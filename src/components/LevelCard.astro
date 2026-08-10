@@ -1,0 +1,70 @@
+---
+import type { LevelMeta } from '../data/levels';
+
+interface Props {
+  level: LevelMeta;
+  lessonCount: number;
+}
+
+const { level, lessonCount } = Astro.props;
+---
+
+<a class="level-card card" href={`/niveles/${level.id}`} style={`--accent-c: ${level.color}`}>
+  <div class="top">
+    <span class="emoji" aria-hidden="true">{level.emoji}</span>
+    <span class="badge">{lessonCount} lección{lessonCount === 1 ? '' : 'es'}</span>
+  </div>
+  <h3>{level.name}</h3>
+  <p class="tagline">{level.tagline}</p>
+  <p class="desc">{level.description}</p>
+  <span class="link">Explorar nivel →</span>
+</a>
+
+<style>
+  .level-card {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+    border-top: 3px solid var(--accent-c);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+
+  .level-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .emoji {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.2rem;
+  }
+
+  .tagline {
+    color: var(--accent-c);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0 0 1rem;
+    font-size: 0.92rem;
+  }
+
+  .link {
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+</style>

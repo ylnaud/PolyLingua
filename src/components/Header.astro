@@ -1,0 +1,84 @@
+---
+---
+<header class="site-header">
+  <div class="container bar">
+    <a href="/" class="logo" aria-label="PolyLingua — inicio">
+      <span class="logo-mark" aria-hidden="true">DE</span>
+      <span class="logo-text">PolyLingua</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="/niveles">Niveles</a>
+      <a href="/#por-que">Por qué PolyLingua</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary cta" href="/niveles">Empezar gratis</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(15, 17, 21, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 0.85rem;
+    gap: 1rem;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.15rem;
+  }
+
+  .logo-mark {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #000 0%, var(--de-red) 55%, var(--accent) 100%);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  nav {
+    display: flex;
+    gap: 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+  }
+
+  nav a:hover {
+    color: var(--text);
+  }
+
+  .cta {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 720px) {
+    nav {
+      display: none;
+    }
+  }
+</style>

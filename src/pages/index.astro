@@ -1,0 +1,333 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LevelCard from '../components/LevelCard.astro';
+import { LEVELS } from '../data/levels';
+import { getCollection } from 'astro:content';
+
+const lessons = await getCollection('lessons');
+const lessonCounts = Object.fromEntries(
+  LEVELS.map((l) => [l.id, lessons.filter((les) => les.data.level === l.id).length])
+);
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'PolyLingua — Alemán de A1 a C2',
+  description:
+    'Aprende alemán gratis de A1 a C2 con gramática gamificada, quizzes interactivos y explicaciones que no aburren.',
+  provider: {
+    '@type': 'Organization',
+    name: 'PolyLingua',
+    sameAs: 'https://github.com/ylnaud/polylingua',
+  },
+  inLanguage: 'de',
+};
+
+const faqs = [
+  {
+    q: '¿PolyLingua es realmente gratis?',
+    a: 'Sí. Todo el contenido está disponible gratis mientras construimos la comunidad. En el futuro podríamos añadir funciones premium opcionales, pero el curso base seguirá siendo accesible.',
+  },
+  {
+    q: '¿Necesito saber alemán previo para empezar?',
+    a: 'No. El nivel A1 empieza desde cero: alfabeto, pronunciación y las primeras frases del día a día.',
+  },
+  {
+    q: '¿Cómo está organizado el contenido?',
+    a: 'Seguimos el Marco Común Europeo de Referencia (MCER): A1, A2, B1, B2, C1 y C2, con lecciones cortas de gramática explicada de forma visual y quizzes interactivos para practicar al instante.',
+  },
+];
+---
+
+<BaseLayout
+  title="PolyLingua — Aprende alemán de A1 a C2 gratis"
+  description="Curso de alemán gratuito de A1 a C2 con gramática explicada de forma divertida, quizzes interactivos y una ruta clara por nivel del MCER."
+  structuredData={structuredData}
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">🇩🇪 Curso gratuito · MCER A1–C2</span>
+        <h1>Aprende alemán de verdad, sin morir de aburrimiento en la gramática.</h1>
+        <p class="hero-lede">
+          PolyLingua convierte cada regla gramatical en un mini-juego: mnemotecnias,
+          quizzes interactivos y ejemplos reales, desde tu primera palabra hasta matices
+          que solo dominan los nativos.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/niveles/a1">Empezar en A1 →</a>
+          <a class="btn btn-ghost" href="/niveles">Ver todos los niveles</a>
+        </div>
+        <p class="hero-note">100% gratis · sin registro · funciona en cualquier dispositivo</p>
+      </div>
+      <div class="hero-card card" aria-hidden="true">
+        <p class="hero-card-label">Vista previa de una lección</p>
+        <p class="hero-card-q">¿Cuál es el artículo correcto para "Tisch"?</p>
+        <div class="hero-card-options">
+          <span class="opt correct">der Tisch ✓</span>
+          <span class="opt">die Tisch</span>
+          <span class="opt">das Tisch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="levels container" id="niveles">
+    <div class="section-head">
+      <h2>Elige tu punto de partida</h2>
+      <p>Seis niveles, cero relleno. Avanza a tu ritmo desde tu primera palabra hasta la maestría.</p>
+    </div>
+    <div class="levels-grid">
+      {LEVELS.map((level) => (
+        <LevelCard level={level} lessonCount={lessonCounts[level.id] ?? 0} />
+      ))}
+    </div>
+  </section>
+
+  <section class="why container" id="por-que">
+    <div class="section-head">
+      <h2>¿Por qué PolyLingua y no otra app?</h2>
+    </div>
+    <div class="why-grid">
+      <div class="card why-item">
+        <span class="why-emoji">🎮</span>
+        <h3>Gramática gamificada</h3>
+        <p>Cada regla viene con una mnemotecnia visual y un quiz interactivo — aprendes haciendo, no memorizando tablas aburridas.</p>
+      </div>
+      <div class="card why-item">
+        <span class="why-emoji">⚡</span>
+        <h3>Ultra ligera</h3>
+        <p>Construida para cargar al instante, sin JavaScript innecesario. Aprende alemán, no esperes a que cargue una app.</p>
+      </div>
+      <div class="card why-item">
+        <span class="why-emoji">🗺️</span>
+        <h3>Ruta clara MCER</h3>
+        <p>De A1 a C2, siguiendo el estándar europeo, para que sepas exactamente en qué nivel estás y qué sigue.</p>
+      </div>
+      <div class="card why-item">
+        <span class="why-emoji">🌍</span>
+        <h3>Gratis y de código abierto</h3>
+        <p>Todo el curso es gratis mientras crecemos juntos. El código está abierto en GitHub para quien quiera contribuir.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq container" id="faq">
+    <div class="section-head">
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-list">
+      {faqs.map((item) => (
+        <details class="card faq-item">
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="final-cta container">
+    <div class="card final-cta-card">
+      <h2>Tu primera lección te espera</h2>
+      <p>Sin registros, sin tarjetas de crédito. Solo tú, el alemán y cinco minutos.</p>
+      <a class="btn btn-primary" href="/niveles/a1">Empezar gratis ahora →</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding-block: 3.5rem 4rem;
+    background: radial-gradient(circle at 20% 0%, rgba(255, 206, 58, 0.08), transparent 55%);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin: 0.75rem 0 1rem;
+  }
+
+  .hero-lede {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 52ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.85rem;
+    margin: 1.5rem 0 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-note {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .hero-card {
+    padding: 1.75rem;
+  }
+
+  .hero-card-label {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.75rem;
+    font-weight: 700;
+  }
+
+  .hero-card-q {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 0 1rem;
+  }
+
+  .hero-card-options {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .opt {
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    font-size: 0.95rem;
+  }
+
+  .opt.correct {
+    border-color: #2f9e6e;
+    background: rgba(47, 158, 110, 0.15);
+    color: #4fd493;
+    font-weight: 700;
+  }
+
+  .section-head {
+    text-align: center;
+    max-width: 46ch;
+    margin: 0 auto 2.25rem;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    margin: 0 0 0.5rem;
+  }
+
+  .section-head p {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .levels {
+    padding-block: 2rem;
+  }
+
+  .levels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .why {
+    padding-block: 3rem;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  .why-item {
+    padding: 1.5rem;
+  }
+
+  .why-emoji {
+    font-size: 1.75rem;
+  }
+
+  .why-item h3 {
+    margin: 0.6rem 0 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  .why-item p {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.92rem;
+  }
+
+  .faq {
+    padding-block: 3rem;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 0.85rem;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .faq-item {
+    padding: 1.1rem 1.4rem;
+  }
+
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .faq-item p {
+    color: var(--text-muted);
+    margin: 0.75rem 0 0;
+  }
+
+  .final-cta {
+    padding-block: 2rem 4rem;
+  }
+
+  .final-cta-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(255, 206, 58, 0.1), transparent);
+  }
+
+  .final-cta-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .final-cta-card p {
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .levels-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .levels-grid,
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

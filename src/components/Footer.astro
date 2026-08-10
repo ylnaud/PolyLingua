@@ -1,0 +1,100 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container foot-grid">
+    <div>
+      <p class="foot-logo">PolyLingua</p>
+      <p class="foot-tagline">
+        Alemán de A1 a C2, con gramática que se aprende jugando. Gratis mientras
+        construimos la comunidad.
+      </p>
+    </div>
+    <div>
+      <h2>Niveles</h2>
+      <ul>
+        <li><a href="/niveles/a1">A1 · Principiante</a></li>
+        <li><a href="/niveles/b1">B1 · Intermedio</a></li>
+        <li><a href="/niveles/c2">C2 · Maestría</a></li>
+        <li><a href="/niveles">Ver todos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Proyecto</h2>
+      <ul>
+        <li><a href="https://github.com/ylnaud/polylingua" rel="noopener">Código en GitHub</a></li>
+        <li><a href="/#faq">Preguntas frecuentes</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container foot-bottom">
+    <p>© {year} PolyLingua. Hecho con ☕ para quienes aman el alemán.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+    padding-block: 3rem 1.5rem;
+    background: var(--bg-elevated);
+  }
+
+  .foot-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .foot-logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .foot-tagline {
+    color: var(--text-muted);
+    max-width: 32ch;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin: 0 0 0.75rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  ul a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+
+  ul a:hover {
+    color: var(--accent);
+  }
+
+  .foot-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 720px) {
+    .foot-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

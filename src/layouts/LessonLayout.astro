@@ -1,0 +1,156 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Quiz from '../components/Quiz.astro';
+import { LEVEL_MAP } from '../data/levels';
+
+interface QuizQuestion {
+  question: string;
+  options: string[];
+  answerIndex: number;
+  explanation: string;
+}
+
+interface Props {
+  level: 'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2';
+  title: string;
+  description: string;
+  grammarTopic: string;
+  funFact: string;
+  minutes: number;
+  quiz: QuizQuestion[];
+  path: string;
+}
+
+const { level, title, description, grammarTopic, funFact, minutes, quiz, path } =
+  Astro.props;
+const levelMeta = LEVEL_MAP[level];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'LearningResource',
+  name: title,
+  description,
+  educationalLevel: levelMeta.name,
+  learningResourceType: 'Lesson',
+  inLanguage: 'de',
+  teaches: grammarTopic,
+  isPartOf: {
+    '@type': 'Course',
+    name: `Alemán ${levelMeta.name} — PolyLingua`,
+  },
+};
+---
+
+<BaseLayout title={title} description={description} path={path} structuredData={structuredData}>
+  <article class="lesson container">
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="/niveles">Niveles</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/niveles/${level}`}>{levelMeta.name}</a>
+    </nav>
+
+    <header class="lesson-head">
+      <span class="badge" style={`border-color:${levelMeta.color}; color:${levelMeta.color}`}>
+        {levelMeta.emoji} {levelMeta.name}
+      </span>
+      <h1>{title}</h1>
+      <p class="lede">{description}</p>
+      <div class="meta">
+        <span>📘 {grammarTopic}</span>
+        <span>⏱️ {minutes} min</span>
+      </div>
+    </header>
+
+    <div class="fun-fact card">
+      <span class="eyebrow">💡 Truco para no aburrirte</span>
+      <p>{funFact}</p>
+    </div>
+
+    <div class="content">
+      <slot />
+    </div>
+
+    <Quiz questions={quiz} />
+
+    <footer class="lesson-nav">
+      <a class="btn btn-ghost" href={`/niveles/${level}`}>← Volver al nivel {levelMeta.name}</a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .lesson {
+    max-width: 760px;
+    padding-block: 2.5rem 4rem;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: var(--text-muted);
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--accent);
+  }
+
+  .lesson-head h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin: 0.75rem 0 0.5rem;
+  }
+
+  .lede {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .meta {
+    display: flex;
+    gap: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .fun-fact {
+    margin: 1.75rem 0;
+    padding: 1.1rem 1.25rem;
+    background: rgba(255, 206, 58, 0.08);
+    border-color: rgba(255, 206, 58, 0.35);
+  }
+
+  .fun-fact p {
+    margin: 0.35rem 0 0;
+  }
+
+  .content :global(h2) {
+    margin-top: 2.25rem;
+    font-size: 1.4rem;
+  }
+
+  .content :global(h3) {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .content :global(p) {
+    margin: 0.85rem 0;
+  }
+
+  .content :global(ul),
+  .content :global(ol) {
+    padding-left: 1.25rem;
+  }
+
+  .lesson-nav {
+    margin-top: 2.5rem;
+  }
+</style>

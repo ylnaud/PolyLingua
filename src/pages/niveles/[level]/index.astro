@@ -1,0 +1,171 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LEVELS, LEVEL_MAP } from '../../../data/levels';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return LEVELS.map((level) => ({ params: { level: level.id } }));
+}
+
+const { level } = Astro.params;
+const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
+
+const allLessons = await getCollection('lessons');
+const lessons = allLessons
+  .filter((l) => l.data.level === level)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: `Alemán ${levelMeta.name} — PolyLingua`,
+  description: levelMeta.description,
+  inLanguage: 'de',
+  hasCourseInstance: lessons.map((l) => ({
+    '@type': 'CourseInstance',
+    name: l.data.title,
+  })),
+};
+---
+
+<BaseLayout
+  title={`Alemán ${levelMeta.name}`}
+  description={`${levelMeta.description} Lecciones de gramática gamificada, quizzes interactivos y trucos para no aburrirte aprendiendo alemán.`}
+  path={`/niveles/${level}`}
+  structuredData={structuredData}
+>
+  <section class="container level-head" style={`--accent-c:${levelMeta.color}`}>
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="/niveles">Niveles</a>
+      <span aria-hidden="true">/</span>
+      <span>{levelMeta.name}</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">{levelMeta.emoji}</span>
+    <h1>{levelMeta.name}</h1>
+    <p class="tagline">{levelMeta.tagline}</p>
+    <p class="desc">{levelMeta.description}</p>
+  </section>
+
+  <section class="container lessons">
+    {lessons.length === 0 && (
+      <p class="empty">Estamos preparando lecciones para este nivel. ¡Vuelve pronto!</p>
+    )}
+    <ol class="lesson-list">
+      {lessons.map((lesson, i) => (
+        <li>
+          <a class="lesson-item card" href={`/niveles/${level}/${lesson.id.split('/').pop()}`}>
+            <span class="lesson-num" style={`background:${levelMeta.color}`}>{i + 1}</span>
+            <div>
+              <h2>{lesson.data.title}</h2>
+              <p>{lesson.data.description}</p>
+              <span class="lesson-meta">📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min</span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>
+
+<style>
+  .level-head {
+    padding-block: 2.5rem 2rem;
+    max-width: 640px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: var(--text-muted);
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--accent);
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin: 0.4rem 0 0.4rem;
+  }
+
+  .tagline {
+    color: var(--accent-c);
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .lessons {
+    padding-block: 1rem 4rem;
+  }
+
+  .lesson-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .lesson-item {
+    display: flex;
+    gap: 1.1rem;
+    padding: 1.25rem 1.4rem;
+    text-decoration: none;
+    color: var(--text);
+    align-items: flex-start;
+    transition: transform 0.15s ease;
+  }
+
+  .lesson-item:hover {
+    transform: translateX(4px);
+  }
+
+  .lesson-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    color: #14161c;
+    font-size: 0.9rem;
+  }
+
+  .lesson-item h2 {
+    margin: 0 0 0.3rem;
+    font-size: 1.1rem;
+  }
+
+  .lesson-item p {
+    margin: 0 0 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.93rem;
+  }
+
+  .lesson-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .empty {
+    color: var(--text-muted);
+  }
+</style>

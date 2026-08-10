@@ -1,0 +1,256 @@
+---
+interface QuizQuestion {
+  question: string;
+  options: string[];
+  answerIndex: number;
+  explanation: string;
+}
+
+interface Props {
+  questions: QuizQuestion[];
+}
+
+const { questions } = Astro.props;
+const quizId = `quiz-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+{questions.length > 0 && (
+  <section class="quiz" id={quizId} data-quiz aria-label="Práctica interactiva">
+    <div class="quiz-head">
+      <span class="eyebrow">🎮 Ponte a prueba</span>
+      <span class="quiz-progress" data-quiz-progress>1 / {questions.length}</span>
+    </div>
+
+    {questions.map((q, i) => (
+      <fieldset class="quiz-question" data-quiz-question data-index={i} hidden={i !== 0}>
+        <legend>{q.question}</legend>
+        <div class="options" role="radiogroup">
+          {q.options.map((opt, oi) => (
+            <button
+              type="button"
+              class="option"
+              data-option
+              data-correct={oi === q.answerIndex ? 'true' : 'false'}
+            >
+              {opt}
+            </button>
+          ))}
+        </div>
+        <p class="feedback" data-feedback role="status" aria-live="polite"></p>
+        <p class="explanation" data-explanation hidden>{q.explanation}</p>
+        <button type="button" class="btn btn-primary next" data-next hidden>
+          Siguiente →
+        </button>
+      </fieldset>
+    ))}
+
+    <div class="quiz-done" data-quiz-done hidden>
+      <p class="score-emoji" data-score-emoji>🎉</p>
+      <h3>¡Completado!</h3>
+      <p data-score-text>Acertaste 0 / {questions.length}</p>
+      <button type="button" class="btn btn-ghost" data-restart>Repetir</button>
+    </div>
+  </section>
+)}
+
+<style>
+  .quiz {
+    margin-block: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+
+  .quiz-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .quiz-progress {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  legend {
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  .options {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .option {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-size: 0.98rem;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .option:hover {
+    border-color: var(--accent);
+  }
+
+  .option.correct {
+    border-color: #2f9e6e;
+    background: rgba(47, 158, 110, 0.15);
+  }
+
+  .option.incorrect {
+    border-color: var(--de-red);
+    background: rgba(216, 0, 39, 0.12);
+  }
+
+  .option:disabled {
+    cursor: default;
+  }
+
+  .feedback {
+    min-height: 1.4rem;
+    font-weight: 700;
+    margin: 0.85rem 0 0;
+  }
+
+  .explanation {
+    color: var(--text-muted);
+    margin: 0.35rem 0 0;
+    font-size: 0.92rem;
+  }
+
+  .next {
+    margin-top: 1rem;
+  }
+
+  .quiz-done {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .score-emoji {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+</style>
+
+<script>
+  function initQuizzes() {
+    document.querySelectorAll<HTMLElement>('[data-quiz]').forEach((quiz) => {
+      if (quiz.dataset.initialized) return;
+      quiz.dataset.initialized = 'true';
+
+      const questions = Array.from(
+        quiz.querySelectorAll<HTMLElement>('[data-quiz-question]')
+      );
+      const progressEl = quiz.querySelector<HTMLElement>('[data-quiz-progress]');
+      const doneEl = quiz.querySelector<HTMLElement>('[data-quiz-done]');
+      const scoreText = quiz.querySelector<HTMLElement>('[data-score-text]');
+      const scoreEmoji = quiz.querySelector<HTMLElement>('[data-score-emoji]');
+      const restartBtn = quiz.querySelector<HTMLButtonElement>('[data-restart]');
+      let current = 0;
+      let score = 0;
+
+      function showQuestion(index: number) {
+        questions.forEach((q, i) => {
+          q.hidden = i !== index;
+        });
+        if (progressEl) {
+          progressEl.textContent = `${index + 1} / ${questions.length}`;
+        }
+      }
+
+      function finish() {
+        questions.forEach((q) => (q.hidden = true));
+        if (doneEl) doneEl.hidden = false;
+        if (progressEl) progressEl.hidden = true;
+        const pct = score / questions.length;
+        if (scoreEmoji) {
+          scoreEmoji.textContent = pct === 1 ? '🏆' : pct >= 0.5 ? '🎉' : '💪';
+        }
+        if (scoreText) {
+          scoreText.textContent = `Acertaste ${score} / ${questions.length}`;
+        }
+      }
+
+      questions.forEach((question) => {
+        const options = Array.from(
+          question.querySelectorAll<HTMLButtonElement>('[data-option]')
+        );
+        const feedback = question.querySelector<HTMLElement>('[data-feedback]');
+        const explanation = question.querySelector<HTMLElement>('[data-explanation]');
+        const nextBtn = question.querySelector<HTMLButtonElement>('[data-next]');
+
+        options.forEach((opt) => {
+          opt.addEventListener('click', () => {
+            if (question.dataset.answered) return;
+            question.dataset.answered = 'true';
+
+            const isCorrect = opt.dataset.correct === 'true';
+            options.forEach((o) => {
+              o.disabled = true;
+              if (o.dataset.correct === 'true') o.classList.add('correct');
+            });
+            if (!isCorrect) opt.classList.add('incorrect');
+            if (isCorrect) score += 1;
+
+            if (feedback) {
+              feedback.textContent = isCorrect ? '✅ ¡Correcto!' : '❌ No del todo.';
+            }
+            if (explanation) explanation.hidden = false;
+            if (nextBtn) nextBtn.hidden = false;
+          });
+        });
+
+        nextBtn?.addEventListener('click', () => {
+          current += 1;
+          if (current < questions.length) {
+            showQuestion(current);
+          } else {
+            finish();
+          }
+        });
+      });
+
+      restartBtn?.addEventListener('click', () => {
+        current = 0;
+        score = 0;
+        questions.forEach((q) => {
+          delete q.dataset.answered;
+          q.querySelectorAll<HTMLButtonElement>('[data-option]').forEach((o) => {
+            o.disabled = false;
+            o.classList.remove('correct', 'incorrect');
+          });
+          const fb = q.querySelector<HTMLElement>('[data-feedback]');
+          if (fb) fb.textContent = '';
+          const ex = q.querySelector<HTMLElement>('[data-explanation]');
+          if (ex) ex.hidden = true;
+          const nb = q.querySelector<HTMLButtonElement>('[data-next]');
+          if (nb) nb.hidden = true;
+        });
+        if (doneEl) doneEl.hidden = true;
+        if (progressEl) progressEl.hidden = false;
+        showQuestion(0);
+      });
+    });
+  }
+
+  initQuizzes();
+  document.addEventListener('astro:page-load', initQuizzes);
+</script>

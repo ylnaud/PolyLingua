@@ -13,9 +13,9 @@ export const LEVELS: LevelMeta[] = [
   {
     id: 'a1',
     name: 'A1 · Principiante',
-    tagline: 'Tus primeras palabras en alemán',
+    tagline: 'Tus primeras palabras',
     description:
-      'Preséntate, pide un café y sobrevive tu primer día en Berlín sin entrar en pánico.',
+      'Preséntate, pide algo de comer y sobrevive tu primer día hablando el idioma sin entrar en pánico.',
     color: '#2f9e6e',
     emoji: '🌱',
   },
@@ -33,7 +33,7 @@ export const LEVELS: LevelMeta[] = [
     name: 'B1 · Intermedio',
     tagline: 'Conversaciones con sustancia',
     description:
-      'Conecta ideas con weil, dass y obwohl, y empieza a opinar como quien sabe alemán.',
+      'Conecta ideas con causa, contraste y condición, y empieza a opinar como quien domina el idioma.',
     color: '#5b6ee1',
     emoji: '🧭',
   },
@@ -49,7 +49,7 @@ export const LEVELS: LevelMeta[] = [
   {
     id: 'c1',
     name: 'C1 · Avanzado',
-    tagline: 'Estilo, matices y Konjunktiv I',
+    tagline: 'Estilo, matices y modo subjuntivo',
     description:
       'Redacta, debate y comprende textos complejos con soltura casi nativa.',
     color: '#c2569b',
@@ -58,9 +58,9 @@ export const LEVELS: LevelMeta[] = [
   {
     id: 'c2',
     name: 'C2 · Maestría',
-    tagline: 'Alemán al nivel de un nativo culto',
+    tagline: 'El idioma al nivel de un nativo culto',
     description:
-      'Ironía, partículas modales y matices estilísticos que solo dominan los expertos.',
+      'Ironía, registro coloquial y matices estilísticos que solo dominan los expertos.',
     color: '#d6763a',
     emoji: '👑',
   },

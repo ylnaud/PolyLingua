@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LanguageCard from '../../components/LanguageCard.astro';
+import { LANGUAGES } from '../../data/languages';
+import { getCollection } from 'astro:content';
+
+const lessons = await getCollection('lessons');
+const lessonCounts = Object.fromEntries(
+  LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length])
+);
+---
+
+<BaseLayout
+  title="Idiomas disponibles"
+  description="Elige el idioma que quieres aprender: alemán, inglés, francés, italiano o portugués. Gramática gamificada de A1 a C2, gratis."
+  path="/idiomas"
+>
+  <section class="container page-head">
+    <span class="eyebrow">Catálogo de idiomas</span>
+    <h1>¿Qué idioma quieres aprender?</h1>
+    <p>
+      Cada idioma tiene su propia ruta de A1 a C2, con la misma gramática gamificada que
+      hace que aprender no se sienta como estudiar.
+    </p>
+  </section>
+
+  <section class="container languages-grid">
+    {LANGUAGES.map((language) => (
+      <LanguageCard language={language} lessonCount={lessonCounts[language.id] ?? 0} />
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .page-head {
+    padding-block: 3rem 2rem;
+    max-width: 640px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 0.6rem 0 0.75rem;
+  }
+
+  .page-head p {
+    color: var(--text-muted);
+  }
+
+  .languages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding-block: 1rem 4rem;
+  }
+
+  @media (max-width: 900px) {
+    .languages-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .languages-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

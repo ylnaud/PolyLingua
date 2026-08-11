@@ -1,27 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import LevelCard from '../components/LevelCard.astro';
-import { LEVELS } from '../data/levels';
+import LanguageCard from '../components/LanguageCard.astro';
+import { LANGUAGES } from '../data/languages';
 import { getCollection } from 'astro:content';
 
 const lessons = await getCollection('lessons');
 const lessonCounts = Object.fromEntries(
-  LEVELS.map((l) => [l.id, lessons.filter((les) => les.data.level === l.id).length])
+  LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length])
 );
-
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: 'PolyLingua — Alemán de A1 a C2',
-  description:
-    'Aprende alemán gratis de A1 a C2 con gramática gamificada, quizzes interactivos y explicaciones que no aburren.',
-  provider: {
-    '@type': 'Organization',
-    name: 'PolyLingua',
-    sameAs: 'https://github.com/ylnaud/polylingua',
-  },
-  inLanguage: 'de',
-};
 
 const faqs = [
   {
@@ -29,34 +15,84 @@ const faqs = [
     a: 'Sí. Todo el contenido está disponible gratis mientras construimos la comunidad. En el futuro podríamos añadir funciones premium opcionales, pero el curso base seguirá siendo accesible.',
   },
   {
-    q: '¿Necesito saber alemán previo para empezar?',
-    a: 'No. El nivel A1 empieza desde cero: alfabeto, pronunciación y las primeras frases del día a día.',
+    q: '¿Puedo aprender más de un idioma a la vez?',
+    a: 'Claro. Cada idioma tiene su propia ruta independiente de A1 a C2, así que puedes avanzar en alemán y en francés al mismo tiempo si quieres, sin que se mezclen.',
+  },
+  {
+    q: '¿Necesito conocimientos previos para empezar?',
+    a: 'No. El nivel A1 de cada idioma empieza desde cero: lo básico, pronunciación y las primeras frases del día a día.',
   },
   {
     q: '¿Cómo está organizado el contenido?',
     a: 'Seguimos el Marco Común Europeo de Referencia (MCER): A1, A2, B1, B2, C1 y C2, con lecciones cortas de gramática explicada de forma visual y quizzes interactivos para practicar al instante.',
   },
+  {
+    q: '¿Puedo usar PolyLingua sin conexión a internet?',
+    a: 'Sí. PolyLingua se puede instalar como aplicación desde el navegador (el botón "Instalar app") y funciona incluso con conexión limitada gracias a su diseño ultra ligero.',
+  },
 ];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ItemList',
+      name: 'Cursos de idiomas gratis — PolyLingua',
+      description:
+        'Aprende alemán, inglés, francés, italiano o portugués gratis de A1 a C2, con gramática gamificada, quizzes interactivos y explicaciones que no aburren.',
+      itemListElement: LANGUAGES.map((lang, i) => ({
+        '@type': 'Course',
+        position: i + 1,
+        name: `${lang.name} — PolyLingua`,
+        description: lang.description,
+        inLanguage: lang.id,
+        provider: {
+          '@type': 'Organization',
+          name: 'PolyLingua',
+          sameAs: 'https://github.com/ylnaud/polylingua',
+        },
+      })),
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((item) => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.a,
+        },
+      })),
+    },
+    {
+      '@type': 'WebSite',
+      name: 'PolyLingua',
+      url: 'https://polylingua.app',
+      inLanguage: 'es',
+    },
+  ],
+};
 ---
 
 <BaseLayout
-  title="PolyLingua — Aprende alemán de A1 a C2 gratis"
-  description="Curso de alemán gratuito de A1 a C2 con gramática explicada de forma divertida, quizzes interactivos y una ruta clara por nivel del MCER."
+  title="PolyLingua — Aprende Alemán, Inglés, Francés, Italiano y Portugués Gratis (A1-C2)"
+  description="Curso gratis de alemán, inglés, francés, italiano y portugués online, de A1 a C2. Gramática explicada con trucos fáciles de recordar y ejercicios interactivos para aprender rápido, sin aburrirte."
   structuredData={structuredData}
 >
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">🇩🇪 Curso gratuito · MCER A1–C2</span>
-        <h1>Aprende alemán de verdad, sin morir de aburrimiento en la gramática.</h1>
+        <span class="eyebrow">🌐 5 idiomas · Gratis · MCER A1–C2</span>
+        <h1>Aprende idiomas de verdad, sin morir de aburrimiento en la gramática.</h1>
         <p class="hero-lede">
           PolyLingua convierte cada regla gramatical en un mini-juego: mnemotecnias,
           quizzes interactivos y ejemplos reales, desde tu primera palabra hasta matices
-          que solo dominan los nativos.
+          que solo dominan los nativos. Alemán, inglés, francés, italiano y portugués, en
+          un solo lugar.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="/niveles/a1">Empezar en A1 →</a>
-          <a class="btn btn-ghost" href="/niveles">Ver todos los niveles</a>
+          <a class="btn btn-primary" href="/idiomas">Elegir idioma →</a>
+          <a class="btn btn-ghost" href="/idiomas/de">Empezar con alemán</a>
         </div>
         <p class="hero-note">100% gratis · sin registro · funciona en cualquier dispositivo</p>
       </div>
@@ -72,14 +108,14 @@ const faqs = [
     </div>
   </section>
 
-  <section class="levels container" id="niveles">
+  <section class="languages container" id="idiomas">
     <div class="section-head">
-      <h2>Elige tu punto de partida</h2>
-      <p>Seis niveles, cero relleno. Avanza a tu ritmo desde tu primera palabra hasta la maestría.</p>
+      <h2>Elige tu idioma</h2>
+      <p>Cinco idiomas, seis niveles cada uno. Avanza a tu ritmo desde tu primera palabra hasta la maestría.</p>
     </div>
-    <div class="levels-grid">
-      {LEVELS.map((level) => (
-        <LevelCard level={level} lessonCount={lessonCounts[level.id] ?? 0} />
+    <div class="languages-grid">
+      {LANGUAGES.map((language) => (
+        <LanguageCard language={language} lessonCount={lessonCounts[language.id] ?? 0} />
       ))}
     </div>
   </section>
@@ -97,12 +133,12 @@ const faqs = [
       <div class="card why-item">
         <span class="why-emoji">⚡</span>
         <h3>Ultra ligera</h3>
-        <p>Construida para cargar al instante, sin JavaScript innecesario. Aprende alemán, no esperes a que cargue una app.</p>
+        <p>Construida para cargar al instante, sin JavaScript innecesario. Aprende idiomas, no esperes a que cargue una app.</p>
       </div>
       <div class="card why-item">
         <span class="why-emoji">🗺️</span>
         <h3>Ruta clara MCER</h3>
-        <p>De A1 a C2, siguiendo el estándar europeo, para que sepas exactamente en qué nivel estás y qué sigue.</p>
+        <p>De A1 a C2 en cada idioma, siguiendo el estándar europeo, para que sepas exactamente en qué nivel estás y qué sigue.</p>
       </div>
       <div class="card why-item">
         <span class="why-emoji">🌍</span>
@@ -129,8 +165,8 @@ const faqs = [
   <section class="final-cta container">
     <div class="card final-cta-card">
       <h2>Tu primera lección te espera</h2>
-      <p>Sin registros, sin tarjetas de crédito. Solo tú, el alemán y cinco minutos.</p>
-      <a class="btn btn-primary" href="/niveles/a1">Empezar gratis ahora →</a>
+      <p>Sin registros, sin tarjetas de crédito. Solo tú, el idioma que elijas y cinco minutos.</p>
+      <a class="btn btn-primary" href="/idiomas">Elegir idioma y empezar →</a>
     </div>
   </section>
 </BaseLayout>
@@ -226,11 +262,11 @@ const faqs = [
     margin: 0;
   }
 
-  .levels {
+  .languages {
     padding-block: 2rem;
   }
 
-  .levels-grid {
+  .languages-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
@@ -315,7 +351,7 @@ const faqs = [
       grid-template-columns: 1fr;
     }
 
-    .levels-grid {
+    .languages-grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -325,7 +361,7 @@ const faqs = [
   }
 
   @media (max-width: 560px) {
-    .levels-grid,
+    .languages-grid,
     .why-grid {
       grid-template-columns: 1fr;
     }

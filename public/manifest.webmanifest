@@ -1,0 +1,33 @@
+{
+  "name": "PolyLingua — Aprende idiomas de A1 a C2",
+  "short_name": "PolyLingua",
+  "description": "Aprende alemán, inglés, francés, italiano o portugués gratis, con gramática gamificada y quizzes interactivos.",
+  "start_url": "/?utm_source=pwa",
+  "id": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f1115",
+  "theme_color": "#0f1115",
+  "lang": "es",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

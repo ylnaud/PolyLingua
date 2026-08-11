@@ -1,0 +1,176 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LEVELS } from '../../../data/levels';
+import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
+}
+
+const { lang } = Astro.params;
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+const allLessons = await getCollection('lessons');
+const lessonCounts = Object.fromEntries(
+  LEVELS.map((lvl) => [
+    lvl.id,
+    allLessons.filter((l) => l.data.language === lang && l.data.level === lvl.id).length,
+  ])
+);
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: `${languageMeta.name} — PolyLingua`,
+  description: languageMeta.description,
+  inLanguage: lang,
+};
+---
+
+<BaseLayout
+  title={`Aprende ${languageMeta.name}`}
+  description={`${languageMeta.description} Seis niveles del MCER (A1 a C2), con gramática gamificada y quizzes interactivos.`}
+  path={`/idiomas/${lang}`}
+  structuredData={structuredData}
+>
+  <section class="container lang-head" style={`--accent-c:${languageMeta.color}`}>
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="/idiomas">Idiomas</a>
+      <span aria-hidden="true">/</span>
+      <span>{languageMeta.name}</span>
+    </nav>
+    <span class="flag" aria-hidden="true">{languageMeta.flag}</span>
+    <h1>{languageMeta.name} <span class="native">· {languageMeta.nativeName}</span></h1>
+    <p class="tagline">{languageMeta.tagline}</p>
+    <p class="desc">{languageMeta.description}</p>
+  </section>
+
+  <section class="container levels-grid">
+    {LEVELS.map((level) => (
+      <a
+        class="level-item card"
+        href={`/idiomas/${lang}/${level.id}`}
+        style={`border-top-color:${level.color}`}
+      >
+        <div class="top">
+          <span class="emoji" aria-hidden="true">{level.emoji}</span>
+          <span class="badge">{lessonCounts[level.id] ?? 0} lección{(lessonCounts[level.id] ?? 0) === 1 ? '' : 'es'}</span>
+        </div>
+        <h2>{level.name}</h2>
+        <p class="lvl-tagline" style={`color:${level.color}`}>{level.tagline}</p>
+        <p class="lvl-desc">{level.description}</p>
+      </a>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .lang-head {
+    padding-block: 2.5rem 2rem;
+    max-width: 680px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: var(--text-muted);
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--accent-text);
+  }
+
+  .flag {
+    font-size: 2.2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin: 0.4rem 0 0.4rem;
+  }
+
+  .native {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.6em;
+  }
+
+  .tagline {
+    color: var(--accent-c);
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .levels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding-block: 1rem 4rem;
+  }
+
+  .level-item {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+    border-top: 3px solid;
+    transition: transform 0.15s ease;
+  }
+
+  .level-item:hover {
+    transform: translateY(-3px);
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .emoji {
+    font-size: 1.75rem;
+  }
+
+  .level-item h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.15rem;
+  }
+
+  .lvl-tagline {
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .lvl-desc {
+    color: var(--text-muted);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .levels-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .levels-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

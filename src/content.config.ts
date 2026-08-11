@@ -11,6 +11,7 @@ const quizQuestion = z.object({
 const lessons = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/lessons' }),
   schema: z.object({
+    language: z.enum(['de', 'en', 'fr', 'it', 'pt']),
     level: z.enum(['a1', 'a2', 'b1', 'b2', 'c1', 'c2']),
     title: z.string(),
     description: z.string(),

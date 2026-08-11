@@ -8,4 +8,7 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'auto',
   },
+  redirects: {
+    '/niveles': '/idiomas/de',
+  },
 });

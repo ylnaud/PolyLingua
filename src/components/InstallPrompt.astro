@@ -1,0 +1,64 @@
+---
+---
+<button
+  type="button"
+  class="install-btn"
+  id="install-btn"
+  hidden
+  aria-label="Instalar PolyLingua como aplicación"
+>
+  📲 Instalar app
+</button>
+
+<style>
+  .install-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .install-btn:hover {
+    border-color: var(--accent);
+  }
+</style>
+
+<script>
+  function initInstallPrompt() {
+    const btn = document.getElementById('install-btn') as HTMLButtonElement | null;
+    if (!btn || btn.dataset.initialized) return;
+    btn.dataset.initialized = 'true';
+
+    let deferredPrompt: any = null;
+
+    window.addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault();
+      deferredPrompt = event;
+      btn.hidden = false;
+    });
+
+    btn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      btn.hidden = true;
+    });
+
+    window.addEventListener('appinstalled', () => {
+      btn.hidden = true;
+      deferredPrompt = null;
+    });
+  }
+
+  initInstallPrompt();
+  document.addEventListener('astro:page-load', initInstallPrompt);
+</script>

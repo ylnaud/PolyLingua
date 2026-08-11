@@ -1,0 +1,69 @@
+---
+language: it
+level: c2
+title: "Mica, dai, magari, ecco: el italiano que no está en los libros"
+description: "Las palabritas que un nativo usa constantemente en conversación y que marcan la diferencia entre sonar de manual o sonar auténtico."
+order: 1
+grammarTopic: "Particelle colloquiali e registro"
+funFact: "Estas palabras son el 'tono de voz' escrito del italiano: 'mica' niega con actitud ('non sono mica stupido' = no soy tonto, ¿eh?), 'dai' anima o insiste ('¡vamos!'), 'magari' expresa un deseo casi imposible ('¡ojalá!'). Ningún diccionario las traduce del todo bien porque no cambian el significado literal — cambian la actitud."
+minutes: 12
+quiz:
+  - question: "'Non sono mica stanco.' — ¿qué matiz añade 'mica' aquí?"
+    options: [
+      "Duda sobre la propia afirmación",
+      "Énfasis coloquial en la negación, casi como '¡para nada!'",
+      "Es una pregunta formal"
+    ]
+    answerIndex: 1
+    explanation: "'mica' refuerza una negación de forma coloquial y enfática: 'Non sono mica stanco' suena a 'no estoy nada cansado, ¿eh?' — mucho más expresivo que un simple 'non sono stanco'."
+  - question: "'Magari fosse vero!' — ¿qué expresa 'magari' en este contexto?"
+    options: [
+      "Certeza total de que algo es verdad",
+      "Un deseo fuerte sobre algo poco probable, como '¡ojalá!'",
+      "Una orden directa"
+    ]
+    answerIndex: 1
+    explanation: "'magari' expresa un deseo intenso sobre algo dudoso o improbable: 'Magari fosse vero!' = '¡Ojalá fuera verdad!' — nota que también dispara el congiuntivo (fosse)."
+  - question: "¿Cuál es la mejor forma de aprender a usar partículas como 'dai', 'boh' o 'insomma'?"
+    options: [
+      "Memorizando su traducción exacta al español",
+      "Exponiéndose a conversación real italiana y notando el tono en que se usan",
+      "Evitándolas porque son gramaticalmente incorrectas"
+    ]
+    answerIndex: 1
+    explanation: "No tienen traducción 1:1 — su significado depende del tono y contexto. No son errores: son el italiano hablado real, y se dominan por exposición e imitación."
+---
+
+Llegaste al nivel donde la gramática de manual ya no es el reto. El verdadero examen de
+un C2 son las **partículas coloquiales**: palabras cortas que un italiano nativo usa
+constantemente y que raramente se explican a fondo en los libros de texto.
+
+## Por qué son el examen final del idioma
+
+Un estudiante de B2 puede hablar con gramática perfecta y aun así sonar como un
+presentador de telediario. Lo que falta son estas partículas: el condimento que hace que
+una frase suene espontánea y con actitud — igual que el tono de voz en español.
+
+## Las partículas más útiles
+
+| Partícula | Efecto | Ejemplo |
+| --- | --- | --- |
+| mica | negación enfática/coloquial | Non è mica facile! |
+| dai | ánimo, insistencia, "¡vamos!" | Dai, sbrigati! |
+| magari | deseo intenso improbable, "¡ojalá!" | Magari vincessi alla lotteria! |
+| boh | duda, "no sé", encogimiento de hombros | Dov'è Marco? Boh. |
+| insomma | resumen, "en fin / más o menos" | Insomma, non mi piace. |
+
+## El verdadero reto: usarlas con el tono correcto
+
+Estas palabras no se traducen palabra por palabra — se **sienten**. "Magari" puede sonar
+a esperanza sincera o a sarcasmo dependiendo del contexto y la entonación. Un italiano
+nativo las combina sin pensarlo: "Boh, magari, dai, proviamo" — cuatro partículas en una
+frase relajada de cinco palabras.
+
+## No hay atajo de memorización
+
+La única forma real de dominarlas es exponerte a italiano hablado auténtico —películas,
+pódcasts, conversación real— y notar cuándo un nativo las usa y con qué actitud. Ese
+oído es, literalmente, la frontera entre "hablar italiano muy bien" y "hablar italiano
+como si hubieras crecido en Roma".

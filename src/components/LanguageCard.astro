@@ -1,0 +1,74 @@
+---
+import type { LanguageMeta } from '../data/languages';
+
+interface Props {
+  language: LanguageMeta;
+  lessonCount: number;
+}
+
+const { language, lessonCount } = Astro.props;
+---
+
+<a
+  class="lang-card card"
+  href={`/idiomas/${language.id}`}
+  style={`--accent-c: ${language.color}`}
+>
+  <div class="top">
+    <span class="flag" aria-hidden="true">{language.flag}</span>
+    <span class="badge">{lessonCount} lección{lessonCount === 1 ? '' : 'es'}</span>
+  </div>
+  <h3>{language.name}</h3>
+  <p class="tagline">{language.tagline}</p>
+  <p class="desc">{language.description}</p>
+  <span class="link">Ver niveles →</span>
+</a>
+
+<style>
+  .lang-card {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+    border-top: 3px solid var(--accent-c);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+
+  .lang-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .flag {
+    font-size: 1.9rem;
+  }
+
+  h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.2rem;
+  }
+
+  .tagline {
+    color: var(--accent-c);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0 0 1rem;
+    font-size: 0.92rem;
+  }
+
+  .link {
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+</style>

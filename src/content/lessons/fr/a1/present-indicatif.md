@@ -1,0 +1,63 @@
+---
+language: fr
+level: a1
+title: "Le présent: tres grupos de verbos, un solo patrón cada uno"
+description: "Conjuga verbos en -er, -ir y -re con reglas predecibles, más los dos irregulares que tienes que saberte sí o sí."
+order: 2
+grammarTopic: "Présent de l'indicatif (verbos regulares -er + être/avoir)"
+funFact: "El 90% de los verbos franceses terminan en '-er' y se conjugan EXACTAMENTE igual (parler, manger, aimer...). Aprende UN verbo en -er a la perfección y automáticamente sabes conjugar cientos más. Es el grupo más rentable de memorizar."
+minutes: 7
+quiz:
+  - question: "¿Cuál es la conjugación correcta de 'parler' (hablar) con 'tu' (tú)?"
+    options: ["tu parles", "tu parle", "tu parlez"]
+    answerIndex: 0
+    explanation: "Los verbos en -er con 'tu' toman la terminación '-es': tu parles. La 's' final no se pronuncia, pero se escribe siempre."
+  - question: "¿Cuál es la forma correcta de 'être' (ser/estar) con 'nous' (nosotros)?"
+    options: ["nous sommes", "nous êtes", "nous est"]
+    answerIndex: 0
+    explanation: "'être' es irregular: nous sommes. Es uno de los verbos más importantes e irregulares del francés, hay que memorizarlo completo."
+  - question: "¿Cuál es la conjugación de 'avoir' (tener) con 'ils' (ellos)?"
+    options: ["ils avons", "ils ont", "ils as"]
+    answerIndex: 1
+    explanation: "'avoir' con 'ils/elles' es 'ont': ils ont. Otro verbo irregular esencial que aparece en construcciones como 'avoir faim' (tener hambre)."
+---
+
+El francés organiza sus verbos en tres grupos según su terminación, y el primer grupo
+(el más grande) es sorprendentemente predecible.
+
+## Grupo 1: verbos en -er (el 90% de los verbos)
+
+Toma la raíz (quita "-er") y añade estas terminaciones:
+
+| Pronombre | Terminación | parler (hablar) |
+| --- | --- | --- |
+| je | -e | je parle |
+| tu | -es | tu parles |
+| il/elle | -e | il parle |
+| nous | -ons | nous parlons |
+| vous | -ez | vous parlez |
+| ils/elles | -ent | ils parlent |
+
+Fíjate: **je, tu, il/elle, ils/elles suenan igual al hablar** aunque se escriban
+distinto. La ortografía importa mucho más que la pronunciación aquí.
+
+## Los dos verbos irregulares que debes memorizar ya
+
+**être** (ser/estar) y **avoir** (tener) son irregulares, pero aparecen en TODAS partes
+— incluso para formar el pasado compuesto que verás en tu próxima lección.
+
+| Pronombre | être | avoir |
+| --- | --- | --- |
+| je | suis | ai |
+| tu | es | as |
+| il/elle | est | a |
+| nous | sommes | avons |
+| vous | êtes | avez |
+| ils/elles | sont | ont |
+
+## Un uso curioso de "avoir"
+
+El francés usa "avoir" (tener) donde el español usa "tener" pero también donde el
+español usa "estar" o "ser": **avoir faim** (tener hambre), **avoir 20 ans** (tener 20
+años — igual que en español), **avoir raison** (tener razón). Memorízalas como frases
+completas, no palabra por palabra.

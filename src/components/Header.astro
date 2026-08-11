@@ -1,18 +1,39 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
+import InstallPrompt from './InstallPrompt.astro';
 ---
 <header class="site-header">
   <div class="container bar">
     <a href="/" class="logo" aria-label="PolyLingua — inicio">
-      <span class="logo-mark" aria-hidden="true">DE</span>
+      <span class="logo-mark" aria-hidden="true">🌐</span>
       <span class="logo-text">PolyLingua</span>
     </a>
-    <nav aria-label="Navegación principal">
-      <a href="/niveles">Niveles</a>
+    <nav class="nav-desktop" aria-label="Navegación principal">
+      <a href="/idiomas">Idiomas</a>
       <a href="/#por-que">Por qué PolyLingua</a>
       <a href="/#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary cta" href="/niveles">Empezar gratis</a>
+    <div class="actions">
+      <InstallPrompt />
+      <ThemeToggle />
+      <a class="btn btn-primary cta" href="/idiomas">Empezar gratis</a>
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Abrir menú de navegación"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
   </div>
+  <nav id="mobile-nav" class="nav-mobile" aria-label="Navegación móvil" hidden>
+    <a href="/idiomas">Idiomas</a>
+    <a href="/#por-que">Por qué PolyLingua</a>
+    <a href="/#faq">FAQ</a>
+  </nav>
 </header>
 
 <style>
@@ -20,7 +41,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(15, 17, 21, 0.85);
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
   }
@@ -48,14 +69,11 @@
     width: 34px;
     height: 34px;
     border-radius: 9px;
-    background: linear-gradient(135deg, #000 0%, var(--de-red) 55%, var(--accent) 100%);
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
+    background: linear-gradient(135deg, #2f8fce 0%, var(--de-red) 55%, var(--accent) 100%);
+    font-size: 1.1rem;
   }
 
-  nav {
+  .nav-desktop {
     display: flex;
     gap: 1.5rem;
     font-weight: 600;
@@ -71,14 +89,86 @@
     color: var(--text);
   }
 
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
   .cta {
     padding: 0.55rem 1.1rem;
     font-size: 0.9rem;
   }
 
+  .menu-toggle {
+    display: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem 1.25rem 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-mobile a {
+    padding: 0.7rem 0.25rem;
+    font-weight: 600;
+  }
+
+  .nav-mobile:not([hidden]) {
+    display: flex;
+  }
+
   @media (max-width: 720px) {
-    nav {
+    .nav-desktop {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: grid;
+      place-items: center;
+    }
+
+    .cta {
+      display: none;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .actions :global(.install-btn) {
       display: none;
     }
   }
 </style>
+
+<script>
+  function initMenuToggle() {
+    const btn = document.getElementById('menu-toggle');
+    const nav = document.getElementById('mobile-nav');
+    if (!btn || !nav || btn.dataset.initialized) return;
+    btn.dataset.initialized = 'true';
+
+    btn.addEventListener('click', () => {
+      const isOpen = !nav.hidden;
+      nav.hidden = isOpen;
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      btn.setAttribute(
+        'aria-label',
+        isOpen ? 'Abrir menú de navegación' : 'Cerrar menú de navegación'
+      );
+    });
+  }
+
+  initMenuToggle();
+  document.addEventListener('astro:page-load', initMenuToggle);
+</script>

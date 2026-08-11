@@ -1,32 +1,14 @@
 ---
-import LessonLayout from '../../../layouts/LessonLayout.astro';
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const lessons = await getCollection('lessons');
+  const lessons = await getCollection('lessons', ({ data }) => data.language === 'de');
   return lessons.map((lesson) => {
-    const [level, slug] = lesson.id.split('/');
-    return {
-      params: { level, slug },
-      props: { lesson },
-    };
+    const [, level, slug] = lesson.id.split('/');
+    return { params: { level, slug } };
   });
 }
 
-const { lesson } = Astro.props;
-const { Content } = await render(lesson);
 const { level, slug } = Astro.params;
+return Astro.redirect(`/idiomas/de/${level}/${slug}`, 301);
 ---
-
-<LessonLayout
-  level={lesson.data.level}
-  title={lesson.data.title}
-  description={lesson.data.description}
-  grammarTopic={lesson.data.grammarTopic}
-  funFact={lesson.data.funFact}
-  minutes={lesson.data.minutes}
-  quiz={lesson.data.quiz}
-  path={`/niveles/${level}/${slug}`}
->
-  <Content />
-</LessonLayout>

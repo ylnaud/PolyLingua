@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { LEVEL_MAP } from '../../../../data/levels';
+import { LANGUAGE_MAP } from '../../../../data/languages';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allLessons = await getCollection('lessons');
+  const combos = new Set<string>();
+  for (const lesson of allLessons) {
+    combos.add(`${lesson.data.language}/${lesson.data.level}`);
+  }
+  return Array.from(combos).map((combo) => {
+    const [lang, level] = combo.split('/');
+    return { params: { lang, level } };
+  });
+}
+
+const { lang, level } = Astro.params;
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
+
+const allLessons = await getCollection('lessons');
+const lessons = allLessons
+  .filter((l) => l.data.language === lang && l.data.level === level)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
+  description: levelMeta.description,
+  inLanguage: lang,
+  hasCourseInstance: lessons.map((l) => ({
+    '@type': 'CourseInstance',
+    name: l.data.title,
+  })),
+};
+---
+
+<BaseLayout
+  title={`${languageMeta.name} ${levelMeta.name}`}
+  description={`${levelMeta.description} Lecciones de gramática gamificada de ${languageMeta.name}, con quizzes interactivos y trucos para no aburrirte.`}
+  path={`/idiomas/${lang}/${level}`}
+  structuredData={structuredData}
+>
+  <section class="container level-head" style={`--accent-c:${levelMeta.color}`}>
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="/idiomas">Idiomas</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/idiomas/${lang}`}>{languageMeta.flag} {languageMeta.name}</a>
+      <span aria-hidden="true">/</span>
+      <span>{levelMeta.name}</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">{levelMeta.emoji}</span>
+    <h1>{languageMeta.name} — {levelMeta.name}</h1>
+    <p class="tagline">{levelMeta.tagline}</p>
+    <p class="desc">{levelMeta.description}</p>
+  </section>
+
+  <section class="container lessons">
+    {lessons.length === 0 && (
+      <p class="empty">Estamos preparando lecciones para este nivel. ¡Vuelve pronto!</p>
+    )}
+    <ol class="lesson-list">
+      {lessons.map((lesson, i) => (
+        <li>
+          <a class="lesson-item card" href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}>
+            <span class="lesson-num" style={`background:${levelMeta.color}`}>{i + 1}</span>
+            <div>
+              <h2>{lesson.data.title}</h2>
+              <p>{lesson.data.description}</p>
+              <span class="lesson-meta">📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min</span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>
+
+<style>
+  .level-head {
+    padding-block: 2.5rem 2rem;
+    max-width: 640px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: var(--text-muted);
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--accent-text);
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.4rem;
+  }
+
+  .tagline {
+    color: var(--accent-c);
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .lessons {
+    padding-block: 1rem 4rem;
+  }
+
+  .lesson-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .lesson-item {
+    display: flex;
+    gap: 1.1rem;
+    padding: 1.25rem 1.4rem;
+    text-decoration: none;
+    color: var(--text);
+    align-items: flex-start;
+    transition: transform 0.15s ease;
+  }
+
+  .lesson-item:hover {
+    transform: translateX(4px);
+  }
+
+  .lesson-num {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    color: #14161c;
+    font-size: 0.9rem;
+  }
+
+  .lesson-item h2 {
+    margin: 0 0 0.3rem;
+    font-size: 1.1rem;
+  }
+
+  .lesson-item p {
+    margin: 0 0 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.93rem;
+  }
+
+  .lesson-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .empty {
+    color: var(--text-muted);
+  }
+</style>

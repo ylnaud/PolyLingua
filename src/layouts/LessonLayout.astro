@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Quiz from '../components/Quiz.astro';
 import { LEVEL_MAP } from '../data/levels';
+import { LANGUAGE_MAP } from '../data/languages';
 
 interface QuizQuestion {
   question: string;
@@ -11,6 +12,7 @@ interface QuizQuestion {
 }
 
 interface Props {
+  language: 'de' | 'en' | 'fr' | 'it' | 'pt';
   level: 'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2';
   title: string;
   description: string;
@@ -21,32 +23,65 @@ interface Props {
   path: string;
 }
 
-const { level, title, description, grammarTopic, funFact, minutes, quiz, path } =
+const { language, level, title, description, grammarTopic, funFact, minutes, quiz, path } =
   Astro.props;
 const levelMeta = LEVEL_MAP[level];
+const languageMeta = LANGUAGE_MAP[language];
+
+const siteURL = 'https://polylingua.app';
 
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'LearningResource',
-  name: title,
-  description,
-  educationalLevel: levelMeta.name,
-  learningResourceType: 'Lesson',
-  inLanguage: 'de',
-  teaches: grammarTopic,
-  isPartOf: {
-    '@type': 'Course',
-    name: `Alemán ${levelMeta.name} — PolyLingua`,
-  },
+  '@graph': [
+    {
+      '@type': 'LearningResource',
+      name: title,
+      description,
+      educationalLevel: levelMeta.name,
+      learningResourceType: 'Lesson',
+      inLanguage: language,
+      teaches: grammarTopic,
+      isPartOf: {
+        '@type': 'Course',
+        name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Idiomas', item: `${siteURL}/idiomas` },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: languageMeta.name,
+          item: `${siteURL}/idiomas/${language}`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: levelMeta.name,
+          item: `${siteURL}/idiomas/${language}/${level}`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          name: title,
+          item: `${siteURL}${path}`,
+        },
+      ],
+    },
+  ],
 };
 ---
 
 <BaseLayout title={title} description={description} path={path} structuredData={structuredData}>
   <article class="lesson container">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/niveles">Niveles</a>
+      <a href="/idiomas">Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/niveles/${level}`}>{levelMeta.name}</a>
+      <a href={`/idiomas/${language}`}>{languageMeta.flag} {languageMeta.name}</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/idiomas/${language}/${level}`}>{levelMeta.name}</a>
     </nav>
 
     <header class="lesson-head">
@@ -73,7 +108,7 @@ const structuredData = {
     <Quiz questions={quiz} />
 
     <footer class="lesson-nav">
-      <a class="btn btn-ghost" href={`/niveles/${level}`}>← Volver al nivel {levelMeta.name}</a>
+      <a class="btn btn-ghost" href={`/idiomas/${language}/${level}`}>← Volver a {languageMeta.name} {levelMeta.name}</a>
     </footer>
   </article>
 </BaseLayout>
@@ -86,6 +121,7 @@ const structuredData = {
 
   .breadcrumbs {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -98,7 +134,7 @@ const structuredData = {
   }
 
   .breadcrumbs a:hover {
-    color: var(--accent);
+    color: var(--accent-text);
   }
 
   .lesson-head h1 {

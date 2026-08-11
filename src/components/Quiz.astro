@@ -24,7 +24,7 @@ const quizId = `quiz-${Math.random().toString(36).slice(2, 9)}`;
     {questions.map((q, i) => (
       <fieldset class="quiz-question" data-quiz-question data-index={i} hidden={i !== 0}>
         <legend>{q.question}</legend>
-        <div class="options" role="radiogroup">
+        <div class="options">
           {q.options.map((opt, oi) => (
             <button
               type="button"

@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ProgressTracker from '../components/ProgressTracker.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -80,6 +81,7 @@ const ogImage = new URL('/og-image.svg', Astro.site);
       <slot />
     </main>
     <Footer />
+    <ProgressTracker />
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

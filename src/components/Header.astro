@@ -16,6 +16,8 @@ import DailyGoal from './DailyGoal.astro';
     </nav>
     <div class="actions">
       <DailyGoal />
+      <a class="btn-pill" href="/repasar" aria-label="Repasar palabras falladas">📚 Repasar</a>
+      <a class="btn-pill" href="/logros" aria-label="Ver tus logros">🏆 Logros</a>
       <InstallPrompt />
       <ThemeToggle />
       <a class="btn btn-primary cta" href="/idiomas">Empezar gratis</a>
@@ -35,6 +37,8 @@ import DailyGoal from './DailyGoal.astro';
     <a href="/idiomas">Idiomas</a>
     <a href="/#por-que">Por qué PolyLingua</a>
     <a href="/#faq">FAQ</a>
+    <a href="/repasar">📚 Repasar</a>
+    <a href="/logros">🏆 Logros</a>
   </nav>
 </header>
 
@@ -97,6 +101,26 @@ import DailyGoal from './DailyGoal.astro';
     gap: 0.6rem;
   }
 
+  .btn-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    min-height: 44px;
+  }
+
+  .btn-pill:hover {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
   .cta {
     padding: 0.55rem 1.1rem;
     font-size: 0.9rem;
@@ -142,6 +166,10 @@ import DailyGoal from './DailyGoal.astro';
     }
 
     .cta {
+      display: none;
+    }
+
+    .actions .btn-pill {
       display: none;
     }
   }

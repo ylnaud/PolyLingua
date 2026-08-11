@@ -223,7 +223,7 @@ function shuffledIndices(n: number): number[] {
                     >
                       {pair.left}
                     </button>
-                    <button type="button" class="speak-btn" data-speak data-speak-text={pair.left} aria-label={`Escuchar «${pair.left}»`}>🔊</button>
+                    <button type="button" class="speak-btn match-speak" data-speak data-speak-text={pair.left} aria-label={`Escuchar «${pair.left}»`}>🔊</button>
                   </div>
                 ))}
               </div>
@@ -288,7 +288,7 @@ function shuffledIndices(n: number): number[] {
   </section>
 )}
 
-<style>
+<style is:global>
   .practice {
     margin-block: 2rem;
     padding: 1.5rem;
@@ -344,7 +344,8 @@ function shuffledIndices(n: number): number[] {
     gap: 0.4rem;
   }
 
-  .option-row .option {
+  .option-row .option,
+  .option-row .match-item {
     flex: 1;
   }
 
@@ -366,6 +367,19 @@ function shuffledIndices(n: number): number[] {
 
   .speak-btn:hover {
     border-color: var(--accent);
+  }
+
+  .speak-btn.match-speak {
+    border-color: transparent;
+    background: transparent;
+    font-size: 0.95rem;
+    border-radius: 999px;
+  }
+
+  .speak-btn.match-speak:hover,
+  .speak-btn.match-speak:focus-visible {
+    border-color: var(--border);
+    background: var(--bg-elevated);
   }
 
   .speak-btn.reveal-speak {
@@ -421,6 +435,66 @@ function shuffledIndices(n: number): number[] {
   .match-item.selected {
     border-color: var(--accent);
     background: color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+
+  .match-item {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    font-weight: 600;
+    transition: border-color 0.15s ease, background 0.15s ease,
+      box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .match-item:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .match-item:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  .match-item.selected {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .match-item.correct {
+    animation: match-pop 0.35s ease;
+  }
+
+  .match-item.incorrect {
+    animation: match-shake 0.4s ease;
+  }
+
+  @keyframes match-pop {
+    0% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(1.08);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes match-shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-6px);
+    }
+    40% {
+      transform: translateX(6px);
+    }
+    60% {
+      transform: translateX(-4px);
+    }
+    80% {
+      transform: translateX(4px);
+    }
   }
 
   .prompt-sentence {

@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Acerca de PolyLingua"
+  description="Qué es PolyLingua, por qué es gratis, y cómo contactar con el proyecto."
+  path="/acerca"
+>
+  <section class="container legal-head">
+    <span class="eyebrow">El proyecto</span>
+    <h1>Acerca de PolyLingua</h1>
+  </section>
+
+  <article class="container legal">
+    <h2>Qué es</h2>
+    <p>
+      PolyLingua es una web para aprender alemán, inglés, francés, italiano y
+      portugués, con rutas de gramática de A1 a C2. Cada nivel combina
+      lecciones explicadas con ejercicios interactivos — opción múltiple,
+      completar huecos, emparejar, escribir y ordenar frases — más un examen
+      de nivel, repaso espaciado de lo que fallas, y logros para mantenerte
+      motivado.
+    </p>
+
+    <h2>Por qué es gratis</h2>
+    <p>
+      PolyLingua es un proyecto independiente, hecho por una sola persona sin
+      empresa detrás. No hay planes de pago ni cuentas de usuario: todo tu
+      progreso se guarda en tu propio navegador (puedes leer los detalles en
+      la <a href="/privacidad">Política de privacidad</a>). El proyecto se
+      mantiene gratuito y, para poder seguir así a largo plazo, es posible
+      que en el futuro se muestren anuncios en la web.
+    </p>
+
+    <h2>Contacto</h2>
+    <p>
+      La forma más directa de contactar es a través del
+      <a href="https://github.com/ylnaud/polylingua" rel="noopener">
+        repositorio de GitHub del proyecto
+      </a> — puedes abrir un issue para reportar un error, sugerir una
+      lección o hacer cualquier pregunta.
+    </p>
+    <!-- TODO(owner): si quieres un contacto directo por email, sustituye este
+         párrafo por un mailto: o un formulario. No se ha publicado ningún
+         email personal en esta página porque no había consentimiento
+         explícito para hacerlo público. -->
+  </article>
+</BaseLayout>
+
+<style>
+  .legal-head {
+    padding-block: 3rem 1.5rem;
+    max-width: 720px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 0.6rem 0 0.5rem;
+  }
+
+  .legal {
+    max-width: 720px;
+    padding-block: 0 4rem;
+  }
+
+  .legal h2 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .legal h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal p {
+    color: var(--text-muted);
+    margin: 0 0 1rem;
+  }
+
+  .legal a {
+    color: var(--accent-text);
+  }
+</style>

@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://polylingua.app',
+  site: 'https://poly-lingua.vercel.app',
   integrations: [sitemap()],
   compressHTML: true,
   build: {

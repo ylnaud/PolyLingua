@@ -1,0 +1,76 @@
+---
+language: en
+level: c1
+title: "Modals of Deduction: adivina en inglés como Sherlock Holmes"
+description: "Must have, might have, can't have: cómo expresar certeza, posibilidad e imposibilidad sobre el pasado con precisión quirúrgica."
+order: 2
+grammarTopic: "Modals of deduction (must/might/could/can't + have + participle)"
+funFact: "Estos modales son la versión gramatical de un detective razonando: 'must have' es 'estoy 95% seguro', 'might/could have' es 'es posible, no estoy seguro', y 'can't have' es 'es imposible, lo descarto por completo'. Cada uno marca un nivel distinto de certeza sobre algo que ya pasó."
+minutes: 10
+quiz:
+  - question: "Llegas a casa y ves la luz encendida pero no hay nadie. ¿Cuál expresa mayor certeza de que alguien SÍ estuvo ahí?"
+    options: [
+      "Someone might have been here.",
+      "Someone must have been here.",
+      "Someone can't have been here."
+    ]
+    answerIndex: 1
+    explanation: "'must have been' expresa alta certeza basada en evidencia (la luz encendida): definitivamente alguien estuvo aquí."
+  - question: "Sabes que tu amigo estaba en otro país esa noche. ¿Cómo dirías 'es imposible que él haya estado en la fiesta'?"
+    options: [
+      "He must have been at the party.",
+      "He might have been at the party.",
+      "He can't have been at the party."
+    ]
+    answerIndex: 2
+    explanation: "'can't have been' expresa imposibilidad basada en evidencia contraria — es la negación lógica de 'must have'."
+  - question: "¿Cuál es la estructura gramatical correcta de estos modales?"
+    options: [
+      "modal + have + past participle",
+      "modal + past simple",
+      "modal + be + -ing"
+    ]
+    answerIndex: 0
+    explanation: "La estructura fija es: modal (must/might/could/can't) + have + participio pasado: must have left, might have forgotten, can't have known."
+---
+
+Ya usaste modales para hablar de obligación y capacidad. En este nivel, los mismos
+modales adquieren un superpoder distinto: **especular sobre el pasado** con distintos
+grados de certeza.
+
+## La escala de certeza
+
+| Modal | Nivel de certeza | Ejemplo |
+| --- | --- | --- |
+| must have | Muy seguro (positivo) | She must have left already. |
+| might/could have | Posible, no seguro | She might have left already. |
+| can't have | Muy seguro (negativo/imposible) | She can't have left, her car is here. |
+
+## La estructura fija
+
+```
+modal  +  have  +  past participle
+
+He must have forgotten his keys.
+They can't have missed the train.
+```
+
+Nota que el verbo principal siempre va en participio, sin importar el modal — la parte
+que cambia es solo el modal inicial.
+
+## Cómo elegir el modal correcto
+
+Piensa como un detective: ¿qué tan segura es tu conclusión, basada en la evidencia que
+tienes?
+
+- **Evidencia fuerte a favor** → must have: "The lights are on, she must have arrived."
+- **No hay evidencia clara** → might/could have: "She might have taken a different route."
+- **Evidencia que contradice la idea** → can't have: "She can't have arrived, her car
+  isn't here."
+
+## El matiz que separa C1 de B2
+
+Un estudiante B2 puede usar "maybe she arrived" para expresar duda. Un hablante C1 elige
+entre must/might/can't have según el peso real de la evidencia — un matiz de precisión
+lógica que hace que tus especulaciones suenen mucho más naturales y razonadas en
+inglés.

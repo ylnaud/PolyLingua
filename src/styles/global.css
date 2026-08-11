@@ -27,7 +27,7 @@
   --text-muted: #56503f;
   --accent: #e0a915;
   --accent-strong: #c99304;
-  --accent-text: #8a5a00;
+  --accent-text: #7a4b00;
   --de-red: #c40023;
   --de-black: #14161c;
   --focus-ring: #1d5fbf;
@@ -42,6 +42,22 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --text-muted: #c3c8d4;
+    --border: #4a5062;
+  }
+
+  :root[data-theme='light'] {
+    --text-muted: #3a3529;
+    --border: #a89f89;
+  }
+
+  :focus-visible {
+    outline-width: 4px;
   }
 }
 

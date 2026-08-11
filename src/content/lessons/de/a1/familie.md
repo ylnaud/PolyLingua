@@ -3,7 +3,7 @@ language: de
 level: a1
 title: "Die Familie: presenta a los tuyos en alemán"
 description: "El vocabulario esencial para hablar de padres, hermanos y demás parientes."
-order: 6
+order: 8
 grammarTopic: "Vocabulario: la familia"
 funFact: "Casi todas las palabras de familia masculina y femenina siguen el patrón der/die predecible: der Vater, die Mutter, der Bruder, die Schwester. Apréndelas en parejas (padre/madre, hermano/hermana) y el vocabulario se duplica con la mitad del esfuerzo."
 minutes: 6

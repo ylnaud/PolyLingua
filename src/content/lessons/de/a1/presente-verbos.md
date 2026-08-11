@@ -3,7 +3,7 @@ language: de
 level: a1
 title: "El presente (Präsens): tu primera superpotencia"
 description: "Conjuga cualquier verbo regular en minutos con un patrón que se repite siempre."
-order: 2
+order: 4
 grammarTopic: "Präsens de verbos regulares"
 funFact: "Las terminaciones -e, -st, -t, -en, -t, -en riman con una cancioncita: e-s-t-en-t-en. Cántala como una tabla de multiplicar y jamás se te olvidará."
 minutes: 6

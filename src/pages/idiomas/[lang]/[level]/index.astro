@@ -65,8 +65,13 @@ const structuredData = {
     <ol class="lesson-list">
       {lessons.map((lesson, i) => (
         <li>
-          <a class="lesson-item card" href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}>
-            <span class="lesson-num" style={`background:${levelMeta.color}`}>{i + 1}</span>
+          <a
+            class="lesson-item card"
+            data-lesson-item
+            data-slug={lesson.id.split('/').pop()}
+            href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+          >
+            <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>{i + 1}</span>
             <div>
               <h2>{lesson.data.title}</h2>
               <p>{lesson.data.description}</p>
@@ -75,9 +80,56 @@ const structuredData = {
           </a>
         </li>
       ))}
+      {lessons.length > 0 && (
+        <li>
+          <a
+            class="lesson-item card exam-item"
+            data-exam-item
+            href={`/idiomas/${lang}/${level}/examen`}
+          >
+            <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>🏆</span>
+            <div>
+              <h2>Examen de nivel</h2>
+              <p>Combina todo lo que aprendiste en {levelMeta.name} — apruébalo para desbloquear el siguiente nivel.</p>
+            </div>
+          </a>
+        </li>
+      )}
     </ol>
   </section>
 </BaseLayout>
+
+<script define:vars={{ lang, level, slugs: lessons.map((l) => l.id.split('/').pop()) }}>
+  function read(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }
+
+  function isLessonDone(slug) {
+    return !!read(`polylingua-lesson-done-${lang}-${level}-${slug}`);
+  }
+
+  function lockItem(el) {
+    el.classList.add('locked');
+    el.setAttribute('aria-disabled', 'true');
+    const num = el.querySelector('[data-lesson-num]');
+    if (num) num.textContent = '🔒';
+    el.addEventListener('click', (e) => e.preventDefault());
+  }
+
+  document.querySelectorAll('[data-lesson-item]').forEach((el, i) => {
+    if (i === 0) return;
+    const prevSlug = slugs[i - 1];
+    if (!isLessonDone(prevSlug)) lockItem(el);
+  });
+
+  const examItem = document.querySelector('[data-exam-item]');
+  const lastSlug = slugs[slugs.length - 1];
+  if (examItem && (!lastSlug || !isLessonDone(lastSlug))) lockItem(examItem);
+</script>
 
 <style>
   .level-head {
@@ -180,5 +232,18 @@ const structuredData = {
 
   .empty {
     color: var(--text-muted);
+  }
+
+  .exam-item {
+    border-color: var(--accent);
+  }
+
+  .locked {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  .locked:hover {
+    transform: none;
   }
 </style>

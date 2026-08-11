@@ -21,11 +21,23 @@ interface Props {
   minutes: number;
   quiz: QuizQuestion[];
   exercises?: any[];
+  lessonId?: string;
   path: string;
 }
 
-const { language, level, title, description, grammarTopic, funFact, minutes, quiz, exercises = [], path } =
-  Astro.props;
+const {
+  language,
+  level,
+  title,
+  description,
+  grammarTopic,
+  funFact,
+  minutes,
+  quiz,
+  exercises = [],
+  lessonId = '',
+  path,
+} = Astro.props;
 const levelMeta = LEVEL_MAP[level];
 const languageMeta = LANGUAGE_MAP[language];
 
@@ -106,7 +118,13 @@ const structuredData = {
       <slot />
     </div>
 
-    <Practice quiz={quiz} exercises={exercises} minutes={minutes} />
+    <Practice
+      quiz={quiz}
+      exercises={exercises}
+      minutes={minutes}
+      lessonId={lessonId}
+      sessionType="lesson"
+    />
 
     <footer class="lesson-nav">
       <a class="btn btn-ghost" href={`/idiomas/${language}/${level}`}>← Volver a {languageMeta.name} {levelMeta.name}</a>

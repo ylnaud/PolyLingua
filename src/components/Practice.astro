@@ -41,9 +41,21 @@ interface Props {
   quiz: QuizQuestion[];
   exercises?: Exercise[];
   minutes?: number;
+  lessonId?: string;
+  sessionType?: 'lesson' | 'exam' | 'review';
+  itemIds?: string[];
+  dynamic?: boolean;
 }
 
-const { quiz, exercises = [], minutes = 8 } = Astro.props;
+const {
+  quiz,
+  exercises = [],
+  minutes = 8,
+  lessonId = '',
+  sessionType = 'lesson',
+  itemIds,
+  dynamic = false,
+} = Astro.props;
 
 type Item =
   | { kind: 'choice'; data: QuizQuestion }
@@ -86,19 +98,30 @@ function shuffledIndices(n: number): number[] {
 }
 ---
 
-{items.length > 0 && (
-  <section class="practice" data-practice data-lesson-minutes={minutes} aria-label="Práctica interactiva">
+{(items.length > 0 || dynamic) && (
+  <section
+    class="practice"
+    data-practice
+    data-lesson-minutes={minutes}
+    data-session-type={sessionType}
+    data-lesson-id={lessonId}
+    data-dynamic={dynamic ? 'true' : 'false'}
+    aria-label="Práctica interactiva"
+  >
     <div class="practice-head">
       <span class="eyebrow">🎮 Ponte a prueba</span>
       <span class="practice-progress" data-practice-progress>1 / {items.length}</span>
     </div>
 
+    <div class="practice-items" data-items-container>
     {items.map((item, i) => (
       <fieldset
         class="practice-item"
         data-practice-item
         data-kind={item.kind}
         data-index={i}
+        data-item-id={itemIds ? itemIds[i] : `${lessonId}#${item.kind}-${i}`}
+        data-item-json={JSON.stringify(item.data)}
         hidden={i !== 0}
       >
         <span class="kind-tag">{kindLabels[item.kind]}</span>
@@ -245,6 +268,7 @@ function shuffledIndices(n: number): number[] {
         </button>
       </fieldset>
     ))}
+    </div>
 
     <div class="practice-done" data-practice-done hidden>
       <p class="score-emoji" data-score-emoji>🎉</p>
@@ -493,9 +517,10 @@ function shuffledIndices(n: number): number[] {
   function initPractice() {
     document.querySelectorAll<HTMLElement>('[data-practice]').forEach((root) => {
       if (root.dataset.initialized) return;
-      root.dataset.initialized = 'true';
 
       const items = Array.from(root.querySelectorAll<HTMLElement>('[data-practice-item]'));
+      if (items.length === 0 && root.dataset.dynamic === 'true') return;
+      root.dataset.initialized = 'true';
       const progressEl = root.querySelector<HTMLElement>('[data-practice-progress]');
       const doneEl = root.querySelector<HTMLElement>('[data-practice-done]');
       const scoreText = root.querySelector<HTMLElement>('[data-score-text]');
@@ -503,6 +528,7 @@ function shuffledIndices(n: number): number[] {
       const restartBtn = root.querySelector<HTMLButtonElement>('[data-restart]');
       let current = 0;
       let score = 0;
+      const results: { id: string; kind: string; data: unknown; correct: boolean }[] = [];
 
       function showItem(index: number) {
         items.forEach((it, i) => {
@@ -521,7 +547,14 @@ function shuffledIndices(n: number): number[] {
         const minutes = Number(root.dataset.lessonMinutes ?? 8);
         root.dispatchEvent(
           new CustomEvent('practice-complete', {
-            detail: { score, total: items.length, minutes },
+            detail: {
+              score,
+              total: items.length,
+              minutes,
+              sessionType: root.dataset.sessionType ?? 'lesson',
+              lessonId: root.dataset.lessonId ?? '',
+              results,
+            },
             bubbles: true,
           })
         );
@@ -544,6 +577,13 @@ function shuffledIndices(n: number): number[] {
           if (explanation && explanation.textContent) explanation.hidden = false;
           if (nextBtn) nextBtn.hidden = false;
           if (correct) score += 1;
+          let data: unknown = null;
+          try {
+            data = JSON.parse(item.dataset.itemJson ?? 'null');
+          } catch {
+            data = null;
+          }
+          results.push({ id: item.dataset.itemId ?? '', kind: kind ?? '', data, correct });
         }
 
         if (kind === 'choice') {

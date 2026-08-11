@@ -1,0 +1,129 @@
+---
+---
+<script>
+  interface ResultItem {
+    id: string;
+    kind: string;
+    data: unknown;
+    correct: boolean;
+  }
+
+  interface SrsEntry {
+    id: string;
+    kind: string;
+    data: unknown;
+    box: number;
+    due: string;
+    lang: string;
+    level: string;
+  }
+
+  const EXAM_PASS_THRESHOLD = 0.7;
+  const INTERVAL_DAYS = [1, 3, 7, 16];
+
+  function today(): string {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }
+
+  function addDays(dateStr: string, days: number): string {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const date = new Date(y, m - 1, d);
+    date.setDate(date.getDate() + days);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  }
+
+  function read(key: string): string | null {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }
+
+  function write(key: string, value: string) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      /* localStorage unavailable */
+    }
+  }
+
+  function readPool(): Record<string, SrsEntry> {
+    try {
+      return JSON.parse(read('polylingua-srs-pool') ?? '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  function writePool(pool: Record<string, SrsEntry>) {
+    write('polylingua-srs-pool', JSON.stringify(pool));
+  }
+
+  function updateSrsPool(results: ResultItem[]) {
+    const pool = readPool();
+    for (const r of results) {
+      if (!r.id) continue;
+      // Derive lang/level from the item id itself (e.g. "de/a1/slug#choice-0" or
+      // "de/a1#write-2") rather than the session's own lessonId — the review page
+      // has no single lang/level of its own (it mixes items from many lessons), so
+      // this is the only reliable source for every session type.
+      const [lang = '', level = ''] = r.id.split('#')[0].split('/');
+      if (!lang || !level) continue;
+      if (!r.correct) {
+        pool[r.id] = { id: r.id, kind: r.kind, data: r.data, box: 0, due: today(), lang, level };
+        continue;
+      }
+      const existing = pool[r.id];
+      if (!existing) continue;
+      const nextBox = existing.box + 1;
+      if (nextBox >= INTERVAL_DAYS.length + 1) {
+        delete pool[r.id];
+        write('polylingua-srs-mastered-count', String(Number(read('polylingua-srs-mastered-count') ?? '0') + 1));
+      } else {
+        pool[r.id] = { ...existing, box: nextBox, due: addDays(today(), INTERVAL_DAYS[nextBox - 1]) };
+      }
+    }
+    writePool(pool);
+  }
+
+  function initProgressTracker() {
+    if (document.body.dataset.progressTrackerInitialized) return;
+    document.body.dataset.progressTrackerInitialized = 'true';
+
+    document.addEventListener('practice-complete', ((e: CustomEvent) => {
+      const detail = e.detail ?? {};
+      const sessionType: string = detail.sessionType ?? 'lesson';
+      const lessonId: string = detail.lessonId ?? '';
+      const score: number = detail.score ?? 0;
+      const total: number = detail.total ?? 0;
+      const results: ResultItem[] = Array.isArray(detail.results) ? detail.results : [];
+
+      if (sessionType === 'lesson' && lessonId) {
+        const key = lessonId.replace(/\//g, '-');
+        write(`polylingua-lesson-done-${key}`, today());
+        if (total > 0 && score === total) {
+          write(`polylingua-lesson-perfect-${key}`, '1');
+        }
+        try {
+          const doneToday = Object.keys(localStorage).filter(
+            (k) => k.startsWith('polylingua-lesson-done-') && localStorage.getItem(k) === today()
+          ).length;
+          if (doneToday >= 3) write('polylingua-achievement-marathon', 'true');
+        } catch {
+          /* localStorage unavailable */
+        }
+      }
+
+      if (sessionType === 'exam' && lessonId && total > 0 && score / total >= EXAM_PASS_THRESHOLD) {
+        write(`polylingua-level-passed-${lessonId.replace('/', '-')}`, 'true');
+      }
+
+      updateSrsPool(results);
+    }) as EventListener);
+  }
+
+  initProgressTracker();
+  document.addEventListener('astro:page-load', initProgressTracker);
+</script>

@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LANGUAGES } from '../data/languages';
+import { LEVELS } from '../data/levels';
+
+interface Badge {
+  id: string;
+  emoji: string;
+  name: string;
+  hint: string;
+}
+
+const coreBadges: Badge[] = [
+  { id: 'first-lesson', emoji: '🎯', name: 'Primera lección', hint: 'Completa tu primera lección.' },
+  { id: 'streak-3', emoji: '🔥', name: 'Racha de 3 días', hint: 'Practica 3 días seguidos.' },
+  { id: 'streak-7', emoji: '🔥', name: 'Racha de 7 días', hint: 'Practica 7 días seguidos.' },
+  { id: 'streak-30', emoji: '🔥', name: 'Racha de 30 días', hint: 'Practica 30 días seguidos.' },
+  { id: 'perfect', emoji: '💯', name: 'Perfeccionista', hint: 'Acierta todos los ítems de una lección.' },
+  { id: 'marathon', emoji: '⚡', name: 'Maratón', hint: 'Completa 3 lecciones en un mismo día.' },
+  { id: 'srs-master', emoji: '🧠', name: 'Maestro del repaso', hint: 'Domina 5 ítems en el repaso espaciado.' },
+  { id: 'levels-1', emoji: '🏆', name: 'Primer nivel superado', hint: 'Aprueba tu primer examen de nivel.' },
+  { id: 'levels-5', emoji: '🏆', name: '5 niveles superados', hint: 'Aprueba 5 exámenes de nivel.' },
+  { id: 'levels-15', emoji: '🏆', name: '15 niveles superados', hint: 'Aprueba 15 exámenes de nivel.' },
+];
+
+const courseBadges: Badge[] = LANGUAGES.map((language) => ({
+  id: `course-${language.id}`,
+  emoji: language.flag,
+  name: `Curso de ${language.name} completo`,
+  hint: `Aprueba los 6 niveles de ${language.name}.`,
+}));
+
+const allBadges = [...coreBadges, ...courseBadges];
+const levelIds = LEVELS.map((l) => l.id);
+const languageIds = LANGUAGES.map((l) => l.id);
+---
+
+<BaseLayout
+  title="Mis logros"
+  description="Tus insignias de progreso en PolyLingua: rachas, niveles superados, cursos completos y más."
+  path="/logros"
+  noindex
+>
+  <section class="container achievements-head">
+    <h1>🏆 Mis logros</h1>
+    <p class="desc" data-progress-summary>Cargando tu progreso…</p>
+  </section>
+
+  <section class="container badges-grid">
+    {allBadges.map((badge) => (
+      <div class="badge-item card locked" data-badge={badge.id}>
+        <span class="badge-emoji" aria-hidden="true">{badge.emoji}</span>
+        <h2>{badge.name}</h2>
+        <p>{badge.hint}</p>
+        <span class="badge-status" data-badge-status>🔒 Bloqueado</span>
+      </div>
+    ))}
+  </section>
+</BaseLayout>
+
+<script define:vars={{ levelIds, languageIds }}>
+  function read(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }
+
+  function hasAnyKeyStartingWith(prefix) {
+    try {
+      return Object.keys(localStorage).some((k) => k.startsWith(prefix));
+    } catch {
+      return false;
+    }
+  }
+
+  function countKeysStartingWith(prefix) {
+    try {
+      return Object.keys(localStorage).filter((k) => k.startsWith(prefix)).length;
+    } catch {
+      return 0;
+    }
+  }
+
+  const streak = Number(read('polylingua-streak-count') ?? '0');
+  const srsMastered = Number(read('polylingua-srs-mastered-count') ?? '0');
+  const levelsPassed = countKeysStartingWith('polylingua-level-passed-');
+  const hasFirstLesson = hasAnyKeyStartingWith('polylingua-lesson-done-');
+  const hasPerfect = hasAnyKeyStartingWith('polylingua-lesson-perfect-');
+  const hasMarathon = read('polylingua-achievement-marathon') === 'true';
+
+  const earned = {
+    'first-lesson': hasFirstLesson,
+    'streak-3': streak >= 3,
+    'streak-7': streak >= 7,
+    'streak-30': streak >= 30,
+    perfect: hasPerfect,
+    marathon: hasMarathon,
+    'srs-master': srsMastered >= 5,
+    'levels-1': levelsPassed >= 1,
+    'levels-5': levelsPassed >= 5,
+    'levels-15': levelsPassed >= 15,
+  };
+
+  languageIds.forEach((lang) => {
+    earned[`course-${lang}`] = levelIds.every((level) => read(`polylingua-level-passed-${lang}-${level}`) === 'true');
+  });
+
+  document.querySelectorAll('[data-badge]').forEach((el) => {
+    const id = el.getAttribute('data-badge');
+    if (id && earned[id]) {
+      el.classList.remove('locked');
+      const status = el.querySelector('[data-badge-status]');
+      if (status) status.textContent = '✅ Conseguido';
+    }
+  });
+
+  const summary = document.querySelector('[data-progress-summary]');
+  if (summary) {
+    const earnedCount = Object.values(earned).filter(Boolean).length;
+    summary.textContent = `Tienes ${earnedCount} de ${Object.keys(earned).length} logros, una racha de ${streak} día${streak === 1 ? '' : 's'}, y ${levelsPassed} nivel${levelsPassed === 1 ? '' : 'es'} superado${levelsPassed === 1 ? '' : 's'}.`;
+  }
+</script>
+
+<style>
+  .achievements-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .badges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    padding-block: 0.5rem 4rem;
+  }
+
+  .badge-item {
+    padding: 1.5rem;
+    text-align: center;
+    transition: opacity 0.15s ease;
+  }
+
+  .badge-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .badge-item h2 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+
+  .badge-item p {
+    color: var(--text-muted);
+    margin: 0 0 0.75rem;
+    font-size: 0.88rem;
+  }
+
+  .badge-status {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+  }
+
+  .badge-item.locked {
+    opacity: 0.55;
+  }
+
+  .badge-item:not(.locked) {
+    border-color: var(--accent);
+  }
+
+  .badge-item:not(.locked) .badge-status {
+    color: #2f9e6e;
+  }
+
+  @media (max-width: 900px) {
+    .badges-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 560px) {
+    .badges-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

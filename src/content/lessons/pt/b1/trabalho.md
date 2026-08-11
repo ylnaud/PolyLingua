@@ -1,0 +1,69 @@
+---
+language: pt
+level: b1
+title: "Vocabulário de trabalho: da entrevista ao escritório"
+description: "Vocabulario esencial de trabajo y oficina en portugués, para entrevistas, correos y conversaciones profesionales."
+order: 7
+grammarTopic: "Vocabulário profissional"
+funFact: "'Currículo' en Brasil y 'currículo vitae' o simplemente 'CV' en Portugal son formas comunes de referirse al currículum — pero en Brasil también es muy frecuente escuchar simplemente 'currículo', mientras que en Portugal el uso de 'CV' importado del inglés/francés es más habitual en contextos formales."
+minutes: 7
+quiz:
+  - question: "¿Cómo se dice 'entrevista de trabajo' en portugués?"
+    options: ["entrevista de emprego", "entrevista de trabalho", "reunião de emprego"]
+    answerIndex: 0
+    explanation: "'entrevista de emprego' es la forma estándar — 'emprego' es la palabra habitual para 'empleo/trabajo' en este contexto."
+  - question: "¿Qué significa 'chefe' en portugués?"
+    options: ["compañero de trabajo", "jefe", "cliente"]
+    answerIndex: 1
+    explanation: "'chefe' significa jefe — un cognado directo y fácil con el español."
+  - question: "¿Cómo dirías 'Estoy buscando trabajo' en portugués?"
+    options: ["Estou procurando emprego", "Estou olhando trabalho", "Estou vendo emprego"]
+    answerIndex: 0
+    explanation: "'Estou procurando emprego' es la forma natural — 'procurar' es 'buscar' en este contexto."
+---
+
+El vocabulario profesional es esencial si planeas trabajar, estudiar o hacer negocios
+en un país de habla portuguesa.
+
+## Vocabulario de búsqueda de empleo
+
+| Portugués | Español |
+| --- | --- |
+| o emprego | el empleo |
+| o currículo | el currículum |
+| a entrevista de emprego | la entrevista de trabajo |
+| a vaga | la vacante |
+| contratar | contratar |
+| demitir | despedir |
+
+## En la oficina
+
+| Portugués | Español |
+| --- | --- |
+| o chefe / a chefa | el jefe / la jefa |
+| o colega de trabalho | el compañero de trabajo |
+| a reunião | la reunión |
+| o prazo | el plazo (fecha límite) |
+| o salário | el salario |
+
+## Frases útiles para una entrevista
+
+```
+Eu tenho experiência em...        (Tengo experiencia en...)
+Quais são as minhas responsabilidades?   (¿Cuáles son mis responsabilidades?)
+Estou disponível para começar imediatamente.  (Estoy disponible para empezar de inmediato)
+```
+
+## Correos profesionales: fórmulas comunes
+
+```
+Prezado(a) [Nome],       (Estimado/a [Nombre],)
+Agradeço a atenção.        (Agradezco la atención.)
+Atenciosamente,             (Atentamente,)
+```
+
+## Una nota cultural
+
+En Brasil, el ambiente laboral suele ser algo más informal en el trato diario (uso
+frecuente de "você" incluso con superiores), mientras que en Portugal el registro
+formal tiende a mantenerse más tiempo en contextos de oficina.

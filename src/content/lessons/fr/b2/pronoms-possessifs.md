@@ -1,0 +1,72 @@
+---
+language: fr
+level: b2
+title: "Les pronoms possessifs: le mien, le tien, y sus primos"
+description: "Cómo reemplazar 'mi libro' por 'el mío' sin repetir el sustantivo — con artículo incluido y concordancia doble."
+order: 6
+grammarTopic: "Pronombres posesivos (le mien, le tien, le sien...)"
+funFact: "A diferencia de los adjetivos posesivos (mon/ma/mes) que ya conoces, los pronombres posesivos SIEMPRE llevan un artículo pegado: 'le mien', nunca solo 'mien'. Es como si la palabra necesitara ese artículo para poder funcionar de forma independiente, sin el sustantivo al lado."
+minutes: 8
+quiz:
+  - question: "'C'est mon livre.' → 'C'est ___' (es el mío). ¿Qué pronombre va?"
+    options: ["le mien", "mien", "le mon"]
+    answerIndex: 0
+    explanation: "El pronombre posesivo siempre lleva artículo: le mien (el mío), reemplazando 'mon livre' completo."
+  - question: "¿Cuál es el pronombre posesivo correcto para 'sa voiture' (su coche, de ella — femenino)?"
+    options: ["le sien", "la sienne", "les siennes"]
+    answerIndex: 1
+    explanation: "'voiture' es femenino singular, así que el pronombre concuerda: la sienne (la suya)."
+  - question: "Los pronombres posesivos concuerdan en género y número con:"
+    options: [
+      "La persona que posee el objeto",
+      "El objeto poseído (igual que los adjetivos posesivos mon/ma/mes)",
+      "No concuerdan con nada"
+    ]
+    answerIndex: 1
+    explanation: "Al igual que mon/ma/mes, los pronombres posesivos concuerdan con el género y número de la COSA poseída, no con quién la posee."
+---
+
+Estos pronombres reemplazan completamente un sustantivo poseído — con su propio
+artículo incluido, listos para usarse solos en la frase.
+
+## La tabla completa
+
+| Poseedor | Masc. sing. | Fem. sing. | Masc. plural | Fem. plural |
+| --- | --- | --- | --- | --- |
+| yo | le mien | la mienne | les miens | les miennes |
+| tú | le tien | la tienne | les tiens | les tiennes |
+| él/ella | le sien | la sienne | les siens | les siennes |
+| nosotros | le nôtre | la nôtre | les nôtres | les nôtres |
+| ustedes | le vôtre | la vôtre | les vôtres | les vôtres |
+| ellos | le leur | la leur | les leurs | les leurs |
+
+## Reemplazando en contexto
+
+```
+C'est mon livre. → C'est le mien.
+C'est sa voiture. → C'est la sienne.
+Ce sont nos idées. → Ce sont les nôtres.
+```
+
+## La doble concordancia (como los adjetivos posesivos)
+
+Igual que "mon/ma/mes", estos pronombres concuerdan con el género/número de la cosa
+poseída, no con la persona que posee:
+
+```
+Sa voiture (de él) → la sienne     (voiture es femenino, así que "la sienne")
+Son livre (de ella) → le sien       (livre es masculino, así que "le sien")
+```
+
+## Comparando: adjetivo posesivo vs. pronombre posesivo
+
+```
+C'est mon livre.        (adjetivo, antes de sustantivo)
+Ce livre est le mien.    (pronombre, reemplaza completamente al sustantivo)
+```
+
+## El truco práctico
+
+El artículo (le/la/les) es una parte inseparable del pronombre posesivo — nunca lo
+omitas. Piensa en "le mien/la mienne" como una sola palabra compuesta que ya incluye
+tanto el artículo como la concordancia.

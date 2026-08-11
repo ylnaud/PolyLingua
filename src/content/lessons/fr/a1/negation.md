@@ -1,0 +1,73 @@
+---
+language: fr
+level: a1
+title: "La négation: ne...pas, el sándwich que rodea al verbo"
+description: "Cómo negar cualquier frase en francés colocando 'ne' y 'pas' a los dos lados del verbo."
+order: 6
+grammarTopic: "Negación (ne...pas)"
+funFact: "Piensa en 'ne...pas' como un sándwich: el verbo va siempre en el medio, atrapado entre 'ne' (antes) y 'pas' (después). En el francés hablado muy informal, los franceses a menudo omiten el 'ne' y dicen solo 'pas' — pero al escribir o hablar formalmente, ambas partes son obligatorias."
+minutes: 6
+quiz:
+  - question: "¿Cuál es la negación correcta de 'Je parle français' (hablo francés)?"
+    options: ["Je ne parle pas français", "Je parle ne pas français", "Je pas parle français"]
+    answerIndex: 0
+    explanation: "'ne' va justo antes del verbo, y 'pas' justo después: Je ne parle pas français."
+  - question: "¿Cómo se niega correctamente 'J'aime le café' (con elisión, ya que 'aime' empieza con vocal)?"
+    options: ["Je n'aime pas le café", "Je ne aime pas le café", "Je aime ne pas le café"]
+    answerIndex: 0
+    explanation: "'ne' se contrae a 'n'' antes de una vocal: Je n'aime pas le café."
+  - question: "En el francés hablado muy informal, ¿qué parte de la negación se omite a menudo?"
+    options: ["'pas'", "'ne'", "ninguna, siempre se dicen ambas"]
+    answerIndex: 1
+    explanation: "En conversación muy informal, muchos franceses omiten 'ne' y dicen solo 'pas': 'Je sais pas' (en vez de 'Je ne sais pas'). Al escribir, siempre se usan ambas partes."
+---
+
+Negar una frase en francés requiere dos palabras que "envuelven" al verbo — una
+estructura distinta a la negación simple del español.
+
+## La fórmula: el sándwich ne...pas
+
+```
+sujeto + ne + verbo + pas + resto
+
+Je    ne    parle    pas    français.
+       ↑              ↑
+     antes          después del verbo
+```
+
+## Con elisión (verbo empieza en vocal)
+
+```
+Je n'aime pas le café.      (ne → n' antes de vocal)
+Il n'habite pas ici.         (ne → n' antes de "h" muda)
+```
+
+## Con verbos compuestos (passé composé)
+
+Con el Perfekt francés (passé composé), "ne...pas" rodea solo al AUXILIAR, no al
+participio:
+
+```
+Je n'ai pas mangé.          (no "je n'ai mangé pas")
+Elle n'est pas partie.        (no "elle n'est partie pas")
+```
+
+## Otras negaciones útiles (mismo patrón)
+
+| Negación | Significado |
+| --- | --- |
+| ne...jamais | nunca |
+| ne...rien | nada |
+| ne...plus | ya no |
+| ne...personne | nadie |
+
+```
+Je ne mange jamais de viande.     (Nunca como carne)
+Il n'y a plus de pain.              (Ya no hay pan)
+```
+
+## La realidad del francés hablado
+
+En conversación muy informal, muchos franceses omiten el "ne" y dicen solo "pas": "Je
+sais pas" en vez de "Je ne sais pas". Al escribir o hablar en contextos formales, sin
+embargo, ambas partes son obligatorias — aprende primero la forma completa.

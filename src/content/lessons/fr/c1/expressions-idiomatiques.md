@@ -1,0 +1,78 @@
+---
+language: fr
+level: c1
+title: "Expressions idiomatiques: cuando las palabras dejan de significar lo que dicen"
+description: "Poser un lapin, avoir le cafard, coûter les yeux de la tête: expresiones que todo francés entiende al instante."
+order: 6
+grammarTopic: "Expresiones idiomáticas francesas"
+funFact: "'Poser un lapin à quelqu'un' literalmente significa 'ponerle un conejo a alguien' — pero en realidad significa 'dejar plantado a alguien'. Como toda expresión idiomática, no se puede traducir palabra por palabra: se aprende como una imagen mental completa."
+minutes: 10
+quiz:
+  - question: "'Il m'a posé un lapin hier soir.' ¿Qué significa realmente?"
+    options: [
+      "Me regaló un conejo",
+      "Me dejó plantado, no se presentó a la cita",
+      "Me invitó a cenar"
+    ]
+    answerIndex: 1
+    explanation: "'poser un lapin à quelqu'un' significa dejar plantado a alguien, no presentarse a una cita — nada que ver con conejos literalmente."
+  - question: "'Cette voiture coûte les yeux de la tête.' ¿Qué significa la expresión?"
+    options: [
+      "El coche es peligroso para los ojos",
+      "El coche cuesta muchísimo dinero",
+      "El coche es muy bonito"
+    ]
+    answerIndex: 1
+    explanation: "'coûter les yeux de la tête' significa 'costar muchísimo' — equivalente al 'costar un ojo de la cara' en español, con una imagen similar."
+  - question: "'J'ai le cafard aujourd'hui.' ¿Qué significa esta expresión?"
+    options: [
+      "Tengo una cucaracha en casa",
+      "Estoy deprimido/triste hoy",
+      "Estoy muy ocupado"
+    ]
+    answerIndex: 1
+    explanation: "'avoir le cafard' significa estar deprimido o melancólico — una expresión coloquial muy común, sin relación literal con insectos."
+---
+
+Llegaste al terreno de las expresiones que ni la gramática ni el vocabulario amplio te
+preparan para entender, porque su significado no tiene relación directa con la suma de
+sus palabras.
+
+## Las expresiones más comunes
+
+| Expresión | Literal | Significado real |
+| --- | --- | --- |
+| poser un lapin | poner un conejo | dejar plantado a alguien |
+| avoir le cafard | tener la cucaracha | estar deprimido/triste |
+| coûter les yeux de la tête | costar los ojos de la cabeza | costar muchísimo |
+| avoir un chat dans la gorge | tener un gato en la garganta | tener carraspera |
+| tomber dans les pommes | caer en las manzanas | desmayarse |
+| être dans la lune | estar en la luna | estar distraído |
+
+## Cómo suenan en contexto real
+
+```
+Désolé, j'ai un chat dans la gorge aujourd'hui.
+(Perdón, tengo carraspera hoy)
+
+Elle est toujours dans la lune pendant les cours.
+(Ella siempre está distraída durante las clases)
+```
+
+## Por qué existen
+
+Cada idioma acumula, a lo largo de generaciones, imágenes que se vuelven automáticas
+para sus hablantes. Estas expresiones son parte del tejido cultural francés, tan
+naturales para un nativo como "estar en las nubes" lo es en español.
+
+## El truco para "coleccionarlas"
+
+No intentes memorizar una lista larga de golpe. Cuando escuches o leas una expresión
+en contexto real (pódcast, serie, conversación), anótala junto con la situación exacta.
+La imagen mental + el contexto real es lo que hace que se queden grabadas de verdad.
+
+## La señal de que ya las dominas
+
+Sabrás que llegaste al nivel C1 cuando puedas usar una de estas expresiones en el
+momento justo de una conversación, sin traducirla mentalmente primero desde el español
+— simplemente te sale, como le sale a cualquier hablante nativo francés.

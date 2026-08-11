@@ -20,6 +20,40 @@ quiz:
     options: ["am + adjetivo + -sten", "der/die/das + adjetivo + -ste", "ambas son correctas según el contexto"]
     answerIndex: 2
     explanation: "'Er ist am schnellsten' (predicativo, después del verbo) y 'der schnellste Läufer' (atributivo, antes de un sustantivo) son ambas correctas, según la posición en la frase."
+exercises:
+  - type: "fill-blank"
+    sentence: "Der Zug ist ___ als das Auto."
+    answer: "schneller"
+    accepted: ["schneller"]
+    hint: "Comparativo regular: se añade -er."
+    translation: "El tren es más rápido que el coche."
+  - type: "fill-blank"
+    sentence: "Das Essen hier ist am ___."
+    answer: "besten"
+    accepted: ["besten"]
+    hint: "'gut' es irregular: gut → besser → am besten."
+    translation: "La comida aquí es la mejor."
+  - type: "match"
+    instructions: "Empareja cada adjetivo en positivo con su superlativo."
+    pairs:
+      - left: "gut"
+        right: "am besten"
+      - left: "viel"
+        right: "am meisten"
+      - left: "gern"
+        right: "am liebsten"
+      - left: "hoch"
+        right: "am höchsten"
+      - left: "alt"
+        right: "am ältesten"
+  - type: "write"
+    prompt: "Escribe el comparativo de 'groß' (grande), con Umlaut."
+    answer: "größer"
+    accepted: ["groesser"]
+    hint: "Los adjetivos de una sílaba añaden Umlaut: groß → größer."
+  - type: "order"
+    sentence: "Der Zug ist schneller als das Auto"
+    translation: "El tren es más rápido que el coche."
 ---
 
 Comparar personas, objetos o situaciones es una de las herramientas conversacionales más

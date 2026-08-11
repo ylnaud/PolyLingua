@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Ambos significan básicamente lo mismo ('aplicarse'), pero la construcción con sustantivo (Anwendung finden) suena más formal y objetiva — el registro preferido en documentos oficiales."
+exercises:
+  - type: "fill-blank"
+    sentence: "Das neue Gesetz tritt am 1. Januar in ___."
+    answer: "Kraft"
+    accepted: ["kraft"]
+    hint: "Completa el Funktionsverbgefüge 'in Kraft treten' (entrar en vigor)."
+    translation: "La nueva ley entra en vigor el 1 de enero."
+  - type: "fill-blank"
+    sentence: "Die Unterlagen ___ den Mitarbeitern zur Verfügung."
+    answer: "stehen"
+    accepted: ["Stehen"]
+    hint: "'zur Verfügung stehen' significa 'estar disponible/a disposición'."
+    translation: "Los documentos están a disposición de los empleados."
+  - type: "match"
+    instructions: "Empareja cada Funktionsverbgefüge con su significado."
+    pairs:
+      - left: "in Kraft treten"
+        right: "entrar en vigor"
+      - left: "zur Verfügung stehen"
+        right: "estar disponible"
+      - left: "Anwendung finden"
+        right: "aplicarse"
+      - left: "zum Ausdruck bringen"
+        right: "expresar"
+      - left: "in Betracht ziehen"
+        right: "considerar"
+  - type: "write"
+    prompt: "Escribe el Funktionsverbgefüge equivalente a 'berücksichtigen' (tener en cuenta), formado con el verbo 'nehmen' y el sustantivo 'Rücksicht'."
+    answer: "Rücksicht nehmen auf"
+    accepted: ["Rücksicht auf etwas nehmen", "Rücksicht nehmen"]
+    hint: "verbo débil 'nehmen' + sustantivo 'Rücksicht' + preposición 'auf'."
+  - type: "order"
+    sentence: "Die Regel tritt ab morgen in Kraft"
+    translation: "La regla entra en vigor a partir de mañana."
 ---
 
 Este es uno de los rasgos más distintivos del alemán administrativo, legal y de

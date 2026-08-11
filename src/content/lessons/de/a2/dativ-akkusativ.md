@@ -20,6 +20,40 @@ quiz:
     options: ["den", "dem", "der"]
     answerIndex: 1
     explanation: "Masculino y neutro comparten la misma forma en Dativ: dem. Femenino usa 'der', y plural usa 'den' (+ -n al sustantivo)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich gebe ___ Kind das Buch."
+    answer: "dem"
+    accepted: ["dem"]
+    hint: "Dativ masculino/neutro: dem."
+    translation: "Le doy el libro al niño."
+  - type: "fill-blank"
+    sentence: "Ich sehe ___ Ball."
+    answer: "den"
+    accepted: ["den"]
+    hint: "En Akkusativ solo el masculino cambia: der → den."
+    translation: "Veo la pelota."
+  - type: "match"
+    instructions: "Empareja cada caso y género con su artículo correcto."
+    pairs:
+      - left: "Akkusativ maskulin"
+        right: "den"
+      - left: "Dativ maskulin/neutral"
+        right: "dem"
+      - left: "Dativ feminin"
+        right: "der"
+      - left: "Nominativ neutral"
+        right: "das"
+      - left: "Dativ Plural"
+        right: "den (+n)"
+  - type: "write"
+    prompt: "Escribe el pronombre correcto: 'Ich helfe ___.' (a ti, Dativ)"
+    answer: "dir"
+    accepted: ["Dir"]
+    hint: "'helfen' siempre pide Dativ."
+  - type: "order"
+    sentence: "Ich gebe dem Kind das Buch"
+    translation: "Le doy el libro al niño."
 ---
 
 Este es, probablemente, el mayor salto de complejidad del alemán intermedio: los

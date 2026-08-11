@@ -24,6 +24,38 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'um...zu' + infinitivo no tiene un sujeto propio — se entiende que es el mismo sujeto de la frase principal. Si necesitas un sujeto distinto, 'damit' es la única opción."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich lerne Deutsch, ___ in Berlin zu arbeiten."
+    answer: "um"
+    accepted: ["um"]
+    hint: "Mismo sujeto en ambas acciones (yo aprendo / yo trabajo) → um...zu + infinitivo."
+    translation: "Aprendo alemán para trabajar en Berlín."
+  - type: "fill-blank"
+    sentence: "Ich spreche langsam, ___ du mich verstehst."
+    answer: "damit"
+    accepted: ["damit"]
+    hint: "Sujetos diferentes (yo hablo / tú entiendes) → damit + oración completa."
+    translation: "Hablo despacio para que tú me entiendas."
+  - type: "match"
+    instructions: "Empareja cada situación o frase con su estructura o traducción correcta."
+    pairs:
+      - left: "Mismo sujeto en ambas acciones"
+        right: "um...zu + infinitivo"
+      - left: "Sujetos diferentes"
+        right: "damit + oración completa"
+      - left: "um in Berlin zu arbeiten"
+        right: "para trabajar en Berlín"
+      - left: "damit du mich verstehst"
+        right: "para que tú me entiendas"
+  - type: "write"
+    prompt: "Completa el conector correcto: 'Ich spreche langsam, ___ du mich verstehst.' (sujetos diferentes)"
+    answer: "damit"
+    accepted: ["Damit"]
+    hint: "Cuando el sujeto de la segunda acción es distinto, 'um...zu' no funciona."
+  - type: "order"
+    sentence: "Ich spreche langsam, damit du mich verstehst"
+    translation: "Hablo despacio para que tú me entiendas."
 ---
 
 Expresar el propósito o la finalidad de una acción ("para que...", "con el fin de...")

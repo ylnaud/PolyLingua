@@ -8,6 +8,44 @@ const quizQuestion = z.object({
   explanation: z.string(),
 });
 
+const fillBlankExercise = z.object({
+  type: z.literal('fill-blank'),
+  sentence: z.string(),
+  answer: z.string(),
+  accepted: z.array(z.string()).optional(),
+  hint: z.string().optional(),
+  translation: z.string().optional(),
+});
+
+const matchExercise = z.object({
+  type: z.literal('match'),
+  instructions: z.string().optional(),
+  pairs: z
+    .array(z.object({ left: z.string(), right: z.string() }))
+    .min(3),
+});
+
+const writeExercise = z.object({
+  type: z.literal('write'),
+  prompt: z.string(),
+  answer: z.string(),
+  accepted: z.array(z.string()).optional(),
+  hint: z.string().optional(),
+});
+
+const orderExercise = z.object({
+  type: z.literal('order'),
+  sentence: z.string(),
+  translation: z.string().optional(),
+});
+
+const exercise = z.discriminatedUnion('type', [
+  fillBlankExercise,
+  matchExercise,
+  writeExercise,
+  orderExercise,
+]);
+
 const lessons = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/lessons' }),
   schema: z.object({
@@ -20,6 +58,7 @@ const lessons = defineCollection({
     funFact: z.string(),
     minutes: z.number().default(8),
     quiz: z.array(quizQuestion).default([]),
+    exercises: z.array(exercise).default([]),
   }),
 });
 

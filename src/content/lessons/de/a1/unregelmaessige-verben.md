@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "sehen → du siehst, er sieht; lesen → du liest, er liest. El patrón e→ie es compartido por varios verbos comunes."
+exercises:
+  - type: "fill-blank"
+    sentence: "Du ___ sehr schnell."
+    answer: "fährst"
+    accepted: ["fahrst"]
+    hint: "'fahren' cambia a→ä con du/er/sie/es."
+    translation: "Tú conduces muy rápido."
+  - type: "fill-blank"
+    sentence: "Er ___ ein Buch."
+    answer: "liest"
+    accepted: ["Liest"]
+    hint: "'lesen' cambia e→ie con du/er/sie/es."
+    translation: "Él lee un libro."
+  - type: "match"
+    instructions: "Empareja cada verbo con su forma correcta para 'du'."
+    pairs:
+      - left: "fahren"
+        right: "fährst"
+      - left: "essen"
+        right: "isst"
+      - left: "sehen"
+        right: "siehst"
+      - left: "sprechen"
+        right: "sprichst"
+      - left: "lesen"
+        right: "liest"
+  - type: "write"
+    prompt: "Conjuga 'essen' (comer) con 'er'."
+    answer: "isst"
+    accepted: ["Isst"]
+    hint: "'essen' cambia e→i con er/sie/es: er isst."
+  - type: "order"
+    sentence: "Du liest ein Buch"
+    translation: "Tú lees un libro."
 ---
 
 Ya dominas la fórmula regular del Präsens. Ahora conoces a un pequeño grupo de verbos

@@ -20,6 +20,40 @@ quiz:
     options: ["fünfunddreißig", "dreißigfünf", "fünfzigdrei"]
     answerIndex: 0
     explanation: "Siguiendo el patrón invertido: 'fünf-und-dreißig' (cinco-y-treinta) = 35."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich bin ___ Jahre alt."
+    answer: "einundzwanzig"
+    accepted: ["Einundzwanzig"]
+    hint: "21 en el patrón invertido: uno-y-veinte."
+    translation: "Tengo 21 años."
+  - type: "fill-blank"
+    sentence: "Das kostet ___ Euro."
+    answer: "hundert"
+    accepted: ["Hundert"]
+    hint: "100 en alemán — no lo confundas con 'tausend' (1000)."
+    translation: "Eso cuesta 100 euros."
+  - type: "match"
+    instructions: "Empareja cada palabra con su número."
+    pairs:
+      - left: "zwanzig"
+        right: "20"
+      - left: "dreißig"
+        right: "30"
+      - left: "hundert"
+        right: "100"
+      - left: "einundzwanzig"
+        right: "21"
+      - left: "neunundneunzig"
+        right: "99"
+  - type: "write"
+    prompt: "Escribe el número 35 en alemán."
+    answer: "fünfunddreißig"
+    accepted: ["Fünfunddreißig"]
+    hint: "Patrón invertido: unidad + und + decena."
+  - type: "order"
+    sentence: "Ich bin einundzwanzig Jahre alt"
+    translation: "Tengo 21 años."
 ---
 
 Los números son vocabulario de supervivencia: precios, horas, edades, direcciones. En

@@ -20,6 +20,38 @@ quiz:
     options: ["viertel nach acht", "viertel vor neun", "halb neun"]
     answerIndex: 1
     explanation: "'viertel vor neun' (un cuarto antes de las nueve) = 8:45. La lógica coloquial siempre mira hacia la próxima hora en punto."
+exercises:
+  - type: "fill-blank"
+    sentence: "Es ist ___ vier."
+    answer: "halb"
+    accepted: ["Halb"]
+    hint: "'halb' apunta hacia la hora siguiente, no hacia la actual: halb vier = 3:30."
+    translation: "Son las tres y media."
+  - type: "fill-blank"
+    sentence: "Wie ___ ist es?"
+    answer: "spät"
+    accepted: ["Spät"]
+    hint: "Es la pregunta estándar para pedir la hora."
+    translation: "¿Qué hora es?"
+  - type: "match"
+    instructions: "Empareja cada expresión con la hora que representa."
+    pairs:
+      - left: "viertel nach drei"
+        right: "3:15"
+      - left: "halb vier"
+        right: "3:30"
+      - left: "viertel vor neun"
+        right: "8:45"
+      - left: "vierzehn Uhr dreißig"
+        right: "14:30"
+  - type: "write"
+    prompt: "Escribe cómo se dice '14:30' en el sistema oficial (24 horas)."
+    answer: "vierzehn Uhr dreißig"
+    accepted: ["Vierzehn Uhr dreißig"]
+    hint: "El patrón es: [hora] Uhr [minutos]."
+  - type: "order"
+    sentence: "Es ist vierzehn Uhr dreißig"
+    translation: "Son las 14:30."
 ---
 
 Decir la hora en alemán tiene dos sistemas paralelos: uno para hablar con amigos y otro

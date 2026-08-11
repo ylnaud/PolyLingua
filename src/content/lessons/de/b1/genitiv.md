@@ -20,6 +20,40 @@ quiz:
     options: ["der Frau", "die Frau", "des Frau"]
     answerIndex: 0
     explanation: "Femenino y plural comparten la misma forma en Genitiv que en Dativ: der Frau. Solo masculino y neutro tienen la forma especial 'des' + -(e)s."
+exercises:
+  - type: "fill-blank"
+    sentence: "Das Auto ___ Mannes ist neu."
+    answer: "des"
+    accepted: ["des"]
+    hint: "Genitiv masculino: el artículo cambia a 'des' y el sustantivo añade -s/-es."
+    translation: "El coche del hombre es nuevo."
+  - type: "fill-blank"
+    sentence: "Die Farbe ___ Blume ist rot."
+    answer: "der"
+    accepted: ["der"]
+    hint: "Genitiv femenino: el artículo es 'der' y el sustantivo no cambia."
+    translation: "El color de la flor es rojo."
+  - type: "match"
+    instructions: "Empareja cada género con su forma de Genitiv."
+    pairs:
+      - left: "maskulin"
+        right: "des Mannes"
+      - left: "feminin"
+        right: "der Frau"
+      - left: "neutral"
+        right: "des Kindes"
+      - left: "Plural"
+        right: "der Kinder"
+      - left: "alternativa hablada"
+        right: "von + Dativ"
+  - type: "write"
+    prompt: "Escribe la forma de Genitiv de 'das Kind' (artículo + sustantivo)."
+    answer: "des Kindes"
+    accepted: ["des Kindes"]
+    hint: "Neutro en Genitiv: 'des' + sustantivo con -es."
+  - type: "order"
+    sentence: "Trotz des Regens gehe ich spazieren"
+    translation: "A pesar de la lluvia, voy a pasear."
 ---
 
 El Genitiv es el cuarto y último caso alemán — el que expresa posesión de forma formal,

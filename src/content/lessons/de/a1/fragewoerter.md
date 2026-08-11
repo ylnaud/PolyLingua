@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El orden fijo es: [W-Wort] + [verbo conjugado] + resto: Wo wohnst du? — el verbo siempre ocupa la segunda posición."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ wohnst du?"
+    answer: "Wo"
+    accepted: ["wo"]
+    hint: "Pregunta por el lugar."
+    translation: "¿Dónde vives?"
+  - type: "fill-blank"
+    sentence: "___ lernst du Deutsch?"
+    answer: "Warum"
+    accepted: ["warum"]
+    hint: "Pregunta por la razón de algo."
+    translation: "¿Por qué aprendes alemán?"
+  - type: "match"
+    instructions: "Empareja cada palabra interrogativa con su significado."
+    pairs:
+      - left: "Wer?"
+        right: "¿Quién?"
+      - left: "Was?"
+        right: "¿Qué?"
+      - left: "Wann?"
+        right: "¿Cuándo?"
+      - left: "Wie?"
+        right: "¿Cómo?"
+      - left: "Welche?"
+        right: "¿Cuál?"
+  - type: "write"
+    prompt: "Escribe la palabra interrogativa para preguntar '¿qué?'."
+    answer: "Was"
+    accepted: ["was"]
+    hint: "Es una de las 6 palabras esenciales W-Fragen."
+  - type: "order"
+    sentence: "Wo wohnst du"
+    translation: "¿Dónde vives?"
 ---
 
 Con solo seis palabras puedes empezar a preguntar prácticamente cualquier cosa en

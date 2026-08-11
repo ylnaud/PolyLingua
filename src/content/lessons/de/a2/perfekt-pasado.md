@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "El auxiliar 'haben' va en segunda posición y el participio 'gespielt' se manda al final de la frase."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich habe gestern Pizza ___."
+    answer: "gegessen"
+    accepted: ["gegessen"]
+    hint: "'essen' es irregular: ge- + raíz cambiada + -en."
+    translation: "Ayer comí pizza."
+  - type: "fill-blank"
+    sentence: "Er ___ gestern ins Kino gegangen."
+    answer: "ist"
+    accepted: ["ist"]
+    hint: "'gehen' usa 'sein' como auxiliar, no 'haben'."
+    translation: "Ayer él fue al cine."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su participio en Perfekt."
+    pairs:
+      - left: "machen"
+        right: "gemacht"
+      - left: "essen"
+        right: "gegessen"
+      - left: "studieren"
+        right: "studiert"
+      - left: "gehen"
+        right: "gegangen"
+      - left: "spielen"
+        right: "gespielt"
+  - type: "write"
+    prompt: "Escribe el participio de 'gehen' (ir)."
+    answer: "gegangen"
+    accepted: ["gegangen"]
+    hint: "Verbo de movimiento con 'sein': ich bin gegangen."
+  - type: "order"
+    sentence: "Wir haben Fußball gespielt"
+    translation: "Jugamos fútbol."
 ---
 
 Cuando un alemán te cuenta qué hizo el fin de semana, casi nunca usa el pasado simple

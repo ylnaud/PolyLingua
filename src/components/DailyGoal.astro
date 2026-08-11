@@ -1,0 +1,225 @@
+---
+---
+<button
+  type="button"
+  class="goal-pill"
+  id="goal-pill"
+  aria-haspopup="dialog"
+  aria-label="Ver o cambiar tu meta de práctica de hoy"
+>
+  <span data-goal-pill-text>🔥 0 · 0 min</span>
+</button>
+
+<dialog id="goal-dialog" class="goal-dialog" aria-labelledby="goal-dialog-title">
+  <form method="dialog" class="goal-form">
+    <h2 id="goal-dialog-title">¿Cuánto quieres practicar hoy?</h2>
+    <p class="goal-sub">Elige una meta para hoy — puedes cambiarla cuando quieras.</p>
+    <div class="goal-options" role="group" aria-label="Minutos por día">
+      <button type="button" class="goal-option" data-goal-minutes="5">5 min</button>
+      <button type="button" class="goal-option" data-goal-minutes="10">10 min</button>
+      <button type="button" class="goal-option" data-goal-minutes="15">15 min</button>
+      <button type="button" class="goal-option" data-goal-minutes="20">20 min</button>
+    </div>
+    <button type="button" class="btn btn-ghost goal-skip" data-goal-skip>Ahora no</button>
+  </form>
+</dialog>
+
+<style>
+  .goal-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    padding: 0.5rem 0.85rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    min-height: 44px;
+  }
+
+  .goal-pill:hover {
+    border-color: var(--accent);
+  }
+
+  .goal-dialog {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    color: var(--text);
+    padding: 1.75rem;
+    max-width: min(90vw, 380px);
+  }
+
+  .goal-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+  }
+
+  .goal-dialog h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.2rem;
+  }
+
+  .goal-sub {
+    color: var(--text-muted);
+    margin: 0 0 1.25rem;
+    font-size: 0.92rem;
+  }
+
+  .goal-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .goal-option {
+    padding: 0.85rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    min-height: 44px;
+  }
+
+  .goal-option:hover {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+
+  .goal-skip {
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+  }
+</style>
+
+<script>
+  type Progress = { minutes: number; lessons: number };
+
+  function today(): string {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+  }
+
+  function yesterday(dateStr: string): string {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const date = new Date(y, m - 1, d);
+    date.setDate(date.getDate() - 1);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+  }
+
+  function read(key: string): string | null {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }
+
+  function write(key: string, value: string) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      /* localStorage unavailable */
+    }
+  }
+
+  function getProgress(): Progress {
+    const date = read('polylingua-progress-date');
+    if (date !== today()) return { minutes: 0, lessons: 0 };
+    return {
+      minutes: Number(read('polylingua-progress-minutes') ?? '0'),
+      lessons: Number(read('polylingua-progress-lessons') ?? '0'),
+    };
+  }
+
+  function getGoalMinutes(): number | null {
+    const date = read('polylingua-goal-date');
+    if (date !== today()) return null;
+    return Number(read('polylingua-goal-minutes') ?? '0');
+  }
+
+  function setGoalMinutes(minutes: number) {
+    write('polylingua-goal-date', today());
+    write('polylingua-goal-minutes', String(minutes));
+  }
+
+  function getStreak(): number {
+    return Number(read('polylingua-streak-count') ?? '0');
+  }
+
+  function recordProgress(minutes: number) {
+    const t = today();
+    const prev = read('polylingua-progress-date') === t ? getProgress() : { minutes: 0, lessons: 0 };
+    write('polylingua-progress-date', t);
+    write('polylingua-progress-minutes', String(prev.minutes + minutes));
+    write('polylingua-progress-lessons', String(prev.lessons + 1));
+
+    const lastActive = read('polylingua-streak-last-date');
+    if (lastActive !== t) {
+      const count = lastActive === yesterday(t) ? getStreak() + 1 : 1;
+      write('polylingua-streak-count', String(count));
+      write('polylingua-streak-last-date', t);
+    }
+  }
+
+  function initDailyGoal() {
+    const pill = document.getElementById('goal-pill');
+    const pillText = pill?.querySelector<HTMLElement>('[data-goal-pill-text]');
+    const dialog = document.getElementById('goal-dialog') as HTMLDialogElement | null;
+    if (!pill || !dialog || pill.dataset.initialized) return;
+    pill.dataset.initialized = 'true';
+
+    function refreshPill() {
+      const { minutes } = getProgress();
+      const goal = getGoalMinutes();
+      const streak = getStreak();
+      if (pillText) {
+        pillText.textContent = goal
+          ? `🔥 ${streak} · ${minutes}/${goal} min`
+          : `🔥 ${streak} · ${minutes} min`;
+      }
+    }
+
+    dialog.querySelectorAll<HTMLButtonElement>('[data-goal-minutes]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        setGoalMinutes(Number(btn.dataset.goalMinutes));
+        dialog.close();
+        refreshPill();
+      });
+    });
+
+    dialog.querySelector<HTMLButtonElement>('[data-goal-skip]')?.addEventListener('click', () => {
+      setGoalMinutes(0);
+      dialog.close();
+      refreshPill();
+    });
+
+    pill.addEventListener('click', () => {
+      if (typeof dialog.showModal === 'function') dialog.showModal();
+    });
+
+    document.addEventListener('practice-complete', ((e: CustomEvent) => {
+      const minutes = Number(e.detail?.minutes ?? 8);
+      recordProgress(minutes);
+      refreshPill();
+    }) as EventListener);
+
+    refreshPill();
+
+    if (getGoalMinutes() === null && typeof dialog.showModal === 'function') {
+      window.setTimeout(() => dialog.showModal(), 400);
+    }
+  }
+
+  initDailyGoal();
+  document.addEventListener('astro:page-load', initDailyGoal);
+</script>

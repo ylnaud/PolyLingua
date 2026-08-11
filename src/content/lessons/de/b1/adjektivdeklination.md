@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El sistema garantiza que la información gramatical (género/caso/número) se comunique al menos una vez, ya sea por el artículo o por la terminación del adjetivo."
+exercises:
+  - type: "fill-blank"
+    sentence: "Der ___ Mann trinkt Kaffee."
+    answer: "gute"
+    accepted: ["gute"]
+    hint: "Artículo definido, Nominativ masculino → terminación débil: -e."
+    translation: "El hombre bueno bebe café."
+  - type: "fill-blank"
+    sentence: "Ein ___ Mann steht dort."
+    answer: "guter"
+    accepted: ["guter"]
+    hint: "Artículo indefinido, Nominativ masculino → el adjetivo aclara el género: -er."
+    translation: "Un hombre bueno está parado ahí."
+  - type: "match"
+    instructions: "Empareja cada situación gramatical con la terminación correcta del adjetivo 'gut'."
+    pairs:
+      - left: "der gute Mann (definido, Nom. mask.)"
+        right: "-e"
+      - left: "ein guter Mann (indefinido, Nom. mask.)"
+        right: "-er"
+      - left: "das gute Kind (definido, Nom. neutro)"
+        right: "-e"
+      - left: "die guten Kinder (definido, Plural)"
+        right: "-en"
+      - left: "guter Kaffee (sin artículo, mask.)"
+        right: "-er"
+  - type: "write"
+    prompt: "Escribe la forma correcta de 'gut' en 'die ___ Frau' (con artículo definido, Nominativ femenino)."
+    answer: "gute"
+    accepted: ["Gute"]
+    hint: "Artículo definido → terminación débil -e, también en femenino/neutro Nominativ."
+  - type: "order"
+    sentence: "Der gute Mann trinkt heute Kaffee"
+    translation: "El hombre bueno bebe café hoy."
 ---
 
 Este es uno de los últimos retos estructurales del alemán intermedio: los adjetivos

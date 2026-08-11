@@ -24,6 +24,40 @@ quiz:
     options: ["wollen", "willst", "will"]
     answerIndex: 0
     explanation: "Con 'wir', 'wollen' se queda igual que el infinitivo (los modales son irregulares solo en singular): wir wollen, sie wollen."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich ___ heute früh aufstehen."
+    answer: "muss"
+    accepted: ["muss"]
+    hint: "'müssen' expresa obligación."
+    translation: "Tengo que levantarme temprano hoy."
+  - type: "fill-blank"
+    sentence: "Wir ___ heute ins Kino gehen."
+    answer: "wollen"
+    accepted: ["wollen"]
+    hint: "Con 'wir', 'wollen' es igual que el infinitivo."
+    translation: "Queremos ir al cine hoy."
+  - type: "match"
+    instructions: "Empareja cada verbo modal con su significado."
+    pairs:
+      - left: "können"
+        right: "poder / saber"
+      - left: "müssen"
+        right: "tener que"
+      - left: "dürfen"
+        right: "tener permiso"
+      - left: "sollen"
+        right: "deber (por otros)"
+      - left: "möchten"
+        right: "querer (cortés)"
+  - type: "write"
+    prompt: "Escribe el modal correcto para expresar prohibición: 'Du ___ nicht rauchen.' (no tienes permitido fumar)"
+    answer: "darfst"
+    accepted: ["darfst"]
+    hint: "'dürfen' + 'nicht' expresa prohibición."
+  - type: "order"
+    sentence: "Ich kann Deutsch sprechen"
+    translation: "Puedo hablar alemán."
 ---
 
 Los verbos modales son tu herramienta para sonar natural: pedir permiso, expresar

@@ -1,0 +1,69 @@
+---
+language: de
+level: c1
+title: "Modalverben in subjektiver Bedeutung: adivina como un detective"
+description: "Müssen, dürfte, kann nicht: los mismos modales que ya conoces, reutilizados para especular sobre certeza y probabilidad."
+order: 3
+grammarTopic: "Verbos modales con significado especulativo (subjektive Modalverben)"
+funFact: "Es el mismo fenómeno que 'must have / might have / can't have' en inglés: los modales alemanes cambian de significado 'objetivo' (obligación, capacidad) a 'subjetivo' (certeza, probabilidad) según el contexto. 'Er muss zu Hause sein' ya no es 'él debe estar en casa' (obligación) sino 'seguramente está en casa' (deducción)."
+minutes: 10
+quiz:
+  - question: "'Er muss zu Hause sein' en un contexto de deducción, ¿qué significa realmente?"
+    options: [
+      "Él tiene la obligación de estar en casa",
+      "Seguramente está en casa (alta certeza basada en evidencia)",
+      "Está prohibido que esté en casa"
+    ]
+    answerIndex: 1
+    explanation: "En su uso subjetivo/especulativo, 'müssen' expresa alta certeza deductiva, no obligación: seguramente está en casa."
+  - question: "¿Qué modal expresa una posibilidad especulativa, más débil que 'müssen'?"
+    options: ["dürfte", "sollen", "wollen"]
+    answerIndex: 0
+    explanation: "'dürfte' (condicional de dürfen) en su uso subjetivo expresa una suposición probable pero no segura: Er dürfte zu Hause sein (probablemente esté en casa)."
+  - question: "'Er kann nicht zu Hause sein, sein Auto ist weg' — ¿qué expresa 'kann nicht' aquí?"
+    options: [
+      "Prohibición",
+      "Imposibilidad lógica basada en evidencia",
+      "Incapacidad física"
+    ]
+    answerIndex: 1
+    explanation: "En su uso subjetivo, 'kann nicht' expresa que algo es lógicamente imposible según la evidencia disponible — paralelo al 'can't have' inglés."
+---
+
+Ya conoces los modales en su sentido básico: obligación, permiso, capacidad. En este
+nivel, descubres que los mismos verbos tienen una segunda vida como herramientas para
+**especular sobre certeza**.
+
+## La escala de certeza especulativa
+
+| Modal | Certeza | Ejemplo |
+| --- | --- | --- |
+| müssen | Muy alta (positiva) | Er muss zu Hause sein. (seguro que está) |
+| dürfte | Alta pero no total | Er dürfte zu Hause sein. (probablemente) |
+| kann/könnte | Posible | Er könnte zu Hause sein. (podría ser) |
+| kann nicht | Imposibilidad | Er kann nicht zu Hause sein. (imposible) |
+
+## Objetivo vs. subjetivo: el mismo verbo, otro significado
+
+```
+Objetivo (obligación):    Ich muss arbeiten.       (tengo que trabajar)
+Subjetivo (deducción):     Er muss reich sein.       (seguro que es rico)
+```
+
+El contexto —no la gramática— es lo que te dice cuál sentido aplica.
+
+## Cómo reconocer el uso subjetivo
+
+El uso subjetivo aparece típicamente con estados o hechos (sein, haben) más que con
+acciones voluntarias, y suele describir una conclusión sobre otra persona o cosa, no una
+obligación propia:
+
+```
+Sie muss die Beste sein.        (Debe ser la mejor — deducción, no obligación de ella)
+```
+
+## Por qué es un reto de nivel C1
+
+Reconocer este doble significado sin ayuda de contexto explícito, y producirlo con
+naturalidad al hablar, es exactamente el tipo de matiz que un manual básico nunca
+explica — y que separa una comprensión mecánica del alemán de una comprensión real.

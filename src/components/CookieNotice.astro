@@ -1,0 +1,84 @@
+---
+---
+<div class="cookie-notice" data-cookie-notice hidden role="status" aria-live="polite">
+  <p>
+    PolyLingua guarda tu progreso solo en tu navegador (sin cookies de
+    rastreo). Más detalles en la
+    <a href="/privacidad">Política de privacidad</a>.
+  </p>
+  <button type="button" class="btn btn-primary" data-cookie-dismiss>Entendido</button>
+</div>
+
+<style>
+  .cookie-notice {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 80;
+    max-width: 640px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 1.25rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .cookie-notice p {
+    flex: 1;
+    min-width: 200px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .cookie-notice a {
+    color: var(--accent-text);
+  }
+
+  .cookie-notice .btn {
+    flex-shrink: 0;
+  }
+</style>
+
+<script>
+  function read(key: string): string | null {
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }
+
+  function write(key: string, value: string) {
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      /* localStorage unavailable */
+    }
+  }
+
+  function initCookieNotice() {
+    const el = document.querySelector<HTMLElement>('[data-cookie-notice]');
+    if (!el || el.dataset.initialized) return;
+    el.dataset.initialized = 'true';
+
+    if (read('polylingua-cookie-notice-dismissed') !== 'true') {
+      el.hidden = false;
+    }
+
+    const dismissBtn = el.querySelector<HTMLButtonElement>('[data-cookie-dismiss]');
+    dismissBtn?.addEventListener('click', () => {
+      write('polylingua-cookie-notice-dismissed', 'true');
+      el.hidden = true;
+    });
+  }
+
+  initCookieNotice();
+  document.addEventListener('astro:page-load', initCookieNotice);
+</script>

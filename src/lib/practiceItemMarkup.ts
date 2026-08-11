@@ -130,7 +130,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
       const btn = el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'left', 'data-pair': String(pi) }, pair.left);
       const speakBtn = el('button', {
         type: 'button',
-        class: 'speak-btn',
+        class: 'speak-btn match-speak',
         'data-speak': '',
         'data-speak-text': pair.left,
         'aria-label': `Escuchar «${pair.left}»`,

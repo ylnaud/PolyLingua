@@ -1,0 +1,74 @@
+---
+language: en
+level: b1
+title: "Relative Clauses: conecta ideas con who, which, that"
+description: "Cómo describir personas y cosas dentro de la misma frase, sin repetir el sustantivo."
+order: 6
+grammarTopic: "Oraciones de relativo (who/which/that/whose)"
+funFact: "'That' es el comodín universal: reemplaza tanto a 'who' (personas) como a 'which' (cosas) en oraciones de relativo esenciales — por eso es el que más usan los hablantes nativos en conversación informal, aunque 'who' suene un poco más formal para personas."
+minutes: 9
+quiz:
+  - question: "¿Cuál es correcta: 'The man ___ lives next door is a doctor' (el hombre que vive al lado es doctor)?"
+    options: ["which", "who", "whose"]
+    answerIndex: 1
+    explanation: "'who' se usa para personas: The man who lives next door... 'that' también sería correcto aquí."
+  - question: "¿Cuál es correcta: 'This is the book ___ I told you about' (este es el libro del que te hablé)?"
+    options: ["who", "which", "whose"]
+    answerIndex: 1
+    explanation: "'which' (o 'that') se usa para cosas: the book which I told you about."
+  - question: "¿Qué indica 'whose'?"
+    options: [
+      "Lugar",
+      "Posesión (de quién es algo)",
+      "Tiempo"
+    ]
+    answerIndex: 1
+    explanation: "'whose' indica posesión, tanto para personas como para cosas: the woman whose car was stolen (la mujer cuyo auto fue robado)."
+---
+
+Las oraciones de relativo te permiten describir personas, cosas o lugares dentro de la
+misma frase, en vez de usar dos frases cortas y separadas.
+
+## Los pronombres relativos principales
+
+| Pronombre | Se usa para | Ejemplo |
+| --- | --- | --- |
+| who | personas (sujeto) | The man who called is my uncle. |
+| which | cosas | The car which I bought is red. |
+| that | personas O cosas (informal) | The book that I read was great. |
+| whose | posesión | The woman whose dog barked... |
+| where | lugares | The city where I was born... |
+
+## Combinando dos frases en una
+
+```
+I have a friend. + My friend lives in Tokyo.
+→ I have a friend who lives in Tokyo.
+```
+
+## Cláusulas esenciales vs. adicionales: las comas importan
+
+```
+Esencial (sin comas):    The book that I read was great.
+                          (identifica CUÁL libro — información necesaria)
+
+Adicional (con comas):    My car, which is red, is very old.
+                            (información extra, no esencial para identificar)
+```
+
+Con cláusulas adicionales, "that" nunca se puede usar — solo who/which.
+
+## Omitiendo el pronombre relativo
+
+Cuando el pronombre es el OBJETO (no el sujeto) de la cláusula, puedes omitirlo en
+inglés informal:
+
+```
+The book that I read = The book I read      (ambas correctas)
+The man who called = The man who called      (aquí NO se puede omitir, es el sujeto)
+```
+
+## El truco práctico
+
+"that" es tu comodín seguro para cláusulas esenciales con personas o cosas — cuando
+dudes entre who/which, "that" casi siempre funciona en registro informal.

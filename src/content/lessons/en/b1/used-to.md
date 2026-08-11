@@ -1,0 +1,76 @@
+---
+language: en
+level: b1
+title: "Used to: cómo hablar de hábitos que ya no existen"
+description: "La estructura especial para describir algo que hacías regularmente en el pasado, pero que ya no haces."
+order: 5
+grammarTopic: "used to + infinitivo"
+funFact: "'used to' no es un verbo normal — es una estructura fija que solo existe para hablar de pasado, y siempre implica un contraste con el presente: 'I used to live in Paris' sugiere fuertemente 'pero ya no vivo ahí'. Es información extra que el simple 'I lived in Paris' no comunica tan claramente."
+minutes: 7
+quiz:
+  - question: "¿Cuál es correcta: 'I ___ play the guitar' (solía tocar la guitarra)?"
+    options: ["use to", "used to", "using to"]
+    answerIndex: 1
+    explanation: "'used to' siempre se escribe así en afirmativo, seguido de infinitivo sin 'to' extra en el verbo principal: I used to play (no 'used to to play')."
+  - question: "¿Cuál es la forma negativa correcta?"
+    options: ["I didn't used to smoke.", "I didn't use to smoke.", "I don't used to smoke."]
+    answerIndex: 1
+    explanation: "En negativo y en preguntas, 'used' pierde la 'd' porque el auxiliar 'did' ya carga el pasado: I didn't use to smoke (no 'didn't used to')."
+  - question: "¿Qué implica decir 'I used to live in Paris' que 'I lived in Paris' no implica tan claramente?"
+    options: [
+      "Que todavía vives en París",
+      "Que ya NO vives en París — un contraste explícito con el presente",
+      "Que nunca viviste en París"
+    ]
+    answerIndex: 1
+    explanation: "'used to' siempre implica un cambio: algo era cierto antes, pero ya no lo es ahora. 'I lived in Paris' es más neutral respecto al presente."
+---
+
+"used to" es una estructura especial —ni Present ni Past Simple normal— diseñada
+específicamente para hablar de hábitos o estados pasados que ya terminaron.
+
+## La estructura básica
+
+```
+used to + infinitivo (sin cambios)
+
+I used to play the guitar.        (solía tocar la guitarra — ya no lo hago)
+```
+
+## El detalle importante: negativo y preguntas
+
+```
+Afirmativo:   I used to smoke.
+Negativo:      I didn't use to smoke.       (¡sin "d" en "use"!)
+Pregunta:       Did you use to smoke?        (¡sin "d" en "use"!)
+```
+
+La "d" de "used" desaparece en negativo y preguntas porque el auxiliar "did" ya carga
+toda la información de pasado.
+
+## Para qué se usa exactamente
+
+| Uso | Ejemplo |
+| --- | --- |
+| Hábitos pasados, ya no vigentes | I used to play tennis every week. |
+| Estados pasados, ya cambiados | She used to be shy. |
+
+## "used to" vs. Past Simple normal
+
+```
+I used to live in Paris.       (implica: ya no vivo ahí — contraste claro)
+I lived in Paris.               (neutral, no aclara si sigues ahí o no)
+```
+
+## Un aviso: no confundir con "be used to"
+
+"be used to" (estar acostumbrado a) es una estructura completamente diferente, aunque
+se parezca:
+
+```
+used to + infinitivo:        I used to live there.       (hábito pasado)
+be used to + gerundio/sustantivo: I am used to living here. (estar acostumbrado)
+```
+
+Son dos estructuras distintas que solo comparten las palabras "used to" — no las
+confundas.

@@ -1,0 +1,70 @@
+---
+language: en
+level: a2
+title: "Prepositions of Time and Place: in, on, at sin adivinar"
+description: "Las tres preposiciones más confusas del inglés, ordenadas de lo general a lo específico."
+order: 5
+grammarTopic: "Preposiciones de tiempo y lugar (in/on/at)"
+funFact: "Piensa en 'in, on, at' como un zoom que se acerca: 'in' es lo más amplio (meses, años, ciudades), 'on' es intermedio (días, fechas, calles), y 'at' es lo más específico y puntual (horas, direcciones exactas). Cuanto más preciso el momento o lugar, más te acercas hacia 'at'."
+minutes: 8
+quiz:
+  - question: "¿Cuál es correcta: 'I was born ___ 1995' (nací en 1995)?"
+    options: ["in 1995", "on 1995", "at 1995"]
+    answerIndex: 0
+    explanation: "'in' se usa para años, meses y periodos largos: in 1995, in July, in summer."
+  - question: "¿Cuál es correcta: 'The meeting is ___ Monday' (la reunión es el lunes)?"
+    options: ["in Monday", "on Monday", "at Monday"]
+    answerIndex: 1
+    explanation: "'on' se usa para días y fechas específicas: on Monday, on July 4th."
+  - question: "¿Cuál es correcta: 'I'll see you ___ 3 o'clock' (te veo a las 3)?"
+    options: ["in 3 o'clock", "on 3 o'clock", "at 3 o'clock"]
+    answerIndex: 2
+    explanation: "'at' se usa para horas exactas y puntos específicos: at 3 o'clock, at noon."
+---
+
+Estas tres preposiciones causan confusión constante porque en español muchas veces se
+traducen todas como "en". El inglés las distingue por nivel de especificidad.
+
+## El zoom de lo general a lo específico
+
+| Preposición | Nivel | Ejemplos |
+| --- | --- | --- |
+| in | Amplio (años, meses, ciudades) | in 2024, in July, in Madrid |
+| on | Intermedio (días, fechas, calles) | on Monday, on July 4th, on Main Street |
+| at | Específico (horas, lugares puntuales) | at 3pm, at the door, at home |
+
+## Tiempo: comparación completa
+
+```
+in 2024                (año)
+in July                 (mes)
+in the morning          (parte del día — excepción: "at night")
+on Monday               (día de la semana)
+on July 4th             (fecha específica)
+at 3pm                  (hora exacta)
+at night                (¡excepción! usa "at", no "in")
+```
+
+## Lugar: comparación completa
+
+```
+in Spain                (país, algo grande)
+in the kitchen           (espacio cerrado)
+on the table             (superficie)
+on Main Street            (calle)
+at the door               (punto específico)
+at 25 Main Street         (dirección exacta)
+```
+
+## Las excepciones que hay que memorizar
+
+```
+at night        (no "in the night")
+at the weekend  (británico) / on the weekend (americano)
+```
+
+## El truco práctico
+
+Cuando dudes, pregúntate qué tan específico es el momento o lugar: ¿un periodo amplio
+(in), un día/superficie concreta (on), o un punto exacto (at)? Ese orden de "zoom" te
+ayuda a elegir correctamente la mayoría de las veces.

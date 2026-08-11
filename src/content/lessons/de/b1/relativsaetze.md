@@ -20,6 +20,40 @@ quiz:
     options: ["En segunda posición", "Al final de la oración de relativo", "Al principio"]
     answerIndex: 1
     explanation: "Como toda oración subordinada, el verbo va al final: der Mann, der dort STEHT — igual que con weil/dass/obwohl."
+exercises:
+  - type: "fill-blank"
+    sentence: "Der Mann, ___ dort steht, ist mein Lehrer."
+    answer: "der"
+    accepted: ["der"]
+    hint: "Sujeto de 'steht' → Nominativ masculino."
+    translation: "El hombre que está parado ahí es mi profesor."
+  - type: "fill-blank"
+    sentence: "Das ist der Film, ___ ich gestern gesehen habe."
+    answer: "den"
+    accepted: ["den"]
+    hint: "Objeto directo de 'gesehen habe' → Akkusativ masculino."
+    translation: "Esta es la película que vi ayer."
+  - type: "match"
+    instructions: "Empareja cada combinación de caso y género con su pronombre relativo."
+    pairs:
+      - left: "Nominativ maskulin"
+        right: "der"
+      - left: "Akkusativ maskulin"
+        right: "den"
+      - left: "Dativ maskulin"
+        right: "dem"
+      - left: "Dativ Plural"
+        right: "denen"
+      - left: "Nominativ feminin"
+        right: "die"
+  - type: "write"
+    prompt: "Escribe el pronombre relativo correcto: 'Der Mann, ___ ich helfe, ist nett.' (helfen pide Dativ)"
+    answer: "dem"
+    accepted: ["dem"]
+    hint: "Dativ masculino: dem."
+  - type: "order"
+    sentence: "Der Mann, der dort steht, ist mein Lehrer"
+    translation: "El hombre que está parado ahí es mi profesor."
 ---
 
 Ya conoces der/die/das como artículos. Ahora aprenderás a reutilizarlos —con el mismo

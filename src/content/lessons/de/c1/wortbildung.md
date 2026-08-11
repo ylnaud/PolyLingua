@@ -24,6 +24,40 @@ quiz:
     options: ["muy posible", "imposible", "posiblemente"]
     answerIndex: 1
     explanation: "'un-' niega el adjetivo: möglich (posible) → unmöglich (imposible). Es uno de los prefijos de negación más productivos del alemán."
+exercises:
+  - type: "fill-blank"
+    sentence: "Dieses Buch ist wirklich leicht zu verstehen, es ist sehr ___."
+    answer: "lesbar"
+    accepted: ["Lesbar"]
+    hint: "'-bar' convierte un verbo en adjetivo: lesen → lesbar (que se puede leer)."
+    translation: "Este libro es realmente fácil de entender, es muy legible."
+  - type: "fill-blank"
+    sentence: "Nach der schlechten Nachricht fühlte sie sich völlig ___."
+    answer: "hoffnungslos"
+    accepted: ["Hoffnungslos"]
+    hint: "'-los' significa 'sin': Hoffnung (esperanza) + los."
+    translation: "Después de la mala noticia se sintió completamente desesperanzada."
+  - type: "match"
+    instructions: "Empareja cada afijo con su significado."
+    pairs:
+      - left: "un-"
+        right: "negación"
+      - left: "-los"
+        right: "sin"
+      - left: "-bar"
+        right: "que se puede"
+      - left: "-heit / -keit"
+        right: "convierte adjetivo en sustantivo abstracto"
+      - left: "-ung"
+        right: "convierte verbo en sustantivo de acción"
+  - type: "write"
+    prompt: "Aplica el prefijo de negación 'un-' a 'möglich' para formar su opuesto."
+    answer: "unmöglich"
+    accepted: ["Unmöglich"]
+    hint: "un- + möglich = imposible."
+  - type: "order"
+    sentence: "Diese Erfahrung war für mich unvergesslich"
+    translation: "Esta experiencia fue inolvidable para mí."
 ---
 
 Este es uno de los superpoderes más rentables del alemán avanzado: reconocer patrones

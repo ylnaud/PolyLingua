@@ -24,6 +24,40 @@ quiz:
     options: ["-te", "-t", "-en"]
     answerIndex: 0
     explanation: "Los verbos regulares añaden '-te' (sin terminación extra en 3ª persona singular): er machte, sie lernte. Compara con el Perfekt (er hat gemacht) — mucho más corto en Präteritum."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich ___ gestern sehr müde."
+    answer: "war"
+    accepted: ["war"]
+    hint: "Präteritum de 'sein': ich war."
+    translation: "Ayer yo estaba muy cansado."
+  - type: "fill-blank"
+    sentence: "Er ___ jeden Tag ins Büro."
+    answer: "ging"
+    accepted: ["ging"]
+    hint: "Präteritum irregular de 'gehen': ging (cambia la vocal de la raíz)."
+    translation: "Él iba a la oficina todos los días."
+  - type: "match"
+    instructions: "Empareja cada verbo en infinitivo con su forma de Präteritum (ich/er/sie/es)."
+    pairs:
+      - left: "sein"
+        right: "war"
+      - left: "haben"
+        right: "hatte"
+      - left: "gehen"
+        right: "ging"
+      - left: "sehen"
+        right: "sah"
+      - left: "kommen"
+        right: "kam"
+  - type: "write"
+    prompt: "Escribe la forma de Präteritum de 'machen' para 'er/sie/es'."
+    answer: "machte"
+    accepted: ["machte"]
+    hint: "Verbos regulares: raíz + -te, sin terminación extra en 3ª persona singular."
+  - type: "order"
+    sentence: "Er ging jeden Tag ins Büro"
+    translation: "Él iba a la oficina todos los días."
 ---
 
 Ya conoces el Perfekt para hablar del pasado. Ahora conoces a su hermano más formal: el

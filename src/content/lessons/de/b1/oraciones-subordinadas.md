@@ -24,6 +24,38 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'Obwohl es regnet' es la subordinada (verbo al final: regnet). Luego viene la principal invertida: 'gehe ich', porque la subordinada ya ocupó la primera posición."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich bleibe zu Hause, ___ ich krank bin."
+    answer: "weil"
+    accepted: ["weil"]
+    hint: "'weil' (porque) introduce una subordinada y manda el verbo al final."
+    translation: "Me quedo en casa porque estoy enfermo."
+  - type: "fill-blank"
+    sentence: "Ich glaube, ___ er recht hat."
+    answer: "dass"
+    accepted: ["dass"]
+    hint: "'dass' (que) introduce una subordinada con el verbo al final."
+    translation: "Creo que él tiene razón."
+  - type: "match"
+    instructions: "Empareja cada conjunción subordinante con su significado."
+    pairs:
+      - left: "weil"
+        right: "porque"
+      - left: "dass"
+        right: "que"
+      - left: "obwohl"
+        right: "aunque"
+      - left: "wenn"
+        right: "si / cuando"
+  - type: "write"
+    prompt: "Completa con el verbo en la posición correcta: 'Wenn es regnet, ___ ich zu Hause.' (quedarse)"
+    answer: "bleibe"
+    accepted: ["bleibe"]
+    hint: "Cuando la subordinada va primero, el verbo principal salta a la primera posición tras la coma."
+  - type: "order"
+    sentence: "Wenn es regnet, bleibe ich zu Hause"
+    translation: "Si llueve, me quedo en casa."
 ---
 
 Hasta ahora tus frases probablemente son cortas y directas. En este nivel empiezas a

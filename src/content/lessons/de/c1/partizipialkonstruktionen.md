@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'der schreibende Autor' (el autor que escribe — activo) usa Partizip I. 'der geschriebene Text' (el texto que fue escrito — pasivo/completado) usa Partizip II. La elección cambia el significado."
+exercises:
+  - type: "fill-blank"
+    sentence: "Der ___ Mann sitzt auf der Bank."
+    answer: "lachende"
+    accepted: ["Lachende"]
+    hint: "Partizip I de 'lachen' (infinitivo + d): acción activa y simultánea."
+    translation: "El hombre que ríe está sentado en el banco."
+  - type: "fill-blank"
+    sentence: "Der ___ Brief liegt auf dem Tisch."
+    answer: "geschriebene"
+    accepted: ["Geschriebene"]
+    hint: "Partizip II de 'schreiben' (ge- + raíz + -en): acción pasiva y completada."
+    translation: "La carta escrita está sobre la mesa."
+  - type: "match"
+    instructions: "Empareja cada Partizipialkonstruktion con la oración relativa que resume."
+    pairs:
+      - left: "der lachende Mann"
+        right: "der Mann, der lacht"
+      - left: "der geschriebene Brief"
+        right: "der Brief, der geschrieben wurde"
+      - left: "die veröffentlichte Studie"
+        right: "die Studie, die veröffentlicht wurde"
+      - left: "die geplante Reform"
+        right: "die Reform, die geplant wird"
+  - type: "write"
+    prompt: "Escribe el Partizip I de 'schreiben' para completar 'der ___ Autor' (el autor que escribe)."
+    answer: "schreibende"
+    accepted: ["Schreibende"]
+    hint: "Partizip I: infinitivo + '-d'."
+  - type: "order"
+    sentence: "Die von der Regierung geplante Reform wurde veröffentlicht"
+    translation: "La reforma planeada por el gobierno fue publicada."
 ---
 
 En este nivel, ya no se trata de construir frases correctas — se trata de escribir con el

@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "La anáfora repite deliberadamente una palabra o estructura al comienzo de frases seguidas para crear ritmo y énfasis — un recurso clásico de discursos memorables."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ ist Geld."
+    answer: "Zeit"
+    accepted: ["zeit"]
+    hint: "Metáfora clásica que compara dos conceptos sin usar 'wie' (como)."
+    translation: "El tiempo es dinero."
+  - type: "fill-blank"
+    sentence: "Das dauert eine ___!"
+    answer: "Ewigkeit"
+    accepted: ["ewigkeit"]
+    hint: "Übertreibung (exageración) para dar énfasis: literalmente 'una eternidad'."
+    translation: "¡Eso dura una eternidad!"
+  - type: "match"
+    instructions: "Empareja cada figura retórica con lo que hace."
+    pairs:
+      - left: "Metapher"
+        right: "Compara dos cosas sin \"wie\" (como)"
+      - left: "Rhetorische Frage"
+        right: "Afirma disfrazado de pregunta"
+      - left: "Anapher"
+        right: "Repite el inicio de frases seguidas"
+      - left: "Übertreibung"
+        right: "Exagera para dar énfasis"
+      - left: "Alliteration"
+        right: "Repite el sonido inicial"
+  - type: "write"
+    prompt: "Escribe (en alemán) la figura retórica que repite el sonido inicial de varias palabras, como en 'Milch macht müde Männer munter'."
+    answer: "Alliteration"
+    accepted: ["alliteration"]
+    hint: "Mismo concepto que la 'aliteración' en español."
+  - type: "order"
+    sentence: "Wer würde das nicht wollen"
+    translation: "¿Quién no querría eso? (pregunta retórica)"
 ---
 
 Llegaste al último tramo: las herramientas que transforman un alemán correcto en un

@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "No tienen traducción 1:1 — su significado depende del tono y contexto. Se dominan por exposición e imitación, no por memorización de diccionario."
+exercises:
+  - type: "fill-blank"
+    sentence: "Das weißt du ___!"
+    answer: "doch"
+    accepted: ["Doch"]
+    hint: "Partícula que añade énfasis o leve contradicción."
+    translation: "¡Pero si tú lo sabes!"
+  - type: "fill-blank"
+    sentence: "Wie geht's dir ___?"
+    answer: "denn"
+    accepted: ["Denn"]
+    hint: "Partícula que añade curiosidad genuina en preguntas."
+    translation: "¿Y bien, cómo estás?"
+  - type: "match"
+    instructions: "Empareja cada partícula modal con su efecto en la frase."
+    pairs:
+      - left: "doch"
+        right: "énfasis / leve contradicción"
+      - left: "ja"
+        right: "algo obvio, compartido"
+      - left: "mal"
+        right: "suaviza, informalidad"
+      - left: "halt / eben"
+        right: "resignación, \"así es\""
+      - left: "denn"
+        right: "curiosidad genuina en preguntas"
+  - type: "write"
+    prompt: "Escribe la partícula que suaviza una orden y la hace más casual: 'Komm ___ her!' (ven un momento, en vez de un seco 'ven')."
+    answer: "mal"
+    accepted: ["Mal"]
+    hint: "Suaviza órdenes y peticiones, dándoles un tono relajado."
+  - type: "order"
+    sentence: "Komm doch mal her"
+    translation: "¡Ven aquí, anda! (mezcla contradicción suave y casualidad en una sola frase)."
 ---
 
 Llegaste al nivel donde la gramática "de manual" ya no es el reto. El verdadero examen de

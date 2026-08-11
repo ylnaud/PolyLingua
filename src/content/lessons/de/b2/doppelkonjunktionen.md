@@ -20,6 +20,40 @@ quiz:
     options: ["Al final en ambas partes", "En segunda posición siempre", "Solo la segunda parte lleva verbo al final"]
     answerIndex: 0
     explanation: "Ambas partes de 'je...desto' llevan el verbo al final, como oraciones subordinadas: Je mehr du LERNST, desto besser du SPRICHST."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ er als auch sie kommen."
+    answer: "Sowohl"
+    accepted: ["sowohl"]
+    hint: "Pareja fija con 'als auch': tanto... como."
+    translation: "Tanto él como ella vienen."
+  - type: "fill-blank"
+    sentence: "Ich habe weder Zeit ___ Lust."
+    answer: "noch"
+    accepted: ["Noch"]
+    hint: "'weder... noch' es la negación doble: ni... ni."
+    translation: "No tengo ni tiempo ni ganas."
+  - type: "match"
+    instructions: "Empareja cada conjunción doble con su significado."
+    pairs:
+      - left: "sowohl... als auch"
+        right: "tanto... como"
+      - left: "entweder... oder"
+        right: "o... o"
+      - left: "weder... noch"
+        right: "ni... ni"
+      - left: "je... desto"
+        right: "cuanto más... más"
+      - left: "nicht nur... sondern auch"
+        right: "no solo... sino también"
+  - type: "write"
+    prompt: "Escribe la palabra que falta en la pareja proporcional: 'Je mehr du übst, ___ besser wirst du.'"
+    answer: "desto"
+    accepted: ["Desto"]
+    hint: "Es la segunda mitad fija de la construcción je... desto."
+  - type: "order"
+    sentence: "Er ist nicht nur klug sondern auch nett"
+    translation: "Él no solo es inteligente sino también amable."
 ---
 
 Estas conjunciones vienen siempre en pareja y te permiten estructurar comparaciones,

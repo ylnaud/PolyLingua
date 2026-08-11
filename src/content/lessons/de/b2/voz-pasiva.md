@@ -28,6 +28,38 @@ quiz:
     options: ["mit", "von", "für"]
     answerIndex: 1
     explanation: "'von' + dativo introduce al agente: 'Der Kaffee wird vom Kellner gebracht' (el café es traído por el mesero)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Der Kaffee ___ gebracht."
+    answer: "wird"
+    accepted: ["Wird"]
+    hint: "Presente pasivo = werden conjugado + participio al final."
+    translation: "El café es traído."
+  - type: "fill-blank"
+    sentence: "Die Suppe wird ___ Koch gekocht."
+    answer: "vom"
+    accepted: ["Vom"]
+    hint: "'von' + dativo introduce al agente; von + dem se contrae en 'vom'."
+    translation: "La sopa es cocinada por el cocinero."
+  - type: "match"
+    instructions: "Empareja cada tiempo verbal del Passiv con su forma."
+    pairs:
+      - left: "Präsens"
+        right: "wird gebaut"
+      - left: "Präteritum"
+        right: "wurde gebaut"
+      - left: "Perfekt"
+        right: "ist gebaut worden"
+      - left: "Agente"
+        right: "von + Dativ"
+  - type: "write"
+    prompt: "Transforma a voz pasiva presente: 'Der Kellner bringt den Kaffee.' → 'Der Kaffee ___ gebracht.'"
+    answer: "wird"
+    accepted: ["Wird"]
+    hint: "werden conjugado en 3ª persona singular."
+  - type: "order"
+    sentence: "Das Haus wird gebaut"
+    translation: "La casa está siendo construida."
 ---
 
 En español decimos "se vende la casa" sin decir quién la vende. El alemán hace lo mismo con

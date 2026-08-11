@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Como las expresiones idiomáticas, los refranes son fórmulas cerradas: no puedes cambiar ninguna palabra, y usarlos en el momento equivocado (o con la forma incorrecta) suena forzado o extraño."
+exercises:
+  - type: "fill-blank"
+    sentence: "Der Apfel fällt nicht weit vom ___."
+    answer: "Stamm"
+    accepted: ["stamm"]
+    hint: "Refrán equivalente a 'de tal palo, tal astilla'."
+    translation: "La manzana no cae lejos del tronco."
+  - type: "fill-blank"
+    sentence: "___ macht den Meister."
+    answer: "Übung"
+    accepted: ["übung", "Uebung"]
+    hint: "Equivalente a 'la práctica hace al maestro'."
+    translation: "La práctica hace al maestro."
+  - type: "match"
+    instructions: "Empareja cada refrán alemán con su equivalente en español."
+    pairs:
+      - left: "Der Apfel fällt nicht weit vom Stamm"
+        right: "De tal palo, tal astilla"
+      - left: "Morgenstund hat Gold im Mund"
+        right: "A quien madruga, Dios le ayuda"
+      - left: "Wer zwei Hasen jagt, fängt keinen"
+        right: "El que mucho abarca, poco aprieta"
+      - left: "Aller Anfang ist schwer"
+        right: "Lo difícil es empezar"
+  - type: "write"
+    prompt: "Completa el refrán: 'Wer zwei Hasen jagt, fängt ___.'"
+    answer: "keinen"
+    accepted: ["Keinen"]
+    hint: "Significa que quien persigue dos objetivos a la vez, no logra ninguno."
+  - type: "order"
+    sentence: "Aller Anfang ist schwer"
+    translation: "Todo comienzo es difícil."
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

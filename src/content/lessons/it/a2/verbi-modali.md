@@ -20,6 +20,40 @@ quiz:
     options: ["loro vogliono", "loro volono", "loro vuole"]
     answerIndex: 0
     explanation: "'volere' con 'loro' es 'vogliono': loro vogliono partire (ellos quieren irse). Otro caso irregular común."
+exercises:
+  - type: "fill-blank"
+    sentence: "Io ___ lavorare."
+    answer: "devo"
+    accepted: ["devo"]
+    hint: "'dovere' conjugado con 'io' es 'devo'."
+    translation: "Yo debo trabajar."
+  - type: "fill-blank"
+    sentence: "___ entrare?"
+    answer: "Posso"
+    accepted: ["posso"]
+    hint: "'potere' conjugado con 'io' es 'posso', usado para pedir permiso."
+    translation: "¿Puedo entrar?"
+  - type: "match"
+    instructions: "Empareja cada pronombre con la conjugación correcta del verbo modal indicado."
+    pairs:
+      - left: "io (potere)"
+        right: "posso"
+      - left: "tu (potere)"
+        right: "puoi"
+      - left: "loro (volere)"
+        right: "vogliono"
+      - left: "noi (dovere)"
+        right: "dobbiamo"
+      - left: "voi (dovere)"
+        right: "dovete"
+  - type: "write"
+    prompt: "Escribe en italiano la forma cortés de pedir un café, usando el condicional de 'volere'."
+    answer: "Vorrei un caffè"
+    accepted: ["vorrei un caffè"]
+    hint: "'vorrei' es el condizionale de 'volere', más educado que 'voglio'."
+  - type: "order"
+    sentence: "Devo lavorare ogni giorno"
+    translation: "Debo trabajar todos los días."
 ---
 
 Estos tres verbos modales son tu herramienta principal para pedir, permitir, opinar y

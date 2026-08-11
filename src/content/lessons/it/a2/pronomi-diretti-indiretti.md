@@ -20,6 +20,40 @@ quiz:
     options: ["Después del verbo", "Antes del verbo conjugado", "Al final de la frase"]
     answerIndex: 1
     explanation: "El pronombre objeto va justo antes del verbo conjugado: Lo vedo, Gli parlo — igual que en español (lo veo, le hablo)."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ vedo."
+    answer: "Lo"
+    accepted: ["lo"]
+    hint: "Reemplaza un objeto directo masculino singular, como 'il film'."
+    translation: "Lo veo (el film)."
+  - type: "fill-blank"
+    sentence: "___ parlo."
+    answer: "Gli"
+    accepted: ["gli"]
+    hint: "'parlare a Marco' pide objeto indirecto: gli (a él)."
+    translation: "Le hablo (a él)."
+  - type: "match"
+    instructions: "Empareja cada pronombre con lo que reemplaza."
+    pairs:
+      - left: "lo"
+        right: "objeto directo masculino singular"
+      - left: "la"
+        right: "objeto directo femenino singular"
+      - left: "gli"
+        right: "a él (objeto indirecto)"
+      - left: "le"
+        right: "a ella (objeto indirecto)"
+      - left: "li"
+        right: "objeto directo masculino plural"
+  - type: "write"
+    prompt: "Escribe en italiano cómo dirías 'la veo' (refiriéndote a Maria) usando el pronombre de objeto directo."
+    answer: "La vedo"
+    accepted: ["la vedo"]
+    hint: "'la' reemplaza un objeto directo femenino singular."
+  - type: "order"
+    sentence: "Non lo vedo"
+    translation: "No lo veo."
 ---
 
 Estos pronombres te permiten evitar repetir un sustantivo una y otra vez — la lógica

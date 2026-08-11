@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La nominalización permite empaquetar acciones como conceptos abstractos ('l'attuazione', 'l'aumento'), típico de informes, ensayos y periodismo serio."
+exercises:
+  - type: "fill-blank"
+    sentence: "La ___ del governo di aumentare le tasse ha suscitato dibattiti."
+    answer: "decisione"
+    accepted: ["Decisione"]
+    hint: "Nominalización del verbo 'decidere', típica del registro formal."
+    translation: "La decisión del gobierno de aumentar los impuestos suscitó debates."
+  - type: "fill-blank"
+    sentence: "Il progetto è complesso; ___, è stato completato in tempo."
+    answer: "tuttavia"
+    accepted: ["Tuttavia"]
+    hint: "Conector formal equivalente a 'però' (pero/sin embargo)."
+    translation: "El proyecto es complejo; sin embargo, se completó a tiempo."
+  - type: "match"
+    instructions: "Empareja cada verbo con su forma nominalizada (registro formal)."
+    pairs:
+      - left: "decidere"
+        right: "la decisione"
+      - left: "analizzare"
+        right: "l'analisi"
+      - left: "aumentare"
+        right: "l'aumento"
+      - left: "attuare"
+        right: "l'attuazione"
+  - type: "write"
+    prompt: "Escribe en italiano la forma nominalizada (sustantivo) del verbo 'analizzare'."
+    answer: "l'analisi"
+    accepted: ["l'analisi", "analisi", "L'analisi"]
+    hint: "Compacta la idea de 'analizar' en un sustantivo abstracto."
+  - type: "order"
+    sentence: "Il governo ha deciso di aumentare le tasse"
+    translation: "El gobierno decidió aumentar los impuestos."
 ---
 
 Llegaste al último peldaño: escribir y hablar con el registro que encontrarás en un

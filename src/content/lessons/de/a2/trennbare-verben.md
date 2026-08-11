@@ -28,6 +28,40 @@ quiz:
     options: ["ver-", "auf-", "be-"]
     answerIndex: 1
     explanation: "auf-, an-, ab-, ein-, aus-, mit-, vor-, zu- son prefijos separables comunes. 'ver-' y 'be-' son prefijos INSEPARABLES (nunca se separan)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich stehe um 7 Uhr ___."
+    answer: "auf"
+    accepted: ["auf"]
+    hint: "El prefijo separable 'auf' salta al final de la frase."
+    translation: "Me levanto a las 7."
+  - type: "fill-blank"
+    sentence: "Ich rufe dich ___."
+    answer: "an"
+    accepted: ["an"]
+    hint: "'anrufen' se separa en presente: rufe... an."
+    translation: "Te llamo."
+  - type: "match"
+    instructions: "Empareja cada verbo separable con su significado."
+    pairs:
+      - left: "aufstehen"
+        right: "levantarse"
+      - left: "anrufen"
+        right: "llamar por teléfono"
+      - left: "einkaufen"
+        right: "hacer compras"
+      - left: "ausgehen"
+        right: "salir"
+      - left: "vorbereiten"
+        right: "preparar"
+  - type: "write"
+    prompt: "Escribe el prefijo separable de 'anrufen' cuando se separa en presente: 'Ich rufe dich ___.'"
+    answer: "an"
+    accepted: ["an"]
+    hint: "an- es el prefijo separable de anrufen."
+  - type: "order"
+    sentence: "Ich muss dich anrufen"
+    translation: "Tengo que llamarte."
 ---
 
 Este es uno de los rasgos más distintivos del alemán: verbos que, en presente, se

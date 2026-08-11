@@ -28,6 +28,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "En su uso subjetivo, 'kann nicht' expresa que algo es lógicamente imposible según la evidencia disponible — paralelo al 'can't have' inglés."
+exercises:
+  - type: "fill-blank"
+    sentence: "Er ___ zu Hause sein, sein Auto steht vor der Tür."
+    answer: "muss"
+    accepted: ["Muss"]
+    hint: "Uso subjetivo de 'müssen': certeza deductiva muy alta, no obligación."
+    translation: "Seguro que está en casa, su coche está frente a la puerta."
+  - type: "fill-blank"
+    sentence: "Sie ___ zu Hause sein, ich habe sie gerade im Büro gesehen."
+    answer: "kann nicht"
+    accepted: ["Kann nicht"]
+    hint: "Uso subjetivo de 'kann nicht': imposibilidad lógica basada en evidencia."
+    translation: "No puede estar en casa, la acabo de ver en la oficina."
+  - type: "match"
+    instructions: "Empareja cada modal subjetivo con su grado de certeza."
+    pairs:
+      - left: "muss"
+        right: "certeza muy alta (deducción positiva)"
+      - left: "dürfte"
+        right: "alta probabilidad, no total certeza"
+      - left: "könnte"
+        right: "posibilidad especulativa"
+      - left: "kann nicht"
+        right: "imposibilidad lógica"
+  - type: "write"
+    prompt: "Escribe el modal (forma de 'dürfen') que expresa una suposición probable pero no segura en: 'Er ___ zu Hause sein.'"
+    answer: "dürfte"
+    accepted: ["Dürfte"]
+    hint: "Es el condicional de 'dürfen' usado para especular con alta probabilidad."
+  - type: "order"
+    sentence: "Sie muss die Beste sein"
+    translation: "Seguro que ella es la mejor."
 ---
 
 Ya conoces los modales en su sentido básico: obligación, permiso, capacidad. En este

@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "A diferencia de la gramática, que sigue reglas, reconocer la ironía requiere entender el contexto social y cultural completo — una habilidad que solo se desarrolla con exposición real al idioma."
+exercises:
+  - type: "fill-blank"
+    sentence: "Der Kaffee ist auf den Laptop gefallen. Na ___!"
+    answer: "toll"
+    accepted: ["Toll"]
+    hint: "Exclamación irónica: literalmente '¡qué bien!', pero aquí expresa lo contrario, frustración."
+    translation: "El café se derramó en la laptop. ¡Qué bien!"
+  - type: "fill-blank"
+    sentence: "Es wäre ___, pünktlich zu erscheinen."
+    answer: "empfehlenswert"
+    accepted: ["Empfehlenswert"]
+    hint: "Registro gehoben (elevado), típico de discursos y textos oficiales."
+    translation: "Sería recomendable llegar puntual."
+  - type: "match"
+    instructions: "Empareja cada registro o recurso con su característica."
+    pairs:
+      - left: "Gehoben"
+        right: "Nominalstil, Konjunktiv I y vocabulario culto"
+      - left: "Standard"
+        right: "Gramática neutra, sin marcas especiales"
+      - left: "Umgangssprachlich"
+        right: "Partículas modales, contracciones y slang"
+      - left: "Ironie"
+        right: "Decir lo contrario de lo que se piensa, sin marca explícita"
+  - type: "write"
+    prompt: "Alguien derrama café en su laptop y dice con ironía: 'Na ___!' ¿Qué palabra falta?"
+    answer: "toll"
+    accepted: ["Toll"]
+    hint: "Es la exclamación irónica típica cuando algo sale mal — literalmente significa '¡qué bien!'."
+  - type: "order"
+    sentence: "Es ist besser pünktlich zu kommen"
+    translation: "Es mejor llegar puntual."
 ---
 
 Llegaste al nivel donde entender las palabras ya no es suficiente — necesitas entender

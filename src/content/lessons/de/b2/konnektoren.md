@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Estos conectores cuentan como la 'primera posición' de la frase, así que el verbo los sigue inmediatamente: Trotzdem ging er spazieren (verbo-sujeto invertido)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Es regnete stark. ___ ging er spazieren."
+    answer: "Trotzdem"
+    accepted: ["trotzdem"]
+    hint: "Marca un contraste inesperado con lo dicho antes: a pesar de eso."
+    translation: "Llovía fuerte. A pesar de eso, él salió a caminar."
+  - type: "fill-blank"
+    sentence: "Er hat viel gelernt, ___ hat er die Prüfung bestanden."
+    answer: "deshalb"
+    accepted: ["Deshalb"]
+    hint: "Introduce una consecuencia lógica: por eso."
+    translation: "Él estudió mucho, por eso aprobó el examen."
+  - type: "match"
+    instructions: "Empareja cada conector con su significado."
+    pairs:
+      - left: "trotzdem"
+        right: "a pesar de eso"
+      - left: "folglich"
+        right: "por lo tanto"
+      - left: "außerdem"
+        right: "además"
+      - left: "stattdessen"
+        right: "en cambio"
+      - left: "deshalb"
+        right: "por eso"
+  - type: "write"
+    prompt: "Escribe el conector que introduce una consecuencia lógica en: 'Er hat viel gelernt, ___ hat er bestanden.'"
+    answer: "deshalb"
+    accepted: ["Deshalb", "folglich", "Folglich"]
+    hint: "Es sinónimo de 'folglich' y 'daher'."
+  - type: "order"
+    sentence: "Trotzdem ging er spazieren"
+    translation: "A pesar de eso, él salió a pasear."
 ---
 
 En este nivel, ya no basta con conectar ideas con "und" o "aber" — necesitas

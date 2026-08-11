@@ -28,6 +28,38 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'zumal' agrega una razón extra con énfasis: Ich bleibe zu Hause, zumal es regnet (me quedo en casa, sobre todo porque llueve — sugiere que hay más de una razón)."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ es regnete, blieben wir zu Hause."
+    answer: "Da"
+    accepted: ["da"]
+    hint: "'da' introduce una razón que el oyente probablemente ya conoce o puede deducir, y suele ir al principio."
+    translation: "Como llovía, nos quedamos en casa."
+  - type: "fill-blank"
+    sentence: "Ich bleibe zu Hause, ___ ich bin krank."
+    answer: "denn"
+    accepted: ["Denn"]
+    hint: "Este conector coordinante NO manda el verbo al final: orden normal, verbo en segunda posición."
+    translation: "Me quedo en casa, pues estoy enfermo."
+  - type: "match"
+    instructions: "Empareja cada conector causal con su matiz."
+    pairs:
+      - left: "weil"
+        right: "razón neutra, información nueva"
+      - left: "da"
+        right: "razón conocida u obvia para el oyente"
+      - left: "denn"
+        right: "tono hablado, no manda el verbo al final"
+      - left: "zumal"
+        right: "razón adicional enfática"
+  - type: "write"
+    prompt: "Completa con el conector que añade un matiz de énfasis, como 'sobre todo porque': 'Ich bleibe zu Hause, ___ es auch regnet.'"
+    answer: "zumal"
+    accepted: ["Zumal"]
+    hint: "Es el conector que agrega una razón extra e importante."
+  - type: "order"
+    sentence: "Ich bleibe zu Hause denn ich bin krank"
+    translation: "Me quedo en casa, pues estoy enfermo."
 ---
 
 Ya usas "weil" con soltura. En este nivel, descubres que el alemán tiene un menú

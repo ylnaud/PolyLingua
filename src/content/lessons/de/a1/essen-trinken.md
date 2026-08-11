@@ -20,6 +20,40 @@ quiz:
     options: ["der Brot", "die Brot", "das Brot"]
     answerIndex: 2
     explanation: "'das Brot' es neutro. El pan es central en la cultura alemana — vale la pena memorizar bien su artículo."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich ___ einen Kaffee, bitte."
+    answer: "möchte"
+    accepted: ["Möchte"]
+    hint: "Es la forma educada de pedir algo, viene de 'mögen' — mucho más suave que 'Ich will'."
+    translation: "Quisiera un café, por favor."
+  - type: "fill-blank"
+    sentence: "___ Brot schmeckt gut."
+    answer: "Das"
+    accepted: ["das"]
+    hint: "'Brot' es neutro: das Brot."
+    translation: "El pan sabe bien."
+  - type: "match"
+    instructions: "Empareja cada palabra alemana con su traducción."
+    pairs:
+      - left: "Käse"
+        right: "el queso"
+      - left: "Suppe"
+        right: "la sopa"
+      - left: "Milch"
+        right: "la leche"
+      - left: "Saft"
+        right: "el jugo"
+      - left: "Apfel"
+        right: "la manzana"
+  - type: "write"
+    prompt: "Escribe la palabra alemana para 'té'."
+    answer: "Tee"
+    accepted: ["tee"]
+    hint: "Es masculino: der Tee."
+  - type: "order"
+    sentence: "Ich möchte einen Kaffee bitte"
+    translation: "Quisiera un café, por favor."
 ---
 
 Ya sea en un restaurante, un supermercado o la mesa de una familia alemana, este

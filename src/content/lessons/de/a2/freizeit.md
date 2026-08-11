@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'Was machst du in deiner Freizeit?' es la pregunta estándar para hablar de pasatiempos."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich schwimme sehr ___."
+    answer: "gern"
+    accepted: ["gern"]
+    hint: "'gern' va después del verbo conjugado."
+    translation: "Me gusta mucho nadar."
+  - type: "fill-blank"
+    sentence: "Was machst du in ___ Freizeit?"
+    answer: "deiner"
+    accepted: ["deiner"]
+    hint: "Posesivo en Dativ femenino: deiner Freizeit."
+    translation: "¿Qué haces en tu tiempo libre?"
+  - type: "match"
+    instructions: "Empareja cada actividad con su traducción."
+    pairs:
+      - left: "Sport machen"
+        right: "hacer deporte"
+      - left: "Musik hören"
+        right: "escuchar música"
+      - left: "ins Kino gehen"
+        right: "ir al cine"
+      - left: "mit Freunden treffen"
+        right: "quedar con amigos"
+      - left: "eine Pause machen"
+        right: "tomar un descanso"
+  - type: "write"
+    prompt: "Escribe la palabra alemana para 'pasatiempo' (artículo neutro)."
+    answer: "Hobby"
+    accepted: ["hobby", "das Hobby"]
+    hint: "das Hobby, como muchas palabras internacionales."
+  - type: "order"
+    sentence: "Ich gehe gern ins Kino"
+    translation: "Me gusta ir al cine."
 ---
 
 Hablar de tus pasatiempos es una de las conversaciones más naturales para hacer amigos

@@ -20,6 +20,37 @@ quiz:
     options: ["während des Sommers", "wegen des Sommers", "trotz des Sommers"]
     answerIndex: 0
     explanation: "'während' significa 'durante': während des Sommers (durante el verano)."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ des Sommers fahren wir ans Meer."
+    answer: "Während"
+    accepted: ["während"]
+    hint: "'während' + Genitiv significa 'durante'."
+    translation: "Durante el verano vamos al mar."
+  - type: "fill-blank"
+    sentence: "Er blieb zu Hause ___ des schlechten Wetters."
+    answer: "trotz"
+    accepted: ["Trotz"]
+    hint: "'trotz' + Genitiv significa 'a pesar de'."
+    translation: "Se quedó en casa a pesar del mal clima."
+  - type: "match"
+    instructions: "Empareja cada preposición de Genitiv con su significado."
+    pairs:
+      - left: "während"
+        right: "durante"
+      - left: "trotz"
+        right: "a pesar de"
+      - left: "wegen"
+        right: "debido a"
+      - left: "aufgrund"
+        right: "a causa de"
+  - type: "write"
+    prompt: "Escribe la forma formal y correcta con Genitiv de 'wegen' + 'der Regen' (debido a la lluvia)."
+    answer: "wegen des Regens"
+    hint: "La forma formal usa Genitiv (des + -s), no Dativ coloquial (wegen dem Regen)."
+  - type: "order"
+    sentence: "Sie ging trotz des Regens spazieren"
+    translation: "Ella salió a caminar a pesar de la lluvia."
 ---
 
 Estas cuatro preposiciones son la señal más clara de un alemán escrito cuidado y

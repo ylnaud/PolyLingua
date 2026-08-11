@@ -24,6 +24,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Können Sie mir sagen, ob der Zug pünktlich ist?' suena mucho más cortés que la pregunta directa 'Ist der Zug pünktlich?' — un recurso útil en contextos formales."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich frage mich, ___ sie heute kommt."
+    answer: "ob"
+    accepted: ["ob"]
+    hint: "Pregunta indirecta de sí/no → se introduce con 'ob'."
+    translation: "Me pregunto si ella viene hoy."
+  - type: "fill-blank"
+    sentence: "Ich möchte wissen, wo du ___."
+    answer: "wohnst"
+    accepted: ["wohnst"]
+    hint: "El verbo se manda al final en la pregunta indirecta."
+    translation: "Quisiera saber dónde vives."
+  - type: "match"
+    instructions: "Empareja cada pregunta directa con su versión indirecta correcta."
+    pairs:
+      - left: "Kommt sie heute?"
+        right: "Ich weiß nicht, ob sie heute kommt."
+      - left: "Wo wohnst du?"
+        right: "Ich möchte wissen, wo du wohnst."
+      - left: "Ist der Zug pünktlich?"
+        right: "Können Sie mir sagen, ob der Zug pünktlich ist?"
+      - left: "Preguntas de sí/no"
+        right: "se introducen con ob"
+  - type: "write"
+    prompt: "Convierte 'Wann kommt der Zug?' en la parte subordinada de 'Ich möchte wissen, ...' (escribe solo desde 'wann')."
+    answer: "wann der Zug kommt"
+    accepted: ["wann der Zug kommt"]
+    hint: "W-Wort + sujeto + ... + verbo al final."
+  - type: "order"
+    sentence: "Können Sie mir sagen, ob der Zug pünktlich ist"
+    translation: "¿Podría decirme si el tren llega puntual?"
 ---
 
 Las preguntas indirectas son una forma más cortés y natural de preguntar algo,

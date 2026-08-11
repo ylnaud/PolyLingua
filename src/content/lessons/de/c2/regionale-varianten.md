@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El Hochdeutsch (alemán estándar) es tu base sólida para hablar y escribir, pero reconocer las variantes regionales te evita confusiones al viajar o conversar con hablantes de distintas regiones germanófonas."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ sagt man in Österreich sowohl zur Begrüßung als auch zum Abschied."
+    answer: "Servus"
+    accepted: ["servus"]
+    hint: "Saludo informal usado en ambas direcciones en Austria y el sur de Alemania."
+    translation: "Servus se dice en Austria tanto para saludar como para despedirse."
+  - type: "fill-blank"
+    sentence: "In der Schweiz sagt man \"das ___\" statt \"das Fahrrad\"."
+    answer: "Velo"
+    accepted: ["velo"]
+    hint: "Préstamo del francés 'vélo', usado en el Schweizerdeutsch."
+    translation: "En Suiza se dice 'das Velo' en vez de 'das Fahrrad'."
+  - type: "match"
+    instructions: "Empareja cada palabra regional con su equivalente en Hochdeutsch."
+    pairs:
+      - left: "das Velo"
+        right: "das Fahrrad (bicicleta, Suiza)"
+      - left: "die Semmel"
+        right: "das Brötchen (panecillo, Austria)"
+      - left: "das Sackerl"
+        right: "die Tüte (bolsa, Austria)"
+      - left: "das Säckli"
+        right: "die Tüte (bolsa, Suiza)"
+      - left: "Servus"
+        right: "hola / adiós (Austria y sur de Alemania)"
+  - type: "write"
+    prompt: "Escribe el saludo (dos palabras) usado en el sur de Alemania y Austria en vez de 'Hallo'."
+    answer: "Grüß Gott"
+    accepted: ["grüß gott", "Gruess Gott"]
+    hint: "Se usa especialmente en Baviera y Austria."
+  - type: "order"
+    sentence: "Ich bin gestern im Kino gewesen"
+    translation: "Ayer fui al cine (Perfekt, tendencia típica del alemán suizo)."
 ---
 
 El "alemán estándar" que aprendiste en tus lecciones es real y funcional en todas

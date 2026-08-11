@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Aunque suena formal y objetivo, el uso excesivo de Nominalstil produce textos densos y difíciles — muchas guías de estilo alemanas recomiendan moderarlo incluso en textos formales."
+exercises:
+  - type: "fill-blank"
+    sentence: "Nach ___ der Studie wurden die Ergebnisse veröffentlicht."
+    answer: "Durchführung"
+    accepted: ["durchführung"]
+    hint: "Nominalstil de 'nachdem die Studie durchgeführt wurde': el verbo se convierte en el sustantivo 'Durchführung'."
+    translation: "Tras la realización del estudio, se publicaron los resultados."
+  - type: "fill-blank"
+    sentence: "___ seiner Krankheit konnte er nicht kommen."
+    answer: "Wegen"
+    accepted: ["wegen"]
+    hint: "Nominalstil de 'weil er krank war' → 'wegen seiner Krankheit'."
+    translation: "Debido a su enfermedad, no pudo venir."
+  - type: "match"
+    instructions: "Empareja cada oración en Verbalstil con su equivalente en Nominalstil."
+    pairs:
+      - left: "weil er krank war"
+        right: "wegen seiner Krankheit"
+      - left: "nachdem er angekommen war"
+        right: "nach seiner Ankunft"
+      - left: "um das Ziel zu erreichen"
+        right: "zur Erreichung des Ziels"
+      - left: "nachdem die Studie durchgeführt wurde"
+        right: "nach Durchführung der Studie"
+  - type: "write"
+    prompt: "Transforma 'weil er krank war' en Nominalstil, usando el sustantivo 'Krankheit'."
+    answer: "wegen seiner Krankheit"
+    accepted: ["Wegen seiner Krankheit"]
+    hint: "Patrón: verbo → sustantivo + preposición (wegen + Genitiv/Dativ)."
+  - type: "order"
+    sentence: "Nach Durchführung der Studie wurden die Ergebnisse veröffentlicht"
+    translation: "Tras la realización del estudio, se publicaron los resultados."
 ---
 
 Ya viste cómo comprimir una oración relativa en un participio. El Nominalstil lleva esa

@@ -20,6 +20,40 @@ quiz:
     options: ["der Einkommen", "die Einkommen", "das Einkommen"]
     answerIndex: 2
     explanation: "'das Einkommen' es neutro — como muchos sustantivos formados a partir de un infinitivo (de 'einkommen')."
+exercises:
+  - type: "fill-blank"
+    sentence: "Die ___ ist meiner Meinung nach das größte Problem."
+    answer: "Arbeitslosigkeit"
+    accepted: ["arbeitslosigkeit"]
+    hint: "Termina en -keit: el desempleo."
+    translation: "El desempleo es, en mi opinión, el mayor problema."
+  - type: "fill-blank"
+    sentence: "___ und Nachfrage bestimmen den Preis."
+    answer: "Angebot"
+    accepted: ["angebot"]
+    hint: "Su opuesto es die Nachfrage (la demanda)."
+    translation: "La oferta y la demanda determinan el precio."
+  - type: "match"
+    instructions: "Empareja cada palabra en alemán con su traducción."
+    pairs:
+      - left: "die Nachfrage"
+        right: "la demanda"
+      - left: "das Angebot"
+        right: "la oferta"
+      - left: "die Arbeitslosigkeit"
+        right: "el desempleo"
+      - left: "die Steuer"
+        right: "el impuesto"
+      - left: "die Gleichberechtigung"
+        right: "la igualdad de derechos"
+  - type: "write"
+    prompt: "Escribe el artículo correcto (der/die/das) para 'Einkommen' (ingresos)."
+    answer: "das"
+    accepted: ["Das"]
+    hint: "Muchos sustantivos derivados de un infinitivo son neutros."
+  - type: "order"
+    sentence: "Meiner Meinung nach ist die Arbeitslosigkeit das größte Problem"
+    translation: "En mi opinión, el desempleo es el mayor problema."
 ---
 
 Este vocabulario te permite dar el salto de conversaciones cotidianas a discusiones

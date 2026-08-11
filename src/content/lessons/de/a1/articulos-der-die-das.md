@@ -47,6 +47,45 @@ quiz:
     options: ["die, siempre", "depende del género original", "se elimina el artículo"]
     answerIndex: 0
     explanation: "En plural el artículo es SIEMPRE 'die', sin excepción: der Tisch → die Tische, das Mädchen → die Mädchen, die Zeitung → die Zeitungen."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ Mädchen spielt im Garten."
+    answer: "Das"
+    accepted: ["das"]
+    hint: "Termina en -chen: los diminutivos en -chen/-lein son siempre neutros, sin excepción."
+    translation: "La niña juega en el jardín."
+  - type: "fill-blank"
+    sentence: "___ Zeitung liegt auf dem Tisch."
+    answer: "Die"
+    accepted: ["die"]
+    hint: "Terminación -ung: femenina con 98% de certeza."
+    translation: "El periódico está sobre la mesa."
+  - type: "match"
+    instructions: "Empareja cada palabra con su artículo correcto."
+    pairs:
+      - left: "Zeitung"
+        right: "die"
+      - left: "Mädchen"
+        right: "das"
+      - left: "Lehrer"
+        right: "der"
+      - left: "Freiheit"
+        right: "die"
+      - left: "Ergebnis"
+        right: "das"
+  - type: "write"
+    prompt: "Escribe el artículo correcto (der/die/das) para 'Honig' (miel)."
+    answer: "der"
+    accepted: ["Der"]
+    hint: "Terminación -ig: masculina con 98% de certeza."
+  - type: "write"
+    prompt: "Escribe el artículo correcto (der/die/das) para 'Freundschaft' (amistad)."
+    answer: "die"
+    accepted: ["Die"]
+    hint: "Terminación -schaft: femenina con 98% de certeza."
+  - type: "order"
+    sentence: "Der Lehrer trinkt heute Kaffee"
+    translation: "El profesor toma café hoy."
 ---
 
 En español decimos "la mesa" y en alemán... también puede ser "der Tisch", "die Tisch" o

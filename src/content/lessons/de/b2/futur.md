@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "Futur II = werden + participio + haben/sein (al final): Bis morgen werde ich die Arbeit beendet haben (para mañana habré terminado el trabajo)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich ___ morgen nach Berlin fahren."
+    answer: "werde"
+    accepted: ["Werde"]
+    hint: "Futur I = werden conjugado (1ª persona: werde) + infinitivo al final."
+    translation: "Mañana viajaré a Berlín."
+  - type: "fill-blank"
+    sentence: "Er ___ jetzt zu Hause sein."
+    answer: "wird"
+    accepted: ["Wird"]
+    hint: "werden en 3ª persona singular; aquí expresa una suposición sobre el presente, no futuro puro."
+    translation: "Probablemente él está en casa ahora."
+  - type: "match"
+    instructions: "Empareja cada pronombre con su forma conjugada de 'werden'."
+    pairs:
+      - left: "ich"
+        right: "werde"
+      - left: "du"
+        right: "wirst"
+      - left: "er/sie/es"
+        right: "wird"
+      - left: "wir"
+        right: "werden"
+      - left: "ihr"
+        right: "werdet"
+  - type: "write"
+    prompt: "Conjuga 'werden' para 'sie' (plural, ellos): 'Sie ___ morgen ankommen.'"
+    answer: "werden"
+    accepted: ["Werden"]
+    hint: "Es la misma forma que para 'wir'."
+  - type: "order"
+    sentence: "Bis morgen werde ich die Arbeit beendet haben"
+    translation: "Para mañana habré terminado el trabajo."
 ---
 
 El alemán tiene una relación curiosa con el futuro: aunque existe una forma gramatical

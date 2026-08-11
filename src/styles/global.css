@@ -1,8 +1,8 @@
 :root {
-  --bg: #0f1115;
-  --bg-elevated: #171a21;
-  --bg-card: #1c1f28;
-  --border: #2a2e3a;
+  --bg: #07080a;
+  --bg-elevated: #0f1117;
+  --bg-card: #14161e;
+  --border: #262a36;
   --text: #eef0f4;
   --text-muted: #9aa1b1;
   --accent: #ffce3a;
@@ -63,6 +63,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 body {

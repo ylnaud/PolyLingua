@@ -20,6 +20,40 @@ quiz:
     options: ["er spielt", "er spielst", "er spielen"]
     answerIndex: 0
     explanation: "Con 'er/sie/es' la terminación es '-t': er spielt, sie spielt, es spielt."
+exercises:
+  - type: "fill-blank"
+    sentence: "Du ___ das sehr gut."
+    answer: "machst"
+    accepted: ["Machst"]
+    hint: "Con 'du' añadimos '-st' a la raíz del verbo."
+    translation: "Tú lo haces muy bien."
+  - type: "fill-blank"
+    sentence: "Wir ___ Deutsch."
+    answer: "lernen"
+    accepted: ["Lernen"]
+    hint: "Con 'wir' la terminación siempre es '-en'."
+    translation: "Nosotros aprendemos alemán."
+  - type: "match"
+    instructions: "Empareja cada pronombre con la conjugación correcta de 'machen'."
+    pairs:
+      - left: "ich"
+        right: "mache"
+      - left: "du"
+        right: "machst"
+      - left: "er/sie/es"
+        right: "macht"
+      - left: "wir"
+        right: "machen"
+      - left: "ihr"
+        right: "macht"
+  - type: "write"
+    prompt: "Conjuga 'spielen' (jugar) con 'er'."
+    answer: "spielt"
+    accepted: ["Spielt"]
+    hint: "Con er/sie/es la terminación es '-t'."
+  - type: "order"
+    sentence: "Wir lernen Deutsch"
+    translation: "Nosotros aprendemos alemán."
 ---
 
 El presente en alemán es más fácil que en español: solo tienes **un patrón** que se repite

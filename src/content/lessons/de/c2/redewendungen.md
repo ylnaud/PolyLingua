@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "A diferencia de la gramática, que sigue reglas, las expresiones idiomáticas son arbitrarias culturalmente — no hay lógica que las derive, solo exposición y memorización del significado completo."
+exercises:
+  - type: "fill-blank"
+    sentence: "Das ist mir ___."
+    answer: "Wurst"
+    accepted: ["wurst"]
+    hint: "Expresión coloquial que significa 'me da igual', literalmente 'salchicha'."
+    translation: "Eso me da igual."
+  - type: "fill-blank"
+    sentence: "Er hat wohl ___ auf den Augen."
+    answer: "Tomaten"
+    accepted: ["tomaten"]
+    hint: "Expresión idiomática: literalmente 'tener tomates en los ojos', significa no ver lo obvio."
+    translation: "Parece que no ve lo obvio."
+  - type: "match"
+    instructions: "Empareja cada Redewendung con su significado real."
+    pairs:
+      - left: "Das ist mir Wurst"
+        right: "Me da igual"
+      - left: "Ich verstehe nur Bahnhof"
+        right: "No entiendo nada"
+      - left: "Die Katze im Sack kaufen"
+        right: "Comprar algo a ciegas"
+      - left: "Jemandem die Daumen drücken"
+        right: "Desearle suerte"
+      - left: "Ins Gras beißen"
+        right: "Morir (informal)"
+  - type: "write"
+    prompt: "Completa la expresión que significa 'andarse con rodeos': 'Um den heißen ___ reden'."
+    answer: "Brei"
+    accepted: ["brei"]
+    hint: "Literalmente 'hablar alrededor del puré caliente'."
+  - type: "order"
+    sentence: "Ich verstehe nur Bahnhof"
+    translation: "No entiendo absolutamente nada."
 ---
 
 Llegaste al último tramo del idioma: las expresiones que ni la gramática más avanzada ni

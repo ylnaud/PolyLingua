@@ -20,6 +20,40 @@ quiz:
     options: ["Zusammenfassend lässt sich sagen, dass...", "Trotzdem ist es so, dass...", "Vielleicht ist es so, dass..."]
     answerIndex: 0
     explanation: "'Zusammenfassend lässt sich sagen, dass...' (en resumen, se puede decir que...) es una fórmula fija estándar para concluir un texto académico."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ der Studie ist die Hypothese bestätigt worden."
+    answer: "Laut"
+    accepted: ["laut"]
+    hint: "'laut' + Genitiv/Dativ significa 'según'."
+    translation: "Según el estudio, la hipótesis ha sido confirmada."
+  - type: "fill-blank"
+    sentence: "Zusammenfassend lässt sich ___, dass die Ergebnisse eindeutig sind."
+    answer: "sagen"
+    accepted: ["Sagen"]
+    hint: "Fórmula fija para concluir un texto académico: 'Zusammenfassend lässt sich sagen, dass...'."
+    translation: "En resumen, se puede decir que los resultados son claros."
+  - type: "match"
+    instructions: "Empareja cada palabra académica con su significado."
+    pairs:
+      - left: "die Hypothese"
+        right: "la hipótesis"
+      - left: "die Schlussfolgerung"
+        right: "la conclusión"
+      - left: "die Quelle"
+        right: "la fuente"
+      - left: "der Beweis"
+        right: "la prueba"
+      - left: "widerlegen"
+        right: "refutar"
+  - type: "write"
+    prompt: "Escribe el verbo académico que significa 'comprobar/documentar' con pruebas o fuentes."
+    answer: "belegen"
+    accepted: ["Belegen"]
+    hint: "Verbo académico clave relacionado con 'der Beweis'."
+  - type: "order"
+    sentence: "Es lässt sich feststellen dass die Ergebnisse eindeutig sind"
+    translation: "Se puede constatar que los resultados son claros."
 ---
 
 Este vocabulario te permite leer y escribir en el registro que domina tesis, artículos

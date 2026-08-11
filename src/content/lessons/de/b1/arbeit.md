@@ -20,6 +20,40 @@ quiz:
     options: ["der Gehalt", "die Gehalt", "das Gehalt"]
     answerIndex: 2
     explanation: "'das Gehalt' es neutro."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich habe morgen ein ___."
+    answer: "Vorstellungsgespräch"
+    accepted: ["Vorstellungsgespräch"]
+    hint: "La entrevista de trabajo — artículo neutro (das)."
+    translation: "Mañana tengo una entrevista de trabajo."
+  - type: "fill-blank"
+    sentence: "Meine ___ heißt Anna."
+    answer: "Kollegin"
+    accepted: ["Kollegin"]
+    hint: "Colega femenina: der Kollege → die Kollegin."
+    translation: "Mi colega se llama Anna."
+  - type: "match"
+    instructions: "Empareja cada palabra del mundo laboral con su significado."
+    pairs:
+      - left: "die Bewerbung"
+        right: "la solicitud"
+      - left: "der Lebenslauf"
+        right: "el currículum"
+      - left: "das Gehalt"
+        right: "el salario"
+      - left: "die Besprechung"
+        right: "la reunión"
+      - left: "der Vertrag"
+        right: "el contrato"
+  - type: "write"
+    prompt: "Escribe la versión femenina de 'der Arzt' (el médico)."
+    answer: "die Ärztin"
+    accepted: ["Ärztin", "die Ärztin"]
+    hint: "Se añade el sufijo -in a la forma masculina."
+  - type: "order"
+    sentence: "Ich arbeite als Lehrerin in einer Firma"
+    translation: "Trabajo como profesora en una empresa."
 ---
 
 Ya sea para hablar de tu trabajo actual, escribir una solicitud o prepararte para una

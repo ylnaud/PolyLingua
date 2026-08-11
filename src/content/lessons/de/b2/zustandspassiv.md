@@ -24,6 +24,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'wird gekocht' = se está cocinando (proceso). 'ist gekocht' = ya está cocida (resultado/estado final)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Die Tür ___ gerade geöffnet."
+    answer: "wird"
+    accepted: ["Wird"]
+    hint: "Vorgangspassiv: werden + participio describe el proceso en marcha."
+    translation: "La puerta está siendo abierta ahora mismo."
+  - type: "fill-blank"
+    sentence: "Die Tür ___ schon geöffnet."
+    answer: "ist"
+    accepted: ["Ist"]
+    hint: "Zustandspassiv: sein + participio describe el resultado ya terminado."
+    translation: "La puerta ya está abierta."
+  - type: "match"
+    instructions: "Empareja cada frase con lo que describe: el proceso o el resultado."
+    pairs:
+      - left: "Die Tür wird geöffnet."
+        right: "proceso en marcha"
+      - left: "Die Tür ist geöffnet."
+        right: "resultado final"
+      - left: "Der Brief wird geschrieben."
+        right: "se está escribiendo"
+      - left: "Der Brief ist geschrieben."
+        right: "ya está escrita"
+  - type: "write"
+    prompt: "Escribe el auxiliar correcto para el Zustandspassiv en: 'Die Suppe ___ gekocht' (ya está lista)."
+    answer: "ist"
+    accepted: ["Ist"]
+    hint: "El Zustandspassiv usa 'sein', no 'werden'."
+  - type: "order"
+    sentence: "Ab neun Uhr ist das Geschäft geöffnet"
+    translation: "Desde las nueve, la tienda está abierta."
 ---
 
 Ya conoces el Passiv con "werden". Ahora descubres que existe una segunda forma, con

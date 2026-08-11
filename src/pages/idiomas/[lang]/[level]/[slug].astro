@@ -27,6 +27,7 @@ const { lang, level, slug } = Astro.params;
   funFact={lesson.data.funFact}
   minutes={lesson.data.minutes}
   quiz={lesson.data.quiz}
+  exercises={lesson.data.exercises}
   path={`/idiomas/${lang}/${level}/${slug}`}
 >
   <Content />

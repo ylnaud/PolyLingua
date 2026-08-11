@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La condición irreal usa Konjunktiv II en ambas partes: 'hätte' (tener, hipotético) + 'würde reisen' (viajaría). Es la estructura clásica del 'si... entonces...' imaginario."
+exercises:
+  - type: "fill-blank"
+    sentence: "Wenn ich Zeit hätte, ___ ich reisen."
+    answer: "würde"
+    accepted: ["Würde"]
+    hint: "Fórmula universal del Konjunktiv II: würde + infinitivo."
+    translation: "Si tuviera tiempo, viajaría."
+  - type: "fill-blank"
+    sentence: "___ Sie mir bitte helfen?"
+    answer: "Könnten"
+    accepted: ["könnten"]
+    hint: "Forma cortés de Konjunktiv II de 'können', más educada que 'Können Sie'."
+    translation: "¿Podría ayudarme, por favor?"
+  - type: "match"
+    instructions: "Empareja cada verbo con su forma propia de Konjunktiv II."
+    pairs:
+      - left: "sein"
+        right: "wäre"
+      - left: "haben"
+        right: "hätte"
+      - left: "können"
+        right: "könnte"
+      - left: "müssen"
+        right: "müsste"
+      - left: "dürfen"
+        right: "dürfte"
+  - type: "write"
+    prompt: "Escribe la forma de Konjunktiv II de 'haben' para 'ich' (la que reemplaza a 'würde haben')."
+    answer: "hätte"
+    accepted: ["Hätte"]
+    hint: "Es una de las formas propias que suenan más naturales que su versión con 'würde'."
+  - type: "order"
+    sentence: "Ich wünschte ich könnte fliegen"
+    translation: "Ojalá pudiera volar."
 ---
 
 El Konjunktiv II es tu herramienta para hablar de mundos hipotéticos, deseos y — muy

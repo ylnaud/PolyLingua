@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Digga' (colega/tío, muy coloquial) + 'voll' (súper/muy) + 'cringe' (anglicismo) es una frase típica de Jugendsprache actual — totalmente inapropiada en un contexto formal."
+exercises:
+  - type: "fill-blank"
+    sentence: "Digga, das ist ___ cringe."
+    answer: "voll"
+    accepted: ["Voll"]
+    hint: "Intensificador coloquial: significa 'muy/súper'."
+    translation: "Tío, eso es súper vergonzoso."
+  - type: "fill-blank"
+    sentence: "Ich ___ heute Abend zu Hause."
+    answer: "chille"
+    accepted: ["chille"]
+    hint: "Del inglés 'to chill' (relajarse), conjugado en primera persona."
+    translation: "Esta noche me quedo relajando en casa."
+  - type: "match"
+    instructions: "Empareja cada palabra de Jugendsprache con su significado."
+    pairs:
+      - left: "chillen"
+        right: "relajarse"
+      - left: "cringe"
+        right: "vergonzoso/incómodo"
+      - left: "Digga"
+        right: "tío/colega (vocativo informal)"
+      - left: "voll"
+        right: "muy/súper (intensificador)"
+      - left: "Fail"
+        right: "fracaso, error vergonzoso"
+  - type: "write"
+    prompt: "Escribe el anglicismo alemán que significa 'fracaso, error vergonzoso'."
+    answer: "Fail"
+    accepted: ["fail"]
+    hint: "Es un préstamo directo del inglés, muy común en Jugendsprache."
+  - type: "order"
+    sentence: "Digga das ist voll cringe"
+    translation: "Tío, eso es súper vergonzoso."
 ---
 
 Este es el registro más cambiante del alemán: el que hablan los jóvenes entre sí,

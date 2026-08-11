@@ -1,6 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import Quiz from '../components/Quiz.astro';
+import Practice from '../components/Practice.astro';
 import { LEVEL_MAP } from '../data/levels';
 import { LANGUAGE_MAP } from '../data/languages';
 
@@ -20,10 +20,11 @@ interface Props {
   funFact: string;
   minutes: number;
   quiz: QuizQuestion[];
+  exercises?: any[];
   path: string;
 }
 
-const { language, level, title, description, grammarTopic, funFact, minutes, quiz, path } =
+const { language, level, title, description, grammarTopic, funFact, minutes, quiz, exercises = [], path } =
   Astro.props;
 const levelMeta = LEVEL_MAP[level];
 const languageMeta = LANGUAGE_MAP[language];
@@ -105,7 +106,7 @@ const structuredData = {
       <slot />
     </div>
 
-    <Quiz questions={quiz} />
+    <Practice quiz={quiz} exercises={exercises} minutes={minutes} />
 
     <footer class="lesson-nav">
       <a class="btn btn-ghost" href={`/idiomas/${language}/${level}`}>← Volver a {languageMeta.name} {levelMeta.name}</a>

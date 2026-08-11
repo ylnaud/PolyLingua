@@ -20,6 +20,40 @@ quiz:
     options: ["Wo? (¿dónde?)", "Wohin? (¿hacia dónde?)", "Wann? (¿cuándo?)"]
     answerIndex: 1
     explanation: "'Wohin?' (¿hacia dónde?) señala movimiento con destino → Akkusativ. 'Wo?' (¿dónde?) señala posición fija → Dativ."
+exercises:
+  - type: "fill-blank"
+    sentence: "Die Katze springt auf ___ Tisch."
+    answer: "den"
+    accepted: ["den"]
+    hint: "Movimiento con destino (springt) → Akkusativ: den Tisch."
+    translation: "El gato salta sobre la mesa."
+  - type: "fill-blank"
+    sentence: "Die Katze sitzt auf ___ Tisch."
+    answer: "dem"
+    accepted: ["dem"]
+    hint: "Posición fija (sitzt) → Dativ: dem Tisch."
+    translation: "El gato está sentado sobre la mesa."
+  - type: "match"
+    instructions: "Empareja cada verbo con el caso que suele acompañarlo."
+    pairs:
+      - left: "gehen"
+        right: "Akkusativ (movimiento)"
+      - left: "liegen"
+        right: "Dativ (posición)"
+      - left: "springen"
+        right: "Akkusativ (movimiento)"
+      - left: "sitzen"
+        right: "Dativ (posición)"
+      - left: "stellen"
+        right: "Akkusativ (movimiento)"
+  - type: "write"
+    prompt: "Escribe la pregunta alemana que activa el Akkusativ con estas preposiciones (movimiento con destino)."
+    answer: "Wohin"
+    accepted: ["wohin", "Wohin?"]
+    hint: "Wohin? = ¿hacia dónde?"
+  - type: "order"
+    sentence: "Ich gehe in die Küche"
+    translation: "Voy hacia la cocina."
 ---
 
 Estas nueve preposiciones son especiales: no tienen un caso fijo — cambian entre

@@ -20,6 +20,40 @@ quiz:
     options: ["Te recuerdo a ti", "Me acuerdo de ti", "Tú me recuerdas"]
     answerIndex: 1
     explanation: "'sich erinnern an' significa 'acordarse de': Ich erinnere mich an dich = Me acuerdo de ti."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ich freue ___ auf die Ferien."
+    answer: "mich"
+    accepted: ["mich"]
+    hint: "Pronombre reflexivo para 'ich': mich."
+    translation: "Me alegro por las vacaciones."
+  - type: "fill-blank"
+    sentence: "Er erinnert ___ an sie."
+    answer: "sich"
+    accepted: ["sich"]
+    hint: "'sich' se usa para er/sie/es."
+    translation: "Él se acuerda de ella."
+  - type: "match"
+    instructions: "Empareja cada pronombre personal con su pronombre reflexivo."
+    pairs:
+      - left: "ich"
+        right: "mich"
+      - left: "du"
+        right: "dich"
+      - left: "er/sie/es"
+        right: "sich"
+      - left: "wir"
+        right: "uns"
+      - left: "ihr"
+        right: "euch"
+  - type: "write"
+    prompt: "Escribe el pronombre reflexivo correcto para 'wir' (nosotros)."
+    answer: "uns"
+    accepted: ["uns"]
+    hint: "wir → uns, como en 'Wir beeilen uns.'"
+  - type: "order"
+    sentence: "Ich freue mich auf die Ferien"
+    translation: "Me alegro por las vacaciones."
 ---
 
 Algunos verbos alemanes necesitan siempre un pronombre que "regresa" la acción al

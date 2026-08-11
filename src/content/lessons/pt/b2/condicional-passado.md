@@ -32,6 +32,37 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La estructura clásica es: Se + pluscuamperfecto do subjuntivo, + condicional composto — Se eu tivesse sabido, teria ligado."
+exercises:
+  - type: "fill-blank"
+    sentence: "Se eu ___ estudado, teria passado no exame."
+    answer: "tivesse"
+    hint: "Pluscuamperfecto do subjuntivo: tivesse + participio."
+    translation: "Si hubiera estudiado, habría aprobado el examen."
+  - type: "fill-blank"
+    sentence: "Se ela tivesse me avisado, eu não ___ chegado atrasado."
+    answer: "teria"
+    hint: "Condicional compuesto: teria + participio."
+    translation: "Si ella me hubiera avisado, no habría llegado tarde."
+  - type: "match"
+    instructions: "Empareja cada forma verbal con su traducción."
+    pairs:
+      - left: "teria falado"
+        right: "habría hablado"
+      - left: "teria feito"
+        right: "habría hecho"
+      - left: "teria ido"
+        right: "habría ido"
+      - left: "tivesse estudado"
+        right: "hubiera estudiado"
+      - left: "teria passado"
+        right: "habría aprobado"
+  - type: "write"
+    prompt: "Escribe en portugués: 'Habría ayudado, si me lo hubieras pedido.'"
+    answer: "Eu teria ajudado, se você tivesse pedido."
+    hint: "Condicional composto + se + pluscuamperfeito do subjuntivo."
+  - type: "order"
+    sentence: "Se nós tivéssemos mais tempo teríamos visitado o museu"
+    translation: "Si hubiéramos tenido más tiempo, habríamos visitado el museo."
 ---
 
 El condicional compuesto expresa lo que habría pasado bajo una condición que, en

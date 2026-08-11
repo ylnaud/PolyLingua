@@ -20,6 +20,37 @@ quiz:
     options: ["sustentabilidad", "sustancia", "sustento económico"]
     answerIndex: 0
     explanation: "'sustentabilidade' es un cognado directo de 'sustentabilidad' — el uso responsable de recursos para el futuro."
+exercises:
+  - type: "fill-blank"
+    sentence: "É urgente reduzir as emissões de ___."
+    answer: "carbono"
+    hint: "Vocabulario ambiental esencial."
+    translation: "Es urgente reducir las emisiones de carbono."
+  - type: "fill-blank"
+    sentence: "O ___ na Amazônia preocupa cientistas do mundo todo."
+    answer: "desmatamento"
+    hint: "Significa 'deforestación'."
+    translation: "La deforestación en la Amazonía preocupa a científicos de todo el mundo."
+  - type: "match"
+    instructions: "Empareja cada término ambiental con su traducción."
+    pairs:
+      - left: "o meio ambiente"
+        right: "el medio ambiente"
+      - left: "a mudança climática"
+        right: "el cambio climático"
+      - left: "o desmatamento"
+        right: "la deforestación"
+      - left: "a poluição"
+        right: "la contaminación"
+      - left: "a sustentabilidade"
+        right: "la sustentabilidad"
+  - type: "write"
+    prompt: "Escribe en portugués: 'Necesitamos invertir en energías renovables.'"
+    answer: "Precisamos investir em energias renováveis."
+    hint: "'as energias renováveis' = las energías renovables."
+  - type: "order"
+    sentence: "A mudança climática já afeta o planeta inteiro"
+    translation: "El cambio climático ya afecta a todo el planeta."
 ---
 
 El vocabulario ambiental es cada vez más relevante en cualquier idioma — y en

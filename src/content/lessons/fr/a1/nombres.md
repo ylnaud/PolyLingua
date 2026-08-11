@@ -20,6 +20,40 @@ quiz:
     options: ["quatre-vingt-quinze", "neuf-vingt-cinq", "quatre-vingt-cinq-dix"]
     answerIndex: 0
     explanation: "95 = quatre-vingt (80) + quinze (15) = quatre-vingt-quinze. Sigue combinando 80 con el resto hasta llegar a 99."
+exercises:
+  - type: "fill-blank"
+    sentence: "70 se dice ___-dix en francés estándar."
+    answer: "soixante"
+    accepted: ["soixante"]
+    hint: "Literalmente 'sesenta-diez'."
+    translation: "setenta"
+  - type: "fill-blank"
+    sentence: "80 se dice quatre-___ en francés estándar."
+    answer: "vingts"
+    accepted: ["vingts", "vingt"]
+    hint: "Literalmente 'cuatro-veintes' (4×20)."
+    translation: "ochenta"
+  - type: "match"
+    instructions: "Empareja cada número con su palabra en francés."
+    pairs:
+      - left: "70"
+        right: "soixante-dix"
+      - left: "80"
+        right: "quatre-vingts"
+      - left: "90"
+        right: "quatre-vingt-dix"
+      - left: "100"
+        right: "cent"
+      - left: "1000"
+        right: "mille"
+  - type: "write"
+    prompt: "Escribe cómo se dice '95' en francés."
+    answer: "quatre-vingt-quinze"
+    accepted: ["Quatre-vingt-quinze"]
+    hint: "95 = quatre-vingt (80) + quinze (15)."
+  - type: "order"
+    sentence: "Il a quatre-vingt-quinze ans"
+    translation: "Él tiene noventa y cinco años."
 ---
 
 Los números franceses tienen una peculiaridad que sorprende a todo principiante: del 70

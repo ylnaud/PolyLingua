@@ -32,6 +32,36 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'She was sad' (tell) declara el estado directamente. 'Her hands trembled as she read the letter' (show) demuestra la emoción a través de una imagen concreta, sin nombrarla."
+exercises:
+  - type: "fill-blank"
+    sentence: "\"Don't go,\" he ___."
+    answer: "pleaded"
+    accepted: ["begged"]
+    hint: "Verbo de habla más expresivo que 'said', usado en la lección junto a 'declared'."
+    translation: "—No te vayas —suplicó."
+  - type: "fill-blank"
+    sentence: "Her hands ___ as she reached for the door."
+    answer: "trembled"
+    accepted: ["shook"]
+    hint: "'Show, don't tell': en vez de decir 'she was nervous', se muestra con este verbo."
+    translation: "Le temblaban las manos mientras alcanzaba la puerta."
+  - type: "match"
+    instructions: "Empareja el recurso literario con su ejemplo."
+    pairs:
+      - left: "Personification"
+        right: "The wind whispered through the trees."
+      - left: "Sensory imagery"
+        right: "The bread smelled of warm cinnamon and childhood."
+      - left: "Repetition for rhythm"
+        right: "She waited. She waited. She waited still."
+  - type: "write"
+    prompt: "Escribe el verbo de habla usado en la lección en vez de 'said' cuando alguien afirma algo con firmeza ('I'm leaving,' she ___)."
+    answer: "declared"
+    accepted: ["Declared"]
+    hint: "Aparece en el ejemplo contrastado con 'pleaded'."
+  - type: "order"
+    sentence: "Dust motes drifted through the single beam of afternoon light"
+    translation: "Las motas de polvo flotaban a través del único haz de luz de la tarde."
 ---
 
 Llegaste al registro más elevado y expresivo del inglés: el de la prosa literaria,

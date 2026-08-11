@@ -20,6 +20,38 @@ quiz:
     options: ["além disso", "no entanto", "por outro lado"]
     answerIndex: 0
     explanation: "'além disso' (además de eso) suma información nueva a favor del mismo argumento, sin contraste — a diferencia de 'no entanto' o 'por outro lado', que sí contrastan."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ele estudou muito; ___, não passou no exame."
+    answer: "no entanto"
+    accepted: ["No entanto"]
+    hint: "Introduce un contraste, equivalente a 'sin embargo'."
+    translation: "Estudió mucho; sin embargo, no aprobó el examen."
+  - type: "fill-blank"
+    sentence: "___ da chuva, saímos para caminhar."
+    answer: "Apesar"
+    hint: "'apesar de' + sustantivo introduce una concesión."
+    translation: "A pesar de la lluvia, salimos a caminar."
+  - type: "match"
+    instructions: "Empareja cada conector con su significado en español."
+    pairs:
+      - left: "no entanto"
+        right: "sin embargo"
+      - left: "apesar de"
+        right: "a pesar de"
+      - left: "além disso"
+        right: "además"
+      - left: "embora"
+        right: "aunque"
+      - left: "por outro lado"
+        right: "por otro lado"
+  - type: "write"
+    prompt: "Escribe en portugués: 'El proyecto es caro. Además, va a tardar meses.'"
+    answer: "O projeto é caro. Além disso, vai demorar meses."
+    hint: "'além disso' suma información sin contraste."
+  - type: "order"
+    sentence: "Embora ele seja jovem tem muita experiência"
+    translation: "Aunque él es joven, tiene mucha experiencia."
 ---
 
 Los conectores lógicos son las bisagras que permiten construir argumentos elaborados,

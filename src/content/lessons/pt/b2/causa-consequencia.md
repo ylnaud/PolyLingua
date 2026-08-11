@@ -24,6 +24,38 @@ quiz:
     options: ["Devido à chuva, cancelamos o evento", "Porque a chuva, cancelamos o evento", "Chuva, então cancelamos"]
     answerIndex: 0
     explanation: "'devido a' + sustantivo es la forma correcta para 'debido a' — Devido à chuva, cancelamos o evento."
+exercises:
+  - type: "fill-blank"
+    sentence: "Não fomos à praia ___ choveu."
+    answer: "porque"
+    hint: "Causa nueva, neutral — la opción por defecto."
+    translation: "No fuimos a la playa porque llovió."
+  - type: "fill-blank"
+    sentence: "___ você está aqui, pode me ajudar?"
+    answer: "Já que"
+    accepted: ["já que"]
+    hint: "Introduce una causa que el oyente ya conoce o asume, no información nueva."
+    translation: "Ya que estás aquí, ¿puedes ayudarme?"
+  - type: "match"
+    instructions: "Empareja cada conector portugués con su significado en español."
+    pairs:
+      - left: "porque"
+        right: "porque (causa nueva)"
+      - left: "já que"
+        right: "ya que (causa conocida)"
+      - left: "portanto"
+        right: "por lo tanto"
+      - left: "por isso"
+        right: "por eso"
+      - left: "devido a"
+        right: "debido a"
+  - type: "write"
+    prompt: "Escribe en portugués: 'Debido a la lluvia, cancelamos el evento.'"
+    answer: "Devido à chuva, cancelamos o evento."
+    hint: "'devido a' + sustantivo, causa formal."
+  - type: "order"
+    sentence: "Estudei muito portanto passei no exame"
+    translation: "Estudié mucho, por lo tanto aprobé el examen."
 ---
 
 Conectar causas y consecuencias con precisión es una marca clara de fluidez —

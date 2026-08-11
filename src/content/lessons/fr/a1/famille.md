@@ -20,6 +20,40 @@ quiz:
     options: ["le enfant siempre", "la enfant siempre", "l'enfant (depende del sexo real)"]
     answerIndex: 2
     explanation: "'enfant' empieza con vocal, así que el artículo se convierte en 'l'' — pero el género (le/la) depende del sexo real de la persona: l'enfant (m. o f.)."
+exercises:
+  - type: "fill-blank"
+    sentence: "J'ai deux ___ et une sœur."
+    answer: "frères"
+    accepted: ["frères", "freres"]
+    hint: "Plural masculino de 'frère' (hermano)."
+    translation: "Tengo dos hermanos y una hermana."
+  - type: "fill-blank"
+    sentence: "Ma ___ s'appelle Anne."
+    answer: "mère"
+    accepted: ["mère", "mere"]
+    hint: "La madre — femenino, sin excepción."
+    translation: "Mi madre se llama Anne."
+  - type: "match"
+    instructions: "Empareja cada palabra en francés con su traducción."
+    pairs:
+      - left: "le père"
+        right: "el padre"
+      - left: "la mère"
+        right: "la madre"
+      - left: "le frère"
+        right: "el hermano"
+      - left: "la sœur"
+        right: "la hermana"
+      - left: "le grand-père"
+        right: "el abuelo"
+  - type: "write"
+    prompt: "Escribe cómo se dice 'la tía' en francés, con su artículo."
+    answer: "la tante"
+    accepted: ["la tante"]
+    hint: "Termina en -e, como la mayoría de sustantivos femeninos."
+  - type: "order"
+    sentence: "Mon frère a vingt ans"
+    translation: "Mi hermano tiene veinte años."
 ---
 
 Presentar a tu familia es una de las primeras conversaciones reales en francés. Aquí

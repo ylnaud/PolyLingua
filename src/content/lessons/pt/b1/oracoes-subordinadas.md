@@ -20,6 +20,40 @@ quiz:
     options: ["quando (cuando)", "embora (aunque)", "para que (para que)"]
     answerIndex: 0
     explanation: "'quando' se usa con indicativo en afirmaciones sobre hábitos o hechos: Quando chove, fico em casa. En cambio 'embora' y 'para que' exigen subjuntivo porque expresan contraste o finalidad."
+exercises:
+  - type: "fill-blank"
+    sentence: "Fico em casa ___ estou doente."
+    answer: "porque"
+    accepted: ["Porque"]
+    hint: "'porque' introduce una causa directa y no exige subjuntivo."
+    translation: "Me quedo en casa porque estoy enfermo."
+  - type: "fill-blank"
+    sentence: "Embora ___ cansado, ele continua trabalhando."
+    answer: "esteja"
+    accepted: []
+    hint: "'embora' siempre exige subjuntivo: subjuntivo de estar para ele/ela es 'esteja'."
+    translation: "Aunque esté cansado, él sigue trabajando."
+  - type: "match"
+    instructions: "Empareja cada conjunción con el modo verbal que exige."
+    pairs:
+      - left: "porque"
+        right: "indicativo"
+      - left: "quando"
+        right: "indicativo"
+      - left: "embora"
+        right: "subjuntivo"
+      - left: "para que"
+        right: "subjuntivo"
+      - left: "antes que"
+        right: "subjuntivo"
+  - type: "write"
+    prompt: "Escribe en portugués, usando subjuntivo: 'Aunque sea rico, es infeliz.'"
+    answer: "Embora seja rico, é infeliz."
+    accepted: []
+    hint: "embora + subjuntivo de ser (seja)."
+  - type: "order"
+    sentence: "Falo devagar para que você entenda"
+    translation: "Hablo despacio para que entiendas."
 ---
 
 En este nivel empiezas a construir frases más ricas: causa, contraste, tiempo. Buena

@@ -24,6 +24,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La doble negación con 'não' repetido al final es un rasgo muy vivo del portugués hablado brasileño coloquial, pero no se usa en registro formal o escrito."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu ___ falo português."
+    answer: "não"
+    accepted: ["Não"]
+    hint: "'não' va antes del verbo conjugado."
+    translation: "No hablo portugués."
+  - type: "fill-blank"
+    sentence: "___ sabe a resposta."
+    answer: "Ninguém"
+    accepted: ["ninguém", "ninguem"]
+    hint: "Palabra negativa que significa 'nadie'."
+    translation: "Nadie sabe la respuesta."
+  - type: "match"
+    instructions: "Empareja cada palabra negativa con su significado."
+    pairs:
+      - left: "nunca"
+        right: "nunca"
+      - left: "nada"
+        right: "nada"
+      - left: "ninguém"
+        right: "nadie"
+      - left: "nenhum"
+        right: "ninguno"
+  - type: "write"
+    prompt: "Escribe en portugués cómo dirías 'No tengo nada'."
+    answer: "Não tenho nada"
+    accepted: ["não tenho nada"]
+    hint: "não + verbo + nada."
+  - type: "order"
+    sentence: "Ela não gosta de café"
+    translation: "A ella no le gusta el café."
 ---
 
 Negar una oración en portugués es, en la mayoría de los casos, más simple que en

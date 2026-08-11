@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El portugués hablado en países africanos lusófonos incorpora préstamos e influencias de lenguas bantúes locales, dando lugar a variantes con identidad propia, distintas tanto del portugués europeo como del brasileño."
+exercises:
+  - type: "fill-blank"
+    sentence: "Em Portugal, 'ônibus' se diz ___."
+    answer: "autocarro"
+    accepted: ["Autocarro"]
+    hint: "Es el término europeo para 'autobús'."
+    translation: "En Portugal, 'ônibus' se dice 'autocarro'."
+  - type: "fill-blank"
+    sentence: "Em Portugal, 'celular' se diz ___."
+    answer: "telemóvel"
+    accepted: ["Telemóvel"]
+    hint: "Es el término europeo para 'teléfono móvil'."
+    translation: "En Portugal, 'celular' se dice 'telemóvel'."
+  - type: "match"
+    instructions: "Empareja cada palabra brasileña con su equivalente en el portugués de Portugal."
+    pairs:
+      - left: "ônibus"
+        right: "autocarro"
+      - left: "trem"
+        right: "comboio"
+      - left: "celular"
+        right: "telemóvel"
+      - left: "geladeira"
+        right: "frigorífico"
+      - left: "banheiro"
+        right: "casa de banho"
+  - type: "write"
+    prompt: "Escribe cómo se dice 'tren' en el portugués de Portugal (no en Brasil)."
+    answer: "comboio"
+    accepted: ["o comboio"]
+    hint: "En Brasil se dice 'trem'."
+  - type: "order"
+    sentence: "O português é falado em nove países"
+    translation: "El portugués se habla en nueve países."
 ---
 
 El portugués estándar que dominas te abre las puertas a nueve países en cuatro

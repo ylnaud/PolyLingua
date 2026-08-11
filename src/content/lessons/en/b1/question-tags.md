@@ -20,6 +20,40 @@ quiz:
     options: ["haven't they", "didn't they", "weren't they"]
     answerIndex: 1
     explanation: "Cuando el verbo principal no tiene auxiliar visible (pasado simple regular), el tag usa 'did/didn't' para representar ese tiempo: They went home, didn't they?"
+exercises:
+  - type: "fill-blank"
+    sentence: "You like coffee, ___?"
+    answer: "don't you"
+    accepted: ["don't you"]
+    hint: "Frase afirmativa → tag negativo con 'do/don't'."
+    translation: "Te gusta el café, ¿verdad?"
+  - type: "fill-blank"
+    sentence: "She isn't coming, ___?"
+    answer: "is she"
+    accepted: ["is she"]
+    hint: "Frase negativa → tag afirmativo."
+    translation: "Ella no viene, ¿verdad?"
+  - type: "match"
+    instructions: "Empareja cada frase con su question tag correcto."
+    pairs:
+      - left: "You're tired"
+        right: "aren't you?"
+      - left: "She can drive"
+        right: "can't she?"
+      - left: "They went home"
+        right: "didn't they?"
+      - left: "You don't smoke"
+        right: "do you?"
+      - left: "It's cold today"
+        right: "isn't it?"
+  - type: "write"
+    prompt: "Escribe en inglés con question tag: 'Ellos vinieron a la fiesta, ¿verdad?'"
+    answer: "They came to the party, didn't they?"
+    accepted: ["They came to the party, didn't they"]
+    hint: "Frase afirmativa en pasado simple → tag con 'didn't'."
+  - type: "order"
+    sentence: "You can swim can't you"
+    translation: "Sabes nadar, ¿verdad?"
 ---
 
 Los question tags son esas pequeñas preguntas al final de una frase que buscan

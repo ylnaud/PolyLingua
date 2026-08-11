@@ -24,6 +24,37 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'one' sustituye al sustantivo contable ya mencionado (phone), evitando la repetición: I need a new one."
+exercises:
+  - type: "fill-blank"
+    sentence: "I think ___."
+    answer: "so"
+    hint: "Alguien pregunta si lloverá; respondes afirmativamente sustituyendo toda la idea con una sola palabra."
+    translation: "Creo que sí."
+  - type: "fill-blank"
+    sentence: "Neither ___ I."
+    answer: "do"
+    hint: "Alguien dice que no le gusta el café; expresas acuerdo negativo — el auxiliar concuerda con el verbo principal like."
+    translation: "Yo tampoco."
+  - type: "match"
+    instructions: "Empareja cada palabra o estructura de sustitución con su función."
+    pairs:
+      - left: "so"
+        right: "sustituye una idea afirmativa completa"
+      - left: "neither"
+        right: "expresa acuerdo con una idea negativa"
+      - left: "one / ones"
+        right: "sustituye un sustantivo contable ya mencionado"
+      - left: "do so"
+        right: "sustituye una acción completa"
+      - left: "elipsis"
+        right: "omitir una parte que ya se entiende por contexto"
+  - type: "write"
+    prompt: "Traduce usando sustitución con one: Estos zapatos son bonitos, pero prefiero los negros."
+    answer: "These shoes are nice, but I prefer the black ones."
+    hint: "Sustituye el sustantivo repetido (shoes) con ones."
+  - type: "order"
+    sentence: "He asked me to leave and I did so immediately"
+    translation: "Me pidió que me fuera y lo hice de inmediato."
 ---
 
 Este es uno de los rasgos más sutiles de un inglés verdaderamente fluido: evitar

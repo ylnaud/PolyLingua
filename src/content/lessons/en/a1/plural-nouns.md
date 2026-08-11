@@ -20,6 +20,40 @@ quiz:
     options: ["childs", "childes", "children"]
     answerIndex: 2
     explanation: "'child' es irregular: su plural es 'children', totalmente distinto a la raíz. Hay que memorizarlo como excepción."
+exercises:
+  - type: "fill-blank"
+    sentence: "I have three ___."
+    answer: "boxes"
+    accepted: ["Boxes"]
+    hint: "'box' termina en -x, así que añade '-es' en vez de solo '-s'."
+    translation: "Tengo tres cajas."
+  - type: "fill-blank"
+    sentence: "There are five ___ in my family."
+    answer: "children"
+    accepted: ["Children"]
+    hint: "Plural irregular de 'child' — hay que memorizarlo aparte."
+    translation: "Hay cinco niños en mi familia."
+  - type: "match"
+    instructions: "Empareja cada sustantivo singular con su plural."
+    pairs:
+      - left: "child"
+        right: "children"
+      - left: "man"
+        right: "men"
+      - left: "foot"
+        right: "feet"
+      - left: "city"
+        right: "cities"
+      - left: "sheep"
+        right: "sheep"
+  - type: "write"
+    prompt: "Escribe el plural de 'tooth' (diente)."
+    answer: "teeth"
+    accepted: ["Teeth"]
+    hint: "Es un plural irregular, como 'foot' → 'feet'."
+  - type: "order"
+    sentence: "The children have two books"
+    translation: "Los niños tienen dos libros."
 ---
 
 La mayoría de los sustantivos en inglés forman su plural de forma simple y predecible

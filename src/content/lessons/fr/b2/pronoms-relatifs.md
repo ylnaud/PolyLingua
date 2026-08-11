@@ -20,6 +20,37 @@ quiz:
     options: ["que", "où", "dont"]
     answerIndex: 2
     explanation: "'de ce sujet' usa la preposición 'de', así que se reemplaza con 'dont': C'est un sujet dont je parle souvent (del que hablo a menudo)."
+exercises:
+  - type: "fill-blank"
+    sentence: "La femme ___ parle est ma sœur."
+    answer: "qui"
+    accepted: ["qui"]
+    hint: "'cette femme' es el sujeto de 'parle'."
+    translation: "La mujer que habla es mi hermana."
+  - type: "fill-blank"
+    sentence: "Le film ___ j'ai vu était super."
+    answer: "que"
+    accepted: ["que"]
+    hint: "'ce film' es el objeto directo de 'j'ai vu'."
+    translation: "La película que vi era genial."
+  - type: "match"
+    instructions: "Empareja cada pronombre relativo con la función que cumple."
+    pairs:
+      - left: "qui"
+        right: "reemplaza el sujeto"
+      - left: "que"
+        right: "reemplaza el objeto directo"
+      - left: "dont"
+        right: "reemplaza algo introducido por 'de'"
+      - left: "où"
+        right: "reemplaza un lugar o tiempo"
+  - type: "write"
+    prompt: "Traduce: 'Este es el libro del que hablo.'"
+    answer: "C'est le livre dont je parle."
+    hint: "'parler de' activa 'dont' en vez de 'que'."
+  - type: "order"
+    sentence: "Voici la maison où j'ai grandi"
+    translation: "Esta es la casa donde crecí."
 ---
 
 Los pronombres relativos son la herramienta que separa el francés de principiante ("J'ai

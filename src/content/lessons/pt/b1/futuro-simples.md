@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "La mesóclise inserta el pronombre entre la raíz y la terminación del futuro (o condicional), una estructura muy formal y hoy poco usada en el habla."
+exercises:
+  - type: "fill-blank"
+    sentence: "O governo ___ novas medidas amanhã."
+    answer: "anunciará"
+    accepted: ["Anunciará"]
+    hint: "anunciar + á = anunciará (futuro simples, 3ª persona)."
+    translation: "El gobierno anunciará nuevas medidas mañana."
+  - type: "fill-blank"
+    sentence: "Eu ___ com ela."
+    answer: "falarei"
+    accepted: ["Falarei"]
+    hint: "falar + ei = falarei."
+    translation: "Hablaré con ella."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su forma de futuro simples (eu)."
+    pairs:
+      - left: "fazer"
+        right: "farei"
+      - left: "dizer"
+        right: "direi"
+      - left: "trazer"
+        right: "trarei"
+      - left: "falar"
+        right: "falarei"
+      - left: "partir"
+        right: "partirei"
+  - type: "write"
+    prompt: "Escribe en portugués, en futuro simples: 'Este proyecto cambiará el futuro de la ciudad.'"
+    answer: "Este projeto mudará o futuro da cidade."
+    accepted: []
+    hint: "mudar + á = mudará."
+  - type: "order"
+    sentence: "Dar-lhe-ei o livro amanhã"
+    translation: "Le daré el libro mañana."
 ---
 
 El futuro simple morfológico es el registro más formal para hablar del futuro en

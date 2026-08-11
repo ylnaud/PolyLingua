@@ -20,6 +20,40 @@ quiz:
     options: ["in 3 o'clock", "on 3 o'clock", "at 3 o'clock"]
     answerIndex: 2
     explanation: "'at' se usa para horas exactas y puntos específicos: at 3 o'clock, at noon."
+exercises:
+  - type: "fill-blank"
+    sentence: "I was born ___ 1995."
+    answer: "in"
+    accepted: ["In"]
+    hint: "Se usa para años, meses y periodos largos."
+    translation: "Nací en 1995."
+  - type: "fill-blank"
+    sentence: "The meeting is ___ Monday."
+    answer: "on"
+    accepted: ["On"]
+    hint: "Se usa para días y fechas específicas."
+    translation: "La reunión es el lunes."
+  - type: "match"
+    instructions: "Empareja cada expresión con la preposición que le corresponde."
+    pairs:
+      - left: "in 2024"
+        right: "in"
+      - left: "on Monday"
+        right: "on"
+      - left: "at 3pm"
+        right: "at"
+      - left: "at night"
+        right: "at"
+      - left: "on Main Street"
+        right: "on"
+  - type: "write"
+    prompt: "Escribe cómo dirías 'a las 3 en punto' usando la preposición correcta."
+    answer: "at 3 o'clock"
+    accepted: ["at 3 oclock"]
+    hint: "Las horas exactas usan 'at'."
+  - type: "order"
+    sentence: "The meeting is on Monday"
+    translation: "La reunión es el lunes."
 ---
 
 Estas tres preposiciones causan confusión constante porque en español muchas veces se

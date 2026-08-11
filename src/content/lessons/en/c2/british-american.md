@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Ambas son gramaticalmente correctas en su variante — es una diferencia de preferencia regional consolidada, no un error."
+exercises:
+  - type: "fill-blank"
+    sentence: "In British English, an apartment is called a ___."
+    answer: "flat"
+    accepted: ["Flat"]
+    hint: "Es la palabra británica estándar; en americano se dice 'apartment'."
+    translation: "En inglés británico, un apartamento se llama 'flat'."
+  - type: "fill-blank"
+    sentence: "The American spelling of 'colour' is ___."
+    answer: "color"
+    accepted: ["Color"]
+    hint: "El americano simplifica -our a -or."
+    translation: "La ortografía americana de 'colour' es 'color'."
+  - type: "match"
+    instructions: "Empareja la palabra británica con su equivalente americano."
+    pairs:
+      - left: "flat"
+        right: "apartment"
+      - left: "lift"
+        right: "elevator"
+      - left: "rubbish"
+        right: "trash/garbage"
+      - left: "autumn"
+        right: "fall"
+      - left: "petrol"
+        right: "gas/gasoline"
+  - type: "write"
+    prompt: "Escribe la palabra americana para 'biscuit' (galleta, en inglés británico)."
+    answer: "cookie"
+    accepted: ["Cookie"]
+    hint: "Es la palabra que verías en un paquete de galletas en Estados Unidos."
+  - type: "order"
+    sentence: "Have you got a pen"
+    translation: "¿Tienes un bolígrafo? (versión británica; en americano: Do you have a pen?)"
 ---
 
 El inglés que aprendiste en PolyLingua funciona en cualquier país angloparlante, pero

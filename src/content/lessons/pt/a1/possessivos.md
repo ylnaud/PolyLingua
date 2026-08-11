@@ -24,6 +24,36 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'seu/sua' cubre múltiples poseedores posibles (tu, su de usted, de él, de ella) — el contexto o una aclaración con 'dele/dela' resuelve la ambigüedad."
+exercises:
+  - type: "fill-blank"
+    sentence: "A ___ irmã mora com os pais dela."
+    answer: "minha"
+    hint: "Posesivo femenino de 'eu' (yo)."
+    translation: "Mi hermana vive con sus padres (de ella)."
+  - type: "fill-blank"
+    sentence: "O carro ___, sem ambiguidade."
+    answer: "dele"
+    hint: "Forma que aclara que el poseedor es 'él', evitando la ambigüedad de 'seu'."
+    translation: "El coche de él, sin ambigüedad."
+  - type: "match"
+    instructions: "Empareja cada posesivo con su poseedor."
+    pairs:
+      - left: "meu"
+        right: "eu"
+      - left: "teu"
+        right: "tu"
+      - left: "seu"
+        right: "você/ele/ela"
+      - left: "nosso"
+        right: "nós"
+  - type: "write"
+    prompt: "Escribe en portugués (forma de Portugal, con artículo) cómo dirías 'mi coche'."
+    answer: "o meu carro"
+    accepted: ["O meu carro"]
+    hint: "En Portugal se usa el artículo antes del posesivo."
+  - type: "order"
+    sentence: "A minha casa é grande"
+    translation: "Mi casa es grande."
 ---
 
 Los posesivos portugueses concuerdan con el objeto poseído, no con el poseedor — igual

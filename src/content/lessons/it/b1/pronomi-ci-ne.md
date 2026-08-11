@@ -20,6 +20,40 @@ quiz:
     options: ["ne", "ci", "lo"]
     answerIndex: 1
     explanation: "'pensare a' usa la preposición 'a', así que se reemplaza con 'ci': Ci penso (pienso en eso)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Vado a Roma. → ___ vado."
+    answer: "Ci"
+    accepted: ["ci"]
+    hint: "'ci' reemplaza un lugar introducido por 'a'."
+    translation: "Voy a Roma. → Voy allí."
+  - type: "fill-blank"
+    sentence: "Ho tre libri. → ___ ho tre."
+    answer: "Ne"
+    accepted: ["ne"]
+    hint: "'ne' reemplaza una cantidad + sustantivo."
+    translation: "Tengo tres libros. → Tengo tres de ellos."
+  - type: "match"
+    instructions: "Empareja cada frase en italiano con su traducción."
+    pairs:
+      - left: "Ci vado"
+        right: "Voy allí"
+      - left: "Ci penso"
+        right: "Pienso en eso"
+      - left: "Ne ho tre"
+        right: "Tengo tres de ellos"
+      - left: "Ne parlo"
+        right: "Hablo de eso"
+      - left: "Ne vengo"
+        right: "Vengo de allí"
+  - type: "write"
+    prompt: "Escribe en italiano 'hay tres de ellos', combinando 'ci' + 'ne' (se convierte en 'ce ne')."
+    answer: "Ce ne sono tre"
+    accepted: ["ce ne sono tre"]
+    hint: "'ci' se convierte en 'ce' cuando va antes de 'ne'."
+  - type: "order"
+    sentence: "Non ci vado"
+    translation: "No voy allí."
 ---
 
 Estos dos pronombres pequeños son extremadamente frecuentes en italiano hablado —

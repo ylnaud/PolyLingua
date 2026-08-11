@@ -20,6 +20,40 @@ quiz:
     options: ["en cuanto / tan pronto como", "aunque", "a pesar de que"]
     answerIndex: 0
     explanation: "'assim que' indica inmediatez temporal: Assim que ela chegar, começamos (En cuanto ella llegue, empezamos)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Quando eu ___, te aviso."
+    answer: "chegar"
+    accepted: []
+    hint: "Evento futuro todavía no realizado: se usa futuro do subjuntivo, no presente."
+    translation: "Cuando llegue, te aviso."
+  - type: "fill-blank"
+    sentence: "___ eu cozinho, você pode arrumar a mesa."
+    answer: "Enquanto"
+    accepted: ["enquanto"]
+    hint: "Expresa simultaneidad: mientras."
+    translation: "Mientras yo cocino, tú puedes poner la mesa."
+  - type: "match"
+    instructions: "Empareja cada conjunción portuguesa con su significado en español."
+    pairs:
+      - left: "quando"
+        right: "cuando"
+      - left: "enquanto"
+        right: "mientras"
+      - left: "assim que"
+        right: "en cuanto"
+      - left: "depois que"
+        right: "después de que"
+      - left: "até que"
+        right: "hasta que"
+  - type: "write"
+    prompt: "Escribe en portugués, usando futuro do subjuntivo: 'En cuanto ella sepa, llama.'"
+    answer: "Assim que ela souber, ela liga."
+    accepted: []
+    hint: "assim que + futuro do subjuntivo de saber (souber)."
+  - type: "order"
+    sentence: "Quando eu chego em casa ligo a TV"
+    translation: "Cuando llego a casa, prendo la tele."
 ---
 
 Las conjunciones temporales conectan eventos en el tiempo — y el portugués tiene una

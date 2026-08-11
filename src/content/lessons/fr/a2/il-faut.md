@@ -20,6 +20,39 @@ quiz:
     options: ["pars", "partes", "partir"]
     answerIndex: 1
     explanation: "'il faut que' + sujeto específico exige subjonctif: Il faut que tu partes (tienes que irte). Sin 'que' + sujeto, se usa infinitivo: il faut partir."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ manger pour vivre."
+    answer: "Il faut"
+    hint: "Obligación general sin sujeto específico: il faut + infinitivo."
+    translation: "Hay que comer para vivir."
+  - type: "fill-blank"
+    sentence: "Il faut que tu ___ maintenant."
+    answer: "partes"
+    hint: "'il faut que' + sujeto específico exige subjonctif de partir."
+    translation: "Tienes que irte ahora."
+  - type: "match"
+    instructions: "Empareja cada expresión impersonal con su significado."
+    pairs:
+      - left: "il faut"
+        right: "hay que / es necesario"
+      - left: "il y a"
+        right: "hay / existe"
+      - left: "il est important de"
+        right: "es importante"
+      - left: "il est possible de"
+        right: "es posible"
+      - left: "il vaut mieux"
+        right: "es mejor"
+  - type: "write"
+    prompt: "Escribe en francés: 'hay un problema', usando il y a."
+    answer: "Il y a un problème"
+    accepted:
+      - "Il y a un problème."
+    hint: "il y a + sustantivo indica existencia."
+  - type: "order"
+    sentence: "Il est important de bien dormir"
+    translation: "Es importante dormir bien."
 ---
 
 Estas expresiones impersonales son extremadamente comunes en francés cotidiano —

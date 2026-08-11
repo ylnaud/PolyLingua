@@ -20,6 +20,39 @@ quiz:
     options: ["A conta, por favor", "O dinheiro, por favor", "A comida, por favor"]
     answerIndex: 0
     explanation: "'A conta, por favor' es la forma estándar de pedir la cuenta en un restaurante, en Brasil y Portugal."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu ___ um café e um pão de queijo, por favor."
+    answer: "queria"
+    accepted: ["Queria"]
+    hint: "Forma cortés de pedir algo, equivalente a 'yo quisiera'."
+    translation: "Yo quisiera un café y un pan de queso, por favor."
+  - type: "fill-blank"
+    sentence: "A ___, por favor."
+    answer: "conta"
+    hint: "Lo que pides al final de la comida en un restaurante."
+    translation: "La cuenta, por favor."
+  - type: "match"
+    instructions: "Empareja cada palabra en portugués con su significado en español."
+    pairs:
+      - left: "o pão"
+        right: "el pan"
+      - left: "a fruta"
+        right: "la fruta"
+      - left: "a carne"
+        right: "la carne"
+      - left: "o peixe"
+        right: "el pescado"
+      - left: "o queijo"
+        right: "el queso"
+  - type: "write"
+    prompt: "Escribe cómo se dice 'el menú' en portugués de Brasil."
+    answer: "o cardápio"
+    accepted: ["cardápio", "o cardapio", "cardapio"]
+    hint: "En Portugal se dice 'a ementa'."
+  - type: "order"
+    sentence: "Eu queria um café e um pão de queijo"
+    translation: "Yo quisiera un café y un pan de queso."
 ---
 
 El vocabulario de comida es de los más útiles y prácticos que puedes aprender — y el

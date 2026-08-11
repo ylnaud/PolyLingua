@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'costare un occhio della testa' significa 'costar muchísimo' — equivalente al 'costar un ojo de la cara' en español, con una imagen casi idéntica."
+exercises:
+  - type: "fill-blank"
+    sentence: "In bocca al ___!"
+    answer: "lupo"
+    accepted: ["lupo"]
+    hint: "Expresión supersticiosa para desear buena suerte, literalmente 'en la boca del...'."
+    translation: "¡Buena suerte!"
+  - type: "fill-blank"
+    sentence: "Questo ristorante costa un ___ della testa."
+    answer: "occhio"
+    accepted: ["occhio"]
+    hint: "Igual que en español: costar un ___ de la cara."
+    translation: "Este restaurante cuesta muchísimo."
+  - type: "match"
+    instructions: "Empareja cada expresión idiomática con su significado real."
+    pairs:
+      - left: "in bocca al lupo"
+        right: "¡buena suerte!"
+      - left: "costare un occhio della testa"
+        right: "costar muchísimo"
+      - left: "avere le mani in pasta"
+        right: "estar involucrado en algo"
+      - left: "non vedo l'ora"
+        right: "tengo muchas ganas"
+      - left: "prendere in giro"
+        right: "tomar el pelo/bromear"
+  - type: "write"
+    prompt: "Escribe la respuesta tradicional correcta a '¡In bocca al lupo!'"
+    answer: "Crepi!"
+    accepted: ["Crepi", "crepi!", "Crepi."]
+    hint: "Nunca se responde 'grazie' — la respuesta ritual es otra palabra."
+  - type: "order"
+    sentence: "Non vedo l'ora di vederti"
+    translation: "Tengo muchas ganas de verte."
 ---
 
 Llegaste al terreno de las expresiones que ni la gramática ni el vocabulario amplio te

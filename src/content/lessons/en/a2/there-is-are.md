@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'some' en frases afirmativas (There are some apples), 'any' en negativas y preguntas (There aren't any apples. Are there any apples?)."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ a book on the table."
+    answer: "There is"
+    accepted: ["there is"]
+    hint: "Sustantivo singular."
+    translation: "Hay un libro en la mesa."
+  - type: "fill-blank"
+    sentence: "___ some apples in the fridge."
+    answer: "There are"
+    accepted: ["there are"]
+    hint: "Sustantivo plural."
+    translation: "Hay unas manzanas en el refrigerador."
+  - type: "match"
+    instructions: "Empareja cada frase con lo que representa."
+    pairs:
+      - left: "There is a cat."
+        right: "singular afirmativo"
+      - left: "There are two cats."
+        right: "plural afirmativo"
+      - left: "There aren't any cats."
+        right: "plural negativo"
+      - left: "Is there a cat?"
+        right: "singular pregunta"
+      - left: "Are there any cats?"
+        right: "plural pregunta"
+  - type: "write"
+    prompt: "Escribe cómo preguntarías '¿Hay tiendas cerca?' en inglés."
+    answer: "Are there any shops nearby?"
+    accepted: ["Are there any shops nearby"]
+    hint: "Pregunta plural: usa 'any'."
+  - type: "order"
+    sentence: "There is a park near my house"
+    translation: "Hay un parque cerca de mi casa."
 ---
 
 "There is/are" es tu herramienta para describir qué existe o qué hay en un lugar —

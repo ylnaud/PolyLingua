@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La nominalización permite empaquetar acciones como conceptos abstractos ('la mise en œuvre', 'l'augmentation'), típico de informes, ensayos y periodismo serio."
+exercises:
+  - type: "fill-blank"
+    sentence: "La ___ du gouvernement d'augmenter les impôts a suscité des débats."
+    answer: "décision"
+    accepted: ["Décision"]
+    hint: "Nominalización del verbo 'décider'."
+    translation: "La decisión del gobierno de aumentar los impuestos suscitó debates."
+  - type: "fill-blank"
+    sentence: "Que ___-vous de cette proposition ?"
+    answer: "pensez"
+    accepted: ["Pensez"]
+    hint: "Inversión sujeto-verbo formal, en vez de 'qu'est-ce que vous pensez'."
+    translation: "¿Qué piensa usted de esta propuesta?"
+  - type: "match"
+    instructions: "Empareja cada verbo del registro neutro con su nominalización en estilo soutenu."
+    pairs:
+      - left: "décider"
+        right: "la décision"
+      - left: "analyser"
+        right: "l'analyse"
+      - left: "augmenter"
+        right: "l'augmentation"
+      - left: "mettre en œuvre"
+        right: "la mise en œuvre"
+      - left: "beaucoup de"
+        right: "de nombreux/nombreuses"
+  - type: "write"
+    prompt: "Escribe en estilo soutenu (formal) la pregunta '¿Qué piensa usted de esta propuesta?', usando la inversión sujeto-verbo."
+    answer: "Que pensez-vous de cette proposition ?"
+    accepted: ["Que pensez-vous de cette proposition?", "que pensez-vous de cette proposition ?"]
+    hint: "Empieza con 'Que pensez-vous'."
+  - type: "order"
+    sentence: "Le gouvernement a décidé d'augmenter les impôts"
+    translation: "El gobierno decidió aumentar los impuestos."
 ---
 
 Llegaste al último peldaño: escribir y hablar con el registro que encontrarás en un

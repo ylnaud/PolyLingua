@@ -20,6 +20,40 @@ quiz:
     options: ["il pane", "la pane", "lo pane"]
     answerIndex: 0
     explanation: "'il pane' es masculino."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ un caffè, per favore."
+    answer: "Vorrei"
+    accepted: ["vorrei"]
+    hint: "Forma educada de pedir: el condizionale de 'volere', mucho más natural que 'voglio'."
+    translation: "Quisiera un café, por favor."
+  - type: "fill-blank"
+    sentence: "___ conto, per favore."
+    answer: "Il"
+    accepted: ["il"]
+    hint: "'conto' es masculino: il conto."
+    translation: "La cuenta, por favor."
+  - type: "match"
+    instructions: "Empareja cada palabra en italiano con su traducción."
+    pairs:
+      - left: "il pane"
+        right: "el pan"
+      - left: "il formaggio"
+        right: "el queso"
+      - left: "la mela"
+        right: "la manzana"
+      - left: "il riso"
+        right: "el arroz"
+      - left: "l'acqua"
+        right: "el agua"
+  - type: "write"
+    prompt: "Escribe en italiano cómo preguntarías educadamente '¿Qué me recomienda?' en un restaurante."
+    answer: "Cosa mi consiglia?"
+    accepted: ["Cosa mi consiglia"]
+    hint: "Es la pregunta estándar para pedir una recomendación al camarero."
+  - type: "order"
+    sentence: "Vorrei un caffè per favore"
+    translation: "Quisiera un café, por favor."
 ---
 
 Ya sea en una trattoria, un bar o un mercato, este vocabulario es indispensable para

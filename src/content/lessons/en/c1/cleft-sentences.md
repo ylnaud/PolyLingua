@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Las cleft sentences no cambian el significado básico de la frase — solo redistribuyen el énfasis para resaltar la parte más importante."
+exercises:
+  - type: "fill-blank"
+    sentence: "It ___ John who broke the window."
+    answer: "was"
+    hint: "Estructura It-cleft: It + be + elemento enfatizado + who/that..."
+    translation: "Fue John quien rompió la ventana."
+  - type: "fill-blank"
+    sentence: "___ I need is more time."
+    answer: "What"
+    hint: "What-cleft: pone el elemento enfatizado al final de la frase."
+    translation: "Lo que necesito es más tiempo."
+  - type: "match"
+    instructions: "Empareja cada estructura o función con su ejemplo."
+    pairs:
+      - left: "It-cleft con énfasis en el sujeto"
+        right: "It was John who broke the window."
+      - left: "What-cleft con énfasis final"
+        right: "What I need is more time."
+      - left: "It-cleft con énfasis en el objeto"
+        right: "It was the window that John broke."
+      - left: "Corregir un malentendido"
+        right: "It wasn't me who said that."
+      - left: "Contrastar dos ideas"
+        right: "It's not the money that matters, it's the experience."
+  - type: "write"
+    prompt: "Reescribe la frase She loves music como una It-cleft sentence que enfatice music."
+    answer: "It's music that she loves."
+    accepted: ["It is music that she loves."]
+    hint: "Estructura: It + be + elemento enfatizado + that + resto."
+  - type: "order"
+    sentence: "It was the window that John broke"
+    translation: "Fue la ventana lo que John rompió."
 ---
 
 Las cleft sentences son una herramienta de estilo avanzada: reestructuran una frase

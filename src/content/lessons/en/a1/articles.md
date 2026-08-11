@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'the' se usa para algo específico y conocido por ambos hablantes: 'I saw a dog. The dog was brown' (vi un perro. El perro era marrón — ya identificado)."
+exercises:
+  - type: "fill-blank"
+    sentence: "I have ___ apple."
+    answer: "an"
+    accepted: ["An"]
+    hint: "'apple' empieza con sonido vocálico, así que usamos 'an'."
+    translation: "Tengo una manzana."
+  - type: "fill-blank"
+    sentence: "___ sun is very bright today."
+    answer: "The"
+    accepted: ["the"]
+    hint: "'the sun' es único en su tipo, por eso lleva artículo definido."
+    translation: "El sol está muy brillante hoy."
+  - type: "match"
+    instructions: "Empareja cada palabra con el artículo indefinido correcto (a/an) según su sonido inicial."
+    pairs:
+      - left: "apple"
+        right: "an"
+      - left: "dog"
+        right: "a"
+      - left: "hour"
+        right: "an"
+      - left: "university"
+        right: "a"
+      - left: "hotel"
+        right: "a"
+  - type: "write"
+    prompt: "Escribe en inglés: 'Vi un gato. El gato era negro.'"
+    answer: "I saw a cat. The cat was black."
+    accepted: ["I saw a cat, the cat was black."]
+    hint: "Primera mención = a/an; segunda mención (ya específica) = the."
+  - type: "order"
+    sentence: "The cat was black"
+    translation: "El gato era negro."
 ---
 
 El español no tiene un artículo indefinido con dos formas — el inglés sí, y elegir

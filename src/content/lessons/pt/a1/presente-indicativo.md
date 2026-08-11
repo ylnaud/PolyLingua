@@ -20,6 +20,35 @@ quiz:
     options: ["eles abrem", "eles abren", "eles abre"]
     answerIndex: 0
     explanation: "Los verbos en -ir con 'eles/elas' terminan en '-em': eles abrem. Nota que en portugués es '-em' y no '-en' como en español ('abren')."
+exercises:
+  - type: "fill-blank"
+    sentence: "Nós ___ português todos os dias."
+    answer: "falamos"
+    hint: "'falar' con 'nós': terminación -amos."
+    translation: "Hablamos portugués todos los días."
+  - type: "fill-blank"
+    sentence: "Você ___ português?"
+    answer: "fala"
+    hint: "'você' se conjuga como tercera persona (ele/ela), no como 'tu'."
+    translation: "¿Hablas portugués?"
+  - type: "match"
+    instructions: "Empareja cada pronombre con la conjugación correcta de 'comer'."
+    pairs:
+      - left: "eu"
+        right: "como"
+      - left: "nós"
+        right: "comemos"
+      - left: "eles"
+        right: "comem"
+      - left: "ele/ela"
+        right: "come"
+  - type: "write"
+    prompt: "Escribe en portugués la conjugación de 'abrir' con 'eles' (ellos)."
+    answer: "abrem"
+    hint: "Verbos en -ir con 'eles/elas' terminan en -em."
+  - type: "order"
+    sentence: "Eu sou brasileiro"
+    translation: "Yo soy brasileño."
 ---
 
 Si ya hablas español, el presente portugués te va a resultar el más fácil de aprender de

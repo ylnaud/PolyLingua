@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'via' (imperfeito, fondo continuo) + 'tocou' (pretérito perfeito, evento puntual que interrumpe) es la combinación clásica: 'Veía la tele cuando sonó el teléfono'."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ quando eu cheguei."
+    answer: "Chovia"
+    accepted: ["chovia"]
+    hint: "Imperfeito para describir el fondo/estado continuo (llovía)."
+    translation: "Llovía cuando llegué."
+  - type: "fill-blank"
+    sentence: "Ontem, eu ___ o museu."
+    answer: "visitei"
+    accepted: ["Visitei"]
+    hint: "Pretérito perfeito para un evento puntual y completado."
+    translation: "Ayer, visité el museo."
+  - type: "match"
+    instructions: "Empareja cada frase en portugués con su traducción al español."
+    pairs:
+      - left: "Fazia calor"
+        right: "Hacía calor"
+      - left: "Eu jogava futebol todo sábado"
+        right: "Yo jugaba fútbol todos los sábados"
+      - left: "Levantei, comi, saí"
+        right: "Me levanté, comí, salí"
+      - left: "O telefone tocou"
+        right: "El teléfono sonó"
+      - left: "Ela estava cansada"
+        right: "Ella estaba cansada"
+  - type: "write"
+    prompt: "Escribe en portugués (pretérito imperfeito): 'Cuando yo era niño, jugaba fútbol todos los sábados.'"
+    answer: "Quando eu era criança, jogava futebol todo sábado."
+    accepted: []
+    hint: "era (imperfeito de ser) + jogava (imperfeito de hábito repetido)."
+  - type: "order"
+    sentence: "Eu lia quando você ligou"
+    translation: "Yo leía cuando tú llamaste."
 ---
 
 Esta es, de los cinco idiomas que puedes estudiar en PolyLingua, la distinción de pasado

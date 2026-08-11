@@ -24,6 +24,40 @@ quiz:
     options: ["hacer una pausa larga", "evaluar la situación actual, ponerse al día", "firmar un contrato"]
     answerIndex: 1
     explanation: "'fare il punto della situazione' significa hacer un balance/evaluación de la situación actual — muy común en reuniones."
+exercises:
+  - type: "fill-blank"
+    sentence: "Le scrivo in ___ a..."
+    answer: "merito"
+    accepted: ["merito"]
+    hint: "Fórmula fija de correo formal: 'le scrivo in merito a' (le escribo con respecto a)."
+    translation: "Le escribo con respecto a..."
+  - type: "fill-blank"
+    sentence: "Il fatturato è aumentato del 15% rispetto al trimestre ___."
+    answer: "scorso"
+    accepted: ["scorso"]
+    hint: "'el trimestre pasado' — trimestre scorso."
+    translation: "La facturación aumentó un 15% respecto al trimestre pasado."
+  - type: "match"
+    instructions: "Empareja cada término de negocios en italiano con su significado en español."
+    pairs:
+      - left: "la scadenza"
+        right: "fecha límite"
+      - left: "dare seguito a"
+        right: "dar seguimiento a"
+      - left: "licenziare qualcuno"
+        right: "despedir a alguien"
+      - left: "il fatturato"
+        right: "los ingresos/facturación"
+      - left: "fare il punto della situazione"
+        right: "hacer un balance/evaluación"
+  - type: "write"
+    prompt: "Escribe en italiano cómo suavizarías un desacuerdo en una reunión: 'Entiendo su punto de vista, pero tengo una perspectiva diferente.'"
+    answer: "Capisco il suo punto di vista, ma ho una prospettiva diversa."
+    accepted: ["Capisco il suo punto di vista, ma ho una prospettiva diversa"]
+    hint: "Empieza reconociendo el punto del otro antes de contrastar con 'ma'."
+  - type: "order"
+    sentence: "Siamo in linea per rispettare la scadenza"
+    translation: "Estamos en camino de cumplir con la fecha límite."
 ---
 
 Este vocabulario te prepara para el registro específico del mundo corporativo

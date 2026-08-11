@@ -20,6 +20,37 @@ quiz:
     options: ["vamos", "vou", "vão"]
     answerIndex: 0
     explanation: "'nós vamos' es la forma de 'ir' para nosotros — Nós vamos viajar amanhã (Vamos a viajar mañana)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu ___ estudar amanhã."
+    answer: "vou"
+    hint: "Conjugación de 'ir' para 'eu' en presente."
+    translation: "Voy a estudiar mañana."
+  - type: "fill-blank"
+    sentence: "Nós ___ viajar na semana que vem."
+    answer: "vamos"
+    hint: "Conjugación de 'ir' para 'nós' en presente."
+    translation: "Vamos a viajar la semana que viene."
+  - type: "match"
+    instructions: "Empareja cada pronombre con la forma correcta de 'ir' en presente."
+    pairs:
+      - left: "eu"
+        right: "vou"
+      - left: "tu"
+        right: "vais"
+      - left: "você/ele/ela"
+        right: "vai"
+      - left: "nós"
+        right: "vamos"
+      - left: "vocês/eles"
+        right: "vão"
+  - type: "write"
+    prompt: "Escribe en portugués 'Van a llegar' (eles), usando futuro próximo."
+    answer: "Eles vão chegar"
+    hint: "Conjugación de 'ir' para 'eles' es 'vão'."
+  - type: "order"
+    sentence: "Amanhã eu vou trabalhar"
+    translation: "Mañana voy a trabajar."
 ---
 
 El futuro próximo es, en la práctica, la forma de futuro que más vas a escuchar y usar

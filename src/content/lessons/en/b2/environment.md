@@ -24,6 +24,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'weather' = qué tiempo hace hoy/esta semana. 'climate' = el patrón climático general de una región durante años. Es un error común confundirlos."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ change is the biggest challenge of our generation."
+    answer: "Climate"
+    accepted: ["climate"]
+    hint: "Cambio climático = 'climate change'."
+    translation: "El cambio climático es el mayor desafío de nuestra generación."
+  - type: "fill-blank"
+    sentence: "We need to invest more in ___ energy."
+    answer: "renewable"
+    hint: "Energía renovable, como la solar o la eólica."
+    translation: "Necesitamos invertir más en energía renovable."
+  - type: "match"
+    instructions: "Empareja cada palabra en inglés con su traducción."
+    pairs:
+      - left: "climate change"
+        right: "cambio climático"
+      - left: "renewable energy"
+        right: "energía renovable"
+      - left: "pollution"
+        right: "contaminación"
+      - left: "unemployment"
+        right: "desempleo"
+      - left: "human rights"
+        right: "derechos humanos"
+  - type: "write"
+    prompt: "Escribe en inglés la palabra para 'sostenibilidad'."
+    answer: "sustainability"
+    hint: "Muy común en inglés cotidiano de negocios y medio ambiente."
+  - type: "order"
+    sentence: "The region has a tropical climate"
+    translation: "La región tiene un clima tropical."
 ---
 
 Este vocabulario te permite dar el salto de conversaciones cotidianas a discusiones

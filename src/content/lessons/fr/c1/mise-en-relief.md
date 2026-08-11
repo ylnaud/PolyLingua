@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "La regla es igual que con los pronombres relativos normales: 'qui' cuando el elemento enfatizado es el sujeto de lo que sigue, 'que' cuando es el objeto."
+exercises:
+  - type: "fill-blank"
+    sentence: "C'est Paul ___ a gagné."
+    answer: "qui"
+    accepted: ["qui"]
+    hint: "'Paul' es el sujeto del verbo que sigue, así que se usa 'qui'."
+    translation: "Fue Paul quien ganó."
+  - type: "fill-blank"
+    sentence: "C'est ce livre ___ je préfère."
+    answer: "que"
+    accepted: ["que"]
+    hint: "'ce livre' es el objeto de 'préfère', así que se usa 'que'."
+    translation: "Es este libro el que prefiero."
+  - type: "match"
+    instructions: "Empareja cada frase base con su versión en mise en relief que enfatiza el elemento indicado."
+    pairs:
+      - left: "Paul a acheté cette voiture hier. (QUIÉN)"
+        right: "C'est Paul qui a acheté cette voiture hier."
+      - left: "Paul a acheté cette voiture hier. (QUÉ)"
+        right: "C'est cette voiture que Paul a achetée hier."
+      - left: "Paul a acheté cette voiture hier. (CUÁNDO)"
+        right: "C'est hier que Paul a acheté cette voiture."
+      - left: "Ce qui m'intéresse"
+        right: "c'est la musique."
+      - left: "Ce que je veux"
+        right: "c'est du temps libre."
+  - type: "write"
+    prompt: "Escribe en francés, usando mise en relief, cómo dirías 'no es el dinero lo que importa, es la experiencia'."
+    answer: "Ce n'est pas l'argent qui compte, c'est l'expérience."
+    accepted: ["Ce n'est pas l'argent qui compte, c'est l'experience."]
+    hint: "'l'argent' es el sujeto de 'compte', así que va con 'qui'."
+  - type: "order"
+    sentence: "C'est Marie qui a téléphoné"
+    translation: "Fue Marie quien llamó."
 ---
 
 La mise en relief es la herramienta francesa para poner el foco exactamente donde tú

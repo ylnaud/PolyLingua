@@ -20,6 +20,40 @@ quiz:
     options: ["In conclusione, si può affermare che...", "Nonostante ciò, è così che...", "Forse è così che..."]
     answerIndex: 0
     explanation: "'In conclusione, si può affermare che...' (en conclusión, se puede afirmar que...) es una fórmula fija estándar para concluir un texto académico."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ lo studio, i risultati sono significativi."
+    answer: "Secondo"
+    accepted: ["Secondo"]
+    hint: "'Secondo' significa 'según' al citar una fuente."
+    translation: "Según el estudio, los resultados son significativos."
+  - type: "fill-blank"
+    sentence: "___ sottolineato che i dati sono limitati."
+    answer: "Va"
+    accepted: ["Va"]
+    hint: "Fórmula fija académica: 'va sottolineato che' (cabe subrayar que)."
+    translation: "Cabe subrayar que los datos son limitados."
+  - type: "match"
+    instructions: "Empareja cada término académico en italiano con su significado en español."
+    pairs:
+      - left: "l'ipotesi"
+        right: "la hipótesis"
+      - left: "la ricerca"
+        right: "la investigación"
+      - left: "la conclusione"
+        right: "la conclusión"
+      - left: "la fonte"
+        right: "la fuente"
+      - left: "l'analisi"
+        right: "el análisis"
+  - type: "write"
+    prompt: "Escribe en italiano la fórmula fija para introducir una conclusión académica: 'En conclusión, se puede afirmar que...'"
+    answer: "In conclusione, si può affermare che..."
+    accepted: ["In conclusione, si può affermare che"]
+    hint: "Es una fórmula fija muy usada al cerrar un saggio o tesi."
+  - type: "order"
+    sentence: "Va sottolineato che i dati sono limitati"
+    translation: "Cabe subrayar que los datos son limitados."
 ---
 
 Este vocabulario te permite leer y escribir en el registro que domina saggi, tesi y

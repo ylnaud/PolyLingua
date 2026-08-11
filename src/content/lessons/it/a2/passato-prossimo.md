@@ -24,6 +24,40 @@ quiz:
     options: ["Lei è andato", "Lei è andata", "Lei ha andata"]
     answerIndex: 1
     explanation: "Con 'essere', el participio funciona como adjetivo y concuerda en género: lei è andata (con 'a' final para femenino)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ho ___ una pizza ieri."
+    answer: "mangiato"
+    accepted: ["mangiato"]
+    hint: "Verbos en -are forman el participio con -ato: mangiare → mangiato."
+    translation: "Comí una pizza ayer."
+  - type: "fill-blank"
+    sentence: "Lei è ___."
+    answer: "andata"
+    accepted: ["andata"]
+    hint: "Con 'essere', el participio concuerda en género: femenino singular termina en -a."
+    translation: "Ella fue/se fue."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su participio pasado."
+    pairs:
+      - left: "parlare"
+        right: "parlato"
+      - left: "credere"
+        right: "creduto"
+      - left: "dormire"
+        right: "dormito"
+      - left: "fare"
+        right: "fatto"
+      - left: "dire"
+        right: "detto"
+  - type: "write"
+    prompt: "Escribe en italiano 'yo he comido' usando el passato prossimo de 'mangiare'."
+    answer: "Ho mangiato"
+    accepted: ["ho mangiato"]
+    hint: "avere (conjugado con io: ho) + participio pasado."
+  - type: "order"
+    sentence: "Loro sono andati"
+    translation: "Ellos fueron/se fueron."
 ---
 
 Cuando un italiano cuenta qué hizo ayer, casi siempre usa el **passato prossimo**. Es tu

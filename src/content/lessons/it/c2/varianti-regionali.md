@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El italiano estándar es tu base sólida y funcional en todo el país, pero reconocer las variantes regionales te acerca a la riqueza cultural real y te evita confusiones al viajar."
+exercises:
+  - type: "fill-blank"
+    sentence: "Standard: Ragazzo, vieni qui! Napoletano: ___, viene ccà!"
+    answer: "Guagliò"
+    accepted: ["guagliò"]
+    hint: "Forma napolitana informal para dirigirse a un chico/muchacho."
+    translation: "¡Chico, ven aquí! (en napolitano)"
+  - type: "fill-blank"
+    sentence: "Toscana: Vieni ___."
+    answer: "qua"
+    accepted: ["Qua"]
+    hint: "Variante toscana de 'qui' (aquí), con la característica gorgia toscana."
+    translation: "Ven aquí (variante toscana)."
+  - type: "match"
+    instructions: "Empareja cada dialecto o rasgo regional con su característica."
+    pairs:
+      - left: "Napoletano"
+        right: "Vocabulario y gramática muy distintivos"
+      - left: "Siciliano"
+        right: "Influencias árabes y españolas históricas"
+      - left: "Veneto"
+        right: "Sistema de pronombres propio"
+      - left: "Lombardo"
+        right: "Vocales y ritmo distintivos"
+      - left: "gorgia toscana"
+        right: "Aspiración de ciertas consonantes en Toscana"
+  - type: "write"
+    prompt: "Escribe en dialecto napolitano cómo se dice '¡chico, ven aquí!' (usando 'guagliò')."
+    answer: "Guagliò, viene ccà!"
+    accepted: ["Guagliò, viene ccà", "Guaglió, viene ccà!"]
+    hint: "Es el equivalente napolitano de 'Ragazzo, vieni qui!'."
+  - type: "order"
+    sentence: "Ragazzo vieni qui"
+    translation: "Chico, ven aquí."
 ---
 
 El italiano estándar que dominas es funcional en todo el país — pero Italia tiene una

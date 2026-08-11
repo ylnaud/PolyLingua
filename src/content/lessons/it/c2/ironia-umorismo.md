@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "A diferencia de la gramática, reconocer la ironía requiere entender el contexto social y cultural completo — una habilidad que solo se desarrolla con exposición real al idioma."
+exercises:
+  - type: "fill-blank"
+    sentence: "Sei arrivato in ritardo di nuovo? ___!"
+    answer: "Complimenti"
+    accepted: ["complimenti"]
+    hint: "Se dice con tono plano tras un error obvio — es ironía, no una felicitación real."
+    translation: "¿Llegaste tarde otra vez? ¡Felicidades! (irónico)"
+  - type: "fill-blank"
+    sentence: "Ah, sei puntualissimo come ___!"
+    answer: "sempre"
+    accepted: ["Sempre"]
+    hint: "Comentario irónico dicho tras llegar una hora tarde."
+    translation: "Ah, eres puntualísimo como siempre (irónico)."
+  - type: "match"
+    instructions: "Empareja cada expresión con lo que realmente comunica."
+    pairs:
+      - left: "Complimenti!"
+        right: "ironía tras un error obvio"
+      - left: "prendere in giro"
+        right: "tomar el pelo cariñosamente a un amigo"
+      - left: "sei puntualissimo come sempre"
+        right: "comentario irónico tras llegar tarde"
+      - left: "tono plano"
+        right: "forma de decir algo sin énfasis, dejando la ironía implícita"
+  - type: "write"
+    prompt: "Escribe en italiano la expresión que significa 'tomar el pelo' cariñosamente a un amigo cercano."
+    answer: "prendere in giro"
+    accepted: ["Prendere in giro"]
+    hint: "Es una forma común de mostrar cariño entre amigos, no siempre hostilidad."
+  - type: "order"
+    sentence: "Ah sei puntualissimo come sempre"
+    translation: "Ah, eres puntualísimo como siempre."
 ---
 
 Llegaste al nivel donde entender las palabras ya no es suficiente — necesitas

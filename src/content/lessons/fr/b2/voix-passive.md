@@ -24,6 +24,39 @@ quiz:
     options: ["La lettre est écrit.", "La lettre est écrite.", "La lettre est écrits."]
     answerIndex: 1
     explanation: "Con 'être', el participio concuerda en género y número con el sujeto: la lettre est écrite (con 'e' final, femenino singular)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Le repas ___ préparé par le chef."
+    answer: "est"
+    accepted: ["est"]
+    hint: "Presente de 'être', sujeto singular."
+    translation: "La comida es preparada por el chef."
+  - type: "fill-blank"
+    sentence: "La lettre est ___ (écrire)."
+    answer: "écrite"
+    accepted: ["écrite"]
+    hint: "El participio concuerda en femenino singular con 'la lettre'."
+    translation: "La carta está escrita."
+  - type: "match"
+    instructions: "Empareja cada sujeto con su forma pasiva correcta."
+    pairs:
+      - left: "Le livre"
+        right: "est lu"
+      - left: "La lettre"
+        right: "est lue"
+      - left: "Les livres"
+        right: "sont lus"
+      - left: "Les lettres"
+        right: "sont lues"
+      - left: "La maison"
+        right: "a été construite"
+  - type: "write"
+    prompt: "Traduce a voz pasiva: 'El libro fue escrito por Victor Hugo.'"
+    answer: "Le livre a été écrit par Victor Hugo."
+    hint: "Passé composé pasivo = a été + participio, con 'par' introduciendo al agente."
+  - type: "order"
+    sentence: "Le pont a été construit en 1889"
+    translation: "El puente fue construido en 1889."
 ---
 
 Igual que en español, el francés usa la voz pasiva cuando el **qué pasó** importa más

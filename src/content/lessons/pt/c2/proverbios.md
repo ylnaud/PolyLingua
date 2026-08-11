@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Como las expresiones idiomáticas, los refranes son fórmulas cerradas cuyo uso natural exige entender el momento social apropiado, no solo el significado literal."
+exercises:
+  - type: "fill-blank"
+    sentence: "Água mole em pedra dura, tanto bate até que ___."
+    answer: "fura"
+    accepted: ["Fura"]
+    hint: "Rima con 'dura' y significa 'perfora'."
+    translation: "Agua blanda en piedra dura, tanto golpea hasta que perfora."
+  - type: "fill-blank"
+    sentence: "Quem não arrisca, não ___."
+    answer: "petisca"
+    accepted: ["Petisca"]
+    hint: "Literalmente 'picotea'; equivale a 'quien no arriesga, no gana'."
+    translation: "Quien no arriesga, no gana."
+  - type: "match"
+    instructions: "Empareja cada refrán portugués con su equivalente en español."
+    pairs:
+      - left: "Água mole em pedra dura, tanto bate até que fura."
+        right: "Gota a gota se llena la copa."
+      - left: "Quem tem boca vai a Roma."
+        right: "Preguntando se llega a Roma."
+      - left: "Antes tarde do que nunca."
+        right: "Más vale tarde que nunca."
+      - left: "Filho de peixe, peixinho é."
+        right: "De tal palo, tal astilla."
+      - left: "Quem não arrisca, não petisca."
+        right: "Quien no arriesga, no gana."
+  - type: "write"
+    prompt: "Escribe en portugués el refrán equivalente a 'De tal palo, tal astilla'."
+    answer: "Filho de peixe, peixinho é."
+    accepted: ["Filho de peixe, peixinho é"]
+    hint: "Habla de peces y pececitos."
+  - type: "order"
+    sentence: "Quem tem boca vai a Roma"
+    translation: "Preguntando se llega a Roma."
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

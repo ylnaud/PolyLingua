@@ -24,6 +24,38 @@ quiz:
     options: ["for instance", "hence", "whereas"]
     answerIndex: 0
     explanation: "'for instance' (por ejemplo) introduce un caso concreto que ilustra un punto general — igual que 'for example'."
+exercises:
+  - type: "fill-blank"
+    sentence: "The data was flawed; ___, the results are unreliable."
+    answer: "Consequently"
+    accepted: ["consequently"]
+    hint: "Introduce una consecuencia lógica derivada del punto anterior."
+    translation: "Los datos eran defectuosos; en consecuencia, los resultados no son fiables."
+  - type: "fill-blank"
+    sentence: "Some economists support this policy, ___ others strongly oppose it."
+    answer: "whereas"
+    hint: "Contraste formal, equivalente a 'while' pero más académico."
+    translation: "Algunos economistas apoyan esta política, mientras que otros se oponen firmemente."
+  - type: "match"
+    instructions: "Empareja cada conector con su función en un texto académico."
+    pairs:
+      - left: "consequently"
+        right: "introduce una consecuencia lógica"
+      - left: "notwithstanding"
+        right: "expresa contraste formal, similar a despite"
+      - left: "for instance"
+        right: "introduce un ejemplo específico"
+      - left: "namely"
+        right: "presenta información específica, a saber"
+      - left: "furthermore"
+        right: "añade información de forma formal"
+  - type: "write"
+    prompt: "Escribe el conector en inglés que significa 'a saber' y presenta información específica (empieza con n)."
+    answer: "namely"
+    hint: "Aparece en: Two factors contributed to the delay, namely poor planning and lack of resources."
+  - type: "order"
+    sentence: "Some economists support this policy whereas others strongly oppose it"
+    translation: "Algunos economistas apoyan esta política, mientras que otros se oponen firmemente."
 ---
 
 Este vocabulario de conexión es lo que distingue un ensayo académico serio de un texto

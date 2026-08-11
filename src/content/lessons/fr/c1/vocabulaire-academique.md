@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La 'dissertation' francesa clásica sigue el formato thèse-antithèse-synthèse: presentar una idea, su contraargumento, y luego sintetizar ambas perspectivas."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ l'étude, le résultat est significatif."
+    answer: "Selon"
+    accepted: ["selon"]
+    hint: "'selon' significa 'según' al citar una fuente."
+    translation: "Según el estudio, el resultado es significativo."
+  - type: "fill-blank"
+    sentence: "Il convient de ___ que les résultats confirment l'hypothèse."
+    answer: "souligner"
+    accepted: ["souligner"]
+    hint: "'il convient de souligner que...' significa 'conviene subrayar que...'."
+    translation: "Conviene subrayar que los resultados confirman la hipótesis."
+  - type: "match"
+    instructions: "Empareja cada palabra del vocabulario académico francés con su traducción."
+    pairs:
+      - left: "l'hypothèse"
+        right: "la hipótesis"
+      - left: "la recherche"
+        right: "la investigación"
+      - left: "la preuve"
+        right: "la prueba"
+      - left: "démontrer"
+        right: "demostrar"
+      - left: "réfuter"
+        right: "refutar"
+  - type: "write"
+    prompt: "Escribe en francés cómo empezarías una conclusión académica con 'En conclusión, se puede afirmar que...'."
+    answer: "En conclusion, on peut affirmer que..."
+    accepted: ["En conclusion, on peut affirmer que", "En conclusion on peut affirmer que..."]
+    hint: "Es una fórmula fija muy usada en disertaciones francesas."
+  - type: "order"
+    sentence: "Il convient de souligner que les résultats sont significatifs"
+    translation: "Conviene subrayar que los resultados son significativos."
 ---
 
 Este vocabulario te permite leer y escribir en el registro que domina disertaciones,

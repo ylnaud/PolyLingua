@@ -24,6 +24,40 @@ quiz:
     options: ["des", "un", "une"]
     answerIndex: 0
     explanation: "'des' es el artículo indefinido plural, usado tanto para masculino como femenino: des livres (unos libros), des voitures (unos autos)."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ table est grande."
+    answer: "La"
+    accepted: ["la"]
+    hint: "'table' es femenina, igual que en español ('la mesa')."
+    translation: "La mesa es grande."
+  - type: "fill-blank"
+    sentence: "___ ami habite à Paris."
+    answer: "L'"
+    accepted: ["l'", "l’"]
+    hint: "Antes de vocal, el artículo (masculino o femenino) se convierte en l'."
+    translation: "El amigo vive en París."
+  - type: "match"
+    instructions: "Empareja cada palabra con su artículo correcto."
+    pairs:
+      - left: "livre"
+        right: "le"
+      - left: "table"
+        right: "la"
+      - left: "voitures (plural)"
+        right: "des"
+      - left: "nation"
+        right: "la"
+      - left: "gouvernement"
+        right: "le"
+  - type: "write"
+    prompt: "Escribe el artículo definido correcto para 'château' (castillo), que termina en -eau."
+    answer: "le"
+    accepted: ["Le"]
+    hint: "La terminación -eau es masculina: le bureau, le château."
+  - type: "order"
+    sentence: "J'aime la table et le livre"
+    translation: "Me gusta la mesa y el libro."
 ---
 
 Si hablas español, ya entiendes el concepto de género gramatical — la ventaja es enorme.

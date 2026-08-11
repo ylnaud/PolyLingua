@@ -24,6 +24,39 @@ quiz:
     options: ["la amica", "l'amica", "lo amica"]
     answerIndex: 1
     explanation: "Ante vocal, 'la' se convierte en 'l'': l'amica (igual que en francés). Es una elisión para facilitar la pronunciación."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ libro è sul tavolo."
+    answer: "Il"
+    accepted: ["il"]
+    hint: "Termina en -o: masculino, igual que en español."
+    translation: "El libro está sobre la mesa."
+  - type: "fill-blank"
+    sentence: "___ studente studia italiano."
+    answer: "Lo"
+    accepted: ["lo"]
+    hint: "Empieza con s+consonante ('st'): caso especial que activa 'lo' en vez de 'il'."
+    translation: "El estudiante estudia italiano."
+  - type: "match"
+    instructions: "Empareja cada palabra con su artículo correcto."
+    pairs:
+      - left: "libro"
+        right: "il"
+      - left: "studente"
+        right: "lo"
+      - left: "casa"
+        right: "la"
+      - left: "amica"
+        right: "l'"
+      - left: "zaino"
+        right: "lo"
+  - type: "write"
+    prompt: "Escribe el artículo indefinido correcto para 'amica' (una amiga)."
+    answer: "un'"
+    hint: "Femenino ante vocal: 'una' se convierte en 'un'' por elisión."
+  - type: "order"
+    sentence: "Lo studente legge il libro"
+    translation: "El estudiante lee el libro."
 ---
 
 Si hablas español, el género italiano te va a resultar el más intuitivo de todos los

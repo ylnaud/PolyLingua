@@ -20,6 +20,40 @@ quiz:
     options: ["più buono", "migliore", "buonissimo (solo esta forma existe)"]
     answerIndex: 1
     explanation: "'buono' es irregular: buono → migliore (mejor) → il migliore (el mejor). Aunque 'più buono' también se usa coloquialmente, 'migliore' es la forma estándar."
+exercises:
+  - type: "fill-blank"
+    sentence: "È ___ alto di me."
+    answer: "più"
+    accepted: ["più", "piu"]
+    hint: "Comparativo de superioridad: più + adjetivo + di."
+    translation: "Es más alto que yo."
+  - type: "fill-blank"
+    sentence: "Roma è bella, ma Firenze è ___!"
+    answer: "bellissima"
+    accepted: ["bellissima"]
+    hint: "Superlativo absoluto de 'bella' con el sufijo -issima (concuerda en género femenino)."
+    translation: "Roma es bonita, ¡pero Florencia es bellísima!"
+  - type: "match"
+    instructions: "Empareja cada adjetivo con su comparativo irregular."
+    pairs:
+      - left: "buono"
+        right: "migliore"
+      - left: "cattivo"
+        right: "peggiore"
+      - left: "grande"
+        right: "maggiore"
+      - left: "più... di"
+        right: "más... que"
+      - left: "meno... di"
+        right: "menos... que"
+  - type: "write"
+    prompt: "Escribe en italiano el comparativo irregular de 'buono' (bueno), la forma que significa 'mejor'."
+    answer: "migliore"
+    accepted: ["migliore"]
+    hint: "No es 'più buono' en su forma estándar, sino un comparativo irregular."
+  - type: "order"
+    sentence: "Questo libro è più interessante di quello"
+    translation: "Este libro es más interesante que aquel."
 ---
 
 Comparar en italiano tiene una ventaja especial: además del comparativo normal, tienes

@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "A diferencia de la gramática, reconocer la ironía requiere entender el contexto social y cultural completo — una habilidad que solo se desarrolla con exposición real al idioma."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ bonne idée ! (dit avec un ton plat après un échec évident)"
+    answer: "Quelle"
+    accepted: ["quelle"]
+    hint: "Expresión irónica clásica: literalmente '¡Qué buena idea!'."
+    translation: "¡Qué buena idea! (dicho con ironía tras un fracaso evidente)"
+  - type: "fill-blank"
+    sentence: "Se moquer de soi-même avec élégance s'appelle l'___."
+    answer: "autodérision"
+    accepted: ["Autodérision"]
+    hint: "Reírse de uno mismo con elegancia; visto como signo de inteligencia, no de debilidad."
+    translation: "Burlarse de uno mismo con elegancia se llama la autoironía."
+  - type: "match"
+    instructions: "Empareja cada término con su definición."
+    pairs:
+      - left: "l'ironie"
+        right: "decir lo contrario de lo que se piensa"
+      - left: "l'esprit"
+        right: "el ingenio verbal elegante"
+      - left: "l'autodérision"
+        right: "reírse de uno mismo"
+      - left: "Quelle bonne idée!"
+        right: "expresión irónica típica tras un fracaso"
+  - type: "write"
+    prompt: "Escribe en francés la frase irónica que alguien diría con tono plano tras un plan que fracasó (significa '¡Qué buena idea!')."
+    answer: "Quelle bonne idée !"
+    accepted: ["Quelle bonne idée!", "quelle bonne idée !"]
+    hint: "Empieza con 'Quelle' y termina con 'idée'."
+  - type: "order"
+    sentence: "Je suis un expert en catastrophes culinaires"
+    translation: "Soy un experto en desastres culinarios."
 ---
 
 Llegaste al nivel donde entender las palabras ya no es suficiente — necesitas

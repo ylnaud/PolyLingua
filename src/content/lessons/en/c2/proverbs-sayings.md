@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Como toda expresión fija, los refranes no se pueden modificar libremente y su uso natural depende de un timing y contexto apropiados — algo que solo se desarrolla con exposición cultural real."
+exercises:
+  - type: "fill-blank"
+    sentence: "The early bird catches the ___."
+    answer: "worm"
+    accepted: ["Worm"]
+    hint: "Equivalente a 'a quien madruga, Dios le ayuda'."
+    translation: "El pájaro madrugador atrapa el gusano."
+  - type: "fill-blank"
+    sentence: "Don't ___ your chickens before they hatch."
+    answer: "count"
+    accepted: ["Count"]
+    hint: "Equivalente a 'no vendas la piel del oso antes de cazarlo'."
+    translation: "No cantes victoria antes de tiempo."
+  - type: "match"
+    instructions: "Empareja el refrán inglés con su equivalente en español."
+    pairs:
+      - left: "The early bird catches the worm."
+        right: "A quien madruga, Dios le ayuda."
+      - left: "Actions speak louder than words."
+        right: "Obras son amores, que no buenas razones."
+      - left: "Practice makes perfect."
+        right: "La práctica hace al maestro."
+      - left: "Don't judge a book by its cover."
+        right: "No juzgues un libro por su portada."
+      - left: "When in Rome, do as the Romans do."
+        right: "Donde fueres, haz lo que vieres."
+  - type: "write"
+    prompt: "Escribe el refrán inglés que significa 'la práctica hace al maestro'."
+    answer: "Practice makes perfect"
+    accepted: ["Practice makes perfect."]
+    hint: "Tres palabras, sin refrán equivalente literal en español."
+  - type: "order"
+    sentence: "Actions speak louder than words"
+    translation: "Obras son amores, que no buenas razones."
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

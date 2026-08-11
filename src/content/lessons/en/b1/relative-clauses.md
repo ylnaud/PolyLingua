@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'whose' indica posesión, tanto para personas como para cosas: the woman whose car was stolen (la mujer cuyo auto fue robado)."
+exercises:
+  - type: "fill-blank"
+    sentence: "The man ___ lives next door is a doctor."
+    answer: "who"
+    accepted: ["who", "that"]
+    hint: "Se usa para personas como sujeto de la cláusula."
+    translation: "El hombre que vive al lado es doctor."
+  - type: "fill-blank"
+    sentence: "This is the book ___ I told you about."
+    answer: "which"
+    accepted: ["which", "that"]
+    hint: "Se usa para cosas."
+    translation: "Este es el libro del que te hablé."
+  - type: "match"
+    instructions: "Empareja cada pronombre relativo con su uso."
+    pairs:
+      - left: "who"
+        right: "personas (sujeto)"
+      - left: "which"
+        right: "cosas"
+      - left: "whose"
+        right: "posesión"
+      - left: "where"
+        right: "lugares"
+      - left: "that"
+        right: "personas o cosas (informal)"
+  - type: "write"
+    prompt: "Escribe en inglés: 'La mujer cuyo auto fue robado llamó a la policía.'"
+    answer: "The woman whose car was stolen called the police."
+    accepted: ["The woman whose car was stolen called the police"]
+    hint: "Usa 'whose' para indicar posesión."
+  - type: "order"
+    sentence: "I have a friend who lives in Tokyo"
+    translation: "Tengo un amigo que vive en Tokio."
 ---
 
 Las oraciones de relativo te permiten describir personas, cosas o lugares dentro de la

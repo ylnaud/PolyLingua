@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La posición del adjetivo cambia el significado: antes del sustantivo (vecchio describe antigüedad de la relación), después del sustantivo (vecchio describe edad física)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ho una macchina ___."
+    answer: "rossa"
+    accepted: ["rossa"]
+    hint: "La mayoría de los adjetivos, como los de color, van DESPUÉS del sustantivo."
+    translation: "Tengo un coche rojo."
+  - type: "fill-blank"
+    sentence: "Marco è un ___ amico."
+    answer: "vecchio"
+    accepted: ["vecchio"]
+    hint: "'vecchio' ANTES del sustantivo indica antigüedad de la relación, no edad física."
+    translation: "Marco es un amigo de toda la vida."
+  - type: "match"
+    instructions: "Empareja cada expresión con su significado según la posición del adjetivo."
+    pairs:
+      - left: "un vecchio amico"
+        right: "un amigo de toda la vida"
+      - left: "un amico vecchio"
+        right: "un amigo viejo de edad"
+      - left: "un grand'uomo"
+        right: "un gran hombre (admirado)"
+      - left: "un uomo grande"
+        right: "un hombre grande (físicamente)"
+      - left: "un buon ristorante"
+        right: "un buen restaurante"
+  - type: "write"
+    prompt: "Escribe en italiano 'una casa pequeña' (piccola va antes del sustantivo)."
+    answer: "una piccola casa"
+    accepted: ["una piccola casa"]
+    hint: "'piccolo' pertenece al grupo de adjetivos cortos y comunes que suelen ir antes del sustantivo."
+  - type: "order"
+    sentence: "Questa è una piccola casa"
+    translation: "Esta es una casa pequeña."
 ---
 
 En español, mover un adjetivo antes o después del sustantivo suele ser solo un matiz

@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "La anáfora repite deliberadamente una palabra o estructura al comienzo de frases seguidas para crear ritmo y énfasis — una técnica con raíces en la oratoria clásica romana."
+exercises:
+  - type: "fill-blank"
+    sentence: "La vita è un ___."
+    answer: "viaggio"
+    accepted: ["Viaggio"]
+    hint: "Metáfora clásica: compara la vida con un viaje, sin usar 'come' (como)."
+    translation: "La vida es un viaje."
+  - type: "fill-blank"
+    sentence: "Non ci arrenderemo. Non indietreggeremo. Non ___."
+    answer: "taceremo"
+    accepted: ["Taceremo"]
+    hint: "Anáfora con 'Non...' — este verbo significa 'callaremos'."
+    translation: "No nos rendiremos. No retrocederemos. No callaremos."
+  - type: "match"
+    instructions: "Empareja cada figura retórica con lo que hace."
+    pairs:
+      - left: "Metafora"
+        right: "Compara sin usar 'come' (como)"
+      - left: "Domanda retorica"
+        right: "Afirma disfrazado de pregunta"
+      - left: "Anafora"
+        right: "Repite el inicio de frases consecutivas"
+      - left: "Iperbole"
+        right: "Exagera para dar énfasis"
+      - left: "Antitesi"
+        right: "Contrasta dos ideas opuestas"
+  - type: "write"
+    prompt: "Escribe en italiano la pregunta retórica que significa '¿quién no querría esto?'."
+    answer: "Chi non vorrebbe questo?"
+    accepted: ["Chi non vorrebbe questo"]
+    hint: "No busca respuesta real — afirma algo con fuerza persuasiva."
+  - type: "order"
+    sentence: "Te l'ho detto un milione di volte"
+    translation: "Te lo he dicho un millón de veces."
 ---
 
 Llegaste al último tramo: las herramientas que transforman un italiano correcto en un

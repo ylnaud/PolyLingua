@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "El español moderno usa presente de indicativo o subjuntivo simple en este tipo de frases ('cuando pueda, llamo/llamaré'), sin un tiempo verbal dedicado, así que es fácil no notar que el portugués tiene una forma verbal específica y distinta para este matiz de futuro incierto."
+exercises:
+  - type: "fill-blank"
+    sentence: "Se você ___ tempo, me avise."
+    answer: "tiver"
+    accepted: ["tiver"]
+    hint: "Futuro do subjuntivo de 'ter' tras 'se', para una condición futura incierta."
+    translation: "Si tienes tiempo, avísame."
+  - type: "fill-blank"
+    sentence: "Quando ela ___, avise-me."
+    answer: "chegar"
+    accepted: ["chegar"]
+    hint: "Verbo regular en -ar: el futuro do subjuntivo coincide con el infinitivo pessoal."
+    translation: "Cuando ella llegue, avísame."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su forma de futuro do subjuntivo (eu/ele)."
+    pairs:
+      - left: "ser/ir"
+        right: "for"
+      - left: "estar"
+        right: "estiver"
+      - left: "ter"
+        right: "tiver"
+      - left: "poder"
+        right: "puder"
+      - left: "fazer"
+        right: "fizer"
+  - type: "write"
+    prompt: "Completa en portugués: 'Quando eu ___ (poder), eu ligo para você.' Escribe solo la forma verbal correcta."
+    answer: "puder"
+    accepted: ["puder"]
+    hint: "Futuro do subjuntivo irregular de 'poder'."
+  - type: "order"
+    sentence: "Se ele vier me avise"
+    translation: "Si él viene, avísame."
 ---
 
 Llegaste a la lección que hace del portugués un idioma verdaderamente único entre los

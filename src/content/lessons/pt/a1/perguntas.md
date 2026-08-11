@@ -24,6 +24,38 @@ quiz:
     options: ["Por que?", "Para que?", "Porque?"]
     answerIndex: 0
     explanation: "'Por que?' (separado, con acento en la pregunta) significa '¿por qué?'; 'porque' (junto, sin acento) significa 'porque' como respuesta."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ você mora?"
+    answer: "Onde"
+    hint: "Palabra interrogativa que significa 'dónde'."
+    translation: "¿Dónde vives?"
+  - type: "fill-blank"
+    sentence: "___ custa isso?"
+    answer: "Quanto"
+    hint: "Palabra interrogativa que significa 'cuánto'."
+    translation: "¿Cuánto cuesta esto?"
+  - type: "match"
+    instructions: "Empareja cada palabra interrogativa con su significado."
+    pairs:
+      - left: "quem"
+        right: "quién"
+      - left: "quando"
+        right: "cuándo"
+      - left: "como"
+        right: "cómo"
+      - left: "qual"
+        right: "cuál"
+      - left: "por que"
+        right: "por qué"
+  - type: "write"
+    prompt: "Escribe en portugués cómo preguntarías '¿Cuál es tu nombre?'."
+    answer: "Qual é o seu nome?"
+    accepted: ["qual é o seu nome?", "Qual é o seu nome"]
+    hint: "qual + é + o seu nome."
+  - type: "order"
+    sentence: "Quando você chega"
+    translation: "¿Cuándo llegas?"
 ---
 
 Formar preguntas es una de las primeras herramientas prácticas que necesitas para

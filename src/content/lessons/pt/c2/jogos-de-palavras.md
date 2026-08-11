@@ -24,6 +24,38 @@ quiz:
     ]
     answerIndex: 0
     explanation: "Un trocadilho exige reconocer simultáneamente el sonido y el doble significado de una palabra — una habilidad que va mucho más allá de la gramática o el vocabulario básico."
+exercises:
+  - type: "fill-blank"
+    sentence: "Cadê o ___ do bolo?"
+    answer: "resto"
+    accepted: ["Resto"]
+    hint: "Doble sentido: sobrante de comida y también término matemático."
+    translation: "¿Dónde está el resto del pastel?"
+  - type: "fill-blank"
+    sentence: "Que Papai Noel te traga ___, e não presença de fatura."
+    answer: "presentes"
+    accepted: ["Presentes"]
+    hint: "Juego de palabras con el sonido de 'presença'."
+    translation: "Que Papá Noel te traiga regalos, y no la presencia de la factura."
+  - type: "match"
+    instructions: "Empareja cada palabra con el doble sentido que activa el trocadilho."
+    pairs:
+      - left: "resto"
+        right: "sobrante de comida / resultado matemático"
+      - left: "presente"
+        right: "regalo / estar presente"
+      - left: "fatura"
+        right: "factura (cuenta a pagar)"
+      - left: "trocadilho"
+        right: "juego de palabras basado en sonido o significado"
+  - type: "write"
+    prompt: "Escribe la palabra portuguesa que designa un juego de palabras basado en sonidos similares o dobles sentidos."
+    answer: "trocadilho"
+    accepted: ["o trocadilho"]
+    hint: "Es la palabra que da nombre a esta lección."
+  - type: "order"
+    sentence: "Que Papai Noel te traga presentes e não presença de fatura"
+    translation: "Que Papá Noel te traiga regalos, y no la presencia de la factura."
 ---
 
 Entender un juego de palabras en portugués sin que te lo expliquen es una de las

@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'parto domani' describe un plan futuro con fecha; 'sto per partire' describe algo inminente, a punto de ocurrir en este preciso momento."
+exercises:
+  - type: "fill-blank"
+    sentence: "Domani ___ per Roma."
+    answer: "parto"
+    accepted: ["parto"]
+    hint: "Presente + marcador de tiempo ('domani') para un plan futuro ya decidido."
+    translation: "Mañana salgo para Roma."
+  - type: "fill-blank"
+    sentence: "Il film ___ per iniziare."
+    answer: "sta"
+    accepted: ["sta"]
+    hint: "'stare' conjugado (lui/lei: sta) + per + infinitivo, para algo inminente."
+    translation: "La película está a punto de empezar."
+  - type: "match"
+    instructions: "Empareja cada pronombre con la forma correcta de 'stare'."
+    pairs:
+      - left: "io"
+        right: "sto"
+      - left: "tu"
+        right: "stai"
+      - left: "noi"
+        right: "stiamo"
+      - left: "voi"
+        right: "state"
+      - left: "loro"
+        right: "stanno"
+  - type: "write"
+    prompt: "Escribe en italiano 'Estoy a punto de partir' usando la estructura 'stare per'."
+    answer: "Sto per partire"
+    accepted: ["sto per partire"]
+    hint: "stare (conjugado) + per + infinitivo."
+  - type: "order"
+    sentence: "Stasera vediamo un film"
+    translation: "Esta noche vemos una película."
 ---
 
 El italiano cotidiano tiene dos formas naturales de hablar del futuro cercano, sin

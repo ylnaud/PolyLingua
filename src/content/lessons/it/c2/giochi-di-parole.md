@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "A diferencia de la gramática, el humor exige entender referencias culturales, matices de tono y timing — la prueba final de que realmente 'piensas' en el idioma."
+exercises:
+  - type: "fill-blank"
+    sentence: "Cameriere, c'è una mosca nella ___!"
+    answer: "minestra"
+    accepted: ["Minestra"]
+    hint: "La palabra italiana para 'sopa', protagonista del chiste clásico del camarero."
+    translation: "¡Camarero, hay una mosca en la sopa!"
+  - type: "fill-blank"
+    sentence: "Molti scherzi italiani dipendono dal doppio ___."
+    answer: "senso"
+    accepted: ["Senso"]
+    hint: "Junto con 'doppio' forma la expresión 'doble sentido'."
+    translation: "Muchos chistes italianos dependen del doble sentido."
+  - type: "match"
+    instructions: "Empareja cada término o frase con su explicación."
+    pairs:
+      - left: "barzelletta"
+        right: "chiste corto con estructura de pregunta-respuesta"
+      - left: "doppio senso"
+        right: "palabra con dos significados posibles a la vez"
+      - left: "genovese"
+        right: "estereotipo regional del tacaño en los chistes italianos"
+      - left: "napoletano"
+        right: "estereotipo regional del ruidoso en los chistes italianos"
+      - left: "mosca nella minestra"
+        right: "clásico chiste italiano del camarero"
+  - type: "write"
+    prompt: "Escribe en italiano la palabra que significa 'camarero', protagonista del chiste clásico de la mosca en la sopa."
+    answer: "cameriere"
+    accepted: ["Cameriere"]
+    hint: "Es la persona a la que le habla el cliente en el chiste."
+  - type: "order"
+    sentence: "Non si preoccupi non beve molto"
+    translation: "No se preocupe, no bebe mucho."
 ---
 
 Reírte de un chiste en italiano —de verdad, sin que alguien te lo explique después—

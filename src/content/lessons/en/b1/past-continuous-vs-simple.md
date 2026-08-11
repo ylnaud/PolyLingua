@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'While I was reading, she was cooking' usa Past Continuous en ambas partes porque son dos acciones largas ocurriendo al mismo tiempo — ninguna interrumpe a la otra."
+exercises:
+  - type: "fill-blank"
+    sentence: "I ___ (cook) dinner when she called."
+    answer: "was cooking"
+    accepted: ["was cooking"]
+    hint: "Past Continuous: was/were + verbo-ing, para el telón de fondo."
+    translation: "Estaba cocinando la cena cuando ella llamó."
+  - type: "fill-blank"
+    sentence: "While I ___ (read), she was cooking."
+    answer: "was reading"
+    accepted: ["was reading"]
+    hint: "'while' introduce una acción de fondo en Past Continuous."
+    translation: "Mientras yo leía, ella cocinaba."
+  - type: "match"
+    instructions: "Empareja cada sujeto con su forma correcta de 'be' en pasado."
+    pairs:
+      - left: "I"
+        right: "was"
+      - left: "she"
+        right: "was"
+      - left: "you"
+        right: "were"
+      - left: "they"
+        right: "were"
+      - left: "we"
+        right: "were"
+  - type: "write"
+    prompt: "Escribe en inglés: 'Estaba lloviendo y las calles estaban vacías.'"
+    answer: "It was raining and the streets were empty."
+    accepted: ["It was raining and the streets were empty"]
+    hint: "Usa Past Continuous para describir la escena."
+  - type: "order"
+    sentence: "I was sleeping when the alarm went off"
+    translation: "Estaba durmiendo cuando sonó la alarma."
 ---
 
 Ya dominas el Past Simple para contar eventos completados. Ahora necesitas su compañero

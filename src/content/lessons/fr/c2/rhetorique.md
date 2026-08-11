@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "La anáfora repite deliberadamente una palabra o estructura al comienzo de frases seguidas para crear ritmo y énfasis — un recurso clásico de los grandes discursos franceses."
+exercises:
+  - type: "fill-blank"
+    sentence: "La vie est un long ___ tranquille."
+    answer: "fleuve"
+    accepted: ["Fleuve"]
+    hint: "Metáfora clásica: compara la vida con un río tranquilo."
+    translation: "La vida es un largo río tranquilo."
+  - type: "fill-blank"
+    sentence: "___ pourrait le nier ?"
+    answer: "Qui"
+    accepted: ["qui"]
+    hint: "Pregunta retórica: afirma disfrazada de pregunta."
+    translation: "¿Quién podría negarlo?"
+  - type: "match"
+    instructions: "Empareja cada figura retórica con su ejemplo."
+    pairs:
+      - left: "Métaphore"
+        right: "La vie est un long fleuve tranquille."
+      - left: "Question rhétorique"
+        right: "Qui pourrait le nier?"
+      - left: "Anaphore"
+        right: "Nous voulons la paix. Nous voulons la justice."
+      - left: "Hyperbole"
+        right: "Je te l'ai dit mille fois!"
+      - left: "Antithèse"
+        right: "Un petit pas pour l'homme, un grand pas pour l'humanité."
+  - type: "write"
+    prompt: "Escribe en francés la frase hiperbólica que significa '¡Te lo he dicho mil veces!'."
+    answer: "Je te l'ai dit mille fois !"
+    accepted: ["Je te l'ai dit mille fois!", "je te l'ai dit mille fois !"]
+    hint: "Termina en 'mille fois'."
+  - type: "order"
+    sentence: "Nous ne céderons pas"
+    translation: "No cederemos."
 ---
 
 Llegaste al último tramo: las herramientas que transforman un francés correcto en un

@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'reunião de alinhamento' es un término muy común en el ambiente corporativo para reuniones de coordinación entre personas o equipos."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ em anexo o documento solicitado."
+    answer: "Segue"
+    accepted: ["segue"]
+    hint: "Fórmula estándar y formal para referirse a un archivo adjunto en un correo profesional."
+    translation: "Adjunto encontrará el documento solicitado."
+  - type: "fill-blank"
+    sentence: "Vamos agendar uma ___ para discutir isso."
+    answer: "call"
+    accepted: ["call"]
+    hint: "Anglicismo corporativo brasileño muy común, especialmente en startups y tecnología."
+    translation: "Vamos a agendar una llamada para discutir esto."
+  - type: "match"
+    instructions: "Empareja cada término del vocabulario de reuniones con su traducción."
+    pairs:
+      - left: "a pauta"
+        right: "la agenda (de una reunión)"
+      - left: "a reunião de alinhamento"
+        right: "reunión de coordinación"
+      - left: "o prazo"
+        right: "el plazo"
+      - left: "a meta"
+        right: "la meta / el objetivo"
+      - left: "o orçamento"
+        right: "el presupuesto"
+  - type: "write"
+    prompt: "Escribe en portugués la fórmula formal de cierre de un correo, equivalente a 'Atentamente,'."
+    answer: "Atenciosamente"
+    accepted: ["Atenciosamente,", "Atenciosamente"]
+    hint: "Es la fórmula de despedida estándar en correos corporativos formales."
+  - type: "order"
+    sentence: "Fico à disposição para esclarecimentos"
+    translation: "Quedo a su disposición para aclaraciones."
 ---
 
 El portugués de negocios combina fórmulas formales tradicionales con una fuerte

@@ -20,6 +20,35 @@ quiz:
     options: ["en", "y", "le"]
     answerIndex: 1
     explanation: "'penser à' usa la preposición 'à', así que se reemplaza con 'y': J'y pense (pienso en eso)."
+exercises:
+  - type: "fill-blank"
+    sentence: "J'___ vais avec plaisir."
+    answer: "y"
+    hint: "'y' reemplaza un lugar introducido por 'à'."
+    translation: "Voy allí con gusto."
+  - type: "fill-blank"
+    sentence: "J'___ ai trois."
+    answer: "en"
+    hint: "'en' reemplaza una cantidad + sustantivo."
+    translation: "Tengo tres de ellos."
+  - type: "match"
+    instructions: "Empareja cada frase original con su versión usando 'y' o 'en'."
+    pairs:
+      - left: "Je vais à Paris"
+        right: "J'y vais"
+      - left: "Je pense à ce problème"
+        right: "J'y pense"
+      - left: "J'ai trois livres"
+        right: "J'en ai trois"
+      - left: "Je viens de Paris"
+        right: "J'en viens"
+  - type: "write"
+    prompt: "Escribe en francés 'Hay tres de ellos' combinando 'il y a' con 'en'."
+    answer: "Il y en a trois."
+    hint: "Combina 'il y a' + 'en': il y en a..."
+  - type: "order"
+    sentence: "Il y en a trois"
+    translation: "Hay tres de ellos."
 ---
 
 Estos dos pronombres pequeños son extremadamente frecuentes en francés hablado —

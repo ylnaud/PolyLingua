@@ -24,6 +24,37 @@ quiz:
     options: ["A carta é escrito.", "A carta é escrita.", "A carta é escritos."]
     answerIndex: 1
     explanation: "Con 'ser', el participio concuerda en género y número con el sujeto: a carta é escrita (con 'a' final, femenino singular)."
+exercises:
+  - type: "fill-blank"
+    sentence: "O almoço ___ preparado pelo chef."
+    answer: "é"
+    hint: "Presente pasivo: ser (conjugado) + participio."
+    translation: "El almuerzo es preparado por el chef."
+  - type: "fill-blank"
+    sentence: "Este livro foi escrito ___ Machado de Assis."
+    answer: "por"
+    hint: "'por' introduce al agente en la voz pasiva."
+    translation: "Este libro fue escrito por Machado de Assis."
+  - type: "match"
+    instructions: "Empareja cada forma pasiva con su traducción."
+    pairs:
+      - left: "é construída"
+        right: "es construida"
+      - left: "foi construída"
+        right: "fue construida"
+      - left: "será construída"
+        right: "será construida"
+      - left: "é lido"
+        right: "es leído"
+      - left: "é escrita"
+        right: "es escrita"
+  - type: "write"
+    prompt: "Escribe la voz pasiva en portugués de 'Machado de Assis escreveu este livro.'"
+    answer: "Este livro foi escrito por Machado de Assis."
+    hint: "El objeto directo se convierte en sujeto; verbo = ser + participio; agente con 'por'."
+  - type: "order"
+    sentence: "A casa é construída"
+    translation: "La casa es construida."
 ---
 
 Igual que en español, el portugués usa la voz pasiva cuando el **qué pasó** importa más

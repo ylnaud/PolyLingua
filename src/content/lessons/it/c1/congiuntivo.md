@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "A diferencia del español, el italiano considera que expresar una opinión personal ('penso che', 'credo che') introduce subjetividad, por lo que activa el congiuntivo: Penso che lui abbia ragione."
+exercises:
+  - type: "fill-blank"
+    sentence: "Bisogna che tu ___ (andare)."
+    answer: "vada"
+    accepted: ["vada"]
+    hint: "'bisogna che' siempre exige congiuntivo: che tu vada."
+    translation: "Hay que ir (que tú vayas)."
+  - type: "fill-blank"
+    sentence: "Penso che lui ___ (avere) ragione."
+    answer: "abbia"
+    accepted: ["abbia"]
+    hint: "Congiuntivo presente de 'avere' para lui/lei: abbia."
+    translation: "Creo que él tiene razón."
+  - type: "match"
+    instructions: "Empareja el pronombre con la forma correcta de congiuntivo presente de 'parlare'."
+    pairs:
+      - left: "che io"
+        right: "parli"
+      - left: "che tu"
+        right: "parli"
+      - left: "che noi"
+        right: "parliamo"
+      - left: "che voi"
+        right: "parliate"
+      - left: "che loro"
+        right: "parlino"
+  - type: "write"
+    prompt: "Escribe en italiano: 'Espero que vengas.'"
+    answer: "Spero che tu venga."
+    accepted: ["Spero che tu venga"]
+    hint: "'sperare che' es un disparador de deseo: congiuntivo de 'venire' para tu es 'venga'."
+  - type: "order"
+    sentence: "Sebbene piova esco"
+    translation: "Aunque llueva, salgo."
 ---
 
 El congiuntivo tiene fama de ser el gran obstáculo del italiano avanzado — pero se reduce

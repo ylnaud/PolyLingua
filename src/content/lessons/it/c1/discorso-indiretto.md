@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Los marcadores de tiempo cambian junto con los verbos: domani → il giorno dopo, oggi → quel giorno, ieri → il giorno prima."
+exercises:
+  - type: "fill-blank"
+    sentence: "Maria ha detto che ___ stanca."
+    answer: "era"
+    accepted: ["era"]
+    hint: "El presente 'sono' retrocede a imperfetto 'era' en discurso indirecto."
+    translation: "Maria dijo que estaba cansada."
+  - type: "fill-blank"
+    sentence: "Paolo ha detto che sarebbe venuto il giorno ___."
+    answer: "dopo"
+    accepted: ["dopo"]
+    hint: "'domani' cambia a 'il giorno dopo' al reportar discurso."
+    translation: "Paolo dijo que vendría al día siguiente."
+  - type: "match"
+    instructions: "Empareja cada marcador de discurso directo con su equivalente en discurso indirecto."
+    pairs:
+      - left: "oggi"
+        right: "quel giorno"
+      - left: "domani"
+        right: "il giorno dopo"
+      - left: "ieri"
+        right: "il giorno prima"
+      - left: "adesso"
+        right: "in quel momento"
+  - type: "write"
+    prompt: "Reporta en discurso indirecto lo que dijo Paolo: 'Ho finito.'"
+    answer: "Paolo ha detto che aveva finito."
+    accepted: ["Paolo ha detto che aveva finito"]
+    hint: "El passato prossimo retrocede a trapassato prossimo: aveva finito."
+  - type: "order"
+    sentence: "Mi ha detto di chiudere la porta"
+    translation: "Me dijo que cerrara la puerta."
 ---
 
 Cuando cuentas lo que alguien más dijo, el italiano no usa comillas — cambia

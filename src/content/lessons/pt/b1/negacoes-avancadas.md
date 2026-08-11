@@ -20,6 +20,40 @@ quiz:
     options: ["también", "tampoco", "todavía"]
     answerIndex: 1
     explanation: "'tampouco' es un cognado casi directo del español 'tampoco', usado de forma muy similar: Eu não fui, e ela tampouco. (Yo no fui, y ella tampoco)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu não bebo, ___ fumo."
+    answer: "nem"
+    accepted: ["Nem"]
+    hint: "'nem' añade una segunda negación: ni/tampoco."
+    translation: "No bebo, ni fumo."
+  - type: "fill-blank"
+    sentence: "___ tentei consertar."
+    answer: "Nem sequer"
+    accepted: ["nem sequer"]
+    hint: "'nem sequer' significa 'ni siquiera'."
+    translation: "Ni siquiera intenté arreglarlo."
+  - type: "match"
+    instructions: "Empareja cada estructura de negación con su significado en español."
+    pairs:
+      - left: "nem"
+        right: "ni / tampoco"
+      - left: "nem sequer"
+        right: "ni siquiera"
+      - left: "tampouco"
+        right: "tampoco"
+      - left: "de jeito nenhum"
+        right: "de ninguna manera"
+      - left: "nem... nem..."
+        right: "ni... ni..."
+  - type: "write"
+    prompt: "Escribe en portugués: 'Yo no fui a la fiesta, y ella tampoco.'"
+    answer: "Eu não fui à festa, e ela tampouco."
+    accepted: []
+    hint: "'tampouco' se coloca al final de la frase, como en español."
+  - type: "order"
+    sentence: "Ela não gosta nem de café nem de chá"
+    translation: "A ella no le gusta ni el café ni el té."
 ---
 
 Más allá de "não", el portugués tiene varias herramientas para negar con precisión y

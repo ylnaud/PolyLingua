@@ -24,6 +24,35 @@ quiz:
     ]
     answerIndex: 0
     explanation: "A diferencia del francés (ne...pas, dos palabras), el italiano solo necesita 'non' — mucho más simple, como el español 'no'."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ parlo italiano."
+    answer: "Non"
+    hint: "La negación va siempre justo antes del verbo conjugado."
+    translation: "No hablo italiano."
+  - type: "fill-blank"
+    sentence: "Non ho ___."
+    answer: "fame"
+    hint: "Lo opuesto de 'Ho fame' (tengo hambre)."
+    translation: "No tengo hambre."
+  - type: "match"
+    instructions: "Empareja cada negación compuesta con su significado."
+    pairs:
+      - left: "non... mai"
+        right: "nunca"
+      - left: "non... niente"
+        right: "nada"
+      - left: "non... più"
+        right: "ya no"
+      - left: "non... nessuno"
+        right: "nadie"
+  - type: "write"
+    prompt: "Escribe cómo dirías 'No es verdad' en italiano."
+    answer: "Non è vero"
+    hint: "non + verbo essere (è) + vero."
+  - type: "order"
+    sentence: "Non mangio mai carne"
+    translation: "Nunca como carne."
 ---
 
 Negar en italiano es, de los cinco idiomas del curso, la estructura más simple de

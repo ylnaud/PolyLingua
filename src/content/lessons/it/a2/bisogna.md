@@ -20,6 +20,40 @@ quiz:
     options: ["parti", "parta", "partire"]
     answerIndex: 1
     explanation: "'bisogna che' + sujeto específico exige congiuntivo: Bisogna che tu parta (tienes que irte). Sin 'che' + sujeto, se usa infinitivo: bisogna partire."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ mangiare per vivere."
+    answer: "Bisogna"
+    accepted: ["bisogna"]
+    hint: "Expresión impersonal para obligación general, sin sujeto específico, seguida de infinitivo."
+    translation: "Hay que comer para vivir."
+  - type: "fill-blank"
+    sentence: "Bisogna che tu ___ adesso."
+    answer: "parta"
+    accepted: ["parta"]
+    hint: "'bisogna che' + sujeto específico exige el congiuntivo del verbo 'partire'."
+    translation: "Tienes que irte ahora."
+  - type: "match"
+    instructions: "Empareja cada expresión impersonal con su significado."
+    pairs:
+      - left: "bisogna"
+        right: "hay que (obligación general)"
+      - left: "ci vuole"
+        right: "se necesita (singular)"
+      - left: "ci vogliono"
+        right: "se necesitan (plural)"
+      - left: "è meglio"
+        right: "es mejor"
+      - left: "è necessario"
+        right: "es necesario"
+  - type: "write"
+    prompt: "Escribe en italiano cómo dirías 'se necesitan dos horas' usando 'ci vogliono'."
+    answer: "Ci vogliono due ore"
+    accepted: ["ci vogliono due ore"]
+    hint: "'ci vogliono' se usa cuando lo que se necesita es plural."
+  - type: "order"
+    sentence: "Bisogna essere pazienti"
+    translation: "Hay que ser paciente."
 ---
 
 Estas expresiones impersonales son extremadamente comunes en italiano cotidiano —

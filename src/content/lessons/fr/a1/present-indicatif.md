@@ -20,6 +20,40 @@ quiz:
     options: ["ils avons", "ils ont", "ils as"]
     answerIndex: 1
     explanation: "'avoir' con 'ils/elles' es 'ont': ils ont. Otro verbo irregular esencial que aparece en construcciones como 'avoir faim' (tener hambre)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Tu ___ français."
+    answer: "parles"
+    accepted: ["parles"]
+    hint: "Verbo en -er con 'tu': terminación -es."
+    translation: "Hablas francés."
+  - type: "fill-blank"
+    sentence: "Nous ___ des amis."
+    answer: "avons"
+    accepted: ["avons"]
+    hint: "'avoir' con 'nous' es irregular: avons."
+    translation: "Tenemos amigos."
+  - type: "match"
+    instructions: "Empareja cada pronombre conjugado con 'être' con su traducción."
+    pairs:
+      - left: "je suis"
+        right: "yo soy/estoy"
+      - left: "tu es"
+        right: "tú eres/estás"
+      - left: "il est"
+        right: "él es/está"
+      - left: "nous sommes"
+        right: "nosotros somos/estamos"
+      - left: "ils sont"
+        right: "ellos son/están"
+  - type: "write"
+    prompt: "Escribe la conjugación de 'avoir' con 'ils' (ellos tienen)."
+    answer: "ils ont"
+    accepted: ["ils ont"]
+    hint: "'avoir' es irregular; con 'ils/elles' es 'ont'."
+  - type: "order"
+    sentence: "Il a vingt ans"
+    translation: "Él tiene veinte años."
 ---
 
 El francés organiza sus verbos en tres grupos según su terminación, y el primer grupo

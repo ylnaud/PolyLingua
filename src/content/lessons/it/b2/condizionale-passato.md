@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Como en los otros idiomas, esta estructura describe un escenario alternativo al pasado real: no tuvo tiempo, y no terminó el proyecto."
+exercises:
+  - type: "fill-blank"
+    sentence: "Se avessi saputo, ___ venuto prima."
+    answer: "sarei"
+    accepted: ["sarei"]
+    hint: "Condizionale presente de 'essere' + participio: verbo de movimiento, usa 'essere'."
+    translation: "Si hubiera sabido, habría venido antes."
+  - type: "fill-blank"
+    sentence: "___ dovuto studiare di più."
+    answer: "Avrei"
+    accepted: ["Avrei", "avrei"]
+    hint: "Condizionale presente de 'avere' + participio passato: arrepentimiento clásico."
+    translation: "Debería haber estudiado más."
+  - type: "match"
+    instructions: "Empareja cada forma en condizionale passato con su traducción."
+    pairs:
+      - left: "avrei voluto"
+        right: "habría querido"
+      - left: "sarei partito"
+        right: "me habría ido"
+      - left: "avrei dovuto"
+        right: "debería haber"
+      - left: "avrei finito"
+        right: "habría terminado"
+      - left: "sarei venuto"
+        right: "habría venido"
+  - type: "write"
+    prompt: "Escribe en italiano cómo dirías 'habría preparado algo' (avere, condizionale passato)."
+    answer: "avrei preparato qualcosa"
+    accepted: ["Avrei preparato qualcosa"]
+    hint: "avere en condizionale presente (avrei) + participio passato de preparare."
+  - type: "order"
+    sentence: "Se avessi avuto tempo avrei finito il progetto"
+    translation: "Si hubiera tenido tiempo, habría terminado el proyecto."
 ---
 
 Este condicional te permite reflexionar sobre un pasado que ya no se puede cambiar —

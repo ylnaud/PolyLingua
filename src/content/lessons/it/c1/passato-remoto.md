@@ -24,6 +24,40 @@ quiz:
     options: ["l'imperfetto", "il passato prossimo", "il futuro semplice"]
     answerIndex: 1
     explanation: "En el italiano estándar del norte, el passato prossimo cumple la función que el passato remoto cumple por escrito o en el sur — son funcionalmente equivalentes en distintos contextos."
+exercises:
+  - type: "fill-blank"
+    sentence: "Lui ___ (parlare, passato remoto)."
+    answer: "parlò"
+    accepted: ["parlò"]
+    hint: "-are en passato remoto para lui/lei: raíz + -ò."
+    translation: "Él habló."
+  - type: "fill-blank"
+    sentence: "Loro ___ (vendere, passato remoto)."
+    answer: "vendettero"
+    accepted: ["vendettero", "venderono"]
+    hint: "-ere en passato remoto para loro: -erono o -ettero."
+    translation: "Ellos vendieron."
+  - type: "match"
+    instructions: "Empareja cada infinitivo irregular con su forma de passato remoto para 'lui'."
+    pairs:
+      - left: "essere"
+        right: "fu"
+      - left: "avere"
+        right: "ebbe"
+      - left: "fare"
+        right: "fece"
+      - left: "dire"
+        right: "disse"
+      - left: "venire"
+        right: "venne"
+  - type: "write"
+    prompt: "Escribe en italiano, en passato remoto, cómo dirías 'ella durmió'."
+    answer: "Lei dormì"
+    accepted: ["Lei dormì", "dormì", "Dormì"]
+    hint: "-ire en passato remoto para lei: raíz + -ì."
+  - type: "order"
+    sentence: "Aprì la porta e vide un uomo seduto vicino alla finestra"
+    translation: "Abrió la puerta y vio a un hombre sentado cerca de la ventana."
 ---
 
 Este es un tiempo verbal con una geografía curiosa: en algunas partes de Italia es

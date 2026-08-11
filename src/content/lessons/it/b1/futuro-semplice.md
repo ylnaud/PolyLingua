@@ -20,6 +20,40 @@ quiz:
     options: ["-emo", "-anno", "-ai"]
     answerIndex: 0
     explanation: "'noi' + '-emo': parleremo, finiremo, venderemo. Las terminaciones son las mismas para los tres grupos verbales."
+exercises:
+  - type: "fill-blank"
+    sentence: "Domani io ___ con Marco."
+    answer: "parlerò"
+    accepted: ["Parlerò"]
+    hint: "Futuro de 'parlare' con 'io' — recuerda el cambio de vocal 'a' a 'e'."
+    translation: "Mañana hablaré con Marco."
+  - type: "fill-blank"
+    sentence: "Lui ___ tardi, ormai."
+    answer: "sarà"
+    accepted: ["Sarà"]
+    hint: "Futuro irregular de 'essere' (raíz sar-), usado aquí como suposición sobre el presente."
+    translation: "Ya debe ser tarde."
+  - type: "match"
+    instructions: "Empareja cada pronombre con la forma correcta del futuro de 'parlare'."
+    pairs:
+      - left: "io"
+        right: "parlerò"
+      - left: "tu"
+        right: "parlerai"
+      - left: "noi"
+        right: "parleremo"
+      - left: "voi"
+        right: "parlerete"
+      - left: "loro"
+        right: "parleranno"
+  - type: "write"
+    prompt: "Escribe el futuro de 'andare' con 'io' (iré)."
+    answer: "andrò"
+    accepted: ["Andrò"]
+    hint: "Irregular: la raíz cambia a 'andr-'."
+  - type: "order"
+    sentence: "Domani io parlerò con il capo"
+    translation: "Mañana hablaré con el jefe."
 ---
 
 El futuro semplice es el futuro "formal" del italiano — el que aparece en promesas,

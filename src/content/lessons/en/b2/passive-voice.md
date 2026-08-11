@@ -28,6 +28,35 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Pasado pasivo = was/were + participio: The bridge was built in 1930."
+exercises:
+  - type: "fill-blank"
+    sentence: "The meal ___ cooked by the chef."
+    answer: "is"
+    hint: "Presente pasivo: be (conjugado) + participio."
+    translation: "La comida es cocinada por el chef."
+  - type: "fill-blank"
+    sentence: "The bridge ___ built in 1930."
+    answer: "was"
+    hint: "Pasado pasivo: was/were + participio."
+    translation: "El puente fue construido en 1930."
+  - type: "match"
+    instructions: "Empareja cada frase pasiva con su tiempo verbal."
+    pairs:
+      - left: "The report is written every month."
+        right: "presente"
+      - left: "The report was written last week."
+        right: "pasado"
+      - left: "The report has been written."
+        right: "presente perfecto"
+      - left: "The report will be written."
+        right: "futuro"
+  - type: "write"
+    prompt: "Escribe en voz pasiva (pasado): 'Shakespeare escribió esta obra.'"
+    answer: "This play was written by Shakespeare."
+    hint: "El objeto de la activa se vuelve sujeto; be + participio + by + agente."
+  - type: "order"
+    sentence: "My phone was stolen"
+    translation: "Me robaron el teléfono."
 ---
 
 En inglés, la voz pasiva se usa muchísimo más que en español, especialmente en contextos

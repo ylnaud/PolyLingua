@@ -24,6 +24,39 @@ quiz:
     options: ["Debes dormir más (orden directa)", "Deberías dormir más (consejo suave)", "Dormirás más"]
     answerIndex: 1
     explanation: "El Conditionnel de 'devoir' (devrais) suaviza la obligación a un consejo: deberías, en vez de la orden directa 'tu dois' (debes)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Je ___ un café, s'il vous plaît."
+    answer: "voudrais"
+    accepted: ["Je voudrais"]
+    hint: "Conditionnel de 'vouloir', para pedir algo con cortesía."
+    translation: "Quisiera un café, por favor."
+  - type: "fill-blank"
+    sentence: "Tu ___ dormir plus."
+    answer: "devrais"
+    hint: "Conditionnel de 'devoir': suaviza la obligación a un consejo."
+    translation: "Deberías dormir más."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su forma de Conditionnel (je/il)."
+    pairs:
+      - left: "être"
+        right: "serais"
+      - left: "avoir"
+        right: "aurais"
+      - left: "aller"
+        right: "irais"
+      - left: "faire"
+        right: "ferais"
+      - left: "vouloir"
+        right: "voudrais"
+  - type: "write"
+    prompt: "Escribe en francés cómo pedirías ayuda educadamente usando el Conditionnel de 'pouvoir' (¿Podría ayudarme?)."
+    answer: "Pourriez-vous m'aider ?"
+    accepted: ["Pourriez-vous m'aider?", "pourriez-vous m'aider ?"]
+    hint: "Usa la forma de cortesía de 'pouvoir' con 'vous'."
+  - type: "order"
+    sentence: "Si j'avais de l'argent je voyagerais"
+    translation: "Si tuviera dinero, viajaría."
 ---
 
 El Conditionnel présent es tu herramienta para sonar cortés, dar consejos suaves y

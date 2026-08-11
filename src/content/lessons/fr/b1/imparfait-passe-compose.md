@@ -24,6 +24,36 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'regardais' (imparfait, fondo continuo) + 'a sonné' (passé composé, evento puntual que interrumpe) es la combinación clásica: 'Miraba la tele cuando sonó el teléfono'."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il ___ (pleuvoir) quand je suis arrivé."
+    answer: "pleuvait"
+    hint: "Imparfait para describir el fondo/estado continuo."
+    translation: "Llovía cuando llegué."
+  - type: "fill-blank"
+    sentence: "Je ___ (regarder) la télé quand le téléphone a sonné."
+    answer: "regardais"
+    hint: "Imparfait: acción de fondo interrumpida por el passé composé."
+    translation: "Miraba la tele cuando sonó el teléfono."
+  - type: "match"
+    instructions: "Empareja cada frase con el uso del tiempo verbal que ilustra."
+    pairs:
+      - left: "Il faisait beau"
+        right: "Imparfait (descripción)"
+      - left: "Hier, j'ai visité le musée"
+        right: "Passé composé (evento puntual)"
+      - left: "Je jouais au foot tous les samedis"
+        right: "Imparfait (hábito)"
+      - left: "Le téléphone a sonné"
+        right: "Passé composé (interrupción)"
+  - type: "write"
+    prompt: "Escribe en francés: 'Cuando era niño, jugaba todos los días.' (imparfait para un hábito)"
+    answer: "Quand j'étais petit, je jouais tous les jours."
+    accepted: ["Quand j'étais petite, je jouais tous les jours."]
+    hint: "'étais' y 'jouais' van en imparfait."
+  - type: "order"
+    sentence: "Je lisais quand tu as appelé"
+    translation: "Yo leía cuando llamaste."
 ---
 
 Este es, para muchos hispanohablantes, el reto número uno del francés intermedio: elegir

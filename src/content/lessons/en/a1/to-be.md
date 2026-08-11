@@ -20,6 +20,40 @@ quiz:
     options: ["We is students", "We are students", "We am students"]
     answerIndex: 1
     explanation: "Con we/you/they siempre usamos 'are': we are students. Son solo 3 formas (am/is/are) para todo el presente de 'to be'."
+exercises:
+  - type: "fill-blank"
+    sentence: "I ___ tired."
+    answer: "am"
+    accepted: ["Am"]
+    hint: "Con 'I' siempre usamos 'am'."
+    translation: "Estoy cansado."
+  - type: "fill-blank"
+    sentence: "They ___ ready."
+    answer: "are"
+    accepted: ["Are"]
+    hint: "Con we/you/they siempre usamos 'are'."
+    translation: "Ellos están listos."
+  - type: "match"
+    instructions: "Empareja cada pronombre con su forma correcta de 'to be'."
+    pairs:
+      - left: "I"
+        right: "am"
+      - left: "he"
+        right: "is"
+      - left: "she"
+        right: "is"
+      - left: "we"
+        right: "are"
+      - left: "they"
+        right: "are"
+  - type: "write"
+    prompt: "Escribe en inglés: 'Ella es profesora.'"
+    answer: "She is a teacher."
+    accepted: ["She's a teacher."]
+    hint: "Con he/she/it usamos 'is'."
+  - type: "order"
+    sentence: "They are ready"
+    translation: "Ellos están listos."
 ---
 
 En español tienes que decidir entre "ser" y "estar" cada vez que hablas — un dolor de

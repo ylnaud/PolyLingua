@@ -28,6 +28,40 @@ quiz:
     options: ["few / a few", "little / a little", "many / a lot of"]
     answerIndex: 1
     explanation: "'little/a little' se usan con incontables (little time, a little water). 'few/a few' se usan con contables plurales (few friends, a few books)."
+exercises:
+  - type: "fill-blank"
+    sentence: "I have ___ friends here — I feel lonely."
+    answer: "few"
+    accepted: ["few"]
+    hint: "Sin artículo 'a': tono negativo."
+    translation: "Tengo pocos amigos aquí — me siento solo."
+  - type: "fill-blank"
+    sentence: "I have ___ time before the meeting, so let's talk."
+    answer: "a little"
+    accepted: ["a little"]
+    hint: "Con artículo 'a' y sustantivo incontable: tono neutral/positivo."
+    translation: "Tengo un poco de tiempo antes de la reunión, así que hablemos."
+  - type: "match"
+    instructions: "Empareja cada cuantificador con su uso y tono."
+    pairs:
+      - left: "few"
+        right: "contables, tono negativo"
+      - left: "a few"
+        right: "contables, tono neutral/positivo"
+      - left: "little"
+        right: "incontables, tono negativo"
+      - left: "a little"
+        right: "incontables, tono neutral/positivo"
+      - left: "a lot of"
+        right: "cantidad grande, contables e incontables"
+  - type: "write"
+    prompt: "Escribe en inglés: 'Tengo algunos amigos aquí.' (tono neutral/positivo)"
+    answer: "I have a few friends here."
+    accepted: ["I have a few friends here"]
+    hint: "No olvides el artículo 'a' antes de 'few'."
+  - type: "order"
+    sentence: "I have a little time before the meeting"
+    translation: "Tengo un poco de tiempo antes de la reunión."
 ---
 
 Este es uno de los matices más sutiles y sorprendentes del inglés: el mismo par de

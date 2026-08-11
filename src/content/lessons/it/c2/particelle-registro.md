@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "No tienen traducción 1:1 — su significado depende del tono y contexto. No son errores: son el italiano hablado real, y se dominan por exposición e imitación."
+exercises:
+  - type: "fill-blank"
+    sentence: "Non sono ___ stanco."
+    answer: "mica"
+    accepted: ["Mica"]
+    hint: "Partícula que refuerza una negación de forma coloquial, casi como '¡para nada!'."
+    translation: "No estoy nada cansado (¿eh?)."
+  - type: "fill-blank"
+    sentence: "___, sbrigati!"
+    answer: "Dai"
+    accepted: ["dai"]
+    hint: "Partícula de ánimo o insistencia, equivalente a '¡vamos!'."
+    translation: "¡Vamos, date prisa!"
+  - type: "match"
+    instructions: "Empareja cada partícula coloquial con el matiz que aporta."
+    pairs:
+      - left: "mica"
+        right: "negación enfática, '¡para nada!'"
+      - left: "dai"
+        right: "ánimo o insistencia, '¡vamos!'"
+      - left: "magari"
+        right: "deseo intenso e improbable, '¡ojalá!'"
+      - left: "boh"
+        right: "duda, 'no sé', encogimiento de hombros"
+      - left: "insomma"
+        right: "resumen, 'en fin / más o menos'"
+  - type: "write"
+    prompt: "Escribe en italiano la partícula que expresa un deseo intenso pero improbable, como en '¡Ojalá ganara la lotería!'."
+    answer: "magari"
+    accepted: ["Magari"]
+    hint: "Suele disparar el uso del congiuntivo en la frase que sigue."
+  - type: "order"
+    sentence: "Boh magari dai proviamo"
+    translation: "No sé, ojalá, vamos, intentémoslo."
 ---
 
 Llegaste al nivel donde la gramática de manual ya no es el reto. El verdadero examen de

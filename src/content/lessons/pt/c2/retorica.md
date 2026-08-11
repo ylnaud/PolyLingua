@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "La anáfora repite deliberadamente una palabra o estructura al comienzo de frases seguidas para crear ritmo y énfasis — muy usada en discursos políticos lusófonos históricos."
+exercises:
+  - type: "fill-blank"
+    sentence: "A vida é uma ___."
+    answer: "viagem"
+    accepted: ["Viagem"]
+    hint: "Metáfora: compara la vida con un viaje sin usar 'como'."
+    translation: "La vida es un viaje."
+  - type: "fill-blank"
+    sentence: "Já te disse isso um ___ de vezes!"
+    answer: "milhão"
+    accepted: ["Milhão"]
+    hint: "Hipérbole: exageración deliberada para dar énfasis."
+    translation: "¡Ya te dije eso un millón de veces!"
+  - type: "match"
+    instructions: "Empareja cada figura retórica con su ejemplo."
+    pairs:
+      - left: "Metáfora"
+        right: "A vida é uma viagem."
+      - left: "Pergunta retórica"
+        right: "Quem não gostaria disso?"
+      - left: "Anáfora"
+        right: "Queremos a paz. Queremos a justiça."
+      - left: "Hipérbole"
+        right: "Já te disse isso um milhão de vezes!"
+      - left: "Antítese"
+        right: "Um pequeno passo para o homem, um grande salto para a humanidade."
+  - type: "write"
+    prompt: "Escribe en portugués una pregunta retórica que afirme algo con fuerza sin esperar respuesta, empezando con 'Quem não...'."
+    answer: "Quem não gostaria disso?"
+    accepted: ["Quem não gostaria disso"]
+    hint: "Una pergunta retórica no busca información, busca persuadir."
+  - type: "order"
+    sentence: "Um pequeno passo para o homem um grande salto para a humanidade"
+    translation: "Un pequeño paso para el hombre, un gran salto para la humanidad."
 ---
 
 Llegaste al terreno de las herramientas que transforman un portugués correcto en un

@@ -24,6 +24,40 @@ quiz:
     options: ["La lettera è scritto.", "La lettera è scritta.", "La lettera è scritti."]
     answerIndex: 1
     explanation: "Con 'essere', el participio concuerda en género y número con el sujeto: la lettera è scritta (con 'a' final, femenino singular)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il pranzo ___ preparato dallo chef."
+    answer: "è"
+    accepted: ["è", "e"]
+    hint: "Presente de 'essere' conjugado para 'il pranzo' (tercera persona singular)."
+    translation: "El almuerzo es preparado por el chef."
+  - type: "fill-blank"
+    sentence: "La lettera è ___ (scrivere)."
+    answer: "scritta"
+    accepted: ["scritta"]
+    hint: "El participio concuerda en género y número con el sujeto: femenino singular."
+    translation: "La carta está escrita."
+  - type: "match"
+    instructions: "Empareja cada sujeto con la forma correcta del participio de 'leggere' en voz pasiva."
+    pairs:
+      - left: "Il libro è ___"
+        right: "letto"
+      - left: "La lettera è ___"
+        right: "letta"
+      - left: "I libri sono ___"
+        right: "letti"
+      - left: "Le lettere sono ___"
+        right: "lette"
+      - left: "Il ponte è stato ___"
+        right: "costruito"
+  - type: "write"
+    prompt: "Escribe en italiano en voz pasiva (passato prossimo): 'este libro fue escrito por Dante'."
+    answer: "Questo libro è stato scritto da Dante"
+    accepted: ["questo libro è stato scritto da Dante"]
+    hint: "essere (è stato) + participio de scrivere + 'da' para el agente."
+  - type: "order"
+    sentence: "Il libro è stato scritto da Dante"
+    translation: "El libro fue escrito por Dante."
 ---
 
 Igual que en español, el italiano usa la voz pasiva cuando el **qué pasó** importa más

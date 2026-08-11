@@ -20,6 +20,40 @@ quiz:
     options: ["quando (cuando)", "sebbene (aunque)", "affinché (para que)"]
     answerIndex: 0
     explanation: "'quando' (cuando) se usa con indicativo normal: Quando piove, resto a casa. En cambio 'sebbene' y 'affinché' exigen congiuntivo porque expresan contraste o finalidad."
+exercises:
+  - type: "fill-blank"
+    sentence: "Resto a casa ___ sono malato."
+    answer: "perché"
+    accepted: ["Perché"]
+    hint: "Introduce una causa directa y no exige congiuntivo."
+    translation: "Me quedo en casa porque estoy enfermo."
+  - type: "fill-blank"
+    sentence: "Sebbene ___ stanco, continua a lavorare."
+    answer: "sia"
+    accepted: ["Sia"]
+    hint: "'sebbene' siempre exige congiuntivo — 'sia' es la forma de 'essere' para lui/lei."
+    translation: "Aunque esté cansado, sigue trabajando."
+  - type: "match"
+    instructions: "Empareja cada conjunción con su significado."
+    pairs:
+      - left: "perché"
+        right: "porque"
+      - left: "quando"
+        right: "cuando"
+      - left: "poiché"
+        right: "ya que"
+      - left: "sebbene"
+        right: "aunque"
+      - left: "affinché"
+        right: "para que"
+  - type: "write"
+    prompt: "Escribe en italiano 'aunque es rico, está triste', usando 'sebbene' + congiuntivo."
+    answer: "Sebbene sia ricco, è triste"
+    accepted: ["sebbene sia ricco, è triste"]
+    hint: "'sebbene' + congiuntivo de 'essere' (sia)."
+  - type: "order"
+    sentence: "Parlo piano affinché tu capisca"
+    translation: "Hablo despacio para que entiendas."
 ---
 
 En este nivel empiezas a construir frases más ricas: causa, contraste, tiempo. Como en

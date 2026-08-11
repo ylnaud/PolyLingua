@@ -28,6 +28,37 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La posición del adjetivo cambia el significado: después del sustantivo (grand describe altura física), antes del sustantivo (grand describe grandeza/importancia)."
+exercises:
+  - type: "fill-blank"
+    sentence: "un ___ jardin."
+    answer: "beau"
+    hint: "BAGS - Beauty: los adjetivos de belleza van antes del sustantivo."
+    translation: "un hermoso jardín."
+  - type: "fill-blank"
+    sentence: "une voiture ___."
+    answer: "rouge"
+    hint: "La mayoría de los adjetivos (como los de color) van DESPUÉS del sustantivo."
+    translation: "un coche rojo."
+  - type: "match"
+    instructions: "Empareja cada adjetivo con su categoría BAGS (o su posición)."
+    pairs:
+      - left: "beau"
+        right: "belleza (antes)"
+      - left: "vieux"
+        right: "edad (antes)"
+      - left: "bon"
+        right: "bondad (antes)"
+      - left: "grand"
+        right: "tamaño (antes)"
+      - left: "rouge"
+        right: "color (después)"
+  - type: "write"
+    prompt: "Escribe en francés: 'una habitación limpia', usando 'propre' después del sustantivo."
+    answer: "une chambre propre"
+    hint: "Después del sustantivo, 'propre' significa 'limpio', no 'propio'."
+  - type: "order"
+    sentence: "Une vieille maison est belle"
+    translation: "Una casa vieja es bonita."
 ---
 
 En español, mover un adjetivo antes o después del sustantivo suele ser solo un matiz

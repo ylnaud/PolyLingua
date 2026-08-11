@@ -24,6 +24,40 @@ quiz:
     options: ["di conseguenza", "tuttavia", "inoltre"]
     answerIndex: 0
     explanation: "'di conseguenza' (en consecuencia) introduce una consecuencia lógica derivada de lo anterior — típico de textos formales."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ha fallito. ___, non si arrende."
+    answer: "Tuttavia"
+    accepted: ["Tuttavia", "tuttavia"]
+    hint: "Marca contraste con lo dicho antes, en registro formal."
+    translation: "Fracasó. Sin embargo, no se rinde."
+  - type: "fill-blank"
+    sentence: "Il prodotto è economico. ___, è affidabile."
+    answer: "Inoltre"
+    accepted: ["Inoltre", "inoltre"]
+    hint: "Añade un punto adicional que refuerza el argumento anterior."
+    translation: "El producto es económico. Además, es fiable."
+  - type: "match"
+    instructions: "Empareja cada conector con su función en un argumento."
+    pairs:
+      - left: "tuttavia"
+        right: "sin embargo (formal)"
+      - left: "inoltre"
+        right: "además"
+      - left: "di conseguenza"
+        right: "en consecuencia"
+      - left: "per esempio"
+        right: "por ejemplo"
+      - left: "però"
+        right: "pero (neutral, muy usado en el habla)"
+  - type: "write"
+    prompt: "Escribe en italiano el conector formal que introduce una consecuencia lógica (equivalente a 'en consecuencia')."
+    answer: "di conseguenza"
+    accepted: ["Di conseguenza"]
+    hint: "Dos palabras, típico de textos formales."
+  - type: "order"
+    sentence: "Ha studiato molto di conseguenza ha superato l'esame"
+    translation: "Estudió mucho; en consecuencia, aprobó el examen."
 ---
 
 Estos conectores son la señal más clara de un italiano escrito y hablado con

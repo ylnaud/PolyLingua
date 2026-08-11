@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "A diferencia de la gramática, el humor basado en sonidos exige un oído entrenado para el idioma real — la prueba final de que realmente 'escuchas' en francés, no solo lo traduces."
+exercises:
+  - type: "fill-blank"
+    sentence: "Un jeu de mots basé sur des sonorités qui se ressemblent s'appelle un ___."
+    answer: "calembour"
+    accepted: ["Calembour"]
+    hint: "El término francés para 'pun' en inglés."
+    translation: "Un juego de palabras basado en sonidos parecidos se llama un calembour."
+  - type: "fill-blank"
+    sentence: "Le feu est passé au ___."
+    answer: "vert"
+    accepted: ["Vert"]
+    hint: "Homófono de 'ver', 'vers' y 'verre' — significa 'verde'."
+    translation: "El semáforo se puso en verde."
+  - type: "match"
+    instructions: "Empareja cada homófono francés con su significado."
+    pairs:
+      - left: "ver"
+        right: "gusano"
+      - left: "vert"
+        right: "verde"
+      - left: "vers"
+        right: "hacia"
+      - left: "verre"
+        right: "vaso"
+      - left: "vair"
+        right: "piel de ardilla"
+  - type: "write"
+    prompt: "Escribe la palabra francesa que significa 'juego de palabras' (equivalente a 'pun')."
+    answer: "calembour"
+    accepted: ["un calembour", "Calembour"]
+    hint: "Empieza con 'cal-'."
+  - type: "order"
+    sentence: "Les crabes ne prêtent pas d'argent"
+    translation: "Los cangrejos no prestan dinero."
 ---
 
 Reírte de un juego de palabras francés —sin que alguien te lo explique después— es

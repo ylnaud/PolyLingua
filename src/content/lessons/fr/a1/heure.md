@@ -20,6 +20,40 @@ quiz:
     options: ["las 4:15", "las 3:45", "las 4:45"]
     answerIndex: 1
     explanation: "'moins le quart' significa 'menos cuarto' = 3:45 (un cuarto antes de las 4)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il est trois heures et ___."
+    answer: "quart"
+    accepted: ["quart"]
+    hint: "'y cuarto' en francés."
+    translation: "Son las tres y cuarto."
+  - type: "fill-blank"
+    sentence: "Quelle ___ est-il?"
+    answer: "heure"
+    accepted: ["heure"]
+    hint: "La palabra francesa para 'hora'."
+    translation: "¿Qué hora es?"
+  - type: "match"
+    instructions: "Empareja cada expresión con su significado."
+    pairs:
+      - left: "et quart"
+        right: "y cuarto"
+      - left: "et demie"
+        right: "y media"
+      - left: "moins le quart"
+        right: "menos cuarto"
+      - left: "midi"
+        right: "mediodía"
+      - left: "minuit"
+        right: "medianoche"
+  - type: "write"
+    prompt: "Escribe en francés cómo dirías 'las cuatro menos cuarto' (usa 'quatre heures')."
+    answer: "quatre heures moins le quart"
+    accepted: ["Quatre heures moins le quart"]
+    hint: "Recuerda la estructura: hora + moins le quart."
+  - type: "order"
+    sentence: "Il est trois heures et quart"
+    translation: "Son las tres y cuarto."
 ---
 
 Decir la hora en francés combina un vocabulario específico con la estructura "il est"

@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Era triste' (dice) vs. 'Le sue mani tremavano leggendo la lettera' (muestra) — demostrar a través de un detalle concreto es más potente que declarar el estado directamente."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ la porta e vide un uomo."
+    answer: "Aprì"
+    accepted: ["aprì"]
+    hint: "Passato remoto de 'aprire' — marca el registro narrativo literario."
+    translation: "Abrió la puerta y vio a un hombre."
+  - type: "fill-blank"
+    sentence: "Il vento ___ tra gli alberi."
+    answer: "sussurrava"
+    accepted: ["Sussurrava"]
+    hint: "Personificazione: el viento 'susurraba' como si fuera una persona."
+    translation: "El viento susurraba entre los árboles."
+  - type: "match"
+    instructions: "Empareja cada frase con el recurso o técnica que representa."
+    pairs:
+      - left: "Era nervosa."
+        right: "Dire (declarar directamente)"
+      - left: "Le sue mani tremavano avvicinandosi alla porta."
+        right: "Mostrare (mostrar a través de un detalle)"
+      - left: "Il vento sussurrava tra gli alberi."
+        right: "Personificazione"
+      - left: "Il pane profumava di cannella calda e d'infanzia."
+        right: "Immagine sensoriale"
+      - left: "Lei aspettò. Aspettò ancora. Aspettò sempre."
+        right: "Ritmo ripetitivo"
+  - type: "write"
+    prompt: "Escribe en italiano, usando el passato remoto, cómo dirías 'vio' (él/ella vio) en un texto literario."
+    answer: "vide"
+    accepted: ["Vide"]
+    hint: "Es la forma de passato remoto del verbo 'vedere'."
+  - type: "order"
+    sentence: "Chiuse la porta con tale forza che le finestre tremarono"
+    translation: "Cerró la puerta con tal fuerza que las ventanas temblaron."
 ---
 
 Llegaste al registro más elevado y expresivo del italiano: el de la prosa literaria,

@@ -24,6 +24,37 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El español frecuentemente usa 'hacer' para todo ('hacer una decisión', 'hacer un favor', 'hacer las compras'), mientras el inglés distribuye entre distintos verbos según la colocación específica, sin lógica traducible."
+exercises:
+  - type: "fill-blank"
+    sentence: "I need to ___ a decision by tomorrow."
+    answer: "make"
+    hint: "Colocación fija: make a decision."
+    translation: "Necesito tomar una decisión para mañana."
+  - type: "fill-blank"
+    sentence: "Could you ___ me a favor?"
+    answer: "do"
+    hint: "Colocación fija: do a favor, distinta de make a decision."
+    translation: "¿Podrías hacerme un favor?"
+  - type: "match"
+    instructions: "Empareja cada verbo con el sustantivo con el que forma una colocación fija."
+    pairs:
+      - left: "make"
+        right: "a mistake"
+      - left: "do"
+        right: "the shopping"
+      - left: "take"
+        right: "a risk"
+      - left: "have"
+        right: "a good time"
+      - left: "pay"
+        right: "attention"
+  - type: "write"
+    prompt: "Escribe la colocación completa en inglés para llegar a una conclusión (verbo + a conclusion)."
+    answer: "reach a conclusion"
+    hint: "El verbo no es make ni do — piensa en llegar."
+  - type: "order"
+    sentence: "You need to make an effort"
+    translation: "Necesitas hacer un esfuerzo."
 ---
 
 Las colocaciones son el verdadero examen de vocabulario avanzado: combinaciones de

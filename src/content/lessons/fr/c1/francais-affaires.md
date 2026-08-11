@@ -24,6 +24,40 @@ quiz:
     options: ["hacer una pausa larga", "evaluar la situación actual, ponerse al día", "firmar un contrato"]
     answerIndex: 1
     explanation: "'faire le point' significa hacer un balance/evaluación de la situación actual — muy común en reuniones: 'Faisons le point sur le projet.'"
+exercises:
+  - type: "fill-blank"
+    sentence: "Le chiffre d'___ a augmenté de 15% par rapport au trimestre dernier."
+    answer: "affaires"
+    accepted: ["affaires"]
+    hint: "'le chiffre d'affaires' significa los ingresos/la facturación."
+    translation: "La facturación aumentó un 15% con respecto al trimestre pasado."
+  - type: "fill-blank"
+    sentence: "Nous sommes en bonne voie pour respecter l'___."
+    answer: "échéance"
+    accepted: ["echeance"]
+    hint: "'l'échéance' significa la fecha límite."
+    translation: "Vamos por buen camino para respetar la fecha límite."
+  - type: "match"
+    instructions: "Empareja cada término de francés de negocios con su significado."
+    pairs:
+      - left: "la partie prenante"
+        right: "parte interesada"
+      - left: "l'échéance"
+        right: "fecha límite"
+      - left: "faire le point"
+        right: "hacer un balance/evaluación"
+      - left: "assurer le suivi"
+        right: "dar seguimiento"
+      - left: "licencier quelqu'un"
+        right: "despedir a alguien"
+  - type: "write"
+    prompt: "Escribe en francés una forma educada de decir 'no estoy de acuerdo' reconociendo primero el punto del otro."
+    answer: "Je comprends votre point de vue, mais j'ai une perspective différente."
+    accepted: ["Je comprends votre point de vue, mais j'ai une perspective differente."]
+    hint: "El francés de negocios suaviza el desacuerdo reconociendo primero al otro."
+  - type: "order"
+    sentence: "Faisons le point sur le projet"
+    translation: "Hagamos un balance sobre el proyecto."
 ---
 
 Este vocabulario te prepara para el registro específico del mundo corporativo

@@ -20,6 +20,40 @@ quiz:
     options: ["Tu parles français?", "Parles-tu français?", "Est-ce que parles-tu français?"]
     answerIndex: 1
     explanation: "'Parles-tu français?' invierte el verbo y el sujeto con un guión — la forma más formal, típica de textos escritos y contextos educados."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ que tu parles français?"
+    answer: "Est-ce"
+    accepted: ["Est-ce", "est-ce"]
+    hint: "La forma neutral, la más usada en conversación."
+    translation: "¿Hablas francés?"
+  - type: "fill-blank"
+    sentence: "___-tu français?"
+    answer: "Parles"
+    accepted: ["Parles", "parles"]
+    hint: "Forma con inversión: verbo + guión + sujeto."
+    translation: "¿Hablas francés? (forma formal, con inversión)"
+  - type: "match"
+    instructions: "Empareja cada pregunta con su nivel de formalidad."
+    pairs:
+      - left: "Tu parles français?"
+        right: "informal (entonación)"
+      - left: "Est-ce que tu parles français?"
+        right: "neutral"
+      - left: "Parles-tu français?"
+        right: "formal (inversión)"
+      - left: "Où est-ce que tu habites?"
+        right: "¿Dónde vives?"
+      - left: "Pourquoi est-ce que tu pars?"
+        right: "¿Por qué te vas?"
+  - type: "write"
+    prompt: "Escribe la pregunta '¿Vive usted aquí?' usando inversión con 'vous habitez ici'."
+    answer: "Habitez-vous ici"
+    accepted: ["Habitez-vous ici", "Habitez-vous ici?"]
+    hint: "Invierte verbo y pronombre, unidos por un guión."
+  - type: "order"
+    sentence: "Est-ce que tu aimes le café"
+    translation: "¿Te gusta el café?"
 ---
 
 El francés ofrece tres caminos para hacer la misma pregunta, cada uno apropiado para

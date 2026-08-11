@@ -20,6 +20,40 @@ quiz:
     options: ["cars", "information", "books"]
     answerIndex: 1
     explanation: "'information' es incontable en inglés — no existe 'informations' ni 'an information'. Otros ejemplos comunes: advice, furniture, news."
+exercises:
+  - type: "fill-blank"
+    sentence: "How ___ money do you have?"
+    answer: "much"
+    accepted: ["Much"]
+    hint: "'money' es incontable, así que se usa 'much'."
+    translation: "¿Cuánto dinero tienes?"
+  - type: "fill-blank"
+    sentence: "How ___ books do you have?"
+    answer: "many"
+    accepted: ["Many"]
+    hint: "'books' es contable (tiene plural), así que se usa 'many'."
+    translation: "¿Cuántos libros tienes?"
+  - type: "match"
+    instructions: "Empareja cada sustantivo con la palabra correcta para preguntar cantidad."
+    pairs:
+      - left: "money"
+        right: "much"
+      - left: "books"
+        right: "many"
+      - left: "water"
+        right: "much"
+      - left: "advice"
+        right: "much"
+      - left: "cars"
+        right: "many"
+  - type: "write"
+    prompt: "Escribe cómo dirías 'una información' en inglés, usando 'a piece of'."
+    answer: "a piece of information"
+    accepted: ["A piece of information"]
+    hint: "'information' es incontable: usa una unidad de medida como 'a piece of'."
+  - type: "order"
+    sentence: "I have a lot of books"
+    translation: "Tengo muchos libros."
 ---
 
 Este es uno de los retos silenciosos del inglés: algunos sustantivos que en español

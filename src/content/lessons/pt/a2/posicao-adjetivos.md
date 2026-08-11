@@ -24,6 +24,35 @@ quiz:
     options: ["siempre después: um homem bom", "puede ir antes con frecuencia: um bom homem", "nunca se usa con sustantivos masculinos"]
     answerIndex: 1
     explanation: "Adjetivos comunes y cortos como 'bom', 'mau', 'grande', 'pequeno' frecuentemente van antes del sustantivo en uso cotidiano."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ele é um ___ homem."
+    answer: "grande"
+    hint: "Antes del sustantivo, este adjetivo toma sentido figurado (admirable)."
+    translation: "Es un gran hombre (admirable)."
+  - type: "fill-blank"
+    sentence: "uma ___ pergunta."
+    answer: "simples"
+    hint: "Antes del sustantivo: sentido de 'mera' o simple."
+    translation: "Una simple pregunta (mera)."
+  - type: "match"
+    instructions: "Empareja cada expresión en portugués con su traducción al español."
+    pairs:
+      - left: "um bom amigo"
+        right: "un buen amigo"
+      - left: "uma pequena casa"
+        right: "una pequeña casa"
+      - left: "um grande problema"
+        right: "un gran problema"
+      - left: "um livro interessante"
+        right: "un libro interesante"
+  - type: "write"
+    prompt: "Escribe en portugués 'un hombre grande' (de tamaño físico, adjetivo después del sustantivo)."
+    answer: "um homem grande"
+    hint: "Después del sustantivo, este adjetivo toma el sentido literal de tamaño."
+  - type: "order"
+    sentence: "Ele é um homem grande"
+    translation: "Es un hombre grande (de tamaño físico)."
 ---
 
 La posición del adjetivo en portugués sigue una lógica muy parecida al español — y el

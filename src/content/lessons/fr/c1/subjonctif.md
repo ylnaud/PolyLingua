@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Je pense que' presenta tu opinión como si fuera un hecho (indicativo). Al negarla ('je ne pense pas que'), introduces duda sobre esa afirmación, lo que activa el subjonctif: Je ne pense pas qu'il ait raison."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il faut que je ___ à l'heure. (être)"
+    answer: "sois"
+    accepted: ["sois"]
+    hint: "'il faut que' siempre exige subjonctif; subjonctif de 'être' para 'je' es 'sois'."
+    translation: "Hay que llegar a tiempo."
+  - type: "fill-blank"
+    sentence: "Bien qu'il ___, je sors. (pleuvoir)"
+    answer: "pleuve"
+    accepted: ["pleuve"]
+    hint: "'bien que' es una conjunción que siempre exige subjonctif."
+    translation: "Aunque llueva, salgo."
+  - type: "match"
+    instructions: "Empareja cada disparador del subjonctif con la frase que lo usa correctamente."
+    pairs:
+      - left: "vouloir que"
+        right: "Je veux que tu viennes."
+      - left: "avoir peur que"
+        right: "Je suis content qu'il soit là."
+      - left: "douter que"
+        right: "Je doute qu'il vienne."
+      - left: "il faut que"
+        right: "Il faut que tu partes."
+      - left: "bien que"
+        right: "Bien qu'il pleuve, je sors."
+  - type: "write"
+    prompt: "Escribe en francés: 'No creo que él tenga razón' (usando 'je ne pense pas que' + subjonctif de 'avoir raison')."
+    answer: "Je ne pense pas qu'il ait raison."
+    accepted: ["Je ne pense pas qu'il ait raison"]
+    hint: "Negar una opinión activa el subjonctif: que + sujeto + ait + raison."
+  - type: "order"
+    sentence: "Il faut que tu sois à l'heure"
+    translation: "Hay que llegar a tiempo."
 ---
 
 El subjonctif tiene fama de ser el gran obstáculo del francés — pero en realidad se

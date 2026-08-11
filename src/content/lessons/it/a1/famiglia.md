@@ -20,6 +20,37 @@ quiz:
     options: ["il zio", "lo zio", "la zio"]
     answerIndex: 1
     explanation: "'zio' empieza con 'z' (caso especial que activa 'lo' en vez de 'il'): lo zio."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ho due ___ e una sorella."
+    answer: "fratelli"
+    hint: "Forma colectiva/masculina plural de 'hermano'."
+    translation: "Tengo dos hermanos y una hermana."
+  - type: "fill-blank"
+    sentence: "Mia ___ si chiama Anna."
+    answer: "madre"
+    hint: "Con familiares singulares el artículo desaparece."
+    translation: "Mi madre se llama Anna."
+  - type: "match"
+    instructions: "Empareja cada palabra en italiano con su traducción."
+    pairs:
+      - left: "il padre"
+        right: "el padre"
+      - left: "la madre"
+        right: "la madre"
+      - left: "il fratello"
+        right: "el hermano"
+      - left: "la sorella"
+        right: "la hermana"
+      - left: "lo zio"
+        right: "el tío"
+  - type: "write"
+    prompt: "Escribe cómo se dice 'los padres' en italiano."
+    answer: "i genitori"
+    hint: "Plural, sin distinguir género natural."
+  - type: "order"
+    sentence: "Mio fratello ha vent'anni"
+    translation: "Mi hermano tiene veinte años."
 ---
 
 Presentar a tu familia en italiano será una de tus primeras conversaciones fáciles —

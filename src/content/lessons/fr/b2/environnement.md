@@ -24,6 +24,39 @@ quiz:
     options: ["energías fósiles", "energías renovables", "energía nuclear exclusivamente"]
     answerIndex: 1
     explanation: "'les énergies renouvelables' son las energías renovables (solar, eólica, etc.) — un término clave en discusiones ambientales."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il faut investir davantage dans les énergies ___."
+    answer: "renouvelables"
+    accepted: ["renouvelables"]
+    hint: "Energías renovables — solar, eólica, etc."
+    translation: "Hay que invertir más en energías renovables."
+  - type: "fill-blank"
+    sentence: "Cette région a un ___ tropical."
+    answer: "climat"
+    accepted: ["climat"]
+    hint: "Patrón climático de una región a largo plazo, no 'le temps' (el tiempo de hoy)."
+    translation: "Esta región tiene un clima tropical."
+  - type: "match"
+    instructions: "Empareja cada término francés con su significado en español."
+    pairs:
+      - left: "le changement climatique"
+        right: "cambio climático"
+      - left: "le développement durable"
+        right: "desarrollo sostenible"
+      - left: "le chômage"
+        right: "el desempleo"
+      - left: "les droits de l'homme"
+        right: "los derechos humanos"
+      - left: "les gaz à effet de serre"
+        right: "gases de efecto invernadero"
+  - type: "write"
+    prompt: "Traduce al francés: 'El desarrollo sostenible debería ser una prioridad.'"
+    answer: "Le développement durable devrait être une priorité."
+    hint: "devrait être = debería ser (conditionnel de devoir + être)."
+  - type: "order"
+    sentence: "Le changement climatique est le plus grand défi de notre génération"
+    translation: "El cambio climático es el mayor desafío de nuestra generación."
 ---
 
 Este vocabulario te permite dar el salto de conversaciones cotidianas a discusiones

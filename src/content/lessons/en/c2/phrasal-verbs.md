@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Give up' vs. 'abandon', 'find out' vs. 'discover', 'put off' vs. 'postpone' — el phrasal verb es la opción cotidiana; la alternativa 'formal' (a menudo de origen latino) suena a texto escrito o discurso."
+exercises:
+  - type: "fill-blank"
+    sentence: "I ___ into an old friend yesterday."
+    answer: "ran"
+    accepted: ["Ran"]
+    hint: "Phrasal verb 'run into' = encontrarse con alguien por casualidad."
+    translation: "Ayer me encontré por casualidad con un viejo amigo."
+  - type: "fill-blank"
+    sentence: "Turn ___ the light before you leave."
+    answer: "off"
+    accepted: ["Off"]
+    hint: "Phrasal verb separable 'turn off' = apagar."
+    translation: "Apaga la luz antes de irte."
+  - type: "match"
+    instructions: "Empareja el phrasal verb con su significado."
+    pairs:
+      - left: "find out"
+        right: "descubrir"
+      - left: "put off"
+        right: "posponer"
+      - left: "give up"
+        right: "rendirse"
+      - left: "come across"
+        right: "encontrarse con algo por casualidad"
+      - left: "get over"
+        right: "superar (algo difícil)"
+  - type: "write"
+    prompt: "Escribe el phrasal verb de dos palabras que significa 'posponer'."
+    answer: "put off"
+    accepted: ["Put off"]
+    hint: "Es el equivalente informal de 'postpone'."
+  - type: "order"
+    sentence: "She finally gave up smoking"
+    translation: "Finalmente dejó de fumar."
 ---
 
 Llegaste al reto que ningún estudiante de inglés puede evitar: los **phrasal verbs**.

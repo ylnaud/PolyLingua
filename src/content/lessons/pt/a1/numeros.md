@@ -20,6 +20,37 @@ quiz:
     options: ["vinte e um", "vinte-um", "vinteum"]
     answerIndex: 0
     explanation: "Los números compuestos en portugués usan 'e' (y) entre decenas y unidades: vinte e um, trinta e dois, etc."
+exercises:
+  - type: "fill-blank"
+    sentence: "Tenho ___ (15) anos de experiência."
+    answer: "quinze"
+    hint: "El número 15, que no se parece visualmente a 'cinco' como el español 'quince'."
+    translation: "Tengo quince años de experiencia."
+  - type: "fill-blank"
+    sentence: "Isso custa ___ (100) euros."
+    answer: "cem"
+    hint: "100 en forma aislada, sin la 'o' final."
+    translation: "Esto cuesta cien euros."
+  - type: "match"
+    instructions: "Empareja cada número con su forma en portugués."
+    pairs:
+      - left: "20"
+        right: "vinte"
+      - left: "21"
+        right: "vinte e um"
+      - left: "50"
+        right: "cinquenta"
+      - left: "100"
+        right: "cem"
+      - left: "102"
+        right: "cento e dois"
+  - type: "write"
+    prompt: "Escribe en portugués el número 47."
+    answer: "quarenta e sete"
+    hint: "Decena + 'e' + unidad."
+  - type: "order"
+    sentence: "Vinte e um mais dez"
+    translation: "Veintiuno más diez."
 ---
 
 Los números son la base práctica de cualquier idioma — los necesitas desde el primer día

@@ -20,6 +20,40 @@ quiz:
     options: ["Non ho più tempo", "Non ho piu di tempo", "Ho non più tempo"]
     answerIndex: 0
     explanation: "'non...più' significa 'ya no': Non ho più tempo (ya no tengo tiempo)."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ mangio mai carne."
+    answer: "Non"
+    accepted: ["non"]
+    hint: "'non' es obligatorio antes del verbo, incluso con 'mai' después."
+    translation: "Nunca como carne."
+  - type: "fill-blank"
+    sentence: "Non ho ___ finito."
+    answer: "ancora"
+    accepted: ["Ancora"]
+    hint: "'non...ancora' significa 'todavía no'."
+    translation: "Todavía no he terminado."
+  - type: "match"
+    instructions: "Empareja cada negación con su significado."
+    pairs:
+      - left: "non... mai"
+        right: "nunca"
+      - left: "non... niente"
+        right: "nada"
+      - left: "non... nessuno"
+        right: "nadie"
+      - left: "non... più"
+        right: "ya no"
+      - left: "non... ancora"
+        right: "todavía no"
+  - type: "write"
+    prompt: "Escribe en italiano 'no veo a nadie', usando non...nessuno."
+    answer: "Non vedo nessuno"
+    accepted: ["non vedo nessuno"]
+    hint: "'non' antes del verbo, 'nessuno' después."
+  - type: "order"
+    sentence: "Non dico mai più niente a nessuno"
+    translation: "Ya nunca le digo nada a nadie."
 ---
 
 Ya dominas "non" solo. Ahora conoces al resto de la familia de negaciones — todas

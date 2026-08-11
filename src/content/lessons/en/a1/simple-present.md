@@ -20,6 +20,40 @@ quiz:
     options: ["He don't like coffee", "He doesn't like coffee", "He not likes coffee"]
     answerIndex: 1
     explanation: "En tercera persona la negación usa 'doesn't' + verbo en su forma base (sin 's'): He doesn't like coffee, no 'He doesn't likes'."
+exercises:
+  - type: "fill-blank"
+    sentence: "She ___ coffee every morning."
+    answer: "drinks"
+    accepted: ["Drinks"]
+    hint: "Con he/she/it el verbo suma una 's' al final."
+    translation: "Ella toma café cada mañana."
+  - type: "fill-blank"
+    sentence: "___ you work on Mondays?"
+    answer: "Do"
+    accepted: ["do"]
+    hint: "Las preguntas en Simple Present necesitan el auxiliar 'do' (excepto con 'to be')."
+    translation: "¿Trabajas los lunes?"
+  - type: "match"
+    instructions: "Empareja cada pronombre con la forma correcta del verbo 'work'."
+    pairs:
+      - left: "I"
+        right: "work"
+      - left: "she"
+        right: "works"
+      - left: "he"
+        right: "doesn't work"
+      - left: "they"
+        right: "work"
+      - left: "it"
+        right: "works"
+  - type: "write"
+    prompt: "Escribe en inglés la negación de 'He likes coffee.'"
+    answer: "He doesn't like coffee."
+    accepted: ["He does not like coffee."]
+    hint: "Con 'does' el verbo principal pierde su 's'."
+  - type: "order"
+    sentence: "The train leaves at nine"
+    translation: "El tren sale a las nueve."
 ---
 
 El Simple Present es el tiempo verbal que más vas a usar: rutinas, horarios, hechos y

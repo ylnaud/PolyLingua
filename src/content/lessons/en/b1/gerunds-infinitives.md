@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Con 'stop', el gerundio describe la acción que se detiene (dejo de fumar), mientras el infinitivo describe el PROPÓSITO de detenerse (me detengo con el fin de fumar)."
+exercises:
+  - type: "fill-blank"
+    sentence: "I enjoy ___ (swim) in the ocean."
+    answer: "swimming"
+    accepted: ["swimming"]
+    hint: "'enjoy' siempre va seguido de gerundio (-ing)."
+    translation: "Disfruto nadar en el océano."
+  - type: "fill-blank"
+    sentence: "She decided ___ (stay) at home tonight."
+    answer: "to stay"
+    accepted: ["to stay"]
+    hint: "'decide' siempre va seguido de infinitivo con 'to'."
+    translation: "Ella decidió quedarse en casa esta noche."
+  - type: "match"
+    instructions: "Empareja cada verbo con la forma que le sigue."
+    pairs:
+      - left: "enjoy"
+        right: "gerundio (-ing)"
+      - left: "want"
+        right: "infinitivo (to + verbo)"
+      - left: "avoid"
+        right: "gerundio (-ing)"
+      - left: "promise"
+        right: "infinitivo (to + verbo)"
+      - left: "finish"
+        right: "gerundio (-ing)"
+  - type: "write"
+    prompt: "Escribe en inglés: 'Ellos prometieron ayudar.'"
+    answer: "They promised to help."
+    accepted: ["They promised to help"]
+    hint: "'promise' pide infinitivo con 'to'."
+  - type: "order"
+    sentence: "She decided to stay at home"
+    translation: "Ella decidió quedarse en casa."
 ---
 
 Este es uno de los retos más silenciosos del inglés intermedio: cuando un verbo va

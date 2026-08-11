@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El registro no es solo gramática — comunica tu lectura de la situación social. Un registro inapropiado para el contexto puede sonar irrespetuoso, poco profesional o simplemente extraño, aunque cada palabra sea correcta."
+exercises:
+  - type: "fill-blank"
+    sentence: "Informal: I ___ to leave early today."
+    answer: "wanna"
+    accepted: ["Wanna"]
+    hint: "Versión informal de 'want to', típica de conversación casual."
+    translation: "Informal: Quiero irme temprano hoy."
+  - type: "fill-blank"
+    sentence: "___ you please give me a moment?"
+    answer: "Could"
+    accepted: ["could"]
+    hint: "Marcador de registro formal, más cortés que 'Can you...?'."
+    translation: "¿Podría darme un momento, por favor?"
+  - type: "match"
+    instructions: "Empareja la expresión formal con su equivalente informal."
+    pairs:
+      - left: "I would like to..."
+        right: "I wanna..."
+      - left: "Could you please...?"
+        right: "Can you...?"
+      - left: "purchase"
+        right: "buy"
+      - left: "commence"
+        right: "start"
+      - left: "in the event that"
+        right: "if"
+  - type: "write"
+    prompt: "Escribe la versión MUY formal de 'The meeting has been postponed.'"
+    answer: "I regret to inform you that the meeting has been postponed"
+    accepted: ["I regret to inform you that the meeting has been postponed."]
+    hint: "Empieza con 'I regret to inform you that...'."
+  - type: "order"
+    sentence: "Thank you for your email"
+    translation: "Gracias por tu correo electrónico (registro formal)."
 ---
 
 Llegaste al nivel donde la gramática correcta ya no es suficiente — necesitas elegir el

@@ -28,6 +28,37 @@ quiz:
     ]
     answerIndex: 0
     explanation: "Igual que con el posesivo adjetivo, se puede aclarar con 'dele/dela': O carro é o seu (dela) — El coche es el suyo (de ella)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Meu carro é azul. O ___ é vermelho."
+    answer: "seu"
+    hint: "Posesivo independiente para 'tuyo/suyo' con sustantivo masculino."
+    translation: "Mi coche es azul. El tuyo/suyo es rojo."
+  - type: "fill-blank"
+    sentence: "Esta é a minha casa. Aquela é a ___."
+    answer: "sua"
+    hint: "Posesivo independiente femenino para 'tuya/suya'."
+    translation: "Esta es mi casa. Aquella es la tuya/suya."
+  - type: "match"
+    instructions: "Empareja cada posesivo independiente con su traducción."
+    pairs:
+      - left: "o meu"
+        right: "el mío"
+      - left: "a minha"
+        right: "la mía"
+      - left: "o teu"
+        right: "el tuyo"
+      - left: "o seu"
+        right: "el suyo"
+      - left: "o nosso"
+        right: "el nuestro"
+  - type: "write"
+    prompt: "Escribe en portugués: 'La casa de ella es más grande que la mía.'"
+    answer: "A casa dela é maior do que a minha."
+    hint: "'a minha' sustituye completamente a 'a minha casa'."
+  - type: "order"
+    sentence: "Meus pais são mais velhos do que os seus"
+    translation: "Mis padres son mayores que los tuyos/suyos."
 ---
 
 Cuando el posesivo reemplaza completamente al sustantivo, funciona como un pronombre

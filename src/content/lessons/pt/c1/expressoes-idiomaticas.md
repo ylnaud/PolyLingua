@@ -28,6 +28,40 @@ quiz:
     options: ["salir todo perfecto", "salir mal / resultar inesperadamente mal", "ganar dinero fácil"]
     answerIndex: 1
     explanation: "'dar zebra' es una expresión brasileña muy popular para cuando algo sale mal o de forma inesperada, con origen en el 'jogo do bicho' (lotería informal brasileña)."
+exercises:
+  - type: "fill-blank"
+    sentence: "O gerente errou, mas foi o estagiário que pagou o ___."
+    answer: "pato"
+    accepted: ["pato"]
+    hint: "Expresión: cargar con la culpa de algo que hizo otra persona."
+    translation: "El gerente se equivocó, pero fue el pasante quien pagó las consecuencias."
+  - type: "fill-blank"
+    sentence: "Ela ___ sapos naquele emprego por anos."
+    answer: "engoliu"
+    accepted: ["engoliu"]
+    hint: "Del verbo 'engolir': aguantar algo desagradable en silencio."
+    translation: "Ella aguantó situaciones desagradables en ese trabajo durante años."
+  - type: "match"
+    instructions: "Empareja cada expresión idiomática con su significado real."
+    pairs:
+      - left: "pagar o pato"
+        right: "cargar con la culpa ajena"
+      - left: "engolir sapos"
+        right: "aguantar algo desagradable en silencio"
+      - left: "dar zebra"
+        right: "salir mal / resultar inesperado"
+      - left: "ficar de boca aberta"
+        right: "quedarse asombrado"
+      - left: "chutar o balde"
+        right: "rendirse por completo, tirar la toalla"
+  - type: "write"
+    prompt: "Escribe en portugués la expresión brasileña (dos palabras) que significa 'salir mal / resultar inesperado', con origen en el jogo do bicho."
+    answer: "dar zebra"
+    accepted: ["dar zebra"]
+    hint: "Literalmente significa 'dar cebra'."
+  - type: "order"
+    sentence: "Achei que ia dar tudo certo mas deu zebra"
+    translation: "Pensé que todo iba a salir bien, pero salió mal."
 ---
 
 Las expresiones idiomáticas son la marca definitiva de fluidez real — imposibles de

@@ -24,6 +24,35 @@ quiz:
     ]
     answerIndex: 1
     explanation: "A diferencia de lo que uno esperaría, 'cujo' concuerda con el sustantivo que sigue (la cosa poseída), no con el poseedor: a autora cujo LIVRO (masc.) vs. o autor cuja HISTÓRIA (fem.)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Tenho um amigo ___ mora em Lisboa."
+    answer: "que"
+    hint: "'que' es el pronombre relativo por defecto."
+    translation: "Tengo un amigo que vive en Lisboa."
+  - type: "fill-blank"
+    sentence: "Este é o autor ___ livro ganhou um prêmio."
+    answer: "cujo"
+    hint: "Concuerda con 'livro' (masculino), no con 'autor'."
+    translation: "Este es el autor cuyo libro ganó un premio."
+  - type: "match"
+    instructions: "Empareja cada pronombre relativo con su uso."
+    pairs:
+      - left: "que"
+        right: "sujeto u objeto, personas y cosas"
+      - left: "quem"
+        right: "personas, tras preposición"
+      - left: "cujo/cuja"
+        right: "posesión, concuerda con lo poseído"
+      - left: "onde"
+        right: "lugar"
+  - type: "write"
+    prompt: "Escribe en portugués: 'La ciudad donde nací es bonita.'"
+    answer: "A cidade onde eu nasci é linda."
+    hint: "'onde' introduce el lugar."
+  - type: "order"
+    sentence: "A mulher que fala é minha irmã"
+    translation: "La mujer que habla es mi hermana."
 ---
 
 Los pronombres relativos son la herramienta que separa el portugués de principiante

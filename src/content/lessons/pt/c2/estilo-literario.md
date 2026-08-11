@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Ela estava triste' (dice) vs. 'As mãos dela tremiam ao ler a carta' (muestra) — demostrar a través de un detalle concreto es más potente que declarar el estado directamente."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ela já ___ quando ele chegou."
+    answer: "partira"
+    accepted: ["Partira"]
+    hint: "Mais-que-perfeito simples de 'partir', marca de registro literário."
+    translation: "Ella ya se había marchado cuando él llegó."
+  - type: "fill-blank"
+    sentence: "O vento ___ entre as árvores."
+    answer: "sussurrava"
+    accepted: ["Sussurrava"]
+    hint: "Personificação: dar una acción humana al viento."
+    translation: "El viento susurraba entre los árboles."
+  - type: "match"
+    instructions: "Empareja cada recurso literario con su ejemplo."
+    pairs:
+      - left: "Personificação"
+        right: "O vento sussurrava entre as árvores."
+      - left: "Imagem sensorial"
+        right: "O pão tinha cheiro de canela quente."
+      - left: "Ritmo repetitivo"
+        right: "Ela esperou. Esperou mais um pouco."
+      - left: "Mostrar, não dizer"
+        right: "As mãos dela tremiam ao se aproximar da porta."
+  - type: "write"
+    prompt: "Reescribe 'Ela tinha partido quando ele chegou' usando el mais-que-perfeito simples, propio del registro literario."
+    answer: "Ela partira quando ele chegou."
+    accepted: ["Ela já partira quando ele chegou."]
+    hint: "Sustituye 'tinha partido' por la forma simple 'partira'."
+  - type: "order"
+    sentence: "Ela esperava como quem já não sabe mais o que é esperar"
+    translation: "Ella esperaba como quien ya no sabe más qué es esperar."
 ---
 
 Llegaste al registro más elevado y expresivo del portugués: el de la prosa literaria,

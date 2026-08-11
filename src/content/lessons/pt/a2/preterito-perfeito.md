@@ -24,6 +24,37 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Tenho comido' no significa 'he comido' en el sentido de un evento puntual — implica algo que has estado haciendo repetidamente ('he estado comiendo [mucho/seguido]'). Para un evento simple del pasado, siempre usa el pretérito perfeito simples: comi."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu ___ com ela ontem."
+    answer: "falei"
+    hint: "Pretérito perfeito simples de 'falar' con 'eu'."
+    translation: "Hablé con ella ayer."
+  - type: "fill-blank"
+    sentence: "Eu ___ a porta."
+    answer: "abri"
+    hint: "Pretérito perfeito simples de 'abrir' con 'eu'."
+    translation: "Abrí la puerta."
+  - type: "match"
+    instructions: "Empareja cada pronombre con la forma correcta del pretérito de 'falar'."
+    pairs:
+      - left: "eu"
+        right: "falei"
+      - left: "tu"
+        right: "falaste"
+      - left: "ele/ela"
+        right: "falou"
+      - left: "nós"
+        right: "falamos"
+      - left: "eles/elas"
+        right: "falaram"
+  - type: "write"
+    prompt: "Escribe en portugués el pretérito de 'fazer' (hacer) con 'eu'."
+    answer: "fiz"
+    hint: "Verbo irregular: eu fiz."
+  - type: "order"
+    sentence: "Eu falei com ela ontem"
+    translation: "Hablé con ella ayer."
 ---
 
 Si vienes de estudiar alemán, francés o italiano en PolyLingua, esta lección te va a dar

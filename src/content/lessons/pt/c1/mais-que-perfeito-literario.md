@@ -24,6 +24,38 @@ quiz:
     options: ["yo hablaba", "yo había hablado", "yo hablaré"]
     answerIndex: 1
     explanation: "'eu falara' equivale al pluscuamperfecto español 'yo había hablado' — una acción anterior a otra acción pasada, expresada en una sola palabra."
+exercises:
+  - type: "fill-blank"
+    sentence: "Quando ele chegou, ela já ___."
+    answer: "partira"
+    accepted: ["partira"]
+    hint: "Pretérito mais-que-perfeito simples de 'partir' (registro literário), equivalente a 'tinha partido'."
+    translation: "Cuando él llegó, ella ya se había marchado."
+  - type: "fill-blank"
+    sentence: "Eu ___ com ela antes."
+    answer: "falara"
+    accepted: ["falara"]
+    hint: "Forma literaria de 'eu tinha falado', en una sola palabra."
+    translation: "Yo había hablado con ella antes."
+  - type: "match"
+    instructions: "Empareja cada forma compuesta (habla cotidiana) con su equivalente literario en una sola palabra."
+    pairs:
+      - left: "eu tinha falado"
+        right: "eu falara"
+      - left: "eu tinha feito"
+        right: "eu fizera"
+      - left: "eu tinha partido"
+        right: "eu partira"
+      - left: "eu tinha chegado"
+        right: "eu chegara"
+  - type: "write"
+    prompt: "Escribe la forma literaria de pretérito mais-que-perfeito simples (una sola palabra) equivalente a 'ela tinha partido' (ella se había marchado)."
+    answer: "partira"
+    accepted: ["partira", "ela partira"]
+    hint: "3ª persona plural del pretérito perfeito 'partiram', quitar '-ram', añadir terminación."
+  - type: "order"
+    sentence: "Quando ele chegou ela já partira"
+    translation: "Cuando él llegó, ella ya se había marchado."
 ---
 
 Este es uno de los tiempos verbales más elegantes y menos usados del portugués

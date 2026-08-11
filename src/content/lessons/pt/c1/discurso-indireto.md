@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Los marcadores de tiempo cambian junto con los verbos: amanhã → no dia seguinte, hoje → naquele dia, ontem → no dia anterior."
+exercises:
+  - type: "fill-blank"
+    sentence: "Maria disse que ___ cansada."
+    answer: "estava"
+    accepted: ["estava"]
+    hint: "El presente 'estou' retrocede a pretérito imperfeito al reportar discurso."
+    translation: "Maria dijo que estaba cansada."
+  - type: "fill-blank"
+    sentence: "Paulo disse que ___ no dia seguinte."
+    answer: "viria"
+    accepted: ["viria"]
+    hint: "El futuro 'virei' retrocede a futuro do pretérito (condicional): viria."
+    translation: "Paulo dijo que vendría al día siguiente."
+  - type: "match"
+    instructions: "Empareja cada marcador de tiempo del discurso directo con su equivalente en discurso indireto."
+    pairs:
+      - left: "hoje"
+        right: "naquele dia"
+      - left: "amanhã"
+        right: "no dia seguinte"
+      - left: "ontem"
+        right: "no dia anterior"
+      - left: "agora"
+        right: "naquele momento"
+  - type: "write"
+    prompt: "Ella dijo: 'Terminei o projeto.' Escribe en portugués cómo reportarías esa frase en discurso indireto."
+    answer: "Ela disse que tinha terminado o projeto."
+    accepted: ["Ela disse que tinha terminado o projeto"]
+    hint: "Pretérito perfeito ('terminei') retrocede a mais-que-perfeito ('tinha terminado')."
+  - type: "order"
+    sentence: "Ele disse que partia no dia seguinte"
+    translation: "Él dijo que se marchaba al día siguiente."
 ---
 
 Cuando cuentas lo que alguien más dijo, el portugués no usa comillas — cambia

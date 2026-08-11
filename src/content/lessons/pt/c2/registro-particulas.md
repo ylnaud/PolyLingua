@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "No tienen traducción 1:1 — su significado depende del tono y contexto. No son incorrectas: son el portugués hablado real, y se dominan por exposición e imitación."
+exercises:
+  - type: "fill-blank"
+    sentence: "Está calor hoje, ___?"
+    answer: "né"
+    accepted: ["Né"]
+    hint: "Busca confirmación o acuerdo, como '¿verdad?'."
+    translation: "Hace calor hoy, ¿verdad?"
+  - type: "fill-blank"
+    sentence: "Perdi o ônibus. ___..."
+    answer: "Pois é"
+    accepted: ["pois é"]
+    hint: "Expresa resignación compartida, como 'así es la vida'."
+    translation: "Perdí el autobús. Así es la vida..."
+  - type: "match"
+    instructions: "Empareja cada partícula coloquial con su función."
+    pairs:
+      - left: "né?"
+        right: "busca confirmación o acuerdo"
+      - left: "pois é"
+        right: "resignación compartida"
+      - left: "tipo assim"
+        right: "muletilla explicativa, 'como que'"
+      - left: "então"
+        right: "conector de transición, 'entonces'"
+      - left: "cara / mano"
+        right: "vocativo informal entre amigos (Brasil)"
+  - type: "write"
+    prompt: "Escribe la partícula coloquial brasileña usada como vocativo informal entre amigos, en la frase 'E aí, ___, tudo bem?'."
+    answer: "cara"
+    accepted: ["mano"]
+    hint: "Equivale a 'tío' o 'colega' en español coloquial."
+  - type: "order"
+    sentence: "Então vamos começar"
+    translation: "Entonces, ¿empezamos?"
 ---
 
 Llegaste al nivel donde la gramática de manual ya no es el reto. El verdadero examen de

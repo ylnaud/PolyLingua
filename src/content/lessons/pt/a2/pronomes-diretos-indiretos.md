@@ -24,6 +24,36 @@ quiz:
     ]
     answerIndex: 1
     explanation: "En el habla brasileña informal es muy común usar 'ela/ele' como objeto directo ('vi ela') o simplemente omitir el pronombre — un fenómeno lingüístico real, aunque distinto de la norma culta escrita."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu ___ vejo."
+    answer: "o"
+    hint: "Pronombre de objeto directo masculino singular, reemplaza 'o filme'."
+    translation: "Lo veo (la película)."
+  - type: "fill-blank"
+    sentence: "Eu ___ dou um presente."
+    answer: "lhe"
+    hint: "Pronombre de objeto indirecto: a él/a ella/a usted."
+    translation: "Le doy un regalo."
+  - type: "match"
+    instructions: "Empareja cada pronombre sujeto con su pronombre de objeto directo correspondiente."
+    pairs:
+      - left: "eu"
+        right: "me"
+      - left: "tu"
+        right: "te"
+      - left: "nós"
+        right: "nos"
+      - left: "vocês/eles"
+        right: "os/as"
+  - type: "write"
+    prompt: "Escribe en portugués 'La conozco' (a Maria), usando el pronombre de objeto directo."
+    answer: "Eu a conheço"
+    accepted: ["A conheço"]
+    hint: "Pronombre de objeto directo femenino singular: a."
+  - type: "order"
+    sentence: "Eu vi ela ontem"
+    translation: "La vi ayer (forma hablada del portugués de Brasil)."
 ---
 
 Los pronombres de objeto evitan repetir sustantivos ya mencionados — esenciales para

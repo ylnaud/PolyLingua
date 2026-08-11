@@ -20,6 +20,37 @@ quiz:
     options: ["infinitivo - r + -ndo", "infinitivo + -ando siempre", "raíz + -endo siempre"]
     answerIndex: 0
     explanation: "Se quita la '-r' final del infinitivo y se añade '-ndo': falar → falando, comer → comendo, partir → partindo."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu estou ___ português. (Brasil)"
+    answer: "estudando"
+    hint: "Gerundio: infinitivo - r + -ndo. Estudar → estudando."
+    translation: "Estoy estudiando portugués."
+  - type: "fill-blank"
+    sentence: "Ela saiu ___."
+    answer: "correndo"
+    hint: "Correr → correndo, acción simultánea."
+    translation: "Ella salió corriendo."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su gerundio correcto."
+    pairs:
+      - left: "falar"
+        right: "falando"
+      - left: "comer"
+        right: "comendo"
+      - left: "partir"
+        right: "partindo"
+      - left: "correr"
+        right: "correndo"
+      - left: "rir"
+        right: "rindo"
+  - type: "write"
+    prompt: "Escribe cómo diría un hablante de Portugal 'Estoy estudiando portugués' (con 'a + infinitivo')."
+    answer: "Estou a estudar português."
+    hint: "Portugal prefiere 'estar a + infinitivo' en vez del gerundio."
+  - type: "order"
+    sentence: "Aprendi português conversando com nativos"
+    translation: "Aprendí portugués conversando con nativos."
 ---
 
 El gerundio portugués tiene el mismo uso básico que en español, pero con una diferencia

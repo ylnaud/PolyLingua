@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 0
     explanation: "El humor exige entender referencias culturales, timing y tono — una combinación mucho más sutil que dominar reglas gramaticales."
+exercises:
+  - type: "fill-blank"
+    sentence: "Que dia ___!"
+    answer: "lindo"
+    accepted: ["Lindo"]
+    hint: "Ironía: se dice durante una tormenta, con tono claramente sarcástico."
+    translation: "¡Qué día lindo! (dicho con ironía durante una tormenta)"
+  - type: "fill-blank"
+    sentence: "Eu quase ___ de rir!"
+    answer: "morri"
+    accepted: ["Morri"]
+    hint: "Hipérbole/exageración típica del humor brasileño."
+    translation: "¡Casi me muero de risa!"
+  - type: "match"
+    instructions: "Empareja cada frase con el tipo de humor que representa."
+    pairs:
+      - left: "Que dia lindo! (durante uma tempestade)"
+        right: "Ironia"
+      - left: "Eu quase morri de rir!"
+        right: "Humor exagerado (brasileiro)"
+      - left: "Ah, claro, porque isso vai correr mesmo bem..."
+        right: "Ironia seca (Portugal)"
+      - left: "Eu sou tão organizado que nem sei onde guardei minhas chaves."
+        right: "Humor autoirônico"
+  - type: "write"
+    prompt: "Escribe en portugués una frase irónica típica de Portugal para decir, con sarcasmo, que algo claramente va a salir mal (empieza con 'Ah, claro...')."
+    answer: "Ah, claro, porque isso vai correr mesmo bem..."
+    accepted: ["Ah, claro, porque isso vai correr mesmo bem"]
+    hint: "Se dice lo contrario de lo que realmente se espera, con tono sarcástico."
+  - type: "order"
+    sentence: "Eu sou tão organizado que nem sei onde guardei minhas chaves"
+    translation: "Soy tan organizado que ni sé dónde guardé mis llaves."
 ---
 
 Reírte de un chiste en portugués —de verdad, sin traducción mental de por medio— es una

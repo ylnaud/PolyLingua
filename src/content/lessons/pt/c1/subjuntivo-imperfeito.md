@@ -28,6 +28,38 @@ quiz:
     ]
     answerIndex: 0
     explanation: "El imperfeito do subjuntivo aparece en la cláusula 'se' de condicionales hipotéticas irreales, acompañado del condicional en la otra cláusula: Se eu tivesse dinheiro, viajaria pelo mundo."
+exercises:
+  - type: "fill-blank"
+    sentence: "Se eu ___ mais tempo, viajaria pelo mundo."
+    answer: "tivesse"
+    accepted: ["tivesse"]
+    hint: "Imperfeito do subjuntivo de 'ter', para una condicional hipotética irreal."
+    translation: "Si tuviera más tiempo, viajaría por el mundo."
+  - type: "fill-blank"
+    sentence: "Se ela ___ a verdade, ficaria chateada."
+    answer: "soubesse"
+    accepted: ["soubesse"]
+    hint: "De 'souberam' (pretérito perfeito de 'saber'), quitar '-am', añadir terminación."
+    translation: "Si ella supiera la verdad, se molestaría."
+  - type: "match"
+    instructions: "Empareja cada forma de 'eles/elas' del pretérito perfeito con su imperfeito do subjuntivo correspondiente (eu/ele)."
+    pairs:
+      - left: "falaram"
+        right: "falasse"
+      - left: "fizeram"
+        right: "fizesse"
+      - left: "foram"
+        right: "fosse"
+      - left: "souberam"
+        right: "soubesse"
+  - type: "write"
+    prompt: "Escribe el pretérito imperfeito do subjuntivo de 'ser' (derivado de 'foram'), como en 'Se eu ___ rico...' (Si yo fuera rico...)."
+    answer: "fosse"
+    accepted: ["fosse"]
+    hint: "foram → foss- + e."
+  - type: "order"
+    sentence: "Se você pudesse me ajudar eu agradeceria muito"
+    translation: "Si pudiera ayudarme, se lo agradecería mucho."
 ---
 
 El pretérito imperfeito do subjuntivo es la puerta de entrada a las hipótesis

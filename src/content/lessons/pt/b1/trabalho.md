@@ -20,6 +20,40 @@ quiz:
     options: ["Estou procurando emprego", "Estou olhando trabalho", "Estou vendo emprego"]
     answerIndex: 0
     explanation: "'Estou procurando emprego' es la forma natural — 'procurar' es 'buscar' en este contexto."
+exercises:
+  - type: "fill-blank"
+    sentence: "Estou ___ emprego."
+    answer: "procurando"
+    accepted: ["Procurando"]
+    hint: "'procurar' significa buscar en este contexto."
+    translation: "Estoy buscando trabajo."
+  - type: "fill-blank"
+    sentence: "Quais são as minhas ___?"
+    answer: "responsabilidades"
+    accepted: ["Responsabilidades"]
+    hint: "Vocabulario típico de una entrevista de trabajo."
+    translation: "¿Cuáles son mis responsabilidades?"
+  - type: "match"
+    instructions: "Empareja cada palabra en portugués con su traducción al español."
+    pairs:
+      - left: "o emprego"
+        right: "el empleo"
+      - left: "o currículo"
+        right: "el currículum"
+      - left: "a vaga"
+        right: "la vacante"
+      - left: "o chefe"
+        right: "el jefe"
+      - left: "o prazo"
+        right: "el plazo"
+  - type: "write"
+    prompt: "Escribe en portugués: 'Tengo experiencia en...'"
+    answer: "Eu tenho experiência em..."
+    accepted: ["Tenho experiência em..."]
+    hint: "'tenho' es la forma de 'eu' del verbo ter."
+  - type: "order"
+    sentence: "Estou disponível para começar imediatamente"
+    translation: "Estoy disponible para empezar de inmediato."
 ---
 
 El vocabulario profesional es esencial si planeas trabajar, estudiar o hacer negocios

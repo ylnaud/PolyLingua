@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'O presente trabalho tem como objetivo...' (El presente trabajo tiene como objetivo...) es una fórmula estándar y formal para introducir un ensayo o artículo académico."
+exercises:
+  - type: "fill-blank"
+    sentence: "O presente trabalho tem como ___ analisar os dados coletados."
+    answer: "objetivo"
+    accepted: ["objetivo"]
+    hint: "Fórmula estándar de introducción de un ensayo o artículo académico."
+    translation: "El presente trabajo tiene como objetivo analizar los datos recopilados."
+  - type: "fill-blank"
+    sentence: "Os dados coletados foram ___."
+    answer: "analisados"
+    accepted: ["analisados"]
+    hint: "Voz pasiva: más formal que 'Analisamos os dados coletados'."
+    translation: "Los datos recopilados fueron analizados."
+  - type: "match"
+    instructions: "Empareja cada término académico con su traducción."
+    pairs:
+      - left: "a hipótese"
+        right: "la hipótesis"
+      - left: "a metodologia"
+        right: "la metodología"
+      - left: "os dados"
+        right: "los datos"
+      - left: "a conclusão"
+        right: "la conclusión"
+      - left: "evidenciar"
+        right: "evidenciar"
+  - type: "write"
+    prompt: "Reescribe en voz pasiva (registro más académico) la frase: 'Concluímos que o método funciona.'"
+    answer: "Conclui-se que o método funciona."
+    accepted: ["Conclui-se que o método funciona", "A conclusão é de que o método é eficaz."]
+    hint: "El registro académico prefiere construcciones pasivas o nominalizadas que distancian al autor de la acción."
+  - type: "order"
+    sentence: "Os resultados indicam que o método é eficaz"
+    translation: "Los resultados indican que el método es eficaz."
 ---
 
 El registro académico portugués sigue convenciones muy específicas de vocabulario y

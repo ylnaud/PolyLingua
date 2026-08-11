@@ -24,6 +24,37 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'dever' suele sonar a consejo o deducción ('Você deve estar cansado' — debes estar cansado), mientras 'ter que' expresa una obligación más fuerte e innegociable ('Eu tenho que trabalhar amanhã')."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu ___ ajudar?"
+    answer: "Posso"
+    accepted: ["posso"]
+    hint: "Forma irregular de 'poder' con 'eu'."
+    translation: "¿Puedo ayudar?"
+  - type: "fill-blank"
+    sentence: "Você ___ estar cansado."
+    answer: "deve"
+    hint: "Conjugación de 'dever' con 'você', para expresar suposición/consejo suave."
+    translation: "Debes estar cansado (probablemente)."
+  - type: "match"
+    instructions: "Empareja cada verbo con su forma conjugada para 'eu'."
+    pairs:
+      - left: "poder"
+        right: "posso"
+      - left: "dever"
+        right: "devo"
+      - left: "querer"
+        right: "quero"
+      - left: "ter que"
+        right: "tenho que"
+  - type: "write"
+    prompt: "Escribe en portugués 'Tengo que trabajar mañana' (obligación fuerte, con 'ter que')."
+    answer: "Tenho que trabalhar amanhã"
+    accepted: ["Eu tenho que trabalhar amanhã"]
+    hint: "'ter que' expresa obligación fuerte, sin opción."
+  - type: "order"
+    sentence: "Quero um café"
+    translation: "Quiero un café."
 ---
 
 Estos verbos son tu caja de herramientas para pedir, permitir, opinar y expresar

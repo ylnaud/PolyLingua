@@ -28,6 +28,38 @@ quiz:
     options: ["Foi ontem que cheguei", "Ontem cheguei foi", "É ontem cheguei"]
     answerIndex: 0
     explanation: "'Foi ontem que cheguei' resalta 'ontem' como el elemento clave de la frase mediante la estructura clivada foi...que."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ ele que quebrou o vaso."
+    answer: "Foi"
+    accepted: ["foi"]
+    hint: "Estructura clivada: Foi + elemento a destacar + que + resto de la frase."
+    translation: "Fue él quien rompió el jarrón."
+  - type: "fill-blank"
+    sentence: "Onde ___ que você mora?"
+    answer: "é"
+    accepted: ["é"]
+    hint: "Partícula 'é que' en preguntas: muletilla de habla natural, no cambia el significado."
+    translation: "¿Dónde vives?"
+  - type: "match"
+    instructions: "Empareja cada frase clivada con su explicación."
+    pairs:
+      - left: "Foi ele que quebrou o vaso."
+        right: "Énfasis en 'ele' como responsable"
+      - left: "Foi ontem que eu cheguei."
+        right: "Énfasis en 'ontem' como momento clave"
+      - left: "Onde é que você mora?"
+        right: "Mismo significado que 'Onde você mora?', más natural en habla"
+      - left: "Quem quebrou o vaso foi ele."
+        right: "Variante con 'quem', mismo énfasis en orden invertido"
+  - type: "write"
+    prompt: "Usando la estructura clivada 'Foi...que', escribe en portugués cómo dirías con énfasis: 'Fue ayer que llegué.'"
+    answer: "Foi ontem que cheguei."
+    accepted: ["Foi ontem que cheguei", "Foi ontem que eu cheguei", "Foi ontem que eu cheguei."]
+    hint: "É/Foi + elemento a destacar + que + resto de la frase."
+  - type: "order"
+    sentence: "Quem quebrou o vaso foi ele"
+    translation: "Quien rompió el jarrón fue él."
 ---
 
 Las frases clivadas te permiten resaltar exactamente qué parte de una oración es la

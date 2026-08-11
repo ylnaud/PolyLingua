@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Ele disse que viria' (dijo que vendría) es un futuro visto desde el pasado — de ahí el nombre 'futuro do pretérito'."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu ___ de um café."
+    answer: "gostaria"
+    accepted: ["Gostaria"]
+    hint: "gostar + ia = gostaria, forma cortés para pedir algo."
+    translation: "Me gustaría un café."
+  - type: "fill-blank"
+    sentence: "Se eu tivesse tempo, eu ___ mais."
+    answer: "viajaria"
+    accepted: ["Viajaria"]
+    hint: "viajar + ia = viajaria, uso de hipótesis."
+    translation: "Si tuviera tiempo, viajaría más."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su forma de condicional (eu)."
+    pairs:
+      - left: "fazer"
+        right: "faria"
+      - left: "dizer"
+        right: "diria"
+      - left: "trazer"
+        right: "traria"
+      - left: "falar"
+        right: "falaria"
+      - left: "comer"
+        right: "comeria"
+  - type: "write"
+    prompt: "Escribe en portugués, de forma cortés: '¿Podrías ayudarme?'"
+    answer: "Você poderia me ajudar?"
+    accepted: ["Voce poderia me ajudar?"]
+    hint: "poder + ia = poderia, la forma habitual para pedir algo con cortesía."
+  - type: "order"
+    sentence: "Ele disse que viria à festa"
+    translation: "Dijo que vendría a la fiesta."
 ---
 
 El condicional portugués sirve para hipótesis, cortesía y para reportar lo que alguien

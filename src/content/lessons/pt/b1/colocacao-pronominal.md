@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "Palabras negativas (não, nunca, ninguém) y palabras interrogativas 'atraen' el pronombre hacia antes del verbo: 'Não te vejo', 'Quando te vi?'."
+exercises:
+  - type: "fill-blank"
+    sentence: "Quando ___ vi, fiquei feliz."
+    answer: "te"
+    accepted: ["Te"]
+    hint: "'Quando' es una palabra interrogativa/conjunción que atrae la próclise obligatoriamente."
+    translation: "Cuando te vi, me puse feliz."
+  - type: "fill-blank"
+    sentence: "Amo-___."
+    answer: "te"
+    accepted: ["Te"]
+    hint: "La ênclise coloca el pronombre después del verbo, unido con guion."
+    translation: "Te amo. (estilo Portugal, ênclise)"
+  - type: "match"
+    instructions: "Empareja cada frase con el tipo de colocación pronominal que usa."
+    pairs:
+      - left: "Não te vejo"
+        right: "Próclise"
+      - left: "Amo-te"
+        right: "Ênclise"
+      - left: "Amar-te-ei"
+        right: "Mesóclise"
+      - left: "Quando te vi?"
+        right: "Próclise"
+      - left: "Disse-me a verdade"
+        right: "Ênclise"
+  - type: "write"
+    prompt: "Escribe cómo dirías 'Ella se lastimó' en portugués usando ênclise (estilo Portugal)."
+    answer: "Machucou-se"
+    accepted: ["Machucou-se."]
+    hint: "El pronombre 'se' va después del verbo 'machucou', unido con guion."
+  - type: "order"
+    sentence: "Não te vejo há muito tempo"
+    translation: "No te veo hace mucho tiempo."
 ---
 
 La colocación del pronombre es uno de los temas que más distingue al portugués de

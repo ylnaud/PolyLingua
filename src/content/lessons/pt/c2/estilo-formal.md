@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La nominalización permite empaquetar acciones como conceptos abstractos ('a implementação', 'o aumento'), típico de informes, ensayos y periodismo serio."
+exercises:
+  - type: "fill-blank"
+    sentence: "A ___ do governo de aumentar os impostos gerou debates."
+    answer: "decisão"
+    accepted: ["Decisão"]
+    hint: "Nominalización del verbo 'decidir', típica del registro formal."
+    translation: "La decisión del gobierno de aumentar los impuestos generó debates."
+  - type: "fill-blank"
+    sentence: "O relatório vai ___ os resultados obtidos."
+    answer: "demonstrar"
+    accepted: ["evidenciar"]
+    hint: "Forma formal de 'mostrar'."
+    translation: "El informe va a demostrar los resultados obtenidos."
+  - type: "match"
+    instructions: "Empareja cada conector o verbo cotidiano con su equivalente formal."
+    pairs:
+      - left: "mas"
+        right: "contudo"
+      - left: "porque"
+        right: "uma vez que"
+      - left: "mesmo assim"
+        right: "não obstante"
+      - left: "muito"
+        right: "consideravelmente"
+      - left: "ajudar"
+        right: "contribuir para"
+  - type: "write"
+    prompt: "Escribe el sustantivo formal (nominalización) derivado del verbo 'implementar'."
+    answer: "implementação"
+    accepted: ["a implementação"]
+    hint: "Sigue el patrón analisar → análise, decidir → decisão."
+  - type: "order"
+    sentence: "O governo decidiu aumentar os impostos"
+    translation: "El gobierno decidió aumentar los impuestos."
 ---
 
 Llegaste al último peldaño: escribir y hablar con el registro que encontrarás en un

@@ -38,7 +38,7 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
       <a class="btn btn-primary" href={`/idiomas/${lang}`}>Ver lecciones</a>
     </div>
 
-    <Practice quiz={[]} exercises={[]} dynamic={true} sessionType="review" lessonId="review" minutes={1} />
+    <Practice quiz={[]} exercises={[]} dynamic={true} sessionType="review" lessonId="review" minutes={1} lang={languageMeta?.bcp47} />
   </section>
 </BaseLayout>
 

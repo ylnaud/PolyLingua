@@ -126,9 +126,17 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
     const board = el('div', { class: 'match-board', 'data-match-board': '', 'data-remaining': String(pairs.length) });
     const leftCol = el('div', { class: 'match-col', 'data-match-col': 'left' });
     pairs.forEach((pair, pi) => {
-      leftCol.appendChild(
-        el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'left', 'data-pair': String(pi) }, pair.left)
-      );
+      const row = el('div', { class: 'option-row' });
+      const btn = el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'left', 'data-pair': String(pi) }, pair.left);
+      const speakBtn = el('button', {
+        type: 'button',
+        class: 'speak-btn',
+        'data-speak': '',
+        'data-speak-text': pair.left,
+        'aria-label': `Escuchar «${pair.left}»`,
+      }, '🔊');
+      row.append(btn, speakBtn);
+      leftCol.appendChild(row);
     });
     const rightCol = el('div', { class: 'match-col', 'data-match-col': 'right' });
     shuffle(pairs.map((_, pi) => pi)).forEach((pi) => {
@@ -166,6 +174,11 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
   const explanation = el('p', { class: 'explanation', 'data-explanation': '', hidden: '' });
   if (kind === 'choice') explanation.textContent = data.explanation ?? '';
   fieldset.appendChild(explanation);
+  if (kind === 'fill-blank' || kind === 'write' || kind === 'order') {
+    fieldset.appendChild(
+      el('button', { type: 'button', class: 'speak-btn reveal-speak', 'data-speak': '', 'data-reveal-speak': '', hidden: '' }, '🔊 Escuchar')
+    );
+  }
   fieldset.appendChild(el('button', { type: 'button', class: 'btn btn-primary next', 'data-next': '', hidden: '' }, 'Siguiente →'));
 
   return fieldset;

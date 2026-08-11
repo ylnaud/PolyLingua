@@ -61,6 +61,16 @@
     write('polylingua-srs-pool', JSON.stringify(pool));
   }
 
+  function writeIfNew(key: string, value: string): boolean {
+    const wasSet = read(key) !== null;
+    write(key, value);
+    return !wasSet;
+  }
+
+  function dispatchAchievement(id: string) {
+    document.dispatchEvent(new CustomEvent('polylingua-achievement', { detail: { id } }));
+  }
+
   function updateSrsPool(results: ResultItem[]) {
     const pool = readPool();
     for (const r of results) {
@@ -104,20 +114,24 @@
         const key = lessonId.replace(/\//g, '-');
         write(`polylingua-lesson-done-${key}`, today());
         if (total > 0 && score === total) {
-          write(`polylingua-lesson-perfect-${key}`, '1');
+          if (writeIfNew(`polylingua-lesson-perfect-${key}`, '1')) dispatchAchievement('perfect');
         }
         try {
           const doneToday = Object.keys(localStorage).filter(
             (k) => k.startsWith('polylingua-lesson-done-') && localStorage.getItem(k) === today()
           ).length;
-          if (doneToday >= 3) write('polylingua-achievement-marathon', 'true');
+          if (doneToday >= 3 && writeIfNew('polylingua-achievement-marathon', 'true')) {
+            dispatchAchievement('marathon');
+          }
         } catch {
           /* localStorage unavailable */
         }
       }
 
       if (sessionType === 'exam' && lessonId && total > 0 && score / total >= EXAM_PASS_THRESHOLD) {
-        write(`polylingua-level-passed-${lessonId.replace('/', '-')}`, 'true');
+        if (writeIfNew(`polylingua-level-passed-${lessonId.replace('/', '-')}`, 'true')) {
+          dispatchAchievement('level-passed');
+        }
       }
 
       updateSrsPool(results);

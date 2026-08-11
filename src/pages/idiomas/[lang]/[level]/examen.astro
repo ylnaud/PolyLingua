@@ -90,6 +90,7 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
       sessionType="exam"
       lessonId={`${lang}/${level}`}
       itemIds={examItemIds}
+      lang={languageMeta?.bcp47}
     />
 
     <div class="exam-result" data-exam-result hidden>

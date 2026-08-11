@@ -45,6 +45,7 @@ interface Props {
   sessionType?: 'lesson' | 'exam' | 'review';
   itemIds?: string[];
   dynamic?: boolean;
+  lang?: string;
 }
 
 const {
@@ -55,6 +56,7 @@ const {
   sessionType = 'lesson',
   itemIds,
   dynamic = false,
+  lang = '',
 } = Astro.props;
 
 type Item =
@@ -106,6 +108,7 @@ function shuffledIndices(n: number): number[] {
     data-session-type={sessionType}
     data-lesson-id={lessonId}
     data-dynamic={dynamic ? 'true' : 'false'}
+    data-lang={lang}
     aria-label="Práctica interactiva"
   >
     <div class="practice-head">
@@ -210,15 +213,18 @@ function shuffledIndices(n: number): number[] {
             <div class="match-board" data-match-board data-remaining={item.data.pairs.length}>
               <div class="match-col" data-match-col="left">
                 {item.data.pairs.map((pair, pi) => (
-                  <button
-                    type="button"
-                    class="match-item"
-                    data-match-item
-                    data-side="left"
-                    data-pair={pi}
-                  >
-                    {pair.left}
-                  </button>
+                  <div class="option-row">
+                    <button
+                      type="button"
+                      class="match-item"
+                      data-match-item
+                      data-side="left"
+                      data-pair={pi}
+                    >
+                      {pair.left}
+                    </button>
+                    <button type="button" class="speak-btn" data-speak data-speak-text={pair.left} aria-label={`Escuchar «${pair.left}»`}>🔊</button>
+                  </div>
                 ))}
               </div>
               <div class="match-col" data-match-col="right">
@@ -263,6 +269,9 @@ function shuffledIndices(n: number): number[] {
         <p class="explanation" data-explanation hidden>
           {item.kind === 'choice' ? item.data.explanation : ''}
         </p>
+        {(item.kind === 'fill-blank' || item.kind === 'write' || item.kind === 'order') && (
+          <button type="button" class="speak-btn reveal-speak" data-speak data-reveal-speak hidden>🔊 Escuchar</button>
+        )}
         <button type="button" class="btn btn-primary next" data-next hidden>
           Siguiente →
         </button>
@@ -327,6 +336,48 @@ function shuffledIndices(n: number): number[] {
   .options {
     display: grid;
     gap: 0.6rem;
+  }
+
+  .option-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0.4rem;
+  }
+
+  .option-row .option {
+    flex: 1;
+  }
+
+  .speak-btn {
+    flex-shrink: 0;
+    min-width: 44px;
+    min-height: 44px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-size: 1.05rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.15s ease;
+  }
+
+  .speak-btn:hover {
+    border-color: var(--accent);
+  }
+
+  .speak-btn.reveal-speak {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: auto;
+    min-width: 0;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-block: 0.75rem 0;
   }
 
   .option,
@@ -506,6 +557,8 @@ function shuffledIndices(n: number): number[] {
 </style>
 
 <script>
+  import { playCorrect, playIncorrect, speak, isMuted } from '../lib/sound';
+
   function normalize(value: string): string {
     return value
       .trim()
@@ -529,6 +582,18 @@ function shuffledIndices(n: number): number[] {
       let current = 0;
       let score = 0;
       const results: { id: string; kind: string; data: unknown; correct: boolean }[] = [];
+
+      if (!('speechSynthesis' in window)) {
+        root.querySelectorAll<HTMLElement>('[data-speak]').forEach((btn) => {
+          btn.hidden = true;
+        });
+      }
+
+      root.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement)?.closest<HTMLElement>('[data-speak]');
+        if (!btn || btn.hidden) return;
+        speak(btn.dataset.speakText ?? '', root.dataset.lang ?? '');
+      });
 
       function showItem(index: number) {
         items.forEach((it, i) => {
@@ -571,9 +636,11 @@ function shuffledIndices(n: number): number[] {
         const feedback = item.querySelector<HTMLElement>('[data-feedback]');
         const explanation = item.querySelector<HTMLElement>('[data-explanation]');
         const nextBtn = item.querySelector<HTMLButtonElement>('[data-next]');
+        const revealSpeak = item.querySelector<HTMLButtonElement>('[data-reveal-speak]');
 
         function reveal(correct: boolean) {
           if (feedback) feedback.textContent = correct ? '✅ ¡Correcto!' : '❌ No del todo.';
+          if (correct) playCorrect(); else playIncorrect();
           if (explanation && explanation.textContent) explanation.hidden = false;
           if (nextBtn) nextBtn.hidden = false;
           if (correct) score += 1;
@@ -617,6 +684,16 @@ function shuffledIndices(n: number): number[] {
             input.classList.add(isCorrect ? 'correct' : 'incorrect');
             if (!isCorrect) input.value = `${input.value} → ${answer}`;
             if (checkBtn) checkBtn.hidden = true;
+            if (revealSpeak && answer) {
+              revealSpeak.dataset.speakText = answer;
+              revealSpeak.hidden = false;
+            }
+            // Auto-play must stay synchronous with the click that triggered submit() —
+            // inserting an await/setTimeout before this line can make Safari drop the
+            // user-gesture standing required for speechSynthesis.speak() to fire.
+            if (kind === 'fill-blank' && isCorrect && !isMuted() && answer) {
+              speak(answer, root.dataset.lang ?? '');
+            }
             reveal(isCorrect);
           };
           checkBtn?.addEventListener('click', submit);
@@ -662,6 +739,7 @@ function shuffledIndices(n: number): number[] {
                 }
               } else {
                 mistakes += 1;
+                playIncorrect();
                 btn.classList.add('incorrect');
                 selectedLeft.classList.add('incorrect');
                 window.setTimeout(() => {
@@ -724,6 +802,15 @@ function shuffledIndices(n: number): number[] {
               correction.className = 'prompt-translation';
               correction.textContent = `Correcto: ${correctSentence}`;
               assembled.after(correction);
+            }
+            if (revealSpeak && correctSentence) {
+              revealSpeak.dataset.speakText = correctSentence;
+              revealSpeak.hidden = false;
+            }
+            // Auto-play must stay synchronous with this click handler — see the
+            // fill-blank submit() comment above for why.
+            if (isCorrect && !isMuted() && correctSentence) {
+              speak(correctSentence, root.dataset.lang ?? '');
             }
             reveal(isCorrect);
           });

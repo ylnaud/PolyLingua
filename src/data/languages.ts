@@ -8,6 +8,7 @@ export interface LanguageMeta {
   tagline: string;
   description: string;
   color: string;
+  bcp47: string;
 }
 
 export const LANGUAGES: LanguageMeta[] = [
@@ -20,6 +21,7 @@ export const LANGUAGES: LanguageMeta[] = [
     description:
       'El idioma de la lógica: reglas claras, orden de palabras curioso y un vocabulario que se construye como piezas de Lego.',
     color: '#d80027',
+    bcp47: 'de-DE',
   },
   {
     id: 'en',
@@ -30,6 +32,7 @@ export const LANGUAGES: LanguageMeta[] = [
     description:
       'Gramática simple en la superficie, con matices (tiempos verbales, phrasal verbs) que marcan la diferencia entre sonar bien y sonar nativo.',
     color: '#2f5fce',
+    bcp47: 'en-US',
   },
   {
     id: 'fr',
@@ -40,6 +43,7 @@ export const LANGUAGES: LanguageMeta[] = [
     description:
       'Sonidos nasales, un género gramatical por dominar y un modo subjuntivo que separa a los buenos hablantes de los excelentes.',
     color: '#3d5ce8',
+    bcp47: 'fr-FR',
   },
   {
     id: 'it',
@@ -50,6 +54,7 @@ export const LANGUAGES: LanguageMeta[] = [
     description:
       'Muy afín al español en vocabulario, con su propio ritmo, dobles consonantes y un congiuntivo que vale la pena conquistar.',
     color: '#2f9e6e',
+    bcp47: 'it-IT',
   },
   {
     id: 'pt',
@@ -60,6 +65,7 @@ export const LANGUAGES: LanguageMeta[] = [
     description:
       'Parecido al español en superficie, con sonidos nasales propios y estructuras (como el futuro do subjuntivo) que no existen en tu idioma.',
     color: '#1f8a5c',
+    bcp47: 'pt-PT',
   },
 ];
 

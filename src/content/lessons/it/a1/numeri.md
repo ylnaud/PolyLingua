@@ -24,6 +24,37 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'venti' pierde su vocal final antes de 'uno' u 'otto': ventuno (21), ventotto (28) — una regla de elisión que se repite en todas las decenas."
+exercises:
+  - type: "fill-blank"
+    sentence: "Trenta più otto fa ___."
+    answer: "trentotto"
+    hint: "Elisión: 'trenta' pierde la 'a' final antes de 'otto'."
+    translation: "Treinta más ocho es treinta y ocho."
+  - type: "fill-blank"
+    sentence: "Il numero 100 si dice ___."
+    answer: "cento"
+    hint: "Muy parecido a 'ciento' en español."
+    translation: "El número 100 se dice cien."
+  - type: "match"
+    instructions: "Empareja cada palabra italiana con su número."
+    pairs:
+      - left: "venti"
+        right: "20"
+      - left: "trenta"
+        right: "30"
+      - left: "quaranta"
+        right: "40"
+      - left: "cinquanta"
+        right: "50"
+      - left: "cento"
+        right: "100"
+  - type: "write"
+    prompt: "Escribe cómo se dice '21' en italiano (una sola palabra)."
+    answer: "ventuno"
+    hint: "'venti' pierde su vocal final antes de 'uno'."
+  - type: "order"
+    sentence: "Ho venti anni"
+    translation: "Tengo veinte años."
 ---
 
 Los números italianos son, de los cinco idiomas de PolyLingua, los más fáciles de

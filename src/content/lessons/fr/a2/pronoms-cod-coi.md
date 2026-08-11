@@ -20,6 +20,39 @@ quiz:
     options: ["Después del verbo", "Antes del verbo conjugado", "Al final de la frase"]
     answerIndex: 1
     explanation: "El pronombre objeto va justo antes del verbo conjugado: Je le vois, Je lui parle — igual que en español (lo veo, le hablo)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Je ___ vois."
+    answer: "la"
+    hint: "'voir' no lleva preposición: usa COD femenino singular."
+    translation: "La veo (a Marie)."
+  - type: "fill-blank"
+    sentence: "Je ___ parle."
+    answer: "lui"
+    hint: "'parler à' lleva preposición oculta: usa COI singular."
+    translation: "Le hablo (a Marc)."
+  - type: "match"
+    instructions: "Empareja cada pronombre con lo que reemplaza."
+    pairs:
+      - left: "le"
+        right: "objeto masculino singular (COD)"
+      - left: "la"
+        right: "objeto femenino singular (COD)"
+      - left: "les"
+        right: "objeto plural (COD)"
+      - left: "lui"
+        right: "a él/ella (COI)"
+      - left: "leur"
+        right: "a ellos/ellas (COI)"
+  - type: "write"
+    prompt: "Escribe en francés: 'les hablo' (a mis amigos), usando el pronombre COI leur."
+    answer: "Je leur parle"
+    accepted:
+      - "Je leur parle."
+    hint: "'parler à' pide COI: leur para plural."
+  - type: "order"
+    sentence: "Je ne le vois pas"
+    translation: "No lo veo."
 ---
 
 Estos pronombres te permiten evitar repetir un sustantivo una y otra vez — la clave

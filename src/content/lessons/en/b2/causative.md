@@ -28,6 +28,39 @@ quiz:
     options: ["Yo mismo", "Alguien más, a quien yo pagué o pedí el servicio", "Nadie, el teléfono se arregló solo"]
     answerIndex: 1
     explanation: "'get something done' indica que alguien más realizó el servicio — típicamente pagado, como en un taller o negocio."
+exercises:
+  - type: "fill-blank"
+    sentence: "I ___ my hair cut yesterday."
+    answer: "had"
+    accepted: ["got"]
+    hint: "Estructura causativa: have/get + objeto + participio pasado."
+    translation: "Me corté el pelo (alguien más lo hizo) ayer."
+  - type: "fill-blank"
+    sentence: "She ___ her house painted last month."
+    answer: "had"
+    accepted: ["got"]
+    hint: "Alguien más pintó la casa, no ella."
+    translation: "Ella hizo pintar su casa el mes pasado."
+  - type: "match"
+    instructions: "Empareja cada frase causativa con su significado."
+    pairs:
+      - left: "have my car repaired"
+        right: "pagar a alguien para que repare mi coche"
+      - left: "get my nails done"
+        right: "hacerme la manicura (que alguien más la haga)"
+      - left: "have my assistant send the email"
+        right: "hacer que mi asistente envíe el correo"
+      - left: "cut my hair"
+        right: "cortarme el pelo yo mismo"
+      - left: "get my phone fixed"
+        right: "que alguien más arregle mi teléfono"
+  - type: "write"
+    prompt: "Escribe en inglés: 'Necesito que me arreglen el teléfono' usando la forma causativa con 'get'."
+    answer: "I need to get my phone fixed."
+    hint: "get + objeto + participio pasado."
+  - type: "order"
+    sentence: "We are having our kitchen renovated"
+    translation: "Estamos haciendo renovar nuestra cocina."
 ---
 
 Esta estructura te permite expresar algo muy común pero fácil de decir mal: que

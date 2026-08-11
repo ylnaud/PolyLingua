@@ -20,6 +20,40 @@ quiz:
     options: ["che", "cui", "il quale sin preposición"]
     answerIndex: 1
     explanation: "Cuando hay una preposición (di, a, con, per...) antes del pronombre relativo, se usa 'cui' en vez de 'che': È un argomento di cui parlo spesso."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ho un amico ___ abita a Roma."
+    answer: "che"
+    accepted: ["che"]
+    hint: "Función de sujeto: 'che' hace casi todo el trabajo en italiano."
+    translation: "Tengo un amigo que vive en Roma."
+  - type: "fill-blank"
+    sentence: "È un argomento di ___ parlo spesso."
+    answer: "cui"
+    accepted: ["cui"]
+    hint: "Hay una preposición (di) antes del pronombre: se usa 'cui', no 'che'."
+    translation: "Es un tema del que hablo a menudo."
+  - type: "match"
+    instructions: "Empareja cada pronombre relativo con su uso."
+    pairs:
+      - left: "che"
+        right: "sujeto u objeto directo"
+      - left: "cui"
+        right: "con preposición (di, a, con...)"
+      - left: "il quale"
+        right: "versión formal, concuerda en género y número"
+      - left: "dove"
+        right: "lugar"
+      - left: "per cui"
+        right: "por la que / por lo cual"
+  - type: "write"
+    prompt: "Escribe en italiano cómo dirías 'la razón por la que...' usando un pronombre relativo con preposición."
+    answer: "la ragione per cui"
+    accepted: ["La ragione per cui"]
+    hint: "Usa 'per' + el pronombre que va con preposiciones."
+  - type: "order"
+    sentence: "Il film che ho visto era bellissimo"
+    translation: "La película que vi era preciosa."
 ---
 
 Los pronombres relativos son la herramienta que separa el italiano de principiante ("Ho

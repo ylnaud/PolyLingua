@@ -20,6 +20,37 @@ quiz:
     options: ["loro dormono", "loro dormano", "loro dorme"]
     answerIndex: 0
     explanation: "Los verbos en -ire con 'loro' terminan en '-ono': loro dormono. Igual que los verbos en -ere en esta persona."
+exercises:
+  - type: "fill-blank"
+    sentence: "Tu ___ italiano."
+    answer: "parli"
+    hint: "Verbos en -are con 'tu' toman la terminación -i."
+    translation: "Tú hablas italiano."
+  - type: "fill-blank"
+    sentence: "Noi ___ un libro."
+    answer: "leggiamo"
+    hint: "-iamo es la terminación de 'noi' compartida por los tres grupos."
+    translation: "Nosotros leemos un libro."
+  - type: "match"
+    instructions: "Empareja cada forma verbal con su traducción."
+    pairs:
+      - left: "io parlo"
+        right: "yo hablo"
+      - left: "tu leggi"
+        right: "tú lees"
+      - left: "lui dorme"
+        right: "él duerme"
+      - left: "noi parliamo"
+        right: "nosotros hablamos"
+      - left: "loro dormono"
+        right: "ellos duermen"
+  - type: "write"
+    prompt: "Escribe la conjugación de 'dormire' con 'loro' (ellos)."
+    answer: "dormono"
+    hint: "Verbos en -ire con 'loro' terminan en -ono, igual que -ere."
+  - type: "order"
+    sentence: "Io parlo italiano"
+    translation: "Yo hablo italiano."
 ---
 
 El italiano organiza sus verbos en tres grupos según la terminación del infinitivo,

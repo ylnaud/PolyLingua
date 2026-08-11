@@ -20,6 +20,40 @@ quiz:
     options: ["registrarse/facturar", "salir", "cancelar"]
     answerIndex: 0
     explanation: "'check in' significa registrarse (en un hotel) o facturar equipaje/documentarse (en un aeropuerto)."
+exercises:
+  - type: "fill-blank"
+    sentence: "I have a job ___ tomorrow."
+    answer: "interview"
+    accepted: ["interview"]
+    hint: "'job interview' = entrevista de trabajo."
+    translation: "Tengo una entrevista de trabajo mañana."
+  - type: "fill-blank"
+    sentence: "I'm looking forward to ___ (see) you."
+    answer: "seeing"
+    accepted: ["seeing"]
+    hint: "Después de 'look forward to', 'to' es preposición y pide gerundio."
+    translation: "Espero con ansias verte."
+  - type: "match"
+    instructions: "Empareja cada palabra en inglés con su significado en español."
+    pairs:
+      - left: "deadline"
+        right: "fecha límite"
+      - left: "colleague"
+        right: "colega"
+      - left: "boarding pass"
+        right: "tarjeta de embarque"
+      - left: "luggage"
+        right: "equipaje"
+      - left: "customs"
+        right: "aduana"
+  - type: "write"
+    prompt: "Escribe en inglés: '¿Podríamos programar una reunión para la próxima semana?'"
+    answer: "Could we schedule a meeting for next week?"
+    accepted: ["Could we schedule a meeting for next week"]
+    hint: "Usa 'schedule a meeting'."
+  - type: "order"
+    sentence: "I would like to check in please"
+    translation: "Me gustaría registrarme, por favor."
 ---
 
 Este vocabulario te prepara para dos de las situaciones más comunes en las que

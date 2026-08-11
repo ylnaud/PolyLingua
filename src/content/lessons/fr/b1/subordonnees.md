@@ -20,6 +20,37 @@ quiz:
     options: ["quand (cuando)", "bien que (aunque)", "avant que (antes de que)"]
     answerIndex: 0
     explanation: "'quand' (cuando) se usa con indicativo normal: Quand il pleut, je reste à la maison. En cambio 'bien que' y 'avant que' sí exigen subjonctif porque expresan contraste o anterioridad incierta."
+exercises:
+  - type: "fill-blank"
+    sentence: "Je reste à la maison ___ je suis malade."
+    answer: "parce que"
+    hint: "Causa/razón directa: no exige subjonctif."
+    translation: "Me quedo en casa porque estoy enfermo."
+  - type: "fill-blank"
+    sentence: "Bien qu'il ___ fatigué, il continue à travailler."
+    answer: "soit"
+    hint: "'bien que' exige subjonctif; 'soit' es el subjonctif de 'être' para il/elle."
+    translation: "Aunque esté cansado, sigue trabajando."
+  - type: "match"
+    instructions: "Empareja cada conjunción con el modo verbal que exige."
+    pairs:
+      - left: "parce que"
+        right: "indicativo"
+      - left: "quand"
+        right: "indicativo"
+      - left: "bien que"
+        right: "subjonctif"
+      - left: "pour que"
+        right: "subjonctif"
+      - left: "avant que"
+        right: "subjonctif"
+  - type: "write"
+    prompt: "Escribe en francés 'Hablo despacio para que entiendas', usando 'pour que' + subjonctif de comprendre (que tu comprennes)."
+    answer: "Je parle lentement pour que tu comprennes."
+    hint: "'pour que' exige subjonctif: comprennes."
+  - type: "order"
+    sentence: "Bien qu'il soit riche il est triste"
+    translation: "Aunque es rico, está triste."
 ---
 
 En este nivel empiezas a conectar ideas complejas: causa, contraste, tiempo. El francés

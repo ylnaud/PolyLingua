@@ -32,6 +32,37 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Si el hecho es una verdad general o sigue siendo cierto, puedes mantener el tiempo original: She said the sun rises in the east (sigue siendo verdad, no es obligatorio cambiarlo a 'rose')."
+exercises:
+  - type: "fill-blank"
+    sentence: "She said she ___ tired."
+    answer: "was"
+    hint: "María dijo I am tired — el presente retrocede a pasado en discurso indirecto."
+    translation: "Ella dijo que estaba cansada."
+  - type: "fill-blank"
+    sentence: "He said he ___ call me."
+    answer: "would"
+    hint: "Tom dijo I will call you — will retrocede a would."
+    translation: "Él dijo que me llamaría."
+  - type: "match"
+    instructions: "Empareja cada forma del discurso directo con su equivalente en discurso indirecto (backshift)."
+    pairs:
+      - left: "am"
+        right: "was"
+      - left: "will"
+        right: "would"
+      - left: "can"
+        right: "could"
+      - left: "now"
+        right: "then"
+      - left: "tomorrow"
+        right: "the next day"
+  - type: "write"
+    prompt: "Reporta en discurso indirecto lo que dijo Ana: I will finish it tomorrow. Empieza con She said..."
+    answer: "She said she would finish it the next day."
+    hint: "Aplica el backshift: will → would, y cambia el marcador temporal tomorrow → the next day."
+  - type: "order"
+    sentence: "He said he would help me"
+    translation: "Él dijo que me ayudaría."
 ---
 
 Cuando cuentas lo que alguien más dijo, el inglés no usa comillas como el español — usa un

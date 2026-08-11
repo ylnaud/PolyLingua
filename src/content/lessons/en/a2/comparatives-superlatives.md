@@ -20,6 +20,40 @@ quiz:
     options: ["goodest", "the most good", "the best"]
     answerIndex: 2
     explanation: "'good' es irregular: good → better → the best. No sigue ninguna de las dos reglas regulares."
+exercises:
+  - type: "fill-blank"
+    sentence: "This car is ___ than that one."
+    answer: "faster"
+    accepted: ["Faster"]
+    hint: "'fast' es corto (1 sílaba): añade '-er'."
+    translation: "Este carro es más rápido que ese."
+  - type: "fill-blank"
+    sentence: "This is the ___ interesting book I've read."
+    answer: "most"
+    accepted: ["Most"]
+    hint: "'interesting' es largo (3+ sílabas): usa 'the most' en vez de una terminación."
+    translation: "Este es el libro más interesante que he leído."
+  - type: "match"
+    instructions: "Empareja cada adjetivo con su superlativo correcto."
+    pairs:
+      - left: "good"
+        right: "the best"
+      - left: "bad"
+        right: "the worst"
+      - left: "far"
+        right: "the farthest"
+      - left: "big"
+        right: "the biggest"
+      - left: "expensive"
+        right: "the most expensive"
+  - type: "write"
+    prompt: "Escribe el comparativo de 'happy' (feliz) en inglés."
+    answer: "happier"
+    accepted: ["Happier"]
+    hint: "Termina en -y: cambia a '-ier'."
+  - type: "order"
+    sentence: "This book is more interesting than that one"
+    translation: "Este libro es más interesante que aquel."
 ---
 
 Comparar cosas es una herramienta conversacional esencial, y el inglés decide entre dos

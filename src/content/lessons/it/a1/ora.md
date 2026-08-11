@@ -20,6 +20,38 @@ quiz:
     options: ["las 3:00", "las 3:15", "las 3:45"]
     answerIndex: 1
     explanation: "'e un quarto' significa 'y cuarto' = 3:15."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ le due."
+    answer: "Sono"
+    hint: "Plural para todas las horas, excepto la una."
+    translation: "Son las dos."
+  - type: "fill-blank"
+    sentence: "___ l'una."
+    answer: "È"
+    hint: "Singular, excepción con la una."
+    translation: "Es la una."
+  - type: "match"
+    instructions: "Empareja cada expresión con su significado."
+    pairs:
+      - left: "e un quarto"
+        right: "y cuarto"
+      - left: "e mezza"
+        right: "y media"
+      - left: "meno un quarto"
+        right: "menos cuarto"
+      - left: "mezzogiorno"
+        right: "mediodía"
+      - left: "mezzanotte"
+        right: "medianoche"
+  - type: "write"
+    prompt: "Escribe cómo preguntarías '¿Qué hora es?' en italiano."
+    answer: "Che ora è?"
+    accepted: ["Che ora è"]
+    hint: "También se puede decir 'Che ore sono?'."
+  - type: "order"
+    sentence: "Sono le due e mezza"
+    translation: "Son las dos y media."
 ---
 
 Decir la hora en italiano te resultará muy familiar si vienes del español — la lógica

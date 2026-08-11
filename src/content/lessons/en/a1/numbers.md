@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'three hundred' (trescientos, número específico) vs. 'hundreds of people' (cientos de personas, cantidad indefinida y grande)."
+exercises:
+  - type: "fill-blank"
+    sentence: "I am ___ years old."
+    answer: "twenty-one"
+    accepted: ["twenty one", "Twenty-one"]
+    hint: "Del 21 al 99: decena-guión-unidad."
+    translation: "Tengo veintiún años."
+  - type: "fill-blank"
+    sentence: "The number 40 is spelled ___."
+    answer: "forty"
+    accepted: ["Forty"]
+    hint: "Pierde la 'u' de 'four' — una excepción ortográfica."
+    translation: "El número 40 se escribe 'forty'."
+  - type: "match"
+    instructions: "Empareja cada número con su palabra en inglés."
+    pairs:
+      - left: "15"
+        right: "fifteen"
+      - left: "40"
+        right: "forty"
+      - left: "21"
+        right: "twenty-one"
+      - left: "100"
+        right: "one hundred"
+      - left: "12"
+        right: "twelve"
+  - type: "write"
+    prompt: "Escribe en inglés el número 47."
+    answer: "forty-seven"
+    accepted: ["forty seven", "Forty-seven"]
+    hint: "decena (forty) + guión + unidad (seven)."
+  - type: "order"
+    sentence: "She is thirty years old"
+    translation: "Ella tiene treinta años."
 ---
 
 Los números son vocabulario de supervivencia inmediata: precios, horas, edades,

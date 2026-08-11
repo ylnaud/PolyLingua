@@ -24,6 +24,40 @@ quiz:
     options: ["uma problema", "um problema", "o problema"]
     answerIndex: 1
     explanation: "'problema' es masculino en portugués (igual que en español 'el problema', a pesar de terminar en -a): um problema. Es una excepción de origen griego que comparten ambos idiomas."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ livro está em cima da mesa."
+    answer: "O"
+    accepted: ["o"]
+    hint: "'livro' termina en -o: masculino."
+    translation: "El libro está sobre la mesa."
+  - type: "fill-blank"
+    sentence: "___ árvore é muito antiga."
+    answer: "A"
+    accepted: ["a"]
+    hint: "'árvore' es femenina en portugués, aunque 'el árbol' sea masculino en español — un falso amigo de género."
+    translation: "El árbol es muy antiguo."
+  - type: "match"
+    instructions: "Empareja cada palabra con su artículo correcto."
+    pairs:
+      - left: "sangue"
+        right: "o"
+      - left: "viagem"
+        right: "a"
+      - left: "costume"
+        right: "o"
+      - left: "casa"
+        right: "a"
+      - left: "problema"
+        right: "o"
+  - type: "write"
+    prompt: "Escribe el artículo indefinido correcto (um/uma) para 'viagem' (viaje)."
+    answer: "uma"
+    accepted: ["Uma"]
+    hint: "'viagem' es femenina en portugués, aunque 'el viaje' sea masculino en español."
+  - type: "order"
+    sentence: "O sangue é vermelho"
+    translation: "La sangre es roja."
 ---
 
 El portugués es, de los cinco idiomas de PolyLingua, el que más vocabulario y estructura

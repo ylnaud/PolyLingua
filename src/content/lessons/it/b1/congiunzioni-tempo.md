@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'prima che' (antes de que) señala que la segunda acción todavía no había pasado en el momento de la primera — esa incertidumbre temporal activa el congiuntivo."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ arrivo, ti chiamo."
+    answer: "Appena"
+    accepted: ["appena"]
+    hint: "Significa 'tan pronto como' — añade un matiz de inmediatez."
+    translation: "Tan pronto como llegue, te llamo."
+  - type: "fill-blank"
+    sentence: "___ cucino, ascolto la musica."
+    answer: "Mentre"
+    accepted: ["mentre"]
+    hint: "Describe dos acciones simultáneas y prolongadas."
+    translation: "Mientras cocino, escucho música."
+  - type: "match"
+    instructions: "Empareja cada conjunción de tiempo con su significado."
+    pairs:
+      - left: "quando"
+        right: "cuando"
+      - left: "appena"
+        right: "tan pronto como"
+      - left: "mentre"
+        right: "mientras"
+      - left: "dopo che"
+        right: "después de que"
+      - left: "prima che"
+        right: "antes de que"
+  - type: "write"
+    prompt: "Escribe en italiano 'llámame antes de que te vayas', usando 'prima che' + congiuntivo."
+    answer: "Chiamami prima che tu parta"
+    accepted: ["chiamami prima che tu parta"]
+    hint: "'prima che' es la única de estas conjunciones que exige congiuntivo."
+  - type: "order"
+    sentence: "Appena sono arrivato ho chiamato mia madre"
+    translation: "Tan pronto como llegué, llamé a mi madre."
 ---
 
 Estas conjunciones te permiten estructurar narraciones con precisión temporal — cuándo

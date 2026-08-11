@@ -20,6 +20,40 @@ quiz:
     options: ["the students's books", "the students' books", "the student's books"]
     answerIndex: 1
     explanation: "Cuando el plural ya termina en 's', solo se añade el apóstrofe sin otra 's': the students' books (los libros de los estudiantes)."
+exercises:
+  - type: "fill-blank"
+    sentence: "This is ___ book."
+    answer: "my"
+    accepted: ["My"]
+    hint: "Adjetivo posesivo para 'I', va antes del sustantivo."
+    translation: "Este es mi libro."
+  - type: "fill-blank"
+    sentence: "___ car is red."
+    answer: "Her"
+    accepted: ["her"]
+    hint: "Adjetivo posesivo para 'she'."
+    translation: "Su coche (de ella) es rojo."
+  - type: "match"
+    instructions: "Empareja cada pronombre con su adjetivo posesivo."
+    pairs:
+      - left: "I"
+        right: "my"
+      - left: "you"
+        right: "your"
+      - left: "he"
+        right: "his"
+      - left: "she"
+        right: "her"
+      - left: "they"
+        right: "their"
+  - type: "write"
+    prompt: "Escribe en inglés: 'El libro es mío.' (usa el pronombre posesivo)"
+    answer: "The book is mine."
+    accepted: ["This book is mine."]
+    hint: "'mine' reemplaza completamente al sustantivo, no va antes de él."
+  - type: "order"
+    sentence: "This book is mine"
+    translation: "Este libro es mío."
 ---
 
 Expresar posesión en inglés tiene dos caminos: el apóstrofe 's' (para personas,

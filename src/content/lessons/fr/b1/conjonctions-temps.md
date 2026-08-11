@@ -28,6 +28,36 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La regla del futuro obligatorio solo aplica cuando AMBAS acciones son futuras. En pasado, usas los tiempos pasados normales: Quand il est arrivé, il a appelé."
+exercises:
+  - type: "fill-blank"
+    sentence: "Quand tu ___ (arriver), appelle-moi."
+    answer: "arriveras"
+    hint: "Acción futura después de 'quand' exige futur simple en francés."
+    translation: "Cuando llegues, llámame."
+  - type: "fill-blank"
+    sentence: "Dès qu'il ___ (finir), il nous le dira."
+    answer: "finira"
+    hint: "'dès que' + futuro cuando ambas acciones son futuras."
+    translation: "Tan pronto como termine, nos lo dirá."
+  - type: "match"
+    instructions: "Empareja cada conjunción de tiempo con su significado."
+    pairs:
+      - left: "quand"
+        right: "cuando"
+      - left: "lorsque"
+        right: "cuando (más formal)"
+      - left: "dès que"
+        right: "tan pronto como"
+      - left: "aussitôt que"
+        right: "tan pronto como sea posible"
+  - type: "write"
+    prompt: "Escribe en francés: 'Cuando estés listo, saldremos.' (usa quand + futur simple en ambas partes)"
+    answer: "Quand tu seras prêt, on partira."
+    accepted: ["Quand tu seras prête, on partira."]
+    hint: "Ambos verbos deben ir en futur simple: seras y partira."
+  - type: "order"
+    sentence: "Quand tu arriveras je serai là"
+    translation: "Cuando llegues, estaré ahí."
 ---
 
 Este es uno de los detalles gramaticales que más sorprende a los hispanohablantes: el

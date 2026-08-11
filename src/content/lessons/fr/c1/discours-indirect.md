@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Los marcadores de tiempo cambian junto con los verbos: demain → le lendemain, aujourd'hui → ce jour-là, hier → la veille."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il a dit qu'il ___ fatigué. (discours direct: 'Je suis fatigué.')"
+    answer: "était"
+    accepted: ["etait"]
+    hint: "El présent ('suis') retrocede a imparfait en discurso indirecto."
+    translation: "Dijo que estaba cansado."
+  - type: "fill-blank"
+    sentence: "Elle a dit qu'elle ___ le lendemain. (discours direct: 'Je viendrai demain.')"
+    answer: "viendrait"
+    accepted: ["viendrait bien"]
+    hint: "El futur simple ('viendrai') retrocede a conditionnel présent."
+    translation: "Dijo que vendría al día siguiente."
+  - type: "match"
+    instructions: "Empareja cada expresión de discurso directo con su equivalente en discurso indirecto."
+    pairs:
+      - left: "aujourd'hui"
+        right: "ce jour-là"
+      - left: "demain"
+        right: "le lendemain"
+      - left: "hier"
+        right: "la veille"
+      - left: "maintenant"
+        right: "à ce moment-là"
+      - left: "Ferme la porte!"
+        right: "de fermer la porte"
+  - type: "write"
+    prompt: "Reporta en discurso indirecto: Paul a dit: 'J'ai fini.' (usa 'il a dit que...')"
+    answer: "Paul a dit qu'il avait fini."
+    accepted: ["Il a dit qu'il avait fini.", "Paul a dit qu'il avait fini"]
+    hint: "El passé composé ('ai fini') retrocede a plus-que-parfait ('avait fini')."
+  - type: "order"
+    sentence: "Elle m'a dit de fermer la porte"
+    translation: "Ella me dijo que cerrara la puerta."
 ---
 
 Cuando cuentas lo que alguien más dijo, el francés no usa comillas — cambia

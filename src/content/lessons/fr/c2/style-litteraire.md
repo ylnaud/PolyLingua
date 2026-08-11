@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Elle était triste' (dice) vs. 'Ses mains tremblaient en lisant la lettre' (muestra) — demostrar a través de un detalle concreto es más potente que declarar el estado directamente."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il ___ la porte et vit un homme."
+    answer: "ouvrit"
+    accepted: ["Ouvrit"]
+    hint: "Passé simple del verbo 'ouvrir', marca del registro narrativo literario."
+    translation: "Abrió la puerta y vio a un hombre."
+  - type: "fill-blank"
+    sentence: "Le vent ___ à travers les arbres."
+    answer: "murmurait"
+    accepted: ["Murmurait"]
+    hint: "Personificación: el viento 'murmura' como si tuviera voz."
+    translation: "El viento murmuraba a través de los árboles."
+  - type: "match"
+    instructions: "Empareja cada frase directa ('dire') con su versión literaria ('montrer')."
+    pairs:
+      - left: "Elle était nerveuse."
+        right: "Ses mains tremblaient en s'approchant de la porte."
+      - left: "Il était en colère."
+        right: "Il claqua la porte si fort que les fenêtres tremblèrent."
+      - left: "Personnification"
+        right: "Le vent murmurait à travers les arbres."
+      - left: "Passé simple"
+        right: "Il ouvrit la porte et vit un homme."
+  - type: "write"
+    prompt: "Escribe en francés la versión 'literaria' (en passé simple) de 'Il a ouvert la porte et a vu un homme.'."
+    answer: "Il ouvrit la porte et vit un homme."
+    accepted: ["Il ouvrit la porte et vit un homme"]
+    hint: "Usa el passé simple de 'ouvrir' y de 'voir'."
+  - type: "order"
+    sentence: "Elle attendit encore"
+    translation: "Ella esperó otra vez."
 ---
 
 Llegaste al registro más elevado y expresivo del francés: el de la prosa literaria,

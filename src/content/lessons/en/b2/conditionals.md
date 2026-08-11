@@ -20,6 +20,36 @@ quiz:
     options: ["Second Conditional", "First Conditional", "Ninguno de los dos"]
     answerIndex: 1
     explanation: "Es una condición realista y futura (SÍ es posible que estudies más), así que corresponde First Conditional: If you study more, you will pass the exam."
+exercises:
+  - type: "fill-blank"
+    sentence: "If it rains, I ___ an umbrella."
+    answer: "will take"
+    accepted: ["'ll take"]
+    hint: "First Conditional: if + presente, will + infinitivo."
+    translation: "Si llueve, tomaré un paraguas."
+  - type: "fill-blank"
+    sentence: "If I ___ a millionaire, I would travel the world."
+    answer: "were"
+    hint: "Second Conditional con 'be' siempre usa 'were', sin importar la persona."
+    translation: "Si fuera millonario, viajaría por el mundo."
+  - type: "match"
+    instructions: "Empareja cada frase con su tipo de condicional."
+    pairs:
+      - left: "If it rains, I will stay home."
+        right: "First Conditional"
+      - left: "If I won the lottery, I would buy a house."
+        right: "Second Conditional"
+      - left: "if + presente, will + infinitivo"
+        right: "situación realista"
+      - left: "if + pasado, would + infinitivo"
+        right: "situación imaginaria"
+  - type: "write"
+    prompt: "Escribe en inglés (First Conditional): 'Si estudias, aprobarás.'"
+    answer: "If you study, you will pass."
+    hint: "if + presente, will + infinitivo."
+  - type: "order"
+    sentence: "If I have time I will call you"
+    translation: "Si tengo tiempo, te llamaré."
 ---
 
 Los condicionales conectan una condición con su consecuencia — pero el inglés distingue

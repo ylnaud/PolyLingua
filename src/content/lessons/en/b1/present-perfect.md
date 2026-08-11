@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Present Perfect conecta el pasado con el presente: viví aquí desde hace 10 años y TODAVÍA vivo aquí. Si dijeras 'I lived here for 10 years' (Past Simple), implicarías que ya NO vives ahí."
+exercises:
+  - type: "fill-blank"
+    sentence: "I ___ (go) to Paris last year."
+    answer: "went"
+    accepted: ["went"]
+    hint: "'last year' es un momento específico → Past Simple."
+    translation: "Fui a París el año pasado."
+  - type: "fill-blank"
+    sentence: "I ___ (live) here for 10 years."
+    answer: "have lived"
+    accepted: ["have lived"]
+    hint: "La acción empezó en el pasado y continúa → Present Perfect."
+    translation: "He vivido aquí durante 10 años."
+  - type: "match"
+    instructions: "Empareja cada palabra clave con el tiempo verbal que anuncia."
+    pairs:
+      - left: "yesterday"
+        right: "Past Simple"
+      - left: "since"
+        right: "Present Perfect"
+      - left: "last week"
+        right: "Past Simple"
+      - left: "ever"
+        right: "Present Perfect"
+      - left: "in 2020"
+        right: "Past Simple"
+  - type: "write"
+    prompt: "Escribe en inglés: 'He perdido mis llaves.' (resultado presente de una acción reciente)"
+    answer: "I have lost my keys."
+    accepted: ["I've lost my keys.", "I have lost my keys", "I've lost my keys"]
+    hint: "Usa Present Perfect: have + participio."
+  - type: "order"
+    sentence: "I have never been to Japan"
+    translation: "Nunca he estado en Japón."
 ---
 
 Este es, sin exagerar, el error gramatical más común entre hispanohablantes aprendiendo

@@ -20,6 +20,40 @@ quiz:
     options: ["What time is it?", "What hour is now?", "How much time is it?"]
     answerIndex: 0
     explanation: "'What time is it?' es la pregunta estándar para pedir la hora."
+exercises:
+  - type: "fill-blank"
+    sentence: "It's ___ three."
+    answer: "half past"
+    accepted: ["Half past"]
+    hint: "Media hora después de las tres."
+    translation: "Son las tres y media."
+  - type: "fill-blank"
+    sentence: "___ time is it?"
+    answer: "What"
+    accepted: ["what"]
+    hint: "Es la pregunta estándar para pedir la hora."
+    translation: "¿Qué hora es?"
+  - type: "match"
+    instructions: "Empareja cada hora con su expresión en inglés."
+    pairs:
+      - left: "3:15"
+        right: "a quarter past three"
+      - left: "3:30"
+        right: "half past three"
+      - left: "3:45"
+        right: "a quarter to four"
+      - left: "9:05"
+        right: "nine oh five"
+      - left: "3:20"
+        right: "twenty past three"
+  - type: "write"
+    prompt: "Escribe en inglés cómo se dice las 4:45 en la forma coloquial."
+    answer: "a quarter to five"
+    accepted: ["A quarter to five"]
+    hint: "Un cuarto antes de las cinco: mira hacia la próxima hora."
+  - type: "order"
+    sentence: "What time is it"
+    translation: "¿Qué hora es?"
 ---
 
 Decir la hora en inglés tiene su propia lógica — una vez que la entiendes, es

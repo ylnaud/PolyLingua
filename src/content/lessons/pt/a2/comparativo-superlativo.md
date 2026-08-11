@@ -20,6 +20,36 @@ quiz:
     options: ["o mais inteligente da turma", "o mais inteligente que a turma", "muito inteligente da turma"]
     answerIndex: 0
     explanation: "El superlativo relativo usa 'o/a mais + adjetivo + de': o mais inteligente da turma."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ela é mais alta ___ eu."
+    answer: "do que"
+    hint: "Comparativo de superioridad en portugués estándar, no solo 'que'."
+    translation: "Ella es más alta que yo."
+  - type: "fill-blank"
+    sentence: "Este café é ___ do que aquele."
+    answer: "melhor"
+    hint: "Forma comparativa irregular de 'bom'."
+    translation: "Este café es mejor que aquel."
+  - type: "match"
+    instructions: "Empareja cada adjetivo con su forma comparativa irregular."
+    pairs:
+      - left: "bom"
+        right: "melhor"
+      - left: "mau"
+        right: "pior"
+      - left: "grande"
+        right: "maior"
+      - left: "pequeno"
+        right: "menor"
+  - type: "write"
+    prompt: "Escribe en portugués 'Ella es tan inteligente como su hermano' (comparativo de igualdad)."
+    answer: "Ela é tão inteligente quanto o irmão"
+    accepted: ["Ela é tão inteligente como o irmão"]
+    hint: "Usa la estructura tão... quanto/como."
+  - type: "order"
+    sentence: "Ela é a mais rápida da equipe"
+    translation: "Ella es la más rápida del equipo."
 ---
 
 Comparar es una función comunicativa esencial — y el portugués tiene su propia lógica,

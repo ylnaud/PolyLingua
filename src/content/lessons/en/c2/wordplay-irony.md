@@ -32,6 +32,36 @@ quiz:
     ]
     answerIndex: 1
     explanation: "A diferencia de la gramática, el humor exige comprensión cultural profunda y reconocimiento instantáneo de ambigüedades — una habilidad que solo se desarrolla con exposición real al idioma."
+exercises:
+  - type: "fill-blank"
+    sentence: "It's impossible to put ___."
+    answer: "down"
+    accepted: ["Down"]
+    hint: "El pun sobre antigravedad juega con 'put down' = dejar de leer / soltar hacia abajo."
+    translation: "Es imposible dejarlo (soltarlo hacia abajo)."
+  - type: "fill-blank"
+    sentence: "Oh ___, another Monday."
+    answer: "great"
+    accepted: ["Great"]
+    hint: "Dicho con tono plano tras un desastre, expresa justo lo contrario: sarcasmo."
+    translation: "Ay, qué bien, otro lunes (dicho con sarcasmo)."
+  - type: "match"
+    instructions: "Empareja el término de humor con su definición."
+    pairs:
+      - left: "Pun"
+        right: "Juego de palabras que explota un doble significado"
+      - left: "Sarcasm"
+        right: "Decir lo contrario de lo que se piensa, con tono serio"
+      - left: "Dry humor"
+        right: "Chiste sin ninguna señal visible de que es broma"
+  - type: "write"
+    prompt: "Escribe la frase de dos palabras con doble sentido en el chiste 'I'm reading a book about anti-gravity. It's impossible to put down.'"
+    answer: "put down"
+    accepted: ["Put down"]
+    hint: "Significa tanto 'dejar de leer' como 'soltar hacia abajo'."
+  - type: "order"
+    sentence: "Well that went well"
+    translation: "Vaya, eso salió genial (dicho con sarcasmo tras un desastre)."
 ---
 
 Entender un chiste en otro idioma sin que alguien te lo explique es una de las

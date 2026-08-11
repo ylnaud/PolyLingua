@@ -20,6 +20,40 @@ quiz:
     options: ["I have two siblings.", "I has two siblings.", "I having two siblings."]
     answerIndex: 0
     explanation: "'I have two siblings' — con 'I', el verbo 'have' se queda en su forma base (sin la 's' de tercera persona)."
+exercises:
+  - type: "fill-blank"
+    sentence: "I have two ___: a brother and a sister."
+    answer: "siblings"
+    accepted: ["Siblings"]
+    hint: "Palabra colectiva para hermanos y hermanas juntos, sin especificar género."
+    translation: "Tengo dos hermanos: un hermano y una hermana."
+  - type: "fill-blank"
+    sentence: "My ___'s name is Ana."
+    answer: "mother"
+    accepted: ["Mother"]
+    hint: "La persona que te dio a luz."
+    translation: "Mi madre se llama Ana."
+  - type: "match"
+    instructions: "Empareja cada palabra de familia con su traducción."
+    pairs:
+      - left: "siblings"
+        right: "hermanos (colectivo)"
+      - left: "grandparents"
+        right: "abuelos"
+      - left: "aunt"
+        right: "tía"
+      - left: "cousin"
+        right: "primo/a"
+      - left: "parents"
+        right: "padres"
+  - type: "write"
+    prompt: "Escribe en inglés: 'Mi hermano tiene 20 años.'"
+    answer: "My brother is 20 years old."
+    accepted: ["My brother is twenty years old."]
+    hint: "Recuerda: con 'my brother' (he) el verbo 'to be' es 'is'."
+  - type: "order"
+    sentence: "I have two siblings"
+    translation: "Tengo dos hermanos."
 ---
 
 Hablar de tu familia es una de las primeras conversaciones naturales en cualquier

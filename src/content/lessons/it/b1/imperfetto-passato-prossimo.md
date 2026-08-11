@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "'Guardavo' (imperfetto, fondo continuo) + 'ha squillato' (passato prossimo, evento puntual que interrumpe) es la combinación clásica: 'Miraba la tele cuando sonó el teléfono'."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ quando sono arrivato."
+    answer: "Pioveva"
+    accepted: ["pioveva"]
+    hint: "Imperfetto: describe el clima como telón de fondo continuo."
+    translation: "Llovía cuando llegué."
+  - type: "fill-blank"
+    sentence: "Guardavo la TV quando il telefono ___."
+    answer: "ha squillato"
+    accepted: ["ha squillato"]
+    hint: "Passato prossimo: el evento puntual que interrumpe el fondo."
+    translation: "Miraba la tele cuando sonó el teléfono."
+  - type: "match"
+    instructions: "Empareja cada frase en italiano con su traducción."
+    pairs:
+      - left: "Era stanca"
+        right: "Estaba cansada"
+      - left: "Faceva bello"
+        right: "Hacía buen tiempo"
+      - left: "Ho visitato il museo"
+        right: "Visité el museo"
+      - left: "Mi sono alzato"
+        right: "Me levanté"
+      - left: "Giocavo ogni sabato"
+        right: "Jugaba cada sábado"
+  - type: "write"
+    prompt: "Escribe en italiano 'cuando era niño, jugaba todos los días', usando imperfetto (empieza con 'Quando ero piccolo')."
+    answer: "Quando ero piccolo, giocavo ogni giorno"
+    accepted: ["quando ero piccolo, giocavo ogni giorno"]
+    hint: "Hábito repetido en el pasado, sin momento puntual: imperfetto."
+  - type: "order"
+    sentence: "Leggevo quando hai chiamato"
+    translation: "Leía cuando llamaste."
 ---
 
 Este es, para muchos hispanohablantes, el reto número uno del italiano intermedio:

@@ -32,6 +32,39 @@ quiz:
     ]
     answerIndex: 0
     explanation: "La estructura fija es: modal (must/might/could/can't) + have + participio pasado: must have left, might have forgotten, can't have known."
+exercises:
+  - type: "fill-blank"
+    sentence: "The lights are on, she ___ have arrived already."
+    answer: "must"
+    hint: "Evidencia fuerte a favor: alta certeza positiva."
+    translation: "Las luces están encendidas, ella debe de haber llegado ya."
+  - type: "fill-blank"
+    sentence: "She ___ have left, her car is here."
+    answer: "can't"
+    accepted: ["cannot"]
+    hint: "Evidencia que contradice la idea: imposibilidad."
+    translation: "Es imposible que se haya ido, su coche está aquí."
+  - type: "match"
+    instructions: "Empareja cada modal con su nivel de certeza."
+    pairs:
+      - left: "must have"
+        right: "muy seguro, positivo"
+      - left: "might have / could have"
+        right: "posible, no seguro"
+      - left: "can't have"
+        right: "muy seguro, imposible"
+      - left: "He must have forgotten his keys"
+        right: "seguramente olvidó sus llaves"
+      - left: "They can't have missed the train"
+        right: "es imposible que perdieran el tren"
+  - type: "write"
+    prompt: "Escribe en inglés: es imposible que ella haya estado en la fiesta, usando can't have."
+    answer: "She can't have been at the party."
+    accepted: ["She cannot have been at the party."]
+    hint: "Estructura: can't + have + participio."
+  - type: "order"
+    sentence: "Someone must have been here"
+    translation: "Alguien debió de estar aquí."
 ---
 
 Ya usaste modales para hablar de obligación y capacidad. En este nivel, los mismos

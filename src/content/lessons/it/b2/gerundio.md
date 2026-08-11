@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El gerundio también indica el MEDIO por el cual se logra algo: aprendí italiano VIENDO películas (esa fue la manera)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Sto ___ (mangiare)."
+    answer: "mangiando"
+    accepted: ["mangiando"]
+    hint: "Verbos en -are forman el gerundio con -ando."
+    translation: "Estoy comiendo."
+  - type: "fill-blank"
+    sentence: "Ho imparato l'italiano ___ (guardare) film."
+    answer: "guardando"
+    accepted: ["guardando"]
+    hint: "El gerundio aquí indica el MEDIO: la manera en que se logró algo."
+    translation: "Aprendí italiano viendo películas."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su gerundio correcto."
+    pairs:
+      - left: "parlare"
+        right: "parlando"
+      - left: "vendere"
+        right: "vendendo"
+      - left: "dormire"
+        right: "dormendo"
+      - left: "fare"
+        right: "facendo"
+      - left: "dire"
+        right: "dicendo"
+  - type: "write"
+    prompt: "Escribe el gerundio italiano de 'bere' (beber)."
+    answer: "bevendo"
+    accepted: ["Bevendo"]
+    hint: "Es uno de los irregulares imprescindibles, como 'facendo' y 'dicendo'."
+  - type: "order"
+    sentence: "Ascolto musica lavorando"
+    translation: "Escucho música mientras trabajo."
 ---
 
 El gerundio italiano cumple dos funciones importantes: describir simultaneidad y

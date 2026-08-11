@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'avoir le cafard' significa estar deprimido o melancólico — una expresión coloquial muy común, sin relación literal con insectos."
+exercises:
+  - type: "fill-blank"
+    sentence: "Désolé, j'ai un ___ dans la gorge aujourd'hui."
+    answer: "chat"
+    accepted: ["chat"]
+    hint: "La expresión 'avoir un chat dans la gorge' significa tener carraspera."
+    translation: "Perdón, tengo carraspera hoy."
+  - type: "fill-blank"
+    sentence: "Elle est toujours dans la ___ pendant les cours."
+    answer: "lune"
+    accepted: ["lune"]
+    hint: "'être dans la lune' significa estar distraído."
+    translation: "Ella siempre está distraída durante las clases."
+  - type: "match"
+    instructions: "Empareja cada expresión idiomática con su significado real."
+    pairs:
+      - left: "poser un lapin"
+        right: "dejar plantado a alguien"
+      - left: "avoir le cafard"
+        right: "estar deprimido/triste"
+      - left: "coûter les yeux de la tête"
+        right: "costar muchísimo"
+      - left: "avoir un chat dans la gorge"
+        right: "tener carraspera"
+      - left: "tomber dans les pommes"
+        right: "desmayarse"
+  - type: "write"
+    prompt: "Escribe en francés la expresión que significa 'estar distraído' (literalmente 'estar en la luna')."
+    answer: "être dans la lune"
+    accepted: ["etre dans la lune", "Être dans la lune"]
+    hint: "Piensa en dónde 'flota' la mente de alguien distraído."
+  - type: "order"
+    sentence: "Cette voiture coûte les yeux de la tête"
+    translation: "Ese coche cuesta muchísimo dinero."
 ---
 
 Llegaste al terreno de las expresiones que ni la gramática ni el vocabulario amplio te

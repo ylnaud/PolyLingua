@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Como las expresiones idiomáticas, los refranes son fórmulas cerradas cuyo uso natural depende del timing y contexto — una habilidad cultural, no solo lingüística."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ à petit, l'oiseau fait son nid."
+    answer: "Petit"
+    accepted: ["petit"]
+    hint: "Refrán sobre el progreso gradual, equivalente a 'Roma no se hizo en un día'."
+    translation: "Poco a poco, el pájaro hace su nido."
+  - type: "fill-blank"
+    sentence: "Il ne faut pas vendre la peau de l'___ avant de l'avoir tué."
+    answer: "ours"
+    accepted: ["Ours"]
+    hint: "Animal cuya piel no se debe vender antes de cazarlo."
+    translation: "No hay que vender la piel del oso antes de matarlo."
+  - type: "match"
+    instructions: "Empareja cada refrán francés con su equivalente en español."
+    pairs:
+      - left: "Petit à petit, l'oiseau fait son nid."
+        right: "Roma no se hizo en un día."
+      - left: "Il ne faut pas vendre la peau de l'ours avant de l'avoir tué."
+        right: "No vendas la piel del oso antes de cazarlo."
+      - left: "L'habit ne fait pas le moine."
+        right: "No juzgues un libro por su portada."
+      - left: "Qui vivra verra."
+        right: "El tiempo lo dirá."
+      - left: "Après la pluie, le beau temps."
+        right: "No hay mal que dure cien años."
+  - type: "write"
+    prompt: "Escribe en francés el refrán que expresa 'poco a poco se llega lejos' (literalmente: el pájaro hace su nido)."
+    answer: "Petit à petit, l'oiseau fait son nid."
+    accepted: ["Petit à petit, l'oiseau fait son nid", "petit à petit, l'oiseau fait son nid."]
+    hint: "Empieza con 'Petit à petit'."
+  - type: "order"
+    sentence: "Après la pluie le beau temps"
+    translation: "Después de la lluvia, el buen tiempo."
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

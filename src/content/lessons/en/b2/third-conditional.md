@@ -28,6 +28,36 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El Third Conditional describe lo que HABRÍA pasado, no lo que pasó. La realidad es exactamente lo opuesto a la condición: no salió temprano, y perdió el tren."
+exercises:
+  - type: "fill-blank"
+    sentence: "If I ___ known, I would have called you."
+    answer: "had"
+    hint: "Third Conditional: if + Past Perfect (had + participio)."
+    translation: "Si lo hubiera sabido, te habría llamado."
+  - type: "fill-blank"
+    sentence: "If she had left earlier, she ___ have missed the train."
+    answer: "wouldn't"
+    accepted: ["would not"]
+    hint: "El resultado describe lo opuesto a lo que realmente pasó: sí perdió el tren."
+    translation: "Si hubiera salido antes, no habría perdido el tren."
+  - type: "match"
+    instructions: "Empareja cada condicional con su uso."
+    pairs:
+      - left: "First Conditional"
+        right: "futuro real"
+      - left: "Second Conditional"
+        right: "presente imaginario"
+      - left: "Third Conditional"
+        right: "pasado alternativo"
+      - left: "If I had known, I would have helped."
+        right: "if + past perfect, would have + participio"
+  - type: "write"
+    prompt: "Escribe en inglés (Third Conditional): 'Si hubiera estudiado, habría aprobado.'"
+    answer: "If I had studied, I would have passed."
+    hint: "If + Past Perfect, would have + participio."
+  - type: "order"
+    sentence: "If I had known you were coming I would have cleaned the house"
+    translation: "Si hubiera sabido que venías, habría limpiado la casa."
 ---
 
 Este condicional te permite reflexionar sobre un pasado que ya no se puede cambiar —

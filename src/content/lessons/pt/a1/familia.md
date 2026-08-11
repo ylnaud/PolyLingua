@@ -20,6 +20,39 @@ quiz:
     options: ["avó", "avô", "avós"]
     answerIndex: 1
     explanation: "'avô' (con acento circunflejo, o cerrada) es abuelo; 'avó' (con acento agudo, o abierta) es abuela — la diferencia de acento es la única distinción escrita."
+exercises:
+  - type: "fill-blank"
+    sentence: "Eu tenho dois irmãos e uma ___."
+    answer: "irmã"
+    accepted: ["irma"]
+    hint: "Hermana, con tilde nasal ã."
+    translation: "Tengo dos hermanos y una hermana."
+  - type: "fill-blank"
+    sentence: "Meus ___ moram no Porto."
+    answer: "avós"
+    hint: "Abuelos, plural de avô/avó."
+    translation: "Mis abuelos viven en Porto."
+  - type: "match"
+    instructions: "Empareja cada palabra en portugués con su traducción."
+    pairs:
+      - left: "o pai"
+        right: "el padre"
+      - left: "a mãe"
+        right: "la madre"
+      - left: "o irmão"
+        right: "el hermano"
+      - left: "os pais"
+        right: "los padres (ambos)"
+      - left: "o sobrinho"
+        right: "el sobrino"
+  - type: "write"
+    prompt: "Escribe en portugués cómo dirías 'la hija'."
+    answer: "a filha"
+    accepted: ["filha", "A filha"]
+    hint: "Femenino de 'o filho'."
+  - type: "order"
+    sentence: "Meus avós moram no Porto"
+    translation: "Mis abuelos viven en Porto."
 ---
 
 El vocabulario de familia es fundamental desde el primer día — y el portugués tiene

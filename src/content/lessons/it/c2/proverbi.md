@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Como las expresiones idiomáticas, los refranes son fórmulas cerradas cuyo uso natural depende del timing y contexto — una habilidad cultural, no solo lingüística."
+exercises:
+  - type: "fill-blank"
+    sentence: "Chi ___ non piglia pesci."
+    answer: "dorme"
+    accepted: ["Dorme"]
+    hint: "Literalmente 'quien duerme no atrapa peces' — equivale a 'a quien madruga, Dios le ayuda'."
+    translation: "Quien duerme no atrapa peces."
+  - type: "fill-blank"
+    sentence: "Non è tutto oro quel che ___."
+    answer: "luccica"
+    accepted: ["Luccica"]
+    hint: "Verbo 'relucir' — este refrán es casi idéntico en español."
+    translation: "No es todo oro lo que reluce."
+  - type: "match"
+    instructions: "Empareja cada refrán italiano con su equivalente en español."
+    pairs:
+      - left: "Chi dorme non piglia pesci."
+        right: "A quien madruga, Dios le ayuda."
+      - left: "Non è tutto oro quel che luccica."
+        right: "No es oro todo lo que reluce."
+      - left: "Chi trova un amico trova un tesoro."
+        right: "Un amigo es un tesoro."
+      - left: "Meglio soli che male accompagnati."
+        right: "Mejor solo que mal acompañado."
+      - left: "Chi la fa l'aspetti."
+        right: "Quien la hace, la paga."
+  - type: "write"
+    prompt: "Escribe en italiano el refrán que significa 'quien la hace, la paga'."
+    answer: "Chi la fa l'aspetti"
+    accepted: ["Chi la fa l'aspetti."]
+    hint: "Literalmente: 'quien la hace, que la espere'."
+  - type: "order"
+    sentence: "Chi trova un amico trova un tesoro"
+    translation: "Quien encuentra un amigo encuentra un tesoro."
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

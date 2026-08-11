@@ -24,6 +24,39 @@ quiz:
     options: ["Elle est sorti", "Elle est sortie", "Elle a sortie"]
     answerIndex: 1
     explanation: "Con 'être', el participio concuerda como un adjetivo: elle est sortie (con 'e' final para femenino). Esta concordancia NO ocurre con 'avoir' en la mayoría de los casos."
+exercises:
+  - type: "fill-blank"
+    sentence: "J'___ mangé une pizza hier."
+    answer: "ai"
+    hint: "'avoir' conjugado con 'je' es 'ai'."
+    translation: "Comí una pizza ayer."
+  - type: "fill-blank"
+    sentence: "Elle ___ allée à Paris."
+    answer: "est"
+    hint: "'aller' usa 'être' como auxiliar."
+    translation: "Ella fue a París."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su participio pasado."
+    pairs:
+      - left: "manger"
+        right: "mangé"
+      - left: "finir"
+        right: "fini"
+      - left: "vendre"
+        right: "vendu"
+      - left: "avoir"
+        right: "eu"
+      - left: "être"
+        right: "été"
+  - type: "write"
+    prompt: "Escribe en francés: 'ellos fueron' (ils, aller) en passé composé."
+    answer: "Ils sont allés"
+    accepted:
+      - "Ils sont allés."
+    hint: "Con 'être', el participio concuerda en género y número: masculino plural añade -s."
+  - type: "order"
+    sentence: "J'ai mangé une pizza hier"
+    translation: "Comí una pizza ayer."
 ---
 
 Cuando un francés cuenta qué hizo ayer, casi siempre usa el **passé composé**. Si has

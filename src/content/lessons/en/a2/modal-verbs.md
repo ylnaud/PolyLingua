@@ -24,6 +24,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Ambos expresan obligación, pero 'must' suele sonar a decisión propia ('I must call my mom' — siento que debo hacerlo) mientras 'have to' suele venir de una regla externa ('I have to wear a uniform' — la empresa lo exige)."
+exercises:
+  - type: "fill-blank"
+    sentence: "She ___ swim."
+    answer: "can"
+    accepted: ["Can"]
+    hint: "Poder / saber hacer algo."
+    translation: "Ella puede nadar."
+  - type: "fill-blank"
+    sentence: "You ___ wear a seatbelt."
+    answer: "must"
+    accepted: ["Must"]
+    hint: "Obligación fuerte."
+    translation: "Debes usar cinturón de seguridad."
+  - type: "match"
+    instructions: "Empareja cada modal con su significado."
+    pairs:
+      - left: "can"
+        right: "poder / saber"
+      - left: "must"
+        right: "deber (obligación fuerte)"
+      - left: "should"
+        right: "debería (consejo)"
+      - left: "have to"
+        right: "tener que (obligación externa)"
+  - type: "write"
+    prompt: "Escribe la pregunta correcta para '¿Debo ir?' usando 'must'."
+    answer: "Must I go?"
+    accepted: ["Must I go"]
+    hint: "Los modales invierten el orden sin necesitar 'do'."
+  - type: "order"
+    sentence: "You should sleep more"
+    translation: "Deberías dormir más."
 ---
 
 Los verbos modales son tu herramienta para sonar natural al opinar, aconsejar, pedir

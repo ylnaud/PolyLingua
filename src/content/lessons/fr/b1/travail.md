@@ -20,6 +20,35 @@ quiz:
     options: ["le salaire", "la salaire", "l'salaire"]
     answerIndex: 0
     explanation: "'le salaire' es masculino."
+exercises:
+  - type: "fill-blank"
+    sentence: "J'ai un ___ d'embauche demain."
+    answer: "entretien"
+    hint: "l'entretien d'embauche = la entrevista de trabajo."
+    translation: "Tengo una entrevista de trabajo mañana."
+  - type: "fill-blank"
+    sentence: "Ma ___ s'appelle Sophie."
+    answer: "collègue"
+    hint: "le/la collègue = el/la colega."
+    translation: "Mi colega se llama Sophie."
+  - type: "match"
+    instructions: "Empareja cada profesión masculina con su versión femenina."
+    pairs:
+      - left: "un directeur"
+        right: "une directrice"
+      - left: "un acteur"
+        right: "une actrice"
+      - left: "un vendeur"
+        right: "une vendeuse"
+      - left: "un boulanger"
+        right: "une boulangère"
+  - type: "write"
+    prompt: "Escribe en francés 'Trabajo como profesor' usando 'travailler comme'."
+    answer: "Je travaille comme professeur."
+    hint: "travailler comme + profesión, sin artículo."
+  - type: "order"
+    sentence: "J'ai un entretien d'embauche demain"
+    translation: "Tengo una entrevista de trabajo mañana."
 ---
 
 Ya sea para hablar de tu trabajo actual, escribir una candidatura o prepararte para

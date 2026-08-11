@@ -24,6 +24,39 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'moreover' (además) añade un punto adicional que refuerza o suma al argumento anterior, similar a 'furthermore'."
+exercises:
+  - type: "fill-blank"
+    sentence: "The plan failed. ___, we learned a lot."
+    answer: "However"
+    accepted: ["however"]
+    hint: "Introduce un contraste con la frase anterior."
+    translation: "El plan fracasó. Sin embargo, aprendimos mucho."
+  - type: "fill-blank"
+    sentence: "___ the rain, we went for a walk."
+    answer: "Despite"
+    accepted: ["despite"]
+    hint: "Va seguido directamente de un sustantivo, sin frase completa."
+    translation: "A pesar de la lluvia, salimos a caminar."
+  - type: "match"
+    instructions: "Empareja cada conector con su función."
+    pairs:
+      - left: "however"
+        right: "contraste"
+      - left: "moreover"
+        right: "adición"
+      - left: "despite"
+        right: "concesión (+ sustantivo)"
+      - left: "although"
+        right: "concesión (+ frase completa)"
+      - left: "therefore"
+        right: "consecuencia"
+  - type: "write"
+    prompt: "Escribe en inglés, uniendo estas ideas con 'although': 'it was raining' + 'we went out'."
+    answer: "Although it was raining, we went out."
+    hint: "'although' va seguido de una frase completa con sujeto y verbo."
+  - type: "order"
+    sentence: "She studied hard therefore she passed"
+    translation: "Ella estudió mucho, por lo tanto aprobó."
 ---
 
 Estos conectores son la señal más clara de un inglés escrito y hablado con estructura

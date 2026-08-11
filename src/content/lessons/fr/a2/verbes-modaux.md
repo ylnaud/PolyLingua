@@ -24,6 +24,39 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'il faut' + infinitivo expresa una obligación impersonal: Il faut étudier (hay que estudiar) — no dice QUIÉN debe hacerlo, es una regla general."
+exercises:
+  - type: "fill-blank"
+    sentence: "Je ___ voyager."
+    answer: "veux"
+    hint: "'vouloir' conjugado con 'je' es 'veux'."
+    translation: "Quiero viajar."
+  - type: "fill-blank"
+    sentence: "Nous ___ étudier."
+    answer: "devons"
+    hint: "'devoir' conjugado con 'nous' es 'devons'."
+    translation: "Debemos estudiar."
+  - type: "match"
+    instructions: "Empareja cada pronombre y verbo con su forma conjugada."
+    pairs:
+      - left: "je (vouloir)"
+        right: "veux"
+      - left: "tu (pouvoir)"
+        right: "peux"
+      - left: "il/elle (devoir)"
+        right: "doit"
+      - left: "nous (vouloir)"
+        right: "voulons"
+      - left: "ils (devoir)"
+        right: "doivent"
+  - type: "write"
+    prompt: "Escribe en francés: 'puedes entrar' (tu, pouvoir)."
+    answer: "Tu peux entrer"
+    accepted:
+      - "Tu peux entrer."
+    hint: "pouvoir conjugado con 'tu' es 'peux' + infinitivo."
+  - type: "order"
+    sentence: "Il faut réserver à l'avance"
+    translation: "Hay que reservar con anticipación."
 ---
 
 Estos tres verbos —junto con la expresión "il faut"— son tu caja de herramientas para

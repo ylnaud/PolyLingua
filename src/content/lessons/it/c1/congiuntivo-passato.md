@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "El Congiuntivo passato marca que la acción subordinada ya se completó antes que la principal: Dubito che abbia finito (dudo que haya terminado, ya en el pasado)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Sono contento che tu ___ superato l'esame."
+    answer: "abbia"
+    accepted: ["abbia"]
+    hint: "'superare' usa el auxiliar avere: che tu abbia + participio."
+    translation: "Estoy contento de que hayas aprobado el examen."
+  - type: "fill-blank"
+    sentence: "È possibile che lei ___ già partita."
+    answer: "sia"
+    accepted: ["sia"]
+    hint: "'partire' usa el auxiliar essere: che lei sia + participio."
+    translation: "Es posible que ella ya se haya ido."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su forma correcta en Congiuntivo passato (che io...)."
+    pairs:
+      - left: "finire"
+        right: "che io abbia finito"
+      - left: "partire"
+        right: "che io sia partito/a"
+      - left: "capire"
+        right: "che io abbia capito"
+      - left: "venire"
+        right: "che io sia venuto/a"
+      - left: "superare"
+        right: "che io abbia superato"
+  - type: "write"
+    prompt: "Escribe en italiano, usando Congiuntivo passato: 'No creo que haya entendido.'"
+    answer: "Non penso che abbia capito."
+    accepted: ["Non penso che abbia capito"]
+    hint: "'pensare' negativo + che + abbia + participio de capire."
+  - type: "order"
+    sentence: "Sono contento che tu abbia superato l'esame"
+    translation: "Estoy contento de que hayas aprobado el examen."
 ---
 
 Ya dominas el Congiuntivo presente. Ahora aprendes su versión de pasado — necesaria

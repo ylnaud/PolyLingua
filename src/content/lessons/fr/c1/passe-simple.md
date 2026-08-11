@@ -24,6 +24,40 @@ quiz:
     options: ["l'imparfait", "le passé composé", "le futur simple"]
     answerIndex: 1
     explanation: "El passé composé cumple en el habla la misma función narrativa que el passé simple cumple por escrito — son funcionalmente equivalentes, pero en registros distintos."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il ouvrit la porte et ___ un homme assis près de la fenêtre. (voir)"
+    answer: "vit"
+    accepted: ["vît"]
+    hint: "Passé simple de 'voir' con 'il': raíz irregular + terminación -it."
+    translation: "Abrió la puerta y vio a un hombre sentado cerca de la ventana."
+  - type: "fill-blank"
+    sentence: "Ils ___ leurs devoirs avant le dîner. (finir)"
+    answer: "finirent"
+    accepted: ["finirent"]
+    hint: "Verbos en -ir toman las terminaciones -is, -is, -it, -îmes, -îtes, -irent."
+    translation: "Terminaron sus tareas antes de la cena."
+  - type: "match"
+    instructions: "Empareja cada verbo en passé simple con su equivalente en passé composé (registro hablado)."
+    pairs:
+      - left: "il parla"
+        right: "il a parlé"
+      - left: "il fut"
+        right: "il a été"
+      - left: "il eut"
+        right: "il a eu"
+      - left: "il fit"
+        right: "il a fait"
+      - left: "il vint"
+        right: "il est venu"
+  - type: "write"
+    prompt: "Escribe la forma del passé simple de 'dire' (decir) con 'il'."
+    answer: "il dit"
+    accepted: ["dit", "Il dit"]
+    hint: "'dire' es irregular en passé simple: il dit."
+  - type: "order"
+    sentence: "Elle vendit sa maison avant l'hiver"
+    translation: "Ella vendió su casa antes del invierno."
 ---
 
 Este es el tiempo más curioso del francés: existe únicamente para ser LEÍDO, nunca

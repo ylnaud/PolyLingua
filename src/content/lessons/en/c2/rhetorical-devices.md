@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'Time is money' es una metáfora: compara tiempo y dinero directamente, sin 'like/as'. Con 'like/as' sería un símil (simile), no una metáfora."
+exercises:
+  - type: "fill-blank"
+    sentence: "Time is ___."
+    answer: "money"
+    accepted: ["Money"]
+    hint: "Metáfora clásica: compara tiempo y dinero sin usar 'like/as'."
+    translation: "El tiempo es dinero."
+  - type: "fill-blank"
+    sentence: "Her voice is ___ music."
+    answer: "like"
+    accepted: ["Like"]
+    hint: "Con 'like' es un símil, no una metáfora."
+    translation: "Su voz es como música."
+  - type: "match"
+    instructions: "Empareja el recurso retórico con su ejemplo."
+    pairs:
+      - left: "Metaphor"
+        right: "Time is money."
+      - left: "Simile"
+        right: "Life is like a box of chocolates."
+      - left: "Rhetorical question"
+        right: "Who wouldn't want that?"
+      - left: "Anaphora"
+        right: "I have a dream that... I have a dream that..."
+      - left: "Hyperbole"
+        right: "I've told you a million times!"
+  - type: "write"
+    prompt: "Escribe el nombre del recurso retórico que repite el sonido inicial de las palabras, como en 'Peter Piper picked a peck of pickled peppers.'"
+    answer: "Alliteration"
+    accepted: ["alliteration"]
+    hint: "Empieza con la misma letra que 'alfabeto' en inglés."
+  - type: "order"
+    sentence: "We will not back down"
+    translation: "No vamos a rendirnos (anáfora de un discurso persuasivo)."
 ---
 
 Estos recursos son lo que distingue un texto o discurso simplemente correcto de uno

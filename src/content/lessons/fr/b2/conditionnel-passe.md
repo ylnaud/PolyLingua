@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Como el Third Conditional inglés, esta estructura describe un escenario alternativo al pasado real: en la realidad, no tuvo tiempo y no terminó el proyecto."
+exercises:
+  - type: "fill-blank"
+    sentence: "J'___ aimé voyager plus."
+    answer: "aurais"
+    accepted: ["aurais"]
+    hint: "avoir en Conditionnel présent, 1ª persona: aurais."
+    translation: "Me habría gustado viajar más."
+  - type: "fill-blank"
+    sentence: "Si j'avais su, je ___ venu plus tôt."
+    answer: "serais"
+    accepted: ["serais"]
+    hint: "être en Conditionnel présent, 1ª persona: serais (venir usa être como auxiliar)."
+    translation: "Si hubiera sabido, habría venido antes."
+  - type: "match"
+    instructions: "Empareja cada inicio de frase con su continuación correcta."
+    pairs:
+      - left: "Si j'avais su,"
+        right: "je serais venu plus tôt."
+      - left: "J'aurais dû"
+        right: "étudier plus."
+      - left: "Si j'avais eu le temps,"
+        right: "j'aurais fini le projet."
+      - left: "Elle"
+        right: "serait partie plus tôt."
+      - left: "Nous"
+        right: "aurions aimé voyager."
+  - type: "write"
+    prompt: "Escribe en francés: 'Habría preparado algo' (usando 'préparer')."
+    answer: "J'aurais préparé quelque chose."
+    accepted: ["j'aurais préparé quelque chose", "j'aurais préparé quelque chose."]
+    hint: "avoir en Conditionnel présent + participe passé de préparer."
+  - type: "order"
+    sentence: "Si j'avais su que tu venais j'aurais préparé quelque chose"
+    translation: "Si hubiera sabido que venías, habría preparado algo."
 ---
 
 Este condicional te permite reflexionar sobre un pasado que ya no se puede cambiar —

@@ -20,6 +20,40 @@ quiz:
     options: ["il stipendio", "lo stipendio", "la stipendio"]
     answerIndex: 1
     explanation: "'stipendio' empieza con 's' + consonante ('st'), así que usa el artículo especial 'lo': lo stipendio."
+exercises:
+  - type: "fill-blank"
+    sentence: "Ho un ___ di lavoro domani."
+    answer: "colloquio"
+    accepted: ["colloquio"]
+    hint: "La entrevista de trabajo."
+    translation: "Tengo una entrevista de trabajo mañana."
+  - type: "fill-blank"
+    sentence: "La mia ___ si chiama Sofia."
+    answer: "collega"
+    accepted: ["collega"]
+    hint: "El/la colega."
+    translation: "Mi colega se llama Sofía."
+  - type: "match"
+    instructions: "Empareja cada palabra en italiano con su significado en español."
+    pairs:
+      - left: "la candidatura"
+        right: "la postulación"
+      - left: "il curriculum"
+        right: "el currículum"
+      - left: "il colloquio di lavoro"
+        right: "la entrevista de trabajo"
+      - left: "lo stipendio"
+        right: "el salario"
+      - left: "l'azienda"
+        right: "la empresa"
+  - type: "write"
+    prompt: "Escribe la versión femenina de 'un professore' (una profesora)."
+    answer: "una professoressa"
+    accepted: ["professoressa", "Una professoressa"]
+    hint: "El patrón '-essa' es muy productivo para profesiones en italiano."
+  - type: "order"
+    sentence: "Ho un colloquio di lavoro domani"
+    translation: "Tengo una entrevista de trabajo mañana."
 ---
 
 Ya sea para hablar de tu trabajo actual, escribir una candidatura o prepararte para

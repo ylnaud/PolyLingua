@@ -20,6 +20,37 @@ quiz:
     options: ["Je n'ai plus de temps", "Je n'ai pas plus de temps", "Je n'ai jamais de temps"]
     answerIndex: 0
     explanation: "'ne...plus' significa 'ya no': Je n'ai plus de temps (ya no tengo tiempo)."
+exercises:
+  - type: "fill-blank"
+    sentence: "Je ne mange ___ de viande."
+    answer: "jamais"
+    hint: "ne...jamais = nunca."
+    translation: "Nunca como carne."
+  - type: "fill-blank"
+    sentence: "Je n'ai ___ de temps."
+    answer: "plus"
+    hint: "ne...plus = ya no."
+    translation: "Ya no tengo tiempo."
+  - type: "match"
+    instructions: "Empareja cada negación con su significado."
+    pairs:
+      - left: "ne...pas"
+        right: "no"
+      - left: "ne...jamais"
+        right: "nunca"
+      - left: "ne...rien"
+        right: "nada"
+      - left: "ne...personne"
+        right: "nadie"
+      - left: "ne...plus"
+        right: "ya no"
+  - type: "write"
+    prompt: "Escribe en francés 'No veo a nadie' usando ne...personne."
+    answer: "Je ne vois personne."
+    hint: "Con 'personne' no se añade 'pas': ya funciona como segunda parte de la negación."
+  - type: "order"
+    sentence: "Je ne mange jamais de viande"
+    translation: "Nunca como carne."
 ---
 
 Ya dominas "ne...pas". Ahora conoces al resto de la familia — todas siguen la misma

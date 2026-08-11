@@ -24,6 +24,37 @@ quiz:
     ]
     answerIndex: 0
     explanation: "La excepción de omitir el artículo con posesivos solo aplica a familiares SINGULARES (mia madre, mio padre) — en plural, el artículo vuelve: i miei fratelli."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ mio libro è nuovo."
+    answer: "Il"
+    hint: "Artículo + posesivo + sustantivo, masculino singular."
+    translation: "Mi libro es nuevo."
+  - type: "fill-blank"
+    sentence: "___ madre si chiama Anna."
+    answer: "Mia"
+    hint: "Con familiares singulares, el artículo desaparece."
+    translation: "Mi madre se llama Anna."
+  - type: "match"
+    instructions: "Empareja cada poseedor con su forma posesiva (masculino singular)."
+    pairs:
+      - left: "io"
+        right: "il mio"
+      - left: "tu"
+        right: "il tuo"
+      - left: "lui/lei"
+        right: "il suo"
+      - left: "noi"
+        right: "il nostro"
+      - left: "voi"
+        right: "il vostro"
+  - type: "write"
+    prompt: "Escribe cómo dirías 'mis hermanos' en italiano."
+    answer: "i miei fratelli"
+    hint: "Plural: sí lleva artículo, aunque sea un familiar."
+  - type: "order"
+    sentence: "Ho i miei libri"
+    translation: "Tengo mis libros."
 ---
 
 El italiano añade un paso extra a los posesivos que el español no tiene: combinar el

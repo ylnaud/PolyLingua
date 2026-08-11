@@ -24,6 +24,40 @@ quiz:
     options: ["energías fósiles", "energías renovables", "energía nuclear exclusivamente"]
     answerIndex: 1
     explanation: "'le energie rinnovabili' son las energías renovables (solar, eólica, etc.) — un término clave en discusiones ambientales."
+exercises:
+  - type: "fill-blank"
+    sentence: "Dobbiamo investire di più nelle energie ___."
+    answer: "rinnovabili"
+    accepted: ["rinnovabili"]
+    hint: "Energías que se regeneran de forma natural: solar, eólica, etc."
+    translation: "Debemos invertir más en las energías renovables."
+  - type: "fill-blank"
+    sentence: "Il ___ climatico è la sfida più grande della nostra generazione."
+    answer: "cambiamento"
+    accepted: ["cambiamento"]
+    hint: "Sustantivo que acompaña a 'climatico' para decir 'cambio climático'."
+    translation: "El cambio climático es el mayor desafío de nuestra generación."
+  - type: "match"
+    instructions: "Empareja cada palabra en italiano con su traducción al español."
+    pairs:
+      - left: "l'inquinamento"
+        right: "la contaminación"
+      - left: "il riciclaggio"
+        right: "el reciclaje"
+      - left: "la disoccupazione"
+        right: "el desempleo"
+      - left: "i diritti umani"
+        right: "los derechos humanos"
+      - left: "la sostenibilità"
+        right: "la sostenibilidad"
+  - type: "write"
+    prompt: "Escribe en italiano la palabra para 'la desigualdad'."
+    answer: "la disuguaglianza"
+    accepted: ["disuguaglianza", "La disuguaglianza"]
+    hint: "Empieza con 'dis-', el prefijo de negación."
+  - type: "order"
+    sentence: "La sostenibilità dovrebbe essere una priorità per ogni azienda"
+    translation: "La sostenibilidad debería ser una prioridad para toda empresa."
 ---
 
 Este vocabulario te permite dar el salto de conversaciones cotidianas a discusiones

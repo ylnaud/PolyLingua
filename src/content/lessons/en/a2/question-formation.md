@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'to be' y los modales forman preguntas invirtiendo directamente: Are you tired? Can you help me? — sin necesitar 'do'."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ you like coffee?"
+    answer: "Do"
+    accepted: ["do"]
+    hint: "Presente simple con I/you/we/they."
+    translation: "¿Te gusta el café?"
+  - type: "fill-blank"
+    sentence: "___ she work here?"
+    answer: "Does"
+    accepted: ["does"]
+    hint: "Presente simple con he/she/it."
+    translation: "¿Ella trabaja aquí?"
+  - type: "match"
+    instructions: "Empareja cada auxiliar/verbo con cuándo se usa para preguntar."
+    pairs:
+      - left: "Do"
+        right: "presente (I/you/we/they)"
+      - left: "Does"
+        right: "presente (he/she/it)"
+      - left: "Did"
+        right: "pasado (cualquier sujeto)"
+      - left: "Are"
+        right: "to be, sin 'do'"
+      - left: "Can"
+        right: "modal, sin 'do'"
+  - type: "write"
+    prompt: "Escribe la pregunta en pasado para 'They arrived yesterday' → '¿Llegaron ayer?'"
+    answer: "Did they arrive yesterday?"
+    accepted: ["Did they arrive yesterday"]
+    hint: "El verbo vuelve a su forma base tras 'did'."
+  - type: "order"
+    sentence: "Where do you live"
+    translation: "¿Dónde vives?"
 ---
 
 Formar preguntas correctamente es una de las estructuras más usadas del inglés, y

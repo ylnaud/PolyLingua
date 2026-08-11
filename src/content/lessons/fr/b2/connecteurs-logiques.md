@@ -24,6 +24,39 @@ quiz:
     options: ["par conséquent", "cependant", "de plus"]
     answerIndex: 0
     explanation: "'par conséquent' (por consiguiente) introduce una consecuencia lógica derivada de lo anterior — típico de textos formales."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il a échoué. ___, il n'abandonne pas."
+    answer: "Cependant"
+    accepted: ["cependant"]
+    hint: "Introduce un contraste con lo dicho antes."
+    translation: "Fracasó. Sin embargo, no se rinde."
+  - type: "fill-blank"
+    sentence: "Le produit est bon marché. ___, il est fiable."
+    answer: "De plus"
+    accepted: ["de plus"]
+    hint: "Añade un punto adicional que refuerza el argumento anterior."
+    translation: "El producto es barato. Además, es fiable."
+  - type: "match"
+    instructions: "Empareja cada conector con su función."
+    pairs:
+      - left: "cependant"
+        right: "contraste"
+      - left: "de plus"
+        right: "adición"
+      - left: "par conséquent"
+        right: "consecuencia lógica"
+      - left: "par exemple"
+        right: "ejemplificación"
+      - left: "néanmoins"
+        right: "contraste formal/enfático"
+  - type: "write"
+    prompt: "Traduce: 'Trabajó mucho; por consiguiente, tuvo éxito.'"
+    answer: "Il a beaucoup travaillé; par conséquent, il a réussi."
+    hint: "'par conséquent' introduce una consecuencia lógica formal."
+  - type: "order"
+    sentence: "Le projet présente des avantages clairs cependant sa mise en œuvre exige un investissement important"
+    translation: "El proyecto presenta ventajas claras, sin embargo su implementación exige una inversión importante."
 ---
 
 Estos conectores son la señal más clara de un francés escrito y hablado con

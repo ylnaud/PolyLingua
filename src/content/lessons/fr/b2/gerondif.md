@@ -28,6 +28,40 @@ quiz:
     ]
     answerIndex: 0
     explanation: "El gérondif solo funciona cuando AMBAS acciones las hace el MISMO sujeto — para sujetos diferentes, necesitas otra estructura (como 'pendant que')."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il parle en ___ (conduire)."
+    answer: "conduisant"
+    accepted: ["conduisant"]
+    hint: "conduire → nous conduisons → en conduisant."
+    translation: "Él habla mientras conduce."
+  - type: "fill-blank"
+    sentence: "J'ai appris le français en ___ (regarder) des films."
+    answer: "regardant"
+    accepted: ["regardant"]
+    hint: "regarder → nous regardons → en regardant."
+    translation: "Aprendí francés viendo películas."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su gérondif correspondiente."
+    pairs:
+      - left: "manger"
+        right: "en mangeant"
+      - left: "être"
+        right: "en étant"
+      - left: "avoir"
+        right: "en ayant"
+      - left: "savoir"
+        right: "en sachant"
+      - left: "travailler"
+        right: "en travaillant"
+  - type: "write"
+    prompt: "Escribe el gérondif de 'cuisiner' (cocinar)."
+    answer: "en cuisinant"
+    accepted: ["en cuisinant"]
+    hint: "en + raíz de 'nous' en presente + -ant."
+  - type: "order"
+    sentence: "Elle écoute de la musique en travaillant"
+    translation: "Ella escucha música mientras trabaja."
 ---
 
 Este es uno de los recursos más elegantes del francés: comprimir dos acciones

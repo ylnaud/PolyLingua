@@ -28,6 +28,38 @@ quiz:
     ]
     answerIndex: 0
     explanation: "Dove abiti? (¿Dónde vives?) — el verbo va justo después de la palabra interrogativa, el mismo orden natural que en español."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ abiti?"
+    answer: "Dove"
+    hint: "Palabra interrogativa para '¿dónde?'."
+    translation: "¿Dónde vives?"
+  - type: "fill-blank"
+    sentence: "___ stai?"
+    answer: "Come"
+    hint: "Palabra interrogativa para '¿cómo?'."
+    translation: "¿Cómo estás?"
+  - type: "match"
+    instructions: "Empareja cada palabra interrogativa con su significado."
+    pairs:
+      - left: "Chi?"
+        right: "¿Quién?"
+      - left: "Dove?"
+        right: "¿Dónde?"
+      - left: "Quando?"
+        right: "¿Cuándo?"
+      - left: "Perché?"
+        right: "¿Por qué?"
+      - left: "Quanto?"
+        right: "¿Cuánto?"
+  - type: "write"
+    prompt: "Escribe cómo preguntarías '¿Tienes hambre?' en italiano."
+    answer: "Hai fame?"
+    accepted: ["Hai fame"]
+    hint: "Verbo 'avere' (hai) + fame, con signo de interrogación."
+  - type: "order"
+    sentence: "Perché studi italiano"
+    translation: "¿Por qué estudias italiano?"
 ---
 
 Hacer preguntas en italiano es sorprendentemente simple — de los cinco idiomas del

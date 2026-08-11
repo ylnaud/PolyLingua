@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Son expresiones de negación o restricción (never, rarely, not only, under no circumstances, seldom...) que, cuando encabezan la frase para dar énfasis, obligan a invertir sujeto y auxiliar — igual que en una pregunta."
+exercises:
+  - type: "fill-blank"
+    sentence: "Never ___ I felt so proud."
+    answer: "have"
+    accepted: ["Have"]
+    hint: "Con 'Never' al inicio, el auxiliar 'have' se invierte con el sujeto."
+    translation: "Nunca me había sentido tan orgulloso."
+  - type: "fill-blank"
+    sentence: "Rarely ___ we see such talent."
+    answer: "do"
+    accepted: ["Do"]
+    hint: "Sin auxiliar propio, se usa do/does/did para invertir."
+    translation: "Raramente vemos tanto talento."
+  - type: "match"
+    instructions: "Empareja el disparador de inversión con su ejemplo correcto."
+    pairs:
+      - left: "Never"
+        right: "Never have I seen such a mess."
+      - left: "Not only... but also"
+        right: "Not only did she win, but she also broke the record."
+      - left: "Under no circumstances"
+        right: "Under no circumstances should you open that door."
+      - left: "Little"
+        right: "Little did he know what awaited him."
+  - type: "write"
+    prompt: "Escribe la versión con inversión de 'I rarely eat fast food.'"
+    answer: "Rarely do I eat fast food"
+    accepted: ["Rarely do I eat fast food."]
+    hint: "'Rarely' al inicio exige do/does/did antes del sujeto."
+  - type: "order"
+    sentence: "Never have I seen such a mess"
+    translation: "Jamás he visto semejante desastre."
 ---
 
 En un nivel C2, ya dominas la gramática "correcta". Lo que te falta es la gramática

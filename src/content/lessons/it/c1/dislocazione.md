@@ -32,6 +32,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "La dislocazione con 'è...che' es flexible: puede enfatizar el sujeto, el objeto, un momento, un lugar — cualquier elemento que quieras resaltar."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ Marco che ha chiamato."
+    answer: "È"
+    accepted: ["È", "E'"]
+    hint: "La frase scissa siempre empieza con 'è' + elemento enfatizado + che."
+    translation: "Fue Marco quien llamó."
+  - type: "fill-blank"
+    sentence: "È questo libro ___ amo."
+    answer: "che"
+    accepted: ["che"]
+    hint: "El italiano usa 'che' tanto para sujeto como para objeto en esta estructura."
+    translation: "Es este libro el que amo."
+  - type: "match"
+    instructions: "Empareja qué elemento se enfatiza en cada frase scissa (a partir de 'Paolo ha comprato quella macchina ieri')."
+    pairs:
+      - left: "chi (quién)"
+        right: "È Paolo che ha comprato quella macchina ieri."
+      - left: "cosa (qué)"
+        right: "È quella macchina che Paolo ha comprato ieri."
+      - left: "quando (cuándo)"
+        right: "È ieri che Paolo ha comprato quella macchina."
+      - left: "idea completa"
+        right: "Quello che mi interessa è la musica."
+  - type: "write"
+    prompt: "Escribe una frase enfática (dislocazione) para decir 'No fui yo quien dijo esto.'"
+    answer: "Non sono io che ho detto questo."
+    accepted: ["Non sono io che ho detto questo"]
+    hint: "Usa la estructura è/sono + [elemento] + che para corregir un malentendido."
+  - type: "order"
+    sentence: "È quella macchina che Paolo ha comprato ieri"
+    translation: "Fue ese coche el que Paolo compró ayer."
 ---
 
 La dislocazione (o frase scissa) es la herramienta italiana para poner el foco

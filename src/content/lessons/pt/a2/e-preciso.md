@@ -24,6 +24,36 @@ quiz:
     options: ["é necessário", "é possível", "é provável"]
     answerIndex: 0
     explanation: "'é necessário' es prácticamente sinónimo de 'é preciso' — ambos expresan necesidad."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ estudar todos os dias."
+    answer: "É preciso"
+    accepted: ["É Preciso"]
+    hint: "Expresión impersonal de necesidad + infinitivo."
+    translation: "Hay que estudiar todos los días."
+  - type: "fill-blank"
+    sentence: "É proibido ___ aqui."
+    answer: "fumar"
+    hint: "Lo que está prohibido hacer en muchos lugares públicos."
+    translation: "Está prohibido fumar aquí."
+  - type: "match"
+    instructions: "Empareja cada expresión impersonal en portugués con su significado en español."
+    pairs:
+      - left: "é necessário"
+        right: "es necesario"
+      - left: "é importante"
+        right: "es importante"
+      - left: "é possível"
+        right: "es posible"
+      - left: "é proibido"
+        right: "está prohibido"
+  - type: "write"
+    prompt: "Escribe en portugués 'Es necesario que todos participen', usando 'é preciso que' + subjuntivo."
+    answer: "É preciso que todos participem"
+    hint: "El subjuntivo de 'participar' para 'todos' es 'participem'."
+  - type: "order"
+    sentence: "É preciso que você chegue cedo"
+    translation: "Es necesario que llegues temprano."
 ---
 
 Las expresiones impersonales te permiten hablar de reglas generales y necesidades sin

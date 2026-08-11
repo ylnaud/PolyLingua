@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Al igual que los adjetivos posesivos, los pronombres concuerdan con el género y número de la COSA poseída, no con quién la posee."
+exercises:
+  - type: "fill-blank"
+    sentence: "È il mio libro. → È ___."
+    answer: "il mio"
+    accepted: ["il mio"]
+    hint: "El pronombre posesivo mantiene siempre su artículo."
+    translation: "Es mi libro. → Es el mío."
+  - type: "fill-blank"
+    sentence: "È la sua macchina. → È ___."
+    answer: "la sua"
+    accepted: ["la sua"]
+    hint: "'macchina' es femenino singular: el pronombre debe concordar."
+    translation: "Es su coche. → Es el suyo."
+  - type: "match"
+    instructions: "Empareja cada poseedor con su pronombre posesivo (masculino singular)."
+    pairs:
+      - left: "io"
+        right: "il mio"
+      - left: "tu"
+        right: "il tuo"
+      - left: "lui/lei"
+        right: "il suo"
+      - left: "noi"
+        right: "il nostro"
+      - left: "voi"
+        right: "il vostro"
+  - type: "write"
+    prompt: "Escribe el pronombre posesivo (masculino plural) correspondiente a 'noi' (los nuestros)."
+    answer: "i nostri"
+    accepted: ["I nostri"]
+    hint: "Recuerda: masculino plural, poseedor 'noi'."
+  - type: "order"
+    sentence: "Questo libro è il mio"
+    translation: "Este libro es el mío."
 ---
 
 Estos pronombres reemplazan completamente un sustantivo poseído — manteniendo siempre

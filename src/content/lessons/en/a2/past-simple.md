@@ -20,6 +20,40 @@ quiz:
     options: ["Did you ate pizza?", "Did you eat pizza?", "You ate pizza?"]
     answerIndex: 1
     explanation: "Con el auxiliar 'did', el verbo principal vuelve a su forma base (sin conjugar en pasado): Did you eat pizza? — no 'Did you ate'."
+exercises:
+  - type: "fill-blank"
+    sentence: "I ___ to the party."
+    answer: "went"
+    accepted: ["Went"]
+    hint: "Pasado irregular de 'go'."
+    translation: "Fui a la fiesta."
+  - type: "fill-blank"
+    sentence: "___ you go to the party?"
+    answer: "Did"
+    accepted: ["did"]
+    hint: "Auxiliar de pasado para preguntas."
+    translation: "¿Fuiste a la fiesta?"
+  - type: "match"
+    instructions: "Empareja cada verbo en presente con su pasado."
+    pairs:
+      - left: "go"
+        right: "went"
+      - left: "eat"
+        right: "ate"
+      - left: "have"
+        right: "had"
+      - left: "see"
+        right: "saw"
+      - left: "do"
+        right: "did"
+  - type: "write"
+    prompt: "Escribe el pasado de 'work' (trabajar)."
+    answer: "worked"
+    accepted: ["Worked"]
+    hint: "Verbo regular: solo añade '-ed'."
+  - type: "order"
+    sentence: "I didn't go to the party"
+    translation: "No fui a la fiesta."
 ---
 
 Para hablar de algo que ya terminó — ayer, la semana pasada, hace un año — el inglés usa

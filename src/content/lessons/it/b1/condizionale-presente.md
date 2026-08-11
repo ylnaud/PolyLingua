@@ -24,6 +24,40 @@ quiz:
     options: ["Debes dormir más (orden directa)", "Deberías dormir más (consejo suave)", "Dormirás más"]
     answerIndex: 1
     explanation: "El condizionale de 'dovere' (dovresti) suaviza la obligación a un consejo: deberías, en vez de la orden directa 'devi' (debes)."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ un caffè, per favore."
+    answer: "Vorrei"
+    accepted: ["vorrei"]
+    hint: "Condizionale de 'volere' — la forma educada para pedir algo, en vez de 'voglio'."
+    translation: "Quisiera un café, por favor."
+  - type: "fill-blank"
+    sentence: "___ dormire di più."
+    answer: "Dovresti"
+    accepted: ["dovresti"]
+    hint: "Condizionale de 'dovere' — un consejo suave, no una orden directa."
+    translation: "Deberías dormir más."
+  - type: "match"
+    instructions: "Empareja cada infinitivo con su forma de condizionale en 'io'."
+    pairs:
+      - left: "essere"
+        right: "sarei"
+      - left: "avere"
+        right: "avrei"
+      - left: "andare"
+        right: "andrei"
+      - left: "fare"
+        right: "farei"
+      - left: "parlare"
+        right: "parlerei"
+  - type: "write"
+    prompt: "Escribe cómo pedirías cortésmente '¿podría ayudarme?' usando el condizionale de 'potere'."
+    answer: "Potrebbe aiutarmi?"
+    accepted: ["Potrebbe aiutarmi", "potrebbe aiutarmi?", "potrebbe aiutarmi"]
+    hint: "Condizionale de 'potere' para 'lei/lui': potrebbe."
+  - type: "order"
+    sentence: "Se avessi soldi viaggerei"
+    translation: "Si tuviera dinero, viajaría."
 ---
 
 El condizionale presente es tu herramienta para sonar cortés, dar consejos suaves y

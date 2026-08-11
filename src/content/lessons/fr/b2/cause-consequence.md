@@ -24,6 +24,39 @@ quiz:
     options: ["donc", "car", "c'est pourquoi"]
     answerIndex: 1
     explanation: "'car' introduce la causa (equivalente formal a 'parce que'): Je reste à la maison, car il pleut."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il a réussi, ___ il a beaucoup travaillé."
+    answer: "car"
+    accepted: ["Car"]
+    hint: "Razón formal, conecta dos ideas ya presentadas por escrito."
+    translation: "Tuvo éxito, porque trabajó mucho."
+  - type: "fill-blank"
+    sentence: "___ tu es là, aide-moi."
+    answer: "Puisque"
+    accepted: ["puisque"]
+    hint: "Se usa cuando la razón ya es obvia o conocida por el oyente."
+    translation: "Ya que estás aquí, ayúdame."
+  - type: "match"
+    instructions: "Empareja cada conector con su matiz o función."
+    pairs:
+      - left: "parce que"
+        right: "razón neutral, información nueva"
+      - left: "car"
+        right: "razón formal, conecta ideas ya escritas"
+      - left: "puisque"
+        right: "razón ya conocida u obvia"
+      - left: "donc"
+        right: "consecuencia lógica"
+      - left: "c'est pourquoi"
+        right: "introduce una conclusión"
+  - type: "write"
+    prompt: "Traduce al francés: 'Llueve, por lo tanto me quedo en casa.'"
+    answer: "Il pleut, donc je reste à la maison."
+    hint: "'donc' introduce la consecuencia lógica de lo dicho antes."
+  - type: "order"
+    sentence: "Le projet a été retardé car l'équipe manquait de ressources"
+    translation: "El proyecto se retrasó porque al equipo le faltaban recursos."
 ---
 
 Estos conectores te permiten estructurar argumentos causales con precisión — la

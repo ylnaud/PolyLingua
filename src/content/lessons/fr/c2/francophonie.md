@@ -24,6 +24,38 @@ quiz:
     ]
     answerIndex: 1
     explanation: "El francés estándar de Francia es tu base sólida, pero reconocer las variantes regionales te evita confusiones al viajar o conversar con los más de 300 millones de hablantes de francés en el mundo."
+exercises:
+  - type: "fill-blank"
+    sentence: "En Quebec, ___ signifie « aller faire des achats »."
+    answer: "magasiner"
+    accepted: ["Magasiner"]
+    hint: "Verbo quebequense equivalente a 'faire du shopping' en Francia."
+    translation: "En Quebec, 'magasiner' significa 'ir de compras'."
+  - type: "fill-blank"
+    sentence: "En Belgique et en Suisse, on dit ___ au lieu de « soixante-dix »."
+    answer: "septante"
+    accepted: ["Septante"]
+    hint: "Número simplificado belga/suizo para el 70."
+    translation: "En Bélgica y Suiza se dice 'septante' en vez de 'soixante-dix'."
+  - type: "match"
+    instructions: "Empareja cada palabra del francés de Francia con su equivalente en el francés de Quebec."
+    pairs:
+      - left: "une voiture"
+        right: "un char"
+      - left: "faire du shopping"
+        right: "magasiner"
+      - left: "un petit ami"
+        right: "un chum"
+      - left: "soixante-dix"
+        right: "septante"
+  - type: "write"
+    prompt: "Escribe cómo se dice 'coche' en el francés hablado de Quebec."
+    answer: "un char"
+    accepted: ["char", "Un char"]
+    hint: "No significa 'tanque de guerra' en este contexto."
+  - type: "order"
+    sentence: "Elle a acheté un char au Québec"
+    translation: "Ella compró un coche en Quebec."
 ---
 
 El francés que aprendiste en tus lecciones (basado en el estándar de Francia) es

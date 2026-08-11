@@ -32,6 +32,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "No tienen traducción 1:1 — su significado depende del tono y contexto. No son 'incorrectas': son el francés hablado real, y se dominan por exposición e imitación."
+exercises:
+  - type: "fill-blank"
+    sentence: "Il a réussi, ___ même !"
+    answer: "quand"
+    accepted: ["Quand"]
+    hint: "Partícula que expresa sorpresa o resignación, 'aun así'."
+    translation: "¡Lo logró, después de todo!"
+  - type: "fill-blank"
+    sentence: "___, on y va ?"
+    answer: "Bon"
+    accepted: ["bon"]
+    hint: "Partícula de transición, 'bueno, ya'."
+    translation: "Bueno, ¿nos vamos?"
+  - type: "match"
+    instructions: "Empareja cada partícula con el matiz que aporta."
+    pairs:
+      - left: "quand même"
+        right: "sorpresa o resignación, 'aun así'"
+      - left: "enfin"
+        right: "corrección suave, 'bueno... / al menos'"
+      - left: "bon"
+        right: "transición, 'bueno, ya'"
+      - left: "ben"
+        right: "duda o pausa casual"
+      - left: "quoi"
+        right: "remate coloquial, '¿sabes?'"
+  - type: "write"
+    prompt: "Escribe la partícula francesa que se usa como versión oral de 'bien' para marcar duda o pausa casual (ejemplo: '___, je sais pas...')."
+    answer: "Ben"
+    accepted: ["ben"]
+    hint: "Solo tres letras."
+  - type: "order"
+    sentence: "Bon enfin on verra bien quoi"
+    translation: "Bueno, en fin, ya veremos, ¿sabes?"
 ---
 
 Llegaste al nivel donde la gramática de manual ya no es el reto. El verdadero examen de

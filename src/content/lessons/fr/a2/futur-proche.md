@@ -24,6 +24,39 @@ quiz:
     options: ["El futur proche", "El futur simple", "Se usan exactamente igual"]
     answerIndex: 0
     explanation: "Igual que el español prefiere 'voy a hacer' sobre 'haré' en el habla diaria, el francés prefiere el futur proche (aller + infinitif) en conversación cotidiana."
+exercises:
+  - type: "fill-blank"
+    sentence: "Je ___ manger."
+    answer: "vais"
+    hint: "'aller' conjugado con 'je' es 'vais'."
+    translation: "Voy a comer."
+  - type: "fill-blank"
+    sentence: "Ils ___ voyager en été."
+    answer: "vont"
+    hint: "'aller' conjugado con 'ils' es 'vont'."
+    translation: "Ellos van a viajar en verano."
+  - type: "match"
+    instructions: "Empareja cada pronombre con su forma de 'aller' en presente."
+    pairs:
+      - left: "je"
+        right: "vais"
+      - left: "tu"
+        right: "vas"
+      - left: "il/elle"
+        right: "va"
+      - left: "nous"
+        right: "allons"
+      - left: "vous"
+        right: "allez"
+  - type: "write"
+    prompt: "Escribe en francés: 'vamos a viajar en verano', usando futur proche (nous)."
+    answer: "Nous allons voyager en été"
+    accepted:
+      - "Nous allons voyager en été."
+    hint: "aller (conjugado con nous) + infinitivo de voyager."
+  - type: "order"
+    sentence: "Tu vas partir demain"
+    translation: "¿Vas a irte mañana?"
 ---
 
 Este es tu primer y más útil futuro en francés — la estructura que realmente

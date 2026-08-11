@@ -24,6 +24,40 @@ quiz:
     options: ["quindi", "perché", "perciò"]
     answerIndex: 1
     explanation: "'perché' introduce la causa: Resto a casa perché piove."
+exercises:
+  - type: "fill-blank"
+    sentence: "Resto a casa ___ piove."
+    answer: "perché"
+    accepted: ["perché", "perche"]
+    hint: "Conector neutral que responde directamente a la pregunta '¿perché?'."
+    translation: "Me quedo en casa porque llueve."
+  - type: "fill-blank"
+    sentence: "___ piove, resto a casa."
+    answer: "Poiché"
+    accepted: ["Poiché", "poiché", "Poiche", "poiche"]
+    hint: "Va al inicio de la frase y suena más formal/escrito."
+    translation: "Como llueve, me quedo en casa."
+  - type: "match"
+    instructions: "Empareja cada conector con su matiz o significado."
+    pairs:
+      - left: "perché"
+        right: "porque (neutral, responde a 'perché?')"
+      - left: "poiché"
+        right: "porque (formal, al inicio de la frase)"
+      - left: "siccome"
+        right: "como/ya que (muy usado en el habla)"
+      - left: "quindi"
+        right: "por lo tanto / entonces"
+      - left: "perciò"
+        right: "por lo tanto (consecuencia)"
+  - type: "write"
+    prompt: "Escribe en italiano el conector típico del habla que significa 'como/ya que' e introduce una razón conocida."
+    answer: "siccome"
+    accepted: ["Siccome"]
+    hint: "Muy natural en conversación cotidiana, va antes de la razón."
+  - type: "order"
+    sentence: "Ha studiato molto perciò ha superato l'esame"
+    translation: "Estudió mucho, por lo tanto aprobó el examen."
 ---
 
 Estos conectores te permiten estructurar argumentos causales con precisión — la

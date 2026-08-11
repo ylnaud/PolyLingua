@@ -24,6 +24,38 @@ quiz:
     options: ["tener una reunión formal larga", "ponerse brevemente en contacto/al día con alguien", "firmar un contrato"]
     answerIndex: 1
     explanation: "'touch base' significa contactar brevemente a alguien para actualizar información — muy común en correos: 'Let's touch base next week.'"
+exercises:
+  - type: "fill-blank"
+    sentence: "Let's ___ base next week to check on the project."
+    answer: "touch"
+    hint: "Significa ponerse brevemente en contacto con alguien."
+    translation: "Pongámonos en contacto brevemente la próxima semana para ver cómo va el proyecto."
+  - type: "fill-blank"
+    sentence: "I'm writing to ___ up on our previous conversation."
+    answer: "follow"
+    hint: "Significa dar seguimiento."
+    translation: "Te escribo para dar seguimiento a nuestra conversación anterior."
+  - type: "match"
+    instructions: "Empareja cada término de negocios con su significado."
+    pairs:
+      - left: "stakeholder"
+        right: "parte interesada"
+      - left: "deadline"
+        right: "fecha límite"
+      - left: "to let someone go"
+        right: "despedir a alguien, de forma indirecta"
+      - left: "downsizing"
+        right: "reducción de personal"
+      - left: "revenue"
+        right: "ingresos"
+  - type: "write"
+    prompt: "Escribe en inglés una forma educada de mostrar desacuerdo en una reunión, reconociendo primero el punto del otro (empieza con I see...)."
+    answer: "I see your point, but I have a different perspective."
+    accepted: ["I see your point but I have a different perspective."]
+    hint: "Reconoce el punto del otro antes de matizar tu desacuerdo."
+  - type: "order"
+    sentence: "We're on track to meet the deadline"
+    translation: "Vamos por buen camino para cumplir el plazo."
 ---
 
 Este vocabulario te prepara para el registro específico del mundo corporativo

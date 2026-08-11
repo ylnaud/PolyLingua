@@ -20,6 +20,39 @@ quiz:
     options: ["São três e meia", "É três e meio", "São três meia"]
     answerIndex: 0
     explanation: "'e meia' (femenino, concordando con 'hora' implícita) es la forma correcta para 'y media': São três e meia."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ uma hora da tarde."
+    answer: "É"
+    accepted: ["e"]
+    hint: "Para la una en punto se usa el singular del verbo ser."
+    translation: "Es la una de la tarde."
+  - type: "fill-blank"
+    sentence: "___ quatro e quinze."
+    answer: "São"
+    hint: "A partir de las dos se usa el plural del verbo ser."
+    translation: "Son las cuatro y quince."
+  - type: "match"
+    instructions: "Empareja cada expresión con su significado."
+    pairs:
+      - left: "e meia"
+        right: "y media"
+      - left: "e quinze"
+        right: "y cuarto"
+      - left: "em ponto"
+        right: "en punto"
+      - left: "da manhã"
+        right: "de la mañana"
+      - left: "da noite"
+        right: "de la noche"
+  - type: "write"
+    prompt: "Escribe en portugués cómo preguntarías '¿Qué hora es?'."
+    answer: "Que horas são?"
+    accepted: ["que horas são", "Que horas são"]
+    hint: "Literalmente '¿qué horas son?', siempre en plural en la pregunta."
+  - type: "order"
+    sentence: "São nove da manhã"
+    translation: "Son las nueve de la mañana."
 ---
 
 Preguntar y decir la hora es una de las primeras habilidades verdaderamente prácticas

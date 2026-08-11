@@ -20,6 +20,39 @@ quiz:
     options: ["le pain", "la pain", "l'pain"]
     answerIndex: 0
     explanation: "'le pain' es masculino. El pan es central en la cultura francesa — vale la pena memorizar bien su artículo."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ eau est fraîche."
+    answer: "L'"
+    hint: "'eau' empieza con vocal, así que el artículo se contrae: l'eau."
+    translation: "El agua está fresca."
+  - type: "fill-blank"
+    sentence: "___ pain est délicieux."
+    answer: "Le"
+    hint: "'pain' es masculino: le pain."
+    translation: "El pan está delicioso."
+  - type: "match"
+    instructions: "Empareja cada palabra en francés con su traducción."
+    pairs:
+      - left: "le pain"
+        right: "el pan"
+      - left: "le fromage"
+        right: "el queso"
+      - left: "la pomme"
+        right: "la manzana"
+      - left: "le riz"
+        right: "el arroz"
+      - left: "l'eau"
+        right: "el agua"
+  - type: "write"
+    prompt: "Escribe en francés cómo pedirías educadamente un té, usando 'je voudrais'."
+    answer: "Je voudrais un thé, s'il vous plaît"
+    accepted:
+      - "Je voudrais un thé s'il vous plaît"
+    hint: "'Je voudrais' es más educado que 'je veux'."
+  - type: "order"
+    sentence: "Je voudrais un café s'il vous plaît"
+    translation: "Quisiera un café, por favor."
 ---
 
 Ya sea en un restaurante, una boulangerie o un supermercado, este vocabulario es

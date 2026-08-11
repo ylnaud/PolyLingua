@@ -28,6 +28,35 @@ quiz:
     ]
     answerIndex: 0
     explanation: "Es el otro tipo de mixto: una condición sobre el PRESENTE (weren't so shy — es tímida ahora) explica un resultado en el PASADO (would have applied)."
+exercises:
+  - type: "fill-blank"
+    sentence: "If I had studied medicine, I ___ a doctor now."
+    answer: "would be"
+    hint: "Condición pasada + resultado presente: would + infinitivo, sin 'have'."
+    translation: "Si hubiera estudiado medicina, sería doctor ahora."
+  - type: "fill-blank"
+    sentence: "If she weren't so shy, she ___ for the job."
+    answer: "would have applied"
+    hint: "Condición presente + resultado pasado: would have + participio."
+    translation: "Si no fuera tan tímida, habría postulado al trabajo."
+  - type: "match"
+    instructions: "Empareja cada frase con su tipo de condicional mixto."
+    pairs:
+      - left: "If I had studied, I would be a doctor now."
+        right: "pasado → presente"
+      - left: "If I weren't afraid, I would have tried it."
+        right: "presente → pasado"
+      - left: "Past Perfect + would + infinitivo"
+        right: "condición pasada, resultado presente"
+      - left: "Past Simple + would have + participio"
+        right: "condición presente, resultado pasado"
+  - type: "write"
+    prompt: "Escribe en inglés (condicional mixto pasado → presente): 'Si hubiera ahorrado más, tendría más dinero ahora.'"
+    answer: "If I had saved more, I would have more money now."
+    hint: "If + Past Perfect, would + infinitivo (sin 'have')."
+  - type: "order"
+    sentence: "If I had known I would be there now"
+    translation: "Si lo hubiera sabido, estaría allí ahora."
 ---
 
 Los condicionales mixtos combinan el Second y Third Conditional para reflejar cómo el

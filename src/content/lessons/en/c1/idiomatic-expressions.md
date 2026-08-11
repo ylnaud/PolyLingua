@@ -32,6 +32,37 @@ quiz:
     ]
     answerIndex: 1
     explanation: "'once in a blue moon' significa algo muy poco frecuente, casi nunca — la 'luna azul' es un evento astronómico raro, de ahí la imagen."
+exercises:
+  - type: "fill-blank"
+    sentence: "This project is a piece of ___, so let's get the ball rolling."
+    answer: "cake"
+    hint: "Expresión que significa algo muy fácil."
+    translation: "Este proyecto es pan comido, así que pongámoslo en marcha."
+  - type: "fill-blank"
+    sentence: "I'm feeling a bit under the ___ today."
+    answer: "weather"
+    hint: "Expresión que significa sentirse mal o enfermo."
+    translation: "Hoy me siento un poco mal."
+  - type: "match"
+    instructions: "Empareja cada expresión idiomática con su significado."
+    pairs:
+      - left: "break the ice"
+        right: "aliviar la tensión inicial"
+      - left: "cost an arm and a leg"
+        right: "costar muchísimo"
+      - left: "once in a blue moon"
+        right: "muy raramente"
+      - left: "hit the nail on the head"
+        right: "acertar exactamente"
+      - left: "get the ball rolling"
+        right: "poner algo en marcha"
+  - type: "write"
+    prompt: "Escribe la expresión idiomática en inglés que significa costar muchísimo dinero, literalmente costar un brazo y una pierna."
+    answer: "cost an arm and a leg"
+    hint: "Empieza con cost an..."
+  - type: "order"
+    sentence: "You hit the nail on the head"
+    translation: "Diste justo en el clavo."
 ---
 
 Estas expresiones son el vocabulario que hace que tu inglés suene vivo y natural en

@@ -24,6 +24,37 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Al reportar una pregunta, la frase se convierte en una afirmación normal (sin inversión, sin 'do/does/did', sin signo de interrogación): She asked where I lived."
+exercises:
+  - type: "fill-blank"
+    sentence: "She asked me ___ I lived."
+    answer: "where"
+    hint: "Las preguntas con W-word conservan la palabra interrogativa, sin 'did'."
+    translation: "Ella me preguntó dónde vivía."
+  - type: "fill-blank"
+    sentence: "He asked ___ I was coming."
+    answer: "if"
+    accepted: ["whether"]
+    hint: "Las preguntas de sí/no se reportan con 'if' o 'whether'."
+    translation: "Él preguntó si yo venía."
+  - type: "match"
+    instructions: "Empareja cada pregunta directa con su versión reportada."
+    pairs:
+      - left: "Where do you live?"
+        right: "She asked me where I lived."
+      - left: "Are you coming?"
+        right: "He asked if I was coming."
+      - left: "What are you doing?"
+        right: "She asked what I was doing."
+      - left: "Did you call him?"
+        right: "She asked if I had called him."
+  - type: "write"
+    prompt: "Convierte a pregunta reportada usando 'he asked': 'Are you tired?'"
+    answer: "He asked if I was tired."
+    accepted: ["He asked whether I was tired."]
+    hint: "Preguntas de sí/no: if/whether + orden normal (sujeto + verbo)."
+  - type: "order"
+    sentence: "She asked where I lived"
+    translation: "Ella preguntó dónde vivía yo."
 ---
 
 Ya sabes reportar afirmaciones. Reportar preguntas tiene su propia lógica: la

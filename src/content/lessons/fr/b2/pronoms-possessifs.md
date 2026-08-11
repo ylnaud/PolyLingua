@@ -24,6 +24,40 @@ quiz:
     ]
     answerIndex: 1
     explanation: "Al igual que mon/ma/mes, los pronombres posesivos concuerdan con el género y número de la COSA poseída, no con quién la posee."
+exercises:
+  - type: "fill-blank"
+    sentence: "C'est mon livre. C'est ___."
+    answer: "le mien"
+    accepted: ["le mien"]
+    hint: "livre es masculino singular, poseedor 'yo'."
+    translation: "Es mi libro. Es el mío."
+  - type: "fill-blank"
+    sentence: "C'est sa voiture. C'est ___."
+    answer: "la sienne"
+    accepted: ["la sienne"]
+    hint: "voiture es femenino singular, poseedor 'él/ella'."
+    translation: "Es su coche. Es el suyo/suya."
+  - type: "match"
+    instructions: "Empareja cada expresión con su pronombre posesivo correspondiente."
+    pairs:
+      - left: "mon livre"
+        right: "le mien"
+      - left: "ta voiture"
+        right: "la tienne"
+      - left: "ses idées"
+        right: "les siennes"
+      - left: "nos idées"
+        right: "les nôtres"
+      - left: "leur maison"
+        right: "la leur"
+  - type: "write"
+    prompt: "Escribe el pronombre posesivo para 'notre voiture' (nuestro coche)."
+    answer: "la nôtre"
+    accepted: ["la nôtre"]
+    hint: "voiture es femenino singular, poseedor 'nosotros'."
+  - type: "order"
+    sentence: "Ce livre est le mien"
+    translation: "Este libro es el mío."
 ---
 
 Estos pronombres reemplazan completamente un sustantivo poseído — con su propio

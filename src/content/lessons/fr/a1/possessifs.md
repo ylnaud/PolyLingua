@@ -24,6 +24,40 @@ quiz:
     options: ["mon livres", "ma livres", "mes livres"]
     answerIndex: 2
     explanation: "En plural, todos los géneros usan 'mes': mes livres, mes amies — sin distinción de masculino/femenino."
+exercises:
+  - type: "fill-blank"
+    sentence: "___ livre est sur la table."
+    answer: "Mon"
+    accepted: ["Mon", "mon"]
+    hint: "'livre' es masculino."
+    translation: "Mi libro está sobre la mesa."
+  - type: "fill-blank"
+    sentence: "___ amie habite à Paris."
+    answer: "Mon"
+    accepted: ["Mon", "mon"]
+    hint: "'amie' es femenino, pero empieza con vocal: se usa 'mon' por pronunciación."
+    translation: "Mi amiga vive en París."
+  - type: "match"
+    instructions: "Empareja cada posesivo francés con su traducción."
+    pairs:
+      - left: "mon livre"
+        right: "mi libro"
+      - left: "ma maison"
+        right: "mi casa"
+      - left: "mes livres"
+        right: "mis libros"
+      - left: "ton livre"
+        right: "tu libro"
+      - left: "son livre"
+        right: "su libro (de él/ella)"
+  - type: "write"
+    prompt: "Escribe cómo dirías 'mi casa' en francés ('maison' es femenino)."
+    answer: "ma maison"
+    accepted: ["ma maison"]
+    hint: "'maison' empieza con consonante, así que no hay excepción fonética."
+  - type: "order"
+    sentence: "Notre maison est grande"
+    translation: "Nuestra casa es grande."
 ---
 
 A diferencia del español, donde "mi" nunca cambia, el francés hace que los posesivos

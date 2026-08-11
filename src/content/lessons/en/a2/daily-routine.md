@@ -24,6 +24,40 @@ quiz:
     options: ["never", "every day", "sometimes"]
     answerIndex: 1
     explanation: "'every day' significa 'todos los días' — una de las expresiones de frecuencia más usadas al describir rutinas."
+exercises:
+  - type: "fill-blank"
+    sentence: "I usually ___ up at 7am."
+    answer: "wake"
+    accepted: ["Wake"]
+    hint: "'wake up' es el momento de abrir los ojos/despertar."
+    translation: "Usualmente me despierto a las 7am."
+  - type: "fill-blank"
+    sentence: "I ___ skip breakfast — it's my favorite meal."
+    answer: "never"
+    accepted: ["Never"]
+    hint: "Expresión de frecuencia que significa 'nunca'."
+    translation: "Nunca me salto el desayuno — es mi comida favorita."
+  - type: "match"
+    instructions: "Empareja cada verbo de rutina con su traducción."
+    pairs:
+      - left: "wake up"
+        right: "despertarse"
+      - left: "get up"
+        right: "levantarse"
+      - left: "get dressed"
+        right: "vestirse"
+      - left: "go to bed"
+        right: "irse a la cama"
+      - left: "have breakfast"
+        right: "desayunar"
+  - type: "write"
+    prompt: "Escribe en inglés cómo dirías 'Ceno a las 8' usando 'have'."
+    answer: "I have dinner at 8."
+    accepted: ["I have dinner at 8"]
+    hint: "Usa 'have dinner' + la hora."
+  - type: "order"
+    sentence: "I usually wake up at 7am"
+    translation: "Usualmente me despierto a las 7am."
 ---
 
 Describir tu rutina diaria es una de las conversaciones más naturales en Simple

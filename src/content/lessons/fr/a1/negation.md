@@ -20,6 +20,40 @@ quiz:
     options: ["'pas'", "'ne'", "ninguna, siempre se dicen ambas"]
     answerIndex: 1
     explanation: "En conversación muy informal, muchos franceses omiten 'ne' y dicen solo 'pas': 'Je sais pas' (en vez de 'Je ne sais pas'). Al escribir, siempre se usan ambas partes."
+exercises:
+  - type: "fill-blank"
+    sentence: "Je ___ parle pas français."
+    answer: "ne"
+    accepted: ["ne"]
+    hint: "La primera mitad del sándwich, justo antes del verbo."
+    translation: "No hablo francés."
+  - type: "fill-blank"
+    sentence: "Il ___ habite pas ici."
+    answer: "n'"
+    accepted: ["n'", "n’"]
+    hint: "'ne' se contrae a n' antes de una 'h' muda."
+    translation: "Él no vive aquí."
+  - type: "match"
+    instructions: "Empareja cada negación con su significado."
+    pairs:
+      - left: "ne...pas"
+        right: "no"
+      - left: "ne...jamais"
+        right: "nunca"
+      - left: "ne...rien"
+        right: "nada"
+      - left: "ne...plus"
+        right: "ya no"
+      - left: "ne...personne"
+        right: "nadie"
+  - type: "write"
+    prompt: "Escribe la negación de 'J'aime le café' usando ne...pas con elisión."
+    answer: "Je n'aime pas le café"
+    accepted: ["Je n'aime pas le café", "Je n’aime pas le café"]
+    hint: "'ne' se contrae ante el verbo que empieza con vocal."
+  - type: "order"
+    sentence: "Je ne mange jamais de viande"
+    translation: "Nunca como carne."
 ---
 
 Negar una frase en francés requiere dos palabras que "envuelven" al verbo — una

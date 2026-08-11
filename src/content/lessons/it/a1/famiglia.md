@@ -1,0 +1,65 @@
+---
+language: it
+level: a1
+title: "La famiglia: presenta a los tuyos en italiano"
+description: "El vocabulario esencial para hablar de padres, hermanos y demás parientes — casi calcado del español."
+order: 5
+grammarTopic: "Vocabulario: la familia"
+funFact: "'madre/padre' en italiano son 'madre/padre' — prácticamente idénticos al español. De los cinco idiomas del curso, el vocabulario familiar italiano es el que menos esfuerzo de memorización requiere gracias a su cercanía directa con el español."
+minutes: 5
+quiz:
+  - question: "¿Cuál es el artículo correcto para 'madre' (madre)?"
+    options: ["il madre", "la madre", "lo madre"]
+    answerIndex: 1
+    explanation: "'la madre' — todas las personas de sexo femenino son femeninas en italiano."
+  - question: "¿Cómo se dice 'hermanos' (varios, colectivo) en italiano?"
+    options: ["i fratelli", "le sorelle", "no existe forma colectiva"]
+    answerIndex: 0
+    explanation: "'i fratelli' (masculino plural) se usa como forma colectiva para 'hermanos y hermanas' juntos, igual que en español 'los hermanos'."
+  - question: "¿Cuál es el artículo correcto para 'zio' (tío)?"
+    options: ["il zio", "lo zio", "la zio"]
+    answerIndex: 1
+    explanation: "'zio' empieza con 'z' (caso especial que activa 'lo' en vez de 'il'): lo zio."
+---
+
+Presentar a tu familia en italiano será una de tus primeras conversaciones fáciles —
+el vocabulario es prácticamente un espejo del español.
+
+## La familia nuclear
+
+| Italiano | Español |
+| --- | --- |
+| la famiglia | la familia |
+| il padre / la madre | el padre / la madre |
+| i genitori | los padres |
+| il figlio / la figlia | el hijo / la hija |
+| il fratello / la sorella | el hermano / la hermana |
+| i fratelli | los hermanos (colectivo) |
+
+## La familia extendida
+
+| Italiano | Español |
+| --- | --- |
+| la nonna / il nonno | la abuela / el abuelo |
+| la zia / lo zio | la tía / el tío |
+| il cugino / la cugina | el primo / la prima |
+
+## Hablar de tu familia
+
+```
+Ho due fratelli e una sorella.       (Tengo dos hermanos y una hermana)
+Mia madre si chiama Anna.              (Mi madre se llama Anna)
+Mio fratello ha vent'anni.              (Mi hermano tiene veinte años)
+```
+
+## El detalle de "lo zio"
+
+"zio" (tío) usa el artículo especial "lo" en vez de "il", porque empieza con "z" — uno
+de los casos especiales de tu primera lección de artículos. Lo mismo aplica a "gli zii"
+(los tíos) en plural.
+
+## El truco para practicar
+
+Gracias al gran parecido con el español, este vocabulario apenas necesita esfuerzo de
+memorización — enfócate más en practicar la pronunciación y los artículos correctos que
+en el significado, que ya intuyes fácilmente.

@@ -1,0 +1,76 @@
+---
+language: it
+level: a2
+title: "I pronomi diretti e indiretti: reemplaza sin repetir"
+description: "Lo, la, li, gli, le: los pronombres que evitan repetir el sustantivo, y dónde colocarlos en la frase."
+order: 4
+grammarTopic: "Pronombres objeto directo e indirecto"
+funFact: "Igual que en español ('lo veo', 'le hablo'), el italiano coloca el pronombre objeto ANTES del verbo conjugado — la lógica te resultará completamente natural, a diferencia de otros idiomas donde el orden puede sorprender."
+minutes: 9
+quiz:
+  - question: "'Vedo Marco' → '___ vedo' (lo veo). ¿Qué pronombre va?"
+    options: ["gli", "lo", "le"]
+    answerIndex: 1
+    explanation: "'lo' reemplaza un objeto directo masculino singular: Lo vedo (lo veo)."
+  - question: "'Parlo a Marco' → '___ parlo' (le hablo, a él). ¿Qué pronombre va?"
+    options: ["lo", "gli", "la"]
+    answerIndex: 1
+    explanation: "'parlare A qualcuno' usa la preposición 'a', así que necesita objeto indirecto: gli (a él)."
+  - question: "¿Dónde se coloca el pronombre objeto en italiano respecto al verbo conjugado?"
+    options: ["Después del verbo", "Antes del verbo conjugado", "Al final de la frase"]
+    answerIndex: 1
+    explanation: "El pronombre objeto va justo antes del verbo conjugado: Lo vedo, Gli parlo — igual que en español (lo veo, le hablo)."
+---
+
+Estos pronombres te permiten evitar repetir un sustantivo una y otra vez — la lógica
+te resultará muy familiar viniendo del español.
+
+## Pronombres de objeto directo (sin preposición)
+
+| Pronombre | Reemplaza |
+| --- | --- |
+| lo | objeto masculino singular |
+| la | objeto femenino singular |
+| li | objeto masculino plural |
+| le | objeto femenino plural |
+
+```
+Vedo il film.    →    Lo vedo.       (lo veo)
+Vedo Maria.        →    La vedo.        (la veo)
+```
+
+## Pronombres de objeto indirecto (con "a" oculta)
+
+| Pronombre | Reemplaza |
+| --- | --- |
+| gli | a él (singular) |
+| le | a ella (singular) |
+| gli | a ellos/ellas (plural, forma moderna estándar) |
+
+```
+Parlo a Marco.      →    Gli parlo.       (le hablo — a él)
+Parlo a Maria.        →    Le parlo.         (le hablo — a ella)
+```
+
+## Cómo saber si un verbo pide directo o indirecto
+
+| Verbo | Tipo | Ejemplo |
+| --- | --- | --- |
+| vedere (ver) | directo | Lo vedo. |
+| amare (amar) | directo | La amo. |
+| parlare a (hablar a) | indirecto | Gli parlo. |
+| telefonare a (llamar a) | indirecto | Le telefono. |
+
+## Posición: antes del verbo conjugado
+
+```
+Lo vedo.               (presente simple)
+Non lo vedo.             (negación rodea al pronombre + verbo)
+L'ho visto.               (passato prossimo: se contrae ante vocal, antes del auxiliar)
+```
+
+## El truco práctico
+
+Antes de elegir el pronombre, pregúntate: "¿este verbo en italiano necesita 'a' antes
+de la persona?" Si sí → gli/le (indirecto). Si no → lo/la/li/le (directo). Gracias al
+parecido estructural con el español, este orden ya te resulta natural.

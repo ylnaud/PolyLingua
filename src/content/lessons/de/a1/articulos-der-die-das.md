@@ -3,7 +3,7 @@ language: de
 level: a1
 title: "Der, die, das: la guía definitiva para dejar de adivinar"
 description: "Categorías por significado, terminaciones con su porcentaje de acierto y las excepciones que sí importan — todo lo que necesitas para dejar de tirar una moneda al aire."
-order: 1
+order: 3
 grammarTopic: "Artículos determinados (der/die/das)"
 funFact: "Esto no son reglas fijas, son tendencias: con estas categorías acertarás la gran mayoría de las veces, pero el alemán siempre se reserva un puñado de excepciones. Aprende cada palabra nueva CON su artículo pegado — der Tisch, no solo 'Tisch' — y tu memoria hará el resto."
 minutes: 12

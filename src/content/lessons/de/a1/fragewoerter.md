@@ -3,7 +3,7 @@ language: de
 level: a1
 title: "Fragewörter: las 6 llaves para abrir cualquier conversación"
 description: "Wer, was, wo, wann, warum, wie: las palabras interrogativas que necesitas para preguntar cualquier cosa."
-order: 8
+order: 2
 grammarTopic: "Palabras interrogativas (W-Fragen)"
 funFact: "En alemán, todas las preguntas con palabra interrogativa se llaman 'W-Fragen' porque casi todas empiezan con W: wer, was, wo, wann, warum, wie, welche. Memoriza estas 6-7 palabras y podrás preguntar prácticamente cualquier cosa."
 minutes: 6

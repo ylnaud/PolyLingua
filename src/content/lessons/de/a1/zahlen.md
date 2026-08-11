@@ -3,7 +3,7 @@ language: de
 level: a1
 title: "Die Zahlen: los números del 0 al 100"
 description: "El vocabulario que necesitas para precios, horarios, edades y direcciones desde el primer día."
-order: 4
+order: 6
 grammarTopic: "Números cardinales (0-100)"
 funFact: "El alemán construye los números del 21 al 99 al revés respecto al español: en vez de 'veintiuno' dicen 'un-y-veinte' (einundzwanzig). Una vez que te acostumbras a ese orden invertido, el resto es pura repetición de patrones."
 minutes: 6

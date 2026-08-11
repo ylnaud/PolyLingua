@@ -3,7 +3,7 @@ language: de
 level: a1
 title: "Essen und Trinken: pide comida sin pasar hambre"
 description: "El vocabulario de supervivencia para restaurantes, supermercados y la mesa de cualquier casa alemana."
-order: 7
+order: 9
 grammarTopic: "Vocabulario: comida y bebida"
 funFact: "En un restaurante alemán, decir simplemente 'Ich möchte...' (quisiera...) antes de cualquier plato es la fórmula mágica que suena educada y natural — mucho más que 'Ich will' (quiero), que puede sonar brusco."
 minutes: 6

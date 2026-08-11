@@ -1,0 +1,15 @@
+---
+---
+<script>
+  import { playAchievement } from '../lib/sound';
+
+  function initSoundEffects() {
+    if (document.body.dataset.soundEffectsInitialized) return;
+    document.body.dataset.soundEffectsInitialized = 'true';
+
+    document.addEventListener('polylingua-achievement', () => playAchievement());
+  }
+
+  initSoundEffects();
+  document.addEventListener('astro:page-load', initSoundEffects);
+</script>

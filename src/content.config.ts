@@ -31,6 +31,7 @@ const writeExercise = z.object({
   answer: z.string(),
   accepted: z.array(z.string()).optional(),
   hint: z.string().optional(),
+  spokenOnly: z.boolean().optional(),
 });
 
 const orderExercise = z.object({

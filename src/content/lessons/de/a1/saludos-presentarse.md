@@ -71,6 +71,7 @@ exercises:
     answer: "Guten Morgen"
     accepted: ["guten morgen", "Guten morgen"]
     hint: "Literalmente 'buena mañana' — el saludo específico antes del mediodía."
+    spokenOnly: true
   - type: "order"
     sentence: "Ich komme aus Mexiko"
     translation: "Soy de México."

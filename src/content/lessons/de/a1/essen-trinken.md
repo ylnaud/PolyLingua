@@ -51,6 +51,7 @@ exercises:
     answer: "Tee"
     accepted: ["tee"]
     hint: "Es masculino: der Tee."
+    spokenOnly: true
   - type: "order"
     sentence: "Ich möchte einen Kaffee bitte"
     translation: "Quisiera un café, por favor."

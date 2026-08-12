@@ -23,7 +23,7 @@ const {
 } = Astro.props;
 
 const siteName = 'PolyLingua';
-const fullTitle = title.includes(siteName) ? title : `${title} · ${siteName}`;
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 const canonicalURL = new URL(path, Astro.site);
 const ogImage = new URL('/og-image.svg', Astro.site);
 ---

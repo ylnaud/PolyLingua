@@ -53,6 +53,42 @@ apps con años de desarrollo y equipos grandes detrás.
 intuirla), odiás los límites artificiales de "vidas" o muros de pago, y
 preferís no dar tu email para probar algo.
 
+## ¿Para qué te sirve cada una, en concreto?
+
+La comparación general ayuda, pero la decisión cambia bastante según qué
+estés tratando de lograr. Algunos escenarios típicos:
+
+**Vas de viaje en unas semanas y querés lo básico para sobrevivir**
+(pedir comida, preguntar direcciones, presentarte). Acá Duolingo tiene
+una ventaja real: sus lecciones cortas y gamificadas están pensadas para
+sesiones de 5 minutos, y el contenido conversacional/turístico es más
+amplio que el de PolyLingua o Babbel. Si tolerás las vidas limitadas, es
+una opción rápida.
+
+**Necesitás preparar un examen oficial** (Goethe-Zertifikat, DELF,
+CELPE-Bras, etc.). Ninguna de las tres reemplaza un curso preparatorio
+específico, pero para la base gramatical que esos exámenes exigen,
+PolyLingua tiene una ventaja concreta: los exámenes de nivel por MCER
+(A1 a C2) obligan a dominar la gramática de un nivel antes de avanzar al
+siguiente, en vez de dejarte "flotar" entre niveles como pasa en
+Duolingo. Babbel, con su progresión más tradicional, también sirve bien
+para esto si podés pagar la suscripción.
+
+**Trabajás en un entorno donde necesitás alemán o inglés formal**
+(reuniones, correos, documentación técnica). Babbel es la que más invierte
+en diálogos de registro profesional y contexto cultural realista — ahí
+paga la suscripción. PolyLingua cubre gramática avanzada (C1-C2, incluida
+retórica y registro formal) pero con menos práctica conversacional
+guiada que Babbel.
+
+**Querés aprender varios idiomas a la vez sin gastar en cada uno por
+separado.** Acá PolyLingua tiene una ventaja estructural: los 5 idiomas
+(alemán, inglés, francés, italiano, portugués) están en la misma cuenta
+(o más bien, en el mismo navegador, ya que no hay cuentas) sin costo
+adicional por idioma. Duolingo también permite varios idiomas gratis,
+pero cada uno arrastra sus propios límites de vidas. Babbel cobra por
+separado según el paquete de idiomas que elijas.
+
 ## La comparación en una tabla
 
 | | Duolingo | Babbel | PolyLingua |

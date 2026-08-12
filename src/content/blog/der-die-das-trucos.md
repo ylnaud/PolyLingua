@@ -1,6 +1,6 @@
 ---
 title: "Der, die, das: por qué memorizas mal los artículos alemanes (y cómo dejar de adivinar)"
-description: "La razón por la que sigues equivocándote con der/die/das no es falta de memoria: es que intentas memorizar sin categorías. Estos son los trucos que sí funcionan."
+description: "La razón por la que te equivocás con der/die/das no es falta de memoria: es que intentas memorizar sin categorías. Los trucos que sí funcionan."
 publishDate: 2026-08-12
 tags: ["alemán", "gramática", "trucos"]
 ---

@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+const dateFormatter = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+
+<BaseLayout
+  title="Blog de PolyLingua"
+  description="Artículos sobre cómo aprender idiomas gratis: trucos de gramática, comparativas con otras apps y consejos para aprender alemán, inglés, francés, italiano y portugués."
+  path="/blog"
+>
+  <section class="container page-head">
+    <span class="eyebrow">Blog</span>
+    <h1>Artículos para aprender idiomas de verdad</h1>
+    <p>
+      Trucos de gramática, comparativas honestas con otras apps, y todo lo que
+      aprendimos construyendo un curso gratuito de 5 idiomas.
+    </p>
+  </section>
+
+  <section class="container posts-grid">
+    {posts.length === 0 && <p class="empty">Muy pronto vamos a publicar el primer artículo.</p>}
+    {posts.map((post) => (
+      <a class="post-card card" href={`/blog/${post.id}`}>
+        <time datetime={post.data.publishDate.toISOString()}>
+          {dateFormatter.format(post.data.publishDate)}
+        </time>
+        <h2>{post.data.title}</h2>
+        <p>{post.data.description}</p>
+        {post.data.tags.length > 0 && (
+          <ul class="tags">
+            {post.data.tags.map((tag) => (
+              <li>{tag}</li>
+            ))}
+          </ul>
+        )}
+      </a>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .page-head {
+    padding-block: 3rem 2rem;
+    max-width: 640px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 0.6rem 0 0.75rem;
+  }
+
+  .page-head p {
+    color: var(--text-muted);
+  }
+
+  .posts-grid {
+    display: grid;
+    gap: 1.25rem;
+    padding-block: 1rem 4rem;
+  }
+
+  .post-card {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.15s ease;
+  }
+
+  .post-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .post-card time {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+  }
+
+  .post-card p {
+    margin: 0 0 0.75rem;
+    color: var(--text-muted);
+  }
+
+  .tags {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tags li {
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .empty {
+    color: var(--text-muted);
+  }
+</style>

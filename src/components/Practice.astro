@@ -116,6 +116,9 @@ function shuffledIndices(n: number): number[] {
       <span class="streak-badge" data-streak-badge hidden>🔥 x2</span>
       <span class="practice-progress" data-practice-progress>1 / {items.length}</span>
     </div>
+    <div class="progress-bar" data-progress-bar>
+      <div class="progress-bar-fill" data-progress-bar-fill></div>
+    </div>
 
     <div class="practice-items" data-items-container>
     {items.map((item, i) => (
@@ -312,6 +315,22 @@ function shuffledIndices(n: number): number[] {
     font-weight: 700;
   }
 
+  .progress-bar {
+    height: 6px;
+    border-radius: 999px;
+    background: var(--bg-elevated);
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 999px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+
   .streak-badge {
     font-size: 0.85rem;
     font-weight: 800;
@@ -484,11 +503,15 @@ function shuffledIndices(n: number): number[] {
     box-shadow: var(--shadow-card-hover);
   }
 
-  .match-item.correct {
+  .option.correct,
+  .match-item.correct,
+  .answer-input.correct {
     animation: match-pop 0.35s ease;
   }
 
-  .match-item.incorrect {
+  .option.incorrect,
+  .match-item.incorrect,
+  .answer-input.incorrect {
     animation: match-shake 0.4s ease;
   }
 
@@ -618,6 +641,21 @@ function shuffledIndices(n: number): number[] {
     display: none;
   }
 
+  .order-assembled .word-chip {
+    animation: chip-in 0.2s ease;
+  }
+
+  @keyframes chip-in {
+    0% {
+      transform: scale(0.85) translateY(4px);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
   .feedback {
     min-height: 1.4rem;
     font-weight: 700;
@@ -647,6 +685,21 @@ function shuffledIndices(n: number): number[] {
   .score-emoji {
     font-size: 2.5rem;
     margin: 0;
+    animation: score-emoji-in 0.4s ease;
+  }
+
+  @keyframes score-emoji-in {
+    0% {
+      transform: scale(0.4);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.15);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   @media (max-width: 480px) {
@@ -680,6 +733,8 @@ function shuffledIndices(n: number): number[] {
       const scoreEmoji = root.querySelector<HTMLElement>('[data-score-emoji]');
       const restartBtn = root.querySelector<HTMLButtonElement>('[data-restart]');
       const streakBadge = root.querySelector<HTMLElement>('[data-streak-badge]');
+      const progressBarFill = root.querySelector<HTMLElement>('[data-progress-bar-fill]');
+      const progressBar = root.querySelector<HTMLElement>('[data-progress-bar]');
       let current = 0;
       let score = 0;
       let streak = 0;
@@ -723,12 +778,15 @@ function shuffledIndices(n: number): number[] {
           it.hidden = i !== index;
         });
         if (progressEl) progressEl.textContent = `${index + 1} / ${items.length}`;
+        if (progressBarFill) progressBarFill.style.width = `${(index / items.length) * 100}%`;
       }
 
       function finish() {
         items.forEach((it) => (it.hidden = true));
         if (doneEl) doneEl.hidden = false;
         if (progressEl) progressEl.hidden = true;
+        if (progressBar) progressBar.hidden = true;
+        if (progressBarFill) progressBarFill.style.width = '100%';
         const pct = score / items.length;
         if (scoreEmoji) scoreEmoji.textContent = pct === 1 ? '🏆' : pct >= 0.5 ? '🎉' : '💪';
         if (scoreText) scoreText.textContent = `Acertaste ${score} / ${items.length}`;

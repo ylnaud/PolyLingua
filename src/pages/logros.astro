@@ -18,6 +18,7 @@ const coreBadges: Badge[] = [
   { id: 'perfect', emoji: '💯', name: 'Perfeccionista', hint: 'Acierta todos los ítems de una lección.' },
   { id: 'marathon', emoji: '⚡', name: 'Maratón', hint: 'Completa 3 lecciones en un mismo día.' },
   { id: 'srs-master', emoji: '🧠', name: 'Maestro del repaso', hint: 'Domina 5 ítems en el repaso espaciado.' },
+  { id: 'combo', emoji: '💥', name: 'Racha de combo', hint: 'Encadena 5 respuestas correctas seguidas en una misma sesión.' },
   { id: 'levels-1', emoji: '🏆', name: 'Primer nivel superado', hint: 'Aprueba tu primer examen de nivel.' },
   { id: 'levels-5', emoji: '🏆', name: '5 niveles superados', hint: 'Aprueba 5 exámenes de nivel.' },
   { id: 'levels-15', emoji: '🏆', name: '15 niveles superados', hint: 'Aprueba 15 exámenes de nivel.' },
@@ -89,6 +90,7 @@ const languageIds = LANGUAGES.map((l) => l.id);
   const hasFirstLesson = hasAnyKeyStartingWith('polylingua-lesson-done-');
   const hasPerfect = hasAnyKeyStartingWith('polylingua-lesson-perfect-');
   const hasMarathon = read('polylingua-achievement-marathon') === 'true';
+  const hasCombo = read('polylingua-achievement-combo') === 'true';
 
   const earned = {
     'first-lesson': hasFirstLesson,
@@ -97,6 +99,7 @@ const languageIds = LANGUAGES.map((l) => l.id);
     'streak-30': streak >= 30,
     perfect: hasPerfect,
     marathon: hasMarathon,
+    combo: hasCombo,
     'srs-master': srsMastered >= 5,
     'levels-1': levelsPassed >= 1,
     'levels-5': levelsPassed >= 5,

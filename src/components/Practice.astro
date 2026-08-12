@@ -113,6 +113,7 @@ function shuffledIndices(n: number): number[] {
   >
     <div class="practice-head">
       <span class="eyebrow">🎮 Ponte a prueba</span>
+      <span class="streak-badge" data-streak-badge hidden>🔥 x2</span>
       <span class="practice-progress" data-practice-progress>1 / {items.length}</span>
     </div>
 
@@ -301,6 +302,7 @@ function shuffledIndices(n: number): number[] {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.75rem;
     margin-bottom: 1rem;
   }
 
@@ -308,6 +310,30 @@ function shuffledIndices(n: number): number[] {
     font-size: 0.85rem;
     color: var(--text-muted);
     font-weight: 700;
+  }
+
+  .streak-badge {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--de-red);
+    background: rgba(216, 0, 39, 0.12);
+    border-radius: 999px;
+    padding: 0.2rem 0.65rem;
+    animation: streak-pop 0.35s ease;
+  }
+
+  @keyframes streak-pop {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.12);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
   }
 
   fieldset {
@@ -631,7 +657,7 @@ function shuffledIndices(n: number): number[] {
 </style>
 
 <script>
-  import { playCorrect, playIncorrect, speak, isMuted } from '../lib/sound';
+  import { playCorrect, playIncorrect, playCombo, speak, isMuted } from '../lib/sound';
 
   function normalize(value: string): string {
     return value
@@ -653,9 +679,32 @@ function shuffledIndices(n: number): number[] {
       const scoreText = root.querySelector<HTMLElement>('[data-score-text]');
       const scoreEmoji = root.querySelector<HTMLElement>('[data-score-emoji]');
       const restartBtn = root.querySelector<HTMLButtonElement>('[data-restart]');
+      const streakBadge = root.querySelector<HTMLElement>('[data-streak-badge]');
       let current = 0;
       let score = 0;
+      let streak = 0;
+      let maxStreak = 0;
       const results: { id: string; kind: string; data: unknown; correct: boolean }[] = [];
+
+      function updateStreak(correct: boolean) {
+        if (correct) {
+          streak += 1;
+          maxStreak = Math.max(maxStreak, streak);
+        } else {
+          streak = 0;
+        }
+        if (!streakBadge) return;
+        if (streak >= 2) {
+          streakBadge.textContent = `🔥 x${streak}`;
+          streakBadge.hidden = false;
+          streakBadge.style.animation = 'none';
+          // reflow para poder relanzar la animación en cada acierto consecutivo
+          void streakBadge.offsetWidth;
+          streakBadge.style.animation = '';
+        } else {
+          streakBadge.hidden = true;
+        }
+      }
 
       if (!('speechSynthesis' in window)) {
         root.querySelectorAll<HTMLElement>('[data-speak]').forEach((btn) => {
@@ -693,6 +742,7 @@ function shuffledIndices(n: number): number[] {
               sessionType: root.dataset.sessionType ?? 'lesson',
               lessonId: root.dataset.lessonId ?? '',
               results,
+              maxStreak,
             },
             bubbles: true,
           })
@@ -715,6 +765,8 @@ function shuffledIndices(n: number): number[] {
         function reveal(correct: boolean) {
           if (feedback) feedback.textContent = correct ? '✅ ¡Correcto!' : '❌ No del todo.';
           if (correct) playCorrect(); else playIncorrect();
+          updateStreak(correct);
+          if (correct && streak >= 2) playCombo(streak);
           if (explanation && explanation.textContent) explanation.hidden = false;
           if (nextBtn) nextBtn.hidden = false;
           if (correct) score += 1;

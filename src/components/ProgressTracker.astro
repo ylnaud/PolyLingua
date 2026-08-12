@@ -20,6 +20,7 @@
 
   const EXAM_PASS_THRESHOLD = 0.7;
   const INTERVAL_DAYS = [1, 3, 7, 16];
+  const COMBO_THRESHOLD = 5;
 
   function today(): string {
     const d = new Date();
@@ -109,6 +110,11 @@
       const score: number = detail.score ?? 0;
       const total: number = detail.total ?? 0;
       const results: ResultItem[] = Array.isArray(detail.results) ? detail.results : [];
+      const maxStreak: number = detail.maxStreak ?? 0;
+
+      if (maxStreak >= COMBO_THRESHOLD && writeIfNew('polylingua-achievement-combo', 'true')) {
+        dispatchAchievement('combo');
+      }
 
       if (sessionType === 'lesson' && lessonId) {
         const key = lessonId.replace(/\//g, '-');

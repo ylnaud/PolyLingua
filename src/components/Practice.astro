@@ -27,6 +27,7 @@ interface WriteExercise {
   answer: string;
   accepted?: string[];
   hint?: string;
+  spokenOnly?: boolean;
 }
 
 interface OrderExercise {
@@ -129,6 +130,7 @@ function shuffledIndices(n: number): number[] {
         data-index={i}
         data-item-id={itemIds ? itemIds[i] : `${lessonId}#${item.kind}-${i}`}
         data-item-json={JSON.stringify(item.data)}
+        data-spoken-only={item.kind === 'write' && item.data.spokenOnly ? 'true' : 'false'}
         hidden={i !== 0}
       >
         <span class="kind-tag">{kindLabels[item.kind]}</span>
@@ -186,7 +188,18 @@ function shuffledIndices(n: number): number[] {
 
         {item.kind === 'write' && (
           <>
-            <legend>{item.data.prompt}</legend>
+            <legend>{item.data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : item.data.prompt}</legend>
+            {item.data.spokenOnly && (
+              <button
+                type="button"
+                class="speak-btn spoken-only-speak"
+                data-speak
+                data-speak-text={item.data.answer}
+                aria-label="Escuchar de nuevo"
+              >
+                🔊 Escuchar
+              </button>
+            )}
             <label class="visually-hidden" for={`input-${i}`}>Tu respuesta</label>
             <div class="answer-row">
               <input
@@ -427,7 +440,8 @@ function shuffledIndices(n: number): number[] {
     background: var(--bg-elevated);
   }
 
-  .speak-btn.reveal-speak {
+  .speak-btn.reveal-speak,
+  .speak-btn.spoken-only-speak {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
@@ -773,12 +787,22 @@ function shuffledIndices(n: number): number[] {
         speak(btn.dataset.speakText ?? '', root.dataset.lang ?? '');
       });
 
+      function maybeAutoSpeak(index: number) {
+        const item = items[index];
+        if (!item || item.dataset.kind !== 'write' || item.dataset.spokenOnly !== 'true') return;
+        if (isMuted()) return;
+        const input = item.querySelector<HTMLInputElement>('[data-answer-input]');
+        const answer = input?.dataset.answer ?? '';
+        if (answer) speak(answer, root.dataset.lang ?? '');
+      }
+
       function showItem(index: number) {
         items.forEach((it, i) => {
           it.hidden = i !== index;
         });
         if (progressEl) progressEl.textContent = `${index + 1} / ${items.length}`;
         if (progressBarFill) progressBarFill.style.width = `${(index / items.length) * 100}%`;
+        maybeAutoSpeak(index);
       }
 
       function finish() {
@@ -1002,6 +1026,8 @@ function shuffledIndices(n: number): number[] {
 
         nextBtn?.addEventListener('click', goNext);
       });
+
+      maybeAutoSpeak(current);
 
       restartBtn?.addEventListener('click', () => {
         window.location.reload();

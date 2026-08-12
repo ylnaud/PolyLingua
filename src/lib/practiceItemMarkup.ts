@@ -59,6 +59,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
     'data-index': String(index),
     'data-item-id': id,
     'data-item-json': JSON.stringify(data),
+    'data-spoken-only': kind === 'write' && data.spokenOnly ? 'true' : 'false',
   });
   if (index !== 0) fieldset.hidden = true;
 
@@ -91,7 +92,24 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
       fieldset.appendChild(p);
       if (data.translation) fieldset.appendChild(el('p', { class: 'prompt-translation' }, data.translation));
     } else {
-      fieldset.appendChild(el('legend', {}, data.prompt));
+      fieldset.appendChild(
+        el('legend', {}, data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : data.prompt)
+      );
+      if (data.spokenOnly) {
+        fieldset.appendChild(
+          el(
+            'button',
+            {
+              type: 'button',
+              class: 'speak-btn spoken-only-speak',
+              'data-speak': '',
+              'data-speak-text': data.answer,
+              'aria-label': 'Escuchar de nuevo',
+            },
+            '🔊 Escuchar'
+          )
+        );
+      }
     }
     const inputId = `review-input-${index}`;
     const label = el('label', { class: 'visually-hidden', for: inputId }, 'Tu respuesta');

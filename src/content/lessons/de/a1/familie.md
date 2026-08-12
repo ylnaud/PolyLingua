@@ -51,6 +51,7 @@ exercises:
     answer: "Großvater"
     accepted: ["großvater", "Grossvater", "grossvater"]
     hint: "Es una palabra compuesta: groß (grande) + Vater (padre)."
+    spokenOnly: true
   - type: "order"
     sentence: "Mein Bruder ist 20 Jahre alt"
     translation: "Mi hermano tiene 20 años."

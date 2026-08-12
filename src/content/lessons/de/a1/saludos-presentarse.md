@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: "Saludos y presentarse: tus primeras 5 frases en alemán"
-description: "Hallo, Guten Tag, Wie heißt du?, Woher kommst du?: las frases con las que arranca cualquier conversación en alemán, antes de aprender ninguna regla de gramática."
+description: "Hallo, Wie heißt du?, Woher kommst du?: las frases con las que arranca cualquier conversación en alemán, sin aprender gramática todavía."
 order: 1
 grammarTopic: "Saludos y presentación personal (Begrüßung / Sich vorstellen)"
 funFact: "No necesitas saber ni una sola regla de gramática para empezar a hablar alemán hoy mismo: estas frases son bloques fijos que se memorizan enteros, como una canción. Repítelas en voz alta hasta que salgan solas — la gramática viene después."

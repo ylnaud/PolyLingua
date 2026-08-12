@@ -81,6 +81,38 @@ die Zeitung  →  die Zeitungen
 Esta es la regla que más tranquilidad da: en plural, nunca tenés que
 adivinar.
 
+## Errores típicos que refuerzan el patrón equivocado
+
+Hay tres confusiones que aparecen una y otra vez, y entender por qué pasan
+ayuda a dejar de cometerlas:
+
+**Confundir "-e" con una regla fija en vez de una tendencia.** Como die
+Blume, die Lampe y die Pizza terminan en -e y son femeninas, es tentador
+memorizar "-e = femenino" como si fuera absoluto. Pero der Name, der Käse,
+der Junge, der Hase y der Kunde también terminan en -e y son masculinas.
+El error no es olvidar estas palabras — es tratarlas como "excepciones
+raras" en vez de memorizarlas desde el principio como un grupo cerrado
+aparte, como recomienda el truco 4. Si las guardás sueltas entre las
+demás palabras en -e, tu cerebro sigue "corrigiéndolas" hacia el patrón
+mayoritario cada vez que las repasás.
+
+**Dejarse guiar por el español.** "La mesa" es femenina en español, así
+que hay una tentación natural de esperar que "der Tisch" (mesa, en
+alemán) también lo sea. El género gramatical no se traduce entre idiomas
+— cada uno tiene el suyo, sin relación real con el otro. Cuando notes que
+estás "traduciendo" el género en vez de aplicar las categorías o
+terminaciones alemanas, es una señal de que conviene volver a las tablas
+de este artículo en vez de confiar en la intuición.
+
+**Aprender la palabra antes que el artículo, "para no perder tiempo".**
+Es común anotar "Zeitung = periódico" primero y pensar en agregar el
+artículo "después, cuando tenga tiempo". Ese "después" casi nunca llega,
+y para cuando volvés a esa palabra ya la memorizaste sin género — hay que
+volver a aprenderla de cero, esta vez bien. Es más lento a corto plazo
+pero mucho más rápido en total: escribir "die Zeitung" desde la primera
+vez cuesta dos segundos más que escribir "Zeitung" sola, y te ahorra
+tener que reaprender la palabra entera más adelante.
+
 ## Ponlo en práctica ahora mismo
 
 Leer sobre las categorías ayuda, pero lo que realmente fija el patrón en tu

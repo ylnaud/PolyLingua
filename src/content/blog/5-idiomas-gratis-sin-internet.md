@@ -60,6 +60,37 @@ el costo de no pedirte registro: la conveniencia de "sin cuenta" y la de
 "progreso sincronizado entre dispositivos" tironean en direcciones opuestas,
 y PolyLingua eligió la primera.
 
+## Preguntas frecuentes
+
+**¿Cuánto espacio ocupa en mi dispositivo?**
+Muy poco. Todo el CSS y JavaScript del sitio pesa apenas unas decenas de
+kilobytes en total — nada que ver con los cientos de megabytes de una app
+nativa de idiomas. Lo único que va creciendo es el caché de las páginas
+que fuiste visitando, y aun así el total se mantiene en pocos megabytes
+incluso después de recorrer varias lecciones.
+
+**¿Qué pasa si borro los datos del navegador?**
+Perdés el caché offline (necesitás conexión una vez más para
+regenerarlo) y también tu progreso guardado — racha, lecciones
+completadas, logros — porque todo vive en el mismo `localStorage` del
+navegador, sin copia en ningún servidor. Es la contrapartida de no pedir
+una cuenta: nadie más que vos tiene esos datos, así que si los borrás,
+no hay forma de recuperarlos desde otro lado.
+
+**¿Funciona en iPhone/Safari, o solo en Android/Chrome?**
+Sí. Safari en iOS soporta service workers y permite "Agregar a pantalla
+de inicio" para instalar el sitio como una PWA, igual que Chrome en
+Android. El comportamiento offline depende del navegador y la versión,
+pero el mecanismo (service worker + `localStorage`) es un estándar web
+que ambos implementan, no una función exclusiva de un sistema operativo.
+
+**¿Necesito instalar la PWA para que funcione offline, o alcanza con
+visitarla desde el navegador?**
+Alcanza con visitarla normalmente al menos una vez con conexión — el
+service worker se registra igual, con o sin instalación. Instalarla
+(agregar el ícono a la pantalla de inicio) solo cambia cómo se abre
+después: como una app aparte en vez de una pestaña del navegador.
+
 ## Para quién tiene sentido esto en la práctica
 
 Si viajás seguido, tenés datos móviles limitados, o simplemente querés

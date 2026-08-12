@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LANGUAGES } from '../data/languages';
+---
+
+<BaseLayout
+  title="Práctica libre"
+  description="Practica con una sesión aleatoria de preguntas y ejercicios de todas tus lecciones, distinta cada vez."
+  path="/practica-libre"
+  noindex
+>
+  <section class="container picker">
+    <h1>¿Qué idioma quieres practicar?</h1>
+    <p class="desc">Elige un idioma para una sesión de práctica libre.</p>
+    <div class="lang-grid">
+      {LANGUAGES.map((language) => (
+        <a class="lang-item card" href={`/idiomas/${language.id}/practica-libre`}>
+          <span class="flag" aria-hidden="true">{language.flag}</span>
+          <span>{language.name}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const prefix = 'polylingua-lesson-done-';
+  let latestLang = '';
+  let latestDate = '';
+  try {
+    for (const key of Object.keys(localStorage)) {
+      if (!key.startsWith(prefix)) continue;
+      const lang = key.slice(prefix.length).split('-')[0];
+      const date = localStorage.getItem(key) ?? '';
+      if (date > latestDate) {
+        latestDate = date;
+        latestLang = lang;
+      }
+    }
+  } catch {
+    /* localStorage unavailable */
+  }
+  if (latestLang) {
+    window.location.replace(`/idiomas/${latestLang}/practica-libre`);
+  }
+</script>
+
+<style>
+  .picker {
+    padding-block: 2.5rem 4rem;
+    max-width: 680px;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+  }
+
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .lang-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+    transition: transform 0.15s ease;
+  }
+
+  .lang-item:hover {
+    transform: translateY(-2px);
+  }
+
+  .flag {
+    font-size: 1.5rem;
+  }
+</style>

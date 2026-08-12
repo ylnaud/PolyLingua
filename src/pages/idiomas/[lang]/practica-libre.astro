@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Practice from '../../../components/Practice.astro';
+import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
+}
+
+const { lang } = Astro.params;
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+const lessons = await getCollection('lessons', (entry) => entry.data.language === lang);
+
+interface PoolItem {
+  id: string;
+  kind: string;
+  data: unknown;
+  box: number;
+  due: string;
+  lang: string;
+  level: string;
+}
+
+const pool: PoolItem[] = lessons.flatMap((lesson) => {
+  const level = lesson.id.split('/')[1] ?? '';
+  const combined = [
+    ...lesson.data.quiz.map((data) => ({ kind: 'choice', data })),
+    ...lesson.data.exercises.map((data) => ({ kind: data.type, data })),
+  ];
+  return combined.map((item, i) => ({
+    id: `${lesson.id}#${item.kind}-${i}`,
+    kind: item.kind,
+    data: item.data,
+    box: 0,
+    due: '',
+    lang: lang ?? '',
+    level,
+  }));
+});
+---
+
+<BaseLayout
+  title={`Práctica libre de ${languageMeta?.name}`}
+  description={`Practica ${languageMeta?.name} con una sesión aleatoria de preguntas y ejercicios de todas tus lecciones, distinta cada vez.`}
+  path={`/idiomas/${lang}/practica-libre`}
+  noindex
+>
+  <section class="container free-head">
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="/idiomas">Idiomas</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <span aria-hidden="true">/</span>
+      <span>Práctica libre</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">🎲</span>
+    <h1>Práctica libre de {languageMeta?.name}</h1>
+    <p class="desc" data-free-desc>Armando una sesión aleatoria…</p>
+  </section>
+
+  <section class="container free-body">
+    <div class="card empty-state" data-empty-state hidden>
+      <p class="empty-emoji">🌱</p>
+      <h2>Todavía no hay ejercicios para practicar</h2>
+      <p>Completa alguna lección primero y vuelve por aquí.</p>
+      <a class="btn btn-primary" href={`/idiomas/${lang}`}>Ver lecciones</a>
+    </div>
+
+    <Practice
+      quiz={[]}
+      exercises={[]}
+      dynamic={true}
+      sessionType="practice-libre"
+      lessonId="practice-libre"
+      minutes={5}
+      lang={languageMeta?.bcp47}
+    />
+  </section>
+</BaseLayout>
+
+<script define:vars={{ pool }}>
+  window.POOL_ITEMS = pool;
+</script>
+<script>
+  import { buildItemFieldset, type SrsEntry } from '../../../lib/practiceItemMarkup';
+
+  const SESSION_SIZE = 12;
+
+  function shuffle<T>(arr: T[]): T[] {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function initFreePractice() {
+    const practiceRoot = document.querySelector<HTMLElement>('[data-practice]');
+    const container = document.querySelector<HTMLElement>('[data-items-container]');
+    const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
+    const desc = document.querySelector<HTMLElement>('[data-free-desc]');
+    if (!practiceRoot || !container) return;
+    if (practiceRoot.dataset.freeBuilt) return;
+    practiceRoot.dataset.freeBuilt = 'true';
+
+    const pool = (window as unknown as { POOL_ITEMS?: SrsEntry[] }).POOL_ITEMS ?? [];
+    const session = shuffle(pool).slice(0, SESSION_SIZE);
+
+    if (session.length === 0) {
+      if (emptyState) emptyState.hidden = false;
+      practiceRoot.hidden = true;
+      if (desc) desc.hidden = true;
+      return;
+    }
+
+    if (desc) {
+      desc.textContent = `Una sesión aleatoria de ${session.length} ítems, distinta cada vez que visitas esta página.`;
+    }
+
+    session.forEach((entry, i) => {
+      container.appendChild(buildItemFieldset(entry, i));
+    });
+
+    const progressEl = practiceRoot.querySelector<HTMLElement>('[data-practice-progress]');
+    if (progressEl) progressEl.textContent = `1 / ${session.length}`;
+    const scoreText = practiceRoot.querySelector<HTMLElement>('[data-score-text]');
+    if (scoreText) scoreText.textContent = `Acertaste 0 / ${session.length}`;
+    practiceRoot.dataset.lessonMinutes = String(Math.max(1, Math.round(session.length * 0.5)));
+
+    document.dispatchEvent(new Event('astro:page-load'));
+  }
+
+  initFreePractice();
+  document.addEventListener('astro:page-load', initFreePractice);
+</script>
+
+<style>
+  .free-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: var(--text-muted);
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--accent-text);
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .free-body {
+    max-width: 680px;
+    padding-block: 0 4rem;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .empty-emoji {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .empty-state .btn {
+    margin-top: 1.25rem;
+  }
+</style>

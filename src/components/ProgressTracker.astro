@@ -21,6 +21,7 @@
   const EXAM_PASS_THRESHOLD = 0.7;
   const INTERVAL_DAYS = [1, 3, 7, 16];
   const COMBO_THRESHOLD = 5;
+  const PRACTICE_LIBRE_GOAL = 5;
 
   function today(): string {
     const d = new Date();
@@ -137,6 +138,14 @@
       if (sessionType === 'exam' && lessonId && total > 0 && score / total >= EXAM_PASS_THRESHOLD) {
         if (writeIfNew(`polylingua-level-passed-${lessonId.replace('/', '-')}`, 'true')) {
           dispatchAchievement('level-passed');
+        }
+      }
+
+      if (sessionType === 'practice-libre') {
+        const count = Number(read('polylingua-practice-libre-count') ?? '0') + 1;
+        write('polylingua-practice-libre-count', String(count));
+        if (count >= PRACTICE_LIBRE_GOAL && writeIfNew('polylingua-achievement-practice-libre', 'true')) {
+          dispatchAchievement('practice-libre');
         }
       }
 

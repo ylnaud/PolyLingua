@@ -65,6 +65,14 @@ export function playIncorrect(): void {
   tone(180, 0.1, 0.22, 'triangle', 0.12);
 }
 
+export function playCombo(streak: number): void {
+  if (isMuted()) return;
+  const level = Math.min(streak - 2, 6);
+  const freq = 660 * Math.pow(2, level / 12);
+  tone(freq, 0, 0.1, 'triangle', 0.1);
+  tone(freq * 1.5, 0.05, 0.12, 'sine', 0.1);
+}
+
 export function playAchievement(): void {
   if (isMuted()) return;
   [523, 659, 784, 1046].forEach((f, i) => tone(f, i * 0.1, 0.18, 'sine', 0.13));

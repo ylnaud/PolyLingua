@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import ProgressTracker from '../components/ProgressTracker.astro';
 import SoundEffects from '../components/SoundEffects.astro';
 import CookieNotice from '../components/CookieNotice.astro';
+import ScrollTopButton from '../components/ScrollTopButton.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -89,6 +90,7 @@ const ogImage = new URL('/og-image.svg', Astro.site);
     <ProgressTracker />
     <SoundEffects />
     <CookieNotice />
+    <ScrollTopButton />
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

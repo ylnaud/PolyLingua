@@ -965,30 +965,31 @@ function splitSentence(sentence: string): { before: string; after: string } {
         if (kind === 'match') {
           const board = item.querySelector<HTMLElement>('[data-match-board]');
           const matchItems = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-match-item]'));
-          let selectedLeft: HTMLButtonElement | null = null;
+          // Sin lado fijo: el primer toque puede ser de cualquier columna
+          // (en mobile el tablero se apila en una sola columna, así que
+          // exigir que el primer toque sea siempre el izquierdo rompía el
+          // juego para quien empieza a tocar de abajo hacia arriba).
+          let selected: HTMLButtonElement | null = null;
           let mistakes = 0;
           let remaining = Number(board?.dataset.remaining ?? matchItems.length / 2);
 
           matchItems.forEach((btn) => {
             btn.addEventListener('click', () => {
-              if (btn.disabled) return;
-              if (btn.dataset.side === 'left') {
-                matchItems
-                  .filter((b) => b.dataset.side === 'left')
-                  .forEach((b) => b.classList.remove('selected'));
-                selectedLeft = btn;
+              if (btn.disabled || btn === selected) return;
+              if (!selected || selected.dataset.side === btn.dataset.side) {
+                selected?.classList.remove('selected');
+                selected = btn;
                 btn.classList.add('selected');
                 return;
               }
-              if (!selectedLeft) return;
-              const isMatch = selectedLeft.dataset.pair === btn.dataset.pair;
+              const isMatch = selected.dataset.pair === btn.dataset.pair;
               if (isMatch) {
-                selectedLeft.disabled = true;
+                selected.disabled = true;
                 btn.disabled = true;
-                selectedLeft.classList.remove('selected');
-                selectedLeft.classList.add('correct');
+                selected.classList.remove('selected');
+                selected.classList.add('correct');
                 btn.classList.add('correct');
-                selectedLeft = null;
+                selected = null;
                 remaining -= 1;
                 if (remaining <= 0 && !item.dataset.answered) {
                   item.dataset.answered = 'true';
@@ -998,11 +999,11 @@ function splitSentence(sentence: string): { before: string; after: string } {
                 mistakes += 1;
                 playIncorrect();
                 btn.classList.add('incorrect');
-                selectedLeft.classList.add('incorrect');
+                selected.classList.add('incorrect');
                 window.setTimeout(() => {
                   btn.classList.remove('incorrect');
-                  selectedLeft?.classList.remove('incorrect', 'selected');
-                  selectedLeft = null;
+                  selected?.classList.remove('incorrect', 'selected');
+                  selected = null;
                 }, 500);
               }
             });

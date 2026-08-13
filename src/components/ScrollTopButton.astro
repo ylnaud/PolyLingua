@@ -1,0 +1,90 @@
+---
+---
+<button
+  type="button"
+  class="scroll-top-btn"
+  id="scroll-top-btn"
+  aria-label="Volver arriba"
+>
+  <span aria-hidden="true">↑</span>
+</button>
+
+<style>
+  .scroll-top-btn {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 40;
+    width: 46px;
+    height: 46px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: var(--shadow-card-hover);
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .scroll-top-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .scroll-top-btn:hover {
+    border-color: var(--accent);
+  }
+
+  @media (max-width: 480px) {
+    .scroll-top-btn {
+      right: 1rem;
+      bottom: 1rem;
+    }
+  }
+</style>
+
+<script>
+  const SHOW_AFTER_PX = 400;
+
+  // Listener de scroll a nivel de módulo: vive en window, que persiste
+  // entre navegaciones SPA (Astro <ClientRouter />) — igual criterio que
+  // SoundEffects.astro. currentBtn se actualiza en cada initScrollTop()
+  // para que el listener único nunca quede apuntando a un botón que ya
+  // no existe tras un swap de <body> (mismo patrón que currentRefreshPill
+  // en DailyGoal.astro).
+  let scrollListenerAttached = false;
+  let currentBtn: HTMLElement | null = null;
+
+  function updateVisibility() {
+    currentBtn?.classList.toggle('visible', window.scrollY > SHOW_AFTER_PX);
+  }
+
+  function initScrollTop() {
+    const btn = document.getElementById('scroll-top-btn');
+    if (!btn) return;
+    currentBtn = btn;
+    updateVisibility();
+
+    if (!btn.dataset.initialized) {
+      btn.dataset.initialized = 'true';
+      btn.addEventListener('click', () => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      });
+    }
+
+    if (!scrollListenerAttached) {
+      scrollListenerAttached = true;
+      window.addEventListener('scroll', updateVisibility, { passive: true });
+    }
+  }
+
+  initScrollTop();
+  document.addEventListener('astro:page-load', initScrollTop);
+</script>

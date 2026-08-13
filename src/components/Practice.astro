@@ -91,14 +91,6 @@ function splitSentence(sentence: string): { before: string; after: string } {
   return { before: sentence.slice(0, idx), after: sentence.slice(idx + 3) };
 }
 
-function shuffledIndices(n: number): number[] {
-  const arr = Array.from({ length: n }, (_, i) => i);
-  for (let i = arr.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(((i + 1) * 9301 + 49297) % 233280 / 233280 * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
 ---
 
 {(items.length > 0 || dynamic) && (
@@ -245,7 +237,7 @@ function shuffledIndices(n: number): number[] {
                 ))}
               </div>
               <div class="match-col" data-match-col="right">
-                {shuffledIndices(item.data.pairs.length).map((pi) => (
+                {item.data.pairs.map((_, pi) => (
                   <button
                     type="button"
                     class="match-item"
@@ -272,7 +264,7 @@ function shuffledIndices(n: number): number[] {
               aria-label="Frase que estás construyendo"
             ></div>
             <div class="order-bank" data-order-bank>
-              {shuffledIndices(item.data.sentence.split(' ').length).map((wi) => (
+              {item.data.sentence.split(' ').map((_, wi) => (
                 <button type="button" class="word-chip" data-word-chip data-word-index={wi}>
                   {item.data.sentence.split(' ')[wi]}
                 </button>
@@ -725,6 +717,15 @@ function shuffledIndices(n: number): number[] {
 
 <script>
   import { playCorrect, playIncorrect, playCombo, speak, isMuted } from '../lib/sound';
+  import { shuffle } from '../lib/shuffle';
+
+  function shuffleChildren(container: Element | null) {
+    if (!container) return;
+    const shuffled = shuffle(Array.from(container.children));
+    const frag = document.createDocumentFragment();
+    shuffled.forEach((el) => frag.appendChild(el));
+    container.appendChild(frag);
+  }
 
   function normalize(value: string): string {
     return value
@@ -843,6 +844,15 @@ function shuffledIndices(n: number): number[] {
         const explanation = item.querySelector<HTMLElement>('[data-explanation]');
         const nextBtn = item.querySelector<HTMLButtonElement>('[data-next]');
         const revealSpeak = item.querySelector<HTMLButtonElement>('[data-reveal-speak]');
+
+        // El markup (estático o inyectado por practiceItemMarkup.ts) llega en
+        // orden canónico; el reshuffle real pasa acá, una sola vez por ítem al
+        // iniciar, para que también se re-mezcle en cada visita en vez de
+        // quedar fijo en el HTML del build. El matching/chequeo de "emparejar"
+        // y "ordenar" usa data-pair/data-word-index, no la posición en el DOM,
+        // así que reordenar acá es seguro.
+        if (kind === 'match') shuffleChildren(item.querySelector('[data-match-col="right"]'));
+        if (kind === 'order') shuffleChildren(item.querySelector('[data-order-bank]'));
 
         function reveal(correct: boolean) {
           if (feedback) feedback.textContent = correct ? '✅ ¡Correcto!' : '❌ No del todo.';

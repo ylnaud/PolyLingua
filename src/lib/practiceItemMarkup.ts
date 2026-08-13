@@ -30,15 +30,6 @@ const KIND_LABELS: Record<string, string> = {
   order: '🧩 Ordena la frase',
 };
 
-function shuffle<T>(arr: T[]): T[] {
-  const copy = [...arr];
-  for (let i = copy.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
-}
-
 function el<K extends keyof HTMLElementTagNameMap>(
   tag: K,
   attrs: Record<string, string> = {},
@@ -156,8 +147,11 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
       row.append(btn, speakBtn);
       leftCol.appendChild(row);
     });
+    // Orden canónico: initPractice() en Practice.astro reordena estos
+    // botones al azar cuando arma el ítem (mismo punto que usan las
+    // lecciones estáticas), así el reshuffle es uno solo para toda la app.
     const rightCol = el('div', { class: 'match-col', 'data-match-col': 'right' });
-    shuffle(pairs.map((_, pi) => pi)).forEach((pi) => {
+    pairs.forEach((_, pi) => {
       rightCol.appendChild(
         el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'right', 'data-pair': String(pi) }, pairs[pi].right)
       );
@@ -179,7 +173,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
     );
     const words = (data.sentence as string).split(' ');
     const bank = el('div', { class: 'order-bank', 'data-order-bank': '' });
-    shuffle(words.map((_, wi) => wi)).forEach((wi) => {
+    words.forEach((_, wi) => {
       bank.appendChild(
         el('button', { type: 'button', class: 'word-chip', 'data-word-chip': '', 'data-word-index': String(wi) }, words[wi])
       );

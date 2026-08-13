@@ -1,6 +1,8 @@
 ---
 ---
 <script>
+  import { today, addDays, read, write } from '../lib/storage';
+
   interface ResultItem {
     id: string;
     kind: string;
@@ -22,34 +24,6 @@
   const INTERVAL_DAYS = [1, 3, 7, 16];
   const COMBO_THRESHOLD = 5;
   const PRACTICE_LIBRE_GOAL = 5;
-
-  function today(): string {
-    const d = new Date();
-    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-  }
-
-  function addDays(dateStr: string, days: number): string {
-    const [y, m, d] = dateStr.split('-').map(Number);
-    const date = new Date(y, m - 1, d);
-    date.setDate(date.getDate() + days);
-    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-  }
-
-  function read(key: string): string | null {
-    try {
-      return localStorage.getItem(key);
-    } catch {
-      return null;
-    }
-  }
-
-  function write(key: string, value: string) {
-    try {
-      localStorage.setItem(key, value);
-    } catch {
-      /* localStorage unavailable */
-    }
-  }
 
   function readPool(): Record<string, SrsEntry> {
     try {

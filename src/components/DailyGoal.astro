@@ -102,35 +102,9 @@
 </style>
 
 <script>
+  import { today, yesterday, read, write } from '../lib/storage';
+
   type Progress = { minutes: number; lessons: number };
-
-  function today(): string {
-    const d = new Date();
-    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-  }
-
-  function yesterday(dateStr: string): string {
-    const [y, m, d] = dateStr.split('-').map(Number);
-    const date = new Date(y, m - 1, d);
-    date.setDate(date.getDate() - 1);
-    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
-  }
-
-  function read(key: string): string | null {
-    try {
-      return localStorage.getItem(key);
-    } catch {
-      return null;
-    }
-  }
-
-  function write(key: string, value: string) {
-    try {
-      localStorage.setItem(key, value);
-    } catch {
-      /* localStorage unavailable */
-    }
-  }
 
   function getProgress(): Progress {
     const date = read('polylingua-progress-date');

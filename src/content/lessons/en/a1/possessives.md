@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: "Possessives: de quién es qué"
-description: "El apóstrofe 's' y los adjetivos posesivos (my, your, his...) para hablar de pertenencia."
+description: "El apóstrofe 's' y los adjetivos posesivos (my, your, his) en inglés para decir de quién es cada cosa, con el orden invertido respecto al español."
 order: 5
 grammarTopic: "Posesivos ('s y adjetivos posesivos)"
 funFact: "El apóstrofe 's' del inglés no tiene equivalente directo en español: 'Maria's book' literalmente pone el dueño ANTES de la cosa poseída, al revés que 'el libro de María'. Acostúmbrate a este orden invertido desde el principio, es uno de los primeros 'giros mentales' del inglés."

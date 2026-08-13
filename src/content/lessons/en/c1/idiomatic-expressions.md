@@ -2,7 +2,7 @@
 language: en
 level: c1
 title: "Idiomatic Expressions: piensa fuera de la caja (literalmente)"
-description: "Break the ice, once in a blue moon, cost an arm and a leg: las expresiones idiomáticas que dominan el inglés hablado real."
+description: "Expresiones idiomáticas del inglés como 'break the ice' o 'cost an arm and a leg' que dominan el inglés hablado real y rara vez enseña un libro."
 order: 7
 grammarTopic: "Expresiones idiomáticas comunes"
 funFact: "'Cost an arm and a leg' no tiene nada que ver con extremidades — significa 'costar muchísimo dinero'. Como toda expresión idiomática, no se puede traducir palabra por palabra: se aprende como una imagen mental completa, congelada en el tiempo por el uso repetido."

@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: "El verbo 'to be': la navaja suiza del inglés"
-description: "Un solo verbo que reemplaza a 'ser' y 'estar' en español. Domínalo y ya puedes presentarte, describir y preguntar."
+description: "El verbo 'to be' en inglés (am/is/are), que reemplaza a los verbos 'ser' y 'estar' del español, para presentarte, describir cosas y hacer preguntas."
 order: 1
 grammarTopic: "Verbo 'to be' (am/is/are)"
 funFact: "En español divides 'ser' y 'estar' en dos verbos distintos. En inglés es solo UNO: 'to be'. Imagina que es una navaja suiza — sirve para todo: identidad, estado, edad, ubicación. Una sola herramienta, mil usos."

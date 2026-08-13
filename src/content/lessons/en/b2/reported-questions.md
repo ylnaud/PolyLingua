@@ -2,7 +2,7 @@
 language: en
 level: b2
 title: "Reported Questions: reporta preguntas sin signo de interrogación"
-description: "Cómo convertir '¿Dónde vives?' en 'Me preguntó dónde vivía', con el orden normal de la frase (no de pregunta)."
+description: "Cómo reportar preguntas en inglés sin signo de interrogación, convirtiendo '¿Dónde vives?' en 'Me preguntó dónde vivía', con el orden correcto."
 order: 4
 grammarTopic: "Preguntas indirectas/reportadas"
 funFact: "El error más común al reportar preguntas es mantener el orden de pregunta original: 'She asked where did I live' es incorrecto — una vez que reportas una pregunta, se convierte en una afirmación normal (sujeto + verbo), sin el auxiliar 'did/do/does' invertido y sin signo de interrogación."

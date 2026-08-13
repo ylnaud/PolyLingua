@@ -2,7 +2,7 @@
 language: en
 level: c1
 title: "Reported Speech: cuenta lo que otros dijeron sin comillas"
-description: "El famoso 'backshift' de tiempos verbales que confunde a todo estudiante, explicado como una regla mecánica de un solo paso."
+description: "El backshift del Reported Speech en inglés, el cambio de tiempos verbales al contar lo que otros dijeron, explicado como una regla mecánica simple."
 order: 1
 grammarTopic: "Reported Speech (discurso indirecto)"
 funFact: "Imagina que cada vez que reportas lo que alguien dijo, el tiempo verbal 'retrocede un casillero' en una línea de tiempo: presente → pasado, pasado → pasado perfecto, will → would. Es un juego de mesa donde todas las fichas se mueven una casilla hacia atrás al mismo tiempo. Ese movimiento se llama 'backshift'."

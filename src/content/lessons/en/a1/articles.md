@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: "A, An, The: los artículos que el español no tiene igual"
-description: "Cuándo usar 'a', cuándo 'an', y cuándo simplemente 'the' — con una regla de sonido, no de ortografía."
+description: "Cuándo usar 'a', 'an' o 'the' en inglés según el sonido de la palabra y no su ortografía, con ejemplos claros para hablar sin dudar cada vez."
 order: 3
 grammarTopic: "Artículos (a/an/the)"
 funFact: "La elección entre 'a' y 'an' depende del SONIDO, no de la letra: 'an hour' (una hora) usa 'an' porque 'hour' suena como empieza con vocal (la 'h' es muda), aunque la palabra empiece con consonante escrita. Escucha, no mires la ortografía."

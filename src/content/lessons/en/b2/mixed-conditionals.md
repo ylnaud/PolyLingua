@@ -2,7 +2,7 @@
 language: en
 level: b2
 title: "Mixed Conditionals: cuando el pasado afecta al presente"
-description: "Combina el Second y Third Conditional para hablar de cómo una decisión pasada sigue afectando tu presente."
+description: "Condicionales mixtos en inglés que combinan Second y Third Conditional para hablar de cómo una decisión pasada sigue afectando tu presente hoy."
 order: 7
 grammarTopic: "Condicionales mixtos"
 funFact: "Los condicionales mixtos existen porque la vida real no siempre separa limpiamente pasado y presente: 'If I had studied medicine, I would be a doctor now' mezcla una condición del PASADO (no estudié medicina) con un resultado en el PRESENTE (no soy doctor ahora). Es el condicional más realista de todos, porque así es como realmente pensamos."

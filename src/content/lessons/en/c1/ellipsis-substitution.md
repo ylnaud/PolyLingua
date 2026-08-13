@@ -2,7 +2,7 @@
 language: en
 level: c1
 title: "Ellipsis and Substitution: di más diciendo menos"
-description: "Cómo evitar repetir palabras usando 'so', 'do', 'one' y omisiones inteligentes, el sello de un inglés fluido y económico."
+description: "Elipsis y sustitución en inglés con 'so', 'do' y 'one' para evitar repetir palabras, el sello de un inglés fluido, natural y económico al hablar."
 order: 4
 grammarTopic: "Elipsis y sustitución (so/neither, do so, one/ones)"
 funFact: "Repetir la misma información palabra por palabra ('I think it will rain, and my brother thinks it will rain too') suena robótico en inglés fluido. Los hablantes nativos comprimen constantemente con atajos como 'so' ('I think so'), 'neither' ('Neither do I'), o simplemente omitiendo lo que ya se entiende por contexto."

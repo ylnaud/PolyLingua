@@ -2,7 +2,7 @@
 language: en
 level: c1
 title: "Academic Linking Words: escribe como un ensayo universitario"
-description: "El vocabulario de conexión que espera un texto académico serio: más preciso y variado que 'and', 'but' o 'so'."
+description: "Conectores académicos avanzados de inglés, más precisos y variados que 'and', 'but' o 'so', para escribir un texto universitario serio y fluido."
 order: 6
 grammarTopic: "Conectores académicos avanzados"
 funFact: "Un texto académico en inglés evita repetir el mismo conector una y otra vez — usar 'furthermore', 'consequently' y 'notwithstanding' en el lugar correcto demuestra un dominio del registro formal que ningún corrector automático puede enseñarte por sí solo."

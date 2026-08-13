@@ -2,7 +2,7 @@
 language: en
 level: b2
 title: "Passive Voice: cuando el 'quién' deja de importar"
-description: "La fórmula 'be + participio' aplicada a cualquier tiempo verbal, para sonar natural en noticias, informes y procesos."
+description: "La voz pasiva en inglés (be + participio) aplicada a cualquier tiempo verbal, clave para sonar natural en noticias, informes y procesos técnicos."
 order: 2
 grammarTopic: "Passive Voice (be + past participle)"
 funFact: "El inglés adora la voz pasiva mucho más que el español en contextos formales: noticias, informes científicos y textos de negocios están llenos de ella. Dominarla no es solo gramática — es sonar profesional en inglés escrito."

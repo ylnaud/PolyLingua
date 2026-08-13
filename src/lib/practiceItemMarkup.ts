@@ -83,8 +83,9 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
       fieldset.appendChild(p);
       if (data.translation) fieldset.appendChild(el('p', { class: 'prompt-translation' }, data.translation));
     } else {
+      const speechAvailable = typeof window !== 'undefined' && 'speechSynthesis' in window;
       fieldset.appendChild(
-        el('legend', { tabindex: '-1' }, data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : data.prompt)
+        el('legend', { tabindex: '-1' }, data.spokenOnly && speechAvailable ? '🔊 Escucha y escribe lo que oís' : data.prompt)
       );
       if (data.spokenOnly) {
         fieldset.appendChild(

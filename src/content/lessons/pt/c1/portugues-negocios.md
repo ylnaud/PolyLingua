@@ -2,7 +2,7 @@
 language: pt
 level: c1
 title: "Português dos negócios: comunícate en el mundo corporativo"
-description: "El registro de negocios del portugués — correos, reuniones y negociaciones en el mundo profesional lusófono."
+description: "El registro de negocios del portugués: vocabulario para correos, reuniones y negociaciones en el mundo profesional lusófono moderno."
 order: 8
 grammarTopic: "Português dos negócios"
 funFact: "El entorno corporativo brasileño mezcla con naturalidad un registro formal en portugués con anglicismos importados directamente del inglés de negocios ('fazer um follow-up', 'ter um feedback', 'agendar uma call') — una jerga híbrida muy característica del mundo empresarial brasileño moderno, especialmente en startups y tecnología."

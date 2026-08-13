@@ -2,7 +2,7 @@
 language: pt
 level: b1
 title: "Porque, embora, quando: conecta tus ideas"
-description: "Las conjunciones que te permiten explicar y contrastar — con una alerta: 'embora' activa el subjuntivo."
+description: "Las conjunciones portuguesas que permiten explicar y contrastar ideas, con la alerta clave: 'embora' siempre activa el subjuntivo."
 order: 1
 grammarTopic: "Orações subordinadas (porque, embora, quando) + introducción al subjuntivo"
 funFact: "Trata 'embora' como una alarma: en cuanto la veas o la uses, tu cerebro debe avisar 'subjuntivo obligatorio'. Es el mismo reflejo que ya conoces del español con 'aunque + subjuntivo' cuando hay incertidumbre — la lógica es prácticamente idéntica entre los dos idiomas."

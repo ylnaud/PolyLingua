@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: "Que horas são? Domina la hora en portugués"
-description: "Cómo preguntar y decir la hora en portugués, con las estructuras que se usan de verdad en Brasil y Portugal."
+description: "Cómo preguntar y decir la hora correctamente en portugués con 'ser', incluyendo la excepción de 'é uma hora' frente al plural 'são duas horas'."
 order: 4
 grammarTopic: "As horas"
 funFact: "En portugués, para decir la hora se usa el verbo 'ser' en plural ('São duas horas') excepto para la una, donde va en singular ('É uma hora') — un pequeño detalle de concordancia que refleja si hablas de una hora o de varias."

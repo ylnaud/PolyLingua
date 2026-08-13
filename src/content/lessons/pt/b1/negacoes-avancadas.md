@@ -2,7 +2,7 @@
 language: pt
 level: b1
 title: "Nem, tampouco, nem sequer: negaciones más allá de 'não'"
-description: "Estructuras de negación más avanzadas y matizadas del portugués, útiles para expresarte con más precisión."
+description: "Estructuras de negación avanzadas del portugués (nem, tampouco, nem sequer) para expresarte con más precisión y matiz que con 'não'."
 order: 8
 grammarTopic: "Estruturas de negação avançadas"
 funFact: "'Nem' puede funcionar solo ('Nem eu sei' = Ni yo sé) o duplicado ('Nem como nem bebo' = Ni como ni bebo) — y en portugués coloquial brasileño, 'nem' también se usa como respuesta enfática corta a una pregunta negativa, muy parecido a un 'para nada' o 'qué va' del español."

@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: "Meu, teu, seu: los posesivos portugueses"
-description: "Cómo indicar posesión en portugués — con el uso del artículo antes del posesivo, algo que no existe en español."
+description: "Los posesivos portugueses (meu, teu, seu) y el uso del artículo antes del posesivo en Portugal, una estructura que no existe en español."
 order: 7
 grammarTopic: "Pronomes possessivos"
 funFact: "En Portugal (y a menudo en portugués formal escrito) se usa el artículo antes del posesivo: 'o meu carro' (literalmente 'el mi coche'), una estructura que no existe en español pero sí en italiano ('la mia macchina') — un puente útil si ya conoces algo de italiano."

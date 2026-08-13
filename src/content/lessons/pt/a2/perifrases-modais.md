@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: "Poder, dever, querer: pide, permite y opina"
-description: "Los tres verbos que te dan superpoderes conversacionales — con conjugaciones muy cercanas al español."
+description: "Los verbos modales poder, dever y querer en portugués, con conjugaciones cercanas al español y los matices que distinguen su uso real."
 order: 2
 grammarTopic: "Verbos modais (poder, dever, querer) + infinitivo"
 funFact: "Estos tres verbos comparten estructura idéntica: [verbo conjugado] + [infinitivo, sin cambios] — igual que en español. La diferencia real está en los matices: 'dever' se usa mucho más que 'ter que' para dar consejos suaves, mientras 'ter que' suena a obligación más innegociable. Ese matiz es tu próximo nivel de naturalidad."

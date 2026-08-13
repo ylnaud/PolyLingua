@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: "É preciso, é preciso que: expresar necesidad y obligación impersonal"
-description: "Las estructuras impersonales del portugués para hablar de reglas, necesidades y obligaciones generales."
+description: "Las estructuras impersonales 'é preciso' y 'é necessário' del portugués para expresar reglas, necesidades y obligaciones generales."
 order: 5
 grammarTopic: "Expressões impessoais (é preciso, é necessário)"
 funFact: "'É preciso' puede ir seguido directamente de infinitivo ('É preciso estudar') o de 'que' + subjuntivo ('É preciso que você estude') — la primera es más general/impersonal, la segunda personaliza a quién le toca hacer la acción, un matiz sutil que en español funciona de forma muy parecida."

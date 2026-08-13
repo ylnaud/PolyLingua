@@ -2,7 +2,7 @@
 language: pt
 level: b2
 title: "Porque, já que, portanto: conectores de causa y consecuencia"
-description: "Cómo conectar causas y consecuencias en portugués con precisión, más allá del básico 'porque'."
+description: "Cómo conectar causas y consecuencias en portugués con precisión, más allá del básico 'porque', usando já que, portanto y visto que."
 order: 5
 grammarTopic: "Conectores de causa e consequência"
 funFact: "'Já que' y 'visto que' introducen una causa que el oyente ya conoce o da por sentada (similar a 'puisque' en francés o 'ya que' en español), a diferencia de 'porque', que introduce información nueva — una distinción sutil que separa a un hablante intermedio de uno avanzado."

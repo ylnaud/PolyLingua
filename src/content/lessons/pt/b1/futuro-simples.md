@@ -2,7 +2,7 @@
 language: pt
 level: b1
 title: "Falarei, comerei: el futuro simple morfológico"
-description: "La forma de futuro más formal del portugués — cuándo usarla en vez del futuro próximo con 'ir'."
+description: "El futuro simple morfológico del portugués: cuándo usarlo en vez del futuro próximo con 'ir', y su registro más formal y literario."
 order: 3
 grammarTopic: "Futuro do presente (futuro simples)"
 funFact: "El futuro simple portugués comparte una característica única entre las lenguas romances: acepta la mesóclise, es decir, insertar el pronombre EN MEDIO del verbo ('dar-lhe-ei' = le daré), una estructura que suena hoy muy arcaica pero que todavía se enseña como correcta en la norma culta escrita más formal."

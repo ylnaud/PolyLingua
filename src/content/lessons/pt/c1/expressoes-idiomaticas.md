@@ -2,7 +2,7 @@
 language: pt
 level: c1
 title: "Pagar o pato, engolir sapo: expresiones idiomáticas esenciales"
-description: "Expresiones que todo hablante nativo de portugués usa constantemente — y que no puedes traducir literalmente."
+description: "Expresiones idiomáticas que todo hablante nativo de portugués usa constantemente, imposibles de traducir de forma literal al español."
 order: 6
 grammarTopic: "Expressões idiomáticas"
 funFact: "'Pagar o pato' (literalmente 'pagar el pato') significa cargar con la culpa o consecuencia de algo que no hiciste — una expresión cuyo origen exacto se debate, pero que es tan común en Brasil que aparece constantemente en noticias, conversación cotidiana y hasta titulares de periódico."

@@ -2,7 +2,7 @@
 language: pt
 level: c2
 title: "Variantes regionais: un idioma, muchos mundos"
-description: "Cómo el portugués cambia entre Brasil, Portugal y África lusófona — vocabulario, pronunciación y hasta gramática."
+description: "Cómo cambia el portugués entre Brasil, Portugal y el África lusófona: vocabulario, pronunciación y hasta pequeñas diferencias gramaticales."
 order: 5
 grammarTopic: "Variedades regionais do português (PT-BR, PT-PT, África lusófona)"
 funFact: "El portugués es la lengua oficial de nueve países en cuatro continentes — Brasil, Portugal, Angola, Mozambique, Cabo Verde, Guinea-Bissau, Santo Tomé y Príncipe, Guinea Ecuatorial y Timor Oriental — lo que lo convierte en una de las lenguas con mayor diversidad geográfica y cultural del mundo, con acentos y vocabularios notablemente distintos entre regiones."

@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: "Antes o después: la posición de los adjetivos en portugués"
-description: "Cómo la posición del adjetivo cambia el matiz — y a veces el significado — en portugués."
+description: "Cómo la posición del adjetivo antes o después del sustantivo cambia el matiz, y a veces el significado completo, en portugués europeo y brasileño."
 order: 8
 grammarTopic: "Posição dos adjetivos"
 funFact: "'Um grande homem' (un gran hombre, en el sentido de importante/admirable) y 'um homem grande' (un hombre grande, de tamaño físico) tienen significados claramente distintos según dónde coloques el adjetivo — exactamente el mismo fenómeno que ocurre en español con 'un gran hombre' vs. 'un hombre grande'."

@@ -2,7 +2,7 @@
 language: pt
 level: b1
 title: "Próclise, ênclise, mesóclise: dónde va el pronombre"
-description: "La regla que más distingue al portugués de otros idiomas romances: dónde colocar el pronombre respecto al verbo."
+description: "Próclise, ênclise y mesóclise: la regla que más distingue al portugués de otras lenguas romances, dónde colocar el pronombre respecto al verbo."
 order: 4
 grammarTopic: "Colocação pronominal (próclise, ênclise, mesóclise)"
 funFact: "La colocación pronominal es, según muchos profesores, la diferencia estructural más marcada entre el portugués de Brasil (que prefiere fuertemente la próclise: 'te amo') y el de Portugal (que en frases afirmativas simples prefiere la ênclise: 'amo-te') — la misma frase se escribe de forma distinta y suena inmediatamente reconocible según el país."

@@ -90,8 +90,12 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
   const SESSION_SIZE = 12;
 
   function initFreePractice() {
-    const practiceRoot = document.querySelector<HTMLElement>('[data-practice]');
-    const container = document.querySelector<HTMLElement>('[data-items-container]');
+    // [data-practice] es el markup genérico que Practice.astro renderiza en
+    // toda página que lo use — acotarlo a esta sesión evita que este script
+    // (cuyo listener de astro:page-load queda activo el resto de la
+    // navegación SPA) toque el quiz de una lección o examen ajenos.
+    const practiceRoot = document.querySelector<HTMLElement>('[data-practice][data-session-type="practice-libre"]');
+    const container = practiceRoot?.querySelector<HTMLElement>('[data-items-container]');
     const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
     const desc = document.querySelector<HTMLElement>('[data-free-desc]');
     if (!practiceRoot || !container) return;

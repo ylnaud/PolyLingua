@@ -59,8 +59,13 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
   }
 
   function initReview() {
-    const practiceRoot = document.querySelector<HTMLElement>('[data-practice]');
-    const container = document.querySelector<HTMLElement>('[data-items-container]');
+    // [data-practice] es el markup genérico que Practice.astro renderiza en
+    // toda página que lo use (lección, examen, práctica libre) — acotarlo a
+    // esta sesión evita que este script, cuyo listener de astro:page-load
+    // queda activo para el resto de la navegación SPA, toque el quiz de una
+    // lección o examen visitados después de pasar por /repasar.
+    const practiceRoot = document.querySelector<HTMLElement>('[data-practice][data-session-type="review"]');
+    const container = practiceRoot?.querySelector<HTMLElement>('[data-items-container]');
     const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
     const desc = document.querySelector<HTMLElement>('[data-review-desc]');
     if (!practiceRoot || !container) return;

@@ -120,15 +120,25 @@ const structuredData = {
     el.addEventListener('click', (e) => e.preventDefault());
   }
 
-  document.querySelectorAll('[data-lesson-item]').forEach((el, i) => {
-    if (i === 0) return;
-    const prevSlug = slugs[i - 1];
-    if (!isLessonDone(prevSlug)) lockItem(el);
-  });
+  // Sin envolver en initX()+astro:page-load, esto solo corría una vez por
+  // carga completa — bajo navegación SPA (Astro <ClientRouter />) revisitar
+  // esta página no recalcularía qué lecciones/examen siguen bloqueados. Cada
+  // navegación trae nodos DOM frescos (sin la clase locked, que solo la
+  // agrega este script), así que reejecutarlo es seguro y no necesita guard.
+  function initLevelIndex() {
+    document.querySelectorAll('[data-lesson-item]').forEach((el, i) => {
+      if (i === 0) return;
+      const prevSlug = slugs[i - 1];
+      if (!isLessonDone(prevSlug)) lockItem(el);
+    });
 
-  const examItem = document.querySelector('[data-exam-item]');
-  const lastSlug = slugs[slugs.length - 1];
-  if (examItem && (!lastSlug || !isLessonDone(lastSlug))) lockItem(examItem);
+    const examItem = document.querySelector('[data-exam-item]');
+    const lastSlug = slugs[slugs.length - 1];
+    if (examItem && (!lastSlug || !isLessonDone(lastSlug))) lockItem(examItem);
+  }
+
+  initLevelIndex();
+  document.addEventListener('astro:page-load', initLevelIndex);
 </script>
 
 <style>

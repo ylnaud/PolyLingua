@@ -3,9 +3,12 @@
 <script>
   import { playAchievement } from '../lib/sound';
 
+  // Bandera de módulo: ver comentario equivalente en ProgressTracker.astro.
+  let soundEffectsStarted = false;
+
   function initSoundEffects() {
-    if (document.body.dataset.soundEffectsInitialized) return;
-    document.body.dataset.soundEffectsInitialized = 'true';
+    if (soundEffectsStarted) return;
+    soundEffectsStarted = true;
 
     document.addEventListener('polylingua-achievement', () => playAchievement());
   }

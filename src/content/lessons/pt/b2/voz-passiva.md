@@ -2,7 +2,7 @@
 language: pt
 level: b2
 title: "A voz passiva: cuando el foco cambia de lugar"
-description: "Transforma cualquier oración activa en pasiva con 'ser + particípio', tan mecánico como en español."
+description: "Cómo transformar una oración activa en pasiva en portugués con 'ser + particípio', un mecanismo casi calcado del que ya usas en español."
 order: 1
 grammarTopic: "Voz passiva (ser + particípio)"
 funFact: "La voz pasiva portuguesa es casi calcada de la española: 'la casa es construida' = 'a casa é construída'. Si ya la usas en español, la mayor parte del trabajo mental ya está hecho. Solo hay que recordar la concordancia del participio con el sujeto, igual que en español."

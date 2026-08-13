@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: "Vocabulário de comida: pide, cocina y disfruta en portugués"
-description: "Vocabulario esencial de comida en portugués, con las diferencias más útiles entre Brasil y Portugal."
+description: "Vocabulario esencial de comida en portugués para pedir, cocinar y disfrutar, con las diferencias léxicas más útiles entre Brasil y Portugal."
 order: 6
 grammarTopic: "Vocabulário de comida e restaurante"
 funFact: "'Bolacha' significa galleta en Portugal, pero en Brasil significa bofetada — pedir 'uma bolacha' en un café brasileño puede generar una mirada confusa. En Brasil, galleta se dice 'biscoito'. Este tipo de diferencias léxicas son de las más útiles de conocer al viajar."

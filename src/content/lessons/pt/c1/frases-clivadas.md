@@ -2,7 +2,7 @@
 language: pt
 level: c1
 title: "É que, foi aí que: las frases clivadas para dar énfasis"
-description: "La estructura 'é que' del portugués para resaltar exactamente la parte de la frase que más importa."
+description: "La estructura 'é que' de las frases clivadas en portugués, usada para resaltar exactamente la parte de la frase que más te importa decir."
 order: 4
 grammarTopic: "Frases clivadas (é que)"
 funFact: "La partícula 'é que' es tan omnipresente en el portugués hablado —tanto de Brasil como de Portugal— que aparece incluso en preguntas simples sin ninguna función de énfasis real ('Onde é que você mora?' en vez de simplemente 'Onde você mora?'), un tic conversacional que suena completamente natural a un nativo pero puede parecer redundante a un estudiante."

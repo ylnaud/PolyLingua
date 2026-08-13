@@ -2,7 +2,7 @@
 language: pt
 level: b2
 title: "Eu teria falado: el condicional compuesto"
-description: "Cómo expresar hipótesis sobre el pasado que ya no pueden cumplirse, con el condicional compuesto portugués."
+description: "El condicional compuesto portugués para expresar hipótesis sobre el pasado que ya no pueden cumplirse, en pareja con el subjuntivo."
 order: 3
 grammarTopic: "Futuro do pretérito composto (condicional composto)"
 funFact: "El condicional compuesto portugués aparece casi siempre junto al pluscuamperfecto do subjuntivo en frases condicionales irreales del pasado ('Se eu tivesse estudado, teria passado'), formando un par gramatical que funciona exactamente igual que en español ('si hubiera estudiado, habría aprobado') — una de las estructuras más simétricas entre ambos idiomas."

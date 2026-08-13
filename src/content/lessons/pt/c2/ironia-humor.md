@@ -2,7 +2,7 @@
 language: pt
 level: c2
 title: "Ironia e humor: cuando entiendes el chiste sin traducirlo"
-description: "Cómo funciona la ironía y el humor real en portugués — el terreno donde el tono importa más que las palabras."
+description: "Cómo funciona la ironía y el humor real en portugués, un terreno donde el tono y el contexto importan más que las palabras exactas."
 order: 3
 grammarTopic: "Ironia e humor"
 funFact: "El humor brasileño y el portugués (de Portugal) tienen tonos notablemente distintos: el humor brasileño tiende a ser más exagerado y físico ('humor pastelão'), mientras que el humor portugués suele apoyarse más en la ironía seca y el doble sentido sutil — dos tradiciones cómicas dentro del mismo idioma que pueden sonar completamente distintas entre sí."

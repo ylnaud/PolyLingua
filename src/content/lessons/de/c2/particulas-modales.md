@@ -2,7 +2,7 @@
 language: de
 level: c2
 title: "Ja, doch, mal, halt: las palabras invisibles que delatan a un no-nativo"
-description: "Las partículas modales no se traducen — se sienten. Aquí aprendes a usarlas con la intuición de un hablante nativo."
+description: "Partículas modales alemanas como ja, doch, mal y halt, las palabras invisibles que delatan a un no nativo porque cambian la actitud, no el significado."
 order: 1
 grammarTopic: "Partículas modales (Modalpartikeln)"
 funFact: "Las partículas modales son el 'tono de voz' escrito del alemán: la misma frase con 'doch' suena a sorpresa, con 'ja' suena obvia, con 'mal' suena casual. Ningún diccionario las traduce bien porque no cambian el significado literal — cambian la actitud."

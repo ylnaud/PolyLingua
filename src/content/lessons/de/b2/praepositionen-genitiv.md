@@ -2,7 +2,7 @@
 language: de
 level: b2
 title: "Präpositionen mit Genitiv: el toque formal en tus frases"
-description: "Während, trotz, wegen, aufgrund: las preposiciones que marcan un alemán escrito y cuidado."
+description: "Preposiciones con Genitiv en alemán como während, trotz, wegen y aufgrund, el registro formal que distingue un texto escrito y cuidado."
 order: 5
 grammarTopic: "Preposiciones que rigen Genitiv"
 funFact: "En el habla cotidiana, muchos alemanes usan estas preposiciones con Dativ en vez de Genitiv ('wegen dem Regen' en vez de 'wegen des Regens') — es un error tan común que casi se acepta coloquialmente. Pero en un texto formal o un examen, el Genitiv correcto es el que se espera."

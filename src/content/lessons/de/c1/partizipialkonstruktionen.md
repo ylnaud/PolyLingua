@@ -2,7 +2,7 @@
 language: de
 level: c1
 title: "Partizipialkonstruktionen: el estilo compacto del alemán formal"
-description: "Cómo los textos académicos y periodísticos comprimen frases enteras en una sola construcción elegante."
+description: "Partizipialkonstruktionen del alemán: cómo comprimir una oración de relativo entera en una sola construcción compacta, formal y elegante."
 order: 2
 grammarTopic: "Partizipialkonstruktionen (construcciones de participio)"
 funFact: "Piensa en las Partizipialkonstruktionen como una maleta de compresión al vacío para las oraciones: toman una frase relativa entera ('die Studie, die im Jahr 2020 veröffentlicht wurde') y la comprimen en una sola frase compacta antes del sustantivo ('die im Jahr 2020 veröffentlichte Studie'). Menos palabras, mismo significado, mucho más formal."

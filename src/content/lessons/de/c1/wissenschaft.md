@@ -2,7 +2,7 @@
 language: de
 level: c1
 title: "Wissenschaftssprache: vocabulario para leer y escribir textos académicos"
-description: "El vocabulario y las fórmulas fijas que aparecen en ensayos, estudios y artículos científicos en alemán."
+description: "Vocabulario académico y científico en alemán: las fórmulas fijas para citar, argumentar y concluir en ensayos y artículos de estudio."
 order: 8
 grammarTopic: "Vocabulario: lenguaje académico y científico"
 funFact: "El alemán académico tiene sus propias fórmulas fijas para citar, argumentar y concluir, muy parecidas a las del español académico pero con su propio vocabulario específico. Aprenderlas como bloques completos (no palabra por palabra) te ahorra tener que construir cada frase desde cero."

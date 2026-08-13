@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: "Die Uhrzeit: pregunta y di la hora sin trabarte"
-description: "Dos formas de decir la hora en alemán: la coloquial y la oficial (formato 24 horas), y cuándo usar cada una."
+description: "Cómo decir la hora en alemán con el sistema coloquial (halb drei) y el oficial de 24 horas, y en qué situación usar cada uno en la vida real."
 order: 7
 grammarTopic: "Decir la hora (formal e informal)"
 funFact: "Los alemanes son muy precisos con los horarios — no es casualidad que tengan DOS sistemas para decir la hora: uno relajado para hablar con amigos ('halb drei' = las dos y media) y uno oficial de 24 horas para trenes, citas y todo lo formal ('14:30 Uhr'). Aprende ambos, los vas a necesitar."

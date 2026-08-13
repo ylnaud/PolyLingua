@@ -2,7 +2,7 @@
 language: de
 level: c2
 title: "Sprichwörter: la sabiduría popular alemana en una frase"
-description: "Refranes que todo alemán reconoce al instante, y que revelan tanto sobre la cultura como sobre el idioma."
+description: "Sprichwörter alemanes, refranes como Der Apfel fällt nicht weit vom Stamm, que revelan tanto de la cultura germana como del idioma mismo."
 order: 4
 grammarTopic: "Sprichwörter (refranes y proverbios)"
 funFact: "Los refranes son cápsulas de cultura: 'Der Apfel fällt nicht weit vom Stamm' (la manzana no cae lejos del árbol) es prácticamente idéntico a 'de tal palo, tal astilla' en español — la sabiduría popular a veces cruza fronteras casi intacta, aunque la imagen concreta cambie."

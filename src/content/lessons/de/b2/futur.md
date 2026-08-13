@@ -2,7 +2,7 @@
 language: de
 level: b2
 title: "Futur I und II: hablar del futuro (y de lo que ya habrá pasado)"
-description: "Werden + Infinitiv para el futuro simple, y su versión compuesta para predecir algo que ya habrá terminado."
+description: "Futur I y Futur II en alemán con werden más infinitivo, usados sobre todo para suposiciones más que para el futuro puro cotidiano."
 order: 4
 grammarTopic: "Futur I y Futur II"
 funFact: "Los alemanes en realidad usan el PRESENTE para hablar del futuro cercano ('Ich fahre morgen nach Berlin' = mañana voy a Berlín), reservando el Futur I formal principalmente para SUPOSICIONES sobre el presente ('Er wird jetzt zu Hause sein' = probablemente está en casa ahora) más que para el futuro puro."

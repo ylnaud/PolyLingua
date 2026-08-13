@@ -2,7 +2,7 @@
 language: de
 level: c1
 title: "Modalverben in subjektiver Bedeutung: adivina como un detective"
-description: "Müssen, dürfte, kann nicht: los mismos modales que ya conoces, reutilizados para especular sobre certeza y probabilidad."
+description: "Modalverben en sentido subjetivo: cómo müssen, dürfte y kann nicht cambian de obligación a especulación para deducir como un detective."
 order: 3
 grammarTopic: "Verbos modales con significado especulativo (subjektive Modalverben)"
 funFact: "Es el mismo fenómeno que 'must have / might have / can't have' en inglés: los modales alemanes cambian de significado 'objetivo' (obligación, capacidad) a 'subjetivo' (certeza, probabilidad) según el contexto. 'Er muss zu Hause sein' ya no es 'él debe estar en casa' (obligación) sino 'seguramente está en casa' (deducción)."

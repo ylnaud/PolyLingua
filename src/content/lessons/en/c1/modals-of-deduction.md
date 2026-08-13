@@ -2,7 +2,7 @@
 language: en
 level: c1
 title: "Modals of Deduction: adivina en inglés como Sherlock Holmes"
-description: "Must have, might have, can't have: cómo expresar certeza, posibilidad e imposibilidad sobre el pasado con precisión quirúrgica."
+description: "Modals of deduction en inglés (must have, might have, can't have) para expresar certeza, posibilidad o imposibilidad sobre hechos del pasado."
 order: 2
 grammarTopic: "Modals of deduction (must/might/could/can't + have + participle)"
 funFact: "Estos modales son la versión gramatical de un detective razonando: 'must have' es 'estoy 95% seguro', 'might/could have' es 'es posible, no estoy seguro', y 'can't have' es 'es imposible, lo descarto por completo'. Cada uno marca un nivel distinto de certeza sobre algo que ya pasó."

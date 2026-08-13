@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: "Plural Nouns: casi siempre añades -s, excepto cuando no"
-description: "La regla regular del plural inglés, más el pequeño grupo de palabras irregulares que hay que memorizar aparte."
+description: "La regla regular del plural en inglés (añadir -s) y el grupo cerrado de sustantivos irregulares como 'child/children' que hay que memorizar aparte."
 order: 4
 grammarTopic: "Plural de sustantivos (regular e irregular)"
 funFact: "'child' se convierte en 'children', no en 'childs' — y no hay ninguna regla lógica detrás, es simplemente una reliquia del inglés antiguo. Los plurales irregulares más comunes son solo un puñado; memorízalos como un grupo cerrado y todo lo demás sigue la regla de -s."

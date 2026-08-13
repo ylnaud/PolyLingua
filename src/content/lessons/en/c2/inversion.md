@@ -2,7 +2,7 @@
 language: en
 level: c2
 title: "Inversion: la estructura que hace que suenes casi nativo"
-description: "Cuando empiezas una frase con 'Never', 'Not only' o 'Rarely', el orden sujeto-verbo se invierte — y eso es puro nivel C2."
+description: "La inversión en inglés (Never, Not only, Rarely + verbo antes del sujeto), la estructura enfática avanzada que suena a nivel C2 casi nativo."
 order: 1
 grammarTopic: "Inversion (estructuras enfáticas)"
 funFact: "La inversión es el equivalente inglés de decir 'Jamás en mi vida había visto algo así' en vez de 'No había visto algo así jamás en mi vida'. Es dramático, es formal, y cuando lo usas bien, suena a discurso de graduación o artículo de revista — el sello del inglés pulido."

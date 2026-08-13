@@ -2,7 +2,7 @@
 language: en
 level: b2
 title: "Causative Verbs: cuando alguien más hace el trabajo por ti"
-description: "Have/get something done: cómo decir que pagaste o pediste a alguien que hiciera algo por ti, sin decir quién."
+description: "Los verbos causativos en inglés (have/get something done) para decir que pagaste o pediste a alguien que hiciera algo por ti, sin decir quién."
 order: 5
 grammarTopic: "Verbos causativos (have/get + objeto + participio)"
 funFact: "'I cut my hair' significa que TÚ mismo te cortaste el pelo (probablemente un accidente). 'I had my hair cut' significa que fuiste a la peluquería y alguien más lo hizo por ti. Un solo cambio de estructura cambia por completo quién realizó la acción."

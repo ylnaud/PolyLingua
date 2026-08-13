@@ -2,7 +2,7 @@
 language: en
 level: b2
 title: "Conditionals: si esto pasa... entonces esto otro"
-description: "First y Second Conditional explicados con una regla de probabilidad: ¿es realista o es un mundo imaginario?"
+description: "First y Second Conditional en inglés, explicados con una regla de probabilidad: ¿es una situación realista o es un mundo puramente imaginario?"
 order: 1
 grammarTopic: "First & Second Conditional"
 funFact: "Piensa en el First Conditional como GPS: te dice una ruta realista que probablemente tomarás. El Second Conditional es una máquina del tiempo hacia un universo imaginario: 'si yo fuera rico' — ni eres rico, ni es muy probable que lo seas mañana. La estructura verbal marca esa diferencia de realismo."

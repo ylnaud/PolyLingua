@@ -2,7 +2,7 @@
 language: en
 level: a2
 title: "Comparatives and Superlatives: más, el más, y cuándo usar 'more'"
-description: "Bigger, the biggest, more expensive, the most expensive: la regla que decide si añades '-er' o usas 'more'."
+description: "Comparativos y superlativos en inglés: cuándo añadir '-er/-est' y cuándo usar 'more/most', según el número de sílabas del adjetivo que compares."
 order: 4
 grammarTopic: "Comparativo y superlativo"
 funFact: "La regla es sobre todo cuestión de LONGITUD: adjetivos cortos (1 sílaba, o 2 terminadas en -y) añaden '-er/-est'; adjetivos largos (3+ sílabas) usan 'more/most'. Los de 2 sílabas son la zona gris — algunos aceptan ambas formas."

@@ -2,7 +2,7 @@
 language: en
 level: b1
 title: "Quantifiers: few, a few, little, a little — la trampa del artículo"
-description: "Cómo un simple artículo cambia el significado por completo: de 'casi nada' a 'algo, aunque poco'."
+description: "Cuantificadores en inglés — few, a few, little, a little — y cómo un simple artículo cambia el significado por completo, de queja a neutralidad."
 order: 7
 grammarTopic: "Cuantificadores (few/a few, little/a little)"
 funFact: "'few' y 'a few' usan las mismas palabras pero significan casi lo opuesto en tono: 'few friends' suena a queja ('casi no tengo amigos'), mientras 'a few friends' suena neutral o positivo ('tengo algunos amigos'). El artículo 'a' es la diferencia entre pesimismo y neutralidad."

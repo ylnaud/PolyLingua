@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: "Telling Time: pregunta y di la hora con confianza"
-description: "Dos formas de decir la hora en inglés — la coloquial (past/to) y la directa — y cuándo usar cada una."
+description: "Cómo decir y preguntar la hora en inglés con dos formas distintas — la coloquial con past/to y la directa con números — y cuándo usar cada una."
 order: 7
 grammarTopic: "Decir la hora"
 funFact: "'half past three' significa 'las tres y media' — literalmente 'media hora después de las tres'. A diferencia del alemán ('halb vier' = mirando HACIA la próxima hora), el inglés mira HACIA ATRÁS, a la hora que acaba de pasar. Dirección opuesta, mismo concepto de mitad de camino."

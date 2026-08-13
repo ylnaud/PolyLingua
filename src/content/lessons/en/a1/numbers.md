@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: "Numbers: del 0 al 100 sin trabarte"
-description: "Los números cardinales que necesitas para precios, horas, edades y direcciones."
+description: "Los números cardinales del 0 al 100 en inglés para precios, horas, edades y direcciones, incluida la trampa ortográfica clásica de 'forty' sin 'u'."
 order: 6
 grammarTopic: "Números cardinales (0-100)"
 funFact: "El inglés tiene una trampa ortográfica clásica: 'forty' (40) NO lleva 'u' aunque 'four' (4) sí la lleva. Es uno de los errores de escritura más comunes incluso entre hablantes avanzados — memorízalo como una excepción aparte."

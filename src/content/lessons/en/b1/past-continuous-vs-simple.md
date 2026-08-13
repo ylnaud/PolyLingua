@@ -2,7 +2,7 @@
 language: en
 level: b1
 title: "Past Continuous vs. Past Simple: el telón de fondo y la acción"
-description: "Cómo distinguir 'lo que estaba pasando' de 'lo que pasó', con la imagen de una película en marcha."
+description: "Past Continuous vs. Past Simple en inglés: distingue 'lo que estaba pasando' de 'lo que pasó' con la imagen de una película en marcha."
 order: 2
 grammarTopic: "Past Continuous vs. Past Simple"
 funFact: "Piensa en el Past Continuous como el telón de fondo de una película (una acción larga en curso) y el Past Simple como el actor que entra en escena (una acción puntual que interrumpe ese fondo). 'I was watching TV when the phone rang' — 'was watching' es el fondo, 'rang' es la interrupción."

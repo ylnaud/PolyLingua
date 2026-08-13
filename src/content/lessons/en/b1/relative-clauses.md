@@ -2,7 +2,7 @@
 language: en
 level: b1
 title: "Relative Clauses: conecta ideas con who, which, that"
-description: "Cómo describir personas y cosas dentro de la misma frase, sin repetir el sustantivo."
+description: "Oraciones de relativo en inglés con who, which y that para describir personas y cosas dentro de la misma frase, sin repetir el sustantivo dos veces."
 order: 6
 grammarTopic: "Oraciones de relativo (who/which/that/whose)"
 funFact: "'That' es el comodín universal: reemplaza tanto a 'who' (personas) como a 'which' (cosas) en oraciones de relativo esenciales — por eso es el que más usan los hablantes nativos en conversación informal, aunque 'who' suene un poco más formal para personas."

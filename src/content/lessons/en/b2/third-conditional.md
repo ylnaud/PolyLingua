@@ -2,7 +2,7 @@
 language: en
 level: b2
 title: "Third Conditional: lamentar el pasado que no cambió"
-description: "'Si hubiera sabido...' — el condicional para hablar de un pasado alternativo que nunca ocurrió."
+description: "El Third Conditional en inglés, para lamentar un pasado que ya no se puede cambiar, con la estructura 'si hubiera sabido...' explicada a fondo."
 order: 3
 grammarTopic: "Third Conditional"
 funFact: "Mientras el First Conditional habla de un futuro real y el Second de un presente imaginario, el Third Conditional viaja a un PASADO que ya no se puede cambiar — es el condicional del arrepentimiento y las reflexiones tipo '¿qué hubiera pasado si...?'"

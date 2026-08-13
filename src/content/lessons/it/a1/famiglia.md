@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: "La famiglia: presenta a los tuyos en italiano"
-description: "El vocabulario esencial para hablar de padres, hermanos y demás parientes — casi calcado del español."
+description: "Vocabulario italiano de la familia: padre, madre, fratello, sorella y demás parientes, con palabras casi idénticas a las del español, fáciles de memorizar."
 order: 5
 grammarTopic: "Vocabulario: la familia"
 funFact: "'madre/padre' en italiano son 'madre/padre' — prácticamente idénticos al español. De los cinco idiomas del curso, el vocabulario familiar italiano es el que menos esfuerzo de memorización requiere gracias a su cercanía directa con el español."

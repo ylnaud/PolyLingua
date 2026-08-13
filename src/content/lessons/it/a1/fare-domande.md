@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: "Fare domande: pregunta en italiano sin invertir nada"
-description: "La forma más simple de hacer preguntas de los cinco idiomas: solo cambia la entonación, sin reordenar la frase."
+description: "Cómo hacer preguntas en italiano cambiando solo la entonación, sin invertir el sujeto y el verbo ni añadir ninguna palabra auxiliar extra al final."
 order: 8
 grammarTopic: "Formación de preguntas (entonación y parole interrogative)"
 funFact: "El italiano es, de los cinco idiomas del curso, el que menos gramática nueva exige para hacer preguntas: NO necesitas invertir el sujeto y el verbo, ni añadir una palabra auxiliar como 'do' en inglés o 'est-ce que' en francés — solo cambia la entonación, exactamente como en español."

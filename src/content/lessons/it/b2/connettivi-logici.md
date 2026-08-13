@@ -2,7 +2,7 @@
 language: it
 level: b2
 title: "I connettivi logici avanzati: estructura un argumento serio"
-description: "Tuttavia, inoltre, di conseguenza: los conectores que transforman ideas sueltas en un texto argumentativo."
+description: "Tuttavia, inoltre, di conseguenza: los conectores lógicos avanzados que convierten ideas sueltas en un texto argumentativo italiano coherente."
 order: 7
 grammarTopic: "Conectores lógicos avanzados"
 funFact: "'Tuttavia' y 'però' significan casi lo mismo (sin embargo), pero 'tuttavia' suena más formal y se usa más en textos escritos, mientras 'però' es el más común en conversación cotidiana — el mismo tipo de matiz que separa 'sin embargo' de 'pero' en registro español."

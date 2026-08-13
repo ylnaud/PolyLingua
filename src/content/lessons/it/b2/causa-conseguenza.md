@@ -2,7 +2,7 @@
 language: it
 level: b2
 title: "Causa e conseguenza: explica el porqué con precisión"
-description: "Perché, poiché, quindi, perciò: los conectores que estructuran un argumento causal claro."
+description: "Perché, poiché, quindi, perciò: los conectores italianos de causa y consecuencia para estructurar un argumento escrito o hablado con precisión."
 order: 5
 grammarTopic: "Conectores de causa y consecuencia"
 funFact: "'Poiché' y 'perché' significan lo mismo (porque), pero 'poiché' suele ir al INICIO de la frase y suena más formal/escrito, mientras 'perché' es la opción neutral que responde directamente a la pregunta '¿perché?' — un matiz de posición y registro similar al 'car/parce que' francés."

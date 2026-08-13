@@ -2,7 +2,7 @@
 language: it
 level: b1
 title: "Il lavoro: vocabulario para el mundo laboral"
-description: "El vocabulario que necesitas para hablar de tu trabajo, escribir un curriculum o manejar un colloquio en italiano."
+description: "Vocabulario italiano del mundo laboral: profesiones, curriculum y colloquio de trabajo, incluyendo el patrón femenino regular en '-essa'."
 order: 7
 grammarTopic: "Vocabulario: trabajo y profesión"
 funFact: "En italiano, la mayoría de las profesiones cambian de forma predecible entre masculino y femenino: 'un professore' se convierte en 'una professoressa', 'un dottore' en 'una dottoressa'. El patrón '-essa' es mucho más consistente que en francés o alemán."

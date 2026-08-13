@@ -2,7 +2,7 @@
 language: it
 level: c2
 title: "L'ironia e l'umorismo: decir lo contrario de lo que piensas"
-description: "Cómo reconocer la ironía italiana y el sarcasmo que tanto abunda en la conversación cotidiana, sin ninguna señal explícita."
+description: "Reconoce la ironía y el sarcasmo del italiano cotidiano, un recurso tan integrado en la conversación diaria que casi nunca lleva señal explícita."
 order: 3
 grammarTopic: "Ironía y humor en italiano"
 funFact: "El italiano conversacional está lleno de ironía cotidiana, muy integrada en el habla diaria — 'Complimenti!' (¡felicidades!) dicho tras un error obvio es ironía tan común que apenas se nota como recurso especial, simplemente forma parte del ritmo natural de la conversación italiana."

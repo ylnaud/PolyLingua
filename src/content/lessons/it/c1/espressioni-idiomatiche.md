@@ -2,7 +2,7 @@
 language: it
 level: c1
 title: "Espressioni idiomatiche: cuando las palabras dejan de significar lo que dicen"
-description: "In bocca al lupo, avere le mani in pasta, costare un occhio della testa: expresiones que todo italiano entiende al instante."
+description: "Expresiones idiomáticas italianas como 'in bocca al lupo' o 'costare un occhio della testa', esenciales para sonar natural en cualquier conversación."
 order: 6
 grammarTopic: "Expresiones idiomáticas italianas"
 funFact: "'In bocca al lupo!' (literalmente 'en la boca del lobo') es la forma italiana de desear buena suerte — y la respuesta correcta NUNCA es 'grazie', sino 'crepi!' (¡que muera [el lobo]!). Responder mal esta expresión es uno de los primeros errores culturales que comete todo estudiante de italiano."

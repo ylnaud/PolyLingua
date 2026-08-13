@@ -2,7 +2,7 @@
 language: it
 level: a2
 title: "La posizione degli aggettivi: antes o después, ¿quién decide?"
-description: "Por qué la mayoría de los adjetivos italianos van DESPUÉS del sustantivo, y el pequeño grupo que va antes."
+description: "Dónde va el adjetivo en una frase italiana: por qué la mayoría se coloca después del sustantivo, y el pequeño grupo que cambia de significado antes."
 order: 8
 grammarTopic: "Posición de los adjetivos"
 funFact: "Igual que en francés, la posición del adjetivo en italiano a veces cambia el significado: 'un vecchio amico' (un amigo de toda la vida, antigüedad de la amistad) vs. 'un amico vecchio' (un amigo que es literalmente viejo de edad). La posición no es solo estilo — puede ser semántica."

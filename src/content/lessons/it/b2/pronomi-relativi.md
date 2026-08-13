@@ -2,7 +2,7 @@
 language: it
 level: b2
 title: "I pronomi relativi: la clave para frases más elegantes"
-description: "Che, cui, il quale: cómo conectar dos ideas en una sola frase fluida, sin repetir el sustantivo."
+description: "Che, cui, il quale: los pronombres relativos italianos para unir dos ideas en una sola frase fluida y elegante, sin repetir el sustantivo."
 order: 2
 grammarTopic: "Pronomi relativi (che, cui, il quale)"
 funFact: "El italiano simplifica bastante respecto al francés: 'che' hace casi todo el trabajo (sujeto Y objeto directo), y solo necesitas 'cui' cuando hay una preposición de por medio. Dos reglas, no cuatro — el italiano es más generoso aquí que sus primos románicos."

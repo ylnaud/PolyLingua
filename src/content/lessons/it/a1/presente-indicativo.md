@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: "Il presente: tres terminaciones, un patrón clarísimo"
-description: "Conjuga verbos en -are, -ere e -ire con reglas que se parecen mucho a las del español."
+description: "Conjuga el presente de indicativo italiano en los tres grupos regulares -are, -ere e -ire, con un patrón que refleja casi exactamente al del español."
 order: 2
 grammarTopic: "Presente indicativo (verbi regolari -are/-ere/-ire)"
 funFact: "Si conjugar verbos en español ('hablar, comer, vivir') te resulta natural, el italiano te va a encantar: la lógica de tres grupos según la terminación del infinitivo (-are, -ere, -ire) es prácticamente un espejo del español (-ar, -er, -ir). Es el idioma donde menos tienes que 'reprogramar' tu cerebro."

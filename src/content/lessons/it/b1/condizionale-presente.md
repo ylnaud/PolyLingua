@@ -2,7 +2,7 @@
 language: it
 level: b1
 title: "Il condizionale presente: cortesía, consejos y mundos hipotéticos"
-description: "Vorrei, dovresti, se fossi in te: el modo que suaviza peticiones y construye condicionales."
+description: "El condizionale presente italiano para pedir con cortesía, dar consejos y construir frases hipotéticas como 'se fossi in te' (si yo fuera tú)."
 order: 6
 grammarTopic: "Condizionale presente"
 funFact: "El condizionale italiano se forma con la misma raíz del futuro que ya conoces, más un set de terminaciones propio — es literalmente una construcción sobre algo que ya sabes, sin gramática completamente nueva que memorizar desde cero."

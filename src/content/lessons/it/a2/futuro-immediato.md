@@ -2,7 +2,7 @@
 language: it
 level: a2
 title: "Il futuro immediato: presente y 'stare per' para lo que está por pasar"
-description: "Cómo hablar del futuro cercano en italiano sin usar el futuro formal — con el presente y la expresión 'stare per'."
+description: "Habla de planes cercanos en italiano usando simplemente el presente, y de algo a punto de pasar ahora mismo con la expresión 'stare per'."
 order: 7
 grammarTopic: "Futuro inmediato (presente + stare per)"
 funFact: "A diferencia del francés (aller + infinitivo) o el inglés (going to), el italiano cotidiano prefiere simplemente el PRESENTE para hablar de planes cercanos: 'Parto domani' (me voy mañana) sin necesitar ningún verbo auxiliar extra. Para algo a punto de pasar EN ESTE MOMENTO, usa 'stare per'."

@@ -2,7 +2,7 @@
 language: it
 level: c1
 title: "Il discorso indiretto: cuenta lo que otros dijeron, con precisión"
-description: "Cómo cambian los tiempos verbales, los pronombres y las expresiones de tiempo al reportar las palabras de alguien más."
+description: "El discorso indiretto italiano: cómo retroceden los tiempos verbales, los pronombres y las expresiones de tiempo al reportar palabras ajenas."
 order: 2
 grammarTopic: "Discorso indiretto (concordanza dei tempi)"
 funFact: "Igual que en francés o inglés, el italiano retrocede sistemáticamente los tiempos verbales al reportar discurso: presente → imperfetto, passato prossimo → trapassato prossimo, futuro → condizionale passato. Es un movimiento mecánico de 'un paso hacia atrás' que, una vez automatizado, se vuelve instantáneo."

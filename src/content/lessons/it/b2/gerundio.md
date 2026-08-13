@@ -2,7 +2,7 @@
 language: it
 level: b2
 title: "Il gerundio: dos acciones al mismo tiempo, en una palabra"
-description: "-ando/-endo: cómo describir que haces algo MIENTRAS haces otra cosa, sin necesitar dos frases separadas."
+description: "El gerundio italiano en -ando/-endo para describir dos acciones simultáneas, y su uso ampliado con 'stare' para formar el tiempo progresivo."
 order: 4
 grammarTopic: "Il gerundio (-ando/-endo)"
 funFact: "El gerundio italiano se usa mucho más ampliamente que en español: además de describir simultaneidad ('mangiando' = comiendo), se combina con 'stare' para formar una forma progresiva ('sto mangiando' = estoy comiendo) muy similar a la estructura inglesa 'I am eating' — un uso que otros idiomas romances no tienen tan desarrollado."

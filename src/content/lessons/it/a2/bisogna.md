@@ -2,7 +2,7 @@
 language: it
 level: a2
 title: "Bisogna: la obligación sin dueño"
-description: "La expresión impersonal más usada del italiano para dar consejos, reglas y necesidades generales."
+description: "La expresión impersonal 'bisogna' para dar consejos, reglas y necesidades generales en italiano sin dirigirte directamente a ninguna persona."
 order: 5
 grammarTopic: "Expresiones impersonales (bisogna, ci vuole, è necessario)"
 funFact: "'Bisogna' viene del verbo 'bisognare' pero SOLO se usa en tercera persona singular, sin sujeto específico — parecido al 'il faut' francés o al 'hay que' español. Es tu herramienta favorita para dar consejos generales sin sonar demasiado directo o autoritario."

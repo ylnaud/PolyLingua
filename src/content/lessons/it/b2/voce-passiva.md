@@ -2,7 +2,7 @@
 language: it
 level: b2
 title: "La voce passiva: cuando el foco cambia de lugar"
-description: "Transforma cualquier oración activa en pasiva con 'essere + participio passato', tan mecánico como en español."
+description: "La voce passiva italiana con 'essere + participio passato', una estructura casi calcada de la voz pasiva española, con su misma concordancia."
 order: 1
 grammarTopic: "Voce passiva (essere + participio passato)"
 funFact: "La voz pasiva italiana es casi calcada de la española: 'la casa es construida' = 'la casa è costruita'. Si ya la usas en español, la mayor parte del trabajo mental ya está hecho. Solo hay que recordar la concordancia del participio, igual que con 'essere' en el passato prossimo."

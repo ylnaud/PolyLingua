@@ -2,7 +2,7 @@
 language: it
 level: c2
 title: "I giochi di parole: cuando entiendes el chiste sin traducirlo"
-description: "Cómo funcionan los juegos de palabras italianos: dobles sentidos, sonidos similares y el humor basado en el idioma real."
+description: "Cómo funcionan los juegos de palabras italianos: dobles sentidos, sonidos parecidos y el humor que depende enteramente del idioma real hablado."
 order: 6
 grammarTopic: "Juegos de palabras y dobles sentidos (giochi di parole)"
 funFact: "El italiano tiene una larga tradición de 'barzellette' (chistes cortos) que dependen enteramente de dobles sentidos regionales o de palabras con múltiples significados — un tipo de humor que floreció especialmente en la comedia italiana clásica de posguerra."

@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: "Il, lo, la: el género italiano, más fácil de lo que crees"
-description: "El idioma más cercano al español en este tema — pero con una consonante que cambia todo: la 'lo' antes de ciertas palabras."
+description: "Il, lo, la, un, uno, una: domina el género y los artículos italianos, el sistema más parecido al español entre los cinco idiomas del curso."
 order: 1
 grammarTopic: "Artículos y género (il/lo/la, un/uno/una)"
 funFact: "Buenas noticias: el italiano es el idioma con el género MÁS parecido al español de los cinco que ofrecemos. La mayoría de las palabras en '-o' son masculinas y en '-a' son femeninas, igual que en español. Solo memoriza el truco de 'lo' (para palabras que empiezan con s+consonante, z, gn, ps) y ya vas muy adelantado."

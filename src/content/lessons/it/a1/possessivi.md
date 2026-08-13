@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: "Gli aggettivi possessivi: mio, tuo, suo — con un artículo extra"
-description: "Cómo el italiano combina el posesivo con el artículo definido, algo que el español no hace."
+description: "Los adjetivos posesivos italianos (mio, tuo, suo) combinados con el artículo definido, y la excepción clave con familiares en singular como 'mia madre'."
 order: 7
 grammarTopic: "Adjetivos posesivos (mio/tuo/suo + artículo)"
 funFact: "A diferencia del español, donde 'mi libro' no lleva artículo, el italiano casi siempre combina el posesivo CON el artículo definido: 'il mio libro' (literalmente 'el mi libro'). La única excepción importante: con familiares en singular, el artículo desaparece — 'mia madre', no 'la mia madre'."

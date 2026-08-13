@@ -2,7 +2,7 @@
 language: it
 level: b1
 title: "Il futuro semplice: el futuro formal, en una sola palabra"
-description: "Cómo formar el futuro sin auxiliar, añadiendo terminaciones directamente al infinitivo."
+description: "El futuro semplice italiano sin auxiliar, con sus terminaciones propias y el cambio de vocal en los verbos que terminan en '-are' antes de conjugar."
 order: 3
 grammarTopic: "Futuro semplice"
 funFact: "El futuro italiano tiene un giro curioso: los verbos en '-are' cambian su vocal a '-er-' antes de las terminaciones ('parlare' → 'parlerò', no 'parlarò'), pero los verbos en '-ere' se quedan igual. Es una pequeña trampa ortográfica que sorprende incluso a estudiantes intermedios."

@@ -2,7 +2,7 @@
 language: it
 level: c2
 title: "I proverbi: la sabiduría popular italiana en una frase"
-description: "Refranes que todo italiano reconoce al instante, y que revelan tanto sobre la cultura como sobre el idioma."
+description: "Proverbios italianos que todo hablante nativo reconoce al instante, y que revelan tanto sobre la cultura del país como sobre el propio idioma."
 order: 4
 grammarTopic: "Proverbi (refranes y dichos populares)"
 funFact: "'Chi dorme non piglia pesci' (quien duerme no atrapa peces) es prácticamente idéntico en sabiduría a 'a quien madruga, Dios le ayuda' — la imagen concreta cambia entre culturas (peces vs. madrugar), pero la valoración de la acción sobre la pasividad es casi universal."

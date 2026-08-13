@@ -2,7 +2,7 @@
 language: it
 level: c1
 title: "Il congiuntivo: el modo de la duda, el deseo y la emoción"
-description: "El gran reto del italiano avanzado, domesticado con una lista corta de disparadores que activan el modo."
+description: "El congiuntivo italiano, el modo de la duda, el deseo y la emoción, explicado con una lista corta de disparadores que activan su uso obligatorio."
 order: 1
 grammarTopic: "Il modo congiuntivo"
 funFact: "El indicativo describe el mundo como ES; el congiuntivo describe el mundo como lo SIENTES, DUDAS o DESEAS. Antes de conjugar, pregúntate: '¿estoy afirmando un hecho, o expresando emoción, duda, deseo u obligación subjetiva?' Si es lo segundo, casi seguro necesitas congiuntivo — igual que en español distingues 'creo que viene' de 'espero que venga'."

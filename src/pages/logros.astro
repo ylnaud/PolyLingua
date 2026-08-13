@@ -85,48 +85,62 @@ const languageIds = LANGUAGES.map((l) => l.id);
     }
   }
 
-  const streak = Number(read('polylingua-streak-count') ?? '0');
-  const srsMastered = Number(read('polylingua-srs-mastered-count') ?? '0');
-  const levelsPassed = countKeysStartingWith('polylingua-level-passed-');
-  const hasFirstLesson = hasAnyKeyStartingWith('polylingua-lesson-done-');
-  const hasPerfect = hasAnyKeyStartingWith('polylingua-lesson-perfect-');
-  const hasMarathon = read('polylingua-achievement-marathon') === 'true';
-  const hasCombo = read('polylingua-achievement-combo') === 'true';
-  const hasPracticeLibre = read('polylingua-achievement-practice-libre') === 'true';
+  // Sin envolver en initX()+astro:page-load, este código solo corría una
+  // vez por carga completa — bajo navegación sin recarga (Astro
+  // <ClientRouter />) revisitar /logros en la misma sesión SPA dejaría las
+  // insignias congeladas en el estado de la primera visita. No hace falta
+  // ningún guard: no registra listeners persistentes, solo lee localStorage
+  // y vuelve a pintar el DOM, así que reejecutarlo en cada navegación es
+  // exactamente lo que se quiere.
+  function initLogros() {
+    const streak = Number(read('polylingua-streak-count') ?? '0');
+    const srsMastered = Number(read('polylingua-srs-mastered-count') ?? '0');
+    const levelsPassed = countKeysStartingWith('polylingua-level-passed-');
+    const hasFirstLesson = hasAnyKeyStartingWith('polylingua-lesson-done-');
+    const hasPerfect = hasAnyKeyStartingWith('polylingua-lesson-perfect-');
+    const hasMarathon = read('polylingua-achievement-marathon') === 'true';
+    const hasCombo = read('polylingua-achievement-combo') === 'true';
+    const hasPracticeLibre = read('polylingua-achievement-practice-libre') === 'true';
 
-  const earned = {
-    'first-lesson': hasFirstLesson,
-    'streak-3': streak >= 3,
-    'streak-7': streak >= 7,
-    'streak-30': streak >= 30,
-    perfect: hasPerfect,
-    marathon: hasMarathon,
-    combo: hasCombo,
-    'practice-libre': hasPracticeLibre,
-    'srs-master': srsMastered >= 5,
-    'levels-1': levelsPassed >= 1,
-    'levels-5': levelsPassed >= 5,
-    'levels-15': levelsPassed >= 15,
-  };
+    const earned = {
+      'first-lesson': hasFirstLesson,
+      'streak-3': streak >= 3,
+      'streak-7': streak >= 7,
+      'streak-30': streak >= 30,
+      perfect: hasPerfect,
+      marathon: hasMarathon,
+      combo: hasCombo,
+      'practice-libre': hasPracticeLibre,
+      'srs-master': srsMastered >= 5,
+      'levels-1': levelsPassed >= 1,
+      'levels-5': levelsPassed >= 5,
+      'levels-15': levelsPassed >= 15,
+    };
 
-  languageIds.forEach((lang) => {
-    earned[`course-${lang}`] = levelIds.every((level) => read(`polylingua-level-passed-${lang}-${level}`) === 'true');
-  });
+    languageIds.forEach((lang) => {
+      earned[`course-${lang}`] = levelIds.every((level) => read(`polylingua-level-passed-${lang}-${level}`) === 'true');
+    });
 
-  document.querySelectorAll('[data-badge]').forEach((el) => {
-    const id = el.getAttribute('data-badge');
-    if (id && earned[id]) {
-      el.classList.remove('locked');
+    document.querySelectorAll('[data-badge]').forEach((el) => {
+      el.classList.add('locked');
       const status = el.querySelector('[data-badge-status]');
-      if (status) status.textContent = '✅ Conseguido';
-    }
-  });
+      if (status) status.textContent = '🔒 Bloqueado';
+      const id = el.getAttribute('data-badge');
+      if (id && earned[id]) {
+        el.classList.remove('locked');
+        if (status) status.textContent = '✅ Conseguido';
+      }
+    });
 
-  const summary = document.querySelector('[data-progress-summary]');
-  if (summary) {
-    const earnedCount = Object.values(earned).filter(Boolean).length;
-    summary.textContent = `Tienes ${earnedCount} de ${Object.keys(earned).length} logros, una racha de ${streak} día${streak === 1 ? '' : 's'}, y ${levelsPassed} nivel${levelsPassed === 1 ? '' : 'es'} superado${levelsPassed === 1 ? '' : 's'}.`;
+    const summary = document.querySelector('[data-progress-summary]');
+    if (summary) {
+      const earnedCount = Object.values(earned).filter(Boolean).length;
+      summary.textContent = `Tienes ${earnedCount} de ${Object.keys(earned).length} logros, una racha de ${streak} día${streak === 1 ? '' : 's'}, y ${levelsPassed} nivel${levelsPassed === 1 ? '' : 'es'} superado${levelsPassed === 1 ? '' : 's'}.`;
+    }
   }
+
+  initLogros();
+  document.addEventListener('astro:page-load', initLogros);
 </script>
 
 <style>

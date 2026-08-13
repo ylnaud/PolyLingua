@@ -115,6 +115,7 @@ const structuredData = {
   function lockItem(el) {
     el.classList.add('locked');
     el.setAttribute('aria-disabled', 'true');
+    el.setAttribute('data-astro-prefetch', 'false');
     const num = el.querySelector('[data-lesson-num]');
     if (num) num.textContent = '🔒';
     el.addEventListener('click', (e) => e.preventDefault());

@@ -92,6 +92,7 @@ const structuredData = {
       if (!isLevelPassed(prevLevel)) {
         el.classList.add('locked');
         el.setAttribute('aria-disabled', 'true');
+        el.setAttribute('data-astro-prefetch', 'false');
         const badge = el.querySelector('[data-level-badge]');
         if (badge) badge.textContent = '🔒 Bloqueado';
         el.addEventListener('click', (e) => e.preventDefault());

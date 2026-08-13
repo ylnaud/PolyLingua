@@ -11,4 +11,7 @@ export default defineConfig({
   redirects: {
     '/niveles': '/idiomas/de',
   },
+  prefetch: {
+    prefetchAll: true,
+  },
 });

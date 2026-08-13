@@ -2,7 +2,7 @@
 language: de
 level: b2
 title: "Zustandspassiv vs. Vorgangspassiv: el resultado y el proceso"
-description: "Dos tipos de voz pasiva que ya conoces a medias: una describe el proceso en marcha, la otra el resultado ya terminado."
+description: "Zustandspassiv frente a Vorgangspassiv en alemán: la diferencia entre sein y werden para describir un resultado o un proceso en marcha."
 order: 6
 grammarTopic: "Zustandspassiv (sein + Partizip) vs. Vorgangspassiv (werden + Partizip)"
 funFact: "Piensa en el Vorgangspassiv (con 'werden') como una cámara filmando el proceso en tiempo real: 'Die Tür wird geöffnet' (la puerta está siendo abierta, ahora mismo). El Zustandspassiv (con 'sein') es una foto del resultado final: 'Die Tür ist geöffnet' (la puerta está abierta, ya terminado el proceso)."

@@ -2,7 +2,7 @@
 language: de
 level: c2
 title: "Regionale Varianten: el alemán no suena igual en todas partes"
-description: "Cómo el alemán de Austria, Suiza y el norte/sur de Alemania cambia en vocabulario, pronunciación y hasta gramática."
+description: "Variantes regionales del alemán en Austria, Suiza y el sur de Alemania: vocabulario, pronunciación y gramática que el Hochdeutsch no cubre."
 order: 5
 grammarTopic: "Variedades regionales del alemán (Österreichisch, Schweizerdeutsch)"
 funFact: "En Austria dices 'Servus' para saludar Y despedirte, en Suiza el Perfekt reemplaza casi por completo al Präteritum incluso por escrito, y en el sur de Alemania es común escuchar 'Grüß Gott' en vez del 'Hallo' estándar. El 'Hochdeutsch' que aprendes en los libros es un estándar útil, pero no es lo único que vas a escuchar."

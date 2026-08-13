@@ -2,7 +2,7 @@
 language: de
 level: b2
 title: "Passiv: cuando nadie sabe (o importa) quién lo hizo"
-description: "La voz pasiva alemana explicada con la fórmula 'werden + participio', sin dolores de cabeza."
+description: "La voz pasiva alemana en presente y pasado con la fórmula werden más participio, explicada como un camaleón que cambia de forma siempre."
 order: 1
 grammarTopic: "Voz pasiva (Passiv) en presente y pasado"
 funFact: "Piensa en 'werden' como un camaleón: cambia de forma según el tiempo verbal, pero siempre lo acompaña el mismo participio fijo al final. Domina las formas de 'werden' y el Passiv se vuelve mecánico."

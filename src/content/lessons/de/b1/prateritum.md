@@ -2,7 +2,7 @@
 language: de
 level: b1
 title: "Präteritum: el pasado que se usa para contar historias"
-description: "El hermano formal del Perfekt: el tiempo que dominan los libros, las noticias y los cuentos."
+description: "El Präteritum alemán, el pasado narrativo de libros y noticias, y por qué sein, haben y los modales lo usan incluso al hablar a diario."
 order: 2
 grammarTopic: "Präteritum (pasado narrativo)"
 funFact: "Piensa en el Perfekt como el pasado de la charla de café (hablado) y el Präteritum como el pasado de los libros (escrito/narrado). Con 'sein', 'haben' y los modales, sin embargo, los alemanes usan el Präteritum incluso al hablar — son la excepción que rompe la regla."

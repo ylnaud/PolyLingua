@@ -2,7 +2,7 @@
 language: de
 level: b1
 title: "Arbeit und Beruf: vocabulario para el mundo laboral"
-description: "El vocabulario que necesitas para hablar de tu trabajo, escribir un currículum o sobrevivir una entrevista en alemán."
+description: "Vocabulario laboral en alemán para hablar de tu trabajo, escribir un currículum y sobrevivir una entrevista, con profesiones en pareja."
 order: 8
 grammarTopic: "Vocabulario: trabajo y profesión"
 funFact: "En alemán, muchas profesiones tienen versión masculina y femenina con la terminación -in: der Lehrer / die Lehrerin, der Arzt / die Ärztin. Aprende cada profesión en pareja desde el principio, y duplicas tu vocabulario con el mismo esfuerzo."

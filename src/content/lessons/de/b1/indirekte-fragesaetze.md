@@ -2,7 +2,7 @@
 language: de
 level: b1
 title: "Indirekte Fragesätze: pregunta sin preguntar directamente"
-description: "Cómo convertir preguntas directas en indirectas y corteses, con 'ob' para preguntas de sí/no."
+description: "Preguntas indirectas en alemán: cómo convertir una pregunta directa en una versión cortés con ob para sí/no o con la palabra W correspondiente."
 order: 4
 grammarTopic: "Preguntas indirectas (ob, W-Wort + verbo final)"
 funFact: "Piensa en 'ob' como el equivalente alemán de 'si' cuando reportas una pregunta de sí/no: 'Kommst du?' (¿vienes?) se convierte en 'Ich weiß nicht, ob du kommst' (no sé si vienes). Para preguntas con W-Wort, simplemente reutilizas la misma palabra interrogativa."

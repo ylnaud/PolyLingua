@@ -2,7 +2,7 @@
 language: de
 level: a2
 title: "Verbos modales: el superpoder de opinar y negociar"
-description: "Können, müssen, wollen y compañía: cómo pedir, permitir y desear como un local."
+description: "Verbos modales en alemán: können, müssen, wollen, dürfen y sollen para pedir, permitir y desear, con el verbo principal siempre al final."
 order: 2
 grammarTopic: "Verbos modales (können, müssen, wollen, dürfen, sollen, möchten)"
 funFact: "Los verbos modales mandan al verbo principal al FINAL de la frase, sin conjugar. Imagina que el modal es un jefe mandón: da la orden al principio y el verbo trabajador espera calladito hasta el final para ejecutarla."

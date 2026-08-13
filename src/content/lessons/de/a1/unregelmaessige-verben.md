@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: "Verbos irregulares en presente: cuando la vocal cambia"
-description: "Fahren, essen, sehen, lesen: un grupo pequeño de verbos que cambian su vocal solo con du/er/sie/es."
+description: "Verbos irregulares del alemán en presente: fahren, essen, sehen y lesen cambian su vocal solo con du y er/sie/es, sin regla general."
 order: 5
 grammarTopic: "Präsens de verbos con cambio de vocal (fahren, essen, sehen, lesen)"
 funFact: "Piensa en estos verbos como adolescentes rebeldes: siguen la regla del Präsens normal (e, st, t, en, t, en)... excepto que cambian su vocal justo en du y er/sie/es, como si quisieran llamar la atención. Memorízalos como un grupo pequeño y cerrado, no como una regla general."

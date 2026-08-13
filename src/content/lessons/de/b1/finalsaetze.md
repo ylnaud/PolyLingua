@@ -2,7 +2,7 @@
 language: de
 level: b1
 title: "Finalsätze: expresa el propósito de una acción"
-description: "Um...zu y damit: dos formas de decir 'para que', según si el sujeto es el mismo o cambia."
+description: "Oraciones finales en alemán con um...zu y damit: dos formas de decir para que, según si el sujeto de la acción es el mismo o cambia."
 order: 5
 grammarTopic: "Oraciones finales (um...zu, damit)"
 funFact: "La regla es simple: si la MISMA persona hace las dos acciones, usa 'um...zu' + infinitivo. Si son DOS personas distintas, necesitas 'damit' + una oración completa con su propio sujeto y verbo. Un solo actor, un solo camino; dos actores, dos verbos."

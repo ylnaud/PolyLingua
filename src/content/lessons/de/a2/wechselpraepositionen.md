@@ -2,7 +2,7 @@
 language: de
 level: a2
 title: "Wechselpräpositionen: las preposiciones de doble personalidad"
-description: "In, an, auf, über: nueve preposiciones que cambian de caso según si hay movimiento o no."
+description: "Las Wechselpräpositionen del alemán: nueve preposiciones de doble caso que cambian entre Akkusativ y Dativ según haya movimiento o no."
 order: 7
 grammarTopic: "Preposiciones de doble régimen (Wechselpräpositionen)"
 funFact: "Pregúntate: '¿HAY movimiento de un lugar a otro, o describo una posición fija?' Si hay movimiento con destino → Akkusativ ('¿wohin?'). Si es una posición estática → Dativ ('¿wo?'). Es la misma preposición, el caso cambia el significado por completo."

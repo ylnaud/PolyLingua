@@ -26,7 +26,8 @@ const lessons = allLessons
   .filter((l) => l.data.language === lang && l.data.level === level)
   .sort((a, b) => a.data.order - b.data.order);
 
-const PER_LESSON = 3;
+const PER_LESSON_CHOICE = 2;
+const PER_LESSON_OTHER = 1;
 
 interface PoolItem {
   kind: string;
@@ -34,14 +35,35 @@ interface PoolItem {
   itemId: string;
 }
 
-const perLessonPools: PoolItem[][] = lessons.map((l) => {
+const perLessonPools: PoolItem[][] = lessons.map((l, lessonIndex) => {
   const full: { kind: string; data: unknown }[] = [
     ...l.data.quiz.map((d) => ({ kind: 'choice', data: d })),
     ...l.data.exercises.map((d) => ({ kind: d.type, data: d })),
   ];
-  return full.slice(0, PER_LESSON).map((it, idx) => ({
-    ...it,
-    itemId: `${l.id}#${it.kind}-${idx}`,
+  // Cada ítem conserva su índice en el array combinado quiz+exercises: es el
+  // mismo índice que usan la página de la lección y practica-libre.astro para
+  // calcular el itemId, así el pool de SRS (indexado por ese id) sigue
+  // apuntando a la entrada real en vez de crear una fantasma.
+  const withIndex = full.map((it, idx) => ({ ...it, idx }));
+  const choiceItems = withIndex.filter((it) => it.kind === 'choice');
+  const otherItems = withIndex.filter((it) => it.kind !== 'choice');
+
+  // Todas las lecciones listan sus exercises en el mismo orden (fill-blank,
+  // fill-blank, match, write, order), así que tomar siempre el primero
+  // volvería a dejar match/write/order fuera del examen. Rotar el punto de
+  // partida según la posición de la lección dentro del nivel para que el
+  // examen combine varios tipos a lo largo de sus lecciones.
+  const selectedOther: typeof otherItems = [];
+  for (let k = 0; k < PER_LESSON_OTHER && otherItems.length > 0; k += 1) {
+    selectedOther.push(otherItems[(lessonIndex + k) % otherItems.length]);
+  }
+  const choiceSlots = PER_LESSON_CHOICE + (PER_LESSON_OTHER - selectedOther.length);
+  const selectedChoice = choiceItems.slice(0, choiceSlots);
+
+  return [...selectedChoice, ...selectedOther].map((it) => ({
+    kind: it.kind,
+    data: it.data,
+    itemId: `${l.id}#${it.kind}-${it.idx}`,
   }));
 });
 

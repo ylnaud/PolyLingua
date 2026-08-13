@@ -107,7 +107,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
     <div class="practice-head">
       <span class="eyebrow">🎮 Ponte a prueba</span>
       <span class="streak-badge" data-streak-badge hidden>🔥 x2</span>
-      <span class="practice-progress" data-practice-progress>1 / {items.length}</span>
+      <span class="practice-progress" data-practice-progress role="status" aria-live="polite">1 / {items.length}</span>
     </div>
     <div class="progress-bar" data-progress-bar>
       <div class="progress-bar-fill" data-progress-bar-fill></div>
@@ -129,7 +129,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
         {item.kind === 'choice' && (
           <>
-            <legend>{item.data.question}</legend>
+            <legend tabindex="-1">{item.data.question}</legend>
             <div class="options">
               {item.data.options.map((opt, oi) => (
                 <button
@@ -147,7 +147,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
         {item.kind === 'fill-blank' && (
           <>
-            <legend>Completa la frase</legend>
+            <legend tabindex="-1">Completa la frase</legend>
             <p class="prompt-sentence">
               {splitSentence(item.data.sentence).before}
               <span class="blank-marker" aria-hidden="true">___</span>
@@ -180,7 +180,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
         {item.kind === 'write' && (
           <>
-            <legend>{item.data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : item.data.prompt}</legend>
+            <legend tabindex="-1">{item.data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : item.data.prompt}</legend>
             {item.data.spokenOnly && (
               <button
                 type="button"
@@ -218,7 +218,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
         {item.kind === 'match' && (
           <>
-            <legend>{item.data.instructions ?? 'Empareja cada elemento con su pareja correcta'}</legend>
+            <legend tabindex="-1">{item.data.instructions ?? 'Empareja cada elemento con su pareja correcta'}</legend>
             <div class="match-board" data-match-board data-remaining={item.data.pairs.length}>
               <div class="match-col" data-match-col="left">
                 {item.data.pairs.map((pair, pi) => (
@@ -255,7 +255,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
         {item.kind === 'order' && (
           <>
-            <legend>Ordena las palabras para formar la frase correcta</legend>
+            <legend tabindex="-1">Ordena las palabras para formar la frase correcta</legend>
             {item.data.translation && <p class="prompt-translation">{item.data.translation}</p>}
             <div
               class="order-assembled"
@@ -374,6 +374,11 @@ function splitSentence(sentence: string): { before: string; after: string } {
     text-transform: uppercase;
     letter-spacing: 0.04em;
     margin-bottom: 0.5rem;
+  }
+
+  legend:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 
   legend {
@@ -804,6 +809,9 @@ function splitSentence(sentence: string): { before: string; after: string } {
         if (progressEl) progressEl.textContent = `${index + 1} / ${items.length}`;
         if (progressBarFill) progressBarFill.style.width = `${(index / items.length) * 100}%`;
         maybeAutoSpeak(index);
+        // showItem() solo se llama al avanzar (goNext), nunca en la carga
+        // inicial, así que este foco nunca se roba al entrar a la página.
+        items[index]?.querySelector<HTMLElement>('legend')?.focus();
       }
 
       function finish() {
@@ -869,6 +877,10 @@ function splitSentence(sentence: string): { before: string; after: string } {
             data = null;
           }
           results.push({ id: item.dataset.itemId ?? '', kind: kind ?? '', data, correct });
+          // Responder deshabilita el botón/input enfocado, lo que por spec
+          // manda el foco a <body> — lo movemos al botón "Siguiente" recién
+          // revelado para no perder la posición en el teclado.
+          nextBtn?.focus();
         }
 
         if (kind === 'choice') {

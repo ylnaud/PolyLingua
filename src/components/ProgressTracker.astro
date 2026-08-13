@@ -74,9 +74,15 @@
     writePool(pool);
   }
 
+  // Bandera de módulo, no de document.body.dataset: bajo navegación SPA
+  // (Astro <ClientRouter />) el <body> se reemplaza entero en cada
+  // navegación, así que un guard basado en dataset nunca protegería el
+  // listener de document, que sí persiste durante toda la sesión.
+  let progressTrackerStarted = false;
+
   function initProgressTracker() {
-    if (document.body.dataset.progressTrackerInitialized) return;
-    document.body.dataset.progressTrackerInitialized = 'true';
+    if (progressTrackerStarted) return;
+    progressTrackerStarted = true;
 
     document.addEventListener('practice-complete', ((e: CustomEvent) => {
       const detail = e.detail ?? {};

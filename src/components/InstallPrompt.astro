@@ -32,18 +32,36 @@
 </style>
 
 <script>
+  // Bandera de módulo para los listeners de window, que persisten entre
+  // navegaciones — ver comentario equivalente en ProgressTracker.astro. El
+  // botón en sí se recrea en cada navegación, así que su propio listener de
+  // click sigue enganchándose por nav con el guard local de siempre.
+  let installPromptStarted = false;
+  let deferredPrompt: any = null;
+
   function initInstallPrompt() {
     const btn = document.getElementById('install-btn') as HTMLButtonElement | null;
-    if (!btn || btn.dataset.initialized) return;
+    if (!btn) return;
+
+    if (!installPromptStarted) {
+      installPromptStarted = true;
+
+      window.addEventListener('beforeinstallprompt', (event) => {
+        event.preventDefault();
+        deferredPrompt = event;
+        document.getElementById('install-btn')?.removeAttribute('hidden');
+      });
+
+      window.addEventListener('appinstalled', () => {
+        const current = document.getElementById('install-btn') as HTMLButtonElement | null;
+        if (current) current.hidden = true;
+        deferredPrompt = null;
+      });
+    }
+
+    if (btn.dataset.initialized) return;
     btn.dataset.initialized = 'true';
-
-    let deferredPrompt: any = null;
-
-    window.addEventListener('beforeinstallprompt', (event) => {
-      event.preventDefault();
-      deferredPrompt = event;
-      btn.hidden = false;
-    });
+    btn.hidden = !deferredPrompt;
 
     btn.addEventListener('click', async () => {
       if (!deferredPrompt) return;
@@ -51,11 +69,6 @@
       await deferredPrompt.userChoice;
       deferredPrompt = null;
       btn.hidden = true;
-    });
-
-    window.addEventListener('appinstalled', () => {
-      btn.hidden = true;
-      deferredPrompt = null;
     });
   }
 

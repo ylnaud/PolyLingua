@@ -145,12 +145,19 @@
     }
   }
 
+  // El listener de practice-complete vive en document, que persiste entre
+  // navegaciones SPA — se engancha una sola vez (bandera de módulo, ver
+  // comentario equivalente en ProgressTracker.astro) y siempre llama a
+  // través de esta referencia mutable, que initDailyGoal actualiza en cada
+  // navegación para apuntar al refreshPill del pill/dialog vigentes.
+  let dailyGoalListenerAttached = false;
+  let currentRefreshPill: (() => void) | null = null;
+
   function initDailyGoal() {
     const pill = document.getElementById('goal-pill');
     const pillText = pill?.querySelector<HTMLElement>('[data-goal-pill-text]');
     const dialog = document.getElementById('goal-dialog') as HTMLDialogElement | null;
-    if (!pill || !dialog || pill.dataset.initialized) return;
-    pill.dataset.initialized = 'true';
+    if (!pill || !dialog) return;
 
     function refreshPill() {
       const { minutes } = getProgress();
@@ -162,30 +169,38 @@
           : `🔥 ${streak} · ${minutes} min`;
       }
     }
+    currentRefreshPill = refreshPill;
 
-    dialog.querySelectorAll<HTMLButtonElement>('[data-goal-minutes]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        setGoalMinutes(Number(btn.dataset.goalMinutes));
-        dialog.close();
-        refreshPill();
+    if (!pill.dataset.initialized) {
+      pill.dataset.initialized = 'true';
+
+      dialog.querySelectorAll<HTMLButtonElement>('[data-goal-minutes]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          setGoalMinutes(Number(btn.dataset.goalMinutes));
+          dialog.close();
+          currentRefreshPill?.();
+        });
       });
-    });
 
-    dialog.querySelector<HTMLButtonElement>('[data-goal-skip]')?.addEventListener('click', () => {
-      setGoalMinutes(0);
-      dialog.close();
-      refreshPill();
-    });
+      dialog.querySelector<HTMLButtonElement>('[data-goal-skip]')?.addEventListener('click', () => {
+        setGoalMinutes(0);
+        dialog.close();
+        currentRefreshPill?.();
+      });
 
-    pill.addEventListener('click', () => {
-      if (typeof dialog.showModal === 'function') dialog.showModal();
-    });
+      pill.addEventListener('click', () => {
+        if (typeof dialog.showModal === 'function') dialog.showModal();
+      });
+    }
 
-    document.addEventListener('practice-complete', ((e: CustomEvent) => {
-      const minutes = Number(e.detail?.minutes ?? 8);
-      recordProgress(minutes);
-      refreshPill();
-    }) as EventListener);
+    if (!dailyGoalListenerAttached) {
+      dailyGoalListenerAttached = true;
+      document.addEventListener('practice-complete', ((e: CustomEvent) => {
+        const minutes = Number(e.detail?.minutes ?? 8);
+        recordProgress(minutes);
+        currentRefreshPill?.();
+      }) as EventListener);
+    }
 
     refreshPill();
 

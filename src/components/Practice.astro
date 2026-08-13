@@ -785,6 +785,19 @@ function splitSentence(sentence: string): { before: string; after: string } {
         root.querySelectorAll<HTMLElement>('[data-speak]').forEach((btn) => {
           btn.hidden = true;
         });
+        // Sin TTS, el legend genérico de spokenOnly deja el ítem sin forma de
+        // saber qué escribir — se restaura el prompt real, ya disponible en
+        // data-item-json sin plumbing nuevo.
+        root.querySelectorAll<HTMLElement>('[data-practice-item][data-spoken-only="true"]').forEach((item) => {
+          const legend = item.querySelector('legend');
+          if (!legend) return;
+          try {
+            const data = JSON.parse(item.dataset.itemJson ?? 'null');
+            if (data?.prompt) legend.textContent = data.prompt;
+          } catch {
+            /* deja el texto genérico si el parseo falla */
+          }
+        });
       }
 
       root.addEventListener('click', (e) => {

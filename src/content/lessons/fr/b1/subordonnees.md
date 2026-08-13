@@ -2,7 +2,7 @@
 language: fr
 level: b1
 title: "Parce que, bien que, quand: conecta tus ideas"
-description: "Las conjunciones que te permiten explicar, contrastar y dar contexto — con una sorpresa: algunas exigen el subjonctif."
+description: "Conjunciones como parce que, bien que y quand para conectar ideas en francés, con la sorpresa de que algunas exigen el subjonctif."
 order: 1
 grammarTopic: "Oraciones subordinadas (parce que, bien que, quand) + introducción al subjonctif"
 funFact: "Piensa en 'bien que' como una alarma: cada vez que la escuches o la uses, tu cerebro debe encender una lucecita que dice 'subjonctif obligatorio'. No todas las conjunciones lo piden — pero las de contraste/duda casi siempre sí. Aprende esa lista corta y sabrás detectar la trampa antes de caer en ella."

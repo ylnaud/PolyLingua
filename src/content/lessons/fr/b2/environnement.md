@@ -2,7 +2,7 @@
 language: fr
 level: b2
 title: "L'environnement et la société: vocabulario para debates serios"
-description: "El vocabulario abstracto que necesitas para hablar de medio ambiente, sociedad y actualidad en francés."
+description: "Vocabulario abstracto en francés para debatir sobre medio ambiente, sociedad y actualidad, incluida la diferencia entre climat y temps."
 order: 8
 grammarTopic: "Vocabulario: medio ambiente y sociedad"
 funFact: "'Le climat' y 'le temps' son dos palabras completamente distintas para lo que en español a veces confundimos con 'el clima': 'le climat' es el patrón climático de una región a largo plazo, mientras 'le temps' es el tiempo que hace HOY. Confundirlos es un error muy común entre hispanohablantes."

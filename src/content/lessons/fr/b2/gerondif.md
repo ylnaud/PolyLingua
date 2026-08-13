@@ -2,7 +2,7 @@
 language: fr
 level: b2
 title: "Le gérondif: dos acciones al mismo tiempo, en tres palabras"
-description: "En + participe présent: cómo describir que haces algo MIENTRAS haces otra cosa, sin necesitar dos frases separadas."
+description: "El gérondif del francés (en + participe présent) para describir dos acciones simultáneas sin necesitar dos frases separadas y largas."
 order: 4
 grammarTopic: "Le gérondif (en + participe présent)"
 funFact: "El gérondif francés hace algo que el español necesita dos palabras para lograr: 'en mangeant' comprime 'mientras como/comiendo' en una construcción compacta de 'en' + el verbo terminado en '-ant'. Es la forma más económica de describir dos acciones simultáneas del mismo sujeto."

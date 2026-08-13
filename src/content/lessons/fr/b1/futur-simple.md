@@ -2,7 +2,7 @@
 language: fr
 level: b1
 title: "Le futur simple: el futuro formal, en una sola palabra"
-description: "Cómo formar el futuro sin auxiliar, añadiendo terminaciones directamente al infinitivo (casi siempre)."
+description: "El futur simple del francés: cómo se forma sin auxiliar, añadiendo terminaciones directamente al infinitivo del verbo casi siempre."
 order: 3
 grammarTopic: "Futur simple"
 funFact: "El futur simple francés es la envidia de otros idiomas: no necesita ningún auxiliar como 'will' o 'werden' — las terminaciones del futuro se pegan DIRECTAMENTE al infinitivo del verbo. De hecho, esas terminaciones (-ai, -as, -a, -ons, -ez, -ont) son literalmente el verbo 'avoir' abreviado, fusionado históricamente con el infinitivo."

@@ -2,7 +2,7 @@
 language: fr
 level: c1
 title: "Expressions idiomatiques: cuando las palabras dejan de significar lo que dicen"
-description: "Poser un lapin, avoir le cafard, coûter les yeux de la tête: expresiones que todo francés entiende al instante."
+description: "Expresiones idiomáticas francesas como poser un lapin o avoir le cafard, que todo francófono entiende pero nadie traduce palabra por palabra."
 order: 6
 grammarTopic: "Expresiones idiomáticas francesas"
 funFact: "'Poser un lapin à quelqu'un' literalmente significa 'ponerle un conejo a alguien' — pero en realidad significa 'dejar plantado a alguien'. Como toda expresión idiomática, no se puede traducir palabra por palabra: se aprende como una imagen mental completa."

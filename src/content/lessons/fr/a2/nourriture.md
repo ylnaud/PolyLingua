@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: "La nourriture: pide comida como un local"
-description: "El vocabulario de restaurante y supermercado que necesitas en cualquier situación relacionada con comida."
+description: "Vocabulario de comida y restaurante en francés: pedir platos, hacer la compra y usar 'je voudrais' para sonar educado en vez de brusco."
 order: 7
 grammarTopic: "Vocabulario: comida y restaurante"
 funFact: "En un restaurante francés, decir 'je voudrais' (quisiera) en vez de 'je veux' (quiero) es la diferencia entre sonar educado y sonar brusco — 'je voudrais' es el Conditionnel de 'vouloir' y es la fórmula estándar y obligatoria para pedir cualquier cosa educadamente."

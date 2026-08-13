@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: "Le futur proche: tu primer futuro, y el más usado"
-description: "Aller + infinitivo: la forma más común de hablar del futuro en francés cotidiano, mucho más que el futuro simple."
+description: "El futur proche del francés: aller + infinitivo, la forma más usada para hablar del futuro cercano en la conversación cotidiana real."
 order: 4
 grammarTopic: "Futur proche (aller + infinitivo)"
 funFact: "Igual que en español decimos 'voy a comer' en vez de 'comeré' en la conversación diaria, el francés prefiere 'je vais manger' sobre el futuro simple formal 'je mangerai'. El futur proche domina el habla cotidiana; el futur simple queda para contextos más formales o planes a largo plazo."

@@ -2,7 +2,7 @@
 language: fr
 level: b2
 title: "Les pronoms relatifs: la clave para frases más elegantes"
-description: "Qui, que, dont, où: cómo conectar dos ideas en una sola frase fluida, sin repetir el sustantivo."
+description: "Qui, que, dont y où: los pronombres relativos que conectan dos ideas en una sola frase francesa fluida, sin repetir el sustantivo."
 order: 2
 grammarTopic: "Pronoms relatifs (qui, que, dont, où)"
 funFact: "Piensa en cada pronombre relativo como una etiqueta que indica qué función cumplía la palabra que reemplaza: 'qui' reemplaza un SUJETO, 'que' reemplaza un OBJETO DIRECTO, 'dont' reemplaza algo introducido por 'de', y 'où' reemplaza un LUGAR o TIEMPO. Identifica la función antes de elegir el pronombre."

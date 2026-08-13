@@ -57,7 +57,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
   fieldset.appendChild(el('span', { class: 'kind-tag' }, KIND_LABELS[kind] ?? kind));
 
   if (kind === 'choice') {
-    fieldset.appendChild(el('legend', {}, data.question));
+    fieldset.appendChild(el('legend', { tabindex: '-1' }, data.question));
     const options = el('div', { class: 'options' });
     (data.options as string[]).forEach((opt, oi) => {
       const btn = el('button', {
@@ -74,7 +74,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
 
   if (kind === 'fill-blank' || kind === 'write') {
     if (kind === 'fill-blank') {
-      fieldset.appendChild(el('legend', {}, 'Completa la frase'));
+      fieldset.appendChild(el('legend', { tabindex: '-1' }, 'Completa la frase'));
       const idx = (data.sentence as string).indexOf('___');
       const before = idx === -1 ? data.sentence : data.sentence.slice(0, idx);
       const after = idx === -1 ? '' : data.sentence.slice(idx + 3);
@@ -84,7 +84,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
       if (data.translation) fieldset.appendChild(el('p', { class: 'prompt-translation' }, data.translation));
     } else {
       fieldset.appendChild(
-        el('legend', {}, data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : data.prompt)
+        el('legend', { tabindex: '-1' }, data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : data.prompt)
       );
       if (data.spokenOnly) {
         fieldset.appendChild(
@@ -129,7 +129,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
 
   if (kind === 'match') {
     fieldset.appendChild(
-      el('legend', {}, data.instructions ?? 'Empareja cada elemento con su pareja correcta')
+      el('legend', { tabindex: '-1' }, data.instructions ?? 'Empareja cada elemento con su pareja correcta')
     );
     const pairs = data.pairs as { left: string; right: string }[];
     const board = el('div', { class: 'match-board', 'data-match-board': '', 'data-remaining': String(pairs.length) });
@@ -161,7 +161,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
   }
 
   if (kind === 'order') {
-    fieldset.appendChild(el('legend', {}, 'Ordena las palabras para formar la frase correcta'));
+    fieldset.appendChild(el('legend', { tabindex: '-1' }, 'Ordena las palabras para formar la frase correcta'));
     if (data.translation) fieldset.appendChild(el('p', { class: 'prompt-translation' }, data.translation));
     fieldset.appendChild(
       el('div', {

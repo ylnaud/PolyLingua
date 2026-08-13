@@ -516,13 +516,15 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
   .option.correct,
   .match-item.correct,
-  .answer-input.correct {
+  .answer-input.correct,
+  .order-assembled.correct {
     animation: match-pop 0.35s ease;
   }
 
   .option.incorrect,
   .match-item.incorrect,
-  .answer-input.incorrect {
+  .answer-input.incorrect,
+  .order-assembled.incorrect {
     animation: match-shake 0.4s ease;
   }
 
@@ -596,11 +598,13 @@ function splitSentence(sentence: string): { before: string; after: string } {
     border-color: var(--accent);
   }
 
-  .answer-input.correct {
+  .answer-input.correct,
+  .order-assembled.correct {
     border-color: #2f9e6e;
   }
 
-  .answer-input.incorrect {
+  .answer-input.incorrect,
+  .order-assembled.incorrect {
     border-color: var(--de-red);
   }
 
@@ -730,6 +734,13 @@ function splitSentence(sentence: string): { before: string; after: string } {
     const frag = document.createDocumentFragment();
     shuffled.forEach((el) => frag.appendChild(el));
     container.appendChild(frag);
+  }
+
+  function showCorrection(afterEl: Element, answerText: string) {
+    const p = document.createElement('p');
+    p.className = 'prompt-translation';
+    p.textContent = `Correcto: ${answerText}`;
+    afterEl.after(p);
   }
 
   function normalize(value: string): string {
@@ -925,7 +936,10 @@ function splitSentence(sentence: string): { before: string; after: string } {
             const isCorrect = candidates.includes(normalize(input.value));
             input.disabled = true;
             input.classList.add(isCorrect ? 'correct' : 'incorrect');
-            if (!isCorrect) input.value = `${input.value} → ${answer}`;
+            if (!isCorrect) {
+              const row = input.closest('.answer-row') ?? input;
+              showCorrection(row, answer);
+            }
             if (checkBtn) checkBtn.hidden = true;
             if (revealSpeak && answer) {
               revealSpeak.dataset.speakText = answer;
@@ -1040,11 +1054,9 @@ function splitSentence(sentence: string): { before: string; after: string } {
               .join(' ');
             const isCorrect = normalize(built) === normalize(correctSentence);
             checkBtn.hidden = true;
-            if (!isCorrect && assembled) {
-              const correction = document.createElement('p');
-              correction.className = 'prompt-translation';
-              correction.textContent = `Correcto: ${correctSentence}`;
-              assembled.after(correction);
+            if (assembled) {
+              assembled.classList.add(isCorrect ? 'correct' : 'incorrect');
+              if (!isCorrect) showCorrection(assembled, correctSentence);
             }
             if (revealSpeak && correctSentence) {
               revealSpeak.dataset.speakText = correctSentence;

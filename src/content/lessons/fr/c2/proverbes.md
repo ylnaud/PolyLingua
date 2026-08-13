@@ -2,7 +2,7 @@
 language: fr
 level: c2
 title: "Les proverbes: la sabiduría popular francesa en una frase"
-description: "Refranes que todo francófono reconoce al instante, y que revelan tanto sobre la cultura como sobre el idioma."
+description: "Proverbes: refranes populares que todo francófono reconoce al instante y que revelan tanto de la cultura como del idioma francés mismo."
 order: 4
 grammarTopic: "Proverbes (refranes y dichos populares)"
 funFact: "'Petit à petit, l'oiseau fait son nid' (poco a poco, el pájaro hace su nido) es prácticamente idéntico en sabiduría a 'Roma no se hizo en un día' — la imagen concreta cambia entre culturas, pero la paciencia como virtud es una sabiduría casi universal."

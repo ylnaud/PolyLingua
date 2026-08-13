@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: "Vouloir, pouvoir, devoir: pide, permite y opina"
-description: "Los tres verbos que te dan superpoderes conversacionales, siempre seguidos de un infinitivo."
+description: "Vouloir, pouvoir y devoir: los tres verbos semi-modales del francés que se combinan con un infinitivo para pedir, permitir y opinar."
 order: 2
 grammarTopic: "Verbos semi-modales (vouloir, pouvoir, devoir) + il faut"
 funFact: "Estos tres verbos son irregulares pero comparten una estructura idéntica: [verbo conjugado] + [infinitivo]. Una vez que memorizas la conjugación de uno, entiendes la lógica de los tres. Es como aprender tres acordes de guitarra que se combinan con cualquier canción."

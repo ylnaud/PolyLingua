@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: "Le comparatif et le superlatif: compara todo en francés"
-description: "Plus, moins, aussi... que: cómo comparar personas, cosas y situaciones con solo tres palabras clave."
+description: "Cómo comparar en francés con plus, moins y aussi... que, y formar el superlativo sin cambiar nunca la terminación de ningún adjetivo."
 order: 3
 grammarTopic: "Comparativo y superlativo"
 funFact: "A diferencia del alemán o inglés, el francés casi nunca cambia la terminación del adjetivo para comparar — simplemente añade 'plus/moins/aussi' antes y 'que' después. Es uno de los sistemas comparativos más simples y regulares de los cinco idiomas de PolyLingua."

@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: "Poser des questions: tres formas de preguntar en francés"
-description: "De la más informal a la más formal: cómo hacer preguntas usando entonación, 'est-ce que' o inversión."
+description: "Tres formas de preguntar en francés, de la más informal a la más formal: solo entonación, 'est-ce que' o inversión del verbo y el sujeto."
 order: 8
 grammarTopic: "Formación de preguntas (intonation, est-ce que, inversion)"
 funFact: "El francés te da TRES formas de hacer la misma pregunta, cada una con su propio nivel de formalidad: solo la entonación (muy informal), 'est-ce que' (neutral, la más usada), o invertir el verbo y el sujeto (formal/escrito). Puedes elegir según el contexto, igual que eliges el registro en español."

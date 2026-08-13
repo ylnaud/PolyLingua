@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: "Les pronoms COD et COI: reemplaza sin repetir"
-description: "Le, la, les, lui, leur: los pronombres que evitan repetir el sustantivo una y otra vez, y dónde colocarlos en la frase."
+description: "Los pronombres COD y COI del francés (le, la, les, lui, leur) para reemplazar sustantivos sin repetirlos, con su posición en la frase."
 order: 5
 grammarTopic: "Pronombres objeto directo (COD) e indirecto (COI)"
 funFact: "A diferencia del español, donde el pronombre de objeto va antes del verbo conjugado ('lo veo'), el francés hace exactamente lo mismo ('je le vois') — la lógica te resultará familiar. La verdadera trampa está en elegir entre COD (le/la/les) y COI (lui/leur) según si el verbo francés usa una preposición 'à' oculta o no."

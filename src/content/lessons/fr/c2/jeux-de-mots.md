@@ -2,7 +2,7 @@
 language: fr
 level: c2
 title: "Les jeux de mots: cuando entiendes el chiste sin traducirlo"
-description: "Cómo funcionan los juegos de palabras franceses: homófonos, dobles sentidos y el humor basado en el sonido del idioma."
+description: "Cómo funcionan los juegos de palabras franceses: homófonos, dobles sentidos y el humor que se basa en el sonido puro del idioma francés."
 order: 6
 grammarTopic: "Juegos de palabras (jeux de mots) y homófonos"
 funFact: "El francés tiene muchísimos homófonos (palabras que suenan igual pero se escriben distinto: 'ver', 'vert', 'vers', 'verre' — todos suenan igual pero significan 'gusano', 'verde', 'hacia' y 'vaso') — una mina de oro para juegos de palabras que casi no tiene equivalente en español."

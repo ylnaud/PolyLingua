@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: "L'heure: pregunta y di la hora en francés"
-description: "El sistema de 12 y 24 horas, más los cuartos y medias que necesitas para citas y horarios."
+description: "Cómo preguntar y decir la hora en francés: sistema de 12 y 24 horas, cuartos, medias y las expresiones que necesitas para citas y horarios."
 order: 4
 grammarTopic: "Decir la hora"
 funFact: "'Il est midi et demi' (es mediodía y media) es una de las pocas excepciones donde 'demi' concuerda en género con 'midi' (masculino) sin 'e' final — pero 'il est une heure et demie' sí lleva la 'e' porque 'heure' es femenino. Un pequeño detalle de concordancia que sorprende incluso a nivel intermedio."

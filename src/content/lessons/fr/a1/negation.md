@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: "La négation: ne...pas, el sándwich que rodea al verbo"
-description: "Cómo negar cualquier frase en francés colocando 'ne' y 'pas' a los dos lados del verbo."
+description: "La negación básica del francés: coloca 'ne' antes y 'pas' después del verbo, como un sándwich, para negar cualquier frase con seguridad."
 order: 6
 grammarTopic: "Negación (ne...pas)"
 funFact: "Piensa en 'ne...pas' como un sándwich: el verbo va siempre en el medio, atrapado entre 'ne' (antes) y 'pas' (después). En el francés hablado muy informal, los franceses a menudo omiten el 'ne' y dicen solo 'pas' — pero al escribir o hablar formalmente, ambas partes son obligatorias."

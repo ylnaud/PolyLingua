@@ -2,7 +2,7 @@
 language: fr
 level: b2
 title: "Cause et conséquence: explica el porqué con precisión"
-description: "Parce que, car, puisque, donc, c'est pourquoi: los conectores que estructuran un argumento causal claro."
+description: "Parce que, car, puisque, donc y c'est pourquoi: los conectores que estructuran un argumento causal claro y preciso en francés escrito."
 order: 5
 grammarTopic: "Conectores de causa y consecuencia"
 funFact: "'Car' y 'parce que' significan lo mismo (porque), pero 'car' es más formal y NUNCA puede empezar una frase por sí solo sin conectar dos ideas ya presentadas — mientras 'parce que' responde naturalmente a la pregunta '¿pourquoi?' de forma directa."

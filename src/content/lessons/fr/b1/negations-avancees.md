@@ -2,7 +2,7 @@
 language: fr
 level: b1
 title: "Les négations avancées: más allá de ne...pas"
-description: "Ne...jamais, ne...rien, ne...personne, ne...plus: la familia completa de negaciones francesas y cómo combinarlas."
+description: "Ne...jamais, ne...rien, ne...personne y ne...plus: la familia completa de negaciones francesas más allá de ne...pas, y cómo combinarlas."
 order: 8
 grammarTopic: "Negaciones avanzadas (ne...jamais/rien/personne/plus)"
 funFact: "Todas estas negaciones siguen exactamente el mismo 'sándwich' que ya conoces de 'ne...pas' — solo cambia la segunda palabra. Una vez que dominas la estructura básica, memorizar el resto de la familia es simplemente aprender vocabulario nuevo dentro de un molde que ya conoces."

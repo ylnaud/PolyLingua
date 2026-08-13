@@ -2,7 +2,7 @@
 language: fr
 level: c2
 title: "L'ironie et l'humour: decir lo contrario de lo que piensas"
-description: "Cómo reconocer la ironía francesa y el 'esprit' —el ingenio verbal— que tanto valora la cultura francófona."
+description: "Cómo reconocer la ironía francesa y el 'esprit', el ingenio verbal que la cultura francófona valora tanto como tener razón en una discusión."
 order: 3
 grammarTopic: "Ironía y humor en francés"
 funFact: "El 'esprit français' (ingenio francés) valora especialmente la réplica rápida y elegante — un comentario irónico bien construido se admira casi tanto como tener razón en un argumento. Reconocer cuándo alguien está siendo irónico, sin ninguna marca gramatical explícita, es una habilidad puramente cultural."

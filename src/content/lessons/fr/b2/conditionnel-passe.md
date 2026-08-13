@@ -2,7 +2,7 @@
 language: fr
 level: b2
 title: "Le conditionnel passé: lamentar el pasado que no cambió"
-description: "'Si j'avais su...' — el condicional para hablar de un pasado alternativo que nunca ocurrió."
+description: "El conditionnel passé del francés, 'si j'avais su...', para lamentar en francés un pasado alternativo que nunca llegó a ocurrir realmente."
 order: 3
 grammarTopic: "Conditionnel passé"
 funFact: "El Conditionnel passé es la versión francesa del 'habría hecho' en español — y se construye exactamente como el passé composé, pero con el auxiliar en Conditionnel présent en vez de presente normal. Es la fórmula perfecta para el arrepentimiento y las reflexiones tipo '¿qué habría pasado si...?'"

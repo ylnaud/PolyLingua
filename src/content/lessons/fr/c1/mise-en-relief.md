@@ -2,7 +2,7 @@
 language: fr
 level: c1
 title: "La mise en relief: pon el foco exactamente donde quieres"
-description: "C'est... qui / c'est... que: cómo reestructurar una frase francesa para dar énfasis dramático a una sola parte."
+description: "La mise en relief del francés (c'est... qui / c'est... que) para reestructurar una frase y dar énfasis dramático a una sola parte."
 order: 4
 grammarTopic: "Mise en relief (c'est...qui/que)"
 funFact: "'C'est Marie qui a téléphoné' literalmente 'parte' la frase en dos, con el único propósito de gritar 'fue MARÍA, no nadie más'. Es el equivalente francés exacto de las cleft sentences inglesas — la misma herramienta retórica, con su propio molde gramatical."

@@ -2,7 +2,7 @@
 language: fr
 level: b1
 title: "Quand, lorsque, dès que: el futuro que el español no marca"
-description: "Por qué el francés exige futuro después de estas conjunciones cuando hablas de algo que aún no pasó, a diferencia del español."
+description: "Por qué 'quand', 'lorsque' y 'dès que' exigen futuro en francés al hablar de algo que aún no pasó, a diferencia del presente del español."
 order: 5
 grammarTopic: "Conjunciones de tiempo (quand, lorsque, dès que) + concordancia de tiempos"
 funFact: "En español dices 'cuando llegues, llámame' usando presente para el futuro. En francés, esa misma lógica sería incorrecta: 'quand tu arriveras, appelle-moi' EXIGE futuro en ambas partes si el evento es futuro. Es una de las trampas más comunes para hispanohablantes en este nivel."

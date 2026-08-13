@@ -2,7 +2,7 @@
 language: fr
 level: c1
 title: "Le discours indirect: cuenta lo que otros dijeron, con precisión"
-description: "Cómo cambian los tiempos verbales, los pronombres y las expresiones de tiempo al reportar las palabras de alguien más."
+description: "El discours indirect del francés: cómo cambian los tiempos verbales, los pronombres y las expresiones de tiempo al reportar palabras ajenas."
 order: 2
 grammarTopic: "Discours indirect (concordance des temps)"
 funFact: "Igual que en el 'backshift' del inglés, el francés retrocede sistemáticamente los tiempos verbales al reportar discurso: présent → imparfait, futur → conditionnel, passé composé → plus-que-parfait. Es un movimiento mecánico de 'un paso hacia atrás' que, una vez que lo automatizas, se vuelve instantáneo."

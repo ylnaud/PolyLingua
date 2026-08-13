@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: "Le présent: tres grupos de verbos, un solo patrón cada uno"
-description: "Conjuga verbos en -er, -ir y -re con reglas predecibles, más los dos irregulares que tienes que saberte sí o sí."
+description: "Conjuga el présent de l'indicatif en francés: los tres grupos de verbos regulares (-er, -ir, -re) y los dos irregulares être y avoir."
 order: 2
 grammarTopic: "Présent de l'indicatif (verbos regulares -er + être/avoir)"
 funFact: "El 90% de los verbos franceses terminan en '-er' y se conjugan EXACTAMENTE igual (parler, manger, aimer...). Aprende UN verbo en -er a la perfección y automáticamente sabes conjugar cientos más. Es el grupo más rentable de memorizar."

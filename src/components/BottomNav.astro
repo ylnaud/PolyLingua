@@ -1,0 +1,171 @@
+---
+const path = Astro.url.pathname;
+
+const isActive = (route: string) =>
+  route === '/' ? path === '/' : path === route || path.startsWith(`${route}/`);
+
+const tabs = [
+  { href: '/', icon: '🏠', label: 'Inicio' },
+  { href: '/idiomas', icon: '📚', label: 'Idiomas' },
+  { href: '/repasar', icon: '🔁', label: 'Repasar', reload: true },
+  { href: '/logros', icon: '🏆', label: 'Logros' },
+];
+---
+
+<nav class="bottom-nav" aria-label="Navegación principal móvil">
+  {tabs.map((tab) => (
+    <a
+      href={tab.href}
+      class={isActive(tab.href) ? 'nav-item active' : 'nav-item'}
+      aria-current={isActive(tab.href) ? 'page' : undefined}
+      data-astro-reload={tab.reload ? true : undefined}
+    >
+      <span class="ico" aria-hidden="true">{tab.icon}</span>
+      <span class="label">{tab.label}</span>
+    </a>
+  ))}
+  <button
+    type="button"
+    class="nav-item more-btn"
+    id="more-btn"
+    aria-haspopup="dialog"
+    aria-controls="more-sheet"
+    aria-expanded="false"
+  >
+    <span class="ico" aria-hidden="true">☰</span>
+    <span class="label">Más</span>
+  </button>
+</nav>
+
+<dialog id="more-sheet" aria-label="Más opciones">
+  <a href="/practica-libre" data-astro-reload class="sheet-link">🎲 Práctica libre</a>
+  <a href="/blog" class="sheet-link">📰 Blog</a>
+  <a href="/#por-que" class="sheet-link">💡 Por qué PolyLingua</a>
+  <a href="/#faq" class="sheet-link">❓ FAQ</a>
+  <a href="/idiomas" class="sheet-link cta">Empezar gratis</a>
+</dialog>
+
+<style>
+  .bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    height: calc(var(--bottom-nav-h) + var(--bottom-nav-gap));
+    padding-bottom: var(--bottom-nav-gap);
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    align-items: stretch;
+    justify-content: space-around;
+  }
+
+  @media (max-width: 720px) {
+    .bottom-nav {
+      display: flex;
+    }
+  }
+
+  .nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    min-height: 44px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .nav-item .ico {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .nav-item .label {
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+
+  .nav-item.active {
+    color: var(--accent-text);
+  }
+
+  #more-sheet {
+    margin: 0;
+    inset: auto 0 calc(var(--bottom-nav-h) + var(--bottom-nav-gap)) 0;
+    width: 100%;
+    max-width: none;
+    border: none;
+    border-top: 1px solid var(--border);
+    border-radius: var(--radius) var(--radius) 0 0;
+    padding: 0.75rem;
+    background: var(--bg-card);
+    color: var(--text);
+  }
+
+  #more-sheet[open] {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  #more-sheet::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .sheet-link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.6rem 0.9rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .sheet-link:hover {
+    background: var(--bg-elevated);
+  }
+
+  .sheet-link.cta {
+    justify-content: center;
+    margin-top: 0.3rem;
+    background: var(--accent);
+    color: var(--de-black);
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  function initBottomNav() {
+    const btn = document.getElementById('more-btn');
+    const dialog = document.getElementById('more-sheet') as HTMLDialogElement | null;
+    if (!btn || !dialog || btn.dataset.initialized) return;
+    btn.dataset.initialized = 'true';
+
+    btn.addEventListener('click', () => {
+      dialog.showModal();
+      btn.setAttribute('aria-expanded', 'true');
+    });
+
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+
+    dialog.addEventListener('close', () => {
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  initBottomNav();
+  document.addEventListener('astro:page-load', initBottomNav);
+</script>

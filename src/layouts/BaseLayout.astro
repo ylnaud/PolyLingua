@@ -6,6 +6,7 @@ import ProgressTracker from '../components/ProgressTracker.astro';
 import SoundEffects from '../components/SoundEffects.astro';
 import CookieNotice from '../components/CookieNotice.astro';
 import ScrollTopButton from '../components/ScrollTopButton.astro';
+import BottomNav from '../components/BottomNav.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -34,7 +35,7 @@ const ogImage = new URL('/og-image.svg', Astro.site);
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -91,6 +92,7 @@ const ogImage = new URL('/og-image.svg', Astro.site);
     <SoundEffects />
     <CookieNotice />
     <ScrollTopButton />
+    <BottomNav />
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

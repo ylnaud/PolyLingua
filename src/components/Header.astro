@@ -18,8 +18,8 @@ import DailyGoal from './DailyGoal.astro';
     </nav>
     <div class="actions">
       <DailyGoal />
-      <a class="btn-pill" href="/repasar" aria-label="Repasar palabras falladas">📚 Repasar</a>
-      <a class="btn-pill" href="/practica-libre" aria-label="Práctica libre aleatoria">🎲 Práctica libre</a>
+      <a class="btn-pill" href="/repasar" data-astro-reload aria-label="Repasar palabras falladas">📚 Repasar</a>
+      <a class="btn-pill" href="/practica-libre" data-astro-reload aria-label="Práctica libre aleatoria">🎲 Práctica libre</a>
       <a class="btn-pill" href="/logros" aria-label="Ver tus logros">🏆 Logros</a>
       <InstallPrompt />
       <SoundToggle />
@@ -42,8 +42,8 @@ import DailyGoal from './DailyGoal.astro';
     <a href="/blog">Blog</a>
     <a href="/#por-que">Por qué PolyLingua</a>
     <a href="/#faq">FAQ</a>
-    <a href="/repasar">📚 Repasar</a>
-    <a href="/practica-libre">🎲 Práctica libre</a>
+    <a href="/repasar" data-astro-reload>📚 Repasar</a>
+    <a href="/practica-libre" data-astro-reload>🎲 Práctica libre</a>
     <a href="/logros">🏆 Logros</a>
   </nav>
 </header>

@@ -7,7 +7,8 @@
   aria-haspopup="dialog"
   aria-label="Ver o cambiar tu meta de práctica de hoy"
 >
-  <span data-goal-pill-text>🔥 0 · 0 min</span>
+  <span class="goal-pill-fill" data-goal-pill-fill></span>
+  <span data-goal-pill-text aria-live="polite">🔥 0 · 0 min</span>
 </button>
 
 <dialog id="goal-dialog" class="goal-dialog" aria-labelledby="goal-dialog-title">
@@ -26,6 +27,8 @@
 
 <style>
   .goal-pill {
+    position: relative;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
@@ -43,6 +46,38 @@
 
   .goal-pill:hover {
     border-color: var(--accent);
+  }
+
+  .goal-pill-fill {
+    position: absolute;
+    inset: 0;
+    width: 0%;
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
+    transition: width 0.3s ease;
+  }
+
+  .goal-pill span[data-goal-pill-text] {
+    position: relative;
+    z-index: 1;
+  }
+
+  .goal-pill-met {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+
+  @keyframes goal-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.08);
+    }
+  }
+
+  .goal-pill-pulse {
+    animation: goal-pulse 0.6s ease;
   }
 
   .goal-dialog {
@@ -92,6 +127,15 @@
   .goal-option:hover {
     border-color: var(--accent);
     background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+
+  .goal-option.is-selected {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+
+  .goal-option.is-selected::after {
+    content: ' ✓';
   }
 
   .goal-skip {
@@ -152,10 +196,12 @@
   // navegación para apuntar al refreshPill del pill/dialog vigentes.
   let dailyGoalListenerAttached = false;
   let currentRefreshPill: (() => void) | null = null;
+  let currentCelebrate: (() => void) | null = null;
 
   function initDailyGoal() {
     const pill = document.getElementById('goal-pill');
     const pillText = pill?.querySelector<HTMLElement>('[data-goal-pill-text]');
+    const pillFill = pill?.querySelector<HTMLElement>('[data-goal-pill-fill]');
     const dialog = document.getElementById('goal-dialog') as HTMLDialogElement | null;
     if (!pill || !dialog) return;
 
@@ -163,13 +209,27 @@
       const { minutes } = getProgress();
       const goal = getGoalMinutes();
       const streak = getStreak();
+      const met = !!goal && minutes >= goal;
+      pill!.classList.toggle('goal-pill-met', met);
+      if (pillFill) pillFill.style.width = `${goal ? Math.min(100, Math.round((minutes / goal) * 100)) : 0}%`;
       if (pillText) {
         pillText.textContent = goal
-          ? `🔥 ${streak} · ${minutes}/${goal} min`
+          ? `${met ? '🎉' : '🔥'} ${streak} · ${minutes}/${goal} min`
           : `🔥 ${streak} · ${minutes} min`;
       }
     }
     currentRefreshPill = refreshPill;
+
+    // El pulso de "meta cumplida" es un disparo único al cruzar el umbral,
+    // no algo que refreshPill() pueda decidir (correría en cada carga de
+    // página, no solo al completar la sesión que cruza la meta) — ver el
+    // listener de practice-complete más abajo, que compara antes/después.
+    function celebrateGoalMet() {
+      pill!.classList.remove('goal-pill-pulse');
+      void pill!.offsetWidth;
+      pill!.classList.add('goal-pill-pulse');
+    }
+    currentCelebrate = celebrateGoalMet;
 
     if (!pill.dataset.initialized) {
       pill.dataset.initialized = 'true';
@@ -177,8 +237,14 @@
       dialog.querySelectorAll<HTMLButtonElement>('[data-goal-minutes]').forEach((btn) => {
         btn.addEventListener('click', () => {
           setGoalMinutes(Number(btn.dataset.goalMinutes));
-          dialog.close();
+          dialog.querySelectorAll('.goal-option').forEach((b) => b.classList.remove('is-selected'));
+          btn.classList.add('is-selected');
           currentRefreshPill?.();
+          window.setTimeout(() => {
+            if (!dialog.isConnected) return;
+            dialog.close();
+            btn.classList.remove('is-selected');
+          }, 400);
         });
       });
 
@@ -196,9 +262,13 @@
     if (!dailyGoalListenerAttached) {
       dailyGoalListenerAttached = true;
       document.addEventListener('practice-complete', ((e: CustomEvent) => {
+        const goal = getGoalMinutes();
+        const before = getProgress().minutes;
         const minutes = Number(e.detail?.minutes ?? 8);
         recordProgress(minutes);
+        const after = getProgress().minutes;
         currentRefreshPill?.();
+        if (goal && before < goal && after >= goal) currentCelebrate?.();
       }) as EventListener);
     }
 

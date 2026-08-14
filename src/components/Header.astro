@@ -129,6 +129,11 @@ import DailyGoal from './DailyGoal.astro';
     .actions .btn-pill {
       display: none;
     }
+
+    .actions :global(.sound-toggle),
+    .actions :global(.theme-toggle) {
+      display: none;
+    }
   }
 
   @media (max-width: 480px) {

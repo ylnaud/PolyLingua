@@ -764,6 +764,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
       const items = Array.from(root.querySelectorAll<HTMLElement>('[data-practice-item]'));
       if (items.length === 0 && root.dataset.dynamic === 'true') return;
       root.dataset.initialized = 'true';
+      const startedAt = Date.now();
       const progressEl = root.querySelector<HTMLElement>('[data-practice-progress]');
       const doneEl = root.querySelector<HTMLElement>('[data-practice-done]');
       const scoreText = root.querySelector<HTMLElement>('[data-score-text]');
@@ -853,7 +854,9 @@ function splitSentence(sentence: string): { before: string; after: string } {
         const pct = score / items.length;
         if (scoreEmoji) scoreEmoji.textContent = pct === 1 ? '🏆' : pct >= 0.5 ? '🎉' : '💪';
         if (scoreText) scoreText.textContent = `Acertaste ${score} / ${items.length}`;
-        const minutes = Number(root.dataset.lessonMinutes ?? 8);
+        const estimatedMinutes = Number(root.dataset.lessonMinutes ?? 8);
+        const elapsedMinutes = Math.round((Date.now() - startedAt) / 60000);
+        const minutes = Math.min(Math.max(elapsedMinutes, 1), Math.max(estimatedMinutes * 4, 10));
         root.dispatchEvent(
           new CustomEvent('practice-complete', {
             detail: {

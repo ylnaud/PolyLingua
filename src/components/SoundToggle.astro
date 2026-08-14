@@ -1,14 +1,23 @@
 ---
+interface Props {
+  // 'icon' es el botón circular del header (desktop/landscape); 'sheet' es la
+  // variante de fila completa para el menú "Más" del bottom nav (portrait) —
+  // ambas comparten el mismo comportamiento vía la clase .sound-toggle, así
+  // que en cualquier página con las dos instancias montadas (header + sheet)
+  // se sincronizan en simultáneo.
+  variant?: 'icon' | 'sheet';
+}
+
+const { variant = 'icon' } = Astro.props;
 ---
 <button
   type="button"
-  class="sound-toggle"
-  id="sound-toggle"
+  class:list={['sound-toggle', { 'sound-toggle-sheet': variant === 'sheet' }]}
   aria-label="Silenciar sonidos"
   aria-pressed="false"
 >
-  <span class="icon icon-on" aria-hidden="true">🔊</span>
-  <span class="icon icon-off" aria-hidden="true">🔇</span>
+  <span class="icon icon-on" aria-hidden="true">🔊<span class="sheet-only"> Silenciar sonidos</span></span>
+  <span class="icon icon-off" aria-hidden="true">🔇<span class="sheet-only"> Activar sonidos</span></span>
 </button>
 
 <style>
@@ -41,28 +50,69 @@
   .sound-toggle.is-muted .icon-off {
     display: inline;
   }
+
+  .sheet-only {
+    display: none;
+  }
+
+  .sound-toggle-sheet {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    min-height: 44px;
+    padding: 0.6rem 0.9rem;
+    font-size: 1rem;
+  }
+
+  .sound-toggle-sheet:hover {
+    border-color: transparent;
+    background: var(--bg-elevated);
+  }
+
+  .sound-toggle-sheet .sheet-only {
+    display: inline;
+  }
 </style>
 
 <script>
   import { isMuted, setMuted } from '../lib/sound';
 
-  function initSoundToggle() {
-    const btn = document.getElementById('sound-toggle');
-    if (!btn || btn.dataset.initialized) return;
-    btn.dataset.initialized = 'true';
+  // Puede haber más de un botón .sound-toggle montado a la vez (el del
+  // header y el del menú "Más"), así que todo lo que toca visibilidad/estado
+  // opera sobre querySelectorAll en vez de un único id, para que ambas
+  // instancias queden siempre sincronizadas — ver comentario equivalente en
+  // InstallPrompt.astro.
+  function allButtons(): HTMLButtonElement[] {
+    return Array.from(document.querySelectorAll<HTMLButtonElement>('.sound-toggle'));
+  }
 
-    const sync = () => {
-      const muted = isMuted();
+  function syncAll() {
+    const muted = isMuted();
+    allButtons().forEach((btn) => {
       btn.setAttribute('aria-pressed', String(muted));
       btn.classList.toggle('is-muted', muted);
       btn.setAttribute('aria-label', muted ? 'Activar sonidos' : 'Silenciar sonidos');
-    };
-    sync();
-
-    btn.addEventListener('click', () => {
-      setMuted(!isMuted());
-      sync();
     });
+  }
+
+  function initSoundToggle() {
+    const btns = allButtons();
+    if (btns.length === 0) return;
+
+    btns.forEach((btn) => {
+      if (btn.dataset.initialized) return;
+      btn.dataset.initialized = 'true';
+      btn.addEventListener('click', () => {
+        setMuted(!isMuted());
+        syncAll();
+      });
+    });
+
+    syncAll();
   }
 
   initSoundToggle();

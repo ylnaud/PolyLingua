@@ -1,14 +1,23 @@
 ---
+interface Props {
+  // 'icon' es el botón circular del header (desktop/landscape); 'sheet' es la
+  // variante de fila completa para el menú "Más" del bottom nav (portrait) —
+  // ambas comparten el mismo comportamiento vía la clase .theme-toggle, así
+  // que en cualquier página con las dos instancias montadas (header + sheet)
+  // se sincronizan en simultáneo.
+  variant?: 'icon' | 'sheet';
+}
+
+const { variant = 'icon' } = Astro.props;
 ---
 <button
   type="button"
-  class="theme-toggle"
-  id="theme-toggle"
+  class:list={['theme-toggle', { 'theme-toggle-sheet': variant === 'sheet' }]}
   aria-label="Cambiar entre modo oscuro y modo claro"
   aria-pressed="false"
 >
-  <span class="icon icon-sun" aria-hidden="true">☀️</span>
-  <span class="icon icon-moon" aria-hidden="true">🌙</span>
+  <span class="icon icon-sun" aria-hidden="true">☀️<span class="sheet-only"> Cambiar a modo claro</span></span>
+  <span class="icon icon-moon" aria-hidden="true">🌙<span class="sheet-only"> Cambiar a modo oscuro</span></span>
 </button>
 
 <style>
@@ -41,32 +50,70 @@
   :root[data-theme='light'] .icon-moon {
     display: inline;
   }
+
+  .sheet-only {
+    display: none;
+  }
+
+  .theme-toggle-sheet {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    min-height: 44px;
+    padding: 0.6rem 0.9rem;
+    font-size: 1rem;
+  }
+
+  .theme-toggle-sheet:hover {
+    border-color: transparent;
+    background: var(--bg-elevated);
+  }
+
+  .theme-toggle-sheet .sheet-only {
+    display: inline;
+  }
 </style>
 
 <script>
+  // Puede haber más de un botón .theme-toggle montado a la vez (el del
+  // header y el del menú "Más") — el swap de íconos ya lo resuelve un
+  // selector CSS global sobre :root[data-theme], así que lo único que hay
+  // que sincronizar entre instancias es aria-pressed. Ver comentario
+  // equivalente en InstallPrompt.astro / SoundToggle.astro.
+  function allButtons(): HTMLButtonElement[] {
+    return Array.from(document.querySelectorAll<HTMLButtonElement>('.theme-toggle'));
+  }
+
+  function syncAll() {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    allButtons().forEach((btn) => btn.setAttribute('aria-pressed', String(isLight)));
+  }
+
   function initThemeToggle() {
-    const btn = document.getElementById('theme-toggle');
-    if (!btn || btn.dataset.initialized) return;
-    btn.dataset.initialized = 'true';
+    const btns = allButtons();
+    if (btns.length === 0) return;
 
-    const root = document.documentElement;
-
-    const sync = () => {
-      const isLight = root.getAttribute('data-theme') === 'light';
-      btn.setAttribute('aria-pressed', String(isLight));
-    };
-    sync();
-
-    btn.addEventListener('click', () => {
-      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', next);
-      try {
-        localStorage.setItem('polylingua-theme', next);
-      } catch (e) {
-        /* localStorage unavailable */
-      }
-      sync();
+    btns.forEach((btn) => {
+      if (btn.dataset.initialized) return;
+      btn.dataset.initialized = 'true';
+      btn.addEventListener('click', () => {
+        const root = document.documentElement;
+        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        try {
+          localStorage.setItem('polylingua-theme', next);
+        } catch (e) {
+          /* localStorage unavailable */
+        }
+        syncAll();
+      });
     });
+
+    syncAll();
   }
 
   initThemeToggle();

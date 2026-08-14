@@ -114,6 +114,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
       'data-answer-input': '',
       'data-answer': data.answer,
       'data-accepted': (data.accepted ?? []).join('|'),
+      ...(data.placeholder ? { placeholder: data.placeholder } : {}),
       autocomplete: 'off',
       autocapitalize: 'off',
       spellcheck: 'false',

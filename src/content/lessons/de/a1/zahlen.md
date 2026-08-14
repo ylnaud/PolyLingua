@@ -27,12 +27,14 @@ exercises:
     accepted: ["Einundzwanzig"]
     hint: "21 en el patrón invertido: uno-y-veinte."
     translation: "Tengo 21 años."
+    placeholder: "Ej: fünfunddreißig"
   - type: "fill-blank"
     sentence: "Das kostet ___ Euro."
     answer: "hundert"
     accepted: ["Hundert"]
     hint: "100 en alemán — no lo confundas con 'tausend' (1000)."
     translation: "Eso cuesta 100 euros."
+    placeholder: "Ej: zwanzig"
   - type: "match"
     instructions: "Empareja cada palabra con su número."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "fünfunddreißig"
     accepted: ["Fünfunddreißig"]
     hint: "Patrón invertido: unidad + und + decena."
+    placeholder: "Ej: einundzwanzig"
   - type: "order"
     sentence: "Ich bin einundzwanzig Jahre alt"
     translation: "Tengo 21 años."
+vocabulary:
+  - term: "eins"
+    translation: "uno"
+  - term: "zehn"
+    translation: "diez"
+  - term: "zwanzig"
+    translation: "veinte"
+  - term: "hundert"
+    translation: "cien"
+  - term: "tausend"
+    translation: "mil"
+  - term: "einundzwanzig"
+    translation: "veintiuno"
 ---
 
 Los números son vocabulario de supervivencia: precios, horas, edades, direcciones. En

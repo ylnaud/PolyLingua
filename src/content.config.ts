@@ -15,6 +15,7 @@ const fillBlankExercise = z.object({
   accepted: z.array(z.string()).optional(),
   hint: z.string().optional(),
   translation: z.string().optional(),
+  placeholder: z.string().optional(),
 });
 
 const matchExercise = z.object({
@@ -32,6 +33,7 @@ const writeExercise = z.object({
   accepted: z.array(z.string()).optional(),
   hint: z.string().optional(),
   spokenOnly: z.boolean().optional(),
+  placeholder: z.string().optional(),
 });
 
 const orderExercise = z.object({
@@ -47,6 +49,11 @@ const exercise = z.discriminatedUnion('type', [
   orderExercise,
 ]);
 
+const vocabularyItem = z.object({
+  term: z.string(),
+  translation: z.string(),
+});
+
 const lessons = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/lessons' }),
   schema: z.object({
@@ -60,6 +67,7 @@ const lessons = defineCollection({
     minutes: z.number().default(8),
     quiz: z.array(quizQuestion).default([]),
     exercises: z.array(exercise).default([]),
+    vocabulary: z.array(vocabularyItem).default([]),
   }),
 });
 

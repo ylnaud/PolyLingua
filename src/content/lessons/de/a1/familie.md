@@ -27,12 +27,14 @@ exercises:
     accepted: ["mutter"]
     hint: "La persona que te dio la vida: die Mutter."
     translation: "Mi madre se llama Ana."
+    placeholder: "Ej: Schwester"
   - type: "fill-blank"
     sentence: "Ich habe zwei ___."
     answer: "Geschwister"
     accepted: ["geschwister"]
     hint: "Palabra colectiva para hermanos y hermanas juntos, sin especificar género."
     translation: "Tengo dos hermanos."
+    placeholder: "Ej: Brüder"
   - type: "match"
     instructions: "Empareja cada palabra alemana con su traducción."
     pairs:
@@ -52,9 +54,23 @@ exercises:
     accepted: ["großvater", "Grossvater", "grossvater"]
     hint: "Es una palabra compuesta: groß (grande) + Vater (padre)."
     spokenOnly: true
+    placeholder: "Ej: Großmutter"
   - type: "order"
     sentence: "Mein Bruder ist 20 Jahre alt"
     translation: "Mi hermano tiene 20 años."
+vocabulary:
+  - term: "die Familie"
+    translation: "la familia"
+  - term: "der Vater"
+    translation: "el padre"
+  - term: "die Mutter"
+    translation: "la madre"
+  - term: "der Bruder"
+    translation: "el hermano"
+  - term: "die Schwester"
+    translation: "la hermana"
+  - term: "die Geschwister"
+    translation: "los hermanos (colectivo)"
 ---
 
 Presentar a tu familia es una de las primeras conversaciones reales que vas a tener en

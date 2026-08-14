@@ -31,12 +31,14 @@ exercises:
     accepted: ["fahrst"]
     hint: "'fahren' cambia a→ä con du/er/sie/es."
     translation: "Tú conduces muy rápido."
+    placeholder: "Ej: du sprichst"
   - type: "fill-blank"
     sentence: "Er ___ ein Buch."
     answer: "liest"
     accepted: ["Liest"]
     hint: "'lesen' cambia e→ie con du/er/sie/es."
     translation: "Él lee un libro."
+    placeholder: "Ej: er sieht"
   - type: "match"
     instructions: "Empareja cada verbo con su forma correcta para 'du'."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "isst"
     accepted: ["Isst"]
     hint: "'essen' cambia e→i con er/sie/es: er isst."
+    placeholder: "Ej: er spricht"
   - type: "order"
     sentence: "Du liest ein Buch"
     translation: "Tú lees un libro."
+vocabulary:
+  - term: "fahren"
+    translation: "conducir"
+  - term: "essen"
+    translation: "comer"
+  - term: "sehen"
+    translation: "ver"
+  - term: "lesen"
+    translation: "leer"
+  - term: "sprechen"
+    translation: "hablar"
 ---
 
 Ya dominas la fórmula regular del Präsens. Ahora conoces a un pequeño grupo de verbos

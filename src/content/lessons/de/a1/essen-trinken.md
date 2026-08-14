@@ -27,12 +27,14 @@ exercises:
     accepted: ["Möchte"]
     hint: "Es la forma educada de pedir algo, viene de 'mögen' — mucho más suave que 'Ich will'."
     translation: "Quisiera un café, por favor."
+    placeholder: "Ej: ich habe"
   - type: "fill-blank"
     sentence: "___ Brot schmeckt gut."
     answer: "Das"
     accepted: ["das"]
     hint: "'Brot' es neutro: das Brot."
     translation: "El pan sabe bien."
+    placeholder: "der / die / das"
   - type: "match"
     instructions: "Empareja cada palabra alemana con su traducción."
     pairs:
@@ -52,9 +54,23 @@ exercises:
     accepted: ["tee"]
     hint: "Es masculino: der Tee."
     spokenOnly: true
+    placeholder: "Ej: Kaffee"
   - type: "order"
     sentence: "Ich möchte einen Kaffee bitte"
     translation: "Quisiera un café, por favor."
+vocabulary:
+  - term: "das Brot"
+    translation: "el pan"
+  - term: "der Käse"
+    translation: "el queso"
+  - term: "die Suppe"
+    translation: "la sopa"
+  - term: "das Wasser"
+    translation: "el agua"
+  - term: "der Kaffee"
+    translation: "el café"
+  - term: "die Milch"
+    translation: "la leche"
 ---
 
 Ya sea en un restaurante, un supermercado o la mesa de una familia alemana, este

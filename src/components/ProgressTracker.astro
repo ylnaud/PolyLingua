@@ -20,6 +20,14 @@
     level: string;
   }
 
+  interface VocabEntry {
+    term: string;
+    translation: string;
+    lang: string;
+    lessonId: string;
+    learnedAt: string;
+  }
+
   const EXAM_PASS_THRESHOLD = 0.7;
   const INTERVAL_DAYS = [1, 3, 7, 16];
   const COMBO_THRESHOLD = 5;
@@ -35,6 +43,37 @@
 
   function writePool(pool: Record<string, SrsEntry>) {
     write('polylingua-srs-pool', JSON.stringify(pool));
+  }
+
+  function readVocabLearned(): Record<string, VocabEntry> {
+    try {
+      return JSON.parse(read('polylingua-vocab-learned') ?? '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  function recordLearnedVocab(lessonId: string) {
+    const el = document.querySelector<HTMLElement>('[data-vocab-tracker]');
+    if (!el) return;
+    let vocabulary: { term: string; translation: string }[] = [];
+    try {
+      vocabulary = JSON.parse(el.dataset.vocabulary ?? '[]');
+    } catch {
+      return;
+    }
+    if (vocabulary.length === 0) return;
+    const [lang = ''] = lessonId.split('/');
+    if (!lang) return;
+    const learned = readVocabLearned();
+    let changed = false;
+    for (const v of vocabulary) {
+      const vkey = `${lang}::${v.term}`;
+      if (learned[vkey]) continue;
+      learned[vkey] = { term: v.term, translation: v.translation, lang, lessonId, learnedAt: today() };
+      changed = true;
+    }
+    if (changed) write('polylingua-vocab-learned', JSON.stringify(learned));
   }
 
   function writeIfNew(key: string, value: string): boolean {
@@ -100,6 +139,7 @@
       if (sessionType === 'lesson' && lessonId) {
         const key = lessonId.replace(/\//g, '-');
         write(`polylingua-lesson-done-${key}`, today());
+        recordLearnedVocab(lessonId);
         if (total > 0 && score === total) {
           if (writeIfNew(`polylingua-lesson-perfect-${key}`, '1')) dispatchAchievement('perfect');
         }
@@ -129,7 +169,10 @@
         }
       }
 
-      updateSrsPool(results);
+      // El repaso de vocabulario usa ids sintéticos (lang: 'vocab') que nunca
+      // calzan con el filtro real de repasar.astro — igual evitamos meterlos
+      // al pool SRS para no dejar entradas inertes dando vueltas.
+      if (sessionType !== 'vocab') updateSrsPool(results);
     }) as EventListener);
   }
 

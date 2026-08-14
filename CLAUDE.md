@@ -87,10 +87,27 @@ No hace falta adaptador @astrojs/vercel ni vercel.json.
 - Canonical en cada página para evitar duplicados
 - Sitemap generado automáticamente por @astrojs/sitemap
 
+## Progreso del usuario (localStorage)
+Todo el progreso del usuario (SRS de repaso, logros, racha diaria, lecciones
+completadas, vocabulario aprendido, tema, sonido) se persiste client-side con
+`localStorage`, vía el wrapper `src/lib/storage.ts` (`read`/`write`, con
+try/catch — nunca llames a `localStorage` directo). Es el patrón ya usado en
+`src/components/ProgressTracker.astro`, `DailyGoal.astro`, `ThemeToggle.astro`,
+`src/lib/sound.ts` y las páginas `repasar`/`practica-libre`/`vocabulario`. Si
+agregas una funcionalidad de progreso nueva, sigue este mismo patrón (key con
+prefijo `polylingua-`, lectura/escritura por `storage.ts`) en vez de inventar
+otro mecanismo. No es apto para nada que deba ser indexable o SEO-relevante —
+para eso sigue siendo contenido estático en el `.md`/frontmatter.
+
+Scripts con `define:vars` en Astro se tratan como `is:inline` y por eso NO
+soportan `import` — si tu script necesita `import { read, write } from
+'../lib/storage'`, usa un `<script>` plano y lee los datos que necesites del
+DOM (atributos `data-*`) o de la URL en vez de inyectarlos como props.
+
 ## Lo que NUNCA debes hacer
 - Añadir React, Vue, Svelte o cualquier framework JS
 - Añadir Tailwind, Bootstrap u otro framework CSS
-- Usar localStorage o sessionStorage
+- Usar sessionStorage, o `localStorage` directo sin pasar por `src/lib/storage.ts`
 - Crear páginas sin meta tags (title, description, canonical)
 - Usar slugs genéricos como "leccion-01" o "page-1"
 - Hacer fetch a APIs externas en tiempo de build sin avisar

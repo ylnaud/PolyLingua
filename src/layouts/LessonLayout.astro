@@ -11,6 +11,11 @@ interface QuizQuestion {
   explanation: string;
 }
 
+interface VocabularyItem {
+  term: string;
+  translation: string;
+}
+
 interface Props {
   language: 'de' | 'en' | 'fr' | 'it' | 'pt';
   level: 'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2';
@@ -21,6 +26,7 @@ interface Props {
   minutes: number;
   quiz: QuizQuestion[];
   exercises?: any[];
+  vocabulary?: VocabularyItem[];
   lessonId?: string;
   path: string;
 }
@@ -35,6 +41,7 @@ const {
   minutes,
   quiz,
   exercises = [],
+  vocabulary = [],
   lessonId = '',
   path,
 } = Astro.props;
@@ -118,6 +125,20 @@ const structuredData = {
       <slot />
     </div>
 
+    {vocabulary.length > 0 && (
+      <div class="vocab card">
+        <span class="eyebrow">📚 Vocabulario de esta lección</span>
+        <dl class="vocab-list">
+          {vocabulary.map((item) => (
+            <div class="vocab-item">
+              <dt>{item.term}</dt>
+              <dd>{item.translation}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    )}
+
     <Practice
       quiz={quiz}
       exercises={exercises}
@@ -185,6 +206,37 @@ const structuredData = {
 
   .fun-fact p {
     margin: 0.35rem 0 0;
+  }
+
+  .vocab {
+    margin: 1.75rem 0;
+    padding: 1.1rem 1.25rem;
+  }
+
+  .vocab-list {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0.6rem 0 0;
+  }
+
+  .vocab-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+
+  .vocab-item dt {
+    font-weight: 700;
+  }
+
+  .vocab-item dd {
+    margin: 0;
+    color: var(--text-muted);
+  }
+
+  .vocab-item dd::before {
+    content: '— ';
   }
 
   .content :global(h2) {

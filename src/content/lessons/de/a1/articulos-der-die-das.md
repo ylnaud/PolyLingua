@@ -54,12 +54,14 @@ exercises:
     accepted: ["das"]
     hint: "Termina en -chen: los diminutivos en -chen/-lein son siempre neutros, sin excepción."
     translation: "La niña juega en el jardín."
+    placeholder: "der / die / das"
   - type: "fill-blank"
     sentence: "___ Zeitung liegt auf dem Tisch."
     answer: "Die"
     accepted: ["die"]
     hint: "Terminación -ung: femenina con 98% de certeza."
     translation: "El periódico está sobre la mesa."
+    placeholder: "der / die / das"
   - type: "match"
     instructions: "Empareja cada palabra con su artículo correcto."
     pairs:
@@ -78,14 +80,29 @@ exercises:
     answer: "der"
     accepted: ["Der"]
     hint: "Terminación -ig: masculina con 98% de certeza."
+    placeholder: "der / die / das"
   - type: "write"
     prompt: "Escribe el artículo correcto (der/die/das) para 'Freundschaft' (amistad)."
     answer: "die"
     accepted: ["Die"]
     hint: "Terminación -schaft: femenina con 98% de certeza."
+    placeholder: "der / die / das"
   - type: "order"
     sentence: "Der Lehrer trinkt heute Kaffee"
     translation: "El profesor toma café hoy."
+vocabulary:
+  - term: "der Tisch"
+    translation: "la mesa"
+  - term: "die Zeitung"
+    translation: "el periódico"
+  - term: "das Mädchen"
+    translation: "la niña"
+  - term: "der Honig"
+    translation: "la miel"
+  - term: "die Freiheit"
+    translation: "la libertad"
+  - term: "das Ergebnis"
+    translation: "el resultado"
 ---
 
 En español decimos "la mesa" y en alemán... también puede ser "der Tisch", "die Tisch" o

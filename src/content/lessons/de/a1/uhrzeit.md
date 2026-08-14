@@ -27,12 +27,14 @@ exercises:
     accepted: ["Halb"]
     hint: "'halb' apunta hacia la hora siguiente, no hacia la actual: halb vier = 3:30."
     translation: "Son las tres y media."
+    placeholder: "Ej: viertel"
   - type: "fill-blank"
     sentence: "Wie ___ ist es?"
     answer: "spät"
     accepted: ["Spät"]
     hint: "Es la pregunta estándar para pedir la hora."
     translation: "¿Qué hora es?"
+    placeholder: "Escribe la palabra que falta"
   - type: "match"
     instructions: "Empareja cada expresión con la hora que representa."
     pairs:
@@ -49,9 +51,23 @@ exercises:
     answer: "vierzehn Uhr dreißig"
     accepted: ["Vierzehn Uhr dreißig"]
     hint: "El patrón es: [hora] Uhr [minutos]."
+    placeholder: "Ej: neun Uhr fünf"
   - type: "order"
     sentence: "Es ist vierzehn Uhr dreißig"
     translation: "Son las 14:30."
+vocabulary:
+  - term: "die Uhrzeit"
+    translation: "la hora"
+  - term: "Wie spät ist es?"
+    translation: "¿Qué hora es?"
+  - term: "halb"
+    translation: "y media (apunta a la hora siguiente)"
+  - term: "viertel nach"
+    translation: "y cuarto"
+  - term: "viertel vor"
+    translation: "menos cuarto"
+  - term: "die Uhr"
+    translation: "el reloj / la hora"
 ---
 
 Decir la hora en alemán tiene dos sistemas paralelos: uno para hablar con amigos y otro

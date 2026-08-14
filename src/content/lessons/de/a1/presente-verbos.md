@@ -27,12 +27,14 @@ exercises:
     accepted: ["Machst"]
     hint: "Con 'du' añadimos '-st' a la raíz del verbo."
     translation: "Tú lo haces muy bien."
+    placeholder: "Ej: du lernst"
   - type: "fill-blank"
     sentence: "Wir ___ Deutsch."
     answer: "lernen"
     accepted: ["Lernen"]
     hint: "Con 'wir' la terminación siempre es '-en'."
     translation: "Nosotros aprendemos alemán."
+    placeholder: "Ej: wir machen"
   - type: "match"
     instructions: "Empareja cada pronombre con la conjugación correcta de 'machen'."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "spielt"
     accepted: ["Spielt"]
     hint: "Con er/sie/es la terminación es '-t'."
+    placeholder: "Ej: er macht"
   - type: "order"
     sentence: "Wir lernen Deutsch"
     translation: "Nosotros aprendemos alemán."
+vocabulary:
+  - term: "machen"
+    translation: "hacer"
+  - term: "lernen"
+    translation: "aprender"
+  - term: "spielen"
+    translation: "jugar"
+  - term: "ich mache"
+    translation: "yo hago"
+  - term: "du machst"
+    translation: "tú haces"
+  - term: "wir machen"
+    translation: "nosotros hacemos"
 ---
 
 El presente en alemán es más fácil que en español: solo tienes **un patrón** que se repite

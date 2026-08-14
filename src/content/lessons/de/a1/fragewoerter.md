@@ -31,12 +31,14 @@ exercises:
     accepted: ["wo"]
     hint: "Pregunta por el lugar."
     translation: "¿Dónde vives?"
+    placeholder: "Ej: Wann/Wie/Was"
   - type: "fill-blank"
     sentence: "___ lernst du Deutsch?"
     answer: "Warum"
     accepted: ["warum"]
     hint: "Pregunta por la razón de algo."
     translation: "¿Por qué aprendes alemán?"
+    placeholder: "Ej: Wo/Wie"
   - type: "match"
     instructions: "Empareja cada palabra interrogativa con su significado."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Was"
     accepted: ["was"]
     hint: "Es una de las 6 palabras esenciales W-Fragen."
+    placeholder: "Ej: Wer"
   - type: "order"
     sentence: "Wo wohnst du"
     translation: "¿Dónde vives?"
+vocabulary:
+  - term: "Wer?"
+    translation: "¿Quién?"
+  - term: "Was?"
+    translation: "¿Qué?"
+  - term: "Wo?"
+    translation: "¿Dónde?"
+  - term: "Wann?"
+    translation: "¿Cuándo?"
+  - term: "Warum?"
+    translation: "¿Por qué?"
+  - term: "Wie?"
+    translation: "¿Cómo?"
 ---
 
 Con solo seis palabras puedes empezar a preguntar prácticamente cualquier cosa en

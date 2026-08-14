@@ -13,6 +13,7 @@ interface FillBlankExercise {
   accepted?: string[];
   hint?: string;
   translation?: string;
+  placeholder?: string;
 }
 
 interface MatchExercise {
@@ -28,6 +29,7 @@ interface WriteExercise {
   accepted?: string[];
   hint?: string;
   spokenOnly?: boolean;
+  placeholder?: string;
 }
 
 interface OrderExercise {
@@ -163,6 +165,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                 data-answer-input
                 data-answer={item.data.answer}
                 data-accepted={(item.data.accepted ?? []).join('|')}
+                placeholder={item.data.placeholder}
                 autocomplete="off"
                 autocapitalize="off"
                 spellcheck="false"
@@ -201,6 +204,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                 data-answer-input
                 data-answer={item.data.answer}
                 data-accepted={(item.data.accepted ?? []).join('|')}
+                placeholder={item.data.placeholder}
                 autocomplete="off"
                 autocapitalize="off"
                 spellcheck="false"

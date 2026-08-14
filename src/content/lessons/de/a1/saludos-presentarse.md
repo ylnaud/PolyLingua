@@ -47,12 +47,14 @@ exercises:
     accepted: ["ich"]
     hint: "Es la primera persona del singular: 'yo'."
     translation: "Me llamo Ana."
+    placeholder: "Ej: du/er/wir"
   - type: "fill-blank"
     sentence: "Ich komme ___ Spanien."
     answer: "aus"
     accepted: ["Aus"]
     hint: "La preposición para indicar origen/país, siempre sin artículo."
     translation: "Soy de España."
+    placeholder: "Escribe la preposición"
   - type: "match"
     instructions: "Empareja cada frase en alemán con su traducción."
     pairs:
@@ -72,9 +74,23 @@ exercises:
     accepted: ["guten morgen", "Guten morgen"]
     hint: "Literalmente 'buena mañana' — el saludo específico antes del mediodía."
     spokenOnly: true
+    placeholder: "Ej: Guten Abend"
   - type: "order"
     sentence: "Ich komme aus Mexiko"
     translation: "Soy de México."
+vocabulary:
+  - term: "Hallo"
+    translation: "Hola"
+  - term: "Guten Morgen"
+    translation: "Buenos días"
+  - term: "Tschüss"
+    translation: "Adiós (informal)"
+  - term: "Danke"
+    translation: "Gracias"
+  - term: "Bitte"
+    translation: "Por favor / de nada"
+  - term: "Wie heißt du?"
+    translation: "¿Cómo te llamas?"
 ---
 
 Antes de aprender ninguna regla de gramática, puedes empezar a hablar alemán hoy

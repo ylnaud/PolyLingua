@@ -27,12 +27,14 @@ exercises:
     accepted: ["laut"]
     hint: "'laut' + Genitiv/Dativ significa 'según'."
     translation: "Según el estudio, la hipótesis ha sido confirmada."
+    placeholder: "Wegen"
   - type: "fill-blank"
     sentence: "Zusammenfassend lässt sich ___, dass die Ergebnisse eindeutig sind."
     answer: "sagen"
     accepted: ["Sagen"]
     hint: "Fórmula fija para concluir un texto académico: 'Zusammenfassend lässt sich sagen, dass...'."
     translation: "En resumen, se puede decir que los resultados son claros."
+    placeholder: "feststellen"
   - type: "match"
     instructions: "Empareja cada palabra académica con su significado."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "belegen"
     accepted: ["Belegen"]
     hint: "Verbo académico clave relacionado con 'der Beweis'."
+    placeholder: "widerlegen"
   - type: "order"
     sentence: "Es lässt sich feststellen dass die Ergebnisse eindeutig sind"
     translation: "Se puede constatar que los resultados son claros."
+vocabulary:
+  - term: "die Hypothese"
+    translation: "la hipótesis"
+  - term: "die Schlussfolgerung"
+    translation: "la conclusión"
+  - term: "die Quelle"
+    translation: "la fuente"
+  - term: "der Beweis"
+    translation: "la prueba"
+  - term: "belegen"
+    translation: "comprobar / documentar"
+  - term: "widerlegen"
+    translation: "refutar"
 ---
 
 Este vocabulario te permite leer y escribir en el registro que domina tesis, artículos

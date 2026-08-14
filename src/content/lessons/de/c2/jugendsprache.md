@@ -39,12 +39,14 @@ exercises:
     accepted: ["Voll"]
     hint: "Intensificador coloquial: significa 'muy/súper'."
     translation: "Tío, eso es súper vergonzoso."
+    placeholder: "mega"
   - type: "fill-blank"
     sentence: "Ich ___ heute Abend zu Hause."
     answer: "chille"
     accepted: ["chille"]
     hint: "Del inglés 'to chill' (relajarse), conjugado en primera persona."
     translation: "Esta noche me quedo relajando en casa."
+    placeholder: "koche"
   - type: "match"
     instructions: "Empareja cada palabra de Jugendsprache con su significado."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "Fail"
     accepted: ["fail"]
     hint: "Es un préstamo directo del inglés, muy común en Jugendsprache."
+    placeholder: "cringe"
   - type: "order"
     sentence: "Digga das ist voll cringe"
     translation: "Tío, eso es súper vergonzoso."
+vocabulary:
+  - term: "chillen"
+    translation: "relajarse"
+  - term: "cringe"
+    translation: "vergonzoso/incómodo"
+  - term: "Digga"
+    translation: "tío/colega (vocativo informal)"
+  - term: "voll"
+    translation: "muy/súper (intensificador)"
+  - term: "Fail"
+    translation: "fracaso, error vergonzoso"
 ---
 
 Este es el registro más cambiante del alemán: el que hablan los jóvenes entre sí,

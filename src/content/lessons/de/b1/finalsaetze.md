@@ -31,12 +31,14 @@ exercises:
     accepted: ["um"]
     hint: "Mismo sujeto en ambas acciones (yo aprendo / yo trabajo) → um...zu + infinitivo."
     translation: "Aprendo alemán para trabajar en Berlín."
+    placeholder: "damit"
   - type: "fill-blank"
     sentence: "Ich spreche langsam, ___ du mich verstehst."
     answer: "damit"
     accepted: ["damit"]
     hint: "Sujetos diferentes (yo hablo / tú entiendes) → damit + oración completa."
     translation: "Hablo despacio para que tú me entiendas."
+    placeholder: "um"
   - type: "match"
     instructions: "Empareja cada situación o frase con su estructura o traducción correcta."
     pairs:
@@ -53,9 +55,23 @@ exercises:
     answer: "damit"
     accepted: ["Damit"]
     hint: "Cuando el sujeto de la segunda acción es distinto, 'um...zu' no funciona."
+    placeholder: "um"
   - type: "order"
     sentence: "Ich spreche langsam, damit du mich verstehst"
     translation: "Hablo despacio para que tú me entiendas."
+vocabulary:
+  - term: "um"
+    translation: "para (mismo sujeto, + infinitivo con zu)"
+  - term: "damit"
+    translation: "para que (sujetos diferentes)"
+  - term: "lerne"
+    translation: "aprendo"
+  - term: "spreche"
+    translation: "hablo"
+  - term: "arbeiten"
+    translation: "trabajar"
+  - term: "verstehst"
+    translation: "entiendes"
 ---
 
 Expresar el propósito o la finalidad de una acción ("para que...", "con el fin de...")

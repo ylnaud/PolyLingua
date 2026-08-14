@@ -39,12 +39,14 @@ exercises:
     accepted: ["durchführung"]
     hint: "Nominalstil de 'nachdem die Studie durchgeführt wurde': el verbo se convierte en el sustantivo 'Durchführung'."
     translation: "Tras la realización del estudio, se publicaron los resultados."
+    placeholder: "Ankunft"
   - type: "fill-blank"
     sentence: "___ seiner Krankheit konnte er nicht kommen."
     answer: "Wegen"
     accepted: ["wegen"]
     hint: "Nominalstil de 'weil er krank war' → 'wegen seiner Krankheit'."
     translation: "Debido a su enfermedad, no pudo venir."
+    placeholder: "Nach"
   - type: "match"
     instructions: "Empareja cada oración en Verbalstil con su equivalente en Nominalstil."
     pairs:
@@ -61,9 +63,23 @@ exercises:
     answer: "wegen seiner Krankheit"
     accepted: ["Wegen seiner Krankheit"]
     hint: "Patrón: verbo → sustantivo + preposición (wegen + Genitiv/Dativ)."
+    placeholder: "nach seiner Ankunft"
   - type: "order"
     sentence: "Nach Durchführung der Studie wurden die Ergebnisse veröffentlicht"
     translation: "Tras la realización del estudio, se publicaron los resultados."
+vocabulary:
+  - term: "die Durchführung"
+    translation: "la realización"
+  - term: "wegen"
+    translation: "debido a / a causa de"
+  - term: "die Krankheit"
+    translation: "la enfermedad"
+  - term: "die Ankunft"
+    translation: "la llegada"
+  - term: "die Erreichung"
+    translation: "el logro / la consecución"
+  - term: "das Ziel"
+    translation: "el objetivo / la meta"
 ---
 
 Ya viste cómo comprimir una oración relativa en un participio. El Nominalstil lleva esa

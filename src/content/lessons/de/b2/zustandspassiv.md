@@ -31,12 +31,14 @@ exercises:
     accepted: ["Wird"]
     hint: "Vorgangspassiv: werden + participio describe el proceso en marcha."
     translation: "La puerta está siendo abierta ahora mismo."
+    placeholder: "war / ist"
   - type: "fill-blank"
     sentence: "Die Tür ___ schon geöffnet."
     answer: "ist"
     accepted: ["Ist"]
     hint: "Zustandspassiv: sein + participio describe el resultado ya terminado."
     translation: "La puerta ya está abierta."
+    placeholder: "wird / war"
   - type: "match"
     instructions: "Empareja cada frase con lo que describe: el proceso o el resultado."
     pairs:
@@ -53,9 +55,23 @@ exercises:
     answer: "ist"
     accepted: ["Ist"]
     hint: "El Zustandspassiv usa 'sein', no 'werden'."
+    placeholder: "wird / war"
   - type: "order"
     sentence: "Ab neun Uhr ist das Geschäft geöffnet"
     translation: "Desde las nueve, la tienda está abierta."
+vocabulary:
+  - term: "die Tür"
+    translation: "la puerta"
+  - term: "geöffnet"
+    translation: "abierto/a"
+  - term: "der Brief"
+    translation: "la carta"
+  - term: "geschrieben"
+    translation: "escrito/a"
+  - term: "das Geschäft"
+    translation: "la tienda"
+  - term: "die Suppe"
+    translation: "la sopa"
 ---
 
 Ya conoces el Passiv con "werden". Ahora descubres que existe una segunda forma, con

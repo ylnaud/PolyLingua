@@ -39,12 +39,14 @@ exercises:
     accepted: ["Toll"]
     hint: "Exclamación irónica: literalmente '¡qué bien!', pero aquí expresa lo contrario, frustración."
     translation: "El café se derramó en la laptop. ¡Qué bien!"
+    placeholder: "super"
   - type: "fill-blank"
     sentence: "Es wäre ___, pünktlich zu erscheinen."
     answer: "empfehlenswert"
     accepted: ["Empfehlenswert"]
     hint: "Registro gehoben (elevado), típico de discursos y textos oficiales."
     translation: "Sería recomendable llegar puntual."
+    placeholder: "ratsam"
   - type: "match"
     instructions: "Empareja cada registro o recurso con su característica."
     pairs:
@@ -61,9 +63,21 @@ exercises:
     answer: "toll"
     accepted: ["Toll"]
     hint: "Es la exclamación irónica típica cuando algo sale mal — literalmente significa '¡qué bien!'."
+    placeholder: "super"
   - type: "order"
     sentence: "Es ist besser pünktlich zu kommen"
     translation: "Es mejor llegar puntual."
+vocabulary:
+  - term: "Na toll!"
+    translation: "¡Qué bien! (irónico)"
+  - term: "gehoben"
+    translation: "elevado (registro)"
+  - term: "umgangssprachlich"
+    translation: "coloquial (registro)"
+  - term: "empfehlenswert"
+    translation: "recomendable"
+  - term: "pünktlich"
+    translation: "puntual"
 ---
 
 Llegaste al nivel donde entender las palabras ya no es suficiente — necesitas entender

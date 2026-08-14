@@ -31,12 +31,14 @@ exercises:
     accepted: ["muss"]
     hint: "'müssen' expresa obligación."
     translation: "Tengo que levantarme temprano hoy."
+    placeholder: "kann"
   - type: "fill-blank"
     sentence: "Wir ___ heute ins Kino gehen."
     answer: "wollen"
     accepted: ["wollen"]
     hint: "Con 'wir', 'wollen' es igual que el infinitivo."
     translation: "Queremos ir al cine hoy."
+    placeholder: "müssen"
   - type: "match"
     instructions: "Empareja cada verbo modal con su significado."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "darfst"
     accepted: ["darfst"]
     hint: "'dürfen' + 'nicht' expresa prohibición."
+    placeholder: "musst"
   - type: "order"
     sentence: "Ich kann Deutsch sprechen"
     translation: "Puedo hablar alemán."
+vocabulary:
+  - term: "können"
+    translation: "poder / saber"
+  - term: "müssen"
+    translation: "tener que"
+  - term: "wollen"
+    translation: "querer"
+  - term: "dürfen"
+    translation: "tener permiso"
+  - term: "sollen"
+    translation: "deber (por otros)"
+  - term: "möchten"
+    translation: "querer (cortés)"
 ---
 
 Los verbos modales son tu herramienta para sonar natural: pedir permiso, expresar

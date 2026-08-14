@@ -39,12 +39,14 @@ exercises:
     accepted: ["Werde"]
     hint: "Futur I = werden conjugado (1ª persona: werde) + infinitivo al final."
     translation: "Mañana viajaré a Berlín."
+    placeholder: "wirst / wird"
   - type: "fill-blank"
     sentence: "Er ___ jetzt zu Hause sein."
     answer: "wird"
     accepted: ["Wird"]
     hint: "werden en 3ª persona singular; aquí expresa una suposición sobre el presente, no futuro puro."
     translation: "Probablemente él está en casa ahora."
+    placeholder: "werde / werden"
   - type: "match"
     instructions: "Empareja cada pronombre con su forma conjugada de 'werden'."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "werden"
     accepted: ["Werden"]
     hint: "Es la misma forma que para 'wir'."
+    placeholder: "werde / wirst"
   - type: "order"
     sentence: "Bis morgen werde ich die Arbeit beendet haben"
     translation: "Para mañana habré terminado el trabajo."
+vocabulary:
+  - term: "werden"
+    translation: "auxiliar del futuro (convertirse en)"
+  - term: "fahren"
+    translation: "viajar / conducir"
+  - term: "zu Hause sein"
+    translation: "estar en casa"
+  - term: "die Arbeit beendet haben"
+    translation: "haber terminado el trabajo"
+  - term: "die Nachricht"
+    translation: "el mensaje"
 ---
 
 El alemán tiene una relación curiosa con el futuro: aunque existe una forma gramatical

@@ -31,12 +31,14 @@ exercises:
     accepted: ["trotzdem"]
     hint: "Marca un contraste inesperado con lo dicho antes: a pesar de eso."
     translation: "Llovía fuerte. A pesar de eso, él salió a caminar."
+    placeholder: "Folglich / Außerdem"
   - type: "fill-blank"
     sentence: "Er hat viel gelernt, ___ hat er die Prüfung bestanden."
     answer: "deshalb"
     accepted: ["Deshalb"]
     hint: "Introduce una consecuencia lógica: por eso."
     translation: "Él estudió mucho, por eso aprobó el examen."
+    placeholder: "trotzdem / außerdem"
   - type: "match"
     instructions: "Empareja cada conector con su significado."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "deshalb"
     accepted: ["Deshalb", "folglich", "Folglich"]
     hint: "Es sinónimo de 'folglich' y 'daher'."
+    placeholder: "trotzdem"
   - type: "order"
     sentence: "Trotzdem ging er spazieren"
     translation: "A pesar de eso, él salió a pasear."
+vocabulary:
+  - term: "trotzdem"
+    translation: "a pesar de eso"
+  - term: "folglich"
+    translation: "por lo tanto"
+  - term: "außerdem"
+    translation: "además"
+  - term: "stattdessen"
+    translation: "en cambio"
+  - term: "deshalb"
+    translation: "por eso"
 ---
 
 En este nivel, ya no basta con conectar ideas con "und" o "aber" — necesitas

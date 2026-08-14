@@ -27,12 +27,14 @@ exercises:
     accepted: ["den"]
     hint: "Movimiento con destino (springt) → Akkusativ: den Tisch."
     translation: "El gato salta sobre la mesa."
+    placeholder: "dem"
   - type: "fill-blank"
     sentence: "Die Katze sitzt auf ___ Tisch."
     answer: "dem"
     accepted: ["dem"]
     hint: "Posición fija (sitzt) → Dativ: dem Tisch."
     translation: "El gato está sentado sobre la mesa."
+    placeholder: "den"
   - type: "match"
     instructions: "Empareja cada verbo con el caso que suele acompañarlo."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Wohin"
     accepted: ["wohin", "Wohin?"]
     hint: "Wohin? = ¿hacia dónde?"
+    placeholder: "Wo?"
   - type: "order"
     sentence: "Ich gehe in die Küche"
     translation: "Voy hacia la cocina."
+vocabulary:
+  - term: "auf"
+    translation: "sobre / encima de"
+  - term: "in"
+    translation: "en / hacia"
+  - term: "gehen"
+    translation: "ir"
+  - term: "liegen"
+    translation: "estar tumbado / puesto"
+  - term: "springen"
+    translation: "saltar"
+  - term: "sitzen"
+    translation: "estar sentado"
 ---
 
 Estas nueve preposiciones son especiales: no tienen un caso fijo — cambian entre

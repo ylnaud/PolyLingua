@@ -35,12 +35,14 @@ exercises:
     accepted: ["Würde"]
     hint: "Fórmula universal del Konjunktiv II: würde + infinitivo."
     translation: "Si tuviera tiempo, viajaría."
+    placeholder: "hätte / wäre"
   - type: "fill-blank"
     sentence: "___ Sie mir bitte helfen?"
     answer: "Könnten"
     accepted: ["könnten"]
     hint: "Forma cortés de Konjunktiv II de 'können', más educada que 'Können Sie'."
     translation: "¿Podría ayudarme, por favor?"
+    placeholder: "Würden / Hätten"
   - type: "match"
     instructions: "Empareja cada verbo con su forma propia de Konjunktiv II."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "hätte"
     accepted: ["Hätte"]
     hint: "Es una de las formas propias que suenan más naturales que su versión con 'würde'."
+    placeholder: "wäre / könnte"
   - type: "order"
     sentence: "Ich wünschte ich könnte fliegen"
     translation: "Ojalá pudiera volar."
+vocabulary:
+  - term: "würde"
+    translation: "forma universal del condicional (auxiliar)"
+  - term: "wäre"
+    translation: "sería / estaría"
+  - term: "hätte"
+    translation: "tendría"
+  - term: "könnte"
+    translation: "podría"
+  - term: "reisen"
+    translation: "viajar"
 ---
 
 El Konjunktiv II es tu herramienta para hablar de mundos hipotéticos, deseos y — muy

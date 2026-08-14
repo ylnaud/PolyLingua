@@ -27,12 +27,14 @@ exercises:
     accepted: ["dem"]
     hint: "Dativ masculino/neutro: dem."
     translation: "Le doy el libro al niño."
+    placeholder: "der / die / das"
   - type: "fill-blank"
     sentence: "Ich sehe ___ Ball."
     answer: "den"
     accepted: ["den"]
     hint: "En Akkusativ solo el masculino cambia: der → den."
     translation: "Veo la pelota."
+    placeholder: "der / die / das"
   - type: "match"
     instructions: "Empareja cada caso y género con su artículo correcto."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "dir"
     accepted: ["Dir"]
     hint: "'helfen' siempre pide Dativ."
+    placeholder: "mir / ihm / uns"
   - type: "order"
     sentence: "Ich gebe dem Kind das Buch"
     translation: "Le doy el libro al niño."
+vocabulary:
+  - term: "geben"
+    translation: "dar"
+  - term: "helfen"
+    translation: "ayudar"
+  - term: "danken"
+    translation: "agradecer"
+  - term: "gefallen"
+    translation: "gustar"
+  - term: "das Buch"
+    translation: "el libro"
+  - term: "das Kind"
+    translation: "el niño / la niña"
 ---
 
 Este es, probablemente, el mayor salto de complejidad del alemán intermedio: los

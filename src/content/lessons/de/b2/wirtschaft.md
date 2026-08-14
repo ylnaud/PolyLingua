@@ -27,12 +27,14 @@ exercises:
     accepted: ["arbeitslosigkeit"]
     hint: "Termina en -keit: el desempleo."
     translation: "El desempleo es, en mi opinión, el mayor problema."
+    placeholder: "Inflation / Steuer"
   - type: "fill-blank"
     sentence: "___ und Nachfrage bestimmen den Preis."
     answer: "Angebot"
     accepted: ["angebot"]
     hint: "Su opuesto es die Nachfrage (la demanda)."
     translation: "La oferta y la demanda determinan el precio."
+    placeholder: "Steuer / Inflation"
   - type: "match"
     instructions: "Empareja cada palabra en alemán con su traducción."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "das"
     accepted: ["Das"]
     hint: "Muchos sustantivos derivados de un infinitivo son neutros."
+    placeholder: "der / die"
   - type: "order"
     sentence: "Meiner Meinung nach ist die Arbeitslosigkeit das größte Problem"
     translation: "En mi opinión, el desempleo es el mayor problema."
+vocabulary:
+  - term: "die Wirtschaft"
+    translation: "la economía"
+  - term: "das Angebot"
+    translation: "la oferta"
+  - term: "die Nachfrage"
+    translation: "la demanda"
+  - term: "die Arbeitslosigkeit"
+    translation: "el desempleo"
+  - term: "die Steuer"
+    translation: "el impuesto"
+  - term: "das Einkommen"
+    translation: "los ingresos"
 ---
 
 Este vocabulario te permite dar el salto de conversaciones cotidianas a discusiones

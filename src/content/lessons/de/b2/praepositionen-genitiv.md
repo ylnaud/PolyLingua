@@ -27,12 +27,14 @@ exercises:
     accepted: ["während"]
     hint: "'während' + Genitiv significa 'durante'."
     translation: "Durante el verano vamos al mar."
+    placeholder: "Trotz / Wegen"
   - type: "fill-blank"
     sentence: "Er blieb zu Hause ___ des schlechten Wetters."
     answer: "trotz"
     accepted: ["Trotz"]
     hint: "'trotz' + Genitiv significa 'a pesar de'."
     translation: "Se quedó en casa a pesar del mal clima."
+    placeholder: "wegen / während"
   - type: "match"
     instructions: "Empareja cada preposición de Genitiv con su significado."
     pairs:
@@ -48,9 +50,21 @@ exercises:
     prompt: "Escribe la forma formal y correcta con Genitiv de 'wegen' + 'der Regen' (debido a la lluvia)."
     answer: "wegen des Regens"
     hint: "La forma formal usa Genitiv (des + -s), no Dativ coloquial (wegen dem Regen)."
+    placeholder: "trotz des Wetters"
   - type: "order"
     sentence: "Sie ging trotz des Regens spazieren"
     translation: "Ella salió a caminar a pesar de la lluvia."
+vocabulary:
+  - term: "während"
+    translation: "durante"
+  - term: "trotz"
+    translation: "a pesar de"
+  - term: "wegen"
+    translation: "debido a / por"
+  - term: "aufgrund"
+    translation: "a causa de"
+  - term: "die Krise"
+    translation: "la crisis"
 ---
 
 Estas cuatro preposiciones son la señal más clara de un alemán escrito cuidado y

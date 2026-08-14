@@ -27,12 +27,14 @@ exercises:
     accepted: ["der"]
     hint: "Sujeto de 'steht' → Nominativ masculino."
     translation: "El hombre que está parado ahí es mi profesor."
+    placeholder: "den"
   - type: "fill-blank"
     sentence: "Das ist der Film, ___ ich gestern gesehen habe."
     answer: "den"
     accepted: ["den"]
     hint: "Objeto directo de 'gesehen habe' → Akkusativ masculino."
     translation: "Esta es la película que vi ayer."
+    placeholder: "dem"
   - type: "match"
     instructions: "Empareja cada combinación de caso y género con su pronombre relativo."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "dem"
     accepted: ["dem"]
     hint: "Dativ masculino: dem."
+    placeholder: "der"
   - type: "order"
     sentence: "Der Mann, der dort steht, ist mein Lehrer"
     translation: "El hombre que está parado ahí es mi profesor."
+vocabulary:
+  - term: "der Mann"
+    translation: "el hombre"
+  - term: "der Film"
+    translation: "la película"
+  - term: "steht"
+    translation: "está parado / está de pie"
+  - term: "sehe"
+    translation: "veo"
+  - term: "helfe"
+    translation: "ayudo"
 ---
 
 Ya conoces der/die/das como artículos. Ahora aprenderás a reutilizarlos —con el mismo

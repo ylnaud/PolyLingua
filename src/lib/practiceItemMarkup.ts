@@ -137,7 +137,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
     const leftCol = el('div', { class: 'match-col', 'data-match-col': 'left' });
     pairs.forEach((pair, pi) => {
       const row = el('div', { class: 'option-row' });
-      const btn = el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'left', 'data-pair': String(pi) }, pair.left);
+      const btn = el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'left', 'data-pair': String(pi), 'data-value': pair.right }, pair.left);
       const speakBtn = el('button', {
         type: 'button',
         class: 'speak-btn match-speak',
@@ -154,7 +154,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
     const rightCol = el('div', { class: 'match-col', 'data-match-col': 'right' });
     pairs.forEach((_, pi) => {
       rightCol.appendChild(
-        el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'right', 'data-pair': String(pi) }, pairs[pi].right)
+        el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'right', 'data-pair': String(pi), 'data-value': pairs[pi].right }, pairs[pi].right)
       );
     });
     board.append(leftCol, rightCol);

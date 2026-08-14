@@ -229,6 +229,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                       data-match-item
                       data-side="left"
                       data-pair={pi}
+                      data-value={pair.right}
                     >
                       {pair.left}
                     </button>
@@ -244,6 +245,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                     data-match-item
                     data-side="right"
                     data-pair={pi}
+                    data-value={item.data.pairs[pi].right}
                   >
                     {item.data.pairs[pi].right}
                   </button>
@@ -982,7 +984,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                 btn.classList.add('selected');
                 return;
               }
-              const isMatch = selected.dataset.pair === btn.dataset.pair;
+              const isMatch = selected.dataset.value === btn.dataset.value;
               if (isMatch) {
                 selected.disabled = true;
                 btn.disabled = true;

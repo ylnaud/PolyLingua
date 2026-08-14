@@ -31,12 +31,14 @@ exercises:
     accepted: ["affaires"]
     hint: "'le chiffre d'affaires' significa los ingresos/la facturación."
     translation: "La facturación aumentó un 15% con respecto al trimestre pasado."
+    placeholder: "production"
   - type: "fill-blank"
     sentence: "Nous sommes en bonne voie pour respecter l'___."
     answer: "échéance"
     accepted: ["echeance"]
     hint: "'l'échéance' significa la fecha límite."
     translation: "Vamos por buen camino para respetar la fecha límite."
+    placeholder: "objectif"
   - type: "match"
     instructions: "Empareja cada término de francés de negocios con su significado."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Je comprends votre point de vue, mais j'ai une perspective différente."
     accepted: ["Je comprends votre point de vue, mais j'ai une perspective differente."]
     hint: "El francés de negocios suaviza el desacuerdo reconociendo primero al otro."
+    placeholder: "Je vois ce que vous voulez dire, cependant j'ai un point de vue différent."
   - type: "order"
     sentence: "Faisons le point sur le projet"
     translation: "Hagamos un balance sobre el proyecto."
+vocabulary:
+  - term: "la partie prenante"
+    translation: "la parte interesada"
+  - term: "l'échéance"
+    translation: "la fecha límite"
+  - term: "faire le point"
+    translation: "hacer un balance/evaluación"
+  - term: "assurer le suivi"
+    translation: "dar seguimiento"
+  - term: "licencier quelqu'un"
+    translation: "despedir a alguien"
+  - term: "le chiffre d'affaires"
+    translation: "los ingresos/la facturación"
 ---
 
 Este vocabulario te prepara para el registro específico del mundo corporativo

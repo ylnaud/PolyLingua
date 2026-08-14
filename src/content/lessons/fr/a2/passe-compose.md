@@ -30,11 +30,13 @@ exercises:
     answer: "ai"
     hint: "'avoir' conjugado con 'je' es 'ai'."
     translation: "Comí una pizza ayer."
+    placeholder: "as"
   - type: "fill-blank"
     sentence: "Elle ___ allée à Paris."
     answer: "est"
     hint: "'aller' usa 'être' como auxiliar."
     translation: "Ella fue a París."
+    placeholder: "sont"
   - type: "match"
     instructions: "Empareja cada infinitivo con su participio pasado."
     pairs:
@@ -54,9 +56,23 @@ exercises:
     accepted:
       - "Ils sont allés."
     hint: "Con 'être', el participio concuerda en género y número: masculino plural añade -s."
+    placeholder: "Elle est allée."
   - type: "order"
     sentence: "J'ai mangé une pizza hier"
     translation: "Comí una pizza ayer."
+vocabulary:
+  - term: "mangé"
+    translation: "comido"
+  - term: "allé / allée"
+    translation: "ido / ida"
+  - term: "fini"
+    translation: "terminado"
+  - term: "vendu"
+    translation: "vendido"
+  - term: "eu"
+    translation: "tenido / habido"
+  - term: "été"
+    translation: "sido / estado"
 ---
 
 Cuando un francés cuenta qué hizo ayer, casi siempre usa el **passé composé**. Si has

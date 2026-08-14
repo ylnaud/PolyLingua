@@ -31,12 +31,14 @@ exercises:
     accepted: ["le mien"]
     hint: "livre es masculino singular, poseedor 'yo'."
     translation: "Es mi libro. Es el mío."
+    placeholder: "le tien / la tienne"
   - type: "fill-blank"
     sentence: "C'est sa voiture. C'est ___."
     answer: "la sienne"
     accepted: ["la sienne"]
     hint: "voiture es femenino singular, poseedor 'él/ella'."
     translation: "Es su coche. Es el suyo/suya."
+    placeholder: "le nôtre / la nôtre"
   - type: "match"
     instructions: "Empareja cada expresión con su pronombre posesivo correspondiente."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "la nôtre"
     accepted: ["la nôtre"]
     hint: "voiture es femenino singular, poseedor 'nosotros'."
+    placeholder: "le mien / la mienne"
   - type: "order"
     sentence: "Ce livre est le mien"
     translation: "Este libro es el mío."
+vocabulary:
+  - term: "le mien"
+    translation: "el mío"
+  - term: "la tienne"
+    translation: "la tuya"
+  - term: "les siennes"
+    translation: "las suyas"
+  - term: "la nôtre"
+    translation: "la nuestra"
+  - term: "la leur"
+    translation: "la suya (de ellos)"
+  - term: "le vôtre"
+    translation: "el suyo (de ustedes)"
 ---
 
 Estos pronombres reemplazan completamente un sustantivo poseído — con su propio

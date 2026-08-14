@@ -35,12 +35,14 @@ exercises:
     accepted: ["Fleuve"]
     hint: "Metáfora clásica: compara la vida con un río tranquilo."
     translation: "La vida es un largo río tranquilo."
+    placeholder: "chemin"
   - type: "fill-blank"
     sentence: "___ pourrait le nier ?"
     answer: "Qui"
     accepted: ["qui"]
     hint: "Pregunta retórica: afirma disfrazada de pregunta."
     translation: "¿Quién podría negarlo?"
+    placeholder: "Que"
   - type: "match"
     instructions: "Empareja cada figura retórica con su ejemplo."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Je te l'ai dit mille fois !"
     accepted: ["Je te l'ai dit mille fois!", "je te l'ai dit mille fois !"]
     hint: "Termina en 'mille fois'."
+    placeholder: "J'ai attendu mille ans !"
   - type: "order"
     sentence: "Nous ne céderons pas"
     translation: "No cederemos."
+vocabulary:
+  - term: "métaphore"
+    translation: "metáfora"
+  - term: "question rhétorique"
+    translation: "pregunta retórica"
+  - term: "anaphore"
+    translation: "anáfora"
+  - term: "hyperbole"
+    translation: "hipérbole"
+  - term: "antithèse"
+    translation: "antítesis"
 ---
 
 Llegaste al último tramo: las herramientas que transforman un francés correcto en un

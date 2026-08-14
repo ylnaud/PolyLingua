@@ -35,12 +35,14 @@ exercises:
     accepted: ["aies"]
     hint: "Subjonctif passé = avoir/être en subjonctif présent + participe passé; con 'tu' es 'aies'."
     translation: "Estoy contento de que hayas aprobado tu examen."
+    placeholder: "soit"
   - type: "fill-blank"
     sentence: "Il est possible qu'elle ___ déjà partie."
     answer: "soit"
     accepted: ["soit"]
     hint: "'partir' se conjuga con être; subjonctif présent de être para 'elle' es 'soit'."
     translation: "Es posible que ya se haya ido."
+    placeholder: "ait"
   - type: "match"
     instructions: "Empareja cada frase en subjonctif présent con su equivalente en subjonctif passé."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Je ne pense pas qu'il ait compris."
     accepted: ["Je ne pense pas qu'il ait compris"]
     hint: "'comprendre' se conjuga con avoir: que + sujeto + aie/ait/... + compris."
+    placeholder: "Je doute qu'elle ait fini."
   - type: "order"
     sentence: "Je ne pense pas qu'il ait compris"
     translation: "No creo que él haya entendido."
+vocabulary:
+  - term: "que j'aie fini"
+    translation: "que haya terminado"
+  - term: "que je sois parti(e)"
+    translation: "que haya salido / que me haya ido"
+  - term: "Je doute qu'il soit venu."
+    translation: "Dudo que haya venido."
+  - term: "Je suis triste qu'il soit parti."
+    translation: "Estoy triste de que se haya ido."
+  - term: "Je ne pense pas qu'il ait compris."
+    translation: "No creo que haya entendido."
 ---
 
 Ya dominas el Subjonctif présent. Ahora aprendes su versión de pasado — necesaria

@@ -31,12 +31,14 @@ exercises:
     accepted: ["Magasiner"]
     hint: "Verbo quebequense equivalente a 'faire du shopping' en Francia."
     translation: "En Quebec, 'magasiner' significa 'ir de compras'."
+    placeholder: "un chum"
   - type: "fill-blank"
     sentence: "En Belgique et en Suisse, on dit ___ au lieu de « soixante-dix »."
     answer: "septante"
     accepted: ["Septante"]
     hint: "Número simplificado belga/suizo para el 70."
     translation: "En Bélgica y Suiza se dice 'septante' en vez de 'soixante-dix'."
+    placeholder: "huitante"
   - type: "match"
     instructions: "Empareja cada palabra del francés de Francia con su equivalente en el francés de Quebec."
     pairs:
@@ -53,9 +55,23 @@ exercises:
     answer: "un char"
     accepted: ["char", "Un char"]
     hint: "No significa 'tanque de guerra' en este contexto."
+    placeholder: "une drache"
   - type: "order"
     sentence: "Elle a acheté un char au Québec"
     translation: "Ella compró un coche en Quebec."
+vocabulary:
+  - term: "un char"
+    translation: "un coche (Quebec)"
+  - term: "magasiner"
+    translation: "ir de compras (Quebec)"
+  - term: "septante"
+    translation: "setenta (Bélgica/Suiza)"
+  - term: "un chum"
+    translation: "un novio (Quebec)"
+  - term: "une drache"
+    translation: "una lluvia fuerte (Bélgica)"
+  - term: "huitante"
+    translation: "ochenta (Bélgica/Suiza)"
 ---
 
 El francés que aprendiste en tus lecciones (basado en el estándar de Francia) es

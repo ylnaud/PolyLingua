@@ -39,12 +39,14 @@ exercises:
     accepted: ["etait"]
     hint: "El présent ('suis') retrocede a imparfait en discurso indirecto."
     translation: "Dijo que estaba cansado."
+    placeholder: "faisait"
   - type: "fill-blank"
     sentence: "Elle a dit qu'elle ___ le lendemain. (discours direct: 'Je viendrai demain.')"
     answer: "viendrait"
     accepted: ["viendrait bien"]
     hint: "El futur simple ('viendrai') retrocede a conditionnel présent."
     translation: "Dijo que vendría al día siguiente."
+    placeholder: "partirait"
   - type: "match"
     instructions: "Empareja cada expresión de discurso directo con su equivalente en discurso indirecto."
     pairs:
@@ -63,9 +65,23 @@ exercises:
     answer: "Paul a dit qu'il avait fini."
     accepted: ["Il a dit qu'il avait fini.", "Paul a dit qu'il avait fini"]
     hint: "El passé composé ('ai fini') retrocede a plus-que-parfait ('avait fini')."
+    placeholder: "Elle a dit qu'elle avait terminé."
   - type: "order"
     sentence: "Elle m'a dit de fermer la porte"
     translation: "Ella me dijo que cerrara la puerta."
+vocabulary:
+  - term: "aujourd'hui"
+    translation: "hoy"
+  - term: "demain"
+    translation: "mañana"
+  - term: "hier"
+    translation: "ayer"
+  - term: "maintenant"
+    translation: "ahora"
+  - term: "le lendemain"
+    translation: "al día siguiente"
+  - term: "la veille"
+    translation: "la víspera / el día anterior"
 ---
 
 Cuando cuentas lo que alguien más dijo, el francés no usa comillas — cambia

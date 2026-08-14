@@ -27,12 +27,14 @@ exercises:
     accepted: ["parles"]
     hint: "Verbo en -er con 'tu': terminación -es."
     translation: "Hablas francés."
+    placeholder: "manges"
   - type: "fill-blank"
     sentence: "Nous ___ des amis."
     answer: "avons"
     accepted: ["avons"]
     hint: "'avoir' con 'nous' es irregular: avons."
     translation: "Tenemos amigos."
+    placeholder: "sommes"
   - type: "match"
     instructions: "Empareja cada pronombre conjugado con 'être' con su traducción."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "ils ont"
     accepted: ["ils ont"]
     hint: "'avoir' es irregular; con 'ils/elles' es 'ont'."
+    placeholder: "ils sont"
   - type: "order"
     sentence: "Il a vingt ans"
     translation: "Él tiene veinte años."
+vocabulary:
+  - term: "parler"
+    translation: "hablar"
+  - term: "être"
+    translation: "ser / estar"
+  - term: "avoir"
+    translation: "tener"
+  - term: "avoir faim"
+    translation: "tener hambre"
+  - term: "avoir raison"
+    translation: "tener razón"
 ---
 
 El francés organiza sus verbos en tres grupos según su terminación, y el primer grupo

@@ -31,12 +31,14 @@ exercises:
     accepted: ["selon"]
     hint: "'selon' significa 'según' al citar una fuente."
     translation: "Según el estudio, el resultado es significativo."
+    placeholder: "Malgré"
   - type: "fill-blank"
     sentence: "Il convient de ___ que les résultats confirment l'hypothèse."
     answer: "souligner"
     accepted: ["souligner"]
     hint: "'il convient de souligner que...' significa 'conviene subrayar que...'."
     translation: "Conviene subrayar que los resultados confirman la hipótesis."
+    placeholder: "constater"
   - type: "match"
     instructions: "Empareja cada palabra del vocabulario académico francés con su traducción."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "En conclusion, on peut affirmer que..."
     accepted: ["En conclusion, on peut affirmer que", "En conclusion on peut affirmer que..."]
     hint: "Es una fórmula fija muy usada en disertaciones francesas."
+    placeholder: "Comme le montre l'étude..."
   - type: "order"
     sentence: "Il convient de souligner que les résultats sont significatifs"
     translation: "Conviene subrayar que los resultados son significativos."
+vocabulary:
+  - term: "l'hypothèse"
+    translation: "la hipótesis"
+  - term: "la recherche"
+    translation: "la investigación"
+  - term: "la preuve"
+    translation: "la prueba"
+  - term: "démontrer"
+    translation: "demostrar"
+  - term: "réfuter"
+    translation: "refutar"
+  - term: "selon"
+    translation: "según"
 ---
 
 Este vocabulario te permite leer y escribir en el registro que domina disertaciones,

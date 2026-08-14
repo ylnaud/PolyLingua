@@ -39,12 +39,14 @@ exercises:
     accepted: ["Décision"]
     hint: "Nominalización del verbo 'décider'."
     translation: "La decisión del gobierno de aumentar los impuestos suscitó debates."
+    placeholder: "l'analyse"
   - type: "fill-blank"
     sentence: "Que ___-vous de cette proposition ?"
     answer: "pensez"
     accepted: ["Pensez"]
     hint: "Inversión sujeto-verbo formal, en vez de 'qu'est-ce que vous pensez'."
     translation: "¿Qué piensa usted de esta propuesta?"
+    placeholder: "faites"
   - type: "match"
     instructions: "Empareja cada verbo del registro neutro con su nominalización en estilo soutenu."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "Que pensez-vous de cette proposition ?"
     accepted: ["Que pensez-vous de cette proposition?", "que pensez-vous de cette proposition ?"]
     hint: "Empieza con 'Que pensez-vous'."
+    placeholder: "Pourquoi est-il parti ?"
   - type: "order"
     sentence: "Le gouvernement a décidé d'augmenter les impôts"
     translation: "El gobierno decidió aumentar los impuestos."
+vocabulary:
+  - term: "la décision"
+    translation: "la decisión (nominalización de décider)"
+  - term: "l'analyse"
+    translation: "el análisis"
+  - term: "l'augmentation"
+    translation: "el aumento"
+  - term: "la mise en œuvre"
+    translation: "la puesta en práctica"
+  - term: "de nombreux/nombreuses"
+    translation: "numerosos/as"
 ---
 
 Llegaste al último peldaño: escribir y hablar con el registro que encontrarás en un

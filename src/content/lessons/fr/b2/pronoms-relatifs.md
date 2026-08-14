@@ -27,12 +27,14 @@ exercises:
     accepted: ["qui"]
     hint: "'cette femme' es el sujeto de 'parle'."
     translation: "La mujer que habla es mi hermana."
+    placeholder: "que / dont"
   - type: "fill-blank"
     sentence: "Le film ___ j'ai vu était super."
     answer: "que"
     accepted: ["que"]
     hint: "'ce film' es el objeto directo de 'j'ai vu'."
     translation: "La película que vi era genial."
+    placeholder: "qui / où"
   - type: "match"
     instructions: "Empareja cada pronombre relativo con la función que cumple."
     pairs:
@@ -48,9 +50,23 @@ exercises:
     prompt: "Traduce: 'Este es el libro del que hablo.'"
     answer: "C'est le livre dont je parle."
     hint: "'parler de' activa 'dont' en vez de 'que'."
+    placeholder: "C'est la maison où j'habite."
   - type: "order"
     sentence: "Voici la maison où j'ai grandi"
     translation: "Esta es la casa donde crecí."
+vocabulary:
+  - term: "qui"
+    translation: "que (sujeto)"
+  - term: "que"
+    translation: "que (objeto directo)"
+  - term: "dont"
+    translation: "del/de la que"
+  - term: "où"
+    translation: "donde"
+  - term: "parler de"
+    translation: "hablar de"
+  - term: "avoir besoin de"
+    translation: "necesitar"
 ---
 
 Los pronombres relativos son la herramienta que separa el francés de principiante ("J'ai

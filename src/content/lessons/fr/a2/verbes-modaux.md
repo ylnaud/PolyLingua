@@ -30,11 +30,13 @@ exercises:
     answer: "veux"
     hint: "'vouloir' conjugado con 'je' es 'veux'."
     translation: "Quiero viajar."
+    placeholder: "peux"
   - type: "fill-blank"
     sentence: "Nous ___ étudier."
     answer: "devons"
     hint: "'devoir' conjugado con 'nous' es 'devons'."
     translation: "Debemos estudiar."
+    placeholder: "voulons"
   - type: "match"
     instructions: "Empareja cada pronombre y verbo con su forma conjugada."
     pairs:
@@ -54,9 +56,23 @@ exercises:
     accepted:
       - "Tu peux entrer."
     hint: "pouvoir conjugado con 'tu' es 'peux' + infinitivo."
+    placeholder: "Je veux voyager."
   - type: "order"
     sentence: "Il faut réserver à l'avance"
     translation: "Hay que reservar con anticipación."
+vocabulary:
+  - term: "vouloir"
+    translation: "querer"
+  - term: "pouvoir"
+    translation: "poder"
+  - term: "devoir"
+    translation: "deber / tener que"
+  - term: "il faut"
+    translation: "hay que"
+  - term: "voyager"
+    translation: "viajar"
+  - term: "entrer"
+    translation: "entrar"
 ---
 
 Estos tres verbos —junto con la expresión "il faut"— son tu caja de herramientas para

@@ -39,12 +39,14 @@ exercises:
     accepted: ["petit"]
     hint: "Refrán sobre el progreso gradual, equivalente a 'Roma no se hizo en un día'."
     translation: "Poco a poco, el pájaro hace su nido."
+    placeholder: "Après"
   - type: "fill-blank"
     sentence: "Il ne faut pas vendre la peau de l'___ avant de l'avoir tué."
     answer: "ours"
     accepted: ["Ours"]
     hint: "Animal cuya piel no se debe vender antes de cazarlo."
     translation: "No hay que vender la piel del oso antes de matarlo."
+    placeholder: "lion"
   - type: "match"
     instructions: "Empareja cada refrán francés con su equivalente en español."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "Petit à petit, l'oiseau fait son nid."
     accepted: ["Petit à petit, l'oiseau fait son nid", "petit à petit, l'oiseau fait son nid."]
     hint: "Empieza con 'Petit à petit'."
+    placeholder: "Après la pluie, le beau temps."
   - type: "order"
     sentence: "Après la pluie le beau temps"
     translation: "Después de la lluvia, el buen tiempo."
+vocabulary:
+  - term: "Petit à petit, l'oiseau fait son nid."
+    translation: "Poco a poco, el pájaro hace su nido (Roma no se hizo en un día)"
+  - term: "Il ne faut pas vendre la peau de l'ours avant de l'avoir tué."
+    translation: "No vendas la piel del oso antes de cazarlo"
+  - term: "L'habit ne fait pas le moine."
+    translation: "No juzgues un libro por su portada"
+  - term: "Qui vivra verra."
+    translation: "El tiempo lo dirá"
+  - term: "Après la pluie, le beau temps."
+    translation: "No hay mal que dure cien años"
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

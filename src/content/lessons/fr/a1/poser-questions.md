@@ -27,12 +27,14 @@ exercises:
     accepted: ["Est-ce", "est-ce"]
     hint: "La forma neutral, la más usada en conversación."
     translation: "¿Hablas francés?"
+    placeholder: "Qu'est-ce"
   - type: "fill-blank"
     sentence: "___-tu français?"
     answer: "Parles"
     accepted: ["Parles", "parles"]
     hint: "Forma con inversión: verbo + guión + sujeto."
     translation: "¿Hablas francés? (forma formal, con inversión)"
+    placeholder: "Aimes"
   - type: "match"
     instructions: "Empareja cada pregunta con su nivel de formalidad."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "Habitez-vous ici"
     accepted: ["Habitez-vous ici", "Habitez-vous ici?"]
     hint: "Invierte verbo y pronombre, unidos por un guión."
+    placeholder: "Parlez-vous français"
   - type: "order"
     sentence: "Est-ce que tu aimes le café"
     translation: "¿Te gusta el café?"
+vocabulary:
+  - term: "est-ce que"
+    translation: "¿es que...? (marcador de pregunta)"
+  - term: "où"
+    translation: "dónde"
+  - term: "pourquoi"
+    translation: "por qué"
+  - term: "parles-tu"
+    translation: "hablas tú (inversión)"
+  - term: "habitez-vous"
+    translation: "vive usted (inversión)"
 ---
 
 El francés ofrece tres caminos para hacer la misma pregunta, cada uno apropiado para

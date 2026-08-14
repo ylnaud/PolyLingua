@@ -31,12 +31,14 @@ exercises:
     accepted: ["est"]
     hint: "Presente de 'être', sujeto singular."
     translation: "La comida es preparada por el chef."
+    placeholder: "sont / était"
   - type: "fill-blank"
     sentence: "La lettre est ___ (écrire)."
     answer: "écrite"
     accepted: ["écrite"]
     hint: "El participio concuerda en femenino singular con 'la lettre'."
     translation: "La carta está escrita."
+    placeholder: "construite"
   - type: "match"
     instructions: "Empareja cada sujeto con su forma pasiva correcta."
     pairs:
@@ -54,9 +56,21 @@ exercises:
     prompt: "Traduce a voz pasiva: 'El libro fue escrito por Victor Hugo.'"
     answer: "Le livre a été écrit par Victor Hugo."
     hint: "Passé composé pasivo = a été + participio, con 'par' introduciendo al agente."
+    placeholder: "La maison a été construite par l'architecte."
   - type: "order"
     sentence: "Le pont a été construit en 1889"
     translation: "El puente fue construido en 1889."
+vocabulary:
+  - term: "par"
+    translation: "por"
+  - term: "être"
+    translation: "ser / estar"
+  - term: "la maison est construite"
+    translation: "la casa es construida"
+  - term: "le livre est lu"
+    translation: "el libro es leído"
+  - term: "a été construit"
+    translation: "fue construido"
 ---
 
 Igual que en español, el francés usa la voz pasiva cuando el **qué pasó** importa más

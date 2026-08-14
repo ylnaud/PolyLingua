@@ -30,11 +30,13 @@ exercises:
     answer: "vais"
     hint: "'aller' conjugado con 'je' es 'vais'."
     translation: "Voy a comer."
+    placeholder: "vas"
   - type: "fill-blank"
     sentence: "Ils ___ voyager en été."
     answer: "vont"
     hint: "'aller' conjugado con 'ils' es 'vont'."
     translation: "Ellos van a viajar en verano."
+    placeholder: "allons"
   - type: "match"
     instructions: "Empareja cada pronombre con su forma de 'aller' en presente."
     pairs:
@@ -54,9 +56,23 @@ exercises:
     accepted:
       - "Nous allons voyager en été."
     hint: "aller (conjugado con nous) + infinitivo de voyager."
+    placeholder: "Tu vas partir demain."
   - type: "order"
     sentence: "Tu vas partir demain"
     translation: "¿Vas a irte mañana?"
+vocabulary:
+  - term: "je vais"
+    translation: "yo voy (a)"
+  - term: "tu vas"
+    translation: "tú vas (a)"
+  - term: "nous allons"
+    translation: "nosotros vamos (a)"
+  - term: "ils vont"
+    translation: "ellos van (a)"
+  - term: "voyager"
+    translation: "viajar"
+  - term: "demain"
+    translation: "mañana"
 ---
 
 Este es tu primer y más útil futuro en francés — la estructura que realmente

@@ -26,11 +26,13 @@ exercises:
     answer: "parce que"
     hint: "Causa/razón directa: no exige subjonctif."
     translation: "Me quedo en casa porque estoy enfermo."
+    placeholder: "quand"
   - type: "fill-blank"
     sentence: "Bien qu'il ___ fatigué, il continue à travailler."
     answer: "soit"
     hint: "'bien que' exige subjonctif; 'soit' es el subjonctif de 'être' para il/elle."
     translation: "Aunque esté cansado, sigue trabajando."
+    placeholder: "est"
   - type: "match"
     instructions: "Empareja cada conjunción con el modo verbal que exige."
     pairs:
@@ -48,9 +50,23 @@ exercises:
     prompt: "Escribe en francés 'Hablo despacio para que entiendas', usando 'pour que' + subjonctif de comprendre (que tu comprennes)."
     answer: "Je parle lentement pour que tu comprennes."
     hint: "'pour que' exige subjonctif: comprennes."
+    placeholder: "Je parle vite avant que tu partes."
   - type: "order"
     sentence: "Bien qu'il soit riche il est triste"
     translation: "Aunque es rico, está triste."
+vocabulary:
+  - term: "parce que"
+    translation: "porque"
+  - term: "quand"
+    translation: "cuando"
+  - term: "puisque"
+    translation: "ya que"
+  - term: "bien que"
+    translation: "aunque"
+  - term: "pour que"
+    translation: "para que"
+  - term: "avant que"
+    translation: "antes de que"
 ---
 
 En este nivel empiezas a conectar ideas complejas: causa, contraste, tiempo. El francés

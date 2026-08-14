@@ -39,12 +39,14 @@ exercises:
     accepted: ["quelle"]
     hint: "Expresión irónica clásica: literalmente '¡Qué buena idea!'."
     translation: "¡Qué buena idea! (dicho con ironía tras un fracaso evidente)"
+    placeholder: "Quel / Quelle / Quels / Quelles"
   - type: "fill-blank"
     sentence: "Se moquer de soi-même avec élégance s'appelle l'___."
     answer: "autodérision"
     accepted: ["Autodérision"]
     hint: "Reírse de uno mismo con elegancia; visto como signo de inteligencia, no de debilidad."
     translation: "Burlarse de uno mismo con elegancia se llama la autoironía."
+    placeholder: "ironie"
   - type: "match"
     instructions: "Empareja cada término con su definición."
     pairs:
@@ -61,8 +63,20 @@ exercises:
     answer: "Quelle bonne idée !"
     accepted: ["Quelle bonne idée!", "quelle bonne idée !"]
     hint: "Empieza con 'Quelle' y termina con 'idée'."
+    placeholder: "Quelle surprise !"
   - type: "order"
     sentence: "Je suis un expert en catastrophes culinaires"
+    translation: "Soy un experto en desastres culinarios."
+vocabulary:
+  - term: "l'ironie"
+    translation: "la ironía"
+  - term: "l'esprit"
+    translation: "el ingenio verbal"
+  - term: "l'autodérision"
+    translation: "la autoironía"
+  - term: "Quelle bonne idée !"
+    translation: "¡Qué buena idea! (dicho con ironía)"
+  - term: "Je suis un expert en catastrophes culinaires."
     translation: "Soy un experto en desastres culinarios."
 ---
 

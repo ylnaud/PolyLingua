@@ -34,11 +34,13 @@ exercises:
     answer: "beau"
     hint: "BAGS - Beauty: los adjetivos de belleza van antes del sustantivo."
     translation: "un hermoso jardín."
+    placeholder: "joli"
   - type: "fill-blank"
     sentence: "une voiture ___."
     answer: "rouge"
     hint: "La mayoría de los adjetivos (como los de color) van DESPUÉS del sustantivo."
     translation: "un coche rojo."
+    placeholder: "bleue"
   - type: "match"
     instructions: "Empareja cada adjetivo con su categoría BAGS (o su posición)."
     pairs:
@@ -56,9 +58,23 @@ exercises:
     prompt: "Escribe en francés: 'una habitación limpia', usando 'propre' después del sustantivo."
     answer: "une chambre propre"
     hint: "Después del sustantivo, 'propre' significa 'limpio', no 'propio'."
+    placeholder: "un livre ancien"
   - type: "order"
     sentence: "Une vieille maison est belle"
     translation: "Una casa vieja es bonita."
+vocabulary:
+  - term: "beau"
+    translation: "hermoso"
+  - term: "vieille"
+    translation: "vieja"
+  - term: "bon"
+    translation: "bueno"
+  - term: "grand"
+    translation: "grande"
+  - term: "petit"
+    translation: "pequeño"
+  - term: "propre"
+    translation: "limpio (o propio, según posición)"
 ---
 
 En español, mover un adjetivo antes o después del sustantivo suele ser solo un matiz

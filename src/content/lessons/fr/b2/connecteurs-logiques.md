@@ -31,12 +31,14 @@ exercises:
     accepted: ["cependant"]
     hint: "Introduce un contraste con lo dicho antes."
     translation: "Fracasó. Sin embargo, no se rinde."
+    placeholder: "Néanmoins"
   - type: "fill-blank"
     sentence: "Le produit est bon marché. ___, il est fiable."
     answer: "De plus"
     accepted: ["de plus"]
     hint: "Añade un punto adicional que refuerza el argumento anterior."
     translation: "El producto es barato. Además, es fiable."
+    placeholder: "En outre"
   - type: "match"
     instructions: "Empareja cada conector con su función."
     pairs:
@@ -54,9 +56,23 @@ exercises:
     prompt: "Traduce: 'Trabajó mucho; por consiguiente, tuvo éxito.'"
     answer: "Il a beaucoup travaillé; par conséquent, il a réussi."
     hint: "'par conséquent' introduce una consecuencia lógica formal."
+    placeholder: "Elle a beaucoup étudié; par conséquent, elle a réussi."
   - type: "order"
     sentence: "Le projet présente des avantages clairs cependant sa mise en œuvre exige un investissement important"
     translation: "El proyecto presenta ventajas claras, sin embargo su implementación exige una inversión importante."
+vocabulary:
+  - term: "cependant"
+    translation: "sin embargo"
+  - term: "néanmoins"
+    translation: "no obstante (formal/enfático)"
+  - term: "de plus"
+    translation: "además"
+  - term: "par conséquent"
+    translation: "por consiguiente"
+  - term: "par exemple"
+    translation: "por ejemplo"
+  - term: "toutefois"
+    translation: "sin embargo (muy formal, escrito)"
 ---
 
 Estos conectores son la señal más clara de un francés escrito y hablado con

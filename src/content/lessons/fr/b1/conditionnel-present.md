@@ -31,11 +31,13 @@ exercises:
     accepted: ["Je voudrais"]
     hint: "Conditionnel de 'vouloir', para pedir algo con cortesía."
     translation: "Quisiera un café, por favor."
+    placeholder: "il voudrait"
   - type: "fill-blank"
     sentence: "Tu ___ dormir plus."
     answer: "devrais"
     hint: "Conditionnel de 'devoir': suaviza la obligación a un consejo."
     translation: "Deberías dormir más."
+    placeholder: "il devrait"
   - type: "match"
     instructions: "Empareja cada infinitivo con su forma de Conditionnel (je/il)."
     pairs:
@@ -54,9 +56,23 @@ exercises:
     answer: "Pourriez-vous m'aider ?"
     accepted: ["Pourriez-vous m'aider?", "pourriez-vous m'aider ?"]
     hint: "Usa la forma de cortesía de 'pouvoir' con 'vous'."
+    placeholder: "Pourriez-vous m'expliquer ?"
   - type: "order"
     sentence: "Si j'avais de l'argent je voyagerais"
     translation: "Si tuviera dinero, viajaría."
+vocabulary:
+  - term: "je voudrais"
+    translation: "quisiera"
+  - term: "tu devrais"
+    translation: "deberías"
+  - term: "Pourriez-vous m'aider ?"
+    translation: "¿Podría ayudarme?"
+  - term: "je serais"
+    translation: "yo sería"
+  - term: "j'aurais"
+    translation: "yo tendría"
+  - term: "je voyagerais"
+    translation: "yo viajaría"
 ---
 
 El Conditionnel présent es tu herramienta para sonar cortés, dar consejos suaves y

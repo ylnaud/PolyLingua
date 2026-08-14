@@ -35,12 +35,14 @@ exercises:
     accepted: ["conduisant"]
     hint: "conduire → nous conduisons → en conduisant."
     translation: "Él habla mientras conduce."
+    placeholder: "en travaillant"
   - type: "fill-blank"
     sentence: "J'ai appris le français en ___ (regarder) des films."
     answer: "regardant"
     accepted: ["regardant"]
     hint: "regarder → nous regardons → en regardant."
     translation: "Aprendí francés viendo películas."
+    placeholder: "en dansant"
   - type: "match"
     instructions: "Empareja cada infinitivo con su gérondif correspondiente."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "en cuisinant"
     accepted: ["en cuisinant"]
     hint: "en + raíz de 'nous' en presente + -ant."
+    placeholder: "en mangeant"
   - type: "order"
     sentence: "Elle écoute de la musique en travaillant"
     translation: "Ella escucha música mientras trabaja."
+vocabulary:
+  - term: "en mangeant"
+    translation: "comiendo"
+  - term: "en conduisant"
+    translation: "conduciendo"
+  - term: "en travaillant"
+    translation: "trabajando"
+  - term: "en regardant"
+    translation: "mirando"
+  - term: "en étant"
+    translation: "siendo"
+  - term: "en sachant"
+    translation: "sabiendo"
 ---
 
 Este es uno de los recursos más elegantes del francés: comprimir dos acciones

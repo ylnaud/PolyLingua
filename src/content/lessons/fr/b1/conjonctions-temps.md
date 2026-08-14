@@ -34,11 +34,13 @@ exercises:
     answer: "arriveras"
     hint: "Acción futura después de 'quand' exige futur simple en francés."
     translation: "Cuando llegues, llámame."
+    placeholder: "finiras"
   - type: "fill-blank"
     sentence: "Dès qu'il ___ (finir), il nous le dira."
     answer: "finira"
     hint: "'dès que' + futuro cuando ambas acciones son futuras."
     translation: "Tan pronto como termine, nos lo dirá."
+    placeholder: "arrivera"
   - type: "match"
     instructions: "Empareja cada conjunción de tiempo con su significado."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Quand tu seras prêt, on partira."
     accepted: ["Quand tu seras prête, on partira."]
     hint: "Ambos verbos deben ir en futur simple: seras y partira."
+    placeholder: "Quand il sera prêt, on partira."
   - type: "order"
     sentence: "Quand tu arriveras je serai là"
     translation: "Cuando llegues, estaré ahí."
+vocabulary:
+  - term: "quand"
+    translation: "cuando"
+  - term: "lorsque"
+    translation: "cuando (más formal)"
+  - term: "dès que"
+    translation: "tan pronto como"
+  - term: "aussitôt que"
+    translation: "tan pronto como (sea posible)"
+  - term: "tu arriveras"
+    translation: "llegarás"
+  - term: "appelle-moi"
+    translation: "llámame"
 ---
 
 Este es uno de los detalles gramaticales que más sorprende a los hispanohablantes: el

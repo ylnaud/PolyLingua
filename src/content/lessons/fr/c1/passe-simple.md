@@ -31,12 +31,14 @@ exercises:
     accepted: ["vît"]
     hint: "Passé simple de 'voir' con 'il': raíz irregular + terminación -it."
     translation: "Abrió la puerta y vio a un hombre sentado cerca de la ventana."
+    placeholder: "dit"
   - type: "fill-blank"
     sentence: "Ils ___ leurs devoirs avant le dîner. (finir)"
     answer: "finirent"
     accepted: ["finirent"]
     hint: "Verbos en -ir toman las terminaciones -is, -is, -it, -îmes, -îtes, -irent."
     translation: "Terminaron sus tareas antes de la cena."
+    placeholder: "vendirent"
   - type: "match"
     instructions: "Empareja cada verbo en passé simple con su equivalente en passé composé (registro hablado)."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "il dit"
     accepted: ["dit", "Il dit"]
     hint: "'dire' es irregular en passé simple: il dit."
+    placeholder: "il vint"
   - type: "order"
     sentence: "Elle vendit sa maison avant l'hiver"
     translation: "Ella vendió su casa antes del invierno."
+vocabulary:
+  - term: "il parla"
+    translation: "él habló"
+  - term: "ils finirent"
+    translation: "ellos terminaron"
+  - term: "elle vendit"
+    translation: "ella vendió"
+  - term: "il fut"
+    translation: "él fue/estuvo"
+  - term: "il eut"
+    translation: "él tuvo"
+  - term: "il fit"
+    translation: "él hizo"
 ---
 
 Este es el tiempo más curioso del francés: existe únicamente para ser LEÍDO, nunca

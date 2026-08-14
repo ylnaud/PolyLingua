@@ -26,11 +26,13 @@ exercises:
     answer: "entretien"
     hint: "l'entretien d'embauche = la entrevista de trabajo."
     translation: "Tengo una entrevista de trabajo mañana."
+    placeholder: "contrat"
   - type: "fill-blank"
     sentence: "Ma ___ s'appelle Sophie."
     answer: "collègue"
     hint: "le/la collègue = el/la colega."
     translation: "Mi colega se llama Sophie."
+    placeholder: "patronne"
   - type: "match"
     instructions: "Empareja cada profesión masculina con su versión femenina."
     pairs:
@@ -46,9 +48,23 @@ exercises:
     prompt: "Escribe en francés 'Trabajo como profesor' usando 'travailler comme'."
     answer: "Je travaille comme professeur."
     hint: "travailler comme + profesión, sin artículo."
+    placeholder: "Je travaille comme vendeur."
   - type: "order"
     sentence: "J'ai un entretien d'embauche demain"
     translation: "Tengo una entrevista de trabajo mañana."
+vocabulary:
+  - term: "l'entretien d'embauche"
+    translation: "la entrevista de trabajo"
+  - term: "le/la collègue"
+    translation: "el/la colega"
+  - term: "le salaire"
+    translation: "el salario"
+  - term: "le bureau"
+    translation: "la oficina"
+  - term: "l'entreprise"
+    translation: "la empresa"
+  - term: "le patron / la patronne"
+    translation: "el jefe / la jefa"
 ---
 
 Ya sea para hablar de tu trabajo actual, escribir una candidatura o prepararte para

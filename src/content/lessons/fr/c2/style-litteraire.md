@@ -39,12 +39,14 @@ exercises:
     accepted: ["Ouvrit"]
     hint: "Passé simple del verbo 'ouvrir', marca del registro narrativo literario."
     translation: "Abrió la puerta y vio a un hombre."
+    placeholder: "partit"
   - type: "fill-blank"
     sentence: "Le vent ___ à travers les arbres."
     answer: "murmurait"
     accepted: ["Murmurait"]
     hint: "Personificación: el viento 'murmura' como si tuviera voz."
     translation: "El viento murmuraba a través de los árboles."
+    placeholder: "soufflait"
   - type: "match"
     instructions: "Empareja cada frase directa ('dire') con su versión literaria ('montrer')."
     pairs:
@@ -61,9 +63,21 @@ exercises:
     answer: "Il ouvrit la porte et vit un homme."
     accepted: ["Il ouvrit la porte et vit un homme"]
     hint: "Usa el passé simple de 'ouvrir' y de 'voir'."
+    placeholder: "Elle sourit et partit."
   - type: "order"
     sentence: "Elle attendit encore"
     translation: "Ella esperó otra vez."
+vocabulary:
+  - term: "ouvrit"
+    translation: "abrió (passé simple, registro literario)"
+  - term: "murmurait"
+    translation: "murmuraba"
+  - term: "personnification"
+    translation: "personificación"
+  - term: "montrer"
+    translation: "mostrar"
+  - term: "attendit"
+    translation: "esperó (passé simple)"
 ---
 
 Llegaste al registro más elevado y expresivo del francés: el de la prosa literaria,

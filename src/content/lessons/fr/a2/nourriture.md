@@ -26,11 +26,13 @@ exercises:
     answer: "L'"
     hint: "'eau' empieza con vocal, así que el artículo se contrae: l'eau."
     translation: "El agua está fresca."
+    placeholder: "Le"
   - type: "fill-blank"
     sentence: "___ pain est délicieux."
     answer: "Le"
     hint: "'pain' es masculino: le pain."
     translation: "El pan está delicioso."
+    placeholder: "La"
   - type: "match"
     instructions: "Empareja cada palabra en francés con su traducción."
     pairs:
@@ -50,9 +52,23 @@ exercises:
     accepted:
       - "Je voudrais un thé s'il vous plaît"
     hint: "'Je voudrais' es más educado que 'je veux'."
+    placeholder: "Je voudrais un café, s'il vous plaît."
   - type: "order"
     sentence: "Je voudrais un café s'il vous plaît"
     translation: "Quisiera un café, por favor."
+vocabulary:
+  - term: "le pain"
+    translation: "el pan"
+  - term: "le fromage"
+    translation: "el queso"
+  - term: "la pomme"
+    translation: "la manzana"
+  - term: "le riz"
+    translation: "el arroz"
+  - term: "l'eau"
+    translation: "el agua"
+  - term: "je voudrais"
+    translation: "yo quisiera"
 ---
 
 Ya sea en un restaurante, una boulangerie o un supermercado, este vocabulario es

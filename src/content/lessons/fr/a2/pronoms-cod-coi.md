@@ -26,11 +26,13 @@ exercises:
     answer: "la"
     hint: "'voir' no lleva preposición: usa COD femenino singular."
     translation: "La veo (a Marie)."
+    placeholder: "le"
   - type: "fill-blank"
     sentence: "Je ___ parle."
     answer: "lui"
     hint: "'parler à' lleva preposición oculta: usa COI singular."
     translation: "Le hablo (a Marc)."
+    placeholder: "leur"
   - type: "match"
     instructions: "Empareja cada pronombre con lo que reemplaza."
     pairs:
@@ -50,9 +52,21 @@ exercises:
     accepted:
       - "Je leur parle."
     hint: "'parler à' pide COI: leur para plural."
+    placeholder: "Je lui parle."
   - type: "order"
     sentence: "Je ne le vois pas"
     translation: "No lo veo."
+vocabulary:
+  - term: "le"
+    translation: "lo (objeto masculino singular)"
+  - term: "la"
+    translation: "la (objeto femenino singular)"
+  - term: "les"
+    translation: "los / las (objeto plural)"
+  - term: "lui"
+    translation: "le (a él / a ella)"
+  - term: "leur"
+    translation: "les (a ellos / a ellas)"
 ---
 
 Estos pronombres te permiten evitar repetir un sustantivo una y otra vez — la clave

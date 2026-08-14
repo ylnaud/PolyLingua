@@ -31,12 +31,14 @@ exercises:
     accepted: ["Mon", "mon"]
     hint: "'livre' es masculino."
     translation: "Mi libro está sobre la mesa."
+    placeholder: "Ton"
   - type: "fill-blank"
     sentence: "___ amie habite à Paris."
     answer: "Mon"
     accepted: ["Mon", "mon"]
     hint: "'amie' es femenino, pero empieza con vocal: se usa 'mon' por pronunciación."
     translation: "Mi amiga vive en París."
+    placeholder: "Son"
   - type: "match"
     instructions: "Empareja cada posesivo francés con su traducción."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "ma maison"
     accepted: ["ma maison"]
     hint: "'maison' empieza con consonante, así que no hay excepción fonética."
+    placeholder: "ta maison"
   - type: "order"
     sentence: "Notre maison est grande"
     translation: "Nuestra casa es grande."
+vocabulary:
+  - term: "mon livre"
+    translation: "mi libro"
+  - term: "ma maison"
+    translation: "mi casa"
+  - term: "mes livres"
+    translation: "mis libros"
+  - term: "ton livre"
+    translation: "tu libro"
+  - term: "son livre"
+    translation: "su libro (de él/ella)"
 ---
 
 A diferencia del español, donde "mi" nunca cambia, el francés hace que los posesivos

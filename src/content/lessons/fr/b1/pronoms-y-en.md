@@ -26,11 +26,13 @@ exercises:
     answer: "y"
     hint: "'y' reemplaza un lugar introducido por 'à'."
     translation: "Voy allí con gusto."
+    placeholder: "en"
   - type: "fill-blank"
     sentence: "J'___ ai trois."
     answer: "en"
     hint: "'en' reemplaza una cantidad + sustantivo."
     translation: "Tengo tres de ellos."
+    placeholder: "y"
   - type: "match"
     instructions: "Empareja cada frase original con su versión usando 'y' o 'en'."
     pairs:
@@ -46,9 +48,21 @@ exercises:
     prompt: "Escribe en francés 'Hay tres de ellos' combinando 'il y a' con 'en'."
     answer: "Il y en a trois."
     hint: "Combina 'il y a' + 'en': il y en a..."
+    placeholder: "Il y en a deux."
   - type: "order"
     sentence: "Il y en a trois"
     translation: "Hay tres de ellos."
+vocabulary:
+  - term: "y"
+    translation: "allí / eso (pronombre adverbial de lugar)"
+  - term: "en"
+    translation: "de ello / de eso (pronombre adverbial de cantidad)"
+  - term: "J'y vais"
+    translation: "voy allí"
+  - term: "J'en ai trois"
+    translation: "tengo tres de ellos"
+  - term: "Il y en a trois"
+    translation: "hay tres de ellos"
 ---
 
 Estos dos pronombres pequeños son extremadamente frecuentes en francés hablado —

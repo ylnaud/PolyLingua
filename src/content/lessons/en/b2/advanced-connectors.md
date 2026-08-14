@@ -31,12 +31,14 @@ exercises:
     accepted: ["however"]
     hint: "Introduce un contraste con la frase anterior."
     translation: "El plan fracasó. Sin embargo, aprendimos mucho."
+    placeholder: "Moreover"
   - type: "fill-blank"
     sentence: "___ the rain, we went for a walk."
     answer: "Despite"
     accepted: ["despite"]
     hint: "Va seguido directamente de un sustantivo, sin frase completa."
     translation: "A pesar de la lluvia, salimos a caminar."
+    placeholder: "In spite of"
   - type: "match"
     instructions: "Empareja cada conector con su función."
     pairs:
@@ -54,9 +56,21 @@ exercises:
     prompt: "Escribe en inglés, uniendo estas ideas con 'although': 'it was raining' + 'we went out'."
     answer: "Although it was raining, we went out."
     hint: "'although' va seguido de una frase completa con sujeto y verbo."
+    placeholder: "Although it's expensive, we bought it."
   - type: "order"
     sentence: "She studied hard therefore she passed"
     translation: "Ella estudió mucho, por lo tanto aprobó."
+vocabulary:
+  - term: "however"
+    translation: "sin embargo"
+  - term: "moreover"
+    translation: "además"
+  - term: "despite"
+    translation: "a pesar de"
+  - term: "although"
+    translation: "aunque"
+  - term: "therefore"
+    translation: "por lo tanto"
 ---
 
 Estos conectores son la señal más clara de un inglés escrito y hablado con estructura

@@ -31,12 +31,14 @@ exercises:
     accepted: ["there is"]
     hint: "Sustantivo singular."
     translation: "Hay un libro en la mesa."
+    placeholder: "There are"
   - type: "fill-blank"
     sentence: "___ some apples in the fridge."
     answer: "There are"
     accepted: ["there are"]
     hint: "Sustantivo plural."
     translation: "Hay unas manzanas en el refrigerador."
+    placeholder: "There is"
   - type: "match"
     instructions: "Empareja cada frase con lo que representa."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Are there any shops nearby?"
     accepted: ["Are there any shops nearby"]
     hint: "Pregunta plural: usa 'any'."
+    placeholder: "Is there a park nearby?"
   - type: "order"
     sentence: "There is a park near my house"
     translation: "Hay un parque cerca de mi casa."
+vocabulary:
+  - term: "There is"
+    translation: "hay (singular)"
+  - term: "There are"
+    translation: "hay (plural)"
+  - term: "some"
+    translation: "algunos / algo de"
+  - term: "any"
+    translation: "ningún / alguno (negativas y preguntas)"
+  - term: "nearby"
+    translation: "cerca"
+  - term: "park"
+    translation: "parque"
 ---
 
 "There is/are" es tu herramienta para describir qué existe o qué hay en un lugar —

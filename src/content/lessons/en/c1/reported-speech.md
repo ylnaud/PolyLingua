@@ -38,11 +38,13 @@ exercises:
     answer: "was"
     hint: "María dijo I am tired — el presente retrocede a pasado en discurso indirecto."
     translation: "Ella dijo que estaba cansada."
+    placeholder: "were"
   - type: "fill-blank"
     sentence: "He said he ___ call me."
     answer: "would"
     hint: "Tom dijo I will call you — will retrocede a would."
     translation: "Él dijo que me llamaría."
+    placeholder: "could"
   - type: "match"
     instructions: "Empareja cada forma del discurso directo con su equivalente en discurso indirecto (backshift)."
     pairs:
@@ -60,9 +62,21 @@ exercises:
     prompt: "Reporta en discurso indirecto lo que dijo Ana: I will finish it tomorrow. Empieza con She said..."
     answer: "She said she would finish it the next day."
     hint: "Aplica el backshift: will → would, y cambia el marcador temporal tomorrow → the next day."
+    placeholder: "He said he would help me the next day."
   - type: "order"
     sentence: "He said he would help me"
     translation: "Él dijo que me ayudaría."
+vocabulary:
+  - term: "backshift"
+    translation: "retroceso de tiempos verbales"
+  - term: "will"
+    translation: "will (futuro)"
+  - term: "would"
+    translation: "would (forma reportada de will)"
+  - term: "tomorrow"
+    translation: "mañana"
+  - term: "the next day"
+    translation: "al día siguiente"
 ---
 
 Cuando cuentas lo que alguien más dijo, el inglés no usa comillas como el español — usa un

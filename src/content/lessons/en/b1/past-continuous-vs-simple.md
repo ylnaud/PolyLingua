@@ -35,12 +35,14 @@ exercises:
     accepted: ["was cooking"]
     hint: "Past Continuous: was/were + verbo-ing, para el telón de fondo."
     translation: "Estaba cocinando la cena cuando ella llamó."
+    placeholder: "was sleeping"
   - type: "fill-blank"
     sentence: "While I ___ (read), she was cooking."
     answer: "was reading"
     accepted: ["was reading"]
     hint: "'while' introduce una acción de fondo en Past Continuous."
     translation: "Mientras yo leía, ella cocinaba."
+    placeholder: "was watching"
   - type: "match"
     instructions: "Empareja cada sujeto con su forma correcta de 'be' en pasado."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "It was raining and the streets were empty."
     accepted: ["It was raining and the streets were empty"]
     hint: "Usa Past Continuous para describir la escena."
+    placeholder: "She was cooking and he was setting the table."
   - type: "order"
     sentence: "I was sleeping when the alarm went off"
     translation: "Estaba durmiendo cuando sonó la alarma."
+vocabulary:
+  - term: "was cooking"
+    translation: "estaba cocinando"
+  - term: "was reading"
+    translation: "estaba leyendo"
+  - term: "was sleeping"
+    translation: "estaba durmiendo"
+  - term: "was raining"
+    translation: "estaba lloviendo"
+  - term: "while"
+    translation: "mientras"
+  - term: "when"
+    translation: "cuando"
 ---
 
 Ya dominas el Past Simple para contar eventos completados. Ahora necesitas su compañero

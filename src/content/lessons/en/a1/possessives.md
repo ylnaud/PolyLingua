@@ -27,12 +27,14 @@ exercises:
     accepted: ["My"]
     hint: "Adjetivo posesivo para 'I', va antes del sustantivo."
     translation: "Este es mi libro."
+    placeholder: "her"
   - type: "fill-blank"
     sentence: "___ car is red."
     answer: "Her"
     accepted: ["her"]
     hint: "Adjetivo posesivo para 'she'."
     translation: "Su coche (de ella) es rojo."
+    placeholder: "Their"
   - type: "match"
     instructions: "Empareja cada pronombre con su adjetivo posesivo."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "The book is mine."
     accepted: ["This book is mine."]
     hint: "'mine' reemplaza completamente al sustantivo, no va antes de él."
+    placeholder: "The car is yours."
   - type: "order"
     sentence: "This book is mine"
     translation: "Este libro es mío."
+vocabulary:
+  - term: "my"
+    translation: "mi / mío"
+  - term: "your"
+    translation: "tu / tuyo"
+  - term: "his"
+    translation: "su (de él) / suyo"
+  - term: "her"
+    translation: "su (de ella) / suyo"
+  - term: "their"
+    translation: "su (de ellos) / suyo"
+  - term: "mine"
+    translation: "mío (pronombre)"
 ---
 
 Expresar posesión en inglés tiene dos caminos: el apóstrofe 's' (para personas,

@@ -27,12 +27,14 @@ exercises:
     accepted: ["Boxes"]
     hint: "'box' termina en -x, así que añade '-es' en vez de solo '-s'."
     translation: "Tengo tres cajas."
+    placeholder: "cities"
   - type: "fill-blank"
     sentence: "There are five ___ in my family."
     answer: "children"
     accepted: ["Children"]
     hint: "Plural irregular de 'child' — hay que memorizarlo aparte."
     translation: "Hay cinco niños en mi familia."
+    placeholder: "people"
   - type: "match"
     instructions: "Empareja cada sustantivo singular con su plural."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "teeth"
     accepted: ["Teeth"]
     hint: "Es un plural irregular, como 'foot' → 'feet'."
+    placeholder: "feet"
   - type: "order"
     sentence: "The children have two books"
     translation: "Los niños tienen dos libros."
+vocabulary:
+  - term: "box"
+    translation: "caja"
+  - term: "city"
+    translation: "ciudad"
+  - term: "child"
+    translation: "niño/a"
+  - term: "foot"
+    translation: "pie"
+  - term: "tooth"
+    translation: "diente"
+  - term: "sheep"
+    translation: "oveja"
 ---
 
 La mayoría de los sustantivos en inglés forman su plural de forma simple y predecible

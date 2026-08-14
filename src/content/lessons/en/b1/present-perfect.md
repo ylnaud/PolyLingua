@@ -31,12 +31,14 @@ exercises:
     accepted: ["went"]
     hint: "'last year' es un momento específico → Past Simple."
     translation: "Fui a París el año pasado."
+    placeholder: "visited"
   - type: "fill-blank"
     sentence: "I ___ (live) here for 10 years."
     answer: "have lived"
     accepted: ["have lived"]
     hint: "La acción empezó en el pasado y continúa → Present Perfect."
     translation: "He vivido aquí durante 10 años."
+    placeholder: "have worked"
   - type: "match"
     instructions: "Empareja cada palabra clave con el tiempo verbal que anuncia."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "I have lost my keys."
     accepted: ["I've lost my keys.", "I have lost my keys", "I've lost my keys"]
     hint: "Usa Present Perfect: have + participio."
+    placeholder: "I have finished my homework."
   - type: "order"
     sentence: "I have never been to Japan"
     translation: "Nunca he estado en Japón."
+vocabulary:
+  - term: "went"
+    translation: "fui / fue (pasado simple de 'go')"
+  - term: "have been"
+    translation: "he estado"
+  - term: "have lived"
+    translation: "he vivido"
+  - term: "have worked"
+    translation: "he trabajado"
+  - term: "have finished"
+    translation: "he terminado"
+  - term: "have lost"
+    translation: "he perdido"
 ---
 
 Este es, sin exagerar, el error gramatical más común entre hispanohablantes aprendiendo

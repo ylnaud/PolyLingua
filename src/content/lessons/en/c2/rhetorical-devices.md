@@ -35,12 +35,14 @@ exercises:
     accepted: ["Money"]
     hint: "Metáfora clásica: compara tiempo y dinero sin usar 'like/as'."
     translation: "El tiempo es dinero."
+    placeholder: "gold"
   - type: "fill-blank"
     sentence: "Her voice is ___ music."
     answer: "like"
     accepted: ["Like"]
     hint: "Con 'like' es un símil, no una metáfora."
     translation: "Su voz es como música."
+    placeholder: "as"
   - type: "match"
     instructions: "Empareja el recurso retórico con su ejemplo."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "Alliteration"
     accepted: ["alliteration"]
     hint: "Empieza con la misma letra que 'alfabeto' en inglés."
+    placeholder: "Anaphora"
   - type: "order"
     sentence: "We will not back down"
     translation: "No vamos a rendirnos (anáfora de un discurso persuasivo)."
+vocabulary:
+  - term: "Metaphor"
+    translation: "metáfora"
+  - term: "Simile"
+    translation: "símil"
+  - term: "Rhetorical question"
+    translation: "pregunta retórica"
+  - term: "Anaphora"
+    translation: "anáfora"
+  - term: "Hyperbole"
+    translation: "hipérbole"
+  - term: "Alliteration"
+    translation: "aliteración"
 ---
 
 Estos recursos son lo que distingue un texto o discurso simplemente correcto de uno

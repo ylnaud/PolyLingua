@@ -39,12 +39,14 @@ exercises:
     accepted: ["Ran"]
     hint: "Phrasal verb 'run into' = encontrarse con alguien por casualidad."
     translation: "Ayer me encontré por casualidad con un viejo amigo."
+    placeholder: "came"
   - type: "fill-blank"
     sentence: "Turn ___ the light before you leave."
     answer: "off"
     accepted: ["Off"]
     hint: "Phrasal verb separable 'turn off' = apagar."
     translation: "Apaga la luz antes de irte."
+    placeholder: "on"
   - type: "match"
     instructions: "Empareja el phrasal verb con su significado."
     pairs:
@@ -63,9 +65,23 @@ exercises:
     answer: "put off"
     accepted: ["Put off"]
     hint: "Es el equivalente informal de 'postpone'."
+    placeholder: "find out"
   - type: "order"
     sentence: "She finally gave up smoking"
     translation: "Finalmente dejó de fumar."
+vocabulary:
+  - term: "find out"
+    translation: "descubrir"
+  - term: "put off"
+    translation: "posponer"
+  - term: "give up"
+    translation: "rendirse"
+  - term: "come across"
+    translation: "encontrarse con algo por casualidad"
+  - term: "get over"
+    translation: "superar (algo difícil)"
+  - term: "look after"
+    translation: "cuidar"
 ---
 
 Llegaste al reto que ningún estudiante de inglés puede evitar: los **phrasal verbs**.

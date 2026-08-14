@@ -27,11 +27,13 @@ exercises:
     accepted: ["'ll take"]
     hint: "First Conditional: if + presente, will + infinitivo."
     translation: "Si llueve, tomaré un paraguas."
+    placeholder: "will call"
   - type: "fill-blank"
     sentence: "If I ___ a millionaire, I would travel the world."
     answer: "were"
     hint: "Second Conditional con 'be' siempre usa 'were', sin importar la persona."
     translation: "Si fuera millonario, viajaría por el mundo."
+    placeholder: "was / were"
   - type: "match"
     instructions: "Empareja cada frase con su tipo de condicional."
     pairs:
@@ -47,9 +49,21 @@ exercises:
     prompt: "Escribe en inglés (First Conditional): 'Si estudias, aprobarás.'"
     answer: "If you study, you will pass."
     hint: "if + presente, will + infinitivo."
+    placeholder: "If it rains, I will stay home."
   - type: "order"
     sentence: "If I have time I will call you"
     translation: "Si tengo tiempo, te llamaré."
+vocabulary:
+  - term: "will"
+    translation: "auxiliar de futuro (First Conditional)"
+  - term: "would"
+    translation: "auxiliar condicional (Second Conditional)"
+  - term: "were"
+    translation: "forma de 'be' en Second Conditional (todas las personas)"
+  - term: "If it rains, I will stay home."
+    translation: "Si llueve, me quedaré en casa."
+  - term: "If I won the lottery, I would buy a house."
+    translation: "Si ganara la lotería, compraría una casa."
 ---
 
 Los condicionales conectan una condición con su consecuencia — pero el inglés distingue

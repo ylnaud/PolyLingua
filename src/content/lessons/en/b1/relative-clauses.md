@@ -31,12 +31,14 @@ exercises:
     accepted: ["who", "that"]
     hint: "Se usa para personas como sujeto de la cláusula."
     translation: "El hombre que vive al lado es doctor."
+    placeholder: "which"
   - type: "fill-blank"
     sentence: "This is the book ___ I told you about."
     answer: "which"
     accepted: ["which", "that"]
     hint: "Se usa para cosas."
     translation: "Este es el libro del que te hablé."
+    placeholder: "whose"
   - type: "match"
     instructions: "Empareja cada pronombre relativo con su uso."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "The woman whose car was stolen called the police."
     accepted: ["The woman whose car was stolen called the police"]
     hint: "Usa 'whose' para indicar posesión."
+    placeholder: "The man who called is my uncle."
   - type: "order"
     sentence: "I have a friend who lives in Tokyo"
     translation: "Tengo un amigo que vive en Tokio."
+vocabulary:
+  - term: "who"
+    translation: "que / quien (personas, sujeto)"
+  - term: "which"
+    translation: "que / cual (cosas)"
+  - term: "whose"
+    translation: "cuyo / cuya (posesión)"
+  - term: "where"
+    translation: "donde (lugares)"
+  - term: "that"
+    translation: "que (personas o cosas, informal)"
 ---
 
 Las oraciones de relativo te permiten describir personas, cosas o lugares dentro de la

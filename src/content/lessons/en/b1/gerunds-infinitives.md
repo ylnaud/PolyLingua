@@ -31,12 +31,14 @@ exercises:
     accepted: ["swimming"]
     hint: "'enjoy' siempre va seguido de gerundio (-ing)."
     translation: "Disfruto nadar en el océano."
+    placeholder: "reading / cleaning"
   - type: "fill-blank"
     sentence: "She decided ___ (stay) at home tonight."
     answer: "to stay"
     accepted: ["to stay"]
     hint: "'decide' siempre va seguido de infinitivo con 'to'."
     translation: "Ella decidió quedarse en casa esta noche."
+    placeholder: "to leave / to help"
   - type: "match"
     instructions: "Empareja cada verbo con la forma que le sigue."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "They promised to help."
     accepted: ["They promised to help"]
     hint: "'promise' pide infinitivo con 'to'."
+    placeholder: "She wants to leave."
   - type: "order"
     sentence: "She decided to stay at home"
     translation: "Ella decidió quedarse en casa."
+vocabulary:
+  - term: "enjoy"
+    translation: "disfrutar"
+  - term: "want"
+    translation: "querer"
+  - term: "decide"
+    translation: "decidir"
+  - term: "promise"
+    translation: "prometer"
+  - term: "avoid"
+    translation: "evitar"
+  - term: "stop smoking"
+    translation: "dejar de fumar"
 ---
 
 Este es uno de los retos más silenciosos del inglés intermedio: cuando un verbo va

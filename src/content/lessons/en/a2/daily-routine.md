@@ -31,12 +31,14 @@ exercises:
     accepted: ["Wake"]
     hint: "'wake up' es el momento de abrir los ojos/despertar."
     translation: "Usualmente me despierto a las 7am."
+    placeholder: "get"
   - type: "fill-blank"
     sentence: "I ___ skip breakfast — it's my favorite meal."
     answer: "never"
     accepted: ["Never"]
     hint: "Expresión de frecuencia que significa 'nunca'."
     translation: "Nunca me salto el desayuno — es mi comida favorita."
+    placeholder: "always"
   - type: "match"
     instructions: "Empareja cada verbo de rutina con su traducción."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "I have dinner at 8."
     accepted: ["I have dinner at 8"]
     hint: "Usa 'have dinner' + la hora."
+    placeholder: "I have lunch at 1."
   - type: "order"
     sentence: "I usually wake up at 7am"
     translation: "Usualmente me despierto a las 7am."
+vocabulary:
+  - term: "wake up"
+    translation: "despertarse"
+  - term: "get up"
+    translation: "levantarse"
+  - term: "get dressed"
+    translation: "vestirse"
+  - term: "have breakfast"
+    translation: "desayunar"
+  - term: "go to bed"
+    translation: "irse a la cama"
+  - term: "every day"
+    translation: "todos los días"
 ---
 
 Describir tu rutina diaria es una de las conversaciones más naturales en Simple

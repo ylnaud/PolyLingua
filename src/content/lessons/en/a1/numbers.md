@@ -31,12 +31,14 @@ exercises:
     accepted: ["twenty one", "Twenty-one"]
     hint: "Del 21 al 99: decena-guión-unidad."
     translation: "Tengo veintiún años."
+    placeholder: "thirty-five"
   - type: "fill-blank"
     sentence: "The number 40 is spelled ___."
     answer: "forty"
     accepted: ["Forty"]
     hint: "Pierde la 'u' de 'four' — una excepción ortográfica."
     translation: "El número 40 se escribe 'forty'."
+    placeholder: "sixty"
   - type: "match"
     instructions: "Empareja cada número con su palabra en inglés."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "forty-seven"
     accepted: ["forty seven", "Forty-seven"]
     hint: "decena (forty) + guión + unidad (seven)."
+    placeholder: "fifty-three"
   - type: "order"
     sentence: "She is thirty years old"
     translation: "Ella tiene treinta años."
+vocabulary:
+  - term: "forty"
+    translation: "cuarenta"
+  - term: "twenty-one"
+    translation: "veintiuno"
+  - term: "fifty"
+    translation: "cincuenta"
+  - term: "hundred"
+    translation: "cien"
+  - term: "thousand"
+    translation: "mil"
 ---
 
 Los números son vocabulario de supervivencia inmediata: precios, horas, edades,

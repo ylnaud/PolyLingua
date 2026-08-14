@@ -39,12 +39,14 @@ exercises:
     accepted: ["Worm"]
     hint: "Equivalente a 'a quien madruga, Dios le ayuda'."
     translation: "El pájaro madrugador atrapa el gusano."
+    placeholder: "chickens"
   - type: "fill-blank"
     sentence: "Don't ___ your chickens before they hatch."
     answer: "count"
     accepted: ["Count"]
     hint: "Equivalente a 'no vendas la piel del oso antes de cazarlo'."
     translation: "No cantes victoria antes de tiempo."
+    placeholder: "judge"
   - type: "match"
     instructions: "Empareja el refrán inglés con su equivalente en español."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "Practice makes perfect"
     accepted: ["Practice makes perfect."]
     hint: "Tres palabras, sin refrán equivalente literal en español."
+    placeholder: "Actions speak louder than words"
   - type: "order"
     sentence: "Actions speak louder than words"
     translation: "Obras son amores, que no buenas razones."
+vocabulary:
+  - term: "The early bird catches the worm."
+    translation: "A quien madruga, Dios le ayuda."
+  - term: "Don't count your chickens before they hatch."
+    translation: "No vendas la piel del oso antes de cazarlo."
+  - term: "Actions speak louder than words."
+    translation: "Obras son amores, que no buenas razones."
+  - term: "Practice makes perfect."
+    translation: "La práctica hace al maestro."
+  - term: "Don't judge a book by its cover."
+    translation: "No juzgues un libro por su portada."
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

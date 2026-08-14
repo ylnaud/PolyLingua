@@ -27,12 +27,14 @@ exercises:
     accepted: ["Am"]
     hint: "Con 'I' siempre usamos 'am'."
     translation: "Estoy cansado."
+    placeholder: "are"
   - type: "fill-blank"
     sentence: "They ___ ready."
     answer: "are"
     accepted: ["Are"]
     hint: "Con we/you/they siempre usamos 'are'."
     translation: "Ellos están listos."
+    placeholder: "is"
   - type: "match"
     instructions: "Empareja cada pronombre con su forma correcta de 'to be'."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "She is a teacher."
     accepted: ["She's a teacher."]
     hint: "Con he/she/it usamos 'is'."
+    placeholder: "He is a doctor."
   - type: "order"
     sentence: "They are ready"
     translation: "Ellos están listos."
+vocabulary:
+  - term: "am"
+    translation: "soy / estoy (con I)"
+  - term: "is"
+    translation: "es / está (con he/she/it)"
+  - term: "are"
+    translation: "son / están (con we/you/they)"
+  - term: "tired"
+    translation: "cansado/a"
+  - term: "ready"
+    translation: "listo/a"
 ---
 
 En español tienes que decidir entre "ser" y "estar" cada vez que hablas — un dolor de

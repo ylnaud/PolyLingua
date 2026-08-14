@@ -27,12 +27,14 @@ exercises:
     accepted: ["In"]
     hint: "Se usa para años, meses y periodos largos."
     translation: "Nací en 1995."
+    placeholder: "on"
   - type: "fill-blank"
     sentence: "The meeting is ___ Monday."
     answer: "on"
     accepted: ["On"]
     hint: "Se usa para días y fechas específicas."
     translation: "La reunión es el lunes."
+    placeholder: "at"
   - type: "match"
     instructions: "Empareja cada expresión con la preposición que le corresponde."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "at 3 o'clock"
     accepted: ["at 3 oclock"]
     hint: "Las horas exactas usan 'at'."
+    placeholder: "at night"
   - type: "order"
     sentence: "The meeting is on Monday"
     translation: "La reunión es el lunes."
+vocabulary:
+  - term: "in 2024"
+    translation: "en 2024"
+  - term: "on Monday"
+    translation: "el lunes"
+  - term: "at 3pm"
+    translation: "a las 3pm"
+  - term: "at night"
+    translation: "de noche"
+  - term: "in the morning"
+    translation: "en la mañana"
+  - term: "on Main Street"
+    translation: "en la calle Main"
 ---
 
 Estas tres preposiciones causan confusión constante porque en español muchas veces se

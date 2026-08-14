@@ -38,11 +38,13 @@ exercises:
     answer: "cake"
     hint: "Expresión que significa algo muy fácil."
     translation: "Este proyecto es pan comido, así que pongámoslo en marcha."
+    placeholder: "weather"
   - type: "fill-blank"
     sentence: "I'm feeling a bit under the ___ today."
     answer: "weather"
     hint: "Expresión que significa sentirse mal o enfermo."
     translation: "Hoy me siento un poco mal."
+    placeholder: "cake"
   - type: "match"
     instructions: "Empareja cada expresión idiomática con su significado."
     pairs:
@@ -60,9 +62,21 @@ exercises:
     prompt: "Escribe la expresión idiomática en inglés que significa costar muchísimo dinero, literalmente costar un brazo y una pierna."
     answer: "cost an arm and a leg"
     hint: "Empieza con cost an..."
+    placeholder: "hit the nail on the head"
   - type: "order"
     sentence: "You hit the nail on the head"
     translation: "Diste justo en el clavo."
+vocabulary:
+  - term: "break the ice"
+    translation: "romper el hielo"
+  - term: "cost an arm and a leg"
+    translation: "costar un ojo de la cara"
+  - term: "once in a blue moon"
+    translation: "muy raramente"
+  - term: "hit the nail on the head"
+    translation: "dar en el clavo"
+  - term: "a piece of cake"
+    translation: "pan comido"
 ---
 
 Estas expresiones son el vocabulario que hace que tu inglés suene vivo y natural en

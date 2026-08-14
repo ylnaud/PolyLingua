@@ -39,12 +39,14 @@ exercises:
     accepted: ["Have"]
     hint: "Con 'Never' al inicio, el auxiliar 'have' se invierte con el sujeto."
     translation: "Nunca me había sentido tan orgulloso."
+    placeholder: "did"
   - type: "fill-blank"
     sentence: "Rarely ___ we see such talent."
     answer: "do"
     accepted: ["Do"]
     hint: "Sin auxiliar propio, se usa do/does/did para invertir."
     translation: "Raramente vemos tanto talento."
+    placeholder: "have"
   - type: "match"
     instructions: "Empareja el disparador de inversión con su ejemplo correcto."
     pairs:
@@ -61,9 +63,21 @@ exercises:
     answer: "Rarely do I eat fast food"
     accepted: ["Rarely do I eat fast food."]
     hint: "'Rarely' al inicio exige do/does/did antes del sujeto."
+    placeholder: "Never have I seen such a mess"
   - type: "order"
     sentence: "Never have I seen such a mess"
     translation: "Jamás he visto semejante desastre."
+vocabulary:
+  - term: "Never"
+    translation: "nunca (disparador de inversión)"
+  - term: "Rarely"
+    translation: "raramente (disparador de inversión)"
+  - term: "Not only... but also"
+    translation: "no solo... sino también"
+  - term: "Under no circumstances"
+    translation: "bajo ninguna circunstancia"
+  - term: "Little"
+    translation: "apenas / poco (disparador de inversión)"
 ---
 
 En un nivel C2, ya dominas la gramática "correcta". Lo que te falta es la gramática

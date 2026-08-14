@@ -39,12 +39,14 @@ exercises:
     accepted: ["begged"]
     hint: "Verbo de habla más expresivo que 'said', usado en la lección junto a 'declared'."
     translation: "—No te vayas —suplicó."
+    placeholder: "declared"
   - type: "fill-blank"
     sentence: "Her hands ___ as she reached for the door."
     answer: "trembled"
     accepted: ["shook"]
     hint: "'Show, don't tell': en vez de decir 'she was nervous', se muestra con este verbo."
     translation: "Le temblaban las manos mientras alcanzaba la puerta."
+    placeholder: "rattled"
   - type: "match"
     instructions: "Empareja el recurso literario con su ejemplo."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "declared"
     accepted: ["Declared"]
     hint: "Aparece en el ejemplo contrastado con 'pleaded'."
+    placeholder: "pleaded"
   - type: "order"
     sentence: "Dust motes drifted through the single beam of afternoon light"
     translation: "Las motas de polvo flotaban a través del único haz de luz de la tarde."
+vocabulary:
+  - term: "pleaded"
+    translation: "suplicó"
+  - term: "declared"
+    translation: "declaró / afirmó con firmeza"
+  - term: "trembled"
+    translation: "temblaron"
+  - term: "Personification"
+    translation: "personificación"
+  - term: "Sensory imagery"
+    translation: "imagen sensorial"
+  - term: "show, don't tell"
+    translation: "mostrar, no contar (técnica narrativa)"
 ---
 
 Llegaste al registro más elevado y expresivo del inglés: el de la prosa literaria,

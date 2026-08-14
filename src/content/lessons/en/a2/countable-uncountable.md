@@ -27,12 +27,14 @@ exercises:
     accepted: ["Much"]
     hint: "'money' es incontable, así que se usa 'much'."
     translation: "¿Cuánto dinero tienes?"
+    placeholder: "many"
   - type: "fill-blank"
     sentence: "How ___ books do you have?"
     answer: "many"
     accepted: ["Many"]
     hint: "'books' es contable (tiene plural), así que se usa 'many'."
     translation: "¿Cuántos libros tienes?"
+    placeholder: "much"
   - type: "match"
     instructions: "Empareja cada sustantivo con la palabra correcta para preguntar cantidad."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "a piece of information"
     accepted: ["A piece of information"]
     hint: "'information' es incontable: usa una unidad de medida como 'a piece of'."
+    placeholder: "a glass of water"
   - type: "order"
     sentence: "I have a lot of books"
     translation: "Tengo muchos libros."
+vocabulary:
+  - term: "money"
+    translation: "dinero"
+  - term: "books"
+    translation: "libros"
+  - term: "water"
+    translation: "agua"
+  - term: "information"
+    translation: "información"
+  - term: "advice"
+    translation: "consejo"
+  - term: "furniture"
+    translation: "muebles"
 ---
 
 Este es uno de los retos silenciosos del inglés: algunos sustantivos que en español

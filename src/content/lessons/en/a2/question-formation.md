@@ -31,12 +31,14 @@ exercises:
     accepted: ["do"]
     hint: "Presente simple con I/you/we/they."
     translation: "¿Te gusta el café?"
+    placeholder: "Does"
   - type: "fill-blank"
     sentence: "___ she work here?"
     answer: "Does"
     accepted: ["does"]
     hint: "Presente simple con he/she/it."
     translation: "¿Ella trabaja aquí?"
+    placeholder: "Did"
   - type: "match"
     instructions: "Empareja cada auxiliar/verbo con cuándo se usa para preguntar."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Did they arrive yesterday?"
     accepted: ["Did they arrive yesterday"]
     hint: "El verbo vuelve a su forma base tras 'did'."
+    placeholder: "Did you work yesterday?"
   - type: "order"
     sentence: "Where do you live"
     translation: "¿Dónde vives?"
+vocabulary:
+  - term: "Do"
+    translation: "auxiliar presente (I/you/we/they)"
+  - term: "Does"
+    translation: "auxiliar presente (he/she/it)"
+  - term: "Did"
+    translation: "auxiliar pasado (cualquier sujeto)"
+  - term: "Are"
+    translation: "to be, sin 'do'"
+  - term: "Can"
+    translation: "modal, sin 'do'"
+  - term: "Where"
+    translation: "dónde"
 ---
 
 Formar preguntas correctamente es una de las estructuras más usadas del inglés, y

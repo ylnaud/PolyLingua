@@ -31,12 +31,14 @@ exercises:
     accepted: ["Flat"]
     hint: "Es la palabra británica estándar; en americano se dice 'apartment'."
     translation: "En inglés británico, un apartamento se llama 'flat'."
+    placeholder: "lift"
   - type: "fill-blank"
     sentence: "The American spelling of 'colour' is ___."
     answer: "color"
     accepted: ["Color"]
     hint: "El americano simplifica -our a -or."
     translation: "La ortografía americana de 'colour' es 'color'."
+    placeholder: "favorite"
   - type: "match"
     instructions: "Empareja la palabra británica con su equivalente americano."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "cookie"
     accepted: ["Cookie"]
     hint: "Es la palabra que verías en un paquete de galletas en Estados Unidos."
+    placeholder: "elevator"
   - type: "order"
     sentence: "Have you got a pen"
     translation: "¿Tienes un bolígrafo? (versión británica; en americano: Do you have a pen?)"
+vocabulary:
+  - term: "flat"
+    translation: "apartamento (británico)"
+  - term: "apartment"
+    translation: "apartamento (americano)"
+  - term: "lift"
+    translation: "ascensor (británico)"
+  - term: "elevator"
+    translation: "ascensor (americano)"
+  - term: "colour"
+    translation: "color (ortografía británica)"
+  - term: "biscuit"
+    translation: "galleta (británico)"
 ---
 
 El inglés que aprendiste en PolyLingua funciona en cualquier país angloparlante, pero

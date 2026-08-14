@@ -35,12 +35,14 @@ exercises:
     accepted: ["got"]
     hint: "Estructura causativa: have/get + objeto + participio pasado."
     translation: "Me corté el pelo (alguien más lo hizo) ayer."
+    placeholder: "have / get"
   - type: "fill-blank"
     sentence: "She ___ her house painted last month."
     answer: "had"
     accepted: ["got"]
     hint: "Alguien más pintó la casa, no ella."
     translation: "Ella hizo pintar su casa el mes pasado."
+    placeholder: "have / get"
   - type: "match"
     instructions: "Empareja cada frase causativa con su significado."
     pairs:
@@ -58,9 +60,21 @@ exercises:
     prompt: "Escribe en inglés: 'Necesito que me arreglen el teléfono' usando la forma causativa con 'get'."
     answer: "I need to get my phone fixed."
     hint: "get + objeto + participio pasado."
+    placeholder: "I need to have my car repaired."
   - type: "order"
     sentence: "We are having our kitchen renovated"
     translation: "Estamos haciendo renovar nuestra cocina."
+vocabulary:
+  - term: "had my car repaired"
+    translation: "hice reparar mi coche (pagué a alguien)"
+  - term: "got my nails done"
+    translation: "me hice la manicura"
+  - term: "had my hair cut"
+    translation: "me corté el pelo (lo hizo alguien más)"
+  - term: "get my phone fixed"
+    translation: "hacer que me arreglen el teléfono"
+  - term: "had my assistant send the email"
+    translation: "hice que mi asistente enviara el correo"
 ---
 
 Esta estructura te permite expresar algo muy común pero fácil de decir mal: que

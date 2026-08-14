@@ -38,11 +38,13 @@ exercises:
     answer: "was"
     hint: "Estructura It-cleft: It + be + elemento enfatizado + who/that..."
     translation: "Fue John quien rompió la ventana."
+    placeholder: "is"
   - type: "fill-blank"
     sentence: "___ I need is more time."
     answer: "What"
     hint: "What-cleft: pone el elemento enfatizado al final de la frase."
     translation: "Lo que necesito es más tiempo."
+    placeholder: "That"
   - type: "match"
     instructions: "Empareja cada estructura o función con su ejemplo."
     pairs:
@@ -61,9 +63,21 @@ exercises:
     answer: "It's music that she loves."
     accepted: ["It is music that she loves."]
     hint: "Estructura: It + be + elemento enfatizado + that + resto."
+    placeholder: "It's sports that he plays."
   - type: "order"
     sentence: "It was the window that John broke"
     translation: "Fue la ventana lo que John rompió."
+vocabulary:
+  - term: "cleft sentences"
+    translation: "oraciones escindidas"
+  - term: "It-cleft"
+    translation: "oración escindida con It"
+  - term: "What-cleft"
+    translation: "oración escindida con What"
+  - term: "broke the window"
+    translation: "rompió la ventana"
+  - term: "She loves music"
+    translation: "ella ama la música"
 ---
 
 Las cleft sentences son una herramienta de estilo avanzada: reestructuran una frase

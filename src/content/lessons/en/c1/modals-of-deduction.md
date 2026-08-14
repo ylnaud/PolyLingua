@@ -38,12 +38,14 @@ exercises:
     answer: "must"
     hint: "Evidencia fuerte a favor: alta certeza positiva."
     translation: "Las luces están encendidas, ella debe de haber llegado ya."
+    placeholder: "might"
   - type: "fill-blank"
     sentence: "She ___ have left, her car is here."
     answer: "can't"
     accepted: ["cannot"]
     hint: "Evidencia que contradice la idea: imposibilidad."
     translation: "Es imposible que se haya ido, su coche está aquí."
+    placeholder: "must"
   - type: "match"
     instructions: "Empareja cada modal con su nivel de certeza."
     pairs:
@@ -62,9 +64,21 @@ exercises:
     answer: "She can't have been at the party."
     accepted: ["She cannot have been at the party."]
     hint: "Estructura: can't + have + participio."
+    placeholder: "He must have missed the bus."
   - type: "order"
     sentence: "Someone must have been here"
     translation: "Alguien debió de estar aquí."
+vocabulary:
+  - term: "must have"
+    translation: "debe de haber (certeza alta)"
+  - term: "might have"
+    translation: "podría haber (posibilidad)"
+  - term: "can't have"
+    translation: "no puede haber (imposible)"
+  - term: "forgotten"
+    translation: "olvidado"
+  - term: "missed"
+    translation: "perdido / perdió"
 ---
 
 Ya usaste modales para hablar de obligación y capacidad. En este nivel, los mismos

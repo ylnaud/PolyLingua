@@ -35,12 +35,14 @@ exercises:
     accepted: ["few"]
     hint: "Sin artículo 'a': tono negativo."
     translation: "Tengo pocos amigos aquí — me siento solo."
+    placeholder: "a lot of"
   - type: "fill-blank"
     sentence: "I have ___ time before the meeting, so let's talk."
     answer: "a little"
     accepted: ["a little"]
     hint: "Con artículo 'a' y sustantivo incontable: tono neutral/positivo."
     translation: "Tengo un poco de tiempo antes de la reunión, así que hablemos."
+    placeholder: "plenty of"
   - type: "match"
     instructions: "Empareja cada cuantificador con su uso y tono."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "I have a few friends here."
     accepted: ["I have a few friends here"]
     hint: "No olvides el artículo 'a' antes de 'few'."
+    placeholder: "I have a little time."
   - type: "order"
     sentence: "I have a little time before the meeting"
     translation: "Tengo un poco de tiempo antes de la reunión."
+vocabulary:
+  - term: "few"
+    translation: "pocos/pocas (tono negativo)"
+  - term: "a few"
+    translation: "algunos/algunas (tono neutral)"
+  - term: "little"
+    translation: "poco (incontable, tono negativo)"
+  - term: "a little"
+    translation: "un poco (incontable, tono neutral)"
+  - term: "a lot of"
+    translation: "mucho/muchos"
+  - term: "enough"
+    translation: "suficiente"
 ---
 
 Este es uno de los matices más sutiles y sorprendentes del inglés: el mismo par de

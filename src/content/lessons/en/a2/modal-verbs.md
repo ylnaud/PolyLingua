@@ -31,12 +31,14 @@ exercises:
     accepted: ["Can"]
     hint: "Poder / saber hacer algo."
     translation: "Ella puede nadar."
+    placeholder: "must"
   - type: "fill-blank"
     sentence: "You ___ wear a seatbelt."
     answer: "must"
     accepted: ["Must"]
     hint: "Obligación fuerte."
     translation: "Debes usar cinturón de seguridad."
+    placeholder: "should"
   - type: "match"
     instructions: "Empareja cada modal con su significado."
     pairs:
@@ -53,9 +55,19 @@ exercises:
     answer: "Must I go?"
     accepted: ["Must I go"]
     hint: "Los modales invierten el orden sin necesitar 'do'."
+    placeholder: "Can I go?"
   - type: "order"
     sentence: "You should sleep more"
     translation: "Deberías dormir más."
+vocabulary:
+  - term: "can"
+    translation: "poder / saber"
+  - term: "must"
+    translation: "deber (obligación fuerte)"
+  - term: "should"
+    translation: "debería (consejo)"
+  - term: "have to"
+    translation: "tener que (obligación externa)"
 ---
 
 Los verbos modales son tu herramienta para sonar natural al opinar, aconsejar, pedir

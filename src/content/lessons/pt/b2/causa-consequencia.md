@@ -30,12 +30,14 @@ exercises:
     answer: "porque"
     hint: "Causa nueva, neutral — la opción por defecto."
     translation: "No fuimos a la playa porque llovió."
+    placeholder: "porque / já que / portanto"
   - type: "fill-blank"
     sentence: "___ você está aqui, pode me ajudar?"
     answer: "Já que"
     accepted: ["já que"]
     hint: "Introduce una causa que el oyente ya conoce o asume, no información nueva."
     translation: "Ya que estás aquí, ¿puedes ayudarme?"
+    placeholder: "Já que / Visto que / Devido a"
   - type: "match"
     instructions: "Empareja cada conector portugués con su significado en español."
     pairs:
@@ -53,9 +55,23 @@ exercises:
     prompt: "Escribe en portugués: 'Debido a la lluvia, cancelamos el evento.'"
     answer: "Devido à chuva, cancelamos o evento."
     hint: "'devido a' + sustantivo, causa formal."
+    placeholder: "Devido a / por causa de + sustantivo, consequência."
   - type: "order"
     sentence: "Estudei muito portanto passei no exame"
     translation: "Estudié mucho, por lo tanto aprobé el examen."
+vocabulary:
+  - term: "porque"
+    translation: "porque"
+  - term: "já que"
+    translation: "ya que"
+  - term: "devido a"
+    translation: "debido a"
+  - term: "portanto"
+    translation: "por lo tanto"
+  - term: "por isso"
+    translation: "por eso"
+  - term: "consequentemente"
+    translation: "consecuentemente"
 ---
 
 Conectar causas y consecuencias con precisión es una marca clara de fluidez —

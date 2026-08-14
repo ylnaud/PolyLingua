@@ -30,11 +30,13 @@ exercises:
     answer: "minha"
     hint: "Posesivo femenino de 'eu' (yo)."
     translation: "Mi hermana vive con sus padres (de ella)."
+    placeholder: "tua"
   - type: "fill-blank"
     sentence: "O carro ___, sem ambiguidade."
     answer: "dele"
     hint: "Forma que aclara que el poseedor es 'él', evitando la ambigüedad de 'seu'."
     translation: "El coche de él, sin ambigüedad."
+    placeholder: "dela"
   - type: "match"
     instructions: "Empareja cada posesivo con su poseedor."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "o meu carro"
     accepted: ["O meu carro"]
     hint: "En Portugal se usa el artículo antes del posesivo."
+    placeholder: "a minha casa"
   - type: "order"
     sentence: "A minha casa é grande"
     translation: "Mi casa es grande."
+vocabulary:
+  - term: "meu"
+    translation: "mi (masculino)"
+  - term: "minha"
+    translation: "mi (femenino)"
+  - term: "teu"
+    translation: "tu (masculino)"
+  - term: "seu"
+    translation: "su (de usted/él/ella)"
+  - term: "nosso"
+    translation: "nuestro"
+  - term: "dele"
+    translation: "de él"
 ---
 
 Los posesivos portugueses concuerdan con el objeto poseído, no con el poseedor — igual

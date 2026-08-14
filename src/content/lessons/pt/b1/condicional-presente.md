@@ -35,12 +35,14 @@ exercises:
     accepted: ["Gostaria"]
     hint: "gostar + ia = gostaria, forma cortés para pedir algo."
     translation: "Me gustaría un café."
+    placeholder: "faria / diria / traria"
   - type: "fill-blank"
     sentence: "Se eu tivesse tempo, eu ___ mais."
     answer: "viajaria"
     accepted: ["Viajaria"]
     hint: "viajar + ia = viajaria, uso de hipótesis."
     translation: "Si tuviera tiempo, viajaría más."
+    placeholder: "comeria / faria / diria"
   - type: "match"
     instructions: "Empareja cada infinitivo con su forma de condicional (eu)."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "Você poderia me ajudar?"
     accepted: ["Voce poderia me ajudar?"]
     hint: "poder + ia = poderia, la forma habitual para pedir algo con cortesía."
+    placeholder: "Você faria isso?"
   - type: "order"
     sentence: "Ele disse que viria à festa"
     translation: "Dijo que vendría a la fiesta."
+vocabulary:
+  - term: "gostaria"
+    translation: "me gustaría"
+  - term: "poderia"
+    translation: "podría"
+  - term: "faria"
+    translation: "haría"
+  - term: "diria"
+    translation: "diría"
+  - term: "viria"
+    translation: "vendría"
+  - term: "queria"
+    translation: "quería (uso cortés)"
 ---
 
 El condicional portugués sirve para hipótesis, cortesía y para reportar lo que alguien

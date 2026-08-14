@@ -31,11 +31,13 @@ exercises:
     accepted: ["posso"]
     hint: "Forma irregular de 'poder' con 'eu'."
     translation: "¿Puedo ayudar?"
+    placeholder: "pode / podemos / podem"
   - type: "fill-blank"
     sentence: "Você ___ estar cansado."
     answer: "deve"
     hint: "Conjugación de 'dever' con 'você', para expresar suposición/consejo suave."
     translation: "Debes estar cansado (probablemente)."
+    placeholder: "tem que"
   - type: "match"
     instructions: "Empareja cada verbo con su forma conjugada para 'eu'."
     pairs:
@@ -52,9 +54,23 @@ exercises:
     answer: "Tenho que trabalhar amanhã"
     accepted: ["Eu tenho que trabalhar amanhã"]
     hint: "'ter que' expresa obligación fuerte, sin opción."
+    placeholder: "Ela tem que estudar"
   - type: "order"
     sentence: "Quero um café"
     translation: "Quiero un café."
+vocabulary:
+  - term: "poder"
+    translation: "poder"
+  - term: "dever"
+    translation: "deber"
+  - term: "querer"
+    translation: "querer"
+  - term: "ter que"
+    translation: "tener que"
+  - term: "posso"
+    translation: "puedo"
+  - term: "quero"
+    translation: "quiero"
 ---
 
 Estos verbos son tu caja de herramientas para pedir, permitir, opinar y expresar

@@ -26,11 +26,13 @@ exercises:
     answer: "falamos"
     hint: "'falar' con 'nós': terminación -amos."
     translation: "Hablamos portugués todos los días."
+    placeholder: "comemos"
   - type: "fill-blank"
     sentence: "Você ___ português?"
     answer: "fala"
     hint: "'você' se conjuga como tercera persona (ele/ela), no como 'tu'."
     translation: "¿Hablas portugués?"
+    placeholder: "come"
   - type: "match"
     instructions: "Empareja cada pronombre con la conjugación correcta de 'comer'."
     pairs:
@@ -46,9 +48,23 @@ exercises:
     prompt: "Escribe en portugués la conjugación de 'abrir' con 'eles' (ellos)."
     answer: "abrem"
     hint: "Verbos en -ir con 'eles/elas' terminan en -em."
+    placeholder: "comem"
   - type: "order"
     sentence: "Eu sou brasileiro"
     translation: "Yo soy brasileño."
+vocabulary:
+  - term: "falar"
+    translation: "hablar"
+  - term: "comer"
+    translation: "comer"
+  - term: "abrir"
+    translation: "abrir"
+  - term: "sou"
+    translation: "soy"
+  - term: "estou"
+    translation: "estoy"
+  - term: "fala"
+    translation: "habla"
 ---
 
 Si ya hablas español, el presente portugués te va a resultar el más fácil de aprender de

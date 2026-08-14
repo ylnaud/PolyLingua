@@ -30,11 +30,13 @@ exercises:
     answer: "falei"
     hint: "Pretérito perfeito simples de 'falar' con 'eu'."
     translation: "Hablé con ella ayer."
+    placeholder: "falaste / falou / falamos"
   - type: "fill-blank"
     sentence: "Eu ___ a porta."
     answer: "abri"
     hint: "Pretérito perfeito simples de 'abrir' con 'eu'."
     translation: "Abrí la puerta."
+    placeholder: "abriste / abriu / abrimos"
   - type: "match"
     instructions: "Empareja cada pronombre con la forma correcta del pretérito de 'falar'."
     pairs:
@@ -52,9 +54,23 @@ exercises:
     prompt: "Escribe en portugués el pretérito de 'fazer' (hacer) con 'eu'."
     answer: "fiz"
     hint: "Verbo irregular: eu fiz."
+    placeholder: "tive"
   - type: "order"
     sentence: "Eu falei com ela ontem"
     translation: "Hablé con ella ayer."
+vocabulary:
+  - term: "falei"
+    translation: "hablé"
+  - term: "comi"
+    translation: "comí"
+  - term: "abri"
+    translation: "abrí"
+  - term: "fiz"
+    translation: "hice"
+  - term: "fui"
+    translation: "fui (de ser/ir)"
+  - term: "tive"
+    translation: "tuve"
 ---
 
 Si vienes de estudiar alemán, francés o italiano en PolyLingua, esta lección te va a dar

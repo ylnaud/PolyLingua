@@ -35,12 +35,14 @@ exercises:
     accepted: ["Anunciará"]
     hint: "anunciar + á = anunciará (futuro simples, 3ª persona)."
     translation: "El gobierno anunciará nuevas medidas mañana."
+    placeholder: "falará / dirá / fará"
   - type: "fill-blank"
     sentence: "Eu ___ com ela."
     answer: "falarei"
     accepted: ["Falarei"]
     hint: "falar + ei = falarei."
     translation: "Hablaré con ella."
+    placeholder: "comerei / partirei / direi"
   - type: "match"
     instructions: "Empareja cada infinitivo con su forma de futuro simples (eu)."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "Este projeto mudará o futuro da cidade."
     accepted: []
     hint: "mudar + á = mudará."
+    placeholder: "Ela falará a verdade."
   - type: "order"
     sentence: "Dar-lhe-ei o livro amanhã"
     translation: "Le daré el libro mañana."
+vocabulary:
+  - term: "falarei"
+    translation: "hablaré"
+  - term: "comerei"
+    translation: "comeré"
+  - term: "partirei"
+    translation: "partiré"
+  - term: "farei"
+    translation: "haré"
+  - term: "direi"
+    translation: "diré"
+  - term: "trarei"
+    translation: "traeré"
 ---
 
 El futuro simple morfológico es el registro más formal para hablar del futuro en

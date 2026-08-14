@@ -27,11 +27,13 @@ exercises:
     accepted: ["Queria"]
     hint: "Forma cortés de pedir algo, equivalente a 'yo quisiera'."
     translation: "Yo quisiera un café y un pan de queso, por favor."
+    placeholder: "Eu gostaria"
   - type: "fill-blank"
     sentence: "A ___, por favor."
     answer: "conta"
     hint: "Lo que pides al final de la comida en un restaurante."
     translation: "La cuenta, por favor."
+    placeholder: "o cardápio"
   - type: "match"
     instructions: "Empareja cada palabra en portugués con su significado en español."
     pairs:
@@ -50,9 +52,23 @@ exercises:
     answer: "o cardápio"
     accepted: ["cardápio", "o cardapio", "cardapio"]
     hint: "En Portugal se dice 'a ementa'."
+    placeholder: "a conta"
   - type: "order"
     sentence: "Eu queria um café e um pão de queijo"
     translation: "Yo quisiera un café y un pan de queso."
+vocabulary:
+  - term: "o pão"
+    translation: "el pan"
+  - term: "a fruta"
+    translation: "la fruta"
+  - term: "a carne"
+    translation: "la carne"
+  - term: "o peixe"
+    translation: "el pescado"
+  - term: "o queijo"
+    translation: "el queso"
+  - term: "a conta"
+    translation: "la cuenta"
 ---
 
 El vocabulario de comida es de los más útiles y prácticos que puedes aprender — y el

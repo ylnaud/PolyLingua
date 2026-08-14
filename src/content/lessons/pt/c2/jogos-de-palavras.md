@@ -31,12 +31,14 @@ exercises:
     accepted: ["Resto"]
     hint: "Doble sentido: sobrante de comida y también término matemático."
     translation: "¿Dónde está el resto del pastel?"
+    placeholder: "pedaço / restante"
   - type: "fill-blank"
     sentence: "Que Papai Noel te traga ___, e não presença de fatura."
     answer: "presentes"
     accepted: ["Presentes"]
     hint: "Juego de palabras con el sonido de 'presença'."
     translation: "Que Papá Noel te traiga regalos, y no la presencia de la factura."
+    placeholder: "alegria / saúde"
   - type: "match"
     instructions: "Empareja cada palabra con el doble sentido que activa el trocadilho."
     pairs:
@@ -53,9 +55,21 @@ exercises:
     answer: "trocadilho"
     accepted: ["o trocadilho"]
     hint: "Es la palabra que da nombre a esta lección."
+    placeholder: "piada"
   - type: "order"
     sentence: "Que Papai Noel te traga presentes e não presença de fatura"
     translation: "Que Papá Noel te traiga regalos, y no la presencia de la factura."
+vocabulary:
+  - term: "resto"
+    translation: "resto (sobrante de comida / resultado matemático)"
+  - term: "presente"
+    translation: "regalo / estar presente"
+  - term: "fatura"
+    translation: "factura (cuenta a pagar)"
+  - term: "trocadilho"
+    translation: "juego de palabras"
+  - term: "presença"
+    translation: "presencia"
 ---
 
 Entender un juego de palabras en portugués sin que te lo expliquen es una de las

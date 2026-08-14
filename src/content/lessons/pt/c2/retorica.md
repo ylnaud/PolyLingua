@@ -35,12 +35,14 @@ exercises:
     accepted: ["Viagem"]
     hint: "Metáfora: compara la vida con un viaje sin usar 'como'."
     translation: "La vida es un viaje."
+    placeholder: "festa / batalha"
   - type: "fill-blank"
     sentence: "Já te disse isso um ___ de vezes!"
     answer: "milhão"
     accepted: ["Milhão"]
     hint: "Hipérbole: exageración deliberada para dar énfasis."
     translation: "¡Ya te dije eso un millón de veces!"
+    placeholder: "mil"
   - type: "match"
     instructions: "Empareja cada figura retórica con su ejemplo."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Quem não gostaria disso?"
     accepted: ["Quem não gostaria disso"]
     hint: "Una pergunta retórica no busca información, busca persuadir."
+    placeholder: "Quem não sonharia com isso?"
   - type: "order"
     sentence: "Um pequeno passo para o homem um grande salto para a humanidade"
     translation: "Un pequeño paso para el hombre, un gran salto para la humanidad."
+vocabulary:
+  - term: "metáfora"
+    translation: "metáfora"
+  - term: "pergunta retórica"
+    translation: "pregunta retórica"
+  - term: "anáfora"
+    translation: "anáfora"
+  - term: "hipérbole"
+    translation: "hipérbole"
+  - term: "antítese"
+    translation: "antítesis"
 ---
 
 Llegaste al terreno de las herramientas que transforman un portugués correcto en un

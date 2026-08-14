@@ -35,12 +35,14 @@ exercises:
     accepted: ["segue"]
     hint: "Fórmula estándar y formal para referirse a un archivo adjunto en un correo profesional."
     translation: "Adjunto encontrará el documento solicitado."
+    placeholder: "Anexo"
   - type: "fill-blank"
     sentence: "Vamos agendar uma ___ para discutir isso."
     answer: "call"
     accepted: ["call"]
     hint: "Anglicismo corporativo brasileño muy común, especialmente en startups y tecnología."
     translation: "Vamos a agendar una llamada para discutir esto."
+    placeholder: "reunião"
   - type: "match"
     instructions: "Empareja cada término del vocabulario de reuniones con su traducción."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Atenciosamente"
     accepted: ["Atenciosamente,", "Atenciosamente"]
     hint: "Es la fórmula de despedida estándar en correos corporativos formales."
+    placeholder: "Cordialmente"
   - type: "order"
     sentence: "Fico à disposição para esclarecimentos"
     translation: "Quedo a su disposición para aclaraciones."
+vocabulary:
+  - term: "a pauta"
+    translation: "la agenda (de una reunión)"
+  - term: "a reunião de alinhamento"
+    translation: "reunión de coordinación"
+  - term: "o prazo"
+    translation: "el plazo"
+  - term: "a meta"
+    translation: "la meta / el objetivo"
+  - term: "o orçamento"
+    translation: "el presupuesto"
 ---
 
 El portugués de negocios combina fórmulas formales tradicionales con una fuerte

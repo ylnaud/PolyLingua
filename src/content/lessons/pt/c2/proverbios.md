@@ -35,12 +35,14 @@ exercises:
     accepted: ["Fura"]
     hint: "Rima con 'dura' y significa 'perfora'."
     translation: "Agua blanda en piedra dura, tanto golpea hasta que perfora."
+    placeholder: "voa / passa"
   - type: "fill-blank"
     sentence: "Quem não arrisca, não ___."
     answer: "petisca"
     accepted: ["Petisca"]
     hint: "Literalmente 'picotea'; equivale a 'quien no arriesga, no gana'."
     translation: "Quien no arriesga, no gana."
+    placeholder: "avança / ganha"
   - type: "match"
     instructions: "Empareja cada refrán portugués con su equivalente en español."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Filho de peixe, peixinho é."
     accepted: ["Filho de peixe, peixinho é"]
     hint: "Habla de peces y pececitos."
+    placeholder: "Quem não arrisca, não petisca."
   - type: "order"
     sentence: "Quem tem boca vai a Roma"
     translation: "Preguntando se llega a Roma."
+vocabulary:
+  - term: "Água mole em pedra dura, tanto bate até que fura."
+    translation: "agua blanda en piedra dura, tanto golpea hasta que perfora"
+  - term: "Quem tem boca vai a Roma."
+    translation: "quien tiene boca va a Roma / preguntando se llega a Roma"
+  - term: "Antes tarde do que nunca."
+    translation: "más vale tarde que nunca"
+  - term: "Filho de peixe, peixinho é."
+    translation: "de tal palo, tal astilla"
+  - term: "Quem não arrisca, não petisca."
+    translation: "quien no arriesga, no gana"
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

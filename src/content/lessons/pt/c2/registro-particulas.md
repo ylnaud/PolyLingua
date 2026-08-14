@@ -39,12 +39,14 @@ exercises:
     accepted: ["Né"]
     hint: "Busca confirmación o acuerdo, como '¿verdad?'."
     translation: "Hace calor hoy, ¿verdad?"
+    placeholder: "hein / então"
   - type: "fill-blank"
     sentence: "Perdi o ônibus. ___..."
     answer: "Pois é"
     accepted: ["pois é"]
     hint: "Expresa resignación compartida, como 'así es la vida'."
     translation: "Perdí el autobús. Así es la vida..."
+    placeholder: "Então"
   - type: "match"
     instructions: "Empareja cada partícula coloquial con su función."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "cara"
     accepted: ["mano"]
     hint: "Equivale a 'tío' o 'colega' en español coloquial."
+    placeholder: "véi / meu"
   - type: "order"
     sentence: "Então vamos começar"
     translation: "Entonces, ¿empezamos?"
+vocabulary:
+  - term: "né"
+    translation: "¿verdad? / ¿no?"
+  - term: "pois é"
+    translation: "así es la vida (resignación compartida)"
+  - term: "tipo assim"
+    translation: "como que"
+  - term: "então"
+    translation: "entonces"
+  - term: "cara"
+    translation: "tío / colega (Brasil)"
 ---
 
 Llegaste al nivel donde la gramática de manual ya no es el reto. El verdadero examen de

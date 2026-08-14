@@ -35,12 +35,14 @@ exercises:
     accepted: ["tiver"]
     hint: "Futuro do subjuntivo de 'ter' tras 'se', para una condición futura incierta."
     translation: "Si tienes tiempo, avísame."
+    placeholder: "vier"
   - type: "fill-blank"
     sentence: "Quando ela ___, avise-me."
     answer: "chegar"
     accepted: ["chegar"]
     hint: "Verbo regular en -ar: el futuro do subjuntivo coincide con el infinitivo pessoal."
     translation: "Cuando ella llegue, avísame."
+    placeholder: "puder"
   - type: "match"
     instructions: "Empareja cada infinitivo con su forma de futuro do subjuntivo (eu/ele)."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "puder"
     accepted: ["puder"]
     hint: "Futuro do subjuntivo irregular de 'poder'."
+    placeholder: "tiver"
   - type: "order"
     sentence: "Se ele vier me avise"
     translation: "Si él viene, avísame."
+vocabulary:
+  - term: "se"
+    translation: "si"
+  - term: "quando"
+    translation: "cuando"
+  - term: "tiver"
+    translation: "tuvieras / tengas (futuro do subjuntivo de \"ter\")"
+  - term: "puder"
+    translation: "puedas (futuro do subjuntivo de \"poder\")"
+  - term: "vier"
+    translation: "vengas (futuro do subjuntivo de \"vir\")"
 ---
 
 Llegaste a la lección que hace del portugués un idioma verdaderamente único entre los

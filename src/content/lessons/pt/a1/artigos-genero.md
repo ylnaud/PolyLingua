@@ -31,12 +31,14 @@ exercises:
     accepted: ["o"]
     hint: "'livro' termina en -o: masculino."
     translation: "El libro está sobre la mesa."
+    placeholder: "o / a"
   - type: "fill-blank"
     sentence: "___ árvore é muito antiga."
     answer: "A"
     accepted: ["a"]
     hint: "'árvore' es femenina en portugués, aunque 'el árbol' sea masculino en español — un falso amigo de género."
     translation: "El árbol es muy antiguo."
+    placeholder: "o / a"
   - type: "match"
     instructions: "Empareja cada palabra con su artículo correcto."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "uma"
     accepted: ["Uma"]
     hint: "'viagem' es femenina en portugués, aunque 'el viaje' sea masculino en español."
+    placeholder: "um / uma"
   - type: "order"
     sentence: "O sangue é vermelho"
     translation: "La sangre es roja."
+vocabulary:
+  - term: "o livro"
+    translation: "el libro"
+  - term: "a árvore"
+    translation: "el árbol"
+  - term: "a viagem"
+    translation: "el viaje"
+  - term: "o costume"
+    translation: "la costumbre"
+  - term: "o sangue"
+    translation: "la sangre"
+  - term: "a casa"
+    translation: "la casa"
 ---
 
 El portugués es, de los cinco idiomas de PolyLingua, el que más vocabulario y estructura

@@ -30,11 +30,13 @@ exercises:
     answer: "é"
     hint: "Presente pasivo: ser (conjugado) + participio."
     translation: "El almuerzo es preparado por el chef."
+    placeholder: "é / foi / será"
   - type: "fill-blank"
     sentence: "Este livro foi escrito ___ Machado de Assis."
     answer: "por"
     hint: "'por' introduce al agente en la voz pasiva."
     translation: "Este libro fue escrito por Machado de Assis."
+    placeholder: "pelo / pela / por"
   - type: "match"
     instructions: "Empareja cada forma pasiva con su traducción."
     pairs:
@@ -52,9 +54,21 @@ exercises:
     prompt: "Escribe la voz pasiva en portugués de 'Machado de Assis escreveu este livro.'"
     answer: "Este livro foi escrito por Machado de Assis."
     hint: "El objeto directo se convierte en sujeto; verbo = ser + participio; agente con 'por'."
+    placeholder: "Sujeito + foi + particípio + por + agente."
   - type: "order"
     sentence: "A casa é construída"
     translation: "La casa es construida."
+vocabulary:
+  - term: "é construída"
+    translation: "es construida"
+  - term: "foi construída"
+    translation: "fue construida"
+  - term: "será construída"
+    translation: "será construida"
+  - term: "é lido"
+    translation: "es leído"
+  - term: "é escrita"
+    translation: "es escrita"
 ---
 
 Igual que en español, el portugués usa la voz pasiva cuando el **qué pasó** importa más

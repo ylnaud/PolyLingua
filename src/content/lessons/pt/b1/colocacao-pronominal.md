@@ -35,12 +35,14 @@ exercises:
     accepted: ["Te"]
     hint: "'Quando' es una palabra interrogativa/conjunción que atrae la próclise obligatoriamente."
     translation: "Cuando te vi, me puse feliz."
+    placeholder: "me / o / a"
   - type: "fill-blank"
     sentence: "Amo-___."
     answer: "te"
     accepted: ["Te"]
     hint: "La ênclise coloca el pronombre después del verbo, unido con guion."
     translation: "Te amo. (estilo Portugal, ênclise)"
+    placeholder: "me / o / a"
   - type: "match"
     instructions: "Empareja cada frase con el tipo de colocación pronominal que usa."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Machucou-se"
     accepted: ["Machucou-se."]
     hint: "El pronombre 'se' va después del verbo 'machucou', unido con guion."
+    placeholder: "Perdeu-se"
   - type: "order"
     sentence: "Não te vejo há muito tempo"
     translation: "No te veo hace mucho tiempo."
+vocabulary:
+  - term: "amo-te"
+    translation: "te amo (ênclise)"
+  - term: "não te vejo"
+    translation: "no te veo"
+  - term: "quando te vi"
+    translation: "cuando te vi"
+  - term: "disse-me a verdade"
+    translation: "me dijo la verdad"
+  - term: "machucou-se"
+    translation: "se lastimó"
 ---
 
 La colocación del pronombre es uno de los temas que más distingue al portugués de

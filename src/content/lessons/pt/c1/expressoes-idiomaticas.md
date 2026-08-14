@@ -35,12 +35,14 @@ exercises:
     accepted: ["pato"]
     hint: "Expresión: cargar con la culpa de algo que hizo otra persona."
     translation: "El gerente se equivocó, pero fue el pasante quien pagó las consecuencias."
+    placeholder: "sapo"
   - type: "fill-blank"
     sentence: "Ela ___ sapos naquele emprego por anos."
     answer: "engoliu"
     accepted: ["engoliu"]
     hint: "Del verbo 'engolir': aguantar algo desagradable en silencio."
     translation: "Ella aguantó situaciones desagradables en ese trabajo durante años."
+    placeholder: "pagou"
   - type: "match"
     instructions: "Empareja cada expresión idiomática con su significado real."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "dar zebra"
     accepted: ["dar zebra"]
     hint: "Literalmente significa 'dar cebra'."
+    placeholder: "pagar o pato"
   - type: "order"
     sentence: "Achei que ia dar tudo certo mas deu zebra"
     translation: "Pensé que todo iba a salir bien, pero salió mal."
+vocabulary:
+  - term: "pagar o pato"
+    translation: "cargar con la culpa ajena"
+  - term: "engolir sapos"
+    translation: "aguantar algo desagradable en silencio"
+  - term: "dar zebra"
+    translation: "salir mal / resultar inesperado"
+  - term: "ficar de boca aberta"
+    translation: "quedarse asombrado"
+  - term: "chutar o balde"
+    translation: "rendirse por completo, tirar la toalla"
 ---
 
 Las expresiones idiomáticas son la marca definitiva de fluidez real — imposibles de

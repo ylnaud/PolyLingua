@@ -39,12 +39,14 @@ exercises:
     accepted: ["estava"]
     hint: "El presente 'estou' retrocede a pretérito imperfeito al reportar discurso."
     translation: "Maria dijo que estaba cansada."
+    placeholder: "gostava"
   - type: "fill-blank"
     sentence: "Paulo disse que ___ no dia seguinte."
     answer: "viria"
     accepted: ["viria"]
     hint: "El futuro 'virei' retrocede a futuro do pretérito (condicional): viria."
     translation: "Paulo dijo que vendría al día siguiente."
+    placeholder: "faria"
   - type: "match"
     instructions: "Empareja cada marcador de tiempo del discurso directo con su equivalente en discurso indireto."
     pairs:
@@ -61,9 +63,23 @@ exercises:
     answer: "Ela disse que tinha terminado o projeto."
     accepted: ["Ela disse que tinha terminado o projeto"]
     hint: "Pretérito perfeito ('terminei') retrocede a mais-que-perfeito ('tinha terminado')."
+    placeholder: "Ele disse que tinha chegado cedo."
   - type: "order"
     sentence: "Ele disse que partia no dia seguinte"
     translation: "Él dijo que se marchaba al día siguiente."
+vocabulary:
+  - term: "amanhã"
+    translation: "mañana"
+  - term: "hoje"
+    translation: "hoy"
+  - term: "ontem"
+    translation: "ayer"
+  - term: "agora"
+    translation: "ahora"
+  - term: "no dia seguinte"
+    translation: "al día siguiente"
+  - term: "naquele dia"
+    translation: "aquel día"
 ---
 
 Cuando cuentas lo que alguien más dijo, el portugués no usa comillas — cambia

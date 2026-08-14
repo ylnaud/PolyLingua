@@ -31,12 +31,14 @@ exercises:
     accepted: ["chovia"]
     hint: "Imperfeito para describir el fondo/estado continuo (llovía)."
     translation: "Llovía cuando llegué."
+    placeholder: "Fazia calor"
   - type: "fill-blank"
     sentence: "Ontem, eu ___ o museu."
     answer: "visitei"
     accepted: ["Visitei"]
     hint: "Pretérito perfeito para un evento puntual y completado."
     translation: "Ayer, visité el museo."
+    placeholder: "cheguei / liguei"
   - type: "match"
     instructions: "Empareja cada frase en portugués con su traducción al español."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Quando eu era criança, jogava futebol todo sábado."
     accepted: []
     hint: "era (imperfeito de ser) + jogava (imperfeito de hábito repetido)."
+    placeholder: "Quando eu tinha dez anos, eu lia todo dia."
   - type: "order"
     sentence: "Eu lia quando você ligou"
     translation: "Yo leía cuando tú llamaste."
+vocabulary:
+  - term: "chovia"
+    translation: "llovía"
+  - term: "visitei"
+    translation: "visité"
+  - term: "jogava"
+    translation: "jugaba"
+  - term: "tocou"
+    translation: "sonó"
+  - term: "estava cansada"
+    translation: "estaba cansada"
+  - term: "fazia calor"
+    translation: "hacía calor"
 ---
 
 Esta es, de los cinco idiomas que puedes estudiar en PolyLingua, la distinción de pasado

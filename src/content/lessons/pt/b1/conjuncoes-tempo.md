@@ -27,12 +27,14 @@ exercises:
     accepted: []
     hint: "Evento futuro todavía no realizado: se usa futuro do subjuntivo, no presente."
     translation: "Cuando llegue, te aviso."
+    placeholder: "souber / voltar"
   - type: "fill-blank"
     sentence: "___ eu cozinho, você pode arrumar a mesa."
     answer: "Enquanto"
     accepted: ["enquanto"]
     hint: "Expresa simultaneidad: mientras."
     translation: "Mientras yo cocino, tú puedes poner la mesa."
+    placeholder: "Quando / Assim que"
   - type: "match"
     instructions: "Empareja cada conjunción portuguesa con su significado en español."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Assim que ela souber, ela liga."
     accepted: []
     hint: "assim que + futuro do subjuntivo de saber (souber)."
+    placeholder: "Quando ela chegar, ela liga."
   - type: "order"
     sentence: "Quando eu chego em casa ligo a TV"
     translation: "Cuando llego a casa, prendo la tele."
+vocabulary:
+  - term: "quando"
+    translation: "cuando"
+  - term: "enquanto"
+    translation: "mientras"
+  - term: "assim que"
+    translation: "en cuanto / tan pronto como"
+  - term: "depois que"
+    translation: "después de que"
+  - term: "antes que"
+    translation: "antes de que"
+  - term: "até que"
+    translation: "hasta que"
 ---
 
 Las conjunciones temporales conectan eventos en el tiempo — y el portugués tiene una

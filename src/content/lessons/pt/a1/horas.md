@@ -27,11 +27,13 @@ exercises:
     accepted: ["e"]
     hint: "Para la una en punto se usa el singular del verbo ser."
     translation: "Es la una de la tarde."
+    placeholder: "São"
   - type: "fill-blank"
     sentence: "___ quatro e quinze."
     answer: "São"
     hint: "A partir de las dos se usa el plural del verbo ser."
     translation: "Son las cuatro y quince."
+    placeholder: "É"
   - type: "match"
     instructions: "Empareja cada expresión con su significado."
     pairs:
@@ -50,9 +52,23 @@ exercises:
     answer: "Que horas são?"
     accepted: ["que horas são", "Que horas são"]
     hint: "Literalmente '¿qué horas son?', siempre en plural en la pregunta."
+    placeholder: "Como você se chama?"
   - type: "order"
     sentence: "São nove da manhã"
     translation: "Son las nueve de la mañana."
+vocabulary:
+  - term: "que horas são?"
+    translation: "¿qué hora es?"
+  - term: "e meia"
+    translation: "y media"
+  - term: "e quinze"
+    translation: "y cuarto"
+  - term: "em ponto"
+    translation: "en punto"
+  - term: "da manhã"
+    translation: "de la mañana"
+  - term: "da noite"
+    translation: "de la noche"
 ---
 
 Preguntar y decir la hora es una de las primeras habilidades verdaderamente prácticas

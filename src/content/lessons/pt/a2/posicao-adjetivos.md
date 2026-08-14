@@ -30,11 +30,13 @@ exercises:
     answer: "grande"
     hint: "Antes del sustantivo, este adjetivo toma sentido figurado (admirable)."
     translation: "Es un gran hombre (admirable)."
+    placeholder: "bom"
   - type: "fill-blank"
     sentence: "uma ___ pergunta."
     answer: "simples"
     hint: "Antes del sustantivo: sentido de 'mera' o simple."
     translation: "Una simple pregunta (mera)."
+    placeholder: "pequena"
   - type: "match"
     instructions: "Empareja cada expresión en portugués con su traducción al español."
     pairs:
@@ -50,9 +52,23 @@ exercises:
     prompt: "Escribe en portugués 'un hombre grande' (de tamaño físico, adjetivo después del sustantivo)."
     answer: "um homem grande"
     hint: "Después del sustantivo, este adjetivo toma el sentido literal de tamaño."
+    placeholder: "um amigo velho"
   - type: "order"
     sentence: "Ele é um homem grande"
     translation: "Es un hombre grande (de tamaño físico)."
+vocabulary:
+  - term: "um bom amigo"
+    translation: "un buen amigo"
+  - term: "uma pequena casa"
+    translation: "una pequeña casa"
+  - term: "um grande problema"
+    translation: "un gran problema"
+  - term: "um livro interessante"
+    translation: "un libro interesante"
+  - term: "um homem grande"
+    translation: "un hombre grande"
+  - term: "um velho amigo"
+    translation: "un viejo amigo"
 ---
 
 La posición del adjetivo en portugués sigue una lógica muy parecida al español — y el

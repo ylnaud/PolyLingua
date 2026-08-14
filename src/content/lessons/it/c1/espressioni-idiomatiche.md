@@ -35,12 +35,14 @@ exercises:
     accepted: ["lupo"]
     hint: "Expresión supersticiosa para desear buena suerte, literalmente 'en la boca del...'."
     translation: "¡Buena suerte!"
+    placeholder: "gatto"
   - type: "fill-blank"
     sentence: "Questo ristorante costa un ___ della testa."
     answer: "occhio"
     accepted: ["occhio"]
     hint: "Igual que en español: costar un ___ de la cara."
     translation: "Este restaurante cuesta muchísimo."
+    placeholder: "braccio"
   - type: "match"
     instructions: "Empareja cada expresión idiomática con su significado real."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "Crepi!"
     accepted: ["Crepi", "crepi!", "Crepi."]
     hint: "Nunca se responde 'grazie' — la respuesta ritual es otra palabra."
+    placeholder: "Grazie!"
   - type: "order"
     sentence: "Non vedo l'ora di vederti"
     translation: "Tengo muchas ganas de verte."
+vocabulary:
+  - term: "in bocca al lupo"
+    translation: "¡buena suerte!"
+  - term: "costare un occhio della testa"
+    translation: "costar un ojo de la cara"
+  - term: "avere le mani in pasta"
+    translation: "estar involucrado en algo"
+  - term: "non vedo l'ora"
+    translation: "tengo muchas ganas"
+  - term: "prendere in giro"
+    translation: "tomar el pelo/bromear"
+  - term: "Crepi!"
+    translation: "¡que así sea! (respuesta a in bocca al lupo)"
 ---
 
 Llegaste al terreno de las expresiones que ni la gramática ni el vocabulario amplio te

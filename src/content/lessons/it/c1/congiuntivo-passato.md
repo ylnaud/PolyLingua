@@ -35,12 +35,14 @@ exercises:
     accepted: ["abbia"]
     hint: "'superare' usa el auxiliar avere: che tu abbia + participio."
     translation: "Estoy contento de que hayas aprobado el examen."
+    placeholder: "abbia / sia"
   - type: "fill-blank"
     sentence: "È possibile che lei ___ già partita."
     answer: "sia"
     accepted: ["sia"]
     hint: "'partire' usa el auxiliar essere: che lei sia + participio."
     translation: "Es posible que ella ya se haya ido."
+    placeholder: "abbia / sia"
   - type: "match"
     instructions: "Empareja cada infinitivo con su forma correcta en Congiuntivo passato (che io...)."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "Non penso che abbia capito."
     accepted: ["Non penso che abbia capito"]
     hint: "'pensare' negativo + che + abbia + participio de capire."
+    placeholder: "Non credo che abbia parlato."
   - type: "order"
     sentence: "Sono contento che tu abbia superato l'esame"
     translation: "Estoy contento de que hayas aprobado el examen."
+vocabulary:
+  - term: "abbia superato"
+    translation: "hayas aprobado"
+  - term: "già partita"
+    translation: "ya se haya ido (ella)"
+  - term: "abbia capito"
+    translation: "haya entendido"
+  - term: "participio passato"
+    translation: "participio pasado"
+  - term: "Congiuntivo presente"
+    translation: "subjuntivo presente"
+  - term: "l'esame"
+    translation: "el examen"
 ---
 
 Ya dominas el Congiuntivo presente. Ahora aprendes su versión de pasado — necesaria

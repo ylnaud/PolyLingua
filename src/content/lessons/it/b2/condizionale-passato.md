@@ -35,12 +35,14 @@ exercises:
     accepted: ["sarei"]
     hint: "Condizionale presente de 'essere' + participio: verbo de movimiento, usa 'essere'."
     translation: "Si hubiera sabido, habría venido antes."
+    placeholder: "sarei / avrei"
   - type: "fill-blank"
     sentence: "___ dovuto studiare di più."
     answer: "Avrei"
     accepted: ["Avrei", "avrei"]
     hint: "Condizionale presente de 'avere' + participio passato: arrepentimiento clásico."
     translation: "Debería haber estudiado más."
+    placeholder: "Avrei / Sarei"
   - type: "match"
     instructions: "Empareja cada forma en condizionale passato con su traducción."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "avrei preparato qualcosa"
     accepted: ["Avrei preparato qualcosa"]
     hint: "avere en condizionale presente (avrei) + participio passato de preparare."
+    placeholder: "avrei + participio passato"
   - type: "order"
     sentence: "Se avessi avuto tempo avrei finito il progetto"
     translation: "Si hubiera tenido tiempo, habría terminado el proyecto."
+vocabulary:
+  - term: "avrei voluto"
+    translation: "habría querido"
+  - term: "sarei partito"
+    translation: "me habría ido"
+  - term: "avrei dovuto"
+    translation: "debería haber"
+  - term: "avrei finito"
+    translation: "habría terminado"
+  - term: "sarei venuto"
+    translation: "habría venido"
 ---
 
 Este condicional te permite reflexionar sobre un pasado que ya no se puede cambiar —

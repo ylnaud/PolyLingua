@@ -35,12 +35,14 @@ exercises:
     accepted: ["parto"]
     hint: "Presente + marcador de tiempo ('domani') para un plan futuro ya decidido."
     translation: "Mañana salgo para Roma."
+    placeholder: "es. arrivo"
   - type: "fill-blank"
     sentence: "Il film ___ per iniziare."
     answer: "sta"
     accepted: ["sta"]
     hint: "'stare' conjugado (lui/lei: sta) + per + infinitivo, para algo inminente."
     translation: "La película está a punto de empezar."
+    placeholder: "sto / stai / sta / stiamo"
   - type: "match"
     instructions: "Empareja cada pronombre con la forma correcta de 'stare'."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "Sto per partire"
     accepted: ["sto per partire"]
     hint: "stare (conjugado) + per + infinitivo."
+    placeholder: "es. Sto per mangiare"
   - type: "order"
     sentence: "Stasera vediamo un film"
     translation: "Esta noche vemos una película."
+vocabulary:
+  - term: "domani"
+    translation: "mañana"
+  - term: "stasera"
+    translation: "esta noche"
+  - term: "parto"
+    translation: "salgo / parto"
+  - term: "stare per"
+    translation: "estar a punto de"
+  - term: "sto per partire"
+    translation: "estoy a punto de partir"
+  - term: "sta per iniziare"
+    translation: "está a punto de empezar"
 ---
 
 El italiano cotidiano tiene dos formas naturales de hablar del futuro cercano, sin

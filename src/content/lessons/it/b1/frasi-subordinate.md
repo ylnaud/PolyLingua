@@ -27,12 +27,14 @@ exercises:
     accepted: ["Perché"]
     hint: "Introduce una causa directa y no exige congiuntivo."
     translation: "Me quedo en casa porque estoy enfermo."
+    placeholder: "perché / poiché / quando"
   - type: "fill-blank"
     sentence: "Sebbene ___ stanco, continua a lavorare."
     answer: "sia"
     accepted: ["Sia"]
     hint: "'sebbene' siempre exige congiuntivo — 'sia' es la forma de 'essere' para lui/lei."
     translation: "Aunque esté cansado, sigue trabajando."
+    placeholder: "sia / sono / è"
   - type: "match"
     instructions: "Empareja cada conjunción con su significado."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "Sebbene sia ricco, è triste"
     accepted: ["sebbene sia ricco, è triste"]
     hint: "'sebbene' + congiuntivo de 'essere' (sia)."
+    placeholder: "Sebbene + congiuntivo, + frase"
   - type: "order"
     sentence: "Parlo piano affinché tu capisca"
     translation: "Hablo despacio para que entiendas."
+vocabulary:
+  - term: "perché"
+    translation: "porque"
+  - term: "quando"
+    translation: "cuando"
+  - term: "poiché"
+    translation: "ya que"
+  - term: "sebbene"
+    translation: "aunque"
+  - term: "affinché"
+    translation: "para que"
 ---
 
 En este nivel empiezas a construir frases más ricas: causa, contraste, tiempo. Como en

@@ -39,12 +39,14 @@ exercises:
     accepted: ["era"]
     hint: "El presente 'sono' retrocede a imperfetto 'era' en discurso indirecto."
     translation: "Maria dijo que estaba cansada."
+    placeholder: "era / aveva / sarebbe"
   - type: "fill-blank"
     sentence: "Paolo ha detto che sarebbe venuto il giorno ___."
     answer: "dopo"
     accepted: ["dopo"]
     hint: "'domani' cambia a 'il giorno dopo' al reportar discurso."
     translation: "Paolo dijo que vendría al día siguiente."
+    placeholder: "dopo / prima"
   - type: "match"
     instructions: "Empareja cada marcador de discurso directo con su equivalente en discurso indirecto."
     pairs:
@@ -61,9 +63,23 @@ exercises:
     answer: "Paolo ha detto che aveva finito."
     accepted: ["Paolo ha detto che aveva finito"]
     hint: "El passato prossimo retrocede a trapassato prossimo: aveva finito."
+    placeholder: "Maria ha detto che aveva parlato."
   - type: "order"
     sentence: "Mi ha detto di chiudere la porta"
     translation: "Me dijo que cerrara la puerta."
+vocabulary:
+  - term: "concordanza dei tempi"
+    translation: "concordancia de los tiempos"
+  - term: "il giorno dopo"
+    translation: "al día siguiente"
+  - term: "il giorno prima"
+    translation: "el día anterior"
+  - term: "quel giorno"
+    translation: "ese día"
+  - term: "in quel momento"
+    translation: "en ese momento"
+  - term: "Trapassato prossimo"
+    translation: "pretérito pluscuamperfecto"
 ---
 
 Cuando cuentas lo que alguien más dijo, el italiano no usa comillas — cambia

@@ -31,12 +31,14 @@ exercises:
     accepted: ["pioveva"]
     hint: "Imperfetto: describe el clima como telón de fondo continuo."
     translation: "Llovía cuando llegué."
+    placeholder: "Pioveva / Faceva / Era"
   - type: "fill-blank"
     sentence: "Guardavo la TV quando il telefono ___."
     answer: "ha squillato"
     accepted: ["ha squillato"]
     hint: "Passato prossimo: el evento puntual que interrumpe el fondo."
     translation: "Miraba la tele cuando sonó el teléfono."
+    placeholder: "ha squillato / è arrivato / ha chiamato"
   - type: "match"
     instructions: "Empareja cada frase en italiano con su traducción."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Quando ero piccolo, giocavo ogni giorno"
     accepted: ["quando ero piccolo, giocavo ogni giorno"]
     hint: "Hábito repetido en el pasado, sin momento puntual: imperfetto."
+    placeholder: "Quando ero + [imperfetto], + imperfetto"
   - type: "order"
     sentence: "Leggevo quando hai chiamato"
     translation: "Leía cuando llamaste."
+vocabulary:
+  - term: "Pioveva"
+    translation: "Llovía"
+  - term: "Faceva bello"
+    translation: "Hacía buen tiempo"
+  - term: "Era stanca"
+    translation: "Estaba cansada"
+  - term: "Ho visitato il museo"
+    translation: "Visité el museo"
+  - term: "Mi sono alzato"
+    translation: "Me levanté"
+  - term: "Giocavo"
+    translation: "Jugaba"
 ---
 
 Este es, para muchos hispanohablantes, el reto número uno del italiano intermedio:

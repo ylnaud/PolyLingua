@@ -35,12 +35,14 @@ exercises:
     accepted: ["guagliò"]
     hint: "Forma napolitana informal para dirigirse a un chico/muchacho."
     translation: "¡Chico, ven aquí! (en napolitano)"
+    placeholder: "es. Ehi"
   - type: "fill-blank"
     sentence: "Toscana: Vieni ___."
     answer: "qua"
     accepted: ["Qua"]
     hint: "Variante toscana de 'qui' (aquí), con la característica gorgia toscana."
     translation: "Ven aquí (variante toscana)."
+    placeholder: "es. lì"
   - type: "match"
     instructions: "Empareja cada dialecto o rasgo regional con su característica."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Guagliò, viene ccà!"
     accepted: ["Guagliò, viene ccà", "Guaglió, viene ccà!"]
     hint: "Es el equivalente napolitano de 'Ragazzo, vieni qui!'."
+    placeholder: "es. Ragazzo, vieni qui!"
   - type: "order"
     sentence: "Ragazzo vieni qui"
     translation: "Chico, ven aquí."
+vocabulary:
+  - term: "guagliò"
+    translation: "chico/muchacho (napolitano)"
+  - term: "viene ccà"
+    translation: "ven aquí (napolitano)"
+  - term: "qua"
+    translation: "aquí (variante toscana)"
+  - term: "gorgia toscana"
+    translation: "la aspiración toscana (rasgo fonético)"
+  - term: "dialetto"
+    translation: "el dialecto"
 ---
 
 El italiano estándar que dominas es funcional en todo el país — pero Italia tiene una

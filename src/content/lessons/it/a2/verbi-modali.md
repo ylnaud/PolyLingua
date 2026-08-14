@@ -27,12 +27,14 @@ exercises:
     accepted: ["devo"]
     hint: "'dovere' conjugado con 'io' es 'devo'."
     translation: "Yo debo trabajar."
+    placeholder: "es. posso"
   - type: "fill-blank"
     sentence: "___ entrare?"
     answer: "Posso"
     accepted: ["posso"]
     hint: "'potere' conjugado con 'io' es 'posso', usado para pedir permiso."
     translation: "¿Puedo entrar?"
+    placeholder: "es. Devo"
   - type: "match"
     instructions: "Empareja cada pronombre con la conjugación correcta del verbo modal indicado."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Vorrei un caffè"
     accepted: ["vorrei un caffè"]
     hint: "'vorrei' es el condizionale de 'volere', más educado que 'voglio'."
+    placeholder: "es. Vorrei un tè"
   - type: "order"
     sentence: "Devo lavorare ogni giorno"
     translation: "Debo trabajar todos los días."
+vocabulary:
+  - term: "dovere"
+    translation: "deber / tener que"
+  - term: "potere"
+    translation: "poder"
+  - term: "volere"
+    translation: "querer"
+  - term: "devo"
+    translation: "debo"
+  - term: "posso"
+    translation: "puedo"
+  - term: "vorrei"
+    translation: "quisiera"
 ---
 
 Estos tres verbos modales son tu herramienta principal para pedir, permitir, opinar y

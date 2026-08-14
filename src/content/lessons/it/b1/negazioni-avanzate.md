@@ -27,12 +27,14 @@ exercises:
     accepted: ["non"]
     hint: "'non' es obligatorio antes del verbo, incluso con 'mai' después."
     translation: "Nunca como carne."
+    placeholder: "Non... [parola negativa]"
   - type: "fill-blank"
     sentence: "Non ho ___ finito."
     answer: "ancora"
     accepted: ["Ancora"]
     hint: "'non...ancora' significa 'todavía no'."
     translation: "Todavía no he terminado."
+    placeholder: "ancora / mai / più"
   - type: "match"
     instructions: "Empareja cada negación con su significado."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "Non vedo nessuno"
     accepted: ["non vedo nessuno"]
     hint: "'non' antes del verbo, 'nessuno' después."
+    placeholder: "Non + verbo + nessuno/niente"
   - type: "order"
     sentence: "Non dico mai più niente a nessuno"
     translation: "Ya nunca le digo nada a nadie."
+vocabulary:
+  - term: "non... mai"
+    translation: "nunca"
+  - term: "non... niente"
+    translation: "nada"
+  - term: "non... nessuno"
+    translation: "nadie"
+  - term: "non... più"
+    translation: "ya no"
+  - term: "non... ancora"
+    translation: "todavía no"
 ---
 
 Ya dominas "non" solo. Ahora conoces al resto de la familia de negaciones — todas

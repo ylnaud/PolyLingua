@@ -30,11 +30,13 @@ exercises:
     answer: "Il"
     hint: "Artículo + posesivo + sustantivo, masculino singular."
     translation: "Mi libro es nuevo."
+    placeholder: "La"
   - type: "fill-blank"
     sentence: "___ madre si chiama Anna."
     answer: "Mia"
     hint: "Con familiares singulares, el artículo desaparece."
     translation: "Mi madre se llama Anna."
+    placeholder: "Tuo"
   - type: "match"
     instructions: "Empareja cada poseedor con su forma posesiva (masculino singular)."
     pairs:
@@ -52,9 +54,23 @@ exercises:
     prompt: "Escribe cómo dirías 'mis hermanos' en italiano."
     answer: "i miei fratelli"
     hint: "Plural: sí lleva artículo, aunque sea un familiar."
+    placeholder: "i miei libri"
   - type: "order"
     sentence: "Ho i miei libri"
     translation: "Tengo mis libros."
+vocabulary:
+  - term: "il mio libro"
+    translation: "mi libro"
+  - term: "la mia casa"
+    translation: "mi casa"
+  - term: "i miei libri"
+    translation: "mis libros"
+  - term: "mia madre"
+    translation: "mi madre"
+  - term: "mio padre"
+    translation: "mi padre"
+  - term: "i miei fratelli"
+    translation: "mis hermanos"
 ---
 
 El italiano añade un paso extra a los posesivos que el español no tiene: combinar el

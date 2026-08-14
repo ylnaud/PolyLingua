@@ -35,12 +35,14 @@ exercises:
     accepted: ["mangiando"]
     hint: "Verbos en -are forman el gerundio con -ando."
     translation: "Estoy comiendo."
+    placeholder: "parlando / vendendo"
   - type: "fill-blank"
     sentence: "Ho imparato l'italiano ___ (guardare) film."
     answer: "guardando"
     accepted: ["guardando"]
     hint: "El gerundio aquí indica el MEDIO: la manera en que se logró algo."
     translation: "Aprendí italiano viendo películas."
+    placeholder: "dormendo / facendo"
   - type: "match"
     instructions: "Empareja cada infinitivo con su gerundio correcto."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "bevendo"
     accepted: ["Bevendo"]
     hint: "Es uno de los irregulares imprescindibles, como 'facendo' y 'dicendo'."
+    placeholder: "dicendo / facendo"
   - type: "order"
     sentence: "Ascolto musica lavorando"
     translation: "Escucho música mientras trabajo."
+vocabulary:
+  - term: "parlando"
+    translation: "hablando"
+  - term: "vendendo"
+    translation: "vendiendo"
+  - term: "dormendo"
+    translation: "durmiendo"
+  - term: "facendo"
+    translation: "haciendo"
+  - term: "dicendo"
+    translation: "diciendo"
+  - term: "bevendo"
+    translation: "bebiendo"
 ---
 
 El gerundio italiano cumple dos funciones importantes: describir simultaneidad y

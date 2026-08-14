@@ -35,12 +35,14 @@ exercises:
     accepted: ["vada"]
     hint: "'bisogna che' siempre exige congiuntivo: che tu vada."
     translation: "Hay que ir (que tú vayas)."
+    placeholder: "vada / venga / parli"
   - type: "fill-blank"
     sentence: "Penso che lui ___ (avere) ragione."
     answer: "abbia"
     accepted: ["abbia"]
     hint: "Congiuntivo presente de 'avere' para lui/lei: abbia."
     translation: "Creo que él tiene razón."
+    placeholder: "abbia / sia"
   - type: "match"
     instructions: "Empareja el pronombre con la forma correcta de congiuntivo presente de 'parlare'."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "Spero che tu venga."
     accepted: ["Spero che tu venga"]
     hint: "'sperare che' es un disparador de deseo: congiuntivo de 'venire' para tu es 'venga'."
+    placeholder: "Voglio che tu parli."
   - type: "order"
     sentence: "Sebbene piova esco"
     translation: "Aunque llueva, salgo."
+vocabulary:
+  - term: "bisogna che"
+    translation: "hay que (+ subjuntivo)"
+  - term: "Sebbene piova"
+    translation: "aunque llueva"
+  - term: "abbia ragione"
+    translation: "tenga razón"
+  - term: "sia qui"
+    translation: "esté aquí"
+  - term: "che tu venga"
+    translation: "que vengas"
+  - term: "che io parli"
+    translation: "que yo hable"
 ---
 
 El congiuntivo tiene fama de ser el gran obstáculo del italiano avanzado — pero se reduce

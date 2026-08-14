@@ -31,12 +31,14 @@ exercises:
     accepted: ["rinnovabili"]
     hint: "Energías que se regeneran de forma natural: solar, eólica, etc."
     translation: "Debemos invertir más en las energías renovables."
+    placeholder: "rinnovabili / fossili"
   - type: "fill-blank"
     sentence: "Il ___ climatico è la sfida più grande della nostra generazione."
     answer: "cambiamento"
     accepted: ["cambiamento"]
     hint: "Sustantivo que acompaña a 'climatico' para decir 'cambio climático'."
     translation: "El cambio climático es el mayor desafío de nuestra generación."
+    placeholder: "cambiamento / clima"
   - type: "match"
     instructions: "Empareja cada palabra en italiano con su traducción al español."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "la disuguaglianza"
     accepted: ["disuguaglianza", "La disuguaglianza"]
     hint: "Empieza con 'dis-', el prefijo de negación."
+    placeholder: "la [parola]"
   - type: "order"
     sentence: "La sostenibilità dovrebbe essere una priorità per ogni azienda"
     translation: "La sostenibilidad debería ser una prioridad para toda empresa."
+vocabulary:
+  - term: "il cambiamento climatico"
+    translation: "el cambio climático"
+  - term: "le energie rinnovabili"
+    translation: "las energías renovables"
+  - term: "la sostenibilità"
+    translation: "la sostenibilidad"
+  - term: "l'inquinamento"
+    translation: "la contaminación"
+  - term: "i diritti umani"
+    translation: "los derechos humanos"
+  - term: "la disoccupazione"
+    translation: "el desempleo"
 ---
 
 Este vocabulario te permite dar el salto de conversaciones cotidianas a discusiones

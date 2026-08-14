@@ -31,12 +31,14 @@ exercises:
     accepted: ["vorrei"]
     hint: "Condizionale de 'volere' — la forma educada para pedir algo, en vez de 'voglio'."
     translation: "Quisiera un café, por favor."
+    placeholder: "Vorrei / Dovrei / Potrei"
   - type: "fill-blank"
     sentence: "___ dormire di più."
     answer: "Dovresti"
     accepted: ["dovresti"]
     hint: "Condizionale de 'dovere' — un consejo suave, no una orden directa."
     translation: "Deberías dormir más."
+    placeholder: "Dovresti / Potresti / Vorresti"
   - type: "match"
     instructions: "Empareja cada infinitivo con su forma de condizionale en 'io'."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Potrebbe aiutarmi?"
     accepted: ["Potrebbe aiutarmi", "potrebbe aiutarmi?", "potrebbe aiutarmi"]
     hint: "Condizionale de 'potere' para 'lei/lui': potrebbe."
+    placeholder: "Potrebbe + infinito?"
   - type: "order"
     sentence: "Se avessi soldi viaggerei"
     translation: "Si tuviera dinero, viajaría."
+vocabulary:
+  - term: "Vorrei"
+    translation: "Quisiera"
+  - term: "Dovresti"
+    translation: "Deberías"
+  - term: "Potrebbe aiutarmi?"
+    translation: "¿Podría ayudarme?"
+  - term: "Sarei"
+    translation: "Sería / estaría"
+  - term: "Avrei"
+    translation: "Tendría"
+  - term: "Andrei"
+    translation: "Iría"
 ---
 
 El condizionale presente es tu herramienta para sonar cortés, dar consejos suaves y

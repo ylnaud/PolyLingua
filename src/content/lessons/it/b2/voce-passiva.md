@@ -31,12 +31,14 @@ exercises:
     accepted: ["è", "e"]
     hint: "Presente de 'essere' conjugado para 'il pranzo' (tercera persona singular)."
     translation: "El almuerzo es preparado por el chef."
+    placeholder: "è / sono"
   - type: "fill-blank"
     sentence: "La lettera è ___ (scrivere)."
     answer: "scritta"
     accepted: ["scritta"]
     hint: "El participio concuerda en género y número con el sujeto: femenino singular."
     translation: "La carta está escrita."
+    placeholder: "scritto / scritti"
   - type: "match"
     instructions: "Empareja cada sujeto con la forma correcta del participio de 'leggere' en voz pasiva."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "Questo libro è stato scritto da Dante"
     accepted: ["questo libro è stato scritto da Dante"]
     hint: "essere (è stato) + participio de scrivere + 'da' para el agente."
+    placeholder: "Il ponte è stato costruito da..."
   - type: "order"
     sentence: "Il libro è stato scritto da Dante"
     translation: "El libro fue escrito por Dante."
+vocabulary:
+  - term: "è costruita"
+    translation: "es construida"
+  - term: "è stata costruita"
+    translation: "fue construida"
+  - term: "sarà costruita"
+    translation: "será construida"
+  - term: "letto"
+    translation: "leído"
+  - term: "letta"
+    translation: "leída"
 ---
 
 Igual que en español, el italiano usa la voz pasiva cuando el **qué pasó** importa más

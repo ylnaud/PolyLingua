@@ -27,12 +27,14 @@ exercises:
     accepted: ["Secondo"]
     hint: "'Secondo' significa 'según' al citar una fuente."
     translation: "Según el estudio, los resultados son significativos."
+    placeholder: "Nonostante"
   - type: "fill-blank"
     sentence: "___ sottolineato che i dati sono limitati."
     answer: "Va"
     accepted: ["Va"]
     hint: "Fórmula fija académica: 'va sottolineato che' (cabe subrayar que)."
     translation: "Cabe subrayar que los datos son limitados."
+    placeholder: "Occorre"
   - type: "match"
     instructions: "Empareja cada término académico en italiano con su significado en español."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "In conclusione, si può affermare che..."
     accepted: ["In conclusione, si può affermare che"]
     hint: "Es una fórmula fija muy usada al cerrar un saggio o tesi."
+    placeholder: "Come lo studio dimostra che..."
   - type: "order"
     sentence: "Va sottolineato che i dati sono limitati"
     translation: "Cabe subrayar que los datos son limitados."
+vocabulary:
+  - term: "l'ipotesi"
+    translation: "la hipótesis"
+  - term: "la ricerca"
+    translation: "la investigación"
+  - term: "la conclusione"
+    translation: "la conclusión"
+  - term: "la fonte"
+    translation: "la fuente"
+  - term: "l'analisi"
+    translation: "el análisis"
+  - term: "dimostrare"
+    translation: "demostrar"
 ---
 
 Este vocabulario te permite leer y escribir en el registro que domina saggi, tesi y

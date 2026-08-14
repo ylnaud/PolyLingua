@@ -31,12 +31,14 @@ exercises:
     accepted: ["appena"]
     hint: "Significa 'tan pronto como' — añade un matiz de inmediatez."
     translation: "Tan pronto como llegue, te llamo."
+    placeholder: "Appena / Quando / Mentre"
   - type: "fill-blank"
     sentence: "___ cucino, ascolto la musica."
     answer: "Mentre"
     accepted: ["mentre"]
     hint: "Describe dos acciones simultáneas y prolongadas."
     translation: "Mientras cocino, escucho música."
+    placeholder: "Mentre / Quando / Appena"
   - type: "match"
     instructions: "Empareja cada conjunción de tiempo con su significado."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "Chiamami prima che tu parta"
     accepted: ["chiamami prima che tu parta"]
     hint: "'prima che' es la única de estas conjunciones que exige congiuntivo."
+    placeholder: "Chiamami prima che + congiuntivo"
   - type: "order"
     sentence: "Appena sono arrivato ho chiamato mia madre"
     translation: "Tan pronto como llegué, llamé a mi madre."
+vocabulary:
+  - term: "quando"
+    translation: "cuando"
+  - term: "appena"
+    translation: "tan pronto como"
+  - term: "mentre"
+    translation: "mientras"
+  - term: "dopo che"
+    translation: "después de que"
+  - term: "prima che"
+    translation: "antes de que"
 ---
 
 Estas conjunciones te permiten estructurar narraciones con precisión temporal — cuándo

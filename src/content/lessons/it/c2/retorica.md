@@ -35,12 +35,14 @@ exercises:
     accepted: ["Viaggio"]
     hint: "Metáfora clásica: compara la vida con un viaje, sin usar 'come' (como)."
     translation: "La vida es un viaje."
+    placeholder: "es. sogno"
   - type: "fill-blank"
     sentence: "Non ci arrenderemo. Non indietreggeremo. Non ___."
     answer: "taceremo"
     accepted: ["Taceremo"]
     hint: "Anáfora con 'Non...' — este verbo significa 'callaremos'."
     translation: "No nos rendiremos. No retrocederemos. No callaremos."
+    placeholder: "es. smetteremo"
   - type: "match"
     instructions: "Empareja cada figura retórica con lo que hace."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Chi non vorrebbe questo?"
     accepted: ["Chi non vorrebbe questo"]
     hint: "No busca respuesta real — afirma algo con fuerza persuasiva."
+    placeholder: "es. Chi potrebbe dirlo?"
   - type: "order"
     sentence: "Te l'ho detto un milione di volte"
     translation: "Te lo he dicho un millón de veces."
+vocabulary:
+  - term: "Metafora"
+    translation: "la metáfora"
+  - term: "Domanda retorica"
+    translation: "la pregunta retórica"
+  - term: "Anafora"
+    translation: "la anáfora"
+  - term: "Iperbole"
+    translation: "la hipérbole"
+  - term: "Antitesi"
+    translation: "la antítesis"
 ---
 
 Llegaste al último tramo: las herramientas que transforman un italiano correcto en un

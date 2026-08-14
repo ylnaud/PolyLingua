@@ -27,12 +27,14 @@ exercises:
     accepted: ["ci"]
     hint: "'ci' reemplaza un lugar introducido por 'a'."
     translation: "Voy a Roma. → Voy allí."
+    placeholder: "Ci / Ne / Lo"
   - type: "fill-blank"
     sentence: "Ho tre libri. → ___ ho tre."
     answer: "Ne"
     accepted: ["ne"]
     hint: "'ne' reemplaza una cantidad + sustantivo."
     translation: "Tengo tres libros. → Tengo tres de ellos."
+    placeholder: "Ne / Ci / Li"
   - type: "match"
     instructions: "Empareja cada frase en italiano con su traducción."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "Ce ne sono tre"
     accepted: ["ce ne sono tre"]
     hint: "'ci' se convierte en 'ce' cuando va antes de 'ne'."
+    placeholder: "Ce ne + verbo + numero"
   - type: "order"
     sentence: "Non ci vado"
     translation: "No voy allí."
+vocabulary:
+  - term: "Ci vado"
+    translation: "Voy allí"
+  - term: "Ci penso"
+    translation: "Pienso en eso"
+  - term: "Ne ho tre"
+    translation: "Tengo tres de ellos"
+  - term: "Ne parlo"
+    translation: "Hablo de eso"
+  - term: "Ne vengo"
+    translation: "Vengo de allí"
 ---
 
 Estos dos pronombres pequeños son extremadamente frecuentes en italiano hablado —

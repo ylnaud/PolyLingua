@@ -39,12 +39,14 @@ exercises:
     accepted: ["Minestra"]
     hint: "La palabra italiana para 'sopa', protagonista del chiste clásico del camarero."
     translation: "¡Camarero, hay una mosca en la sopa!"
+    placeholder: "es. pizza"
   - type: "fill-blank"
     sentence: "Molti scherzi italiani dipendono dal doppio ___."
     answer: "senso"
     accepted: ["Senso"]
     hint: "Junto con 'doppio' forma la expresión 'doble sentido'."
     translation: "Muchos chistes italianos dependen del doble sentido."
+    placeholder: "es. giro"
   - type: "match"
     instructions: "Empareja cada término o frase con su explicación."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "cameriere"
     accepted: ["Cameriere"]
     hint: "Es la persona a la que le habla el cliente en el chiste."
+    placeholder: "es. dottore"
   - type: "order"
     sentence: "Non si preoccupi non beve molto"
     translation: "No se preocupe, no bebe mucho."
+vocabulary:
+  - term: "minestra"
+    translation: "la sopa"
+  - term: "cameriere"
+    translation: "el camarero"
+  - term: "doppio senso"
+    translation: "el doble sentido"
+  - term: "barzelletta"
+    translation: "el chiste"
+  - term: "mosca"
+    translation: "la mosca"
 ---
 
 Reírte de un chiste en italiano —de verdad, sin que alguien te lo explique después—

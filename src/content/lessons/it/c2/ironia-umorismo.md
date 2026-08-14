@@ -39,12 +39,14 @@ exercises:
     accepted: ["complimenti"]
     hint: "Se dice con tono plano tras un error obvio — es ironía, no una felicitación real."
     translation: "¿Llegaste tarde otra vez? ¡Felicidades! (irónico)"
+    placeholder: "es. Bravo!"
   - type: "fill-blank"
     sentence: "Ah, sei puntualissimo come ___!"
     answer: "sempre"
     accepted: ["Sempre"]
     hint: "Comentario irónico dicho tras llegar una hora tarde."
     translation: "Ah, eres puntualísimo como siempre (irónico)."
+    placeholder: "es. mai"
   - type: "match"
     instructions: "Empareja cada expresión con lo que realmente comunica."
     pairs:
@@ -61,9 +63,21 @@ exercises:
     answer: "prendere in giro"
     accepted: ["Prendere in giro"]
     hint: "Es una forma común de mostrar cariño entre amigos, no siempre hostilidad."
+    placeholder: "es. fare uno scherzo"
   - type: "order"
     sentence: "Ah sei puntualissimo come sempre"
     translation: "Ah, eres puntualísimo como siempre."
+vocabulary:
+  - term: "Complimenti"
+    translation: "felicidades (irónico)"
+  - term: "prendere in giro"
+    translation: "tomar el pelo"
+  - term: "tono plano"
+    translation: "tono neutro/sin énfasis"
+  - term: "puntualissimo"
+    translation: "puntualísimo"
+  - term: "ironia"
+    translation: "la ironía"
 ---
 
 Llegaste al nivel donde entender las palabras ya no es suficiente — necesitas

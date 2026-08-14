@@ -31,12 +31,14 @@ exercises:
     accepted: ["il"]
     hint: "Termina en -o: masculino, igual que en español."
     translation: "El libro está sobre la mesa."
+    placeholder: "La / Lo / L'"
   - type: "fill-blank"
     sentence: "___ studente studia italiano."
     answer: "Lo"
     accepted: ["lo"]
     hint: "Empieza con s+consonante ('st'): caso especial que activa 'lo' en vez de 'il'."
     translation: "El estudiante estudia italiano."
+    placeholder: "Il / La / L'"
   - type: "match"
     instructions: "Empareja cada palabra con su artículo correcto."
     pairs:
@@ -54,9 +56,23 @@ exercises:
     prompt: "Escribe el artículo indefinido correcto para 'amica' (una amiga)."
     answer: "un'"
     hint: "Femenino ante vocal: 'una' se convierte en 'un'' por elisión."
+    placeholder: "un / uno / una"
   - type: "order"
     sentence: "Lo studente legge il libro"
     translation: "El estudiante lee el libro."
+vocabulary:
+  - term: "il libro"
+    translation: "el libro"
+  - term: "la casa"
+    translation: "la casa"
+  - term: "lo studente"
+    translation: "el estudiante"
+  - term: "lo zaino"
+    translation: "la mochila"
+  - term: "l'amica"
+    translation: "la amiga"
+  - term: "il tavolo"
+    translation: "la mesa"
 ---
 
 Si hablas español, el género italiano te va a resultar el más intuitivo de todos los

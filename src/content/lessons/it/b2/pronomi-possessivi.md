@@ -31,12 +31,14 @@ exercises:
     accepted: ["il mio"]
     hint: "El pronombre posesivo mantiene siempre su artículo."
     translation: "Es mi libro. → Es el mío."
+    placeholder: "il tuo / la sua"
   - type: "fill-blank"
     sentence: "È la sua macchina. → È ___."
     answer: "la sua"
     accepted: ["la sua"]
     hint: "'macchina' es femenino singular: el pronombre debe concordar."
     translation: "Es su coche. → Es el suyo."
+    placeholder: "il mio / il nostro"
   - type: "match"
     instructions: "Empareja cada poseedor con su pronombre posesivo (masculino singular)."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "i nostri"
     accepted: ["I nostri"]
     hint: "Recuerda: masculino plural, poseedor 'noi'."
+    placeholder: "i miei / i tuoi"
   - type: "order"
     sentence: "Questo libro è il mio"
     translation: "Este libro es el mío."
+vocabulary:
+  - term: "il mio"
+    translation: "el mío"
+  - term: "la mia"
+    translation: "la mía"
+  - term: "il tuo"
+    translation: "el tuyo"
+  - term: "il suo"
+    translation: "el suyo"
+  - term: "il nostro"
+    translation: "el nuestro"
+  - term: "il vostro"
+    translation: "el vuestro"
 ---
 
 Estos pronombres reemplazan completamente un sustantivo poseído — manteniendo siempre

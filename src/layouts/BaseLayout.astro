@@ -96,7 +96,33 @@ const ogImage = new URL('/og-image.svg', Astro.site);
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(() => {});
+          navigator.serviceWorker.register('/sw.js').then((registration) => {
+            // El navegador solo revisa si hay un sw.js nuevo cada ~24h por su
+            // cuenta — por eso una PWA instalada podía quedar pegada a una
+            // versión vieja durante todo ese tiempo. Forzar la revisión en
+            // cada carga, y recargar una sola vez apenas el service worker
+            // nuevo toma el control (gracias a skipWaiting+clients.claim en
+            // sw.js), hace que la actualización sea automática sin tener que
+            // desinstalar ni esperar.
+            registration.update().catch(() => {});
+
+            // Una PWA "reabierta" desde el ícono no siempre dispara una carga
+            // nueva de página — en Android/Chrome, si el sistema mantuvo la
+            // app viva en segundo plano, volver a abrirla solo trae la
+            // pestaña existente al frente sin recargar nada, así que el
+            // 'load' de arriba nunca se vuelve a disparar. Revisar también
+            // cuando la pestaña vuelve a estar visible cubre ese caso.
+            document.addEventListener('visibilitychange', () => {
+              if (document.visibilityState === 'visible') registration.update().catch(() => {});
+            });
+
+            let refreshed = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+              if (refreshed) return;
+              refreshed = true;
+              window.location.reload();
+            });
+          }).catch(() => {});
         });
       }
     </script>

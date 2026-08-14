@@ -256,41 +256,60 @@ const vocabManifest = Object.fromEntries(
 
   .word-list-card {
     margin-bottom: 1.75rem;
+    padding: 1.5rem 1.5rem 0.5rem;
+    box-shadow: var(--shadow-card);
   }
 
   .eyebrow {
     display: block;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
     color: var(--accent-text);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.9rem;
   }
 
   .word-list {
-    display: grid;
-    gap: 0.6rem;
+    display: block;
     margin: 0;
     max-height: 420px;
     overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
   }
 
   .word-list :global(.word-item) {
     display: flex;
-    flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.4rem;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.15s ease;
+  }
+
+  .word-list :global(.word-item:last-child) {
+    border-bottom: none;
+  }
+
+  .word-list :global(.word-item:hover) {
+    background: var(--bg-elevated);
+    margin-inline: -0.5rem;
+    padding-inline: 0.5rem;
   }
 
   .word-list :global(dt) {
     font-weight: 700;
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .word-list :global(dd) {
     margin: 0;
+    flex-shrink: 0;
     color: var(--text-muted);
-  }
-
-  .word-list :global(dd::before) {
-    content: '— ';
+    font-size: 0.95rem;
+    text-align: right;
   }
 </style>

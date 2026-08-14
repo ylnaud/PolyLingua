@@ -137,7 +137,8 @@ import DailyGoal from './DailyGoal.astro';
   }
 
   @media (max-width: 480px) {
-    .actions :global(.install-btn) {
+    .actions :global(.install-btn),
+    .actions :global(.install-fallback) {
       display: none;
     }
   }

@@ -31,12 +31,14 @@ exercises:
     accepted: ["kraft"]
     hint: "Completa el Funktionsverbgefüge 'in Kraft treten' (entrar en vigor)."
     translation: "La nueva ley entra en vigor el 1 de enero."
+    placeholder: "Betracht"
   - type: "fill-blank"
     sentence: "Die Unterlagen ___ den Mitarbeitern zur Verfügung."
     answer: "stehen"
     accepted: ["Stehen"]
     hint: "'zur Verfügung stehen' significa 'estar disponible/a disposición'."
     translation: "Los documentos están a disposición de los empleados."
+    placeholder: "treten"
   - type: "match"
     instructions: "Empareja cada Funktionsverbgefüge con su significado."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Rücksicht nehmen auf"
     accepted: ["Rücksicht auf etwas nehmen", "Rücksicht nehmen"]
     hint: "verbo débil 'nehmen' + sustantivo 'Rücksicht' + preposición 'auf'."
+    placeholder: "Anwendung finden"
   - type: "order"
     sentence: "Die Regel tritt ab morgen in Kraft"
     translation: "La regla entra en vigor a partir de mañana."
+vocabulary:
+  - term: "in Kraft treten"
+    translation: "entrar en vigor"
+  - term: "zur Verfügung stehen"
+    translation: "estar disponible"
+  - term: "Anwendung finden"
+    translation: "aplicarse"
+  - term: "zum Ausdruck bringen"
+    translation: "expresar"
+  - term: "in Betracht ziehen"
+    translation: "considerar"
+  - term: "Rücksicht nehmen auf"
+    translation: "tener en cuenta"
 ---
 
 Este es uno de los rasgos más distintivos del alemán administrativo, legal y de

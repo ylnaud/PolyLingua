@@ -39,12 +39,14 @@ exercises:
     accepted: ["Down"]
     hint: "El pun sobre antigravedad juega con 'put down' = dejar de leer / soltar hacia abajo."
     translation: "Es imposible dejarlo (soltarlo hacia abajo)."
+    placeholder: "up"
   - type: "fill-blank"
     sentence: "Oh ___, another Monday."
     answer: "great"
     accepted: ["Great"]
     hint: "Dicho con tono plano tras un desastre, expresa justo lo contrario: sarcasmo."
     translation: "Ay, qué bien, otro lunes (dicho con sarcasmo)."
+    placeholder: "lovely"
   - type: "match"
     instructions: "Empareja el término de humor con su definición."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "put down"
     accepted: ["Put down"]
     hint: "Significa tanto 'dejar de leer' como 'soltar hacia abajo'."
+    placeholder: "dry humor"
   - type: "order"
     sentence: "Well that went well"
     translation: "Vaya, eso salió genial (dicho con sarcasmo tras un desastre)."
+vocabulary:
+  - term: "Pun"
+    translation: "juego de palabras"
+  - term: "Sarcasm"
+    translation: "sarcasmo"
+  - term: "Dry humor"
+    translation: "humor seco / impávido"
+  - term: "put down"
+    translation: "dejar de leer / soltar hacia abajo (doble sentido)"
+  - term: "Well, that went well."
+    translation: "Vaya, eso salió genial (dicho con sarcasmo)"
 ---
 
 Entender un chiste en otro idioma sin que alguien te lo explique es una de las

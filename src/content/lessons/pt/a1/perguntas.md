@@ -30,11 +30,13 @@ exercises:
     answer: "Onde"
     hint: "Palabra interrogativa que significa 'dónde'."
     translation: "¿Dónde vives?"
+    placeholder: "Quando"
   - type: "fill-blank"
     sentence: "___ custa isso?"
     answer: "Quanto"
     hint: "Palabra interrogativa que significa 'cuánto'."
     translation: "¿Cuánto cuesta esto?"
+    placeholder: "Como"
   - type: "match"
     instructions: "Empareja cada palabra interrogativa con su significado."
     pairs:
@@ -53,9 +55,23 @@ exercises:
     answer: "Qual é o seu nome?"
     accepted: ["qual é o seu nome?", "Qual é o seu nome"]
     hint: "qual + é + o seu nome."
+    placeholder: "Onde você mora?"
   - type: "order"
     sentence: "Quando você chega"
     translation: "¿Cuándo llegas?"
+vocabulary:
+  - term: "quem"
+    translation: "quién"
+  - term: "onde"
+    translation: "dónde"
+  - term: "quando"
+    translation: "cuándo"
+  - term: "como"
+    translation: "cómo"
+  - term: "qual"
+    translation: "cuál"
+  - term: "por que"
+    translation: "por qué"
 ---
 
 Formar preguntas es una de las primeras herramientas prácticas que necesitas para

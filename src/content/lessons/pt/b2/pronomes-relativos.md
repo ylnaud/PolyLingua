@@ -30,11 +30,13 @@ exercises:
     answer: "que"
     hint: "'que' es el pronombre relativo por defecto."
     translation: "Tengo un amigo que vive en Lisboa."
+    placeholder: "que / quem / onde"
   - type: "fill-blank"
     sentence: "Este é o autor ___ livro ganhou um prêmio."
     answer: "cujo"
     hint: "Concuerda con 'livro' (masculino), no con 'autor'."
     translation: "Este es el autor cuyo libro ganó un premio."
+    placeholder: "que / cuja / onde"
   - type: "match"
     instructions: "Empareja cada pronombre relativo con su uso."
     pairs:
@@ -50,9 +52,21 @@ exercises:
     prompt: "Escribe en portugués: 'La ciudad donde nací es bonita.'"
     answer: "A cidade onde eu nasci é linda."
     hint: "'onde' introduce el lugar."
+    placeholder: "A cidade onde + sujeito + verbo + adjetivo."
   - type: "order"
     sentence: "A mulher que fala é minha irmã"
     translation: "La mujer que habla es mi hermana."
+vocabulary:
+  - term: "que"
+    translation: "que"
+  - term: "quem"
+    translation: "quien"
+  - term: "cujo"
+    translation: "cuyo"
+  - term: "cuja"
+    translation: "cuya"
+  - term: "onde"
+    translation: "donde"
 ---
 
 Los pronombres relativos son la herramienta que separa el portugués de principiante

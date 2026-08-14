@@ -26,11 +26,13 @@ exercises:
     answer: "jamais"
     hint: "ne...jamais = nunca."
     translation: "Nunca como carne."
+    placeholder: "rien / personne / plus"
   - type: "fill-blank"
     sentence: "Je n'ai ___ de temps."
     answer: "plus"
     hint: "ne...plus = ya no."
     translation: "Ya no tengo tiempo."
+    placeholder: "jamais / rien"
   - type: "match"
     instructions: "Empareja cada negación con su significado."
     pairs:
@@ -48,9 +50,23 @@ exercises:
     prompt: "Escribe en francés 'No veo a nadie' usando ne...personne."
     answer: "Je ne vois personne."
     hint: "Con 'personne' no se añade 'pas': ya funciona como segunda parte de la negación."
+    placeholder: "Je ne vois rien."
   - type: "order"
     sentence: "Je ne mange jamais de viande"
     translation: "Nunca como carne."
+vocabulary:
+  - term: "ne...pas"
+    translation: "no"
+  - term: "ne...jamais"
+    translation: "nunca"
+  - term: "ne...rien"
+    translation: "nada"
+  - term: "ne...personne"
+    translation: "nadie"
+  - term: "ne...plus"
+    translation: "ya no"
+  - term: "ne...que"
+    translation: "solo (restricción)"
 ---
 
 Ya dominas "ne...pas". Ahora conoces al resto de la familia — todas siguen la misma

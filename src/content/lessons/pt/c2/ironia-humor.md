@@ -39,12 +39,14 @@ exercises:
     accepted: ["Lindo"]
     hint: "Ironía: se dice durante una tormenta, con tono claramente sarcástico."
     translation: "¡Qué día lindo! (dicho con ironía durante una tormenta)"
+    placeholder: "ótimo / incrível"
   - type: "fill-blank"
     sentence: "Eu quase ___ de rir!"
     answer: "morri"
     accepted: ["Morri"]
     hint: "Hipérbole/exageración típica del humor brasileño."
     translation: "¡Casi me muero de risa!"
+    placeholder: "chorei / desmaiei"
   - type: "match"
     instructions: "Empareja cada frase con el tipo de humor que representa."
     pairs:
@@ -61,9 +63,21 @@ exercises:
     answer: "Ah, claro, porque isso vai correr mesmo bem..."
     accepted: ["Ah, claro, porque isso vai correr mesmo bem"]
     hint: "Se dice lo contrario de lo que realmente se espera, con tono sarcástico."
+    placeholder: "Ah, claro, porque + frase irônica..."
   - type: "order"
     sentence: "Eu sou tão organizado que nem sei onde guardei minhas chaves"
     translation: "Soy tan organizado que ni sé dónde guardé mis llaves."
+vocabulary:
+  - term: "Que dia lindo!"
+    translation: "¡Qué día lindo! (dicho con ironía)"
+  - term: "morri de rir"
+    translation: "me morí de risa"
+  - term: "Ah, claro, porque isso vai correr mesmo bem..."
+    translation: "ah, claro, porque esto va a salir muy bien... (irónico)"
+  - term: "humor pastelão"
+    translation: "humor exagerado y físico"
+  - term: "autoirônico"
+    translation: "autoirónico"
 ---
 
 Reírte de un chiste en portugués —de verdad, sin traducción mental de por medio— es una

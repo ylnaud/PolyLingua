@@ -35,12 +35,14 @@ exercises:
     accepted: ["Wird"]
     hint: "Presente pasivo = werden conjugado + participio al final."
     translation: "El café es traído."
+    placeholder: "wurde / ist"
   - type: "fill-blank"
     sentence: "Die Suppe wird ___ Koch gekocht."
     answer: "vom"
     accepted: ["Vom"]
     hint: "'von' + dativo introduce al agente; von + dem se contrae en 'vom'."
     translation: "La sopa es cocinada por el cocinero."
+    placeholder: "von der"
   - type: "match"
     instructions: "Empareja cada tiempo verbal del Passiv con su forma."
     pairs:
@@ -57,9 +59,21 @@ exercises:
     answer: "wird"
     accepted: ["Wird"]
     hint: "werden conjugado en 3ª persona singular."
+    placeholder: "wurde / ist"
   - type: "order"
     sentence: "Das Haus wird gebaut"
     translation: "La casa está siendo construida."
+vocabulary:
+  - term: "der Kellner"
+    translation: "el mesero"
+  - term: "der Kaffee"
+    translation: "el café"
+  - term: "die Suppe"
+    translation: "la sopa"
+  - term: "der Koch"
+    translation: "el cocinero"
+  - term: "das Haus"
+    translation: "la casa"
 ---
 
 En español decimos "se vende la casa" sin decir quién la vende. El alemán hace lo mismo con

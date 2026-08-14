@@ -39,12 +39,14 @@ exercises:
     accepted: ["Decisione"]
     hint: "Nominalización del verbo 'decidere', típica del registro formal."
     translation: "La decisión del gobierno de aumentar los impuestos suscitó debates."
+    placeholder: "es. analisi"
   - type: "fill-blank"
     sentence: "Il progetto è complesso; ___, è stato completato in tempo."
     answer: "tuttavia"
     accepted: ["Tuttavia"]
     hint: "Conector formal equivalente a 'però' (pero/sin embargo)."
     translation: "El proyecto es complejo; sin embargo, se completó a tiempo."
+    placeholder: "es. inoltre"
   - type: "match"
     instructions: "Empareja cada verbo con su forma nominalizada (registro formal)."
     pairs:
@@ -61,9 +63,21 @@ exercises:
     answer: "l'analisi"
     accepted: ["l'analisi", "analisi", "L'analisi"]
     hint: "Compacta la idea de 'analizar' en un sustantivo abstracto."
+    placeholder: "es. l'aumento"
   - type: "order"
     sentence: "Il governo ha deciso di aumentare le tasse"
     translation: "El gobierno decidió aumentar los impuestos."
+vocabulary:
+  - term: "la decisione"
+    translation: "la decisión"
+  - term: "l'analisi"
+    translation: "el análisis"
+  - term: "l'aumento"
+    translation: "el aumento"
+  - term: "l'attuazione"
+    translation: "la implementación"
+  - term: "tuttavia"
+    translation: "sin embargo"
 ---
 
 Llegaste al último peldaño: escribir y hablar con el registro que encontrarás en un

@@ -27,12 +27,14 @@ exercises:
     accepted: ["Vorstellungsgespräch"]
     hint: "La entrevista de trabajo — artículo neutro (das)."
     translation: "Mañana tengo una entrevista de trabajo."
+    placeholder: "Gehalt"
   - type: "fill-blank"
     sentence: "Meine ___ heißt Anna."
     answer: "Kollegin"
     accepted: ["Kollegin"]
     hint: "Colega femenina: der Kollege → die Kollegin."
     translation: "Mi colega se llama Anna."
+    placeholder: "Chefin"
   - type: "match"
     instructions: "Empareja cada palabra del mundo laboral con su significado."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "die Ärztin"
     accepted: ["Ärztin", "die Ärztin"]
     hint: "Se añade el sufijo -in a la forma masculina."
+    placeholder: "die Lehrerin"
   - type: "order"
     sentence: "Ich arbeite als Lehrerin in einer Firma"
     translation: "Trabajo como profesora en una empresa."
+vocabulary:
+  - term: "die Bewerbung"
+    translation: "la solicitud"
+  - term: "der Lebenslauf"
+    translation: "el currículum"
+  - term: "das Gehalt"
+    translation: "el salario"
+  - term: "die Besprechung"
+    translation: "la reunión"
+  - term: "der Vertrag"
+    translation: "el contrato"
 ---
 
 Ya sea para hablar de tu trabajo actual, escribir una solicitud o prepararte para una

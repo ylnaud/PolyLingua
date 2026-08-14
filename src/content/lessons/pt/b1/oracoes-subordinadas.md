@@ -27,12 +27,14 @@ exercises:
     accepted: ["Porque"]
     hint: "'porque' introduce una causa directa y no exige subjuntivo."
     translation: "Me quedo en casa porque estoy enfermo."
+    placeholder: "já que"
   - type: "fill-blank"
     sentence: "Embora ___ cansado, ele continua trabalhando."
     answer: "esteja"
     accepted: []
     hint: "'embora' siempre exige subjuntivo: subjuntivo de estar para ele/ela es 'esteja'."
     translation: "Aunque esté cansado, él sigue trabajando."
+    placeholder: "seja / tenha"
   - type: "match"
     instructions: "Empareja cada conjunción con el modo verbal que exige."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Embora seja rico, é infeliz."
     accepted: []
     hint: "embora + subjuntivo de ser (seja)."
+    placeholder: "Embora tenha pouco tempo, ele estuda muito."
   - type: "order"
     sentence: "Falo devagar para que você entenda"
     translation: "Hablo despacio para que entiendas."
+vocabulary:
+  - term: "porque"
+    translation: "porque"
+  - term: "quando"
+    translation: "cuando"
+  - term: "já que"
+    translation: "ya que"
+  - term: "embora"
+    translation: "aunque"
+  - term: "para que"
+    translation: "para que"
+  - term: "antes que"
+    translation: "antes de que"
 ---
 
 En este nivel empiezas a construir frases más ricas: causa, contraste, tiempo. Buena

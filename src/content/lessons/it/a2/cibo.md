@@ -27,12 +27,14 @@ exercises:
     accepted: ["vorrei"]
     hint: "Forma educada de pedir: el condizionale de 'volere', mucho más natural que 'voglio'."
     translation: "Quisiera un café, por favor."
+    placeholder: "Voglio / Vorrei"
   - type: "fill-blank"
     sentence: "___ conto, per favore."
     answer: "Il"
     accepted: ["il"]
     hint: "'conto' es masculino: il conto."
     translation: "La cuenta, por favor."
+    placeholder: "Il / Lo / La"
   - type: "match"
     instructions: "Empareja cada palabra en italiano con su traducción."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Cosa mi consiglia?"
     accepted: ["Cosa mi consiglia"]
     hint: "Es la pregunta estándar para pedir una recomendación al camarero."
+    placeholder: "es. Cosa mi suggerisce?"
   - type: "order"
     sentence: "Vorrei un caffè per favore"
     translation: "Quisiera un café, por favor."
+vocabulary:
+  - term: "il pane"
+    translation: "el pan"
+  - term: "il formaggio"
+    translation: "el queso"
+  - term: "la mela"
+    translation: "la manzana"
+  - term: "l'acqua"
+    translation: "el agua"
+  - term: "vorrei"
+    translation: "quisiera"
+  - term: "il conto"
+    translation: "la cuenta"
 ---
 
 Ya sea en una trattoria, un bar o un mercato, este vocabulario es indispensable para

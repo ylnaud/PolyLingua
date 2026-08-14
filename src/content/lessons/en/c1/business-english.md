@@ -30,11 +30,13 @@ exercises:
     answer: "touch"
     hint: "Significa ponerse brevemente en contacto con alguien."
     translation: "Pongámonos en contacto brevemente la próxima semana para ver cómo va el proyecto."
+    placeholder: "follow"
   - type: "fill-blank"
     sentence: "I'm writing to ___ up on our previous conversation."
     answer: "follow"
     hint: "Significa dar seguimiento."
     translation: "Te escribo para dar seguimiento a nuestra conversación anterior."
+    placeholder: "touch"
   - type: "match"
     instructions: "Empareja cada término de negocios con su significado."
     pairs:
@@ -53,9 +55,21 @@ exercises:
     answer: "I see your point, but I have a different perspective."
     accepted: ["I see your point but I have a different perspective."]
     hint: "Reconoce el punto del otro antes de matizar tu desacuerdo."
+    placeholder: "I understand your view, but I'm not sure it's feasible."
   - type: "order"
     sentence: "We're on track to meet the deadline"
     translation: "Vamos por buen camino para cumplir el plazo."
+vocabulary:
+  - term: "stakeholder"
+    translation: "parte interesada"
+  - term: "deadline"
+    translation: "fecha límite"
+  - term: "to touch base"
+    translation: "ponerse en contacto brevemente"
+  - term: "to follow up"
+    translation: "dar seguimiento"
+  - term: "revenue"
+    translation: "ingresos"
 ---
 
 Este vocabulario te prepara para el registro específico del mundo corporativo

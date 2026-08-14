@@ -26,11 +26,13 @@ exercises:
     answer: "parli"
     hint: "Verbos en -are con 'tu' toman la terminación -i."
     translation: "Tú hablas italiano."
+    placeholder: "leggi"
   - type: "fill-blank"
     sentence: "Noi ___ un libro."
     answer: "leggiamo"
     hint: "-iamo es la terminación de 'noi' compartida por los tres grupos."
     translation: "Nosotros leemos un libro."
+    placeholder: "parliamo"
   - type: "match"
     instructions: "Empareja cada forma verbal con su traducción."
     pairs:
@@ -48,9 +50,23 @@ exercises:
     prompt: "Escribe la conjugación de 'dormire' con 'loro' (ellos)."
     answer: "dormono"
     hint: "Verbos en -ire con 'loro' terminan en -ono, igual que -ere."
+    placeholder: "leggono"
   - type: "order"
     sentence: "Io parlo italiano"
     translation: "Yo hablo italiano."
+vocabulary:
+  - term: "parlare"
+    translation: "hablar"
+  - term: "leggere"
+    translation: "leer"
+  - term: "dormire"
+    translation: "dormir"
+  - term: "essere"
+    translation: "ser / estar"
+  - term: "avere"
+    translation: "tener"
+  - term: "parliamo"
+    translation: "hablamos"
 ---
 
 El italiano organiza sus verbos en tres grupos según la terminación del infinitivo,

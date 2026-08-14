@@ -39,12 +39,14 @@ exercises:
     accepted: ["Mica"]
     hint: "Partícula que refuerza una negación de forma coloquial, casi como '¡para nada!'."
     translation: "No estoy nada cansado (¿eh?)."
+    placeholder: "es. affatto"
   - type: "fill-blank"
     sentence: "___, sbrigati!"
     answer: "Dai"
     accepted: ["dai"]
     hint: "Partícula de ánimo o insistencia, equivalente a '¡vamos!'."
     translation: "¡Vamos, date prisa!"
+    placeholder: "es. Su"
   - type: "match"
     instructions: "Empareja cada partícula coloquial con el matiz que aporta."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "magari"
     accepted: ["Magari"]
     hint: "Suele disparar el uso del congiuntivo en la frase que sigue."
+    placeholder: "es. speriamo"
   - type: "order"
     sentence: "Boh magari dai proviamo"
     translation: "No sé, ojalá, vamos, intentémoslo."
+vocabulary:
+  - term: "mica"
+    translation: "para nada (negación enfática)"
+  - term: "dai"
+    translation: "vamos/venga"
+  - term: "magari"
+    translation: "ojalá"
+  - term: "boh"
+    translation: "no sé"
+  - term: "insomma"
+    translation: "en fin / más o menos"
 ---
 
 Llegaste al nivel donde la gramática de manual ya no es el reto. El verdadero examen de

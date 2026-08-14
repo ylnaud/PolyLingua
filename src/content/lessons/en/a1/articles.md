@@ -31,12 +31,14 @@ exercises:
     accepted: ["An"]
     hint: "'apple' empieza con sonido vocálico, así que usamos 'an'."
     translation: "Tengo una manzana."
+    placeholder: "a dog"
   - type: "fill-blank"
     sentence: "___ sun is very bright today."
     answer: "The"
     accepted: ["the"]
     hint: "'the sun' es único en su tipo, por eso lleva artículo definido."
     translation: "El sol está muy brillante hoy."
+    placeholder: "A car"
   - type: "match"
     instructions: "Empareja cada palabra con el artículo indefinido correcto (a/an) según su sonido inicial."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "I saw a cat. The cat was black."
     accepted: ["I saw a cat, the cat was black."]
     hint: "Primera mención = a/an; segunda mención (ya específica) = the."
+    placeholder: "I have a dog. The dog is brown."
   - type: "order"
     sentence: "The cat was black"
     translation: "El gato era negro."
+vocabulary:
+  - term: "apple"
+    translation: "manzana"
+  - term: "hour"
+    translation: "hora"
+  - term: "university"
+    translation: "universidad"
+  - term: "hotel"
+    translation: "hotel"
+  - term: "dog"
+    translation: "perro"
 ---
 
 El español no tiene un artículo indefinido con dos formas — el inglés sí, y elegir

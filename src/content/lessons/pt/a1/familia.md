@@ -27,11 +27,13 @@ exercises:
     accepted: ["irma"]
     hint: "Hermana, con tilde nasal ã."
     translation: "Tengo dos hermanos y una hermana."
+    placeholder: "prima"
   - type: "fill-blank"
     sentence: "Meus ___ moram no Porto."
     answer: "avós"
     hint: "Abuelos, plural de avô/avó."
     translation: "Mis abuelos viven en Porto."
+    placeholder: "irmãos"
   - type: "match"
     instructions: "Empareja cada palabra en portugués con su traducción."
     pairs:
@@ -50,9 +52,23 @@ exercises:
     answer: "a filha"
     accepted: ["filha", "A filha"]
     hint: "Femenino de 'o filho'."
+    placeholder: "o filho"
   - type: "order"
     sentence: "Meus avós moram no Porto"
     translation: "Mis abuelos viven en Porto."
+vocabulary:
+  - term: "o pai"
+    translation: "el padre"
+  - term: "a mãe"
+    translation: "la madre"
+  - term: "o irmão"
+    translation: "el hermano"
+  - term: "a irmã"
+    translation: "la hermana"
+  - term: "os pais"
+    translation: "los padres (ambos)"
+  - term: "a filha"
+    translation: "la hija"
 ---
 
 El vocabulario de familia es fundamental desde el primer día — y el portugués tiene

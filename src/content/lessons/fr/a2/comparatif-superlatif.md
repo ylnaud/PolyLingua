@@ -26,11 +26,13 @@ exercises:
     answer: "plus"
     hint: "Comparativo de superioridad: plus + adjetivo + que."
     translation: "Él es más alto que yo."
+    placeholder: "moins"
   - type: "fill-blank"
     sentence: "Ce gâteau est ___ que l'autre."
     answer: "meilleur"
     hint: "'bon' es irregular en el comparativo: no se dice 'plus bon'."
     translation: "Este pastel es mejor que el otro."
+    placeholder: "pire"
   - type: "match"
     instructions: "Empareja cada forma positiva con su comparativo o equivalente."
     pairs:
@@ -50,9 +52,23 @@ exercises:
     accepted:
       - "Elle est moins timide que lui."
     hint: "Estructura: moins + adjetivo + que."
+    placeholder: "Il est plus grand que moi."
   - type: "order"
     sentence: "Paris est plus grand que Lyon"
     translation: "París es más grande que Lyon."
+vocabulary:
+  - term: "plus... que"
+    translation: "más... que"
+  - term: "moins... que"
+    translation: "menos... que"
+  - term: "aussi... que"
+    translation: "tan... como"
+  - term: "meilleur"
+    translation: "mejor (adjetivo)"
+  - term: "mieux"
+    translation: "mejor (adverbio)"
+  - term: "le pire"
+    translation: "el peor"
 ---
 
 Comparar en francés es sorprendentemente simple: casi siempre usas las mismas tres

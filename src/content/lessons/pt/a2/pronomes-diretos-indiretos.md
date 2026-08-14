@@ -30,11 +30,13 @@ exercises:
     answer: "o"
     hint: "Pronombre de objeto directo masculino singular, reemplaza 'o filme'."
     translation: "Lo veo (la película)."
+    placeholder: "a / os / as"
   - type: "fill-blank"
     sentence: "Eu ___ dou um presente."
     answer: "lhe"
     hint: "Pronombre de objeto indirecto: a él/a ella/a usted."
     translation: "Le doy un regalo."
+    placeholder: "me / nos / lhes"
   - type: "match"
     instructions: "Empareja cada pronombre sujeto con su pronombre de objeto directo correspondiente."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Eu a conheço"
     accepted: ["A conheço"]
     hint: "Pronombre de objeto directo femenino singular: a."
+    placeholder: "Eu o vejo"
   - type: "order"
     sentence: "Eu vi ela ontem"
     translation: "La vi ayer (forma hablada del portugués de Brasil)."
+vocabulary:
+  - term: "o / a"
+    translation: "lo / la (objeto directo)"
+  - term: "lhe"
+    translation: "le (objeto indirecto)"
+  - term: "me"
+    translation: "me"
+  - term: "nos"
+    translation: "nos"
+  - term: "os / as"
+    translation: "los / las (objeto directo)"
+  - term: "lhes"
+    translation: "les (objeto indirecto)"
 ---
 
 Los pronombres de objeto evitan repetir sustantivos ya mencionados — esenciales para

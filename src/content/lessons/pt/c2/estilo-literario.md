@@ -39,12 +39,14 @@ exercises:
     accepted: ["Partira"]
     hint: "Mais-que-perfeito simples de 'partir', marca de registro literário."
     translation: "Ella ya se había marchado cuando él llegó."
+    placeholder: "chegara / dissera"
   - type: "fill-blank"
     sentence: "O vento ___ entre as árvores."
     answer: "sussurrava"
     accepted: ["Sussurrava"]
     hint: "Personificação: dar una acción humana al viento."
     translation: "El viento susurraba entre los árboles."
+    placeholder: "soprava / gemia"
   - type: "match"
     instructions: "Empareja cada recurso literario con su ejemplo."
     pairs:
@@ -61,9 +63,21 @@ exercises:
     answer: "Ela partira quando ele chegou."
     accepted: ["Ela já partira quando ele chegou."]
     hint: "Sustituye 'tinha partido' por la forma simple 'partira'."
+    placeholder: "Ele chegara cedo."
   - type: "order"
     sentence: "Ela esperava como quem já não sabe mais o que é esperar"
     translation: "Ella esperaba como quien ya no sabe más qué es esperar."
+vocabulary:
+  - term: "partira"
+    translation: "se había marchado (registro literário)"
+  - term: "sussurrava"
+    translation: "susurraba"
+  - term: "tremiam"
+    translation: "temblaban"
+  - term: "personificação"
+    translation: "personificación"
+  - term: "mostrar, não dizer"
+    translation: "mostrar, no decir"
 ---
 
 Llegaste al registro más elevado y expresivo del portugués: el de la prosa literaria,

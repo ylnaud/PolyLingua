@@ -30,11 +30,13 @@ exercises:
     answer: "so"
     hint: "Alguien pregunta si lloverá; respondes afirmativamente sustituyendo toda la idea con una sola palabra."
     translation: "Creo que sí."
+    placeholder: "not"
   - type: "fill-blank"
     sentence: "Neither ___ I."
     answer: "do"
     hint: "Alguien dice que no le gusta el café; expresas acuerdo negativo — el auxiliar concuerda con el verbo principal like."
     translation: "Yo tampoco."
+    placeholder: "can"
   - type: "match"
     instructions: "Empareja cada palabra o estructura de sustitución con su función."
     pairs:
@@ -52,9 +54,21 @@ exercises:
     prompt: "Traduce usando sustitución con one: Estos zapatos son bonitos, pero prefiero los negros."
     answer: "These shoes are nice, but I prefer the black ones."
     hint: "Sustituye el sustantivo repetido (shoes) con ones."
+    placeholder: "I need a new one."
   - type: "order"
     sentence: "He asked me to leave and I did so immediately"
     translation: "Me pidió que me fuera y lo hice de inmediato."
+vocabulary:
+  - term: "so"
+    translation: "así (que sí)"
+  - term: "neither"
+    translation: "tampoco"
+  - term: "one / ones"
+    translation: "uno / unos (sustituto)"
+  - term: "do so"
+    translation: "hacerlo así"
+  - term: "I hope not"
+    translation: "espero que no"
 ---
 
 Este es uno de los rasgos más sutiles de un inglés verdaderamente fluido: evitar

@@ -39,12 +39,14 @@ exercises:
     accepted: ["Decisão"]
     hint: "Nominalización del verbo 'decidir', típica del registro formal."
     translation: "La decisión del gobierno de aumentar los impuestos generó debates."
+    placeholder: "a análise / o aumento"
   - type: "fill-blank"
     sentence: "O relatório vai ___ os resultados obtidos."
     answer: "demonstrar"
     accepted: ["evidenciar"]
     hint: "Forma formal de 'mostrar'."
     translation: "El informe va a demostrar los resultados obtenidos."
+    placeholder: "afirmar / sustentar"
   - type: "match"
     instructions: "Empareja cada conector o verbo cotidiano con su equivalente formal."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "implementação"
     accepted: ["a implementação"]
     hint: "Sigue el patrón analisar → análise, decidir → decisão."
+    placeholder: "a análise / o aumento"
   - type: "order"
     sentence: "O governo decidiu aumentar os impostos"
     translation: "El gobierno decidió aumentar los impuestos."
+vocabulary:
+  - term: "a decisão"
+    translation: "la decisión"
+  - term: "a análise"
+    translation: "el análisis"
+  - term: "contudo"
+    translation: "sin embargo"
+  - term: "consideravelmente"
+    translation: "considerablemente"
+  - term: "demonstrar"
+    translation: "demostrar"
 ---
 
 Llegaste al último peldaño: escribir y hablar con el registro que encontrarás en un

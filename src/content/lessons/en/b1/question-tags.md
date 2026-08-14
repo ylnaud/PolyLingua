@@ -27,12 +27,14 @@ exercises:
     accepted: ["don't you"]
     hint: "Frase afirmativa → tag negativo con 'do/don't'."
     translation: "Te gusta el café, ¿verdad?"
+    placeholder: "isn't it"
   - type: "fill-blank"
     sentence: "She isn't coming, ___?"
     answer: "is she"
     accepted: ["is she"]
     hint: "Frase negativa → tag afirmativo."
     translation: "Ella no viene, ¿verdad?"
+    placeholder: "aren't you"
   - type: "match"
     instructions: "Empareja cada frase con su question tag correcto."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "They came to the party, didn't they?"
     accepted: ["They came to the party, didn't they"]
     hint: "Frase afirmativa en pasado simple → tag con 'didn't'."
+    placeholder: "You can swim, can't you?"
   - type: "order"
     sentence: "You can swim can't you"
     translation: "Sabes nadar, ¿verdad?"
+vocabulary:
+  - term: "aren't you"
+    translation: "¿verdad? (tag negativo tras 'you're')"
+  - term: "isn't it"
+    translation: "¿verdad? (tag negativo tras 'it's')"
+  - term: "don't you"
+    translation: "¿verdad? (tag negativo en presente)"
+  - term: "didn't they"
+    translation: "¿verdad? (tag negativo en pasado)"
+  - term: "is she"
+    translation: "¿verdad? (tag afirmativo tras frase negativa)"
+  - term: "can't she"
+    translation: "¿verdad? (tag negativo con el modal 'can')"
 ---
 
 Los question tags son esas pequeñas preguntas al final de una frase que buscan

@@ -26,11 +26,13 @@ exercises:
     answer: "quinze"
     hint: "El número 15, que no se parece visualmente a 'cinco' como el español 'quince'."
     translation: "Tengo quince años de experiencia."
+    placeholder: "dez"
   - type: "fill-blank"
     sentence: "Isso custa ___ (100) euros."
     answer: "cem"
     hint: "100 en forma aislada, sin la 'o' final."
     translation: "Esto cuesta cien euros."
+    placeholder: "vinte"
   - type: "match"
     instructions: "Empareja cada número con su forma en portugués."
     pairs:
@@ -48,9 +50,23 @@ exercises:
     prompt: "Escribe en portugués el número 47."
     answer: "quarenta e sete"
     hint: "Decena + 'e' + unidad."
+    placeholder: "vinte e um"
   - type: "order"
     sentence: "Vinte e um mais dez"
     translation: "Veintiuno más diez."
+vocabulary:
+  - term: "zero"
+    translation: "cero"
+  - term: "dez"
+    translation: "diez"
+  - term: "quinze"
+    translation: "quince"
+  - term: "vinte e um"
+    translation: "veintiuno"
+  - term: "cem"
+    translation: "cien"
+  - term: "cento e dois"
+    translation: "ciento dos"
 ---
 
 Los números son la base práctica de cualquier idioma — los necesitas desde el primer día

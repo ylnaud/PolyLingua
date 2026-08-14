@@ -31,11 +31,13 @@ exercises:
     accepted: ["climate"]
     hint: "Cambio climático = 'climate change'."
     translation: "El cambio climático es el mayor desafío de nuestra generación."
+    placeholder: "Economic"
   - type: "fill-blank"
     sentence: "We need to invest more in ___ energy."
     answer: "renewable"
     hint: "Energía renovable, como la solar o la eólica."
     translation: "Necesitamos invertir más en energía renovable."
+    placeholder: "solar"
   - type: "match"
     instructions: "Empareja cada palabra en inglés con su traducción."
     pairs:
@@ -53,9 +55,21 @@ exercises:
     prompt: "Escribe en inglés la palabra para 'sostenibilidad'."
     answer: "sustainability"
     hint: "Muy común en inglés cotidiano de negocios y medio ambiente."
+    placeholder: "recycling"
   - type: "order"
     sentence: "The region has a tropical climate"
     translation: "La región tiene un clima tropical."
+vocabulary:
+  - term: "climate change"
+    translation: "cambio climático"
+  - term: "renewable energy"
+    translation: "energía renovable"
+  - term: "sustainability"
+    translation: "sostenibilidad"
+  - term: "pollution"
+    translation: "contaminación"
+  - term: "human rights"
+    translation: "derechos humanos"
 ---
 
 Este vocabulario te permite dar el salto de conversaciones cotidianas a discusiones

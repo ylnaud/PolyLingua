@@ -35,12 +35,14 @@ exercises:
     accepted: ["rossa"]
     hint: "La mayoría de los adjetivos, como los de color, van DESPUÉS del sustantivo."
     translation: "Tengo un coche rojo."
+    placeholder: "es. blu"
   - type: "fill-blank"
     sentence: "Marco è un ___ amico."
     answer: "vecchio"
     accepted: ["vecchio"]
     hint: "'vecchio' ANTES del sustantivo indica antigüedad de la relación, no edad física."
     translation: "Marco es un amigo de toda la vida."
+    placeholder: "es. buon"
   - type: "match"
     instructions: "Empareja cada expresión con su significado según la posición del adjetivo."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "una piccola casa"
     accepted: ["una piccola casa"]
     hint: "'piccolo' pertenece al grupo de adjetivos cortos y comunes que suelen ir antes del sustantivo."
+    placeholder: "es. un bel giardino"
   - type: "order"
     sentence: "Questa è una piccola casa"
     translation: "Esta es una casa pequeña."
+vocabulary:
+  - term: "macchina rossa"
+    translation: "coche rojo"
+  - term: "vecchio amico"
+    translation: "amigo de toda la vida"
+  - term: "piccola casa"
+    translation: "casa pequeña"
+  - term: "grande"
+    translation: "grande"
+  - term: "bel giardino"
+    translation: "lindo jardín"
+  - term: "buon ristorante"
+    translation: "buen restaurante"
 ---
 
 En español, mover un adjetivo antes o después del sustantivo suele ser solo un matiz

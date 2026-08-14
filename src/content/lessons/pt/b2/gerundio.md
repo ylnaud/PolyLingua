@@ -26,11 +26,13 @@ exercises:
     answer: "estudando"
     hint: "Gerundio: infinitivo - r + -ndo. Estudar → estudando."
     translation: "Estoy estudiando portugués."
+    placeholder: "falando / comendo / partindo"
   - type: "fill-blank"
     sentence: "Ela saiu ___."
     answer: "correndo"
     hint: "Correr → correndo, acción simultánea."
     translation: "Ella salió corriendo."
+    placeholder: "falando / rindo"
   - type: "match"
     instructions: "Empareja cada infinitivo con su gerundio correcto."
     pairs:
@@ -48,9 +50,21 @@ exercises:
     prompt: "Escribe cómo diría un hablante de Portugal 'Estoy estudiando portugués' (con 'a + infinitivo')."
     answer: "Estou a estudar português."
     hint: "Portugal prefiere 'estar a + infinitivo' en vez del gerundio."
+    placeholder: "Estou a + infinitivo."
   - type: "order"
     sentence: "Aprendi português conversando com nativos"
     translation: "Aprendí portugués conversando con nativos."
+vocabulary:
+  - term: "falando"
+    translation: "hablando"
+  - term: "comendo"
+    translation: "comiendo"
+  - term: "partindo"
+    translation: "partiendo"
+  - term: "correndo"
+    translation: "corriendo"
+  - term: "estou a estudar"
+    translation: "estoy estudiando (Portugal)"
 ---
 
 El gerundio portugués tiene el mismo uso básico que en español, pero con una diferencia

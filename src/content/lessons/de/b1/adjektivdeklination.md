@@ -31,12 +31,14 @@ exercises:
     accepted: ["gute"]
     hint: "Artículo definido, Nominativ masculino → terminación débil: -e."
     translation: "El hombre bueno bebe café."
+    placeholder: "kleine"
   - type: "fill-blank"
     sentence: "Ein ___ Mann steht dort."
     answer: "guter"
     accepted: ["guter"]
     hint: "Artículo indefinido, Nominativ masculino → el adjetivo aclara el género: -er."
     translation: "Un hombre bueno está parado ahí."
+    placeholder: "kleiner"
   - type: "match"
     instructions: "Empareja cada situación gramatical con la terminación correcta del adjetivo 'gut'."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "gute"
     accepted: ["Gute"]
     hint: "Artículo definido → terminación débil -e, también en femenino/neutro Nominativ."
+    placeholder: "kleine"
   - type: "order"
     sentence: "Der gute Mann trinkt heute Kaffee"
     translation: "El hombre bueno bebe café hoy."
+vocabulary:
+  - term: "der Mann"
+    translation: "el hombre"
+  - term: "die Frau"
+    translation: "la mujer"
+  - term: "das Kind"
+    translation: "el niño / la niña"
+  - term: "der Kaffee"
+    translation: "el café"
+  - term: "gut"
+    translation: "bueno / buena"
 ---
 
 Este es uno de los últimos retos estructurales del alemán intermedio: los adjetivos

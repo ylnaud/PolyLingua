@@ -30,12 +30,14 @@ exercises:
     answer: "where"
     hint: "Las preguntas con W-word conservan la palabra interrogativa, sin 'did'."
     translation: "Ella me preguntó dónde vivía."
+    placeholder: "what"
   - type: "fill-blank"
     sentence: "He asked ___ I was coming."
     answer: "if"
     accepted: ["whether"]
     hint: "Las preguntas de sí/no se reportan con 'if' o 'whether'."
     translation: "Él preguntó si yo venía."
+    placeholder: "that"
   - type: "match"
     instructions: "Empareja cada pregunta directa con su versión reportada."
     pairs:
@@ -52,9 +54,21 @@ exercises:
     answer: "He asked if I was tired."
     accepted: ["He asked whether I was tired."]
     hint: "Preguntas de sí/no: if/whether + orden normal (sujeto + verbo)."
+    placeholder: "She asked where I lived."
   - type: "order"
     sentence: "She asked where I lived"
     translation: "Ella preguntó dónde vivía yo."
+vocabulary:
+  - term: "where I lived"
+    translation: "dónde vivía (pregunta reportada con W-word)"
+  - term: "if I was coming"
+    translation: "si yo venía (pregunta reportada de sí/no)"
+  - term: "backshift"
+    translation: "retroceso de tiempos verbales"
+  - term: "ask"
+    translation: "preguntar"
+  - term: "wonder"
+    translation: "preguntarse"
 ---
 
 Ya sabes reportar afirmaciones. Reportar preguntas tiene su propia lógica: la

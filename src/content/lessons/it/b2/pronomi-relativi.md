@@ -27,12 +27,14 @@ exercises:
     accepted: ["che"]
     hint: "Función de sujeto: 'che' hace casi todo el trabajo en italiano."
     translation: "Tengo un amigo que vive en Roma."
+    placeholder: "che / cui"
   - type: "fill-blank"
     sentence: "È un argomento di ___ parlo spesso."
     answer: "cui"
     accepted: ["cui"]
     hint: "Hay una preposición (di) antes del pronombre: se usa 'cui', no 'che'."
     translation: "Es un tema del que hablo a menudo."
+    placeholder: "che / dove"
   - type: "match"
     instructions: "Empareja cada pronombre relativo con su uso."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "la ragione per cui"
     accepted: ["La ragione per cui"]
     hint: "Usa 'per' + el pronombre que va con preposiciones."
+    placeholder: "il libro di cui..."
   - type: "order"
     sentence: "Il film che ho visto era bellissimo"
     translation: "La película que vi era preciosa."
+vocabulary:
+  - term: "che"
+    translation: "que (sujeto u objeto directo)"
+  - term: "cui"
+    translation: "que / el cual (con preposición)"
+  - term: "il quale"
+    translation: "el cual (versión formal)"
+  - term: "dove"
+    translation: "donde"
+  - term: "per cui"
+    translation: "por la que / por lo cual"
 ---
 
 Los pronombres relativos son la herramienta que separa el italiano de principiante ("Ho

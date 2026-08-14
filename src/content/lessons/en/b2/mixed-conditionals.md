@@ -34,11 +34,13 @@ exercises:
     answer: "would be"
     hint: "Condición pasada + resultado presente: would + infinitivo, sin 'have'."
     translation: "Si hubiera estudiado medicina, sería doctor ahora."
+    placeholder: "would take"
   - type: "fill-blank"
     sentence: "If she weren't so shy, she ___ for the job."
     answer: "would have applied"
     hint: "Condición presente + resultado pasado: would have + participio."
     translation: "Si no fuera tan tímida, habría postulado al trabajo."
+    placeholder: "would have called"
   - type: "match"
     instructions: "Empareja cada frase con su tipo de condicional mixto."
     pairs:
@@ -54,9 +56,21 @@ exercises:
     prompt: "Escribe en inglés (condicional mixto pasado → presente): 'Si hubiera ahorrado más, tendría más dinero ahora.'"
     answer: "If I had saved more, I would have more money now."
     hint: "If + Past Perfect, would + infinitivo (sin 'have')."
+    placeholder: "If I had studied medicine, I would be a doctor now."
   - type: "order"
     sentence: "If I had known I would be there now"
     translation: "Si lo hubiera sabido, estaría allí ahora."
+vocabulary:
+  - term: "If I had studied medicine, I would be a doctor now."
+    translation: "Si hubiera estudiado medicina, sería doctor ahora."
+  - term: "If she weren't so shy, she would have applied for the job."
+    translation: "Si no fuera tan tímida, habría postulado al trabajo."
+  - term: "Past Perfect"
+    translation: "pluscuamperfecto (had + participio)"
+  - term: "would have + participio"
+    translation: "condicional perfecto (resultado en el pasado)"
+  - term: "would + infinitivo"
+    translation: "condicional simple (resultado en el presente)"
 ---
 
 Los condicionales mixtos combinan el Second y Third Conditional para reflejar cómo el

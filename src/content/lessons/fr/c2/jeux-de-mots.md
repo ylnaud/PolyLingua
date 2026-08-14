@@ -39,12 +39,14 @@ exercises:
     accepted: ["Calembour"]
     hint: "El término francés para 'pun' en inglés."
     translation: "Un juego de palabras basado en sonidos parecidos se llama un calembour."
+    placeholder: "jeu de mots"
   - type: "fill-blank"
     sentence: "Le feu est passé au ___."
     answer: "vert"
     accepted: ["Vert"]
     hint: "Homófono de 'ver', 'vers' y 'verre' — significa 'verde'."
     translation: "El semáforo se puso en verde."
+    placeholder: "ver / vers / verre"
   - type: "match"
     instructions: "Empareja cada homófono francés con su significado."
     pairs:
@@ -63,9 +65,23 @@ exercises:
     answer: "calembour"
     accepted: ["un calembour", "Calembour"]
     hint: "Empieza con 'cal-'."
+    placeholder: "un jeu de mots"
   - type: "order"
     sentence: "Les crabes ne prêtent pas d'argent"
     translation: "Los cangrejos no prestan dinero."
+vocabulary:
+  - term: "un calembour"
+    translation: "un juego de palabras"
+  - term: "ver"
+    translation: "gusano"
+  - term: "vert"
+    translation: "verde"
+  - term: "vers"
+    translation: "hacia"
+  - term: "verre"
+    translation: "vaso"
+  - term: "vair"
+    translation: "piel de ardilla"
 ---
 
 Reírte de un juego de palabras francés —sin que alguien te lo explique después— es

@@ -39,12 +39,14 @@ exercises:
     accepted: ["aprì"]
     hint: "Passato remoto de 'aprire' — marca el registro narrativo literario."
     translation: "Abrió la puerta y vio a un hombre."
+    placeholder: "es. Chiuse"
   - type: "fill-blank"
     sentence: "Il vento ___ tra gli alberi."
     answer: "sussurrava"
     accepted: ["Sussurrava"]
     hint: "Personificazione: el viento 'susurraba' como si fuera una persona."
     translation: "El viento susurraba entre los árboles."
+    placeholder: "es. soffiava"
   - type: "match"
     instructions: "Empareja cada frase con el recurso o técnica que representa."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "vide"
     accepted: ["Vide"]
     hint: "Es la forma de passato remoto del verbo 'vedere'."
+    placeholder: "es. disse"
   - type: "order"
     sentence: "Chiuse la porta con tale forza che le finestre tremarono"
     translation: "Cerró la puerta con tal fuerza que las ventanas temblaron."
+vocabulary:
+  - term: "passato remoto"
+    translation: "el pretérito remoto (tiempo verbal)"
+  - term: "personificazione"
+    translation: "la personificación"
+  - term: "immagine sensoriale"
+    translation: "la imagen sensorial"
+  - term: "ritmo ripetitivo"
+    translation: "el ritmo repetitivo"
+  - term: "mostrare, non dire"
+    translation: "mostrar, no decir"
 ---
 
 Llegaste al registro más elevado y expresivo del italiano: el de la prosa literaria,

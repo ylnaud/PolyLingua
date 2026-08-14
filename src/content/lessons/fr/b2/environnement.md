@@ -31,12 +31,14 @@ exercises:
     accepted: ["renouvelables"]
     hint: "Energías renovables — solar, eólica, etc."
     translation: "Hay que invertir más en energías renovables."
+    placeholder: "fossiles / nucléaires"
   - type: "fill-blank"
     sentence: "Cette région a un ___ tropical."
     answer: "climat"
     accepted: ["climat"]
     hint: "Patrón climático de una región a largo plazo, no 'le temps' (el tiempo de hoy)."
     translation: "Esta región tiene un clima tropical."
+    placeholder: "temps / météo"
   - type: "match"
     instructions: "Empareja cada término francés con su significado en español."
     pairs:
@@ -54,9 +56,23 @@ exercises:
     prompt: "Traduce al francés: 'El desarrollo sostenible debería ser una prioridad.'"
     answer: "Le développement durable devrait être une priorité."
     hint: "devrait être = debería ser (conditionnel de devoir + être)."
+    placeholder: "Sujet + devrait + être + attribut."
   - type: "order"
     sentence: "Le changement climatique est le plus grand défi de notre génération"
     translation: "El cambio climático es el mayor desafío de nuestra generación."
+vocabulary:
+  - term: "le changement climatique"
+    translation: "el cambio climático"
+  - term: "les énergies renouvelables"
+    translation: "las energías renovables"
+  - term: "le développement durable"
+    translation: "el desarrollo sostenible"
+  - term: "la pollution"
+    translation: "la contaminación"
+  - term: "le recyclage"
+    translation: "el reciclaje"
+  - term: "les gaz à effet de serre"
+    translation: "los gases de efecto invernadero"
 ---
 
 Este vocabulario te permite dar el salto de conversaciones cotidianas a discusiones

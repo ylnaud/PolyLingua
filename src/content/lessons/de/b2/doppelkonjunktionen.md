@@ -27,12 +27,14 @@ exercises:
     accepted: ["sowohl"]
     hint: "Pareja fija con 'als auch': tanto... como."
     translation: "Tanto él como ella vienen."
+    placeholder: "Entweder / Weder"
   - type: "fill-blank"
     sentence: "Ich habe weder Zeit ___ Lust."
     answer: "noch"
     accepted: ["Noch"]
     hint: "'weder... noch' es la negación doble: ni... ni."
     translation: "No tengo ni tiempo ni ganas."
+    placeholder: "oder"
   - type: "match"
     instructions: "Empareja cada conjunción doble con su significado."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "desto"
     accepted: ["Desto"]
     hint: "Es la segunda mitad fija de la construcción je... desto."
+    placeholder: "je"
   - type: "order"
     sentence: "Er ist nicht nur klug sondern auch nett"
     translation: "Él no solo es inteligente sino también amable."
+vocabulary:
+  - term: "sowohl... als auch"
+    translation: "tanto... como"
+  - term: "entweder... oder"
+    translation: "o... o"
+  - term: "weder... noch"
+    translation: "ni... ni"
+  - term: "je... desto"
+    translation: "cuanto más... más"
+  - term: "nicht nur... sondern auch"
+    translation: "no solo... sino también"
 ---
 
 Estas conjunciones vienen siempre en pareja y te permiten estructurar comparaciones,

@@ -34,11 +34,13 @@ exercises:
     answer: "is"
     hint: "Presente pasivo: be (conjugado) + participio."
     translation: "La comida es cocinada por el chef."
+    placeholder: "was"
   - type: "fill-blank"
     sentence: "The bridge ___ built in 1930."
     answer: "was"
     hint: "Pasado pasivo: was/were + participio."
     translation: "El puente fue construido en 1930."
+    placeholder: "is"
   - type: "match"
     instructions: "Empareja cada frase pasiva con su tiempo verbal."
     pairs:
@@ -54,9 +56,21 @@ exercises:
     prompt: "Escribe en voz pasiva (pasado): 'Shakespeare escribió esta obra.'"
     answer: "This play was written by Shakespeare."
     hint: "El objeto de la activa se vuelve sujeto; be + participio + by + agente."
+    placeholder: "The bridge was built in 1930."
   - type: "order"
     sentence: "My phone was stolen"
     translation: "Me robaron el teléfono."
+vocabulary:
+  - term: "is cooked"
+    translation: "es cocinado (presente pasivo)"
+  - term: "was built"
+    translation: "fue construido (pasado pasivo)"
+  - term: "has been written"
+    translation: "ha sido escrito (presente perfecto pasivo)"
+  - term: "will be written"
+    translation: "será escrito (futuro pasivo)"
+  - term: "by"
+    translation: "por (introduce al agente en la pasiva)"
 ---
 
 En inglés, la voz pasiva se usa muchísimo más que en español, especialmente en contextos

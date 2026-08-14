@@ -27,12 +27,14 @@ exercises:
     accepted: ["lo"]
     hint: "Reemplaza un objeto directo masculino singular, como 'il film'."
     translation: "Lo veo (el film)."
+    placeholder: "Lo / La / Li / Le"
   - type: "fill-blank"
     sentence: "___ parlo."
     answer: "Gli"
     accepted: ["gli"]
     hint: "'parlare a Marco' pide objeto indirecto: gli (a él)."
     translation: "Le hablo (a él)."
+    placeholder: "Gli / Le"
   - type: "match"
     instructions: "Empareja cada pronombre con lo que reemplaza."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "La vedo"
     accepted: ["la vedo"]
     hint: "'la' reemplaza un objeto directo femenino singular."
+    placeholder: "es. Lo vedo"
   - type: "order"
     sentence: "Non lo vedo"
     translation: "No lo veo."
+vocabulary:
+  - term: "lo"
+    translation: "lo (objeto directo masc. sing.)"
+  - term: "la"
+    translation: "la (objeto directo fem. sing.)"
+  - term: "li"
+    translation: "los (objeto directo masc. pl.)"
+  - term: "gli"
+    translation: "le / a él (objeto indirecto)"
+  - term: "parlo"
+    translation: "hablo"
+  - term: "vedo"
+    translation: "veo"
 ---
 
 Estos pronombres te permiten evitar repetir un sustantivo una y otra vez — la lógica

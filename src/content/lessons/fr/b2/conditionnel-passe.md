@@ -35,12 +35,14 @@ exercises:
     accepted: ["aurais"]
     hint: "avoir en Conditionnel présent, 1ª persona: aurais."
     translation: "Me habría gustado viajar más."
+    placeholder: "auriez"
   - type: "fill-blank"
     sentence: "Si j'avais su, je ___ venu plus tôt."
     answer: "serais"
     accepted: ["serais"]
     hint: "être en Conditionnel présent, 1ª persona: serais (venir usa être como auxiliar)."
     translation: "Si hubiera sabido, habría venido antes."
+    placeholder: "serait"
   - type: "match"
     instructions: "Empareja cada inicio de frase con su continuación correcta."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "J'aurais préparé quelque chose."
     accepted: ["j'aurais préparé quelque chose", "j'aurais préparé quelque chose."]
     hint: "avoir en Conditionnel présent + participe passé de préparer."
+    placeholder: "Tu aurais fini le projet."
   - type: "order"
     sentence: "Si j'avais su que tu venais j'aurais préparé quelque chose"
     translation: "Si hubiera sabido que venías, habría preparado algo."
+vocabulary:
+  - term: "aurais"
+    translation: "habría (auxiliar avoir, condicional)"
+  - term: "serais"
+    translation: "habría/sería (auxiliar être, condicional)"
+  - term: "j'aurais dû"
+    translation: "debería haber"
+  - term: "si j'avais su"
+    translation: "si hubiera sabido"
+  - term: "j'aurais aimé"
+    translation: "me habría gustado"
+  - term: "quelque chose"
+    translation: "algo"
 ---
 
 Este condicional te permite reflexionar sobre un pasado que ya no se puede cambiar —

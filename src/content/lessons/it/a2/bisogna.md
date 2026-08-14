@@ -27,12 +27,14 @@ exercises:
     accepted: ["bisogna"]
     hint: "Expresión impersonal para obligación general, sin sujeto específico, seguida de infinitivo."
     translation: "Hay que comer para vivir."
+    placeholder: "bisogna / ci vuole / ci vogliono"
   - type: "fill-blank"
     sentence: "Bisogna che tu ___ adesso."
     answer: "parta"
     accepted: ["parta"]
     hint: "'bisogna che' + sujeto específico exige el congiuntivo del verbo 'partire'."
     translation: "Tienes que irte ahora."
+    placeholder: "es. vada, arrivi..."
   - type: "match"
     instructions: "Empareja cada expresión impersonal con su significado."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Ci vogliono due ore"
     accepted: ["ci vogliono due ore"]
     hint: "'ci vogliono' se usa cuando lo que se necesita es plural."
+    placeholder: "es. Ci vuole un'ora"
   - type: "order"
     sentence: "Bisogna essere pazienti"
     translation: "Hay que ser paciente."
+vocabulary:
+  - term: "bisogna"
+    translation: "hay que / hace falta"
+  - term: "ci vuole"
+    translation: "se necesita (singular)"
+  - term: "ci vogliono"
+    translation: "se necesitan (plural)"
+  - term: "è importante"
+    translation: "es importante"
+  - term: "è necessario"
+    translation: "es necesario"
+  - term: "è meglio"
+    translation: "es mejor"
 ---
 
 Estas expresiones impersonales son extremadamente comunes en italiano cotidiano —

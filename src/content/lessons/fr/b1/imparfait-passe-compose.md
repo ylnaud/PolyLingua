@@ -30,11 +30,13 @@ exercises:
     answer: "pleuvait"
     hint: "Imparfait para describir el fondo/estado continuo."
     translation: "Llovía cuando llegué."
+    placeholder: "faisait"
   - type: "fill-blank"
     sentence: "Je ___ (regarder) la télé quand le téléphone a sonné."
     answer: "regardais"
     hint: "Imparfait: acción de fondo interrumpida por el passé composé."
     translation: "Miraba la tele cuando sonó el teléfono."
+    placeholder: "jouais"
   - type: "match"
     instructions: "Empareja cada frase con el uso del tiempo verbal que ilustra."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Quand j'étais petit, je jouais tous les jours."
     accepted: ["Quand j'étais petite, je jouais tous les jours."]
     hint: "'étais' y 'jouais' van en imparfait."
+    placeholder: "Quand j'étais jeune, je lisais tous les jours."
   - type: "order"
     sentence: "Je lisais quand tu as appelé"
     translation: "Yo leía cuando llamaste."
+vocabulary:
+  - term: "il pleuvait"
+    translation: "llovía"
+  - term: "il faisait beau"
+    translation: "hacía buen tiempo"
+  - term: "je jouais"
+    translation: "yo jugaba"
+  - term: "j'ai visité"
+    translation: "visité"
+  - term: "le téléphone a sonné"
+    translation: "el teléfono sonó"
+  - term: "je lisais"
+    translation: "yo leía"
 ---
 
 Este es, para muchos hispanohablantes, el reto número uno del francés intermedio: elegir

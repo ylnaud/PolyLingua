@@ -39,12 +39,14 @@ exercises:
     accepted: ["Doch"]
     hint: "Partícula que añade énfasis o leve contradicción."
     translation: "¡Pero si tú lo sabes!"
+    placeholder: "ja"
   - type: "fill-blank"
     sentence: "Wie geht's dir ___?"
     answer: "denn"
     accepted: ["Denn"]
     hint: "Partícula que añade curiosidad genuina en preguntas."
     translation: "¿Y bien, cómo estás?"
+    placeholder: "eigentlich"
   - type: "match"
     instructions: "Empareja cada partícula modal con su efecto en la frase."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "mal"
     accepted: ["Mal"]
     hint: "Suaviza órdenes y peticiones, dándoles un tono relajado."
+    placeholder: "doch"
   - type: "order"
     sentence: "Komm doch mal her"
     translation: "¡Ven aquí, anda! (mezcla contradicción suave y casualidad en una sola frase)."
+vocabulary:
+  - term: "doch"
+    translation: "de todos modos / claro que sí (partícula de énfasis)"
+  - term: "ja"
+    translation: "ya sabes / es obvio (partícula)"
+  - term: "mal"
+    translation: "un momento / anda (partícula que suaviza)"
+  - term: "halt"
+    translation: "así es no más (partícula de resignación)"
+  - term: "denn"
+    translation: "pues (partícula de curiosidad en preguntas)"
 ---
 
 Llegaste al nivel donde la gramática "de manual" ya no es el reto. El verdadero examen de

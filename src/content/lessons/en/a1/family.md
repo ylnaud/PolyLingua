@@ -27,12 +27,14 @@ exercises:
     accepted: ["Siblings"]
     hint: "Palabra colectiva para hermanos y hermanas juntos, sin especificar género."
     translation: "Tengo dos hermanos: un hermano y una hermana."
+    placeholder: "cousins"
   - type: "fill-blank"
     sentence: "My ___'s name is Ana."
     answer: "mother"
     accepted: ["Mother"]
     hint: "La persona que te dio a luz."
     translation: "Mi madre se llama Ana."
+    placeholder: "father"
   - type: "match"
     instructions: "Empareja cada palabra de familia con su traducción."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "My brother is 20 years old."
     accepted: ["My brother is twenty years old."]
     hint: "Recuerda: con 'my brother' (he) el verbo 'to be' es 'is'."
+    placeholder: "My sister is 18 years old."
   - type: "order"
     sentence: "I have two siblings"
     translation: "Tengo dos hermanos."
+vocabulary:
+  - term: "family"
+    translation: "familia"
+  - term: "parents"
+    translation: "padres"
+  - term: "siblings"
+    translation: "hermanos (colectivo)"
+  - term: "grandparents"
+    translation: "abuelos"
+  - term: "aunt"
+    translation: "tía"
+  - term: "cousin"
+    translation: "primo/a"
 ---
 
 Hablar de tu familia es una de las primeras conversaciones naturales en cualquier

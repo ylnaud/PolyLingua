@@ -26,11 +26,13 @@ exercises:
     answer: "Sono"
     hint: "Plural para todas las horas, excepto la una."
     translation: "Son las dos."
+    placeholder: "È"
   - type: "fill-blank"
     sentence: "___ l'una."
     answer: "È"
     hint: "Singular, excepción con la una."
     translation: "Es la una."
+    placeholder: "Sono"
   - type: "match"
     instructions: "Empareja cada expresión con su significado."
     pairs:
@@ -49,9 +51,23 @@ exercises:
     answer: "Che ora è?"
     accepted: ["Che ora è"]
     hint: "También se puede decir 'Che ore sono?'."
+    placeholder: "Che ore sono?"
   - type: "order"
     sentence: "Sono le due e mezza"
     translation: "Son las dos y media."
+vocabulary:
+  - term: "Che ora è?"
+    translation: "¿Qué hora es?"
+  - term: "e un quarto"
+    translation: "y cuarto"
+  - term: "e mezza"
+    translation: "y media"
+  - term: "meno un quarto"
+    translation: "menos cuarto"
+  - term: "mezzogiorno"
+    translation: "mediodía"
+  - term: "mezzanotte"
+    translation: "medianoche"
 ---
 
 Decir la hora en italiano te resultará muy familiar si vienes del español — la lógica

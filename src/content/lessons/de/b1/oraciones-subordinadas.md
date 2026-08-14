@@ -31,12 +31,14 @@ exercises:
     accepted: ["weil"]
     hint: "'weil' (porque) introduce una subordinada y manda el verbo al final."
     translation: "Me quedo en casa porque estoy enfermo."
+    placeholder: "obwohl"
   - type: "fill-blank"
     sentence: "Ich glaube, ___ er recht hat."
     answer: "dass"
     accepted: ["dass"]
     hint: "'dass' (que) introduce una subordinada con el verbo al final."
     translation: "Creo que él tiene razón."
+    placeholder: "wenn"
   - type: "match"
     instructions: "Empareja cada conjunción subordinante con su significado."
     pairs:
@@ -53,9 +55,21 @@ exercises:
     answer: "bleibe"
     accepted: ["bleibe"]
     hint: "Cuando la subordinada va primero, el verbo principal salta a la primera posición tras la coma."
+    placeholder: "gehe"
   - type: "order"
     sentence: "Wenn es regnet, bleibe ich zu Hause"
     translation: "Si llueve, me quedo en casa."
+vocabulary:
+  - term: "weil"
+    translation: "porque"
+  - term: "dass"
+    translation: "que"
+  - term: "obwohl"
+    translation: "aunque"
+  - term: "wenn"
+    translation: "si / cuando"
+  - term: "krank"
+    translation: "enfermo / enferma"
 ---
 
 Hasta ahora tus frases probablemente son cortas y directas. En este nivel empiezas a

@@ -31,12 +31,14 @@ exercises:
     accepted: ["merito"]
     hint: "Fórmula fija de correo formal: 'le scrivo in merito a' (le escribo con respecto a)."
     translation: "Le escribo con respecto a..."
+    placeholder: "riferimento"
   - type: "fill-blank"
     sentence: "Il fatturato è aumentato del 15% rispetto al trimestre ___."
     answer: "scorso"
     accepted: ["scorso"]
     hint: "'el trimestre pasado' — trimestre scorso."
     translation: "La facturación aumentó un 15% respecto al trimestre pasado."
+    placeholder: "prossimo"
   - type: "match"
     instructions: "Empareja cada término de negocios en italiano con su significado en español."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Capisco il suo punto di vista, ma ho una prospettiva diversa."
     accepted: ["Capisco il suo punto di vista, ma ho una prospettiva diversa"]
     hint: "Empieza reconociendo el punto del otro antes de contrastar con 'ma'."
+    placeholder: "È un'idea interessante, tuttavia non sono sicuro."
   - type: "order"
     sentence: "Siamo in linea per rispettare la scadenza"
     translation: "Estamos en camino de cumplir con la fecha límite."
+vocabulary:
+  - term: "la scadenza"
+    translation: "la fecha límite"
+  - term: "dare seguito a"
+    translation: "dar seguimiento a"
+  - term: "licenziare qualcuno"
+    translation: "despedir a alguien"
+  - term: "il fatturato"
+    translation: "los ingresos/facturación"
+  - term: "fare il punto della situazione"
+    translation: "hacer un balance/evaluación"
+  - term: "la parte interessata"
+    translation: "la parte interesada"
 ---
 
 Este vocabulario te prepara para el registro específico del mundo corporativo

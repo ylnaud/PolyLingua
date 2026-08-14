@@ -27,12 +27,14 @@ exercises:
     accepted: ["ne"]
     hint: "La primera mitad del sándwich, justo antes del verbo."
     translation: "No hablo francés."
+    placeholder: "n'"
   - type: "fill-blank"
     sentence: "Il ___ habite pas ici."
     answer: "n'"
     accepted: ["n'", "n’"]
     hint: "'ne' se contrae a n' antes de una 'h' muda."
     translation: "Él no vive aquí."
+    placeholder: "ne"
   - type: "match"
     instructions: "Empareja cada negación con su significado."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "Je n'aime pas le café"
     accepted: ["Je n'aime pas le café", "Je n’aime pas le café"]
     hint: "'ne' se contrae ante el verbo que empieza con vocal."
+    placeholder: "Il n'habite pas ici"
   - type: "order"
     sentence: "Je ne mange jamais de viande"
     translation: "Nunca como carne."
+vocabulary:
+  - term: "ne...pas"
+    translation: "no"
+  - term: "ne...jamais"
+    translation: "nunca"
+  - term: "ne...rien"
+    translation: "nada"
+  - term: "ne...plus"
+    translation: "ya no"
+  - term: "ne...personne"
+    translation: "nadie"
 ---
 
 Negar una frase en francés requiere dos palabras que "envuelven" al verbo — una

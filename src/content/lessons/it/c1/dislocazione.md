@@ -39,12 +39,14 @@ exercises:
     accepted: ["È", "E'"]
     hint: "La frase scissa siempre empieza con 'è' + elemento enfatizado + che."
     translation: "Fue Marco quien llamó."
+    placeholder: "È / Sono"
   - type: "fill-blank"
     sentence: "È questo libro ___ amo."
     answer: "che"
     accepted: ["che"]
     hint: "El italiano usa 'che' tanto para sujeto como para objeto en esta estructura."
     translation: "Es este libro el que amo."
+    placeholder: "che / chi"
   - type: "match"
     instructions: "Empareja qué elemento se enfatiza en cada frase scissa (a partir de 'Paolo ha comprato quella macchina ieri')."
     pairs:
@@ -61,9 +63,23 @@ exercises:
     answer: "Non sono io che ho detto questo."
     accepted: ["Non sono io che ho detto questo"]
     hint: "Usa la estructura è/sono + [elemento] + che para corregir un malentendido."
+    placeholder: "È Marco che ha parlato."
   - type: "order"
     sentence: "È quella macchina che Paolo ha comprato ieri"
     translation: "Fue ese coche el que Paolo compró ayer."
+vocabulary:
+  - term: "frase scissa"
+    translation: "oración escindida (cleft sentence)"
+  - term: "quello che"
+    translation: "lo que"
+  - term: "ciò che"
+    translation: "lo que (variante)"
+  - term: "È questo libro che amo"
+    translation: "Es este libro el que amo"
+  - term: "Non sono io che ho detto questo"
+    translation: "No fui yo quien dijo esto"
+  - term: "tempo libero"
+    translation: "tiempo libre"
 ---
 
 La dislocazione (o frase scissa) es la herramienta italiana para poner el foco

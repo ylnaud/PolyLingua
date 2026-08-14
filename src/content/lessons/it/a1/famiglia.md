@@ -26,11 +26,13 @@ exercises:
     answer: "fratelli"
     hint: "Forma colectiva/masculina plural de 'hermano'."
     translation: "Tengo dos hermanos y una hermana."
+    placeholder: "cugini"
   - type: "fill-blank"
     sentence: "Mia ___ si chiama Anna."
     answer: "madre"
     hint: "Con familiares singulares el artículo desaparece."
     translation: "Mi madre se llama Anna."
+    placeholder: "sorella"
   - type: "match"
     instructions: "Empareja cada palabra en italiano con su traducción."
     pairs:
@@ -48,9 +50,23 @@ exercises:
     prompt: "Escribe cómo se dice 'los padres' en italiano."
     answer: "i genitori"
     hint: "Plural, sin distinguir género natural."
+    placeholder: "i nonni"
   - type: "order"
     sentence: "Mio fratello ha vent'anni"
     translation: "Mi hermano tiene veinte años."
+vocabulary:
+  - term: "il padre"
+    translation: "el padre"
+  - term: "la madre"
+    translation: "la madre"
+  - term: "i genitori"
+    translation: "los padres"
+  - term: "il fratello"
+    translation: "el hermano"
+  - term: "la sorella"
+    translation: "la hermana"
+  - term: "lo zio"
+    translation: "el tío"
 ---
 
 Presentar a tu familia en italiano será una de tus primeras conversaciones fáciles —

@@ -35,12 +35,14 @@ exercises:
     accepted: ["sois"]
     hint: "'il faut que' siempre exige subjonctif; subjonctif de 'être' para 'je' es 'sois'."
     translation: "Hay que llegar a tiempo."
+    placeholder: "aille"
   - type: "fill-blank"
     sentence: "Bien qu'il ___, je sors. (pleuvoir)"
     answer: "pleuve"
     accepted: ["pleuve"]
     hint: "'bien que' es una conjunción que siempre exige subjonctif."
     translation: "Aunque llueva, salgo."
+    placeholder: "vienne"
   - type: "match"
     instructions: "Empareja cada disparador del subjonctif con la frase que lo usa correctamente."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Je ne pense pas qu'il ait raison."
     accepted: ["Je ne pense pas qu'il ait raison"]
     hint: "Negar una opinión activa el subjonctif: que + sujeto + ait + raison."
+    placeholder: "Je doute qu'elle vienne demain."
   - type: "order"
     sentence: "Il faut que tu sois à l'heure"
     translation: "Hay que llegar a tiempo."
+vocabulary:
+  - term: "vouloir que"
+    translation: "querer que"
+  - term: "avoir peur que"
+    translation: "tener miedo de que"
+  - term: "douter que"
+    translation: "dudar que"
+  - term: "il faut que"
+    translation: "hay que / es necesario que"
+  - term: "bien que"
+    translation: "aunque"
 ---
 
 El subjonctif tiene fama de ser el gran obstáculo del francés — pero en realidad se

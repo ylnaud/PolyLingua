@@ -27,12 +27,14 @@ exercises:
     accepted: ["Faster"]
     hint: "'fast' es corto (1 sílaba): añade '-er'."
     translation: "Este carro es más rápido que ese."
+    placeholder: "taller"
   - type: "fill-blank"
     sentence: "This is the ___ interesting book I've read."
     answer: "most"
     accepted: ["Most"]
     hint: "'interesting' es largo (3+ sílabas): usa 'the most' en vez de una terminación."
     translation: "Este es el libro más interesante que he leído."
+    placeholder: "least"
   - type: "match"
     instructions: "Empareja cada adjetivo con su superlativo correcto."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "happier"
     accepted: ["Happier"]
     hint: "Termina en -y: cambia a '-ier'."
+    placeholder: "easier"
   - type: "order"
     sentence: "This book is more interesting than that one"
     translation: "Este libro es más interesante que aquel."
+vocabulary:
+  - term: "taller"
+    translation: "más alto"
+  - term: "faster"
+    translation: "más rápido"
+  - term: "the fastest"
+    translation: "el más rápido"
+  - term: "more interesting"
+    translation: "más interesante"
+  - term: "the most interesting"
+    translation: "el más interesante"
+  - term: "the best"
+    translation: "el mejor"
 ---
 
 Comparar cosas es una herramienta conversacional esencial, y el inglés decide entre dos

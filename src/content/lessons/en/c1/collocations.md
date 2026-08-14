@@ -30,11 +30,13 @@ exercises:
     answer: "make"
     hint: "Colocación fija: make a decision."
     translation: "Necesito tomar una decisión para mañana."
+    placeholder: "take"
   - type: "fill-blank"
     sentence: "Could you ___ me a favor?"
     answer: "do"
     hint: "Colocación fija: do a favor, distinta de make a decision."
     translation: "¿Podrías hacerme un favor?"
+    placeholder: "make"
   - type: "match"
     instructions: "Empareja cada verbo con el sustantivo con el que forma una colocación fija."
     pairs:
@@ -52,9 +54,21 @@ exercises:
     prompt: "Escribe la colocación completa en inglés para llegar a una conclusión (verbo + a conclusion)."
     answer: "reach a conclusion"
     hint: "El verbo no es make ni do — piensa en llegar."
+    placeholder: "break a record"
   - type: "order"
     sentence: "You need to make an effort"
     translation: "Necesitas hacer un esfuerzo."
+vocabulary:
+  - term: "make a decision"
+    translation: "tomar una decisión"
+  - term: "do a favor"
+    translation: "hacer un favor"
+  - term: "take a risk"
+    translation: "correr un riesgo"
+  - term: "pay attention"
+    translation: "prestar atención"
+  - term: "reach a conclusion"
+    translation: "llegar a una conclusión"
 ---
 
 Las colocaciones son el verdadero examen de vocabulario avanzado: combinaciones de

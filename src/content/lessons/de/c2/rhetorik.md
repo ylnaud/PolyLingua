@@ -35,12 +35,14 @@ exercises:
     accepted: ["zeit"]
     hint: "Metáfora clásica que compara dos conceptos sin usar 'wie' (como)."
     translation: "El tiempo es dinero."
+    placeholder: "Wissen"
   - type: "fill-blank"
     sentence: "Das dauert eine ___!"
     answer: "Ewigkeit"
     accepted: ["ewigkeit"]
     hint: "Übertreibung (exageración) para dar énfasis: literalmente 'una eternidad'."
     translation: "¡Eso dura una eternidad!"
+    placeholder: "Stunde"
   - type: "match"
     instructions: "Empareja cada figura retórica con lo que hace."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Alliteration"
     accepted: ["alliteration"]
     hint: "Mismo concepto que la 'aliteración' en español."
+    placeholder: "Metapher"
   - type: "order"
     sentence: "Wer würde das nicht wollen"
     translation: "¿Quién no querría eso? (pregunta retórica)"
+vocabulary:
+  - term: "die Metapher"
+    translation: "la metáfora"
+  - term: "die rhetorische Frage"
+    translation: "la pregunta retórica"
+  - term: "die Anapher"
+    translation: "la anáfora"
+  - term: "die Übertreibung"
+    translation: "la exageración"
+  - term: "die Alliteration"
+    translation: "la aliteración"
 ---
 
 Llegaste al último tramo: las herramientas que transforman un alemán correcto en un

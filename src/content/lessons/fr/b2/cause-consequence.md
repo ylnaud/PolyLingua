@@ -31,12 +31,14 @@ exercises:
     accepted: ["Car"]
     hint: "Razón formal, conecta dos ideas ya presentadas por escrito."
     translation: "Tuvo éxito, porque trabajó mucho."
+    placeholder: "parce que"
   - type: "fill-blank"
     sentence: "___ tu es là, aide-moi."
     answer: "Puisque"
     accepted: ["puisque"]
     hint: "Se usa cuando la razón ya es obvia o conocida por el oyente."
     translation: "Ya que estás aquí, ayúdame."
+    placeholder: "Comme"
   - type: "match"
     instructions: "Empareja cada conector con su matiz o función."
     pairs:
@@ -54,9 +56,23 @@ exercises:
     prompt: "Traduce al francés: 'Llueve, por lo tanto me quedo en casa.'"
     answer: "Il pleut, donc je reste à la maison."
     hint: "'donc' introduce la consecuencia lógica de lo dicho antes."
+    placeholder: "Elle est malade, donc elle reste au lit."
   - type: "order"
     sentence: "Le projet a été retardé car l'équipe manquait de ressources"
     translation: "El proyecto se retrasó porque al equipo le faltaban recursos."
+vocabulary:
+  - term: "parce que"
+    translation: "porque"
+  - term: "car"
+    translation: "porque/pues (formal)"
+  - term: "puisque"
+    translation: "ya que"
+  - term: "donc"
+    translation: "por lo tanto"
+  - term: "c'est pourquoi"
+    translation: "por eso"
+  - term: "comme"
+    translation: "como (causal, al inicio de frase)"
 ---
 
 Estos conectores te permiten estructurar argumentos causales con precisión — la

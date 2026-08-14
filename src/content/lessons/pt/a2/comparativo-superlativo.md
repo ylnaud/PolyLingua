@@ -26,11 +26,13 @@ exercises:
     answer: "do que"
     hint: "Comparativo de superioridad en portugués estándar, no solo 'que'."
     translation: "Ella es más alta que yo."
+    placeholder: "que / do que"
   - type: "fill-blank"
     sentence: "Este café é ___ do que aquele."
     answer: "melhor"
     hint: "Forma comparativa irregular de 'bom'."
     translation: "Este café es mejor que aquel."
+    placeholder: "pior / maior / menor"
   - type: "match"
     instructions: "Empareja cada adjetivo con su forma comparativa irregular."
     pairs:
@@ -47,9 +49,23 @@ exercises:
     answer: "Ela é tão inteligente quanto o irmão"
     accepted: ["Ela é tão inteligente como o irmão"]
     hint: "Usa la estructura tão... quanto/como."
+    placeholder: "Ela é tão alta quanto o irmão"
   - type: "order"
     sentence: "Ela é a mais rápida da equipe"
     translation: "Ella es la más rápida del equipo."
+vocabulary:
+  - term: "mais alto do que"
+    translation: "más alto que"
+  - term: "melhor"
+    translation: "mejor"
+  - term: "pior"
+    translation: "peor"
+  - term: "maior"
+    translation: "mayor / más grande"
+  - term: "menor"
+    translation: "menor / más pequeño"
+  - term: "tão inteligente quanto"
+    translation: "tan inteligente como"
 ---
 
 Comparar es una función comunicativa esencial — y el portugués tiene su propia lógica,

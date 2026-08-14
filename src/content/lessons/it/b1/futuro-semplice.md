@@ -27,12 +27,14 @@ exercises:
     accepted: ["Parlerò"]
     hint: "Futuro de 'parlare' con 'io' — recuerda el cambio de vocal 'a' a 'e'."
     translation: "Mañana hablaré con Marco."
+    placeholder: "parlerò / parlerai / parlerà"
   - type: "fill-blank"
     sentence: "Lui ___ tardi, ormai."
     answer: "sarà"
     accepted: ["Sarà"]
     hint: "Futuro irregular de 'essere' (raíz sar-), usado aquí como suposición sobre el presente."
     translation: "Ya debe ser tarde."
+    placeholder: "sarà / sarò / sarai"
   - type: "match"
     instructions: "Empareja cada pronombre con la forma correcta del futuro de 'parlare'."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "andrò"
     accepted: ["Andrò"]
     hint: "Irregular: la raíz cambia a 'andr-'."
+    placeholder: "andrò / andrai / andrà"
   - type: "order"
     sentence: "Domani io parlerò con il capo"
     translation: "Mañana hablaré con el jefe."
+vocabulary:
+  - term: "parlerò"
+    translation: "hablaré"
+  - term: "sarà"
+    translation: "será / estará"
+  - term: "andrò"
+    translation: "iré"
+  - term: "avrò"
+    translation: "tendré"
+  - term: "farò"
+    translation: "haré"
+  - term: "potrò"
+    translation: "podré"
 ---
 
 El futuro semplice es el futuro "formal" del italiano — el que aparece en promesas,

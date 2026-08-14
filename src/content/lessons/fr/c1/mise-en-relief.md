@@ -39,12 +39,14 @@ exercises:
     accepted: ["qui"]
     hint: "'Paul' es el sujeto del verbo que sigue, así que se usa 'qui'."
     translation: "Fue Paul quien ganó."
+    placeholder: "que"
   - type: "fill-blank"
     sentence: "C'est ce livre ___ je préfère."
     answer: "que"
     accepted: ["que"]
     hint: "'ce livre' es el objeto de 'préfère', así que se usa 'que'."
     translation: "Es este libro el que prefiero."
+    placeholder: "qui"
   - type: "match"
     instructions: "Empareja cada frase base con su versión en mise en relief que enfatiza el elemento indicado."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "Ce n'est pas l'argent qui compte, c'est l'expérience."
     accepted: ["Ce n'est pas l'argent qui compte, c'est l'experience."]
     hint: "'l'argent' es el sujeto de 'compte', así que va con 'qui'."
+    placeholder: "Ce n'est pas le temps qui manque, c'est la motivation."
   - type: "order"
     sentence: "C'est Marie qui a téléphoné"
     translation: "Fue Marie quien llamó."
+vocabulary:
+  - term: "qui"
+    translation: "quien (para el sujeto enfatizado)"
+  - term: "que"
+    translation: "que (para el objeto enfatizado)"
+  - term: "C'est Paul qui a gagné."
+    translation: "Fue Paul quien ganó."
+  - term: "Ce qui m'intéresse, c'est la musique."
+    translation: "Lo que me interesa es la música."
+  - term: "Ce que je veux, c'est du temps libre."
+    translation: "Lo que quiero es tiempo libre."
 ---
 
 La mise en relief es la herramienta francesa para poner el foco exactamente donde tú

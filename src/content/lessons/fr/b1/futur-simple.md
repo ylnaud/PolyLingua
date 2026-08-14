@@ -30,11 +30,13 @@ exercises:
     answer: "parlerai"
     hint: "Infinitivo + terminación -ai para 'je'."
     translation: "Mañana hablaré con ella."
+    placeholder: "finirai"
   - type: "fill-blank"
     sentence: "Un jour, il ___ (voir) la mer."
     answer: "verra"
     hint: "'voir' es irregular en el futuro: raíz verr-."
     translation: "Un día, él verá el mar."
+    placeholder: "sera"
   - type: "match"
     instructions: "Empareja cada infinitivo con su forma de futur simple (je)."
     pairs:
@@ -52,9 +54,23 @@ exercises:
     prompt: "Escribe en francés 'Terminaré mañana' usando el futur simple de 'finir'."
     answer: "Je finirai demain."
     hint: "finir + terminación -ai para 'je'."
+    placeholder: "Je parlerai demain."
   - type: "order"
     sentence: "Un jour je partirai vivre à l'étranger"
     translation: "Un día, me iré a vivir al extranjero."
+vocabulary:
+  - term: "je parlerai"
+    translation: "hablaré"
+  - term: "je finirai"
+    translation: "terminaré"
+  - term: "je serai"
+    translation: "seré"
+  - term: "j'aurai"
+    translation: "tendré"
+  - term: "j'irai"
+    translation: "iré"
+  - term: "je ferai"
+    translation: "haré"
 ---
 
 El futur simple es el futuro "formal" del francés — el que aparece en promesas

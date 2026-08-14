@@ -30,11 +30,13 @@ exercises:
     answer: "Non"
     hint: "La negación va siempre justo antes del verbo conjugado."
     translation: "No hablo italiano."
+    placeholder: "Mai"
   - type: "fill-blank"
     sentence: "Non ho ___."
     answer: "fame"
     hint: "Lo opuesto de 'Ho fame' (tengo hambre)."
     translation: "No tengo hambre."
+    placeholder: "sete"
   - type: "match"
     instructions: "Empareja cada negación compuesta con su significado."
     pairs:
@@ -50,9 +52,21 @@ exercises:
     prompt: "Escribe cómo dirías 'No es verdad' en italiano."
     answer: "Non è vero"
     hint: "non + verbo essere (è) + vero."
+    placeholder: "Non ho fame"
   - type: "order"
     sentence: "Non mangio mai carne"
     translation: "Nunca como carne."
+vocabulary:
+  - term: "non"
+    translation: "no"
+  - term: "non... mai"
+    translation: "nunca"
+  - term: "non... niente"
+    translation: "nada"
+  - term: "non... più"
+    translation: "ya no"
+  - term: "non... nessuno"
+    translation: "nadie"
 ---
 
 Negar en italiano es, de los cinco idiomas del curso, la estructura más simple de

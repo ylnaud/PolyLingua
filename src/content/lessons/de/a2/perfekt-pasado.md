@@ -35,12 +35,14 @@ exercises:
     accepted: ["gegessen"]
     hint: "'essen' es irregular: ge- + raíz cambiada + -en."
     translation: "Ayer comí pizza."
+    placeholder: "gemacht"
   - type: "fill-blank"
     sentence: "Er ___ gestern ins Kino gegangen."
     answer: "ist"
     accepted: ["ist"]
     hint: "'gehen' usa 'sein' como auxiliar, no 'haben'."
     translation: "Ayer él fue al cine."
+    placeholder: "hat"
   - type: "match"
     instructions: "Empareja cada infinitivo con su participio en Perfekt."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "gegangen"
     accepted: ["gegangen"]
     hint: "Verbo de movimiento con 'sein': ich bin gegangen."
+    placeholder: "studiert"
   - type: "order"
     sentence: "Wir haben Fußball gespielt"
     translation: "Jugamos fútbol."
+vocabulary:
+  - term: "machen"
+    translation: "hacer"
+  - term: "essen"
+    translation: "comer"
+  - term: "studieren"
+    translation: "estudiar"
+  - term: "gehen"
+    translation: "ir"
+  - term: "fahren"
+    translation: "conducir / viajar"
+  - term: "kommen"
+    translation: "venir"
 ---
 
 Cuando un alemán te cuenta qué hizo el fin de semana, casi nunca usa el pasado simple

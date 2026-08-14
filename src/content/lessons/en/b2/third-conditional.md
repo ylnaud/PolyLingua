@@ -34,12 +34,14 @@ exercises:
     answer: "had"
     hint: "Third Conditional: if + Past Perfect (had + participio)."
     translation: "Si lo hubiera sabido, te habría llamado."
+    placeholder: "have"
   - type: "fill-blank"
     sentence: "If she had left earlier, she ___ have missed the train."
     answer: "wouldn't"
     accepted: ["would not"]
     hint: "El resultado describe lo opuesto a lo que realmente pasó: sí perdió el tren."
     translation: "Si hubiera salido antes, no habría perdido el tren."
+    placeholder: "would"
   - type: "match"
     instructions: "Empareja cada condicional con su uso."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     prompt: "Escribe en inglés (Third Conditional): 'Si hubiera estudiado, habría aprobado.'"
     answer: "If I had studied, I would have passed."
     hint: "If + Past Perfect, would have + participio."
+    placeholder: "If I had known, I would have helped."
   - type: "order"
     sentence: "If I had known you were coming I would have cleaned the house"
     translation: "Si hubiera sabido que venías, habría limpiado la casa."
+vocabulary:
+  - term: "had known"
+    translation: "había sabido (Past Perfect)"
+  - term: "would have called"
+    translation: "habría llamado (condicional perfecto)"
+  - term: "Past Perfect"
+    translation: "pluscuamperfecto"
+  - term: "If I had studied, I would have passed the exam."
+    translation: "Si hubiera estudiado, habría aprobado el examen."
+  - term: "might have"
+    translation: "podría haber (posibilidad en el pasado)"
 ---
 
 Este condicional te permite reflexionar sobre un pasado que ya no se puede cambiar —

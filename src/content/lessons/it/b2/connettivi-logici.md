@@ -31,12 +31,14 @@ exercises:
     accepted: ["Tuttavia", "tuttavia"]
     hint: "Marca contraste con lo dicho antes, en registro formal."
     translation: "Fracasó. Sin embargo, no se rinde."
+    placeholder: "Tuttavia / Però"
   - type: "fill-blank"
     sentence: "Il prodotto è economico. ___, è affidabile."
     answer: "Inoltre"
     accepted: ["Inoltre", "inoltre"]
     hint: "Añade un punto adicional que refuerza el argumento anterior."
     translation: "El producto es económico. Además, es fiable."
+    placeholder: "Inoltre / Per di più"
   - type: "match"
     instructions: "Empareja cada conector con su función en un argumento."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "di conseguenza"
     accepted: ["Di conseguenza"]
     hint: "Dos palabras, típico de textos formales."
+    placeholder: "di + parola"
   - type: "order"
     sentence: "Ha studiato molto di conseguenza ha superato l'esame"
     translation: "Estudió mucho; en consecuencia, aprobó el examen."
+vocabulary:
+  - term: "tuttavia"
+    translation: "sin embargo (formal)"
+  - term: "inoltre"
+    translation: "además"
+  - term: "di conseguenza"
+    translation: "en consecuencia"
+  - term: "per esempio"
+    translation: "por ejemplo"
+  - term: "però"
+    translation: "pero (neutral, muy usado en el habla)"
 ---
 
 Estos conectores son la señal más clara de un italiano escrito y hablado con

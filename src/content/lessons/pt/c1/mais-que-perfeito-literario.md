@@ -31,12 +31,14 @@ exercises:
     accepted: ["partira"]
     hint: "Pretérito mais-que-perfeito simples de 'partir' (registro literário), equivalente a 'tinha partido'."
     translation: "Cuando él llegó, ella ya se había marchado."
+    placeholder: "falara"
   - type: "fill-blank"
     sentence: "Eu ___ com ela antes."
     answer: "falara"
     accepted: ["falara"]
     hint: "Forma literaria de 'eu tinha falado', en una sola palabra."
     translation: "Yo había hablado con ella antes."
+    placeholder: "chegara"
   - type: "match"
     instructions: "Empareja cada forma compuesta (habla cotidiana) con su equivalente literario en una sola palabra."
     pairs:
@@ -53,9 +55,21 @@ exercises:
     answer: "partira"
     accepted: ["partira", "ela partira"]
     hint: "3ª persona plural del pretérito perfeito 'partiram', quitar '-ram', añadir terminación."
+    placeholder: "fizera"
   - type: "order"
     sentence: "Quando ele chegou ela já partira"
     translation: "Cuando él llegó, ella ya se había marchado."
+vocabulary:
+  - term: "falara"
+    translation: "había hablado"
+  - term: "fizera"
+    translation: "había hecho"
+  - term: "partira"
+    translation: "se había marchado"
+  - term: "chegara"
+    translation: "había llegado"
+  - term: "tinha falado"
+    translation: "había hablado (forma compuesta)"
 ---
 
 Este es uno de los tiempos verbales más elegantes y menos usados del portugués

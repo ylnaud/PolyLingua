@@ -27,12 +27,14 @@ exercises:
     accepted: ["Drinks"]
     hint: "Con he/she/it el verbo suma una 's' al final."
     translation: "Ella toma café cada mañana."
+    placeholder: "likes"
   - type: "fill-blank"
     sentence: "___ you work on Mondays?"
     answer: "Do"
     accepted: ["do"]
     hint: "Las preguntas en Simple Present necesitan el auxiliar 'do' (excepto con 'to be')."
     translation: "¿Trabajas los lunes?"
+    placeholder: "Does"
   - type: "match"
     instructions: "Empareja cada pronombre con la forma correcta del verbo 'work'."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "He doesn't like coffee."
     accepted: ["He does not like coffee."]
     hint: "Con 'does' el verbo principal pierde su 's'."
+    placeholder: "She doesn't drink tea."
   - type: "order"
     sentence: "The train leaves at nine"
     translation: "El tren sale a las nueve."
+vocabulary:
+  - term: "work"
+    translation: "trabajar"
+  - term: "works"
+    translation: "trabaja (con he/she/it)"
+  - term: "drink"
+    translation: "beber / tomar"
+  - term: "likes"
+    translation: "le gusta"
+  - term: "leaves"
+    translation: "sale / parte"
 ---
 
 El Simple Present es el tiempo verbal que más vas a usar: rutinas, horarios, hechos y

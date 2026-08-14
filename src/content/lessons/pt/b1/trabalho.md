@@ -27,12 +27,14 @@ exercises:
     accepted: ["Procurando"]
     hint: "'procurar' significa buscar en este contexto."
     translation: "Estoy buscando trabajo."
+    placeholder: "trabalhando"
   - type: "fill-blank"
     sentence: "Quais são as minhas ___?"
     answer: "responsabilidades"
     accepted: ["Responsabilidades"]
     hint: "Vocabulario típico de una entrevista de trabajo."
     translation: "¿Cuáles son mis responsabilidades?"
+    placeholder: "tarefas"
   - type: "match"
     instructions: "Empareja cada palabra en portugués con su traducción al español."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Eu tenho experiência em..."
     accepted: ["Tenho experiência em..."]
     hint: "'tenho' es la forma de 'eu' del verbo ter."
+    placeholder: "Eu trabalho como..."
   - type: "order"
     sentence: "Estou disponível para começar imediatamente"
     translation: "Estoy disponible para empezar de inmediato."
+vocabulary:
+  - term: "o emprego"
+    translation: "el empleo"
+  - term: "o currículo"
+    translation: "el currículum"
+  - term: "a vaga"
+    translation: "la vacante"
+  - term: "o chefe"
+    translation: "el jefe"
+  - term: "o prazo"
+    translation: "el plazo"
+  - term: "o colega de trabalho"
+    translation: "el compañero de trabajo"
 ---
 
 El vocabulario profesional es esencial si planeas trabajar, estudiar o hacer negocios

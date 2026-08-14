@@ -26,11 +26,13 @@ exercises:
     answer: "carbono"
     hint: "Vocabulario ambiental esencial."
     translation: "Es urgente reducir las emisiones de carbono."
+    placeholder: "carbono / poluição"
   - type: "fill-blank"
     sentence: "O ___ na Amazônia preocupa cientistas do mundo todo."
     answer: "desmatamento"
     hint: "Significa 'deforestación'."
     translation: "La deforestación en la Amazonía preocupa a científicos de todo el mundo."
+    placeholder: "aquecimento global / desmatamento"
   - type: "match"
     instructions: "Empareja cada término ambiental con su traducción."
     pairs:
@@ -48,9 +50,23 @@ exercises:
     prompt: "Escribe en portugués: 'Necesitamos invertir en energías renovables.'"
     answer: "Precisamos investir em energias renováveis."
     hint: "'as energias renováveis' = las energías renovables."
+    placeholder: "Precisamos + infinitivo + em + sustantivo."
   - type: "order"
     sentence: "A mudança climática já afeta o planeta inteiro"
     translation: "El cambio climático ya afecta a todo el planeta."
+vocabulary:
+  - term: "o meio ambiente"
+    translation: "el medio ambiente"
+  - term: "a mudança climática"
+    translation: "el cambio climático"
+  - term: "o desmatamento"
+    translation: "la deforestación"
+  - term: "a poluição"
+    translation: "la contaminación"
+  - term: "as energias renováveis"
+    translation: "las energías renovables"
+  - term: "a sustentabilidade"
+    translation: "la sustentabilidad"
 ---
 
 El vocabulario ambiental es cada vez más relevante en cualquier idioma — y en

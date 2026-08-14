@@ -26,11 +26,13 @@ exercises:
     answer: "vou"
     hint: "Conjugación de 'ir' para 'eu' en presente."
     translation: "Voy a estudiar mañana."
+    placeholder: "vais / vai / vamos / vão"
   - type: "fill-blank"
     sentence: "Nós ___ viajar na semana que vem."
     answer: "vamos"
     hint: "Conjugación de 'ir' para 'nós' en presente."
     translation: "Vamos a viajar la semana que viene."
+    placeholder: "vou / vais / vai / vão"
   - type: "match"
     instructions: "Empareja cada pronombre con la forma correcta de 'ir' en presente."
     pairs:
@@ -48,9 +50,23 @@ exercises:
     prompt: "Escribe en portugués 'Van a llegar' (eles), usando futuro próximo."
     answer: "Eles vão chegar"
     hint: "Conjugación de 'ir' para 'eles' es 'vão'."
+    placeholder: "Nós vamos comer"
   - type: "order"
     sentence: "Amanhã eu vou trabalhar"
     translation: "Mañana voy a trabajar."
+vocabulary:
+  - term: "vou"
+    translation: "voy"
+  - term: "vais"
+    translation: "vas"
+  - term: "vai"
+    translation: "va"
+  - term: "vamos"
+    translation: "vamos"
+  - term: "vão"
+    translation: "van"
+  - term: "amanhã"
+    translation: "mañana"
 ---
 
 El futuro próximo es, en la práctica, la forma de futuro que más vas a escuchar y usar

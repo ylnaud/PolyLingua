@@ -31,12 +31,14 @@ exercises:
     accepted: ["used to"]
     hint: "Hábito pasado, ya no vigente."
     translation: "Solía tocar la guitarra cuando era joven."
+    placeholder: "use to"
   - type: "fill-blank"
     sentence: "I didn't ___ smoke."
     answer: "use to"
     accepted: ["use to"]
     hint: "En negativo, 'used' pierde la 'd' porque 'did' ya carga el pasado."
     translation: "No solía fumar."
+    placeholder: "used to"
   - type: "match"
     instructions: "Empareja cada tipo de frase con su forma correcta."
     pairs:
@@ -53,9 +55,21 @@ exercises:
     answer: "She used to be shy."
     accepted: ["She used to be shy"]
     hint: "used to + infinitivo, sin cambios en el verbo."
+    placeholder: "I used to play the guitar."
   - type: "order"
     sentence: "I used to live in Paris"
     translation: "Solía vivir en París."
+vocabulary:
+  - term: "used to"
+    translation: "solía (hábito pasado)"
+  - term: "use to"
+    translation: "solía (forma en negativo/pregunta, sin 'd')"
+  - term: "be used to"
+    translation: "estar acostumbrado a"
+  - term: "didn't use to smoke"
+    translation: "no solía fumar"
+  - term: "did you use to smoke"
+    translation: "¿solías fumar?"
 ---
 
 "used to" es una estructura especial —ni Present ni Past Simple normal— diseñada

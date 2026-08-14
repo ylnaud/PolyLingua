@@ -31,12 +31,14 @@ exercises:
     accepted: ["gern"]
     hint: "'gern' va después del verbo conjugado."
     translation: "Me gusta mucho nadar."
+    placeholder: "nicht"
   - type: "fill-blank"
     sentence: "Was machst du in ___ Freizeit?"
     answer: "deiner"
     accepted: ["deiner"]
     hint: "Posesivo en Dativ femenino: deiner Freizeit."
     translation: "¿Qué haces en tu tiempo libre?"
+    placeholder: "meiner / seiner"
   - type: "match"
     instructions: "Empareja cada actividad con su traducción."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Hobby"
     accepted: ["hobby", "das Hobby"]
     hint: "das Hobby, como muchas palabras internacionales."
+    placeholder: "das Beispiel"
   - type: "order"
     sentence: "Ich gehe gern ins Kino"
     translation: "Me gusta ir al cine."
+vocabulary:
+  - term: "lesen"
+    translation: "leer"
+  - term: "Sport machen"
+    translation: "hacer deporte"
+  - term: "schwimmen"
+    translation: "nadar"
+  - term: "kochen"
+    translation: "cocinar"
+  - term: "Musik hören"
+    translation: "escuchar música"
+  - term: "ins Kino gehen"
+    translation: "ir al cine"
 ---
 
 Hablar de tus pasatiempos es una de las conversaciones más naturales para hacer amigos

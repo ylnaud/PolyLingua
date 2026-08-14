@@ -39,12 +39,14 @@ exercises:
     accepted: ["Dorme"]
     hint: "Literalmente 'quien duerme no atrapa peces' — equivale a 'a quien madruga, Dios le ayuda'."
     translation: "Quien duerme no atrapa peces."
+    placeholder: "es. lavora"
   - type: "fill-blank"
     sentence: "Non è tutto oro quel che ___."
     answer: "luccica"
     accepted: ["Luccica"]
     hint: "Verbo 'relucir' — este refrán es casi idéntico en español."
     translation: "No es todo oro lo que reluce."
+    placeholder: "es. brilla"
   - type: "match"
     instructions: "Empareja cada refrán italiano con su equivalente en español."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "Chi la fa l'aspetti"
     accepted: ["Chi la fa l'aspetti."]
     hint: "Literalmente: 'quien la hace, que la espere'."
+    placeholder: "es. Chi cerca trova"
   - type: "order"
     sentence: "Chi trova un amico trova un tesoro"
     translation: "Quien encuentra un amigo encuentra un tesoro."
+vocabulary:
+  - term: "Chi dorme non piglia pesci"
+    translation: "quien duerme no atrapa peces"
+  - term: "Non è tutto oro quel che luccica"
+    translation: "no es oro todo lo que reluce"
+  - term: "Chi trova un amico trova un tesoro"
+    translation: "quien encuentra un amigo encuentra un tesoro"
+  - term: "Meglio soli che male accompagnati"
+    translation: "mejor solo que mal acompañado"
+  - term: "Chi la fa l'aspetti"
+    translation: "quien la hace, la paga"
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

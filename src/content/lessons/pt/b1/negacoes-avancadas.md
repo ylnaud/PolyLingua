@@ -27,12 +27,14 @@ exercises:
     accepted: ["Nem"]
     hint: "'nem' añade una segunda negación: ni/tampoco."
     translation: "No bebo, ni fumo."
+    placeholder: "tampouco"
   - type: "fill-blank"
     sentence: "___ tentei consertar."
     answer: "Nem sequer"
     accepted: ["nem sequer"]
     hint: "'nem sequer' significa 'ni siquiera'."
     translation: "Ni siquiera intenté arreglarlo."
+    placeholder: "De jeito nenhum"
   - type: "match"
     instructions: "Empareja cada estructura de negación con su significado en español."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "Eu não fui à festa, e ela tampouco."
     accepted: []
     hint: "'tampouco' se coloca al final de la frase, como en español."
+    placeholder: "Eu não bebo, nem fumo."
   - type: "order"
     sentence: "Ela não gosta nem de café nem de chá"
     translation: "A ella no le gusta ni el café ni el té."
+vocabulary:
+  - term: "nem"
+    translation: "ni / tampoco"
+  - term: "nem sequer"
+    translation: "ni siquiera"
+  - term: "tampouco"
+    translation: "tampoco"
+  - term: "de jeito nenhum"
+    translation: "de ninguna manera"
+  - term: "nem... nem..."
+    translation: "ni... ni..."
 ---
 
 Más allá de "não", el portugués tiene varias herramientas para negar con precisión y

@@ -39,12 +39,14 @@ exercises:
     accepted: ["wurst"]
     hint: "Expresión coloquial que significa 'me da igual', literalmente 'salchicha'."
     translation: "Eso me da igual."
+    placeholder: "Schnuppe"
   - type: "fill-blank"
     sentence: "Er hat wohl ___ auf den Augen."
     answer: "Tomaten"
     accepted: ["tomaten"]
     hint: "Expresión idiomática: literalmente 'tener tomates en los ojos', significa no ver lo obvio."
     translation: "Parece que no ve lo obvio."
+    placeholder: "Kartoffeln"
   - type: "match"
     instructions: "Empareja cada Redewendung con su significado real."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "Brei"
     accepted: ["brei"]
     hint: "Literalmente 'hablar alrededor del puré caliente'."
+    placeholder: "Stein"
   - type: "order"
     sentence: "Ich verstehe nur Bahnhof"
     translation: "No entiendo absolutamente nada."
+vocabulary:
+  - term: "Das ist mir Wurst"
+    translation: "Me da igual"
+  - term: "Ich verstehe nur Bahnhof"
+    translation: "No entiendo nada"
+  - term: "Die Katze im Sack kaufen"
+    translation: "Comprar algo a ciegas"
+  - term: "Tomaten auf den Augen haben"
+    translation: "No ver lo obvio"
+  - term: "Um den heißen Brei reden"
+    translation: "Andarse con rodeos"
 ---
 
 Llegaste al último tramo del idioma: las expresiones que ni la gramática más avanzada ni

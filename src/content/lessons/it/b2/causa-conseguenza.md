@@ -31,12 +31,14 @@ exercises:
     accepted: ["perché", "perche"]
     hint: "Conector neutral que responde directamente a la pregunta '¿perché?'."
     translation: "Me quedo en casa porque llueve."
+    placeholder: "perché / poiché"
   - type: "fill-blank"
     sentence: "___ piove, resto a casa."
     answer: "Poiché"
     accepted: ["Poiché", "poiché", "Poiche", "poiche"]
     hint: "Va al inicio de la frase y suena más formal/escrito."
     translation: "Como llueve, me quedo en casa."
+    placeholder: "Poiché / Siccome"
   - type: "match"
     instructions: "Empareja cada conector con su matiz o significado."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "siccome"
     accepted: ["Siccome"]
     hint: "Muy natural en conversación cotidiana, va antes de la razón."
+    placeholder: "siccome / dato che"
   - type: "order"
     sentence: "Ha studiato molto perciò ha superato l'esame"
     translation: "Estudió mucho, por lo tanto aprobó el examen."
+vocabulary:
+  - term: "perché"
+    translation: "porque (neutral)"
+  - term: "poiché"
+    translation: "porque (formal, al inicio de frase)"
+  - term: "siccome"
+    translation: "como / ya que"
+  - term: "quindi"
+    translation: "por lo tanto / entonces"
+  - term: "perciò"
+    translation: "por lo tanto (consecuencia)"
 ---
 
 Estos conectores te permiten estructurar argumentos causales con precisión — la

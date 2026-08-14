@@ -27,12 +27,14 @@ exercises:
     accepted: ["più", "piu"]
     hint: "Comparativo de superioridad: più + adjetivo + di."
     translation: "Es más alto que yo."
+    placeholder: "più / meno"
   - type: "fill-blank"
     sentence: "Roma è bella, ma Firenze è ___!"
     answer: "bellissima"
     accepted: ["bellissima"]
     hint: "Superlativo absoluto de 'bella' con el sufijo -issima (concuerda en género femenino)."
     translation: "Roma es bonita, ¡pero Florencia es bellísima!"
+    placeholder: "es. buonissima"
   - type: "match"
     instructions: "Empareja cada adjetivo con su comparativo irregular."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "migliore"
     accepted: ["migliore"]
     hint: "No es 'più buono' en su forma estándar, sino un comparativo irregular."
+    placeholder: "es. peggiore"
   - type: "order"
     sentence: "Questo libro è più interessante di quello"
     translation: "Este libro es más interesante que aquel."
+vocabulary:
+  - term: "più"
+    translation: "más"
+  - term: "meno"
+    translation: "menos"
+  - term: "bellissima"
+    translation: "bellísima / muy bonita"
+  - term: "migliore"
+    translation: "mejor"
+  - term: "peggiore"
+    translation: "peor"
+  - term: "maggiore"
+    translation: "mayor"
 ---
 
 Comparar en italiano tiene una ventaja especial: además del comparativo normal, tienes

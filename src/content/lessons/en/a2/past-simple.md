@@ -27,12 +27,14 @@ exercises:
     accepted: ["Went"]
     hint: "Pasado irregular de 'go'."
     translation: "Fui a la fiesta."
+    placeholder: "ate"
   - type: "fill-blank"
     sentence: "___ you go to the party?"
     answer: "Did"
     accepted: ["did"]
     hint: "Auxiliar de pasado para preguntas."
     translation: "¿Fuiste a la fiesta?"
+    placeholder: "Do"
   - type: "match"
     instructions: "Empareja cada verbo en presente con su pasado."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "worked"
     accepted: ["Worked"]
     hint: "Verbo regular: solo añade '-ed'."
+    placeholder: "played"
   - type: "order"
     sentence: "I didn't go to the party"
     translation: "No fui a la fiesta."
+vocabulary:
+  - term: "go"
+    translation: "ir"
+  - term: "went"
+    translation: "fui / fue (pasado de go)"
+  - term: "eat"
+    translation: "comer"
+  - term: "ate"
+    translation: "comí / comió (pasado de eat)"
+  - term: "work"
+    translation: "trabajar"
+  - term: "worked"
+    translation: "trabajé / trabajó (pasado de work)"
 ---
 
 Para hablar de algo que ya terminó — ayer, la semana pasada, hace un año — el inglés usa

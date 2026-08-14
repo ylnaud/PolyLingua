@@ -27,12 +27,14 @@ exercises:
     accepted: ["interview"]
     hint: "'job interview' = entrevista de trabajo."
     translation: "Tengo una entrevista de trabajo mañana."
+    placeholder: "meeting"
   - type: "fill-blank"
     sentence: "I'm looking forward to ___ (see) you."
     answer: "seeing"
     accepted: ["seeing"]
     hint: "Después de 'look forward to', 'to' es preposición y pide gerundio."
     translation: "Espero con ansias verte."
+    placeholder: "meeting"
   - type: "match"
     instructions: "Empareja cada palabra en inglés con su significado en español."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "Could we schedule a meeting for next week?"
     accepted: ["Could we schedule a meeting for next week"]
     hint: "Usa 'schedule a meeting'."
+    placeholder: "I'd like to check in, please."
   - type: "order"
     sentence: "I would like to check in please"
     translation: "Me gustaría registrarme, por favor."
+vocabulary:
+  - term: "job interview"
+    translation: "entrevista de trabajo"
+  - term: "deadline"
+    translation: "fecha límite"
+  - term: "colleague"
+    translation: "colega"
+  - term: "boarding pass"
+    translation: "tarjeta de embarque"
+  - term: "luggage"
+    translation: "equipaje"
+  - term: "customs"
+    translation: "aduana"
 ---
 
 Este vocabulario te prepara para dos de las situaciones más comunes en las que

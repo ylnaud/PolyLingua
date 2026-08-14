@@ -35,12 +35,14 @@ exercises:
     accepted: ["objetivo"]
     hint: "Fórmula estándar de introducción de un ensayo o artículo académico."
     translation: "El presente trabajo tiene como objetivo analizar los datos recopilados."
+    placeholder: "propósito"
   - type: "fill-blank"
     sentence: "Os dados coletados foram ___."
     answer: "analisados"
     accepted: ["analisados"]
     hint: "Voz pasiva: más formal que 'Analisamos os dados coletados'."
     translation: "Los datos recopilados fueron analizados."
+    placeholder: "avaliados"
   - type: "match"
     instructions: "Empareja cada término académico con su traducción."
     pairs:
@@ -59,9 +61,21 @@ exercises:
     answer: "Conclui-se que o método funciona."
     accepted: ["Conclui-se que o método funciona", "A conclusão é de que o método é eficaz."]
     hint: "El registro académico prefiere construcciones pasivas o nominalizadas que distancian al autor de la acción."
+    placeholder: "Verifica-se que os dados são válidos."
   - type: "order"
     sentence: "Os resultados indicam que o método é eficaz"
     translation: "Los resultados indican que el método es eficaz."
+vocabulary:
+  - term: "a hipótese"
+    translation: "la hipótesis"
+  - term: "a metodologia"
+    translation: "la metodología"
+  - term: "os dados"
+    translation: "los datos"
+  - term: "a conclusão"
+    translation: "la conclusión"
+  - term: "evidenciar"
+    translation: "evidenciar"
 ---
 
 El registro académico portugués sigue convenciones muy específicas de vocabulario y

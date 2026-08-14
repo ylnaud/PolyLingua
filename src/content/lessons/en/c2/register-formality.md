@@ -39,12 +39,14 @@ exercises:
     accepted: ["Wanna"]
     hint: "Versión informal de 'want to', típica de conversación casual."
     translation: "Informal: Quiero irme temprano hoy."
+    placeholder: "gonna"
   - type: "fill-blank"
     sentence: "___ you please give me a moment?"
     answer: "Could"
     accepted: ["could"]
     hint: "Marcador de registro formal, más cortés que 'Can you...?'."
     translation: "¿Podría darme un momento, por favor?"
+    placeholder: "Can"
   - type: "match"
     instructions: "Empareja la expresión formal con su equivalente informal."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "I regret to inform you that the meeting has been postponed"
     accepted: ["I regret to inform you that the meeting has been postponed."]
     hint: "Empieza con 'I regret to inform you that...'."
+    placeholder: "I'm writing to let you know that the meeting has been postponed"
   - type: "order"
     sentence: "Thank you for your email"
     translation: "Gracias por tu correo electrónico (registro formal)."
+vocabulary:
+  - term: "I would like to..."
+    translation: "quisiera... (formal)"
+  - term: "I wanna..."
+    translation: "quiero... (informal)"
+  - term: "Could you please...?"
+    translation: "¿Podría usted...? (formal)"
+  - term: "purchase"
+    translation: "comprar (formal)"
+  - term: "commence"
+    translation: "empezar (formal)"
 ---
 
 Llegaste al nivel donde la gramática correcta ya no es suficiente — necesitas elegir el

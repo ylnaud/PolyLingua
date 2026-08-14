@@ -31,12 +31,14 @@ exercises:
     accepted: ["Sei"]
     hint: "Konjunktiv I de 'sein' para tercera persona singular (er/sie/es)."
     translation: "El ministro dijo que la situación era grave."
+    placeholder: "seien"
   - type: "fill-blank"
     sentence: "Er sagte, sie ___ keine Zeit."
     answer: "hätten"
     accepted: ["Hätten"]
     hint: "Konjunktiv II de 'haben', porque el Konjunktiv I ('sie haben') sería ambiguo con el indicativo."
     translation: "Dijo que ellos no tenían tiempo."
+    placeholder: "wären"
   - type: "match"
     instructions: "Empareja cada pronombre con su forma de Konjunktiv I de 'sein'."
     pairs:
@@ -53,9 +55,23 @@ exercises:
     answer: "sei"
     accepted: ["Sei"]
     hint: "Raíz de 'sein' + terminación '-e' para tercera persona singular."
+    placeholder: "seien"
   - type: "order"
     sentence: "Der Minister sagte die Lage sei ernst"
     translation: "El ministro dijo que la situación era grave."
+vocabulary:
+  - term: "der Minister"
+    translation: "el ministro"
+  - term: "die Lage"
+    translation: "la situación"
+  - term: "ernst"
+    translation: "grave / serio"
+  - term: "sagen"
+    translation: "decir"
+  - term: "keine Zeit haben"
+    translation: "no tener tiempo"
+  - term: "sei"
+    translation: "sea / esté (Konjunktiv I de 'sein')"
 ---
 
 Cuando lees un periódico alemán y ves frases como "der Minister sagte, die Lage sei

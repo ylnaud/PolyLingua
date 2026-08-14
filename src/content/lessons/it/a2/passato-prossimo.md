@@ -31,12 +31,14 @@ exercises:
     accepted: ["mangiato"]
     hint: "Verbos en -are forman el participio con -ato: mangiare → mangiato."
     translation: "Comí una pizza ayer."
+    placeholder: "es. parlato"
   - type: "fill-blank"
     sentence: "Lei è ___."
     answer: "andata"
     accepted: ["andata"]
     hint: "Con 'essere', el participio concuerda en género: femenino singular termina en -a."
     translation: "Ella fue/se fue."
+    placeholder: "es. partita"
   - type: "match"
     instructions: "Empareja cada infinitivo con su participio pasado."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Ho mangiato"
     accepted: ["ho mangiato"]
     hint: "avere (conjugado con io: ho) + participio pasado."
+    placeholder: "es. Ho dormito"
   - type: "order"
     sentence: "Loro sono andati"
     translation: "Ellos fueron/se fueron."
+vocabulary:
+  - term: "mangiato"
+    translation: "comido"
+  - term: "andata"
+    translation: "ida"
+  - term: "parlato"
+    translation: "hablado"
+  - term: "fatto"
+    translation: "hecho"
+  - term: "detto"
+    translation: "dicho"
+  - term: "dormito"
+    translation: "dormido"
 ---
 
 Cuando un italiano cuenta qué hizo ayer, casi siempre usa el **passato prossimo**. Es tu

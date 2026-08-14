@@ -39,12 +39,14 @@ exercises:
     accepted: ["Quand"]
     hint: "Partícula que expresa sorpresa o resignación, 'aun así'."
     translation: "¡Lo logró, después de todo!"
+    placeholder: "ben"
   - type: "fill-blank"
     sentence: "___, on y va ?"
     answer: "Bon"
     accepted: ["bon"]
     hint: "Partícula de transición, 'bueno, ya'."
     translation: "Bueno, ¿nos vamos?"
+    placeholder: "Ben"
   - type: "match"
     instructions: "Empareja cada partícula con el matiz que aporta."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "Ben"
     accepted: ["ben"]
     hint: "Solo tres letras."
+    placeholder: "Quoi"
   - type: "order"
     sentence: "Bon enfin on verra bien quoi"
     translation: "Bueno, en fin, ya veremos, ¿sabes?"
+vocabulary:
+  - term: "quand même"
+    translation: "aun así, a pesar de todo"
+  - term: "enfin"
+    translation: "bueno... / al menos"
+  - term: "bon"
+    translation: "bueno, ya (transición)"
+  - term: "ben"
+    translation: "versión oral de 'bien', marca duda o pausa"
+  - term: "quoi"
+    translation: "¿sabes? (remate coloquial)"
 ---
 
 Llegaste al nivel donde la gramática de manual ya no es el reto. El verdadero examen de

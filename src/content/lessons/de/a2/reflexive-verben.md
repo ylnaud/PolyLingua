@@ -27,12 +27,14 @@ exercises:
     accepted: ["mich"]
     hint: "Pronombre reflexivo para 'ich': mich."
     translation: "Me alegro por las vacaciones."
+    placeholder: "dich"
   - type: "fill-blank"
     sentence: "Er erinnert ___ an sie."
     answer: "sich"
     accepted: ["sich"]
     hint: "'sich' se usa para er/sie/es."
     translation: "Él se acuerda de ella."
+    placeholder: "mich"
   - type: "match"
     instructions: "Empareja cada pronombre personal con su pronombre reflexivo."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "uns"
     accepted: ["uns"]
     hint: "wir → uns, como en 'Wir beeilen uns.'"
+    placeholder: "euch"
   - type: "order"
     sentence: "Ich freue mich auf die Ferien"
     translation: "Me alegro por las vacaciones."
+vocabulary:
+  - term: "sich freuen"
+    translation: "alegrarse"
+  - term: "sich waschen"
+    translation: "lavarse"
+  - term: "sich erinnern an"
+    translation: "acordarse de"
+  - term: "sich beeilen"
+    translation: "apurarse"
+  - term: "mich"
+    translation: "me (reflexivo)"
+  - term: "sich"
+    translation: "se (reflexivo)"
 ---
 
 Algunos verbos alemanes necesitan siempre un pronombre que "regresa" la acción al

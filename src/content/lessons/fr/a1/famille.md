@@ -27,12 +27,14 @@ exercises:
     accepted: ["frères", "freres"]
     hint: "Plural masculino de 'frère' (hermano)."
     translation: "Tengo dos hermanos y una hermana."
+    placeholder: "cousins"
   - type: "fill-blank"
     sentence: "Ma ___ s'appelle Anne."
     answer: "mère"
     accepted: ["mère", "mere"]
     hint: "La madre — femenino, sin excepción."
     translation: "Mi madre se llama Anne."
+    placeholder: "tante"
   - type: "match"
     instructions: "Empareja cada palabra en francés con su traducción."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "la tante"
     accepted: ["la tante"]
     hint: "Termina en -e, como la mayoría de sustantivos femeninos."
+    placeholder: "la sœur"
   - type: "order"
     sentence: "Mon frère a vingt ans"
     translation: "Mi hermano tiene veinte años."
+vocabulary:
+  - term: "la famille"
+    translation: "la familia"
+  - term: "le père"
+    translation: "el padre"
+  - term: "la mère"
+    translation: "la madre"
+  - term: "le frère"
+    translation: "el hermano"
+  - term: "la sœur"
+    translation: "la hermana"
+  - term: "la tante"
+    translation: "la tía"
 ---
 
 Presentar a tu familia es una de las primeras conversaciones reales en francés. Aquí

@@ -39,12 +39,14 @@ exercises:
     accepted: ["Lachende"]
     hint: "Partizip I de 'lachen' (infinitivo + d): acción activa y simultánea."
     translation: "El hombre que ríe está sentado en el banco."
+    placeholder: "schreibende"
   - type: "fill-blank"
     sentence: "Der ___ Brief liegt auf dem Tisch."
     answer: "geschriebene"
     accepted: ["Geschriebene"]
     hint: "Partizip II de 'schreiben' (ge- + raíz + -en): acción pasiva y completada."
     translation: "La carta escrita está sobre la mesa."
+    placeholder: "veröffentlichte"
   - type: "match"
     instructions: "Empareja cada Partizipialkonstruktion con la oración relativa que resume."
     pairs:
@@ -61,9 +63,23 @@ exercises:
     answer: "schreibende"
     accepted: ["Schreibende"]
     hint: "Partizip I: infinitivo + '-d'."
+    placeholder: "lachende"
   - type: "order"
     sentence: "Die von der Regierung geplante Reform wurde veröffentlicht"
     translation: "La reforma planeada por el gobierno fue publicada."
+vocabulary:
+  - term: "lachende"
+    translation: "que ríe (Partizip I de 'lachen')"
+  - term: "geschriebene"
+    translation: "escrito/a (Partizip II de 'schreiben')"
+  - term: "veröffentlichte"
+    translation: "publicado/a (Partizip II de 'veröffentlichen')"
+  - term: "geplante"
+    translation: "planeado/a (Partizip II de 'planen')"
+  - term: "der Mann"
+    translation: "el hombre"
+  - term: "der Brief"
+    translation: "la carta"
 ---
 
 En este nivel, ya no se trata de construir frases correctas — se trata de escribir con el

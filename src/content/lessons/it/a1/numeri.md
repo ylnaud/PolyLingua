@@ -30,11 +30,13 @@ exercises:
     answer: "trentotto"
     hint: "Elisión: 'trenta' pierde la 'a' final antes de 'otto'."
     translation: "Treinta más ocho es treinta y ocho."
+    placeholder: "ventuno"
   - type: "fill-blank"
     sentence: "Il numero 100 si dice ___."
     answer: "cento"
     hint: "Muy parecido a 'ciento' en español."
     translation: "El número 100 se dice cien."
+    placeholder: "mille"
   - type: "match"
     instructions: "Empareja cada palabra italiana con su número."
     pairs:
@@ -52,9 +54,23 @@ exercises:
     prompt: "Escribe cómo se dice '21' en italiano (una sola palabra)."
     answer: "ventuno"
     hint: "'venti' pierde su vocal final antes de 'uno'."
+    placeholder: "trentotto"
   - type: "order"
     sentence: "Ho venti anni"
     translation: "Tengo veinte años."
+vocabulary:
+  - term: "venti"
+    translation: "veinte"
+  - term: "trenta"
+    translation: "treinta"
+  - term: "quaranta"
+    translation: "cuarenta"
+  - term: "cinquanta"
+    translation: "cincuenta"
+  - term: "cento"
+    translation: "cien"
+  - term: "ventuno"
+    translation: "veintiuno"
 ---
 
 Los números italianos son, de los cinco idiomas de PolyLingua, los más fáciles de

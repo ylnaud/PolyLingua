@@ -38,11 +38,13 @@ exercises:
     answer: "tivesse"
     hint: "Pluscuamperfecto do subjuntivo: tivesse + participio."
     translation: "Si hubiera estudiado, habría aprobado el examen."
+    placeholder: "tivesse / tivesses / tivéssemos"
   - type: "fill-blank"
     sentence: "Se ela tivesse me avisado, eu não ___ chegado atrasado."
     answer: "teria"
     hint: "Condicional compuesto: teria + participio."
     translation: "Si ella me hubiera avisado, no habría llegado tarde."
+    placeholder: "teria / terias / teríamos"
   - type: "match"
     instructions: "Empareja cada forma verbal con su traducción."
     pairs:
@@ -60,9 +62,21 @@ exercises:
     prompt: "Escribe en portugués: 'Habría ayudado, si me lo hubieras pedido.'"
     answer: "Eu teria ajudado, se você tivesse pedido."
     hint: "Condicional composto + se + pluscuamperfeito do subjuntivo."
+    placeholder: "Eu teria + participio, se você tivesse + participio."
   - type: "order"
     sentence: "Se nós tivéssemos mais tempo teríamos visitado o museu"
     translation: "Si hubiéramos tenido más tiempo, habríamos visitado el museo."
+vocabulary:
+  - term: "teria falado"
+    translation: "habría hablado"
+  - term: "teria feito"
+    translation: "habría hecho"
+  - term: "teria ido"
+    translation: "habría ido"
+  - term: "tivesse estudado"
+    translation: "hubiera estudiado"
+  - term: "teria passado"
+    translation: "habría aprobado"
 ---
 
 El condicional compuesto expresa lo que habría pasado bajo una condición que, en

@@ -35,12 +35,14 @@ exercises:
     accepted: ["tivesse"]
     hint: "Imperfeito do subjuntivo de 'ter', para una condicional hipotética irreal."
     translation: "Si tuviera más tiempo, viajaría por el mundo."
+    placeholder: "fosse"
   - type: "fill-blank"
     sentence: "Se ela ___ a verdade, ficaria chateada."
     answer: "soubesse"
     accepted: ["soubesse"]
     hint: "De 'souberam' (pretérito perfeito de 'saber'), quitar '-am', añadir terminación."
     translation: "Si ella supiera la verdad, se molestaría."
+    placeholder: "fizesse"
   - type: "match"
     instructions: "Empareja cada forma de 'eles/elas' del pretérito perfeito con su imperfeito do subjuntivo correspondiente (eu/ele)."
     pairs:
@@ -57,9 +59,21 @@ exercises:
     answer: "fosse"
     accepted: ["fosse"]
     hint: "foram → foss- + e."
+    placeholder: "tivesse"
   - type: "order"
     sentence: "Se você pudesse me ajudar eu agradeceria muito"
     translation: "Si pudiera ayudarme, se lo agradecería mucho."
+vocabulary:
+  - term: "falasse"
+    translation: "hablara / hablase"
+  - term: "fizesse"
+    translation: "hiciera / hiciese"
+  - term: "fosse"
+    translation: "fuera / fuese"
+  - term: "soubesse"
+    translation: "supiera / supiese"
+  - term: "tivesse"
+    translation: "tuviera / tuviese"
 ---
 
 El pretérito imperfeito do subjuntivo es la puerta de entrada a las hipótesis

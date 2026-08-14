@@ -39,12 +39,14 @@ exercises:
     accepted: ["servus"]
     hint: "Saludo informal usado en ambas direcciones en Austria y el sur de Alemania."
     translation: "Servus se dice en Austria tanto para saludar como para despedirse."
+    placeholder: "Grüß Gott"
   - type: "fill-blank"
     sentence: "In der Schweiz sagt man \"das ___\" statt \"das Fahrrad\"."
     answer: "Velo"
     accepted: ["velo"]
     hint: "Préstamo del francés 'vélo', usado en el Schweizerdeutsch."
     translation: "En Suiza se dice 'das Velo' en vez de 'das Fahrrad'."
+    placeholder: "Brötli"
   - type: "match"
     instructions: "Empareja cada palabra regional con su equivalente en Hochdeutsch."
     pairs:
@@ -63,9 +65,21 @@ exercises:
     answer: "Grüß Gott"
     accepted: ["grüß gott", "Gruess Gott"]
     hint: "Se usa especialmente en Baviera y Austria."
+    placeholder: "Auf Wiedersehen"
   - type: "order"
     sentence: "Ich bin gestern im Kino gewesen"
     translation: "Ayer fui al cine (Perfekt, tendencia típica del alemán suizo)."
+vocabulary:
+  - term: "Servus"
+    translation: "hola / adiós (Austria y sur de Alemania)"
+  - term: "das Velo"
+    translation: "la bicicleta (Suiza)"
+  - term: "die Semmel"
+    translation: "el panecillo (Austria)"
+  - term: "das Sackerl"
+    translation: "la bolsa (Austria)"
+  - term: "Grüß Gott"
+    translation: "saludo formal (sur de Alemania y Austria)"
 ---
 
 El "alemán estándar" que aprendiste en tus lecciones es real y funcional en todas

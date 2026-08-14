@@ -31,12 +31,14 @@ exercises:
     accepted: ["ob"]
     hint: "Pregunta indirecta de sí/no → se introduce con 'ob'."
     translation: "Me pregunto si ella viene hoy."
+    placeholder: "wann"
   - type: "fill-blank"
     sentence: "Ich möchte wissen, wo du ___."
     answer: "wohnst"
     accepted: ["wohnst"]
     hint: "El verbo se manda al final en la pregunta indirecta."
     translation: "Quisiera saber dónde vives."
+    placeholder: "kommst"
   - type: "match"
     instructions: "Empareja cada pregunta directa con su versión indirecta correcta."
     pairs:
@@ -53,9 +55,23 @@ exercises:
     answer: "wann der Zug kommt"
     accepted: ["wann der Zug kommt"]
     hint: "W-Wort + sujeto + ... + verbo al final."
+    placeholder: "ob der Zug pünktlich ist"
   - type: "order"
     sentence: "Können Sie mir sagen, ob der Zug pünktlich ist"
     translation: "¿Podría decirme si el tren llega puntual?"
+vocabulary:
+  - term: "ob"
+    translation: "si (en preguntas indirectas de sí/no)"
+  - term: "wo"
+    translation: "dónde"
+  - term: "wann"
+    translation: "cuándo"
+  - term: "der Zug"
+    translation: "el tren"
+  - term: "pünktlich"
+    translation: "puntual"
+  - term: "wissen"
+    translation: "saber"
 ---
 
 Las preguntas indirectas son una forma más cortés y natural de preguntar algo,

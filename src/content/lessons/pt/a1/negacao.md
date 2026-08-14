@@ -31,12 +31,14 @@ exercises:
     accepted: ["Não"]
     hint: "'não' va antes del verbo conjugado."
     translation: "No hablo portugués."
+    placeholder: "nunca"
   - type: "fill-blank"
     sentence: "___ sabe a resposta."
     answer: "Ninguém"
     accepted: ["ninguém", "ninguem"]
     hint: "Palabra negativa que significa 'nadie'."
     translation: "Nadie sabe la respuesta."
+    placeholder: "Nenhum"
   - type: "match"
     instructions: "Empareja cada palabra negativa con su significado."
     pairs:
@@ -53,9 +55,21 @@ exercises:
     answer: "Não tenho nada"
     accepted: ["não tenho nada"]
     hint: "não + verbo + nada."
+    placeholder: "Eu nunca como carne"
   - type: "order"
     sentence: "Ela não gosta de café"
     translation: "A ella no le gusta el café."
+vocabulary:
+  - term: "não"
+    translation: "no"
+  - term: "nunca"
+    translation: "nunca"
+  - term: "nada"
+    translation: "nada"
+  - term: "ninguém"
+    translation: "nadie"
+  - term: "nenhum"
+    translation: "ninguno"
 ---
 
 Negar una oración en portugués es, en la mayoría de los casos, más simple que en

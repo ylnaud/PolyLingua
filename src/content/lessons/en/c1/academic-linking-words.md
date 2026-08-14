@@ -31,11 +31,13 @@ exercises:
     accepted: ["consequently"]
     hint: "Introduce una consecuencia lógica derivada del punto anterior."
     translation: "Los datos eran defectuosos; en consecuencia, los resultados no son fiables."
+    placeholder: "Hence"
   - type: "fill-blank"
     sentence: "Some economists support this policy, ___ others strongly oppose it."
     answer: "whereas"
     hint: "Contraste formal, equivalente a 'while' pero más académico."
     translation: "Algunos economistas apoyan esta política, mientras que otros se oponen firmemente."
+    placeholder: "although"
   - type: "match"
     instructions: "Empareja cada conector con su función en un texto académico."
     pairs:
@@ -53,9 +55,21 @@ exercises:
     prompt: "Escribe el conector en inglés que significa 'a saber' y presenta información específica (empieza con n)."
     answer: "namely"
     hint: "Aparece en: Two factors contributed to the delay, namely poor planning and lack of resources."
+    placeholder: "furthermore"
   - type: "order"
     sentence: "Some economists support this policy whereas others strongly oppose it"
     translation: "Algunos economistas apoyan esta política, mientras que otros se oponen firmemente."
+vocabulary:
+  - term: "consequently"
+    translation: "en consecuencia"
+  - term: "whereas"
+    translation: "mientras que"
+  - term: "notwithstanding"
+    translation: "no obstante"
+  - term: "namely"
+    translation: "a saber"
+  - term: "furthermore"
+    translation: "además"
 ---
 
 Este vocabulario de conexión es lo que distingue un ensayo académico serio de un texto

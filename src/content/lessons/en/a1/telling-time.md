@@ -27,12 +27,14 @@ exercises:
     accepted: ["Half past"]
     hint: "Media hora después de las tres."
     translation: "Son las tres y media."
+    placeholder: "a quarter past"
   - type: "fill-blank"
     sentence: "___ time is it?"
     answer: "What"
     accepted: ["what"]
     hint: "Es la pregunta estándar para pedir la hora."
     translation: "¿Qué hora es?"
+    placeholder: "Which"
   - type: "match"
     instructions: "Empareja cada hora con su expresión en inglés."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "a quarter to five"
     accepted: ["A quarter to five"]
     hint: "Un cuarto antes de las cinco: mira hacia la próxima hora."
+    placeholder: "half past three"
   - type: "order"
     sentence: "What time is it"
     translation: "¿Qué hora es?"
+vocabulary:
+  - term: "half past"
+    translation: "y media"
+  - term: "a quarter past"
+    translation: "y cuarto"
+  - term: "a quarter to"
+    translation: "menos cuarto"
+  - term: "What time is it?"
+    translation: "¿Qué hora es?"
+  - term: "Do you have the time?"
+    translation: "¿Tienes hora?"
 ---
 
 Decir la hora en inglés tiene su propia lógica — una vez que la entiendes, es

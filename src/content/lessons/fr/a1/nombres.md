@@ -27,12 +27,14 @@ exercises:
     accepted: ["soixante"]
     hint: "Literalmente 'sesenta-diez'."
     translation: "setenta"
+    placeholder: "quatre-vingt"
   - type: "fill-blank"
     sentence: "80 se dice quatre-___ en francés estándar."
     answer: "vingts"
     accepted: ["vingts", "vingt"]
     hint: "Literalmente 'cuatro-veintes' (4×20)."
     translation: "ochenta"
+    placeholder: "dix"
   - type: "match"
     instructions: "Empareja cada número con su palabra en francés."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "quatre-vingt-quinze"
     accepted: ["Quatre-vingt-quinze"]
     hint: "95 = quatre-vingt (80) + quinze (15)."
+    placeholder: "soixante-quinze"
   - type: "order"
     sentence: "Il a quatre-vingt-quinze ans"
     translation: "Él tiene noventa y cinco años."
+vocabulary:
+  - term: "soixante-dix"
+    translation: "setenta"
+  - term: "quatre-vingts"
+    translation: "ochenta"
+  - term: "quatre-vingt-dix"
+    translation: "noventa"
+  - term: "quatre-vingt-quinze"
+    translation: "noventa y cinco"
+  - term: "cent"
+    translation: "cien"
+  - term: "mille"
+    translation: "mil"
 ---
 
 Los números franceses tienen una peculiaridad que sorprende a todo principiante: del 70

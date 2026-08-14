@@ -35,12 +35,14 @@ exercises:
     accepted: ["foi"]
     hint: "Estructura clivada: Foi + elemento a destacar + que + resto de la frase."
     translation: "Fue él quien rompió el jarrón."
+    placeholder: "É"
   - type: "fill-blank"
     sentence: "Onde ___ que você mora?"
     answer: "é"
     accepted: ["é"]
     hint: "Partícula 'é que' en preguntas: muletilla de habla natural, no cambia el significado."
     translation: "¿Dónde vives?"
+    placeholder: "foi"
   - type: "match"
     instructions: "Empareja cada frase clivada con su explicación."
     pairs:
@@ -57,9 +59,21 @@ exercises:
     answer: "Foi ontem que cheguei."
     accepted: ["Foi ontem que cheguei", "Foi ontem que eu cheguei", "Foi ontem que eu cheguei."]
     hint: "É/Foi + elemento a destacar + que + resto de la frase."
+    placeholder: "Foi ele que chegou."
   - type: "order"
     sentence: "Quem quebrou o vaso foi ele"
     translation: "Quien rompió el jarrón fue él."
+vocabulary:
+  - term: "é que"
+    translation: "\"es que\" (partícula de énfasis)"
+  - term: "quem"
+    translation: "quien"
+  - term: "onde"
+    translation: "dónde"
+  - term: "quebrou"
+    translation: "rompió"
+  - term: "vaso"
+    translation: "jarrón"
 ---
 
 Las frases clivadas te permiten resaltar exactamente qué parte de una oración es la

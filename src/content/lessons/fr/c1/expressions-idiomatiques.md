@@ -39,12 +39,14 @@ exercises:
     accepted: ["chat"]
     hint: "La expresión 'avoir un chat dans la gorge' significa tener carraspera."
     translation: "Perdón, tengo carraspera hoy."
+    placeholder: "chien"
   - type: "fill-blank"
     sentence: "Elle est toujours dans la ___ pendant les cours."
     answer: "lune"
     accepted: ["lune"]
     hint: "'être dans la lune' significa estar distraído."
     translation: "Ella siempre está distraída durante las clases."
+    placeholder: "brume"
   - type: "match"
     instructions: "Empareja cada expresión idiomática con su significado real."
     pairs:
@@ -63,9 +65,23 @@ exercises:
     answer: "être dans la lune"
     accepted: ["etre dans la lune", "Être dans la lune"]
     hint: "Piensa en dónde 'flota' la mente de alguien distraído."
+    placeholder: "être dans les nuages"
   - type: "order"
     sentence: "Cette voiture coûte les yeux de la tête"
     translation: "Ese coche cuesta muchísimo dinero."
+vocabulary:
+  - term: "poser un lapin"
+    translation: "dejar plantado a alguien"
+  - term: "avoir le cafard"
+    translation: "estar deprimido/triste"
+  - term: "coûter les yeux de la tête"
+    translation: "costar muchísimo"
+  - term: "avoir un chat dans la gorge"
+    translation: "tener carraspera"
+  - term: "tomber dans les pommes"
+    translation: "desmayarse"
+  - term: "être dans la lune"
+    translation: "estar distraído"
 ---
 
 Llegaste al terreno de las expresiones que ni la gramática ni el vocabulario amplio te

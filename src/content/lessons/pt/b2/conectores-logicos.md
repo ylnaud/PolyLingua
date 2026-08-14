@@ -27,11 +27,13 @@ exercises:
     accepted: ["No entanto"]
     hint: "Introduce un contraste, equivalente a 'sin embargo'."
     translation: "Estudió mucho; sin embargo, no aprobó el examen."
+    placeholder: "no entanto / contudo / por outro lado"
   - type: "fill-blank"
     sentence: "___ da chuva, saímos para caminhar."
     answer: "Apesar"
     hint: "'apesar de' + sustantivo introduce una concesión."
     translation: "A pesar de la lluvia, salimos a caminar."
+    placeholder: "Apesar / Embora / Mesmo que"
   - type: "match"
     instructions: "Empareja cada conector con su significado en español."
     pairs:
@@ -49,9 +51,21 @@ exercises:
     prompt: "Escribe en portugués: 'El proyecto es caro. Además, va a tardar meses.'"
     answer: "O projeto é caro. Além disso, vai demorar meses."
     hint: "'além disso' suma información sin contraste."
+    placeholder: "Frase. Além disso / Também, frase."
   - type: "order"
     sentence: "Embora ele seja jovem tem muita experiência"
     translation: "Aunque él es joven, tiene mucha experiencia."
+vocabulary:
+  - term: "no entanto"
+    translation: "sin embargo"
+  - term: "apesar de"
+    translation: "a pesar de"
+  - term: "além disso"
+    translation: "además"
+  - term: "embora"
+    translation: "aunque"
+  - term: "por outro lado"
+    translation: "por otro lado"
 ---
 
 Los conectores lógicos son las bisagras que permiten construir argumentos elaborados,

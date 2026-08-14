@@ -34,11 +34,13 @@ exercises:
     answer: "Dove"
     hint: "Palabra interrogativa para '¿dónde?'."
     translation: "¿Dónde vives?"
+    placeholder: "Come / Quando"
   - type: "fill-blank"
     sentence: "___ stai?"
     answer: "Come"
     hint: "Palabra interrogativa para '¿cómo?'."
     translation: "¿Cómo estás?"
+    placeholder: "Dove / Quando"
   - type: "match"
     instructions: "Empareja cada palabra interrogativa con su significado."
     pairs:
@@ -57,9 +59,23 @@ exercises:
     answer: "Hai fame?"
     accepted: ["Hai fame"]
     hint: "Verbo 'avere' (hai) + fame, con signo de interrogación."
+    placeholder: "Hai sete?"
   - type: "order"
     sentence: "Perché studi italiano"
     translation: "¿Por qué estudias italiano?"
+vocabulary:
+  - term: "Dove?"
+    translation: "¿Dónde?"
+  - term: "Come?"
+    translation: "¿Cómo?"
+  - term: "Quando?"
+    translation: "¿Cuándo?"
+  - term: "Perché?"
+    translation: "¿Por qué?"
+  - term: "Chi?"
+    translation: "¿Quién?"
+  - term: "Quanto?"
+    translation: "¿Cuánto?"
 ---
 
 Hacer preguntas en italiano es sorprendentemente simple — de los cinco idiomas del

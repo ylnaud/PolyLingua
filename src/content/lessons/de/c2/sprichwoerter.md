@@ -39,12 +39,14 @@ exercises:
     accepted: ["stamm"]
     hint: "Refrán equivalente a 'de tal palo, tal astilla'."
     translation: "La manzana no cae lejos del tronco."
+    placeholder: "Baum"
   - type: "fill-blank"
     sentence: "___ macht den Meister."
     answer: "Übung"
     accepted: ["übung", "Uebung"]
     hint: "Equivalente a 'la práctica hace al maestro'."
     translation: "La práctica hace al maestro."
+    placeholder: "Geduld"
   - type: "match"
     instructions: "Empareja cada refrán alemán con su equivalente en español."
     pairs:
@@ -61,9 +63,21 @@ exercises:
     answer: "keinen"
     accepted: ["Keinen"]
     hint: "Significa que quien persigue dos objetivos a la vez, no logra ninguno."
+    placeholder: "einen"
   - type: "order"
     sentence: "Aller Anfang ist schwer"
     translation: "Todo comienzo es difícil."
+vocabulary:
+  - term: "Der Apfel fällt nicht weit vom Stamm"
+    translation: "De tal palo, tal astilla"
+  - term: "Morgenstund hat Gold im Mund"
+    translation: "A quien madruga, Dios le ayuda"
+  - term: "Wer zwei Hasen jagt, fängt keinen"
+    translation: "El que mucho abarca, poco aprieta"
+  - term: "Übung macht den Meister"
+    translation: "La práctica hace al maestro"
+  - term: "Aller Anfang ist schwer"
+    translation: "Todo comienzo es difícil"
 ---
 
 Los refranes son una de las últimas fronteras culturales de cualquier idioma —

@@ -31,12 +31,14 @@ exercises:
     accepted: ["Lesbar"]
     hint: "'-bar' convierte un verbo en adjetivo: lesen → lesbar (que se puede leer)."
     translation: "Este libro es realmente fácil de entender, es muy legible."
+    placeholder: "trinkbar"
   - type: "fill-blank"
     sentence: "Nach der schlechten Nachricht fühlte sie sich völlig ___."
     answer: "hoffnungslos"
     accepted: ["Hoffnungslos"]
     hint: "'-los' significa 'sin': Hoffnung (esperanza) + los."
     translation: "Después de la mala noticia se sintió completamente desesperanzada."
+    placeholder: "unmöglich"
   - type: "match"
     instructions: "Empareja cada afijo con su significado."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "unmöglich"
     accepted: ["Unmöglich"]
     hint: "un- + möglich = imposible."
+    placeholder: "unvergesslich"
   - type: "order"
     sentence: "Diese Erfahrung war für mich unvergesslich"
     translation: "Esta experiencia fue inolvidable para mí."
+vocabulary:
+  - term: "unmöglich"
+    translation: "imposible"
+  - term: "hoffnungslos"
+    translation: "sin esperanza / desesperanzado"
+  - term: "lesbar"
+    translation: "legible"
+  - term: "die Freiheit"
+    translation: "la libertad"
+  - term: "die Bewegung"
+    translation: "el movimiento"
+  - term: "verschwinden"
+    translation: "desaparecer"
 ---
 
 Este es uno de los superpoderes más rentables del alemán avanzado: reconocer patrones

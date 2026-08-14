@@ -27,12 +27,14 @@ exercises:
     accepted: ["schneller"]
     hint: "Comparativo regular: se añade -er."
     translation: "El tren es más rápido que el coche."
+    placeholder: "größer"
   - type: "fill-blank"
     sentence: "Das Essen hier ist am ___."
     answer: "besten"
     accepted: ["besten"]
     hint: "'gut' es irregular: gut → besser → am besten."
     translation: "La comida aquí es la mejor."
+    placeholder: "höchsten"
   - type: "match"
     instructions: "Empareja cada adjetivo en positivo con su superlativo."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "größer"
     accepted: ["groesser"]
     hint: "Los adjetivos de una sílaba añaden Umlaut: groß → größer."
+    placeholder: "älter"
   - type: "order"
     sentence: "Der Zug ist schneller als das Auto"
     translation: "El tren es más rápido que el coche."
+vocabulary:
+  - term: "schnell"
+    translation: "rápido"
+  - term: "gut"
+    translation: "bueno"
+  - term: "viel"
+    translation: "mucho"
+  - term: "hoch"
+    translation: "alto"
+  - term: "alt"
+    translation: "viejo"
+  - term: "groß"
+    translation: "grande"
 ---
 
 Comparar personas, objetos o situaciones es una de las herramientas conversacionales más

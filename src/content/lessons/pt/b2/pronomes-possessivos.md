@@ -34,11 +34,13 @@ exercises:
     answer: "seu"
     hint: "Posesivo independiente para 'tuyo/suyo' con sustantivo masculino."
     translation: "Mi coche es azul. El tuyo/suyo es rojo."
+    placeholder: "meu / teu / nosso"
   - type: "fill-blank"
     sentence: "Esta é a minha casa. Aquela é a ___."
     answer: "sua"
     hint: "Posesivo independiente femenino para 'tuya/suya'."
     translation: "Esta es mi casa. Aquella es la tuya/suya."
+    placeholder: "minha / tua / nossa"
   - type: "match"
     instructions: "Empareja cada posesivo independiente con su traducción."
     pairs:
@@ -56,9 +58,21 @@ exercises:
     prompt: "Escribe en portugués: 'La casa de ella es más grande que la mía.'"
     answer: "A casa dela é maior do que a minha."
     hint: "'a minha' sustituye completamente a 'a minha casa'."
+    placeholder: "A casa de X é maior do que a/o + posesivo."
   - type: "order"
     sentence: "Meus pais são mais velhos do que os seus"
     translation: "Mis padres son mayores que los tuyos/suyos."
+vocabulary:
+  - term: "o meu"
+    translation: "el mío"
+  - term: "a minha"
+    translation: "la mía"
+  - term: "o teu"
+    translation: "el tuyo"
+  - term: "o seu"
+    translation: "el suyo"
+  - term: "o nosso"
+    translation: "el nuestro"
 ---
 
 Cuando el posesivo reemplaza completamente al sustantivo, funciona como un pronombre

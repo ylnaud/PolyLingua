@@ -35,12 +35,14 @@ exercises:
     accepted: ["auf"]
     hint: "El prefijo separable 'auf' salta al final de la frase."
     translation: "Me levanto a las 7."
+    placeholder: "an"
   - type: "fill-blank"
     sentence: "Ich rufe dich ___."
     answer: "an"
     accepted: ["an"]
     hint: "'anrufen' se separa en presente: rufe... an."
     translation: "Te llamo."
+    placeholder: "auf"
   - type: "match"
     instructions: "Empareja cada verbo separable con su significado."
     pairs:
@@ -59,9 +61,23 @@ exercises:
     answer: "an"
     accepted: ["an"]
     hint: "an- es el prefijo separable de anrufen."
+    placeholder: "ein"
   - type: "order"
     sentence: "Ich muss dich anrufen"
     translation: "Tengo que llamarte."
+vocabulary:
+  - term: "aufstehen"
+    translation: "levantarse"
+  - term: "anrufen"
+    translation: "llamar por teléfono"
+  - term: "einkaufen"
+    translation: "hacer compras"
+  - term: "ausgehen"
+    translation: "salir"
+  - term: "mitkommen"
+    translation: "venir con alguien"
+  - term: "vorbereiten"
+    translation: "preparar"
 ---
 
 Este es uno de los rasgos más distintivos del alemán: verbos que, en presente, se

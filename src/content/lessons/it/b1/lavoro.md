@@ -27,12 +27,14 @@ exercises:
     accepted: ["colloquio"]
     hint: "La entrevista de trabajo."
     translation: "Tengo una entrevista de trabajo mañana."
+    placeholder: "colloquio / contratto / stipendio"
   - type: "fill-blank"
     sentence: "La mia ___ si chiama Sofia."
     answer: "collega"
     accepted: ["collega"]
     hint: "El/la colega."
     translation: "Mi colega se llama Sofía."
+    placeholder: "collega / capo / azienda"
   - type: "match"
     instructions: "Empareja cada palabra en italiano con su significado en español."
     pairs:
@@ -51,9 +53,23 @@ exercises:
     answer: "una professoressa"
     accepted: ["professoressa", "Una professoressa"]
     hint: "El patrón '-essa' es muy productivo para profesiones en italiano."
+    placeholder: "una + [professione]-essa"
   - type: "order"
     sentence: "Ho un colloquio di lavoro domani"
     translation: "Tengo una entrevista de trabajo mañana."
+vocabulary:
+  - term: "il colloquio di lavoro"
+    translation: "la entrevista de trabajo"
+  - term: "lo stipendio"
+    translation: "el salario"
+  - term: "il capo"
+    translation: "el jefe"
+  - term: "il/la collega"
+    translation: "el/la colega"
+  - term: "l'azienda"
+    translation: "la empresa"
+  - term: "la candidatura"
+    translation: "la postulación"
 ---
 
 Ya sea para hablar de tu trabajo actual, escribir una candidatura o prepararte para

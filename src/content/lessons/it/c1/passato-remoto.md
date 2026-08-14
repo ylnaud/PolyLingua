@@ -31,12 +31,14 @@ exercises:
     accepted: ["parlò"]
     hint: "-are en passato remoto para lui/lei: raíz + -ò."
     translation: "Él habló."
+    placeholder: "cantò"
   - type: "fill-blank"
     sentence: "Loro ___ (vendere, passato remoto)."
     answer: "vendettero"
     accepted: ["vendettero", "venderono"]
     hint: "-ere en passato remoto para loro: -erono o -ettero."
     translation: "Ellos vendieron."
+    placeholder: "credettero"
   - type: "match"
     instructions: "Empareja cada infinitivo irregular con su forma de passato remoto para 'lui'."
     pairs:
@@ -55,9 +57,23 @@ exercises:
     answer: "Lei dormì"
     accepted: ["Lei dormì", "dormì", "Dormì"]
     hint: "-ire en passato remoto para lei: raíz + -ì."
+    placeholder: "Lei partì"
   - type: "order"
     sentence: "Aprì la porta e vide un uomo seduto vicino alla finestra"
     translation: "Abrió la puerta y vio a un hombre sentado cerca de la ventana."
+vocabulary:
+  - term: "parlò"
+    translation: "habló (passato remoto)"
+  - term: "vendettero"
+    translation: "vendieron (passato remoto)"
+  - term: "dormì"
+    translation: "durmió (passato remoto)"
+  - term: "fu"
+    translation: "fue (essere, passato remoto)"
+  - term: "ebbe"
+    translation: "tuvo (avere, passato remoto)"
+  - term: "disse"
+    translation: "dijo (dire, passato remoto)"
 ---
 
 Este es un tiempo verbal con una geografía curiosa: en algunas partes de Italia es

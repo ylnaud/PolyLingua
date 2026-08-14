@@ -26,11 +26,13 @@ exercises:
     answer: "Il faut"
     hint: "Obligación general sin sujeto específico: il faut + infinitivo."
     translation: "Hay que comer para vivir."
+    placeholder: "Il vaut mieux"
   - type: "fill-blank"
     sentence: "Il faut que tu ___ maintenant."
     answer: "partes"
     hint: "'il faut que' + sujeto específico exige subjonctif de partir."
     translation: "Tienes que irte ahora."
+    placeholder: "ailles"
   - type: "match"
     instructions: "Empareja cada expresión impersonal con su significado."
     pairs:
@@ -50,9 +52,23 @@ exercises:
     accepted:
       - "Il y a un problème."
     hint: "il y a + sustantivo indica existencia."
+    placeholder: "Il y a trois livres ici."
   - type: "order"
     sentence: "Il est important de bien dormir"
     translation: "Es importante dormir bien."
+vocabulary:
+  - term: "il faut"
+    translation: "hay que / es necesario"
+  - term: "il y a"
+    translation: "hay / existe"
+  - term: "il est important de"
+    translation: "es importante"
+  - term: "il est possible de"
+    translation: "es posible"
+  - term: "il vaut mieux"
+    translation: "es mejor"
+  - term: "il faut que"
+    translation: "hay que (con subjuntivo)"
 ---
 
 Estas expresiones impersonales son extremadamente comunes en francés cotidiano —

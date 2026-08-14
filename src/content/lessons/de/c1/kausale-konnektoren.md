@@ -35,12 +35,14 @@ exercises:
     accepted: ["da"]
     hint: "'da' introduce una razón que el oyente probablemente ya conoce o puede deducir, y suele ir al principio."
     translation: "Como llovía, nos quedamos en casa."
+    placeholder: "Weil"
   - type: "fill-blank"
     sentence: "Ich bleibe zu Hause, ___ ich bin krank."
     answer: "denn"
     accepted: ["Denn"]
     hint: "Este conector coordinante NO manda el verbo al final: orden normal, verbo en segunda posición."
     translation: "Me quedo en casa, pues estoy enfermo."
+    placeholder: "zumal"
   - type: "match"
     instructions: "Empareja cada conector causal con su matiz."
     pairs:
@@ -57,9 +59,23 @@ exercises:
     answer: "zumal"
     accepted: ["Zumal"]
     hint: "Es el conector que agrega una razón extra e importante."
+    placeholder: "weil"
   - type: "order"
     sentence: "Ich bleibe zu Hause denn ich bin krank"
     translation: "Me quedo en casa, pues estoy enfermo."
+vocabulary:
+  - term: "weil"
+    translation: "porque (razón neutra)"
+  - term: "da"
+    translation: "como / dado que"
+  - term: "denn"
+    translation: "pues"
+  - term: "zumal"
+    translation: "sobre todo porque"
+  - term: "es regnete"
+    translation: "llovía"
+  - term: "ich bin krank"
+    translation: "estoy enfermo"
 ---
 
 Ya usas "weil" con soltura. En este nivel, descubres que el alemán tiene un menú

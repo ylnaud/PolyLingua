@@ -27,12 +27,14 @@ exercises:
     accepted: ["des"]
     hint: "Genitiv masculino: el artículo cambia a 'des' y el sustantivo añade -s/-es."
     translation: "El coche del hombre es nuevo."
+    placeholder: "der"
   - type: "fill-blank"
     sentence: "Die Farbe ___ Blume ist rot."
     answer: "der"
     accepted: ["der"]
     hint: "Genitiv femenino: el artículo es 'der' y el sustantivo no cambia."
     translation: "El color de la flor es rojo."
+    placeholder: "des"
   - type: "match"
     instructions: "Empareja cada género con su forma de Genitiv."
     pairs:
@@ -51,9 +53,21 @@ exercises:
     answer: "des Kindes"
     accepted: ["des Kindes"]
     hint: "Neutro en Genitiv: 'des' + sustantivo con -es."
+    placeholder: "der Frau"
   - type: "order"
     sentence: "Trotz des Regens gehe ich spazieren"
     translation: "A pesar de la lluvia, voy a pasear."
+vocabulary:
+  - term: "das Auto"
+    translation: "el coche"
+  - term: "die Blume"
+    translation: "la flor"
+  - term: "der Film"
+    translation: "la película"
+  - term: "der Regen"
+    translation: "la lluvia"
+  - term: "das Kind"
+    translation: "el niño / la niña"
 ---
 
 El Genitiv es el cuarto y último caso alemán — el que expresa posesión de forma formal,

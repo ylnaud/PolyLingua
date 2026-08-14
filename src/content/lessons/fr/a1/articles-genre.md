@@ -31,12 +31,14 @@ exercises:
     accepted: ["la"]
     hint: "'table' es femenina, igual que en español ('la mesa')."
     translation: "La mesa es grande."
+    placeholder: "le / l'"
   - type: "fill-blank"
     sentence: "___ ami habite à Paris."
     answer: "L'"
     accepted: ["l'", "l’"]
     hint: "Antes de vocal, el artículo (masculino o femenino) se convierte en l'."
     translation: "El amigo vive en París."
+    placeholder: "le / la"
   - type: "match"
     instructions: "Empareja cada palabra con su artículo correcto."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "le"
     accepted: ["Le"]
     hint: "La terminación -eau es masculina: le bureau, le château."
+    placeholder: "la / les"
   - type: "order"
     sentence: "J'aime la table et le livre"
     translation: "Me gusta la mesa y el libro."
+vocabulary:
+  - term: "la table"
+    translation: "la mesa"
+  - term: "le livre"
+    translation: "el libro"
+  - term: "l'ami"
+    translation: "el amigo"
+  - term: "le lait"
+    translation: "la leche"
+  - term: "le château"
+    translation: "el castillo"
 ---
 
 Si hablas español, ya entiendes el concepto de género gramatical — la ventaja es enorme.

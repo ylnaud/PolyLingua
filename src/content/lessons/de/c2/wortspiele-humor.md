@@ -39,12 +39,14 @@ exercises:
     accepted: ["faxen"]
     hint: "Doble sentido: significa tanto 'enviar faxes' como 'hacer payasadas/bromas'."
     translation: "¿Qué hace un payaso en la oficina? ¡Bromas! (juego de palabras con 'faxes')."
+    placeholder: "Witze"
   - type: "fill-blank"
     sentence: "___ bezeichnet das Gewicht, das man aus Kummer zunimmt."
     answer: "Kummerspeck"
     accepted: ["kummerspeck"]
     hint: "Literalmente 'tocino de la pena': el peso que se gana comiendo por tristeza."
     translation: "Kummerspeck es el peso que se gana comiendo por tristeza."
+    placeholder: "Kopfkino"
   - type: "match"
     instructions: "Empareja cada palabra o concepto con su significado."
     pairs:
@@ -61,9 +63,19 @@ exercises:
     answer: "Kopfkino"
     accepted: ["kopfkino"]
     hint: "Kopf (cabeza) + Kino (cine)."
+    placeholder: "Kummerspeck"
   - type: "order"
     sentence: "Was macht ein Clown im Büro"
     translation: "¿Qué hace un payaso en la oficina?"
+vocabulary:
+  - term: "der Kummerspeck"
+    translation: "el peso que se gana comiendo por tristeza"
+  - term: "das Kopfkino"
+    translation: "imaginar una escena vívidamente en la mente"
+  - term: "Faxen"
+    translation: "hacer payasadas / bromas (doble sentido con 'enviar faxes')"
+  - term: "die Doppeldeutigkeit"
+    translation: "el doble sentido"
 ---
 
 Reírte de un chiste en otro idioma —de verdad, sin que alguien te lo explique

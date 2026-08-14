@@ -35,12 +35,14 @@ exercises:
     accepted: ["Muss"]
     hint: "Uso subjetivo de 'müssen': certeza deductiva muy alta, no obligación."
     translation: "Seguro que está en casa, su coche está frente a la puerta."
+    placeholder: "dürfte"
   - type: "fill-blank"
     sentence: "Sie ___ zu Hause sein, ich habe sie gerade im Büro gesehen."
     answer: "kann nicht"
     accepted: ["Kann nicht"]
     hint: "Uso subjetivo de 'kann nicht': imposibilidad lógica basada en evidencia."
     translation: "No puede estar en casa, la acabo de ver en la oficina."
+    placeholder: "dürfte"
   - type: "match"
     instructions: "Empareja cada modal subjetivo con su grado de certeza."
     pairs:
@@ -57,9 +59,23 @@ exercises:
     answer: "dürfte"
     accepted: ["Dürfte"]
     hint: "Es el condicional de 'dürfen' usado para especular con alta probabilidad."
+    placeholder: "könnte"
   - type: "order"
     sentence: "Sie muss die Beste sein"
     translation: "Seguro que ella es la mejor."
+vocabulary:
+  - term: "muss"
+    translation: "seguro que (deducción con 'müssen')"
+  - term: "dürfte"
+    translation: "probablemente (uso subjetivo de 'dürfen')"
+  - term: "könnte"
+    translation: "podría ser que"
+  - term: "kann nicht"
+    translation: "no puede ser / es imposible que"
+  - term: "zu Hause sein"
+    translation: "estar en casa"
+  - term: "das Auto"
+    translation: "el coche"
 ---
 
 Ya conoces los modales en su sentido básico: obligación, permiso, capacidad. En este

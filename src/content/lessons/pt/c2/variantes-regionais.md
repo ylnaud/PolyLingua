@@ -31,12 +31,14 @@ exercises:
     accepted: ["Autocarro"]
     hint: "Es el término europeo para 'autobús'."
     translation: "En Portugal, 'ônibus' se dice 'autocarro'."
+    placeholder: "comboio / frigorífico"
   - type: "fill-blank"
     sentence: "Em Portugal, 'celular' se diz ___."
     answer: "telemóvel"
     accepted: ["Telemóvel"]
     hint: "Es el término europeo para 'teléfono móvil'."
     translation: "En Portugal, 'celular' se dice 'telemóvel'."
+    placeholder: "autocarro / comboio"
   - type: "match"
     instructions: "Empareja cada palabra brasileña con su equivalente en el portugués de Portugal."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "comboio"
     accepted: ["o comboio"]
     hint: "En Brasil se dice 'trem'."
+    placeholder: "autocarro / telemóvel"
   - type: "order"
     sentence: "O português é falado em nove países"
     translation: "El portugués se habla en nueve países."
+vocabulary:
+  - term: "autocarro"
+    translation: "autobús (Portugal)"
+  - term: "ônibus"
+    translation: "autobús (Brasil)"
+  - term: "telemóvel"
+    translation: "móvil / celular (Portugal)"
+  - term: "comboio"
+    translation: "tren (Portugal)"
+  - term: "geladeira"
+    translation: "refrigerador (Brasil)"
 ---
 
 El portugués estándar que dominas te abre las puertas a nueve países en cuatro

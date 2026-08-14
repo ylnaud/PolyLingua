@@ -31,12 +31,14 @@ exercises:
     accepted: ["war"]
     hint: "Präteritum de 'sein': ich war."
     translation: "Ayer yo estaba muy cansado."
+    placeholder: "hatte"
   - type: "fill-blank"
     sentence: "Er ___ jeden Tag ins Büro."
     answer: "ging"
     accepted: ["ging"]
     hint: "Präteritum irregular de 'gehen': ging (cambia la vocal de la raíz)."
     translation: "Él iba a la oficina todos los días."
+    placeholder: "kam"
   - type: "match"
     instructions: "Empareja cada verbo en infinitivo con su forma de Präteritum (ich/er/sie/es)."
     pairs:
@@ -55,9 +57,21 @@ exercises:
     answer: "machte"
     accepted: ["machte"]
     hint: "Verbos regulares: raíz + -te, sin terminación extra en 3ª persona singular."
+    placeholder: "lernte"
   - type: "order"
     sentence: "Er ging jeden Tag ins Büro"
     translation: "Él iba a la oficina todos los días."
+vocabulary:
+  - term: "war"
+    translation: "estaba / fui (Präteritum de sein)"
+  - term: "hatte"
+    translation: "tenía / tuve (Präteritum de haben)"
+  - term: "ging"
+    translation: "iba / fue (Präteritum de gehen)"
+  - term: "sah"
+    translation: "vio / veía (Präteritum de sehen)"
+  - term: "kam"
+    translation: "vino / venía (Präteritum de kommen)"
 ---
 
 Ya conoces el Perfekt para hablar del pasado. Ahora conoces a su hermano más formal: el

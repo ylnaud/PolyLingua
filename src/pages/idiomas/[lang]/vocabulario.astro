@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
@@ -9,6 +10,17 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+// Manifest lección→vocabulario de este idioma, para poder completar
+// retroactivamente en el cliente el vocabulario de lecciones que el usuario ya
+// había terminado ANTES de que existiera esta página (su localStorage tiene el
+// "lección completada" pero nunca tuvo la oportunidad de registrar las
+// palabras). Acotado a un idioma por página, como ya hace practica-libre.astro
+// con su pool de ejercicios.
+const lessonsForLang = await getCollection('lessons', (entry) => entry.data.language === lang);
+const vocabManifest = Object.fromEntries(
+  lessonsForLang.filter((l) => l.data.vocabulary.length > 0).map((l) => [l.id, l.data.vocabulary])
+);
 ---
 
 <BaseLayout
@@ -47,12 +59,15 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
       <span class="eyebrow">🎯 Ponte a prueba</span>
       <Practice quiz={[]} exercises={[]} dynamic={true} sessionType="vocab" lessonId="vocab" minutes={1} lang={languageMeta?.bcp47} />
     </div>
+
+    <div hidden data-vocab-manifest={JSON.stringify(vocabManifest)}></div>
   </section>
 </BaseLayout>
 
 <script>
   import { buildItemFieldset, type SrsEntry } from '../../../lib/practiceItemMarkup';
   import { shuffle } from '../../../lib/shuffle';
+  import { read, write } from '../../../lib/storage';
 
   const REVIEW_SIZE = 20;
 
@@ -64,12 +79,50 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
     learnedAt: string;
   }
 
+  interface VocabularyItem {
+    term: string;
+    translation: string;
+  }
+
   function readLearned(): Record<string, VocabEntry> {
     try {
-      return JSON.parse(localStorage.getItem('polylingua-vocab-learned') ?? '{}');
+      return JSON.parse(read('polylingua-vocab-learned') ?? '{}');
     } catch {
       return {};
     }
+  }
+
+  // Completa retroactivamente el vocabulario de lecciones que el usuario ya
+  // había terminado antes de que existiera esta página — su localStorage tiene
+  // `polylingua-lesson-done-{lang}-{level}-{slug}` (con la fecha real en que la
+  // completó) pero nunca tuvo la tarjeta data-vocab-tracker que dispara el
+  // registro (eso solo pasa la próxima vez que TERMINE esa lección). Usa el
+  // manifest lección→vocabulario embebido en la página (`[data-vocab-manifest]`,
+  // generado en build time para este idioma) y la fecha de "lección completada"
+  // ya guardada, en vez de "hoy", para no falsear cuándo se aprendió cada palabra.
+  function backfillFromCompletedLessons(lang: string) {
+    const manifestEl = document.querySelector<HTMLElement>('[data-vocab-manifest]');
+    if (!manifestEl) return;
+    let manifest: Record<string, VocabularyItem[]> = {};
+    try {
+      manifest = JSON.parse(manifestEl.dataset.vocabManifest ?? '{}');
+    } catch {
+      return;
+    }
+
+    const learned = readLearned();
+    let changed = false;
+    for (const [lessonId, vocabulary] of Object.entries(manifest)) {
+      const doneDate = read(`polylingua-lesson-done-${lessonId.replace(/\//g, '-')}`);
+      if (!doneDate) continue;
+      for (const v of vocabulary) {
+        const vkey = `${lang}::${v.term}`;
+        if (learned[vkey]) continue;
+        learned[vkey] = { term: v.term, translation: v.translation, lang, lessonId, learnedAt: doneDate };
+        changed = true;
+      }
+    }
+    if (changed) write('polylingua-vocab-learned', JSON.stringify(learned));
   }
 
   function initVocabPage() {
@@ -88,6 +141,7 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
     practiceRoot.dataset.vocabBuilt = 'true';
 
     const lang = window.location.pathname.split('/')[2] ?? '';
+    backfillFromCompletedLessons(lang);
     const learned = Object.values(readLearned())
       .filter((entry) => entry.lang === lang)
       .sort((a, b) => (a.learnedAt < b.learnedAt ? 1 : -1));

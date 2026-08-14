@@ -24,6 +24,8 @@ import { LANGUAGES } from '../data/languages';
 </BaseLayout>
 
 <script>
+  import { read } from '../lib/storage';
+
   interface VocabEntry {
     term: string;
     translation: string;
@@ -35,9 +37,7 @@ import { LANGUAGES } from '../data/languages';
   let latestLang = '';
   let latestDate = '';
   try {
-    const learned: Record<string, VocabEntry> = JSON.parse(
-      localStorage.getItem('polylingua-vocab-learned') ?? '{}'
-    );
+    const learned: Record<string, VocabEntry> = JSON.parse(read('polylingua-vocab-learned') ?? '{}');
     for (const entry of Object.values(learned)) {
       if (entry.learnedAt > latestDate) {
         latestDate = entry.learnedAt;

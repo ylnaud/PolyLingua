@@ -1,9 +1,18 @@
 ---
+interface Props {
+  // 'pill' es el botón compacto del header (desktop/landscape); 'sheet' es la
+  // variante de fila completa para el menú "Más" del bottom nav (portrait) —
+  // ambas comparten el mismo comportamiento vía la clase .install-btn, así
+  // que en cualquier página con las dos instancias montadas (header + sheet)
+  // se muestran/ocultan en simultáneo.
+  variant?: 'pill' | 'sheet';
+}
+
+const { variant = 'pill' } = Astro.props;
 ---
 <button
   type="button"
-  class="install-btn"
-  id="install-btn"
+  class:list={['install-btn', { 'install-btn-sheet': variant === 'sheet' }]}
   hidden
   aria-label="Instalar PolyLingua como aplicación"
 >
@@ -29,19 +38,41 @@
   .install-btn:hover {
     border-color: var(--accent);
   }
+
+  .install-btn-sheet {
+    width: 100%;
+    justify-content: flex-start;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    min-height: 44px;
+    padding: 0.6rem 0.9rem;
+    font-size: 1rem;
+  }
+
+  .install-btn-sheet:hover {
+    border-color: transparent;
+    background: var(--bg-elevated);
+  }
 </style>
 
 <script>
   // Bandera de módulo para los listeners de window, que persisten entre
-  // navegaciones — ver comentario equivalente en ProgressTracker.astro. El
-  // botón en sí se recrea en cada navegación, así que su propio listener de
-  // click sigue enganchándose por nav con el guard local de siempre.
+  // navegaciones — ver comentario equivalente en ProgressTracker.astro. Puede
+  // haber más de un botón .install-btn montado a la vez (el del header y el
+  // del menú "Más"), así que todo lo que toca visibilidad/estado opera sobre
+  // querySelectorAll en vez de un único id, para que ambas instancias queden
+  // siempre sincronizadas.
   let installPromptStarted = false;
   let deferredPrompt: any = null;
 
+  function allButtons(): HTMLButtonElement[] {
+    return Array.from(document.querySelectorAll<HTMLButtonElement>('.install-btn'));
+  }
+
   function initInstallPrompt() {
-    const btn = document.getElementById('install-btn') as HTMLButtonElement | null;
-    if (!btn) return;
+    const btns = allButtons();
+    if (btns.length === 0) return;
 
     if (!installPromptStarted) {
       installPromptStarted = true;
@@ -49,26 +80,31 @@
       window.addEventListener('beforeinstallprompt', (event) => {
         event.preventDefault();
         deferredPrompt = event;
-        document.getElementById('install-btn')?.removeAttribute('hidden');
+        allButtons().forEach((b) => b.removeAttribute('hidden'));
       });
 
       window.addEventListener('appinstalled', () => {
-        const current = document.getElementById('install-btn') as HTMLButtonElement | null;
-        if (current) current.hidden = true;
+        allButtons().forEach((b) => {
+          b.hidden = true;
+        });
         deferredPrompt = null;
       });
     }
 
-    if (btn.dataset.initialized) return;
-    btn.dataset.initialized = 'true';
-    btn.hidden = !deferredPrompt;
+    btns.forEach((btn) => {
+      if (btn.dataset.initialized) return;
+      btn.dataset.initialized = 'true';
+      btn.hidden = !deferredPrompt;
 
-    btn.addEventListener('click', async () => {
-      if (!deferredPrompt) return;
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-      btn.hidden = true;
+      btn.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        await deferredPrompt.userChoice;
+        deferredPrompt = null;
+        allButtons().forEach((b) => {
+          b.hidden = true;
+        });
+      });
     });
   }
 

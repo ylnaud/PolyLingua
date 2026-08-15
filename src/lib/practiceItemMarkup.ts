@@ -197,3 +197,14 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
 
   return fieldset;
 }
+
+// Deja lista la cabecera de una sesión de Practice armada dinámicamente
+// (vocabulario/práctica libre/repasar): progreso "1 / N", puntaje inicial y
+// el estimado de minutos que usa DailyGoal.astro al completar la sesión.
+export function primePracticeCounters(practiceRoot: HTMLElement, itemCount: number): void {
+  const progressEl = practiceRoot.querySelector<HTMLElement>('[data-practice-progress]');
+  if (progressEl) progressEl.textContent = `1 / ${itemCount}`;
+  const scoreText = practiceRoot.querySelector<HTMLElement>('[data-score-text]');
+  if (scoreText) scoreText.textContent = `Acertaste 0 / ${itemCount}`;
+  practiceRoot.dataset.lessonMinutes = String(Math.max(1, Math.round(itemCount * 0.5)));
+}

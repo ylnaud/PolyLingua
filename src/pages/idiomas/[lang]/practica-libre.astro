@@ -84,7 +84,7 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
   window.POOL_ITEMS = pool;
 </script>
 <script>
-  import { buildItemFieldset, type SrsEntry } from '../../../lib/practiceItemMarkup';
+  import { buildItemFieldset, primePracticeCounters, type SrsEntry } from '../../../lib/practiceItemMarkup';
   import { shuffle } from '../../../lib/shuffle';
 
   const SESSION_SIZE = 12;
@@ -120,11 +120,7 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
       container.appendChild(buildItemFieldset(entry, i));
     });
 
-    const progressEl = practiceRoot.querySelector<HTMLElement>('[data-practice-progress]');
-    if (progressEl) progressEl.textContent = `1 / ${session.length}`;
-    const scoreText = practiceRoot.querySelector<HTMLElement>('[data-score-text]');
-    if (scoreText) scoreText.textContent = `Acertaste 0 / ${session.length}`;
-    practiceRoot.dataset.lessonMinutes = String(Math.max(1, Math.round(session.length * 0.5)));
+    primePracticeCounters(practiceRoot, session.length);
 
     document.dispatchEvent(new Event('astro:page-load'));
   }
@@ -137,24 +133,6 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
   .free-head {
     padding-block: 2.5rem 1.5rem;
     max-width: 680px;
-  }
-
-  .breadcrumbs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 1.25rem;
-  }
-
-  .breadcrumbs a {
-    text-decoration: none;
-    color: var(--text-muted);
-  }
-
-  .breadcrumbs a:hover {
-    color: var(--accent-text);
   }
 
   .emoji {
@@ -176,17 +154,4 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
     padding-block: 0 4rem;
   }
 
-  .empty-state {
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-  }
-
-  .empty-emoji {
-    font-size: 2.5rem;
-    margin: 0;
-  }
-
-  .empty-state .btn {
-    margin-top: 1.25rem;
-  }
 </style>

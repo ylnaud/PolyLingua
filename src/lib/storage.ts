@@ -29,3 +29,26 @@ export function write(key: string, value: string): void {
     /* localStorage unavailable */
   }
 }
+
+// Busca, entre las keys "<prefix><idioma>-...", la del idioma con la fecha
+// más reciente guardada como valor — usado por los selectores de idioma de
+// /practica-libre y /repasar para saltar directo al idioma que el usuario
+// usó últimamente.
+export function mostRecentLangWithPrefix(prefix: string): string {
+  let latestLang = '';
+  let latestDate = '';
+  try {
+    for (const key of Object.keys(localStorage)) {
+      if (!key.startsWith(prefix)) continue;
+      const lang = key.slice(prefix.length).split('-')[0];
+      const date = localStorage.getItem(key) ?? '';
+      if (date > latestDate) {
+        latestDate = date;
+        latestLang = lang;
+      }
+    }
+  } catch {
+    /* localStorage unavailable */
+  }
+  return latestLang;
+}

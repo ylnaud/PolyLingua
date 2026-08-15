@@ -66,7 +66,9 @@ Ejecuta siempre `npm run check && npm run build` antes de dar una tarea por term
 
 ## Despliegue
 Push a `main` → Vercel construye y publica automáticamente.
-No hace falta adaptador @astrojs/vercel ni vercel.json.
+No hace falta adaptador @astrojs/vercel para el build. El único
+`vercel.json` del repo existe solo para declarar los headers de seguridad
+(CSP, X-Frame-Options, etc.) — no configura el build ni ningún adapter.
 
 ## Reglas de trabajo
 1. Explica cada paso en lenguaje sencillo (desarrollador principiante en Astro).

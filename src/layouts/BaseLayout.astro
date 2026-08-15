@@ -76,7 +76,7 @@ const ogImage = new URL('/og-image.svg', Astro.site);
     <meta name="twitter:image" content={ogImage} />
 
     {structuredData && (
-      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />
     )}
 
     <ClientRouter />

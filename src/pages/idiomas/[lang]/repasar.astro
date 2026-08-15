@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
@@ -9,6 +10,22 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+// Manifest lección→ítems de este idioma, para poder ofrecer al repasar un
+// ejercicio distinto de la misma lección en vez de repetir exactamente la
+// frase que se falló (repetición espaciada con contexto nuevo, no
+// memorización de una frase puntual). Acotado a un idioma, mismo patrón que
+// vocabulario.astro.
+const lessonsForLang = await getCollection('lessons', (entry) => entry.data.language === lang);
+const exerciseManifest = Object.fromEntries(
+  lessonsForLang.map((l) => [
+    l.id,
+    [
+      ...l.data.quiz.map((data) => ({ kind: 'choice', data })),
+      ...l.data.exercises.map((data) => ({ kind: data.type, data })),
+    ],
+  ])
+);
 ---
 
 <BaseLayout
@@ -40,11 +57,19 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 
     <Practice quiz={[]} exercises={[]} dynamic={true} sessionType="review" lessonId="review" minutes={1} lang={languageMeta?.bcp47} />
   </section>
+
+  <div hidden data-exercise-manifest={JSON.stringify(exerciseManifest)}></div>
 </BaseLayout>
 
 <script>
   import { buildItemFieldset, primePracticeCounters, type SrsEntry } from '../../../lib/practiceItemMarkup';
   import { today } from '../../../lib/storage';
+  import { shuffle } from '../../../lib/shuffle';
+
+  interface ManifestItem {
+    kind: string;
+    data: unknown;
+  }
 
   function readPool(): Record<string, SrsEntry> {
     try {
@@ -52,6 +77,32 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
     } catch {
       return {};
     }
+  }
+
+  function readExerciseManifest(): Record<string, ManifestItem[]> {
+    const manifestEl = document.querySelector<HTMLElement>('[data-exercise-manifest]');
+    if (!manifestEl) return {};
+    try {
+      return JSON.parse(manifestEl.dataset.exerciseManifest ?? '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  // En vez de repasar la frase exacta que se falló, ofrece otro ítem de la
+  // misma lección (mismo tema gramatical) cuando hay alternativas — refuerza
+  // la regla en vez de memorizar una frase puntual. Si no hay alternativa
+  // (lección con un solo ítem, o manifest sin esa lección), cae al
+  // comportamiento anterior: mostrar la data original.
+  function pickReviewItem(entry: SrsEntry, manifest: Record<string, ManifestItem[]>): SrsEntry {
+    const lessonId = entry.id.split('#')[0];
+    const pool = manifest[lessonId] ?? [];
+    const alternatives = pool.filter(
+      (item) => item.kind !== entry.kind || JSON.stringify(item.data) !== JSON.stringify(entry.data)
+    );
+    if (alternatives.length === 0) return entry;
+    const chosen = shuffle(alternatives)[0];
+    return { ...entry, kind: chosen.kind, data: chosen.data };
   }
 
   function initReview() {
@@ -85,8 +136,9 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
       desc.textContent = `Tienes ${due.length} ${due.length === 1 ? 'ítem' : 'ítems'} por repasar.`;
     }
 
+    const manifest = readExerciseManifest();
     due.forEach((entry, i) => {
-      container.appendChild(buildItemFieldset(entry, i));
+      container.appendChild(buildItemFieldset(pickReviewItem(entry, manifest), i));
     });
 
     primePracticeCounters(practiceRoot, due.length);

@@ -285,7 +285,12 @@ function splitSentence(sentence: string): { before: string; after: string } {
           {item.kind === 'choice' ? item.data.explanation : ''}
         </p>
         {(item.kind === 'fill-blank' || item.kind === 'write' || item.kind === 'order') && (
-          <button type="button" class="speak-btn reveal-speak" data-speak data-reveal-speak hidden>🔊 Escuchar</button>
+          <>
+            <button type="button" class="speak-btn reveal-speak" data-speak data-reveal-speak hidden>🔊 Escuchar</button>
+            <button type="button" class="btn btn-primary shadow-confirm" data-shadow-confirm hidden>
+              🎤 Ya lo dije en voz alta
+            </button>
+          </>
         )}
         <button type="button" class="btn btn-primary next" data-next hidden>
           Siguiente →
@@ -694,7 +699,8 @@ function splitSentence(sentence: string): { before: string; after: string } {
   }
 
   .next,
-  .check {
+  .check,
+  .shadow-confirm {
     margin-top: 1rem;
   }
 
@@ -733,6 +739,11 @@ function splitSentence(sentence: string): { before: string; after: string } {
 <script>
   import { playCorrect, playIncorrect, playCombo, speak, isMuted } from '../lib/sound';
   import { shuffle } from '../lib/shuffle';
+  import { read } from '../lib/storage';
+
+  function isShadowingEnabled(): boolean {
+    return read('polylingua-shadowing-mode') === 'true';
+  }
 
   function shuffleChildren(container: Element | null) {
     if (!container) return;
@@ -885,6 +896,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
         const explanation = item.querySelector<HTMLElement>('[data-explanation]');
         const nextBtn = item.querySelector<HTMLButtonElement>('[data-next]');
         const revealSpeak = item.querySelector<HTMLButtonElement>('[data-reveal-speak]');
+        const shadowConfirm = item.querySelector<HTMLButtonElement>('[data-shadow-confirm]');
 
         // El markup (estático o inyectado por practiceItemMarkup.ts) llega en
         // orden canónico; el reshuffle real pasa acá, una sola vez por ítem al
@@ -901,7 +913,24 @@ function splitSentence(sentence: string): { before: string; after: string } {
           updateStreak(correct);
           if (correct && streak >= 2) playCombo(streak);
           if (explanation && explanation.textContent) explanation.hidden = false;
-          if (nextBtn) nextBtn.hidden = false;
+
+          // Modo shadowing: en vez de destapar "Siguiente" de una, se pide
+          // repetir la respuesta en voz alta primero. El gate se basa en que
+          // el usuario clickee confirmar, no en detectar que el audio
+          // terminó de sonar — speak() no tiene callback de fin, y esperar
+          // audio real dejaría trabada la lección para quien tiene el sonido
+          // muteado (maybeAutoSpeak no suena nada en ese caso). shadowConfirm
+          // solo existe para fill-blank/write/order (donde revealSpeak
+          // también existe); choice/match nunca gatean.
+          const shouldGateWithShadowing =
+            !!shadowConfirm && isShadowingEnabled() && 'speechSynthesis' in window && !!revealSpeak?.dataset.speakText;
+          if (shouldGateWithShadowing && shadowConfirm) {
+            shadowConfirm.dataset.speakText = revealSpeak?.dataset.speakText ?? '';
+            shadowConfirm.hidden = false;
+          } else if (nextBtn) {
+            nextBtn.hidden = false;
+          }
+
           if (correct) score += 1;
           let data: unknown = null;
           try {
@@ -911,10 +940,19 @@ function splitSentence(sentence: string): { before: string; after: string } {
           }
           results.push({ id: item.dataset.itemId ?? '', kind: kind ?? '', data, correct });
           // Responder deshabilita el botón/input enfocado, lo que por spec
-          // manda el foco a <body> — lo movemos al botón "Siguiente" recién
-          // revelado para no perder la posición en el teclado.
-          nextBtn?.focus();
+          // manda el foco a <body> — lo movemos al botón recién revelado
+          // (confirmar shadowing, o directo "Siguiente") para no perder la
+          // posición en el teclado.
+          if (shouldGateWithShadowing) shadowConfirm?.focus();
+          else nextBtn?.focus();
         }
+
+        shadowConfirm?.addEventListener('click', () => {
+          speak(shadowConfirm.dataset.speakText ?? '', root.dataset.lang ?? '');
+          shadowConfirm.hidden = true;
+          if (nextBtn) nextBtn.hidden = false;
+          nextBtn?.focus();
+        });
 
         if (kind === 'choice') {
           const options = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-option]'));

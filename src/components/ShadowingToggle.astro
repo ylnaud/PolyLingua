@@ -1,0 +1,120 @@
+---
+interface Props {
+  // 'icon' es el botón circular del header (desktop/landscape); 'sheet' es la
+  // variante de fila completa para el menú "Más" del bottom nav (portrait) —
+  // ambas comparten el mismo comportamiento vía la clase .shadowing-toggle,
+  // así que en cualquier página con las dos instancias montadas (header +
+  // sheet) se sincronizan en simultáneo.
+  variant?: 'icon' | 'sheet';
+}
+
+const { variant = 'icon' } = Astro.props;
+---
+<button
+  type="button"
+  class:list={['shadowing-toggle', { 'shadowing-toggle-sheet': variant === 'sheet' }]}
+  aria-label="Modo shadowing: repetir en voz alta antes de seguir"
+  aria-pressed="false"
+>
+  <span class="icon" aria-hidden="true">🎤</span>
+  <span class="sheet-only">Modo shadowing (repetir en voz alta)</span>
+</button>
+
+<style>
+  .shadowing-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .shadowing-toggle:hover {
+    border-color: var(--accent);
+  }
+
+  .shadowing-toggle.is-active {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+
+  .sheet-only {
+    display: none;
+  }
+
+  .shadowing-toggle-sheet {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.6rem;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    min-height: 44px;
+    padding: 0.6rem 0.9rem;
+    font-size: 1rem;
+  }
+
+  .shadowing-toggle-sheet:hover {
+    border-color: transparent;
+    background: var(--bg-elevated);
+  }
+
+  .shadowing-toggle-sheet .sheet-only {
+    display: inline;
+  }
+
+  .shadowing-toggle-sheet.is-active {
+    color: var(--accent-text);
+  }
+</style>
+
+<script>
+  import { read, write } from '../lib/storage';
+
+  // Puede haber más de un botón .shadowing-toggle montado a la vez (el del
+  // header y el del menú "Más") — ver comentario equivalente en
+  // SoundToggle.astro / InstallPrompt.astro.
+  function allButtons(): HTMLButtonElement[] {
+    return Array.from(document.querySelectorAll<HTMLButtonElement>('.shadowing-toggle'));
+  }
+
+  function isShadowingEnabled(): boolean {
+    return read('polylingua-shadowing-mode') === 'true';
+  }
+
+  function syncAll() {
+    const active = isShadowingEnabled();
+    allButtons().forEach((btn) => {
+      btn.setAttribute('aria-pressed', String(active));
+      btn.classList.toggle('is-active', active);
+    });
+  }
+
+  function initShadowingToggle() {
+    const btns = allButtons();
+    if (btns.length === 0) return;
+
+    btns.forEach((btn) => {
+      if (btn.dataset.initialized) return;
+      btn.dataset.initialized = 'true';
+      btn.addEventListener('click', () => {
+        write('polylingua-shadowing-mode', String(!isShadowingEnabled()));
+        syncAll();
+      });
+    });
+
+    syncAll();
+  }
+
+  initShadowingToggle();
+  document.addEventListener('astro:page-load', initShadowingToggle);
+</script>

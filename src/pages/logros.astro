@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { LANGUAGES } from '../data/languages';
 import { LEVELS } from '../data/levels';
@@ -35,6 +36,14 @@ const courseBadges: Badge[] = LANGUAGES.map((language) => ({
 const allBadges = [...coreBadges, ...courseBadges];
 const levelIds = LEVELS.map((l) => l.id);
 const languageIds = LANGUAGES.map((l) => l.id);
+
+// Manifest lección→tema gramatical, todos los idiomas (esta página no está
+// scopeada a un [lang] como vocabulario.astro), para poder mostrar el
+// nombre real del tema junto a cada entrada del pool de repetición
+// espaciada — l.id ya es "{lang}/{level}/{slug}", el mismo prefijo que
+// llevan los ids del pool antes del "#{kind}-{index}".
+const allLessons = await getCollection('lessons');
+const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.grammarTopic]));
 ---
 
 <BaseLayout
@@ -47,6 +56,21 @@ const languageIds = LANGUAGES.map((l) => l.id);
     <h1>🏆 Mis logros</h1>
     <p class="desc" data-progress-summary>Cargando tu progreso…</p>
   </section>
+
+  <section class="container pending-head">
+    <div class="card empty-state" data-pending-empty hidden>
+      <p class="empty-emoji">🎉</p>
+      <h2>No tenés temas pendientes</h2>
+      <p>Cuando falles un ejercicio, el tema va a aparecer acá para que lo repases con contexto.</p>
+    </div>
+
+    <div class="card pending-card" data-pending-card hidden>
+      <span class="eyebrow">🎯 Tus temas pendientes</span>
+      <div class="pending-list" data-pending-list></div>
+    </div>
+  </section>
+
+  <div hidden data-topic-manifest={JSON.stringify(topicManifest)}></div>
 
   <section class="container badges-grid">
     {allBadges.map((badge) => (
@@ -143,6 +167,111 @@ const languageIds = LANGUAGES.map((l) => l.id);
   document.addEventListener('astro:page-load', initLogros);
 </script>
 
+<script>
+  import { read, today } from '../lib/storage';
+
+  interface SrsEntry {
+    id: string;
+    kind: string;
+    data: unknown;
+    box: number;
+    due: string;
+    lang: string;
+    level: string;
+    firstFailedAt?: string;
+  }
+
+  const LEVEL_LABELS: Record<string, string> = { a1: 'A1', a2: 'A2', b1: 'B1', b2: 'B2', c1: 'C1', c2: 'C2' };
+  const MAX_TOPICS = 5;
+
+  function readPool(): Record<string, SrsEntry> {
+    try {
+      return JSON.parse(read('polylingua-srs-pool') ?? '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  function initPendingTopics() {
+    const emptyState = document.querySelector<HTMLElement>('[data-pending-empty]');
+    const card = document.querySelector<HTMLElement>('[data-pending-card]');
+    const list = document.querySelector<HTMLElement>('[data-pending-list]');
+    const manifestEl = document.querySelector<HTMLElement>('[data-topic-manifest]');
+    if (!emptyState || !card || !list || !manifestEl) return;
+
+    let manifest: Record<string, string> = {};
+    try {
+      manifest = JSON.parse(manifestEl.dataset.topicManifest ?? '{}');
+    } catch {
+      /* manifest inválido, se trata como vacío */
+    }
+
+    const pool = readPool();
+    const byLesson: Record<string, { lang: string; level: string; count: number; earliest: string }> = {};
+    for (const entry of Object.values(pool)) {
+      const lessonId = entry.id.split('#')[0];
+      const seenAt = entry.firstFailedAt ?? entry.due;
+      const existing = byLesson[lessonId];
+      if (existing) {
+        existing.count += 1;
+        if (seenAt < existing.earliest) existing.earliest = seenAt;
+      } else {
+        byLesson[lessonId] = { lang: entry.lang, level: entry.level, count: 1, earliest: seenAt };
+      }
+    }
+
+    const todayStr = today();
+    const rows = Object.entries(byLesson)
+      .map(([lessonId, info]) => ({
+        lessonId,
+        topic: manifest[lessonId] ?? lessonId,
+        ...info,
+        days: Math.max(0, Math.floor((Date.parse(todayStr) - Date.parse(info.earliest)) / 86400000)),
+      }))
+      .sort((a, b) => b.days - a.days)
+      .slice(0, MAX_TOPICS);
+
+    list.innerHTML = '';
+    if (rows.length === 0) {
+      emptyState.hidden = false;
+      card.hidden = true;
+      return;
+    }
+    emptyState.hidden = true;
+    card.hidden = false;
+
+    for (const row of rows) {
+      const a = document.createElement('a');
+      a.className = 'pending-item';
+      a.href = `/idiomas/${row.lang}/repasar`;
+      a.dataset.astroReload = 'true';
+
+      const info = document.createElement('span');
+      info.className = 'pending-info';
+      const topic = document.createElement('span');
+      topic.className = 'pending-topic';
+      topic.textContent = `${LEVEL_LABELS[row.level] ?? row.level.toUpperCase()} · ${row.topic}`;
+      const meta = document.createElement('span');
+      meta.className = 'pending-meta';
+      meta.textContent = `${row.count} ítem${row.count === 1 ? '' : 's'} · ${
+        row.days === 0 ? 'fallando desde hoy' : `fallando hace ${row.days} día${row.days === 1 ? '' : 's'}`
+      }`;
+      info.append(topic, meta);
+
+      const arrow = document.createElement('span');
+      arrow.className = 'pending-arrow';
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '→';
+
+      a.append(info, arrow);
+      list.appendChild(a);
+    }
+  }
+
+  initPendingTopics();
+  document.addEventListener('astro:page-load', initPendingTopics);
+</script>
+
 <style>
   .achievements-head {
     padding-block: 2.5rem 1.5rem;
@@ -157,6 +286,76 @@ const languageIds = LANGUAGES.map((l) => l.id);
   .desc {
     color: var(--text-muted);
     margin: 0;
+  }
+
+  .pending-head {
+    max-width: 680px;
+    padding-block: 0 1.5rem;
+  }
+
+  .pending-card {
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+    margin-bottom: 0.9rem;
+  }
+
+  .pending-list {
+    display: block;
+  }
+
+  /* Las filas se crean con document.createElement en JS (igual que
+     vocabulario.astro's .word-item), así que nunca reciben el atributo de
+     scoping de Astro — hace falta :global() para que este CSS las alcance. */
+  .pending-list :global(.pending-item) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    transition: background-color 0.15s ease;
+  }
+
+  .pending-list :global(.pending-item:last-child) {
+    border-bottom: none;
+  }
+
+  .pending-list :global(.pending-item:hover) {
+    background: var(--bg-elevated);
+    margin-inline: -0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  .pending-list :global(.pending-info) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+  }
+
+  .pending-list :global(.pending-topic) {
+    font-weight: 700;
+  }
+
+  .pending-list :global(.pending-meta) {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .pending-list :global(.pending-arrow) {
+    color: var(--text-muted);
+    flex-shrink: 0;
   }
 
   .badges-grid {

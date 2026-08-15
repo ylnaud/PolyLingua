@@ -1,6 +1,7 @@
 ---
 import InstallPrompt from './InstallPrompt.astro';
 import SoundToggle from './SoundToggle.astro';
+import ShadowingToggle from './ShadowingToggle.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 const path = Astro.url.pathname;
@@ -48,6 +49,7 @@ const tabs = [
   <a href="/#por-que" class="sheet-link">💡 Por qué PolyLingua</a>
   <a href="/#faq" class="sheet-link">❓ FAQ</a>
   <InstallPrompt variant="sheet" />
+  <ShadowingToggle variant="sheet" />
   <SoundToggle variant="sheet" />
   <ThemeToggle variant="sheet" />
   <a href="/idiomas" class="sheet-link cta">Empezar gratis</a>

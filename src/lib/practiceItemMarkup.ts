@@ -20,6 +20,7 @@ export interface SrsEntry {
   due: string;
   lang: string;
   level: string;
+  firstFailedAt?: string;
 }
 
 const KIND_LABELS: Record<string, string> = {
@@ -191,6 +192,9 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
   if (kind === 'fill-blank' || kind === 'write' || kind === 'order') {
     fieldset.appendChild(
       el('button', { type: 'button', class: 'speak-btn reveal-speak', 'data-speak': '', 'data-reveal-speak': '', hidden: '' }, '🔊 Escuchar')
+    );
+    fieldset.appendChild(
+      el('button', { type: 'button', class: 'btn btn-primary shadow-confirm', 'data-shadow-confirm': '', hidden: '' }, '🎤 Ya lo dije en voz alta')
     );
   }
   fieldset.appendChild(el('button', { type: 'button', class: 'btn btn-primary next', 'data-next': '', hidden: '' }, 'Siguiente →'));

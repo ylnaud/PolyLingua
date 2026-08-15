@@ -1,6 +1,7 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
 import SoundToggle from './SoundToggle.astro';
+import ShadowingToggle from './ShadowingToggle.astro';
 import InstallPrompt from './InstallPrompt.astro';
 import DailyGoal from './DailyGoal.astro';
 ---
@@ -23,6 +24,7 @@ import DailyGoal from './DailyGoal.astro';
       <a class="btn-pill" href="/practica-libre" data-astro-reload aria-label="Práctica libre aleatoria">🎲 Práctica libre</a>
       <a class="btn-pill" href="/logros" aria-label="Ver tus logros">🏆 Logros</a>
       <InstallPrompt />
+      <ShadowingToggle />
       <SoundToggle />
       <ThemeToggle />
       <a class="btn btn-primary cta" href="/idiomas">Empezar gratis</a>
@@ -131,7 +133,8 @@ import DailyGoal from './DailyGoal.astro';
     }
 
     .actions :global(.sound-toggle),
-    .actions :global(.theme-toggle) {
+    .actions :global(.theme-toggle),
+    .actions :global(.shadowing-toggle) {
       display: none;
     }
   }

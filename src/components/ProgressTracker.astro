@@ -18,6 +18,7 @@
     due: string;
     lang: string;
     level: string;
+    firstFailedAt?: string;
   }
 
   interface VocabEntry {
@@ -97,7 +98,17 @@
       const [lang = '', level = ''] = r.id.split('#')[0].split('/');
       if (!lang || !level) continue;
       if (!r.correct) {
-        pool[r.id] = { id: r.id, kind: r.kind, data: r.data, box: 0, due: today(), lang, level };
+        const existing = pool[r.id];
+        pool[r.id] = {
+          id: r.id,
+          kind: r.kind,
+          data: r.data,
+          box: 0,
+          due: today(),
+          lang,
+          level,
+          firstFailedAt: existing?.firstFailedAt ?? today(),
+        };
         continue;
       }
       const existing = pool[r.id];

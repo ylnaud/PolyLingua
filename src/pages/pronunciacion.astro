@@ -4,14 +4,14 @@ import { LANGUAGES } from '../data/languages';
 ---
 
 <BaseLayout
-  title="Practicar pronunciación"
-  description="Graba tu voz diciendo palabras en alemán, inglés, francés, italiano o portugués y compará con la pronunciación nativa."
+  title="Escuchar y repetir"
+  description="Escuchá palabras en alemán, inglés, francés, italiano o portugués con voz nativa y repetilas en voz alta para practicar tu pronunciación."
   path="/pronunciacion"
   noindex
 >
   <section class="container picker">
-    <h1>¿En qué idioma quieres practicar pronunciación?</h1>
-    <p class="desc">Elige un idioma para grabarte y comparar con la pronunciación nativa.</p>
+    <h1>¿En qué idioma quieres practicar?</h1>
+    <p class="desc">Elige un idioma para escuchar palabras y repetirlas en voz alta.</p>
     <div class="lang-grid">
       {LANGUAGES.map((language) => (
         <a class="lang-item card" href={`/idiomas/${language.id}/pronunciacion`}>

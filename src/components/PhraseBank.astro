@@ -1,6 +1,6 @@
 ---
 interface Phrase {
-  de: string;
+  text: string;
   es: string;
   say?: string;
   note?: string;
@@ -21,7 +21,7 @@ const { phrases, lang = '' } = Astro.props;
     {phrases.map((phrase) => (
       <li class="phrase-item">
         <div class="phrase-main">
-          <p class="phrase-de">{phrase.de}</p>
+          <p class="phrase-de">{phrase.text}</p>
           {phrase.say && <p class="phrase-say">{phrase.say}</p>}
           <p class="phrase-es">{phrase.es}</p>
           {phrase.note && <p class="phrase-note">{phrase.note}</p>}
@@ -30,8 +30,8 @@ const { phrases, lang = '' } = Astro.props;
           type="button"
           class="phrase-speak"
           data-phrase-speak
-          data-phrase-text={phrase.de}
-          aria-label={`Escuchar «${phrase.de}»`}
+          data-phrase-text={phrase.text}
+          aria-label={`Escuchar «${phrase.text}»`}
         >
           🔊
         </button>

@@ -16,10 +16,10 @@ quiz:
     options: ["wir sind", "wir seid", "wir habt"]
     answerIndex: 0
     explanation: "'sein' (ser/estar) en 'wir' es 'sind'. 'seid' es la forma de 'ihr', no de 'wir'."
-  - question: "¿Cuál verbo usarías para 'Ella ___ 20 años' (tener X años, en alemán se usa este verbo)?"
-    options: ["sein", "haben", "werden"]
+  - question: "¿Cómo se dice correctamente 'Ella tiene 20 años' en alemán?"
+    options: ["Sie hat 20 Jahre.", "Sie ist 20 Jahre alt.", "Sie wird 20 Jahre."]
     answerIndex: 1
-    explanation: "La edad en alemán se expresa con haben, no con sein: 'Sie hat 20 Jahre' — literalmente 'ella tiene 20 años', igual que en español."
+    explanation: "A diferencia del español, la edad en alemán se expresa con sein + alt, no con haben: 'Sie ist 20 Jahre alt' (literalmente 'ella es 20 años vieja')."
 exercises:
   - type: "fill-blank"
     sentence: "Ich ___ Kopfschmerzen."
@@ -111,9 +111,10 @@ Si la palabra que sigue es un **sustantivo** (algo que "tienes"), usa **haben**:
 `Kopfschmerzen`, `ein Auto`, `Hunger`, `Zeit`. Si es un **lugar o un adjetivo** (algo que
 "eres" o "estás"), usa **sein**: `müde`, `groß`, `in Berlin`, `zu Hause`.
 
-Un caso especial que rompe la lógica del español: la edad. En alemán se usa **haben**,
-no sein — `Ich habe 21 Jahre` (literalmente "tengo 21 años", igual que en español, así
-que en realidad no es tan raro).
+Un caso especial que rompe la lógica del español: la edad. En español "tenés" años
+(haber/tener), pero en alemán se usa **sein + alt**, no haben — `Ich bin 21 Jahre alt`
+(literalmente "soy 21 años viejo/a"). Decir `Ich habe 21 Jahre` es un error típico de
+hispanohablantes: la edad en alemán se "es", no se "tiene".
 
 ## Por qué esto es más importante de lo que parece
 

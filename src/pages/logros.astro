@@ -83,6 +83,19 @@ const lessonCounts = Object.fromEntries(
     </div>
   </section>
 
+  <section class="container sprint-head">
+    <div class="card sprint-card" data-sprint-card hidden>
+      <span class="eyebrow">🏃 Sprint activo</span>
+      <p class="sprint-topic" data-sprint-topic></p>
+      <div class="sprint-days" data-sprint-days aria-hidden="true"></div>
+      <p class="sprint-status" data-sprint-status></p>
+      <div class="sprint-actions">
+        <a class="btn btn-primary" data-sprint-go href="#">Ir a repasar este tema</a>
+        <button type="button" class="btn btn-ghost" data-sprint-end>Terminar sprint</button>
+      </div>
+    </div>
+  </section>
+
   <div hidden data-topic-manifest={JSON.stringify(topicManifest)}></div>
 
   <section class="container badges-grid">
@@ -256,7 +269,7 @@ const lessonCounts = Object.fromEntries(
 </script>
 
 <script>
-  import { read, today } from '../lib/storage';
+  import { read, today, getActiveSprint, startSprint, clearSprint, SPRINT_LENGTH_DAYS } from '../lib/storage';
 
   interface SrsEntry {
     id: string;
@@ -329,9 +342,12 @@ const lessonCounts = Object.fromEntries(
     card.hidden = false;
 
     for (const row of rows) {
+      const item = document.createElement('div');
+      item.className = 'pending-item';
+
       const a = document.createElement('a');
-      a.className = 'pending-item';
-      a.href = `/idiomas/${row.lang}/repasar`;
+      a.className = 'pending-link';
+      a.href = `/idiomas/${row.lang}/repasar?tema=${encodeURIComponent(row.topic)}`;
       a.dataset.astroReload = 'true';
 
       const info = document.createElement('span');
@@ -352,12 +368,82 @@ const lessonCounts = Object.fromEntries(
       arrow.textContent = '→';
 
       a.append(info, arrow);
-      list.appendChild(a);
+
+      const sprintBtn = document.createElement('button');
+      sprintBtn.type = 'button';
+      sprintBtn.className = 'pending-sprint-btn';
+      sprintBtn.title = `Iniciar un sprint de ${SPRINT_LENGTH_DAYS} días en este tema`;
+      sprintBtn.setAttribute('aria-label', `Iniciar sprint de ${row.topic}`);
+      sprintBtn.textContent = '🏃';
+      sprintBtn.addEventListener('click', () => {
+        startSprint(row.lang, row.topic, row.lessonId);
+        renderSprintCard();
+        sprintCardEl?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+
+      item.append(a, sprintBtn);
+      list.appendChild(item);
     }
   }
 
+  // El sprint es, en esencia, "repasá este tema en N días distintos" — reusa
+  // el filtro por tema de /idiomas/[lang]/repasar (ver ?tema= más arriba),
+  // solo cuenta en qué fechas se visitó. Vive en el mismo script que el
+  // panel de temas pendientes porque el botón "Iniciar sprint" de cada fila
+  // necesita poder refrescar esta tarjeta al instante.
+  let sprintCardEl: HTMLElement | null = null;
+
+  function renderSprintCard() {
+    const card = document.querySelector<HTMLElement>('[data-sprint-card]');
+    const topicEl = document.querySelector<HTMLElement>('[data-sprint-topic]');
+    const daysEl = document.querySelector<HTMLElement>('[data-sprint-days]');
+    const statusEl = document.querySelector<HTMLElement>('[data-sprint-status]');
+    const goLink = document.querySelector<HTMLAnchorElement>('[data-sprint-go]');
+    if (!card || !topicEl || !daysEl || !statusEl || !goLink) return;
+    sprintCardEl = card;
+
+    const sprint = getActiveSprint();
+    if (!sprint) {
+      card.hidden = true;
+      return;
+    }
+    card.hidden = false;
+    topicEl.textContent = sprint.topic;
+
+    daysEl.innerHTML = '';
+    for (let i = 0; i < SPRINT_LENGTH_DAYS; i++) {
+      const dot = document.createElement('span');
+      dot.className = i < sprint.days.length ? 'sprint-dot is-done' : 'sprint-dot';
+      daysEl.appendChild(dot);
+    }
+
+    const done = sprint.days.length;
+    statusEl.textContent =
+      done >= SPRINT_LENGTH_DAYS
+        ? `¡Sprint completado! Practicaste ${done} de ${SPRINT_LENGTH_DAYS} días.`
+        : `Practicaste ${done} de ${SPRINT_LENGTH_DAYS} días.`;
+    goLink.href = `/idiomas/${sprint.lang}/repasar?tema=${encodeURIComponent(sprint.topic)}`;
+  }
+
+  function initSprintCard() {
+    const endBtn = document.querySelector<HTMLButtonElement>('[data-sprint-end]');
+    if (!endBtn) return;
+    if (!endBtn.dataset.initialized) {
+      endBtn.dataset.initialized = 'true';
+      endBtn.addEventListener('click', () => {
+        clearSprint();
+        renderSprintCard();
+      });
+    }
+    renderSprintCard();
+  }
+
   initPendingTopics();
-  document.addEventListener('astro:page-load', initPendingTopics);
+  initSprintCard();
+  document.addEventListener('astro:page-load', () => {
+    initPendingTopics();
+    initSprintCard();
+  });
 </script>
 
 <script>
@@ -502,12 +588,9 @@ const lessonCounts = Object.fromEntries(
   .pending-list :global(.pending-item) {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    gap: 0.5rem;
     padding: 0.85rem 0;
     border-bottom: 1px solid var(--border);
-    text-decoration: none;
-    color: var(--text);
     transition: background-color 0.15s ease;
   }
 
@@ -519,6 +602,17 @@ const lessonCounts = Object.fromEntries(
     background: var(--bg-elevated);
     margin-inline: -0.5rem;
     padding-inline: 0.5rem;
+  }
+
+  .pending-list :global(.pending-link) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex: 1;
+    min-width: 0;
+    text-decoration: none;
+    color: var(--text);
   }
 
   .pending-list :global(.pending-info) {
@@ -540,6 +634,69 @@ const lessonCounts = Object.fromEntries(
   .pending-list :global(.pending-arrow) {
     color: var(--text-muted);
     flex-shrink: 0;
+  }
+
+  .pending-list :global(.pending-sprint-btn) {
+    flex-shrink: 0;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+
+  .pending-list :global(.pending-sprint-btn:hover) {
+    border-color: var(--accent);
+  }
+
+  .sprint-head {
+    max-width: 680px;
+    padding-block: 0 1.5rem;
+  }
+
+  .sprint-card {
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .sprint-topic {
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+  }
+
+  .sprint-days {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Los puntos se crean en JS a partir del array de días del sprint — hace
+     falta :global() por el mismo motivo que .pending-list de arriba. */
+  .sprint-days :global(.sprint-dot) {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+  }
+
+  .sprint-days :global(.sprint-dot.is-done) {
+    border-color: var(--accent);
+    background: var(--accent);
+  }
+
+  .sprint-status {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0 0 1.1rem;
+  }
+
+  .sprint-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
   }
 
   .badges-grid {

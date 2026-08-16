@@ -63,6 +63,49 @@ export function importAll(data: Record<string, unknown>): void {
   }
 }
 
+const SPRINT_KEY = 'polylingua-sprint';
+export const SPRINT_LENGTH_DAYS = 7;
+
+export interface Sprint {
+  lang: string;
+  topic: string;
+  lessonId: string;
+  startDate: string;
+  days: string[];
+}
+
+// El "sprint" semanal (ver /logros y /idiomas/[lang]/repasar) es, en
+// esencia, un recordatorio de "repasá este tema en N días distintos" — no
+// reinventa el filtro por tema del repaso, solo cuenta en qué fechas se usó.
+export function getActiveSprint(): Sprint | null {
+  const raw = read(SPRINT_KEY);
+  if (!raw) return null;
+  try {
+    const sprint = JSON.parse(raw) as Partial<Sprint>;
+    if (!sprint.lang || !sprint.topic || !Array.isArray(sprint.days)) return null;
+    return sprint as Sprint;
+  } catch {
+    return null;
+  }
+}
+
+export function startSprint(lang: string, topic: string, lessonId: string): void {
+  const sprint: Sprint = { lang, topic, lessonId, startDate: today(), days: [] };
+  write(SPRINT_KEY, JSON.stringify(sprint));
+}
+
+export function markSprintDayDone(lang: string, topic: string): void {
+  const sprint = getActiveSprint();
+  if (!sprint || sprint.lang !== lang || sprint.topic !== topic) return;
+  const t = today();
+  if (!sprint.days.includes(t)) sprint.days.push(t);
+  write(SPRINT_KEY, JSON.stringify(sprint));
+}
+
+export function clearSprint(): void {
+  write(SPRINT_KEY, '{}');
+}
+
 // Busca, entre las keys "<prefix><idioma>-...", la del idioma con la fecha
 // más reciente guardada como valor — usado por los selectores de idioma de
 // /practica-libre y /repasar para saltar directo al idioma que el usuario

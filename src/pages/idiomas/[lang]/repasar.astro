@@ -70,7 +70,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 
 <script>
   import { buildItemFieldset, primePracticeCounters, type SrsEntry } from '../../../lib/practiceItemMarkup';
-  import { today } from '../../../lib/storage';
+  import { today, getActiveSprint, markSprintDayDone } from '../../../lib/storage';
   import { shuffle } from '../../../lib/shuffle';
 
   interface ManifestItem {
@@ -220,7 +220,30 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     document.dispatchEvent(new Event('astro:page-load'));
   }
 
+  // El sprint semanal de /logros cuenta en qué fechas se completó una sesión
+  // de repaso filtrada por su tema (?tema=) — enganchado a document (no al
+  // practiceRoot puntual) con guard de módulo, mismo patrón que
+  // ProgressTracker.astro/DailyGoal.astro usan para su listener de
+  // practice-complete, así no se duplica bajo navegación SPA repetida a
+  // /repasar.
+  let sprintHookAttached = false;
+
+  function initSprintHook() {
+    if (sprintHookAttached) return;
+    sprintHookAttached = true;
+    document.addEventListener('practice-complete', ((e: CustomEvent) => {
+      if (e.detail?.sessionType !== 'review') return;
+      const lang = window.location.pathname.split('/')[2] ?? '';
+      const selectedTopic = new URLSearchParams(window.location.search).get('tema');
+      if (!selectedTopic) return;
+      const sprint = getActiveSprint();
+      if (!sprint || sprint.lang !== lang || sprint.topic !== selectedTopic) return;
+      markSprintDayDone(lang, selectedTopic);
+    }) as EventListener);
+  }
+
   initReview();
+  initSprintHook();
   document.addEventListener('astro:page-load', initReview);
 </script>
 

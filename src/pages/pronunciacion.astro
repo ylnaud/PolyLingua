@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LANGUAGES } from '../data/languages';
+---
+
+<BaseLayout
+  title="Practicar pronunciación"
+  description="Graba tu voz diciendo palabras en alemán, inglés, francés, italiano o portugués y compará con la pronunciación nativa."
+  path="/pronunciacion"
+  noindex
+>
+  <section class="container picker">
+    <h1>¿En qué idioma quieres practicar pronunciación?</h1>
+    <p class="desc">Elige un idioma para grabarte y comparar con la pronunciación nativa.</p>
+    <div class="lang-grid">
+      {LANGUAGES.map((language) => (
+        <a class="lang-item card" href={`/idiomas/${language.id}/pronunciacion`}>
+          <span class="flag" aria-hidden="true">{language.flag}</span>
+          <span>{language.name}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { mostRecentLangWithPrefix } from '../lib/storage';
+
+  const latestLang = mostRecentLangWithPrefix('polylingua-lesson-done-');
+  if (latestLang) {
+    window.location.replace(`/idiomas/${latestLang}/pronunciacion`);
+  }
+</script>

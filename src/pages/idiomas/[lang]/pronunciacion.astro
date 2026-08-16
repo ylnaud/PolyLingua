@@ -1,0 +1,298 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+
+export async function getStaticPaths() {
+  return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
+}
+
+const { lang } = Astro.params;
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+// Mismo pool deduplicado que ahorcado.astro: todo el vocabulario de las
+// lecciones de este idioma, sin repetir término.
+const lessonsForLang = await getCollection('lessons', (entry) => entry.data.language === lang);
+const vocabPool = Array.from(
+  new Map(lessonsForLang.flatMap((l) => l.data.vocabulary).map((v) => [v.term.toLowerCase(), v])).values()
+);
+---
+
+<BaseLayout
+  title={`Practicar pronunciación de ${languageMeta?.name}`}
+  description={`Grábate diciendo palabras de ${languageMeta?.name} y compará tu pronunciación con la voz nativa del navegador.`}
+  path={`/idiomas/${lang}/pronunciacion`}
+  noindex
+>
+  <section class="container pron-head">
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="/idiomas">Idiomas</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <span aria-hidden="true">/</span>
+      <span>Pronunciación</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">🎙️</span>
+    <h1>Pronunciación de {languageMeta?.name}</h1>
+    <p class="desc">Grábate diciendo la palabra y compará tu voz con la pronunciación nativa.</p>
+  </section>
+
+  <section class="container pron-body">
+    <div class="card empty-state" data-pron-empty hidden>
+      <p class="empty-emoji">📭</p>
+      <h2>Todavía no hay vocabulario</h2>
+      <p>Completa alguna lección de {languageMeta?.name} primero para desbloquear esta práctica.</p>
+      <a class="btn btn-primary" href={`/idiomas/${lang}`}>Ver lecciones</a>
+    </div>
+
+    <div class="card empty-state" data-pron-unsupported hidden>
+      <p class="empty-emoji">🚫</p>
+      <h2>Tu navegador no soporta grabar audio</h2>
+      <p>Probá desde un navegador más reciente, o usá el botón de escuchar pronunciación nativa en tus lecciones mientras tanto.</p>
+    </div>
+
+    <div class="card pron-game" data-pron-game data-lang={languageMeta?.bcp47} hidden>
+      <p class="pron-word" data-pron-word></p>
+      <p class="pron-clue" data-pron-clue></p>
+
+      <div class="pron-actions">
+        <button type="button" class="btn btn-primary" data-pron-record>🎙️ Grabar</button>
+        <button type="button" class="btn btn-ghost" data-pron-play hidden>▶️ Escuchar tu grabación</button>
+        <button type="button" class="btn btn-ghost" data-pron-native hidden>🔊 Escuchar pronunciación nativa</button>
+      </div>
+      <p class="pron-status" data-pron-status role="status" aria-live="polite"></p>
+
+      <button type="button" class="btn btn-ghost pron-next" data-pron-next>➡️ Otra palabra</button>
+    </div>
+  </section>
+
+  <div hidden data-vocab-pool={JSON.stringify(vocabPool)}></div>
+</BaseLayout>
+
+<script>
+  import { speak } from '../../../lib/sound';
+
+  interface VocabItem {
+    term: string;
+    translation: string;
+  }
+
+  let pool: VocabItem[] = [];
+  let recorder: MediaRecorder | null = null;
+  let recordedUrl: string | null = null;
+  let stream: MediaStream | null = null;
+
+  function mediaRecordingSupported(): boolean {
+    return typeof MediaRecorder !== 'undefined' && !!navigator.mediaDevices?.getUserMedia;
+  }
+
+  function readVocabPool(): VocabItem[] {
+    const el = document.querySelector<HTMLElement>('[data-vocab-pool]');
+    if (!el) return [];
+    try {
+      return JSON.parse(el.dataset.vocabPool ?? '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  function pickWord(items: VocabItem[], excludeTerm?: string): VocabItem | null {
+    if (items.length === 0) return null;
+    const candidates = items.filter((v) => v.term !== excludeTerm);
+    const list = candidates.length > 0 ? candidates : items;
+    return list[Math.floor(Math.random() * list.length)];
+  }
+
+  function releaseRecording(root: HTMLElement) {
+    if (recordedUrl) {
+      URL.revokeObjectURL(recordedUrl);
+      recordedUrl = null;
+    }
+    const playBtn = root.querySelector<HTMLButtonElement>('[data-pron-play]');
+    if (playBtn) playBtn.hidden = true;
+  }
+
+  function stopStream() {
+    stream?.getTracks().forEach((track) => track.stop());
+    stream = null;
+  }
+
+  let current: VocabItem | null = null;
+
+  function newWord(root: HTMLElement) {
+    current = pickWord(pool, current?.term);
+    releaseRecording(root);
+    const wordEl = root.querySelector<HTMLElement>('[data-pron-word]');
+    const clueEl = root.querySelector<HTMLElement>('[data-pron-clue]');
+    const status = root.querySelector<HTMLElement>('[data-pron-status]');
+    const nativeBtn = root.querySelector<HTMLButtonElement>('[data-pron-native]');
+    if (wordEl && current) wordEl.textContent = current.term;
+    if (clueEl && current) clueEl.textContent = `Traducción: ${current.translation}`;
+    if (status) status.textContent = '';
+    if (nativeBtn) nativeBtn.hidden = true;
+  }
+
+  // Devuelve si la grabación arrancó de verdad — el caller solo debe pasar
+  // recordBtn a estado "grabando" si esto resuelve true. Si el permiso de
+  // micrófono se deniega, no hay que dejar el botón en un estado a medias
+  // (ver el bug real que esto corrige: antes, el flag "recording" del click
+  // handler se ponía en true de forma optimista ANTES de esperar el
+  // permiso, así que un click posterior trataba el fallo como si hubiera
+  // grabado algo, mostrando el botón de comparar sin ninguna grabación).
+  async function startRecording(root: HTMLElement): Promise<boolean> {
+    const recordBtn = root.querySelector<HTMLButtonElement>('[data-pron-record]');
+    const status = root.querySelector<HTMLElement>('[data-pron-status]');
+    if (!recordBtn) return false;
+
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch {
+      if (status) status.textContent = '❌ No pudimos acceder al micrófono — revisá los permisos del navegador.';
+      return false;
+    }
+
+    releaseRecording(root);
+    const chunks: BlobPart[] = [];
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = (e) => {
+      if (e.data.size > 0) chunks.push(e.data);
+    };
+    recorder.onstop = () => {
+      const blob = new Blob(chunks, { type: 'audio/webm' });
+      recordedUrl = URL.createObjectURL(blob);
+      const playBtn = root.querySelector<HTMLButtonElement>('[data-pron-play]');
+      if (playBtn) playBtn.hidden = false;
+      if (status) status.textContent = '✅ Listo — escuchá tu grabación y compará.';
+      stopStream();
+    };
+    recorder.start();
+
+    recordBtn.textContent = '⏹️ Detener';
+    if (status) status.textContent = '🔴 Grabando…';
+    return true;
+  }
+
+  function stopRecording(root: HTMLElement) {
+    const recordBtn = root.querySelector<HTMLButtonElement>('[data-pron-record]');
+    recorder?.stop();
+    recorder = null;
+    if (recordBtn) recordBtn.textContent = '🎙️ Grabar';
+  }
+
+  function playRecording() {
+    if (!recordedUrl) return;
+    const audio = new Audio(recordedUrl);
+    audio.play().catch(() => {});
+  }
+
+  function initPronunciacion() {
+    const root = document.querySelector<HTMLElement>('[data-pron-game]');
+    const emptyState = document.querySelector<HTMLElement>('[data-pron-empty]');
+    const unsupported = document.querySelector<HTMLElement>('[data-pron-unsupported]');
+    if (!root) return;
+    if (root.dataset.initialized) return;
+    root.dataset.initialized = 'true';
+
+    pool = readVocabPool();
+    if (pool.length === 0) {
+      if (emptyState) emptyState.hidden = false;
+      return;
+    }
+    if (!mediaRecordingSupported()) {
+      if (unsupported) unsupported.hidden = false;
+      return;
+    }
+
+    root.hidden = false;
+    newWord(root);
+
+    const recordBtn = root.querySelector<HTMLButtonElement>('[data-pron-record]');
+    const playBtn = root.querySelector<HTMLButtonElement>('[data-pron-play]');
+    const nativeBtn = root.querySelector<HTMLButtonElement>('[data-pron-native]');
+    const nextBtn = root.querySelector<HTMLButtonElement>('[data-pron-next]');
+
+    let recording = false;
+    recordBtn?.addEventListener('click', async () => {
+      if (!recording) {
+        recording = await startRecording(root);
+      } else {
+        recording = false;
+        stopRecording(root);
+        if (nativeBtn) nativeBtn.hidden = false;
+      }
+    });
+
+    playBtn?.addEventListener('click', playRecording);
+    nativeBtn?.addEventListener('click', () => {
+      if (current) speak(current.term, root.dataset.lang ?? '');
+    });
+    nextBtn?.addEventListener('click', () => {
+      recording = false;
+      if (recorder && recorder.state !== 'inactive') stopRecording(root);
+      newWord(root);
+    });
+  }
+
+  initPronunciacion();
+  document.addEventListener('astro:page-load', initPronunciacion);
+</script>
+
+<style>
+  .pron-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .pron-body {
+    max-width: 680px;
+    padding-block: 0 4rem;
+  }
+
+  .pron-game {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .pron-word {
+    font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+    font-weight: 800;
+    margin: 0 0 0.4rem;
+  }
+
+  .pron-clue {
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+  }
+
+  .pron-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .pron-status {
+    margin: 1rem 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    min-height: 1.2em;
+  }
+
+  .pron-next {
+    margin-top: 0.5rem;
+  }
+</style>

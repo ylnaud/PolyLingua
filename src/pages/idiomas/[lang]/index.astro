@@ -65,6 +65,28 @@ const structuredData = {
       </a>
     ))}
   </section>
+
+  <section class="container explore-more">
+    <span class="eyebrow">🧭 Explorá más</span>
+    <div class="explore-grid">
+      <a class="explore-item card" href={`/idiomas/${lang}/pronunciacion`}>
+        <span aria-hidden="true">🎙️</span>
+        <span>Pronunciación</span>
+      </a>
+      <a class="explore-item card" href={`/idiomas/${lang}/recursos`}>
+        <span aria-hidden="true">📻</span>
+        <span>Recursos</span>
+      </a>
+      <a class="explore-item card" href="/logros">
+        <span aria-hidden="true">🎯</span>
+        <span>Sprint semanal</span>
+      </a>
+      <a class="explore-item card" href={`/idiomas/${lang}/diario`}>
+        <span aria-hidden="true">✍️</span>
+        <span>Diario</span>
+      </a>
+    </div>
+  </section>
 </BaseLayout>
 
 <script define:vars={{ lang, levelIds: LEVELS.map((l) => l.id) }}>
@@ -203,5 +225,50 @@ const structuredData = {
 
   .locked:hover {
     transform: none;
+  }
+
+  .explore-more {
+    padding-block: 0 4rem;
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+    margin-bottom: 0.9rem;
+  }
+
+  .explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .explore-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.1rem;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+    transition: transform 0.15s ease;
+  }
+
+  .explore-item:hover {
+    transform: translateY(-2px);
+  }
+
+  .explore-item span:first-child {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 560px) {
+    .explore-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 </style>

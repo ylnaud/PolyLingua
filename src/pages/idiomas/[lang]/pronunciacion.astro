@@ -81,6 +81,12 @@ const vocabPool = Array.from(
   let recorder: MediaRecorder | null = null;
   let recordedUrl: string | null = null;
   let stream: MediaStream | null = null;
+  // Referencia persistente al elemento de reproducción — un Audio() creado
+  // como variable local dentro de playRecording() y descartado al terminar
+  // la función no tiene nada que lo mantenga vivo, y algunos motores
+  // (sobre todo en mobile) lo recolectan antes de que termine de sonar o
+  // incluso antes de arrancar, sin ningún error visible.
+  let recordedAudioEl: HTMLAudioElement | null = null;
 
   function mediaRecordingSupported(): boolean {
     return typeof MediaRecorder !== 'undefined' && !!navigator.mediaDevices?.getUserMedia;
@@ -118,6 +124,7 @@ const vocabPool = Array.from(
   }
 
   function releaseRecording(root: HTMLElement) {
+    recordedAudioEl?.pause();
     if (recordedUrl) {
       URL.revokeObjectURL(recordedUrl);
       recordedUrl = null;
@@ -167,19 +174,28 @@ const vocabPool = Array.from(
 
     releaseRecording(root);
     const chunks: BlobPart[] = [];
-    recorder = new MediaRecorder(stream);
-    recorder.ondataavailable = (e) => {
+    const mr = new MediaRecorder(stream);
+    recorder = mr;
+    mr.ondataavailable = (e) => {
       if (e.data.size > 0) chunks.push(e.data);
     };
-    recorder.onstop = () => {
-      const blob = new Blob(chunks, { type: 'audio/webm' });
+    mr.onstop = () => {
+      // mr.mimeType es el codec real que el navegador negoció (p. ej.
+      // "audio/webm;codecs=opus" en Chrome/Android) — declarar el Blob con
+      // un tipo distinto al que realmente grabó el MediaRecorder puede
+      // hacer que algunos navegadores fallen al reproducirlo en silencio.
+      // Referenciar "mr" (capturado en este closure) en vez del "recorder"
+      // a nivel de módulo, que para cuando este evento dispara ya está en
+      // null (stopRecording() lo limpia de forma síncrona antes de que
+      // "onstop" — que es asíncrono — llegue a ejecutarse).
+      const blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' });
       recordedUrl = URL.createObjectURL(blob);
       const playBtn = root.querySelector<HTMLButtonElement>('[data-pron-play]');
       if (playBtn) playBtn.hidden = false;
       if (status) status.textContent = '✅ Listo — escuchá tu grabación y compará.';
       stopStream();
     };
-    recorder.start();
+    mr.start();
 
     recordBtn.textContent = '⏹️ Detener';
     if (status) status.textContent = '🔴 Grabando…';
@@ -193,10 +209,18 @@ const vocabPool = Array.from(
     if (recordBtn) recordBtn.textContent = '🎙️ Grabar';
   }
 
-  function playRecording() {
+  function playRecording(root: HTMLElement) {
     if (!recordedUrl) return;
-    const audio = new Audio(recordedUrl);
-    audio.play().catch(() => {});
+    const status = root.querySelector<HTMLElement>('[data-pron-status]');
+    // Reusar un único <audio> guardado a nivel de módulo (no crear uno
+    // nuevo por click) — un elemento local sin ninguna referencia que lo
+    // mantenga vivo puede ser recolectado por el motor antes de terminar de
+    // sonar, sobre todo en navegadores mobile, sin ningún error visible.
+    if (!recordedAudioEl) recordedAudioEl = new Audio();
+    recordedAudioEl.src = recordedUrl;
+    recordedAudioEl.play().catch((err) => {
+      if (status) status.textContent = `❌ No pudimos reproducir la grabación (${err?.name ?? 'error'}).`;
+    });
   }
 
   function initPronunciacion() {
@@ -236,7 +260,7 @@ const vocabPool = Array.from(
       }
     });
 
-    playBtn?.addEventListener('click', playRecording);
+    playBtn?.addEventListener('click', () => playRecording(root));
     nativeBtn?.addEventListener('click', () => {
       if (current) speak(current.term, root.dataset.lang ?? '');
     });

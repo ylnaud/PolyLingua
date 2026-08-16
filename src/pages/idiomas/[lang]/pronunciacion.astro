@@ -96,6 +96,20 @@ const vocabPool = Array.from(
     }
   }
 
+  // Un permiso de micrófono denegado (o nunca concedido) es comportamiento
+  // normal del navegador, no un error de la app — pero "revisá los permisos"
+  // a secas no le dice a nadie dónde tocar. iOS delega los permisos al
+  // sistema (Ajustes), mientras que Android/desktop lo resuelven con un
+  // ícono junto a la barra de direcciones — mismo tipo de detección de
+  // plataforma que ya usa InstallPrompt.astro para su fallback de iOS.
+  function micPermissionMessage(): string {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (isIOS) {
+      return '❌ No pudimos acceder al micrófono. En iPhone/iPad: andá a Ajustes → el navegador que uses (Safari, Chrome...) → activá el Micrófono. Si ya te preguntó antes, tocá el ícono "aA" o el candado junto a la barra de direcciones y revisá los permisos del sitio. Después volvé y recargá la página.';
+    }
+    return '❌ No pudimos acceder al micrófono. Tocá el ícono junto a la barra de direcciones (el candado o el ícono de información del sitio) → Permisos → Micrófono → Permitir. Después recargá la página.';
+  }
+
   function pickWord(items: VocabItem[], excludeTerm?: string): VocabItem | null {
     if (items.length === 0) return null;
     const candidates = items.filter((v) => v.term !== excludeTerm);
@@ -147,7 +161,7 @@ const vocabPool = Array.from(
     try {
       stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     } catch {
-      if (status) status.textContent = '❌ No pudimos acceder al micrófono — revisá los permisos del navegador.';
+      if (status) status.textContent = micPermissionMessage();
       return false;
     }
 

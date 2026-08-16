@@ -1,0 +1,116 @@
+---
+---
+<div class="streak-reminder" data-streak-reminder hidden role="status" aria-live="polite">
+  <div class="container streak-reminder-bar">
+    <p><span aria-hidden="true">🔥</span> <span data-streak-reminder-text></span></p>
+    <div class="streak-reminder-actions">
+      <a class="btn btn-primary" href="/idiomas">Practicar ahora</a>
+      <button type="button" class="streak-reminder-dismiss" data-streak-reminder-dismiss aria-label="Cerrar aviso">
+        ✕
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .streak-reminder {
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+
+  .streak-reminder-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-block: 0.65rem;
+  }
+
+  .streak-reminder-bar p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .streak-reminder-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .streak-reminder-actions .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-height: 36px;
+  }
+
+  .streak-reminder-dismiss {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .streak-reminder-dismiss:hover {
+    background: var(--bg-elevated);
+    color: var(--text);
+  }
+</style>
+
+<script>
+  import { today, yesterday, read, write } from '../lib/storage';
+
+  function getStreak(): number {
+    return Number(read('polylingua-streak-count') ?? '0');
+  }
+
+  function practicedToday(): boolean {
+    return read('polylingua-progress-date') === today();
+  }
+
+  // Solo avisa cuando la racha está genuinamente en riesgo de romperse hoy:
+  // hay racha activa, todavía no se practicó hoy, y la última práctica fue
+  // ayer (si fue antes de ayer la racha ya se rompió — el próximo
+  // practice-complete la reinicia en 1 sola, no tiene sentido "salvarla").
+  function streakAtRisk(): boolean {
+    const streak = getStreak();
+    if (streak <= 0 || practicedToday()) return false;
+    return read('polylingua-streak-last-date') === yesterday(today());
+  }
+
+  function dismissedToday(): boolean {
+    return read('polylingua-streak-reminder-dismissed') === today();
+  }
+
+  function initStreakReminder() {
+    const el = document.querySelector<HTMLElement>('[data-streak-reminder]');
+    const text = el?.querySelector<HTMLElement>('[data-streak-reminder-text]');
+    const dismissBtn = el?.querySelector<HTMLButtonElement>('[data-streak-reminder-dismiss]');
+    if (!el || !text || !dismissBtn) return;
+
+    const streak = getStreak();
+    const show = streakAtRisk() && !dismissedToday();
+    el.hidden = !show;
+    if (show) {
+      text.textContent = `No pierdas tu racha de ${streak} día${streak === 1 ? '' : 's'} — practica algo hoy.`;
+    }
+
+    if (!dismissBtn.dataset.initialized) {
+      dismissBtn.dataset.initialized = 'true';
+      dismissBtn.addEventListener('click', () => {
+        write('polylingua-streak-reminder-dismissed', today());
+        el.hidden = true;
+      });
+    }
+  }
+
+  initStreakReminder();
+  document.addEventListener('astro:page-load', initStreakReminder);
+</script>

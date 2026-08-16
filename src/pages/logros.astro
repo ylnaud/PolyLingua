@@ -82,6 +82,22 @@ const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.gra
       </div>
     ))}
   </section>
+
+  <section class="container backup-head">
+    <div class="card backup-card">
+      <span class="eyebrow">💾 Copia de seguridad</span>
+      <p class="backup-desc">
+        Tu progreso vive solo en este navegador. Exportalo para no perderlo si cambiás de
+        dispositivo, reinstalás la app o borrás el caché.
+      </p>
+      <div class="backup-actions">
+        <button type="button" class="btn btn-ghost" data-export-progress>⬇️ Exportar progreso</button>
+        <button type="button" class="btn btn-ghost" data-import-progress>⬆️ Importar progreso</button>
+        <input type="file" accept="application/json" hidden data-import-input />
+      </div>
+      <p class="backup-status" data-backup-status role="status" aria-live="polite"></p>
+    </div>
+  </section>
 </BaseLayout>
 
 <script define:vars={{ levelIds, languageIds }}>
@@ -272,6 +288,54 @@ const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.gra
   document.addEventListener('astro:page-load', initPendingTopics);
 </script>
 
+<script>
+  import { exportAll, importAll, today } from '../lib/storage';
+
+  function initBackup() {
+    const exportBtn = document.querySelector<HTMLButtonElement>('[data-export-progress]');
+    const importBtn = document.querySelector<HTMLButtonElement>('[data-import-progress]');
+    const importInput = document.querySelector<HTMLInputElement>('[data-import-input]');
+    const status = document.querySelector<HTMLElement>('[data-backup-status]');
+    if (!exportBtn || !importBtn || !importInput || !status) return;
+    if (exportBtn.dataset.initialized) return;
+    exportBtn.dataset.initialized = 'true';
+
+    exportBtn.addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify(exportAll(), null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `polylingua-progreso-${today()}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      status.textContent = '✅ Progreso exportado.';
+    });
+
+    importBtn.addEventListener('click', () => importInput.click());
+
+    importInput.addEventListener('change', async () => {
+      const file = importInput.files?.[0];
+      importInput.value = '';
+      if (!file) return;
+      try {
+        const parsed: unknown = JSON.parse(await file.text());
+        if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+          throw new Error('formato inválido');
+        }
+        if (!window.confirm('Esto va a reemplazar tu progreso actual con el importado. ¿Continuar?')) return;
+        importAll(parsed as Record<string, unknown>);
+        status.textContent = '✅ Progreso importado. Recargando…';
+        window.setTimeout(() => window.location.reload(), 600);
+      } catch {
+        status.textContent = '❌ El archivo no es un backup válido de PolyLingua.';
+      }
+    });
+  }
+
+  initBackup();
+  document.addEventListener('astro:page-load', initBackup);
+</script>
+
 <style>
   .achievements-head {
     padding-block: 2.5rem 1.5rem;
@@ -362,7 +426,36 @@ const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.gra
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
-    padding-block: 0.5rem 4rem;
+    padding-block: 0.5rem 2.5rem;
+  }
+
+  .backup-head {
+    max-width: 680px;
+    padding-block: 0 4rem;
+  }
+
+  .backup-card {
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .backup-desc {
+    color: var(--text-muted);
+    margin: 0 0 1.1rem;
+    font-size: 0.92rem;
+  }
+
+  .backup-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .backup-status {
+    margin: 0.85rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    min-height: 1.2em;
   }
 
   .badge-item {

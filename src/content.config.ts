@@ -60,6 +60,10 @@ const vocabularyItem = z.object({
 const situationPhrase = z.object({
   de: z.string(),
   es: z.string(),
+  // Cómo suena: aproximación a la española + AFI. Es el dato principal en las
+  // lecciones de pronunciación, así que tiene campo propio en vez de ir
+  // escondido en `note`, que se renderiza chico y gris.
+  say: z.string().optional(),
   note: z.string().optional(),
 });
 

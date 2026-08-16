@@ -92,6 +92,21 @@ const vocabPool = Array.from(
     return typeof MediaRecorder !== 'undefined' && !!navigator.mediaDevices?.getUserMedia;
   }
 
+  // Sin especificar mimeType, new MediaRecorder(stream) deja que el
+  // navegador elija su codec por defecto — en algunos dispositivos/Android
+  // eso produjo un archivo que el propio navegador después no supo
+  // reproducir (NotSupportedError). Pedir explícitamente un codec de la
+  // lista de preferencia (los dos primeros son ampliamente compatibles
+  // tanto para grabar como para reproducir en Chrome/Firefox/Safari
+  // modernos) reduce la ambigüedad; si ninguno está soportado, se deja que
+  // el navegador use su default como venía haciendo hasta ahora.
+  const PREFERRED_MIME_TYPES = ['audio/webm;codecs=opus', 'audio/mp4'];
+
+  function pickRecordingMimeType(): string | undefined {
+    if (typeof MediaRecorder.isTypeSupported !== 'function') return undefined;
+    return PREFERRED_MIME_TYPES.find((type) => MediaRecorder.isTypeSupported(type));
+  }
+
   function readVocabPool(): VocabItem[] {
     const el = document.querySelector<HTMLElement>('[data-vocab-pool]');
     if (!el) return [];
@@ -174,7 +189,8 @@ const vocabPool = Array.from(
 
     releaseRecording(root);
     const chunks: BlobPart[] = [];
-    const mr = new MediaRecorder(stream);
+    const mimeType = pickRecordingMimeType();
+    const mr = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
     recorder = mr;
     mr.ondataavailable = (e) => {
       if (e.data.size > 0) chunks.push(e.data);
@@ -189,8 +205,17 @@ const vocabPool = Array.from(
       // null (stopRecording() lo limpia de forma síncrona antes de que
       // "onstop" — que es asíncrono — llegue a ejecutarse).
       const blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' });
-      recordedUrl = URL.createObjectURL(blob);
       const playBtn = root.querySelector<HTMLButtonElement>('[data-pron-play]');
+      // Un blob vacío/casi vacío nunca se va a poder reproducir (el
+      // navegador tira NotSupportedError al intentarlo) — mejor avisar
+      // claro acá que dejar que el usuario se tope con ese error críptico
+      // al tocar "Escuchar tu grabación".
+      if (blob.size < 100) {
+        if (status) status.textContent = '⚠️ La grabación salió vacía — probá de nuevo, hablando un poco más fuerte o más cerca del micrófono.';
+        stopStream();
+        return;
+      }
+      recordedUrl = URL.createObjectURL(blob);
       if (playBtn) playBtn.hidden = false;
       if (status) status.textContent = '✅ Listo — escuchá tu grabación y compará.';
       stopStream();

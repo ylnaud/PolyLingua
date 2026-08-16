@@ -58,7 +58,10 @@ const vocabularyItem = z.object({
 // modo "situaciones" (aprender por frases y contextos reales en vez de por
 // reglas aisladas). Ver src/components/PhraseBank.astro.
 const situationPhrase = z.object({
-  de: z.string(),
+  // `text` es la frase/palabra en el idioma que se está aprendiendo (alemán,
+  // inglés, etc.) y `es` su traducción al español, que es siempre el idioma
+  // de la interfaz.
+  text: z.string(),
   es: z.string(),
   // Cómo suena: aproximación a la española + AFI. Es el dato principal en las
   // lecciones de pronunciación, así que tiene campo propio en vez de ir

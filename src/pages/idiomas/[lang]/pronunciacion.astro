@@ -19,7 +19,7 @@ const vocabPool = Array.from(
   new Map(
     [
       ...lessonsForLang.flatMap((l) => l.data.vocabulary),
-      ...lessonsForLang.flatMap((l) => l.data.phrases.map((p) => ({ term: p.de, translation: p.es }))),
+      ...lessonsForLang.flatMap((l) => l.data.phrases.map((p) => ({ term: p.text, translation: p.es }))),
     ].map((v) => [v.term.toLowerCase(), v])
   ).values()
 );

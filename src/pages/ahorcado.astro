@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LANGUAGES } from '../data/languages';
+---
+
+<BaseLayout
+  title="Ahorcado"
+  description="Juega al ahorcado con el vocabulario que ya aprendiste en PolyLingua, en alemán, inglés, francés, italiano o portugués."
+  path="/ahorcado"
+  noindex
+>
+  <section class="container picker">
+    <h1>¿En qué idioma quieres jugar?</h1>
+    <p class="desc">Elige un idioma para jugar al ahorcado con tu vocabulario.</p>
+    <div class="lang-grid">
+      {LANGUAGES.map((language) => (
+        <a class="lang-item card" href={`/idiomas/${language.id}/ahorcado`}>
+          <span class="flag" aria-hidden="true">{language.flag}</span>
+          <span>{language.name}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { mostRecentLangWithPrefix } from '../lib/storage';
+
+  const latestLang = mostRecentLangWithPrefix('polylingua-lesson-done-');
+  if (latestLang) {
+    window.location.replace(`/idiomas/${latestLang}/ahorcado`);
+  }
+</script>

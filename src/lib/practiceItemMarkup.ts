@@ -65,6 +65,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
         type: 'button',
         class: 'option',
         'data-option': '',
+        'data-option-key': String(oi + 1),
         'data-correct': oi === data.answerIndex ? 'true' : 'false',
       });
       btn.textContent = opt;

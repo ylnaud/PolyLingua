@@ -26,6 +26,11 @@ const exerciseManifest = Object.fromEntries(
     ],
   ])
 );
+
+// Manifest lección→tema gramatical de este idioma, para poder filtrar el
+// repaso por tema (ver el chip row data-topic-filters más abajo) sin tener
+// que parsear el id de la lección para adivinar el tema.
+const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data.grammarTopic]));
 ---
 
 <BaseLayout
@@ -45,6 +50,7 @@ const exerciseManifest = Object.fromEntries(
     <span class="emoji" aria-hidden="true">📚</span>
     <h1>Repasar {languageMeta?.name}</h1>
     <p class="desc" data-review-desc>Cargando tu repaso…</p>
+    <div class="topic-filters" data-topic-filters hidden></div>
   </section>
 
   <section class="container review-body">
@@ -59,6 +65,7 @@ const exerciseManifest = Object.fromEntries(
   </section>
 
   <div hidden data-exercise-manifest={JSON.stringify(exerciseManifest)}></div>
+  <div hidden data-topic-manifest={JSON.stringify(topicManifest)}></div>
 </BaseLayout>
 
 <script>
@@ -86,6 +93,65 @@ const exerciseManifest = Object.fromEntries(
       return JSON.parse(manifestEl.dataset.exerciseManifest ?? '{}');
     } catch {
       return {};
+    }
+  }
+
+  function readTopicManifest(): Record<string, string> {
+    const manifestEl = document.querySelector<HTMLElement>('[data-topic-manifest]');
+    if (!manifestEl) return {};
+    try {
+      return JSON.parse(manifestEl.dataset.topicManifest ?? '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  // Chips "Todos" + un chip por tema presente entre los ítems vencidos, con
+  // cantidad. data-astro-reload fuerza una navegación real (no SPA) al
+  // clickear uno — mismo patrón que ya usan los links de Repasar en
+  // Header/BottomNav — para que initReview() vuelva a correr de cero con el
+  // nuevo ?tema= en vez de tener que reconciliar el estado ya iniciado de
+  // Practice.astro sobre el mismo root.
+  function renderTopicFilters(
+    dueAll: SrsEntry[],
+    topicManifest: Record<string, string>,
+    selectedTopic: string | null
+  ) {
+    const container = document.querySelector<HTMLElement>('[data-topic-filters]');
+    if (!container) return;
+
+    const counts = new Map<string, number>();
+    for (const entry of dueAll) {
+      const topic = topicManifest[entry.id.split('#')[0]];
+      if (!topic) continue;
+      counts.set(topic, (counts.get(topic) ?? 0) + 1);
+    }
+
+    if (counts.size < 2) {
+      container.hidden = true;
+      return;
+    }
+
+    container.innerHTML = '';
+    container.hidden = false;
+
+    const basePath = window.location.pathname;
+
+    const allChip = document.createElement('a');
+    allChip.className = selectedTopic ? 'topic-chip' : 'topic-chip is-active';
+    allChip.href = basePath;
+    allChip.dataset.astroReload = 'true';
+    allChip.textContent = `Todos (${dueAll.length})`;
+    container.appendChild(allChip);
+
+    const sortedTopics = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+    for (const [topic, count] of sortedTopics) {
+      const chip = document.createElement('a');
+      chip.className = topic === selectedTopic ? 'topic-chip is-active' : 'topic-chip';
+      chip.href = `${basePath}?tema=${encodeURIComponent(topic)}`;
+      chip.dataset.astroReload = 'true';
+      chip.textContent = `${topic} (${count})`;
+      container.appendChild(chip);
     }
   }
 
@@ -121,9 +187,17 @@ const exerciseManifest = Object.fromEntries(
 
     const lang = window.location.pathname.split('/')[2] ?? '';
     const pool = readPool();
-    const due = Object.values(pool)
-      .filter((entry) => entry.lang === lang && entry.due <= today())
-      .slice(0, 20);
+    const topicManifest = readTopicManifest();
+    const selectedTopic = new URLSearchParams(window.location.search).get('tema');
+
+    const dueAll = Object.values(pool).filter((entry) => entry.lang === lang && entry.due <= today());
+    renderTopicFilters(dueAll, topicManifest, selectedTopic);
+
+    const due = (
+      selectedTopic
+        ? dueAll.filter((entry) => topicManifest[entry.id.split('#')[0]] === selectedTopic)
+        : dueAll
+    ).slice(0, 20);
 
     if (due.length === 0) {
       if (emptyState) emptyState.hidden = false;
@@ -168,6 +242,41 @@ const exerciseManifest = Object.fromEntries(
   .desc {
     color: var(--text-muted);
     margin: 0;
+  }
+
+  .topic-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  /* Los chips se crean con document.createElement en JS a partir del pool
+     de SRS — nunca reciben el atributo de scoping de Astro, así que hace
+     falta :global() para que este CSS los alcance (mismo patrón que
+     .pending-list en /logros). */
+  .topic-filters :global(.topic-chip) {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .topic-filters :global(.topic-chip:hover) {
+    border-color: var(--accent);
+    color: var(--text);
+  }
+
+  .topic-filters :global(.topic-chip.is-active) {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
+    color: var(--accent-text);
   }
 
   .review-body {

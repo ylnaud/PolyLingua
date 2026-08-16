@@ -19,8 +19,8 @@ const vocabPool = Array.from(
 ---
 
 <BaseLayout
-  title={`Practicar pronunciación de ${languageMeta?.name}`}
-  description={`Grábate diciendo palabras de ${languageMeta?.name} y compará tu pronunciación con la voz nativa del navegador.`}
+  title={`Escuchar y repetir en ${languageMeta?.name}`}
+  description={`Escuchá palabras de ${languageMeta?.name} con voz nativa, repetilas en voz alta y marcá cuáles te cuestan — las difíciles vuelven más seguido.`}
   path={`/idiomas/${lang}/pronunciacion`}
   noindex
 >
@@ -30,11 +30,14 @@ const vocabPool = Array.from(
       <span aria-hidden="true">/</span>
       <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
-      <span>Pronunciación</span>
+      <span>Escuchar y repetir</span>
     </nav>
-    <span class="emoji" aria-hidden="true">🎙️</span>
-    <h1>Pronunciación de {languageMeta?.name}</h1>
-    <p class="desc">Grábate diciendo la palabra y compará tu voz con la pronunciación nativa.</p>
+    <span class="emoji" aria-hidden="true">🗣️</span>
+    <h1>Escuchar y repetir en {languageMeta?.name}</h1>
+    <p class="desc">
+      Escuchá la palabra, hacé una pausa y repetila en voz alta. Después marcá si te
+      salió — las que te cuestan van a volver más seguido.
+    </p>
   </section>
 
   <section class="container pron-body">
@@ -45,24 +48,20 @@ const vocabPool = Array.from(
       <a class="btn btn-primary" href={`/idiomas/${lang}`}>Ver lecciones</a>
     </div>
 
-    <div class="card empty-state" data-pron-unsupported hidden>
-      <p class="empty-emoji">🚫</p>
-      <h2>Tu navegador no soporta grabar audio</h2>
-      <p>Probá desde un navegador más reciente, o usá el botón de escuchar pronunciación nativa en tus lecciones mientras tanto.</p>
-    </div>
-
     <div class="card pron-game" data-pron-game data-lang={languageMeta?.bcp47} hidden>
       <p class="pron-word" data-pron-word></p>
       <p class="pron-clue" data-pron-clue></p>
 
-      <div class="pron-actions">
-        <button type="button" class="btn btn-primary" data-pron-record>🎙️ Grabar</button>
-        <button type="button" class="btn btn-ghost" data-pron-play hidden>▶️ Escuchar tu grabación</button>
-        <button type="button" class="btn btn-ghost" data-pron-native hidden>🔊 Escuchar pronunciación nativa</button>
-      </div>
-      <p class="pron-status" data-pron-status role="status" aria-live="polite"></p>
+      <button type="button" class="btn btn-primary pron-listen" data-pron-listen>🔊 Escuchar</button>
 
-      <button type="button" class="btn btn-ghost pron-next" data-pron-next>➡️ Otra palabra</button>
+      <p class="pron-guide">Escuchá, hacé una pausa, y repetila en voz alta.</p>
+
+      <div class="pron-actions">
+        <button type="button" class="btn btn-ghost" data-pron-easy>✅ Me salió</button>
+        <button type="button" class="btn btn-ghost" data-pron-hard>🔁 Me costó</button>
+      </div>
+
+      <p class="pron-count" data-pron-count role="status" aria-live="polite"></p>
     </div>
   </section>
 
@@ -70,7 +69,8 @@ const vocabPool = Array.from(
 </BaseLayout>
 
 <script>
-  import { speak } from '../../../lib/sound';
+  import { speak, isMuted } from '../../../lib/sound';
+  import { read, write } from '../../../lib/storage';
 
   interface VocabItem {
     term: string;
@@ -78,34 +78,8 @@ const vocabPool = Array.from(
   }
 
   let pool: VocabItem[] = [];
-  let recorder: MediaRecorder | null = null;
-  let recordedUrl: string | null = null;
-  let stream: MediaStream | null = null;
-  // Referencia persistente al elemento de reproducción — un Audio() creado
-  // como variable local dentro de playRecording() y descartado al terminar
-  // la función no tiene nada que lo mantenga vivo, y algunos motores
-  // (sobre todo en mobile) lo recolectan antes de que termine de sonar o
-  // incluso antes de arrancar, sin ningún error visible.
-  let recordedAudioEl: HTMLAudioElement | null = null;
-
-  function mediaRecordingSupported(): boolean {
-    return typeof MediaRecorder !== 'undefined' && !!navigator.mediaDevices?.getUserMedia;
-  }
-
-  // Sin especificar mimeType, new MediaRecorder(stream) deja que el
-  // navegador elija su codec por defecto — en algunos dispositivos/Android
-  // eso produjo un archivo que el propio navegador después no supo
-  // reproducir (NotSupportedError). Pedir explícitamente un codec de la
-  // lista de preferencia (los dos primeros son ampliamente compatibles
-  // tanto para grabar como para reproducir en Chrome/Firefox/Safari
-  // modernos) reduce la ambigüedad; si ninguno está soportado, se deja que
-  // el navegador use su default como venía haciendo hasta ahora.
-  const PREFERRED_MIME_TYPES = ['audio/webm;codecs=opus', 'audio/mp4'];
-
-  function pickRecordingMimeType(): string | undefined {
-    if (typeof MediaRecorder.isTypeSupported !== 'function') return undefined;
-    return PREFERRED_MIME_TYPES.find((type) => MediaRecorder.isTypeSupported(type));
-  }
+  let current: VocabItem | null = null;
+  let practiced = 0;
 
   function readVocabPool(): VocabItem[] {
     const el = document.querySelector<HTMLElement>('[data-vocab-pool]');
@@ -117,141 +91,76 @@ const vocabPool = Array.from(
     }
   }
 
-  // Un permiso de micrófono denegado (o nunca concedido) es comportamiento
-  // normal del navegador, no un error de la app — pero "revisá los permisos"
-  // a secas no le dice a nadie dónde tocar. iOS delega los permisos al
-  // sistema (Ajustes), mientras que Android/desktop lo resuelven con un
-  // ícono junto a la barra de direcciones — mismo tipo de detección de
-  // plataforma que ya usa InstallPrompt.astro para su fallback de iOS.
-  function micPermissionMessage(): string {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    if (isIOS) {
-      return '❌ No pudimos acceder al micrófono. En iPhone/iPad: andá a Ajustes → el navegador que uses (Safari, Chrome...) → activá el Micrófono. Si ya te preguntó antes, tocá el ícono "aA" o el candado junto a la barra de direcciones y revisá los permisos del sitio. Después volvé y recargá la página.';
-    }
-    return '❌ No pudimos acceder al micrófono. Tocá el ícono junto a la barra de direcciones (el candado o el ícono de información del sitio) → Permisos → Micrófono → Permitir. Después recargá la página.';
+  // "Peso de dificultad" por término: cuanto más alto, más seguido vuelve la
+  // palabra. Deliberadamente NO se llama "shadowing" para no confundirlo con
+  // polylingua-shadowing-mode, que es el toggle de los ejercicios y no tiene
+  // nada que ver con esto.
+  function scoresKey(lang: string): string {
+    return `polylingua-repeat-${lang}`;
   }
 
-  function pickWord(items: VocabItem[], excludeTerm?: string): VocabItem | null {
+  function readScores(lang: string): Record<string, number> {
+    try {
+      const parsed = JSON.parse(read(scoresKey(lang)) ?? '{}');
+      return typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed) ? parsed : {};
+    } catch {
+      return {};
+    }
+  }
+
+  function bumpScore(lang: string, term: string, delta: number) {
+    const scores = readScores(lang);
+    scores[term] = Math.max(0, (scores[term] ?? 0) + delta);
+    write(scoresKey(lang), JSON.stringify(scores));
+  }
+
+  // Selección ponderada: cada término entra en la bolsa (1 + score) veces, así
+  // las difíciles quedan sobre-representadas sin necesidad de colas ni
+  // intervalos. Se excluye la palabra actual para no repetirla dos veces
+  // seguidas, con el mismo fallback de siempre: si al excluir no queda nada,
+  // se usa la lista completa.
+  function pickWord(items: VocabItem[], lang: string, excludeTerm?: string): VocabItem | null {
     if (items.length === 0) return null;
     const candidates = items.filter((v) => v.term !== excludeTerm);
     const list = candidates.length > 0 ? candidates : items;
-    return list[Math.floor(Math.random() * list.length)];
-  }
-
-  function releaseRecording(root: HTMLElement) {
-    recordedAudioEl?.pause();
-    if (recordedUrl) {
-      URL.revokeObjectURL(recordedUrl);
-      recordedUrl = null;
+    const scores = readScores(lang);
+    const bag: VocabItem[] = [];
+    for (const item of list) {
+      const weight = 1 + (scores[item.term] ?? 0);
+      for (let i = 0; i < weight; i++) bag.push(item);
     }
-    const playBtn = root.querySelector<HTMLButtonElement>('[data-pron-play]');
-    if (playBtn) playBtn.hidden = true;
+    return bag[Math.floor(Math.random() * bag.length)];
   }
 
-  function stopStream() {
-    stream?.getTracks().forEach((track) => track.stop());
-    stream = null;
-  }
-
-  let current: VocabItem | null = null;
-
-  function newWord(root: HTMLElement) {
-    current = pickWord(pool, current?.term);
-    releaseRecording(root);
+  function renderWord(root: HTMLElement) {
     const wordEl = root.querySelector<HTMLElement>('[data-pron-word]');
     const clueEl = root.querySelector<HTMLElement>('[data-pron-clue]');
-    const status = root.querySelector<HTMLElement>('[data-pron-status]');
-    const nativeBtn = root.querySelector<HTMLButtonElement>('[data-pron-native]');
     if (wordEl && current) wordEl.textContent = current.term;
     if (clueEl && current) clueEl.textContent = `Traducción: ${current.translation}`;
-    if (status) status.textContent = '';
-    if (nativeBtn) nativeBtn.hidden = true;
   }
 
-  // Devuelve si la grabación arrancó de verdad — el caller solo debe pasar
-  // recordBtn a estado "grabando" si esto resuelve true. Si el permiso de
-  // micrófono se deniega, no hay que dejar el botón en un estado a medias
-  // (ver el bug real que esto corrige: antes, el flag "recording" del click
-  // handler se ponía en true de forma optimista ANTES de esperar el
-  // permiso, así que un click posterior trataba el fallo como si hubiera
-  // grabado algo, mostrando el botón de comparar sin ninguna grabación).
-  async function startRecording(root: HTMLElement): Promise<boolean> {
-    const recordBtn = root.querySelector<HTMLButtonElement>('[data-pron-record]');
-    const status = root.querySelector<HTMLElement>('[data-pron-status]');
-    if (!recordBtn) return false;
-
-    try {
-      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-    } catch {
-      if (status) status.textContent = micPermissionMessage();
-      return false;
-    }
-
-    releaseRecording(root);
-    const chunks: BlobPart[] = [];
-    const mimeType = pickRecordingMimeType();
-    const mr = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
-    recorder = mr;
-    mr.ondataavailable = (e) => {
-      if (e.data.size > 0) chunks.push(e.data);
-    };
-    mr.onstop = () => {
-      // mr.mimeType es el codec real que el navegador negoció (p. ej.
-      // "audio/webm;codecs=opus" en Chrome/Android) — declarar el Blob con
-      // un tipo distinto al que realmente grabó el MediaRecorder puede
-      // hacer que algunos navegadores fallen al reproducirlo en silencio.
-      // Referenciar "mr" (capturado en este closure) en vez del "recorder"
-      // a nivel de módulo, que para cuando este evento dispara ya está en
-      // null (stopRecording() lo limpia de forma síncrona antes de que
-      // "onstop" — que es asíncrono — llegue a ejecutarse).
-      const blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' });
-      const playBtn = root.querySelector<HTMLButtonElement>('[data-pron-play]');
-      // Un blob vacío/casi vacío nunca se va a poder reproducir (el
-      // navegador tira NotSupportedError al intentarlo) — mejor avisar
-      // claro acá que dejar que el usuario se tope con ese error críptico
-      // al tocar "Escuchar tu grabación".
-      if (blob.size < 100) {
-        if (status) status.textContent = '⚠️ La grabación salió vacía — probá de nuevo, hablando un poco más fuerte o más cerca del micrófono.';
-        stopStream();
-        return;
-      }
-      recordedUrl = URL.createObjectURL(blob);
-      if (playBtn) playBtn.hidden = false;
-      if (status) status.textContent = '✅ Listo — escuchá tu grabación y compará.';
-      stopStream();
-    };
-    mr.start();
-
-    recordBtn.textContent = '⏹️ Detener';
-    if (status) status.textContent = '🔴 Grabando…';
-    return true;
+  function renderCount(root: HTMLElement) {
+    const countEl = root.querySelector<HTMLElement>('[data-pron-count]');
+    if (!countEl) return;
+    countEl.textContent =
+      practiced === 0 ? '' : `${practiced} ${practiced === 1 ? 'palabra practicada' : 'palabras practicadas'}`;
   }
 
-  function stopRecording(root: HTMLElement) {
-    const recordBtn = root.querySelector<HTMLButtonElement>('[data-pron-record]');
-    recorder?.stop();
-    recorder = null;
-    if (recordBtn) recordBtn.textContent = '🎙️ Grabar';
-  }
-
-  function playRecording(root: HTMLElement) {
-    if (!recordedUrl) return;
-    const status = root.querySelector<HTMLElement>('[data-pron-status]');
-    // Reusar un único <audio> guardado a nivel de módulo (no crear uno
-    // nuevo por click) — un elemento local sin ninguna referencia que lo
-    // mantenga vivo puede ser recolectado por el motor antes de terminar de
-    // sonar, sobre todo en navegadores mobile, sin ningún error visible.
-    if (!recordedAudioEl) recordedAudioEl = new Audio();
-    recordedAudioEl.src = recordedUrl;
-    recordedAudioEl.play().catch((err) => {
-      if (status) status.textContent = `❌ No pudimos reproducir la grabación (${err?.name ?? 'error'}).`;
-    });
+  // Avanzar siempre viene de un click, así que acá sí se puede auto-reproducir
+  // sin que el navegador lo bloquee por falta de gesto de usuario. Respeta el
+  // mute (mismo criterio que maybeAutoSpeak() en Practice.astro); el botón
+  // manual "Escuchar", en cambio, suena siempre — mismo precedente que los
+  // botones [data-speak] del resto de la app.
+  function nextWord(root: HTMLElement) {
+    const lang = window.location.pathname.split('/')[2] ?? '';
+    current = pickWord(pool, lang, current?.term);
+    renderWord(root);
+    if (current && !isMuted()) speak(current.term, root.dataset.lang ?? '');
   }
 
   function initPronunciacion() {
     const root = document.querySelector<HTMLElement>('[data-pron-game]');
     const emptyState = document.querySelector<HTMLElement>('[data-pron-empty]');
-    const unsupported = document.querySelector<HTMLElement>('[data-pron-unsupported]');
     if (!root) return;
     if (root.dataset.initialized) return;
     root.dataset.initialized = 'true';
@@ -261,38 +170,33 @@ const vocabPool = Array.from(
       if (emptyState) emptyState.hidden = false;
       return;
     }
-    if (!mediaRecordingSupported()) {
-      if (unsupported) unsupported.hidden = false;
-      return;
-    }
 
     root.hidden = false;
-    newWord(root);
+    const lang = window.location.pathname.split('/')[2] ?? '';
 
-    const recordBtn = root.querySelector<HTMLButtonElement>('[data-pron-record]');
-    const playBtn = root.querySelector<HTMLButtonElement>('[data-pron-play]');
-    const nativeBtn = root.querySelector<HTMLButtonElement>('[data-pron-native]');
-    const nextBtn = root.querySelector<HTMLButtonElement>('[data-pron-next]');
+    // Primera palabra SIN auto-reproducir: en la carga inicial no hubo ningún
+    // gesto del usuario todavía, y el navegador bloquearía el audio. Para
+    // escucharla, el usuario toca "🔊 Escuchar".
+    current = pickWord(pool, lang);
+    renderWord(root);
+    renderCount(root);
 
-    let recording = false;
-    recordBtn?.addEventListener('click', async () => {
-      if (!recording) {
-        recording = await startRecording(root);
-      } else {
-        recording = false;
-        stopRecording(root);
-        if (nativeBtn) nativeBtn.hidden = false;
-      }
-    });
-
-    playBtn?.addEventListener('click', () => playRecording(root));
-    nativeBtn?.addEventListener('click', () => {
+    root.querySelector<HTMLButtonElement>('[data-pron-listen]')?.addEventListener('click', () => {
       if (current) speak(current.term, root.dataset.lang ?? '');
     });
-    nextBtn?.addEventListener('click', () => {
-      recording = false;
-      if (recorder && recorder.state !== 'inactive') stopRecording(root);
-      newWord(root);
+
+    root.querySelector<HTMLButtonElement>('[data-pron-easy]')?.addEventListener('click', () => {
+      if (current) bumpScore(lang, current.term, -1);
+      practiced += 1;
+      renderCount(root);
+      nextWord(root);
+    });
+
+    root.querySelector<HTMLButtonElement>('[data-pron-hard]')?.addEventListener('click', () => {
+      if (current) bumpScore(lang, current.term, 2);
+      practiced += 1;
+      renderCount(root);
+      nextWord(root);
     });
   }
 
@@ -341,6 +245,12 @@ const vocabPool = Array.from(
     margin: 0 0 1.5rem;
   }
 
+  .pron-guide {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 1.25rem 0;
+  }
+
   .pron-actions {
     display: flex;
     flex-wrap: wrap;
@@ -348,14 +258,10 @@ const vocabPool = Array.from(
     gap: 0.6rem;
   }
 
-  .pron-status {
-    margin: 1rem 0;
+  .pron-count {
+    margin: 1.25rem 0 0;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     min-height: 1.2em;
-  }
-
-  .pron-next {
-    margin-top: 0.5rem;
   }
 </style>

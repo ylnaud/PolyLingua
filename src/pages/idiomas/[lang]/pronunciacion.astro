@@ -11,10 +11,17 @@ const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 
 // Mismo pool deduplicado que ahorcado.astro: todo el vocabulario de las
-// lecciones de este idioma, sin repetir término.
+// lecciones de este idioma, sin repetir término. Se suman también las frases
+// del modo "situaciones" — repetir una frase entera es mejor shadowing que
+// repetir una palabra suelta, que es justo el punto de esta práctica.
 const lessonsForLang = await getCollection('lessons', (entry) => entry.data.language === lang);
 const vocabPool = Array.from(
-  new Map(lessonsForLang.flatMap((l) => l.data.vocabulary).map((v) => [v.term.toLowerCase(), v])).values()
+  new Map(
+    [
+      ...lessonsForLang.flatMap((l) => l.data.vocabulary),
+      ...lessonsForLang.flatMap((l) => l.data.phrases.map((p) => ({ term: p.de, translation: p.es }))),
+    ].map((v) => [v.term.toLowerCase(), v])
+  ).values()
 );
 ---
 

@@ -138,6 +138,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                   type="button"
                   class="option"
                   data-option
+                  data-option-key={oi + 1}
                   data-correct={oi === item.data.answerIndex ? 'true' : 'false'}
                 >
                   {opt}
@@ -476,6 +477,15 @@ function splitSentence(sentence: string): { before: string; after: string } {
     transition: border-color 0.15s ease, background 0.15s ease;
   }
 
+  /* Pista visual del atajo de teclado (1-9) para elegir una opción sin
+     mouse/tap — solo hasta el 9 tiene sentido mostrarlo, y las preguntas de
+     opción múltiple del contenido nunca pasan de unas pocas alternativas. */
+  .option[data-option-key]::before {
+    content: attr(data-option-key) '. ';
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+
   .option:hover,
   .match-item:hover,
   .word-chip:hover {
@@ -745,6 +755,31 @@ function splitSentence(sentence: string): { before: string; after: string } {
     return read('polylingua-shadowing-mode') === 'true';
   }
 
+  // Atajo de teclado: elegir una opción de "choice" con las teclas 1-9, sin
+  // mouse/tap. Enganchado a document (no al root de cada sesión) porque
+  // nada dentro del root recibe foco al cargar la página — showItem() solo
+  // enfoca el <legend> al AVANZAR (goNext()), nunca en el ítem inicial — así
+  // que un listener scoped al root nunca vería el keydown si el usuario no
+  // clickeó nada todavía. Enganchado una sola vez por sesión (flag de
+  // módulo, no una vez por cada [data-practice] que aparece bajo
+  // navegación SPA) y resuelto en cada pulsación contra el root/ítem
+  // vigentes en el DOM, para no acumular listeners duplicados que
+  // contarían una misma tecla varias veces.
+  let practiceKeyboardStarted = false;
+
+  function initPracticeKeyboardShortcut() {
+    if (practiceKeyboardStarted) return;
+    practiceKeyboardStarted = true;
+
+    document.addEventListener('keydown', (e) => {
+      if (!/^[1-9]$/.test(e.key)) return;
+      const item = document.querySelector<HTMLElement>('[data-practice] [data-practice-item]:not([hidden])');
+      if (!item || item.dataset.kind !== 'choice' || item.dataset.answered) return;
+      const options = item.querySelectorAll<HTMLButtonElement>('[data-option]');
+      options[Number(e.key) - 1]?.click();
+    });
+  }
+
   function shuffleChildren(container: Element | null) {
     if (!container) return;
     const shuffled = shuffle(Array.from(container.children));
@@ -834,6 +869,8 @@ function splitSentence(sentence: string): { before: string; after: string } {
         if (!btn || btn.hidden) return;
         speak(btn.dataset.speakText ?? '', root.dataset.lang ?? '');
       });
+
+      initPracticeKeyboardShortcut();
 
       function maybeAutoSpeak(index: number) {
         const item = items[index];

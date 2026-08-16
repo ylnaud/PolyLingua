@@ -21,6 +21,7 @@ const coreBadges: Badge[] = [
   { id: 'srs-master', emoji: '🧠', name: 'Maestro del repaso', hint: 'Domina 5 ítems en el repaso espaciado.' },
   { id: 'combo', emoji: '💥', name: 'Racha de combo', hint: 'Encadena 5 respuestas correctas seguidas en una misma sesión.' },
   { id: 'practice-libre', emoji: '🎲', name: 'Explorador libre', hint: 'Completa 5 sesiones de práctica libre.' },
+  { id: 'hangman-10', emoji: '🔤', name: 'Diez ahorcados ganados', hint: 'Gana 10 partidas de ahorcado.' },
   { id: 'levels-1', emoji: '🏆', name: 'Primer nivel superado', hint: 'Aprueba tu primer examen de nivel.' },
   { id: 'levels-5', emoji: '🏆', name: '5 niveles superados', hint: 'Aprueba 5 exámenes de nivel.' },
   { id: 'levels-15', emoji: '🏆', name: '15 niveles superados', hint: 'Aprueba 15 exámenes de nivel.' },
@@ -44,6 +45,12 @@ const languageIds = LANGUAGES.map((l) => l.id);
 // llevan los ids del pool antes del "#{kind}-{index}".
 const allLessons = await getCollection('lessons');
 const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.grammarTopic]));
+
+// Total de lecciones por idioma, para el panel "Tu progreso por idioma" —
+// mismo cálculo que usa index.astro para las tarjetas de idioma en la home.
+const lessonCounts = Object.fromEntries(
+  LANGUAGES.map((l) => [l.id, allLessons.filter((les) => les.data.language === l.id).length])
+);
 ---
 
 <BaseLayout
@@ -56,6 +63,12 @@ const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.gra
     <h1>🏆 Mis logros</h1>
     <p class="desc" data-progress-summary>Cargando tu progreso…</p>
   </section>
+
+  <section class="container lang-progress-head">
+    <div class="lang-progress-grid" data-lang-progress-grid></div>
+  </section>
+
+  <div hidden data-lesson-counts={JSON.stringify(lessonCounts)}></div>
 
   <section class="container pending-head">
     <div class="card empty-state" data-pending-empty hidden>
@@ -141,6 +154,7 @@ const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.gra
     const hasMarathon = read('polylingua-achievement-marathon') === 'true';
     const hasCombo = read('polylingua-achievement-combo') === 'true';
     const hasPracticeLibre = read('polylingua-achievement-practice-libre') === 'true';
+    const hangmanWins = Number(read('polylingua-hangman-wins') ?? '0');
 
     const earned = {
       'first-lesson': hasFirstLesson,
@@ -151,6 +165,7 @@ const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.gra
       marathon: hasMarathon,
       combo: hasCombo,
       'practice-libre': hasPracticeLibre,
+      'hangman-10': hangmanWins >= 10,
       'srs-master': srsMastered >= 5,
       'levels-1': levelsPassed >= 1,
       'levels-5': levelsPassed >= 5,
@@ -181,6 +196,63 @@ const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.gra
 
   initLogros();
   document.addEventListener('astro:page-load', initLogros);
+</script>
+
+<script>
+  import { exportAll } from '../lib/storage';
+  import { LANGUAGES } from '../data/languages';
+
+  function initLanguageProgress() {
+    const grid = document.querySelector<HTMLElement>('[data-lang-progress-grid]');
+    const countsEl = document.querySelector<HTMLElement>('[data-lesson-counts]');
+    if (!grid || !countsEl) return;
+
+    let lessonCounts: Record<string, number> = {};
+    try {
+      lessonCounts = JSON.parse(countsEl.dataset.lessonCounts ?? '{}');
+    } catch {
+      /* manifest inválido, se trata como vacío */
+    }
+
+    const all = exportAll();
+    let vocabLearned: Record<string, { lang: string }> = {};
+    try {
+      vocabLearned = JSON.parse(all['polylingua-vocab-learned'] ?? '{}');
+    } catch {
+      /* dato corrupto, se trata como vacío */
+    }
+
+    grid.innerHTML = '';
+    for (const lang of LANGUAGES) {
+      const lessonsDone = Object.keys(all).filter((k) => k.startsWith(`polylingua-lesson-done-${lang.id}-`)).length;
+      const levelsPassed = Object.keys(all).filter((k) => k.startsWith(`polylingua-level-passed-${lang.id}-`)).length;
+      const wordsLearned = Object.values(vocabLearned).filter((v) => v.lang === lang.id).length;
+
+      const card = document.createElement('a');
+      card.className = 'lang-progress-card';
+      card.href = `/idiomas/${lang.id}`;
+
+      const head = document.createElement('span');
+      head.className = 'lang-progress-head-row';
+      const flag = document.createElement('span');
+      flag.setAttribute('aria-hidden', 'true');
+      flag.textContent = lang.flag;
+      const name = document.createElement('span');
+      name.className = 'lang-progress-name';
+      name.textContent = lang.name;
+      head.append(flag, name);
+
+      const stats = document.createElement('span');
+      stats.className = 'lang-progress-stats';
+      stats.textContent = `${lessonsDone}/${lessonCounts[lang.id] ?? 0} lecciones · ${levelsPassed}/6 niveles · ${wordsLearned} palabras`;
+
+      card.append(head, stats);
+      grid.appendChild(card);
+    }
+  }
+
+  initLanguageProgress();
+  document.addEventListener('astro:page-load', initLanguageProgress);
 </script>
 
 <script>
@@ -350,6 +422,54 @@ const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.gra
   .desc {
     color: var(--text-muted);
     margin: 0;
+  }
+
+  .lang-progress-head {
+    max-width: 680px;
+    padding-block: 0 1.5rem;
+  }
+
+  .lang-progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.85rem;
+  }
+
+  /* Las tarjetas se crean con document.createElement en JS a partir de
+     localStorage — nunca reciben el atributo de scoping de Astro, así que
+     hace falta :global() para que este CSS las alcance (mismo patrón que
+     .pending-list más abajo). */
+  .lang-progress-grid :global(.lang-progress-card) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem 1.1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease;
+  }
+
+  .lang-progress-grid :global(.lang-progress-card:hover) {
+    border-color: var(--accent);
+  }
+
+  .lang-progress-grid :global(.lang-progress-head-row) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+  }
+
+  .lang-progress-grid :global(.lang-progress-name) {
+    font-weight: 700;
+  }
+
+  .lang-progress-grid :global(.lang-progress-stats) {
+    color: var(--text-muted);
+    font-size: 0.82rem;
   }
 
   .pending-head {

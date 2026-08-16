@@ -30,6 +30,39 @@ export function write(key: string, value: string): void {
   }
 }
 
+const APP_PREFIX = 'polylingua-';
+
+// Vuelca todo el progreso (racha, SRS, vocabulario, logros, preferencias)
+// a un objeto plano — usado por la copia de seguridad de /logros para
+// exportar todo lo que vive en localStorage bajo el prefijo de la app,
+// sin arrastrar keys de otro origen que pudieran compartir el mismo
+// localStorage (no debería pasar, pero es una guarda barata).
+export function exportAll(): Record<string, string> {
+  const data: Record<string, string> = {};
+  try {
+    for (const key of Object.keys(localStorage)) {
+      if (!key.startsWith(APP_PREFIX)) continue;
+      const value = localStorage.getItem(key);
+      if (value !== null) data[key] = value;
+    }
+  } catch {
+    /* localStorage unavailable */
+  }
+  return data;
+}
+
+// Contraparte de exportAll(): escribe de vuelta cada key, ignorando
+// cualquier entrada que no tenga el prefijo de la app o cuyo valor no sea
+// texto — así un archivo de backup editado a mano o corrupto no puede
+// inyectar keys arbitrarias en localStorage.
+export function importAll(data: Record<string, unknown>): void {
+  for (const [key, value] of Object.entries(data)) {
+    if (!key.startsWith(APP_PREFIX)) continue;
+    if (typeof value !== 'string') continue;
+    write(key, value);
+  }
+}
+
 // Busca, entre las keys "<prefix><idioma>-...", la del idioma con la fecha
 // más reciente guardada como valor — usado por los selectores de idioma de
 // /practica-libre y /repasar para saltar directo al idioma que el usuario

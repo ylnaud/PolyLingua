@@ -1,0 +1,229 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allLessons = await getCollection('lessons');
+const searchManifest = allLessons.map((l) => {
+  const slug = l.id.split('/').pop();
+  return {
+    title: l.data.title,
+    topic: l.data.grammarTopic,
+    description: l.data.description,
+    lang: l.data.language,
+    level: l.data.level,
+    href: `/idiomas/${l.data.language}/${l.data.level}/${slug}`,
+  };
+});
+---
+
+<BaseLayout
+  title="Buscar lecciones"
+  description="Busca entre más de 240 lecciones de alemán, inglés, francés, italiano y portugués por tema gramatical o palabra clave."
+  path="/buscar"
+>
+  <section class="container search-head">
+    <h1>🔎 Buscar lecciones</h1>
+    <p class="desc">Busca por tema gramatical, título o palabra clave entre los 5 idiomas.</p>
+    <label class="visually-hidden" for="search-input">Buscar lecciones</label>
+    <input
+      type="search"
+      id="search-input"
+      class="search-input"
+      placeholder="Ej: subjuntivo, artículos, pasado…"
+      autocomplete="off"
+      data-search-input
+    />
+  </section>
+
+  <section class="container search-body">
+    <p class="search-status" data-search-status></p>
+    <div class="search-results" data-search-results></div>
+  </section>
+
+  <div hidden data-search-manifest={JSON.stringify(searchManifest)}></div>
+</BaseLayout>
+
+<script>
+  interface SearchItem {
+    title: string;
+    topic: string;
+    description: string;
+    lang: string;
+    level: string;
+    href: string;
+  }
+
+  const FLAGS: Record<string, string> = { de: '🇩🇪', en: '🇬🇧', fr: '🇫🇷', it: '🇮🇹', pt: '🇵🇹' };
+  const LEVEL_LABELS: Record<string, string> = { a1: 'A1', a2: 'A2', b1: 'B1', b2: 'B2', c1: 'C1', c2: 'C2' };
+  const MIN_CHARS = 2;
+  const MAX_RESULTS = 30;
+
+  // Sin acentos y en minúsculas, para que "aleman" encuentre "alemán" y
+  // "articulo" encuentre "artículo" — la mayoría de usuarios no va a
+  // molestarse en teclear tildes en un buscador.
+  function normalize(s: string): string {
+    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  }
+
+  function initSearch() {
+    const input = document.querySelector<HTMLInputElement>('[data-search-input]');
+    const results = document.querySelector<HTMLElement>('[data-search-results]');
+    const status = document.querySelector<HTMLElement>('[data-search-status]');
+    const manifestEl = document.querySelector<HTMLElement>('[data-search-manifest]');
+    if (!input || !results || !status || !manifestEl) return;
+    if (input.dataset.initialized) return;
+    input.dataset.initialized = 'true';
+
+    let manifest: SearchItem[] = [];
+    try {
+      manifest = JSON.parse(manifestEl.dataset.searchManifest ?? '[]');
+    } catch {
+      manifest = [];
+    }
+
+    function render(query: string) {
+      const trimmed = query.trim();
+      const q = normalize(trimmed);
+      if (!results || !status) return;
+      results.innerHTML = '';
+
+      if (q.length < MIN_CHARS) {
+        status.textContent = trimmed
+          ? 'Escribe al menos 2 letras para buscar.'
+          : `Hay ${manifest.length} lecciones disponibles. Empieza a escribir para buscar.`;
+        return;
+      }
+
+      const matches = manifest
+        .filter(
+          (item) =>
+            normalize(item.title).includes(q) ||
+            normalize(item.topic).includes(q) ||
+            normalize(item.description).includes(q)
+        )
+        .slice(0, MAX_RESULTS);
+
+      if (matches.length === 0) {
+        status.textContent = `Sin resultados para "${trimmed}".`;
+        return;
+      }
+
+      status.textContent = `${matches.length} resultado${matches.length === 1 ? '' : 's'} para "${trimmed}"${
+        matches.length === MAX_RESULTS ? ` (mostrando los primeros ${MAX_RESULTS})` : ''
+      }.`;
+
+      for (const item of matches) {
+        const a = document.createElement('a');
+        a.className = 'search-result';
+        a.href = item.href;
+
+        const meta = document.createElement('span');
+        meta.className = 'search-result-meta';
+        meta.textContent = `${FLAGS[item.lang] ?? ''} ${LEVEL_LABELS[item.level] ?? item.level.toUpperCase()}`;
+
+        const title = document.createElement('span');
+        title.className = 'search-result-title';
+        title.textContent = item.title;
+
+        const topic = document.createElement('span');
+        topic.className = 'search-result-topic';
+        topic.textContent = item.topic;
+
+        a.append(meta, title, topic);
+        results.appendChild(a);
+      }
+    }
+
+    input.addEventListener('input', () => render(input.value));
+    render(input.value);
+  }
+
+  initSearch();
+  document.addEventListener('astro:page-load', initSearch);
+</script>
+
+<style>
+  .search-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-size: 1rem;
+    font-family: inherit;
+    min-height: 44px;
+  }
+
+  .search-input:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .search-body {
+    max-width: 680px;
+    padding-block: 0 4rem;
+  }
+
+  .search-status {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin: 0 0 1rem;
+  }
+
+  .search-results {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  /* Los resultados se arman con document.createElement en JS a partir del
+     manifest embebido — nunca reciben el atributo de scoping de Astro, así
+     que hace falta :global() para que este CSS los alcance (mismo patrón
+     que .pending-list en /logros). */
+  .search-results :global(.search-result) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease;
+  }
+
+  .search-results :global(.search-result:hover) {
+    border-color: var(--accent);
+  }
+
+  .search-results :global(.search-result-meta) {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-muted);
+  }
+
+  .search-results :global(.search-result-title) {
+    font-weight: 700;
+  }
+
+  .search-results :global(.search-result-topic) {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+  }
+</style>

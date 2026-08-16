@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
+import StreakReminder from '../components/StreakReminder.astro';
 import Footer from '../components/Footer.astro';
 import ProgressTracker from '../components/ProgressTracker.astro';
 import SoundEffects from '../components/SoundEffects.astro';
@@ -84,6 +85,7 @@ const ogImage = new URL('/og-image.svg', Astro.site);
   <body>
     <a href="#main" class="skip-link">Saltar al contenido</a>
     <Header />
+    <StreakReminder />
     <main id="main">
       <slot />
     </main>

@@ -1,0 +1,135 @@
+---
+interface Phrase {
+  de: string;
+  es: string;
+  note?: string;
+}
+
+interface Props {
+  phrases: Phrase[];
+  lang?: string;
+}
+
+const { phrases, lang = '' } = Astro.props;
+---
+
+<div class="phrase-bank card" data-phrase-bank data-lang={lang}>
+  <span class="eyebrow">🗣️ Frases para usar hoy</span>
+  <p class="phrase-intro">Escuchá cada frase y repetila en voz alta antes de practicar.</p>
+  <ul class="phrase-list">
+    {phrases.map((phrase) => (
+      <li class="phrase-item">
+        <div class="phrase-main">
+          <p class="phrase-de">{phrase.de}</p>
+          <p class="phrase-es">{phrase.es}</p>
+          {phrase.note && <p class="phrase-note">{phrase.note}</p>}
+        </div>
+        <button
+          type="button"
+          class="phrase-speak"
+          data-phrase-speak
+          data-phrase-text={phrase.de}
+          aria-label={`Escuchar «${phrase.de}»`}
+        >
+          🔊
+        </button>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  import { speak } from '../lib/sound';
+
+  function initPhraseBank() {
+    document.querySelectorAll<HTMLElement>('[data-phrase-bank]').forEach((bank) => {
+      if (bank.dataset.initialized) return;
+      bank.dataset.initialized = 'true';
+
+      // Un solo listener delegado por banco en vez de uno por botón: el markup
+      // es estático (viene del frontmatter), así que no hay nodos que se
+      // agreguen después, y así no se recorre la lista entera al iniciar.
+      bank.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement)?.closest<HTMLElement>('[data-phrase-speak]');
+        if (!btn) return;
+        speak(btn.dataset.phraseText ?? '', bank.dataset.lang ?? '');
+      });
+    });
+  }
+
+  initPhraseBank();
+  document.addEventListener('astro:page-load', initPhraseBank);
+</script>
+
+<style>
+  .phrase-bank {
+    margin: 1.75rem 0;
+    padding: 1.1rem 1.25rem;
+  }
+
+  .phrase-intro {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0.35rem 0 1rem;
+  }
+
+  .phrase-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .phrase-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .phrase-item:first-child {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .phrase-main {
+    min-width: 0;
+  }
+
+  .phrase-de {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .phrase-es {
+    color: var(--text-muted);
+    margin: 0.15rem 0 0;
+  }
+
+  .phrase-note {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin: 0.3rem 0 0;
+  }
+
+  .phrase-speak {
+    flex-shrink: 0;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .phrase-speak:hover {
+    border-color: var(--accent);
+  }
+</style>

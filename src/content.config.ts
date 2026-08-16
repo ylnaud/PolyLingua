@@ -54,6 +54,15 @@ const vocabularyItem = z.object({
   translation: z.string(),
 });
 
+// Frase completa lista para usar, no una palabra suelta — es la unidad del
+// modo "situaciones" (aprender por frases y contextos reales en vez de por
+// reglas aisladas). Ver src/components/PhraseBank.astro.
+const situationPhrase = z.object({
+  de: z.string(),
+  es: z.string(),
+  note: z.string().optional(),
+});
+
 const lessons = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/lessons' }),
   schema: z.object({
@@ -68,6 +77,11 @@ const lessons = defineCollection({
     quiz: z.array(quizQuestion).default([]),
     exercises: z.array(exercise).default([]),
     vocabulary: z.array(vocabularyItem).default([]),
+    // Ambos opcionales: marcan una lección como parte del modo "situaciones"
+    // (contenido 80/20 organizado por contexto real, no por tema gramatical).
+    // Al ser opcionales, las lecciones existentes siguen validando sin cambios.
+    situation: z.string().optional(),
+    phrases: z.array(situationPhrase).default([]),
   }),
 });
 

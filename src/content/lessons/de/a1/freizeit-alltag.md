@@ -4,6 +4,7 @@ level: a1
 title: "Freizeit: decir qué te gusta hacer"
 description: "Ich spiele gern Fußball, ich mag Sport, am Wochenende gehe ich ins Kino: la estructura con «gern» para hablar de tus gustos y tu tiempo libre en alemán."
 order: 22
+unit: 5
 grammarTopic: "Frases para hablar de gustos y tiempo libre"
 situation: "Tiempo libre"
 funFact: "El alemán no tiene un verbo «gustar» para las acciones: le agrega la palabra «gern» al verbo normal. «Ich spiele gern» es literalmente «juego con gusto». Una palabrita y ya podés decir que te gusta cualquier cosa que sepas hacer."

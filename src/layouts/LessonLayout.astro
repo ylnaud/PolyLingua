@@ -140,16 +140,18 @@ const structuredData = {
     {phrases.length > 0 && <PhraseBank phrases={phrases} lang={languageMeta.bcp47} />}
 
     {vocabulary.length > 0 && (
-      <div class="vocab card">
+      <div class="vocab-carousel card" data-vocab-carousel data-vocabulary={JSON.stringify(vocabulary)} data-lang={languageMeta.bcp47}>
         <span class="eyebrow">📚 Vocabulario de esta lección</span>
-        <dl class="vocab-list">
-          {vocabulary.map((item) => (
-            <div class="vocab-item">
-              <dt>{item.term}</dt>
-              <dd>{item.translation}</dd>
-            </div>
-          ))}
-        </dl>
+        <div class="vocab-counter" data-vocab-counter></div>
+        <div class="vocab-card-inner">
+          <span class="vocab-term" data-vocab-term></span>
+          <span class="vocab-translation" data-vocab-translation></span>
+          <button type="button" class="speak-btn vocab-speak" data-vocab-speak aria-label="Escuchar">🔊 Escuchar</button>
+        </div>
+        <div class="vocab-nav">
+          <button type="button" class="btn btn-ghost vocab-prev" data-vocab-prev disabled>← Anterior</button>
+          <button type="button" class="btn btn-primary vocab-next" data-vocab-next>Siguiente →</button>
+        </div>
       </div>
       <div hidden data-vocab-tracker data-vocabulary={JSON.stringify(vocabulary)}></div>
     )}
@@ -205,35 +207,67 @@ const structuredData = {
     margin: 0.35rem 0 0;
   }
 
-  .vocab {
+  .vocab-carousel {
     margin: 1.75rem 0;
-    padding: 1.1rem 1.25rem;
+    padding: 1.25rem;
+    text-align: center;
   }
 
-  .vocab-list {
-    display: grid;
-    gap: 0.6rem;
-    margin: 0.6rem 0 0;
+  .vocab-counter {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 0.5rem 0 0.75rem;
   }
 
-  .vocab-item {
+  .vocab-card-inner {
     display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.4rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    min-height: 120px;
+    justify-content: center;
   }
 
-  .vocab-item dt {
-    font-weight: 700;
+  .vocab-term {
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.3;
   }
 
-  .vocab-item dd {
-    margin: 0;
+  .vocab-translation {
+    font-size: 1.1rem;
     color: var(--text-muted);
   }
 
-  .vocab-item dd::before {
-    content: '— ';
+  .vocab-speak {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background: none;
+    border: 1px solid var(--border, #e5e7eb);
+    border-radius: 8px;
+    padding: 0.4rem 0.8rem;
+    color: var(--text);
+  }
+
+  .vocab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .vocab-prev,
+  .vocab-next {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.1rem;
+  }
+
+  .vocab-prev:disabled {
+    opacity: 0.4;
+    cursor: default;
   }
 
   .content :global(h2) {
@@ -259,3 +293,49 @@ const structuredData = {
     margin-top: 2.5rem;
   }
 </style>
+
+<script>
+  function initVocabCarousel() {
+    const carousel = document.querySelector<HTMLElement>('[data-vocab-carousel]');
+    if (!carousel) return;
+    let items: { term: string; translation: string }[];
+    try { items = JSON.parse(carousel.dataset.vocabulary ?? '[]'); } catch { return; }
+    if (items.length === 0) return;
+
+    const lang = carousel.dataset.lang ?? 'de';
+    const counter = carousel.querySelector<HTMLElement>('[data-vocab-counter]')!;
+    const term = carousel.querySelector<HTMLElement>('[data-vocab-term]')!;
+    const translation = carousel.querySelector<HTMLElement>('[data-vocab-translation]')!;
+    const prevBtn = carousel.querySelector<HTMLButtonElement>('[data-vocab-prev]')!;
+    const nextBtn = carousel.querySelector<HTMLButtonElement>('[data-vocab-next]')!;
+    const speakBtn = carousel.querySelector<HTMLButtonElement>('[data-vocab-speak]')!;
+
+    let current = 0;
+
+    function render() {
+      counter.textContent = `${current + 1} / ${items.length}`;
+      term.textContent = items[current].term;
+      translation.textContent = items[current].translation;
+      prevBtn.disabled = current === 0;
+      nextBtn.textContent = current === items.length - 1 ? 'Empezar práctica →' : 'Siguiente →';
+    }
+
+    prevBtn.addEventListener('click', () => { if (current > 0) { current--; render(); } });
+    nextBtn.addEventListener('click', () => {
+      if (current < items.length - 1) { current++; render(); }
+      else { document.querySelector('[data-practice-root]')?.scrollIntoView({ behavior: 'smooth' }); }
+    });
+    speakBtn.addEventListener('click', () => {
+      if ('speechSynthesis' in window) {
+        const u = new SpeechSynthesisUtterance(items[current].term);
+        u.lang = lang;
+        speechSynthesis.speak(u);
+      }
+    });
+
+    render();
+  }
+
+  initVocabCarousel();
+  document.addEventListener('astro:page-load', initVocabCarousel);
+</script>

@@ -4,6 +4,7 @@ level: a1
 title: "Familie und Freunde: hablar de tu gente"
 description: "Ich habe zwei Brüder, meine Frau heißt Ana, mein Freund wohnt in Berlin: las frases para contar quién es quién en tu vida, no solo la lista de parentescos."
 order: 19
+unit: 4
 grammarTopic: "Frases para hablar de la familia y los amigos"
 situation: "Familia y amigos"
 funFact: "«Mein Freund» no siempre es «mi amigo»: con el posesivo suele entenderse como pareja. Si querés decir simplemente un amigo, lo natural es «ein Freund von mir». Un detalle chico que evita malentendidos grandes."

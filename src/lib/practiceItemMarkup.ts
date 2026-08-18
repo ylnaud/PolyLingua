@@ -21,6 +21,8 @@ export interface SrsEntry {
   lang: string;
   level: string;
   firstFailedAt?: string;
+  lastFailedAt?: string;
+  failCount?: number;
 }
 
 const KIND_LABELS: Record<string, string> = {

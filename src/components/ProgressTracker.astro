@@ -2,6 +2,7 @@
 ---
 <script>
   import { today, addDays, read, write } from '../lib/storage';
+  import { INTERVAL_DAYS, MAX_BOX } from '../lib/srs';
 
   interface ResultItem {
     id: string;
@@ -19,6 +20,16 @@
     lang: string;
     level: string;
     firstFailedAt?: string;
+    lastFailedAt?: string;
+    failCount?: number;
+  }
+
+  interface ErrorLogEntry {
+    id: string;
+    lang: string;
+    level: string;
+    kind: string;
+    date: string;
   }
 
   interface VocabEntry {
@@ -30,9 +41,10 @@
   }
 
   const EXAM_PASS_THRESHOLD = 0.7;
-  const INTERVAL_DAYS = [1, 3, 7, 16];
   const COMBO_THRESHOLD = 5;
   const PRACTICE_LIBRE_GOAL = 5;
+  const ERROR_LOG_KEY = 'polylingua-error-log';
+  const MAX_ERROR_LOG = 200;
 
   function readPool(): Record<string, SrsEntry> {
     try {
@@ -87,36 +99,46 @@
     document.dispatchEvent(new CustomEvent('polylingua-achievement', { detail: { id } }));
   }
 
+  function appendError(entry: Omit<ErrorLogEntry, 'date'>) {
+    let log: ErrorLogEntry[];
+    try { log = JSON.parse(read(ERROR_LOG_KEY) ?? '[]'); } catch { log = []; }
+    log.push({ ...entry, date: today() });
+    if (log.length > MAX_ERROR_LOG) log = log.slice(-MAX_ERROR_LOG);
+    write(ERROR_LOG_KEY, JSON.stringify(log));
+  }
+
   function updateSrsPool(results: ResultItem[]) {
     const pool = readPool();
     for (const r of results) {
       if (!r.id) continue;
-      // Derive lang/level from the item id itself (e.g. "de/a1/slug#choice-0" or
-      // "de/a1#write-2") rather than the session's own lessonId — the review page
-      // has no single lang/level of its own (it mixes items from many lessons), so
-      // this is the only reliable source for every session type.
       const [lang = '', level = ''] = r.id.split('#')[0].split('/');
       if (!lang || !level) continue;
       if (!r.correct) {
         const existing = pool[r.id];
+        const failBox = Math.max(0, (existing?.box ?? 0) - 2);
         pool[r.id] = {
           id: r.id,
           kind: r.kind,
           data: r.data,
-          box: 0,
-          due: today(),
+          box: failBox,
+          due: failBox === 0 ? today() : addDays(today(), INTERVAL_DAYS[failBox - 1]),
           lang,
           level,
           firstFailedAt: existing?.firstFailedAt ?? today(),
+          lastFailedAt: today(),
+          failCount: (existing?.failCount ?? 0) + 1,
         };
+        appendError({ id: r.id, lang, level, kind: r.kind });
         continue;
       }
       const existing = pool[r.id];
       if (!existing) continue;
       const nextBox = existing.box + 1;
-      if (nextBox >= INTERVAL_DAYS.length + 1) {
-        delete pool[r.id];
-        write('polylingua-srs-mastered-count', String(Number(read('polylingua-srs-mastered-count') ?? '0') + 1));
+      if (nextBox >= MAX_BOX) {
+        pool[r.id] = { ...existing, box: MAX_BOX - 1, due: addDays(today(), INTERVAL_DAYS[MAX_BOX - 1]) };
+        if (existing.box === MAX_BOX - 2) {
+          write('polylingua-srs-mastered-count', String(Number(read('polylingua-srs-mastered-count') ?? '0') + 1));
+        }
       } else {
         pool[r.id] = { ...existing, box: nextBox, due: addDays(today(), INTERVAL_DAYS[nextBox - 1]) };
       }

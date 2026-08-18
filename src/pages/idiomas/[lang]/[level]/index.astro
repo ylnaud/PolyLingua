@@ -3,6 +3,7 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { LEVEL_MAP } from '../../../../data/levels';
 import { LANGUAGE_MAP } from '../../../../data/languages';
 import { getCollection } from 'astro:content';
+import { UNITS } from '../../../../data/units';
 
 export async function getStaticPaths() {
   const allLessons = await getCollection('lessons');
@@ -24,6 +25,8 @@ const allLessons = await getCollection('lessons');
 const lessons = allLessons
   .filter((l) => l.data.language === lang && l.data.level === level)
   .sort((a, b) => a.data.order - b.data.order);
+
+const unitMetas = UNITS[`${lang}-${level}`] ?? null;
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -62,25 +65,69 @@ const structuredData = {
     {lessons.length === 0 && (
       <p class="empty">Estamos preparando lecciones para este nivel. ¡Vuelve pronto!</p>
     )}
-    <ol class="lesson-list">
-      {lessons.map((lesson, i) => (
-        <li>
-          <a
-            class="lesson-item card"
-            data-lesson-item
-            data-slug={lesson.id.split('/').pop()}
-            href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
-          >
-            <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>{i + 1}</span>
-            <div>
-              <h2>{lesson.data.title}</h2>
-              <p>{lesson.data.description}</p>
-              <span class="lesson-meta">📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min</span>
+
+    {unitMetas ? (
+      unitMetas.map((unit) => {
+        const unitLessons = lessons.filter((l) => l.data.unit === unit.id);
+        return unitLessons.length > 0 && (
+          <div class="unit-group">
+            <div class="unit-header">
+              <span class="unit-emoji" aria-hidden="true">{unit.emoji}</span>
+              <div>
+                <h2 class="unit-name">Unidad {unit.id} — {unit.name}</h2>
+                <p class="unit-desc">{unit.description}</p>
+                <span class="unit-progress" data-unit-progress data-unit-slugs={unitLessons.map((l) => l.id.split('/').pop()).join(',')}></span>
+              </div>
             </div>
-          </a>
-        </li>
-      ))}
-      {lessons.length > 0 && (
+            <ol class="lesson-list">
+              {unitLessons.map((lesson) => {
+                const gi = lessons.indexOf(lesson);
+                return (
+                  <li>
+                    <a
+                      class="lesson-item card"
+                      data-lesson-item
+                      data-slug={lesson.id.split('/').pop()}
+                      href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+                    >
+                      <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>{gi + 1}</span>
+                      <div>
+                        <h2>{lesson.data.title}</h2>
+                        <p>{lesson.data.description}</p>
+                        <span class="lesson-meta">📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min</span>
+                      </div>
+                    </a>
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+        );
+      })
+    ) : (
+      <ol class="lesson-list">
+        {lessons.map((lesson, i) => (
+          <li>
+            <a
+              class="lesson-item card"
+              data-lesson-item
+              data-slug={lesson.id.split('/').pop()}
+              href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+            >
+              <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>{i + 1}</span>
+              <div>
+                <h2>{lesson.data.title}</h2>
+                <p>{lesson.data.description}</p>
+                <span class="lesson-meta">📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min</span>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ol>
+    )}
+
+    {lessons.length > 0 && (
+      <ol class="lesson-list exam-list">
         <li>
           <a
             class="lesson-item card exam-item"
@@ -94,8 +141,8 @@ const structuredData = {
             </div>
           </a>
         </li>
-      )}
-    </ol>
+      </ol>
+    )}
   </section>
 </BaseLayout>
 
@@ -128,14 +175,24 @@ const structuredData = {
   // agrega este script), así que reejecutarlo es seguro y no necesita guard.
   function initLevelIndex() {
     document.querySelectorAll('[data-lesson-item]').forEach((el, i) => {
+      if (isLessonDone(slugs[i])) el.classList.add('done');
       if (i === 0) return;
-      const prevSlug = slugs[i - 1];
-      if (!isLessonDone(prevSlug)) lockItem(el);
+      if (!isLessonDone(slugs[i - 1])) lockItem(el);
+    });
+
+    document.querySelectorAll('[data-unit-progress]').forEach((el) => {
+      var uSlugs = (el.dataset.unitSlugs || '').split(',').filter(Boolean);
+      var done = uSlugs.filter(isLessonDone).length;
+      el.textContent = done + '/' + uSlugs.length;
+      if (done === uSlugs.length && uSlugs.length > 0) el.classList.add('complete');
     });
 
     const examItem = document.querySelector('[data-exam-item]');
     const lastSlug = slugs[slugs.length - 1];
     if (examItem && (!lastSlug || !isLessonDone(lastSlug))) lockItem(examItem);
+    if (examItem && lastSlug && isLessonDone(lastSlug) && read('polylingua-level-passed-' + lang + '-' + level)) {
+      examItem.classList.add('done');
+    }
   }
 
   initLevelIndex();
@@ -229,6 +286,66 @@ const structuredData = {
 
   .exam-item {
     border-color: var(--accent);
+  }
+
+  .unit-group {
+    margin-bottom: 2rem;
+  }
+
+  .unit-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    background: var(--surface, #f3f4f6);
+  }
+
+  :root[data-theme='dark'] .unit-header,
+  :root:not([data-theme='light']) .unit-header {
+    background: var(--surface, #1e1e2e);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .unit-header {
+      background: var(--surface, #1e1e2e);
+    }
+  }
+
+  .unit-emoji {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .unit-name {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+
+  .unit-desc {
+    margin: 0.15rem 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .unit-progress {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .unit-progress.complete {
+    color: #22c55e;
+  }
+
+  .exam-list {
+    margin-top: 1rem;
+  }
+
+  .lesson-item.done .lesson-num {
+    background: #22c55e !important;
+    color: #fff;
   }
 
   .locked {

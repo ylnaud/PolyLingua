@@ -4,6 +4,7 @@ level: a1
 title: "El plural en alemán: -e, -er, -(e)n, -s y el artículo die"
 description: "Los 5 patrones para formar el plural en alemán, con la regla que nunca falla: TODOS los plurales usan el artículo 'die', sin importar el género en singular."
 order: 14
+unit: 3
 grammarTopic: "Formación del plural de sustantivos"
 funFact: "No hay una sola terminación de plural en alemán — pero hay una sola regla que nunca falla: el artículo plural SIEMPRE es 'die', sea der/die/das en singular. Aprendé esa regla primero; el resto es memorizar cada palabra nueva junto con su plural, como un paquete."
 minutes: 8

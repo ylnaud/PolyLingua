@@ -4,6 +4,7 @@ level: a1
 title: "Tiere: hablar de tus animales"
 description: "Ich habe einen Hund, wir haben Kühe, ich füttere die Tiere: las frases para hablar de mascotas y de los animales del campo en alemán."
 order: 23
+unit: 5
 grammarTopic: "Vocabulario y frases de animales"
 situation: "Animales"
 funFact: "«Ich habe einen Hund» lleva «einen» y no «ein» porque el perro es lo que tenés, y lo que se tiene va en Akkusativ. Con la gata es «eine Katze» y con el caballo «ein Pferd». Es la práctica más natural que existe del Akkusativ: hablar de tus propios animales."

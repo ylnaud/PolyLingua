@@ -19,6 +19,14 @@ const lessonCounts = Object.fromEntries(
   ])
 );
 
+const levelLessonSlugs: Record<string, string[]> = {};
+for (const lvl of LEVELS) {
+  levelLessonSlugs[lvl.id] = allLessons
+    .filter((l) => l.data.language === lang && l.data.level === lvl.id)
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((l) => l.id.split('/').pop()!);
+}
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Course',
@@ -44,6 +52,35 @@ const structuredData = {
     <h1>{languageMeta.name} <span class="native">· {languageMeta.nativeName}</span></h1>
     <p class="tagline">{languageMeta.tagline}</p>
     <p class="desc">{languageMeta.description}</p>
+  </section>
+
+  <section class="container dashboard" hidden data-dashboard>
+    <div class="dash-hero card">
+      <div class="dash-main">
+        <span class="dash-level" data-dash-level></span>
+        <div class="dash-progress-wrap">
+          <div class="dash-progress-bar">
+            <div class="dash-progress-fill" data-dash-fill></div>
+          </div>
+          <span class="dash-progress-text" data-dash-progress></span>
+        </div>
+        <a class="btn btn-primary dash-continue" data-dash-continue href="#">Continuar</a>
+      </div>
+      <div class="dash-stats">
+        <div class="dash-stat">
+          <span class="dash-stat-num" data-dash-review>0</span>
+          <span class="dash-stat-label">Repaso</span>
+        </div>
+        <div class="dash-stat">
+          <span class="dash-stat-num" data-dash-errors>0</span>
+          <span class="dash-stat-label">Errores</span>
+        </div>
+        <div class="dash-stat">
+          <span class="dash-stat-num" data-dash-streak>0</span>
+          <span class="dash-stat-label">Racha</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="container levels-grid">
@@ -93,7 +130,7 @@ const structuredData = {
   </section>
 </BaseLayout>
 
-<script define:vars={{ lang, levelIds: LEVELS.map((l) => l.id) }}>
+<script define:vars={{ lang, levelIds: LEVELS.map((l) => l.id), levelLessonSlugs }}>
   function read(key) {
     try {
       return localStorage.getItem(key);
@@ -103,27 +140,115 @@ const structuredData = {
   }
 
   function isLevelPassed(levelId) {
-    return read(`polylingua-level-passed-${lang}-${levelId}`) === 'true';
+    return read('polylingua-level-passed-' + lang + '-' + levelId) === 'true';
   }
 
-  // Sin envolver en initX()+astro:page-load, esto solo corría una vez por
-  // carga completa — bajo navegación SPA (Astro <ClientRouter />) revisitar
-  // esta página no recalcularía qué niveles siguen bloqueados. Cada
-  // navegación trae nodos DOM frescos (sin la clase locked, que solo la
-  // agrega este script), así que reejecutarlo es seguro y no necesita guard.
+  function isLessonDone(lvl, slug) {
+    return !!read('polylingua-lesson-done-' + lang + '-' + lvl + '-' + slug);
+  }
+
+  function todayStr() {
+    var d = new Date();
+    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  }
+
   function initLangIndex() {
-    document.querySelectorAll('[data-level-item]').forEach((el, i) => {
+    document.querySelectorAll('[data-level-item]').forEach(function (el, i) {
+      var lvl = levelIds[i];
+      var lvlSlugs = levelLessonSlugs[lvl] || [];
+      var done = 0;
+      for (var s = 0; s < lvlSlugs.length; s++) {
+        if (isLessonDone(lvl, lvlSlugs[s])) done++;
+      }
+      var badge = el.querySelector('[data-level-badge]');
+      if (isLevelPassed(lvl) && badge) {
+        badge.textContent = '✓ Completado';
+        el.classList.add('level-passed');
+      } else if (done > 0 && lvlSlugs.length > 0 && badge) {
+        var pct = Math.round((done / lvlSlugs.length) * 100);
+        badge.textContent = pct + '% · ' + done + '/' + lvlSlugs.length;
+      }
+
       if (i === 0) return;
-      const prevLevel = levelIds[i - 1];
+      var prevLevel = levelIds[i - 1];
       if (!isLevelPassed(prevLevel)) {
         el.classList.add('locked');
         el.setAttribute('aria-disabled', 'true');
         el.setAttribute('data-astro-prefetch', 'false');
-        const badge = el.querySelector('[data-level-badge]');
         if (badge) badge.textContent = '🔒 Bloqueado';
-        el.addEventListener('click', (e) => e.preventDefault());
+        el.addEventListener('click', function (e) { e.preventDefault(); });
       }
     });
+
+    initDashboard();
+  }
+
+  function initDashboard() {
+    var dashboard = document.querySelector('[data-dashboard]');
+    if (!dashboard) return;
+
+    var currentLevel = null;
+    for (var i = 0; i < levelIds.length; i++) {
+      if (!isLevelPassed(levelIds[i])) { currentLevel = levelIds[i]; break; }
+    }
+    if (!currentLevel) currentLevel = levelIds[levelIds.length - 1];
+
+    var slugs = levelLessonSlugs[currentLevel] || [];
+    if (slugs.length === 0) return;
+
+    var doneCount = 0;
+    var firstUndone = null;
+    for (var j = 0; j < slugs.length; j++) {
+      if (isLessonDone(currentLevel, slugs[j])) { doneCount++; }
+      else if (!firstUndone) { firstUndone = slugs[j]; }
+    }
+
+    var pct = Math.round((doneCount / slugs.length) * 100);
+
+    var levelEl = dashboard.querySelector('[data-dash-level]');
+    if (levelEl) levelEl.textContent = currentLevel.toUpperCase() + ' — ' + pct + '% completado';
+
+    var fill = dashboard.querySelector('[data-dash-fill]');
+    if (fill) fill.style.width = pct + '%';
+    var progressText = dashboard.querySelector('[data-dash-progress]');
+    if (progressText) progressText.textContent = doneCount + '/' + slugs.length + ' lecciones';
+
+    var continueBtn = dashboard.querySelector('[data-dash-continue]');
+    if (continueBtn && firstUndone) {
+      continueBtn.href = '/idiomas/' + lang + '/' + currentLevel + '/' + firstUndone;
+    } else if (continueBtn) {
+      continueBtn.href = '/idiomas/' + lang + '/' + currentLevel + '/examen';
+      continueBtn.textContent = 'Ir al examen →';
+    }
+
+    var reviewCount = 0;
+    try {
+      var pool = JSON.parse(read('polylingua-srs-pool') || '{}');
+      var td = todayStr();
+      for (var key in pool) {
+        if (pool[key].lang === lang && pool[key].due <= td) reviewCount++;
+      }
+    } catch (e) {}
+    var reviewEl = dashboard.querySelector('[data-dash-review]');
+    if (reviewEl) reviewEl.textContent = String(reviewCount);
+
+    var errorCount = 0;
+    try {
+      var log = JSON.parse(read('polylingua-error-log') || '[]');
+      for (var e2 = 0; e2 < log.length; e2++) {
+        if (log[e2].lang === lang) errorCount++;
+      }
+    } catch (e) {}
+    var errorEl = dashboard.querySelector('[data-dash-errors]');
+    if (errorEl) errorEl.textContent = String(errorCount);
+
+    var streak = Number(read('polylingua-streak-count') || '0');
+    var streakEl = dashboard.querySelector('[data-dash-streak]');
+    if (streakEl) streakEl.textContent = String(streak);
+
+    if (doneCount > 0 || reviewCount > 0 || errorCount > 0 || streak > 0) {
+      dashboard.hidden = false;
+    }
   }
 
   initLangIndex();
@@ -220,6 +345,113 @@ const structuredData = {
     .levels-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  .dashboard {
+    padding-block: 0 1.5rem;
+  }
+
+  .dash-hero {
+    padding: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .dash-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .dash-level {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+  }
+
+  .dash-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .dash-progress-bar {
+    flex: 1;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--border, #e5e7eb);
+    overflow: hidden;
+  }
+
+  .dash-progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: var(--accent-c, var(--accent));
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  .dash-progress-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .dash-continue {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+
+  .dash-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .dash-stat {
+    text-align: center;
+  }
+
+  .dash-stat-num {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .dash-stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 560px) {
+    .dash-hero {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1.25rem;
+    }
+    .dash-stats {
+      justify-content: space-around;
+    }
+  }
+
+  .level-passed {
+    border-top-color: #22c55e !important;
+  }
+
+  .level-passed [data-level-badge] {
+    color: #22c55e;
+    font-weight: 700;
   }
 
   .locked {

@@ -4,6 +4,7 @@ level: a1
 title: "Pronombres personales: ich, du, er, sie, es, wir, ihr, sie/Sie"
 description: "Los 8 pronombres personales del alemán, con la distinción clave entre 'du' (informal) y 'Sie' (formal) que vas a usar en cada frase que digas."
 order: 13
+unit: 3
 grammarTopic: "Pronombres personales (ich, du, er/sie/es, wir, ihr, sie/Sie)"
 funFact: "sie (ellos/ellas) y Sie (usted/ustedes) se escriben y pronuncian igual, pero Sie SIEMPRE lleva mayúscula inicial, incluso en medio de una frase. Es la única forma de distinguirlos por escrito — y una señal de respeto real hacia la otra persona."
 minutes: 6

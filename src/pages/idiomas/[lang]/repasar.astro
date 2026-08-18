@@ -72,6 +72,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
   import { buildItemFieldset, primePracticeCounters, type SrsEntry } from '../../../lib/practiceItemMarkup';
   import { today, getActiveSprint, markSprintDayDone } from '../../../lib/storage';
   import { shuffle } from '../../../lib/shuffle';
+  import { MASTERY_LABELS } from '../../../lib/srs';
 
   interface ManifestItem {
     kind: string;
@@ -207,12 +208,29 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     }
 
     if (desc) {
-      desc.textContent = `Tienes ${due.length} ${due.length === 1 ? 'ítem' : 'ítems'} por repasar.`;
+      const boxCounts = new Map<number, number>();
+      for (const e of due) boxCounts.set(e.box, (boxCounts.get(e.box) ?? 0) + 1);
+      const parts: string[] = [];
+      for (const [box, count] of [...boxCounts.entries()].sort((a, b) => a[0] - b[0])) {
+        parts.push(`${count} ${(MASTERY_LABELS[box] ?? '').toLowerCase()}`);
+      }
+      desc.textContent = `Tienes ${due.length} ${due.length === 1 ? 'ítem' : 'ítems'} por repasar` +
+        (parts.length > 0 ? `: ${parts.join(', ')}.` : '.');
     }
 
     const manifest = readExerciseManifest();
     due.forEach((entry, i) => {
-      container.appendChild(buildItemFieldset(pickReviewItem(entry, manifest), i));
+      const fieldset = buildItemFieldset(pickReviewItem(entry, manifest), i);
+      const masteryTag = document.createElement('span');
+      masteryTag.className = 'mastery-tag';
+      masteryTag.textContent = MASTERY_LABELS[entry.box] ?? `Caja ${entry.box}`;
+      if (entry.failCount && entry.failCount > 0) {
+        masteryTag.textContent += ` · ${entry.failCount}×`;
+      }
+      const kindTag = fieldset.querySelector('.kind-tag');
+      if (kindTag) kindTag.after(masteryTag);
+      else fieldset.prepend(masteryTag);
+      container.appendChild(fieldset);
     });
 
     primePracticeCounters(practiceRoot, due.length);
@@ -305,6 +323,17 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
   .review-body {
     max-width: 680px;
     padding-block: 0 4rem;
+  }
+
+  .review-body :global(.mastery-tag) {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    color: var(--accent-text);
+    margin-left: 0.4rem;
   }
 
 </style>

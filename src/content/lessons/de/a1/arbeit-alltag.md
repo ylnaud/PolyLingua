@@ -4,6 +4,7 @@ level: a1
 title: "Arbeit: hablar de tu trabajo y tu día laboral"
 description: "Ich arbeite viel, ich habe heute frei, ich brauche eine Pause: las frases que necesitás para contar en qué trabajás y cómo es tu día."
 order: 16
+unit: 4
 grammarTopic: "Vocabulario y frases de trabajo"
 situation: "Trabajo"
 funFact: "Con tres verbos — arbeiten, machen y brauchen — ya podés sostener casi cualquier conversación sobre trabajo. No hace falta el vocabulario técnico de tu oficio para empezar a hablar de él."

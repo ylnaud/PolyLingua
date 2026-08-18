@@ -4,6 +4,7 @@ level: a1
 title: "El presente (Präsens): tu primera superpotencia"
 description: "El Präsens de los verbos regulares en alemán: la conjugación -e, -st, -t, -en, -t, -en que se repite siempre, explicada con una cancioncita."
 order: 4
+unit: 2
 grammarTopic: "Präsens de verbos regulares"
 funFact: "Las terminaciones -e, -st, -t, -en, -t, -en riman con una cancioncita: e-s-t-en-t-en. Cántala como una tabla de multiplicar y jamás se te olvidará."
 minutes: 6

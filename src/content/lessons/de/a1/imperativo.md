@@ -4,6 +4,7 @@ level: a1
 title: "El imperativo alemán: cómo dar órdenes y pedir cosas"
 description: "Aprende a formar órdenes en alemán para du, ihr y Sie — la forma verbal que usás sin darte cuenta cada vez que pedís algo (¡Komm!, ¡Kommen Sie!)."
 order: 12
+unit: 3
 grammarTopic: "El imperativo (du / ihr / Sie)"
 funFact: "El alemán usa el imperativo mucho más seguido que el español — hasta para pedidos amables. No te suena grosero decir '¡Komm!' a un amigo, así como en español tampoco suena grosero decir '¡Vení!'."
 minutes: 8

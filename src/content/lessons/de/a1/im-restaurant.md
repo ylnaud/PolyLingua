@@ -4,6 +4,7 @@ level: a1
 title: "Im Restaurant: pedir, preguntar y pagar"
 description: "Ich möchte einen Kaffee, die Rechnung bitte, das schmeckt gut: las frases exactas para entrar a un restaurante alemán y salir sin haber pasado vergüenza."
 order: 20
+unit: 5
 grammarTopic: "Frases para el restaurante"
 situation: "Restaurante"
 funFact: "En Alemania se pide la cuenta en la mesa, no en la caja, y hay que pedirla: nadie te la va a traer sola. La frase es «Die Rechnung, bitte» — y si sos varios, «Zusammen oder getrennt?» te van a preguntar siempre: junto o separado."

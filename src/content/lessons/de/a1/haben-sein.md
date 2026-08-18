@@ -4,6 +4,7 @@ level: a1
 title: "Haben y sein: los dos verbos imprescindibles del alemán"
 description: "Haben (tener) y sein (ser/estar) aparecen en casi toda frase alemana, incluido el pasado Perfekt. Apréndelos primero, antes que cualquier otro verbo."
 order: 10
+unit: 3
 grammarTopic: "Verbos haben y sein (presente)"
 funFact: "haben y sein no son un verbo más: son la base del Perfekt, el pasado que más vas a usar ('ich habe gemacht', 'ich bin gegangen'). Dominarlos ahora te ahorra confusión en cada pasado que digas de acá en adelante."
 minutes: 7

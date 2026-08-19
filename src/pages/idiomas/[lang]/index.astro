@@ -71,10 +71,10 @@ const structuredData = {
           <span class="dash-stat-num" data-dash-review>0</span>
           <span class="dash-stat-label">Repaso</span>
         </div>
-        <div class="dash-stat">
+        <a class="dash-stat dash-stat-link" href={`/idiomas/${lang}/mis-errores`}>
           <span class="dash-stat-num" data-dash-errors>0</span>
           <span class="dash-stat-label">Errores</span>
-        </div>
+        </a>
         <div class="dash-stat">
           <span class="dash-stat-num" data-dash-streak>0</span>
           <span class="dash-stat-label">Racha</span>
@@ -125,6 +125,14 @@ const structuredData = {
       <a class="explore-item card" href={`/idiomas/${lang}/diario`}>
         <span aria-hidden="true">✍️</span>
         <span>Diario</span>
+      </a>
+      <a class="explore-item card" href={`/idiomas/${lang}/mis-errores`}>
+        <span aria-hidden="true">🔴</span>
+        <span>Mis errores</span>
+      </a>
+      <a class="explore-item card" href={`/idiomas/${lang}/gramatica`}>
+        <span aria-hidden="true">📖</span>
+        <span>Gramática</span>
       </a>
     </div>
   </section>
@@ -417,6 +425,16 @@ const structuredData = {
 
   .dash-stat {
     text-align: center;
+  }
+
+  .dash-stat-link {
+    text-decoration: none;
+    color: var(--text);
+    transition: opacity 0.15s ease;
+  }
+
+  .dash-stat-link:hover {
+    opacity: 0.7;
   }
 
   .dash-stat-num {

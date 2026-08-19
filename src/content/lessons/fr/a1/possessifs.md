@@ -4,6 +4,7 @@ level: a1
 title: "Mon, ma, mes: los posesivos que concuerdan con la COSA, no contigo"
 description: "Los adjetivos posesivos del francés (mon, ma, mes) y por qué concuerdan con el género de la cosa poseída, no con quién habla en la frase."
 order: 7
+unit: 2
 grammarTopic: "Adjetivos posesivos (mon/ma/mes...)"
 funFact: "En español, 'mi' no cambia sin importar si el objeto es masculino o femenino. En francés, 'mon/ma/mes' concuerda con el GÉNERO DE LA COSA POSEÍDA, no con quién eres tú. Y hay una excepción sorprendente: antes de una palabra femenina que empieza con vocal, usas 'mon' (no 'ma') solo por facilidad de pronunciación."
 minutes: 7

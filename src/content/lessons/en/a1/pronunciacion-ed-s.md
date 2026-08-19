@@ -4,6 +4,7 @@ level: a1
 title: "Las terminaciones -ed y -s: tres sonidos cada una"
 description: "«Worked» se dice «UÉRKT» y «wanted» se dice «UÓN-tid». Aprendé los tres sonidos de -ed y los tres de -s, con la regla exacta para saber cuál va en cada palabra."
 order: 0.4
+unit: 1
 grammarTopic: "Pronunciación: terminaciones -ed y -s"
 funFact: "Casi nadie pronuncia «-ed» como «ed». En «worked» suena una simple t y en «played» una d: la e no está. Solo suena «id» cuando el verbo ya termina en t o d, porque si no sería imposible de decir."
 minutes: 9

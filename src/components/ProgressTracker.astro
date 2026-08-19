@@ -9,6 +9,8 @@
     kind: string;
     data: unknown;
     correct: boolean;
+    userAnswer?: string;
+    correctAnswer?: string;
   }
 
   interface SrsEntry {
@@ -30,6 +32,8 @@
     level: string;
     kind: string;
     date: string;
+    userAnswer?: string;
+    correctAnswer?: string;
   }
 
   interface VocabEntry {
@@ -128,7 +132,7 @@
           lastFailedAt: today(),
           failCount: (existing?.failCount ?? 0) + 1,
         };
-        appendError({ id: r.id, lang, level, kind: r.kind });
+        appendError({ id: r.id, lang, level, kind: r.kind, userAnswer: r.userAnswer, correctAnswer: r.correctAnswer });
         continue;
       }
       const existing = pool[r.id];

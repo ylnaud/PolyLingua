@@ -4,6 +4,7 @@ level: a1
 title: "Les nombres: del 0 al 100, con la trampa de los setenta"
 description: "Los números cardinales del francés del 0 al 100, incluido el sistema vigesimal de setenta, ochenta y noventa que confunde a todo principiante."
 order: 3
+unit: 1
 grammarTopic: "Números cardinales (0-100)"
 funFact: "El francés hace matemáticas mientras cuenta: 'soixante-dix' (70) literalmente es 'sesenta-diez', y 'quatre-vingts' (80) es 'cuatro-veintes' (4×20). Es un sistema vigesimal, herencia histórica, que sorprende a todo estudiante — Bélgica y Suiza, de hecho, usan palabras más simples (septante, huitante) que Francia no adoptó."
 minutes: 7

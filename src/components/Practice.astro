@@ -45,7 +45,7 @@ interface Props {
   exercises?: Exercise[];
   minutes?: number;
   lessonId?: string;
-  sessionType?: 'lesson' | 'exam' | 'review' | 'practice-libre' | 'vocab';
+  sessionType?: 'lesson' | 'exam' | 'review' | 'practice-libre' | 'vocab' | 'errors';
   itemIds?: string[];
   dynamic?: boolean;
   lang?: string;
@@ -823,7 +823,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
       let score = 0;
       let streak = 0;
       let maxStreak = 0;
-      const results: { id: string; kind: string; data: unknown; correct: boolean }[] = [];
+      const results: { id: string; kind: string; data: unknown; correct: boolean; userAnswer?: string; correctAnswer?: string }[] = [];
 
       function updateStreak(correct: boolean) {
         if (correct) {
@@ -944,7 +944,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
         if (kind === 'match') shuffleChildren(item.querySelector('[data-match-col="right"]'));
         if (kind === 'order') shuffleChildren(item.querySelector('[data-order-bank]'));
 
-        function reveal(correct: boolean) {
+        function reveal(correct: boolean, userAnswer = '', correctAnswer = '') {
           if (feedback) feedback.textContent = correct ? '✅ ¡Correcto!' : '❌ No del todo.';
           if (correct) playCorrect(); else playIncorrect();
           updateStreak(correct);
@@ -975,7 +975,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
           } catch {
             data = null;
           }
-          results.push({ id: item.dataset.itemId ?? '', kind: kind ?? '', data, correct });
+          results.push({ id: item.dataset.itemId ?? '', kind: kind ?? '', data, correct, userAnswer, correctAnswer });
           // Responder deshabilita el botón/input enfocado, lo que por spec
           // manda el foco a <body> — lo movemos al botón recién revelado
           // (confirmar shadowing, o directo "Siguiente") para no perder la
@@ -1003,7 +1003,8 @@ function splitSentence(sentence: string): { before: string; after: string } {
                 if (o.dataset.correct === 'true') o.classList.add('correct');
               });
               if (!isCorrect) opt.classList.add('incorrect');
-              reveal(isCorrect);
+              const correctOpt = options.find((o) => o.dataset.correct === 'true');
+              reveal(isCorrect, opt.textContent?.trim() ?? '', correctOpt?.textContent?.trim() ?? '');
             });
           });
         }
@@ -1035,7 +1036,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
             if (kind === 'fill-blank' && isCorrect && !isMuted() && answer) {
               speak(answer, root.dataset.lang ?? '');
             }
-            reveal(isCorrect);
+            reveal(isCorrect, input?.value ?? '', answer);
           };
           checkBtn?.addEventListener('click', submit);
           input?.addEventListener('keydown', (e) => {
@@ -1077,7 +1078,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                 remaining -= 1;
                 if (remaining <= 0 && !item.dataset.answered) {
                   item.dataset.answered = 'true';
-                  reveal(mistakes === 0);
+                  reveal(mistakes === 0, `${mistakes} error(es)`, '0 errores');
                 }
               } else {
                 mistakes += 1;
@@ -1152,7 +1153,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
             if (isCorrect && !isMuted() && correctSentence) {
               speak(correctSentence, root.dataset.lang ?? '');
             }
-            reveal(isCorrect);
+            reveal(isCorrect, built, correctSentence);
           });
         }
 

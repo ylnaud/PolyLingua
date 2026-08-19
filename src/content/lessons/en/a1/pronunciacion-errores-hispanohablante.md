@@ -4,6 +4,7 @@ level: a1
 title: "Los tres errores que más te delatan como hispanohablante"
 description: "La e fantasma antes de school, la h que sí se pronuncia y la v que no es b. Tres arreglos concretos que cambian tu acento en inglés más que cualquier otra cosa."
 order: 0.5
+unit: 1
 grammarTopic: "Pronunciación: errores típicos del hispanohablante"
 funFact: "En español ninguna palabra empieza con s + consonante — por eso el cerebro mete una «e» sin permiso y sale «eschool» en vez de «school». No es falta de práctica: es que tu idioma nativo no tiene esa combinación. Se arregla arrancando directo por la s."
 minutes: 9

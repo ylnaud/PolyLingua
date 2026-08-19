@@ -4,6 +4,7 @@ level: c2
 title: "Ironie und Sprachregister: decir lo contrario de lo que piensas"
 description: "Ironía y registro lingüístico en alemán: cómo reconocer el sarcasmo por el tono y moverte entre lo formal, lo neutro y lo coloquial."
 order: 3
+unit: 1
 grammarTopic: "Ironía y registro lingüístico"
 funFact: "La ironía alemana casi nunca lleva una señal explícita como '(sarcasmo)' — se reconoce por el tono, el contexto y a veces por un pequeño exceso de entusiasmo sospechoso. 'Na toll!' (¡qué bien!) dicho después de que algo sale mal es pura ironía, aunque las palabras literalmente signifiquen lo contrario."
 minutes: 10

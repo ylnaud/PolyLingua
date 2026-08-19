@@ -4,6 +4,7 @@ level: c2
 title: "Wordplay and Irony: cuando entiendes el chiste sin explicación"
 description: "Cómo funciona el humor en inglés: juegos de palabras, dobles sentidos y el famoso sarcasmo británico, explicados con ejemplos reales y claros."
 order: 6
+unit: 2
 grammarTopic: "Humor, ironía y juegos de palabras"
 funFact: "El sarcasmo británico es tan sutil que a menudo se dice con tono completamente serio — la única pista de que algo es irónico puede ser el contexto absurdo, no el tono de voz. Reírte de un chiste en inglés sin que nadie te lo explique después es una de las señales más claras de dominio real del idioma."
 minutes: 10

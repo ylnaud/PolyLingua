@@ -4,6 +4,7 @@ level: c1
 title: "Business English: el inglés de la sala de juntas"
 description: "Vocabulario y fórmulas fijas del inglés de negocios para reuniones, correos corporativos y negociaciones, incluidos sus eufemismos habituales."
 order: 8
+unit: 2
 grammarTopic: "Vocabulario: inglés de negocios"
 funFact: "El inglés de negocios ama los eufemismos indirectos: 'let go' en vez de 'fired' (despedido), 'downsizing' en vez de 'layoffs' (recortes de personal). Suavizar malas noticias con vocabulario más neutral es una estrategia comunicativa deliberada en el mundo corporativo angloparlante."
 minutes: 8

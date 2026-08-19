@@ -4,6 +4,7 @@ level: c1
 title: "Le vocabulaire académique: escribe como en la universidad"
 description: "Vocabulario y fórmulas fijas del francés académico que aparecen en ensayos, disertaciones y artículos científicos de nivel universitario."
 order: 7
+unit: 2
 grammarTopic: "Vocabulario: lenguaje académico"
 funFact: "La disertación francesa clásica (dissertation) sigue una estructura muy codificada: thèse, antithèse, synthèse (tesis, antítesis, síntesis) — un formato que se enseña desde el liceo y que domina la escritura académica francesa de forma mucho más rígida que en otras tradiciones educativas."
 minutes: 8

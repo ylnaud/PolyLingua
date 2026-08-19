@@ -4,6 +4,7 @@ level: b2
 title: "Konnektoren: conecta argumentos como un debate serio"
 description: "Konnektoren avanzados del alemán como trotzdem, folglich y außerdem: los conectores que convierten frases sueltas en un argumento serio."
 order: 3
+unit: 1
 grammarTopic: "Konnektoren avanzados (conectores de discurso)"
 funFact: "Piensa en los conectores como señales de tránsito para tu oyente: 'trotzdem' avisa un giro inesperado (a pesar de eso), 'folglich' avisa una consecuencia lógica (por lo tanto), 'außerdem' avisa que viene más información (además). Sin ellos, tus ideas suenan como frases sueltas; con ellos, suenan como un argumento construido."
 minutes: 9

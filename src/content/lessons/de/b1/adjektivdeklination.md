@@ -4,6 +4,7 @@ level: b1
 title: "Adjektivdeklination: la terminación que persigue a cada adjetivo"
 description: "La declinación del adjetivo en alemán: por qué gut se convierte en guter, gute, gutes o guten, con un método claro para no adivinar."
 order: 7
+unit: 2
 grammarTopic: "Declinación del adjetivo"
 funFact: "Piensa en la terminación del adjetivo como un trabajo de equipo: si el artículo YA muestra claramente el género/caso (der, die, das...), el adjetivo puede relajarse con una terminación débil (-e o -en). Si NO hay artículo, o es indefinido, el adjetivo tiene que cargar toda la información él solo, con terminaciones fuertes."
 minutes: 10

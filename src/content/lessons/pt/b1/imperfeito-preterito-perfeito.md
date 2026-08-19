@@ -4,6 +4,7 @@ level: b1
 title: "O pretérito imperfeito vs o pretérito perfeito: el fondo y la acción"
 description: "El dúo que todo hispanohablante confunde al principio en portugués — con la ventaja de que la lógica es casi idéntica a la del español."
 order: 2
+unit: 1
 grammarTopic: "Pretérito imperfeito vs Pretérito perfeito"
 funFact: "Buenas noticias: esta distinción es la MÁS fácil de las que vas a estudiar en los cinco idiomas de PolyLingua, porque el portugués la organiza exactamente igual que el español. Si sabes cuándo usar 'llovía' vs 'llovió', ya sabes cuándo usar 'chovia' vs 'choveu'."
 minutes: 8

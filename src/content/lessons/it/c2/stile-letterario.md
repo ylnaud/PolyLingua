@@ -4,6 +4,7 @@ level: c2
 title: "Lo stile letterario: escribe con la elegancia de la prosa italiana"
 description: "Estructuras y elecciones de vocabulario que distinguen la prosa literaria del italiano cotidiano — el registro de la novela y la escritura creativa."
 order: 8
+unit: 2
 grammarTopic: "Estilo literario y prosa elevada"
 funFact: "La literatura italiana, heredera directa de Dante, Petrarca y Boccaccio, tiene una tradición particularmente rica de atención al ritmo de la frase — la prosa literaria italiana a menudo prioriza la musicalidad y el equilibrio sonoro tanto como el significado, un rasgo que se remonta a sus raíces poéticas medievales."
 minutes: 10

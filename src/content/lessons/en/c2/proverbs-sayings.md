@@ -4,6 +4,7 @@ level: c2
 title: "Proverbs and Sayings: la sabiduría popular en una frase"
 description: "Refranes en inglés que revelan tanto sobre la cultura anglosajona como sobre el idioma mismo, y que todo hablante nativo reconoce al instante."
 order: 7
+unit: 2
 grammarTopic: "Proverbs (refranes y dichos populares)"
 funFact: "'The early bird catches the worm' (el pájaro madrugador atrapa el gusano) es prácticamente idéntico en sabiduría a 'a quien madruga, Dios le ayuda' — la imagen concreta cambia entre idiomas, pero la sabiduría popular sobre madrugar cruza fronteras casi intacta."
 minutes: 9

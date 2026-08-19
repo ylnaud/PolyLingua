@@ -4,6 +4,7 @@ level: c1
 title: "Cleft Sentences: pon el foco exactamente donde quieres"
 description: "Las cleft sentences en inglés ('It was John who...') para reestructurar una frase normal y dar énfasis dramático a una sola parte de la oración."
 order: 3
+unit: 1
 grammarTopic: "Cleft sentences (It-clefts y Wh-clefts)"
 funFact: "Una 'cleft sentence' literalmente 'parte' una frase normal en dos, con el único propósito de poner el foco en una palabra específica. 'John broke the window' es neutral; 'It was JOHN who broke the window' grita 'fue John, no nadie más' — el mismo hecho, con énfasis totalmente distinto."
 minutes: 10

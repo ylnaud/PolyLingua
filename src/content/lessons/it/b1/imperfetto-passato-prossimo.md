@@ -4,6 +4,7 @@ level: b1
 title: "L'imperfetto vs il passato prossimo: el fondo y la acción"
 description: "Imperfetto vs passato prossimo: cuándo usar cada pasado italiano con la imagen de la foto fija de fondo frente a la acción puntual de la película."
 order: 2
+unit: 1
 grammarTopic: "Imperfetto vs Passato prossimo"
 funFact: "Piensa en el imperfetto como una FOTO FIJA (una descripción, un estado, algo habitual) y en el passato prossimo como una PELÍCULA con inicio y fin (un evento puntual y completado). 'Pioveva quando sono uscito' — 'pioveva' es la foto de fondo, 'sono uscito' es la acción que ocurre en ese fondo."
 minutes: 10

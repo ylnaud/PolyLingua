@@ -4,6 +4,7 @@ level: c2
 title: "La Francophonie: el francés no suena igual en todas partes"
 description: "Cómo cambia el francés en Quebec, Bélgica, Suiza y África occidental: vocabulario, pronunciación y expresiones de la Francophonie."
 order: 5
+unit: 2
 grammarTopic: "Variedades regionales del francés (francophonie)"
 funFact: "En Quebec, 'un char' significa 'un coche' (no un carro de guerra), y 'magasiner' significa 'ir de compras' — palabras que un francés de Francia probablemente no reconocería de inmediato. El francés es idioma oficial en más de 25 países, y cada región desarrolló su propio vocabulario y ritmo."
 minutes: 9

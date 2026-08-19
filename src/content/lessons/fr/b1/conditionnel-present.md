@@ -4,6 +4,7 @@ level: b1
 title: "Le conditionnel présent: cortesía, consejos y mundos hipotéticos"
 description: "El conditionnel présent del francés para pedir con cortesía, dar consejos y construir frases hipotéticas del tipo 'si j'étais toi'."
 order: 6
+unit: 2
 grammarTopic: "Conditionnel présent"
 funFact: "El Conditionnel se forma combinando la raíz del futuro (que ya conoces) con las terminaciones del imparfait (que también ya conoces) — es literalmente una fusión de dos cosas que ya sabes construir, sin gramática nueva que memorizar desde cero."
 minutes: 8

@@ -4,6 +4,7 @@ level: c2
 title: "Jogos de palavras: el humor que solo funciona en portugués"
 description: "Cómo funcionan los juegos de palabras en portugués: dobles sentidos, sonidos similares y el humor imposible de traducir literalmente."
 order: 6
+unit: 2
 grammarTopic: "Jogos de palavras e trocadilhos"
 funFact: "Brasil tiene una tradición muy particular de 'trocadilhos' (juegos de palabras) en titulares de periódico y publicidad — una práctica tan extendida que existen concursos y compilaciones dedicadas exclusivamente a los mejores trocadilhos de titulares deportivos brasileños, especialmente relacionados con fútbol."
 minutes: 9

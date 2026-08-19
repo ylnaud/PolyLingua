@@ -4,6 +4,7 @@ level: c1
 title: "Le français des affaires: el francés de la sala de juntas"
 description: "El francés de negocios: vocabulario y fórmulas fijas que dominan reuniones, correos corporativos y negociaciones en la sala de juntas."
 order: 8
+unit: 2
 grammarTopic: "Vocabulario: francés de negocios"
 funFact: "El francés de negocios ama las fórmulas de cortesía elaboradas: cerrar un correo con 'Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées' es mucho más formal y ceremonioso que cualquier cierre equivalente en inglés o español — una cortesía casi ritual muy propia de la cultura corporativa francesa."
 minutes: 8

@@ -4,6 +4,7 @@ level: c1
 title: "Le passé simple: el pasado que solo existe en los libros"
 description: "El passé simple francés: el tiempo verbal exclusivamente literario que nunca se usa al hablar, pero que necesitas reconocer para leer novelas."
 order: 5
+unit: 2
 grammarTopic: "Passé simple (tiempo literario)"
 funFact: "El passé simple es único entre los tiempos verbales franceses: NADIE lo usa al hablar — ni siquiera los franceses cultos en conversación formal. Existe exclusivamente en textos escritos literarios y narrativos, como una especie de 'modo formal congelado' reservado para novelas, cuentos y biografías."
 minutes: 10

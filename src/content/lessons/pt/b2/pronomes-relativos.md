@@ -4,6 +4,7 @@ level: b2
 title: "Os pronomes relativos: la clave para frases más elegantes"
 description: "Que, quem, cujo y onde: los pronombres relativos que conectan dos ideas en una sola frase fluida, sin repetir el sustantivo en portugués."
 order: 2
+unit: 1
 grammarTopic: "Pronomes relativos (que, quem, cujo, onde)"
 funFact: "'Que' es el pronombre relativo más versátil del portugués — funciona para sujeto y objeto, personas y cosas. El verdadero reto está en 'cujo', que no se traduce como una sola palabra en español: significa 'cuyo/cuya' pero concuerda en género y número con lo que sigue, no con el poseedor."
 minutes: 9

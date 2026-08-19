@@ -4,6 +4,7 @@ level: b1
 title: "Perché, sebbene, quando: conecta tus ideas"
 description: "Perché, sebbene, quando: las conjunciones italianas para explicar y contrastar ideas, con la alerta de que 'sebbene' exige congiuntivo obligatorio."
 order: 1
+unit: 1
 grammarTopic: "Frasi subordinate (perché, sebbene, quando) + introducción al congiuntivo"
 funFact: "Trata 'sebbene' como una alarma silenciosa: en cuanto la veas o la uses, tu cerebro debe avisar 'congiuntivo obligatorio'. No todas las conjunciones lo piden — pero las de contraste/concesión casi siempre sí. Memoriza esa lista corta y evitarás el error más común de los estudiantes intermedios."
 minutes: 9

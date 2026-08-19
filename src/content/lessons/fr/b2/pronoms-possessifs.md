@@ -4,6 +4,7 @@ level: b2
 title: "Les pronoms possessifs: le mien, le tien, y sus primos"
 description: "Los pronombres posesivos del francés (le mien, le tien...), que reemplazan 'mi libro' por 'el mío' con artículo y doble concordancia."
 order: 6
+unit: 2
 grammarTopic: "Pronombres posesivos (le mien, le tien, le sien...)"
 funFact: "A diferencia de los adjetivos posesivos (mon/ma/mes) que ya conoces, los pronombres posesivos SIEMPRE llevan un artículo pegado: 'le mien', nunca solo 'mien'. Es como si la palabra necesitara ese artículo para poder funcionar de forma independiente, sin el sustantivo al lado."
 minutes: 8

@@ -4,6 +4,7 @@ level: c2
 title: "Redewendungen: cuando las palabras dejan de significar lo que dicen"
 description: "Redewendungen alemanas, expresiones idiomáticas como Ich verstehe nur Bahnhof, que se aprenden como imágenes mentales, no palabra por palabra."
 order: 2
+unit: 1
 grammarTopic: "Idiomatische Redewendungen (expresiones idiomáticas)"
 funFact: "'Ich verstehe nur Bahnhof' significa literalmente 'solo entiendo estación de tren' — pero en realidad significa 'no entiendo absolutamente nada'. Ninguna gramática te prepara para esto: las Redewendungen se aprenden como imágenes mentales completas, no palabra por palabra."
 minutes: 11

@@ -4,6 +4,7 @@ level: c1
 title: "O futuro do subjuntivo: el tiempo verbal que solo existe en portugués"
 description: "Una rareza que ni el español, ni el francés, ni el italiano tienen de esta forma — y que los portugueses usan todos los días sin pensarlo."
 order: 1
+unit: 1
 grammarTopic: "Futuro do subjuntivo"
 funFact: "El español TUVO un futuro de subjuntivo (fuere, hubiere) pero prácticamente desapareció, sobreviviendo solo en textos legales arcaicos ('quien contraviniere...'). El portugués, en cambio, lo conservó vivo y lo usa a diario en frases tan comunes como 'cuando yo pueda' o 'si tú quieres'. Es la joya gramatical más distintiva del idioma."
 minutes: 11

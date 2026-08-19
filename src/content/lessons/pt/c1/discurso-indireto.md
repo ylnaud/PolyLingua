@@ -4,6 +4,7 @@ level: c1
 title: "O discurso indireto: cuenta lo que otros dijeron, con precisión"
 description: "Cómo cambian los tiempos verbales, los pronombres y las expresiones de tiempo en portugués al reportar las palabras de alguien más."
 order: 2
+unit: 1
 grammarTopic: "Discurso indireto (concordância verbal)"
 funFact: "Igual que en francés, italiano o inglés, el portugués retrocede sistemáticamente los tiempos verbales al reportar discurso: presente → pretérito imperfeito, pretérito perfeito → mais-que-perfeito, futuro → futuro do pretérito (condicional). Es un movimiento mecánico de 'un paso hacia atrás' que se automatiza con práctica."
 minutes: 10

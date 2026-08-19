@@ -4,6 +4,7 @@ level: b2
 title: "Konjunktiv II: el modo de lo imaginario y lo cortés"
 description: "El Konjunktiv II alemán para decir si tuviera, me gustaría y podrías, con würde más infinitivo como fórmula universal para cualquier verbo."
 order: 2
+unit: 1
 grammarTopic: "Konjunktiv II (würde + Infinitiv, hätte, wäre)"
 funFact: "'würde' + infinitivo es el comodín universal del Konjunktiv II: funciona con CUALQUIER verbo, siempre. Solo unos pocos verbos (sein, haben, los modales) tienen una forma propia más elegante (wäre, hätte, könnte) que los alemanes prefieren en vez de 'würde sein' o 'würde haben'."
 minutes: 10

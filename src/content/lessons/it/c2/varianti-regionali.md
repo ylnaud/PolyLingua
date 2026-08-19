@@ -4,6 +4,7 @@ level: c2
 title: "Le varianti regionali: el italiano no suena igual en todas partes"
 description: "Cómo el italiano de Milán, Roma, Nápoles y Sicilia cambia en vocabulario, pronunciación y hasta gramática — y la fuerza viva de los dialectos."
 order: 5
+unit: 2
 grammarTopic: "Variedades regionales del italiano (dialetti regionali)"
 funFact: "Italia tiene una diversidad dialectal enorme para su tamaño: el siciliano, el napolitano, el veneto y el sardo son a veces considerados lenguas propias por lingüistas, no simples 'acentos'. El italiano estándar que aprendes en clase es, en realidad, relativamente reciente — unificado formalmente hace poco más de un siglo."
 minutes: 9

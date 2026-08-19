@@ -4,6 +4,7 @@ level: c1
 title: "Il congiuntivo passato: cuando la duda mira hacia atrás"
 description: "Cómo expresar duda, emoción o deseo sobre algo que YA ocurrió, combinando lo que ya sabes del congiuntivo con el participio pasado."
 order: 3
+unit: 1
 grammarTopic: "Congiuntivo passato"
 funFact: "El Congiuntivo passato no es un tiempo verbal nuevo desde cero — es simplemente el Congiuntivo presente del auxiliar (avere/essere) combinado con el participio que ya conoces del passato prossimo. Si ya dominas ambas piezas por separado, esta estructura es solo unirlas."
 minutes: 9

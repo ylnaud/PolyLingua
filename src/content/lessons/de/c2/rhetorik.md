@@ -4,6 +4,7 @@ level: c2
 title: "Stilfiguren und Rhetorik: cómo persuadir en alemán con estilo"
 description: "Metáforas, preguntas retóricas y repeticiones: las herramientas que usan los discursos, la publicidad y la literatura alemana para convencer."
 order: 8
+unit: 2
 grammarTopic: "Figuras retóricas (Stilmittel)"
 funFact: "Una pregunta retórica en alemán ('Wer würde das nicht wollen?' — ¿quién no querría eso?) no espera respuesta: es una afirmación disfrazada de pregunta, mucho más persuasiva que decir simplemente 'todos quieren esto'. Es el mismo truco que usan los discursos políticos en cualquier idioma, con su propio sabor alemán."
 minutes: 10

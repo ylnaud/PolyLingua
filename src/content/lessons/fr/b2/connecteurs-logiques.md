@@ -4,6 +4,7 @@ level: b2
 title: "Les connecteurs logiques avancés: estructura un argumento serio"
 description: "Cependant, néanmoins, de plus y par conséquent: conectores lógicos avanzados que transforman ideas sueltas en un argumento francés serio."
 order: 7
+unit: 2
 grammarTopic: "Conectores lógicos avanzados"
 funFact: "'Cependant' y 'néanmoins' significan casi lo mismo (sin embargo), pero 'néanmoins' suena ligeramente más formal y enfático — la elección entre ambos es una cuestión de matiz estilístico, igual que elegir entre 'sin embargo' y 'no obstante' en español."
 minutes: 9

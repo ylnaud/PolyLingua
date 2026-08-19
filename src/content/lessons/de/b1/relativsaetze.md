@@ -4,6 +4,7 @@ level: b1
 title: "Relativsätze: conecta ideas con der, die, das (otra vez)"
 description: "Oraciones de relativo en alemán: cómo der, die, das se reciclan como pronombres relativos cuyo caso depende de su función en la frase."
 order: 3
+unit: 1
 grammarTopic: "Oraciones de relativo (Relativpronomen)"
 funFact: "Sorpresa: der, die, das ya no son solo artículos — reciclados como pronombres relativos, conectan dos frases en una. La única regla nueva: el pronombre relativo concuerda en género/número con el sustantivo al que se refiere, pero su CASO depende de su función dentro de la frase relativa."
 minutes: 9

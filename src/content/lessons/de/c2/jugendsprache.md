@@ -4,6 +4,7 @@ level: c2
 title: "Jugendsprache und Anglizismen: el alemán que cambia cada año"
 description: "Cringe, chillen, Digga: cómo el alemán juvenil actual mezcla préstamos del inglés con creatividad propia — y por qué se vuelve obsoleto tan rápido."
 order: 7
+unit: 2
 grammarTopic: "Jugendsprache (lenguaje juvenil) y anglicismos"
 funFact: "Cada año, el Langenscheidt-Verlag elige oficialmente un 'Jugendwort des Jahres' (palabra juvenil del año) en Alemania — una tradición que demuestra lo rápido que cambia este registro. Una palabra que suena 'actual' hoy puede sonar anticuada en solo dos o tres años, así que este vocabulario tiene fecha de caducidad."
 minutes: 9

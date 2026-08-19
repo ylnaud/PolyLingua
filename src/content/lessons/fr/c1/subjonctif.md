@@ -4,6 +4,7 @@ level: c1
 title: "Le subjonctif: el modo de la duda, el deseo y la emoción"
 description: "El subjonctif francés, el modo de la duda, el deseo y la emoción, domesticado con una lista corta de disparadores que lo activan siempre."
 order: 1
+unit: 1
 grammarTopic: "Le mode subjonctif"
 funFact: "El indicativo describe el mundo como ES; el subjonctif describe el mundo como lo SIENTES, DUDAS o DESEAS. Antes de conjugar, pregúntate: '¿estoy afirmando un hecho, o expresando emoción, duda, deseo u obligación subjetiva?' Si es lo segundo, casi seguro necesitas subjonctif."
 minutes: 12

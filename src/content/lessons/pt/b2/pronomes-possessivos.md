@@ -4,6 +4,7 @@ level: b2
 title: "O meu, a minha: los posesivos como pronombres independientes"
 description: "Cómo usar los posesivos portugueses como pronombres independientes, sustituyendo por completo lo poseído sin nombrar el sustantivo."
 order: 6
+unit: 2
 grammarTopic: "Pronomes possessivos substantivos"
 funFact: "Cuando el posesivo funciona como pronombre independiente (sin sustantivo al lado), el artículo se vuelve prácticamente obligatorio incluso en Brasil, donde normalmente se omite: 'Este é o meu' (Este es el mío) casi nunca pierde el 'o', a diferencia de 'meu carro' (sin artículo), donde el artículo sí es opcional."
 minutes: 7

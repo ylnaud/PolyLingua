@@ -4,6 +4,7 @@ level: c1
 title: "Weil, da, denn, zumal: los cuatro sabores de 'porque'"
 description: "Cuatro conectores causales que un manual básico trata como sinónimos, pero que los hablantes avanzados distinguen por matiz y posición."
 order: 6
+unit: 2
 grammarTopic: "Conectores causales avanzados (weil, da, denn, zumal)"
 funFact: "'weil' es información NUEVA para el oyente; 'da' introduce una razón que el oyente probablemente YA CONOCE o puede deducir fácilmente; 'denn' es más informal/hablado y NUNCA manda el verbo al final; 'zumal' añade una razón adicional y enfática, casi como decir 'sobre todo porque...'."
 minutes: 9

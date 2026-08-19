@@ -4,6 +4,7 @@ level: c1
 title: "L'italiano degli affari: el italiano de la sala de juntas"
 description: "El italiano de los negocios: vocabulario y fórmulas fijas para reuniones, correos corporativos y negociaciones en un entorno formal y profesional."
 order: 8
+unit: 2
 grammarTopic: "Vocabulario: italiano de negocios"
 funFact: "El italiano de negocios usa el 'Lei' formal (tercera persona) mucho más consistentemente que el francés o el español en contextos comerciales — incluso entre colegas de nivel similar, mantener el 'Lei' hasta que se ofrezca explícitamente el 'tu' es la norma esperada en un entorno corporativo tradicional."
 minutes: 8

@@ -4,6 +4,7 @@ level: a1
 title: "O presente: tres terminaciones que ya conoces"
 description: "Conjuga el presente de indicativo en portugués: verbos regulares -ar, -er e -ir con una lógica casi idéntica a la del español actual."
 order: 2
+unit: 1
 grammarTopic: "Presente do indicativo (verbos regulares -ar/-er/-ir)"
 funFact: "El presente portugués es probablemente el punto de partida más fácil de los cinco idiomas: los tres grupos verbales (-ar, -er, -ir) son EXACTAMENTE los mismos que en español, con terminaciones muy parecidas. El reto real no es la lógica, es la pronunciación de las vocales nasales — pero eso es para tus oídos, no para tu gramática."
 minutes: 6

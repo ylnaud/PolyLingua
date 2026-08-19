@@ -81,6 +81,7 @@ const lessons = defineCollection({
     grammarTopic: z.string(),
     funFact: z.string(),
     minutes: z.number().default(8),
+    unit: z.number().int().min(1).optional(),
     quiz: z.array(quizQuestion).default([]),
     exercises: z.array(exercise).default([]),
     vocabulary: z.array(vocabularyItem).default([]),

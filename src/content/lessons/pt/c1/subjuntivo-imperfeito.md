@@ -4,6 +4,7 @@ level: c1
 title: "Se eu falasse: el pretérito imperfeito do subjuntivo"
 description: "El pretérito imperfeito do subjuntivo portugués, esencial para expresar hipótesis, deseos irrealizados y fórmulas de cortesía más elevada."
 order: 3
+unit: 1
 grammarTopic: "Pretérito imperfeito do subjuntivo"
 funFact: "El pretérito imperfeito do subjuntivo se forma siempre a partir de la tercera persona del plural del pretérito perfeito ('falaram' → 'falasse'), un atajo morfológico que funciona para prácticamente todos los verbos irregulares del idioma, incluso los más caóticos como 'ser/ir' (foram → fosse)."
 minutes: 8

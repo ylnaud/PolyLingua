@@ -4,6 +4,7 @@ level: c2
 title: "Wortspiele und Humor: cuando entiendes el chiste sin traducirlo"
 description: "Humor y juegos de palabras en alemán: cómo las palabras compuestas alemanas más absurdas generan chistes que casi no existen en español."
 order: 6
+unit: 2
 grammarTopic: "Humor y juegos de palabras (Wortspiele)"
 funFact: "Las palabras compuestas alemanas —esas larguísimas que unen varios sustantivos— son una mina de oro para el humor: basta con inventar una combinación absurda y ridículamente específica para generar una carcajada, porque el idioma técnicamente lo permite. Es un tipo de comedia que casi no existe en español."
 minutes: 10

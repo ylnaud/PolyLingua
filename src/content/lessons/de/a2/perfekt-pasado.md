@@ -4,6 +4,7 @@ level: a2
 title: "Perfekt: cuenta lo que hiciste ayer"
 description: "El Perfekt alemán, el pasado que de verdad se usa al hablar: la fórmula de haben o sein más el participio al final de la frase completa."
 order: 1
+unit: 1
 grammarTopic: "Perfekt (haben/sein + participio)"
 funFact: "Piensa en el Perfekt como un sándwich: el verbo auxiliar (haben o sein) va justo después del sujeto, y el participio se va al FINAL de la frase, como la última rebanada de pan. 'Ich habe gestern Pizza gegessen' — habe abre el sándwich, gegessen lo cierra."
 minutes: 9

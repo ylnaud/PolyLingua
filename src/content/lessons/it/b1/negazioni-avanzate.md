@@ -4,6 +4,7 @@ level: b1
 title: "Le negazioni avanzate: más allá de 'non'"
 description: "Non...mai, non...niente, non...nessuno, non...più: la familia completa de negaciones avanzadas del italiano y su doble estructura obligatoria."
 order: 8
+unit: 2
 grammarTopic: "Negaciones avanzadas (non...mai/niente/nessuno/più)"
 funFact: "A diferencia del español, donde 'nunca' o 'nadie' pueden ir solos antes del verbo ('nunca como carne'), el italiano SIEMPRE necesita 'non' antes del verbo además de la palabra negativa después: 'Non mangio mai carne' — nunca se omite el 'non', aunque suene redundante comparado con el español."
 minutes: 8

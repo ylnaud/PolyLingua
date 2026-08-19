@@ -4,6 +4,7 @@ level: b2
 title: "Il condizionale passato: lamentar el pasado que no cambió"
 description: "El condizionale passato italiano, con la fórmula 'se avessi saputo', para lamentar un pasado alternativo que finalmente nunca llegó a ocurrir."
 order: 3
+unit: 1
 grammarTopic: "Condizionale passato"
 funFact: "El condizionale passato es la versión italiana del 'habría hecho' en español — se construye igual que el passato prossimo, pero con el auxiliar en condizionale presente en vez de presente normal. Es la fórmula perfecta para el arrepentimiento."
 minutes: 9

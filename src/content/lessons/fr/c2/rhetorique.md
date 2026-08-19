@@ -4,6 +4,7 @@ level: c2
 title: "La rhétorique: cómo persuadir en francés con estilo"
 description: "Metáforas, preguntas retóricas y repeticiones: las herramientas que usan los discursos, la publicidad y la literatura francesa para convencer."
 order: 7
+unit: 2
 grammarTopic: "Figuras retóricas (figures de style)"
 funFact: "Francia tiene una tradición retórica que se remonta a la Ilustración y los grandes oradores revolucionarios — el arte del discurso persuasivo se enseña formalmente en la educación francesa, y frases como las de Victor Hugo o de Gaulle siguen citándose como modelos de estilo retórico."
 minutes: 10

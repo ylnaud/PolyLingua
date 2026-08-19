@@ -4,6 +4,7 @@ level: b1
 title: "Eu falaria: el condicional (futuro do pretérito)"
 description: "El condicional portugués (futuro do pretérito) para expresar hipótesis, cortesía y deseos, con la misma lógica que el condicional español."
 order: 6
+unit: 2
 grammarTopic: "Futuro do pretérito (condicional)"
 funFact: "En portugués, el condicional se llama oficialmente 'futuro do pretérito' — un nombre que parece contradictorio pero tiene lógica histórica: describe una acción futura vista desde un punto de vista pasado ('Ele disse que viria' = Él dijo que vendría), el mismo concepto que el condicional español."
 minutes: 7

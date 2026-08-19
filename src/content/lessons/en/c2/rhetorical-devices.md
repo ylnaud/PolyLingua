@@ -4,6 +4,7 @@ level: c2
 title: "Rhetorical Devices: las herramientas de un buen discurso"
 description: "Figuras retóricas del inglés — metáforas, preguntas retóricas y anáforas — que convierten un texto correcto en uno memorable y persuasivo."
 order: 5
+unit: 2
 grammarTopic: "Figuras retóricas (rhetorical devices)"
 funFact: "'I have a dream' repetido al inicio de frase tras frase en el famoso discurso de Martin Luther King Jr. es una anáfora — una de las figuras retóricas más poderosas del inglés, y una de las razones por las que ese discurso sigue siendo memorable décadas después."
 minutes: 10

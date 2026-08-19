@@ -4,6 +4,7 @@ level: b2
 title: "I pronomi possessivi: il mio, il tuo, y sus primos"
 description: "Los pronombres posesivos italianos (il mio, il tuo, il suo) que reemplazan el sustantivo entero manteniendo siempre su artículo, sin excepción."
 order: 6
+unit: 2
 grammarTopic: "Pronombres posesivos (il mio, il tuo, il suo...)"
 funFact: "A diferencia de los adjetivos posesivos que ya conoces (donde el artículo desaparece con familiares singulares: 'mia madre'), los pronombres posesivos SIEMPRE mantienen su artículo, sin excepción: 'Questo libro è il mio' — nunca se omite, porque aquí el pronombre reemplaza completamente al sustantivo."
 minutes: 8

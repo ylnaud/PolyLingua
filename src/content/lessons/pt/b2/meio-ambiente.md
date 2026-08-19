@@ -4,6 +4,7 @@ level: b2
 title: "Vocabulário de meio ambiente: discute el planeta en portugués"
 description: "Vocabulario esencial sobre medio ambiente y sostenibilidad en portugués, clave para seguir noticias y conversaciones de actualidad."
 order: 8
+unit: 2
 grammarTopic: "Vocabulário de meio ambiente e sustentabilidade"
 funFact: "Brasil alberga la mayor parte de la selva amazónica ('a Floresta Amazônica'), lo que hace que el vocabulario ambiental en portugués brasileño tenga un peso simbólico y político particularmente fuerte en los medios — términos como 'desmatamento' (deforestación) aparecen constantemente en noticias nacionales e internacionales sobre Brasil."
 minutes: 8

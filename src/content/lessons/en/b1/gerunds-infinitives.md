@@ -4,6 +4,7 @@ level: b1
 title: "Gerunds vs. Infinitives: cuando el segundo verbo cambia de forma"
 description: "Gerundios e infinitivos en inglés: por qué se dice 'enjoy swimming' pero 'want to swim', según el verbo específico que aparece justo antes."
 order: 3
+unit: 1
 grammarTopic: "Gerundio (-ing) vs. Infinitivo (to + verbo) después de un verbo"
 funFact: "No hay una regla lógica universal que decida cuál verbo pide gerundio y cuál pide infinitivo — es una propiedad de CADA verbo que hay que memorizar caso por caso, como el género gramatical en español. La buena noticia: los verbos más comunes forman patrones reconocibles."
 minutes: 10

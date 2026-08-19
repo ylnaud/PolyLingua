@@ -4,6 +4,7 @@ level: b1
 title: "Used to: cómo hablar de hábitos que ya no existen"
 description: "La estructura 'used to' en inglés para hablar de hábitos que hacías regularmente en el pasado, con el contraste implícito frente al presente."
 order: 5
+unit: 2
 grammarTopic: "used to + infinitivo"
 funFact: "'used to' no es un verbo normal — es una estructura fija que solo existe para hablar de pasado, y siempre implica un contraste con el presente: 'I used to live in Paris' sugiere fuertemente 'pero ya no vivo ahí'. Es información extra que el simple 'I lived in Paris' no comunica tan claramente."
 minutes: 7

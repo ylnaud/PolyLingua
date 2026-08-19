@@ -4,6 +4,7 @@ level: a2
 title: "Pronombres personales en Akkusativ: mich, dich, ihn, sie, es"
 description: "Cómo decir 'me', 'te', 'lo', 'la' en alemán: los pronombres personales en caso Akkusativ, imprescindibles en cualquier frase con objeto directo."
 order: 10
+unit: 3
 grammarTopic: "Pronombres personales en Akkusativ (mich, dich, ihn, sie, es, uns, euch, sie/Sie)"
 funFact: "De los 8 pronombres, solo 'er' cambia por completo (→ ihn). Todos los demás, o quedan igual (sie, es, Sie) o solo agregan '-ch' a una forma que ya conocés (ich→mich, du→dich). Memorizá 'ihn' primero: es el único que realmente hay que aprender de cero."
 minutes: 7

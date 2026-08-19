@@ -4,6 +4,7 @@ level: b1
 title: "Quando, appena, mentre: conecta eventos en el tiempo"
 description: "Quando, appena, mentre y prima che: las conjunciones temporales italianas que estructuran una narración clara, con el detalle del congiuntivo."
 order: 5
+unit: 2
 grammarTopic: "Conjunciones de tiempo (quando, appena, mentre, prima che)"
 funFact: "'Prima che' (antes de que) es una de las pocas conjunciones temporales que exige congiuntivo en italiano — porque describe algo que, en el momento de la acción principal, todavía no había pasado (una incertidumbre temporal). El resto de las conjunciones de tiempo usan indicativo normal."
 minutes: 8

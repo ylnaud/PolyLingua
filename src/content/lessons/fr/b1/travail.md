@@ -4,6 +4,7 @@ level: b1
 title: "Le travail: vocabulario para el mundo laboral"
 description: "Vocabulario del mundo laboral en francés para hablar de tu trabajo, escribir una carta de motivación o manejar una entrevista de trabajo."
 order: 7
+unit: 2
 grammarTopic: "Vocabulario: trabajo y profesión"
 funFact: "En francés, muchas profesiones tienen forma masculina y femenina, pero la regla no siempre es tan simple como añadir '-e': 'un directeur' se convierte en 'une directrice', no 'une directeure'. Aprende cada profesión con su versión femenina desde el principio, ya que las terminaciones varían."
 minutes: 7

@@ -4,6 +4,7 @@ level: c2
 title: "Le style littéraire: escribe con la elegancia de la prosa francesa"
 description: "Estructuras y elecciones de vocabulario que distinguen la prosa literaria del francés cotidiano — el registro de la novela y la escritura creativa."
 order: 8
+unit: 2
 grammarTopic: "Estilo literario y prosa elevada"
 funFact: "La literatura francesa a menudo prefiere frases largas y acumulativas, con múltiples cláusulas subordinadas encadenadas, construyendo una imagen o idea paso a paso antes de llegar a su resolución — un ritmo muy distinto al estilo más directo del francés hablado o periodístico."
 minutes: 10

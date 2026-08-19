@@ -4,6 +4,7 @@ level: a2
 title: "Question Formation: domina el 'do' de una vez por todas"
 description: "Cómo formar cualquier pregunta en inglés combinando el auxiliar correcto (do/does/did) con la palabra interrogativa adecuada, paso a paso y sin errores."
 order: 7
+unit: 2
 grammarTopic: "Formación de preguntas (do/does/did + W-words)"
 funFact: "El inglés necesita un auxiliar 'de apoyo' (do/does/did) para casi todas las preguntas, porque a diferencia del español, no puede simplemente invertir el orden o cambiar la entonación. 'Trabajas aquí' se convierte en '¿Trabajas aquí?' solo con la voz en español; en inglés necesitas construir 'Do you work here?' con una pieza gramatical extra."
 minutes: 8

@@ -4,6 +4,7 @@ level: c2
 title: "Le style soutenu: escribir francés como un editorial de Le Monde"
 description: "El style soutenu del francés: nominalización, inversión del sujeto y vocabulario elevado, el registro de los editoriales de Le Monde."
 order: 2
+unit: 1
 grammarTopic: "Style soutenu et nominalisation"
 funFact: "El francés formal AMA convertir verbos en sustantivos: en vez de 'décider' (decidir), un texto formal prefiere 'la décision'; en vez de 'analyser', prefiere 'l'analyse'. Esta nominalización compacta las ideas y suena mucho más elevado — es el mismo instinto que lleva al alemán formal a usar Partizipialkonstruktionen."
 minutes: 11

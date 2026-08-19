@@ -4,6 +4,7 @@ level: a2
 title: "La place des adjectifs: antes o después, ¿quién decide?"
 description: "Por qué la mayoría de los adjetivos franceses van después del sustantivo, y el pequeño grupo que va antes y puede cambiar el sentido."
 order: 8
+unit: 2
 grammarTopic: "Posición de los adjetivos"
 funFact: "A diferencia del español, donde 'grande' antes o después del sustantivo casi no cambia el significado ('un gran hombre' vs 'un hombre grande'), en francés esa posición SÍ puede cambiar el significado: 'un homme grand' (un hombre alto físicamente) vs. 'un grand homme' (un gran hombre, admirado) — la posición no es solo estilo, es semántica."
 minutes: 8

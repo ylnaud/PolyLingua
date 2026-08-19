@@ -4,6 +4,7 @@ level: a2
 title: "Los pronombres posesivos: mein, dein, sein en los tres casos"
 description: "Mein, dein, sein, ihr, unser: cómo decir 'mi', 'tu', 'su' en alemán y declinarlos en Nominativ, Akkusativ y Dativ, igual que ya aprendiste con los artículos."
 order: 9
+unit: 3
 grammarTopic: "Pronombres posesivos (mein/dein/sein...)"
 funFact: "Los posesivos se declinan EXACTAMENTE igual que 'ein': mismas terminaciones, mismos cambios por género y caso. Si ya dominás Dativ y Akkusativ con los artículos, ya sabés el 90% de esta lección — solo hay que cambiar 'ein' por 'mein/dein/sein...'."
 minutes: 9

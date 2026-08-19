@@ -4,6 +4,7 @@ level: c1
 title: "Il passato remoto: el pasado que domina el sur y los libros"
 description: "El tiempo verbal literario que en el norte de Italia casi no se usa hablando, pero que domina la narrativa escrita y algunas regiones del sur."
 order: 5
+unit: 2
 grammarTopic: "Passato remoto (tiempo literario/regional)"
 funFact: "A diferencia del passé simple francés (que nadie usa al hablar en ningún lugar), el passato remoto italiano tiene una vida doble: en el norte de Italia es prácticamente solo literario, pero en varias regiones del sur (Sicilia, Campania) los hablantes lo usan activamente en conversación cotidiana para el pasado, en vez del passato prossimo."
 minutes: 10

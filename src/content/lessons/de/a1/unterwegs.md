@@ -4,6 +4,7 @@ level: a1
 title: "Unterwegs: moverte por la ciudad y preguntar el camino"
 description: "Ich fahre mit dem Bus, wo ist der Bahnhof, ich suche die Apotheke: las frases para tomar transporte y orientarte en una ciudad alemana."
 order: 21
+unit: 5
 grammarTopic: "Frases de transporte y orientación"
 situation: "Transporte y ciudad"
 funFact: "En alemán, si vas en un vehículo usás «fahren» y si vas a pie usás «gehen». Decir «ich gehe nach Berlin» significaría que te vas caminando hasta Berlín. Para el transporte, la fórmula fija es «mit dem» + medio: mit dem Bus, mit dem Zug, mit dem Auto."

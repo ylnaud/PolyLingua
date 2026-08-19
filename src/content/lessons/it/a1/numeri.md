@@ -4,6 +4,7 @@ level: a1
 title: "I numeri: del 0 al 100, casi como en español"
 description: "Los números cardinales del 0 al 100 en italiano, con pronunciación y ortografía muy cercanas al español, el vocabulario numérico más fácil del curso."
 order: 3
+unit: 1
 grammarTopic: "Números cardinales (0-100)"
 funFact: "El italiano es, de los cinco idiomas de PolyLingua, el que tiene los números más parecidos al español: 'quaranta' (40) suena casi como 'cuarenta', 'cento' (100) como 'ciento'. Es el vocabulario numérico más fácil de memorizar de todo el curso."
 minutes: 6

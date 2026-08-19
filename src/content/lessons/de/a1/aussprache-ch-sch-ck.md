@@ -4,6 +4,7 @@ level: a1
 title: "sch, ch y ck: la ch tiene dos sonidos distintos"
 description: "«sch» suena «sh», «ck» suena como una k fuerte, y la «ch» cambia de sonido según la vocal que tenga antes. Aprendé cuál va cuándo, con audio y símbolos fonéticos."
 order: 0.3
+unit: 1
 grammarTopic: "Pronunciación: sch, ch y ck"
 funFact: "La «ch» alemana tiene dos sonidos y la vocal de antes decide cuál: después de a, o, u suena fuerte como la j española (Buch = «BUUJ»); después de e, i suena suave y adelante (Licht = «LIJT»). No hay que elegir de oído: se mira la letra anterior."
 minutes: 9

@@ -4,6 +4,7 @@ level: b2
 title: "Falando, comendo: el gerundio y sus usos reales"
 description: "Cómo y cuándo usar el gerundio portugués, incluyendo la diferencia clave con la construcción de infinitivo gerundial propia de Portugal."
 order: 4
+unit: 1
 grammarTopic: "Gerúndio"
 funFact: "El uso del gerundio es una de las diferencias más marcadas entre Brasil y Portugal: donde un brasileño diría 'estou estudando' (estoy estudiando), un portugués suele preferir 'estou a estudar' — la misma idea, dos construcciones completamente distintas, y una de las señales más rápidas para identificar de qué lado del Atlántico es un hablante."
 minutes: 7

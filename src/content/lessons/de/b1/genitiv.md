@@ -4,6 +4,7 @@ level: b1
 title: "Der Genitiv: el cuarto caso, el de la posesión formal"
 description: "El Genitiv alemán, el caso de la posesión formal: cuándo usarlo en textos escritos y cuándo reemplazarlo por von en el habla cotidiana."
 order: 6
+unit: 2
 grammarTopic: "Caso Genitiv"
 funFact: "En alemán hablado cotidiano, muchos usan 'von + Dativ' en vez del Genitiv ('das Auto von meinem Vater' en vez de 'das Auto meines Vaters'). Pero en textos formales, académicos y escritos, el Genitiv sigue siendo el estándar — y usarlo bien es una señal clara de nivel avanzado."
 minutes: 8

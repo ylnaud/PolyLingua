@@ -4,6 +4,7 @@ level: b1
 title: "Work and Travel: vocabulario para el mundo real"
 description: "Vocabulario de inglés para el trabajo y los viajes, con expresiones útiles para manejarte en situaciones cotidianas más complejas del día a día."
 order: 8
+unit: 2
 grammarTopic: "Vocabulario: trabajo y viajes"
 funFact: "En inglés de negocios, 'I'm looking forward to it' (lo espero con ansias) siempre usa gerundio después de 'to' porque aquí 'to' es una preposición, no parte del infinitivo: 'I'm looking forward to meeting you' (no 'to meet'). Es una trampa clásica incluso para estudiantes avanzados."
 minutes: 7

@@ -4,6 +4,7 @@ level: a2
 title: "Dativ vs. Akkusativ: quién recibe qué"
 description: "El reto de casos más importante del alemán intermedio: distinguir el objeto directo del indirecto y cambiar los artículos según corresponda."
 order: 6
+unit: 2
 grammarTopic: "Casos: Dativ y Akkusativ"
 funFact: "Pregúntate siempre: ¿A QUIÉN le doy algo? (Dativ) vs. ¿QUÉ doy? (Akkusativ). 'Ich gebe dem Mann (Dativ, a quién) den Ball (Akkusativ, qué)'. Una vez que separas estas dos preguntas, elegir el caso correcto se vuelve mecánico."
 minutes: 10

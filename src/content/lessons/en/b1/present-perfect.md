@@ -4,6 +4,7 @@ level: b1
 title: "Present Perfect vs. Past Simple: la confusión #1 de los hispanohablantes"
 description: "Present Perfect vs. Past Simple en inglés, el error número uno de los hispanohablantes, resuelto con una sola pregunta clave sobre el momento exacto."
 order: 1
+unit: 1
 grammarTopic: "Present Perfect (have/has + participio) vs. Past Simple"
 funFact: "Hazte una sola pregunta antes de elegir el tiempo verbal: '¿Menciono O me importa EXACTAMENTE cuándo pasó?' Si sí, usa Past Simple. Si el 'cuándo' no importa y solo importa el resultado presente, usa Present Perfect. Esa pregunta resuelve el 90% de los casos."
 minutes: 10

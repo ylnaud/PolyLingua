@@ -4,6 +4,7 @@ level: c2
 title: "O estilo literário: escreve com a elegância da prosa portuguesa"
 description: "Estructuras y elecciones de vocabulario que distinguen la prosa literaria del portugués cotidiano — el registro de la novela y la escritura creativa."
 order: 8
+unit: 2
 grammarTopic: "Estilo literário e prosa elevada"
 funFact: "La literatura de lengua portuguesa incluye a un Premio Nobel (José Saramago) y a gigantes como Machado de Assis, Clarice Lispector y Fernando Pessoa — cada uno con un estilo de prosa radicalmente distinto, desde las frases larguísimas sin puntuación de Saramago hasta la introspección fragmentada de Lispector, mostrando la enorme flexibilidad estilística que permite este idioma."
 minutes: 10

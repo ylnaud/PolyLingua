@@ -4,6 +4,7 @@ level: a1
 title: "Nicht vs. kein: cómo decir 'no' en alemán sin equivocarte"
 description: "La regla más simple para negar en alemán: kein niega sustantivos, nicht niega todo lo demás. Con la posición correcta de nicht y la declinación de kein."
 order: 11
+unit: 3
 grammarTopic: "La negación: nicht vs. kein"
 funFact: "Preguntate siempre: '¿estoy negando UN SUSTANTIVO?'. Si la respuesta es sí ('no tengo AUTO'), usa kein. Si estás negando un verbo, adjetivo, adverbio o nombre propio ('no ES bonito', 'no VOY'), usa nicht. Esa sola pregunta resuelve el 90% de los casos."
 minutes: 8

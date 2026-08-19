@@ -4,6 +4,7 @@ level: a2
 title: "Daily Routine: describe tu día de principio a fin"
 description: "Vocabulario y expresiones de tiempo en inglés para narrar tu rutina diaria de principio a fin, con phrasal verbs básicos como 'wake up' y 'get up'."
 order: 8
+unit: 2
 grammarTopic: "Vocabulario: rutina diaria"
 funFact: "Muchos verbos de rutina en inglés son 'phrasal verbs' simples que ya puedes usar: 'wake up' (despertarse), 'get up' (levantarse), 'get dressed' (vestirse). Aprenderlos como bloques completos desde ahora te prepara para el mundo más amplio de phrasal verbs que verás en niveles avanzados."
 minutes: 6

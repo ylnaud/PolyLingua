@@ -4,6 +4,7 @@ level: a1
 title: "Como fazer perguntas: forma preguntas desde el día uno"
 description: "Las palabras interrogativas del portugués y cómo formar preguntas de sí/no sin invertir el orden sujeto-verbo, solo con la entonación."
 order: 8
+unit: 2
 grammarTopic: "Formação de perguntas"
 funFact: "El portugués no invierte el orden sujeto-verbo para preguntas de sí/no como el inglés — basta con la entonación (o los signos '?' al escribir): 'Você fala português?' tiene exactamente el mismo orden de palabras que la afirmación, solo cambia la entonación."
 minutes: 6

@@ -4,6 +4,7 @@ level: a1
 title: "ei, ie, eu y au: los diptongos que todos confunden"
 description: "«ei» se lee «ai» y «ie» se lee «i larga»: la confusión número uno al leer alemán. Aprendé los cuatro diptongos con pronunciación escrita, símbolos fonéticos y audio."
 order: 0.2
+unit: 1
 grammarTopic: "Pronunciación: diptongos (ei, ie, eu, au)"
 funFact: "«ei» e «ie» tienen las mismas dos letras al revés, y suenan completamente distinto: «Wein» es vino y «wie» es cómo. Es el error de lectura más común de todos, y se arregla memorizando solo dos reglas."
 minutes: 8

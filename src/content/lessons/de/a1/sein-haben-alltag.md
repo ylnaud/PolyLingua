@@ -4,6 +4,7 @@ level: a1
 title: "Sein und haben im Alltag: las frases que vas a decir todos los días"
 description: "Ich bin müde, ich habe keine Zeit, ich habe keine Ahnung: las frases con sein y haben que aparecen en casi toda conversación cotidiana en alemán."
 order: 15
+unit: 4
 grammarTopic: "Sein y haben en frases cotidianas"
 situation: "Día a día"
 funFact: "No memorices la tabla de conjugación otra vez: memorizá frases enteras. 'Ich habe keine Ahnung' te sale automático mucho antes que 'la 1ª persona singular de haben'. El cerebro guarda bloques, no casillas."

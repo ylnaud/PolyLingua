@@ -4,6 +4,7 @@ level: a1
 title: "st, sp, pf, tz y ß: por qué «Sport» se lee «SHPORT»"
 description: "Al inicio de palabra, st y sp se leen «sht» y «shp». Aprendé esa regla y los sonidos pf, tz y ß, con pronunciación escrita, símbolos fonéticos y audio."
 order: 0.4
+unit: 1
 grammarTopic: "Pronunciación: st, sp, pf, tz y ß"
 funFact: "«Sport» se escribe igual que en español pero se lee «SHPORT», y «Student» se lee «SHTUDÉNT». La regla vale solo al principio de la palabra: en el medio, «gestern» se lee «GÉS-tan», con st normal. La posición lo decide todo."
 minutes: 9

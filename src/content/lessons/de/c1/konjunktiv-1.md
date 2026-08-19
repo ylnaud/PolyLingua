@@ -4,6 +4,7 @@ level: c1
 title: "Konjunktiv I: repite lo que otros dijeron, sin comillas"
 description: "El Konjunktiv I alemán, el modo del discurso indirecto que usan periódicos y textos formales para citar sin comillas ni literalmente dijo."
 order: 1
+unit: 1
 grammarTopic: "Konjunktiv I (discurso indirecto)"
 funFact: "El Konjunktiv I es el modo de los chismes elegantes: le permite al hablante distanciarse ('yo solo repito lo que dijeron') sin usar comillas. Es la forma culta de decir 'según él...' sin sonar a cotilleo de pasillo."
 minutes: 11

@@ -4,6 +4,7 @@ level: a1
 title: "Einkaufen: comprar, preguntar precios y pagar"
 description: "Was kostet das, ich nehme das, ich zahle mit Karte: las frases exactas que necesitás para comprar en un supermercado o una tienda en alemán."
 order: 17
+unit: 4
 grammarTopic: "Vocabulario y frases de compras"
 situation: "Compras y supermercado"
 funFact: "Una compra entera se resuelve con cuatro frases: pedir, preguntar el precio, decidir y pagar. Aprendelas como bloques y ya podés entrar a cualquier tienda sin ensayar nada."

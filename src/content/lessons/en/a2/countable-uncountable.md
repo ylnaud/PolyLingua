@@ -4,6 +4,7 @@ level: a2
 title: "Countable and Uncountable Nouns: much, many, y por qué 'informations' no existe"
 description: "Sustantivos contables e incontables en inglés, y cómo elegir entre 'much' y 'many' sin caer en errores como decir 'an information' o 'two waters'."
 order: 6
+unit: 2
 grammarTopic: "Sustantivos contables e incontables (much/many/a lot of)"
 funFact: "En español dices 'la información' sin pensarlo dos veces, pero en inglés 'information' es incontable — no tiene plural ('informations' no existe) y no puedes decir 'an information'. La lista de sustantivos incontables sorprende porque no siempre coincide con la intuición del español."
 minutes: 8

@@ -4,6 +4,7 @@ level: c1
 title: "Le subjonctif passé: cuando la duda mira hacia atrás"
 description: "Cómo expresar duda, emoción o deseo sobre algo que YA ocurrió, combinando lo que ya sabes del subjonctif con el participio pasado."
 order: 3
+unit: 1
 grammarTopic: "Subjonctif passé"
 funFact: "El Subjonctif passé no es un tiempo verbal nuevo que aprender desde cero — es simplemente el Subjonctif présent del auxiliar (avoir/être) combinado con el participio que ya conoces del passé composé. Si ya dominas ambas piezas por separado, esta 'nueva' estructura es solo unirlas."
 minutes: 9

@@ -4,6 +4,7 @@ level: b1
 title: "L'imparfait vs le passé composé: el fondo y la acción"
 description: "El imparfait y el passé composé del francés explicados con la imagen de una foto fija y una película: el fondo frente a la acción puntual."
 order: 2
+unit: 1
 grammarTopic: "Imparfait vs Passé composé"
 funFact: "Piensa en el imparfait como una FOTO FIJA (una descripción, un estado, algo habitual sin límite claro) y en el passé composé como una PELÍCULA con inicio y fin (un evento puntual y completado). 'Il pleuvait quand je suis sorti' — 'pleuvait' es la foto de fondo, 'suis sorti' es la acción que ocurre en ese fondo."
 minutes: 10

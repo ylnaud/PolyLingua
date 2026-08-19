@@ -4,6 +4,7 @@ level: b2
 title: "Environment and Society: vocabulario para discutir temas serios"
 description: "Vocabulario abstracto de inglés sobre medio ambiente y sociedad para discutir temas serios y actualidad con precisión, evitando falsos amigos."
 order: 8
+unit: 2
 grammarTopic: "Vocabulario: medio ambiente y sociedad"
 funFact: "Muchas palabras de este vocabulario son 'falsos amigos' parciales con el español: 'environment' se parece a 'entorno' más que a 'ambiente' en algunos contextos, y 'sustainable' (sostenible) es mucho más común en inglés cotidiano de lo que 'sostenible' lo es en español hablado."
 minutes: 8

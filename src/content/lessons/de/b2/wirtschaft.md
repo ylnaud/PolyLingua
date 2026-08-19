@@ -4,6 +4,7 @@ level: b2
 title: "Wirtschaft und Gesellschaft: vocabulario para hablar en serio"
 description: "Vocabulario de economía y sociedad en alemán, sustantivos abstractos en -ung, -heit, -keit y -schaft para discutir actualidad como un adulto."
 order: 7
+unit: 2
 grammarTopic: "Vocabulario: economía y sociedad"
 funFact: "La mayoría de estos sustantivos abstractos son femeninos y terminan en -ung, -heit, -keit o -schaft — exactamente los patrones que ya aprendiste en tu primera lección de der/die/das. La gramática que ya sabes te ayuda a adivinar el género del vocabulario nuevo."
 minutes: 7

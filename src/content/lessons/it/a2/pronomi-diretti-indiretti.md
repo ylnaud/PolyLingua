@@ -4,6 +4,7 @@ level: a2
 title: "I pronomi diretti e indiretti: reemplaza sin repetir"
 description: "Los pronombres objeto directo e indirecto italianos (lo, la, li, gli, le) para no repetir el sustantivo, y dónde colocarlos en la frase."
 order: 4
+unit: 1
 grammarTopic: "Pronombres objeto directo e indirecto"
 funFact: "Igual que en español ('lo veo', 'le hablo'), el italiano coloca el pronombre objeto ANTES del verbo conjugado — la lógica te resultará completamente natural, a diferencia de otros idiomas donde el orden puede sorprender."
 minutes: 9

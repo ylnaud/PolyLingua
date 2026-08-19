@@ -4,6 +4,7 @@ level: b2
 title: "No entanto, contudo, apesar disso: conectores de contraste"
 description: "Los conectores lógicos de contraste del portugués (no entanto, contudo, apesar disso) para argumentar con matices en textos elaborados."
 order: 7
+unit: 2
 grammarTopic: "Conectores lógicos de contraste e concessão"
 funFact: "'No entanto' y 'contudo' son prácticamente intercambiables en significado, pero 'contudo' suena ligeramente más formal/escrito, mientras que 'no entanto' se usa con más libertad tanto en habla cuidada como en textos — una diferencia de registro sutil que solo se aprende con exposición real al idioma."
 minutes: 8

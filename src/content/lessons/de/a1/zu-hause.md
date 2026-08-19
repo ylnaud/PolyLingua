@@ -4,6 +4,7 @@ level: a1
 title: "Zu Hause: hablar de dónde vivís y de tu casa"
 description: "Ich wohne in einem Haus, die Küche ist klein, ich bin zu Hause: las frases que necesitás para contar dónde vivís y describir tu casa en alemán."
 order: 18
+unit: 4
 grammarTopic: "Vocabulario y frases de la casa"
 situation: "Casa"
 funFact: "Ojo con «zu Hause» y «nach Hause»: el primero es estar en casa (sin moverte) y el segundo es ir hacia casa. Es la misma diferencia que hay entre «estoy en casa» y «voy a casa», y confundirlas es el error más común del tema."

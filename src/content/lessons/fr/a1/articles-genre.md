@@ -4,6 +4,7 @@ level: a1
 title: "Le, la, un, une: sobrevive al género en francés"
 description: "Como el español, el francés divide todo en masculino y femenino — pero las palabras no siempre coinciden. Aquí tienes los patrones que sí funcionan."
 order: 1
+unit: 1
 grammarTopic: "Artículos y género (le/la/les, un/une)"
 funFact: "Ventaja para ti: el español YA tiene género gramatical, así que el concepto no es nuevo. El problema es que las palabras no siempre coinciden entre idiomas: 'la leche' (fem. en español) es 'le lait' (masc. en francés). Nunca asumas que el género se traduce igual — apréndelo palabra por palabra, con su artículo pegado."
 minutes: 7

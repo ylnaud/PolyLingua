@@ -4,6 +4,7 @@ level: a2
 title: "Dovere, potere, volere: los tres verbos que abren puertas"
 description: "Dovere, potere, volere: los tres verbos modales italianos para pedir, permitir y expresar obligación en el habla cotidiana, todos con la misma estructura."
 order: 2
+unit: 1
 grammarTopic: "Verbi modali (dovere, potere, volere)"
 funFact: "Estos tres verbos son irregulares, pero comparten estructura idéntica: [verbo modal conjugado] + [infinitivo, sin tocar]. Una vez que memorizas la conjugación de uno, ya entiendes cómo funcionan los tres. Además suenan MUY parecido a sus primos en español: dovere~deber, potere~poder, volere~querer."
 minutes: 7

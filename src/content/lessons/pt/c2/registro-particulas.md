@@ -4,6 +4,7 @@ level: c2
 title: "Né, então, tipo assim, pois é: el portugués que no está en los libros"
 description: "Las palabritas que un nativo usa constantemente en conversación y que marcan la diferencia entre sonar de manual o sonar auténtico."
 order: 1
+unit: 1
 grammarTopic: "Registro coloquial e partículas do dia a dia"
 funFact: "Estas palabras son el 'tono de voz' escrito del portugués: 'né?' busca confirmación o acuerdo constante, 'pois é' expresa resignación compartida ('así es la vida'), 'tipo assim' es el equivalente al 'como que' del español coloquial. Ningún diccionario las traduce del todo bien porque no cambian el significado literal — cambian la actitud y conectan con quien escucha."
 minutes: 12

@@ -4,6 +4,7 @@ level: a2
 title: "Freizeit und Hobbys: habla de lo que te gusta hacer"
 description: "Vocabulario de tiempo libre y hobbys en alemán con el verbo comodín machen, para contar tus pasatiempos y planear salidas con amigos."
 order: 8
+unit: 2
 grammarTopic: "Vocabulario: tiempo libre y pasatiempos"
 funFact: "El verbo 'machen' (hacer) es tu comodín para casi cualquier hobby: Sport machen, Musik machen, eine Pause machen. Combínalo con el vocabulario de esta lección y puedes describir tu tiempo libre completo con un solo verbo versátil."
 minutes: 6

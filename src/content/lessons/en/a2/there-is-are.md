@@ -4,6 +4,7 @@ level: a2
 title: "There is / There are: describe lo que existe"
 description: "'There is' y 'there are' en inglés para decir que algo existe o está en un lugar, junto con 'some' y 'any' para hablar de cantidades indefinidas."
 order: 3
+unit: 1
 grammarTopic: "There is/are + some/any"
 funFact: "'There is' y 'there are' no significan 'está ahí' literalmente — son la forma inglesa de decir 'hay'. 'There is a cat' no es 'ahí hay un gato' apuntando a un lugar específico, es simplemente 'hay un gato' en general."
 minutes: 6

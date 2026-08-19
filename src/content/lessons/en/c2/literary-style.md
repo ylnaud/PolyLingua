@@ -4,6 +4,7 @@ level: c2
 title: "Literary Style: escribe con la elegancia de la prosa inglesa"
 description: "Estructuras y vocabulario que distinguen la prosa literaria del inglés cotidiano: el registro de la novela, el ensayo y la escritura creativa."
 order: 8
+unit: 2
 grammarTopic: "Estilo literario y prosa elevada"
 funFact: "La literatura inglesa a menudo prefiere la variación léxica sobre la repetición: en vez de decir 'said' cinco veces en una página, un escritor elige 'murmured', 'declared', 'whispered', 'insisted' — cada uno añadiendo matiz emocional que 'said' por sí solo no comunica."
 minutes: 10

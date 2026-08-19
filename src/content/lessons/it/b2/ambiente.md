@@ -4,6 +4,7 @@ level: b2
 title: "L'ambiente e la società: vocabulario para debates serios"
 description: "Vocabulario italiano sobre medio ambiente y sociedad para debates serios, con la diferencia clave entre 'il tempo' meteorológico y 'il clima' regional."
 order: 8
+unit: 2
 grammarTopic: "Vocabulario: medio ambiente y sociedad"
 funFact: "'Il tempo' y 'il clima' son dos palabras distintas para lo que en español a veces confundimos con 'el clima': 'il clima' es el patrón climático de una región a largo plazo, mientras 'il tempo' es el tiempo que hace HOY (y también significa 'tiempo' en general, como en 'no tengo tiempo')."
 minutes: 8

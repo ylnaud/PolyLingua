@@ -4,6 +4,7 @@ level: c2
 title: "Retórica: cómo persuadir en portugués con estilo"
 description: "Metáforas, preguntas retóricas y repeticiones: las herramientas que usan discursos, publicidad y literatura en portugués para convencer."
 order: 7
+unit: 2
 grammarTopic: "Figuras de retórica"
 funFact: "Los discursos de grandes oradores lusófonos —desde políticos brasileños y portugueses hasta líderes de independencia africanos como Amílcar Cabral— han moldeado un estilo retórico propio del mundo de habla portuguesa, con particular fuerza en la anáfora y la antítesis como recursos de movilización popular."
 minutes: 9

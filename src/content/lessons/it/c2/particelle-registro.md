@@ -4,6 +4,7 @@ level: c2
 title: "Mica, dai, magari, ecco: el italiano que no está en los libros"
 description: "Las palabritas que un nativo usa constantemente en conversación y que marcan la diferencia entre sonar de manual o sonar auténtico."
 order: 1
+unit: 1
 grammarTopic: "Particelle colloquiali e registro"
 funFact: "Estas palabras son el 'tono de voz' escrito del italiano: 'mica' niega con actitud ('non sono mica stupido' = no soy tonto, ¿eh?), 'dai' anima o insiste ('¡vamos!'), 'magari' expresa un deseo casi imposible ('¡ojalá!'). Ningún diccionario las traduce del todo bien porque no cambian el significado literal — cambian la actitud."
 minutes: 12

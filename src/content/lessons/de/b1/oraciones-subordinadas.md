@@ -4,6 +4,7 @@ level: b1
 title: "Weil, dass, obwohl: conecta ideas como un adulto"
 description: "Oraciones subordinadas en alemán con weil, dass, obwohl y wenn: el truco de la silla vacía que manda el verbo conjugado al final de todo."
 order: 1
+unit: 1
 grammarTopic: "Oraciones subordinadas (weil, dass, obwohl, wenn)"
 funFact: "Imagina que el verbo conjugado va en una silla al final de la sala, esperando pacientemente. En cuanto ves 'weil', 'dass' u 'obwohl', ya sabes: el verbo se va a sentar al final de la frase, sin importar qué tan larga se ponga la fiesta."
 minutes: 10

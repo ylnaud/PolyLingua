@@ -4,6 +4,7 @@ level: c1
 title: "Nominalstil vs. Verbalstil: dos formas de decir lo mismo"
 description: "Por qué un informe alemán prefiere 'die Durchführung der Studie' en vez de 'die Studie wurde durchgeführt' — y cuándo conviene cada estilo."
 order: 5
+unit: 2
 grammarTopic: "Nominalstil (estilo nominal) vs. Verbalstil (estilo verbal)"
 funFact: "El Nominalstil es el hermano mayor de las Partizipialkonstruktionen que ya estudiaste: en vez de comprimir solo una oración relativa, comprime FRASES ENTERAS en sustantivos. 'Nachdem die Studie durchgeführt wurde' se convierte en 'Nach Durchführung der Studie' — toda una oración subordinada reducida a dos palabras."
 minutes: 10

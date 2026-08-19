@@ -4,6 +4,7 @@ level: b2
 title: "Doppelkonjunktionen: conecta ideas en pareja"
 description: "Conjunciones dobles del alemán como sowohl...als auch y je...desto: cómo estructurar comparaciones y opciones con conectores en pareja."
 order: 8
+unit: 2
 grammarTopic: "Conjunciones dobles (sowohl...als auch, je...desto)"
 funFact: "'je...desto' es la construcción favorita del alemán para expresar proporcionalidad: 'je mehr, desto besser' (cuanto más, mejor). Lo curioso es que AMBAS partes exigen el verbo al final, como si fueran dos oraciones subordinadas trabajando en equipo."
 minutes: 8

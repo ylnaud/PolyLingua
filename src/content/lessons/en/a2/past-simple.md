@@ -4,6 +4,7 @@ level: a2
 title: "Past Simple: cuenta lo que ya pasó"
 description: "El Past Simple en inglés, con verbos regulares terminados en -ed e irregulares que no siguen ninguna regla lógica y hay que memorizar poco a poco."
 order: 1
+unit: 1
 grammarTopic: "Past Simple (regular e irregular)"
 funFact: "Los verbos regulares son fáciles: solo añades '-ed', como pegar una etiqueta. Los irregulares son como gatos: no siguen reglas, cada uno hace lo que quiere (go → went, eat → ate). No pelees contra ellos, solo memorízalos de a poco."
 minutes: 8

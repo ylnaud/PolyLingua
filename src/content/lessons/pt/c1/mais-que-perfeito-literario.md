@@ -4,6 +4,7 @@ level: c1
 title: "Eu falara: el pretérito mais-que-perfeito simple literario"
 description: "El pretérito mais-que-perfeito simples: el tiempo verbal más raro y elegante del portugués, reservado casi por completo a la literatura."
 order: 5
+unit: 2
 grammarTopic: "Pretérito mais-que-perfeito simples (registro literário)"
 funFact: "El pretérito mais-que-perfeito simples ('eu falara') es prácticamente inexistente en el habla cotidiana de Brasil y Portugal —ha sido reemplazado casi por completo por la forma compuesta 'eu tinha falado'— pero sobrevive con fuerza en literatura, especialmente en textos clásicos y en prosa de estilo elevado, donde su uso es una marca deliberada de registro culto."
 minutes: 8

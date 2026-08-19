@@ -4,6 +4,7 @@ level: a2
 title: "Komparativ und Superlativ: compara todo en alemán"
 description: "Comparativo y superlativo en alemán: cómo decir más rápido y el más rápido con solo dos terminaciones, -er y -sten, sin excepciones raras."
 order: 4
+unit: 1
 grammarTopic: "Comparativo y superlativo"
 funFact: "Piensa en una escalera de tres escalones: la forma normal (schnell), un escalón más arriba (schneller = más rápido), y el escalón más alto (am schnellsten = el más rápido). Solo dos terminaciones para subir toda la escalera: -er y -sten."
 minutes: 7

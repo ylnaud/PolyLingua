@@ -4,6 +4,7 @@ level: c1
 title: "Funktionsverbgefüge: cuando un verbo simple se disfraza de frase"
 description: "In Kraft treten, Anwendung finden, zur Verfügung stehen: las combinaciones fijas verbo+sustantivo que dominan el alemán burocrático y de negocios."
 order: 4
+unit: 1
 grammarTopic: "Funktionsverbgefüge (locuciones verbonominales)"
 funFact: "Un Funktionsverbgefüge es la versión alemana de decir 'llevar a cabo' en vez de simplemente 'hacer'. 'Etwas in Kraft treten lassen' suena mucho más formal que 'etwas beginnen zu gelten' — el verbo simple se disuelve en una combinación fija de verbo débil + sustantivo, típica de textos legales, administrativos y de negocios."
 minutes: 10

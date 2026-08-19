@@ -4,6 +4,7 @@ level: a1
 title: "La famille: presenta a los tuyos en francés"
 description: "Vocabulario esencial de la familia en francés: padres, hermanos y parientes, con artículos incluidos y el género que sigue a la persona real."
 order: 5
+unit: 2
 grammarTopic: "Vocabulario: la familia"
 funFact: "Como en español, las palabras de familia francesa casi siempre siguen el género real de la persona: le père/la mère, le frère/la sœur. Apréndelas en parejas y duplicarás tu vocabulario con el mismo esfuerzo, reforzando también el patrón le/la que ya conoces."
 minutes: 6

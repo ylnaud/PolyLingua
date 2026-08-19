@@ -4,6 +4,7 @@ level: c2
 title: "Register and Formality: la misma idea, cinco tonos distintos"
 description: "Cómo el mismo mensaje cambia completamente de vocabulario y estructura según el contexto social, del texto a un amigo al discurso presidencial."
 order: 3
+unit: 1
 grammarTopic: "Registro y formalidad"
 funFact: "Decirle a tu jefe 'gimme a sec' (dame un segundo) en vez de 'could you give me a moment, please?' no es un error gramatical — es un error de REGISTRO, y en muchos contextos profesionales es igual de problemático que un error de gramática real. El inglés C2 exige saber leer la situación, no solo la gramática."
 minutes: 10

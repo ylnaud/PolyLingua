@@ -4,6 +4,7 @@ level: a1
 title: "La h muda, la terminación -er y las letras que engañan"
 description: "Por qué «Lehrer» se lee «LÉE-ra» y no «le-rer»: la h que alarga, la terminación -er que suena a «a», y las letras v, z y s que no suenan como parecen."
 order: 0.5
+unit: 1
 grammarTopic: "Pronunciación: h muda, terminación -er, y v/z/s"
 funFact: "«Lehrer» tiene dos trampas en una sola palabra: la h del medio no se pronuncia (solo alarga la e) y la terminación -er no suena «er» sino como una «a» relajada. Resultado: «LÉE-ra». Con estas dos reglas, cientos de palabras dejan de sonar raras."
 minutes: 9

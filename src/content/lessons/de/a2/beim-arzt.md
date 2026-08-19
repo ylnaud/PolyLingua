@@ -4,6 +4,7 @@ level: a2
 title: "Beim Arzt: decir qué te duele y pedir un turno"
 description: "Ich habe Kopfschmerzen, mir tut der Rücken weh, ich fühle mich nicht gut: las frases para explicar un síntoma y sacar un turno médico en alemán."
 order: 13
+unit: 4
 grammarTopic: "Frases de salud y del médico"
 situation: "Salud y cuerpo"
 funFact: "Para decir que algo te duele, el alemán pone la persona en Dativ y la parte del cuerpo como sujeto: «Mir tut der Kopf weh» es literalmente «a mí me duele la cabeza». Es exactamente la misma estructura del español, así que no hay que pelearla."

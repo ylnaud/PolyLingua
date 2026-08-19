@@ -4,6 +4,7 @@ level: c1
 title: "Wortbildung: adivina palabras que nunca viste"
 description: "Formación de palabras en alemán con prefijos y sufijos como un-, -los y -bar, para deducir el significado de miles de palabras nuevas."
 order: 7
+unit: 2
 grammarTopic: "Formación de palabras: prefijos y sufijos productivos"
 funFact: "El alemán construye vocabulario como piezas de Lego: toma una palabra base conocida y le pega un prefijo o sufijo con significado predecible. Si sabes que 'un-' niega, '-los' significa 'sin', y '-bar' significa 'se puede', puedes deducir el significado de miles de palabras que nunca estudiaste."
 minutes: 10

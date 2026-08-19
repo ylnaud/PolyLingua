@@ -4,6 +4,7 @@ level: c2
 title: "La retorica: cómo persuadir en italiano con estilo"
 description: "Metáforas, preguntas retóricas y repeticiones: las herramientas que usan los discursos, la publicidad y la literatura italiana para convencer."
 order: 7
+unit: 2
 grammarTopic: "Figuras retóricas (figure retoriche)"
 funFact: "Italia tiene una tradición retórica que se remonta directamente a la Roma clásica y Cicerón — el arte de la persuasión oral tiene raíces particularmente profundas en la cultura italiana, y muchas figuras retóricas que estudias hoy llevan nombres derivados directamente del latín clásico."
 minutes: 10

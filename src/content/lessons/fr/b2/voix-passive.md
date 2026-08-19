@@ -4,6 +4,7 @@ level: b2
 title: "La voix passive: cuando el foco cambia de lugar"
 description: "La voix passive del francés, con la fórmula être + participe passé, tan mecánica como en español para cambiar el foco de la oración."
 order: 1
+unit: 1
 grammarTopic: "Voix passive (être + participe passé)"
 funFact: "La voz pasiva francesa es casi un calco de la española: 'la casa es construida' = 'la maison est construite'. Si ya sabes usarla en español, el 80% del trabajo mental ya está hecho — solo necesitas la conjugación correcta de 'être' y recordar la concordancia del participio."
 minutes: 9

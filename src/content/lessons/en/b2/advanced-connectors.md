@@ -4,6 +4,7 @@ level: b2
 title: "Advanced Connectors: however, moreover, despite y compañía"
 description: "Conectores avanzados del inglés (however, moreover, despite) que transforman ideas sueltas en un argumento bien estructurado, típico de ensayos."
 order: 6
+unit: 2
 grammarTopic: "Conectores avanzados de discurso"
 funFact: "'Despite' y 'although' significan lo mismo (a pesar de), pero se construyen distinto: 'despite' va seguido de un sustantivo o gerundio ('despite the rain'), mientras 'although' va seguido de una frase completa con sujeto y verbo ('although it was raining'). Confundir su construcción es el error más común en este nivel."
 minutes: 9

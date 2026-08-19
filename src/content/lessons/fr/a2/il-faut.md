@@ -4,6 +4,7 @@ level: a2
 title: "Il faut: la obligación sin dueño"
 description: "'Il faut', la expresión impersonal más usada del francés para dar consejos, reglas y necesidades generales sin señalar a nadie en concreto."
 order: 6
+unit: 2
 grammarTopic: "Expresiones impersonales (il faut, il y a, il est important de)"
 funFact: "'Il faut' es literalmente intraducible palabra por palabra ('il' no se refiere a nadie en concreto) — es una fórmula fija que significa 'hay que' o 'es necesario', sin señalar a una persona específica. Es la forma más natural de dar un consejo general en francés."
 minutes: 7

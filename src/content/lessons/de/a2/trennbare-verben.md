@@ -4,6 +4,7 @@ level: a2
 title: "Trennbare Verben: cuando el verbo se parte en dos"
 description: "Verbos separables del alemán como aufstehen y einkaufen: el prefijo que se despega y salta al final de la frase como un boomerang."
 order: 3
+unit: 1
 grammarTopic: "Verbos separables (trennbare Verben)"
 funFact: "Imagina que el prefijo separable es un boomerang: sale disparado del verbo y aterriza al final de la frase, pero siempre vuelve a pegarse cuando el verbo está en infinitivo o participio. 'aufstehen' → 'ich stehe auf' (el 'auf' vuela al final)."
 minutes: 8

@@ -4,6 +4,7 @@ level: a2
 title: "Il cibo: pide comida como un local"
 description: "Vocabulario italiano de comida y restaurante: cómo pedir con cortesía usando 'vorrei', leer un menú y desenvolverte en un mercado sin apuros."
 order: 6
+unit: 2
 grammarTopic: "Vocabulario: comida y restaurante"
 funFact: "En un restaurante italiano, decir 'vorrei' (quisiera) en vez de 'voglio' (quiero) es la diferencia entre sonar educado y sonar brusco — 'vorrei' es el condizionale de 'volere' y es la fórmula estándar para pedir cualquier cosa educadamente, igual que en francés o alemán."
 minutes: 6

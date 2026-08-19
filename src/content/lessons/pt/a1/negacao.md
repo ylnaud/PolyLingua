@@ -4,6 +4,7 @@ level: a1
 title: "Não: la negación simple en portugués"
 description: "Cómo negar oraciones en portugués con 'não': más simple que en español en general, con la doble negación coloquial brasileña como excepción."
 order: 6
+unit: 2
 grammarTopic: "Negação com 'não'"
 funFact: "A diferencia del español, donde 'no' puede combinarse con otras palabras negativas ('no quiero nada'), el portugués permite construcciones similares pero con más flexibilidad de orden: 'não quero nada' o, en habla coloquial brasileña, hasta 'não quero nada não' — una doble negación enfática muy característica del Brasil hablado."
 minutes: 6

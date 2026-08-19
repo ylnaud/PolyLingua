@@ -4,6 +4,7 @@ level: a2
 title: "Gestern und morgen: contar lo que hiciste y lo que vas a hacer"
 description: "Was hast du gestern gemacht? Con el Perfekt y el presente te alcanza para hablar del pasado y del futuro en alemán cotidiano, sin Präteritum ni Futur."
 order: 12
+unit: 3
 grammarTopic: "Perfekt para el pasado y presente para el futuro"
 situation: "Ayer y mañana"
 funFact: "Para hablar del pasado en la conversación diaria, los alemanes usan casi siempre el Perfekt: 'Ich bin ins Kino gegangen', no 'Ich ging ins Kino'. Y para el futuro cercano ni siquiera hace falta el futuro: alcanza con el presente y la palabra 'morgen'. Dos tiempos verbales menos que aprender."

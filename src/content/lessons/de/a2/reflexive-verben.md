@@ -4,6 +4,7 @@ level: a2
 title: "Reflexive Verben: cuando la acción vuelve a ti"
 description: "Verbos reflexivos en alemán como sich freuen y sich waschen: por qué siempre llevan un pronombre que devuelve la acción al sujeto."
 order: 5
+unit: 2
 grammarTopic: "Verbos reflexivos (sich + verbo)"
 funFact: "Piensa en 'sich' como un espejo: la acción sale del sujeto y rebota de vuelta hacia él mismo. 'Ich freue mich' literalmente es 'yo alegro a mí mismo' — suena raro en español, pero es completamente natural en alemán."
 minutes: 7

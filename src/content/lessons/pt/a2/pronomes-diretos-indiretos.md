@@ -4,6 +4,7 @@ level: a2
 title: "O, a, lhe: los pronombres de objeto directo e indirecto"
 description: "Los pronombres de objeto directo e indirecto en portugués (o, a, lhe) y sus reemplazos, con las diferencias de colocación entre Brasil y Portugal."
 order: 4
+unit: 1
 grammarTopic: "Pronomes de objeto direto e indireto"
 funFact: "En el portugués hablado de Brasil, es extremadamente común usar el pronombre sujeto en vez del pronombre de objeto directo: en vez de 'Eu vi ela' (gramaticalmente 'incorrecto' según la norma culta, que exigiría 'Eu a vi'), esa forma domina el habla real de todo el país — un caso fascinante de norma escrita vs. uso hablado."
 minutes: 7

@@ -4,6 +4,7 @@ level: a1
 title: "Os números: contar em português desde o zero"
 description: "Los números cardinales del portugués desde cero, con las trampas de 'cem' y 'cento' que más confunden a un hispanohablante principiante."
 order: 3
+unit: 1
 grammarTopic: "Números cardinais"
 funFact: "El número 'cem' (cien) pierde la 'o' final que tiene en español, pero 'cento' reaparece en compuestos: 'cento e um' (ciento uno). Es una de esas pequeñas irregularidades que solo se aprenden usándolas."
 minutes: 6

@@ -4,6 +4,7 @@ level: a2
 title: "Pläne machen: invitar, aceptar y cancelar"
 description: "Hast du Lust ins Kino zu gehen, das passt mir gut, ich muss leider absagen: las frases para arreglar planes con alguien en alemán."
 order: 17
+unit: 4
 grammarTopic: "Frases para hacer planes y quedar con alguien"
 situation: "Hacer planes"
 funFact: "«Wollen wir ins Kino gehen?» no es «¿queremos ir al cine?» sino «¿vamos al cine?». En alemán, «wollen wir...?» es la forma normal de proponer algo, igual que el «¿vamos...?» del español. Traducirlo literal confunde; usarlo como bloque, no."

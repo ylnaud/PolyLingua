@@ -4,6 +4,7 @@ level: a1
 title: "A família: vocabulario esencial para hablar de los tuyos"
 description: "El vocabulario de la familia en portugués: términos de parentesco con los cambios de género que más despistan a un hispanohablante."
 order: 5
+unit: 2
 grammarTopic: "Vocabulário da família"
 funFact: "'Os pais' en portugués significa 'los padres' (papá y mamá juntos), no 'los países' — un falso amigo clásico con el español que ha confundido a generaciones de estudiantes hispanohablantes desde el primer día de clase."
 minutes: 6

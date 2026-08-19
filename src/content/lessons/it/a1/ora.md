@@ -4,6 +4,7 @@ level: a1
 title: "L'ora: pregunta y di la hora en italiano"
 description: "Cómo preguntar y decir la hora en italiano con 'sono le' para la mayoría de los casos, más las excepciones de la una en punto y el mediodía."
 order: 4
+unit: 1
 grammarTopic: "Decir la hora"
 funFact: "El italiano usa el plural 'sono le due/tre/quattro' (son las dos/tres/cuatro) para la mayoría de las horas, pero cambia a singular 'è l'una' (es la una) — exactamente el mismo patrón que en español. Es de los pocos idiomas del curso donde esta lógica ya te resulta completamente natural."
 minutes: 6

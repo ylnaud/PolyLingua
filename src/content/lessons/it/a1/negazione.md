@@ -4,6 +4,7 @@ level: a1
 title: "La negazione: 'non' antes del verbo, y ya está"
 description: "La negación italiana con 'non' antes del verbo: la estructura negativa más simple de los cinco idiomas del curso, sin segunda palabra necesaria."
 order: 6
+unit: 2
 grammarTopic: "Negación (non)"
 funFact: "El italiano tiene la negación más simple de los cinco idiomas de PolyLingua: solo 'non' antes del verbo, sin ninguna segunda palabra necesaria (a diferencia del francés 'ne...pas'). Es una de las estructuras que menos dolores de cabeza te va a dar en todo el curso."
 minutes: 5

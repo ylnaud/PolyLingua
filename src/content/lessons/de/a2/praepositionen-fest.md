@@ -4,6 +4,7 @@ level: a2
 title: "Preposiciones fijas: cuáles rigen Akkusativ y cuáles Dativ"
 description: "Für, durch, gegen, ohne, um siempre rigen Akkusativ; aus, bei, mit, nach, seit, von, zu siempre rigen Dativ. Sin excepciones — apréndelas de memoria."
 order: 11
+unit: 3
 grammarTopic: "Preposiciones fijas: rigen Akkusativ o Dativ siempre"
 funFact: "A diferencia de las Wechselpräpositionen (que ya viste), que cambian de caso según haya movimiento o no, estas preposiciones SIEMPRE rigen el mismo caso, sin excepción. Muchos profesores de alemán enseñan la lista de Dativ con esta rima: 'Aus, bei, mit, nach, seit, von, zu — immer nur den Dativ du!' ('siempre solo el Dativ tú [usas]')."
 minutes: 8

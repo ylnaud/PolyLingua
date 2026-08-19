@@ -4,6 +4,7 @@ level: a2
 title: "Geld: pagar, sacar plata y hablar de gastos"
 description: "Kann ich mit Karte zahlen, ich muss Geld abheben, das kann ich mir nicht leisten: las frases para manejarte con el dinero en alemán."
 order: 16
+unit: 4
 grammarTopic: "Frases sobre dinero y pagos"
 situation: "Dinero"
 funFact: "En Alemania todavía hay muchos lugares donde solo se puede pagar en efectivo, y te lo van a avisar con un seco «Nur Bargeld». Por eso la pregunta «Kann ich mit Karte zahlen?» conviene hacerla antes de pedir, no después de comer."

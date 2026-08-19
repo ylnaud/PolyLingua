@@ -4,6 +4,7 @@ level: a2
 title: "Probleme im Alltag: cuando algo se rompe o no entendés"
 description: "Das funktioniert nicht, können Sie das wiederholen, ich habe ein Problem: las frases para resolver los líos cotidianos sin quedarte trabado en alemán."
 order: 14
+unit: 4
 grammarTopic: "Frases para problemas cotidianos"
 situation: "Problemas cotidianos"
 funFact: "«Können Sie das bitte wiederholen?» es probablemente la frase más útil de todo tu alemán. Pedir que te repitan no es de principiante: es lo que hace cualquiera que quiere seguir la conversación en vez de asentir sin entender."

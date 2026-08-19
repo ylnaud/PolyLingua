@@ -4,6 +4,7 @@ level: a2
 title: "Il passato prossimo: cuenta lo que hiciste ayer"
 description: "El passato prossimo italiano, el pasado más usado al hablar, con la elección entre 'avere' y 'essere' y la concordancia del participio pasado."
 order: 1
+unit: 1
 grammarTopic: "Passato prossimo (avere/essere + participio passato)"
 funFact: "Piensa en 'avere' como el auxiliar 'de fábrica' (la mayoría de verbos lo usan) y en 'essere' como el club exclusivo de verbos de movimiento y cambio de estado (andare, venire, nascere...). El truco extra: con 'essere', el participio se comporta como un adjetivo y concuerda en género y número — con 'avere' normalmente no."
 minutes: 8

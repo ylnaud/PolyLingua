@@ -25,6 +25,7 @@ import DailyGoal from './DailyGoal.astro';
       <a class="btn-pill" href="/practica-libre" data-astro-reload aria-label="Práctica libre aleatoria">🎲 Práctica libre</a>
       <a class="btn-pill" href="/ahorcado" data-astro-reload aria-label="Jugar al ahorcado">🔤 Ahorcado</a>
       <a class="btn-pill" href="/logros" aria-label="Ver tus logros">🏆 Logros</a>
+      <a class="btn-pill header-lang-link" href="#" data-header-errors hidden aria-label="Ver tus errores frecuentes">❌ Mis errores</a>
       <InstallPrompt />
       <ShadowingToggle />
       <SoundToggle />
@@ -148,4 +149,20 @@ import DailyGoal from './DailyGoal.astro';
     }
   }
 </style>
+
+<script>
+  function initHeaderLangLinks() {
+    const errLink = document.querySelector('[data-header-errors]') as HTMLAnchorElement | null;
+    if (!errLink) return;
+    const langMatch = location.pathname.match(/^\/idiomas\/(de|en|fr|it|pt)/);
+    if (langMatch) {
+      errLink.href = `/idiomas/${langMatch[1]}/mis-errores`;
+      errLink.hidden = false;
+    } else {
+      errLink.hidden = true;
+    }
+  }
+  initHeaderLangLinks();
+  document.addEventListener('astro:page-load', initHeaderLangLinks);
+</script>
 

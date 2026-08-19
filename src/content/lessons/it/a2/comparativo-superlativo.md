@@ -4,6 +4,7 @@ level: a2
 title: "Il comparativo e il superlativo: compara todo en italiano"
 description: "Compara personas y cosas en italiano con più, meno, come/quanto, y forma el superlativo absoluto añadiendo el sufijo '-issimo' a cualquier adjetivo."
 order: 3
+unit: 1
 grammarTopic: "Comparativo y superlativo"
 funFact: "Como el español, el italiano tiene un 'superlativo absoluto' extra que no existe formalmente en otros idiomas del curso: añadir '-issimo' a un adjetivo lo intensifica muchísimo. 'Bello' se convierte en 'bellissimo' (bellísimo/hermosísimo) — una sola palabra que en español necesitarías reforzar con 'muy' o el mismo sufijo."
 minutes: 7

@@ -4,6 +4,7 @@ level: a2
 title: "O pretérito perfeito: el pasado simple, sin auxiliar"
 description: "A diferencia del alemán, francés o italiano, el portugués cotidiano NO usa 'haber/tener + participio' para el pasado — usa una sola palabra conjugada."
 order: 1
+unit: 1
 grammarTopic: "Pretérito perfeito simples"
 funFact: "Si has estudiado alemán, francés o italiano, esperas un pasado con dos palabras (auxiliar + participio). El portugués te sorprende: usa una SOLA palabra conjugada, como el español 'hablé, comí, viví'. Es, de los cinco idiomas de PolyLingua, el único con esta estructura — tenlo presente para no 'inventar' un auxiliar que no existe."
 minutes: 8

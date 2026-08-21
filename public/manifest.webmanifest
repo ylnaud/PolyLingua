@@ -10,6 +10,7 @@
   "theme_color": "#0f1115",
   "lang": "es",
   "orientation": "portrait-primary",
+  "categories": ["education"],
   "icons": [
     {
       "src": "/icon-192.png",
@@ -24,10 +25,15 @@
       "purpose": "any"
     },
     {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
+      "type": "image/svg+xml"
     }
   ]
 }

@@ -1,10 +1,27 @@
-const CACHE_NAME = 'polylingua-v2';
-const OFFLINE_URL = '/';
+const CACHE_NAME = 'polylingua-v3';
+const OFFLINE_URL = '/offline';
+
+const LANGS = ['de', 'en', 'fr', 'it', 'pt'];
+const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+
+const PRECACHE_URLS = [
+  '/',
+  '/offline',
+  '/idiomas',
+  '/logros',
+  '/repasar',
+  ...LANGS.map((l) => `/idiomas/${l}`),
+  ...LANGS.flatMap((l) => LEVELS.map((lv) => `/idiomas/${l}/${lv}`)),
+];
 
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.add(OFFLINE_URL))
+    caches.open(CACHE_NAME).then((cache) =>
+      cache.addAll(PRECACHE_URLS).catch((err) => {
+        console.warn('[SW] Pre-cache parcial:', err);
+        return cache.add('/');
+      })
+    )
   );
 });
 
@@ -19,16 +36,17 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
 
-  // Navegaciones (el HTML de cada página): red primero, caché solo como
-  // respaldo sin conexión. Antes esto era "caché primero" para TODO, lo que
-  // dejaba la PWA instalada mostrando el HTML del momento de instalación
-  // hasta que el usuario borraba caché a mano — con conexión, ahora siempre
-  // se ve la versión publicada más reciente.
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request)
@@ -39,14 +57,13 @@ self.addEventListener('fetch', (event) => {
           }
           return response;
         })
-        .catch(() => caches.match(event.request).then((cached) => cached || caches.match(OFFLINE_URL)))
+        .catch(() =>
+          caches.match(event.request).then((cached) => cached || caches.match(OFFLINE_URL))
+        )
     );
     return;
   }
 
-  // Assets estáticos (JS/CSS con hash de contenido en el nombre, imágenes):
-  // caché primero está bien acá porque su URL cambia cuando cambia su
-  // contenido, así que nunca sirven una versión vieja bajo un nombre nuevo.
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;

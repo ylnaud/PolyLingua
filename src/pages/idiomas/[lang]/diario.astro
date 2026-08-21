@@ -37,7 +37,7 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
         class="diary-textarea"
         data-diary-textarea
         rows="8"
-        placeholder="Heute habe ich..."
+        placeholder={({ de: 'Heute habe ich...', en: 'Today I...', fr: "Aujourd'hui j'ai...", it: 'Oggi ho...', pt: 'Hoje eu...' } as Record<string, string>)[lang ?? 'de'] ?? 'Escribe aquí...'}
       ></textarea>
       <div class="diary-footer">
         <span class="diary-count" data-diary-count>0 palabras</span>

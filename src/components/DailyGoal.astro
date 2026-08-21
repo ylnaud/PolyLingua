@@ -186,6 +186,8 @@
       const count = lastActive === yesterday(t) ? getStreak() + 1 : 1;
       write('polylingua-streak-count', String(count));
       write('polylingua-streak-last-date', t);
+      const prev = Number(read('polylingua-streak-max') ?? '0');
+      if (count > prev) write('polylingua-streak-max', String(count));
     }
   }
 

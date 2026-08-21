@@ -8,12 +8,29 @@ const lessons = await getCollection('lessons');
 const lessonCounts = Object.fromEntries(
   LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length])
 );
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Idiomas disponibles en PolyLingua',
+  itemListElement: LANGUAGES.map((l, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Course',
+      name: `Curso de ${l.name}`,
+      url: `https://poly-lingua.vercel.app/idiomas/${l.id}`,
+      inLanguage: l.id,
+    },
+  })),
+};
 ---
 
 <BaseLayout
   title="Idiomas disponibles"
   description="Elige el idioma que quieres aprender: alemán, inglés, francés, italiano o portugués. Gramática gamificada de A1 a C2, gratis."
   path="/idiomas"
+  structuredData={structuredData}
 >
   <section class="container page-head">
     <span class="eyebrow">Catálogo de idiomas</span>

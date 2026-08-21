@@ -159,7 +159,7 @@ const lessonCounts = Object.fromEntries(
   // y vuelve a pintar el DOM, así que reejecutarlo en cada navegación es
   // exactamente lo que se quiere.
   function initLogros() {
-    const streak = Number(read('polylingua-streak-count') ?? '0');
+    const streakMax = Math.max(Number(read('polylingua-streak-max') ?? '0'), Number(read('polylingua-streak-count') ?? '0'));
     const srsMastered = Number(read('polylingua-srs-mastered-count') ?? '0');
     const levelsPassed = countKeysStartingWith('polylingua-level-passed-');
     const hasFirstLesson = hasAnyKeyStartingWith('polylingua-lesson-done-');
@@ -171,9 +171,9 @@ const lessonCounts = Object.fromEntries(
 
     const earned = {
       'first-lesson': hasFirstLesson,
-      'streak-3': streak >= 3,
-      'streak-7': streak >= 7,
-      'streak-30': streak >= 30,
+      'streak-3': streakMax >= 3,
+      'streak-7': streakMax >= 7,
+      'streak-30': streakMax >= 30,
       perfect: hasPerfect,
       marathon: hasMarathon,
       combo: hasCombo,

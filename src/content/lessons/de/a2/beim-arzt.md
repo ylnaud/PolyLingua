@@ -7,7 +7,7 @@ order: 13
 unit: 4
 grammarTopic: 'Frases de salud y del médico'
 situation: 'Salud y cuerpo'
-funFact: 'Para decir que algo te duele, el alemán pone la persona en Dativ y la parte del cuerpo como sujeto: «Mir tut der Kopf weh» es literalmente «a mí me duele la cabeza». Es exactamente la misma estructura del español, así que no hay que pelearla.'
+funFact: 'Para decir que algo te duele, el alemán usa mir/dir/ihm (Dativ — la forma «a quién») y la parte del cuerpo como sujeto: «Mir tut der Kopf weh» es literalmente «a mí me duele la cabeza». Es exactamente la misma estructura del español, así que no hay que pelearla.'
 minutes: 9
 phrases:
   - text: 'Ich bin krank.'
@@ -24,7 +24,7 @@ phrases:
     es: 'Tengo fiebre.'
   - text: 'Mir tut der Rücken weh.'
     es: 'Me duele la espalda.'
-    note: 'La persona en Dativ (mir) y la parte del cuerpo como sujeto.'
+    note: 'La persona va con mir/dir/ihm (Dativ = «a quién») y la parte del cuerpo es el sujeto.'
   - text: 'Mir tut der Hals weh.'
     es: 'Me duele la garganta.'
   - text: 'Ich brauche einen Termin.'
@@ -144,8 +144,9 @@ Mir tut der Rücken weh.       Me duele la espalda.
 Mir tut der Hals weh.         Me duele la garganta.
 ```
 
-La estructura es **idéntica al español**: la persona en Dativ (`mir` = a mí) y la parte
-del cuerpo como sujeto. No hay nada nuevo que aprender, solo la palabra `wehtun`.
+La estructura es **idéntica al español**: la persona con `mir/dir/ihm` (Dativ = "a
+quién") y la parte del cuerpo como sujeto. No hay nada nuevo que aprender, solo la
+palabra `wehtun`.
 
 ## Pedir turno y contestar al médico
 

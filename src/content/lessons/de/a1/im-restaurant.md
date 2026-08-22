@@ -82,7 +82,7 @@ exercises:
     prompt: '«Was möchten Sie trinken?» — Respondé que quisieras un café.'
     answer: 'Ich möchte einen Kaffee'
     accepted: ['Ich möchte einen Kaffee.', 'Einen Kaffee, bitte', 'Einen Kaffee, bitte.']
-    hint: '«der Kaffee» es masculino, y en Akkusativ queda «einen».'
+    hint: '«der Kaffee» es masculino, y como es lo que pedís, el artículo cambia: «einen Kaffee».'
     placeholder: 'Ich möchte ...'
   - type: 'write'
     prompt: 'Terminaste de comer y querés pagar. ¿Qué le decís al mesero?'

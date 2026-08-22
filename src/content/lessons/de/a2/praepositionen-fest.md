@@ -1,41 +1,41 @@
 ---
 language: de
 level: a2
-title: 'Preposiciones fijas: cuáles rigen Akkusativ y cuáles Dativ'
-description: 'Für, durch, gegen, ohne, um siempre rigen Akkusativ; aus, bei, mit, nach, seit, von, zu siempre rigen Dativ. Sin excepciones — apréndelas de memoria.'
+title: 'Preposiciones fijas: cuáles van con Akkusativ y cuáles con Dativ'
+description: 'Für, durch, gegen, ohne, um siempre van con Akkusativ; aus, bei, mit, nach, seit, von, zu siempre van con Dativ. Sin excepciones — apréndelas de memoria.'
 order: 11
 unit: 3
-grammarTopic: 'Preposiciones fijas: rigen Akkusativ o Dativ siempre'
-funFact: "A diferencia de las Wechselpräpositionen (que ya viste), que cambian de caso según haya movimiento o no, estas preposiciones SIEMPRE rigen el mismo caso, sin excepción. Muchos profesores de alemán enseñan la lista de Dativ con esta rima: 'Aus, bei, mit, nach, seit, von, zu — immer nur den Dativ du!' ('siempre solo el Dativ tú [usas]')."
+grammarTopic: 'Preposiciones fijas: siempre con Akkusativ o siempre con Dativ'
+funFact: "A diferencia de las Wechselpräpositionen (que ya viste), que cambian según haya movimiento o no, estas preposiciones SIEMPRE van con el mismo caso, sin excepción. Muchos profesores enseñan la lista de Dativ con esta rima: 'Aus, bei, mit, nach, seit, von, zu — immer nur den Dativ du!' ('siempre solo el Dativ tú [usas]')."
 minutes: 8
 quiz:
-  - question: "¿Qué caso rige la preposición 'für' (para)?"
+  - question: "¿Con qué caso va siempre la preposición 'für' (para)?"
     options: ['Dativ', 'Akkusativ', 'Nominativ']
     answerIndex: 1
     explanation: "'für' está en el grupo fijo de Akkusativ: für, durch, gegen, ohne, um."
-  - question: "¿Qué caso rige la preposición 'mit' (con)?"
+  - question: "¿Con qué caso va siempre la preposición 'mit' (con)?"
     options: ['Akkusativ', 'Dativ', 'Genitiv']
     answerIndex: 1
     explanation: "'mit' está en el grupo fijo de Dativ: aus, bei, mit, nach, seit, von, zu."
   - question: "'Er kommt ___ dem Bus.' (él viene DEL autobús, origen)"
     options: ['durch', 'aus', 'um']
     answerIndex: 1
-    explanation: "'aus' (de/desde, origen) siempre rige Dativ: aus dem Bus."
+    explanation: "'aus' (de/desde, origen) siempre va con Dativ: aus dem Bus."
 exercises:
   - type: 'fill-blank'
     sentence: 'Das Geschenk ist ___ dich.'
     answer: 'für'
-    hint: "'für' (para) siempre rige Akkusativ."
+    hint: "'für' (para) siempre va con Akkusativ."
     translation: 'El regalo es para ti.'
     placeholder: 'für / durch'
   - type: 'fill-blank'
     sentence: 'Wir gehen ___ den Park spazieren.'
     answer: 'durch'
-    hint: "'durch' (a través de) rige Akkusativ: durch den Park."
+    hint: "'durch' (a través de) siempre va con Akkusativ: durch den Park."
     translation: 'Caminamos por el parque.'
     placeholder: 'durch / mit'
   - type: 'match'
-    instructions: 'Empareja cada preposición con el caso que rige.'
+    instructions: 'Empareja cada preposición con el caso que le corresponde siempre.'
     pairs:
       - left: 'für'
         right: 'Akkusativ'
@@ -46,7 +46,7 @@ exercises:
       - left: 'seit'
         right: 'Dativ'
   - type: 'write'
-    prompt: "¿Qué caso rige 'zu' (hacia/a)? Escribe: Dativ o Akkusativ."
+    prompt: "¿Con qué caso va siempre 'zu' (hacia/a)? Escribe: Dativ o Akkusativ."
     answer: 'Dativ'
     hint: "'zu' está en el grupo fijo de Dativ."
     placeholder: 'Dativ / Akkusativ'
@@ -81,9 +81,10 @@ vocabulary:
 ---
 
 Ya viste las Wechselpräpositionen, que cambian de caso según haya movimiento o no. Estas
-preposiciones son más simples en un sentido: **siempre** rigen el mismo caso, sin
-excepción, así que no hay que pensar en movimiento ni en nada más — solo memorizar a
-qué grupo pertenece cada una.
+preposiciones son más simples: **siempre** van con el mismo caso, sin excepción, así que
+no hay que pensar en movimiento ni en nada más — solo memorizar a qué grupo pertenece
+cada una. (Si no recordás qué es el Dativ y el Akkusativ, revisá la lección
+[Dativ y Akkusativ](/idiomas/de/a2/dativ-akkusativ).)
 
 ## Grupo Akkusativ (siempre)
 
@@ -124,7 +125,7 @@ Muchos profesores enseñan este grupo con una rima que se repite hasta memorizar
 
 ## Contracciones frecuentes
 
-Cuando la preposición se combina con un artículo Dativ muy usado, el alemán suele
+Cuando una de estas preposiciones se combina con un artículo muy usado, el alemán suele
 contraerlos en una sola palabra:
 
 ```

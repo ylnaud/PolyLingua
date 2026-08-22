@@ -22,7 +22,7 @@ phrases:
     es: '¡Sí, con gusto!'
   - text: 'Das passt mir gut.'
     es: 'Me viene bien.'
-    note: '«passen» rige Dativ: das passt mir, dir, ihm.'
+    note: '«passen» siempre va con mir/dir/ihm (Dativ): das passt mir, dir, ihm.'
   - text: 'Das passt mir leider nicht.'
     es: 'Lamentablemente no me viene bien.'
   - text: 'Wann treffen wir uns?'
@@ -44,11 +44,11 @@ quiz:
     explanation: 'Traducido literal suena raro, pero «Wollen wir...?» es simplemente la forma de proponer un plan, igual que el «¿vamos...?» del español.'
   - question: '«Das passt mir gut» — ¿por qué «mir» y no «mich»?'
     options:
-      - 'Porque «passen» rige Dativ.'
+      - 'Porque «passen» siempre va con mir/dir/ihm (Dativ).'
       - 'Porque siempre se usa «mir» con «gut».'
       - 'Es un error, debería ser «mich».'
     answerIndex: 0
-    explanation: '«passen» es de los verbos que piden Dativ, igual que «helfen» y «gefallen»: das passt mir, dir, ihm.'
+    explanation: '«passen» siempre va con mir/dir/ihm (Dativ), igual que «helfen» y «gefallen»: das passt mir, dir, ihm.'
   - question: 'En «Hast du Lust, einen Kaffee zu trinken?», el infinitivo va...'
     options: ['Justo después de «Lust».', 'Al final, con «zu» delante.', 'Antes del sujeto.']
     answerIndex: 1
@@ -58,7 +58,7 @@ exercises:
     sentence: 'Das passt ___ gut.'
     answer: 'mir'
     accepted: ['Mir']
-    hint: '«passen» rige Dativ.'
+    hint: '«passen» siempre va con mir/dir/ihm (Dativ).'
     translation: 'Me viene bien.'
     placeholder: 'mich / mir'
   - type: 'fill-blank'
@@ -83,7 +83,7 @@ exercises:
     prompt: '«Hast du am Samstag Zeit?» — Respondé que sí y que te viene bien.'
     answer: 'Ja, das passt mir gut'
     accepted: ['Ja, das passt mir gut.', 'Das passt mir gut', 'Das passt mir gut.']
-    hint: '«passen» + Dativ.'
+    hint: '«passen» siempre va con mir/dir/ihm.'
     placeholder: 'Ja, das passt ...'
   - type: 'write'
     prompt: 'Quedaste con alguien pero no podés ir. Decí que lamentablemente tenés que cancelar.'
@@ -98,7 +98,7 @@ vocabulary:
   - term: 'Lust haben'
     translation: 'tener ganas'
   - term: 'passen'
-    translation: 'venir bien (rige Dativ)'
+    translation: 'venir bien (siempre con mir/dir/ihm)'
   - term: 'sich treffen'
     translation: 'encontrarse'
   - term: 'absagen'
@@ -139,8 +139,8 @@ Das passt mir leider nicht.      Lamentablemente no me viene bien.
 Vielleicht ein anderes Mal.      Quizás en otro momento.
 ```
 
-`passen` es otro verbo que rige **Dativ**, igual que `helfen` y `gefallen`: `das passt
-**mir**`, no _"das passt mich"_.
+`passen` siempre va con `mir/dir/ihm` (**Dativ**), igual que `helfen` y `gefallen`:
+`das passt **mir**`, no _"das passt mich"_.
 
 Y `leider` (lamentablemente) es la palabra que suaviza cualquier negativa. Un `nein` a
 secas suena cortante; `leider nicht` es lo normal.

@@ -2,7 +2,7 @@
 language: de
 level: a2
 title: 'Pronombres personales en Akkusativ: mich, dich, ihn, sie, es'
-description: "Cómo decir 'me', 'te', 'lo', 'la' en alemán: los pronombres personales en caso Akkusativ, imprescindibles en cualquier frase con objeto directo."
+description: "Cómo decir 'me', 'te', 'lo', 'la' en alemán: los pronombres personales en Akkusativ — la forma que toman cuando son lo que alguien ve, tiene o busca."
 order: 10
 unit: 3
 grammarTopic: 'Pronombres personales en Akkusativ (mich, dich, ihn, sie, es, uns, euch, sie/Sie)'
@@ -68,11 +68,11 @@ vocabulary:
     translation: 'nos'
 ---
 
-Ya viste el caso Akkusativ con los artículos (der → den) y con los posesivos (mein →
-meinen). Los pronombres personales también cambian en Akkusativ — y la buena noticia es
-que la mayoría ya se parece a la forma que conocés.
+Ya viste que el artículo cambia cuando algo es lo que tenés/ves/comprás (Akkusativ:
+der → den, mein → meinen). Los pronombres personales también cambian en esa situación —
+y la buena noticia es que la mayoría ya se parece a la forma que conocés.
 
-## Nominativ vs. Akkusativ
+## Forma normal vs. Akkusativ (cuando son lo que ves/tenés)
 
 | Nominativ   | Akkusativ | Cambia...    |
 | ----------- | --------- | ------------ |
@@ -96,9 +96,10 @@ Ich liebe dich.        Sie ruft mich an.        Wir besuchen sie.
 forma original. Todos los demás, o agregan algo pequeño a una forma conocida (ich→mich,
 du→dich) o directamente no cambian (sie, es, Sie). Concentrá tu memoria ahí.
 
-## Verbos comunes que llevan Akkusativ
+## Verbos comunes que van con Akkusativ
 
-Estos pronombres aparecen constantemente detrás de verbos que piden objeto directo:
+Estos pronombres aparecen constantemente detrás de verbos donde alguien ve, tiene o
+busca algo/alguien:
 
 ```
 sehen (ver)        Ich sehe ihn.

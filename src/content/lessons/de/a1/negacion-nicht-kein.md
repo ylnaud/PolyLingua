@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: "Nicht vs. kein: cómo decir 'no' en alemán sin equivocarte"
-description: 'La regla más simple para negar en alemán: kein niega sustantivos, nicht niega todo lo demás. Con la posición correcta de nicht y la declinación de kein.'
+description: 'La regla más simple para negar en alemán: kein niega sustantivos, nicht niega todo lo demás. Con la posición correcta de nicht y cómo cambia kein según el género.'
 order: 11
 unit: 3
 grammarTopic: 'La negación: nicht vs. kein'
@@ -26,7 +26,7 @@ exercises:
     sentence: 'Ich habe ___ Zeit.'
     answer: 'keine'
     accepted: ['keine']
-    hint: "'die Zeit' es femenino, y es un sustantivo → kein se declina: keine."
+    hint: "'die Zeit' es femenino, y es un sustantivo → kein cambia según el género: keine."
     translation: 'No tengo tiempo.'
     placeholder: 'kein / keine / nicht'
   - type: 'fill-blank'
@@ -51,7 +51,7 @@ exercises:
     prompt: "Niega esta frase: 'Ich habe ein Buch.' → 'Ich habe ___ Buch.'"
     answer: 'kein'
     accepted: ['Kein']
-    hint: "'das Buch' es neutro, y kein neutro en Akkusativ no cambia: kein."
+    hint: "'das Buch' es neutro, y kein neutro no cambia cuando es lo que tenés/comprás: kein."
     placeholder: 'kein / keine / nicht'
   - type: 'order'
     sentence: 'Ich kaufe kein neues Auto'
@@ -90,18 +90,18 @@ Ich habe keine Zeit. (niega "Zeit", un sustantivo)
 
 ## Kein: se declina igual que "ein"
 
-`kein` cambia según el género y el caso del sustantivo que niega, exactamente como el
-artículo indefinido `ein`:
+`kein` cambia según el género del sustantivo y cómo se usa en la frase, exactamente como
+el artículo indefinido `ein`:
 
-| Caso      | maskulin | feminin | neutral | Plural |
-| --------- | -------- | ------- | ------- | ------ |
-| Nominativ | kein     | keine   | kein    | keine  |
-| Akkusativ | keinen   | keine   | kein    | keine  |
+|                                          | maskulin | feminin | neutral | Plural |
+| ---------------------------------------- | -------- | ------- | ------- | ------ |
+| Forma normal (el sujeto de la frase)     | kein     | keine   | kein    | keine  |
+| Cuando es lo que tenés/ves/comprás       | keinen   | keine   | kein    | keine  |
 
 ```
-Kein Mann ist hier. (Nominativ maskulin)
-Ich sehe keinen Mann. (Akkusativ maskulin)
-Sie hat keine Kinder. (Plural)
+Kein Mann ist hier.        (forma normal, masculino)
+Ich sehe keinen Mann.      (lo que veo, masculino → keinen)
+Sie hat keine Kinder.      (plural)
 ```
 
 ## Nicht: dónde va en la frase

@@ -7,12 +7,12 @@ order: 23
 unit: 5
 grammarTopic: 'Vocabulario y frases de animales'
 situation: 'Animales'
-funFact: '«Ich habe einen Hund» lleva «einen» y no «ein» porque el perro es lo que tenés, y lo que se tiene va en Akkusativ. Con la gata es «eine Katze» y con el caballo «ein Pferd». Es la práctica más natural que existe del Akkusativ: hablar de tus propios animales.'
+funFact: '«Ich habe einen Hund» lleva «einen» y no «ein» porque el perro es lo que tenés — y cuando algo es lo que tenés, ves o comprás, el artículo masculino cambia: ein → einen. Con la gata es «eine Katze» y con el caballo «ein Pferd» (femenino y neutro no cambian). Hablar de tus propios animales es la práctica más natural que hay de este cambio.'
 minutes: 8
 phrases:
   - text: 'Ich habe einen Hund.'
     es: 'Tengo un perro.'
-    note: '«der Hund» en Akkusativ pasa a «einen Hund».'
+    note: '«der Hund» es masculino, y como es lo que tenés, el artículo cambia: ein → einen.'
   - text: 'Ich habe eine Katze.'
     es: 'Tengo una gata.'
   - text: 'Mein Hund heißt Max.'
@@ -30,7 +30,7 @@ phrases:
     es: 'Les doy de comer a los animales todas las mañanas.'
   - text: 'Ich gehe mit dem Hund spazieren.'
     es: 'Saco a pasear al perro.'
-    note: '«mit dem Hund»: mit siempre rige Dativ.'
+    note: '«mit dem Hund»: después de «mit», el artículo siempre toma esta forma (dem en vez de der/das).'
   - text: 'Die Katze schläft auf dem Sofa.'
     es: 'La gata duerme en el sofá.'
   - text: 'Der Hund bellt.'
@@ -41,14 +41,14 @@ quiz:
   - question: '¿Cómo se dice «Tengo un perro»?'
     options: ['Ich habe ein Hund.', 'Ich habe einen Hund.', 'Ich habe einem Hund.']
     answerIndex: 1
-    explanation: '«der Hund» es masculino, y lo que se tiene va en Akkusativ, donde «ein» pasa a «einen».'
+    explanation: '«der Hund» es masculino, y como el perro es lo que tenés, el artículo cambia: «ein» pasa a «einen». Femenino y neutro no cambian.'
   - question: '«Ich gehe mit dem Hund spazieren» — ¿por qué «dem» y no «den»?'
     options:
-      - 'Porque «mit» siempre rige Dativ.'
+      - 'Porque después de «mit», el artículo siempre cambia a «dem».'
       - 'Porque el perro es el objeto directo.'
       - 'Es un error, debería ser «den».'
     answerIndex: 0
-    explanation: '«mit» es una de las preposiciones que siempre rigen Dativ: mit dem Hund, mit dem Bus, mit meiner Familie.'
+    explanation: 'Después de «mit», el artículo siempre toma la forma «dem» (masculino/neutro) o «der» (femenino): mit dem Hund, mit dem Bus, mit der Familie.'
   - question: 'Para decir «Tenemos vacas» en plural, se dice...'
     options: ['Wir haben eine Kühe.', 'Wir haben Kühe.', 'Wir haben einen Kühe.']
     answerIndex: 1
@@ -58,14 +58,14 @@ exercises:
     sentence: 'Ich habe ___ Hund.'
     answer: 'einen'
     accepted: ['Einen']
-    hint: 'Masculino en Akkusativ.'
+    hint: 'El perro es lo que tenés → el masculino cambia: ein → einen.'
     translation: 'Tengo un perro.'
     placeholder: 'ein / einen / einem'
   - type: 'fill-blank'
     sentence: 'Ich gehe mit ___ Hund spazieren.'
     answer: 'dem'
     accepted: ['Dem']
-    hint: '«mit» rige Dativ.'
+    hint: 'Después de «mit», el artículo siempre es «dem».'
     translation: 'Saco a pasear al perro.'
     placeholder: 'den / dem'
   - type: 'match'
@@ -83,7 +83,7 @@ exercises:
     prompt: '«Hast du ein Haustier?» — Respondé que tenés una gata.'
     answer: 'Ich habe eine Katze'
     accepted: ['Ich habe eine Katze.', 'Ja, ich habe eine Katze', 'Ja, ich habe eine Katze.']
-    hint: '«die Katze» es femenino: en Akkusativ queda igual, «eine».'
+    hint: '«die Katze» es femenino: el femenino no cambia, sigue siendo «eine».'
     placeholder: 'Ich habe ...'
   - type: 'write'
     prompt: '«Wie heißt dein Hund?» — Respondé que tu perro se llama Max.'
@@ -109,8 +109,9 @@ vocabulary:
     translation: 'dar de comer / alimentar'
 ---
 
-Hablar de tus animales es de las conversaciones más fáciles de empezar — y de paso es
-la práctica más natural que hay del Akkusativ.
+Hablar de tus animales es de las conversaciones más fáciles de empezar — y de paso
+practicás algo clave: cuando algo es lo que tenés, comprás o ves, el artículo masculino
+cambia (`ein` → `einen`). Femenino y neutro quedan igual.
 
 ## Decir qué animales tenés
 
@@ -120,7 +121,7 @@ Ich habe eine Katze.       Tengo una gata.       (die Katze → eine)
 Ich habe ein Pferd.        Tengo un caballo.     (das Pferd → ein)
 ```
 
-Fijate el patrón: lo que **tenés** va en Akkusativ, y ahí el masculino es el único que
+Fijate el patrón: lo que **tenés** es lo que provoca el cambio, y solo el masculino
 cambia (`ein` → `einen`). Femenino y neutro quedan igual.
 
 En plural no va artículo, igual que en español:
@@ -136,8 +137,8 @@ Ich füttere die Tiere jeden Morgen.    Les doy de comer todas las mañanas.
 Ich gehe mit dem Hund spazieren.       Saco a pasear al perro.
 ```
 
-Ojo con `mit dem Hund`: `mit` es una de las preposiciones que **siempre** rigen Dativ,
-así que nunca es _"mit den Hund"_.
+Ojo con `mit dem Hund`: después de `mit`, el artículo **siempre** toma la forma `dem`
+(masculino/neutro) o `der` (femenino), así que nunca es _"mit den Hund"_.
 
 ## Describirlos
 
@@ -151,5 +152,5 @@ Wie alt ist dein Hund?             ¿Cuántos años tiene tu perro?
 ## El truco para practicar
 
 Nombrá en voz alta los animales que tenés o conocés, uno por frase, con `Ich habe...` o
-`Wir haben...`. Como cada animal tiene su género, vas practicando el Akkusativ sin darte
-cuenta — y con palabras que te importan de verdad.
+`Wir haben...`. Como cada animal tiene su género, vas practicando el cambio del artículo
+sin darte cuenta — y con palabras que te importan de verdad.

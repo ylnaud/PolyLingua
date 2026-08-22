@@ -80,7 +80,7 @@ exercises:
     prompt: '«Wo wohnst du?» — Respondé que vivís en un departamento.'
     answer: 'Ich wohne in einer Wohnung'
     accepted: ['Ich wohne in einer Wohnung.']
-    hint: '«die Wohnung» es femenino, y después de «in» sin movimiento va Dativ: in einer.'
+    hint: '«die Wohnung» es femenino, y cuando decís dónde estás (sin movimiento), el artículo cambia: «in einer».'
     placeholder: 'Ich wohne ...'
   - type: 'write'
     prompt: '«Bist du zu Hause?» — Respondé que sí, que estás en casa.'

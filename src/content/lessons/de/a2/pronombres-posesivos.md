@@ -2,11 +2,11 @@
 language: de
 level: a2
 title: 'Los pronombres posesivos: mein, dein, sein en los tres casos'
-description: "Mein, dein, sein, ihr, unser: cómo decir 'mi', 'tu', 'su' en alemán y declinarlos en Nominativ, Akkusativ y Dativ, igual que ya aprendiste con los artículos."
+description: "Mein, dein, sein, ihr, unser: cómo decir 'mi', 'tu', 'su' en alemán y cómo cambian según el género y el rol de la palabra en la frase."
 order: 9
 unit: 3
 grammarTopic: 'Pronombres posesivos (mein/dein/sein...)'
-funFact: "Los posesivos se declinan EXACTAMENTE igual que 'ein': mismas terminaciones, mismos cambios por género y caso. Si ya dominás Dativ y Akkusativ con los artículos, ya sabés el 90% de esta lección — solo hay que cambiar 'ein' por 'mein/dein/sein...'."
+funFact: "Los posesivos cambian EXACTAMENTE igual que 'ein': mismas terminaciones, mismos cambios por género y según cómo se usa la palabra. Si ya dominás cómo cambian los artículos (ein → einen, ein → einem), ya sabés el 90% de esta lección — solo hay que cambiar 'ein' por 'mein/dein/sein...'."
 minutes: 9
 quiz:
   - question: "¿Cómo se dice 'mi madre' (die Mutter, femenino) en Nominativ?"
@@ -73,7 +73,8 @@ vocabulary:
     translation: 'la estación de tren'
 ---
 
-Ya sabés declinar `ein` en Nominativ, Akkusativ y Dativ. Los pronombres posesivos usan
+Ya sabés cómo cambia `ein` según el rol de la palabra (ein → einen cuando es lo que
+ves/tenés, ein → einem cuando es a quién le das algo). Los pronombres posesivos usan
 exactamente las mismas terminaciones — solo cambia la raíz.
 
 ## La lista de posesivos
@@ -89,32 +90,32 @@ exactamente las mismas terminaciones — solo cambia la raíz.
 | sie (ellos) | ihr      |
 | Sie         | Ihr      |
 
-## Se declinan igual que "ein"
+## Cambian igual que "ein"
 
 Las terminaciones son idénticas a las del artículo indefinido — si ya las sabés con
 `ein`, ya las sabés acá:
 
-| Caso      | maskulin | feminin | neutral | Plural |
-| --------- | -------- | ------- | ------- | ------ |
-| Nominativ | mein     | meine   | mein    | meine  |
-| Akkusativ | meinen   | meine   | mein    | meine  |
-| Dativ     | meinem   | meiner  | meinem  | meinen |
+|                                               | maskulin | feminin | neutral | Plural |
+| --------------------------------------------- | -------- | ------- | ------- | ------ |
+| Forma normal (Nominativ)                      | mein     | meine   | mein    | meine  |
+| Lo que ves/tenés/comprás (Akkusativ)          | meinen   | meine   | mein    | meine  |
+| A quién le das/decís algo (Dativ)             | meinem   | meiner  | meinem  | meinen |
 
 ```
-Nominativ:  Mein Bruder ist hier.       (mein, sin terminación — como "ein")
-Akkusativ:  Ich sehe meinen Bruder.     (meinen — como "einen")
-Dativ:      Ich helfe meinem Bruder.    (meinem — como "einem")
+Forma normal:   Mein Bruder ist hier.       (mein, sin terminación — como "ein")
+Lo que veo:     Ich sehe meinen Bruder.     (meinen — como "einen")
+A quién ayudo:  Ich helfe meinem Bruder.    (meinem — como "einem")
 ```
 
 ## Los cuatro pasos para elegir la forma correcta
 
 1. Elegí el posesivo según quién posee (mein, dein, sein...).
 2. Determiná el género del sustantivo que sigue (maskulin/feminin/neutral/Plural).
-3. Determiná el caso según la función del sustantivo en la frase.
+3. Preguntate: ¿es la forma normal, lo que ves/tenés, o a quién le das algo?
 4. Agregá la terminación correspondiente — la misma que usarías con "ein".
 
 ```
-sehen = Akkusativ    der Vater = maskulin    →    seinen Vater
+sehen (lo que ves → Akkusativ)    der Vater = maskulin    →    seinen Vater
 Er sieht seinen Vater am Bahnhof.
 ```
 

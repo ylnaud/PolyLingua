@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Pagina no encontrada"
+  description="La pagina que buscas no existe o fue movida."
+  path="/404"
+  noindex
+>
+  <section class="container not-found-page">
+    <span class="not-found-icon" aria-hidden="true">🔍</span>
+    <h1>Pagina no encontrada</h1>
+    <p class="not-found-desc">
+      La pagina que buscas no existe, fue movida o la URL tiene un error.
+      Prueba volver al inicio o buscar lo que necesitas.
+    </p>
+    <div class="not-found-actions">
+      <a class="btn btn-primary" href="/">Ir al inicio</a>
+      <a class="btn btn-ghost" href="/idiomas">Idiomas</a>
+      <a class="btn btn-ghost" href="/buscar">Buscar</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found-page {
+    max-width: 480px;
+    text-align: center;
+    padding-block: 4rem 6rem;
+  }
+
+  .not-found-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    margin: 0 0 0.75rem;
+  }
+
+  .not-found-desc {
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+    line-height: 1.6;
+  }
+
+  .not-found-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

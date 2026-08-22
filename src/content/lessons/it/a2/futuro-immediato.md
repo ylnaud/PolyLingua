@@ -5,80 +5,78 @@ title: "Il futuro immediato: presente y 'stare per' para lo que está por pasar"
 description: "Habla de planes cercanos en italiano usando simplemente el presente, y de algo a punto de pasar ahora mismo con la expresión 'stare per'."
 order: 7
 unit: 2
-grammarTopic: "Futuro inmediato (presente + stare per)"
+grammarTopic: 'Futuro inmediato (presente + stare per)'
 funFact: "A diferencia del francés (aller + infinitivo) o el inglés (going to), el italiano cotidiano prefiere simplemente el PRESENTE para hablar de planes cercanos: 'Parto domani' (me voy mañana) sin necesitar ningún verbo auxiliar extra. Para algo a punto de pasar EN ESTE MOMENTO, usa 'stare per'."
 minutes: 7
 quiz:
   - question: "¿Cómo dirías 'me voy mañana' de forma natural en italiano cotidiano?"
-    options: ["Vado partire domani", "Parto domani", "Sto partire domani"]
+    options: ['Vado partire domani', 'Parto domani', 'Sto partire domani']
     answerIndex: 1
-    explanation: "El italiano cotidiano usa simplemente el presente + marcador de tiempo para planes cercanos: Parto domani (me voy mañana)."
+    explanation: 'El italiano cotidiano usa simplemente el presente + marcador de tiempo para planes cercanos: Parto domani (me voy mañana).'
   - question: "¿Cuál es la estructura de 'stare per' (estar a punto de)?"
-    options: [
-      "stare (conjugado) + per + infinitivo",
-      "stare + gerundio",
-      "per + stare + infinitivo"
-    ]
+    options:
+      ['stare (conjugado) + per + infinitivo', 'stare + gerundio', 'per + stare + infinitivo']
     answerIndex: 0
-    explanation: "stare (conjugado) + per + infinitivo: Sto per partire (estoy a punto de partir/salir)."
+    explanation: 'stare (conjugado) + per + infinitivo: Sto per partire (estoy a punto de partir/salir).'
   - question: "¿Cuál es la diferencia entre 'parto domani' y 'sto per partire'?"
-    options: [
-      "No hay ninguna diferencia",
-      "'parto domani' es un plan futuro (mañana); 'sto per partire' es algo a punto de pasar AHORA MISMO",
-      "'sto per partire' se refiere solo al pasado"
-    ]
+    options:
+      [
+        'No hay ninguna diferencia',
+        "'parto domani' es un plan futuro (mañana); 'sto per partire' es algo a punto de pasar AHORA MISMO",
+        "'sto per partire' se refiere solo al pasado",
+      ]
     answerIndex: 1
     explanation: "'parto domani' describe un plan futuro con fecha; 'sto per partire' describe algo inminente, a punto de ocurrir en este preciso momento."
 exercises:
-  - type: "fill-blank"
-    sentence: "Domani ___ per Roma."
-    answer: "parto"
-    accepted: ["parto"]
+  - type: 'fill-blank'
+    sentence: 'Domani ___ per Roma.'
+    answer: 'parto'
+    accepted: ['parto']
     hint: "Presente + marcador de tiempo ('domani') para un plan futuro ya decidido."
-    translation: "Mañana salgo para Roma."
-    placeholder: "es. arrivo"
-  - type: "fill-blank"
-    sentence: "Il film ___ per iniziare."
-    answer: "sta"
-    accepted: ["sta"]
+    translation: 'Mañana salgo para Roma.'
+    placeholder: 'es. arrivo'
+  - type: 'fill-blank'
+    sentence: 'Il film ___ per iniziare.'
+    answer: 'sta'
+    accepted: ['sta']
     hint: "'stare' conjugado (lui/lei: sta) + per + infinitivo, para algo inminente."
-    translation: "La película está a punto de empezar."
-    placeholder: "sto / stai / sta / stiamo"
-  - type: "match"
+    translation: 'La película está a punto de empezar.'
+    placeholder: 'sto / stai / sta / stiamo'
+  - type: 'match'
     instructions: "Empareja cada pronombre con la forma correcta de 'stare'."
     pairs:
-      - left: "io"
-        right: "sto"
-      - left: "tu"
-        right: "stai"
-      - left: "noi"
-        right: "stiamo"
-      - left: "voi"
-        right: "state"
-      - left: "loro"
-        right: "stanno"
-  - type: "write"
+      - left: 'io'
+        right: 'sto'
+      - left: 'tu'
+        right: 'stai'
+      - left: 'noi'
+        right: 'stiamo'
+      - left: 'voi'
+        right: 'state'
+      - left: 'loro'
+        right: 'stanno'
+  - type: 'write'
     prompt: "Escribe en italiano 'Estoy a punto de partir' usando la estructura 'stare per'."
-    answer: "Sto per partire"
-    accepted: ["sto per partire"]
-    hint: "stare (conjugado) + per + infinitivo."
-    placeholder: "es. Sto per mangiare"
-  - type: "order"
-    sentence: "Stasera vediamo un film"
-    translation: "Esta noche vemos una película."
+    answer: 'Sto per partire'
+    accepted: ['sto per partire']
+    hint: 'stare (conjugado) + per + infinitivo.'
+    placeholder: 'es. Sto per mangiare'
+  - type: 'order'
+    sentence: 'Stasera vediamo un film'
+    translation: 'Esta noche vemos una película.'
 vocabulary:
-  - term: "domani"
-    translation: "mañana"
-  - term: "stasera"
-    translation: "esta noche"
-  - term: "parto"
-    translation: "salgo / parto"
-  - term: "stare per"
-    translation: "estar a punto de"
-  - term: "sto per partire"
-    translation: "estoy a punto de partir"
-  - term: "sta per iniziare"
-    translation: "está a punto de empezar"
+  - term: 'domani'
+    translation: 'mañana'
+  - term: 'stasera'
+    translation: 'esta noche'
+  - term: 'parto'
+    translation: 'salgo / parto'
+  - term: 'stare per'
+    translation: 'estar a punto de'
+  - term: 'sto per partire'
+    translation: 'estoy a punto de partir'
+  - term: 'sta per iniziare'
+    translation: 'está a punto de empezar'
 ---
 
 El italiano cotidiano tiene dos formas naturales de hablar del futuro cercano, sin
@@ -105,21 +103,21 @@ Il film sta per iniziare. (La película está a punto de empezar)
 
 ## Comparando los dos futuros cercanos
 
-| Estructura | Uso | Ejemplo |
-| --- | --- | --- |
-| Presente + marcador | Plan futuro con fecha | Parto domani. |
+| Estructura             | Uso                         | Ejemplo          |
+| ---------------------- | --------------------------- | ---------------- |
+| Presente + marcador    | Plan futuro con fecha       | Parto domani.    |
 | stare per + infinitivo | Algo inminente, ahora mismo | Sto per partire. |
 
 ## Conjugación de "stare" (repaso)
 
-| Pronombre | stare |
-| --- | --- |
-| io | sto |
-| tu | stai |
-| lui/lei | sta |
-| noi | stiamo |
-| voi | state |
-| loro | stanno |
+| Pronombre | stare  |
+| --------- | ------ |
+| io        | sto    |
+| tu        | stai   |
+| lui/lei   | sta    |
+| noi       | stiamo |
+| voi       | state  |
+| loro      | stanno |
 
 ## El truco práctico
 

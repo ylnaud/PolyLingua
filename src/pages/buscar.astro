@@ -65,7 +65,14 @@ const structuredData = {
   }
 
   const FLAGS: Record<string, string> = { de: '🇩🇪', en: '🇬🇧', fr: '🇫🇷', it: '🇮🇹', pt: '🇵🇹' };
-  const LEVEL_LABELS: Record<string, string> = { a1: 'A1', a2: 'A2', b1: 'B1', b2: 'B2', c1: 'C1', c2: 'C2' };
+  const LEVEL_LABELS: Record<string, string> = {
+    a1: 'A1',
+    a2: 'A2',
+    b1: 'B1',
+    b2: 'B2',
+    c1: 'C1',
+    c2: 'C2',
+  };
   const MIN_CHARS = 2;
   const MAX_RESULTS = 30;
 
@@ -73,7 +80,10 @@ const structuredData = {
   // "articulo" encuentre "artículo" — la mayoría de usuarios no va a
   // molestarse en teclear tildes en un buscador.
   function normalize(s: string): string {
-    return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return s
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
   }
 
   function initSearch() {
@@ -110,7 +120,7 @@ const structuredData = {
           (item) =>
             normalize(item.title).includes(q) ||
             normalize(item.topic).includes(q) ||
-            normalize(item.description).includes(q)
+            normalize(item.description).includes(q),
         )
         .slice(0, MAX_RESULTS);
 

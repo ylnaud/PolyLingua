@@ -1,80 +1,81 @@
 ---
 language: en
 level: c2
-title: "British vs. American English: un idioma, dos personalidades"
-description: "Diferencias de vocabulario, ortografía y gramática entre el inglés británico y el americano, para que ninguna variante te tome por sorpresa nunca."
+title: 'British vs. American English: un idioma, dos personalidades'
+description: 'Diferencias de vocabulario, ortografía y gramática entre el inglés británico y el americano, para que ninguna variante te tome por sorpresa nunca.'
 order: 4
 unit: 1
-grammarTopic: "Diferencias entre inglés británico y americano"
+grammarTopic: 'Diferencias entre inglés británico y americano'
 funFact: "'I've just eaten' (británico) vs. 'I just ate' (americano) — ambos son correctos, pero el inglés británico prefiere el Present Perfect para acciones recién completadas, mientras el americano tiende a usar Past Simple con más libertad. No es un error, es una preferencia regional consolidada."
 minutes: 9
 quiz:
   - question: "¿Cuál es la ortografía americana de 'colour' (color, británico)?"
-    options: ["colour", "color", "coloor"]
+    options: ['colour', 'color', 'coloor']
     answerIndex: 1
-    explanation: "El inglés americano simplifica muchas terminaciones -our a -or: colour → color, favourite → favorite."
+    explanation: 'El inglés americano simplifica muchas terminaciones -our a -or: colour → color, favourite → favorite.'
   - question: "¿Cuál es la palabra británica para 'apartment' (americano)?"
-    options: ["flat", "house", "room"]
+    options: ['flat', 'house', 'room']
     answerIndex: 0
     explanation: "'flat' es la palabra británica estándar para 'apartment' (apartamento en inglés americano)."
   - question: "'I've just eaten' (británico) vs. 'I just ate' (americano). ¿Qué revela esta diferencia?"
-    options: [
-      "Que uno de los dos es incorrecto",
-      "Una preferencia regional: el inglés británico tiende a usar Present Perfect donde el americano prefiere Past Simple",
-      "Que no hay ninguna diferencia real"
-    ]
+    options:
+      [
+        'Que uno de los dos es incorrecto',
+        'Una preferencia regional: el inglés británico tiende a usar Present Perfect donde el americano prefiere Past Simple',
+        'Que no hay ninguna diferencia real',
+      ]
     answerIndex: 1
-    explanation: "Ambas son gramaticalmente correctas en su variante — es una diferencia de preferencia regional consolidada, no un error."
+    explanation: 'Ambas son gramaticalmente correctas en su variante — es una diferencia de preferencia regional consolidada, no un error.'
 exercises:
-  - type: "fill-blank"
-    sentence: "In British English, an apartment is called a ___."
-    answer: "flat"
-    accepted: ["Flat"]
+  - type: 'fill-blank'
+    sentence: 'In British English, an apartment is called a ___.'
+    answer: 'flat'
+    accepted: ['Flat']
     hint: "Es la palabra británica estándar; en americano se dice 'apartment'."
     translation: "En inglés británico, un apartamento se llama 'flat'."
-    placeholder: "lift"
-  - type: "fill-blank"
+    placeholder: 'lift'
+  - type: 'fill-blank'
     sentence: "The American spelling of 'colour' is ___."
-    answer: "color"
-    accepted: ["Color"]
-    hint: "El americano simplifica -our a -or."
+    answer: 'color'
+    accepted: ['Color']
+    hint: 'El americano simplifica -our a -or.'
     translation: "La ortografía americana de 'colour' es 'color'."
-    placeholder: "favorite"
-  - type: "match"
-    instructions: "Empareja la palabra británica con su equivalente americano."
+    placeholder: 'favorite'
+  - type: 'match'
+    instructions: 'Empareja la palabra británica con su equivalente americano.'
     pairs:
-      - left: "flat"
-        right: "apartment"
-      - left: "lift"
-        right: "elevator"
-      - left: "rubbish"
-        right: "trash/garbage"
-      - left: "autumn"
-        right: "fall"
-      - left: "petrol"
-        right: "gas/gasoline"
-  - type: "write"
+      - left: 'flat'
+        right: 'apartment'
+      - left: 'lift'
+        right: 'elevator'
+      - left: 'rubbish'
+        right: 'trash/garbage'
+      - left: 'autumn'
+        right: 'fall'
+      - left: 'petrol'
+        right: 'gas/gasoline'
+  - type: 'write'
     prompt: "Escribe la palabra americana para 'biscuit' (galleta, en inglés británico)."
-    answer: "cookie"
-    accepted: ["Cookie"]
-    hint: "Es la palabra que verías en un paquete de galletas en Estados Unidos."
-    placeholder: "elevator"
-  - type: "order"
-    sentence: "Have you got a pen"
-    translation: "¿Tienes un bolígrafo? (versión británica; en americano: Do you have a pen?)"
+    answer: 'cookie'
+    accepted: ['Cookie']
+    hint: 'Es la palabra que verías en un paquete de galletas en Estados Unidos.'
+    placeholder: 'elevator'
+  - type: 'order'
+    sentence: 'Have you got a pen'
+    translation: '¿Tienes un bolígrafo? (versión británica; en americano: Do you have a pen?)'
 vocabulary:
-  - term: "flat"
-    translation: "apartamento (británico)"
-  - term: "apartment"
-    translation: "apartamento (americano)"
-  - term: "lift"
-    translation: "ascensor (británico)"
-  - term: "elevator"
-    translation: "ascensor (americano)"
-  - term: "colour"
-    translation: "color (ortografía británica)"
-  - term: "biscuit"
-    translation: "galleta (británico)"
+  - term: 'flat'
+    translation: 'apartamento (británico)'
+  - term: 'apartment'
+    translation: 'apartamento (americano)'
+  - term: 'lift'
+    translation: 'ascensor (británico)'
+  - term: 'elevator'
+    translation: 'ascensor (americano)'
+  - term: 'colour'
+    translation: 'color (ortografía británica)'
+  - term: 'biscuit'
+    translation: 'galleta (británico)'
 ---
 
 El inglés que aprendiste en PolyLingua funciona en cualquier país angloparlante, pero
@@ -82,25 +83,25 @@ reconocer las diferencias entre las dos variantes principales te evita sorpresas
 
 ## Diferencias de vocabulario
 
-| Británico | Americano | Español |
-| --- | --- | --- |
-| flat | apartment | apartamento |
-| lift | elevator | ascensor |
-| rubbish | trash/garbage | basura |
-| holiday | vacation | vacaciones |
-| autumn | fall | otoño |
-| biscuit | cookie | galleta |
-| petrol | gas/gasoline | gasolina |
+| Británico | Americano     | Español     |
+| --------- | ------------- | ----------- |
+| flat      | apartment     | apartamento |
+| lift      | elevator      | ascensor    |
+| rubbish   | trash/garbage | basura      |
+| holiday   | vacation      | vacaciones  |
+| autumn    | fall          | otoño       |
+| biscuit   | cookie        | galleta     |
+| petrol    | gas/gasoline  | gasolina    |
 
 ## Diferencias de ortografía
 
 | Británico | Americano |
-| --- | --- |
-| colour | color |
-| favourite | favorite |
-| centre | center |
-| organise | organize |
-| travelled | traveled |
+| --------- | --------- |
+| colour    | color     |
+| favourite | favorite  |
+| centre    | center    |
+| organise  | organize  |
+| travelled | traveled  |
 
 ## Una diferencia gramatical real
 

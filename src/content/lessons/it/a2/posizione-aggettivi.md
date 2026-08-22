@@ -1,84 +1,86 @@
 ---
 language: it
 level: a2
-title: "La posizione degli aggettivi: antes o después, ¿quién decide?"
-description: "Dónde va el adjetivo en una frase italiana: por qué la mayoría se coloca después del sustantivo, y el pequeño grupo que cambia de significado antes."
+title: 'La posizione degli aggettivi: antes o después, ¿quién decide?'
+description: 'Dónde va el adjetivo en una frase italiana: por qué la mayoría se coloca después del sustantivo, y el pequeño grupo que cambia de significado antes.'
 order: 8
 unit: 2
-grammarTopic: "Posición de los adjetivos"
+grammarTopic: 'Posición de los adjetivos'
 funFact: "Igual que en francés, la posición del adjetivo en italiano a veces cambia el significado: 'un vecchio amico' (un amigo de toda la vida, antigüedad de la amistad) vs. 'un amico vecchio' (un amigo que es literalmente viejo de edad). La posición no es solo estilo — puede ser semántica."
 minutes: 8
 quiz:
-  - question: "¿Dónde va la mayoría de los adjetivos en italiano respecto al sustantivo?"
-    options: ["Siempre antes", "Siempre después", "Depende, pero la mayoría van después"]
+  - question: '¿Dónde va la mayoría de los adjetivos en italiano respecto al sustantivo?'
+    options: ['Siempre antes', 'Siempre después', 'Depende, pero la mayoría van después']
     answerIndex: 2
-    explanation: "La mayoría de los adjetivos italianos van DESPUÉS del sustantivo: una macchina rossa, un libro interessante. Un grupo pequeño y común va antes."
-  - question: "¿Cuáles son ejemplos de adjetivos comunes que suelen ir ANTES del sustantivo?"
-    options: [
-      "bello, buono, grande, piccolo, giovane, vecchio",
-      "rosso, blu, verde (colores)",
-      "italiano, spagnolo (nacionalidades)"
-    ]
+    explanation: 'La mayoría de los adjetivos italianos van DESPUÉS del sustantivo: una macchina rossa, un libro interessante. Un grupo pequeño y común va antes.'
+  - question: '¿Cuáles son ejemplos de adjetivos comunes que suelen ir ANTES del sustantivo?'
+    options:
+      [
+        'bello, buono, grande, piccolo, giovane, vecchio',
+        'rosso, blu, verde (colores)',
+        'italiano, spagnolo (nacionalidades)',
+      ]
     answerIndex: 0
-    explanation: "Un grupo de adjetivos muy comunes y cortos (bello, buono, grande, piccolo, giovane, vecchio, nuovo) suele preceder al sustantivo, especialmente en uso descriptivo general."
+    explanation: 'Un grupo de adjetivos muy comunes y cortos (bello, buono, grande, piccolo, giovane, vecchio, nuovo) suele preceder al sustantivo, especialmente en uso descriptivo general.'
   - question: "¿Cuál es la diferencia entre 'un vecchio amico' y 'un amico vecchio'?"
-    options: [
-      "No hay ninguna diferencia",
-      "'un vecchio amico' = un amigo de toda la vida (antigüedad de la relación); 'un amico vecchio' = un amigo que es viejo de edad",
-      "Ambas frases son incorrectas"
-    ]
+    options:
+      [
+        'No hay ninguna diferencia',
+        "'un vecchio amico' = un amigo de toda la vida (antigüedad de la relación); 'un amico vecchio' = un amigo que es viejo de edad",
+        'Ambas frases son incorrectas',
+      ]
     answerIndex: 1
-    explanation: "La posición del adjetivo cambia el significado: antes del sustantivo (vecchio describe antigüedad de la relación), después del sustantivo (vecchio describe edad física)."
+    explanation: 'La posición del adjetivo cambia el significado: antes del sustantivo (vecchio describe antigüedad de la relación), después del sustantivo (vecchio describe edad física).'
 exercises:
-  - type: "fill-blank"
-    sentence: "Ho una macchina ___."
-    answer: "rossa"
-    accepted: ["rossa"]
-    hint: "La mayoría de los adjetivos, como los de color, van DESPUÉS del sustantivo."
-    translation: "Tengo un coche rojo."
-    placeholder: "es. blu"
-  - type: "fill-blank"
-    sentence: "Marco è un ___ amico."
-    answer: "vecchio"
-    accepted: ["vecchio"]
+  - type: 'fill-blank'
+    sentence: 'Ho una macchina ___.'
+    answer: 'rossa'
+    accepted: ['rossa']
+    hint: 'La mayoría de los adjetivos, como los de color, van DESPUÉS del sustantivo.'
+    translation: 'Tengo un coche rojo.'
+    placeholder: 'es. blu'
+  - type: 'fill-blank'
+    sentence: 'Marco è un ___ amico.'
+    answer: 'vecchio'
+    accepted: ['vecchio']
     hint: "'vecchio' ANTES del sustantivo indica antigüedad de la relación, no edad física."
-    translation: "Marco es un amigo de toda la vida."
-    placeholder: "es. buon"
-  - type: "match"
-    instructions: "Empareja cada expresión con su significado según la posición del adjetivo."
+    translation: 'Marco es un amigo de toda la vida.'
+    placeholder: 'es. buon'
+  - type: 'match'
+    instructions: 'Empareja cada expresión con su significado según la posición del adjetivo.'
     pairs:
-      - left: "un vecchio amico"
-        right: "un amigo de toda la vida"
-      - left: "un amico vecchio"
-        right: "un amigo viejo de edad"
+      - left: 'un vecchio amico'
+        right: 'un amigo de toda la vida'
+      - left: 'un amico vecchio'
+        right: 'un amigo viejo de edad'
       - left: "un grand'uomo"
-        right: "un gran hombre (admirado)"
-      - left: "un uomo grande"
-        right: "un hombre grande (físicamente)"
-      - left: "un buon ristorante"
-        right: "un buen restaurante"
-  - type: "write"
+        right: 'un gran hombre (admirado)'
+      - left: 'un uomo grande'
+        right: 'un hombre grande (físicamente)'
+      - left: 'un buon ristorante'
+        right: 'un buen restaurante'
+  - type: 'write'
     prompt: "Escribe en italiano 'una casa pequeña' (piccola va antes del sustantivo)."
-    answer: "una piccola casa"
-    accepted: ["una piccola casa"]
+    answer: 'una piccola casa'
+    accepted: ['una piccola casa']
     hint: "'piccolo' pertenece al grupo de adjetivos cortos y comunes que suelen ir antes del sustantivo."
-    placeholder: "es. un bel giardino"
-  - type: "order"
-    sentence: "Questa è una piccola casa"
-    translation: "Esta es una casa pequeña."
+    placeholder: 'es. un bel giardino'
+  - type: 'order'
+    sentence: 'Questa è una piccola casa'
+    translation: 'Esta es una casa pequeña.'
 vocabulary:
-  - term: "macchina rossa"
-    translation: "coche rojo"
-  - term: "vecchio amico"
-    translation: "amigo de toda la vida"
-  - term: "piccola casa"
-    translation: "casa pequeña"
-  - term: "grande"
-    translation: "grande"
-  - term: "bel giardino"
-    translation: "lindo jardín"
-  - term: "buon ristorante"
-    translation: "buen restaurante"
+  - term: 'macchina rossa'
+    translation: 'coche rojo'
+  - term: 'vecchio amico'
+    translation: 'amigo de toda la vida'
+  - term: 'piccola casa'
+    translation: 'casa pequeña'
+  - term: 'grande'
+    translation: 'grande'
+  - term: 'bel giardino'
+    translation: 'lindo jardín'
+  - term: 'buon ristorante'
+    translation: 'buen restaurante'
 ---
 
 En español, mover un adjetivo antes o después del sustantivo suele ser solo un matiz
@@ -109,11 +111,11 @@ una piccola casa           (una casa pequeña)
 
 Un pequeño grupo de adjetivos cambia de significado según su posición:
 
-| Adjetivo | Antes del sustantivo | Después del sustantivo |
-| --- | --- | --- |
-| vecchio | antiguo (de tiempo, la relación) | viejo (edad física) |
-| grande | grande (importancia) | grande (tamaño físico) |
-| povero | pobre (lástima) | pobre (sin dinero) |
+| Adjetivo | Antes del sustantivo             | Después del sustantivo |
+| -------- | -------------------------------- | ---------------------- |
+| vecchio  | antiguo (de tiempo, la relación) | viejo (edad física)    |
+| grande   | grande (importancia)             | grande (tamaño físico) |
+| povero   | pobre (lástima)                  | pobre (sin dinero)     |
 
 ```
 un vecchio amico            (un amigo de toda la vida)

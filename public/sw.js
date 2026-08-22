@@ -20,8 +20,8 @@ self.addEventListener('install', (event) => {
       cache.addAll(PRECACHE_URLS).catch((err) => {
         console.warn('[SW] Pre-cache parcial:', err);
         return cache.add('/');
-      })
-    )
+      }),
+    ),
   );
 });
 
@@ -30,9 +30,9 @@ self.addEventListener('activate', (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
+        Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))),
       )
-      .then(() => self.clients.claim())
+      .then(() => self.clients.claim()),
   );
 });
 
@@ -58,8 +58,8 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() =>
-          caches.match(event.request).then((cached) => cached || caches.match(OFFLINE_URL))
-        )
+          caches.match(event.request).then((cached) => cached || caches.match(OFFLINE_URL)),
+        ),
     );
     return;
   }
@@ -74,6 +74,6 @@ self.addEventListener('fetch', (event) => {
         }
         return response;
       });
-    })
+    }),
   );
 });

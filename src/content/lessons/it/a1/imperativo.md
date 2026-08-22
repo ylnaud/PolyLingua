@@ -1,60 +1,60 @@
 ---
 language: it
 level: a1
-title: "El imperativo italiano: ordena, pide y sugiere en italiano"
+title: 'El imperativo italiano: ordena, pide y sugiere en italiano'
 description: "El modo imperativo en italiano para las formas tu, noi y voi, el imperativo negativo con 'non' + infinitivo, y los irregulares essere, avere y andare."
 order: 11
 unit: 3
-grammarTopic: "El imperativo"
+grammarTopic: 'El imperativo'
 funFact: "Para decir 'no hagas algo' a un amigo (tu), el italiano usa 'non' + infinitivo: 'Non parlare!' (no hables). Es la única persona donde el imperativo negativo NO usa la forma conjugada del imperativo, sino el infinitivo. Para 'noi' y 'voi', simplemente pones 'non' delante de la forma normal."
 minutes: 9
 quiz:
   - question: "¿Cuál es la forma correcta del imperativo de 'parlare' (hablar) para 'tu'?"
-    options: ["Parli!", "Parla!", "Parlare!"]
+    options: ['Parli!', 'Parla!', 'Parlare!']
     answerIndex: 1
     explanation: "El imperativo de 'tu' para verbos en -are usa la terminación -a: Parla! (habla)."
   - question: "¿Cómo se dice 'no hables' (imperativo negativo, tú) en italiano?"
-    options: ["Non parla!", "Non parli!", "Non parlare!"]
+    options: ['Non parla!', 'Non parli!', 'Non parlare!']
     answerIndex: 2
     explanation: "El imperativo negativo de 'tu' se forma con 'non' + infinitivo: Non parlare! Es la única persona con esta regla especial."
   - question: "¿Cuál es el imperativo de 'essere' (ser/estar) para 'tu'?"
-    options: ["Esse!", "Sii!", "Sia!"]
+    options: ['Esse!', 'Sii!', 'Sia!']
     answerIndex: 1
     explanation: "'Essere' es irregular en imperativo: la forma de 'tu' es 'Sii!' (sé)."
 exercises:
-  - type: "fill-blank"
-    sentence: "___ il libro! (leer, tú)"
-    answer: "Leggi"
-    accepted: ["leggi"]
+  - type: 'fill-blank'
+    sentence: '___ il libro! (leer, tú)'
+    answer: 'Leggi'
+    accepted: ['leggi']
     hint: "Imperativo de 'leggere' para 'tu': usa la terminación -i."
-    translation: "Lee el libro."
-    placeholder: "Legge"
-  - type: "fill-blank"
-    sentence: "Non ___ in ritardo! (arrivare, tú)"
-    answer: "arrivare"
-    accepted: ["Arrivare"]
+    translation: 'Lee el libro.'
+    placeholder: 'Legge'
+  - type: 'fill-blank'
+    sentence: 'Non ___ in ritardo! (arrivare, tú)'
+    answer: 'arrivare'
+    accepted: ['Arrivare']
     hint: "Imperativo negativo de 'tu': non + infinitivo."
-    translation: "No llegues tarde."
-    placeholder: "arrivi"
-  - type: "write"
+    translation: 'No llegues tarde.'
+    placeholder: 'arrivi'
+  - type: 'write'
     prompt: "Escribe cómo dirías 'vamos' en italiano (imperativo de 'andare' para 'noi')."
-    answer: "Andiamo!"
-    accepted: ["andiamo", "Andiamo"]
+    answer: 'Andiamo!'
+    accepted: ['andiamo', 'Andiamo']
     hint: "El imperativo de 'noi' coincide con el presente indicativo."
-    placeholder: "Andare"
-  - type: "match"
-    instructions: "Empareja cada forma de imperativo con su significado."
+    placeholder: 'Andare'
+  - type: 'match'
+    instructions: 'Empareja cada forma de imperativo con su significado.'
     pairs:
-      - left: "Parla!"
-        right: "Habla (tú)"
-      - left: "Parliamo!"
-        right: "Hablemos (nosotros)"
-      - left: "Parlate!"
-        right: "Hablad (vosotros)"
-      - left: "Non parlare!"
-        right: "No hables (tú)"
-      - left: "Sii gentile!"
-        right: "Sé amable (tú)"
+      - left: 'Parla!'
+        right: 'Habla (tú)'
+      - left: 'Parliamo!'
+        right: 'Hablemos (nosotros)'
+      - left: 'Parlate!'
+        right: 'Hablad (vosotros)'
+      - left: 'Non parlare!'
+        right: 'No hables (tú)'
+      - left: 'Sii gentile!'
+        right: 'Sé amable (tú)'
 ---
 
 El imperativo en italiano te permite dar órdenes, hacer sugerencias e invitar a la acción.
@@ -67,27 +67,27 @@ El imperativo italiano solo tiene tres personas principales: **tu**, **noi** y *
 
 ### Verbos en -are (parlare = hablar)
 
-| Persona | Forma | Ejemplo |
-| --- | --- | --- |
-| tu | Parla! | Parla più piano! (Habla más despacio) |
-| noi | Parliamo! | Parliamo italiano! (Hablemos italiano) |
-| voi | Parlate! | Parlate con il professore! (Hablad con el profesor) |
+| Persona | Forma     | Ejemplo                                             |
+| ------- | --------- | --------------------------------------------------- |
+| tu      | Parla!    | Parla più piano! (Habla más despacio)               |
+| noi     | Parliamo! | Parliamo italiano! (Hablemos italiano)              |
+| voi     | Parlate!  | Parlate con il professore! (Hablad con el profesor) |
 
 ### Verbos en -ere (prendere = tomar)
 
-| Persona | Forma | Ejemplo |
-| --- | --- | --- |
-| tu | Prendi! | Prendi un caffè! (Toma un café) |
-| noi | Prendiamo! | Prendiamo un taxi! (Tomemos un taxi) |
-| voi | Prendete! | Prendete i libri! (Tomad los libros) |
+| Persona | Forma      | Ejemplo                              |
+| ------- | ---------- | ------------------------------------ |
+| tu      | Prendi!    | Prendi un caffè! (Toma un café)      |
+| noi     | Prendiamo! | Prendiamo un taxi! (Tomemos un taxi) |
+| voi     | Prendete!  | Prendete i libri! (Tomad los libros) |
 
 ### Verbos en -ire (aprire = abrir)
 
-| Persona | Forma | Ejemplo |
-| --- | --- | --- |
-| tu | Apri! | Apri la porta! (Abre la puerta) |
-| noi | Apriamo! | Apriamo la finestra! (Abramos la ventana) |
-| voi | Aprite! | Aprite i quaderni! (Abrid los cuadernos) |
+| Persona | Forma    | Ejemplo                                   |
+| ------- | -------- | ----------------------------------------- |
+| tu      | Apri!    | Apri la porta! (Abre la puerta)           |
+| noi     | Apriamo! | Apriamo la finestra! (Abramos la ventana) |
+| voi     | Aprite!  | Aprite i quaderni! (Abrid los cuadernos)  |
 
 ## Un detalle clave para "tu"
 
@@ -127,13 +127,13 @@ Aquí simplemente añades "non" delante de la forma afirmativa, sin cambiar nada
 
 Algunos verbos muy frecuentes tienen formas irregulares en imperativo:
 
-| Verbo | tu | noi | voi |
-| --- | --- | --- | --- |
-| essere (ser/estar) | Sii! | Siamo! | Siate! |
-| avere (tener) | Abbi! | Abbiamo! | Abbiate! |
-| andare (ir) | Va'! / Vai! | Andiamo! | Andate! |
-| fare (hacer) | Fa'! / Fai! | Facciamo! | Fate! |
-| dare (dar) | Da'! / Dai! | Diamo! | Date! |
+| Verbo              | tu          | noi       | voi      |
+| ------------------ | ----------- | --------- | -------- |
+| essere (ser/estar) | Sii!        | Siamo!    | Siate!   |
+| avere (tener)      | Abbi!       | Abbiamo!  | Abbiate! |
+| andare (ir)        | Va'! / Vai! | Andiamo!  | Andate!  |
+| fare (hacer)       | Fa'! / Fai! | Facciamo! | Fate!    |
+| dare (dar)         | Da'! / Dai! | Diamo!    | Date!    |
 
 Las formas con apóstrofo (Va', Fa', Da') son las más comunes en el habla cotidiana.
 

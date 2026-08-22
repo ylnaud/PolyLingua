@@ -1,120 +1,120 @@
 ---
 language: it
 level: a1
-title: "Consonantes dobles en italiano: pala vs palla, caro vs carro"
-description: "La pronunciación de consonantes dobles en italiano (pp, tt, ll, rr, nn): cómo distinguirlas y por qué cambiar una letra cambia toda la palabra."
+title: 'Consonantes dobles en italiano: pala vs palla, caro vs carro'
+description: 'La pronunciación de consonantes dobles en italiano (pp, tt, ll, rr, nn): cómo distinguirlas y por qué cambiar una letra cambia toda la palabra.'
 order: 12
 unit: 3
-grammarTopic: "Pronunciación: consonantes dobles"
+grammarTopic: 'Pronunciación: consonantes dobles'
 funFact: "En español las consonantes dobles casi nunca cambian el significado, pero en italiano son fonémicas: 'pala' (pala) y 'palla' (pelota) son palabras completamente distintas. El truco es alargar la consonante, como si la mantuvieras un instante más antes de soltar la siguiente vocal."
 minutes: 8
 phrases:
-  - text: "pala"
-    es: "pala"
+  - text: 'pala'
+    es: 'pala'
     say: "PA-la (la 'l' es rápida y ligera)"
     note: "Una sola 'l': la consonante pasa rápido."
-  - text: "palla"
-    es: "pelota"
+  - text: 'palla'
+    es: 'pelota'
     say: "PAL-la (mantén la 'l' un instante más)"
     note: "Doble 'l': la consonante se alarga, como si la retuvieras."
-  - text: "caro"
-    es: "querido / caro"
+  - text: 'caro'
+    es: 'querido / caro'
     say: "CA-ro (la 'r' es breve)"
-  - text: "carro"
-    es: "carro / carreta"
+  - text: 'carro'
+    es: 'carro / carreta'
     say: "CAR-ro (la 'r' vibra más tiempo)"
-    note: "La diferencia se nota en la duración de la vibración."
-  - text: "nono"
-    es: "noveno"
+    note: 'La diferencia se nota en la duración de la vibración.'
+  - text: 'nono'
+    es: 'noveno'
     say: "NO-no (la 'n' pasa rápido)"
-  - text: "nonno"
-    es: "abuelo"
+  - text: 'nonno'
+    es: 'abuelo'
     say: "NON-no (la 'n' se mantiene antes de soltar)"
-    note: "Uno de los pares mínimos más comunes en conversación."
-  - text: "casa"
-    es: "casa"
+    note: 'Uno de los pares mínimos más comunes en conversación.'
+  - text: 'casa'
+    es: 'casa'
     say: "CA-sa (la 's' es suave y breve)"
-  - text: "cassa"
-    es: "caja / cajera"
+  - text: 'cassa'
+    es: 'caja / cajera'
     say: "CAS-sa (la 's' se prolonga, como un sssss contenido)"
-  - text: "fato"
-    es: "destino / hado"
+  - text: 'fato'
+    es: 'destino / hado'
     say: "FA-to (la 't' es ligera)"
-  - text: "fatto"
-    es: "hecho"
+  - text: 'fatto'
+    es: 'hecho'
     say: "FAT-to (la 't' se detiene un instante antes de soltar)"
     note: "Del verbo 'fare' (hacer): participio pasado."
-  - text: "sete"
-    es: "sed"
+  - text: 'sete'
+    es: 'sed'
     say: "SE-te (la 't' pasa rápido)"
-  - text: "sette"
-    es: "siete"
+  - text: 'sette'
+    es: 'siete'
     say: "SET-te (la 't' se mantiene)"
 quiz:
   - question: "¿Cuál es la diferencia entre 'pala' y 'palla' en italiano?"
     options:
-      - "Son sinónimos"
+      - 'Son sinónimos'
       - "'pala' significa pala y 'palla' significa pelota: la doble consonante cambia el significado"
-      - "La pronunciación es la misma, solo cambia la escritura"
+      - 'La pronunciación es la misma, solo cambia la escritura'
     answerIndex: 1
     explanation: "En italiano las consonantes dobles son fonémicas: alargar la consonante cambia la palabra por completo. 'pala' (pala) y 'palla' (pelota) son palabras diferentes."
-  - question: "¿Cómo se pronuncia una consonante doble en italiano?"
+  - question: '¿Cómo se pronuncia una consonante doble en italiano?'
     options:
-      - "Igual que una consonante simple"
-      - "Se alarga la consonante, manteniéndola un instante más antes de la vocal siguiente"
-      - "Se pronuncia más fuerte pero no más larga"
+      - 'Igual que una consonante simple'
+      - 'Se alarga la consonante, manteniéndola un instante más antes de la vocal siguiente'
+      - 'Se pronuncia más fuerte pero no más larga'
     answerIndex: 1
-    explanation: "La clave es la duración: la consonante doble se mantiene un instante más largo. No es cuestión de fuerza, sino de tiempo."
+    explanation: 'La clave es la duración: la consonante doble se mantiene un instante más largo. No es cuestión de fuerza, sino de tiempo.'
   - question: "¿Qué significa 'nonno' en italiano?"
-    options: ["noveno", "abuelo", "nombre"]
+    options: ['noveno', 'abuelo', 'nombre']
     answerIndex: 1
     explanation: "'nonno' (con doble n) significa abuelo. 'nono' (con una sola n) significa noveno. La doble consonante marca la diferencia."
 exercises:
-  - type: "match"
-    instructions: "Empareja cada palabra con su significado correcto."
+  - type: 'match'
+    instructions: 'Empareja cada palabra con su significado correcto.'
     pairs:
-      - left: "pala"
-        right: "pala"
-      - left: "palla"
-        right: "pelota"
-      - left: "caro"
-        right: "querido"
-      - left: "carro"
-        right: "carro/carreta"
-      - left: "nonno"
-        right: "abuelo"
-  - type: "fill-blank"
+      - left: 'pala'
+        right: 'pala'
+      - left: 'palla'
+        right: 'pelota'
+      - left: 'caro'
+        right: 'querido'
+      - left: 'carro'
+        right: 'carro/carreta'
+      - left: 'nonno'
+        right: 'abuelo'
+  - type: 'fill-blank'
     sentence: "Mio ___ ha ottant'anni."
-    answer: "nonno"
+    answer: 'nonno'
     hint: "Abuelo, con doble 'n'."
-    translation: "Mi abuelo tiene ochenta años."
-    placeholder: "nono"
-  - type: "write"
+    translation: 'Mi abuelo tiene ochenta años.'
+    placeholder: 'nono'
+  - type: 'write'
     prompt: "Escribe la palabra italiana para 'hecho' (participio pasado de 'fare')."
-    answer: "fatto"
-    accepted: ["Fatto"]
+    answer: 'fatto'
+    accepted: ['Fatto']
     hint: "Con doble 't': fat-to."
-    placeholder: "fato"
-  - type: "fill-blank"
-    sentence: "I bambini giocano con la ___."
-    answer: "palla"
-    accepted: ["Palla"]
+    placeholder: 'fato'
+  - type: 'fill-blank'
+    sentence: 'I bambini giocano con la ___.'
+    answer: 'palla'
+    accepted: ['Palla']
     hint: "Pelota, con doble 'l'."
-    translation: "Los niños juegan con la pelota."
-    placeholder: "pala"
+    translation: 'Los niños juegan con la pelota.'
+    placeholder: 'pala'
 vocabulary:
-  - term: "pala / palla"
-    translation: "pala / pelota"
-  - term: "caro / carro"
-    translation: "querido / carro"
-  - term: "nono / nonno"
-    translation: "noveno / abuelo"
-  - term: "casa / cassa"
-    translation: "casa / caja"
-  - term: "fato / fatto"
-    translation: "destino / hecho"
-  - term: "sete / sette"
-    translation: "sed / siete"
+  - term: 'pala / palla'
+    translation: 'pala / pelota'
+  - term: 'caro / carro'
+    translation: 'querido / carro'
+  - term: 'nono / nonno'
+    translation: 'noveno / abuelo'
+  - term: 'casa / cassa'
+    translation: 'casa / caja'
+  - term: 'fato / fatto'
+    translation: 'destino / hecho'
+  - term: 'sete / sette'
+    translation: 'sed / siete'
 ---
 
 En español las consonantes dobles rara vez cambian el significado de una palabra, pero en
@@ -127,13 +127,13 @@ En italiano, la longitud de la consonante es **fonémica**: distingue palabras. 
 los pares mínimos más famosos:
 
 | Simple | Significado | Doble | Significado |
-| --- | --- | --- | --- |
-| pala | pala | palla | pelota |
-| caro | querido | carro | carro |
-| nono | noveno | nonno | abuelo |
-| casa | casa | cassa | caja |
-| fato | destino | fatto | hecho |
-| sete | sed | sette | siete |
+| ------ | ----------- | ----- | ----------- |
+| pala   | pala        | palla | pelota      |
+| caro   | querido     | carro | carro       |
+| nono   | noveno      | nonno | abuelo      |
+| casa   | casa        | cassa | caja        |
+| fato   | destino     | fatto | hecho       |
+| sete   | sed         | sette | siete       |
 
 ## Cómo pronunciar las consonantes dobles
 
@@ -141,10 +141,10 @@ El secreto no es pronunciar la consonante "más fuerte", sino **más larga**. Im
 la consonante doble crea una pequeña pausa o retención:
 
 1. **Consonante simple**: la consonante pasa rápido entre las vocales.
-   - *pa-la* → la "l" es breve y ligera.
+   - _pa-la_ → la "l" es breve y ligera.
 2. **Consonante doble**: la consonante se mantiene un instante antes de soltar la vocal
    siguiente.
-   - *pal-la* → la "l" se alarga, como si la retuvieras en la boca.
+   - _pal-la_ → la "l" se alarga, como si la retuvieras en la boca.
 
 Una buena imagen mental: piensa que la consonante doble "cierra" la sílaba anterior y
 "abre" la siguiente. Por eso las sílabas se dividen **entre** las dos consonantes:

@@ -50,8 +50,18 @@ const structuredData = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Idiomas', item: `${siteURL}/idiomas` },
-        { '@type': 'ListItem', position: 2, name: languageMeta.name, item: `${siteURL}/idiomas/${lang}` },
-        { '@type': 'ListItem', position: 3, name: levelMeta.name, item: `${siteURL}/idiomas/${lang}/${level}` },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: languageMeta.name,
+          item: `${siteURL}/idiomas/${lang}`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: levelMeta.name,
+          item: `${siteURL}/idiomas/${lang}/${level}`,
+        },
       ],
     },
   ],
@@ -80,87 +90,120 @@ const structuredData = {
   </section>
 
   <section class="container lessons">
-    {lessons.length === 0 && (
-      <p class="empty">Estamos preparando lecciones para este nivel. ¡Vuelve pronto!</p>
-    )}
+    {
+      lessons.length === 0 && (
+        <p class="empty">Estamos preparando lecciones para este nivel. ¡Vuelve pronto!</p>
+      )
+    }
 
-    {unitMetas ? (
-      unitMetas.map((unit) => {
-        const unitLessons = lessons.filter((l) => l.data.unit === unit.id);
-        return unitLessons.length > 0 && (
-          <div class="unit-group">
-            <div class="unit-header">
-              <span class="unit-emoji" aria-hidden="true">{unit.emoji}</span>
-              <div>
-                <h2 class="unit-name">Unidad {unit.id} — {unit.name}</h2>
-                <p class="unit-desc">{unit.description}</p>
-                <span class="unit-progress" data-unit-progress data-unit-slugs={unitLessons.map((l) => l.id.split('/').pop()).join(',')}></span>
+    {
+      unitMetas ? (
+        unitMetas.map((unit) => {
+          const unitLessons = lessons.filter((l) => l.data.unit === unit.id);
+          return (
+            unitLessons.length > 0 && (
+              <div class="unit-group">
+                <div class="unit-header">
+                  <span class="unit-emoji" aria-hidden="true">
+                    {unit.emoji}
+                  </span>
+                  <div>
+                    <h2 class="unit-name">
+                      Unidad {unit.id} — {unit.name}
+                    </h2>
+                    <p class="unit-desc">{unit.description}</p>
+                    <span
+                      class="unit-progress"
+                      data-unit-progress
+                      data-unit-slugs={unitLessons.map((l) => l.id.split('/').pop()).join(',')}
+                    />
+                  </div>
+                </div>
+                <ol class="lesson-list">
+                  {unitLessons.map((lesson) => {
+                    const gi = lessons.indexOf(lesson);
+                    return (
+                      <li>
+                        <a
+                          class="lesson-item card"
+                          data-lesson-item
+                          data-slug={lesson.id.split('/').pop()}
+                          href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+                        >
+                          <span
+                            class="lesson-num"
+                            data-lesson-num
+                            style={`background:${levelMeta.color}`}
+                          >
+                            {gi + 1}
+                          </span>
+                          <div>
+                            <h2>{lesson.data.title}</h2>
+                            <p>{lesson.data.description}</p>
+                            <span class="lesson-meta">
+                              📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min
+                            </span>
+                          </div>
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ol>
               </div>
-            </div>
-            <ol class="lesson-list">
-              {unitLessons.map((lesson) => {
-                const gi = lessons.indexOf(lesson);
-                return (
-                  <li>
-                    <a
-                      class="lesson-item card"
-                      data-lesson-item
-                      data-slug={lesson.id.split('/').pop()}
-                      href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
-                    >
-                      <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>{gi + 1}</span>
-                      <div>
-                        <h2>{lesson.data.title}</h2>
-                        <p>{lesson.data.description}</p>
-                        <span class="lesson-meta">📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min</span>
-                      </div>
-                    </a>
-                  </li>
-                );
-              })}
-            </ol>
-          </div>
-        );
-      })
-    ) : (
-      <ol class="lesson-list">
-        {lessons.map((lesson, i) => (
+            )
+          );
+        })
+      ) : (
+        <ol class="lesson-list">
+          {lessons.map((lesson, i) => (
+            <li>
+              <a
+                class="lesson-item card"
+                data-lesson-item
+                data-slug={lesson.id.split('/').pop()}
+                href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+              >
+                <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>
+                  {i + 1}
+                </span>
+                <div>
+                  <h2>{lesson.data.title}</h2>
+                  <p>{lesson.data.description}</p>
+                  <span class="lesson-meta">
+                    📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min
+                  </span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ol>
+      )
+    }
+
+    {
+      lessons.length > 0 && (
+        <ol class="lesson-list exam-list">
           <li>
             <a
-              class="lesson-item card"
-              data-lesson-item
-              data-slug={lesson.id.split('/').pop()}
-              href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+              class="lesson-item card exam-item"
+              data-exam-item
+              href={`/idiomas/${lang}/${level}/examen`}
             >
-              <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>{i + 1}</span>
+              <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>
+                🏆
+              </span>
               <div>
-                <h2>{lesson.data.title}</h2>
-                <p>{lesson.data.description}</p>
-                <span class="lesson-meta">📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min</span>
+                <h2>Examen de nivel</h2>
+                <p>
+                  Combina todo lo que aprendiste en {levelMeta.name} — apruébalo para desbloquear el
+                  siguiente nivel.
+                </p>
               </div>
             </a>
           </li>
-        ))}
-      </ol>
-    )}
-
-    {lessons.length > 0 && (
-      <ol class="lesson-list exam-list">
-        <li>
-          <a
-            class="lesson-item card exam-item"
-            data-exam-item
-            href={`/idiomas/${lang}/${level}/examen`}
-          >
-            <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>🏆</span>
-            <div>
-              <h2>Examen de nivel</h2>
-              <p>Combina todo lo que aprendiste en {levelMeta.name} — apruébalo para desbloquear el siguiente nivel.</p>
-            </div>
-          </a>
-        </li>
-      </ol>
-    )}
+        </ol>
+      )
+    }
   </section>
 </BaseLayout>
 
@@ -208,7 +251,12 @@ const structuredData = {
     const examItem = document.querySelector('[data-exam-item]');
     const lastSlug = slugs[slugs.length - 1];
     if (examItem && (!lastSlug || !isLessonDone(lastSlug))) lockItem(examItem);
-    if (examItem && lastSlug && isLessonDone(lastSlug) && read('polylingua-level-passed-' + lang + '-' + level)) {
+    if (
+      examItem &&
+      lastSlug &&
+      isLessonDone(lastSlug) &&
+      read('polylingua-level-passed-' + lang + '-' + level)
+    ) {
       examItem.classList.add('done');
     }
   }

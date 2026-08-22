@@ -17,7 +17,9 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 // letra por letra.
 const lessonsForLang = await getCollection('lessons', (entry) => entry.data.language === lang);
 const vocabPool = Array.from(
-  new Map(lessonsForLang.flatMap((l) => l.data.vocabulary).map((v) => [v.term.toLowerCase(), v])).values()
+  new Map(
+    lessonsForLang.flatMap((l) => l.data.vocabulary).map((v) => [v.term.toLowerCase(), v]),
+  ).values(),
 ).filter((v) => v.term.trim().length >= 2 && v.term.trim().length <= 24);
 ---
 
@@ -51,7 +53,9 @@ const vocabPool = Array.from(
     <div class="card hangman-game" data-hangman data-lang={languageMeta?.bcp47} hidden>
       <div class="hangman-status">
         <span class="hangman-lives" data-hangman-lives aria-live="polite"></span>
-        <button type="button" class="btn btn-ghost hangman-speak" data-hangman-speak hidden>🔊 Escuchar</button>
+        <button type="button" class="btn btn-ghost hangman-speak" data-hangman-speak hidden
+          >🔊 Escuchar</button
+        >
       </div>
       <p class="hangman-clue" data-hangman-clue></p>
       <p class="hangman-word" data-hangman-word aria-live="polite"></p>
@@ -252,11 +256,15 @@ const vocabPool = Array.from(
     alphabet = buildAlphabet(pool);
     root.hidden = false;
 
-    root.querySelector<HTMLButtonElement>('[data-hangman-again]')?.addEventListener('click', () => startRound(root));
-    root.querySelector<HTMLButtonElement>('[data-hangman-speak]')?.addEventListener('click', (e) => {
-      const btn = e.currentTarget as HTMLButtonElement;
-      speak(btn.dataset.speakText ?? '', root.dataset.lang ?? '');
-    });
+    root
+      .querySelector<HTMLButtonElement>('[data-hangman-again]')
+      ?.addEventListener('click', () => startRound(root));
+    root
+      .querySelector<HTMLButtonElement>('[data-hangman-speak]')
+      ?.addEventListener('click', (e) => {
+        const btn = e.currentTarget as HTMLButtonElement;
+        speak(btn.dataset.speakText ?? '', root.dataset.lang ?? '');
+      });
 
     startRound(root);
 

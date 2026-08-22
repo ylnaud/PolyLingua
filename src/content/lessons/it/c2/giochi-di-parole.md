@@ -1,86 +1,89 @@
 ---
 language: it
 level: c2
-title: "I giochi di parole: cuando entiendes el chiste sin traducirlo"
-description: "Cómo funcionan los juegos de palabras italianos: dobles sentidos, sonidos parecidos y el humor que depende enteramente del idioma real hablado."
+title: 'I giochi di parole: cuando entiendes el chiste sin traducirlo'
+description: 'Cómo funcionan los juegos de palabras italianos: dobles sentidos, sonidos parecidos y el humor que depende enteramente del idioma real hablado.'
 order: 6
 unit: 2
-grammarTopic: "Juegos de palabras y dobles sentidos (giochi di parole)"
+grammarTopic: 'Juegos de palabras y dobles sentidos (giochi di parole)'
 funFact: "El italiano tiene una larga tradición de 'barzellette' (chistes cortos) que dependen enteramente de dobles sentidos regionales o de palabras con múltiples significados — un tipo de humor que floreció especialmente en la comedia italiana clásica de posguerra."
 minutes: 10
 quiz:
-  - question: "¿Por qué los dobles sentidos son una fuente común de humor en italiano?"
-    options: [
-      "Porque están prohibidos gramaticalmente",
-      "Porque muchas palabras italianas tienen significados múltiples que se pueden explotar cómicamente según el contexto",
-      "Porque siempre son groserías"
-    ]
+  - question: '¿Por qué los dobles sentidos son una fuente común de humor en italiano?'
+    options:
+      [
+        'Porque están prohibidos gramaticalmente',
+        'Porque muchas palabras italianas tienen significados múltiples que se pueden explotar cómicamente según el contexto',
+        'Porque siempre son groserías',
+      ]
     answerIndex: 1
-    explanation: "Como en cualquier idioma, palabras con doble significado (doppio senso) son terreno fértil para el humor cuando el contexto permite ambas lecturas simultáneamente."
-  - question: "Entender un chiste basado en un doble sentido requiere ¿qué habilidad principal?"
-    options: [
-      "Memorizar reglas gramaticales adicionales",
-      "Reconocer que una palabra o frase tiene dos significados posibles simultáneamente",
-      "Traducir literalmente cada palabra"
-    ]
+    explanation: 'Como en cualquier idioma, palabras con doble significado (doppio senso) son terreno fértil para el humor cuando el contexto permite ambas lecturas simultáneamente.'
+  - question: 'Entender un chiste basado en un doble sentido requiere ¿qué habilidad principal?'
+    options:
+      [
+        'Memorizar reglas gramaticales adicionales',
+        'Reconocer que una palabra o frase tiene dos significados posibles simultáneamente',
+        'Traducir literalmente cada palabra',
+      ]
     answerIndex: 1
-    explanation: "El humor de doble sentido depende de reconocer ambas lecturas posibles al mismo tiempo — eso es lo que genera el efecto cómico."
-  - question: "¿Por qué el humor es considerado de los últimos retos de un idioma?"
-    options: [
-      "Porque no tiene ninguna lógica gramatical que aprender",
-      "Porque depende de un dominio profundo del idioma, la cultura y el timing — no se puede traducir mecánicamente",
-      "Porque el humor no existe en italiano"
-    ]
+    explanation: 'El humor de doble sentido depende de reconocer ambas lecturas posibles al mismo tiempo — eso es lo que genera el efecto cómico.'
+  - question: '¿Por qué el humor es considerado de los últimos retos de un idioma?'
+    options:
+      [
+        'Porque no tiene ninguna lógica gramatical que aprender',
+        'Porque depende de un dominio profundo del idioma, la cultura y el timing — no se puede traducir mecánicamente',
+        'Porque el humor no existe en italiano',
+      ]
     answerIndex: 1
     explanation: "A diferencia de la gramática, el humor exige entender referencias culturales, matices de tono y timing — la prueba final de que realmente 'piensas' en el idioma."
 exercises:
-  - type: "fill-blank"
+  - type: 'fill-blank'
     sentence: "Cameriere, c'è una mosca nella ___!"
-    answer: "minestra"
-    accepted: ["Minestra"]
+    answer: 'minestra'
+    accepted: ['Minestra']
     hint: "La palabra italiana para 'sopa', protagonista del chiste clásico del camarero."
-    translation: "¡Camarero, hay una mosca en la sopa!"
-    placeholder: "es. pizza"
-  - type: "fill-blank"
-    sentence: "Molti scherzi italiani dipendono dal doppio ___."
-    answer: "senso"
-    accepted: ["Senso"]
+    translation: '¡Camarero, hay una mosca en la sopa!'
+    placeholder: 'es. pizza'
+  - type: 'fill-blank'
+    sentence: 'Molti scherzi italiani dipendono dal doppio ___.'
+    answer: 'senso'
+    accepted: ['Senso']
     hint: "Junto con 'doppio' forma la expresión 'doble sentido'."
-    translation: "Muchos chistes italianos dependen del doble sentido."
-    placeholder: "es. giro"
-  - type: "match"
-    instructions: "Empareja cada término o frase con su explicación."
+    translation: 'Muchos chistes italianos dependen del doble sentido.'
+    placeholder: 'es. giro'
+  - type: 'match'
+    instructions: 'Empareja cada término o frase con su explicación.'
     pairs:
-      - left: "barzelletta"
-        right: "chiste corto con estructura de pregunta-respuesta"
-      - left: "doppio senso"
-        right: "palabra con dos significados posibles a la vez"
-      - left: "genovese"
-        right: "estereotipo regional del tacaño en los chistes italianos"
-      - left: "napoletano"
-        right: "estereotipo regional del ruidoso en los chistes italianos"
-      - left: "mosca nella minestra"
-        right: "clásico chiste italiano del camarero"
-  - type: "write"
+      - left: 'barzelletta'
+        right: 'chiste corto con estructura de pregunta-respuesta'
+      - left: 'doppio senso'
+        right: 'palabra con dos significados posibles a la vez'
+      - left: 'genovese'
+        right: 'estereotipo regional del tacaño en los chistes italianos'
+      - left: 'napoletano'
+        right: 'estereotipo regional del ruidoso en los chistes italianos'
+      - left: 'mosca nella minestra'
+        right: 'clásico chiste italiano del camarero'
+  - type: 'write'
     prompt: "Escribe en italiano la palabra que significa 'camarero', protagonista del chiste clásico de la mosca en la sopa."
-    answer: "cameriere"
-    accepted: ["Cameriere"]
-    hint: "Es la persona a la que le habla el cliente en el chiste."
-    placeholder: "es. dottore"
-  - type: "order"
-    sentence: "Non si preoccupi non beve molto"
-    translation: "No se preocupe, no bebe mucho."
+    answer: 'cameriere'
+    accepted: ['Cameriere']
+    hint: 'Es la persona a la que le habla el cliente en el chiste.'
+    placeholder: 'es. dottore'
+  - type: 'order'
+    sentence: 'Non si preoccupi non beve molto'
+    translation: 'No se preocupe, no bebe mucho.'
 vocabulary:
-  - term: "minestra"
-    translation: "la sopa"
-  - term: "cameriere"
-    translation: "el camarero"
-  - term: "doppio senso"
-    translation: "el doble sentido"
-  - term: "barzelletta"
-    translation: "el chiste"
-  - term: "mosca"
-    translation: "la mosca"
+  - term: 'minestra'
+    translation: 'la sopa'
+  - term: 'cameriere'
+    translation: 'el camarero'
+  - term: 'doppio senso'
+    translation: 'el doble sentido'
+  - term: 'barzelletta'
+    translation: 'el chiste'
+  - term: 'mosca'
+    translation: 'la mosca'
 ---
 
 Reírte de un chiste en italiano —de verdad, sin que alguien te lo explique después—

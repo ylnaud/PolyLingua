@@ -1,74 +1,75 @@
 ---
 language: en
 level: a2
-title: "Modal verbs: can, must, should y el arte de opinar"
-description: "Los verbos modales del inglés (can, must, should, have to) para pedir permiso, dar consejos y expresar obligación sin conjugaciones complicadas."
+title: 'Modal verbs: can, must, should y el arte de opinar'
+description: 'Los verbos modales del inglés (can, must, should, have to) para pedir permiso, dar consejos y expresar obligación sin conjugaciones complicadas.'
 order: 2
 unit: 1
-grammarTopic: "Verbos modales (can, must, should, have to)"
+grammarTopic: 'Verbos modales (can, must, should, have to)'
 funFact: "Los modales son los verbos más 'perezosos' del inglés: nunca cambian de forma (no existe 'he cans' ni 'she musts'), nunca necesitan 'do' para preguntar, y siempre van seguidos de un verbo en infinitivo sin 'to'. Tres reglas de oro que nunca se rompen."
 minutes: 7
 quiz:
   - question: "¿Cuál es la forma correcta con 'she' (ella puede nadar)?"
-    options: ["She cans swim", "She can swims", "She can swim"]
+    options: ['She cans swim', 'She can swims', 'She can swim']
     answerIndex: 2
     explanation: "Los modales NUNCA cambian con la tercera persona: she can swim (no 'cans'), y el verbo que sigue va en infinitivo sin 's': swim (no 'swims')."
   - question: "¿Cómo se hace la pregunta '¿Debo ir?' (must)?"
-    options: ["Do I must go?", "Must I go?", "Am I must go?"]
+    options: ['Do I must go?', 'Must I go?', 'Am I must go?']
     answerIndex: 1
     explanation: "Los modales forman preguntas invirtiendo el orden, sin necesitar 'do': Must I go? Nunca 'Do I must'."
   - question: "¿Cuál es la diferencia entre 'must' y 'have to'?"
-    options: [
-      "No hay ninguna diferencia real",
-      "'must' suele ser obligación personal/interna, 'have to' suele venir de una regla externa",
-      "'have to' solo se usa en pasado"
-    ]
+    options:
+      [
+        'No hay ninguna diferencia real',
+        "'must' suele ser obligación personal/interna, 'have to' suele venir de una regla externa",
+        "'have to' solo se usa en pasado",
+      ]
     answerIndex: 1
     explanation: "Ambos expresan obligación, pero 'must' suele sonar a decisión propia ('I must call my mom' — siento que debo hacerlo) mientras 'have to' suele venir de una regla externa ('I have to wear a uniform' — la empresa lo exige)."
 exercises:
-  - type: "fill-blank"
-    sentence: "She ___ swim."
-    answer: "can"
-    accepted: ["Can"]
-    hint: "Poder / saber hacer algo."
-    translation: "Ella puede nadar."
-    placeholder: "must"
-  - type: "fill-blank"
-    sentence: "You ___ wear a seatbelt."
-    answer: "must"
-    accepted: ["Must"]
-    hint: "Obligación fuerte."
-    translation: "Debes usar cinturón de seguridad."
-    placeholder: "should"
-  - type: "match"
-    instructions: "Empareja cada modal con su significado."
+  - type: 'fill-blank'
+    sentence: 'She ___ swim.'
+    answer: 'can'
+    accepted: ['Can']
+    hint: 'Poder / saber hacer algo.'
+    translation: 'Ella puede nadar.'
+    placeholder: 'must'
+  - type: 'fill-blank'
+    sentence: 'You ___ wear a seatbelt.'
+    answer: 'must'
+    accepted: ['Must']
+    hint: 'Obligación fuerte.'
+    translation: 'Debes usar cinturón de seguridad.'
+    placeholder: 'should'
+  - type: 'match'
+    instructions: 'Empareja cada modal con su significado.'
     pairs:
-      - left: "can"
-        right: "poder / saber"
-      - left: "must"
-        right: "deber (obligación fuerte)"
-      - left: "should"
-        right: "debería (consejo)"
-      - left: "have to"
-        right: "tener que (obligación externa)"
-  - type: "write"
+      - left: 'can'
+        right: 'poder / saber'
+      - left: 'must'
+        right: 'deber (obligación fuerte)'
+      - left: 'should'
+        right: 'debería (consejo)'
+      - left: 'have to'
+        right: 'tener que (obligación externa)'
+  - type: 'write'
     prompt: "Escribe la pregunta correcta para '¿Debo ir?' usando 'must'."
-    answer: "Must I go?"
-    accepted: ["Must I go"]
+    answer: 'Must I go?'
+    accepted: ['Must I go']
     hint: "Los modales invierten el orden sin necesitar 'do'."
-    placeholder: "Can I go?"
-  - type: "order"
-    sentence: "You should sleep more"
-    translation: "Deberías dormir más."
+    placeholder: 'Can I go?'
+  - type: 'order'
+    sentence: 'You should sleep more'
+    translation: 'Deberías dormir más.'
 vocabulary:
-  - term: "can"
-    translation: "poder / saber"
-  - term: "must"
-    translation: "deber (obligación fuerte)"
-  - term: "should"
-    translation: "debería (consejo)"
-  - term: "have to"
-    translation: "tener que (obligación externa)"
+  - term: 'can'
+    translation: 'poder / saber'
+  - term: 'must'
+    translation: 'deber (obligación fuerte)'
+  - term: 'should'
+    translation: 'debería (consejo)'
+  - term: 'have to'
+    translation: 'tener que (obligación externa)'
 ---
 
 Los verbos modales son tu herramienta para sonar natural al opinar, aconsejar, pedir
@@ -76,12 +77,12 @@ permiso o hablar de obligaciones — y tienen una gramática sorprendentemente s
 
 ## Los modales esenciales
 
-| Modal | Significado | Ejemplo |
-| --- | --- | --- |
-| can | poder / saber | I can swim. |
-| must | deber (obligación fuerte) | You must wear a seatbelt. |
-| should | debería (consejo) | You should sleep more. |
-| have to | tener que (obligación externa) | I have to work tomorrow. |
+| Modal   | Significado                    | Ejemplo                   |
+| ------- | ------------------------------ | ------------------------- |
+| can     | poder / saber                  | I can swim.               |
+| must    | deber (obligación fuerte)      | You must wear a seatbelt. |
+| should  | debería (consejo)              | You should sleep more.    |
+| have to | tener que (obligación externa) | I have to work tomorrow.  |
 
 ## Tres reglas que nunca se rompen
 

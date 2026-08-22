@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 
 const lessons = await getCollection('lessons');
 const lessonCounts = Object.fromEntries(
-  LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length])
+  LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length]),
 );
 
 const faqs = [
@@ -85,10 +85,9 @@ const structuredData = {
         <span class="eyebrow">🌐 5 idiomas · Gratis · MCER A1–C2</span>
         <h1>Aprende idiomas de verdad, sin morir de aburrimiento en la gramática.</h1>
         <p class="hero-lede">
-          PolyLingua convierte cada regla gramatical en un mini-juego: mnemotecnias,
-          quizzes interactivos y ejemplos reales, desde tu primera palabra hasta matices
-          que solo dominan los nativos. Alemán, inglés, francés, italiano y portugués, en
-          un solo lugar.
+          PolyLingua convierte cada regla gramatical en un mini-juego: mnemotecnias, quizzes
+          interactivos y ejemplos reales, desde tu primera palabra hasta matices que solo dominan
+          los nativos. Alemán, inglés, francés, italiano y portugués, en un solo lugar.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="/idiomas">Elegir idioma →</a>
@@ -111,12 +110,17 @@ const structuredData = {
   <section class="languages container" id="idiomas">
     <div class="section-head">
       <h2>Elige tu idioma</h2>
-      <p>Cinco idiomas, seis niveles cada uno. Avanza a tu ritmo desde tu primera palabra hasta la maestría.</p>
+      <p>
+        Cinco idiomas, seis niveles cada uno. Avanza a tu ritmo desde tu primera palabra hasta la
+        maestría.
+      </p>
     </div>
     <div class="languages-grid">
-      {LANGUAGES.map((language) => (
-        <LanguageCard language={language} lessonCount={lessonCounts[language.id] ?? 0} />
-      ))}
+      {
+        LANGUAGES.map((language) => (
+          <LanguageCard language={language} lessonCount={lessonCounts[language.id] ?? 0} />
+        ))
+      }
     </div>
   </section>
 
@@ -128,22 +132,34 @@ const structuredData = {
       <div class="card why-item">
         <span class="why-emoji">🎮</span>
         <h3>Gramática gamificada</h3>
-        <p>Cada regla viene con una mnemotecnia visual y un quiz interactivo — aprendes haciendo, no memorizando tablas aburridas.</p>
+        <p>
+          Cada regla viene con una mnemotecnia visual y un quiz interactivo — aprendes haciendo, no
+          memorizando tablas aburridas.
+        </p>
       </div>
       <div class="card why-item">
         <span class="why-emoji">⚡</span>
         <h3>Ultra ligera</h3>
-        <p>Construida para cargar al instante, sin JavaScript innecesario. Aprende idiomas, no esperes a que cargue una app.</p>
+        <p>
+          Construida para cargar al instante, sin JavaScript innecesario. Aprende idiomas, no
+          esperes a que cargue una app.
+        </p>
       </div>
       <div class="card why-item">
         <span class="why-emoji">🗺️</span>
         <h3>Ruta clara MCER</h3>
-        <p>De A1 a C2 en cada idioma, siguiendo el estándar europeo, para que sepas exactamente en qué nivel estás y qué sigue.</p>
+        <p>
+          De A1 a C2 en cada idioma, siguiendo el estándar europeo, para que sepas exactamente en
+          qué nivel estás y qué sigue.
+        </p>
       </div>
       <div class="card why-item">
         <span class="why-emoji">🌍</span>
         <h3>Gratis y de código abierto</h3>
-        <p>Todo el curso es gratis mientras crecemos juntos. El código está abierto en GitHub para quien quiera contribuir.</p>
+        <p>
+          Todo el curso es gratis mientras crecemos juntos. El código está abierto en GitHub para
+          quien quiera contribuir.
+        </p>
       </div>
     </div>
   </section>
@@ -153,12 +169,14 @@ const structuredData = {
       <h2>Preguntas frecuentes</h2>
     </div>
     <div class="faq-list">
-      {faqs.map((item) => (
-        <details class="card faq-item">
-          <summary>{item.q}</summary>
-          <p>{item.a}</p>
-        </details>
-      ))}
+      {
+        faqs.map((item) => (
+          <details class="card faq-item">
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))
+      }
     </div>
   </section>
 

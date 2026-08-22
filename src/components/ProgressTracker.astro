@@ -1,5 +1,7 @@
 ---
+
 ---
+
 <script>
   import { today, addDays, read, write } from '../lib/storage';
   import { INTERVAL_DAYS, MAX_BOX } from '../lib/srs';
@@ -87,7 +89,13 @@
     for (const v of vocabulary) {
       const vkey = `${lang}::${v.term}`;
       if (learned[vkey]) continue;
-      learned[vkey] = { term: v.term, translation: v.translation, lang, lessonId, learnedAt: today() };
+      learned[vkey] = {
+        term: v.term,
+        translation: v.translation,
+        lang,
+        lessonId,
+        learnedAt: today(),
+      };
       changed = true;
     }
     if (changed) write('polylingua-vocab-learned', JSON.stringify(learned));
@@ -105,7 +113,11 @@
 
   function appendError(entry: Omit<ErrorLogEntry, 'date'>) {
     let log: ErrorLogEntry[];
-    try { log = JSON.parse(read(ERROR_LOG_KEY) ?? '[]'); } catch { log = []; }
+    try {
+      log = JSON.parse(read(ERROR_LOG_KEY) ?? '[]');
+    } catch {
+      log = [];
+    }
     log.push({ ...entry, date: today() });
     if (log.length > MAX_ERROR_LOG) log = log.slice(-MAX_ERROR_LOG);
     write(ERROR_LOG_KEY, JSON.stringify(log));
@@ -132,19 +144,37 @@
           lastFailedAt: today(),
           failCount: (existing?.failCount ?? 0) + 1,
         };
-        appendError({ id: r.id, lang, level, kind: r.kind, userAnswer: r.userAnswer, correctAnswer: r.correctAnswer });
+        appendError({
+          id: r.id,
+          lang,
+          level,
+          kind: r.kind,
+          userAnswer: r.userAnswer,
+          correctAnswer: r.correctAnswer,
+        });
         continue;
       }
       const existing = pool[r.id];
       if (!existing) continue;
       const nextBox = existing.box + 1;
       if (nextBox >= MAX_BOX) {
-        pool[r.id] = { ...existing, box: MAX_BOX - 1, due: addDays(today(), INTERVAL_DAYS[MAX_BOX - 1]) };
+        pool[r.id] = {
+          ...existing,
+          box: MAX_BOX - 1,
+          due: addDays(today(), INTERVAL_DAYS[MAX_BOX - 1]),
+        };
         if (existing.box === MAX_BOX - 2) {
-          write('polylingua-srs-mastered-count', String(Number(read('polylingua-srs-mastered-count') ?? '0') + 1));
+          write(
+            'polylingua-srs-mastered-count',
+            String(Number(read('polylingua-srs-mastered-count') ?? '0') + 1),
+          );
         }
       } else {
-        pool[r.id] = { ...existing, box: nextBox, due: addDays(today(), INTERVAL_DAYS[nextBox - 1]) };
+        pool[r.id] = {
+          ...existing,
+          box: nextBox,
+          due: addDays(today(), INTERVAL_DAYS[nextBox - 1]),
+        };
       }
     }
     writePool(pool);
@@ -182,7 +212,7 @@
         }
         try {
           const doneToday = Object.keys(localStorage).filter(
-            (k) => k.startsWith('polylingua-lesson-done-') && localStorage.getItem(k) === today()
+            (k) => k.startsWith('polylingua-lesson-done-') && localStorage.getItem(k) === today(),
           ).length;
           if (doneToday >= 3 && writeIfNew('polylingua-achievement-marathon', 'true')) {
             dispatchAchievement('marathon');
@@ -201,7 +231,10 @@
       if (sessionType === 'practice-libre') {
         const count = Number(read('polylingua-practice-libre-count') ?? '0') + 1;
         write('polylingua-practice-libre-count', String(count));
-        if (count >= PRACTICE_LIBRE_GOAL && writeIfNew('polylingua-achievement-practice-libre', 'true')) {
+        if (
+          count >= PRACTICE_LIBRE_GOAL &&
+          writeIfNew('polylingua-achievement-practice-libre', 'true')
+        ) {
           dispatchAchievement('practice-libre');
         }
       }

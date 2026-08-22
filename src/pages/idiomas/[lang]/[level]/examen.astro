@@ -100,7 +100,16 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
     <p class="desc">
       Este examen combina preguntas y ejercicios de las {lessons.length} lecciones de{' '}
       {levelMeta?.name}. Necesitas <strong>70% o más</strong> para aprobar
-      {nextLevel ? <> y desbloquear <strong>{nextLevel.name}</strong></> : <> y completar el idioma</>}.
+      {
+        nextLevel ? (
+          <>
+            {' '}
+            y desbloquear <strong>{nextLevel.name}</strong>
+          </>
+        ) : (
+          <> y completar el idioma</>
+        )
+      }.
     </p>
   </section>
 
@@ -119,17 +128,23 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
       <div class="card result-card" data-result-pass hidden>
         <p class="result-emoji">🎉</p>
         <h2>¡Aprobado!</h2>
-        {nextLevel ? (
-          <p>Desbloqueaste <strong>{nextLevel.name}</strong>.</p>
-        ) : (
-          <p>Completaste todo el curso de {languageMeta?.name}. ¡Felicidades!</p>
-        )}
+        {
+          nextLevel ? (
+            <p>
+              Desbloqueaste <strong>{nextLevel.name}</strong>.
+            </p>
+          ) : (
+            <p>Completaste todo el curso de {languageMeta?.name}. ¡Felicidades!</p>
+          )
+        }
         <div class="result-actions">
-          {nextLevel && (
-            <a class="btn btn-primary" href={`/idiomas/${lang}/${nextLevel.id}`}>
-              Ir a {nextLevel.name} →
-            </a>
-          )}
+          {
+            nextLevel && (
+              <a class="btn btn-primary" href={`/idiomas/${lang}/${nextLevel.id}`}>
+                Ir a {nextLevel.name} →
+              </a>
+            )
+          }
           <a class="btn btn-ghost" href="/logros">Ver mis logros</a>
         </div>
       </div>

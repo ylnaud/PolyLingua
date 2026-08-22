@@ -1,77 +1,78 @@
 ---
 language: it
 level: a1
-title: "Gli aggettivi possessivi: mio, tuo, suo — con un artículo extra"
+title: 'Gli aggettivi possessivi: mio, tuo, suo — con un artículo extra'
 description: "Los adjetivos posesivos italianos (mio, tuo, suo) combinados con el artículo definido, y la excepción clave con familiares en singular como 'mia madre'."
 order: 7
 unit: 2
-grammarTopic: "Adjetivos posesivos (mio/tuo/suo + artículo)"
+grammarTopic: 'Adjetivos posesivos (mio/tuo/suo + artículo)'
 funFact: "A diferencia del español, donde 'mi libro' no lleva artículo, el italiano casi siempre combina el posesivo CON el artículo definido: 'il mio libro' (literalmente 'el mi libro'). La única excepción importante: con familiares en singular, el artículo desaparece — 'mia madre', no 'la mia madre'."
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta de 'mi libro' (il libro, masculino)?"
-    options: ["mio libro", "il mio libro", "il libro mio"]
+    options: ['mio libro', 'il mio libro', 'il libro mio']
     answerIndex: 1
     explanation: "El italiano combina artículo + posesivo + sustantivo: il mio libro (literalmente 'el mi libro')."
   - question: "¿Cuál es la forma correcta de 'mi madre' (excepción de familia singular)?"
-    options: ["la mia madre", "mia madre", "il mio madre"]
+    options: ['la mia madre', 'mia madre', 'il mio madre']
     answerIndex: 1
     explanation: "Con familiares singulares SIN adjetivo adicional, el artículo desaparece: mia madre (no 'la mia madre')."
   - question: "¿Por qué 'i miei fratelli' (mis hermanos) SÍ lleva artículo, a diferencia de 'mia madre'?"
-    options: [
-      "Porque está en plural, y la excepción de 'sin artículo' solo aplica a familiares en singular",
-      "Es un error, no debería llevar artículo",
-      "Porque 'fratelli' no es un familiar"
-    ]
+    options:
+      [
+        "Porque está en plural, y la excepción de 'sin artículo' solo aplica a familiares en singular",
+        'Es un error, no debería llevar artículo',
+        "Porque 'fratelli' no es un familiar",
+      ]
     answerIndex: 0
-    explanation: "La excepción de omitir el artículo con posesivos solo aplica a familiares SINGULARES (mia madre, mio padre) — en plural, el artículo vuelve: i miei fratelli."
+    explanation: 'La excepción de omitir el artículo con posesivos solo aplica a familiares SINGULARES (mia madre, mio padre) — en plural, el artículo vuelve: i miei fratelli.'
 exercises:
-  - type: "fill-blank"
-    sentence: "___ mio libro è nuovo."
-    answer: "Il"
-    hint: "Artículo + posesivo + sustantivo, masculino singular."
-    translation: "Mi libro es nuevo."
-    placeholder: "La"
-  - type: "fill-blank"
-    sentence: "___ madre si chiama Anna."
-    answer: "Mia"
-    hint: "Con familiares singulares, el artículo desaparece."
-    translation: "Mi madre se llama Anna."
-    placeholder: "Tuo"
-  - type: "match"
-    instructions: "Empareja cada poseedor con su forma posesiva (masculino singular)."
+  - type: 'fill-blank'
+    sentence: '___ mio libro è nuovo.'
+    answer: 'Il'
+    hint: 'Artículo + posesivo + sustantivo, masculino singular.'
+    translation: 'Mi libro es nuevo.'
+    placeholder: 'La'
+  - type: 'fill-blank'
+    sentence: '___ madre si chiama Anna.'
+    answer: 'Mia'
+    hint: 'Con familiares singulares, el artículo desaparece.'
+    translation: 'Mi madre se llama Anna.'
+    placeholder: 'Tuo'
+  - type: 'match'
+    instructions: 'Empareja cada poseedor con su forma posesiva (masculino singular).'
     pairs:
-      - left: "io"
-        right: "il mio"
-      - left: "tu"
-        right: "il tuo"
-      - left: "lui/lei"
-        right: "il suo"
-      - left: "noi"
-        right: "il nostro"
-      - left: "voi"
-        right: "il vostro"
-  - type: "write"
+      - left: 'io'
+        right: 'il mio'
+      - left: 'tu'
+        right: 'il tuo'
+      - left: 'lui/lei'
+        right: 'il suo'
+      - left: 'noi'
+        right: 'il nostro'
+      - left: 'voi'
+        right: 'il vostro'
+  - type: 'write'
     prompt: "Escribe cómo dirías 'mis hermanos' en italiano."
-    answer: "i miei fratelli"
-    hint: "Plural: sí lleva artículo, aunque sea un familiar."
-    placeholder: "i miei libri"
-  - type: "order"
-    sentence: "Ho i miei libri"
-    translation: "Tengo mis libros."
+    answer: 'i miei fratelli'
+    hint: 'Plural: sí lleva artículo, aunque sea un familiar.'
+    placeholder: 'i miei libri'
+  - type: 'order'
+    sentence: 'Ho i miei libri'
+    translation: 'Tengo mis libros.'
 vocabulary:
-  - term: "il mio libro"
-    translation: "mi libro"
-  - term: "la mia casa"
-    translation: "mi casa"
-  - term: "i miei libri"
-    translation: "mis libros"
-  - term: "mia madre"
-    translation: "mi madre"
-  - term: "mio padre"
-    translation: "mi padre"
-  - term: "i miei fratelli"
-    translation: "mis hermanos"
+  - term: 'il mio libro'
+    translation: 'mi libro'
+  - term: 'la mia casa'
+    translation: 'mi casa'
+  - term: 'i miei libri'
+    translation: 'mis libros'
+  - term: 'mia madre'
+    translation: 'mi madre'
+  - term: 'mio padre'
+    translation: 'mi padre'
+  - term: 'i miei fratelli'
+    translation: 'mis hermanos'
 ---
 
 El italiano añade un paso extra a los posesivos que el español no tiene: combinar el
@@ -89,12 +90,12 @@ i miei libri            (mis libros)
 
 ## Tabla completa (con "mio")
 
-| Género/número | Forma |
-| --- | --- |
+| Género/número      | Forma        |
+| ------------------ | ------------ |
 | masculino singular | il mio libro |
-| femenino singular | la mia casa |
-| masculino plural | i miei libri |
-| femenino plural | le mie case |
+| femenino singular  | la mia casa  |
+| masculino plural   | i miei libri |
+| femenino plural    | le mie case  |
 
 ## La gran excepción: familiares en singular
 
@@ -115,14 +116,14 @@ la mia cara madre         (mi querida madre — con adjetivo, sí lleva artícul
 
 ## Tabla de posesivos (masculino singular, como referencia)
 
-| Poseedor | Posesivo |
-| --- | --- |
-| io | il mio |
-| tu | il tuo |
-| lui/lei | il suo |
-| noi | il nostro |
-| voi | il vostro |
-| loro | il loro |
+| Poseedor | Posesivo  |
+| -------- | --------- |
+| io       | il mio    |
+| tu       | il tuo    |
+| lui/lei  | il suo    |
+| noi      | il nostro |
+| voi      | il vostro |
+| loro     | il loro   |
 
 ## El truco práctico
 

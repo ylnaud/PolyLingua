@@ -1,84 +1,87 @@
 ---
 language: de
 level: c2
-title: "Ironie und Sprachregister: decir lo contrario de lo que piensas"
-description: "Ironía y registro lingüístico en alemán: cómo reconocer el sarcasmo por el tono y moverte entre lo formal, lo neutro y lo coloquial."
+title: 'Ironie und Sprachregister: decir lo contrario de lo que piensas'
+description: 'Ironía y registro lingüístico en alemán: cómo reconocer el sarcasmo por el tono y moverte entre lo formal, lo neutro y lo coloquial.'
 order: 3
 unit: 1
-grammarTopic: "Ironía y registro lingüístico"
+grammarTopic: 'Ironía y registro lingüístico'
 funFact: "La ironía alemana casi nunca lleva una señal explícita como '(sarcasmo)' — se reconoce por el tono, el contexto y a veces por un pequeño exceso de entusiasmo sospechoso. 'Na toll!' (¡qué bien!) dicho después de que algo sale mal es pura ironía, aunque las palabras literalmente signifiquen lo contrario."
 minutes: 10
 quiz:
   - question: "Alguien derrama café en su laptop y dice 'Na toll!' ¿Qué está expresando realmente?"
-    options: [
-      "Está genuinamente feliz",
-      "Frustración/molestia expresada con ironía (lo contrario de lo que dice)",
-      "Está pidiendo ayuda"
-    ]
+    options:
+      [
+        'Está genuinamente feliz',
+        'Frustración/molestia expresada con ironía (lo contrario de lo que dice)',
+        'Está pidiendo ayuda',
+      ]
     answerIndex: 1
     explanation: "'Na toll!' (¡qué bien!) en este contexto es claramente irónico — expresa justo lo contrario, frustración, disfrazada de entusiasmo."
   - question: "¿Qué distingue al registro 'gehoben' (elevado) del 'umgangssprachlich' (coloquial)?"
-    options: [
-      "No hay ninguna diferencia real en alemán",
-      "El vocabulario, las construcciones gramaticales (Nominalstil, Konjunktiv I) y el contexto de uso",
-      "Solo la velocidad al hablar"
-    ]
+    options:
+      [
+        'No hay ninguna diferencia real en alemán',
+        'El vocabulario, las construcciones gramaticales (Nominalstil, Konjunktiv I) y el contexto de uso',
+        'Solo la velocidad al hablar',
+      ]
     answerIndex: 1
-    explanation: "El registro elevado usa vocabulario más formal, Nominalstil, y estructuras como el Konjunktiv I; el coloquial usa partículas modales, contracciones y vocabulario más directo."
-  - question: "¿Por qué la ironía es considerada un reto de nivel C2?"
-    options: [
-      "Porque requiere vocabulario muy raro",
-      "Porque depende completamente del contexto y el tono, no de ninguna marca gramatical explícita",
-      "Porque no existe en alemán"
-    ]
+    explanation: 'El registro elevado usa vocabulario más formal, Nominalstil, y estructuras como el Konjunktiv I; el coloquial usa partículas modales, contracciones y vocabulario más directo.'
+  - question: '¿Por qué la ironía es considerada un reto de nivel C2?'
+    options:
+      [
+        'Porque requiere vocabulario muy raro',
+        'Porque depende completamente del contexto y el tono, no de ninguna marca gramatical explícita',
+        'Porque no existe en alemán',
+      ]
     answerIndex: 1
-    explanation: "A diferencia de la gramática, que sigue reglas, reconocer la ironía requiere entender el contexto social y cultural completo — una habilidad que solo se desarrolla con exposición real al idioma."
+    explanation: 'A diferencia de la gramática, que sigue reglas, reconocer la ironía requiere entender el contexto social y cultural completo — una habilidad que solo se desarrolla con exposición real al idioma.'
 exercises:
-  - type: "fill-blank"
-    sentence: "Der Kaffee ist auf den Laptop gefallen. Na ___!"
-    answer: "toll"
-    accepted: ["Toll"]
+  - type: 'fill-blank'
+    sentence: 'Der Kaffee ist auf den Laptop gefallen. Na ___!'
+    answer: 'toll'
+    accepted: ['Toll']
     hint: "Exclamación irónica: literalmente '¡qué bien!', pero aquí expresa lo contrario, frustración."
-    translation: "El café se derramó en la laptop. ¡Qué bien!"
-    placeholder: "super"
-  - type: "fill-blank"
-    sentence: "Es wäre ___, pünktlich zu erscheinen."
-    answer: "empfehlenswert"
-    accepted: ["Empfehlenswert"]
-    hint: "Registro gehoben (elevado), típico de discursos y textos oficiales."
-    translation: "Sería recomendable llegar puntual."
-    placeholder: "ratsam"
-  - type: "match"
-    instructions: "Empareja cada registro o recurso con su característica."
+    translation: 'El café se derramó en la laptop. ¡Qué bien!'
+    placeholder: 'super'
+  - type: 'fill-blank'
+    sentence: 'Es wäre ___, pünktlich zu erscheinen.'
+    answer: 'empfehlenswert'
+    accepted: ['Empfehlenswert']
+    hint: 'Registro gehoben (elevado), típico de discursos y textos oficiales.'
+    translation: 'Sería recomendable llegar puntual.'
+    placeholder: 'ratsam'
+  - type: 'match'
+    instructions: 'Empareja cada registro o recurso con su característica.'
     pairs:
-      - left: "Gehoben"
-        right: "Nominalstil, Konjunktiv I y vocabulario culto"
-      - left: "Standard"
-        right: "Gramática neutra, sin marcas especiales"
-      - left: "Umgangssprachlich"
-        right: "Partículas modales, contracciones y slang"
-      - left: "Ironie"
-        right: "Decir lo contrario de lo que se piensa, sin marca explícita"
-  - type: "write"
+      - left: 'Gehoben'
+        right: 'Nominalstil, Konjunktiv I y vocabulario culto'
+      - left: 'Standard'
+        right: 'Gramática neutra, sin marcas especiales'
+      - left: 'Umgangssprachlich'
+        right: 'Partículas modales, contracciones y slang'
+      - left: 'Ironie'
+        right: 'Decir lo contrario de lo que se piensa, sin marca explícita'
+  - type: 'write'
     prompt: "Alguien derrama café en su laptop y dice con ironía: 'Na ___!' ¿Qué palabra falta?"
-    answer: "toll"
-    accepted: ["Toll"]
+    answer: 'toll'
+    accepted: ['Toll']
     hint: "Es la exclamación irónica típica cuando algo sale mal — literalmente significa '¡qué bien!'."
-    placeholder: "super"
-  - type: "order"
-    sentence: "Es ist besser pünktlich zu kommen"
-    translation: "Es mejor llegar puntual."
+    placeholder: 'super'
+  - type: 'order'
+    sentence: 'Es ist besser pünktlich zu kommen'
+    translation: 'Es mejor llegar puntual.'
 vocabulary:
-  - term: "Na toll!"
-    translation: "¡Qué bien! (irónico)"
-  - term: "gehoben"
-    translation: "elevado (registro)"
-  - term: "umgangssprachlich"
-    translation: "coloquial (registro)"
-  - term: "empfehlenswert"
-    translation: "recomendable"
-  - term: "pünktlich"
-    translation: "puntual"
+  - term: 'Na toll!'
+    translation: '¡Qué bien! (irónico)'
+  - term: 'gehoben'
+    translation: 'elevado (registro)'
+  - term: 'umgangssprachlich'
+    translation: 'coloquial (registro)'
+  - term: 'empfehlenswert'
+    translation: 'recomendable'
+  - term: 'pünktlich'
+    translation: 'puntual'
 ---
 
 Llegaste al nivel donde entender las palabras ya no es suficiente — necesitas entender
@@ -94,11 +97,11 @@ No hay una palabra mágica para "esto es sarcasmo" — se reconoce por:
 
 ## Los tres registros principales
 
-| Registro | Características | Contexto |
-| --- | --- | --- |
-| Gehoben (elevado) | Nominalstil, Konjunktiv I, vocabulario culto | Discursos, literatura, textos oficiales |
-| Standard (neutro) | Gramática estándar sin marcas especiales | Noticias, conversación educada |
-| Umgangssprachlich (coloquial) | Partículas modales, contracciones, slang | Amigos, familia |
+| Registro                      | Características                              | Contexto                                |
+| ----------------------------- | -------------------------------------------- | --------------------------------------- |
+| Gehoben (elevado)             | Nominalstil, Konjunktiv I, vocabulario culto | Discursos, literatura, textos oficiales |
+| Standard (neutro)             | Gramática estándar sin marcas especiales     | Noticias, conversación educada          |
+| Umgangssprachlich (coloquial) | Partículas modales, contracciones, slang     | Amigos, familia                         |
 
 ## Ejemplo del mismo mensaje en tres registros
 

@@ -19,7 +19,7 @@ const exerciseManifest = Object.fromEntries(
       ...l.data.quiz.map((data) => ({ kind: 'choice', data })),
       ...l.data.exercises.map((data) => ({ kind: data.type, data })),
     ],
-  ])
+  ]),
 );
 const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data.grammarTopic]));
 ---
@@ -54,10 +54,20 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 
     <div class="error-list" data-error-list hidden></div>
 
-    <button type="button" class="btn btn-primary practice-errors-btn" data-practice-btn hidden>Practicar mis errores</button>
+    <button type="button" class="btn btn-primary practice-errors-btn" data-practice-btn hidden
+      >Practicar mis errores</button
+    >
 
     <div data-practice-section hidden>
-      <Practice quiz={[]} exercises={[]} dynamic={true} sessionType="errors" lessonId="errors" minutes={1} lang={languageMeta?.bcp47} />
+      <Practice
+        quiz={[]}
+        exercises={[]}
+        dynamic={true}
+        sessionType="errors"
+        lessonId="errors"
+        minutes={1}
+        lang={languageMeta?.bcp47}
+      />
     </div>
   </section>
 
@@ -66,7 +76,11 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 </BaseLayout>
 
 <script>
-  import { buildItemFieldset, primePracticeCounters, type SrsEntry } from '../../../lib/practiceItemMarkup';
+  import {
+    buildItemFieldset,
+    primePracticeCounters,
+    type SrsEntry,
+  } from '../../../lib/practiceItemMarkup';
   import { read } from '../../../lib/storage';
   import { MASTERY_LABELS } from '../../../lib/srs';
 
@@ -140,10 +154,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     order: 'Ordena',
   };
 
-  function renderTopicFilters(
-    grouped: GroupedError[],
-    selectedTopic: string | null
-  ) {
+  function renderTopicFilters(grouped: GroupedError[], selectedTopic: string | null) {
     const container = document.querySelector<HTMLElement>('[data-topic-filters]');
     if (!container) return;
 
@@ -183,7 +194,9 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 
   function initErrors() {
     const practiceSection = document.querySelector<HTMLElement>('[data-practice-section]');
-    const practiceRoot = practiceSection?.querySelector<HTMLElement>('[data-practice][data-session-type="errors"]');
+    const practiceRoot = practiceSection?.querySelector<HTMLElement>(
+      '[data-practice][data-session-type="errors"]',
+    );
     const container = practiceRoot?.querySelector<HTMLElement>('[data-items-container]');
     const errorList = document.querySelector<HTMLElement>('[data-error-list]');
     const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
@@ -334,9 +347,14 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
           const lessonId = g.id.split('#')[0];
           const pool = manifest[lessonId] ?? [];
           const alternatives = pool.filter(
-            (item) => item.kind !== srsEntry.kind || JSON.stringify(item.data) !== JSON.stringify(srsEntry.data)
+            (item) =>
+              item.kind !== srsEntry.kind ||
+              JSON.stringify(item.data) !== JSON.stringify(srsEntry.data),
           );
-          const chosen = alternatives.length > 0 ? alternatives[Math.floor(Math.random() * alternatives.length)] : null;
+          const chosen =
+            alternatives.length > 0
+              ? alternatives[Math.floor(Math.random() * alternatives.length)]
+              : null;
           const entry: SrsEntry = chosen
             ? { ...srsEntry, kind: chosen.kind, data: chosen.data }
             : srsEntry;

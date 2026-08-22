@@ -1,7 +1,7 @@
 ---
 language: fr
 level: c1
-title: "La mise en relief: pon el foco exactamente donde quieres"
+title: 'La mise en relief: pon el foco exactamente donde quieres'
 description: "La mise en relief del francés (c'est... qui / c'est... que) para reestructurar una frase y dar énfasis dramático a una sola parte."
 order: 4
 unit: 1
@@ -10,77 +10,76 @@ funFact: "'C'est Marie qui a téléphoné' literalmente 'parte' la frase en dos,
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta para dar énfasis en QUIÉN llamó: 'Marie a téléphoné'?"
-    options: [
-      "C'est Marie qui a téléphoné.",
-      "C'est Marie que a téléphoné.",
-      "Marie c'est qui a téléphoné."
-    ]
+    options:
+      [
+        "C'est Marie qui a téléphoné.",
+        "C'est Marie que a téléphoné.",
+        "Marie c'est qui a téléphoné.",
+      ]
     answerIndex: 0
     explanation: "Cuando el elemento enfatizado es el SUJETO, se usa 'qui': C'est Marie qui a téléphoné."
   - question: "¿Cuál es correcta para dar énfasis en el objeto: 'J'aime ce livre'?"
-    options: [
-      "C'est ce livre qui j'aime.",
-      "C'est ce livre que j'aime.",
-      "Ce livre c'est que j'aime."
-    ]
+    options:
+      ["C'est ce livre qui j'aime.", "C'est ce livre que j'aime.", "Ce livre c'est que j'aime."]
     answerIndex: 1
     explanation: "Cuando el elemento enfatizado es el OBJETO (no el sujeto de la frase), se usa 'que': C'est ce livre que j'aime."
   - question: "¿Cuál es la regla para elegir entre 'qui' y 'que' en esta estructura?"
-    options: [
-      "'qui' para el sujeto de la frase original, 'que' para el objeto",
-      "Son completamente intercambiables",
-      "'qui' es siempre para cosas, 'que' para personas"
-    ]
+    options:
+      [
+        "'qui' para el sujeto de la frase original, 'que' para el objeto",
+        'Son completamente intercambiables',
+        "'qui' es siempre para cosas, 'que' para personas",
+      ]
     answerIndex: 0
     explanation: "La regla es igual que con los pronombres relativos normales: 'qui' cuando el elemento enfatizado es el sujeto de lo que sigue, 'que' cuando es el objeto."
 exercises:
-  - type: "fill-blank"
+  - type: 'fill-blank'
     sentence: "C'est Paul ___ a gagné."
-    answer: "qui"
-    accepted: ["qui"]
+    answer: 'qui'
+    accepted: ['qui']
     hint: "'Paul' es el sujeto del verbo que sigue, así que se usa 'qui'."
-    translation: "Fue Paul quien ganó."
-    placeholder: "que"
-  - type: "fill-blank"
+    translation: 'Fue Paul quien ganó.'
+    placeholder: 'que'
+  - type: 'fill-blank'
     sentence: "C'est ce livre ___ je préfère."
-    answer: "que"
-    accepted: ["que"]
+    answer: 'que'
+    accepted: ['que']
     hint: "'ce livre' es el objeto de 'préfère', así que se usa 'que'."
-    translation: "Es este libro el que prefiero."
-    placeholder: "qui"
-  - type: "match"
-    instructions: "Empareja cada frase base con su versión en mise en relief que enfatiza el elemento indicado."
+    translation: 'Es este libro el que prefiero.'
+    placeholder: 'qui'
+  - type: 'match'
+    instructions: 'Empareja cada frase base con su versión en mise en relief que enfatiza el elemento indicado.'
     pairs:
-      - left: "Paul a acheté cette voiture hier. (QUIÉN)"
+      - left: 'Paul a acheté cette voiture hier. (QUIÉN)'
         right: "C'est Paul qui a acheté cette voiture hier."
-      - left: "Paul a acheté cette voiture hier. (QUÉ)"
+      - left: 'Paul a acheté cette voiture hier. (QUÉ)'
         right: "C'est cette voiture que Paul a achetée hier."
-      - left: "Paul a acheté cette voiture hier. (CUÁNDO)"
+      - left: 'Paul a acheté cette voiture hier. (CUÁNDO)'
         right: "C'est hier que Paul a acheté cette voiture."
       - left: "Ce qui m'intéresse"
         right: "c'est la musique."
-      - left: "Ce que je veux"
+      - left: 'Ce que je veux'
         right: "c'est du temps libre."
-  - type: "write"
+  - type: 'write'
     prompt: "Escribe en francés, usando mise en relief, cómo dirías 'no es el dinero lo que importa, es la experiencia'."
     answer: "Ce n'est pas l'argent qui compte, c'est l'expérience."
     accepted: ["Ce n'est pas l'argent qui compte, c'est l'experience."]
     hint: "'l'argent' es el sujeto de 'compte', así que va con 'qui'."
     placeholder: "Ce n'est pas le temps qui manque, c'est la motivation."
-  - type: "order"
+  - type: 'order'
     sentence: "C'est Marie qui a téléphoné"
-    translation: "Fue Marie quien llamó."
+    translation: 'Fue Marie quien llamó.'
 vocabulary:
-  - term: "qui"
-    translation: "quien (para el sujeto enfatizado)"
-  - term: "que"
-    translation: "que (para el objeto enfatizado)"
+  - term: 'qui'
+    translation: 'quien (para el sujeto enfatizado)'
+  - term: 'que'
+    translation: 'que (para el objeto enfatizado)'
   - term: "C'est Paul qui a gagné."
-    translation: "Fue Paul quien ganó."
+    translation: 'Fue Paul quien ganó.'
   - term: "Ce qui m'intéresse, c'est la musique."
-    translation: "Lo que me interesa es la música."
+    translation: 'Lo que me interesa es la música.'
   - term: "Ce que je veux, c'est du temps libre."
-    translation: "Lo que quiero es tiempo libre."
+    translation: 'Lo que quiero es tiempo libre.'
 ---
 
 La mise en relief es la herramienta francesa para poner el foco exactamente donde tú

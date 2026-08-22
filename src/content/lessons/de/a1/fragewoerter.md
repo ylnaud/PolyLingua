@@ -1,80 +1,81 @@
 ---
 language: de
 level: a1
-title: "Fragewörter: las 6 llaves para abrir cualquier conversación"
-description: "Las W-Fragen del alemán: wer, was, wo, wann, warum y wie, las seis palabras interrogativas que abren cualquier conversación básica."
+title: 'Fragewörter: las 6 llaves para abrir cualquier conversación'
+description: 'Las W-Fragen del alemán: wer, was, wo, wann, warum y wie, las seis palabras interrogativas que abren cualquier conversación básica.'
 order: 2
 unit: 1
-grammarTopic: "Palabras interrogativas (W-Fragen)"
+grammarTopic: 'Palabras interrogativas (W-Fragen)'
 funFact: "En alemán, todas las preguntas con palabra interrogativa se llaman 'W-Fragen' porque casi todas empiezan con W: wer, was, wo, wann, warum, wie, welche. Memoriza estas 6-7 palabras y podrás preguntar prácticamente cualquier cosa."
 minutes: 6
 quiz:
   - question: "¿Qué palabra usarías para preguntar '¿Dónde vives?'"
-    options: ["Wann wohnst du?", "Wo wohnst du?", "Wer wohnst du?"]
+    options: ['Wann wohnst du?', 'Wo wohnst du?', 'Wer wohnst du?']
     answerIndex: 1
     explanation: "'Wo' pregunta por lugar: Wo wohnst du? (¿Dónde vives?). No confundir con 'wer' (quién) ni 'wann' (cuándo)."
-  - question: "¿Cuál es la palabra interrogativa para preguntar la razón de algo?"
-    options: ["Wie", "Warum", "Was"]
+  - question: '¿Cuál es la palabra interrogativa para preguntar la razón de algo?'
+    options: ['Wie', 'Warum', 'Was']
     answerIndex: 1
     explanation: "'Warum' pregunta por qué / la razón: Warum lernst du Deutsch? (¿Por qué aprendes alemán?)."
-  - question: "En una pregunta con W-Wort, ¿en qué posición va el verbo conjugado?"
-    options: [
-      "Al final de la frase",
-      "Justo después de la palabra interrogativa (segunda posición)",
-      "Al principio, antes de la palabra interrogativa"
-    ]
+  - question: 'En una pregunta con W-Wort, ¿en qué posición va el verbo conjugado?'
+    options:
+      [
+        'Al final de la frase',
+        'Justo después de la palabra interrogativa (segunda posición)',
+        'Al principio, antes de la palabra interrogativa',
+      ]
     answerIndex: 1
-    explanation: "El orden fijo es: [W-Wort] + [verbo conjugado] + resto: Wo wohnst du? — el verbo siempre ocupa la segunda posición."
+    explanation: 'El orden fijo es: [W-Wort] + [verbo conjugado] + resto: Wo wohnst du? — el verbo siempre ocupa la segunda posición.'
 exercises:
-  - type: "fill-blank"
-    sentence: "___ wohnst du?"
-    answer: "Wo"
-    accepted: ["wo"]
-    hint: "Pregunta por el lugar."
-    translation: "¿Dónde vives?"
-    placeholder: "Ej: Wann/Wie/Was"
-  - type: "fill-blank"
-    sentence: "___ lernst du Deutsch?"
-    answer: "Warum"
-    accepted: ["warum"]
-    hint: "Pregunta por la razón de algo."
-    translation: "¿Por qué aprendes alemán?"
-    placeholder: "Ej: Wo/Wie"
-  - type: "match"
-    instructions: "Empareja cada palabra interrogativa con su significado."
+  - type: 'fill-blank'
+    sentence: '___ wohnst du?'
+    answer: 'Wo'
+    accepted: ['wo']
+    hint: 'Pregunta por el lugar.'
+    translation: '¿Dónde vives?'
+    placeholder: 'Ej: Wann/Wie/Was'
+  - type: 'fill-blank'
+    sentence: '___ lernst du Deutsch?'
+    answer: 'Warum'
+    accepted: ['warum']
+    hint: 'Pregunta por la razón de algo.'
+    translation: '¿Por qué aprendes alemán?'
+    placeholder: 'Ej: Wo/Wie'
+  - type: 'match'
+    instructions: 'Empareja cada palabra interrogativa con su significado.'
     pairs:
-      - left: "Wer?"
-        right: "¿Quién?"
-      - left: "Was?"
-        right: "¿Qué?"
-      - left: "Wann?"
-        right: "¿Cuándo?"
-      - left: "Wie?"
-        right: "¿Cómo?"
-      - left: "Welche?"
-        right: "¿Cuál?"
-  - type: "write"
+      - left: 'Wer?'
+        right: '¿Quién?'
+      - left: 'Was?'
+        right: '¿Qué?'
+      - left: 'Wann?'
+        right: '¿Cuándo?'
+      - left: 'Wie?'
+        right: '¿Cómo?'
+      - left: 'Welche?'
+        right: '¿Cuál?'
+  - type: 'write'
     prompt: "Escribe la palabra interrogativa para preguntar '¿qué?'."
-    answer: "Was"
-    accepted: ["was"]
-    hint: "Es una de las 6 palabras esenciales W-Fragen."
-    placeholder: "Ej: Wer"
-  - type: "order"
-    sentence: "Wo wohnst du"
-    translation: "¿Dónde vives?"
+    answer: 'Was'
+    accepted: ['was']
+    hint: 'Es una de las 6 palabras esenciales W-Fragen.'
+    placeholder: 'Ej: Wer'
+  - type: 'order'
+    sentence: 'Wo wohnst du'
+    translation: '¿Dónde vives?'
 vocabulary:
-  - term: "Wer?"
-    translation: "¿Quién?"
-  - term: "Was?"
-    translation: "¿Qué?"
-  - term: "Wo?"
-    translation: "¿Dónde?"
-  - term: "Wann?"
-    translation: "¿Cuándo?"
-  - term: "Warum?"
-    translation: "¿Por qué?"
-  - term: "Wie?"
-    translation: "¿Cómo?"
+  - term: 'Wer?'
+    translation: '¿Quién?'
+  - term: 'Was?'
+    translation: '¿Qué?'
+  - term: 'Wo?'
+    translation: '¿Dónde?'
+  - term: 'Wann?'
+    translation: '¿Cuándo?'
+  - term: 'Warum?'
+    translation: '¿Por qué?'
+  - term: 'Wie?'
+    translation: '¿Cómo?'
 ---
 
 Con solo seis palabras puedes empezar a preguntar prácticamente cualquier cosa en
@@ -82,14 +83,14 @@ alemán. Son las herramientas más rentables que vas a aprender en este nivel.
 
 ## Las 6 palabras esenciales
 
-| Palabra | Significado | Ejemplo |
-| --- | --- | --- |
-| Wer? | ¿Quién? | Wer bist du? |
-| Was? | ¿Qué? | Was machst du? |
-| Wo? | ¿Dónde? | Wo wohnst du? |
-| Wann? | ¿Cuándo? | Wann kommst du? |
-| Warum? | ¿Por qué? | Warum lernst du Deutsch? |
-| Wie? | ¿Cómo? | Wie heißt du? |
+| Palabra | Significado | Ejemplo                  |
+| ------- | ----------- | ------------------------ |
+| Wer?    | ¿Quién?     | Wer bist du?             |
+| Was?    | ¿Qué?       | Was machst du?           |
+| Wo?     | ¿Dónde?     | Wo wohnst du?            |
+| Wann?   | ¿Cuándo?    | Wann kommst du?          |
+| Warum?  | ¿Por qué?   | Warum lernst du Deutsch? |
+| Wie?    | ¿Cómo?      | Wie heißt du?            |
 
 ## El orden fijo: W-Wort + verbo + resto
 

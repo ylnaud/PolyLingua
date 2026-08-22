@@ -1,73 +1,73 @@
 ---
 language: it
 level: a1
-title: "Il presente: tres terminaciones, un patrón clarísimo"
-description: "Conjuga el presente de indicativo italiano en los tres grupos regulares -are, -ere e -ire, con un patrón que refleja casi exactamente al del español."
+title: 'Il presente: tres terminaciones, un patrón clarísimo'
+description: 'Conjuga el presente de indicativo italiano en los tres grupos regulares -are, -ere e -ire, con un patrón que refleja casi exactamente al del español.'
 order: 2
 unit: 1
-grammarTopic: "Presente indicativo (verbi regolari -are/-ere/-ire)"
+grammarTopic: 'Presente indicativo (verbi regolari -are/-ere/-ire)'
 funFact: "Si conjugar verbos en español ('hablar, comer, vivir') te resulta natural, el italiano te va a encantar: la lógica de tres grupos según la terminación del infinitivo (-are, -ere, -ire) es prácticamente un espejo del español (-ar, -er, -ir). Es el idioma donde menos tienes que 'reprogramar' tu cerebro."
 minutes: 6
 quiz:
   - question: "¿Cuál es la conjugación correcta de 'parlare' (hablar) con 'tu' (tú)?"
-    options: ["tu parle", "tu parli", "tu parla"]
+    options: ['tu parle', 'tu parli', 'tu parla']
     answerIndex: 1
     explanation: "Los verbos en -are con 'tu' toman la terminación '-i': tu parli. Nota que no es tan intuitivo como en español (donde sería 'hablas'), así que vale la pena memorizarlo bien."
   - question: "¿Cuál es la forma correcta de 'noi' (nosotros) con 'leggere' (leer)?"
-    options: ["noi leggiamo", "noi leggono", "noi legge"]
+    options: ['noi leggiamo', 'noi leggono', 'noi legge']
     answerIndex: 0
     explanation: "Los verbos en -ere con 'noi' terminan en '-iamo': noi leggiamo. Esta terminación '-iamo' es compartida por los tres grupos verbales en la persona 'noi'."
   - question: "¿Cuál es la conjugación de 'dormire' (dormir) con 'loro' (ellos)?"
-    options: ["loro dormono", "loro dormano", "loro dorme"]
+    options: ['loro dormono', 'loro dormano', 'loro dorme']
     answerIndex: 0
     explanation: "Los verbos en -ire con 'loro' terminan en '-ono': loro dormono. Igual que los verbos en -ere en esta persona."
 exercises:
-  - type: "fill-blank"
-    sentence: "Tu ___ italiano."
-    answer: "parli"
+  - type: 'fill-blank'
+    sentence: 'Tu ___ italiano.'
+    answer: 'parli'
     hint: "Verbos en -are con 'tu' toman la terminación -i."
-    translation: "Tú hablas italiano."
-    placeholder: "leggi"
-  - type: "fill-blank"
-    sentence: "Noi ___ un libro."
-    answer: "leggiamo"
+    translation: 'Tú hablas italiano.'
+    placeholder: 'leggi'
+  - type: 'fill-blank'
+    sentence: 'Noi ___ un libro.'
+    answer: 'leggiamo'
     hint: "-iamo es la terminación de 'noi' compartida por los tres grupos."
-    translation: "Nosotros leemos un libro."
-    placeholder: "parliamo"
-  - type: "match"
-    instructions: "Empareja cada forma verbal con su traducción."
+    translation: 'Nosotros leemos un libro.'
+    placeholder: 'parliamo'
+  - type: 'match'
+    instructions: 'Empareja cada forma verbal con su traducción.'
     pairs:
-      - left: "io parlo"
-        right: "yo hablo"
-      - left: "tu leggi"
-        right: "tú lees"
-      - left: "lui dorme"
-        right: "él duerme"
-      - left: "noi parliamo"
-        right: "nosotros hablamos"
-      - left: "loro dormono"
-        right: "ellos duermen"
-  - type: "write"
+      - left: 'io parlo'
+        right: 'yo hablo'
+      - left: 'tu leggi'
+        right: 'tú lees'
+      - left: 'lui dorme'
+        right: 'él duerme'
+      - left: 'noi parliamo'
+        right: 'nosotros hablamos'
+      - left: 'loro dormono'
+        right: 'ellos duermen'
+  - type: 'write'
     prompt: "Escribe la conjugación de 'dormire' con 'loro' (ellos)."
-    answer: "dormono"
+    answer: 'dormono'
     hint: "Verbos en -ire con 'loro' terminan en -ono, igual que -ere."
-    placeholder: "leggono"
-  - type: "order"
-    sentence: "Io parlo italiano"
-    translation: "Yo hablo italiano."
+    placeholder: 'leggono'
+  - type: 'order'
+    sentence: 'Io parlo italiano'
+    translation: 'Yo hablo italiano.'
 vocabulary:
-  - term: "parlare"
-    translation: "hablar"
-  - term: "leggere"
-    translation: "leer"
-  - term: "dormire"
-    translation: "dormir"
-  - term: "essere"
-    translation: "ser / estar"
-  - term: "avere"
-    translation: "tener"
-  - term: "parliamo"
-    translation: "hablamos"
+  - term: 'parlare'
+    translation: 'hablar'
+  - term: 'leggere'
+    translation: 'leer'
+  - term: 'dormire'
+    translation: 'dormir'
+  - term: 'essere'
+    translation: 'ser / estar'
+  - term: 'avere'
+    translation: 'tener'
+  - term: 'parliamo'
+    translation: 'hablamos'
 ---
 
 El italiano organiza sus verbos en tres grupos según la terminación del infinitivo,
@@ -76,21 +76,21 @@ igual que el español — así que la lógica general ya la conoces.
 ## Los tres grupos
 
 | Terminación | Ejemplo | Traducción |
-| --- | --- | --- |
-| -are | parlare | hablar |
-| -ere | leggere | leer |
-| -ire | dormire | dormir |
+| ----------- | ------- | ---------- |
+| -are        | parlare | hablar     |
+| -ere        | leggere | leer       |
+| -ire        | dormire | dormir     |
 
 ## Las conjugaciones lado a lado
 
-| Pronombre | parlare | leggere | dormire |
-| --- | --- | --- | --- |
-| io | parlo | leggo | dormo |
-| tu | parli | leggi | dormi |
-| lui/lei | parla | legge | dorme |
-| noi | parliamo | leggiamo | dormiamo |
-| voi | parlate | leggete | dormite |
-| loro | parlano | leggono | dormono |
+| Pronombre | parlare  | leggere  | dormire  |
+| --------- | -------- | -------- | -------- |
+| io        | parlo    | leggo    | dormo    |
+| tu        | parli    | leggi    | dormi    |
+| lui/lei   | parla    | legge    | dorme    |
+| noi       | parliamo | leggiamo | dormiamo |
+| voi       | parlate  | leggete  | dormite  |
+| loro      | parlano  | leggono  | dormono  |
 
 ## Lo que salta a la vista
 

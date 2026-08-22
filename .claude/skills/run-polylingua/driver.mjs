@@ -110,13 +110,18 @@ async function runSmoke({ port, out }) {
   }
 
   await page.waitForTimeout(300);
-  const scoreText = await page.locator('[data-score-text]').textContent().catch(() => null);
+  const scoreText = await page
+    .locator('[data-score-text]')
+    .textContent()
+    .catch(() => null);
 
   if (out) await screenshot(page, out);
   await browser.close();
 
   if (!scoreText) {
-    throw new Error('No se encontró el texto de puntaje final — el flujo de la lección no llegó a completarse.');
+    throw new Error(
+      'No se encontró el texto de puntaje final — el flujo de la lección no llegó a completarse.',
+    );
   }
   if (consoleErrors.length > 0) {
     throw new Error(`Errores de consola durante el flujo: ${consoleErrors.join('; ')}`);

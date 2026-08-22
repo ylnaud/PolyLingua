@@ -1,71 +1,71 @@
 ---
 language: de
 level: a2
-title: "Pronombres personales en Akkusativ: mich, dich, ihn, sie, es"
+title: 'Pronombres personales en Akkusativ: mich, dich, ihn, sie, es'
 description: "Cómo decir 'me', 'te', 'lo', 'la' en alemán: los pronombres personales en caso Akkusativ, imprescindibles en cualquier frase con objeto directo."
 order: 10
 unit: 3
-grammarTopic: "Pronombres personales en Akkusativ (mich, dich, ihn, sie, es, uns, euch, sie/Sie)"
+grammarTopic: 'Pronombres personales en Akkusativ (mich, dich, ihn, sie, es, uns, euch, sie/Sie)'
 funFact: "De los 8 pronombres, solo 'er' cambia por completo (→ ihn). Todos los demás, o quedan igual (sie, es, Sie) o solo agregan '-ch' a una forma que ya conocés (ich→mich, du→dich). Memorizá 'ihn' primero: es el único que realmente hay que aprender de cero."
 minutes: 7
 quiz:
   - question: "¿Cómo se dice 'Yo lo veo' (a él) en alemán?"
-    options: ["Ich sehe er.", "Ich sehe ihn.", "Ich sehe ihm."]
+    options: ['Ich sehe er.', 'Ich sehe ihn.', 'Ich sehe ihm.']
     answerIndex: 1
     explanation: "'er' (él) en Akkusativ cambia por completo a 'ihn': Ich sehe ihn."
   - question: "¿Cómo se dice 'Ella me llama' en alemán?"
-    options: ["Sie ruft ich an.", "Sie ruft mich an.", "Sie ruft mir an."]
+    options: ['Sie ruft ich an.', 'Sie ruft mich an.', 'Sie ruft mir an.']
     answerIndex: 1
     explanation: "'ich' (yo) en Akkusativ es 'mich': Sie ruft mich an."
   - question: "¿Cuál es el Akkusativ de 'wir' (nosotros)?"
-    options: ["uns", "unser", "wir"]
+    options: ['uns', 'unser', 'wir']
     answerIndex: 0
     explanation: "'wir' en Akkusativ es 'uns' — la misma forma que también se usa en Dativ."
 exercises:
-  - type: "fill-blank"
-    sentence: "Ich liebe ___ sehr."
-    answer: "dich"
+  - type: 'fill-blank'
+    sentence: 'Ich liebe ___ sehr.'
+    answer: 'dich'
     hint: "'du' (tú) en Akkusativ es 'dich'."
-    translation: "Te amo mucho."
-    placeholder: "du / dich"
-  - type: "fill-blank"
-    sentence: "Wir besuchen ___ am Wochenende."
-    answer: "sie"
+    translation: 'Te amo mucho.'
+    placeholder: 'du / dich'
+  - type: 'fill-blank'
+    sentence: 'Wir besuchen ___ am Wochenende.'
+    answer: 'sie'
     hint: "'sie' (ellos/ellas) no cambia en Akkusativ."
-    translation: "Los visitamos el fin de semana."
-    placeholder: "sie / ihnen"
-  - type: "match"
-    instructions: "Empareja cada pronombre en Nominativ con su forma en Akkusativ."
+    translation: 'Los visitamos el fin de semana.'
+    placeholder: 'sie / ihnen'
+  - type: 'match'
+    instructions: 'Empareja cada pronombre en Nominativ con su forma en Akkusativ.'
     pairs:
-      - left: "ich"
-        right: "mich"
-      - left: "du"
-        right: "dich"
-      - left: "er"
-        right: "ihn"
-      - left: "wir"
-        right: "uns"
-  - type: "write"
+      - left: 'ich'
+        right: 'mich'
+      - left: 'du'
+        right: 'dich'
+      - left: 'er'
+        right: 'ihn'
+      - left: 'wir'
+        right: 'uns'
+  - type: 'write'
     prompt: "Traduce a Akkusativ: '¿Tú lo conoces (a él)?' → 'Kennst du ___?'"
-    answer: "ihn"
+    answer: 'ihn'
     hint: "'er' en Akkusativ es 'ihn'."
-    placeholder: "er / ihn / ihm"
-  - type: "order"
-    sentence: "Ich sehe ihn jeden Tag"
-    translation: "Lo veo todos los días."
+    placeholder: 'er / ihn / ihm'
+  - type: 'order'
+    sentence: 'Ich sehe ihn jeden Tag'
+    translation: 'Lo veo todos los días.'
 vocabulary:
-  - term: "mich"
-    translation: "me"
-  - term: "dich"
-    translation: "te"
-  - term: "ihn"
-    translation: "lo (a él)"
-  - term: "sie"
-    translation: "la (a ella) / los/las (a ellos)"
-  - term: "es"
-    translation: "lo (neutro)"
-  - term: "uns"
-    translation: "nos"
+  - term: 'mich'
+    translation: 'me'
+  - term: 'dich'
+    translation: 'te'
+  - term: 'ihn'
+    translation: 'lo (a él)'
+  - term: 'sie'
+    translation: 'la (a ella) / los/las (a ellos)'
+  - term: 'es'
+    translation: 'lo (neutro)'
+  - term: 'uns'
+    translation: 'nos'
 ---
 
 Ya viste el caso Akkusativ con los artículos (der → den) y con los posesivos (mein →
@@ -74,17 +74,17 @@ que la mayoría ya se parece a la forma que conocés.
 
 ## Nominativ vs. Akkusativ
 
-| Nominativ | Akkusativ | Cambia... |
-| --- | --- | --- |
-| ich | mich | agrega -ch |
-| du | dich | agrega -ch |
-| er | ihn | por completo |
-| sie (ella) | sie | no cambia |
-| es | es | no cambia |
-| wir | uns | por completo |
-| ihr | euch | por completo |
-| sie (ellos) | sie | no cambia |
-| Sie | Sie | no cambia |
+| Nominativ   | Akkusativ | Cambia...    |
+| ----------- | --------- | ------------ |
+| ich         | mich      | agrega -ch   |
+| du          | dich      | agrega -ch   |
+| er          | ihn       | por completo |
+| sie (ella)  | sie       | no cambia    |
+| es          | es        | no cambia    |
+| wir         | uns       | por completo |
+| ihr         | euch      | por completo |
+| sie (ellos) | sie       | no cambia    |
+| Sie         | Sie       | no cambia    |
 
 ```
 Ich liebe dich.        Sie ruft mich an.        Wir besuchen sie.

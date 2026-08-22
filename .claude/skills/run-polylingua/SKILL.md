@@ -64,10 +64,12 @@ build already exists, it's stale; always rebuild before driving the app.
    ```
 
    Verified output from an actual run:
+
    ```
    OK — Acertaste 8 / 14
    Captura guardada en /tmp/polylingua-smoke.png
    ```
+
    Exits non-zero with a message if the lesson never reaches "done" or if
    any `pageerror` fired during the flow.
 
@@ -150,9 +152,9 @@ when you want the underlying error instead of a build-time failure.
 
 ## Troubleshooting
 
-| Symptom | Fix |
-|---|---|
-| `astro preview` fails to bind / port already in use | `pkill -f "astro preview"`, then retry the start command. |
-| `astro build` fails | Run `npx astro check` first — it surfaces the actual Zod/YAML error instead of the terser build-time message. |
-| Driver's `smoke` command times out on a click | You skipped `seedLocalStorage(page)` before `goto`, or navigated before the server finished starting — check the preview log for `"Preview server running"` first. |
-| `ERR_MODULE_NOT_FOUND: playwright` | You imported `'playwright'` directly instead of `driver.mjs`'s `launch()` helper, or the absolute path to the global package changed — re-check `npm ls -g --depth=0` for the installed version. |
+| Symptom                                             | Fix                                                                                                                                                                                              |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `astro preview` fails to bind / port already in use | `pkill -f "astro preview"`, then retry the start command.                                                                                                                                        |
+| `astro build` fails                                 | Run `npx astro check` first — it surfaces the actual Zod/YAML error instead of the terser build-time message.                                                                                    |
+| Driver's `smoke` command times out on a click       | You skipped `seedLocalStorage(page)` before `goto`, or navigated before the server finished starting — check the preview log for `"Preview server running"` first.                               |
+| `ERR_MODULE_NOT_FOUND: playwright`                  | You imported `'playwright'` directly instead of `driver.mjs`'s `launch()` helper, or the absolute path to the global package changed — re-check `npm ls -g --depth=0` for the installed version. |

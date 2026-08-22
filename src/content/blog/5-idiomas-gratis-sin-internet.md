@@ -1,8 +1,8 @@
 ---
-title: "Aprender 5 idiomas gratis sin internet: así funciona una app que no necesita cuenta ni WiFi"
-description: "Cómo una web puede funcionar sin conexión, sin cuenta y sin pesar 200 MB: la explicación técnica (sencilla) detrás de una PWA para aprender idiomas."
+title: 'Aprender 5 idiomas gratis sin internet: así funciona una app que no necesita cuenta ni WiFi'
+description: 'Cómo una web puede funcionar sin conexión, sin cuenta y sin pesar 200 MB: la explicación técnica (sencilla) detrás de una PWA para aprender idiomas.'
 publishDate: 2026-08-12
-tags: ["offline", "PWA", "cómo funciona"]
+tags: ['offline', 'PWA', 'cómo funciona']
 ---
 
 "Funciona sin internet" suena a promesa de marketing hasta que lo probás en
@@ -29,8 +29,8 @@ puede seguir funcionando aunque se corte la conexión.
 
 ## Cómo logra funcionar sin internet
 
-La clave está en un archivo que corre en segundo plano llamado *service
-worker*: la primera vez que visitás el sitio con conexión, ese archivo
+La clave está en un archivo que corre en segundo plano llamado _service
+worker_: la primera vez que visitás el sitio con conexión, ese archivo
 guarda en tu dispositivo una copia de las páginas y lecciones que fuiste
 abriendo. La próxima vez que las pidas — con o sin internet — el navegador
 las sirve directamente desde esa copia local, sin esperar respuesta de

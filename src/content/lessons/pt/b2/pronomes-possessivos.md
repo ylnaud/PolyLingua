@@ -1,79 +1,81 @@
 ---
 language: pt
 level: b2
-title: "O meu, a minha: los posesivos como pronombres independientes"
-description: "Cómo usar los posesivos portugueses como pronombres independientes, sustituyendo por completo lo poseído sin nombrar el sustantivo."
+title: 'O meu, a minha: los posesivos como pronombres independientes'
+description: 'Cómo usar los posesivos portugueses como pronombres independientes, sustituyendo por completo lo poseído sin nombrar el sustantivo.'
 order: 6
 unit: 2
-grammarTopic: "Pronomes possessivos substantivos"
+grammarTopic: 'Pronomes possessivos substantivos'
 funFact: "Cuando el posesivo funciona como pronombre independiente (sin sustantivo al lado), el artículo se vuelve prácticamente obligatorio incluso en Brasil, donde normalmente se omite: 'Este é o meu' (Este es el mío) casi nunca pierde el 'o', a diferencia de 'meu carro' (sin artículo), donde el artículo sí es opcional."
 minutes: 7
 quiz:
   - question: "¿Cómo dirías 'Este es el mío' en portugués?"
-    options: ["Este é meu", "Este é o meu", "Este é minha"]
+    options: ['Este é meu', 'Este é o meu', 'Este é minha']
     answerIndex: 1
     explanation: "Como pronombre independiente (sin sustantivo), el artículo es prácticamente obligatorio: 'Este é o meu' — a diferencia de 'meu carro' donde sí puede omitirse."
   - question: "¿Cómo dirías 'La casa de ella es más grande que la mía' en portugués?"
-    options: [
-      "A casa dela é maior do que a minha",
-      "A casa dela é maior do que meu",
-      "A casa dela é maior do que minha casa dela"
-    ]
+    options:
+      [
+        'A casa dela é maior do que a minha',
+        'A casa dela é maior do que meu',
+        'A casa dela é maior do que minha casa dela',
+      ]
     answerIndex: 0
     explanation: "'a minha' sustituye completamente a 'a minha casa' — A casa dela é maior do que a minha."
   - question: "¿Qué construcción se usa para aclarar la ambigüedad de 'seu' en un posesivo independiente?"
-    options: [
-      "o seu dele / o seu dela",
-      "no existe forma de aclararlo",
-      "se usa siempre 'teu' en su lugar"
-    ]
+    options:
+      [
+        'o seu dele / o seu dela',
+        'no existe forma de aclararlo',
+        "se usa siempre 'teu' en su lugar",
+      ]
     answerIndex: 0
     explanation: "Igual que con el posesivo adjetivo, se puede aclarar con 'dele/dela': O carro é o seu (dela) — El coche es el suyo (de ella)."
 exercises:
-  - type: "fill-blank"
-    sentence: "Meu carro é azul. O ___ é vermelho."
-    answer: "seu"
+  - type: 'fill-blank'
+    sentence: 'Meu carro é azul. O ___ é vermelho.'
+    answer: 'seu'
     hint: "Posesivo independiente para 'tuyo/suyo' con sustantivo masculino."
-    translation: "Mi coche es azul. El tuyo/suyo es rojo."
-    placeholder: "meu / teu / nosso"
-  - type: "fill-blank"
-    sentence: "Esta é a minha casa. Aquela é a ___."
-    answer: "sua"
+    translation: 'Mi coche es azul. El tuyo/suyo es rojo.'
+    placeholder: 'meu / teu / nosso'
+  - type: 'fill-blank'
+    sentence: 'Esta é a minha casa. Aquela é a ___.'
+    answer: 'sua'
     hint: "Posesivo independiente femenino para 'tuya/suya'."
-    translation: "Esta es mi casa. Aquella es la tuya/suya."
-    placeholder: "minha / tua / nossa"
-  - type: "match"
-    instructions: "Empareja cada posesivo independiente con su traducción."
+    translation: 'Esta es mi casa. Aquella es la tuya/suya.'
+    placeholder: 'minha / tua / nossa'
+  - type: 'match'
+    instructions: 'Empareja cada posesivo independiente con su traducción.'
     pairs:
-      - left: "o meu"
-        right: "el mío"
-      - left: "a minha"
-        right: "la mía"
-      - left: "o teu"
-        right: "el tuyo"
-      - left: "o seu"
-        right: "el suyo"
-      - left: "o nosso"
-        right: "el nuestro"
-  - type: "write"
+      - left: 'o meu'
+        right: 'el mío'
+      - left: 'a minha'
+        right: 'la mía'
+      - left: 'o teu'
+        right: 'el tuyo'
+      - left: 'o seu'
+        right: 'el suyo'
+      - left: 'o nosso'
+        right: 'el nuestro'
+  - type: 'write'
     prompt: "Escribe en portugués: 'La casa de ella es más grande que la mía.'"
-    answer: "A casa dela é maior do que a minha."
+    answer: 'A casa dela é maior do que a minha.'
     hint: "'a minha' sustituye completamente a 'a minha casa'."
-    placeholder: "A casa de X é maior do que a/o + posesivo."
-  - type: "order"
-    sentence: "Meus pais são mais velhos do que os seus"
-    translation: "Mis padres son mayores que los tuyos/suyos."
+    placeholder: 'A casa de X é maior do que a/o + posesivo.'
+  - type: 'order'
+    sentence: 'Meus pais são mais velhos do que os seus'
+    translation: 'Mis padres son mayores que los tuyos/suyos.'
 vocabulary:
-  - term: "o meu"
-    translation: "el mío"
-  - term: "a minha"
-    translation: "la mía"
-  - term: "o teu"
-    translation: "el tuyo"
-  - term: "o seu"
-    translation: "el suyo"
-  - term: "o nosso"
-    translation: "el nuestro"
+  - term: 'o meu'
+    translation: 'el mío'
+  - term: 'a minha'
+    translation: 'la mía'
+  - term: 'o teu'
+    translation: 'el tuyo'
+  - term: 'o seu'
+    translation: 'el suyo'
+  - term: 'o nosso'
+    translation: 'el nuestro'
 ---
 
 Cuando el posesivo reemplaza completamente al sustantivo, funciona como un pronombre
@@ -91,12 +93,12 @@ Esta é a minha casa. Aquela é a sua.
 
 ## Tabla completa como pronombre independiente
 
-| Poseedor | Masculino | Femenino |
-| --- | --- | --- |
-| eu | o meu | a minha |
-| tu | o teu | a tua |
-| você/ele/ela | o seu | a sua |
-| nós | o nosso | a nossa |
+| Poseedor     | Masculino | Femenino |
+| ------------ | --------- | -------- |
+| eu           | o meu     | a minha  |
+| tu           | o teu     | a tua    |
+| você/ele/ela | o seu     | a sua    |
+| nós          | o nosso   | a nossa  |
 
 ## Comparaciones con posesivos
 

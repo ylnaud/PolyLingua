@@ -23,8 +23,7 @@ export const LEVELS: LevelMeta[] = [
     id: 'a2',
     name: 'A2 · Elemental',
     tagline: 'Cuenta lo que hiciste ayer',
-    description:
-      'Pasado, rutinas y las primeras frases que te hacen sonar (casi) como un local.',
+    description: 'Pasado, rutinas y las primeras frases que te hacen sonar (casi) como un local.',
     color: '#2f8fce',
     emoji: '🧩',
   },
@@ -41,8 +40,7 @@ export const LEVELS: LevelMeta[] = [
     id: 'b2',
     name: 'B2 · Intermedio alto',
     tagline: 'Domina la voz pasiva y el subjuntivo',
-    description:
-      'Habla de hipótesis, noticias y matices con la precisión de un hablante avanzado.',
+    description: 'Habla de hipótesis, noticias y matices con la precisión de un hablante avanzado.',
     color: '#8a5bd6',
     emoji: '⚙️',
   },
@@ -50,8 +48,7 @@ export const LEVELS: LevelMeta[] = [
     id: 'c1',
     name: 'C1 · Avanzado',
     tagline: 'Estilo, matices y modo subjuntivo',
-    description:
-      'Redacta, debate y comprende textos complejos con soltura casi nativa.',
+    description: 'Redacta, debate y comprende textos complejos con soltura casi nativa.',
     color: '#c2569b',
     emoji: '🎓',
   },
@@ -59,8 +56,7 @@ export const LEVELS: LevelMeta[] = [
     id: 'c2',
     name: 'C2 · Maestría',
     tagline: 'El idioma al nivel de un nativo culto',
-    description:
-      'Ironía, registro coloquial y matices estilísticos que solo dominan los expertos.',
+    description: 'Ironía, registro coloquial y matices estilísticos que solo dominan los expertos.',
     color: '#d6763a',
     emoji: '👑',
   },

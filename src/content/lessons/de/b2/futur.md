@@ -1,86 +1,79 @@
 ---
 language: de
 level: b2
-title: "Futur I und II: hablar del futuro (y de lo que ya habrá pasado)"
-description: "Futur I y Futur II en alemán con werden más infinitivo, usados sobre todo para suposiciones más que para el futuro puro cotidiano."
+title: 'Futur I und II: hablar del futuro (y de lo que ya habrá pasado)'
+description: 'Futur I y Futur II en alemán con werden más infinitivo, usados sobre todo para suposiciones más que para el futuro puro cotidiano.'
 order: 4
 unit: 1
-grammarTopic: "Futur I y Futur II"
+grammarTopic: 'Futur I y Futur II'
 funFact: "Los alemanes en realidad usan el PRESENTE para hablar del futuro cercano ('Ich fahre morgen nach Berlin' = mañana voy a Berlín), reservando el Futur I formal principalmente para SUPOSICIONES sobre el presente ('Er wird jetzt zu Hause sein' = probablemente está en casa ahora) más que para el futuro puro."
 minutes: 8
 quiz:
-  - question: "¿Cuál es la fórmula del Futur I?"
-    options: [
-      "werden (conjugado) + infinitivo",
-      "haben (conjugado) + participio",
-      "sein (conjugado) + participio"
-    ]
+  - question: '¿Cuál es la fórmula del Futur I?'
+    options:
+      [
+        'werden (conjugado) + infinitivo',
+        'haben (conjugado) + participio',
+        'sein (conjugado) + participio',
+      ]
     answerIndex: 0
-    explanation: "Futur I = werden (conjugado) + infinitivo al final: Ich werde morgen arbeiten."
-  - question: "¿Cuál es el uso MÁS común del Futur I en alemán real, más allá de hablar del futuro puro?"
-    options: [
-      "Dar órdenes",
-      "Expresar una suposición sobre el presente",
-      "Hablar del pasado"
-    ]
+    explanation: 'Futur I = werden (conjugado) + infinitivo al final: Ich werde morgen arbeiten.'
+  - question: '¿Cuál es el uso MÁS común del Futur I en alemán real, más allá de hablar del futuro puro?'
+    options: ['Dar órdenes', 'Expresar una suposición sobre el presente', 'Hablar del pasado']
     answerIndex: 1
     explanation: "'Er wird jetzt zu Hause sein' no habla de futuro — expresa 'probablemente está en casa ahora'. Es un uso muy común y sorprendente para hispanohablantes."
-  - question: "¿Cuál es la fórmula del Futur II (algo que habrá terminado en el futuro)?"
-    options: [
-      "werden + participio + haben/sein",
-      "werden + infinitivo",
-      "haben + participio"
-    ]
+  - question: '¿Cuál es la fórmula del Futur II (algo que habrá terminado en el futuro)?'
+    options: ['werden + participio + haben/sein', 'werden + infinitivo', 'haben + participio']
     answerIndex: 0
-    explanation: "Futur II = werden + participio + haben/sein (al final): Bis morgen werde ich die Arbeit beendet haben (para mañana habré terminado el trabajo)."
+    explanation: 'Futur II = werden + participio + haben/sein (al final): Bis morgen werde ich die Arbeit beendet haben (para mañana habré terminado el trabajo).'
 exercises:
-  - type: "fill-blank"
-    sentence: "Ich ___ morgen nach Berlin fahren."
-    answer: "werde"
-    accepted: ["Werde"]
-    hint: "Futur I = werden conjugado (1ª persona: werde) + infinitivo al final."
-    translation: "Mañana viajaré a Berlín."
-    placeholder: "wirst / wird"
-  - type: "fill-blank"
-    sentence: "Er ___ jetzt zu Hause sein."
-    answer: "wird"
-    accepted: ["Wird"]
-    hint: "werden en 3ª persona singular; aquí expresa una suposición sobre el presente, no futuro puro."
-    translation: "Probablemente él está en casa ahora."
-    placeholder: "werde / werden"
-  - type: "match"
+  - type: 'fill-blank'
+    sentence: 'Ich ___ morgen nach Berlin fahren.'
+    answer: 'werde'
+    accepted: ['Werde']
+    hint: 'Futur I = werden conjugado (1ª persona: werde) + infinitivo al final.'
+    translation: 'Mañana viajaré a Berlín.'
+    placeholder: 'wirst / wird'
+  - type: 'fill-blank'
+    sentence: 'Er ___ jetzt zu Hause sein.'
+    answer: 'wird'
+    accepted: ['Wird']
+    hint: 'werden en 3ª persona singular; aquí expresa una suposición sobre el presente, no futuro puro.'
+    translation: 'Probablemente él está en casa ahora.'
+    placeholder: 'werde / werden'
+  - type: 'match'
     instructions: "Empareja cada pronombre con su forma conjugada de 'werden'."
     pairs:
-      - left: "ich"
-        right: "werde"
-      - left: "du"
-        right: "wirst"
-      - left: "er/sie/es"
-        right: "wird"
-      - left: "wir"
-        right: "werden"
-      - left: "ihr"
-        right: "werdet"
-  - type: "write"
+      - left: 'ich'
+        right: 'werde'
+      - left: 'du'
+        right: 'wirst'
+      - left: 'er/sie/es'
+        right: 'wird'
+      - left: 'wir'
+        right: 'werden'
+      - left: 'ihr'
+        right: 'werdet'
+  - type: 'write'
     prompt: "Conjuga 'werden' para 'sie' (plural, ellos): 'Sie ___ morgen ankommen.'"
-    answer: "werden"
-    accepted: ["Werden"]
+    answer: 'werden'
+    accepted: ['Werden']
     hint: "Es la misma forma que para 'wir'."
-    placeholder: "werde / wirst"
-  - type: "order"
-    sentence: "Bis morgen werde ich die Arbeit beendet haben"
-    translation: "Para mañana habré terminado el trabajo."
+    placeholder: 'werde / wirst'
+  - type: 'order'
+    sentence: 'Bis morgen werde ich die Arbeit beendet haben'
+    translation: 'Para mañana habré terminado el trabajo.'
 vocabulary:
-  - term: "werden"
-    translation: "auxiliar del futuro (convertirse en)"
-  - term: "fahren"
-    translation: "viajar / conducir"
-  - term: "zu Hause sein"
-    translation: "estar en casa"
-  - term: "die Arbeit beendet haben"
-    translation: "haber terminado el trabajo"
-  - term: "die Nachricht"
-    translation: "el mensaje"
+  - term: 'werden'
+    translation: 'auxiliar del futuro (convertirse en)'
+  - term: 'fahren'
+    translation: 'viajar / conducir'
+  - term: 'zu Hause sein'
+    translation: 'estar en casa'
+  - term: 'die Arbeit beendet haben'
+    translation: 'haber terminado el trabajo'
+  - term: 'die Nachricht'
+    translation: 'el mensaje'
 ---
 
 El alemán tiene una relación curiosa con el futuro: aunque existe una forma gramatical
@@ -96,11 +89,11 @@ Ich werde    nach Berlin    fahren.
 
 ## Cuándo se usa realmente
 
-| Uso | Ejemplo | ¿Común? |
-| --- | --- | --- |
-| Futuro con presente + marcador de tiempo | Ich fahre morgen nach Berlin. | Muy común |
-| Futur I para plan/promesa formal | Ich werde das Problem lösen. | Común en contextos formales |
-| Futur I para SUPOSICIÓN sobre el presente | Er wird jetzt zu Hause sein. | Muy común, sorprendente |
+| Uso                                       | Ejemplo                       | ¿Común?                     |
+| ----------------------------------------- | ----------------------------- | --------------------------- |
+| Futuro con presente + marcador de tiempo  | Ich fahre morgen nach Berlin. | Muy común                   |
+| Futur I para plan/promesa formal          | Ich werde das Problem lösen.  | Común en contextos formales |
+| Futur I para SUPOSICIÓN sobre el presente | Er wird jetzt zu Hause sein.  | Muy común, sorprendente     |
 
 ## El uso que sorprende a los estudiantes
 

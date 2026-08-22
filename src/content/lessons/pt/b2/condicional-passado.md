@@ -1,83 +1,86 @@
 ---
 language: pt
 level: b2
-title: "Eu teria falado: el condicional compuesto"
-description: "El condicional compuesto portugués para expresar hipótesis sobre el pasado que ya no pueden cumplirse, en pareja con el subjuntivo."
+title: 'Eu teria falado: el condicional compuesto'
+description: 'El condicional compuesto portugués para expresar hipótesis sobre el pasado que ya no pueden cumplirse, en pareja con el subjuntivo.'
 order: 3
 unit: 1
-grammarTopic: "Futuro do pretérito composto (condicional composto)"
+grammarTopic: 'Futuro do pretérito composto (condicional composto)'
 funFact: "El condicional compuesto portugués aparece casi siempre junto al pluscuamperfecto do subjuntivo en frases condicionales irreales del pasado ('Se eu tivesse estudado, teria passado'), formando un par gramatical que funciona exactamente igual que en español ('si hubiera estudiado, habría aprobado') — una de las estructuras más simétricas entre ambos idiomas."
 minutes: 8
 quiz:
-  - question: "¿Cómo se forma el condicional compuesto en portugués?"
-    options: [
-      "teria/terias/teria... + participio",
-      "tinha/tinhas/tinha... + participio",
-      "terei/terás/terá... + participio"
-    ]
+  - question: '¿Cómo se forma el condicional compuesto en portugués?'
+    options:
+      [
+        'teria/terias/teria... + participio',
+        'tinha/tinhas/tinha... + participio',
+        'terei/terás/terá... + participio',
+      ]
     answerIndex: 0
     explanation: "El condicional compuesto usa el condicional del verbo 'ter' (teria, terias...) + participio: teria falado (habría hablado)."
   - question: "¿Qué expresa 'Se eu tivesse estudado, teria passado'?"
-    options: [
-      "Una condición futura posible",
-      "Una condición irreal del pasado, que ya no puede cumplirse",
-      "Un hábito pasado"
-    ]
+    options:
+      [
+        'Una condición futura posible',
+        'Una condición irreal del pasado, que ya no puede cumplirse',
+        'Un hábito pasado',
+      ]
     answerIndex: 1
     explanation: "Esta estructura expresa arrepentimiento o hipótesis sobre algo que ya no puede cambiar: 'Si hubiera estudiado, habría aprobado' — pero no estudió."
   - question: "¿Qué tiempo verbal acompaña típicamente al condicional compuesto en la cláusula con 'se'?"
-    options: [
-      "presente do indicativo",
-      "pluscuamperfecto do subjuntivo (tivesse + participio)",
-      "futuro do subjuntivo"
-    ]
+    options:
+      [
+        'presente do indicativo',
+        'pluscuamperfecto do subjuntivo (tivesse + participio)',
+        'futuro do subjuntivo',
+      ]
     answerIndex: 1
-    explanation: "La estructura clásica es: Se + pluscuamperfecto do subjuntivo, + condicional composto — Se eu tivesse sabido, teria ligado."
+    explanation: 'La estructura clásica es: Se + pluscuamperfecto do subjuntivo, + condicional composto — Se eu tivesse sabido, teria ligado.'
 exercises:
-  - type: "fill-blank"
-    sentence: "Se eu ___ estudado, teria passado no exame."
-    answer: "tivesse"
-    hint: "Pluscuamperfecto do subjuntivo: tivesse + participio."
-    translation: "Si hubiera estudiado, habría aprobado el examen."
-    placeholder: "tivesse / tivesses / tivéssemos"
-  - type: "fill-blank"
-    sentence: "Se ela tivesse me avisado, eu não ___ chegado atrasado."
-    answer: "teria"
-    hint: "Condicional compuesto: teria + participio."
-    translation: "Si ella me hubiera avisado, no habría llegado tarde."
-    placeholder: "teria / terias / teríamos"
-  - type: "match"
-    instructions: "Empareja cada forma verbal con su traducción."
+  - type: 'fill-blank'
+    sentence: 'Se eu ___ estudado, teria passado no exame.'
+    answer: 'tivesse'
+    hint: 'Pluscuamperfecto do subjuntivo: tivesse + participio.'
+    translation: 'Si hubiera estudiado, habría aprobado el examen.'
+    placeholder: 'tivesse / tivesses / tivéssemos'
+  - type: 'fill-blank'
+    sentence: 'Se ela tivesse me avisado, eu não ___ chegado atrasado.'
+    answer: 'teria'
+    hint: 'Condicional compuesto: teria + participio.'
+    translation: 'Si ella me hubiera avisado, no habría llegado tarde.'
+    placeholder: 'teria / terias / teríamos'
+  - type: 'match'
+    instructions: 'Empareja cada forma verbal con su traducción.'
     pairs:
-      - left: "teria falado"
-        right: "habría hablado"
-      - left: "teria feito"
-        right: "habría hecho"
-      - left: "teria ido"
-        right: "habría ido"
-      - left: "tivesse estudado"
-        right: "hubiera estudiado"
-      - left: "teria passado"
-        right: "habría aprobado"
-  - type: "write"
+      - left: 'teria falado'
+        right: 'habría hablado'
+      - left: 'teria feito'
+        right: 'habría hecho'
+      - left: 'teria ido'
+        right: 'habría ido'
+      - left: 'tivesse estudado'
+        right: 'hubiera estudiado'
+      - left: 'teria passado'
+        right: 'habría aprobado'
+  - type: 'write'
     prompt: "Escribe en portugués: 'Habría ayudado, si me lo hubieras pedido.'"
-    answer: "Eu teria ajudado, se você tivesse pedido."
-    hint: "Condicional composto + se + pluscuamperfeito do subjuntivo."
-    placeholder: "Eu teria + participio, se você tivesse + participio."
-  - type: "order"
-    sentence: "Se nós tivéssemos mais tempo teríamos visitado o museu"
-    translation: "Si hubiéramos tenido más tiempo, habríamos visitado el museo."
+    answer: 'Eu teria ajudado, se você tivesse pedido.'
+    hint: 'Condicional composto + se + pluscuamperfeito do subjuntivo.'
+    placeholder: 'Eu teria + participio, se você tivesse + participio.'
+  - type: 'order'
+    sentence: 'Se nós tivéssemos mais tempo teríamos visitado o museu'
+    translation: 'Si hubiéramos tenido más tiempo, habríamos visitado el museo.'
 vocabulary:
-  - term: "teria falado"
-    translation: "habría hablado"
-  - term: "teria feito"
-    translation: "habría hecho"
-  - term: "teria ido"
-    translation: "habría ido"
-  - term: "tivesse estudado"
-    translation: "hubiera estudiado"
-  - term: "teria passado"
-    translation: "habría aprobado"
+  - term: 'teria falado'
+    translation: 'habría hablado'
+  - term: 'teria feito'
+    translation: 'habría hecho'
+  - term: 'teria ido'
+    translation: 'habría ido'
+  - term: 'tivesse estudado'
+    translation: 'hubiera estudiado'
+  - term: 'teria passado'
+    translation: 'habría aprobado'
 ---
 
 El condicional compuesto expresa lo que habría pasado bajo una condición que, en

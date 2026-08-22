@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 
 const lessons = await getCollection('lessons');
 const lessonCounts = Object.fromEntries(
-  LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length])
+  LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length]),
 );
 
 const structuredData = {
@@ -36,15 +36,17 @@ const structuredData = {
     <span class="eyebrow">Catálogo de idiomas</span>
     <h1>¿Qué idioma quieres aprender?</h1>
     <p>
-      Cada idioma tiene su propia ruta de A1 a C2, con la misma gramática gamificada que
-      hace que aprender no se sienta como estudiar.
+      Cada idioma tiene su propia ruta de A1 a C2, con la misma gramática gamificada que hace que
+      aprender no se sienta como estudiar.
     </p>
   </section>
 
   <section class="container languages-grid">
-    {LANGUAGES.map((language) => (
-      <LanguageCard language={language} lessonCount={lessonCounts[language.id] ?? 0} />
-    ))}
+    {
+      LANGUAGES.map((language) => (
+        <LanguageCard language={language} lessonCount={lessonCounts[language.id] ?? 0} />
+      ))
+    }
   </section>
 </BaseLayout>
 

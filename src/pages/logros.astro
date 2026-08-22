@@ -12,19 +12,64 @@ interface Badge {
 }
 
 const coreBadges: Badge[] = [
-  { id: 'first-lesson', emoji: '🎯', name: 'Primera lección', hint: 'Completa tu primera lección.' },
+  {
+    id: 'first-lesson',
+    emoji: '🎯',
+    name: 'Primera lección',
+    hint: 'Completa tu primera lección.',
+  },
   { id: 'streak-3', emoji: '🔥', name: 'Racha de 3 días', hint: 'Practica 3 días seguidos.' },
   { id: 'streak-7', emoji: '🔥', name: 'Racha de 7 días', hint: 'Practica 7 días seguidos.' },
   { id: 'streak-30', emoji: '🔥', name: 'Racha de 30 días', hint: 'Practica 30 días seguidos.' },
-  { id: 'perfect', emoji: '💯', name: 'Perfeccionista', hint: 'Acierta todos los ítems de una lección.' },
+  {
+    id: 'perfect',
+    emoji: '💯',
+    name: 'Perfeccionista',
+    hint: 'Acierta todos los ítems de una lección.',
+  },
   { id: 'marathon', emoji: '⚡', name: 'Maratón', hint: 'Completa 3 lecciones en un mismo día.' },
-  { id: 'srs-master', emoji: '🧠', name: 'Maestro del repaso', hint: 'Domina 5 ítems en el repaso espaciado.' },
-  { id: 'combo', emoji: '💥', name: 'Racha de combo', hint: 'Encadena 5 respuestas correctas seguidas en una misma sesión.' },
-  { id: 'practice-libre', emoji: '🎲', name: 'Explorador libre', hint: 'Completa 5 sesiones de práctica libre.' },
-  { id: 'hangman-10', emoji: '🔤', name: 'Diez ahorcados ganados', hint: 'Gana 10 partidas de ahorcado.' },
-  { id: 'levels-1', emoji: '🏆', name: 'Primer nivel superado', hint: 'Aprueba tu primer examen de nivel.' },
-  { id: 'levels-5', emoji: '🏆', name: '5 niveles superados', hint: 'Aprueba 5 exámenes de nivel.' },
-  { id: 'levels-15', emoji: '🏆', name: '15 niveles superados', hint: 'Aprueba 15 exámenes de nivel.' },
+  {
+    id: 'srs-master',
+    emoji: '🧠',
+    name: 'Maestro del repaso',
+    hint: 'Domina 5 ítems en el repaso espaciado.',
+  },
+  {
+    id: 'combo',
+    emoji: '💥',
+    name: 'Racha de combo',
+    hint: 'Encadena 5 respuestas correctas seguidas en una misma sesión.',
+  },
+  {
+    id: 'practice-libre',
+    emoji: '🎲',
+    name: 'Explorador libre',
+    hint: 'Completa 5 sesiones de práctica libre.',
+  },
+  {
+    id: 'hangman-10',
+    emoji: '🔤',
+    name: 'Diez ahorcados ganados',
+    hint: 'Gana 10 partidas de ahorcado.',
+  },
+  {
+    id: 'levels-1',
+    emoji: '🏆',
+    name: 'Primer nivel superado',
+    hint: 'Aprueba tu primer examen de nivel.',
+  },
+  {
+    id: 'levels-5',
+    emoji: '🏆',
+    name: '5 niveles superados',
+    hint: 'Aprueba 5 exámenes de nivel.',
+  },
+  {
+    id: 'levels-15',
+    emoji: '🏆',
+    name: '15 niveles superados',
+    hint: 'Aprueba 15 exámenes de nivel.',
+  },
 ];
 
 const courseBadges: Badge[] = LANGUAGES.map((language) => ({
@@ -49,7 +94,7 @@ const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.gra
 // Total de lecciones por idioma, para el panel "Tu progreso por idioma" —
 // mismo cálculo que usa index.astro para las tarjetas de idioma en la home.
 const lessonCounts = Object.fromEntries(
-  LANGUAGES.map((l) => [l.id, allLessons.filter((les) => les.data.language === l.id).length])
+  LANGUAGES.map((l) => [l.id, allLessons.filter((les) => les.data.language === l.id).length]),
 );
 ---
 
@@ -99,14 +144,20 @@ const lessonCounts = Object.fromEntries(
   <div hidden data-topic-manifest={JSON.stringify(topicManifest)}></div>
 
   <section class="container badges-grid">
-    {allBadges.map((badge) => (
-      <div class="badge-item card locked" data-badge={badge.id}>
-        <span class="badge-emoji" aria-hidden="true">{badge.emoji}</span>
-        <h2>{badge.name}</h2>
-        <p>{badge.hint}</p>
-        <span class="badge-status" data-badge-status>🔒 Bloqueado</span>
-      </div>
-    ))}
+    {
+      allBadges.map((badge) => (
+        <div class="badge-item card locked" data-badge={badge.id}>
+          <span class="badge-emoji" aria-hidden="true">
+            {badge.emoji}
+          </span>
+          <h2>{badge.name}</h2>
+          <p>{badge.hint}</p>
+          <span class="badge-status" data-badge-status>
+            🔒 Bloqueado
+          </span>
+        </div>
+      ))
+    }
   </section>
 
   <section class="container backup-head">
@@ -117,8 +168,12 @@ const lessonCounts = Object.fromEntries(
         dispositivo, reinstalás la app o borrás el caché.
       </p>
       <div class="backup-actions">
-        <button type="button" class="btn btn-ghost" data-export-progress>⬇️ Exportar progreso</button>
-        <button type="button" class="btn btn-ghost" data-import-progress>⬆️ Importar progreso</button>
+        <button type="button" class="btn btn-ghost" data-export-progress
+          >⬇️ Exportar progreso</button
+        >
+        <button type="button" class="btn btn-ghost" data-import-progress
+          >⬆️ Importar progreso</button
+        >
         <input type="file" accept="application/json" hidden data-import-input />
       </div>
       <p class="backup-status" data-backup-status role="status" aria-live="polite"></p>
@@ -159,7 +214,10 @@ const lessonCounts = Object.fromEntries(
   // y vuelve a pintar el DOM, así que reejecutarlo en cada navegación es
   // exactamente lo que se quiere.
   function initLogros() {
-    const streakMax = Math.max(Number(read('polylingua-streak-max') ?? '0'), Number(read('polylingua-streak-count') ?? '0'));
+    const streakMax = Math.max(
+      Number(read('polylingua-streak-max') ?? '0'),
+      Number(read('polylingua-streak-count') ?? '0'),
+    );
     const srsMastered = Number(read('polylingua-srs-mastered-count') ?? '0');
     const levelsPassed = countKeysStartingWith('polylingua-level-passed-');
     const hasFirstLesson = hasAnyKeyStartingWith('polylingua-lesson-done-');
@@ -186,7 +244,9 @@ const lessonCounts = Object.fromEntries(
     };
 
     languageIds.forEach((lang) => {
-      earned[`course-${lang}`] = levelIds.every((level) => read(`polylingua-level-passed-${lang}-${level}`) === 'true');
+      earned[`course-${lang}`] = levelIds.every(
+        (level) => read(`polylingua-level-passed-${lang}-${level}`) === 'true',
+      );
     });
 
     document.querySelectorAll('[data-badge]').forEach((el) => {
@@ -237,8 +297,12 @@ const lessonCounts = Object.fromEntries(
 
     grid.innerHTML = '';
     for (const lang of LANGUAGES) {
-      const lessonsDone = Object.keys(all).filter((k) => k.startsWith(`polylingua-lesson-done-${lang.id}-`)).length;
-      const levelsPassed = Object.keys(all).filter((k) => k.startsWith(`polylingua-level-passed-${lang.id}-`)).length;
+      const lessonsDone = Object.keys(all).filter((k) =>
+        k.startsWith(`polylingua-lesson-done-${lang.id}-`),
+      ).length;
+      const levelsPassed = Object.keys(all).filter((k) =>
+        k.startsWith(`polylingua-level-passed-${lang.id}-`),
+      ).length;
       const wordsLearned = Object.values(vocabLearned).filter((v) => v.lang === lang.id).length;
 
       const card = document.createElement('a');
@@ -269,7 +333,14 @@ const lessonCounts = Object.fromEntries(
 </script>
 
 <script>
-  import { read, today, getActiveSprint, startSprint, clearSprint, SPRINT_LENGTH_DAYS } from '../lib/storage';
+  import {
+    read,
+    today,
+    getActiveSprint,
+    startSprint,
+    clearSprint,
+    SPRINT_LENGTH_DAYS,
+  } from '../lib/storage';
 
   interface SrsEntry {
     id: string;
@@ -282,7 +353,14 @@ const lessonCounts = Object.fromEntries(
     firstFailedAt?: string;
   }
 
-  const LEVEL_LABELS: Record<string, string> = { a1: 'A1', a2: 'A2', b1: 'B1', b2: 'B2', c1: 'C1', c2: 'C2' };
+  const LEVEL_LABELS: Record<string, string> = {
+    a1: 'A1',
+    a2: 'A2',
+    b1: 'B1',
+    b2: 'B2',
+    c1: 'C1',
+    c2: 'C2',
+  };
   const MAX_TOPICS = 5;
 
   function readPool(): Record<string, SrsEntry> {
@@ -308,7 +386,10 @@ const lessonCounts = Object.fromEntries(
     }
 
     const pool = readPool();
-    const byLesson: Record<string, { lang: string; level: string; count: number; earliest: string }> = {};
+    const byLesson: Record<
+      string,
+      { lang: string; level: string; count: number; earliest: string }
+    > = {};
     for (const entry of Object.values(pool)) {
       const lessonId = entry.id.split('#')[0];
       const seenAt = entry.firstFailedAt ?? entry.due;
@@ -327,7 +408,10 @@ const lessonCounts = Object.fromEntries(
         lessonId,
         topic: manifest[lessonId] ?? lessonId,
         ...info,
-        days: Math.max(0, Math.floor((Date.parse(todayStr) - Date.parse(info.earliest)) / 86400000)),
+        days: Math.max(
+          0,
+          Math.floor((Date.parse(todayStr) - Date.parse(info.earliest)) / 86400000),
+        ),
       }))
       .sort((a, b) => b.days - a.days)
       .slice(0, MAX_TOPICS);
@@ -358,7 +442,9 @@ const lessonCounts = Object.fromEntries(
       const meta = document.createElement('span');
       meta.className = 'pending-meta';
       meta.textContent = `${row.count} ítem${row.count === 1 ? '' : 's'} · ${
-        row.days === 0 ? 'fallando desde hoy' : `fallando hace ${row.days} día${row.days === 1 ? '' : 's'}`
+        row.days === 0
+          ? 'fallando desde hoy'
+          : `fallando hace ${row.days} día${row.days === 1 ? '' : 's'}`
       }`;
       info.append(topic, meta);
 
@@ -480,7 +566,10 @@ const lessonCounts = Object.fromEntries(
         if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
           throw new Error('formato inválido');
         }
-        if (!window.confirm('Esto va a reemplazar tu progreso actual con el importado. ¿Continuar?')) return;
+        if (
+          !window.confirm('Esto va a reemplazar tu progreso actual con el importado. ¿Continuar?')
+        )
+          return;
         importAll(parsed as Record<string, unknown>);
         status.textContent = '✅ Progreso importado. Recargando…';
         window.setTimeout(() => window.location.reload(), 600);

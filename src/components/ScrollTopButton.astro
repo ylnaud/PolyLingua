@@ -1,11 +1,8 @@
 ---
+
 ---
-<button
-  type="button"
-  class="scroll-top-btn"
-  id="scroll-top-btn"
-  aria-label="Volver arriba"
->
+
+<button type="button" class="scroll-top-btn" id="scroll-top-btn" aria-label="Volver arriba">
   <span aria-hidden="true">↑</span>
 </button>
 
@@ -28,7 +25,10 @@
     opacity: 0;
     transform: translateY(8px);
     pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      border-color 0.2s ease;
   }
 
   .scroll-top-btn.visible {

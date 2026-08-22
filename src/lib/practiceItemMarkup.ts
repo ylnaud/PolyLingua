@@ -36,7 +36,7 @@ const KIND_LABELS: Record<string, string> = {
 function el<K extends keyof HTMLElementTagNameMap>(
   tag: K,
   attrs: Record<string, string> = {},
-  text?: string
+  text?: string,
 ): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag);
   for (const [key, value] of Object.entries(attrs)) node.setAttribute(key, value);
@@ -85,11 +85,16 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
       const p = el('p', { class: 'prompt-sentence' });
       p.append(before, el('span', { class: 'blank-marker', 'aria-hidden': 'true' }, '___'), after);
       fieldset.appendChild(p);
-      if (data.translation) fieldset.appendChild(el('p', { class: 'prompt-translation' }, data.translation));
+      if (data.translation)
+        fieldset.appendChild(el('p', { class: 'prompt-translation' }, data.translation));
     } else {
       const speechAvailable = typeof window !== 'undefined' && 'speechSynthesis' in window;
       fieldset.appendChild(
-        el('legend', { tabindex: '-1' }, data.spokenOnly && speechAvailable ? '🔊 Escucha y escribe lo que oís' : data.prompt)
+        el(
+          'legend',
+          { tabindex: '-1' },
+          data.spokenOnly && speechAvailable ? '🔊 Escucha y escribe lo que oís' : data.prompt,
+        ),
       );
       if (data.spokenOnly) {
         fieldset.appendChild(
@@ -102,8 +107,8 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
               'data-speak-text': data.answer,
               'aria-label': 'Escuchar de nuevo',
             },
-            '🔊 Escuchar'
-          )
+            '🔊 Escuchar',
+          ),
         );
       }
     }
@@ -123,7 +128,11 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
       autocapitalize: 'off',
       spellcheck: 'false',
     });
-    const checkBtn = el('button', { type: 'button', class: 'btn btn-primary check', 'data-check': '' }, 'Comprobar');
+    const checkBtn = el(
+      'button',
+      { type: 'button', class: 'btn btn-primary check', 'data-check': '' },
+      'Comprobar',
+    );
     row.append(input, checkBtn);
     fieldset.appendChild(row);
     if (data.hint) {
@@ -135,21 +144,44 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
 
   if (kind === 'match') {
     fieldset.appendChild(
-      el('legend', { tabindex: '-1' }, data.instructions ?? 'Empareja cada elemento con su pareja correcta')
+      el(
+        'legend',
+        { tabindex: '-1' },
+        data.instructions ?? 'Empareja cada elemento con su pareja correcta',
+      ),
     );
     const pairs = data.pairs as { left: string; right: string }[];
-    const board = el('div', { class: 'match-board', 'data-match-board': '', 'data-remaining': String(pairs.length) });
+    const board = el('div', {
+      class: 'match-board',
+      'data-match-board': '',
+      'data-remaining': String(pairs.length),
+    });
     const leftCol = el('div', { class: 'match-col', 'data-match-col': 'left' });
     pairs.forEach((pair, pi) => {
       const row = el('div', { class: 'option-row' });
-      const btn = el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'left', 'data-pair': String(pi), 'data-value': pair.right }, pair.left);
-      const speakBtn = el('button', {
-        type: 'button',
-        class: 'speak-btn match-speak',
-        'data-speak': '',
-        'data-speak-text': pair.left,
-        'aria-label': `Escuchar «${pair.left}»`,
-      }, '🔊');
+      const btn = el(
+        'button',
+        {
+          type: 'button',
+          class: 'match-item',
+          'data-match-item': '',
+          'data-side': 'left',
+          'data-pair': String(pi),
+          'data-value': pair.right,
+        },
+        pair.left,
+      );
+      const speakBtn = el(
+        'button',
+        {
+          type: 'button',
+          class: 'speak-btn match-speak',
+          'data-speak': '',
+          'data-speak-text': pair.left,
+          'aria-label': `Escuchar «${pair.left}»`,
+        },
+        '🔊',
+      );
       row.append(btn, speakBtn);
       leftCol.appendChild(row);
     });
@@ -159,7 +191,18 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
     const rightCol = el('div', { class: 'match-col', 'data-match-col': 'right' });
     pairs.forEach((_, pi) => {
       rightCol.appendChild(
-        el('button', { type: 'button', class: 'match-item', 'data-match-item': '', 'data-side': 'right', 'data-pair': String(pi), 'data-value': pairs[pi].right }, pairs[pi].right)
+        el(
+          'button',
+          {
+            type: 'button',
+            class: 'match-item',
+            'data-match-item': '',
+            'data-side': 'right',
+            'data-pair': String(pi),
+            'data-value': pairs[pi].right,
+          },
+          pairs[pi].right,
+        ),
       );
     });
     board.append(leftCol, rightCol);
@@ -167,40 +210,85 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
   }
 
   if (kind === 'order') {
-    fieldset.appendChild(el('legend', { tabindex: '-1' }, 'Ordena las palabras para formar la frase correcta'));
-    if (data.translation) fieldset.appendChild(el('p', { class: 'prompt-translation' }, data.translation));
+    fieldset.appendChild(
+      el('legend', { tabindex: '-1' }, 'Ordena las palabras para formar la frase correcta'),
+    );
+    if (data.translation)
+      fieldset.appendChild(el('p', { class: 'prompt-translation' }, data.translation));
     fieldset.appendChild(
       el('div', {
         class: 'order-assembled',
         'data-order-assembled': '',
         'data-answer': data.sentence,
         'aria-label': 'Frase que estás construyendo',
-      })
+      }),
     );
     const words = (data.sentence as string).split(' ');
     const bank = el('div', { class: 'order-bank', 'data-order-bank': '' });
     words.forEach((_, wi) => {
       bank.appendChild(
-        el('button', { type: 'button', class: 'word-chip', 'data-word-chip': '', 'data-word-index': String(wi) }, words[wi])
+        el(
+          'button',
+          {
+            type: 'button',
+            class: 'word-chip',
+            'data-word-chip': '',
+            'data-word-index': String(wi),
+          },
+          words[wi],
+        ),
       );
     });
     fieldset.appendChild(bank);
-    fieldset.appendChild(el('button', { type: 'button', class: 'btn btn-primary check', 'data-check': '', hidden: '' }, 'Comprobar'));
+    fieldset.appendChild(
+      el(
+        'button',
+        { type: 'button', class: 'btn btn-primary check', 'data-check': '', hidden: '' },
+        'Comprobar',
+      ),
+    );
   }
 
-  fieldset.appendChild(el('p', { class: 'feedback', 'data-feedback': '', role: 'status', 'aria-live': 'polite' }));
+  fieldset.appendChild(
+    el('p', { class: 'feedback', 'data-feedback': '', role: 'status', 'aria-live': 'polite' }),
+  );
   const explanation = el('p', { class: 'explanation', 'data-explanation': '', hidden: '' });
   if (kind === 'choice') explanation.textContent = data.explanation ?? '';
   fieldset.appendChild(explanation);
   if (kind === 'fill-blank' || kind === 'write' || kind === 'order') {
     fieldset.appendChild(
-      el('button', { type: 'button', class: 'speak-btn reveal-speak', 'data-speak': '', 'data-reveal-speak': '', hidden: '' }, '🔊 Escuchar')
+      el(
+        'button',
+        {
+          type: 'button',
+          class: 'speak-btn reveal-speak',
+          'data-speak': '',
+          'data-reveal-speak': '',
+          hidden: '',
+        },
+        '🔊 Escuchar',
+      ),
     );
     fieldset.appendChild(
-      el('button', { type: 'button', class: 'btn btn-primary shadow-confirm', 'data-shadow-confirm': '', hidden: '' }, '🎤 Ya lo dije en voz alta')
+      el(
+        'button',
+        {
+          type: 'button',
+          class: 'btn btn-primary shadow-confirm',
+          'data-shadow-confirm': '',
+          hidden: '',
+        },
+        '🎤 Ya lo dije en voz alta',
+      ),
     );
   }
-  fieldset.appendChild(el('button', { type: 'button', class: 'btn btn-primary next', 'data-next': '', hidden: '' }, 'Siguiente →'));
+  fieldset.appendChild(
+    el(
+      'button',
+      { type: 'button', class: 'btn btn-primary next', 'data-next': '', hidden: '' },
+      'Siguiente →',
+    ),
+  );
 
   return fieldset;
 }

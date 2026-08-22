@@ -30,14 +30,22 @@ let ctx: AudioContext | null = null;
 
 function getCtx(): AudioContext | null {
   if (typeof window === 'undefined') return null;
-  const Ctor = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+  const Ctor =
+    window.AudioContext ??
+    (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
   if (!Ctor) return null;
   if (!ctx) ctx = new Ctor();
   if (ctx.state === 'suspended') ctx.resume();
   return ctx;
 }
 
-function tone(freq: number, startOffset: number, duration: number, type: OscillatorType = 'sine', peakGain = 0.15): void {
+function tone(
+  freq: number,
+  startOffset: number,
+  duration: number,
+  type: OscillatorType = 'sine',
+  peakGain = 0.15,
+): void {
   const audioCtx = getCtx();
   if (!audioCtx) return;
   const osc = audioCtx.createOscillator();

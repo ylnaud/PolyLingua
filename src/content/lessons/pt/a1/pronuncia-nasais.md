@@ -1,102 +1,104 @@
 ---
 language: pt
 level: a1
-title: "Vocales nasales del portugués: ão, ãe, õe y la tilde"
-description: "Las vocales nasales del portugués que no existen en español: cómo pronunciar -ão, -ãe, -õe, la tilde como marcador nasal y la -m al final de palabras."
+title: 'Vocales nasales del portugués: ão, ãe, õe y la tilde'
+description: 'Las vocales nasales del portugués que no existen en español: cómo pronunciar -ão, -ãe, -õe, la tilde como marcador nasal y la -m al final de palabras.'
 order: 12
 unit: 3
-grammarTopic: "Pronunciación: vocales nasales"
-funFact: "El portugués es la única lengua románica con un sistema completo de vocales nasales — cinco en total. El francés también tiene nasales, pero el portugués las combina en diptongos nasales (-ão, -ãe, -õe) que no existen en ningún otro idioma europeo grande. Son el sonido que hace al portugués inconfundible."
+grammarTopic: 'Pronunciación: vocales nasales'
+funFact: 'El portugués es la única lengua románica con un sistema completo de vocales nasales — cinco en total. El francés también tiene nasales, pero el portugués las combina en diptongos nasales (-ão, -ãe, -õe) que no existen en ningún otro idioma europeo grande. Son el sonido que hace al portugués inconfundible.'
 minutes: 9
 phrases:
-  - text: "não"
-    es: "no"
+  - text: 'não'
+    es: 'no'
     say: "«NAUN» — como 'nau' pero dejando que el aire salga por la nariz al final"
     note: "El diptongo nasal más frecuente del portugués. La boca dice 'au' pero la nariz vibra."
-  - text: "coração"
-    es: "corazón"
+  - text: 'coração'
+    es: 'corazón'
     say: "«co-ra-SAUN» — acento en la última sílaba, que suena como 'saun' nasal"
-  - text: "pão"
-    es: "pan"
+  - text: 'pão'
+    es: 'pan'
     say: "«PAUN» — empieza con 'p', la vocal es 'au' nasal"
-  - text: "mãe"
-    es: "madre"
+  - text: 'mãe'
+    es: 'madre'
     say: "«MAIN» — como 'mai' pero con la nariz vibrando al final"
-    note: "El diptongo -ãe es exclusivo del portugués. No existe en español ni en francés."
-  - text: "também"
-    es: "también"
+    note: 'El diptongo -ãe es exclusivo del portugués. No existe en español ni en francés.'
+  - text: 'também'
+    es: 'también'
     say: "«tam-BEIN» — la -m final nasaliza la vocal, como si dijeras 'bein' sin cerrar los labios del todo"
-  - text: "homem"
-    es: "hombre"
+  - text: 'homem'
+    es: 'hombre'
     say: "«O-mein» — la -m final no se pronuncia como 'm' sino que nasaliza la 'e'"
-  - text: "põe"
-    es: "pone"
+  - text: 'põe'
+    es: 'pone'
     say: "«POIN» — como 'poi' nasal"
     note: "El diptongo -õe aparece en formas verbales como 'põe' (pone) y plurales como 'limões'."
-  - text: "limões"
-    es: "limones"
-    say: "«li-MOINS» — acento en la última sílaba, con el diptongo nasal -ões"
-  - text: "irmã"
-    es: "hermana"
+  - text: 'limões'
+    es: 'limones'
+    say: '«li-MOINS» — acento en la última sílaba, con el diptongo nasal -ões'
+  - text: 'irmã'
+    es: 'hermana'
     say: "«ir-MAN» — la tilde sobre la 'a' la hace nasal, como una 'a' francesa"
-  - text: "bem"
-    es: "bien"
+  - text: 'bem'
+    es: 'bien'
     say: "«BEIN» — la -m final no suena como 'm', solo nasaliza la vocal"
 quiz:
-  - question: "¿Qué función cumple la tilde (~) en portugués?"
-    options: [
-      "Indica que la vocal es acentuada (más fuerte)",
-      "Indica que la vocal es nasal (el aire sale por la nariz)",
-      "Indica que la vocal es larga"
-    ]
+  - question: '¿Qué función cumple la tilde (~) en portugués?'
+    options:
+      [
+        'Indica que la vocal es acentuada (más fuerte)',
+        'Indica que la vocal es nasal (el aire sale por la nariz)',
+        'Indica que la vocal es larga',
+      ]
     answerIndex: 1
-    explanation: "La tilde (~) en portugués marca la nasalización: el aire sale parcialmente por la nariz al pronunciar la vocal. No tiene relación con el acento de intensidad."
+    explanation: 'La tilde (~) en portugués marca la nasalización: el aire sale parcialmente por la nariz al pronunciar la vocal. No tiene relación con el acento de intensidad.'
   - question: "¿Cómo se pronuncia la -m al final de una palabra como 'também'?"
-    options: [
-      "Como una m normal, cerrando los labios",
-      "No se pronuncia, solo nasaliza la vocal anterior",
-      "Como una n"
-    ]
+    options:
+      [
+        'Como una m normal, cerrando los labios',
+        'No se pronuncia, solo nasaliza la vocal anterior',
+        'Como una n',
+      ]
     answerIndex: 1
-    explanation: "La -m final en portugués no es una consonante que se pronuncia: solo indica que la vocal anterior es nasal. Los labios no llegan a cerrarse."
-  - question: "¿Cuál de estos diptongos nasales es el más frecuente en portugués?"
-    options: ["-ãe", "-ão", "-õe"]
+    explanation: 'La -m final en portugués no es una consonante que se pronuncia: solo indica que la vocal anterior es nasal. Los labios no llegan a cerrarse.'
+  - question: '¿Cuál de estos diptongos nasales es el más frecuente en portugués?'
+    options: ['-ãe', '-ão', '-õe']
     answerIndex: 1
     explanation: "El diptongo -ão es con diferencia el más frecuente: aparece en 'não' (no), todos los infinitivos sustantivados y miles de sustantivos (coração, avião, opinião)."
 exercises:
-  - type: "fill-blank"
-    sentence: "___ quero café. (no)"
-    answer: "Não"
-    accepted: ["não", "Nao", "nao"]
-    hint: "La palabra más básica con el diptongo nasal -ão."
-    translation: "No quiero café."
-    placeholder: "Sim"
-  - type: "fill-blank"
-    sentence: "Minha ___ é brasileira. (madre)"
-    answer: "mãe"
-    accepted: ["Mãe", "mae"]
+  - type: 'fill-blank'
+    sentence: '___ quero café. (no)'
+    answer: 'Não'
+    accepted: ['não', 'Nao', 'nao']
+    hint: 'La palabra más básica con el diptongo nasal -ão.'
+    translation: 'No quiero café.'
+    placeholder: 'Sim'
+  - type: 'fill-blank'
+    sentence: 'Minha ___ é brasileira. (madre)'
+    answer: 'mãe'
+    accepted: ['Mãe', 'mae']
     hint: "La palabra 'madre' en portugués, con el diptongo nasal -ãe."
-    translation: "Mi madre es brasileña."
-    placeholder: "irmã"
-  - type: "match"
-    instructions: "Empareja cada palabra con el tipo de nasalización que tiene."
+    translation: 'Mi madre es brasileña.'
+    placeholder: 'irmã'
+  - type: 'match'
+    instructions: 'Empareja cada palabra con el tipo de nasalización que tiene.'
     pairs:
-      - left: "não"
-        right: "diptongo nasal -ão"
-      - left: "mãe"
-        right: "diptongo nasal -ãe"
-      - left: "põe"
-        right: "diptongo nasal -õe"
-      - left: "também"
-        right: "-m final nasaliza la vocal"
-      - left: "irmã"
-        right: "tilde sobre vocal simple"
-  - type: "write"
+      - left: 'não'
+        right: 'diptongo nasal -ão'
+      - left: 'mãe'
+        right: 'diptongo nasal -ãe'
+      - left: 'põe'
+        right: 'diptongo nasal -õe'
+      - left: 'também'
+        right: '-m final nasaliza la vocal'
+      - left: 'irmã'
+        right: 'tilde sobre vocal simple'
+  - type: 'write'
     prompt: "Escribe en portugués la palabra 'corazón'."
-    answer: "coração"
-    accepted: ["Coração", "coracao", "Coracao"]
-    hint: "Termina en el diptongo nasal -ão."
-    placeholder: "limão"
+    answer: 'coração'
+    accepted: ['Coração', 'coracao', 'Coracao']
+    hint: 'Termina en el diptongo nasal -ão.'
+    placeholder: 'limão'
 ---
 
 Las vocales nasales son probablemente el rasgo más característico del portugués — el sonido

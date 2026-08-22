@@ -19,9 +19,11 @@ const vocabPool = Array.from(
   new Map(
     [
       ...lessonsForLang.flatMap((l) => l.data.vocabulary),
-      ...lessonsForLang.flatMap((l) => l.data.phrases.map((p) => ({ term: p.text, translation: p.es }))),
-    ].map((v) => [v.term.toLowerCase(), v])
-  ).values()
+      ...lessonsForLang.flatMap((l) =>
+        l.data.phrases.map((p) => ({ term: p.text, translation: p.es })),
+      ),
+    ].map((v) => [v.term.toLowerCase(), v]),
+  ).values(),
 );
 ---
 
@@ -42,8 +44,8 @@ const vocabPool = Array.from(
     <span class="emoji" aria-hidden="true">🗣️</span>
     <h1>Escuchar y repetir en {languageMeta?.name}</h1>
     <p class="desc">
-      Escuchá la palabra, hacé una pausa y repetila en voz alta. Después marcá si te
-      salió — las que te cuestan van a volver más seguido.
+      Escuchá la palabra, hacé una pausa y repetila en voz alta. Después marcá si te salió — las que
+      te cuestan van a volver más seguido.
     </p>
   </section>
 
@@ -59,7 +61,8 @@ const vocabPool = Array.from(
       <p class="pron-word" data-pron-word></p>
       <p class="pron-clue" data-pron-clue></p>
 
-      <button type="button" class="btn btn-primary pron-listen" data-pron-listen>🔊 Escuchar</button>
+      <button type="button" class="btn btn-primary pron-listen" data-pron-listen>🔊 Escuchar</button
+      >
 
       <p class="pron-guide">Escuchá, hacé una pausa, y repetila en voz alta.</p>
 
@@ -150,7 +153,9 @@ const vocabPool = Array.from(
     const countEl = root.querySelector<HTMLElement>('[data-pron-count]');
     if (!countEl) return;
     countEl.textContent =
-      practiced === 0 ? '' : `${practiced} ${practiced === 1 ? 'palabra practicada' : 'palabras practicadas'}`;
+      practiced === 0
+        ? ''
+        : `${practiced} ${practiced === 1 ? 'palabra practicada' : 'palabras practicadas'}`;
   }
 
   // Avanzar siempre viene de un click, así que acá sí se puede auto-reproducir

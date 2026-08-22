@@ -18,25 +18,27 @@ const { phrases, lang = '' } = Astro.props;
   <span class="eyebrow">🗣️ Frases para usar hoy</span>
   <p class="phrase-intro">Escuchá cada frase y repetila en voz alta antes de practicar.</p>
   <ul class="phrase-list">
-    {phrases.map((phrase) => (
-      <li class="phrase-item">
-        <div class="phrase-main">
-          <p class="phrase-de">{phrase.text}</p>
-          {phrase.say && <p class="phrase-say">{phrase.say}</p>}
-          <p class="phrase-es">{phrase.es}</p>
-          {phrase.note && <p class="phrase-note">{phrase.note}</p>}
-        </div>
-        <button
-          type="button"
-          class="phrase-speak"
-          data-phrase-speak
-          data-phrase-text={phrase.text}
-          aria-label={`Escuchar «${phrase.text}»`}
-        >
-          🔊
-        </button>
-      </li>
-    ))}
+    {
+      phrases.map((phrase) => (
+        <li class="phrase-item">
+          <div class="phrase-main">
+            <p class="phrase-de">{phrase.text}</p>
+            {phrase.say && <p class="phrase-say">{phrase.say}</p>}
+            <p class="phrase-es">{phrase.es}</p>
+            {phrase.note && <p class="phrase-note">{phrase.note}</p>}
+          </div>
+          <button
+            type="button"
+            class="phrase-speak"
+            data-phrase-speak
+            data-phrase-text={phrase.text}
+            aria-label={`Escuchar «${phrase.text}»`}
+          >
+            🔊
+          </button>
+        </li>
+      ))
+    }
   </ul>
 </div>
 

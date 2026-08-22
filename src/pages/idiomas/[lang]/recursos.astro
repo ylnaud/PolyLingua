@@ -35,34 +35,38 @@ const categories = (Object.keys(CATEGORY_LABELS) as ResourceItem['category'][]).
     <span class="emoji" aria-hidden="true">📻</span>
     <h1>Recursos de {languageMeta?.name}</h1>
     <p class="desc">
-      Aprender de verdad requiere contacto diario con el idioma, no solo lecciones. Estos
-      son recursos reales para seguir practicando por tu cuenta.
+      Aprender de verdad requiere contacto diario con el idioma, no solo lecciones. Estos son
+      recursos reales para seguir practicando por tu cuenta.
     </p>
   </section>
 
   <section class="container resources-body">
-    {items.length === 0 ? (
-      <div class="card empty-state">
-        <p class="empty-emoji">🚧</p>
-        <h2>Todavía no hay recursos para {languageMeta?.name}</h2>
-        <p>Estamos sumando recomendaciones para este idioma — volvé pronto.</p>
-      </div>
-    ) : (
-      categories.filter((c) => c.items.length > 0).map((c) => (
-        <div class="card resource-group">
-          <span class="eyebrow">{c.label}</span>
-          <ul class="resource-list">
-            {c.items.map((item) => (
-              <li class="resource-item">
-                <span class="resource-title">{item.title}</span>
-                {item.level && <span class="resource-level">{item.level}</span>}
-                <p class="resource-note">{item.note}</p>
-              </li>
-            ))}
-          </ul>
+    {
+      items.length === 0 ? (
+        <div class="card empty-state">
+          <p class="empty-emoji">🚧</p>
+          <h2>Todavía no hay recursos para {languageMeta?.name}</h2>
+          <p>Estamos sumando recomendaciones para este idioma — volvé pronto.</p>
         </div>
-      ))
-    )}
+      ) : (
+        categories
+          .filter((c) => c.items.length > 0)
+          .map((c) => (
+            <div class="card resource-group">
+              <span class="eyebrow">{c.label}</span>
+              <ul class="resource-list">
+                {c.items.map((item) => (
+                  <li class="resource-item">
+                    <span class="resource-title">{item.title}</span>
+                    {item.level && <span class="resource-level">{item.level}</span>}
+                    <p class="resource-note">{item.note}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+      )
+    }
   </section>
 </BaseLayout>
 

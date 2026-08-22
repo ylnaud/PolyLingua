@@ -1,75 +1,75 @@
 ---
 language: fr
 level: a1
-title: "Le pluriel: como formar el plural en frances"
-description: "Reglas para formar el plural en frances: la -s muda, los plurales en -eaux, -aux y los irregulares. Patrones claros con ejemplos practicos."
+title: 'Le pluriel: como formar el plural en frances'
+description: 'Reglas para formar el plural en frances: la -s muda, los plurales en -eaux, -aux y los irregulares. Patrones claros con ejemplos practicos.'
 order: 10
 unit: 3
-grammarTopic: "Formacion del plural"
+grammarTopic: 'Formacion del plural'
 funFact: "La -s del plural en frances es MUDA: 'chat' y 'chats' se pronuncian exactamente igual. La diferencia solo se ve por escrito o por el articulo que los acompana: 'le chat' vs 'les chats'. Tu oido va a depender del articulo, no de la palabra."
 minutes: 7
 quiz:
   - question: "Cual es el plural de 'le chat' (el gato)?"
-    options: ["les chates", "les chats", "les chaux"]
+    options: ['les chates', 'les chats', 'les chaux']
     answerIndex: 1
     explanation: "La regla general es anadir una -s muda: chat -> chats. El articulo cambia de 'le' a 'les'."
   - question: "Cual es el plural de 'le chateau' (el castillo)?"
-    options: ["les chateaus", "les chateaux", "les chateauxs"]
+    options: ['les chateaus', 'les chateaux', 'les chateauxs']
     answerIndex: 1
-    explanation: "Las palabras terminadas en -eau hacen el plural en -eaux, sin -s adicional: chateau -> chateaux."
+    explanation: 'Las palabras terminadas en -eau hacen el plural en -eaux, sin -s adicional: chateau -> chateaux.'
   - question: "Cual es el plural de 'le journal' (el periodico)?"
-    options: ["les journals", "les journaux", "les journales"]
+    options: ['les journals', 'les journaux', 'les journales']
     answerIndex: 1
-    explanation: "Las palabras terminadas en -al cambian a -aux: journal -> journaux. Es un patron regular."
+    explanation: 'Las palabras terminadas en -al cambian a -aux: journal -> journaux. Es un patron regular.'
 exercises:
-  - type: "fill-blank"
-    sentence: "Les ___ sont grands."
-    answer: "chateaux"
-    accepted: ["châteaux"]
+  - type: 'fill-blank'
+    sentence: 'Les ___ sont grands.'
+    answer: 'chateaux'
+    accepted: ['châteaux']
     hint: "Plural de 'chateau': las palabras en -eau hacen el plural en -eaux."
-    translation: "Los castillos son grandes."
-    placeholder: "chateaus"
-  - type: "match"
-    instructions: "Empareja cada singular con su plural correcto."
+    translation: 'Los castillos son grandes.'
+    placeholder: 'chateaus'
+  - type: 'match'
+    instructions: 'Empareja cada singular con su plural correcto.'
     pairs:
-      - left: "le livre"
-        right: "les livres"
-      - left: "le chateau"
-        right: "les chateaux"
-      - left: "le journal"
-        right: "les journaux"
+      - left: 'le livre'
+        right: 'les livres'
+      - left: 'le chateau'
+        right: 'les chateaux'
+      - left: 'le journal'
+        right: 'les journaux'
       - left: "l'oeil"
-        right: "les yeux"
-  - type: "write"
+        right: 'les yeux'
+  - type: 'write'
     prompt: "Escribe el plural de 'animal'."
-    answer: "animaux"
-    accepted: ["Animaux", "les animaux"]
-    hint: "Las palabras en -al hacen el plural en -aux."
-    placeholder: "animals"
-  - type: "fill-blank"
+    answer: 'animaux'
+    accepted: ['Animaux', 'les animaux']
+    hint: 'Las palabras en -al hacen el plural en -aux.'
+    placeholder: 'animals'
+  - type: 'fill-blank'
     sentence: "J'ai deux ___."
-    answer: "enfants"
-    accepted: ["Enfants"]
+    answer: 'enfants'
+    accepted: ['Enfants']
     hint: "Regla general: se anade -s al singular 'enfant'."
-    translation: "Tengo dos hijos."
-    placeholder: "enfantes"
+    translation: 'Tengo dos hijos.'
+    placeholder: 'enfantes'
 vocabulary:
-  - term: "le chat / les chats"
-    translation: "el gato / los gatos"
-  - term: "le livre / les livres"
-    translation: "el libro / los libros"
-  - term: "le chateau / les chateaux"
-    translation: "el castillo / los castillos"
-  - term: "le journal / les journaux"
-    translation: "el periodico / los periodicos"
+  - term: 'le chat / les chats'
+    translation: 'el gato / los gatos'
+  - term: 'le livre / les livres'
+    translation: 'el libro / los libros'
+  - term: 'le chateau / les chateaux'
+    translation: 'el castillo / los castillos'
+  - term: 'le journal / les journaux'
+    translation: 'el periodico / los periodicos'
   - term: "l'animal / les animaux"
-    translation: "el animal / los animales"
+    translation: 'el animal / los animales'
   - term: "l'oeil / les yeux"
-    translation: "el ojo / los ojos"
-  - term: "monsieur / messieurs"
-    translation: "senor / senores"
-  - term: "madame / mesdames"
-    translation: "senora / senoras"
+    translation: 'el ojo / los ojos'
+  - term: 'monsieur / messieurs'
+    translation: 'senor / senores'
+  - term: 'madame / mesdames'
+    translation: 'senora / senoras'
 ---
 
 El plural en frances se parece al espanol en lo basico (anadir una marca al
@@ -82,11 +82,11 @@ esta en el articulo.
 
 La mayoria de los sustantivos simplemente anaden una **-s** que no se pronuncia:
 
-| Singular | Plural |
-| --- | --- |
+| Singular            | Plural     |
+| ------------------- | ---------- |
 | le livre (el libro) | les livres |
-| la table (la mesa) | les tables |
-| le chat (el gato) | les chats |
+| la table (la mesa)  | les tables |
+| le chat (el gato)   | les chats  |
 
 El articulo definido siempre cambia a **les** en plural, sin importar el genero.
 
@@ -128,11 +128,11 @@ le nez       ->   les nez     (la nariz / las narices)
 
 Algunos plurales no siguen ninguna regla:
 
-| Singular | Plural | Significado |
-| --- | --- | --- |
-| l'oeil | les yeux | el ojo / los ojos |
-| monsieur | messieurs | senor / senores |
-| madame | mesdames | senora / senoras |
+| Singular | Plural    | Significado       |
+| -------- | --------- | ----------------- |
+| l'oeil   | les yeux  | el ojo / los ojos |
+| monsieur | messieurs | senor / senores   |
+| madame   | mesdames  | senora / senoras  |
 
 ## El truco: escucha el articulo
 

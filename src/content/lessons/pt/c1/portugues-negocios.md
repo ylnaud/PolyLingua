@@ -1,82 +1,85 @@
 ---
 language: pt
 level: c1
-title: "Português dos negócios: comunícate en el mundo corporativo"
-description: "El registro de negocios del portugués: vocabulario para correos, reuniones y negociaciones en el mundo profesional lusófono moderno."
+title: 'Português dos negócios: comunícate en el mundo corporativo'
+description: 'El registro de negocios del portugués: vocabulario para correos, reuniones y negociaciones en el mundo profesional lusófono moderno.'
 order: 8
 unit: 2
-grammarTopic: "Português dos negócios"
+grammarTopic: 'Português dos negócios'
 funFact: "El entorno corporativo brasileño mezcla con naturalidad un registro formal en portugués con anglicismos importados directamente del inglés de negocios ('fazer um follow-up', 'ter um feedback', 'agendar uma call') — una jerga híbrida muy característica del mundo empresarial brasileño moderno, especialmente en startups y tecnología."
 minutes: 8
 quiz:
   - question: "¿Qué significa 'fazer um follow-up' en el contexto corporativo brasileño?"
-    options: [
-      "es un anglicismo de uso muy común: dar seguimiento a algo",
-      "es una expresión exclusivamente portuguesa sin relación con el inglés",
-      "significa cancelar una reunión"
-    ]
+    options:
+      [
+        'es un anglicismo de uso muy común: dar seguimiento a algo',
+        'es una expresión exclusivamente portuguesa sin relación con el inglés',
+        'significa cancelar una reunión',
+      ]
     answerIndex: 0
     explanation: "El entorno corporativo brasileño usa muchos anglicismos con naturalidad — 'fazer um follow-up' (dar seguimiento) es extremadamente común, especialmente en startups y tecnología."
   - question: "¿Cómo dirías formalmente 'Adjunto encontrará el documento' en un correo de negocios?"
-    options: ["Segue em anexo o documento", "Anexado está o documento aqui", "O documento está junto"]
+    options:
+      ['Segue em anexo o documento', 'Anexado está o documento aqui', 'O documento está junto']
     answerIndex: 0
     explanation: "'Segue em anexo o documento' es la fórmula estándar y formal para referirse a un archivo adjunto en un correo profesional."
   - question: "¿Qué significa 'reunião de alinhamento' en el vocabulario corporativo?"
-    options: [
-      "una reunión para coordinar expectativas y próximos pasos entre equipos",
-      "una reunión disciplinaria",
-      "una entrevista de trabajo"
-    ]
+    options:
+      [
+        'una reunión para coordinar expectativas y próximos pasos entre equipos',
+        'una reunión disciplinaria',
+        'una entrevista de trabajo',
+      ]
     answerIndex: 0
     explanation: "'reunião de alinhamento' es un término muy común en el ambiente corporativo para reuniones de coordinación entre personas o equipos."
 exercises:
-  - type: "fill-blank"
-    sentence: "___ em anexo o documento solicitado."
-    answer: "Segue"
-    accepted: ["segue"]
-    hint: "Fórmula estándar y formal para referirse a un archivo adjunto en un correo profesional."
-    translation: "Adjunto encontrará el documento solicitado."
-    placeholder: "Anexo"
-  - type: "fill-blank"
-    sentence: "Vamos agendar uma ___ para discutir isso."
-    answer: "call"
-    accepted: ["call"]
-    hint: "Anglicismo corporativo brasileño muy común, especialmente en startups y tecnología."
-    translation: "Vamos a agendar una llamada para discutir esto."
-    placeholder: "reunião"
-  - type: "match"
-    instructions: "Empareja cada término del vocabulario de reuniones con su traducción."
+  - type: 'fill-blank'
+    sentence: '___ em anexo o documento solicitado.'
+    answer: 'Segue'
+    accepted: ['segue']
+    hint: 'Fórmula estándar y formal para referirse a un archivo adjunto en un correo profesional.'
+    translation: 'Adjunto encontrará el documento solicitado.'
+    placeholder: 'Anexo'
+  - type: 'fill-blank'
+    sentence: 'Vamos agendar uma ___ para discutir isso.'
+    answer: 'call'
+    accepted: ['call']
+    hint: 'Anglicismo corporativo brasileño muy común, especialmente en startups y tecnología.'
+    translation: 'Vamos a agendar una llamada para discutir esto.'
+    placeholder: 'reunião'
+  - type: 'match'
+    instructions: 'Empareja cada término del vocabulario de reuniones con su traducción.'
     pairs:
-      - left: "a pauta"
-        right: "la agenda (de una reunión)"
-      - left: "a reunião de alinhamento"
-        right: "reunión de coordinación"
-      - left: "o prazo"
-        right: "el plazo"
-      - left: "a meta"
-        right: "la meta / el objetivo"
-      - left: "o orçamento"
-        right: "el presupuesto"
-  - type: "write"
+      - left: 'a pauta'
+        right: 'la agenda (de una reunión)'
+      - left: 'a reunião de alinhamento'
+        right: 'reunión de coordinación'
+      - left: 'o prazo'
+        right: 'el plazo'
+      - left: 'a meta'
+        right: 'la meta / el objetivo'
+      - left: 'o orçamento'
+        right: 'el presupuesto'
+  - type: 'write'
     prompt: "Escribe en portugués la fórmula formal de cierre de un correo, equivalente a 'Atentamente,'."
-    answer: "Atenciosamente"
-    accepted: ["Atenciosamente,", "Atenciosamente"]
-    hint: "Es la fórmula de despedida estándar en correos corporativos formales."
-    placeholder: "Cordialmente"
-  - type: "order"
-    sentence: "Fico à disposição para esclarecimentos"
-    translation: "Quedo a su disposición para aclaraciones."
+    answer: 'Atenciosamente'
+    accepted: ['Atenciosamente,', 'Atenciosamente']
+    hint: 'Es la fórmula de despedida estándar en correos corporativos formales.'
+    placeholder: 'Cordialmente'
+  - type: 'order'
+    sentence: 'Fico à disposição para esclarecimentos'
+    translation: 'Quedo a su disposición para aclaraciones.'
 vocabulary:
-  - term: "a pauta"
-    translation: "la agenda (de una reunión)"
-  - term: "a reunião de alinhamento"
-    translation: "reunión de coordinación"
-  - term: "o prazo"
-    translation: "el plazo"
-  - term: "a meta"
-    translation: "la meta / el objetivo"
-  - term: "o orçamento"
-    translation: "el presupuesto"
+  - term: 'a pauta'
+    translation: 'la agenda (de una reunión)'
+  - term: 'a reunião de alinhamento'
+    translation: 'reunión de coordinación'
+  - term: 'o prazo'
+    translation: 'el plazo'
+  - term: 'a meta'
+    translation: 'la meta / el objetivo'
+  - term: 'o orçamento'
+    translation: 'el presupuesto'
 ---
 
 El portugués de negocios combina fórmulas formales tradicionales con una fuerte
@@ -94,13 +97,13 @@ Atenciosamente,                            (Atentamente,)
 
 ## Vocabulario de reuniones
 
-| Portugués | Español |
-| --- | --- |
-| a pauta | la agenda (de una reunión) |
-| a reunião de alinhamento | reunión de coordinación |
-| o prazo | el plazo |
-| a meta | la meta / el objetivo |
-| o orçamento | el presupuesto |
+| Portugués                | Español                    |
+| ------------------------ | -------------------------- |
+| a pauta                  | la agenda (de una reunión) |
+| a reunião de alinhamento | reunión de coordinación    |
+| o prazo                  | el plazo                   |
+| a meta                   | la meta / el objetivo      |
+| o orçamento              | el presupuesto             |
 
 ## Los anglicismos corporativos brasileños
 

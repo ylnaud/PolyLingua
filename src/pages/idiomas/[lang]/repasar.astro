@@ -24,7 +24,7 @@ const exerciseManifest = Object.fromEntries(
       ...l.data.quiz.map((data) => ({ kind: 'choice', data })),
       ...l.data.exercises.map((data) => ({ kind: data.type, data })),
     ],
-  ])
+  ]),
 );
 
 // Manifest lección→tema gramatical de este idioma, para poder filtrar el
@@ -61,7 +61,15 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
       <a class="btn btn-primary" href={`/idiomas/${lang}`}>Ver lecciones</a>
     </div>
 
-    <Practice quiz={[]} exercises={[]} dynamic={true} sessionType="review" lessonId="review" minutes={1} lang={languageMeta?.bcp47} />
+    <Practice
+      quiz={[]}
+      exercises={[]}
+      dynamic={true}
+      sessionType="review"
+      lessonId="review"
+      minutes={1}
+      lang={languageMeta?.bcp47}
+    />
   </section>
 
   <div hidden data-exercise-manifest={JSON.stringify(exerciseManifest)}></div>
@@ -69,7 +77,11 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 </BaseLayout>
 
 <script>
-  import { buildItemFieldset, primePracticeCounters, type SrsEntry } from '../../../lib/practiceItemMarkup';
+  import {
+    buildItemFieldset,
+    primePracticeCounters,
+    type SrsEntry,
+  } from '../../../lib/practiceItemMarkup';
   import { today, getActiveSprint, markSprintDayDone } from '../../../lib/storage';
   import { shuffle } from '../../../lib/shuffle';
   import { MASTERY_LABELS } from '../../../lib/srs';
@@ -116,7 +128,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
   function renderTopicFilters(
     dueAll: SrsEntry[],
     topicManifest: Record<string, string>,
-    selectedTopic: string | null
+    selectedTopic: string | null,
   ) {
     const container = document.querySelector<HTMLElement>('[data-topic-filters]');
     if (!container) return;
@@ -165,7 +177,8 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     const lessonId = entry.id.split('#')[0];
     const pool = manifest[lessonId] ?? [];
     const alternatives = pool.filter(
-      (item) => item.kind !== entry.kind || JSON.stringify(item.data) !== JSON.stringify(entry.data)
+      (item) =>
+        item.kind !== entry.kind || JSON.stringify(item.data) !== JSON.stringify(entry.data),
     );
     if (alternatives.length === 0) return entry;
     const chosen = shuffle(alternatives)[0];
@@ -178,7 +191,9 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     // esta sesión evita que este script, cuyo listener de astro:page-load
     // queda activo para el resto de la navegación SPA, toque el quiz de una
     // lección o examen visitados después de pasar por /repasar.
-    const practiceRoot = document.querySelector<HTMLElement>('[data-practice][data-session-type="review"]');
+    const practiceRoot = document.querySelector<HTMLElement>(
+      '[data-practice][data-session-type="review"]',
+    );
     const container = practiceRoot?.querySelector<HTMLElement>('[data-items-container]');
     const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
     const desc = document.querySelector<HTMLElement>('[data-review-desc]');
@@ -191,7 +206,9 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     const topicManifest = readTopicManifest();
     const selectedTopic = new URLSearchParams(window.location.search).get('tema');
 
-    const dueAll = Object.values(pool).filter((entry) => entry.lang === lang && entry.due <= today());
+    const dueAll = Object.values(pool).filter(
+      (entry) => entry.lang === lang && entry.due <= today(),
+    );
     renderTopicFilters(dueAll, topicManifest, selectedTopic);
 
     const due = (
@@ -214,7 +231,8 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
       for (const [box, count] of [...boxCounts.entries()].sort((a, b) => a[0] - b[0])) {
         parts.push(`${count} ${(MASTERY_LABELS[box] ?? '').toLowerCase()}`);
       }
-      desc.textContent = `Tienes ${due.length} ${due.length === 1 ? 'ítem' : 'ítems'} por repasar` +
+      desc.textContent =
+        `Tienes ${due.length} ${due.length === 1 ? 'ítem' : 'ítems'} por repasar` +
         (parts.length > 0 ? `: ${parts.join(', ')}.` : '.');
     }
 
@@ -335,5 +353,4 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     color: var(--accent-text);
     margin-left: 0.4rem;
   }
-
 </style>

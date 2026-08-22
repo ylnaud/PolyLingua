@@ -1,8 +1,8 @@
 ---
-title: "Duolingo, Babbel o PolyLingua: cuál te conviene si no quieres pagar ni registrarte"
-description: "Comparamos sin filtro las tres opciones para aprender idiomas gratis: qué gana cada una, dónde flaquea, y cuándo tiene sentido elegir la gratuita de verdad."
+title: 'Duolingo, Babbel o PolyLingua: cuál te conviene si no quieres pagar ni registrarte'
+description: 'Comparamos sin filtro las tres opciones para aprender idiomas gratis: qué gana cada una, dónde flaquea, y cuándo tiene sentido elegir la gratuita de verdad.'
 publishDate: 2026-08-12
-tags: ["comparativas", "aprender gratis"]
+tags: ['comparativas', 'aprender gratis']
 ---
 
 Si buscaste esto es porque ya probaste (o estás por probar) Duolingo o Babbel y
@@ -91,14 +91,14 @@ separado según el paquete de idiomas que elijas.
 
 ## La comparación en una tabla
 
-| | Duolingo | Babbel | PolyLingua |
-| --- | --- | --- | --- |
-| Gratis sin límites | No (vidas limitadas) | No | Sí |
-| Requiere cuenta | Sí | Sí | No |
-| Explica la gramática directamente | Poco | Sí | Sí |
-| Funciona offline | Parcial (con app de pago) | No | Sí |
-| Reconocimiento de voz | Sí | Sí | No (por ahora) |
-| Idiomas en un solo lugar | Muchos | Varios | 5 (alemán, inglés, francés, italiano, portugués) |
+|                                   | Duolingo                  | Babbel | PolyLingua                                       |
+| --------------------------------- | ------------------------- | ------ | ------------------------------------------------ |
+| Gratis sin límites                | No (vidas limitadas)      | No     | Sí                                               |
+| Requiere cuenta                   | Sí                        | Sí     | No                                               |
+| Explica la gramática directamente | Poco                      | Sí     | Sí                                               |
+| Funciona offline                  | Parcial (con app de pago) | No     | Sí                                               |
+| Reconocimiento de voz             | Sí                        | Sí     | No (por ahora)                                   |
+| Idiomas en un solo lugar          | Muchos                    | Varios | 5 (alemán, inglés, francés, italiano, portugués) |
 
 ## La respuesta corta
 

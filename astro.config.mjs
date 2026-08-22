@@ -5,7 +5,21 @@ import sitemap from '@astrojs/sitemap';
 // `noindex` en src/pages para la lista viva). @astrojs/sitemap no lee ese meta
 // tag — solo enumera rutas del build — así que hay que excluirlas a mano acá
 // o terminan en el sitemap contradiciendo su propio noindex.
-const NOINDEX_LAST_SEGMENTS = ['repasar', 'practica-libre', 'vocabulario', 'examen', 'logros', 'ahorcado', 'diario', 'pronunciacion', 'recursos', 'situaciones', 'gramatica', 'mis-errores', 'offline'];
+const NOINDEX_LAST_SEGMENTS = [
+  'repasar',
+  'practica-libre',
+  'vocabulario',
+  'examen',
+  'logros',
+  'ahorcado',
+  'diario',
+  'pronunciacion',
+  'recursos',
+  'situaciones',
+  'gramatica',
+  'mis-errores',
+  'offline',
+];
 
 function isNoindexPage(pageUrl) {
   const path = new URL(pageUrl).pathname.replace(/\/$/, '');

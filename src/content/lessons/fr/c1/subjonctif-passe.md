@@ -1,51 +1,53 @@
 ---
 language: fr
 level: c1
-title: "Le subjonctif passé: cuando la duda mira hacia atrás"
-description: "Cómo expresar duda, emoción o deseo sobre algo que YA ocurrió, combinando lo que ya sabes del subjonctif con el participio pasado."
+title: 'Le subjonctif passé: cuando la duda mira hacia atrás'
+description: 'Cómo expresar duda, emoción o deseo sobre algo que YA ocurrió, combinando lo que ya sabes del subjonctif con el participio pasado.'
 order: 3
 unit: 1
-grammarTopic: "Subjonctif passé"
+grammarTopic: 'Subjonctif passé'
 funFact: "El Subjonctif passé no es un tiempo verbal nuevo que aprender desde cero — es simplemente el Subjonctif présent del auxiliar (avoir/être) combinado con el participio que ya conoces del passé composé. Si ya dominas ambas piezas por separado, esta 'nueva' estructura es solo unirlas."
 minutes: 9
 quiz:
-  - question: "¿Cuál es la fórmula del Subjonctif passé?"
-    options: [
-      "avoir/être (en subjonctif présent) + participe passé",
-      "avoir/être (presente normal) + participe passé",
-      "Subjonctif présent del verbo principal"
-    ]
+  - question: '¿Cuál es la fórmula del Subjonctif passé?'
+    options:
+      [
+        'avoir/être (en subjonctif présent) + participe passé',
+        'avoir/être (presente normal) + participe passé',
+        'Subjonctif présent del verbo principal',
+      ]
     answerIndex: 0
     explanation: "Subjonctif passé = avoir/être conjugado en subjonctif présent (que j'aie, que je sois) + participe passé: que j'aie fini, que je sois parti."
   - question: "'Je suis content que tu ___ (réussir) ton examen' (contento de que hayas aprobado). ¿Qué forma va?"
-    options: ["réussisses", "aies réussi", "as réussi"]
+    options: ['réussisses', 'aies réussi', 'as réussi']
     answerIndex: 1
-    explanation: "Como la acción de aprobar ya ocurrió (antes del sentimiento de contento), se usa Subjonctif passé: que tu aies réussi."
-  - question: "¿Cuándo usarías Subjonctif passé en vez de Subjonctif présent?"
-    options: [
-      "Cuando la acción del subjonctif ya ocurrió ANTES que la acción principal",
-      "Siempre, son intercambiables",
-      "Solo en preguntas"
-    ]
+    explanation: 'Como la acción de aprobar ya ocurrió (antes del sentimiento de contento), se usa Subjonctif passé: que tu aies réussi.'
+  - question: '¿Cuándo usarías Subjonctif passé en vez de Subjonctif présent?'
+    options:
+      [
+        'Cuando la acción del subjonctif ya ocurrió ANTES que la acción principal',
+        'Siempre, son intercambiables',
+        'Solo en preguntas',
+      ]
     answerIndex: 0
     explanation: "El Subjonctif passé marca que la acción subordinada ya se completó antes que la principal: Je doute qu'il ait fini (dudo que haya terminado, ya en el pasado)."
 exercises:
-  - type: "fill-blank"
-    sentence: "Je suis content que tu ___ réussi ton examen."
-    answer: "aies"
-    accepted: ["aies"]
+  - type: 'fill-blank'
+    sentence: 'Je suis content que tu ___ réussi ton examen.'
+    answer: 'aies'
+    accepted: ['aies']
     hint: "Subjonctif passé = avoir/être en subjonctif présent + participe passé; con 'tu' es 'aies'."
-    translation: "Estoy contento de que hayas aprobado tu examen."
-    placeholder: "soit"
-  - type: "fill-blank"
+    translation: 'Estoy contento de que hayas aprobado tu examen.'
+    placeholder: 'soit'
+  - type: 'fill-blank'
     sentence: "Il est possible qu'elle ___ déjà partie."
-    answer: "soit"
-    accepted: ["soit"]
+    answer: 'soit'
+    accepted: ['soit']
     hint: "'partir' se conjuga con être; subjonctif présent de être para 'elle' es 'soit'."
-    translation: "Es posible que ya se haya ido."
-    placeholder: "ait"
-  - type: "match"
-    instructions: "Empareja cada frase en subjonctif présent con su equivalente en subjonctif passé."
+    translation: 'Es posible que ya se haya ido.'
+    placeholder: 'ait'
+  - type: 'match'
+    instructions: 'Empareja cada frase en subjonctif présent con su equivalente en subjonctif passé.'
     pairs:
       - left: "Je doute qu'il vienne."
         right: "Je doute qu'il soit venu."
@@ -53,30 +55,30 @@ exercises:
         right: "Je suis triste qu'il soit parti."
       - left: "que j'aie (avoir, presente)"
         right: "que j'aie fini (passé)"
-      - left: "que je sois (être, presente)"
-        right: "que je sois parti(e) (passé)"
+      - left: 'que je sois (être, presente)'
+        right: 'que je sois parti(e) (passé)'
       - left: "Je ne pense pas qu'il comprenne."
         right: "Je ne pense pas qu'il ait compris."
-  - type: "write"
+  - type: 'write'
     prompt: "Escribe en francés: 'No creo que haya entendido' (usando subjonctif passé de 'comprendre')."
     answer: "Je ne pense pas qu'il ait compris."
     accepted: ["Je ne pense pas qu'il ait compris"]
     hint: "'comprendre' se conjuga con avoir: que + sujeto + aie/ait/... + compris."
     placeholder: "Je doute qu'elle ait fini."
-  - type: "order"
+  - type: 'order'
     sentence: "Je ne pense pas qu'il ait compris"
-    translation: "No creo que él haya entendido."
+    translation: 'No creo que él haya entendido.'
 vocabulary:
   - term: "que j'aie fini"
-    translation: "que haya terminado"
-  - term: "que je sois parti(e)"
-    translation: "que haya salido / que me haya ido"
+    translation: 'que haya terminado'
+  - term: 'que je sois parti(e)'
+    translation: 'que haya salido / que me haya ido'
   - term: "Je doute qu'il soit venu."
-    translation: "Dudo que haya venido."
+    translation: 'Dudo que haya venido.'
   - term: "Je suis triste qu'il soit parti."
-    translation: "Estoy triste de que se haya ido."
+    translation: 'Estoy triste de que se haya ido.'
   - term: "Je ne pense pas qu'il ait compris."
-    translation: "No creo que haya entendido."
+    translation: 'No creo que haya entendido.'
 ---
 
 Ya dominas el Subjonctif présent. Ahora aprendes su versión de pasado — necesaria

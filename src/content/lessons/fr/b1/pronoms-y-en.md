@@ -1,69 +1,69 @@
 ---
 language: fr
 level: b1
-title: "Les pronoms y et en: dos palabritas que reemplazan mucho"
+title: 'Les pronoms y et en: dos palabritas que reemplazan mucho'
 description: "'Y' reemplaza lugares y cosas con 'à'; 'en' reemplaza cantidades y cosas con 'de'. Dos pronombres, infinitas repeticiones evitadas."
 order: 4
 unit: 1
-grammarTopic: "Pronombres adverbiales (y, en)"
+grammarTopic: 'Pronombres adverbiales (y, en)'
 funFact: "'J'y vais' (voy allí) es una de las frases más comunes del francés cotidiano, y resume todo lo que necesitas saber sobre 'y': reemplaza un LUGAR o algo introducido por 'à'. Su hermano 'en' hace lo mismo pero para cantidades y cosas con 'de'. Juntos, evitan que repitas constantemente sustantivos ya mencionados."
 minutes: 9
 quiz:
   - question: "'Je vais à Paris' → 'J'___ vais' (voy allí). ¿Qué pronombre va?"
-    options: ["en", "y", "le"]
+    options: ['en', 'y', 'le']
     answerIndex: 1
     explanation: "'y' reemplaza un lugar introducido por 'à' (o en/dans/sur): J'y vais (voy allí)."
   - question: "'J'ai trois livres' → 'J'___ ai trois' (tengo tres [de ellos]). ¿Qué pronombre va?"
-    options: ["y", "en", "les"]
+    options: ['y', 'en', 'les']
     answerIndex: 1
     explanation: "'en' reemplaza una cantidad + sustantivo: J'en ai trois (tengo tres de ellos/eso)."
   - question: "'Je pense à mon travail' → 'J'___ pense' (pienso en eso). ¿Qué pronombre va?"
-    options: ["en", "y", "le"]
+    options: ['en', 'y', 'le']
     answerIndex: 1
     explanation: "'penser à' usa la preposición 'à', así que se reemplaza con 'y': J'y pense (pienso en eso)."
 exercises:
-  - type: "fill-blank"
+  - type: 'fill-blank'
     sentence: "J'___ vais avec plaisir."
-    answer: "y"
+    answer: 'y'
     hint: "'y' reemplaza un lugar introducido por 'à'."
-    translation: "Voy allí con gusto."
-    placeholder: "en"
-  - type: "fill-blank"
+    translation: 'Voy allí con gusto.'
+    placeholder: 'en'
+  - type: 'fill-blank'
     sentence: "J'___ ai trois."
-    answer: "en"
+    answer: 'en'
     hint: "'en' reemplaza una cantidad + sustantivo."
-    translation: "Tengo tres de ellos."
-    placeholder: "y"
-  - type: "match"
+    translation: 'Tengo tres de ellos.'
+    placeholder: 'y'
+  - type: 'match'
     instructions: "Empareja cada frase original con su versión usando 'y' o 'en'."
     pairs:
-      - left: "Je vais à Paris"
+      - left: 'Je vais à Paris'
         right: "J'y vais"
-      - left: "Je pense à ce problème"
+      - left: 'Je pense à ce problème'
         right: "J'y pense"
       - left: "J'ai trois livres"
         right: "J'en ai trois"
-      - left: "Je viens de Paris"
+      - left: 'Je viens de Paris'
         right: "J'en viens"
-  - type: "write"
+  - type: 'write'
     prompt: "Escribe en francés 'Hay tres de ellos' combinando 'il y a' con 'en'."
-    answer: "Il y en a trois."
+    answer: 'Il y en a trois.'
     hint: "Combina 'il y a' + 'en': il y en a..."
-    placeholder: "Il y en a deux."
-  - type: "order"
-    sentence: "Il y en a trois"
-    translation: "Hay tres de ellos."
+    placeholder: 'Il y en a deux.'
+  - type: 'order'
+    sentence: 'Il y en a trois'
+    translation: 'Hay tres de ellos.'
 vocabulary:
-  - term: "y"
-    translation: "allí / eso (pronombre adverbial de lugar)"
-  - term: "en"
-    translation: "de ello / de eso (pronombre adverbial de cantidad)"
+  - term: 'y'
+    translation: 'allí / eso (pronombre adverbial de lugar)'
+  - term: 'en'
+    translation: 'de ello / de eso (pronombre adverbial de cantidad)'
   - term: "J'y vais"
-    translation: "voy allí"
+    translation: 'voy allí'
   - term: "J'en ai trois"
-    translation: "tengo tres de ellos"
-  - term: "Il y en a trois"
-    translation: "hay tres de ellos"
+    translation: 'tengo tres de ellos'
+  - term: 'Il y en a trois'
+    translation: 'hay tres de ellos'
 ---
 
 Estos dos pronombres pequeños son extremadamente frecuentes en francés hablado —

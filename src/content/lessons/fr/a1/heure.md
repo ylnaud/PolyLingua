@@ -2,73 +2,73 @@
 language: fr
 level: a1
 title: "L'heure: pregunta y di la hora en francés"
-description: "Cómo preguntar y decir la hora en francés: sistema de 12 y 24 horas, cuartos, medias y las expresiones que necesitas para citas y horarios."
+description: 'Cómo preguntar y decir la hora en francés: sistema de 12 y 24 horas, cuartos, medias y las expresiones que necesitas para citas y horarios.'
 order: 4
 unit: 1
-grammarTopic: "Decir la hora"
+grammarTopic: 'Decir la hora'
 funFact: "'Il est midi et demi' (es mediodía y media) es una de las pocas excepciones donde 'demi' concuerda en género con 'midi' (masculino) sin 'e' final — pero 'il est une heure et demie' sí lleva la 'e' porque 'heure' es femenino. Un pequeño detalle de concordancia que sorprende incluso a nivel intermedio."
 minutes: 6
 quiz:
-  - question: "¿Cómo preguntarías la hora en francés?"
-    options: ["Quelle heure est-il?", "Quel temps est-il?", "Combien d'heure est-il?"]
+  - question: '¿Cómo preguntarías la hora en francés?'
+    options: ['Quelle heure est-il?', 'Quel temps est-il?', "Combien d'heure est-il?"]
     answerIndex: 0
     explanation: "'Quelle heure est-il?' es la pregunta estándar para pedir la hora."
   - question: "¿Qué significa 'il est trois heures et quart'?"
-    options: ["las 3:00", "las 3:15", "las 3:45"]
+    options: ['las 3:00', 'las 3:15', 'las 3:45']
     answerIndex: 1
     explanation: "'et quart' significa 'y cuarto' = 3:15."
   - question: "¿Qué significa 'il est quatre heures moins le quart'?"
-    options: ["las 4:15", "las 3:45", "las 4:45"]
+    options: ['las 4:15', 'las 3:45', 'las 4:45']
     answerIndex: 1
     explanation: "'moins le quart' significa 'menos cuarto' = 3:45 (un cuarto antes de las 4)."
 exercises:
-  - type: "fill-blank"
-    sentence: "Il est trois heures et ___."
-    answer: "quart"
-    accepted: ["quart"]
+  - type: 'fill-blank'
+    sentence: 'Il est trois heures et ___.'
+    answer: 'quart'
+    accepted: ['quart']
     hint: "'y cuarto' en francés."
-    translation: "Son las tres y cuarto."
-    placeholder: "demie"
-  - type: "fill-blank"
-    sentence: "Quelle ___ est-il?"
-    answer: "heure"
-    accepted: ["heure"]
+    translation: 'Son las tres y cuarto.'
+    placeholder: 'demie'
+  - type: 'fill-blank'
+    sentence: 'Quelle ___ est-il?'
+    answer: 'heure'
+    accepted: ['heure']
     hint: "La palabra francesa para 'hora'."
-    translation: "¿Qué hora es?"
-    placeholder: "minute"
-  - type: "match"
-    instructions: "Empareja cada expresión con su significado."
+    translation: '¿Qué hora es?'
+    placeholder: 'minute'
+  - type: 'match'
+    instructions: 'Empareja cada expresión con su significado.'
     pairs:
-      - left: "et quart"
-        right: "y cuarto"
-      - left: "et demie"
-        right: "y media"
-      - left: "moins le quart"
-        right: "menos cuarto"
-      - left: "midi"
-        right: "mediodía"
-      - left: "minuit"
-        right: "medianoche"
-  - type: "write"
+      - left: 'et quart'
+        right: 'y cuarto'
+      - left: 'et demie'
+        right: 'y media'
+      - left: 'moins le quart'
+        right: 'menos cuarto'
+      - left: 'midi'
+        right: 'mediodía'
+      - left: 'minuit'
+        right: 'medianoche'
+  - type: 'write'
     prompt: "Escribe en francés cómo dirías 'las cuatro menos cuarto' (usa 'quatre heures')."
-    answer: "quatre heures moins le quart"
-    accepted: ["Quatre heures moins le quart"]
-    hint: "Recuerda la estructura: hora + moins le quart."
-    placeholder: "trois heures et quart"
-  - type: "order"
-    sentence: "Il est trois heures et quart"
-    translation: "Son las tres y cuarto."
+    answer: 'quatre heures moins le quart'
+    accepted: ['Quatre heures moins le quart']
+    hint: 'Recuerda la estructura: hora + moins le quart.'
+    placeholder: 'trois heures et quart'
+  - type: 'order'
+    sentence: 'Il est trois heures et quart'
+    translation: 'Son las tres y cuarto.'
 vocabulary:
-  - term: "quart"
-    translation: "cuarto"
-  - term: "demie"
-    translation: "media"
-  - term: "moins le quart"
-    translation: "menos cuarto"
-  - term: "midi"
-    translation: "mediodía"
-  - term: "minuit"
-    translation: "medianoche"
+  - term: 'quart'
+    translation: 'cuarto'
+  - term: 'demie'
+    translation: 'media'
+  - term: 'moins le quart'
+    translation: 'menos cuarto'
+  - term: 'midi'
+    translation: 'mediodía'
+  - term: 'minuit'
+    translation: 'medianoche'
 ---
 
 Decir la hora en francés combina un vocabulario específico con la estructura "il est"
@@ -85,10 +85,10 @@ Il est trois heures.      (son las tres)
 
 ## Cuartos y medias
 
-| Expresión | Significado |
-| --- | --- |
-| et quart | y cuarto (+15 min) |
-| et demie | y media (+30 min) |
+| Expresión      | Significado            |
+| -------------- | ---------------------- |
+| et quart       | y cuarto (+15 min)     |
+| et demie       | y media (+30 min)      |
 | moins le quart | menos cuarto (-15 min) |
 
 ```

@@ -1,117 +1,118 @@
 ---
 language: pt
 level: a1
-title: "Saudações: saludos y presentaciones en portugués brasileño"
-description: "Oi, tudo bem, bom dia, meu nome é, prazer: todos los saludos y frases para presentarte en portugués brasileño desde el primer día."
+title: 'Saudações: saludos y presentaciones en portugués brasileño'
+description: 'Oi, tudo bem, bom dia, meu nome é, prazer: todos los saludos y frases para presentarte en portugués brasileño desde el primer día.'
 order: 13
 unit: 3
-grammarTopic: "Saludos y presentarse"
+grammarTopic: 'Saludos y presentarse'
 funFact: "'Tudo bem?' en Brasil no es solo un saludo: es pregunta y respuesta a la vez. Si alguien te dice 'Tudo bem?', la respuesta estándar es 'Tudo bem!' o 'Tudo bom!' — literalmente estás respondiendo la pregunta con la misma frase, solo cambiando la entonación de pregunta a afirmación."
 minutes: 7
 phrases:
-  - text: "Oi!"
-    es: "¡Hola!"
+  - text: 'Oi!'
+    es: '¡Hola!'
     note: "El saludo más informal y común en Brasil. Más usado que 'olá'."
-  - text: "Olá!"
-    es: "¡Hola!"
+  - text: 'Olá!'
+    es: '¡Hola!'
     note: "Más formal que 'oi'. Se usa más en Portugal y en contextos formales en Brasil."
-  - text: "Bom dia!"
-    es: "¡Buenos días!"
-    note: "Se usa hasta el mediodía aproximadamente."
-  - text: "Boa tarde!"
-    es: "¡Buenas tardes!"
-    note: "Desde el mediodía hasta el anochecer."
-  - text: "Boa noite!"
-    es: "¡Buenas noches!"
-    note: "Sirve tanto para saludar como para despedirse por la noche."
-  - text: "Tudo bem?"
-    es: "¿Todo bien? / ¿Cómo estás?"
+  - text: 'Bom dia!'
+    es: '¡Buenos días!'
+    note: 'Se usa hasta el mediodía aproximadamente.'
+  - text: 'Boa tarde!'
+    es: '¡Buenas tardes!'
+    note: 'Desde el mediodía hasta el anochecer.'
+  - text: 'Boa noite!'
+    es: '¡Buenas noches!'
+    note: 'Sirve tanto para saludar como para despedirse por la noche.'
+  - text: 'Tudo bem?'
+    es: '¿Todo bien? / ¿Cómo estás?'
     note: "El saludo-pregunta más frecuente en Brasil. La respuesta es 'Tudo bem!' o 'Tudo bom!'."
-  - text: "Meu nome é..."
-    es: "Mi nombre es..."
-  - text: "Eu me chamo..."
-    es: "Me llamo..."
-    note: "Forma más natural y coloquial de presentarse."
-  - text: "Prazer!"
-    es: "¡Mucho gusto!"
+  - text: 'Meu nome é...'
+    es: 'Mi nombre es...'
+  - text: 'Eu me chamo...'
+    es: 'Me llamo...'
+    note: 'Forma más natural y coloquial de presentarse.'
+  - text: 'Prazer!'
+    es: '¡Mucho gusto!'
     note: "Abreviación de 'prazer em conhecê-lo/la' (placer en conocerle)."
-  - text: "Tchau!"
-    es: "¡Chau! / ¡Adiós!"
+  - text: 'Tchau!'
+    es: '¡Chau! / ¡Adiós!'
     note: "Del italiano 'ciao'. Es la despedida informal estándar."
-  - text: "Até logo!"
-    es: "¡Hasta luego!"
-  - text: "Até amanhã!"
-    es: "¡Hasta mañana!"
+  - text: 'Até logo!'
+    es: '¡Hasta luego!'
+  - text: 'Até amanhã!'
+    es: '¡Hasta mañana!'
 quiz:
   - question: "¿Cuál es la respuesta más natural a 'Tudo bem?' en Brasil?"
-    options: ["Sim, obrigado.", "Tudo bem!", "Não sei."]
+    options: ['Sim, obrigado.', 'Tudo bem!', 'Não sei.']
     answerIndex: 1
     explanation: "En Brasil, 'Tudo bem?' se responde con la misma frase en forma afirmativa: 'Tudo bem!' o 'Tudo bom!'."
   - question: "¿Cuál es la diferencia entre 'oi' y 'olá'?"
-    options: [
-      "'oi' es informal (más usado en Brasil); 'olá' es más formal",
-      "'oi' es portugués de Portugal; 'olá' es brasileño",
-      "No hay diferencia, son sinónimos exactos"
-    ]
+    options:
+      [
+        "'oi' es informal (más usado en Brasil); 'olá' es más formal",
+        "'oi' es portugués de Portugal; 'olá' es brasileño",
+        'No hay diferencia, son sinónimos exactos',
+      ]
     answerIndex: 0
     explanation: "'oi' es el saludo informal del día a día en Brasil; 'olá' es más formal y se usa más en Portugal o en contextos escritos."
   - question: "¿Cómo dirías 'Mucho gusto' al conocer a alguien en portugués?"
-    options: ["Obrigado!", "Tchau!", "Prazer!"]
+    options: ['Obrigado!', 'Tchau!', 'Prazer!']
     answerIndex: 2
     explanation: "'Prazer!' (literalmente 'placer') es la forma estándar de decir 'mucho gusto' al conocer a alguien."
 exercises:
-  - type: "fill-blank"
-    sentence: "___! Meu nome é Ana. ___!"
-    answer: "Oi"
-    accepted: ["oi", "Olá", "olá"]
-    hint: "El saludo más informal y común en Brasil."
-    translation: "¡Hola! Mi nombre es Ana. ¡Mucho gusto!"
-    placeholder: "Tchau"
-  - type: "fill-blank"
-    sentence: "Eu ___ chamo Pedro. E você?"
-    answer: "me"
+  - type: 'fill-blank'
+    sentence: '___! Meu nome é Ana. ___!'
+    answer: 'Oi'
+    accepted: ['oi', 'Olá', 'olá']
+    hint: 'El saludo más informal y común en Brasil.'
+    translation: '¡Hola! Mi nombre es Ana. ¡Mucho gusto!'
+    placeholder: 'Tchau'
+  - type: 'fill-blank'
+    sentence: 'Eu ___ chamo Pedro. E você?'
+    answer: 'me'
     hint: "El pronombre reflexivo que acompaña a 'chamar-se' (llamarse)."
-    translation: "Yo me llamo Pedro. ¿Y tú?"
-    placeholder: "se"
-  - type: "match"
-    instructions: "Empareja cada saludo con su momento de uso."
+    translation: 'Yo me llamo Pedro. ¿Y tú?'
+    placeholder: 'se'
+  - type: 'match'
+    instructions: 'Empareja cada saludo con su momento de uso.'
     pairs:
-      - left: "Bom dia!"
-        right: "por la mañana"
-      - left: "Boa tarde!"
-        right: "por la tarde"
-      - left: "Boa noite!"
-        right: "por la noche"
-      - left: "Tchau!"
-        right: "al despedirse"
-      - left: "Prazer!"
-        right: "al conocer a alguien"
-  - type: "write"
+      - left: 'Bom dia!'
+        right: 'por la mañana'
+      - left: 'Boa tarde!'
+        right: 'por la tarde'
+      - left: 'Boa noite!'
+        right: 'por la noche'
+      - left: 'Tchau!'
+        right: 'al despedirse'
+      - left: 'Prazer!'
+        right: 'al conocer a alguien'
+  - type: 'write'
     prompt: "Escribe en portugués cómo te presentarías diciendo tu nombre (usa 'Eu me chamo')."
-    answer: "Eu me chamo Maria"
-    accepted: ["eu me chamo Maria", "Eu me chamo Maria.", "Eu me chamo Pedro", "eu me chamo Pedro"]
-    hint: "Eu me chamo + tu nombre."
-    placeholder: "Meu nome é João"
-  - type: "order"
-    sentence: "Eu me chamo Ana prazer"
-    translation: "Me llamo Ana, mucho gusto."
+    answer: 'Eu me chamo Maria'
+    accepted: ['eu me chamo Maria', 'Eu me chamo Maria.', 'Eu me chamo Pedro', 'eu me chamo Pedro']
+    hint: 'Eu me chamo + tu nombre.'
+    placeholder: 'Meu nome é João'
+  - type: 'order'
+    sentence: 'Eu me chamo Ana prazer'
+    translation: 'Me llamo Ana, mucho gusto.'
 vocabulary:
-  - term: "oi"
-    translation: "hola (informal)"
-  - term: "olá"
-    translation: "hola (formal)"
-  - term: "bom dia"
-    translation: "buenos días"
-  - term: "boa tarde"
-    translation: "buenas tardes"
-  - term: "boa noite"
-    translation: "buenas noches"
-  - term: "tudo bem"
-    translation: "todo bien / ¿cómo estás?"
-  - term: "prazer"
-    translation: "mucho gusto"
-  - term: "tchau"
-    translation: "chau / adiós"
+  - term: 'oi'
+    translation: 'hola (informal)'
+  - term: 'olá'
+    translation: 'hola (formal)'
+  - term: 'bom dia'
+    translation: 'buenos días'
+  - term: 'boa tarde'
+    translation: 'buenas tardes'
+  - term: 'boa noite'
+    translation: 'buenas noches'
+  - term: 'tudo bem'
+    translation: 'todo bien / ¿cómo estás?'
+  - term: 'prazer'
+    translation: 'mucho gusto'
+  - term: 'tchau'
+    translation: 'chau / adiós'
 ---
 
 Los saludos son lo primero que necesitas para cualquier interacción en portugués. La buena

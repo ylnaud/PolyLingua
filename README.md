@@ -49,17 +49,17 @@ Cada lección vive como un archivo Markdown en
 ```md
 ---
 level: a1
-title: "Título de la lección"
-description: "Resumen corto para SEO y tarjetas"
+title: 'Título de la lección'
+description: 'Resumen corto para SEO y tarjetas'
 order: 1
-grammarTopic: "Tema gramatical"
-funFact: "El truco/mnemotecnia para no aburrirse"
+grammarTopic: 'Tema gramatical'
+funFact: 'El truco/mnemotecnia para no aburrirse'
 minutes: 7
 quiz:
-  - question: "¿...?"
-    options: ["opción A", "opción B", "opción C"]
+  - question: '¿...?'
+    options: ['opción A', 'opción B', 'opción C']
     answerIndex: 0
-    explanation: "Por qué es correcta"
+    explanation: 'Por qué es correcta'
 ---
 
 Contenido de la lección en Markdown normal.

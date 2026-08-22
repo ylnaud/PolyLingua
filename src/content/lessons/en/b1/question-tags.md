@@ -1,20 +1,20 @@
 ---
 language: en
 level: b1
-title: "Question Tags: esas preguntitas al final, ¿verdad?"
+title: 'Question Tags: esas preguntitas al final, ¿verdad?'
 description: "Los question tags del inglés (isn't it?, don't you?) que confirman lo que acabas de decir, con la regla del espejo afirmativo-negativo explicada."
 order: 4
 unit: 1
-grammarTopic: "Question tags (¿verdad?, ¿no es cierto?)"
+grammarTopic: 'Question tags (¿verdad?, ¿no es cierto?)'
 funFact: "La regla de oro: si la frase principal es AFIRMATIVA, el question tag es NEGATIVO. Si la frase es NEGATIVA, el tag es AFIRMATIVO. Es un espejo que siempre refleja lo opuesto — 'You're tired, aren't you?' (afirmativa + tag negativo)."
 minutes: 8
 quiz:
   - question: "'You like coffee, ___?' (te gusta el café, ¿verdad?). ¿Qué tag va?"
-    options: ["do you", "don't you", "you do"]
+    options: ['do you', "don't you", 'you do']
     answerIndex: 1
     explanation: "La frase principal es afirmativa (you like), así que el tag es negativo: don't you?"
   - question: "'She isn't coming, ___?' (ella no viene, ¿verdad?). ¿Qué tag va?"
-    options: ["isn't she", "is she", "does she"]
+    options: ["isn't she", 'is she', 'does she']
     answerIndex: 1
     explanation: "La frase principal es negativa (isn't coming), así que el tag es afirmativo: is she?"
   - question: "¿Qué auxiliar usarías para el tag de 'They went home' (fueron a casa, pasado simple sin auxiliar visible)?"
@@ -22,53 +22,53 @@ quiz:
     answerIndex: 1
     explanation: "Cuando el verbo principal no tiene auxiliar visible (pasado simple regular), el tag usa 'did/didn't' para representar ese tiempo: They went home, didn't they?"
 exercises:
-  - type: "fill-blank"
-    sentence: "You like coffee, ___?"
+  - type: 'fill-blank'
+    sentence: 'You like coffee, ___?'
     answer: "don't you"
     accepted: ["don't you"]
     hint: "Frase afirmativa → tag negativo con 'do/don't'."
-    translation: "Te gusta el café, ¿verdad?"
+    translation: 'Te gusta el café, ¿verdad?'
     placeholder: "isn't it"
-  - type: "fill-blank"
+  - type: 'fill-blank'
     sentence: "She isn't coming, ___?"
-    answer: "is she"
-    accepted: ["is she"]
-    hint: "Frase negativa → tag afirmativo."
-    translation: "Ella no viene, ¿verdad?"
+    answer: 'is she'
+    accepted: ['is she']
+    hint: 'Frase negativa → tag afirmativo.'
+    translation: 'Ella no viene, ¿verdad?'
     placeholder: "aren't you"
-  - type: "match"
-    instructions: "Empareja cada frase con su question tag correcto."
+  - type: 'match'
+    instructions: 'Empareja cada frase con su question tag correcto.'
     pairs:
       - left: "You're tired"
         right: "aren't you?"
-      - left: "She can drive"
+      - left: 'She can drive'
         right: "can't she?"
-      - left: "They went home"
+      - left: 'They went home'
         right: "didn't they?"
       - left: "You don't smoke"
-        right: "do you?"
+        right: 'do you?'
       - left: "It's cold today"
         right: "isn't it?"
-  - type: "write"
+  - type: 'write'
     prompt: "Escribe en inglés con question tag: 'Ellos vinieron a la fiesta, ¿verdad?'"
     answer: "They came to the party, didn't they?"
     accepted: ["They came to the party, didn't they"]
     hint: "Frase afirmativa en pasado simple → tag con 'didn't'."
     placeholder: "You can swim, can't you?"
-  - type: "order"
+  - type: 'order'
     sentence: "You can swim can't you"
-    translation: "Sabes nadar, ¿verdad?"
+    translation: 'Sabes nadar, ¿verdad?'
 vocabulary:
   - term: "aren't you"
     translation: "¿verdad? (tag negativo tras 'you're')"
   - term: "isn't it"
     translation: "¿verdad? (tag negativo tras 'it's')"
   - term: "don't you"
-    translation: "¿verdad? (tag negativo en presente)"
+    translation: '¿verdad? (tag negativo en presente)'
   - term: "didn't they"
-    translation: "¿verdad? (tag negativo en pasado)"
-  - term: "is she"
-    translation: "¿verdad? (tag afirmativo tras frase negativa)"
+    translation: '¿verdad? (tag negativo en pasado)'
+  - term: 'is she'
+    translation: '¿verdad? (tag afirmativo tras frase negativa)'
   - term: "can't she"
     translation: "¿verdad? (tag negativo con el modal 'can')"
 ---
@@ -89,12 +89,12 @@ You aren't tired,    are you?
 
 ## Cómo elegir el auxiliar del tag
 
-| Verbo principal | Auxiliar del tag |
-| --- | --- |
-| to be (is/are/was/were) | mismo verbo | She is nice, isn't she? |
-| Verbo modal (can/will/should) | mismo modal | You can swim, can't you? |
-| Verbo normal (presente) | do/does | You like tea, don't you? |
-| Verbo normal (pasado) | did | They left, didn't they? |
+| Verbo principal               | Auxiliar del tag |
+| ----------------------------- | ---------------- |
+| to be (is/are/was/were)       | mismo verbo      | She is nice, isn't she?  |
+| Verbo modal (can/will/should) | mismo modal      | You can swim, can't you? |
+| Verbo normal (presente)       | do/does          | You like tea, don't you? |
+| Verbo normal (pasado)         | did              | They left, didn't they?  |
 
 ## Un caso especial: "I am"
 

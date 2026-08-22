@@ -10,14 +10,19 @@ interface Props {
 
 const { variant = 'icon' } = Astro.props;
 ---
+
 <button
   type="button"
   class:list={['theme-toggle', { 'theme-toggle-sheet': variant === 'sheet' }]}
   aria-label="Cambiar entre modo oscuro y modo claro"
   aria-pressed="false"
 >
-  <span class="icon icon-sun" aria-hidden="true">☀️<span class="sheet-only"> Cambiar a modo claro</span></span>
-  <span class="icon icon-moon" aria-hidden="true">🌙<span class="sheet-only"> Cambiar a modo oscuro</span></span>
+  <span class="icon icon-sun" aria-hidden="true"
+    >☀️<span class="sheet-only"> Cambiar a modo claro</span></span
+  >
+  <span class="icon icon-moon" aria-hidden="true"
+    >🌙<span class="sheet-only"> Cambiar a modo oscuro</span></span
+  >
 </button>
 
 <style>

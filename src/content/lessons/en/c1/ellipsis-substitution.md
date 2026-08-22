@@ -1,75 +1,76 @@
 ---
 language: en
 level: c1
-title: "Ellipsis and Substitution: di más diciendo menos"
+title: 'Ellipsis and Substitution: di más diciendo menos'
 description: "Elipsis y sustitución en inglés con 'so', 'do' y 'one' para evitar repetir palabras, el sello de un inglés fluido, natural y económico al hablar."
 order: 4
 unit: 1
-grammarTopic: "Elipsis y sustitución (so/neither, do so, one/ones)"
+grammarTopic: 'Elipsis y sustitución (so/neither, do so, one/ones)'
 funFact: "Repetir la misma información palabra por palabra ('I think it will rain, and my brother thinks it will rain too') suena robótico en inglés fluido. Los hablantes nativos comprimen constantemente con atajos como 'so' ('I think so'), 'neither' ('Neither do I'), o simplemente omitiendo lo que ya se entiende por contexto."
 minutes: 9
 quiz:
   - question: "'Do you think it will rain?' 'I think ___.' ¿Qué palabra completa la respuesta de forma natural?"
-    options: ["it", "so", "that"]
+    options: ['it', 'so', 'that']
     answerIndex: 1
     explanation: "'I think so' sustituye toda la idea 'it will rain' con 'so' — mucho más natural que repetir toda la frase."
   - question: "'I don't like coffee.' 'Neither ___ I.' ¿Qué auxiliar va?"
-    options: ["do", "am", "have"]
+    options: ['do', 'am', 'have']
     answerIndex: 0
     explanation: "'Neither do I' concuerda con el verbo principal 'like' (no auxiliar especial), así que usa 'do': Neither do I (yo tampoco)."
   - question: "'I need a new phone. Mine is old.' ¿Cómo evitarías repetir 'phone' usando sustitución?"
-    options: [
-      "I need a new one. Mine is old.",
-      "I need a new phone phone. Mine is old.",
-      "No hay forma de evitarlo"
-    ]
+    options:
+      [
+        'I need a new one. Mine is old.',
+        'I need a new phone phone. Mine is old.',
+        'No hay forma de evitarlo',
+      ]
     answerIndex: 0
     explanation: "'one' sustituye al sustantivo contable ya mencionado (phone), evitando la repetición: I need a new one."
 exercises:
-  - type: "fill-blank"
-    sentence: "I think ___."
-    answer: "so"
-    hint: "Alguien pregunta si lloverá; respondes afirmativamente sustituyendo toda la idea con una sola palabra."
-    translation: "Creo que sí."
-    placeholder: "not"
-  - type: "fill-blank"
-    sentence: "Neither ___ I."
-    answer: "do"
-    hint: "Alguien dice que no le gusta el café; expresas acuerdo negativo — el auxiliar concuerda con el verbo principal like."
-    translation: "Yo tampoco."
-    placeholder: "can"
-  - type: "match"
-    instructions: "Empareja cada palabra o estructura de sustitución con su función."
+  - type: 'fill-blank'
+    sentence: 'I think ___.'
+    answer: 'so'
+    hint: 'Alguien pregunta si lloverá; respondes afirmativamente sustituyendo toda la idea con una sola palabra.'
+    translation: 'Creo que sí.'
+    placeholder: 'not'
+  - type: 'fill-blank'
+    sentence: 'Neither ___ I.'
+    answer: 'do'
+    hint: 'Alguien dice que no le gusta el café; expresas acuerdo negativo — el auxiliar concuerda con el verbo principal like.'
+    translation: 'Yo tampoco.'
+    placeholder: 'can'
+  - type: 'match'
+    instructions: 'Empareja cada palabra o estructura de sustitución con su función.'
     pairs:
-      - left: "so"
-        right: "sustituye una idea afirmativa completa"
-      - left: "neither"
-        right: "expresa acuerdo con una idea negativa"
-      - left: "one / ones"
-        right: "sustituye un sustantivo contable ya mencionado"
-      - left: "do so"
-        right: "sustituye una acción completa"
-      - left: "elipsis"
-        right: "omitir una parte que ya se entiende por contexto"
-  - type: "write"
-    prompt: "Traduce usando sustitución con one: Estos zapatos son bonitos, pero prefiero los negros."
-    answer: "These shoes are nice, but I prefer the black ones."
-    hint: "Sustituye el sustantivo repetido (shoes) con ones."
-    placeholder: "I need a new one."
-  - type: "order"
-    sentence: "He asked me to leave and I did so immediately"
-    translation: "Me pidió que me fuera y lo hice de inmediato."
+      - left: 'so'
+        right: 'sustituye una idea afirmativa completa'
+      - left: 'neither'
+        right: 'expresa acuerdo con una idea negativa'
+      - left: 'one / ones'
+        right: 'sustituye un sustantivo contable ya mencionado'
+      - left: 'do so'
+        right: 'sustituye una acción completa'
+      - left: 'elipsis'
+        right: 'omitir una parte que ya se entiende por contexto'
+  - type: 'write'
+    prompt: 'Traduce usando sustitución con one: Estos zapatos son bonitos, pero prefiero los negros.'
+    answer: 'These shoes are nice, but I prefer the black ones.'
+    hint: 'Sustituye el sustantivo repetido (shoes) con ones.'
+    placeholder: 'I need a new one.'
+  - type: 'order'
+    sentence: 'He asked me to leave and I did so immediately'
+    translation: 'Me pidió que me fuera y lo hice de inmediato.'
 vocabulary:
-  - term: "so"
-    translation: "así (que sí)"
-  - term: "neither"
-    translation: "tampoco"
-  - term: "one / ones"
-    translation: "uno / unos (sustituto)"
-  - term: "do so"
-    translation: "hacerlo así"
-  - term: "I hope not"
-    translation: "espero que no"
+  - term: 'so'
+    translation: 'así (que sí)'
+  - term: 'neither'
+    translation: 'tampoco'
+  - term: 'one / ones'
+    translation: 'uno / unos (sustituto)'
+  - term: 'do so'
+    translation: 'hacerlo así'
+  - term: 'I hope not'
+    translation: 'espero que no'
 ---
 
 Este es uno de los rasgos más sutiles de un inglés verdaderamente fluido: evitar

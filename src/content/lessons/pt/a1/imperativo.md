@@ -1,81 +1,82 @@
 ---
 language: pt
 level: a1
-title: "El imperativo en portugués: dar órdenes y hacer pedidos"
-description: "El imperativo del portugués brasileño: cómo dar órdenes, instrucciones y hacer pedidos con las formas de você y vocês, que son las más usadas en Brasil."
+title: 'El imperativo en portugués: dar órdenes y hacer pedidos'
+description: 'El imperativo del portugués brasileño: cómo dar órdenes, instrucciones y hacer pedidos con las formas de você y vocês, que son las más usadas en Brasil.'
 order: 11
 unit: 3
-grammarTopic: "El imperativo"
+grammarTopic: 'El imperativo'
 funFact: "En Brasil, el imperativo se forma con la conjugación de 'você', no con la de 'tu' como en España. Así que si ya sabes conjugar el presente para 'você', ya sabes el 90% del imperativo brasileño — es el mismo verbo: 'você fala' → 'fala!' (¡habla!)."
 minutes: 8
 quiz:
   - question: "¿Cómo se dice '¡Habla!' (imperativo) en portugués brasileño?"
-    options: ["Falas!", "Fala!", "Falar!"]
+    options: ['Falas!', 'Fala!', 'Falar!']
     answerIndex: 1
     explanation: "En Brasil, el imperativo usa la forma de 'você' del presente de indicativo: 'fala!' — no la de 'tu' (falas)."
-  - question: "¿Cómo formas el imperativo negativo en portugués brasileño?"
-    options: [
-      "Añadiendo 'não' antes del verbo conjugado en subjuntivo de 'você'",
-      "Añadiendo 'não' antes del infinitivo",
-      "Añadiendo 'nunca' después del verbo"
-    ]
+  - question: '¿Cómo formas el imperativo negativo en portugués brasileño?'
+    options:
+      [
+        "Añadiendo 'não' antes del verbo conjugado en subjuntivo de 'você'",
+        "Añadiendo 'não' antes del infinitivo",
+        "Añadiendo 'nunca' después del verbo",
+      ]
     answerIndex: 0
     explanation: "El imperativo negativo usa 'não' + la forma del presente de subjuntivo de 'você': 'Não fale assim!' (¡No hables así!)."
   - question: "¿Cómo dirías '¡Coman!' dirigiéndote a varias personas?"
-    options: ["Come!", "Comam!", "Comer!"]
+    options: ['Come!', 'Comam!', 'Comer!']
     answerIndex: 1
     explanation: "Para 'vocês' se usa la tercera persona plural del presente de subjuntivo: 'comam!' (¡coman!)."
 exercises:
-  - type: "fill-blank"
+  - type: 'fill-blank'
     sentence: "___ aqui, por favor! (venir — imperativo para 'você')"
-    answer: "Venha"
-    accepted: ["venha"]
+    answer: 'Venha'
+    accepted: ['venha']
     hint: "El imperativo de 'vir' para 'você' es 'venha'."
-    translation: "¡Ven aquí, por favor!"
-    placeholder: "Fala"
-  - type: "fill-blank"
+    translation: '¡Ven aquí, por favor!'
+    placeholder: 'Fala'
+  - type: 'fill-blank'
     sentence: "Não ___ isso! (fazer — imperativo negativo para 'você')"
-    answer: "faça"
-    accepted: ["Faça"]
-    hint: "El imperativo negativo usa la forma del subjuntivo: não + faça."
-    translation: "¡No hagas eso!"
-    placeholder: "fale"
-  - type: "match"
+    answer: 'faça'
+    accepted: ['Faça']
+    hint: 'El imperativo negativo usa la forma del subjuntivo: não + faça.'
+    translation: '¡No hagas eso!'
+    placeholder: 'fale'
+  - type: 'match'
     instructions: "Empareja cada infinitivo con su imperativo afirmativo (forma de 'você')."
     pairs:
-      - left: "falar (hablar)"
-        right: "fale"
-      - left: "comer (comer)"
-        right: "coma"
-      - left: "abrir (abrir)"
-        right: "abra"
-      - left: "vir (venir)"
-        right: "venha"
-      - left: "fazer (hacer)"
-        right: "faça"
-  - type: "write"
+      - left: 'falar (hablar)'
+        right: 'fale'
+      - left: 'comer (comer)'
+        right: 'coma'
+      - left: 'abrir (abrir)'
+        right: 'abra'
+      - left: 'vir (venir)'
+        right: 'venha'
+      - left: 'fazer (hacer)'
+        right: 'faça'
+  - type: 'write'
     prompt: "Escribe en portugués: '¡Espera un momento!' (imperativo para 'você')."
-    answer: "Espere um momento!"
-    accepted: ["espere um momento!", "Espere um momento", "espere um momento"]
+    answer: 'Espere um momento!'
+    accepted: ['espere um momento!', 'Espere um momento', 'espere um momento']
     hint: "El verbo 'esperar' en imperativo formal es 'espere'."
-    placeholder: "Fale devagar!"
+    placeholder: 'Fale devagar!'
 vocabulary:
-  - term: "fale"
-    translation: "habla / hable (imperativo)"
-  - term: "coma"
-    translation: "come / coma (imperativo)"
-  - term: "abra"
-    translation: "abre / abra (imperativo)"
-  - term: "venha"
-    translation: "ven / venga (imperativo)"
-  - term: "faça"
-    translation: "haz / haga (imperativo)"
-  - term: "espere"
-    translation: "espera / espere (imperativo)"
-  - term: "por favor"
-    translation: "por favor"
-  - term: "devagar"
-    translation: "despacio"
+  - term: 'fale'
+    translation: 'habla / hable (imperativo)'
+  - term: 'coma'
+    translation: 'come / coma (imperativo)'
+  - term: 'abra'
+    translation: 'abre / abra (imperativo)'
+  - term: 'venha'
+    translation: 'ven / venga (imperativo)'
+  - term: 'faça'
+    translation: 'haz / haga (imperativo)'
+  - term: 'espere'
+    translation: 'espera / espere (imperativo)'
+  - term: 'por favor'
+    translation: 'por favor'
+  - term: 'devagar'
+    translation: 'despacio'
 ---
 
 El imperativo es la forma verbal que usas para dar órdenes, instrucciones, consejos o hacer
@@ -90,11 +91,11 @@ aprender, no dos como en español (tú vs. usted).
 
 ### Verbos regulares: imperativo afirmativo
 
-| Infinitivo | Presente (você) | Imperativo |
-| --- | --- | --- |
-| falar (hablar) | fala | **fale** |
-| comer (comer) | come | **coma** |
-| abrir (abrir) | abre | **abra** |
+| Infinitivo     | Presente (você) | Imperativo |
+| -------------- | --------------- | ---------- |
+| falar (hablar) | fala            | **fale**   |
+| comer (comer)  | come            | **coma**   |
+| abrir (abrir)  | abre            | **abra**   |
 
 La regla para el imperativo formal (y el más usado en escritura) es tomar la raíz del
 presente de indicativo de "eu" y cambiar la vocal temática:

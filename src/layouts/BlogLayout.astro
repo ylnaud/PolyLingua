@@ -14,7 +14,11 @@ const { title, description, publishDate, updatedDate, tags = [], path } = Astro.
 
 const siteURL = 'https://poly-lingua.vercel.app';
 
-const dateFormatter = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long', year: 'numeric' });
+const dateFormatter = new Intl.DateTimeFormat('es', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -47,7 +51,13 @@ const structuredData = {
 };
 ---
 
-<BaseLayout title={`${title} | PolyLingua`} description={description} path={path} structuredData={structuredData} ogType="article">
+<BaseLayout
+  title={`${title} | PolyLingua`}
+  description={description}
+  path={path}
+  structuredData={structuredData}
+  ogType="article"
+>
   <article class="post container">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
       <a href="/">Inicio</a>
@@ -60,13 +70,15 @@ const structuredData = {
       <p class="lede">{description}</p>
       <div class="meta">
         <time datetime={publishDate.toISOString()}>{dateFormatter.format(publishDate)}</time>
-        {tags.length > 0 && (
-          <ul class="tags">
-            {tags.map((tag) => (
-              <li>{tag}</li>
-            ))}
-          </ul>
-        )}
+        {
+          tags.length > 0 && (
+            <ul class="tags">
+              {tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+          )
+        }
       </div>
     </header>
 

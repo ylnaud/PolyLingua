@@ -1,8 +1,8 @@
 ---
-title: "Cómo preparar el Goethe-Zertifikat A1 desde cero: guía práctica con recursos gratuitos"
-description: "Estructura del examen Goethe A1, qué esperar en cada parte, y cómo prepararte gratis con lecciones de gramática, vocabulario y situaciones reales."
+title: 'Cómo preparar el Goethe-Zertifikat A1 desde cero: guía práctica con recursos gratuitos'
+description: 'Estructura del examen Goethe A1, qué esperar en cada parte, y cómo prepararte gratis con lecciones de gramática, vocabulario y situaciones reales.'
 publishDate: 2026-08-22
-tags: ["alemán", "exámenes oficiales", "Goethe", "A1"]
+tags: ['alemán', 'exámenes oficiales', 'Goethe', 'A1']
 ---
 
 El Goethe-Zertifikat A1: Start Deutsch 1 es la puerta de entrada oficial al

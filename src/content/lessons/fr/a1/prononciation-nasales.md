@@ -1,59 +1,64 @@
 ---
 language: fr
 level: a1
-title: "Voyelles nasales: pronunciar an, on, in, un en frances"
-description: "Las vocales nasales del frances explicadas para hispanohablantes: los sonidos an/en, on, in/ain/ein y un con aproximaciones claras y ejemplos."
+title: 'Voyelles nasales: pronunciar an, on, in, un en frances'
+description: 'Las vocales nasales del frances explicadas para hispanohablantes: los sonidos an/en, on, in/ain/ein y un con aproximaciones claras y ejemplos.'
 order: 12
 unit: 3
-grammarTopic: "Pronunciacion: vocales nasales"
+grammarTopic: 'Pronunciacion: vocales nasales'
 funFact: "El frances tiene cuatro vocales nasales que no existen en espanol. El truco: se pronuncian dejando salir el aire por la nariz, como si tuvieras un resfriado leve. No digas la 'n' ni la 'm' al final: 'bon' no es 'bon' con n espanola, es un sonido nasal puro, como un 'bo' que vibra en la nariz."
 minutes: 8
 phrases:
-  - text: "enfant"
-    es: "nino/a"
-    say: "«an-FAN» (nasal, sin n final) . /ɑ̃.fɑ̃/"
+  - text: 'enfant'
+    es: 'nino/a'
+    say: '«an-FAN» (nasal, sin n final) . /ɑ̃.fɑ̃/'
     note: "Dos nasales seguidas: 'en' y 'an' suenan igual."
-  - text: "restaurant"
-    es: "restaurante"
-    say: "«res-to-RAN» (nasal) . /ʁɛs.to.ʁɑ̃/"
+  - text: 'restaurant'
+    es: 'restaurante'
+    say: '«res-to-RAN» (nasal) . /ʁɛs.to.ʁɑ̃/'
     note: "La 'au' se lee 'o' y la '-ant' final es nasal, sin pronunciar la t."
-  - text: "bonjour"
-    es: "buenos dias / hola"
-    say: "«bon-ZHUR» (nasal) . /bɔ̃.ʒuʁ/"
+  - text: 'bonjour'
+    es: 'buenos dias / hola'
+    say: '«bon-ZHUR» (nasal) . /bɔ̃.ʒuʁ/'
     note: "'bon' tiene la nasal /ɔ̃/: labios redondeados, aire por la nariz."
-  - text: "maison"
-    es: "casa"
-    say: "«me-ZON» (nasal) . /mɛ.zɔ̃/"
+  - text: 'maison'
+    es: 'casa'
+    say: '«me-ZON» (nasal) . /mɛ.zɔ̃/'
     note: "La '-on' final es nasal pura: no digas la 'n'."
-  - text: "pain"
-    es: "pan"
+  - text: 'pain'
+    es: 'pan'
     say: "«PEN» (nasal, como 'pe' por la nariz) . /pɛ̃/"
     note: "'-ain' se lee igual que '-in': es la nasal /ɛ̃/."
-  - text: "vin"
-    es: "vino"
-    say: "«VEN» (nasal) . /vɛ̃/"
+  - text: 'vin'
+    es: 'vino'
+    say: '«VEN» (nasal) . /vɛ̃/'
     note: "'-in' suena como una 'e' que vibra en la nariz."
-  - text: "jardin"
-    es: "jardin"
-    say: "«zhar-DEN» (nasal) . /ʒaʁ.dɛ̃/"
-  - text: "un"
-    es: "uno"
-    say: "«EN» (nasal, labios redondeados) . /œ̃/"
+  - text: 'jardin'
+    es: 'jardin'
+    say: '«zhar-DEN» (nasal) . /ʒaʁ.dɛ̃/'
+  - text: 'un'
+    es: 'uno'
+    say: '«EN» (nasal, labios redondeados) . /œ̃/'
     note: "La nasal mas rara: labios como para 'o', sonido como 'e' nasal."
-  - text: "lundi"
-    es: "lunes"
-    say: "«len-DI» (nasal) . /lœ̃.di/"
+  - text: 'lundi'
+    es: 'lunes'
+    say: '«len-DI» (nasal) . /lœ̃.di/'
     note: "'-un-' tiene la nasal /œ̃/, pero muchos franceses la pronuncian como /ɛ̃/."
-  - text: "brun"
-    es: "marron / castano"
-    say: "«BREN» (nasal) . /bʁœ̃/"
+  - text: 'brun'
+    es: 'marron / castano'
+    say: '«BREN» (nasal) . /bʁœ̃/'
 quiz:
-  - question: "Cuantas vocales nasales tiene el frances?"
-    options: ["dos", "tres", "cuatro"]
+  - question: 'Cuantas vocales nasales tiene el frances?'
+    options: ['dos', 'tres', 'cuatro']
     answerIndex: 2
-    explanation: "El frances tiene cuatro vocales nasales: /ɑ̃/ (an/en), /ɔ̃/ (on), /ɛ̃/ (in/ain/ein) y /œ̃/ (un). Aunque en la practica muchos hablantes fusionan /œ̃/ con /ɛ̃/."
+    explanation: 'El frances tiene cuatro vocales nasales: /ɑ̃/ (an/en), /ɔ̃/ (on), /ɛ̃/ (in/ain/ein) y /œ̃/ (un). Aunque en la practica muchos hablantes fusionan /œ̃/ con /ɛ̃/.'
   - question: "En 'bonjour', la silaba 'bon' se pronuncia..."
-    options: ["como 'bon' en espanol, con n clara", "con la nasal /ɔ̃/, sin pronunciar la n", "como 'bun' en ingles"]
+    options:
+      [
+        "como 'bon' en espanol, con n clara",
+        'con la nasal /ɔ̃/, sin pronunciar la n',
+        "como 'bun' en ingles",
+      ]
     answerIndex: 1
     explanation: "'Bon' tiene la vocal nasal /ɔ̃/: el aire sale por la nariz y la 'n' no se pronuncia como consonante. Es un sonido que no existe en espanol."
   - question: "'Pain' (pan) y 'vin' (vino) comparten la misma vocal nasal. Cual es?"
@@ -61,54 +66,54 @@ quiz:
     answerIndex: 2
     explanation: "Tanto '-ain' como '-in' representan la vocal nasal /ɛ̃/. Suenan igual: 'pain' y 'pin' riman perfectamente."
 exercises:
-  - type: "match"
-    instructions: "Empareja cada palabra con su vocal nasal."
+  - type: 'match'
+    instructions: 'Empareja cada palabra con su vocal nasal.'
     pairs:
-      - left: "enfant"
-        right: "/ɑ̃/ (an/en)"
-      - left: "bonjour"
-        right: "/ɔ̃/ (on)"
-      - left: "vin"
-        right: "/ɛ̃/ (in)"
-      - left: "lundi"
-        right: "/œ̃/ (un)"
-  - type: "fill-blank"
-    sentence: "Le ___ est sur la table."
-    answer: "pain"
-    accepted: ["Pain"]
-    hint: "Pan en frances. Tiene la nasal /ɛ̃/."
-    translation: "El pan esta sobre la mesa."
-    placeholder: "vin / pain"
-  - type: "write"
+      - left: 'enfant'
+        right: '/ɑ̃/ (an/en)'
+      - left: 'bonjour'
+        right: '/ɔ̃/ (on)'
+      - left: 'vin'
+        right: '/ɛ̃/ (in)'
+      - left: 'lundi'
+        right: '/œ̃/ (un)'
+  - type: 'fill-blank'
+    sentence: 'Le ___ est sur la table.'
+    answer: 'pain'
+    accepted: ['Pain']
+    hint: 'Pan en frances. Tiene la nasal /ɛ̃/.'
+    translation: 'El pan esta sobre la mesa.'
+    placeholder: 'vin / pain'
+  - type: 'write'
     prompt: "Escribe la palabra francesa para 'restaurante'. Pista: tiene la nasal /ɑ̃/ al final."
-    answer: "restaurant"
-    accepted: ["Restaurant", "le restaurant"]
-    hint: "Se parece mucho al espanol, pero la terminacion es nasal."
-    placeholder: "restaurante"
-  - type: "fill-blank"
-    sentence: "___ est lundi."
-    answer: "On"
-    accepted: ["on"]
+    answer: 'restaurant'
+    accepted: ['Restaurant', 'le restaurant']
+    hint: 'Se parece mucho al espanol, pero la terminacion es nasal.'
+    placeholder: 'restaurante'
+  - type: 'fill-blank'
+    sentence: '___ est lundi.'
+    answer: 'On'
+    accepted: ['on']
     hint: "Pronombre impersonal o informal para 'nosotros'. Tiene la nasal /ɔ̃/."
-    translation: "Es lunes. / Estamos a lunes."
-    placeholder: "Il / On"
+    translation: 'Es lunes. / Estamos a lunes.'
+    placeholder: 'Il / On'
 vocabulary:
-  - term: "enfant"
-    translation: "nino/a"
-  - term: "restaurant"
-    translation: "restaurante"
-  - term: "bonjour"
-    translation: "buenos dias / hola"
-  - term: "maison"
-    translation: "casa"
-  - term: "pain"
-    translation: "pan"
-  - term: "vin"
-    translation: "vino"
-  - term: "jardin"
-    translation: "jardin"
-  - term: "lundi"
-    translation: "lunes"
+  - term: 'enfant'
+    translation: 'nino/a'
+  - term: 'restaurant'
+    translation: 'restaurante'
+  - term: 'bonjour'
+    translation: 'buenos dias / hola'
+  - term: 'maison'
+    translation: 'casa'
+  - term: 'pain'
+    translation: 'pan'
+  - term: 'vin'
+    translation: 'vino'
+  - term: 'jardin'
+    translation: 'jardin'
+  - term: 'lundi'
+    translation: 'lunes'
 ---
 
 Las vocales nasales son probablemente el sonido mas "frances" que existe -- y el

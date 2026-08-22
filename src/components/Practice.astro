@@ -92,222 +92,268 @@ function splitSentence(sentence: string): { before: string; after: string } {
   if (idx === -1) return { before: sentence, after: '' };
   return { before: sentence.slice(0, idx), after: sentence.slice(idx + 3) };
 }
-
 ---
 
-{(items.length > 0 || dynamic) && (
-  <section
-    class="practice"
-    data-practice
-    data-lesson-minutes={minutes}
-    data-session-type={sessionType}
-    data-lesson-id={lessonId}
-    data-dynamic={dynamic ? 'true' : 'false'}
-    data-lang={lang}
-    aria-label="Práctica interactiva"
-  >
-    <div class="practice-head">
-      <span class="eyebrow">🎮 Ponte a prueba</span>
-      <span class="streak-badge" data-streak-badge hidden>🔥 x2</span>
-      <span class="practice-progress" data-practice-progress role="status" aria-live="polite">1 / {items.length}</span>
-    </div>
-    <div class="progress-bar" data-progress-bar>
-      <div class="progress-bar-fill" data-progress-bar-fill></div>
-    </div>
+{
+  (items.length > 0 || dynamic) && (
+    <section
+      class="practice"
+      data-practice
+      data-lesson-minutes={minutes}
+      data-session-type={sessionType}
+      data-lesson-id={lessonId}
+      data-dynamic={dynamic ? 'true' : 'false'}
+      data-lang={lang}
+      aria-label="Práctica interactiva"
+    >
+      <div class="practice-head">
+        <span class="eyebrow">🎮 Ponte a prueba</span>
+        <span class="streak-badge" data-streak-badge hidden>
+          🔥 x2
+        </span>
+        <span class="practice-progress" data-practice-progress role="status" aria-live="polite">
+          1 / {items.length}
+        </span>
+      </div>
+      <div class="progress-bar" data-progress-bar>
+        <div class="progress-bar-fill" data-progress-bar-fill />
+      </div>
 
-    <div class="practice-items" data-items-container>
-    {items.map((item, i) => (
-      <fieldset
-        class="practice-item"
-        data-practice-item
-        data-kind={item.kind}
-        data-index={i}
-        data-item-id={itemIds ? itemIds[i] : `${lessonId}#${item.kind}-${i}`}
-        data-item-json={JSON.stringify(item.data)}
-        data-spoken-only={item.kind === 'write' && item.data.spokenOnly ? 'true' : 'false'}
-        hidden={i !== 0}
-      >
-        <span class="kind-tag">{kindLabels[item.kind]}</span>
+      <div class="practice-items" data-items-container>
+        {items.map((item, i) => (
+          <fieldset
+            class="practice-item"
+            data-practice-item
+            data-kind={item.kind}
+            data-index={i}
+            data-item-id={itemIds ? itemIds[i] : `${lessonId}#${item.kind}-${i}`}
+            data-item-json={JSON.stringify(item.data)}
+            data-spoken-only={item.kind === 'write' && item.data.spokenOnly ? 'true' : 'false'}
+            hidden={i !== 0}
+          >
+            <span class="kind-tag">{kindLabels[item.kind]}</span>
 
-        {item.kind === 'choice' && (
-          <>
-            <legend tabindex="-1">{item.data.question}</legend>
-            <div class="options">
-              {item.data.options.map((opt, oi) => (
-                <button
-                  type="button"
-                  class="option"
-                  data-option
-                  data-option-key={oi + 1}
-                  data-correct={oi === item.data.answerIndex ? 'true' : 'false'}
-                >
-                  {opt}
-                </button>
-              ))}
-            </div>
-          </>
-        )}
-
-        {item.kind === 'fill-blank' && (
-          <>
-            <legend tabindex="-1">Completa la frase</legend>
-            <p class="prompt-sentence">
-              {splitSentence(item.data.sentence).before}
-              <span class="blank-marker" aria-hidden="true">___</span>
-              {splitSentence(item.data.sentence).after}
-            </p>
-            {item.data.translation && <p class="prompt-translation">{item.data.translation}</p>}
-            <label class="visually-hidden" for={`input-${i}`}>Tu respuesta</label>
-            <div class="answer-row">
-              <input
-                type="text"
-                id={`input-${i}`}
-                class="answer-input"
-                data-answer-input
-                data-answer={item.data.answer}
-                data-accepted={(item.data.accepted ?? []).join('|')}
-                placeholder={item.data.placeholder}
-                autocomplete="off"
-                autocapitalize="off"
-                spellcheck="false"
-              />
-              <button type="button" class="btn btn-primary check" data-check>Comprobar</button>
-            </div>
-            {item.data.hint && (
-              <details class="hint">
-                <summary>💡 Pista</summary>
-                <p>{item.data.hint}</p>
-              </details>
-            )}
-          </>
-        )}
-
-        {item.kind === 'write' && (
-          <>
-            <legend tabindex="-1">{item.data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : item.data.prompt}</legend>
-            {item.data.spokenOnly && (
-              <button
-                type="button"
-                class="speak-btn spoken-only-speak"
-                data-speak
-                data-speak-text={item.data.answer}
-                aria-label="Escuchar de nuevo"
-              >
-                🔊 Escuchar
-              </button>
-            )}
-            <label class="visually-hidden" for={`input-${i}`}>Tu respuesta</label>
-            <div class="answer-row">
-              <input
-                type="text"
-                id={`input-${i}`}
-                class="answer-input"
-                data-answer-input
-                data-answer={item.data.answer}
-                data-accepted={(item.data.accepted ?? []).join('|')}
-                placeholder={item.data.placeholder}
-                autocomplete="off"
-                autocapitalize="off"
-                spellcheck="false"
-              />
-              <button type="button" class="btn btn-primary check" data-check>Comprobar</button>
-            </div>
-            {item.data.hint && (
-              <details class="hint">
-                <summary>💡 Pista</summary>
-                <p>{item.data.hint}</p>
-              </details>
-            )}
-          </>
-        )}
-
-        {item.kind === 'match' && (
-          <>
-            <legend tabindex="-1">{item.data.instructions ?? 'Empareja cada elemento con su pareja correcta'}</legend>
-            <div class="match-board" data-match-board data-remaining={item.data.pairs.length}>
-              <div class="match-col" data-match-col="left">
-                {item.data.pairs.map((pair, pi) => (
-                  <div class="option-row">
+            {item.kind === 'choice' && (
+              <>
+                <legend tabindex="-1">{item.data.question}</legend>
+                <div class="options">
+                  {item.data.options.map((opt, oi) => (
                     <button
                       type="button"
-                      class="match-item"
-                      data-match-item
-                      data-side="left"
-                      data-pair={pi}
-                      data-value={pair.right}
+                      class="option"
+                      data-option
+                      data-option-key={oi + 1}
+                      data-correct={oi === item.data.answerIndex ? 'true' : 'false'}
                     >
-                      {pair.left}
+                      {opt}
                     </button>
-                    <button type="button" class="speak-btn match-speak" data-speak data-speak-text={pair.left} aria-label={`Escuchar «${pair.left}»`}>🔊</button>
-                  </div>
-                ))}
-              </div>
-              <div class="match-col" data-match-col="right">
-                {item.data.pairs.map((_, pi) => (
+                  ))}
+                </div>
+              </>
+            )}
+
+            {item.kind === 'fill-blank' && (
+              <>
+                <legend tabindex="-1">Completa la frase</legend>
+                <p class="prompt-sentence">
+                  {splitSentence(item.data.sentence).before}
+                  <span class="blank-marker" aria-hidden="true">
+                    ___
+                  </span>
+                  {splitSentence(item.data.sentence).after}
+                </p>
+                {item.data.translation && <p class="prompt-translation">{item.data.translation}</p>}
+                <label class="visually-hidden" for={`input-${i}`}>
+                  Tu respuesta
+                </label>
+                <div class="answer-row">
+                  <input
+                    type="text"
+                    id={`input-${i}`}
+                    class="answer-input"
+                    data-answer-input
+                    data-answer={item.data.answer}
+                    data-accepted={(item.data.accepted ?? []).join('|')}
+                    placeholder={item.data.placeholder}
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  />
+                  <button type="button" class="btn btn-primary check" data-check>
+                    Comprobar
+                  </button>
+                </div>
+                {item.data.hint && (
+                  <details class="hint">
+                    <summary>💡 Pista</summary>
+                    <p>{item.data.hint}</p>
+                  </details>
+                )}
+              </>
+            )}
+
+            {item.kind === 'write' && (
+              <>
+                <legend tabindex="-1">
+                  {item.data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : item.data.prompt}
+                </legend>
+                {item.data.spokenOnly && (
                   <button
                     type="button"
-                    class="match-item"
-                    data-match-item
-                    data-side="right"
-                    data-pair={pi}
-                    data-value={item.data.pairs[pi].right}
+                    class="speak-btn spoken-only-speak"
+                    data-speak
+                    data-speak-text={item.data.answer}
+                    aria-label="Escuchar de nuevo"
                   >
-                    {item.data.pairs[pi].right}
+                    🔊 Escuchar
                   </button>
-                ))}
-              </div>
-            </div>
-          </>
-        )}
+                )}
+                <label class="visually-hidden" for={`input-${i}`}>
+                  Tu respuesta
+                </label>
+                <div class="answer-row">
+                  <input
+                    type="text"
+                    id={`input-${i}`}
+                    class="answer-input"
+                    data-answer-input
+                    data-answer={item.data.answer}
+                    data-accepted={(item.data.accepted ?? []).join('|')}
+                    placeholder={item.data.placeholder}
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  />
+                  <button type="button" class="btn btn-primary check" data-check>
+                    Comprobar
+                  </button>
+                </div>
+                {item.data.hint && (
+                  <details class="hint">
+                    <summary>💡 Pista</summary>
+                    <p>{item.data.hint}</p>
+                  </details>
+                )}
+              </>
+            )}
 
-        {item.kind === 'order' && (
-          <>
-            <legend tabindex="-1">Ordena las palabras para formar la frase correcta</legend>
-            {item.data.translation && <p class="prompt-translation">{item.data.translation}</p>}
-            <div
-              class="order-assembled"
-              data-order-assembled
-              data-answer={item.data.sentence}
-              aria-label="Frase que estás construyendo"
-            ></div>
-            <div class="order-bank" data-order-bank>
-              {item.data.sentence.split(' ').map((_, wi) => (
-                <button type="button" class="word-chip" data-word-chip data-word-index={wi}>
-                  {item.data.sentence.split(' ')[wi]}
+            {item.kind === 'match' && (
+              <>
+                <legend tabindex="-1">
+                  {item.data.instructions ?? 'Empareja cada elemento con su pareja correcta'}
+                </legend>
+                <div class="match-board" data-match-board data-remaining={item.data.pairs.length}>
+                  <div class="match-col" data-match-col="left">
+                    {item.data.pairs.map((pair, pi) => (
+                      <div class="option-row">
+                        <button
+                          type="button"
+                          class="match-item"
+                          data-match-item
+                          data-side="left"
+                          data-pair={pi}
+                          data-value={pair.right}
+                        >
+                          {pair.left}
+                        </button>
+                        <button
+                          type="button"
+                          class="speak-btn match-speak"
+                          data-speak
+                          data-speak-text={pair.left}
+                          aria-label={`Escuchar «${pair.left}»`}
+                        >
+                          🔊
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                  <div class="match-col" data-match-col="right">
+                    {item.data.pairs.map((_, pi) => (
+                      <button
+                        type="button"
+                        class="match-item"
+                        data-match-item
+                        data-side="right"
+                        data-pair={pi}
+                        data-value={item.data.pairs[pi].right}
+                      >
+                        {item.data.pairs[pi].right}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+
+            {item.kind === 'order' && (
+              <>
+                <legend tabindex="-1">Ordena las palabras para formar la frase correcta</legend>
+                {item.data.translation && <p class="prompt-translation">{item.data.translation}</p>}
+                <div
+                  class="order-assembled"
+                  data-order-assembled
+                  data-answer={item.data.sentence}
+                  aria-label="Frase que estás construyendo"
+                />
+                <div class="order-bank" data-order-bank>
+                  {item.data.sentence.split(' ').map((_, wi) => (
+                    <button type="button" class="word-chip" data-word-chip data-word-index={wi}>
+                      {item.data.sentence.split(' ')[wi]}
+                    </button>
+                  ))}
+                </div>
+                <button type="button" class="btn btn-primary check" data-check hidden>
+                  Comprobar
                 </button>
-              ))}
-            </div>
-            <button type="button" class="btn btn-primary check" data-check hidden>Comprobar</button>
-          </>
-        )}
+              </>
+            )}
 
-        <p class="feedback" data-feedback role="status" aria-live="polite"></p>
-        <p class="explanation" data-explanation hidden>
-          {item.kind === 'choice' ? item.data.explanation : ''}
-        </p>
-        {(item.kind === 'fill-blank' || item.kind === 'write' || item.kind === 'order') && (
-          <>
-            <button type="button" class="speak-btn reveal-speak" data-speak data-reveal-speak hidden>🔊 Escuchar</button>
-            <button type="button" class="btn btn-primary shadow-confirm" data-shadow-confirm hidden>
-              🎤 Ya lo dije en voz alta
+            <p class="feedback" data-feedback role="status" aria-live="polite" />
+            <p class="explanation" data-explanation hidden>
+              {item.kind === 'choice' ? item.data.explanation : ''}
+            </p>
+            {(item.kind === 'fill-blank' || item.kind === 'write' || item.kind === 'order') && (
+              <>
+                <button
+                  type="button"
+                  class="speak-btn reveal-speak"
+                  data-speak
+                  data-reveal-speak
+                  hidden
+                >
+                  🔊 Escuchar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary shadow-confirm"
+                  data-shadow-confirm
+                  hidden
+                >
+                  🎤 Ya lo dije en voz alta
+                </button>
+              </>
+            )}
+            <button type="button" class="btn btn-primary next" data-next hidden>
+              Siguiente →
             </button>
-          </>
-        )}
-        <button type="button" class="btn btn-primary next" data-next hidden>
-          Siguiente →
-        </button>
-      </fieldset>
-    ))}
-    </div>
+          </fieldset>
+        ))}
+      </div>
 
-    <div class="practice-done" data-practice-done hidden>
-      <p class="score-emoji" data-score-emoji>🎉</p>
-      <h3>¡Completado!</h3>
-      <p data-score-text>Acertaste 0 / {items.length}</p>
-      <button type="button" class="btn btn-ghost" data-restart>Repetir</button>
-    </div>
-  </section>
-)}
+      <div class="practice-done" data-practice-done hidden>
+        <p class="score-emoji" data-score-emoji>
+          🎉
+        </p>
+        <h3>¡Completado!</h3>
+        <p data-score-text>Acertaste 0 / {items.length}</p>
+        <button type="button" class="btn btn-ghost" data-restart>
+          Repetir
+        </button>
+      </div>
+    </section>
+  )
+}
 
 <style is:global>
   .practice {
@@ -474,7 +520,9 @@ function splitSentence(sentence: string): { before: string; after: string } {
     font-size: 0.98rem;
     cursor: pointer;
     font-family: inherit;
-    transition: border-color 0.15s ease, background 0.15s ease;
+    transition:
+      border-color 0.15s ease,
+      background 0.15s ease;
   }
 
   /* Pista visual del atajo de teclado (1-9) para elegir una opción sin
@@ -518,8 +566,11 @@ function splitSentence(sentence: string): { before: string; after: string } {
     border-radius: var(--radius);
     box-shadow: var(--shadow-card);
     font-weight: 600;
-    transition: border-color 0.15s ease, background 0.15s ease,
-      box-shadow 0.15s ease, transform 0.15s ease;
+    transition:
+      border-color 0.15s ease,
+      background 0.15s ease,
+      box-shadow 0.15s ease,
+      transform 0.15s ease;
   }
 
   .match-item:hover:not(:disabled) {
@@ -773,7 +824,9 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
     document.addEventListener('keydown', (e) => {
       if (!/^[1-9]$/.test(e.key)) return;
-      const item = document.querySelector<HTMLElement>('[data-practice] [data-practice-item]:not([hidden])');
+      const item = document.querySelector<HTMLElement>(
+        '[data-practice] [data-practice-item]:not([hidden])',
+      );
       if (!item || item.dataset.kind !== 'choice' || item.dataset.answered) return;
       const options = item.querySelectorAll<HTMLButtonElement>('[data-option]');
       options[Number(e.key) - 1]?.click();
@@ -796,11 +849,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
   }
 
   function normalize(value: string): string {
-    return value
-      .trim()
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[̀-ͯ]/g, '');
+    return value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
   }
 
   function initPractice() {
@@ -823,7 +872,14 @@ function splitSentence(sentence: string): { before: string; after: string } {
       let score = 0;
       let streak = 0;
       let maxStreak = 0;
-      const results: { id: string; kind: string; data: unknown; correct: boolean; userAnswer?: string; correctAnswer?: string }[] = [];
+      const results: {
+        id: string;
+        kind: string;
+        data: unknown;
+        correct: boolean;
+        userAnswer?: string;
+        correctAnswer?: string;
+      }[] = [];
 
       function updateStreak(correct: boolean) {
         if (correct) {
@@ -852,16 +908,18 @@ function splitSentence(sentence: string): { before: string; after: string } {
         // Sin TTS, el legend genérico de spokenOnly deja el ítem sin forma de
         // saber qué escribir — se restaura el prompt real, ya disponible en
         // data-item-json sin plumbing nuevo.
-        root.querySelectorAll<HTMLElement>('[data-practice-item][data-spoken-only="true"]').forEach((item) => {
-          const legend = item.querySelector('legend');
-          if (!legend) return;
-          try {
-            const data = JSON.parse(item.dataset.itemJson ?? 'null');
-            if (data?.prompt) legend.textContent = data.prompt;
-          } catch {
-            /* deja el texto genérico si el parseo falla */
-          }
-        });
+        root
+          .querySelectorAll<HTMLElement>('[data-practice-item][data-spoken-only="true"]')
+          .forEach((item) => {
+            const legend = item.querySelector('legend');
+            if (!legend) return;
+            try {
+              const data = JSON.parse(item.dataset.itemJson ?? 'null');
+              if (data?.prompt) legend.textContent = data.prompt;
+            } catch {
+              /* deja el texto genérico si el parseo falla */
+            }
+          });
       }
 
       root.addEventListener('click', (e) => {
@@ -917,7 +975,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
               maxStreak,
             },
             bubbles: true,
-          })
+          }),
         );
       }
 
@@ -946,7 +1004,8 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
         function reveal(correct: boolean, userAnswer = '', correctAnswer = '') {
           if (feedback) feedback.textContent = correct ? '✅ ¡Correcto!' : '❌ No del todo.';
-          if (correct) playCorrect(); else playIncorrect();
+          if (correct) playCorrect();
+          else playIncorrect();
           updateStreak(correct);
           if (correct && streak >= 2) playCombo(streak);
           if (explanation && explanation.textContent) explanation.hidden = false;
@@ -960,7 +1019,10 @@ function splitSentence(sentence: string): { before: string; after: string } {
           // solo existe para fill-blank/write/order (donde revealSpeak
           // también existe); choice/match nunca gatean.
           const shouldGateWithShadowing =
-            !!shadowConfirm && isShadowingEnabled() && 'speechSynthesis' in window && !!revealSpeak?.dataset.speakText;
+            !!shadowConfirm &&
+            isShadowingEnabled() &&
+            'speechSynthesis' in window &&
+            !!revealSpeak?.dataset.speakText;
           if (shouldGateWithShadowing && shadowConfirm) {
             shadowConfirm.dataset.speakText = revealSpeak?.dataset.speakText ?? '';
             shadowConfirm.hidden = false;
@@ -975,7 +1037,14 @@ function splitSentence(sentence: string): { before: string; after: string } {
           } catch {
             data = null;
           }
-          results.push({ id: item.dataset.itemId ?? '', kind: kind ?? '', data, correct, userAnswer, correctAnswer });
+          results.push({
+            id: item.dataset.itemId ?? '',
+            kind: kind ?? '',
+            data,
+            correct,
+            userAnswer,
+            correctAnswer,
+          });
           // Responder deshabilita el botón/input enfocado, lo que por spec
           // manda el foco a <body> — lo movemos al botón recién revelado
           // (confirmar shadowing, o directo "Siguiente") para no perder la
@@ -1004,7 +1073,11 @@ function splitSentence(sentence: string): { before: string; after: string } {
               });
               if (!isCorrect) opt.classList.add('incorrect');
               const correctOpt = options.find((o) => o.dataset.correct === 'true');
-              reveal(isCorrect, opt.textContent?.trim() ?? '', correctOpt?.textContent?.trim() ?? '');
+              reveal(
+                isCorrect,
+                opt.textContent?.trim() ?? '',
+                correctOpt?.textContent?.trim() ?? '',
+              );
             });
           });
         }
@@ -1049,7 +1122,9 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
         if (kind === 'match') {
           const board = item.querySelector<HTMLElement>('[data-match-board]');
-          const matchItems = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-match-item]'));
+          const matchItems = Array.from(
+            item.querySelectorAll<HTMLButtonElement>('[data-match-item]'),
+          );
           // Sin lado fijo: el primer toque puede ser de cualquier columna
           // (en mobile el tablero se apila en una sola columna, así que
           // exigir que el primer toque sea siempre el izquierdo rompía el
@@ -1136,7 +1211,9 @@ function splitSentence(sentence: string): { before: string; after: string } {
             if (item.dataset.answered) return;
             item.dataset.answered = 'true';
             const built = placedOrder
-              .map((wi) => (chips.find((c) => Number(c.dataset.wordIndex) === wi)?.textContent ?? '').trim())
+              .map((wi) =>
+                (chips.find((c) => Number(c.dataset.wordIndex) === wi)?.textContent ?? '').trim(),
+              )
               .join(' ');
             const isCorrect = normalize(built) === normalize(correctSentence);
             checkBtn.hidden = true;

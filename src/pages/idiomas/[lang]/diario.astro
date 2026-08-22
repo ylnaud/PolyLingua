@@ -26,7 +26,10 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
     </nav>
     <span class="emoji" aria-hidden="true">✍️</span>
     <h1>Diario de {languageMeta?.name}</h1>
-    <p class="desc">Escribe unas líneas sobre tu día — sin presión, sin respuesta correcta. Se guarda solo en este navegador.</p>
+    <p class="desc">
+      Escribe unas líneas sobre tu día — sin presión, sin respuesta correcta. Se guarda solo en este
+      navegador.
+    </p>
   </section>
 
   <section class="container diary-body">
@@ -37,8 +40,15 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
         class="diary-textarea"
         data-diary-textarea
         rows="8"
-        placeholder={({ de: 'Heute habe ich...', en: 'Today I...', fr: "Aujourd'hui j'ai...", it: 'Oggi ho...', pt: 'Hoje eu...' } as Record<string, string>)[lang ?? 'de'] ?? 'Escribe aquí...'}
-      ></textarea>
+        placeholder={(
+          {
+            de: 'Heute habe ich...',
+            en: 'Today I...',
+            fr: "Aujourd'hui j'ai...",
+            it: 'Oggi ho...',
+            pt: 'Hoje eu...',
+          } as Record<string, string>
+        )[lang ?? 'de'] ?? 'Escribe aquí...'}></textarea>
       <div class="diary-footer">
         <span class="diary-count" data-diary-count>0 palabras</span>
         <span class="diary-saved" data-diary-saved aria-live="polite"></span>
@@ -80,7 +90,10 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
     const all = exportAll();
     const prefix = `polylingua-diary-${lang}-`;
     const entries = Object.entries(all)
-      .filter(([key, value]) => key.startsWith(prefix) && key.slice(prefix.length) !== todayStr && value.trim() !== '')
+      .filter(
+        ([key, value]) =>
+          key.startsWith(prefix) && key.slice(prefix.length) !== todayStr && value.trim() !== '',
+      )
       .map(([key, value]) => ({ date: key.slice(prefix.length), text: value }))
       .sort((a, b) => (a.date < b.date ? 1 : -1))
       .slice(0, MAX_PREVIOUS_ENTRIES);

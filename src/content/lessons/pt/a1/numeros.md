@@ -1,73 +1,73 @@
 ---
 language: pt
 level: a1
-title: "Os números: contar em português desde o zero"
+title: 'Os números: contar em português desde o zero'
 description: "Los números cardinales del portugués desde cero, con las trampas de 'cem' y 'cento' que más confunden a un hispanohablante principiante."
 order: 3
 unit: 1
-grammarTopic: "Números cardinais"
+grammarTopic: 'Números cardinais'
 funFact: "El número 'cem' (cien) pierde la 'o' final que tiene en español, pero 'cento' reaparece en compuestos: 'cento e um' (ciento uno). Es una de esas pequeñas irregularidades que solo se aprenden usándolas."
 minutes: 6
 quiz:
   - question: "¿Cómo se dice '15' en portugués?"
-    options: ["quinze", "cincoze", "quinzem"]
+    options: ['quinze', 'cincoze', 'quinzem']
     answerIndex: 0
     explanation: "'quinze' es 15 — nota que no lleva relación directa con 'cinco' como en español 'quince' sí evoca visualmente 'cinco'."
   - question: "¿Cómo se dice '100' en portugués?"
-    options: ["cento", "cem", "centro"]
+    options: ['cento', 'cem', 'centro']
     answerIndex: 1
     explanation: "'cem' es 100 en forma aislada; 'cento' se usa solo en compuestos como 'cento e dois' (102)."
   - question: "¿Cómo se dice '21' en portugués?"
-    options: ["vinte e um", "vinte-um", "vinteum"]
+    options: ['vinte e um', 'vinte-um', 'vinteum']
     answerIndex: 0
     explanation: "Los números compuestos en portugués usan 'e' (y) entre decenas y unidades: vinte e um, trinta e dois, etc."
 exercises:
-  - type: "fill-blank"
-    sentence: "Tenho ___ (15) anos de experiência."
-    answer: "quinze"
+  - type: 'fill-blank'
+    sentence: 'Tenho ___ (15) anos de experiência.'
+    answer: 'quinze'
     hint: "El número 15, que no se parece visualmente a 'cinco' como el español 'quince'."
-    translation: "Tengo quince años de experiencia."
-    placeholder: "dez"
-  - type: "fill-blank"
-    sentence: "Isso custa ___ (100) euros."
-    answer: "cem"
+    translation: 'Tengo quince años de experiencia.'
+    placeholder: 'dez'
+  - type: 'fill-blank'
+    sentence: 'Isso custa ___ (100) euros.'
+    answer: 'cem'
     hint: "100 en forma aislada, sin la 'o' final."
-    translation: "Esto cuesta cien euros."
-    placeholder: "vinte"
-  - type: "match"
-    instructions: "Empareja cada número con su forma en portugués."
+    translation: 'Esto cuesta cien euros.'
+    placeholder: 'vinte'
+  - type: 'match'
+    instructions: 'Empareja cada número con su forma en portugués.'
     pairs:
-      - left: "20"
-        right: "vinte"
-      - left: "21"
-        right: "vinte e um"
-      - left: "50"
-        right: "cinquenta"
-      - left: "100"
-        right: "cem"
-      - left: "102"
-        right: "cento e dois"
-  - type: "write"
-    prompt: "Escribe en portugués el número 47."
-    answer: "quarenta e sete"
+      - left: '20'
+        right: 'vinte'
+      - left: '21'
+        right: 'vinte e um'
+      - left: '50'
+        right: 'cinquenta'
+      - left: '100'
+        right: 'cem'
+      - left: '102'
+        right: 'cento e dois'
+  - type: 'write'
+    prompt: 'Escribe en portugués el número 47.'
+    answer: 'quarenta e sete'
     hint: "Decena + 'e' + unidad."
-    placeholder: "vinte e um"
-  - type: "order"
-    sentence: "Vinte e um mais dez"
-    translation: "Veintiuno más diez."
+    placeholder: 'vinte e um'
+  - type: 'order'
+    sentence: 'Vinte e um mais dez'
+    translation: 'Veintiuno más diez.'
 vocabulary:
-  - term: "zero"
-    translation: "cero"
-  - term: "dez"
-    translation: "diez"
-  - term: "quinze"
-    translation: "quince"
-  - term: "vinte e um"
-    translation: "veintiuno"
-  - term: "cem"
-    translation: "cien"
-  - term: "cento e dois"
-    translation: "ciento dos"
+  - term: 'zero'
+    translation: 'cero'
+  - term: 'dez'
+    translation: 'diez'
+  - term: 'quinze'
+    translation: 'quince'
+  - term: 'vinte e um'
+    translation: 'veintiuno'
+  - term: 'cem'
+    translation: 'cien'
+  - term: 'cento e dois'
+    translation: 'ciento dos'
 ---
 
 Los números son la base práctica de cualquier idioma — los necesitas desde el primer día
@@ -76,33 +76,33 @@ para precios, horas, direcciones y edades.
 ## Del 0 al 10
 
 | Número | Portugués |
-| --- | --- |
-| 0 | zero |
-| 1 | um |
-| 2 | dois |
-| 3 | três |
-| 4 | quatro |
-| 5 | cinco |
-| 6 | seis |
-| 7 | sete |
-| 8 | oito |
-| 9 | nove |
-| 10 | dez |
+| ------ | --------- |
+| 0      | zero      |
+| 1      | um        |
+| 2      | dois      |
+| 3      | três      |
+| 4      | quatro    |
+| 5      | cinco     |
+| 6      | seis      |
+| 7      | sete      |
+| 8      | oito      |
+| 9      | nove      |
+| 10     | dez       |
 
 ## Del 11 al 20
 
 | Número | Portugués |
-| --- | --- |
-| 11 | onze |
-| 12 | doze |
-| 13 | treze |
-| 14 | catorze |
-| 15 | quinze |
-| 16 | dezesseis |
-| 17 | dezessete |
-| 18 | dezoito |
-| 19 | dezenove |
-| 20 | vinte |
+| ------ | --------- |
+| 11     | onze      |
+| 12     | doze      |
+| 13     | treze     |
+| 14     | catorze   |
+| 15     | quinze    |
+| 16     | dezesseis |
+| 17     | dezessete |
+| 18     | dezoito   |
+| 19     | dezenove  |
+| 20     | vinte     |
 
 ## Las decenas y el conector "e"
 

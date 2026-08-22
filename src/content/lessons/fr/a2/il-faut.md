@@ -1,75 +1,76 @@
 ---
 language: fr
 level: a2
-title: "Il faut: la obligación sin dueño"
+title: 'Il faut: la obligación sin dueño'
 description: "'Il faut', la expresión impersonal más usada del francés para dar consejos, reglas y necesidades generales sin señalar a nadie en concreto."
 order: 6
 unit: 2
-grammarTopic: "Expresiones impersonales (il faut, il y a, il est important de)"
+grammarTopic: 'Expresiones impersonales (il faut, il y a, il est important de)'
 funFact: "'Il faut' es literalmente intraducible palabra por palabra ('il' no se refiere a nadie en concreto) — es una fórmula fija que significa 'hay que' o 'es necesario', sin señalar a una persona específica. Es la forma más natural de dar un consejo general en francés."
 minutes: 7
 quiz:
   - question: "¿Cómo dirías 'hay que estudiar mucho' usando il faut?"
-    options: ["Il faut étudier beaucoup", "Il faut que étudier beaucoup", "Il fait étudier beaucoup"]
+    options:
+      ['Il faut étudier beaucoup', 'Il faut que étudier beaucoup', 'Il fait étudier beaucoup']
     answerIndex: 0
     explanation: "'il faut' + infinitivo expresa una obligación general: Il faut étudier beaucoup."
   - question: "¿Qué significa 'il y a' en francés?"
-    options: ["hay / existe", "hace (tiempo)", "es necesario"]
+    options: ['hay / existe', 'hace (tiempo)', 'es necesario']
     answerIndex: 0
     explanation: "'il y a' significa 'hay': Il y a un livre sur la table (hay un libro sobre la mesa)."
   - question: "¿Cuál es correcta: 'Il faut que tu ___ (partir) maintenant' (con sujeto específico, requiere subjonctif)?"
-    options: ["pars", "partes", "partir"]
+    options: ['pars', 'partes', 'partir']
     answerIndex: 1
     explanation: "'il faut que' + sujeto específico exige subjonctif: Il faut que tu partes (tienes que irte). Sin 'que' + sujeto, se usa infinitivo: il faut partir."
 exercises:
-  - type: "fill-blank"
-    sentence: "___ manger pour vivre."
-    answer: "Il faut"
-    hint: "Obligación general sin sujeto específico: il faut + infinitivo."
-    translation: "Hay que comer para vivir."
-    placeholder: "Il vaut mieux"
-  - type: "fill-blank"
-    sentence: "Il faut que tu ___ maintenant."
-    answer: "partes"
+  - type: 'fill-blank'
+    sentence: '___ manger pour vivre.'
+    answer: 'Il faut'
+    hint: 'Obligación general sin sujeto específico: il faut + infinitivo.'
+    translation: 'Hay que comer para vivir.'
+    placeholder: 'Il vaut mieux'
+  - type: 'fill-blank'
+    sentence: 'Il faut que tu ___ maintenant.'
+    answer: 'partes'
     hint: "'il faut que' + sujeto específico exige subjonctif de partir."
-    translation: "Tienes que irte ahora."
-    placeholder: "ailles"
-  - type: "match"
-    instructions: "Empareja cada expresión impersonal con su significado."
+    translation: 'Tienes que irte ahora.'
+    placeholder: 'ailles'
+  - type: 'match'
+    instructions: 'Empareja cada expresión impersonal con su significado.'
     pairs:
-      - left: "il faut"
-        right: "hay que / es necesario"
-      - left: "il y a"
-        right: "hay / existe"
-      - left: "il est important de"
-        right: "es importante"
-      - left: "il est possible de"
-        right: "es posible"
-      - left: "il vaut mieux"
-        right: "es mejor"
-  - type: "write"
+      - left: 'il faut'
+        right: 'hay que / es necesario'
+      - left: 'il y a'
+        right: 'hay / existe'
+      - left: 'il est important de'
+        right: 'es importante'
+      - left: 'il est possible de'
+        right: 'es posible'
+      - left: 'il vaut mieux'
+        right: 'es mejor'
+  - type: 'write'
     prompt: "Escribe en francés: 'hay un problema', usando il y a."
-    answer: "Il y a un problème"
+    answer: 'Il y a un problème'
     accepted:
-      - "Il y a un problème."
-    hint: "il y a + sustantivo indica existencia."
-    placeholder: "Il y a trois livres ici."
-  - type: "order"
-    sentence: "Il est important de bien dormir"
-    translation: "Es importante dormir bien."
+      - 'Il y a un problème.'
+    hint: 'il y a + sustantivo indica existencia.'
+    placeholder: 'Il y a trois livres ici.'
+  - type: 'order'
+    sentence: 'Il est important de bien dormir'
+    translation: 'Es importante dormir bien.'
 vocabulary:
-  - term: "il faut"
-    translation: "hay que / es necesario"
-  - term: "il y a"
-    translation: "hay / existe"
-  - term: "il est important de"
-    translation: "es importante"
-  - term: "il est possible de"
-    translation: "es posible"
-  - term: "il vaut mieux"
-    translation: "es mejor"
-  - term: "il faut que"
-    translation: "hay que (con subjuntivo)"
+  - term: 'il faut'
+    translation: 'hay que / es necesario'
+  - term: 'il y a'
+    translation: 'hay / existe'
+  - term: 'il est important de'
+    translation: 'es importante'
+  - term: 'il est possible de'
+    translation: 'es posible'
+  - term: 'il vaut mieux'
+    translation: 'es mejor'
+  - term: 'il faut que'
+    translation: 'hay que (con subjuntivo)'
 ---
 
 Estas expresiones impersonales son extremadamente comunes en francés cotidiano —
@@ -105,12 +106,12 @@ Il n'y a pas de pain.          (No hay pan)
 
 ## Otras expresiones impersonales útiles
 
-| Expresión | Significado |
-| --- | --- |
-| il est important de | es importante |
-| il est nécessaire de | es necesario |
-| il est possible de | es posible |
-| il vaut mieux | es mejor |
+| Expresión            | Significado   |
+| -------------------- | ------------- |
+| il est important de  | es importante |
+| il est nécessaire de | es necesario  |
+| il est possible de   | es posible    |
+| il vaut mieux        | es mejor      |
 
 ```
 Il est important de bien dormir.

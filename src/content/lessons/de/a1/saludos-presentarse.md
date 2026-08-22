@@ -1,97 +1,98 @@
 ---
 language: de
 level: a1
-title: "Saludos y presentarse: tus primeras 5 frases en alemán"
-description: "Hallo, Wie heißt du?, Woher kommst du?: las frases con las que arranca cualquier conversación en alemán, sin aprender gramática todavía."
+title: 'Saludos y presentarse: tus primeras 5 frases en alemán'
+description: 'Hallo, Wie heißt du?, Woher kommst du?: las frases con las que arranca cualquier conversación en alemán, sin aprender gramática todavía.'
 order: 1
 unit: 1
-grammarTopic: "Saludos y presentación personal (Begrüßung / Sich vorstellen)"
-funFact: "No necesitas saber ni una sola regla de gramática para empezar a hablar alemán hoy mismo: estas frases son bloques fijos que se memorizan enteros, como una canción. Repítelas en voz alta hasta que salgan solas — la gramática viene después."
+grammarTopic: 'Saludos y presentación personal (Begrüßung / Sich vorstellen)'
+funFact: 'No necesitas saber ni una sola regla de gramática para empezar a hablar alemán hoy mismo: estas frases son bloques fijos que se memorizan enteros, como una canción. Repítelas en voz alta hasta que salgan solas — la gramática viene después.'
 minutes: 8
 quiz:
-  - question: "Quieres saludar a alguien a cualquier hora del día, de forma neutral. ¿Qué dices?"
-    options: ["Gute Nacht", "Hallo", "Tschüss"]
+  - question: 'Quieres saludar a alguien a cualquier hora del día, de forma neutral. ¿Qué dices?'
+    options: ['Gute Nacht', 'Hallo', 'Tschüss']
     answerIndex: 1
     explanation: "'Hallo' sirve para saludar a cualquier hora y en casi cualquier situación — es el saludo más universal y seguro."
   - question: "¿Cuál es la forma correcta de preguntar '¿Cómo te llamas?'"
-    options: ["Wie heißt du?", "Wo wohnst du?", "Wer bist du?"]
+    options: ['Wie heißt du?', 'Wo wohnst du?', 'Wer bist du?']
     answerIndex: 0
     explanation: "'Wie heißt du?' pregunta literalmente '¿cómo te llamas?'. Se responde con 'Ich heiße...' (Me llamo...)."
   - question: "Alguien te pregunta 'Woher kommst du?'. ¿Qué te está preguntando?"
-    options: ["Dónde vives ahora", "De dónde eres/vienes", "Cuántos años tienes"]
+    options: ['Dónde vives ahora', 'De dónde eres/vienes', 'Cuántos años tienes']
     answerIndex: 1
     explanation: "'Woher kommst du?' pregunta por tu origen. Se responde con 'Ich komme aus...' + país, sin artículo: Ich komme aus Spanien."
-  - question: "¿Cómo te despides de forma informal, con un amigo?"
-    options: ["Guten Tag", "Tschüss", "Entschuldigung"]
+  - question: '¿Cómo te despides de forma informal, con un amigo?'
+    options: ['Guten Tag', 'Tschüss', 'Entschuldigung']
     answerIndex: 1
     explanation: "'Tschüss' es la despedida informal más común, equivalente a 'chao' o 'adiós' entre amigos."
   - question: "¿Qué significa 'Danke'?"
-    options: ["Por favor", "Gracias", "Perdón"]
+    options: ['Por favor', 'Gracias', 'Perdón']
     answerIndex: 1
     explanation: "'Danke' significa 'gracias'. Para 'por favor' se usa 'Bitte' — que también sirve para responder 'de nada'."
   - question: "'Sie' (con mayúscula) y 'du' significan ambos 'tú/usted'. ¿Cuál es la diferencia?"
-    options: [
-      "No hay ninguna diferencia real",
-      "'Sie' es la forma formal (usted); 'du' es informal (tú)",
-      "'Sie' se usa solo con mujeres"
-    ]
+    options:
+      [
+        'No hay ninguna diferencia real',
+        "'Sie' es la forma formal (usted); 'du' es informal (tú)",
+        "'Sie' se usa solo con mujeres",
+      ]
     answerIndex: 1
     explanation: "'Sie' (siempre con mayúscula) es el tratamiento formal, para desconocidos o contextos profesionales. 'du' es informal, para amigos, familia o niños."
-  - question: "Quieres saber cuántos años tiene alguien. ¿Qué preguntas?"
-    options: ["Wie alt bist du?", "Wie heißt du?", "Wo wohnst du?"]
+  - question: 'Quieres saber cuántos años tiene alguien. ¿Qué preguntas?'
+    options: ['Wie alt bist du?', 'Wie heißt du?', 'Wo wohnst du?']
     answerIndex: 0
     explanation: "'Wie alt bist du?' pregunta la edad. Se responde con 'Ich bin ... Jahre alt' (Tengo ... años)."
 exercises:
-  - type: "fill-blank"
-    sentence: "___ heiße Ana."
-    answer: "Ich"
-    accepted: ["ich"]
+  - type: 'fill-blank'
+    sentence: '___ heiße Ana.'
+    answer: 'Ich'
+    accepted: ['ich']
     hint: "Es la primera persona del singular: 'yo'."
-    translation: "Me llamo Ana."
-    placeholder: "Ej: du/er/wir"
-  - type: "fill-blank"
-    sentence: "Ich komme ___ Spanien."
-    answer: "aus"
-    accepted: ["Aus"]
-    hint: "La preposición para indicar origen/país, siempre sin artículo."
-    translation: "Soy de España."
-    placeholder: "Escribe la preposición"
-  - type: "match"
-    instructions: "Empareja cada frase en alemán con su traducción."
+    translation: 'Me llamo Ana.'
+    placeholder: 'Ej: du/er/wir'
+  - type: 'fill-blank'
+    sentence: 'Ich komme ___ Spanien.'
+    answer: 'aus'
+    accepted: ['Aus']
+    hint: 'La preposición para indicar origen/país, siempre sin artículo.'
+    translation: 'Soy de España.'
+    placeholder: 'Escribe la preposición'
+  - type: 'match'
+    instructions: 'Empareja cada frase en alemán con su traducción.'
     pairs:
-      - left: "Wie heißt du?"
-        right: "¿Cómo te llamas?"
-      - left: "Woher kommst du?"
-        right: "¿De dónde eres?"
-      - left: "Wie alt bist du?"
-        right: "¿Cuántos años tienes?"
-      - left: "Danke"
-        right: "Gracias"
-      - left: "Tschüss"
-        right: "Adiós (informal)"
-  - type: "write"
+      - left: 'Wie heißt du?'
+        right: '¿Cómo te llamas?'
+      - left: 'Woher kommst du?'
+        right: '¿De dónde eres?'
+      - left: 'Wie alt bist du?'
+        right: '¿Cuántos años tienes?'
+      - left: 'Danke'
+        right: 'Gracias'
+      - left: 'Tschüss'
+        right: 'Adiós (informal)'
+  - type: 'write'
     prompt: "Escribe cómo se dice 'Buenos días' en alemán (saludo de mañana)."
-    answer: "Guten Morgen"
-    accepted: ["guten morgen", "Guten morgen"]
+    answer: 'Guten Morgen'
+    accepted: ['guten morgen', 'Guten morgen']
     hint: "Literalmente 'buena mañana' — el saludo específico antes del mediodía."
     spokenOnly: true
-    placeholder: "Ej: Guten Abend"
-  - type: "order"
-    sentence: "Ich komme aus Mexiko"
-    translation: "Soy de México."
+    placeholder: 'Ej: Guten Abend'
+  - type: 'order'
+    sentence: 'Ich komme aus Mexiko'
+    translation: 'Soy de México.'
 vocabulary:
-  - term: "Hallo"
-    translation: "Hola"
-  - term: "Guten Morgen"
-    translation: "Buenos días"
-  - term: "Tschüss"
-    translation: "Adiós (informal)"
-  - term: "Danke"
-    translation: "Gracias"
-  - term: "Bitte"
-    translation: "Por favor / de nada"
-  - term: "Wie heißt du?"
-    translation: "¿Cómo te llamas?"
+  - term: 'Hallo'
+    translation: 'Hola'
+  - term: 'Guten Morgen'
+    translation: 'Buenos días'
+  - term: 'Tschüss'
+    translation: 'Adiós (informal)'
+  - term: 'Danke'
+    translation: 'Gracias'
+  - term: 'Bitte'
+    translation: 'Por favor / de nada'
+  - term: 'Wie heißt du?'
+    translation: '¿Cómo te llamas?'
 ---
 
 Antes de aprender ninguna regla de gramática, puedes empezar a hablar alemán hoy
@@ -100,20 +101,20 @@ letras de canciones — y te van a servir en cualquier primera conversación.
 
 ## Saludar
 
-| Alemán | Español | Cuándo usarlo |
-| --- | --- | --- |
-| Hallo | Hola | A cualquier hora, casi cualquier situación |
-| Guten Morgen | Buenos días | Por la mañana |
-| Guten Tag | Buenos días / buenas tardes | Del mediodía hasta el atardecer |
-| Guten Abend | Buenas noches (al llegar) | Al anochecer |
+| Alemán       | Español                     | Cuándo usarlo                              |
+| ------------ | --------------------------- | ------------------------------------------ |
+| Hallo        | Hola                        | A cualquier hora, casi cualquier situación |
+| Guten Morgen | Buenos días                 | Por la mañana                              |
+| Guten Tag    | Buenos días / buenas tardes | Del mediodía hasta el atardecer            |
+| Guten Abend  | Buenas noches (al llegar)   | Al anochecer                               |
 
 ## Despedirse
 
-| Alemán | Español | Registro |
-| --- | --- | --- |
-| Tschüss | Adiós, chao | Informal |
-| Auf Wiedersehen | Adiós | Formal |
-| Gute Nacht | Buenas noches (al irse a dormir) | — |
+| Alemán          | Español                          | Registro |
+| --------------- | -------------------------------- | -------- |
+| Tschüss         | Adiós, chao                      | Informal |
+| Auf Wiedersehen | Adiós                            | Formal   |
+| Gute Nacht      | Buenas noches (al irse a dormir) | —        |
 
 ## Presentarte: las 3 preguntas esenciales
 

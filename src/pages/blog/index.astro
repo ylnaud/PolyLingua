@@ -3,16 +3,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
 
-const dateFormatter = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long', year: 'numeric' });
+const dateFormatter = new Intl.DateTimeFormat('es', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
 
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Blog de PolyLingua',
-  description: 'Trucos de gramática, comparativas con otras apps y consejos para aprender idiomas gratis.',
+  description:
+    'Trucos de gramática, comparativas con otras apps y consejos para aprender idiomas gratis.',
   url: 'https://poly-lingua.vercel.app/blog',
   mainEntity: {
     '@type': 'Blog',
@@ -36,29 +41,31 @@ const structuredData = {
     <span class="eyebrow">Blog</span>
     <h1>Artículos para aprender idiomas de verdad</h1>
     <p>
-      Trucos de gramática, comparativas honestas con otras apps, y todo lo que
-      aprendimos construyendo un curso gratuito de 5 idiomas.
+      Trucos de gramática, comparativas honestas con otras apps, y todo lo que aprendimos
+      construyendo un curso gratuito de 5 idiomas.
     </p>
   </section>
 
   <section class="container posts-grid">
     {posts.length === 0 && <p class="empty">Muy pronto vamos a publicar el primer artículo.</p>}
-    {posts.map((post) => (
-      <a class="post-card card" href={`/blog/${post.id}`}>
-        <time datetime={post.data.publishDate.toISOString()}>
-          {dateFormatter.format(post.data.publishDate)}
-        </time>
-        <h2>{post.data.title}</h2>
-        <p>{post.data.description}</p>
-        {post.data.tags.length > 0 && (
-          <ul class="tags">
-            {post.data.tags.map((tag) => (
-              <li>{tag}</li>
-            ))}
-          </ul>
-        )}
-      </a>
-    ))}
+    {
+      posts.map((post) => (
+        <a class="post-card card" href={`/blog/${post.id}`}>
+          <time datetime={post.data.publishDate.toISOString()}>
+            {dateFormatter.format(post.data.publishDate)}
+          </time>
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          {post.data.tags.length > 0 && (
+            <ul class="tags">
+              {post.data.tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+          )}
+        </a>
+      ))
+    }
   </section>
 </BaseLayout>
 

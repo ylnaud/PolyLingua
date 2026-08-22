@@ -1,76 +1,87 @@
 ---
 language: pt
 level: c2
-title: "Jogos de palavras: el humor que solo funciona en portugués"
-description: "Cómo funcionan los juegos de palabras en portugués: dobles sentidos, sonidos similares y el humor imposible de traducir literalmente."
+title: 'Jogos de palavras: el humor que solo funciona en portugués'
+description: 'Cómo funcionan los juegos de palabras en portugués: dobles sentidos, sonidos similares y el humor imposible de traducir literalmente.'
 order: 6
 unit: 2
-grammarTopic: "Jogos de palavras e trocadilhos"
+grammarTopic: 'Jogos de palavras e trocadilhos'
 funFact: "Brasil tiene una tradición muy particular de 'trocadilhos' (juegos de palabras) en titulares de periódico y publicidad — una práctica tan extendida que existen concursos y compilaciones dedicadas exclusivamente a los mejores trocadilhos de titulares deportivos brasileños, especialmente relacionados con fútbol."
 minutes: 9
 quiz:
   - question: "¿Qué es un 'trocadilho' en portugués?"
-    options: ["un refrán tradicional", "un juego de palabras basado en sonidos similares o dobles sentidos", "un tipo de poema formal"]
+    options:
+      [
+        'un refrán tradicional',
+        'un juego de palabras basado en sonidos similares o dobles sentidos',
+        'un tipo de poema formal',
+      ]
     answerIndex: 1
     explanation: "'trocadilho' es la palabra portuguesa para juego de palabras — un recurso humorístico basado en ambigüedad sonora o de significado."
-  - question: "¿Dónde es particularmente popular la tradición del trocadilho en Brasil?"
-    options: ["en titulares de periódico, especialmente deportivos", "solo en poesía clásica", "no es popular en absoluto"]
+  - question: '¿Dónde es particularmente popular la tradición del trocadilho en Brasil?'
+    options:
+      [
+        'en titulares de periódico, especialmente deportivos',
+        'solo en poesía clásica',
+        'no es popular en absoluto',
+      ]
     answerIndex: 0
-    explanation: "Los titulares deportivos brasileños, sobre todo de fútbol, tienen una tradición muy establecida y celebrada de trocadilhos ingeniosos."
-  - question: "¿Por qué los juegos de palabras son de los últimos retos de un idioma?"
-    options: [
-      "Porque dependen de un dominio fonético y semántico profundo, imposible de traducir mecánicamente",
-      "Porque no tienen ninguna lógica lingüística",
-      "Porque solo existen en portugués"
-    ]
+    explanation: 'Los titulares deportivos brasileños, sobre todo de fútbol, tienen una tradición muy establecida y celebrada de trocadilhos ingeniosos.'
+  - question: '¿Por qué los juegos de palabras son de los últimos retos de un idioma?'
+    options:
+      [
+        'Porque dependen de un dominio fonético y semántico profundo, imposible de traducir mecánicamente',
+        'Porque no tienen ninguna lógica lingüística',
+        'Porque solo existen en portugués',
+      ]
     answerIndex: 0
-    explanation: "Un trocadilho exige reconocer simultáneamente el sonido y el doble significado de una palabra — una habilidad que va mucho más allá de la gramática o el vocabulario básico."
+    explanation: 'Un trocadilho exige reconocer simultáneamente el sonido y el doble significado de una palabra — una habilidad que va mucho más allá de la gramática o el vocabulario básico.'
 exercises:
-  - type: "fill-blank"
-    sentence: "Cadê o ___ do bolo?"
-    answer: "resto"
-    accepted: ["Resto"]
-    hint: "Doble sentido: sobrante de comida y también término matemático."
-    translation: "¿Dónde está el resto del pastel?"
-    placeholder: "pedaço / restante"
-  - type: "fill-blank"
-    sentence: "Que Papai Noel te traga ___, e não presença de fatura."
-    answer: "presentes"
-    accepted: ["Presentes"]
+  - type: 'fill-blank'
+    sentence: 'Cadê o ___ do bolo?'
+    answer: 'resto'
+    accepted: ['Resto']
+    hint: 'Doble sentido: sobrante de comida y también término matemático.'
+    translation: '¿Dónde está el resto del pastel?'
+    placeholder: 'pedaço / restante'
+  - type: 'fill-blank'
+    sentence: 'Que Papai Noel te traga ___, e não presença de fatura.'
+    answer: 'presentes'
+    accepted: ['Presentes']
     hint: "Juego de palabras con el sonido de 'presença'."
-    translation: "Que Papá Noel te traiga regalos, y no la presencia de la factura."
-    placeholder: "alegria / saúde"
-  - type: "match"
-    instructions: "Empareja cada palabra con el doble sentido que activa el trocadilho."
+    translation: 'Que Papá Noel te traiga regalos, y no la presencia de la factura.'
+    placeholder: 'alegria / saúde'
+  - type: 'match'
+    instructions: 'Empareja cada palabra con el doble sentido que activa el trocadilho.'
     pairs:
-      - left: "resto"
-        right: "sobrante de comida / resultado matemático"
-      - left: "presente"
-        right: "regalo / estar presente"
-      - left: "fatura"
-        right: "factura (cuenta a pagar)"
-      - left: "trocadilho"
-        right: "juego de palabras basado en sonido o significado"
-  - type: "write"
-    prompt: "Escribe la palabra portuguesa que designa un juego de palabras basado en sonidos similares o dobles sentidos."
-    answer: "trocadilho"
-    accepted: ["o trocadilho"]
-    hint: "Es la palabra que da nombre a esta lección."
-    placeholder: "piada"
-  - type: "order"
-    sentence: "Que Papai Noel te traga presentes e não presença de fatura"
-    translation: "Que Papá Noel te traiga regalos, y no la presencia de la factura."
+      - left: 'resto'
+        right: 'sobrante de comida / resultado matemático'
+      - left: 'presente'
+        right: 'regalo / estar presente'
+      - left: 'fatura'
+        right: 'factura (cuenta a pagar)'
+      - left: 'trocadilho'
+        right: 'juego de palabras basado en sonido o significado'
+  - type: 'write'
+    prompt: 'Escribe la palabra portuguesa que designa un juego de palabras basado en sonidos similares o dobles sentidos.'
+    answer: 'trocadilho'
+    accepted: ['o trocadilho']
+    hint: 'Es la palabra que da nombre a esta lección.'
+    placeholder: 'piada'
+  - type: 'order'
+    sentence: 'Que Papai Noel te traga presentes e não presença de fatura'
+    translation: 'Que Papá Noel te traiga regalos, y no la presencia de la factura.'
 vocabulary:
-  - term: "resto"
-    translation: "resto (sobrante de comida / resultado matemático)"
-  - term: "presente"
-    translation: "regalo / estar presente"
-  - term: "fatura"
-    translation: "factura (cuenta a pagar)"
-  - term: "trocadilho"
-    translation: "juego de palabras"
-  - term: "presença"
-    translation: "presencia"
+  - term: 'resto'
+    translation: 'resto (sobrante de comida / resultado matemático)'
+  - term: 'presente'
+    translation: 'regalo / estar presente'
+  - term: 'fatura'
+    translation: 'factura (cuenta a pagar)'
+  - term: 'trocadilho'
+    translation: 'juego de palabras'
+  - term: 'presença'
+    translation: 'presencia'
 ---
 
 Entender un juego de palabras en portugués sin que te lo expliquen es una de las

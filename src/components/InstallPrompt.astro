@@ -10,6 +10,7 @@ interface Props {
 
 const { variant = 'pill' } = Astro.props;
 ---
+
 <button
   type="button"
   class:list={['install-btn', { 'install-btn-sheet': variant === 'sheet' }]}
@@ -18,9 +19,7 @@ const { variant = 'pill' } = Astro.props;
 >
   📲 Instalar app
 </button>
-<span
-  class:list={['install-fallback', { 'install-fallback-sheet': variant === 'sheet' }]}
-  hidden
+<span class:list={['install-fallback', { 'install-fallback-sheet': variant === 'sheet' }]} hidden
 ></span>
 
 <style>

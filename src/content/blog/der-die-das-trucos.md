@@ -1,8 +1,8 @@
 ---
-title: "Der, die, das: por qué memorizas mal los artículos alemanes (y cómo dejar de adivinar)"
-description: "La razón por la que te equivocás con der/die/das no es falta de memoria: es que intentas memorizar sin categorías. Los trucos que sí funcionan."
+title: 'Der, die, das: por qué memorizas mal los artículos alemanes (y cómo dejar de adivinar)'
+description: 'La razón por la que te equivocás con der/die/das no es falta de memoria: es que intentas memorizar sin categorías. Los trucos que sí funcionan.'
 publishDate: 2026-08-12
-tags: ["alemán", "gramática", "trucos"]
+tags: ['alemán', 'gramática', 'trucos']
 ---
 
 Si estudiás alemán, ya sabés la sensación: aprendés una palabra nueva, la
@@ -44,13 +44,13 @@ son "reglas", son **tendencias con un porcentaje de acierto**. Tratarlas así
 te da una expectativa realista en vez de frustración cuando aparece una
 excepción.
 
-| Terminación | Género | Certeza |
-| --- | --- | --- |
-| -ung, -heit, -keit, -schaft | femenino (die) | 98% |
-| -chen, -lein | neutro (das) | 100% (sin excepciones) |
-| -ig, -ismus | masculino (der) | 98% |
-| -ion, -tät | femenino (die) | 95-98% |
-| -um, -nis | neutro (das) | 90% |
+| Terminación                 | Género          | Certeza                |
+| --------------------------- | --------------- | ---------------------- |
+| -ung, -heit, -keit, -schaft | femenino (die)  | 98%                    |
+| -chen, -lein                | neutro (das)    | 100% (sin excepciones) |
+| -ig, -ismus                 | masculino (der) | 98%                    |
+| -ion, -tät                  | femenino (die)  | 95-98%                 |
+| -um, -nis                   | neutro (das)    | 90%                    |
 
 Fijate que "-chen/-lein" está marcado como 100% — es la única terminación
 que **nunca** falla. Por eso das Mädchen (niña) es neutro pese a referirse a

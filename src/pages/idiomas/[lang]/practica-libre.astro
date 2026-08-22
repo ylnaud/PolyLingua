@@ -84,7 +84,11 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
   window.POOL_ITEMS = pool;
 </script>
 <script>
-  import { buildItemFieldset, primePracticeCounters, type SrsEntry } from '../../../lib/practiceItemMarkup';
+  import {
+    buildItemFieldset,
+    primePracticeCounters,
+    type SrsEntry,
+  } from '../../../lib/practiceItemMarkup';
   import { shuffle } from '../../../lib/shuffle';
 
   const SESSION_SIZE = 12;
@@ -94,7 +98,9 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
     // toda página que lo use — acotarlo a esta sesión evita que este script
     // (cuyo listener de astro:page-load queda activo el resto de la
     // navegación SPA) toque el quiz de una lección o examen ajenos.
-    const practiceRoot = document.querySelector<HTMLElement>('[data-practice][data-session-type="practice-libre"]');
+    const practiceRoot = document.querySelector<HTMLElement>(
+      '[data-practice][data-session-type="practice-libre"]',
+    );
     const container = practiceRoot?.querySelector<HTMLElement>('[data-items-container]');
     const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
     const desc = document.querySelector<HTMLElement>('[data-free-desc]');
@@ -153,5 +159,4 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
     max-width: 680px;
     padding-block: 0 4rem;
   }
-
 </style>

@@ -1,80 +1,82 @@
 ---
 language: pt
 level: c1
-title: "Se eu falasse: el pretérito imperfeito do subjuntivo"
-description: "El pretérito imperfeito do subjuntivo portugués, esencial para expresar hipótesis, deseos irrealizados y fórmulas de cortesía más elevada."
+title: 'Se eu falasse: el pretérito imperfeito do subjuntivo'
+description: 'El pretérito imperfeito do subjuntivo portugués, esencial para expresar hipótesis, deseos irrealizados y fórmulas de cortesía más elevada.'
 order: 3
 unit: 1
-grammarTopic: "Pretérito imperfeito do subjuntivo"
+grammarTopic: 'Pretérito imperfeito do subjuntivo'
 funFact: "El pretérito imperfeito do subjuntivo se forma siempre a partir de la tercera persona del plural del pretérito perfeito ('falaram' → 'falasse'), un atajo morfológico que funciona para prácticamente todos los verbos irregulares del idioma, incluso los más caóticos como 'ser/ir' (foram → fosse)."
 minutes: 8
 quiz:
-  - question: "¿De qué forma verbal se deriva el pretérito imperfeito do subjuntivo?"
-    options: [
-      "de la tercera persona del plural del pretérito perfeito",
-      "del infinitivo directamente",
-      "del presente do indicativo"
-    ]
+  - question: '¿De qué forma verbal se deriva el pretérito imperfeito do subjuntivo?'
+    options:
+      [
+        'de la tercera persona del plural del pretérito perfeito',
+        'del infinitivo directamente',
+        'del presente do indicativo',
+      ]
     answerIndex: 0
     explanation: "Se toma la forma 'eles/elas' del pretérito perfeito, se quita '-am' y se añaden las terminaciones: falaram → falasse."
   - question: "¿Cuál es el imperfeito do subjuntivo del verbo 'ser' (a partir de 'foram')?"
-    options: ["fosse", "sesse", "seria"]
+    options: ['fosse', 'sesse', 'seria']
     answerIndex: 0
     explanation: "foram → foss- + e = fosse. 'Se eu fosse rico...' (Si yo fuera rico...)."
-  - question: "¿En qué tipo de frase condicional aparece típicamente el imperfeito do subjuntivo?"
-    options: [
-      "condicionales irreales del presente/futuro: Se eu tivesse dinheiro, viajaria",
-      "solo en preguntas directas",
-      "solo con verbos en primera persona del plural"
-    ]
+  - question: '¿En qué tipo de frase condicional aparece típicamente el imperfeito do subjuntivo?'
+    options:
+      [
+        'condicionales irreales del presente/futuro: Se eu tivesse dinheiro, viajaria',
+        'solo en preguntas directas',
+        'solo con verbos en primera persona del plural',
+      ]
     answerIndex: 0
     explanation: "El imperfeito do subjuntivo aparece en la cláusula 'se' de condicionales hipotéticas irreales, acompañado del condicional en la otra cláusula: Se eu tivesse dinheiro, viajaria pelo mundo."
 exercises:
-  - type: "fill-blank"
-    sentence: "Se eu ___ mais tempo, viajaria pelo mundo."
-    answer: "tivesse"
-    accepted: ["tivesse"]
+  - type: 'fill-blank'
+    sentence: 'Se eu ___ mais tempo, viajaria pelo mundo.'
+    answer: 'tivesse'
+    accepted: ['tivesse']
     hint: "Imperfeito do subjuntivo de 'ter', para una condicional hipotética irreal."
-    translation: "Si tuviera más tiempo, viajaría por el mundo."
-    placeholder: "fosse"
-  - type: "fill-blank"
-    sentence: "Se ela ___ a verdade, ficaria chateada."
-    answer: "soubesse"
-    accepted: ["soubesse"]
+    translation: 'Si tuviera más tiempo, viajaría por el mundo.'
+    placeholder: 'fosse'
+  - type: 'fill-blank'
+    sentence: 'Se ela ___ a verdade, ficaria chateada.'
+    answer: 'soubesse'
+    accepted: ['soubesse']
     hint: "De 'souberam' (pretérito perfeito de 'saber'), quitar '-am', añadir terminación."
-    translation: "Si ella supiera la verdad, se molestaría."
-    placeholder: "fizesse"
-  - type: "match"
+    translation: 'Si ella supiera la verdad, se molestaría.'
+    placeholder: 'fizesse'
+  - type: 'match'
     instructions: "Empareja cada forma de 'eles/elas' del pretérito perfeito con su imperfeito do subjuntivo correspondiente (eu/ele)."
     pairs:
-      - left: "falaram"
-        right: "falasse"
-      - left: "fizeram"
-        right: "fizesse"
-      - left: "foram"
-        right: "fosse"
-      - left: "souberam"
-        right: "soubesse"
-  - type: "write"
+      - left: 'falaram'
+        right: 'falasse'
+      - left: 'fizeram'
+        right: 'fizesse'
+      - left: 'foram'
+        right: 'fosse'
+      - left: 'souberam'
+        right: 'soubesse'
+  - type: 'write'
     prompt: "Escribe el pretérito imperfeito do subjuntivo de 'ser' (derivado de 'foram'), como en 'Se eu ___ rico...' (Si yo fuera rico...)."
-    answer: "fosse"
-    accepted: ["fosse"]
-    hint: "foram → foss- + e."
-    placeholder: "tivesse"
-  - type: "order"
-    sentence: "Se você pudesse me ajudar eu agradeceria muito"
-    translation: "Si pudiera ayudarme, se lo agradecería mucho."
+    answer: 'fosse'
+    accepted: ['fosse']
+    hint: 'foram → foss- + e.'
+    placeholder: 'tivesse'
+  - type: 'order'
+    sentence: 'Se você pudesse me ajudar eu agradeceria muito'
+    translation: 'Si pudiera ayudarme, se lo agradecería mucho.'
 vocabulary:
-  - term: "falasse"
-    translation: "hablara / hablase"
-  - term: "fizesse"
-    translation: "hiciera / hiciese"
-  - term: "fosse"
-    translation: "fuera / fuese"
-  - term: "soubesse"
-    translation: "supiera / supiese"
-  - term: "tivesse"
-    translation: "tuviera / tuviese"
+  - term: 'falasse'
+    translation: 'hablara / hablase'
+  - term: 'fizesse'
+    translation: 'hiciera / hiciese'
+  - term: 'fosse'
+    translation: 'fuera / fuese'
+  - term: 'soubesse'
+    translation: 'supiera / supiese'
+  - term: 'tivesse'
+    translation: 'tuviera / tuviese'
 ---
 
 El pretérito imperfeito do subjuntivo es la puerta de entrada a las hipótesis

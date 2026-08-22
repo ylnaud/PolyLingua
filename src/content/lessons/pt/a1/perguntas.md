@@ -1,78 +1,79 @@
 ---
 language: pt
 level: a1
-title: "Como fazer perguntas: forma preguntas desde el día uno"
-description: "Las palabras interrogativas del portugués y cómo formar preguntas de sí/no sin invertir el orden sujeto-verbo, solo con la entonación."
+title: 'Como fazer perguntas: forma preguntas desde el día uno'
+description: 'Las palabras interrogativas del portugués y cómo formar preguntas de sí/no sin invertir el orden sujeto-verbo, solo con la entonación.'
 order: 8
 unit: 2
-grammarTopic: "Formação de perguntas"
+grammarTopic: 'Formação de perguntas'
 funFact: "El portugués no invierte el orden sujeto-verbo para preguntas de sí/no como el inglés — basta con la entonación (o los signos '?' al escribir): 'Você fala português?' tiene exactamente el mismo orden de palabras que la afirmación, solo cambia la entonación."
 minutes: 6
 quiz:
-  - question: "¿Cómo formas una pregunta de sí/no en portugués?"
-    options: [
-      "Invirtiendo el orden sujeto-verbo, como en inglés",
-      "Con el mismo orden de palabras que una afirmación, cambiando solo la entonación",
-      "Añadiendo siempre 'será que' al inicio"
-    ]
+  - question: '¿Cómo formas una pregunta de sí/no en portugués?'
+    options:
+      [
+        'Invirtiendo el orden sujeto-verbo, como en inglés',
+        'Con el mismo orden de palabras que una afirmación, cambiando solo la entonación',
+        "Añadiendo siempre 'será que' al inicio",
+      ]
     answerIndex: 1
     explanation: "A diferencia del inglés, el portugués no invierte el orden para preguntas sí/no: 'Você fala português?' usa el mismo orden que 'Você fala português.'"
   - question: "¿Qué significa 'onde' en portugués?"
-    options: ["cuándo", "dónde", "cuánto"]
+    options: ['cuándo', 'dónde', 'cuánto']
     answerIndex: 1
     explanation: "'onde' significa 'dónde' — 'Onde você mora?' (¿Dónde vives?)."
   - question: "¿Cómo dirías '¿Por qué?' en portugués?"
-    options: ["Por que?", "Para que?", "Porque?"]
+    options: ['Por que?', 'Para que?', 'Porque?']
     answerIndex: 0
     explanation: "'Por que?' (separado, con acento en la pregunta) significa '¿por qué?'; 'porque' (junto, sin acento) significa 'porque' como respuesta."
 exercises:
-  - type: "fill-blank"
-    sentence: "___ você mora?"
-    answer: "Onde"
+  - type: 'fill-blank'
+    sentence: '___ você mora?'
+    answer: 'Onde'
     hint: "Palabra interrogativa que significa 'dónde'."
-    translation: "¿Dónde vives?"
-    placeholder: "Quando"
-  - type: "fill-blank"
-    sentence: "___ custa isso?"
-    answer: "Quanto"
+    translation: '¿Dónde vives?'
+    placeholder: 'Quando'
+  - type: 'fill-blank'
+    sentence: '___ custa isso?'
+    answer: 'Quanto'
     hint: "Palabra interrogativa que significa 'cuánto'."
-    translation: "¿Cuánto cuesta esto?"
-    placeholder: "Como"
-  - type: "match"
-    instructions: "Empareja cada palabra interrogativa con su significado."
+    translation: '¿Cuánto cuesta esto?'
+    placeholder: 'Como'
+  - type: 'match'
+    instructions: 'Empareja cada palabra interrogativa con su significado.'
     pairs:
-      - left: "quem"
-        right: "quién"
-      - left: "quando"
-        right: "cuándo"
-      - left: "como"
-        right: "cómo"
-      - left: "qual"
-        right: "cuál"
-      - left: "por que"
-        right: "por qué"
-  - type: "write"
+      - left: 'quem'
+        right: 'quién'
+      - left: 'quando'
+        right: 'cuándo'
+      - left: 'como'
+        right: 'cómo'
+      - left: 'qual'
+        right: 'cuál'
+      - left: 'por que'
+        right: 'por qué'
+  - type: 'write'
     prompt: "Escribe en portugués cómo preguntarías '¿Cuál es tu nombre?'."
-    answer: "Qual é o seu nome?"
-    accepted: ["qual é o seu nome?", "Qual é o seu nome"]
-    hint: "qual + é + o seu nome."
-    placeholder: "Onde você mora?"
-  - type: "order"
-    sentence: "Quando você chega"
-    translation: "¿Cuándo llegas?"
+    answer: 'Qual é o seu nome?'
+    accepted: ['qual é o seu nome?', 'Qual é o seu nome']
+    hint: 'qual + é + o seu nome.'
+    placeholder: 'Onde você mora?'
+  - type: 'order'
+    sentence: 'Quando você chega'
+    translation: '¿Cuándo llegas?'
 vocabulary:
-  - term: "quem"
-    translation: "quién"
-  - term: "onde"
-    translation: "dónde"
-  - term: "quando"
-    translation: "cuándo"
-  - term: "como"
-    translation: "cómo"
-  - term: "qual"
-    translation: "cuál"
-  - term: "por que"
-    translation: "por qué"
+  - term: 'quem'
+    translation: 'quién'
+  - term: 'onde'
+    translation: 'dónde'
+  - term: 'quando'
+    translation: 'cuándo'
+  - term: 'como'
+    translation: 'cómo'
+  - term: 'qual'
+    translation: 'cuál'
+  - term: 'por que'
+    translation: 'por qué'
 ---
 
 Formar preguntas es una de las primeras herramientas prácticas que necesitas para
@@ -90,16 +91,16 @@ interrogación al escribir).
 
 ## Las palabras interrogativas
 
-| Portugués | Español |
-| --- | --- |
-| o quê / que | qué |
-| quem | quién |
-| onde | dónde |
-| quando | cuándo |
-| como | cómo |
-| por que | por qué |
+| Portugués     | Español       |
+| ------------- | ------------- |
+| o quê / que   | qué           |
+| quem          | quién         |
+| onde          | dónde         |
+| quando        | cuándo        |
+| como          | cómo          |
+| por que       | por qué       |
 | quanto/quanta | cuánto/cuánta |
-| qual | cuál |
+| qual          | cuál          |
 
 ## Ejemplos completos
 

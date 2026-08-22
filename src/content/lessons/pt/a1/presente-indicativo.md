@@ -1,71 +1,71 @@
 ---
 language: pt
 level: a1
-title: "O presente: tres terminaciones que ya conoces"
-description: "Conjuga el presente de indicativo en portugués: verbos regulares -ar, -er e -ir con una lógica casi idéntica a la del español actual."
+title: 'O presente: tres terminaciones que ya conoces'
+description: 'Conjuga el presente de indicativo en portugués: verbos regulares -ar, -er e -ir con una lógica casi idéntica a la del español actual.'
 order: 2
 unit: 1
-grammarTopic: "Presente do indicativo (verbos regulares -ar/-er/-ir)"
-funFact: "El presente portugués es probablemente el punto de partida más fácil de los cinco idiomas: los tres grupos verbales (-ar, -er, -ir) son EXACTAMENTE los mismos que en español, con terminaciones muy parecidas. El reto real no es la lógica, es la pronunciación de las vocales nasales — pero eso es para tus oídos, no para tu gramática."
+grammarTopic: 'Presente do indicativo (verbos regulares -ar/-er/-ir)'
+funFact: 'El presente portugués es probablemente el punto de partida más fácil de los cinco idiomas: los tres grupos verbales (-ar, -er, -ir) son EXACTAMENTE los mismos que en español, con terminaciones muy parecidas. El reto real no es la lógica, es la pronunciación de las vocales nasales — pero eso es para tus oídos, no para tu gramática.'
 minutes: 6
 quiz:
   - question: "¿Cuál es la conjugación correcta de 'falar' (hablar) con 'você' (tú/usted)?"
-    options: ["você fala", "você falas", "você falo"]
+    options: ['você fala', 'você falas', 'você falo']
     answerIndex: 0
     explanation: "Con 'você', los verbos en -ar terminan en '-a', igual que con 'ele/ela': você fala. En portugués brasileño, 'você' se conjuga como tercera persona."
   - question: "¿Cuál es la forma correcta de 'nós' (nosotros) con 'comer' (comer)?"
-    options: ["nós comemos", "nós comem", "nós come"]
+    options: ['nós comemos', 'nós comem', 'nós come']
     answerIndex: 0
     explanation: "Los verbos en -er con 'nós' terminan en '-emos': nós comemos — casi idéntico al español 'comemos'."
   - question: "¿Cuál es la conjugación de 'abrir' (abrir) con 'eles' (ellos)?"
-    options: ["eles abrem", "eles abren", "eles abre"]
+    options: ['eles abrem', 'eles abren', 'eles abre']
     answerIndex: 0
     explanation: "Los verbos en -ir con 'eles/elas' terminan en '-em': eles abrem. Nota que en portugués es '-em' y no '-en' como en español ('abren')."
 exercises:
-  - type: "fill-blank"
-    sentence: "Nós ___ português todos os dias."
-    answer: "falamos"
+  - type: 'fill-blank'
+    sentence: 'Nós ___ português todos os dias.'
+    answer: 'falamos'
     hint: "'falar' con 'nós': terminación -amos."
-    translation: "Hablamos portugués todos los días."
-    placeholder: "comemos"
-  - type: "fill-blank"
-    sentence: "Você ___ português?"
-    answer: "fala"
+    translation: 'Hablamos portugués todos los días.'
+    placeholder: 'comemos'
+  - type: 'fill-blank'
+    sentence: 'Você ___ português?'
+    answer: 'fala'
     hint: "'você' se conjuga como tercera persona (ele/ela), no como 'tu'."
-    translation: "¿Hablas portugués?"
-    placeholder: "come"
-  - type: "match"
+    translation: '¿Hablas portugués?'
+    placeholder: 'come'
+  - type: 'match'
     instructions: "Empareja cada pronombre con la conjugación correcta de 'comer'."
     pairs:
-      - left: "eu"
-        right: "como"
-      - left: "nós"
-        right: "comemos"
-      - left: "eles"
-        right: "comem"
-      - left: "ele/ela"
-        right: "come"
-  - type: "write"
+      - left: 'eu'
+        right: 'como'
+      - left: 'nós'
+        right: 'comemos'
+      - left: 'eles'
+        right: 'comem'
+      - left: 'ele/ela'
+        right: 'come'
+  - type: 'write'
     prompt: "Escribe en portugués la conjugación de 'abrir' con 'eles' (ellos)."
-    answer: "abrem"
+    answer: 'abrem'
     hint: "Verbos en -ir con 'eles/elas' terminan en -em."
-    placeholder: "comem"
-  - type: "order"
-    sentence: "Eu sou brasileiro"
-    translation: "Yo soy brasileño."
+    placeholder: 'comem'
+  - type: 'order'
+    sentence: 'Eu sou brasileiro'
+    translation: 'Yo soy brasileño.'
 vocabulary:
-  - term: "falar"
-    translation: "hablar"
-  - term: "comer"
-    translation: "comer"
-  - term: "abrir"
-    translation: "abrir"
-  - term: "sou"
-    translation: "soy"
-  - term: "estou"
-    translation: "estoy"
-  - term: "fala"
-    translation: "habla"
+  - term: 'falar'
+    translation: 'hablar'
+  - term: 'comer'
+    translation: 'comer'
+  - term: 'abrir'
+    translation: 'abrir'
+  - term: 'sou'
+    translation: 'soy'
+  - term: 'estou'
+    translation: 'estoy'
+  - term: 'fala'
+    translation: 'habla'
 ---
 
 Si ya hablas español, el presente portugués te va a resultar el más fácil de aprender de
@@ -74,21 +74,21 @@ los cinco idiomas — la estructura es prácticamente un espejo.
 ## Los tres grupos (igual que en español)
 
 | Terminación | Ejemplo | Traducción |
-| --- | --- | --- |
-| -ar | falar | hablar |
-| -er | comer | comer |
-| -ir | abrir | abrir |
+| ----------- | ------- | ---------- |
+| -ar         | falar   | hablar     |
+| -er         | comer   | comer      |
+| -ir         | abrir   | abrir      |
 
 ## Las conjugaciones lado a lado
 
-| Pronombre | falar | comer | abrir |
-| --- | --- | --- | --- |
-| eu | falo | como | abro |
-| tu / você | falas / fala | comes / come | abres / abre |
-| ele/ela | fala | come | abre |
-| nós | falamos | comemos | abrimos |
+| Pronombre   | falar          | comer          | abrir         |
+| ----------- | -------------- | -------------- | ------------- |
+| eu          | falo           | como           | abro          |
+| tu / você   | falas / fala   | comes / come   | abres / abre  |
+| ele/ela     | fala           | come           | abre          |
+| nós         | falamos        | comemos        | abrimos       |
 | vós / vocês | falais / falam | comeis / comem | abris / abrem |
-| eles/elas | falam | comem | abrem |
+| eles/elas   | falam          | comem          | abrem         |
 
 ## La particularidad "você"
 

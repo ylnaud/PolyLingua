@@ -19,7 +19,7 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 // con su pool de ejercicios.
 const lessonsForLang = await getCollection('lessons', (entry) => entry.data.language === lang);
 const vocabManifest = Object.fromEntries(
-  lessonsForLang.filter((l) => l.data.vocabulary.length > 0).map((l) => [l.id, l.data.vocabulary])
+  lessonsForLang.filter((l) => l.data.vocabulary.length > 0).map((l) => [l.id, l.data.vocabulary]),
 );
 ---
 
@@ -57,7 +57,15 @@ const vocabManifest = Object.fromEntries(
 
     <div class="review-card" data-review-card hidden>
       <span class="eyebrow">🎯 Ponte a prueba</span>
-      <Practice quiz={[]} exercises={[]} dynamic={true} sessionType="vocab" lessonId="vocab" minutes={1} lang={languageMeta?.bcp47} />
+      <Practice
+        quiz={[]}
+        exercises={[]}
+        dynamic={true}
+        sessionType="vocab"
+        lessonId="vocab"
+        minutes={1}
+        lang={languageMeta?.bcp47}
+      />
     </div>
 
     <div hidden data-vocab-manifest={JSON.stringify(vocabManifest)}></div>
@@ -65,7 +73,11 @@ const vocabManifest = Object.fromEntries(
 </BaseLayout>
 
 <script>
-  import { buildItemFieldset, primePracticeCounters, type SrsEntry } from '../../../lib/practiceItemMarkup';
+  import {
+    buildItemFieldset,
+    primePracticeCounters,
+    type SrsEntry,
+  } from '../../../lib/practiceItemMarkup';
   import { shuffle } from '../../../lib/shuffle';
   import { read, write } from '../../../lib/storage';
 
@@ -118,7 +130,13 @@ const vocabManifest = Object.fromEntries(
       for (const v of vocabulary) {
         const vkey = `${lang}::${v.term}`;
         if (learned[vkey]) continue;
-        learned[vkey] = { term: v.term, translation: v.translation, lang, lessonId, learnedAt: doneDate };
+        learned[vkey] = {
+          term: v.term,
+          translation: v.translation,
+          lang,
+          lessonId,
+          learnedAt: doneDate,
+        };
         changed = true;
       }
     }
@@ -135,7 +153,9 @@ const vocabManifest = Object.fromEntries(
     const wordListCard = document.querySelector<HTMLElement>('[data-word-list-card]');
     const wordList = document.querySelector<HTMLElement>('[data-word-list]');
     const reviewCard = document.querySelector<HTMLElement>('[data-review-card]');
-    const practiceRoot = document.querySelector<HTMLElement>('[data-practice][data-session-type="vocab"]');
+    const practiceRoot = document.querySelector<HTMLElement>(
+      '[data-practice][data-session-type="vocab"]',
+    );
     if (!desc || !emptyState || !wordListCard || !wordList || !reviewCard || !practiceRoot) return;
     if (practiceRoot.dataset.vocabBuilt) return;
     practiceRoot.dataset.vocabBuilt = 'true';
@@ -175,7 +195,11 @@ const vocabManifest = Object.fromEntries(
       const syntheticEntry: SrsEntry = {
         id: `vocab/${lang}#write-${i}`,
         kind: 'write',
-        data: { type: 'write', prompt: `¿Cómo se dice "${entry.translation}"?`, answer: entry.term },
+        data: {
+          type: 'write',
+          prompt: `¿Cómo se dice "${entry.translation}"?`,
+          answer: entry.term,
+        },
         box: 0,
         due: '',
         lang: 'vocab',

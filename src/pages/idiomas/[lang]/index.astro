@@ -16,7 +16,7 @@ const lessonCounts = Object.fromEntries(
   LEVELS.map((lvl) => [
     lvl.id,
     allLessons.filter((l) => l.data.language === lang && l.data.level === lvl.id).length,
-  ])
+  ]),
 );
 
 const levelLessonSlugs: Record<string, string[]> = {};
@@ -43,7 +43,12 @@ const structuredData = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Idiomas', item: `${siteURL}/idiomas` },
-        { '@type': 'ListItem', position: 2, name: languageMeta.name, item: `${siteURL}/idiomas/${lang}` },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: languageMeta.name,
+          item: `${siteURL}/idiomas/${lang}`,
+        },
       ],
     },
   ],
@@ -55,6 +60,7 @@ const structuredData = {
   description={languageMeta.description}
   path={`/idiomas/${lang}`}
   structuredData={structuredData}
+  ogImage={`/og-${lang}.png`}
 >
   <section class="container lang-head" style={`--accent-c:${languageMeta.color}`}>
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
@@ -98,23 +104,31 @@ const structuredData = {
   </section>
 
   <section class="container levels-grid">
-    {LEVELS.map((level) => (
-      <a
-        class="level-item card"
-        data-level-item
-        data-level-id={level.id}
-        href={`/idiomas/${lang}/${level.id}`}
-        style={`border-top-color:${level.color}`}
-      >
-        <div class="top">
-          <span class="emoji" aria-hidden="true">{level.emoji}</span>
-          <span class="badge" data-level-badge>{lessonCounts[level.id] ?? 0} lección{(lessonCounts[level.id] ?? 0) === 1 ? '' : 'es'}</span>
-        </div>
-        <h2>{level.name}</h2>
-        <p class="lvl-tagline" style={`color:${level.color}`}>{level.tagline}</p>
-        <p class="lvl-desc">{level.description}</p>
-      </a>
-    ))}
+    {
+      LEVELS.map((level) => (
+        <a
+          class="level-item card"
+          data-level-item
+          data-level-id={level.id}
+          href={`/idiomas/${lang}/${level.id}`}
+          style={`border-top-color:${level.color}`}
+        >
+          <div class="top">
+            <span class="emoji" aria-hidden="true">
+              {level.emoji}
+            </span>
+            <span class="badge" data-level-badge>
+              {lessonCounts[level.id] ?? 0} lección{(lessonCounts[level.id] ?? 0) === 1 ? '' : 'es'}
+            </span>
+          </div>
+          <h2>{level.name}</h2>
+          <p class="lvl-tagline" style={`color:${level.color}`}>
+            {level.tagline}
+          </p>
+          <p class="lvl-desc">{level.description}</p>
+        </a>
+      ))
+    }
   </section>
 
   <section class="container explore-more">
@@ -171,7 +185,13 @@ const structuredData = {
 
   function todayStr() {
     var d = new Date();
-    return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    return (
+      d.getFullYear() +
+      '-' +
+      String(d.getMonth() + 1).padStart(2, '0') +
+      '-' +
+      String(d.getDate()).padStart(2, '0')
+    );
   }
 
   function initLangIndex() {
@@ -198,7 +218,9 @@ const structuredData = {
         el.setAttribute('aria-disabled', 'true');
         el.setAttribute('data-astro-prefetch', 'false');
         if (badge) badge.textContent = '🔒 Bloqueado';
-        el.addEventListener('click', function (e) { e.preventDefault(); });
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+        });
       }
     });
 
@@ -211,7 +233,10 @@ const structuredData = {
 
     var currentLevel = null;
     for (var i = 0; i < levelIds.length; i++) {
-      if (!isLevelPassed(levelIds[i])) { currentLevel = levelIds[i]; break; }
+      if (!isLevelPassed(levelIds[i])) {
+        currentLevel = levelIds[i];
+        break;
+      }
     }
     if (!currentLevel) currentLevel = levelIds[levelIds.length - 1];
 
@@ -221,8 +246,11 @@ const structuredData = {
     var doneCount = 0;
     var firstUndone = null;
     for (var j = 0; j < slugs.length; j++) {
-      if (isLessonDone(currentLevel, slugs[j])) { doneCount++; }
-      else if (!firstUndone) { firstUndone = slugs[j]; }
+      if (isLessonDone(currentLevel, slugs[j])) {
+        doneCount++;
+      } else if (!firstUndone) {
+        firstUndone = slugs[j];
+      }
     }
 
     var pct = Math.round((doneCount / slugs.length) * 100);

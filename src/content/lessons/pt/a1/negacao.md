@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a1
-title: "Não: la negación simple en portugués"
+title: 'Não: la negación simple en portugués'
 description: "Cómo negar oraciones en portugués con 'não': más simple que en español en general, con la doble negación coloquial brasileña como excepción."
 order: 6
 unit: 2
@@ -10,67 +10,68 @@ funFact: "A diferencia del español, donde 'no' puede combinarse con otras palab
 minutes: 6
 quiz:
   - question: "¿Cómo se dice 'No hablo portugués' en portugués?"
-    options: ["Não falo português", "Falo não português", "Não é falo português"]
+    options: ['Não falo português', 'Falo não português', 'Não é falo português']
     answerIndex: 0
     explanation: "'não' va antes del verbo conjugado: Não falo português — estructura idéntica al español."
   - question: "¿Qué significa 'nunca' en portugués?"
-    options: ["nunca (mismo significado que en español)", "siempre", "nada"]
+    options: ['nunca (mismo significado que en español)', 'siempre', 'nada']
     answerIndex: 0
     explanation: "'nunca' significa exactamente lo mismo que en español — un cognado directo y fácil de recordar."
   - question: "¿Qué tiene de particular la doble negación en el portugués coloquial brasileño ('não quero nada não')?"
-    options: [
-      "Es un error gramatical que se debe evitar siempre",
-      "Es una construcción enfática común en el habla informal de Brasil, no en portugués formal escrito",
-      "Es obligatoria en cualquier oración negativa"
-    ]
+    options:
+      [
+        'Es un error gramatical que se debe evitar siempre',
+        'Es una construcción enfática común en el habla informal de Brasil, no en portugués formal escrito',
+        'Es obligatoria en cualquier oración negativa',
+      ]
     answerIndex: 1
     explanation: "La doble negación con 'não' repetido al final es un rasgo muy vivo del portugués hablado brasileño coloquial, pero no se usa en registro formal o escrito."
 exercises:
-  - type: "fill-blank"
-    sentence: "Eu ___ falo português."
-    answer: "não"
-    accepted: ["Não"]
+  - type: 'fill-blank'
+    sentence: 'Eu ___ falo português.'
+    answer: 'não'
+    accepted: ['Não']
     hint: "'não' va antes del verbo conjugado."
-    translation: "No hablo portugués."
-    placeholder: "nunca"
-  - type: "fill-blank"
-    sentence: "___ sabe a resposta."
-    answer: "Ninguém"
-    accepted: ["ninguém", "ninguem"]
+    translation: 'No hablo portugués.'
+    placeholder: 'nunca'
+  - type: 'fill-blank'
+    sentence: '___ sabe a resposta.'
+    answer: 'Ninguém'
+    accepted: ['ninguém', 'ninguem']
     hint: "Palabra negativa que significa 'nadie'."
-    translation: "Nadie sabe la respuesta."
-    placeholder: "Nenhum"
-  - type: "match"
-    instructions: "Empareja cada palabra negativa con su significado."
+    translation: 'Nadie sabe la respuesta.'
+    placeholder: 'Nenhum'
+  - type: 'match'
+    instructions: 'Empareja cada palabra negativa con su significado.'
     pairs:
-      - left: "nunca"
-        right: "nunca"
-      - left: "nada"
-        right: "nada"
-      - left: "ninguém"
-        right: "nadie"
-      - left: "nenhum"
-        right: "ninguno"
-  - type: "write"
+      - left: 'nunca'
+        right: 'nunca'
+      - left: 'nada'
+        right: 'nada'
+      - left: 'ninguém'
+        right: 'nadie'
+      - left: 'nenhum'
+        right: 'ninguno'
+  - type: 'write'
     prompt: "Escribe en portugués cómo dirías 'No tengo nada'."
-    answer: "Não tenho nada"
-    accepted: ["não tenho nada"]
-    hint: "não + verbo + nada."
-    placeholder: "Eu nunca como carne"
-  - type: "order"
-    sentence: "Ela não gosta de café"
-    translation: "A ella no le gusta el café."
+    answer: 'Não tenho nada'
+    accepted: ['não tenho nada']
+    hint: 'não + verbo + nada.'
+    placeholder: 'Eu nunca como carne'
+  - type: 'order'
+    sentence: 'Ela não gosta de café'
+    translation: 'A ella no le gusta el café.'
 vocabulary:
-  - term: "não"
-    translation: "no"
-  - term: "nunca"
-    translation: "nunca"
-  - term: "nada"
-    translation: "nada"
-  - term: "ninguém"
-    translation: "nadie"
-  - term: "nenhum"
-    translation: "ninguno"
+  - term: 'não'
+    translation: 'no'
+  - term: 'nunca'
+    translation: 'nunca'
+  - term: 'nada'
+    translation: 'nada'
+  - term: 'ninguém'
+    translation: 'nadie'
+  - term: 'nenhum'
+    translation: 'ninguno'
 ---
 
 Negar una oración en portugués es, en la mayoría de los casos, más simple que en
@@ -87,11 +88,11 @@ Ela não gosta de café.        (A ella no le gusta el café)
 
 ## Palabras negativas comunes
 
-| Portugués | Español |
-| --- | --- |
-| nunca | nunca |
-| nada | nada |
-| ninguém | nadie |
+| Portugués        | Español           |
+| ---------------- | ----------------- |
+| nunca            | nunca             |
+| nada             | nada              |
+| ninguém          | nadie             |
 | nenhum / nenhuma | ninguno / ninguna |
 
 ```

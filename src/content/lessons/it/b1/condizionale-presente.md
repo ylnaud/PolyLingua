@@ -1,80 +1,82 @@
 ---
 language: it
 level: b1
-title: "Il condizionale presente: cortesía, consejos y mundos hipotéticos"
+title: 'Il condizionale presente: cortesía, consejos y mundos hipotéticos'
 description: "El condizionale presente italiano para pedir con cortesía, dar consejos y construir frases hipotéticas como 'se fossi in te' (si yo fuera tú)."
 order: 6
 unit: 2
-grammarTopic: "Condizionale presente"
-funFact: "El condizionale italiano se forma con la misma raíz del futuro que ya conoces, más un set de terminaciones propio — es literalmente una construcción sobre algo que ya sabes, sin gramática completamente nueva que memorizar desde cero."
+grammarTopic: 'Condizionale presente'
+funFact: 'El condizionale italiano se forma con la misma raíz del futuro que ya conoces, más un set de terminaciones propio — es literalmente una construcción sobre algo que ya sabes, sin gramática completamente nueva que memorizar desde cero.'
 minutes: 8
 quiz:
-  - question: "¿Cuál es la fórmula del Condizionale presente?"
-    options: [
-      "raíz del futuro + terminaciones propias del condizionale",
-      "raíz del presente + terminaciones del futuro",
-      "avere + participio"
-    ]
+  - question: '¿Cuál es la fórmula del Condizionale presente?'
+    options:
+      [
+        'raíz del futuro + terminaciones propias del condizionale',
+        'raíz del presente + terminaciones del futuro',
+        'avere + participio',
+      ]
     answerIndex: 0
-    explanation: "Condizionale = raíz del futuro (parler-, sar-, avr-...) + terminaciones propias: -ei, -esti, -ebbe, -emmo, -este, -ebbero."
+    explanation: 'Condizionale = raíz del futuro (parler-, sar-, avr-...) + terminaciones propias: -ei, -esti, -ebbe, -emmo, -este, -ebbero.'
   - question: "¿Cómo dirías educadamente 'quisiera un café' usando el condizionale?"
-    options: ["Voglio un caffè", "Vorrei un caffè", "Volerei un caffè"]
+    options: ['Voglio un caffè', 'Vorrei un caffè', 'Volerei un caffè']
     answerIndex: 1
     explanation: "'Vorrei' es el condizionale de 'volere' — la forma educada estándar para pedir algo."
   - question: "'Dovresti dormire di più' significa:"
-    options: ["Debes dormir más (orden directa)", "Deberías dormir más (consejo suave)", "Dormirás más"]
+    options:
+      ['Debes dormir más (orden directa)', 'Deberías dormir más (consejo suave)', 'Dormirás más']
     answerIndex: 1
     explanation: "El condizionale de 'dovere' (dovresti) suaviza la obligación a un consejo: deberías, en vez de la orden directa 'devi' (debes)."
 exercises:
-  - type: "fill-blank"
-    sentence: "___ un caffè, per favore."
-    answer: "Vorrei"
-    accepted: ["vorrei"]
+  - type: 'fill-blank'
+    sentence: '___ un caffè, per favore.'
+    answer: 'Vorrei'
+    accepted: ['vorrei']
     hint: "Condizionale de 'volere' — la forma educada para pedir algo, en vez de 'voglio'."
-    translation: "Quisiera un café, por favor."
-    placeholder: "Vorrei / Dovrei / Potrei"
-  - type: "fill-blank"
-    sentence: "___ dormire di più."
-    answer: "Dovresti"
-    accepted: ["dovresti"]
+    translation: 'Quisiera un café, por favor.'
+    placeholder: 'Vorrei / Dovrei / Potrei'
+  - type: 'fill-blank'
+    sentence: '___ dormire di più.'
+    answer: 'Dovresti'
+    accepted: ['dovresti']
     hint: "Condizionale de 'dovere' — un consejo suave, no una orden directa."
-    translation: "Deberías dormir más."
-    placeholder: "Dovresti / Potresti / Vorresti"
-  - type: "match"
+    translation: 'Deberías dormir más.'
+    placeholder: 'Dovresti / Potresti / Vorresti'
+  - type: 'match'
     instructions: "Empareja cada infinitivo con su forma de condizionale en 'io'."
     pairs:
-      - left: "essere"
-        right: "sarei"
-      - left: "avere"
-        right: "avrei"
-      - left: "andare"
-        right: "andrei"
-      - left: "fare"
-        right: "farei"
-      - left: "parlare"
-        right: "parlerei"
-  - type: "write"
+      - left: 'essere'
+        right: 'sarei'
+      - left: 'avere'
+        right: 'avrei'
+      - left: 'andare'
+        right: 'andrei'
+      - left: 'fare'
+        right: 'farei'
+      - left: 'parlare'
+        right: 'parlerei'
+  - type: 'write'
     prompt: "Escribe cómo pedirías cortésmente '¿podría ayudarme?' usando el condizionale de 'potere'."
-    answer: "Potrebbe aiutarmi?"
-    accepted: ["Potrebbe aiutarmi", "potrebbe aiutarmi?", "potrebbe aiutarmi"]
+    answer: 'Potrebbe aiutarmi?'
+    accepted: ['Potrebbe aiutarmi', 'potrebbe aiutarmi?', 'potrebbe aiutarmi']
     hint: "Condizionale de 'potere' para 'lei/lui': potrebbe."
-    placeholder: "Potrebbe + infinito?"
-  - type: "order"
-    sentence: "Se avessi soldi viaggerei"
-    translation: "Si tuviera dinero, viajaría."
+    placeholder: 'Potrebbe + infinito?'
+  - type: 'order'
+    sentence: 'Se avessi soldi viaggerei'
+    translation: 'Si tuviera dinero, viajaría.'
 vocabulary:
-  - term: "Vorrei"
-    translation: "Quisiera"
-  - term: "Dovresti"
-    translation: "Deberías"
-  - term: "Potrebbe aiutarmi?"
-    translation: "¿Podría ayudarme?"
-  - term: "Sarei"
-    translation: "Sería / estaría"
-  - term: "Avrei"
-    translation: "Tendría"
-  - term: "Andrei"
-    translation: "Iría"
+  - term: 'Vorrei'
+    translation: 'Quisiera'
+  - term: 'Dovresti'
+    translation: 'Deberías'
+  - term: 'Potrebbe aiutarmi?'
+    translation: '¿Podría ayudarme?'
+  - term: 'Sarei'
+    translation: 'Sería / estaría'
+  - term: 'Avrei'
+    translation: 'Tendría'
+  - term: 'Andrei'
+    translation: 'Iría'
 ---
 
 El condizionale presente es tu herramienta para sonar cortés, dar consejos suaves y
@@ -116,12 +118,12 @@ Se avessi soldi, viaggerei.
 
 ## Los irregulares (mismas raíces que el futuro)
 
-| Infinitivo | Raíz | Condizionale |
-| --- | --- | --- |
-| essere | sar- | sarei |
-| avere | avr- | avrei |
-| andare | andr- | andrei |
-| fare | far- | farei |
+| Infinitivo | Raíz  | Condizionale |
+| ---------- | ----- | ------------ |
+| essere     | sar-  | sarei        |
+| avere      | avr-  | avrei        |
+| andare     | andr- | andrei       |
+| fare       | far-  | farei        |
 
 ## Comparando registro
 

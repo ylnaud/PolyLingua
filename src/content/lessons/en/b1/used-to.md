@@ -1,76 +1,77 @@
 ---
 language: en
 level: b1
-title: "Used to: cómo hablar de hábitos que ya no existen"
+title: 'Used to: cómo hablar de hábitos que ya no existen'
 description: "La estructura 'used to' en inglés para hablar de hábitos que hacías regularmente en el pasado, con el contraste implícito frente al presente."
 order: 5
 unit: 2
-grammarTopic: "used to + infinitivo"
+grammarTopic: 'used to + infinitivo'
 funFact: "'used to' no es un verbo normal — es una estructura fija que solo existe para hablar de pasado, y siempre implica un contraste con el presente: 'I used to live in Paris' sugiere fuertemente 'pero ya no vivo ahí'. Es información extra que el simple 'I lived in Paris' no comunica tan claramente."
 minutes: 7
 quiz:
   - question: "¿Cuál es correcta: 'I ___ play the guitar' (solía tocar la guitarra)?"
-    options: ["use to", "used to", "using to"]
+    options: ['use to', 'used to', 'using to']
     answerIndex: 1
     explanation: "'used to' siempre se escribe así en afirmativo, seguido de infinitivo sin 'to' extra en el verbo principal: I used to play (no 'used to to play')."
-  - question: "¿Cuál es la forma negativa correcta?"
+  - question: '¿Cuál es la forma negativa correcta?'
     options: ["I didn't used to smoke.", "I didn't use to smoke.", "I don't used to smoke."]
     answerIndex: 1
     explanation: "En negativo y en preguntas, 'used' pierde la 'd' porque el auxiliar 'did' ya carga el pasado: I didn't use to smoke (no 'didn't used to')."
   - question: "¿Qué implica decir 'I used to live in Paris' que 'I lived in Paris' no implica tan claramente?"
-    options: [
-      "Que todavía vives en París",
-      "Que ya NO vives en París — un contraste explícito con el presente",
-      "Que nunca viviste en París"
-    ]
+    options:
+      [
+        'Que todavía vives en París',
+        'Que ya NO vives en París — un contraste explícito con el presente',
+        'Que nunca viviste en París',
+      ]
     answerIndex: 1
     explanation: "'used to' siempre implica un cambio: algo era cierto antes, pero ya no lo es ahora. 'I lived in Paris' es más neutral respecto al presente."
 exercises:
-  - type: "fill-blank"
-    sentence: "I ___ play the guitar when I was young."
-    answer: "used to"
-    accepted: ["used to"]
-    hint: "Hábito pasado, ya no vigente."
-    translation: "Solía tocar la guitarra cuando era joven."
-    placeholder: "use to"
-  - type: "fill-blank"
+  - type: 'fill-blank'
+    sentence: 'I ___ play the guitar when I was young.'
+    answer: 'used to'
+    accepted: ['used to']
+    hint: 'Hábito pasado, ya no vigente.'
+    translation: 'Solía tocar la guitarra cuando era joven.'
+    placeholder: 'use to'
+  - type: 'fill-blank'
     sentence: "I didn't ___ smoke."
-    answer: "use to"
-    accepted: ["use to"]
+    answer: 'use to'
+    accepted: ['use to']
     hint: "En negativo, 'used' pierde la 'd' porque 'did' ya carga el pasado."
-    translation: "No solía fumar."
-    placeholder: "used to"
-  - type: "match"
-    instructions: "Empareja cada tipo de frase con su forma correcta."
+    translation: 'No solía fumar.'
+    placeholder: 'used to'
+  - type: 'match'
+    instructions: 'Empareja cada tipo de frase con su forma correcta.'
     pairs:
-      - left: "Afirmativo"
-        right: "I used to smoke."
-      - left: "Negativo"
+      - left: 'Afirmativo'
+        right: 'I used to smoke.'
+      - left: 'Negativo'
         right: "I didn't use to smoke."
-      - left: "Pregunta"
-        right: "Did you use to smoke?"
-      - left: "be used to + gerundio"
-        right: "I am used to living here."
-  - type: "write"
+      - left: 'Pregunta'
+        right: 'Did you use to smoke?'
+      - left: 'be used to + gerundio'
+        right: 'I am used to living here.'
+  - type: 'write'
     prompt: "Escribe en inglés: 'Ella solía ser tímida.'"
-    answer: "She used to be shy."
-    accepted: ["She used to be shy"]
-    hint: "used to + infinitivo, sin cambios en el verbo."
-    placeholder: "I used to play the guitar."
-  - type: "order"
-    sentence: "I used to live in Paris"
-    translation: "Solía vivir en París."
+    answer: 'She used to be shy.'
+    accepted: ['She used to be shy']
+    hint: 'used to + infinitivo, sin cambios en el verbo.'
+    placeholder: 'I used to play the guitar.'
+  - type: 'order'
+    sentence: 'I used to live in Paris'
+    translation: 'Solía vivir en París.'
 vocabulary:
-  - term: "used to"
-    translation: "solía (hábito pasado)"
-  - term: "use to"
+  - term: 'used to'
+    translation: 'solía (hábito pasado)'
+  - term: 'use to'
     translation: "solía (forma en negativo/pregunta, sin 'd')"
-  - term: "be used to"
-    translation: "estar acostumbrado a"
+  - term: 'be used to'
+    translation: 'estar acostumbrado a'
   - term: "didn't use to smoke"
-    translation: "no solía fumar"
-  - term: "did you use to smoke"
-    translation: "¿solías fumar?"
+    translation: 'no solía fumar'
+  - term: 'did you use to smoke'
+    translation: '¿solías fumar?'
 ---
 
 "used to" es una estructura especial —ni Present ni Past Simple normal— diseñada
@@ -97,10 +98,10 @@ toda la información de pasado.
 
 ## Para qué se usa exactamente
 
-| Uso | Ejemplo |
-| --- | --- |
+| Uso                             | Ejemplo                           |
+| ------------------------------- | --------------------------------- |
 | Hábitos pasados, ya no vigentes | I used to play tennis every week. |
-| Estados pasados, ya cambiados | She used to be shy. |
+| Estados pasados, ya cambiados   | She used to be shy.               |
 
 ## "used to" vs. Past Simple normal
 

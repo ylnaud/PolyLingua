@@ -1,20 +1,20 @@
 ---
 language: fr
 level: b1
-title: "Les négations avancées: más allá de ne...pas"
-description: "Ne...jamais, ne...rien, ne...personne y ne...plus: la familia completa de negaciones francesas más allá de ne...pas, y cómo combinarlas."
+title: 'Les négations avancées: más allá de ne...pas'
+description: 'Ne...jamais, ne...rien, ne...personne y ne...plus: la familia completa de negaciones francesas más allá de ne...pas, y cómo combinarlas.'
 order: 8
 unit: 2
-grammarTopic: "Negaciones avanzadas (ne...jamais/rien/personne/plus)"
+grammarTopic: 'Negaciones avanzadas (ne...jamais/rien/personne/plus)'
 funFact: "Todas estas negaciones siguen exactamente el mismo 'sándwich' que ya conoces de 'ne...pas' — solo cambia la segunda palabra. Una vez que dominas la estructura básica, memorizar el resto de la familia es simplemente aprender vocabulario nuevo dentro de un molde que ya conoces."
 minutes: 8
 quiz:
   - question: "¿Cuál es la traducción correcta de 'Je ne mange jamais de viande'?"
-    options: ["Nunca como carne", "Ya no como carne", "No como nada de carne"]
+    options: ['Nunca como carne', 'Ya no como carne', 'No como nada de carne']
     answerIndex: 0
     explanation: "'ne...jamais' significa 'nunca': Je ne mange jamais de viande (nunca como carne)."
   - question: "¿Cuál es correcta para 'no veo a nadie' (personne = nadie)?"
-    options: ["Je ne vois personne pas", "Je ne vois pas personne", "Je ne vois personne"]
+    options: ['Je ne vois personne pas', 'Je ne vois pas personne', 'Je ne vois personne']
     answerIndex: 2
     explanation: "Con 'personne', NO se usa 'pas' adicional — 'personne' ya funciona como la segunda parte de la negación: Je ne vois personne."
   - question: "¿Cómo dirías 'ya no tengo tiempo' usando ne...plus?"
@@ -22,52 +22,52 @@ quiz:
     answerIndex: 0
     explanation: "'ne...plus' significa 'ya no': Je n'ai plus de temps (ya no tengo tiempo)."
 exercises:
-  - type: "fill-blank"
-    sentence: "Je ne mange ___ de viande."
-    answer: "jamais"
-    hint: "ne...jamais = nunca."
-    translation: "Nunca como carne."
-    placeholder: "rien / personne / plus"
-  - type: "fill-blank"
+  - type: 'fill-blank'
+    sentence: 'Je ne mange ___ de viande.'
+    answer: 'jamais'
+    hint: 'ne...jamais = nunca.'
+    translation: 'Nunca como carne.'
+    placeholder: 'rien / personne / plus'
+  - type: 'fill-blank'
     sentence: "Je n'ai ___ de temps."
-    answer: "plus"
-    hint: "ne...plus = ya no."
-    translation: "Ya no tengo tiempo."
-    placeholder: "jamais / rien"
-  - type: "match"
-    instructions: "Empareja cada negación con su significado."
+    answer: 'plus'
+    hint: 'ne...plus = ya no.'
+    translation: 'Ya no tengo tiempo.'
+    placeholder: 'jamais / rien'
+  - type: 'match'
+    instructions: 'Empareja cada negación con su significado.'
     pairs:
-      - left: "ne...pas"
-        right: "no"
-      - left: "ne...jamais"
-        right: "nunca"
-      - left: "ne...rien"
-        right: "nada"
-      - left: "ne...personne"
-        right: "nadie"
-      - left: "ne...plus"
-        right: "ya no"
-  - type: "write"
+      - left: 'ne...pas'
+        right: 'no'
+      - left: 'ne...jamais'
+        right: 'nunca'
+      - left: 'ne...rien'
+        right: 'nada'
+      - left: 'ne...personne'
+        right: 'nadie'
+      - left: 'ne...plus'
+        right: 'ya no'
+  - type: 'write'
     prompt: "Escribe en francés 'No veo a nadie' usando ne...personne."
-    answer: "Je ne vois personne."
+    answer: 'Je ne vois personne.'
     hint: "Con 'personne' no se añade 'pas': ya funciona como segunda parte de la negación."
-    placeholder: "Je ne vois rien."
-  - type: "order"
-    sentence: "Je ne mange jamais de viande"
-    translation: "Nunca como carne."
+    placeholder: 'Je ne vois rien.'
+  - type: 'order'
+    sentence: 'Je ne mange jamais de viande'
+    translation: 'Nunca como carne.'
 vocabulary:
-  - term: "ne...pas"
-    translation: "no"
-  - term: "ne...jamais"
-    translation: "nunca"
-  - term: "ne...rien"
-    translation: "nada"
-  - term: "ne...personne"
-    translation: "nadie"
-  - term: "ne...plus"
-    translation: "ya no"
-  - term: "ne...que"
-    translation: "solo (restricción)"
+  - term: 'ne...pas'
+    translation: 'no'
+  - term: 'ne...jamais'
+    translation: 'nunca'
+  - term: 'ne...rien'
+    translation: 'nada'
+  - term: 'ne...personne'
+    translation: 'nadie'
+  - term: 'ne...plus'
+    translation: 'ya no'
+  - term: 'ne...que'
+    translation: 'solo (restricción)'
 ---
 
 Ya dominas "ne...pas". Ahora conoces al resto de la familia — todas siguen la misma
@@ -75,14 +75,14 @@ estructura de sándwich alrededor del verbo.
 
 ## La familia completa de negaciones
 
-| Negación | Significado | Ejemplo |
-| --- | --- | --- |
-| ne...pas | no | Je ne mange pas. |
-| ne...jamais | nunca | Je ne mange jamais de viande. |
-| ne...rien | nada | Je ne vois rien. |
-| ne...personne | nadie | Je ne vois personne. |
-| ne...plus | ya no | Je ne fume plus. |
-| ne...que | solo (restricción) | Je n'ai qu'un frère. |
+| Negación      | Significado        | Ejemplo                       |
+| ------------- | ------------------ | ----------------------------- |
+| ne...pas      | no                 | Je ne mange pas.              |
+| ne...jamais   | nunca              | Je ne mange jamais de viande. |
+| ne...rien     | nada               | Je ne vois rien.              |
+| ne...personne | nadie              | Je ne vois personne.          |
+| ne...plus     | ya no              | Je ne fume plus.              |
+| ne...que      | solo (restricción) | Je n'ai qu'un frère.          |
 
 ## Todas siguen el mismo sándwich
 

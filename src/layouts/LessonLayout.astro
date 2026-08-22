@@ -41,6 +41,7 @@ interface Props {
   path: string;
   prevLesson?: { title: string; href: string } | null;
   nextLesson?: { title: string; href: string } | null;
+  ogImage?: string;
 }
 
 const {
@@ -60,32 +61,41 @@ const {
   path,
   prevLesson = null,
   nextLesson = null,
+  ogImage,
 } = Astro.props;
 const levelMeta = LEVEL_MAP[level];
 const languageMeta = LANGUAGE_MAP[language];
 
 const siteURL = 'https://poly-lingua.vercel.app';
 
+const lessonURL = `${siteURL}${path}`;
+const courseURL = `${siteURL}/idiomas/${language}/${level}`;
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'Course',
+      '@id': `${courseURL}#course`,
+      name: `Curso de ${languageMeta.name} Interactivo — PolyLingua`,
+      description: `Aprende ${languageMeta.name.toLowerCase()} de A1 a C2 gratis con gramática divertida y ejercicios interactivos.`,
+      url: courseURL,
+      publisher: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
+    },
+    {
       '@type': 'LearningResource',
+      '@id': lessonURL,
+      isPartOf: { '@id': `${courseURL}#course` },
       name: title,
       description,
-      url: `${siteURL}${path}`,
-      educationalLevel: levelMeta.name,
+      url: lessonURL,
+      educationalLevel: level.toUpperCase(),
       learningResourceType: 'Lesson',
       inLanguage: language,
       teaches: situation ? `${situation} — ${grammarTopic}` : grammarTopic,
       timeRequired: `PT${minutes}M`,
-      interactivityType: 'mixed',
-      provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
-      isPartOf: {
-        '@type': 'Course',
-        name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
-        url: `${siteURL}/idiomas/${language}/${level}`,
-      },
+      interactivityType: 'active',
+      assesses: quiz.map((q) => q.question),
     },
     {
       '@type': 'BreadcrumbList',
@@ -101,13 +111,13 @@ const structuredData = {
           '@type': 'ListItem',
           position: 3,
           name: levelMeta.name,
-          item: `${siteURL}/idiomas/${language}/${level}`,
+          item: courseURL,
         },
         {
           '@type': 'ListItem',
           position: 4,
           name: title,
-          item: `${siteURL}${path}`,
+          item: lessonURL,
         },
       ],
     },
@@ -115,7 +125,13 @@ const structuredData = {
 };
 ---
 
-<BaseLayout title={title} description={description} path={path} structuredData={structuredData}>
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  structuredData={structuredData}
+  ogImage={ogImage}
+>
   <article class="lesson container">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
       <a href="/idiomas">Idiomas</a>
@@ -127,7 +143,8 @@ const structuredData = {
 
     <header class="lesson-head">
       <span class="badge" style={`border-color:${levelMeta.color}; color:${levelMeta.color}`}>
-        {levelMeta.emoji} {levelMeta.name}
+        {levelMeta.emoji}
+        {levelMeta.name}
       </span>
       <h1>{title}</h1>
       <p class="lede">{description}</p>
@@ -148,22 +165,42 @@ const structuredData = {
 
     {phrases.length > 0 && <PhraseBank phrases={phrases} lang={languageMeta.bcp47} />}
 
-    {vocabulary.length > 0 && (
-      <div class="vocab-carousel card" data-vocab-carousel data-vocabulary={JSON.stringify(vocabulary)} data-lang={languageMeta.bcp47}>
-        <span class="eyebrow">📚 Vocabulario de esta lección</span>
-        <div class="vocab-counter" data-vocab-counter></div>
-        <div class="vocab-card-inner">
-          <span class="vocab-term" data-vocab-term></span>
-          <span class="vocab-translation" data-vocab-translation></span>
-          <button type="button" class="speak-btn vocab-speak" data-vocab-speak aria-label="Escuchar">🔊 Escuchar</button>
-        </div>
-        <div class="vocab-nav">
-          <button type="button" class="btn btn-ghost vocab-prev" data-vocab-prev disabled>← Anterior</button>
-          <button type="button" class="btn btn-primary vocab-next" data-vocab-next>Siguiente →</button>
-        </div>
-      </div>
-      <div hidden data-vocab-tracker data-vocabulary={JSON.stringify(vocabulary)}></div>
-    )}
+    {
+      vocabulary.length > 0 && (
+        <>
+          <div
+            class="vocab-carousel card"
+            data-vocab-carousel
+            data-vocabulary={JSON.stringify(vocabulary)}
+            data-lang={languageMeta.bcp47}
+          >
+            <span class="eyebrow">📚 Vocabulario de esta lección</span>
+            <div class="vocab-counter" data-vocab-counter />
+            <div class="vocab-card-inner">
+              <span class="vocab-term" data-vocab-term />
+              <span class="vocab-translation" data-vocab-translation />
+              <button
+                type="button"
+                class="speak-btn vocab-speak"
+                data-vocab-speak
+                aria-label="Escuchar"
+              >
+                🔊 Escuchar
+              </button>
+            </div>
+            <div class="vocab-nav">
+              <button type="button" class="btn btn-ghost vocab-prev" data-vocab-prev disabled>
+                ← Anterior
+              </button>
+              <button type="button" class="btn btn-primary vocab-next" data-vocab-next>
+                Siguiente →
+              </button>
+            </div>
+          </div>
+          <div hidden data-vocab-tracker data-vocabulary={JSON.stringify(vocabulary)} />
+        </>
+      )
+    }
 
     <Practice
       quiz={quiz}
@@ -175,14 +212,24 @@ const structuredData = {
     />
 
     <footer class="lesson-nav">
-      {prevLesson ? (
-        <a class="btn btn-ghost" href={prevLesson.href}>← {prevLesson.title}</a>
-      ) : (
-        <a class="btn btn-ghost" href={`/idiomas/${language}/${level}`}>← {languageMeta.name} {levelMeta.name}</a>
-      )}
-      {nextLesson && (
-        <a class="btn btn-primary" href={nextLesson.href}>{nextLesson.title} →</a>
-      )}
+      {
+        prevLesson ? (
+          <a class="btn btn-ghost" href={prevLesson.href}>
+            ← {prevLesson.title}
+          </a>
+        ) : (
+          <a class="btn btn-ghost" href={`/idiomas/${language}/${level}`}>
+            ← {languageMeta.name} {levelMeta.name}
+          </a>
+        )
+      }
+      {
+        nextLesson && (
+          <a class="btn btn-primary" href={nextLesson.href}>
+            {nextLesson.title} →
+          </a>
+        )
+      }
     </footer>
   </article>
 </BaseLayout>
@@ -319,7 +366,11 @@ const structuredData = {
     const carousel = document.querySelector<HTMLElement>('[data-vocab-carousel]');
     if (!carousel) return;
     let items: { term: string; translation: string }[];
-    try { items = JSON.parse(carousel.dataset.vocabulary ?? '[]'); } catch { return; }
+    try {
+      items = JSON.parse(carousel.dataset.vocabulary ?? '[]');
+    } catch {
+      return;
+    }
     if (items.length === 0) return;
 
     const lang = carousel.dataset.lang ?? 'de';
@@ -340,10 +391,19 @@ const structuredData = {
       nextBtn.textContent = current === items.length - 1 ? 'Empezar práctica →' : 'Siguiente →';
     }
 
-    prevBtn.addEventListener('click', () => { if (current > 0) { current--; render(); } });
+    prevBtn.addEventListener('click', () => {
+      if (current > 0) {
+        current--;
+        render();
+      }
+    });
     nextBtn.addEventListener('click', () => {
-      if (current < items.length - 1) { current++; render(); }
-      else { document.querySelector('[data-practice-root]')?.scrollIntoView({ behavior: 'smooth' }); }
+      if (current < items.length - 1) {
+        current++;
+        render();
+      } else {
+        document.querySelector('[data-practice-root]')?.scrollIntoView({ behavior: 'smooth' });
+      }
     });
     speakBtn.addEventListener('click', () => {
       if ('speechSynthesis' in window) {

@@ -1,86 +1,89 @@
 ---
 language: fr
 level: c2
-title: "Donc, quand même, enfin, ben: el francés que no está en los libros"
-description: "Las palabritas de relleno que un hablante nativo usa constantemente y que marcan la diferencia entre sonar de manual o sonar auténtico."
+title: 'Donc, quand même, enfin, ben: el francés que no está en los libros'
+description: 'Las palabritas de relleno que un hablante nativo usa constantemente y que marcan la diferencia entre sonar de manual o sonar auténtico.'
 order: 1
 unit: 1
-grammarTopic: "Registre familier et particules discursives"
+grammarTopic: 'Registre familier et particules discursives'
 funFact: "Estas palabras son el 'tono de voz' escrito del francés: 'quand même' añade sorpresa o resignación, 'enfin' suaviza o corrige lo que acabas de decir, 'ben' (versión oral de 'bien') marca duda o transición casual. Ningún libro de texto las traduce bien porque no cambian el significado literal — cambian la actitud del hablante."
 minutes: 12
 quiz:
   - question: "'Il a réussi, quand même!' — ¿qué matiz añade 'quand même' aquí?"
-    options: [
-      "Indiferencia total",
-      "Sorpresa o cierto reconocimiento a pesar de las dudas previas",
-      "Una orden formal"
-    ]
+    options:
+      [
+        'Indiferencia total',
+        'Sorpresa o cierto reconocimiento a pesar de las dudas previas',
+        'Una orden formal',
+      ]
     answerIndex: 1
     explanation: "'quand même' aquí expresa sorpresa/reconocimiento: '¡Lo logró, después de todo!' — implica que había dudas."
   - question: "'Enfin, c'est ce que je pense.' — ¿qué función cumple 'enfin' en este contexto?"
-    options: [
-      "Marca el final absoluto de la conversación",
-      "Suaviza o matiza lo que se acaba de decir, como 'bueno, al menos'",
-      "Es un signo de enojo"
-    ]
+    options:
+      [
+        'Marca el final absoluto de la conversación',
+        "Suaviza o matiza lo que se acaba de decir, como 'bueno, al menos'",
+        'Es un signo de enojo',
+      ]
     answerIndex: 1
     explanation: "'enfin' en conversación casual suele suavizar o corregir levemente una afirmación: 'Bueno, al menos eso es lo que pienso' — no siempre significa 'finalmente'."
   - question: "¿Cuál es la mejor forma de dominar partículas como 'ben', 'quoi' o 'bon'?"
-    options: [
-      "Memorizar su traducción exacta al español",
-      "Exponerse a conversación real y notar el tono en que se usan",
-      "Evitarlas porque son incorrectas gramaticalmente"
-    ]
+    options:
+      [
+        'Memorizar su traducción exacta al español',
+        'Exponerse a conversación real y notar el tono en que se usan',
+        'Evitarlas porque son incorrectas gramaticalmente',
+      ]
     answerIndex: 1
     explanation: "No tienen traducción 1:1 — su significado depende del tono y contexto. No son 'incorrectas': son el francés hablado real, y se dominan por exposición e imitación."
 exercises:
-  - type: "fill-blank"
-    sentence: "Il a réussi, ___ même !"
-    answer: "quand"
-    accepted: ["Quand"]
+  - type: 'fill-blank'
+    sentence: 'Il a réussi, ___ même !'
+    answer: 'quand'
+    accepted: ['Quand']
     hint: "Partícula que expresa sorpresa o resignación, 'aun así'."
-    translation: "¡Lo logró, después de todo!"
-    placeholder: "ben"
-  - type: "fill-blank"
-    sentence: "___, on y va ?"
-    answer: "Bon"
-    accepted: ["bon"]
+    translation: '¡Lo logró, después de todo!'
+    placeholder: 'ben'
+  - type: 'fill-blank'
+    sentence: '___, on y va ?'
+    answer: 'Bon'
+    accepted: ['bon']
     hint: "Partícula de transición, 'bueno, ya'."
-    translation: "Bueno, ¿nos vamos?"
-    placeholder: "Ben"
-  - type: "match"
-    instructions: "Empareja cada partícula con el matiz que aporta."
+    translation: 'Bueno, ¿nos vamos?'
+    placeholder: 'Ben'
+  - type: 'match'
+    instructions: 'Empareja cada partícula con el matiz que aporta.'
     pairs:
-      - left: "quand même"
+      - left: 'quand même'
         right: "sorpresa o resignación, 'aun así'"
-      - left: "enfin"
+      - left: 'enfin'
         right: "corrección suave, 'bueno... / al menos'"
-      - left: "bon"
+      - left: 'bon'
         right: "transición, 'bueno, ya'"
-      - left: "ben"
-        right: "duda o pausa casual"
-      - left: "quoi"
+      - left: 'ben'
+        right: 'duda o pausa casual'
+      - left: 'quoi'
         right: "remate coloquial, '¿sabes?'"
-  - type: "write"
+  - type: 'write'
     prompt: "Escribe la partícula francesa que se usa como versión oral de 'bien' para marcar duda o pausa casual (ejemplo: '___, je sais pas...')."
-    answer: "Ben"
-    accepted: ["ben"]
-    hint: "Solo tres letras."
-    placeholder: "Quoi"
-  - type: "order"
-    sentence: "Bon enfin on verra bien quoi"
-    translation: "Bueno, en fin, ya veremos, ¿sabes?"
+    answer: 'Ben'
+    accepted: ['ben']
+    hint: 'Solo tres letras.'
+    placeholder: 'Quoi'
+  - type: 'order'
+    sentence: 'Bon enfin on verra bien quoi'
+    translation: 'Bueno, en fin, ya veremos, ¿sabes?'
 vocabulary:
-  - term: "quand même"
-    translation: "aun así, a pesar de todo"
-  - term: "enfin"
-    translation: "bueno... / al menos"
-  - term: "bon"
-    translation: "bueno, ya (transición)"
-  - term: "ben"
+  - term: 'quand même'
+    translation: 'aun así, a pesar de todo'
+  - term: 'enfin'
+    translation: 'bueno... / al menos'
+  - term: 'bon'
+    translation: 'bueno, ya (transición)'
+  - term: 'ben'
     translation: "versión oral de 'bien', marca duda o pausa"
-  - term: "quoi"
-    translation: "¿sabes? (remate coloquial)"
+  - term: 'quoi'
+    translation: '¿sabes? (remate coloquial)'
 ---
 
 Llegaste al nivel donde la gramática de manual ya no es el reto. El verdadero examen de
@@ -96,13 +99,13 @@ en español.
 
 ## Las partículas más útiles
 
-| Partícula | Efecto | Ejemplo |
-| --- | --- | --- |
-| quand même | sorpresa, resignación, "aun así" | Il a réussi, quand même! |
-| enfin | corrección suave, "bueno... / al menos" | Enfin, c'est mon avis. |
-| bon | transición, "bueno, ya" | Bon, on y va? |
-| ben | duda, pausa casual (versión oral de "bien") | Ben, je sais pas... |
-| quoi | remate coloquial, "¿sabes?" | C'est bizarre, quoi. |
+| Partícula  | Efecto                                      | Ejemplo                  |
+| ---------- | ------------------------------------------- | ------------------------ |
+| quand même | sorpresa, resignación, "aun así"            | Il a réussi, quand même! |
+| enfin      | corrección suave, "bueno... / al menos"     | Enfin, c'est mon avis.   |
+| bon        | transición, "bueno, ya"                     | Bon, on y va?            |
+| ben        | duda, pausa casual (versión oral de "bien") | Ben, je sais pas...      |
+| quoi       | remate coloquial, "¿sabes?"                 | C'est bizarre, quoi.     |
 
 ## El verdadero reto: usarlas con el tono correcto
 

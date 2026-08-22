@@ -1,76 +1,76 @@
 ---
 language: de
 level: a2
-title: "Reflexive Verben: cuando la acción vuelve a ti"
-description: "Verbos reflexivos en alemán como sich freuen y sich waschen: por qué siempre llevan un pronombre que devuelve la acción al sujeto."
+title: 'Reflexive Verben: cuando la acción vuelve a ti'
+description: 'Verbos reflexivos en alemán como sich freuen y sich waschen: por qué siempre llevan un pronombre que devuelve la acción al sujeto.'
 order: 5
 unit: 2
-grammarTopic: "Verbos reflexivos (sich + verbo)"
+grammarTopic: 'Verbos reflexivos (sich + verbo)'
 funFact: "Piensa en 'sich' como un espejo: la acción sale del sujeto y rebota de vuelta hacia él mismo. 'Ich freue mich' literalmente es 'yo alegro a mí mismo' — suena raro en español, pero es completamente natural en alemán."
 minutes: 7
 quiz:
   - question: "¿Cuál es la forma correcta de 'sich freuen' (alegrarse) con 'ich'?"
-    options: ["Ich freue dich", "Ich freue mich", "Ich freue sich"]
+    options: ['Ich freue dich', 'Ich freue mich', 'Ich freue sich']
     answerIndex: 1
     explanation: "El pronombre reflexivo debe concordar con el sujeto: ich → mich. 'Ich freue mich' (me alegro)."
   - question: "¿Cuál es el pronombre reflexivo correcto para 'er' (él)?"
-    options: ["ihm", "sich", "ihn"]
+    options: ['ihm', 'sich', 'ihn']
     answerIndex: 1
     explanation: "'sich' se usa para er/sie/es y sie(plural)/Sie: Er freut sich. Es el mismo pronombre para todas las terceras personas."
   - question: "¿Cuál es la traducción correcta de 'Ich erinnere mich an dich'?"
-    options: ["Te recuerdo a ti", "Me acuerdo de ti", "Tú me recuerdas"]
+    options: ['Te recuerdo a ti', 'Me acuerdo de ti', 'Tú me recuerdas']
     answerIndex: 1
     explanation: "'sich erinnern an' significa 'acordarse de': Ich erinnere mich an dich = Me acuerdo de ti."
 exercises:
-  - type: "fill-blank"
-    sentence: "Ich freue ___ auf die Ferien."
-    answer: "mich"
-    accepted: ["mich"]
+  - type: 'fill-blank'
+    sentence: 'Ich freue ___ auf die Ferien.'
+    answer: 'mich'
+    accepted: ['mich']
     hint: "Pronombre reflexivo para 'ich': mich."
-    translation: "Me alegro por las vacaciones."
-    placeholder: "dich"
-  - type: "fill-blank"
-    sentence: "Er erinnert ___ an sie."
-    answer: "sich"
-    accepted: ["sich"]
+    translation: 'Me alegro por las vacaciones.'
+    placeholder: 'dich'
+  - type: 'fill-blank'
+    sentence: 'Er erinnert ___ an sie.'
+    answer: 'sich'
+    accepted: ['sich']
     hint: "'sich' se usa para er/sie/es."
-    translation: "Él se acuerda de ella."
-    placeholder: "mich"
-  - type: "match"
-    instructions: "Empareja cada pronombre personal con su pronombre reflexivo."
+    translation: 'Él se acuerda de ella.'
+    placeholder: 'mich'
+  - type: 'match'
+    instructions: 'Empareja cada pronombre personal con su pronombre reflexivo.'
     pairs:
-      - left: "ich"
-        right: "mich"
-      - left: "du"
-        right: "dich"
-      - left: "er/sie/es"
-        right: "sich"
-      - left: "wir"
-        right: "uns"
-      - left: "ihr"
-        right: "euch"
-  - type: "write"
+      - left: 'ich'
+        right: 'mich'
+      - left: 'du'
+        right: 'dich'
+      - left: 'er/sie/es'
+        right: 'sich'
+      - left: 'wir'
+        right: 'uns'
+      - left: 'ihr'
+        right: 'euch'
+  - type: 'write'
     prompt: "Escribe el pronombre reflexivo correcto para 'wir' (nosotros)."
-    answer: "uns"
-    accepted: ["uns"]
+    answer: 'uns'
+    accepted: ['uns']
     hint: "wir → uns, como en 'Wir beeilen uns.'"
-    placeholder: "euch"
-  - type: "order"
-    sentence: "Ich freue mich auf die Ferien"
-    translation: "Me alegro por las vacaciones."
+    placeholder: 'euch'
+  - type: 'order'
+    sentence: 'Ich freue mich auf die Ferien'
+    translation: 'Me alegro por las vacaciones.'
 vocabulary:
-  - term: "sich freuen"
-    translation: "alegrarse"
-  - term: "sich waschen"
-    translation: "lavarse"
-  - term: "sich erinnern an"
-    translation: "acordarse de"
-  - term: "sich beeilen"
-    translation: "apurarse"
-  - term: "mich"
-    translation: "me (reflexivo)"
-  - term: "sich"
-    translation: "se (reflexivo)"
+  - term: 'sich freuen'
+    translation: 'alegrarse'
+  - term: 'sich waschen'
+    translation: 'lavarse'
+  - term: 'sich erinnern an'
+    translation: 'acordarse de'
+  - term: 'sich beeilen'
+    translation: 'apurarse'
+  - term: 'mich'
+    translation: 'me (reflexivo)'
+  - term: 'sich'
+    translation: 'se (reflexivo)'
 ---
 
 Algunos verbos alemanes necesitan siempre un pronombre que "regresa" la acción al
@@ -79,13 +79,13 @@ sujeto — como si el verbo mirara al espejo.
 ## Los pronombres reflexivos
 
 | Pronombre | Reflexivo |
-| --- | --- |
-| ich | mich |
-| du | dich |
-| er/sie/es | sich |
-| wir | uns |
-| ihr | euch |
-| sie/Sie | sich |
+| --------- | --------- |
+| ich       | mich      |
+| du        | dich      |
+| er/sie/es | sich      |
+| wir       | uns       |
+| ihr       | euch      |
+| sie/Sie   | sich      |
 
 ## Verbos reflexivos comunes
 

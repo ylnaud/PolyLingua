@@ -1,72 +1,72 @@
 ---
 language: pt
 level: b2
-title: "No entanto, contudo, apesar disso: conectores de contraste"
-description: "Los conectores lógicos de contraste del portugués (no entanto, contudo, apesar disso) para argumentar con matices en textos elaborados."
+title: 'No entanto, contudo, apesar disso: conectores de contraste'
+description: 'Los conectores lógicos de contraste del portugués (no entanto, contudo, apesar disso) para argumentar con matices en textos elaborados.'
 order: 7
 unit: 2
-grammarTopic: "Conectores lógicos de contraste e concessão"
+grammarTopic: 'Conectores lógicos de contraste e concessão'
 funFact: "'No entanto' y 'contudo' son prácticamente intercambiables en significado, pero 'contudo' suena ligeramente más formal/escrito, mientras que 'no entanto' se usa con más libertad tanto en habla cuidada como en textos — una diferencia de registro sutil que solo se aprende con exposición real al idioma."
 minutes: 8
 quiz:
   - question: "¿Qué significa 'no entanto' en portugués?"
-    options: ["sin embargo", "por lo tanto", "además"]
+    options: ['sin embargo', 'por lo tanto', 'además']
     answerIndex: 0
     explanation: "'no entanto' introduce un contraste, equivalente a 'sin embargo' en español."
   - question: "¿Qué significa 'apesar de' en portugués?"
-    options: ["a pesar de", "además de", "en vez de"]
+    options: ['a pesar de', 'además de', 'en vez de']
     answerIndex: 0
     explanation: "'apesar de' + sustantivo/infinitivo introduce una concesión, equivalente a 'a pesar de': Apesar da chuva, saímos."
-  - question: "¿Cuál conector añade una idea adicional, en vez de contrastar?"
-    options: ["além disso", "no entanto", "por outro lado"]
+  - question: '¿Cuál conector añade una idea adicional, en vez de contrastar?'
+    options: ['além disso', 'no entanto', 'por outro lado']
     answerIndex: 0
     explanation: "'além disso' (además de eso) suma información nueva a favor del mismo argumento, sin contraste — a diferencia de 'no entanto' o 'por outro lado', que sí contrastan."
 exercises:
-  - type: "fill-blank"
-    sentence: "Ele estudou muito; ___, não passou no exame."
-    answer: "no entanto"
-    accepted: ["No entanto"]
+  - type: 'fill-blank'
+    sentence: 'Ele estudou muito; ___, não passou no exame.'
+    answer: 'no entanto'
+    accepted: ['No entanto']
     hint: "Introduce un contraste, equivalente a 'sin embargo'."
-    translation: "Estudió mucho; sin embargo, no aprobó el examen."
-    placeholder: "no entanto / contudo / por outro lado"
-  - type: "fill-blank"
-    sentence: "___ da chuva, saímos para caminhar."
-    answer: "Apesar"
+    translation: 'Estudió mucho; sin embargo, no aprobó el examen.'
+    placeholder: 'no entanto / contudo / por outro lado'
+  - type: 'fill-blank'
+    sentence: '___ da chuva, saímos para caminhar.'
+    answer: 'Apesar'
     hint: "'apesar de' + sustantivo introduce una concesión."
-    translation: "A pesar de la lluvia, salimos a caminar."
-    placeholder: "Apesar / Embora / Mesmo que"
-  - type: "match"
-    instructions: "Empareja cada conector con su significado en español."
+    translation: 'A pesar de la lluvia, salimos a caminar.'
+    placeholder: 'Apesar / Embora / Mesmo que'
+  - type: 'match'
+    instructions: 'Empareja cada conector con su significado en español.'
     pairs:
-      - left: "no entanto"
-        right: "sin embargo"
-      - left: "apesar de"
-        right: "a pesar de"
-      - left: "além disso"
-        right: "además"
-      - left: "embora"
-        right: "aunque"
-      - left: "por outro lado"
-        right: "por otro lado"
-  - type: "write"
+      - left: 'no entanto'
+        right: 'sin embargo'
+      - left: 'apesar de'
+        right: 'a pesar de'
+      - left: 'além disso'
+        right: 'además'
+      - left: 'embora'
+        right: 'aunque'
+      - left: 'por outro lado'
+        right: 'por otro lado'
+  - type: 'write'
     prompt: "Escribe en portugués: 'El proyecto es caro. Además, va a tardar meses.'"
-    answer: "O projeto é caro. Além disso, vai demorar meses."
+    answer: 'O projeto é caro. Além disso, vai demorar meses.'
     hint: "'além disso' suma información sin contraste."
-    placeholder: "Frase. Além disso / Também, frase."
-  - type: "order"
-    sentence: "Embora ele seja jovem tem muita experiência"
-    translation: "Aunque él es joven, tiene mucha experiencia."
+    placeholder: 'Frase. Além disso / Também, frase.'
+  - type: 'order'
+    sentence: 'Embora ele seja jovem tem muita experiência'
+    translation: 'Aunque él es joven, tiene mucha experiencia.'
 vocabulary:
-  - term: "no entanto"
-    translation: "sin embargo"
-  - term: "apesar de"
-    translation: "a pesar de"
-  - term: "além disso"
-    translation: "además"
-  - term: "embora"
-    translation: "aunque"
-  - term: "por outro lado"
-    translation: "por otro lado"
+  - term: 'no entanto'
+    translation: 'sin embargo'
+  - term: 'apesar de'
+    translation: 'a pesar de'
+  - term: 'além disso'
+    translation: 'además'
+  - term: 'embora'
+    translation: 'aunque'
+  - term: 'por outro lado'
+    translation: 'por otro lado'
 ---
 
 Los conectores lógicos son las bisagras que permiten construir argumentos elaborados,
@@ -74,12 +74,12 @@ esenciales para redacción académica, debates y textos formales.
 
 ## Conectores de contraste
 
-| Portugués | Español |
-| --- | --- |
-| no entanto | sin embargo |
-| contudo | no obstante |
+| Portugués      | Español       |
+| -------------- | ------------- |
+| no entanto     | sin embargo   |
+| contudo        | no obstante   |
 | por outro lado | por otro lado |
-| mas | pero |
+| mas            | pero          |
 
 ```
 Ele estudou muito; no entanto, não passou no exame.
@@ -88,10 +88,10 @@ Ele estudou muito; no entanto, não passou no exame.
 
 ## Conectores de concesión
 
-| Portugués | Español |
-| --- | --- |
-| apesar de | a pesar de |
-| embora | aunque |
+| Portugués | Español             |
+| --------- | ------------------- |
+| apesar de | a pesar de          |
+| embora    | aunque              |
 | mesmo que | aunque / incluso si |
 | ainda que | aunque (más formal) |
 
@@ -105,10 +105,10 @@ Embora ele seja jovem, tem muita experiência.
 
 ## Conectores de adición
 
-| Portugués | Español |
-| --- | --- |
-| além disso | además |
-| também | también |
+| Portugués            | Español                 |
+| -------------------- | ----------------------- |
+| além disso           | además                  |
+| também               | también                 |
 | não só... mas também | no solo... sino también |
 
 ```

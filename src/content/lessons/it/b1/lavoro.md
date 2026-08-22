@@ -1,76 +1,76 @@
 ---
 language: it
 level: b1
-title: "Il lavoro: vocabulario para el mundo laboral"
+title: 'Il lavoro: vocabulario para el mundo laboral'
 description: "Vocabulario italiano del mundo laboral: profesiones, curriculum y colloquio de trabajo, incluyendo el patrón femenino regular en '-essa'."
 order: 7
 unit: 2
-grammarTopic: "Vocabulario: trabajo y profesión"
+grammarTopic: 'Vocabulario: trabajo y profesión'
 funFact: "En italiano, la mayoría de las profesiones cambian de forma predecible entre masculino y femenino: 'un professore' se convierte en 'una professoressa', 'un dottore' en 'una dottoressa'. El patrón '-essa' es mucho más consistente que en francés o alemán."
 minutes: 7
 quiz:
   - question: "¿Cómo se dice 'la entrevista de trabajo' en italiano?"
-    options: ["il colloquio di lavoro", "il curriculum", "la candidatura"]
+    options: ['il colloquio di lavoro', 'il curriculum', 'la candidatura']
     answerIndex: 0
     explanation: "'il colloquio di lavoro' es la entrevista de trabajo. 'la candidatura' es la postulación, y 'il CV' es el currículum."
   - question: "¿Cuál es la versión femenina de 'un professore' (profesor)?"
-    options: ["una professora", "una professoressa", "una professoresa"]
+    options: ['una professora', 'una professoressa', 'una professoresa']
     answerIndex: 1
     explanation: "'professore' → 'professoressa' — el patrón '-essa' es muy productivo para profesiones en italiano."
   - question: "¿Cuál es el artículo correcto para 'stipendio' (salario)?"
-    options: ["il stipendio", "lo stipendio", "la stipendio"]
+    options: ['il stipendio', 'lo stipendio', 'la stipendio']
     answerIndex: 1
     explanation: "'stipendio' empieza con 's' + consonante ('st'), así que usa el artículo especial 'lo': lo stipendio."
 exercises:
-  - type: "fill-blank"
-    sentence: "Ho un ___ di lavoro domani."
-    answer: "colloquio"
-    accepted: ["colloquio"]
-    hint: "La entrevista de trabajo."
-    translation: "Tengo una entrevista de trabajo mañana."
-    placeholder: "colloquio / contratto / stipendio"
-  - type: "fill-blank"
-    sentence: "La mia ___ si chiama Sofia."
-    answer: "collega"
-    accepted: ["collega"]
-    hint: "El/la colega."
-    translation: "Mi colega se llama Sofía."
-    placeholder: "collega / capo / azienda"
-  - type: "match"
-    instructions: "Empareja cada palabra en italiano con su significado en español."
+  - type: 'fill-blank'
+    sentence: 'Ho un ___ di lavoro domani.'
+    answer: 'colloquio'
+    accepted: ['colloquio']
+    hint: 'La entrevista de trabajo.'
+    translation: 'Tengo una entrevista de trabajo mañana.'
+    placeholder: 'colloquio / contratto / stipendio'
+  - type: 'fill-blank'
+    sentence: 'La mia ___ si chiama Sofia.'
+    answer: 'collega'
+    accepted: ['collega']
+    hint: 'El/la colega.'
+    translation: 'Mi colega se llama Sofía.'
+    placeholder: 'collega / capo / azienda'
+  - type: 'match'
+    instructions: 'Empareja cada palabra en italiano con su significado en español.'
     pairs:
-      - left: "la candidatura"
-        right: "la postulación"
-      - left: "il curriculum"
-        right: "el currículum"
-      - left: "il colloquio di lavoro"
-        right: "la entrevista de trabajo"
-      - left: "lo stipendio"
-        right: "el salario"
+      - left: 'la candidatura'
+        right: 'la postulación'
+      - left: 'il curriculum'
+        right: 'el currículum'
+      - left: 'il colloquio di lavoro'
+        right: 'la entrevista de trabajo'
+      - left: 'lo stipendio'
+        right: 'el salario'
       - left: "l'azienda"
-        right: "la empresa"
-  - type: "write"
+        right: 'la empresa'
+  - type: 'write'
     prompt: "Escribe la versión femenina de 'un professore' (una profesora)."
-    answer: "una professoressa"
-    accepted: ["professoressa", "Una professoressa"]
+    answer: 'una professoressa'
+    accepted: ['professoressa', 'Una professoressa']
     hint: "El patrón '-essa' es muy productivo para profesiones en italiano."
-    placeholder: "una + [professione]-essa"
-  - type: "order"
-    sentence: "Ho un colloquio di lavoro domani"
-    translation: "Tengo una entrevista de trabajo mañana."
+    placeholder: 'una + [professione]-essa'
+  - type: 'order'
+    sentence: 'Ho un colloquio di lavoro domani'
+    translation: 'Tengo una entrevista de trabajo mañana.'
 vocabulary:
-  - term: "il colloquio di lavoro"
-    translation: "la entrevista de trabajo"
-  - term: "lo stipendio"
-    translation: "el salario"
-  - term: "il capo"
-    translation: "el jefe"
-  - term: "il/la collega"
-    translation: "el/la colega"
+  - term: 'il colloquio di lavoro'
+    translation: 'la entrevista de trabajo'
+  - term: 'lo stipendio'
+    translation: 'el salario'
+  - term: 'il capo'
+    translation: 'el jefe'
+  - term: 'il/la collega'
+    translation: 'el/la colega'
   - term: "l'azienda"
-    translation: "la empresa"
-  - term: "la candidatura"
-    translation: "la postulación"
+    translation: 'la empresa'
+  - term: 'la candidatura'
+    translation: 'la postulación'
 ---
 
 Ya sea para hablar de tu trabajo actual, escribir una candidatura o prepararte para
@@ -78,23 +78,23 @@ un colloquio, este vocabulario es esencial en italiano profesional.
 
 ## El proceso de búsqueda de empleo
 
-| Italiano | Español |
-| --- | --- |
-| la candidatura | la postulación |
-| il curriculum (CV) | el currículum |
+| Italiano               | Español                  |
+| ---------------------- | ------------------------ |
+| la candidatura         | la postulación           |
+| il curriculum (CV)     | el currículum            |
 | il colloquio di lavoro | la entrevista de trabajo |
-| il contratto | el contrato |
-| lo stipendio | el salario |
+| il contratto           | el contrato              |
+| lo stipendio           | el salario               |
 
 ## En la oficina
 
-| Italiano | Español |
-| --- | --- |
+| Italiano          | Español           |
+| ----------------- | ----------------- |
 | il capo / la capa | el jefe / la jefa |
-| il/la collega | el/la colega |
-| la riunione | la reunión |
-| l'ufficio | la oficina |
-| l'azienda | la empresa |
+| il/la collega     | el/la colega      |
+| la riunione       | la reunión        |
+| l'ufficio         | la oficina        |
+| l'azienda         | la empresa        |
 
 ## Frases útiles para hablar de tu trabajo
 

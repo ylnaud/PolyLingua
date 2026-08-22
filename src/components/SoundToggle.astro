@@ -10,14 +10,19 @@ interface Props {
 
 const { variant = 'icon' } = Astro.props;
 ---
+
 <button
   type="button"
   class:list={['sound-toggle', { 'sound-toggle-sheet': variant === 'sheet' }]}
   aria-label="Silenciar sonidos"
   aria-pressed="false"
 >
-  <span class="icon icon-on" aria-hidden="true">🔊<span class="sheet-only"> Silenciar sonidos</span></span>
-  <span class="icon icon-off" aria-hidden="true">🔇<span class="sheet-only"> Activar sonidos</span></span>
+  <span class="icon icon-on" aria-hidden="true"
+    >🔊<span class="sheet-only"> Silenciar sonidos</span></span
+  >
+  <span class="icon icon-off" aria-hidden="true"
+    >🔇<span class="sheet-only"> Activar sonidos</span></span
+  >
 </button>
 
 <style>

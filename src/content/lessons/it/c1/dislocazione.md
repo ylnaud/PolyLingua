@@ -1,86 +1,79 @@
 ---
 language: it
 level: c1
-title: "La dislocazione: pon el foco exactamente donde quieres"
+title: 'La dislocazione: pon el foco exactamente donde quieres'
 description: "La dislocazione italiana con la estructura 'è... che' para dar énfasis dramático a una sola parte de la frase, como el 'cleft sentence' inglés."
 order: 4
 unit: 1
-grammarTopic: "Frase scissa / dislocazione (è...che)"
+grammarTopic: 'Frase scissa / dislocazione (è...che)'
 funFact: "'È Marco che ha chiamato' literalmente 'parte' la frase en dos, con el único propósito de gritar 'fue MARCO, no nadie más'. Es el equivalente italiano exacto de las cleft sentences inglesas o la mise en relief francesa — la misma herramienta retórica en su propio molde."
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta para dar énfasis en QUIÉN llamó: 'Marco ha chiamato'?"
-    options: [
-      "È Marco che ha chiamato.",
-      "È Marco chi ha chiamato.",
-      "Marco è che ha chiamato."
-    ]
+    options: ['È Marco che ha chiamato.', 'È Marco chi ha chiamato.', 'Marco è che ha chiamato.']
     answerIndex: 0
     explanation: "La 'frase scissa' italiana usa 'è...che' para casi todos los casos (sujeto u objeto): È Marco che ha chiamato."
   - question: "¿Cuál es correcta para dar énfasis en el objeto: 'Amo questo libro'?"
-    options: [
-      "È questo libro chi amo.",
-      "È questo libro che amo.",
-      "Questo libro è che amo."
-    ]
+    options: ['È questo libro chi amo.', 'È questo libro che amo.', 'Questo libro è che amo.']
     answerIndex: 1
     explanation: "A diferencia del francés (qui/que) o inglés, el italiano usa 'che' tanto para sujeto como objeto en esta estructura: È questo libro che amo."
-  - question: "¿Qué elemento de la frase original se puede enfatizar con esta estructura?"
-    options: [
-      "Solo el sujeto",
-      "Prácticamente cualquier elemento: sujeto, objeto, tiempo, lugar",
-      "Solo verbos"
-    ]
+  - question: '¿Qué elemento de la frase original se puede enfatizar con esta estructura?'
+    options:
+      [
+        'Solo el sujeto',
+        'Prácticamente cualquier elemento: sujeto, objeto, tiempo, lugar',
+        'Solo verbos',
+      ]
     answerIndex: 1
     explanation: "La dislocazione con 'è...che' es flexible: puede enfatizar el sujeto, el objeto, un momento, un lugar — cualquier elemento que quieras resaltar."
 exercises:
-  - type: "fill-blank"
-    sentence: "___ Marco che ha chiamato."
-    answer: "È"
-    accepted: ["È", "E'"]
+  - type: 'fill-blank'
+    sentence: '___ Marco che ha chiamato.'
+    answer: 'È'
+    accepted: ['È', "E'"]
     hint: "La frase scissa siempre empieza con 'è' + elemento enfatizado + che."
-    translation: "Fue Marco quien llamó."
-    placeholder: "È / Sono"
-  - type: "fill-blank"
-    sentence: "È questo libro ___ amo."
-    answer: "che"
-    accepted: ["che"]
+    translation: 'Fue Marco quien llamó.'
+    placeholder: 'È / Sono'
+  - type: 'fill-blank'
+    sentence: 'È questo libro ___ amo.'
+    answer: 'che'
+    accepted: ['che']
     hint: "El italiano usa 'che' tanto para sujeto como para objeto en esta estructura."
-    translation: "Es este libro el que amo."
-    placeholder: "che / chi"
-  - type: "match"
+    translation: 'Es este libro el que amo.'
+    placeholder: 'che / chi'
+  - type: 'match'
     instructions: "Empareja qué elemento se enfatiza en cada frase scissa (a partir de 'Paolo ha comprato quella macchina ieri')."
     pairs:
-      - left: "chi (quién)"
-        right: "È Paolo che ha comprato quella macchina ieri."
-      - left: "cosa (qué)"
-        right: "È quella macchina che Paolo ha comprato ieri."
-      - left: "quando (cuándo)"
-        right: "È ieri che Paolo ha comprato quella macchina."
-      - left: "idea completa"
-        right: "Quello che mi interessa è la musica."
-  - type: "write"
+      - left: 'chi (quién)'
+        right: 'È Paolo che ha comprato quella macchina ieri.'
+      - left: 'cosa (qué)'
+        right: 'È quella macchina che Paolo ha comprato ieri.'
+      - left: 'quando (cuándo)'
+        right: 'È ieri che Paolo ha comprato quella macchina.'
+      - left: 'idea completa'
+        right: 'Quello che mi interessa è la musica.'
+  - type: 'write'
     prompt: "Escribe una frase enfática (dislocazione) para decir 'No fui yo quien dijo esto.'"
-    answer: "Non sono io che ho detto questo."
-    accepted: ["Non sono io che ho detto questo"]
-    hint: "Usa la estructura è/sono + [elemento] + che para corregir un malentendido."
-    placeholder: "È Marco che ha parlato."
-  - type: "order"
-    sentence: "È quella macchina che Paolo ha comprato ieri"
-    translation: "Fue ese coche el que Paolo compró ayer."
+    answer: 'Non sono io che ho detto questo.'
+    accepted: ['Non sono io che ho detto questo']
+    hint: 'Usa la estructura è/sono + [elemento] + che para corregir un malentendido.'
+    placeholder: 'È Marco che ha parlato.'
+  - type: 'order'
+    sentence: 'È quella macchina che Paolo ha comprato ieri'
+    translation: 'Fue ese coche el que Paolo compró ayer.'
 vocabulary:
-  - term: "frase scissa"
-    translation: "oración escindida (cleft sentence)"
-  - term: "quello che"
-    translation: "lo que"
-  - term: "ciò che"
-    translation: "lo que (variante)"
-  - term: "È questo libro che amo"
-    translation: "Es este libro el que amo"
-  - term: "Non sono io che ho detto questo"
-    translation: "No fui yo quien dijo esto"
-  - term: "tempo libero"
-    translation: "tiempo libre"
+  - term: 'frase scissa'
+    translation: 'oración escindida (cleft sentence)'
+  - term: 'quello che'
+    translation: 'lo que'
+  - term: 'ciò che'
+    translation: 'lo que (variante)'
+  - term: 'È questo libro che amo'
+    translation: 'Es este libro el que amo'
+  - term: 'Non sono io che ho detto questo'
+    translation: 'No fui yo quien dijo esto'
+  - term: 'tempo libero'
+    translation: 'tiempo libre'
 ---
 
 La dislocazione (o frase scissa) es la herramienta italiana para poner el foco

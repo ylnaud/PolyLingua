@@ -1,5 +1,7 @@
 ---
+
 ---
+
 <button
   type="button"
   class="goal-pill"
@@ -176,7 +178,8 @@
 
   function recordProgress(minutes: number) {
     const t = today();
-    const prev = read('polylingua-progress-date') === t ? getProgress() : { minutes: 0, lessons: 0 };
+    const prev =
+      read('polylingua-progress-date') === t ? getProgress() : { minutes: 0, lessons: 0 };
     write('polylingua-progress-date', t);
     write('polylingua-progress-minutes', String(prev.minutes + minutes));
     write('polylingua-progress-lessons', String(prev.lessons + 1));
@@ -213,7 +216,8 @@
       const streak = getStreak();
       const met = !!goal && minutes >= goal;
       pill!.classList.toggle('goal-pill-met', met);
-      if (pillFill) pillFill.style.width = `${goal ? Math.min(100, Math.round((minutes / goal) * 100)) : 0}%`;
+      if (pillFill)
+        pillFill.style.width = `${goal ? Math.min(100, Math.round((minutes / goal) * 100)) : 0}%`;
       if (pillText) {
         pillText.textContent = goal
           ? `${met ? '🎉' : '🔥'} ${streak} · ${minutes}/${goal} min`

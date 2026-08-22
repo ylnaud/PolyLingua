@@ -1,73 +1,73 @@
 ---
 language: fr
 level: b2
-title: "Les pronoms relatifs: la clave para frases más elegantes"
-description: "Qui, que, dont y où: los pronombres relativos que conectan dos ideas en una sola frase francesa fluida, sin repetir el sustantivo."
+title: 'Les pronoms relatifs: la clave para frases más elegantes'
+description: 'Qui, que, dont y où: los pronombres relativos que conectan dos ideas en una sola frase francesa fluida, sin repetir el sustantivo.'
 order: 2
 unit: 1
-grammarTopic: "Pronoms relatifs (qui, que, dont, où)"
+grammarTopic: 'Pronoms relatifs (qui, que, dont, où)'
 funFact: "Piensa en cada pronombre relativo como una etiqueta que indica qué función cumplía la palabra que reemplaza: 'qui' reemplaza un SUJETO, 'que' reemplaza un OBJETO DIRECTO, 'dont' reemplaza algo introducido por 'de', y 'où' reemplaza un LUGAR o TIEMPO. Identifica la función antes de elegir el pronombre."
 minutes: 9
 quiz:
   - question: "'J'ai un ami. Cet ami habite à Paris.' → 'J'ai un ami ___ habite à Paris.' ¿Qué pronombre va?"
-    options: ["que", "qui", "dont"]
+    options: ['que', 'qui', 'dont']
     answerIndex: 1
     explanation: "'cet ami' es el SUJETO de 'habite', así que se reemplaza con 'qui': J'ai un ami qui habite à Paris."
   - question: "'Voici le livre. J'ai lu ce livre.' → 'Voici le livre ___ j'ai lu.' ¿Qué pronombre va?"
-    options: ["qui", "que", "où"]
+    options: ['qui', 'que', 'où']
     answerIndex: 1
     explanation: "'ce livre' es el OBJETO DIRECTO de 'j'ai lu', así que se reemplaza con 'que': Voici le livre que j'ai lu."
   - question: "'C'est un sujet. Je parle souvent de ce sujet.' → 'C'est un sujet ___ je parle souvent.' ¿Qué pronombre va?"
-    options: ["que", "où", "dont"]
+    options: ['que', 'où', 'dont']
     answerIndex: 2
     explanation: "'de ce sujet' usa la preposición 'de', así que se reemplaza con 'dont': C'est un sujet dont je parle souvent (del que hablo a menudo)."
 exercises:
-  - type: "fill-blank"
-    sentence: "La femme ___ parle est ma sœur."
-    answer: "qui"
-    accepted: ["qui"]
+  - type: 'fill-blank'
+    sentence: 'La femme ___ parle est ma sœur.'
+    answer: 'qui'
+    accepted: ['qui']
     hint: "'cette femme' es el sujeto de 'parle'."
-    translation: "La mujer que habla es mi hermana."
-    placeholder: "que / dont"
-  - type: "fill-blank"
+    translation: 'La mujer que habla es mi hermana.'
+    placeholder: 'que / dont'
+  - type: 'fill-blank'
     sentence: "Le film ___ j'ai vu était super."
-    answer: "que"
-    accepted: ["que"]
+    answer: 'que'
+    accepted: ['que']
     hint: "'ce film' es el objeto directo de 'j'ai vu'."
-    translation: "La película que vi era genial."
-    placeholder: "qui / où"
-  - type: "match"
-    instructions: "Empareja cada pronombre relativo con la función que cumple."
+    translation: 'La película que vi era genial.'
+    placeholder: 'qui / où'
+  - type: 'match'
+    instructions: 'Empareja cada pronombre relativo con la función que cumple.'
     pairs:
-      - left: "qui"
-        right: "reemplaza el sujeto"
-      - left: "que"
-        right: "reemplaza el objeto directo"
-      - left: "dont"
+      - left: 'qui'
+        right: 'reemplaza el sujeto'
+      - left: 'que'
+        right: 'reemplaza el objeto directo'
+      - left: 'dont'
         right: "reemplaza algo introducido por 'de'"
-      - left: "où"
-        right: "reemplaza un lugar o tiempo"
-  - type: "write"
+      - left: 'où'
+        right: 'reemplaza un lugar o tiempo'
+  - type: 'write'
     prompt: "Traduce: 'Este es el libro del que hablo.'"
     answer: "C'est le livre dont je parle."
     hint: "'parler de' activa 'dont' en vez de 'que'."
     placeholder: "C'est la maison où j'habite."
-  - type: "order"
+  - type: 'order'
     sentence: "Voici la maison où j'ai grandi"
-    translation: "Esta es la casa donde crecí."
+    translation: 'Esta es la casa donde crecí.'
 vocabulary:
-  - term: "qui"
-    translation: "que (sujeto)"
-  - term: "que"
-    translation: "que (objeto directo)"
-  - term: "dont"
-    translation: "del/de la que"
-  - term: "où"
-    translation: "donde"
-  - term: "parler de"
-    translation: "hablar de"
-  - term: "avoir besoin de"
-    translation: "necesitar"
+  - term: 'qui'
+    translation: 'que (sujeto)'
+  - term: 'que'
+    translation: 'que (objeto directo)'
+  - term: 'dont'
+    translation: 'del/de la que'
+  - term: 'où'
+    translation: 'donde'
+  - term: 'parler de'
+    translation: 'hablar de'
+  - term: 'avoir besoin de'
+    translation: 'necesitar'
 ---
 
 Los pronombres relativos son la herramienta que separa el francés de principiante ("J'ai
@@ -78,12 +78,12 @@ un ami. Il habite à Paris.") del francés fluido ("J'ai un ami qui habite à Pa
 Antes de elegir el pronombre, pregúntate qué función cumplía la palabra que vas a
 reemplazar en la segunda frase.
 
-| Pronombre | Reemplaza | Ejemplo |
-| --- | --- | --- |
-| qui | el sujeto | La femme qui parle est ma sœur. |
-| que | el objeto directo | Le film que j'ai vu était super. |
-| dont | algo con "de" | Le livre dont je parle est génial. |
-| où | lugar o tiempo | La ville où j'habite est belle. |
+| Pronombre | Reemplaza         | Ejemplo                            |
+| --------- | ----------------- | ---------------------------------- |
+| qui       | el sujeto         | La femme qui parle est ma sœur.    |
+| que       | el objeto directo | Le film que j'ai vu était super.   |
+| dont      | algo con "de"     | Le livre dont je parle est génial. |
+| où        | lugar o tiempo    | La ville où j'habite est belle.    |
 
 ## qui vs. que: el error más común
 

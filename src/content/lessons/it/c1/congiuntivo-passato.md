@@ -1,84 +1,86 @@
 ---
 language: it
 level: c1
-title: "Il congiuntivo passato: cuando la duda mira hacia atrás"
-description: "Cómo expresar duda, emoción o deseo sobre algo que YA ocurrió, combinando lo que ya sabes del congiuntivo con el participio pasado."
+title: 'Il congiuntivo passato: cuando la duda mira hacia atrás'
+description: 'Cómo expresar duda, emoción o deseo sobre algo que YA ocurrió, combinando lo que ya sabes del congiuntivo con el participio pasado.'
 order: 3
 unit: 1
-grammarTopic: "Congiuntivo passato"
-funFact: "El Congiuntivo passato no es un tiempo verbal nuevo desde cero — es simplemente el Congiuntivo presente del auxiliar (avere/essere) combinado con el participio que ya conoces del passato prossimo. Si ya dominas ambas piezas por separado, esta estructura es solo unirlas."
+grammarTopic: 'Congiuntivo passato'
+funFact: 'El Congiuntivo passato no es un tiempo verbal nuevo desde cero — es simplemente el Congiuntivo presente del auxiliar (avere/essere) combinado con el participio que ya conoces del passato prossimo. Si ya dominas ambas piezas por separado, esta estructura es solo unirlas.'
 minutes: 9
 quiz:
-  - question: "¿Cuál es la fórmula del Congiuntivo passato?"
-    options: [
-      "avere/essere (en congiuntivo presente) + participio passato",
-      "avere/essere (presente normal) + participio passato",
-      "Congiuntivo presente del verbo principal"
-    ]
+  - question: '¿Cuál es la fórmula del Congiuntivo passato?'
+    options:
+      [
+        'avere/essere (en congiuntivo presente) + participio passato',
+        'avere/essere (presente normal) + participio passato',
+        'Congiuntivo presente del verbo principal',
+      ]
     answerIndex: 0
-    explanation: "Congiuntivo passato = avere/essere conjugado en congiuntivo presente (che io abbia, che io sia) + participio passato: che io abbia finito, che io sia partito."
+    explanation: 'Congiuntivo passato = avere/essere conjugado en congiuntivo presente (che io abbia, che io sia) + participio passato: che io abbia finito, che io sia partito.'
   - question: "'Sono contento che tu ___ (superare) l'esame' (contento de que hayas aprobado). ¿Qué forma va?"
-    options: ["superi", "abbia superato", "hai superato"]
+    options: ['superi', 'abbia superato', 'hai superato']
     answerIndex: 1
-    explanation: "Como la acción de aprobar ya ocurrió antes del sentimiento de contento, se usa congiuntivo passato: che tu abbia superato."
-  - question: "¿Cuándo usarías Congiuntivo passato en vez de Congiuntivo presente?"
-    options: [
-      "Cuando la acción del congiuntivo ya ocurrió ANTES que la acción principal",
-      "Siempre, son intercambiables",
-      "Solo en preguntas"
-    ]
+    explanation: 'Como la acción de aprobar ya ocurrió antes del sentimiento de contento, se usa congiuntivo passato: che tu abbia superato.'
+  - question: '¿Cuándo usarías Congiuntivo passato en vez de Congiuntivo presente?'
+    options:
+      [
+        'Cuando la acción del congiuntivo ya ocurrió ANTES que la acción principal',
+        'Siempre, son intercambiables',
+        'Solo en preguntas',
+      ]
     answerIndex: 0
-    explanation: "El Congiuntivo passato marca que la acción subordinada ya se completó antes que la principal: Dubito che abbia finito (dudo que haya terminado, ya en el pasado)."
+    explanation: 'El Congiuntivo passato marca que la acción subordinada ya se completó antes que la principal: Dubito che abbia finito (dudo que haya terminado, ya en el pasado).'
 exercises:
-  - type: "fill-blank"
+  - type: 'fill-blank'
     sentence: "Sono contento che tu ___ superato l'esame."
-    answer: "abbia"
-    accepted: ["abbia"]
+    answer: 'abbia'
+    accepted: ['abbia']
     hint: "'superare' usa el auxiliar avere: che tu abbia + participio."
-    translation: "Estoy contento de que hayas aprobado el examen."
-    placeholder: "abbia / sia"
-  - type: "fill-blank"
-    sentence: "È possibile che lei ___ già partita."
-    answer: "sia"
-    accepted: ["sia"]
+    translation: 'Estoy contento de que hayas aprobado el examen.'
+    placeholder: 'abbia / sia'
+  - type: 'fill-blank'
+    sentence: 'È possibile che lei ___ già partita.'
+    answer: 'sia'
+    accepted: ['sia']
     hint: "'partire' usa el auxiliar essere: che lei sia + participio."
-    translation: "Es posible que ella ya se haya ido."
-    placeholder: "abbia / sia"
-  - type: "match"
-    instructions: "Empareja cada infinitivo con su forma correcta en Congiuntivo passato (che io...)."
+    translation: 'Es posible que ella ya se haya ido.'
+    placeholder: 'abbia / sia'
+  - type: 'match'
+    instructions: 'Empareja cada infinitivo con su forma correcta en Congiuntivo passato (che io...).'
     pairs:
-      - left: "finire"
-        right: "che io abbia finito"
-      - left: "partire"
-        right: "che io sia partito/a"
-      - left: "capire"
-        right: "che io abbia capito"
-      - left: "venire"
-        right: "che io sia venuto/a"
-      - left: "superare"
-        right: "che io abbia superato"
-  - type: "write"
+      - left: 'finire'
+        right: 'che io abbia finito'
+      - left: 'partire'
+        right: 'che io sia partito/a'
+      - left: 'capire'
+        right: 'che io abbia capito'
+      - left: 'venire'
+        right: 'che io sia venuto/a'
+      - left: 'superare'
+        right: 'che io abbia superato'
+  - type: 'write'
     prompt: "Escribe en italiano, usando Congiuntivo passato: 'No creo que haya entendido.'"
-    answer: "Non penso che abbia capito."
-    accepted: ["Non penso che abbia capito"]
+    answer: 'Non penso che abbia capito.'
+    accepted: ['Non penso che abbia capito']
     hint: "'pensare' negativo + che + abbia + participio de capire."
-    placeholder: "Non credo che abbia parlato."
-  - type: "order"
+    placeholder: 'Non credo che abbia parlato.'
+  - type: 'order'
     sentence: "Sono contento che tu abbia superato l'esame"
-    translation: "Estoy contento de que hayas aprobado el examen."
+    translation: 'Estoy contento de que hayas aprobado el examen.'
 vocabulary:
-  - term: "abbia superato"
-    translation: "hayas aprobado"
-  - term: "già partita"
-    translation: "ya se haya ido (ella)"
-  - term: "abbia capito"
-    translation: "haya entendido"
-  - term: "participio passato"
-    translation: "participio pasado"
-  - term: "Congiuntivo presente"
-    translation: "subjuntivo presente"
+  - term: 'abbia superato'
+    translation: 'hayas aprobado'
+  - term: 'già partita'
+    translation: 'ya se haya ido (ella)'
+  - term: 'abbia capito'
+    translation: 'haya entendido'
+  - term: 'participio passato'
+    translation: 'participio pasado'
+  - term: 'Congiuntivo presente'
+    translation: 'subjuntivo presente'
   - term: "l'esame"
-    translation: "el examen"
+    translation: 'el examen'
 ---
 
 Ya dominas el Congiuntivo presente. Ahora aprendes su versión de pasado — necesaria

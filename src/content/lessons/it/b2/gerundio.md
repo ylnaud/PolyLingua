@@ -1,84 +1,82 @@
 ---
 language: it
 level: b2
-title: "Il gerundio: dos acciones al mismo tiempo, en una palabra"
+title: 'Il gerundio: dos acciones al mismo tiempo, en una palabra'
 description: "El gerundio italiano en -ando/-endo para describir dos acciones simultáneas, y su uso ampliado con 'stare' para formar el tiempo progresivo."
 order: 4
 unit: 1
-grammarTopic: "Il gerundio (-ando/-endo)"
+grammarTopic: 'Il gerundio (-ando/-endo)'
 funFact: "El gerundio italiano se usa mucho más ampliamente que en español: además de describir simultaneidad ('mangiando' = comiendo), se combina con 'stare' para formar una forma progresiva ('sto mangiando' = estoy comiendo) muy similar a la estructura inglesa 'I am eating' — un uso que otros idiomas romances no tienen tan desarrollado."
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta del gerundio de 'mangiare' (comer)?"
-    options: ["mangiando", "mangendo", "mangiere"]
+    options: ['mangiando', 'mangendo', 'mangiere']
     answerIndex: 0
-    explanation: "Verbos en -are forman el gerundio con -ando: mangiare → mangiando."
+    explanation: 'Verbos en -are forman el gerundio con -ando: mangiare → mangiando.'
   - question: "'Sta parlando al telefono.' ¿Qué estructura es esta?"
-    options: [
-      "Gerundio simple",
-      "Forma progresiva (stare + gerundio), equivalente a 'está hablando'",
-      "Futuro"
-    ]
+    options:
+      [
+        'Gerundio simple',
+        "Forma progresiva (stare + gerundio), equivalente a 'está hablando'",
+        'Futuro',
+      ]
     answerIndex: 1
     explanation: "'stare + gerundio' forma la construcción progresiva italiana: Sta parlando (está hablando ahora mismo) — muy similar al 'is talking' inglés."
   - question: "'Ho imparato l'italiano guardando film.' ¿Qué función cumple el gerundio aquí?"
-    options: [
-      "Simultaneidad",
-      "Medio/manera: indica CÓMO se logró algo",
-      "Ninguna función especial"
-    ]
+    options:
+      ['Simultaneidad', 'Medio/manera: indica CÓMO se logró algo', 'Ninguna función especial']
     answerIndex: 1
-    explanation: "El gerundio también indica el MEDIO por el cual se logra algo: aprendí italiano VIENDO películas (esa fue la manera)."
+    explanation: 'El gerundio también indica el MEDIO por el cual se logra algo: aprendí italiano VIENDO películas (esa fue la manera).'
 exercises:
-  - type: "fill-blank"
-    sentence: "Sto ___ (mangiare)."
-    answer: "mangiando"
-    accepted: ["mangiando"]
-    hint: "Verbos en -are forman el gerundio con -ando."
-    translation: "Estoy comiendo."
-    placeholder: "parlando / vendendo"
-  - type: "fill-blank"
+  - type: 'fill-blank'
+    sentence: 'Sto ___ (mangiare).'
+    answer: 'mangiando'
+    accepted: ['mangiando']
+    hint: 'Verbos en -are forman el gerundio con -ando.'
+    translation: 'Estoy comiendo.'
+    placeholder: 'parlando / vendendo'
+  - type: 'fill-blank'
     sentence: "Ho imparato l'italiano ___ (guardare) film."
-    answer: "guardando"
-    accepted: ["guardando"]
-    hint: "El gerundio aquí indica el MEDIO: la manera en que se logró algo."
-    translation: "Aprendí italiano viendo películas."
-    placeholder: "dormendo / facendo"
-  - type: "match"
-    instructions: "Empareja cada infinitivo con su gerundio correcto."
+    answer: 'guardando'
+    accepted: ['guardando']
+    hint: 'El gerundio aquí indica el MEDIO: la manera en que se logró algo.'
+    translation: 'Aprendí italiano viendo películas.'
+    placeholder: 'dormendo / facendo'
+  - type: 'match'
+    instructions: 'Empareja cada infinitivo con su gerundio correcto.'
     pairs:
-      - left: "parlare"
-        right: "parlando"
-      - left: "vendere"
-        right: "vendendo"
-      - left: "dormire"
-        right: "dormendo"
-      - left: "fare"
-        right: "facendo"
-      - left: "dire"
-        right: "dicendo"
-  - type: "write"
+      - left: 'parlare'
+        right: 'parlando'
+      - left: 'vendere'
+        right: 'vendendo'
+      - left: 'dormire'
+        right: 'dormendo'
+      - left: 'fare'
+        right: 'facendo'
+      - left: 'dire'
+        right: 'dicendo'
+  - type: 'write'
     prompt: "Escribe el gerundio italiano de 'bere' (beber)."
-    answer: "bevendo"
-    accepted: ["Bevendo"]
+    answer: 'bevendo'
+    accepted: ['Bevendo']
     hint: "Es uno de los irregulares imprescindibles, como 'facendo' y 'dicendo'."
-    placeholder: "dicendo / facendo"
-  - type: "order"
-    sentence: "Ascolto musica lavorando"
-    translation: "Escucho música mientras trabajo."
+    placeholder: 'dicendo / facendo'
+  - type: 'order'
+    sentence: 'Ascolto musica lavorando'
+    translation: 'Escucho música mientras trabajo.'
 vocabulary:
-  - term: "parlando"
-    translation: "hablando"
-  - term: "vendendo"
-    translation: "vendiendo"
-  - term: "dormendo"
-    translation: "durmiendo"
-  - term: "facendo"
-    translation: "haciendo"
-  - term: "dicendo"
-    translation: "diciendo"
-  - term: "bevendo"
-    translation: "bebiendo"
+  - term: 'parlando'
+    translation: 'hablando'
+  - term: 'vendendo'
+    translation: 'vendiendo'
+  - term: 'dormendo'
+    translation: 'durmiendo'
+  - term: 'facendo'
+    translation: 'haciendo'
+  - term: 'dicendo'
+    translation: 'diciendo'
+  - term: 'bevendo'
+    translation: 'bebiendo'
 ---
 
 El gerundio italiano cumple dos funciones importantes: describir simultaneidad y

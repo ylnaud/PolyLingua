@@ -1,11 +1,13 @@
 # PolyLingua — Instrucciones para Claude Code
 
 ## Contexto del proyecto
+
 Sitio estático de aprendizaje de idiomas (alemán, inglés, francés, italiano, portugués)
 con niveles MCER A1–C2. Repositorio: github.com/ylnaud/PolyLingua
 Producción: https://poly-lingua.vercel.app
 
 ## Stack — respétalo SIEMPRE
+
 - Astro 7 en modo SSG (estático, cero servidor)
 - CSS puro — NUNCA Tailwind, Bootstrap ni ninguna librería CSS
 - JavaScript vainilla mínimo — NUNCA React, Vue, Svelte ni librerías JS pesadas
@@ -14,6 +16,7 @@ Producción: https://poly-lingua.vercel.app
 - Una sola integración: @astrojs/sitemap
 
 ## Estructura de carpetas clave
+
 ```
 
 src/pages/          → rutas .astro (index, idiomas/[lang]/[level]/...)
@@ -27,28 +30,30 @@ astro.config.mjs    → config principal
 ```
 
 ## Frontmatter obligatorio en cada lección
+
 ```yaml
 ---
-level: "a1"           # a1 | a2 | b1 | b2 | c1 | c2
-title: "Título SEO con keyword"
-description: "130–160 caracteres con keyword. Para meta description."
-order: 1              # número entero, orden dentro del nivel
-grammarTopic: "Tema gramatical"
-funFact: "Truco mnemotécnico para recordar"
-minutes: 7            # duración estimada
+level: 'a1' # a1 | a2 | b1 | b2 | c1 | c2
+title: 'Título SEO con keyword'
+description: '130–160 caracteres con keyword. Para meta description.'
+order: 1 # número entero, orden dentro del nivel
+grammarTopic: 'Tema gramatical'
+funFact: 'Truco mnemotécnico para recordar'
+minutes: 7 # duración estimada
 quiz:
-  - question: "¿Pregunta?"
-    options: ["Opción A", "Opción B", "Opción C"]
+  - question: '¿Pregunta?'
+    options: ['Opción A', 'Opción B', 'Opción C']
     answerIndex: 0
-    explanation: "Por qué es correcta"
+    explanation: 'Por qué es correcta'
 ---
 ```
 
 Si un campo no cumple el esquema Zod, el build falla. Valida siempre antes de commitear.
 
 ## Los 5 idiomas y sus códigos de ruta
+
 | Idioma    | Código |
-|-----------|--------|
+| --------- | ------ |
 | Alemán    | de     |
 | Inglés    | en     |
 | Francés   | fr     |
@@ -56,32 +61,37 @@ Si un campo no cumple el esquema Zod, el build falla. Valida siempre antes de co
 | Portugués | pt     |
 
 ## Comandos
+
 ```bash
 npm run dev      # localhost:4321
 npm run build    # genera dist/
 npm run preview  # previsualiza el build
 npm run check    # chequeo de tipos TypeScript
 ```
+
 Ejecuta siempre `npm run check && npm run build` antes de dar una tarea por terminada.
 
 ## Despliegue
+
 Push a `main` → Vercel construye y publica automáticamente.
 No hace falta adaptador @astrojs/vercel para el build. El único
 `vercel.json` del repo existe solo para declarar los headers de seguridad
 (CSP, X-Frame-Options, etc.) — no configura el build ni ningún adapter.
 
 ## Reglas de trabajo
+
 1. Explica cada paso en lenguaje sencillo (desarrollador principiante en Astro).
 2. Indica siempre el nombre del archivo antes de escribir código.
 3. Prioriza .astro estático. JS de cliente solo si es imprescindible.
 4. Todo cambio de layout debe preservar los meta tags, Open Graph y canonical.
 5. Toda lección nueva debe incluir JSON-LD de tipo LearningResource.
-6. Los slugs de lección deben ser descriptivos con keywords: 
-   ✅ articulos-der-die-das   ❌ leccion-01
+6. Los slugs de lección deben ser descriptivos con keywords:
+   ✅ articulos-der-die-das ❌ leccion-01
 7. No añadas dependencias sin consultar. El principio es "cero JS extra".
 8. El blog en /blog es la herramienta SEO principal: posts de mínimo 800 palabras.
 
 ## SEO — prioridades
+
 - meta title: incluye keyword + "| PolyLingua"
 - meta description: 130–160 chars con keyword, en el frontmatter de cada .md
 - JSON-LD LearningResource en cada lección
@@ -90,6 +100,7 @@ No hace falta adaptador @astrojs/vercel para el build. El único
 - Sitemap generado automáticamente por @astrojs/sitemap
 
 ## Progreso del usuario (localStorage)
+
 Todo el progreso del usuario (SRS de repaso, logros, racha diaria, lecciones
 completadas, vocabulario aprendido, tema, sonido) se persiste client-side con
 `localStorage`, vía el wrapper `src/lib/storage.ts` (`read`/`write`, con
@@ -107,6 +118,7 @@ soportan `import` — si tu script necesita `import { read, write } from
 DOM (atributos `data-*`) o de la URL en vez de inyectarlos como props.
 
 ## Lo que NUNCA debes hacer
+
 - Añadir React, Vue, Svelte o cualquier framework JS
 - Añadir Tailwind, Bootstrap u otro framework CSS
 - Usar sessionStorage, o `localStorage` directo sin pasar por `src/lib/storage.ts`

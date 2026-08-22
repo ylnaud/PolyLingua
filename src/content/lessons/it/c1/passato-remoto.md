@@ -1,80 +1,81 @@
 ---
 language: it
 level: c1
-title: "Il passato remoto: el pasado que domina el sur y los libros"
-description: "El tiempo verbal literario que en el norte de Italia casi no se usa hablando, pero que domina la narrativa escrita y algunas regiones del sur."
+title: 'Il passato remoto: el pasado que domina el sur y los libros'
+description: 'El tiempo verbal literario que en el norte de Italia casi no se usa hablando, pero que domina la narrativa escrita y algunas regiones del sur.'
 order: 5
 unit: 2
-grammarTopic: "Passato remoto (tiempo literario/regional)"
-funFact: "A diferencia del passé simple francés (que nadie usa al hablar en ningún lugar), el passato remoto italiano tiene una vida doble: en el norte de Italia es prácticamente solo literario, pero en varias regiones del sur (Sicilia, Campania) los hablantes lo usan activamente en conversación cotidiana para el pasado, en vez del passato prossimo."
+grammarTopic: 'Passato remoto (tiempo literario/regional)'
+funFact: 'A diferencia del passé simple francés (que nadie usa al hablar en ningún lugar), el passato remoto italiano tiene una vida doble: en el norte de Italia es prácticamente solo literario, pero en varias regiones del sur (Sicilia, Campania) los hablantes lo usan activamente en conversación cotidiana para el pasado, en vez del passato prossimo.'
 minutes: 10
 quiz:
-  - question: "¿En qué contexto es más probable escuchar el passato remoto en conversación real?"
-    options: [
-      "En el norte de Italia, siempre",
-      "En varias regiones del sur de Italia, donde se usa activamente al hablar",
-      "Nunca se usa al hablar en ninguna región"
-    ]
+  - question: '¿En qué contexto es más probable escuchar el passato remoto en conversación real?'
+    options:
+      [
+        'En el norte de Italia, siempre',
+        'En varias regiones del sur de Italia, donde se usa activamente al hablar',
+        'Nunca se usa al hablar en ninguna región',
+      ]
     answerIndex: 1
-    explanation: "A diferencia del francés, el passato remoto italiano SÍ se usa en el habla cotidiana en varias regiones del sur (Sicilia, Campania), aunque en el norte sea principalmente literario."
+    explanation: 'A diferencia del francés, el passato remoto italiano SÍ se usa en el habla cotidiana en varias regiones del sur (Sicilia, Campania), aunque en el norte sea principalmente literario.'
   - question: "¿Cuál es la forma correcta del passato remoto de 'parlare' con 'lui'?"
-    options: ["lui parlò", "lui parlava", "lui ha parlato"]
+    options: ['lui parlò', 'lui parlava', 'lui ha parlato']
     answerIndex: 0
     explanation: "'lui parlò' es passato remoto (raíz + -ò). Compárese con 'parlava' (imperfetto) y 'ha parlato' (passato prossimo)."
   - question: "¿Cuál es el equivalente 'hablado estándar' (norte de Italia) del passato remoto?"
-    options: ["l'imperfetto", "il passato prossimo", "il futuro semplice"]
+    options: ["l'imperfetto", 'il passato prossimo', 'il futuro semplice']
     answerIndex: 1
-    explanation: "En el italiano estándar del norte, el passato prossimo cumple la función que el passato remoto cumple por escrito o en el sur — son funcionalmente equivalentes en distintos contextos."
+    explanation: 'En el italiano estándar del norte, el passato prossimo cumple la función que el passato remoto cumple por escrito o en el sur — son funcionalmente equivalentes en distintos contextos.'
 exercises:
-  - type: "fill-blank"
-    sentence: "Lui ___ (parlare, passato remoto)."
-    answer: "parlò"
-    accepted: ["parlò"]
-    hint: "-are en passato remoto para lui/lei: raíz + -ò."
-    translation: "Él habló."
-    placeholder: "cantò"
-  - type: "fill-blank"
-    sentence: "Loro ___ (vendere, passato remoto)."
-    answer: "vendettero"
-    accepted: ["vendettero", "venderono"]
-    hint: "-ere en passato remoto para loro: -erono o -ettero."
-    translation: "Ellos vendieron."
-    placeholder: "credettero"
-  - type: "match"
+  - type: 'fill-blank'
+    sentence: 'Lui ___ (parlare, passato remoto).'
+    answer: 'parlò'
+    accepted: ['parlò']
+    hint: '-are en passato remoto para lui/lei: raíz + -ò.'
+    translation: 'Él habló.'
+    placeholder: 'cantò'
+  - type: 'fill-blank'
+    sentence: 'Loro ___ (vendere, passato remoto).'
+    answer: 'vendettero'
+    accepted: ['vendettero', 'venderono']
+    hint: '-ere en passato remoto para loro: -erono o -ettero.'
+    translation: 'Ellos vendieron.'
+    placeholder: 'credettero'
+  - type: 'match'
     instructions: "Empareja cada infinitivo irregular con su forma de passato remoto para 'lui'."
     pairs:
-      - left: "essere"
-        right: "fu"
-      - left: "avere"
-        right: "ebbe"
-      - left: "fare"
-        right: "fece"
-      - left: "dire"
-        right: "disse"
-      - left: "venire"
-        right: "venne"
-  - type: "write"
+      - left: 'essere'
+        right: 'fu'
+      - left: 'avere'
+        right: 'ebbe'
+      - left: 'fare'
+        right: 'fece'
+      - left: 'dire'
+        right: 'disse'
+      - left: 'venire'
+        right: 'venne'
+  - type: 'write'
     prompt: "Escribe en italiano, en passato remoto, cómo dirías 'ella durmió'."
-    answer: "Lei dormì"
-    accepted: ["Lei dormì", "dormì", "Dormì"]
-    hint: "-ire en passato remoto para lei: raíz + -ì."
-    placeholder: "Lei partì"
-  - type: "order"
-    sentence: "Aprì la porta e vide un uomo seduto vicino alla finestra"
-    translation: "Abrió la puerta y vio a un hombre sentado cerca de la ventana."
+    answer: 'Lei dormì'
+    accepted: ['Lei dormì', 'dormì', 'Dormì']
+    hint: '-ire en passato remoto para lei: raíz + -ì.'
+    placeholder: 'Lei partì'
+  - type: 'order'
+    sentence: 'Aprì la porta e vide un uomo seduto vicino alla finestra'
+    translation: 'Abrió la puerta y vio a un hombre sentado cerca de la ventana.'
 vocabulary:
-  - term: "parlò"
-    translation: "habló (passato remoto)"
-  - term: "vendettero"
-    translation: "vendieron (passato remoto)"
-  - term: "dormì"
-    translation: "durmió (passato remoto)"
-  - term: "fu"
-    translation: "fue (essere, passato remoto)"
-  - term: "ebbe"
-    translation: "tuvo (avere, passato remoto)"
-  - term: "disse"
-    translation: "dijo (dire, passato remoto)"
+  - term: 'parlò'
+    translation: 'habló (passato remoto)'
+  - term: 'vendettero'
+    translation: 'vendieron (passato remoto)'
+  - term: 'dormì'
+    translation: 'durmió (passato remoto)'
+  - term: 'fu'
+    translation: 'fue (essere, passato remoto)'
+  - term: 'ebbe'
+    translation: 'tuvo (avere, passato remoto)'
+  - term: 'disse'
+    translation: 'dijo (dire, passato remoto)'
 ---
 
 Este es un tiempo verbal con una geografía curiosa: en algunas partes de Italia es
@@ -96,11 +97,11 @@ Literario (en todas partes): Mangiò una pizza quel giorno.
 
 ## Las terminaciones regulares
 
-| Grupo | Terminaciones |
-| --- | --- |
-| -are (parlare) | -ai, -asti, -ò, -ammo, -aste, -arono |
+| Grupo          | Terminaciones                                            |
+| -------------- | -------------------------------------------------------- |
+| -are (parlare) | -ai, -asti, -ò, -ammo, -aste, -arono                     |
 | -ere (vendere) | -ei/-etti, -esti, -é/-ette, -emmo, -este, -erono/-ettero |
-| -ire (dormire) | -ii, -isti, -ì, -immo, -iste, -irono |
+| -ire (dormire) | -ii, -isti, -ì, -immo, -iste, -irono                     |
 
 ```
 lui parlò        (él habló)
@@ -111,12 +112,12 @@ lei dormì           (ella durmió)
 ## Los irregulares más comunes
 
 | Infinitivo | Passato remoto (lui) |
-| --- | --- |
-| essere | fu |
-| avere | ebbe |
-| fare | fece |
-| dire | disse |
-| venire | venne |
+| ---------- | -------------------- |
+| essere     | fu                   |
+| avere      | ebbe                 |
+| fare       | fece                 |
+| dire       | disse                |
+| venire     | venne                |
 
 ## Tu objetivo real: reconocerlo siempre, producirlo según el contexto
 

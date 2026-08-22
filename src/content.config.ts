@@ -21,9 +21,7 @@ const fillBlankExercise = z.object({
 const matchExercise = z.object({
   type: z.literal('match'),
   instructions: z.string().optional(),
-  pairs: z
-    .array(z.object({ left: z.string(), right: z.string() }))
-    .min(3),
+  pairs: z.array(z.object({ left: z.string(), right: z.string() })).min(3),
 });
 
 const writeExercise = z.object({

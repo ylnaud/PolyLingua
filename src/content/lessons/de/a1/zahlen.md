@@ -1,76 +1,76 @@
 ---
 language: de
 level: a1
-title: "Die Zahlen: los números del 0 al 100"
-description: "Los números del 0 al 100 en alemán, con su curioso orden invertido (einundzwanzig), para precios, horarios, edades y direcciones útiles."
+title: 'Die Zahlen: los números del 0 al 100'
+description: 'Los números del 0 al 100 en alemán, con su curioso orden invertido (einundzwanzig), para precios, horarios, edades y direcciones útiles.'
 order: 6
 unit: 2
-grammarTopic: "Números cardinales (0-100)"
+grammarTopic: 'Números cardinales (0-100)'
 funFact: "El alemán construye los números del 21 al 99 al revés respecto al español: en vez de 'veintiuno' dicen 'un-y-veinte' (einundzwanzig). Una vez que te acostumbras a ese orden invertido, el resto es pura repetición de patrones."
 minutes: 6
 quiz:
   - question: "¿Cómo se dice '21' en alemán?"
-    options: ["zwanzigeins", "einundzwanzig", "zweiundzehn"]
+    options: ['zwanzigeins', 'einundzwanzig', 'zweiundzehn']
     answerIndex: 1
     explanation: "El alemán invierte el orden: 'ein-und-zwanzig' (uno-y-veinte) = 21. Este patrón se repite hasta el 99."
   - question: "¿Cuál es el número correcto para 'hundert'?"
-    options: ["10", "100", "1000"]
+    options: ['10', '100', '1000']
     answerIndex: 1
     explanation: "'hundert' es 100. 'tausend' es 1000 — no los confundas, son la base de casi todos los números grandes."
   - question: "¿Cómo dirías '35' en alemán?"
-    options: ["fünfunddreißig", "dreißigfünf", "fünfzigdrei"]
+    options: ['fünfunddreißig', 'dreißigfünf', 'fünfzigdrei']
     answerIndex: 0
     explanation: "Siguiendo el patrón invertido: 'fünf-und-dreißig' (cinco-y-treinta) = 35."
 exercises:
-  - type: "fill-blank"
-    sentence: "Ich bin ___ Jahre alt."
-    answer: "einundzwanzig"
-    accepted: ["Einundzwanzig"]
-    hint: "21 en el patrón invertido: uno-y-veinte."
-    translation: "Tengo 21 años."
-    placeholder: "Ej: fünfunddreißig"
-  - type: "fill-blank"
-    sentence: "Das kostet ___ Euro."
-    answer: "hundert"
-    accepted: ["Hundert"]
+  - type: 'fill-blank'
+    sentence: 'Ich bin ___ Jahre alt.'
+    answer: 'einundzwanzig'
+    accepted: ['Einundzwanzig']
+    hint: '21 en el patrón invertido: uno-y-veinte.'
+    translation: 'Tengo 21 años.'
+    placeholder: 'Ej: fünfunddreißig'
+  - type: 'fill-blank'
+    sentence: 'Das kostet ___ Euro.'
+    answer: 'hundert'
+    accepted: ['Hundert']
     hint: "100 en alemán — no lo confundas con 'tausend' (1000)."
-    translation: "Eso cuesta 100 euros."
-    placeholder: "Ej: zwanzig"
-  - type: "match"
-    instructions: "Empareja cada palabra con su número."
+    translation: 'Eso cuesta 100 euros.'
+    placeholder: 'Ej: zwanzig'
+  - type: 'match'
+    instructions: 'Empareja cada palabra con su número.'
     pairs:
-      - left: "zwanzig"
-        right: "20"
-      - left: "dreißig"
-        right: "30"
-      - left: "hundert"
-        right: "100"
-      - left: "einundzwanzig"
-        right: "21"
-      - left: "neunundneunzig"
-        right: "99"
-  - type: "write"
-    prompt: "Escribe el número 35 en alemán."
-    answer: "fünfunddreißig"
-    accepted: ["Fünfunddreißig"]
-    hint: "Patrón invertido: unidad + und + decena."
-    placeholder: "Ej: einundzwanzig"
-  - type: "order"
-    sentence: "Ich bin einundzwanzig Jahre alt"
-    translation: "Tengo 21 años."
+      - left: 'zwanzig'
+        right: '20'
+      - left: 'dreißig'
+        right: '30'
+      - left: 'hundert'
+        right: '100'
+      - left: 'einundzwanzig'
+        right: '21'
+      - left: 'neunundneunzig'
+        right: '99'
+  - type: 'write'
+    prompt: 'Escribe el número 35 en alemán.'
+    answer: 'fünfunddreißig'
+    accepted: ['Fünfunddreißig']
+    hint: 'Patrón invertido: unidad + und + decena.'
+    placeholder: 'Ej: einundzwanzig'
+  - type: 'order'
+    sentence: 'Ich bin einundzwanzig Jahre alt'
+    translation: 'Tengo 21 años.'
 vocabulary:
-  - term: "eins"
-    translation: "uno"
-  - term: "zehn"
-    translation: "diez"
-  - term: "zwanzig"
-    translation: "veinte"
-  - term: "hundert"
-    translation: "cien"
-  - term: "tausend"
-    translation: "mil"
-  - term: "einundzwanzig"
-    translation: "veintiuno"
+  - term: 'eins'
+    translation: 'uno'
+  - term: 'zehn'
+    translation: 'diez'
+  - term: 'zwanzig'
+    translation: 'veinte'
+  - term: 'hundert'
+    translation: 'cien'
+  - term: 'tausend'
+    translation: 'mil'
+  - term: 'einundzwanzig'
+    translation: 'veintiuno'
 ---
 
 Los números son vocabulario de supervivencia: precios, horas, edades, direcciones. En
@@ -78,23 +78,23 @@ alemán tienen una lógica particular que vale la pena entender desde el princip
 
 ## Del 0 al 20 (memorizar de una vez)
 
-| 0-10 | 11-20 |
-| --- | --- |
+| 0-10                               | 11-20                          |
+| ---------------------------------- | ------------------------------ |
 | null, eins, zwei, drei, vier, fünf | elf, zwölf, dreizehn, vierzehn |
-| sechs, sieben, acht, neun, zehn | fünfzehn... neunzehn, zwanzig |
+| sechs, sieben, acht, neun, zehn    | fünfzehn... neunzehn, zwanzig  |
 
 ## Las decenas
 
 | Número | Palabra |
-| --- | --- |
-| 20 | zwanzig |
-| 30 | dreißig |
-| 40 | vierzig |
-| 50 | fünfzig |
-| 60 | sechzig |
-| 70 | siebzig |
-| 80 | achtzig |
-| 90 | neunzig |
+| ------ | ------- |
+| 20     | zwanzig |
+| 30     | dreißig |
+| 40     | vierzig |
+| 50     | fünfzig |
+| 60     | sechzig |
+| 70     | siebzig |
+| 80     | achtzig |
+| 90     | neunzig |
 
 ## El patrón invertido (21-99)
 

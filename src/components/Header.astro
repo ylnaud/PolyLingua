@@ -5,6 +5,7 @@ import ShadowingToggle from './ShadowingToggle.astro';
 import InstallPrompt from './InstallPrompt.astro';
 import DailyGoal from './DailyGoal.astro';
 ---
+
 <header class="site-header">
   <div class="container bar">
     <a href="/" class="logo" aria-label="PolyLingua — inicio">
@@ -20,12 +21,32 @@ import DailyGoal from './DailyGoal.astro';
     </nav>
     <div class="actions">
       <DailyGoal />
-      <a class="btn-pill" href="/repasar" data-astro-reload aria-label="Repasar palabras falladas">📚 Repasar</a>
-      <a class="btn-pill" href="/vocabulario" data-astro-reload aria-label="Ver y repasar tu vocabulario">📖 Vocabulario</a>
-      <a class="btn-pill" href="/practica-libre" data-astro-reload aria-label="Práctica libre aleatoria">🎲 Práctica libre</a>
-      <a class="btn-pill" href="/ahorcado" data-astro-reload aria-label="Jugar al ahorcado">🔤 Ahorcado</a>
+      <a class="btn-pill" href="/repasar" data-astro-reload aria-label="Repasar palabras falladas"
+        >📚 Repasar</a
+      >
+      <a
+        class="btn-pill"
+        href="/vocabulario"
+        data-astro-reload
+        aria-label="Ver y repasar tu vocabulario">📖 Vocabulario</a
+      >
+      <a
+        class="btn-pill"
+        href="/practica-libre"
+        data-astro-reload
+        aria-label="Práctica libre aleatoria">🎲 Práctica libre</a
+      >
+      <a class="btn-pill" href="/ahorcado" data-astro-reload aria-label="Jugar al ahorcado"
+        >🔤 Ahorcado</a
+      >
       <a class="btn-pill" href="/logros" aria-label="Ver tus logros">🏆 Logros</a>
-      <a class="btn-pill header-lang-link" href="#" data-header-errors hidden aria-label="Ver tus errores frecuentes">❌ Mis errores</a>
+      <a
+        class="btn-pill header-lang-link"
+        href="#"
+        data-header-errors
+        hidden
+        aria-label="Ver tus errores frecuentes">❌ Mis errores</a
+      >
       <InstallPrompt />
       <ShadowingToggle />
       <SoundToggle />
@@ -165,4 +186,3 @@ import DailyGoal from './DailyGoal.astro';
   initHeaderLangLinks();
   document.addEventListener('astro:page-load', initHeaderLangLinks);
 </script>
-

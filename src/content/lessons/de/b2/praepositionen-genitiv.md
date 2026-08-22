@@ -1,71 +1,71 @@
 ---
 language: de
 level: b2
-title: "Präpositionen mit Genitiv: el toque formal en tus frases"
-description: "Preposiciones con Genitiv en alemán como während, trotz, wegen y aufgrund, el registro formal que distingue un texto escrito y cuidado."
+title: 'Präpositionen mit Genitiv: el toque formal en tus frases'
+description: 'Preposiciones con Genitiv en alemán como während, trotz, wegen y aufgrund, el registro formal que distingue un texto escrito y cuidado.'
 order: 5
 unit: 2
-grammarTopic: "Preposiciones que rigen Genitiv"
+grammarTopic: 'Preposiciones que rigen Genitiv'
 funFact: "En el habla cotidiana, muchos alemanes usan estas preposiciones con Dativ en vez de Genitiv ('wegen dem Regen' en vez de 'wegen des Regens') — es un error tan común que casi se acepta coloquialmente. Pero en un texto formal o un examen, el Genitiv correcto es el que se espera."
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta y formal de 'debido a la lluvia' (der Regen)?"
-    options: ["wegen dem Regen", "wegen des Regens", "wegen den Regen"]
+    options: ['wegen dem Regen', 'wegen des Regens', 'wegen den Regen']
     answerIndex: 1
     explanation: "'wegen' rige Genitiv formalmente: wegen des Regens. 'wegen dem Regen' (con Dativ) es común en el habla coloquial pero se considera menos correcto por escrito."
   - question: "¿Qué significa 'trotz' en 'trotz des schlechten Wetters'?"
-    options: ["debido a", "a pesar de", "durante"]
+    options: ['debido a', 'a pesar de', 'durante']
     answerIndex: 1
     explanation: "'trotz' significa 'a pesar de': trotz des schlechten Wetters (a pesar del mal clima)."
   - question: "¿Cuál preposición usarías para decir 'durante el verano' (der Sommer)?"
-    options: ["während des Sommers", "wegen des Sommers", "trotz des Sommers"]
+    options: ['während des Sommers', 'wegen des Sommers', 'trotz des Sommers']
     answerIndex: 0
     explanation: "'während' significa 'durante': während des Sommers (durante el verano)."
 exercises:
-  - type: "fill-blank"
-    sentence: "___ des Sommers fahren wir ans Meer."
-    answer: "Während"
-    accepted: ["während"]
+  - type: 'fill-blank'
+    sentence: '___ des Sommers fahren wir ans Meer.'
+    answer: 'Während'
+    accepted: ['während']
     hint: "'während' + Genitiv significa 'durante'."
-    translation: "Durante el verano vamos al mar."
-    placeholder: "Trotz / Wegen"
-  - type: "fill-blank"
-    sentence: "Er blieb zu Hause ___ des schlechten Wetters."
-    answer: "trotz"
-    accepted: ["Trotz"]
+    translation: 'Durante el verano vamos al mar.'
+    placeholder: 'Trotz / Wegen'
+  - type: 'fill-blank'
+    sentence: 'Er blieb zu Hause ___ des schlechten Wetters.'
+    answer: 'trotz'
+    accepted: ['Trotz']
     hint: "'trotz' + Genitiv significa 'a pesar de'."
-    translation: "Se quedó en casa a pesar del mal clima."
-    placeholder: "wegen / während"
-  - type: "match"
-    instructions: "Empareja cada preposición de Genitiv con su significado."
+    translation: 'Se quedó en casa a pesar del mal clima.'
+    placeholder: 'wegen / während'
+  - type: 'match'
+    instructions: 'Empareja cada preposición de Genitiv con su significado.'
     pairs:
-      - left: "während"
-        right: "durante"
-      - left: "trotz"
-        right: "a pesar de"
-      - left: "wegen"
-        right: "debido a"
-      - left: "aufgrund"
-        right: "a causa de"
-  - type: "write"
+      - left: 'während'
+        right: 'durante'
+      - left: 'trotz'
+        right: 'a pesar de'
+      - left: 'wegen'
+        right: 'debido a'
+      - left: 'aufgrund'
+        right: 'a causa de'
+  - type: 'write'
     prompt: "Escribe la forma formal y correcta con Genitiv de 'wegen' + 'der Regen' (debido a la lluvia)."
-    answer: "wegen des Regens"
-    hint: "La forma formal usa Genitiv (des + -s), no Dativ coloquial (wegen dem Regen)."
-    placeholder: "trotz des Wetters"
-  - type: "order"
-    sentence: "Sie ging trotz des Regens spazieren"
-    translation: "Ella salió a caminar a pesar de la lluvia."
+    answer: 'wegen des Regens'
+    hint: 'La forma formal usa Genitiv (des + -s), no Dativ coloquial (wegen dem Regen).'
+    placeholder: 'trotz des Wetters'
+  - type: 'order'
+    sentence: 'Sie ging trotz des Regens spazieren'
+    translation: 'Ella salió a caminar a pesar de la lluvia.'
 vocabulary:
-  - term: "während"
-    translation: "durante"
-  - term: "trotz"
-    translation: "a pesar de"
-  - term: "wegen"
-    translation: "debido a / por"
-  - term: "aufgrund"
-    translation: "a causa de"
-  - term: "die Krise"
-    translation: "la crisis"
+  - term: 'während'
+    translation: 'durante'
+  - term: 'trotz'
+    translation: 'a pesar de'
+  - term: 'wegen'
+    translation: 'debido a / por'
+  - term: 'aufgrund'
+    translation: 'a causa de'
+  - term: 'die Krise'
+    translation: 'la crisis'
 ---
 
 Estas cuatro preposiciones son la señal más clara de un alemán escrito cuidado y
@@ -73,12 +73,12 @@ formal — y todas rigen el caso Genitiv que ya conoces.
 
 ## Las cuatro preposiciones esenciales
 
-| Preposición | Significado | Ejemplo |
-| --- | --- | --- |
-| während | durante | während des Studiums |
-| trotz | a pesar de | trotz des Regens |
-| wegen | debido a / por | wegen der Krise |
-| aufgrund | a causa de | aufgrund neuer Erkenntnisse |
+| Preposición | Significado    | Ejemplo                     |
+| ----------- | -------------- | --------------------------- |
+| während     | durante        | während des Studiums        |
+| trotz       | a pesar de     | trotz des Regens            |
+| wegen       | debido a / por | wegen der Krise             |
+| aufgrund    | a causa de     | aufgrund neuer Erkenntnisse |
 
 ## Aplicando el Genitiv que ya conoces
 

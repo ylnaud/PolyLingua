@@ -56,21 +56,32 @@ const topicManifest = Object.fromEntries(topics.map((t) => [t.topic, t.lessonIds
   </section>
 
   <section class="container grammar-grid" data-grammar-grid>
-    {topics.map((t) => (
-      <div class="grammar-card card" data-grammar-card data-topic={t.topic}>
-        <h2 class="grammar-topic">{t.topic}</h2>
-        <div class="grammar-meta">
-          <span class="grammar-exercises">{t.exerciseCount} ejercicio{t.exerciseCount === 1 ? '' : 's'}</span>
-          <span class="grammar-mastery" data-mastery>Sin datos</span>
-        </div>
-        <div class="grammar-bar-wrap">
-          <div class="grammar-bar">
-            <div class="grammar-bar-fill" data-mastery-fill></div>
+    {
+      topics.map((t) => (
+        <div class="grammar-card card" data-grammar-card data-topic={t.topic}>
+          <h2 class="grammar-topic">{t.topic}</h2>
+          <div class="grammar-meta">
+            <span class="grammar-exercises">
+              {t.exerciseCount} ejercicio{t.exerciseCount === 1 ? '' : 's'}
+            </span>
+            <span class="grammar-mastery" data-mastery>
+              Sin datos
+            </span>
           </div>
+          <div class="grammar-bar-wrap">
+            <div class="grammar-bar">
+              <div class="grammar-bar-fill" data-mastery-fill />
+            </div>
+          </div>
+          <a
+            class="btn btn-ghost grammar-cta"
+            href={`/idiomas/${lang}/repasar?tema=${encodeURIComponent(t.topic)}`}
+          >
+            Practicar
+          </a>
         </div>
-        <a class="btn btn-ghost grammar-cta" href={`/idiomas/${lang}/repasar?tema=${encodeURIComponent(t.topic)}`}>Practicar</a>
-      </div>
-    ))}
+      ))
+    }
   </section>
 
   <div hidden data-topic-manifest={JSON.stringify(topicManifest)}></div>

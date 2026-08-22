@@ -1,78 +1,79 @@
 ---
 language: de
 level: b1
-title: "Präteritum: el pasado que se usa para contar historias"
-description: "El Präteritum alemán, el pasado narrativo de libros y noticias, y por qué sein, haben y los modales lo usan incluso al hablar a diario."
+title: 'Präteritum: el pasado que se usa para contar historias'
+description: 'El Präteritum alemán, el pasado narrativo de libros y noticias, y por qué sein, haben y los modales lo usan incluso al hablar a diario.'
 order: 2
 unit: 1
-grammarTopic: "Präteritum (pasado narrativo)"
+grammarTopic: 'Präteritum (pasado narrativo)'
 funFact: "Piensa en el Perfekt como el pasado de la charla de café (hablado) y el Präteritum como el pasado de los libros (escrito/narrado). Con 'sein', 'haben' y los modales, sin embargo, los alemanes usan el Präteritum incluso al hablar — son la excepción que rompe la regla."
 minutes: 9
 quiz:
   - question: "¿Cuál es la forma correcta de Präteritum de 'sein' (ser/estar) para 'ich'?"
-    options: ["ich bin", "ich war", "ich sei"]
+    options: ['ich bin', 'ich war', 'ich sei']
     answerIndex: 1
     explanation: "'war' es el Präteritum de 'sein': ich war müde (yo estaba cansado). Es una de las formas irregulares más usadas del idioma."
-  - question: "¿En qué contexto se prefiere el Präteritum sobre el Perfekt, incluso al hablar?"
-    options: [
-      "Nunca, el Präteritum es solo para textos escritos",
-      "Con los verbos sein, haben y los modales (können, müssen...)",
-      "Solo los domingos"
-    ]
+  - question: '¿En qué contexto se prefiere el Präteritum sobre el Perfekt, incluso al hablar?'
+    options:
+      [
+        'Nunca, el Präteritum es solo para textos escritos',
+        'Con los verbos sein, haben y los modales (können, müssen...)',
+        'Solo los domingos',
+      ]
     answerIndex: 1
     explanation: "'Ich war', 'ich hatte', 'ich konnte' se usan naturalmente en conversación — decir 'ich bin gewesen' suena forzado. Para el resto de los verbos, el Perfekt domina el habla cotidiana."
   - question: "¿Cuál es la terminación regular del Präteritum para verbos regulares con 'er/sie/es'?"
-    options: ["-te", "-t", "-en"]
+    options: ['-te', '-t', '-en']
     answerIndex: 0
     explanation: "Los verbos regulares añaden '-te' (sin terminación extra en 3ª persona singular): er machte, sie lernte. Compara con el Perfekt (er hat gemacht) — mucho más corto en Präteritum."
 exercises:
-  - type: "fill-blank"
-    sentence: "Ich ___ gestern sehr müde."
-    answer: "war"
-    accepted: ["war"]
+  - type: 'fill-blank'
+    sentence: 'Ich ___ gestern sehr müde.'
+    answer: 'war'
+    accepted: ['war']
     hint: "Präteritum de 'sein': ich war."
-    translation: "Ayer yo estaba muy cansado."
-    placeholder: "hatte"
-  - type: "fill-blank"
-    sentence: "Er ___ jeden Tag ins Büro."
-    answer: "ging"
-    accepted: ["ging"]
+    translation: 'Ayer yo estaba muy cansado.'
+    placeholder: 'hatte'
+  - type: 'fill-blank'
+    sentence: 'Er ___ jeden Tag ins Büro.'
+    answer: 'ging'
+    accepted: ['ging']
     hint: "Präteritum irregular de 'gehen': ging (cambia la vocal de la raíz)."
-    translation: "Él iba a la oficina todos los días."
-    placeholder: "kam"
-  - type: "match"
-    instructions: "Empareja cada verbo en infinitivo con su forma de Präteritum (ich/er/sie/es)."
+    translation: 'Él iba a la oficina todos los días.'
+    placeholder: 'kam'
+  - type: 'match'
+    instructions: 'Empareja cada verbo en infinitivo con su forma de Präteritum (ich/er/sie/es).'
     pairs:
-      - left: "sein"
-        right: "war"
-      - left: "haben"
-        right: "hatte"
-      - left: "gehen"
-        right: "ging"
-      - left: "sehen"
-        right: "sah"
-      - left: "kommen"
-        right: "kam"
-  - type: "write"
+      - left: 'sein'
+        right: 'war'
+      - left: 'haben'
+        right: 'hatte'
+      - left: 'gehen'
+        right: 'ging'
+      - left: 'sehen'
+        right: 'sah'
+      - left: 'kommen'
+        right: 'kam'
+  - type: 'write'
     prompt: "Escribe la forma de Präteritum de 'machen' para 'er/sie/es'."
-    answer: "machte"
-    accepted: ["machte"]
-    hint: "Verbos regulares: raíz + -te, sin terminación extra en 3ª persona singular."
-    placeholder: "lernte"
-  - type: "order"
-    sentence: "Er ging jeden Tag ins Büro"
-    translation: "Él iba a la oficina todos los días."
+    answer: 'machte'
+    accepted: ['machte']
+    hint: 'Verbos regulares: raíz + -te, sin terminación extra en 3ª persona singular.'
+    placeholder: 'lernte'
+  - type: 'order'
+    sentence: 'Er ging jeden Tag ins Büro'
+    translation: 'Él iba a la oficina todos los días.'
 vocabulary:
-  - term: "war"
-    translation: "estaba / fui (Präteritum de sein)"
-  - term: "hatte"
-    translation: "tenía / tuve (Präteritum de haben)"
-  - term: "ging"
-    translation: "iba / fue (Präteritum de gehen)"
-  - term: "sah"
-    translation: "vio / veía (Präteritum de sehen)"
-  - term: "kam"
-    translation: "vino / venía (Präteritum de kommen)"
+  - term: 'war'
+    translation: 'estaba / fui (Präteritum de sein)'
+  - term: 'hatte'
+    translation: 'tenía / tuve (Präteritum de haben)'
+  - term: 'ging'
+    translation: 'iba / fue (Präteritum de gehen)'
+  - term: 'sah'
+    translation: 'vio / veía (Präteritum de sehen)'
+  - term: 'kam'
+    translation: 'vino / venía (Präteritum de kommen)'
 ---
 
 Ya conoces el Perfekt para hablar del pasado. Ahora conoces a su hermano más formal: el
@@ -80,10 +81,10 @@ Ya conoces el Perfekt para hablar del pasado. Ahora conoces a su hermano más fo
 
 ## Cuándo se usa cada uno
 
-| Perfekt | Präteritum |
-| --- | --- |
+| Perfekt                | Präteritum                         |
+| ---------------------- | ---------------------------------- |
 | Conversación cotidiana | Textos escritos, noticias, cuentos |
-| "Ich habe gegessen" | "Ich aß" |
+| "Ich habe gegessen"    | "Ich aß"                           |
 
 ## La excepción que rompe la regla
 
@@ -101,12 +102,12 @@ innecesariamente largo — los alemanes prefieren la forma corta aquí.
 
 **Verbos regulares** (débiles): raíz + -te
 
-| Pronombre | machen |
-| --- | --- |
-| ich | machte |
-| du | machtest |
-| er/sie/es | machte |
-| wir | machten |
+| Pronombre | machen   |
+| --------- | -------- |
+| ich       | machte   |
+| du        | machtest |
+| er/sie/es | machte   |
+| wir       | machten  |
 
 **Verbos irregulares** (fuertes): cambia la vocal de la raíz, sin terminación en
 ich/er-sie-es

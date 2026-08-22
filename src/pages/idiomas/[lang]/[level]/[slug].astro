@@ -16,8 +16,18 @@ export async function getStaticPaths() {
       params: { lang, level, slug },
       props: {
         lesson,
-        prevLesson: prev ? { title: prev.data.title, href: `/idiomas/${lang}/${level}/${prev.id.split('/').pop()}` } : null,
-        nextLesson: next ? { title: next.data.title, href: `/idiomas/${lang}/${level}/${next.id.split('/').pop()}` } : null,
+        prevLesson: prev
+          ? {
+              title: prev.data.title,
+              href: `/idiomas/${lang}/${level}/${prev.id.split('/').pop()}`,
+            }
+          : null,
+        nextLesson: next
+          ? {
+              title: next.data.title,
+              href: `/idiomas/${lang}/${level}/${next.id.split('/').pop()}`,
+            }
+          : null,
       },
     };
   });
@@ -45,6 +55,7 @@ const { lang, level, slug } = Astro.params;
   path={`/idiomas/${lang}/${level}/${slug}`}
   prevLesson={prevLesson}
   nextLesson={nextLesson}
+  ogImage={`/og-${lang}.png`}
 >
   <Content />
 </LessonLayout>

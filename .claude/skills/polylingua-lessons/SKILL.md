@@ -59,9 +59,9 @@ These aren't hypothetical — each one shipped a broken build at least once:
    Always use block style instead:
    ```yaml
    options:
-     - "a"
-     - "b"
-     - "c"
+     - 'a'
+     - 'b'
+     - 'c'
    ```
    (Both block and inline `["a", "b", "c"]` without a trailing comma work fine — the
    trailing comma outside the brackets is the actual bug.)
@@ -82,7 +82,7 @@ before it reaches a PR.
 
 ## Content style
 
-- Lessons are written in Spanish (explanations, headers, hints) but *teach* the target
+- Lessons are written in Spanish (explanations, headers, hints) but _teach_ the target
   language — a French lesson's `quiz`/`exercises` sentences are in French, a
   Portuguese lesson's are in Portuguese, etc. Keep hints/translations in Spanish
   throughout, matching the rest of the course.
@@ -90,7 +90,7 @@ before it reaches a PR.
   sentences that already appear in that lesson's own body — don't invent unrelated
   vocabulary. This keeps the exercise reinforcing what the lesson just taught instead
   of testing something new.
-- `hint` fields should explain the *rule*, not just restate the answer (see the
+- `hint` fields should explain the _rule_, not just restate the answer (see the
   example: "Terminación -ig: masculina con 98% de certeza" rather than "es 'der'").
 - Match `order` in this project's naming style for lesson counts: at levels A1-A2, aim
   for grammar/vocab fundamentals; B1-B2 for connectors and compound tenses; C1 for

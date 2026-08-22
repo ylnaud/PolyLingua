@@ -69,6 +69,7 @@ export const LANGUAGES: LanguageMeta[] = [
   },
 ];
 
-export const LANGUAGE_MAP = Object.fromEntries(
-  LANGUAGES.map((l) => [l.id, l])
-) as Record<LanguageId, LanguageMeta>;
+export const LANGUAGE_MAP = Object.fromEntries(LANGUAGES.map((l) => [l.id, l])) as Record<
+  LanguageId,
+  LanguageMeta
+>;

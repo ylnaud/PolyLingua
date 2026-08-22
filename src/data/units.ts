@@ -17,18 +17,23 @@ export const UNITS: Record<string, UnitMeta[]> = {
     { id: 1, name: 'First Sounds', description: 'Pronunciación desde cero', emoji: '🗣️' },
     { id: 2, name: 'Grammar Foundations', description: 'Las bases gramaticales', emoji: '📐' },
     { id: 3, name: 'Everyday Life', description: 'Vocabulario del día a día', emoji: '🌍' },
+    { id: 4, name: 'Real Situations', description: 'Situaciones cotidianas', emoji: '🏠' },
   ],
   'fr-a1': [
     { id: 1, name: 'Les bases', description: 'Gramática esencial', emoji: '📐' },
     { id: 2, name: 'Parler au quotidien', description: 'Vocabulario y conversación', emoji: '💬' },
+    { id: 3, name: 'Aller plus loin', description: 'Gramática intermedia y pronunciación', emoji: '🚀' },
+    { id: 4, name: 'Situations', description: 'Situaciones cotidianas', emoji: '🏠' },
   ],
   'it-a1': [
     { id: 1, name: 'Le basi', description: 'Gramática esencial', emoji: '📐' },
     { id: 2, name: 'Parlare ogni giorno', description: 'Vocabulario y conversación', emoji: '💬' },
+    { id: 3, name: 'Andare avanti', description: 'Gramática intermedia y pronunciación', emoji: '🚀' },
   ],
   'pt-a1': [
     { id: 1, name: 'As bases', description: 'Gramática esencial', emoji: '📐' },
     { id: 2, name: 'Falar no dia a dia', description: 'Vocabulario y conversación', emoji: '💬' },
+    { id: 3, name: 'Ir além', description: 'Gramática intermedia y pronunciación', emoji: '🚀' },
   ],
   'de-a2': [
     { id: 1, name: 'Die Vergangenheit', description: 'Pasado y verbos modales', emoji: '⏳' },

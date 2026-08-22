@@ -41,6 +41,7 @@ interface Props {
   path: string;
   prevLesson?: { title: string; href: string } | null;
   nextLesson?: { title: string; href: string } | null;
+  ogImage?: string;
 }
 
 const {
@@ -60,6 +61,7 @@ const {
   path,
   prevLesson = null,
   nextLesson = null,
+  ogImage,
 } = Astro.props;
 const levelMeta = LEVEL_MAP[level];
 const languageMeta = LANGUAGE_MAP[language];
@@ -115,7 +117,7 @@ const structuredData = {
 };
 ---
 
-<BaseLayout title={title} description={description} path={path} structuredData={structuredData}>
+<BaseLayout title={title} description={description} path={path} structuredData={structuredData} ogImage={ogImage}>
   <article class="lesson container">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
       <a href="/idiomas">Idiomas</a>

@@ -45,6 +45,7 @@ const { lang, level, slug } = Astro.params;
   path={`/idiomas/${lang}/${level}/${slug}`}
   prevLesson={prevLesson}
   nextLesson={nextLesson}
+  ogImage={`/og-${lang}.png`}
 >
   <Content />
 </LessonLayout>

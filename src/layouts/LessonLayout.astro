@@ -117,7 +117,13 @@ const structuredData = {
 };
 ---
 
-<BaseLayout title={title} description={description} path={path} structuredData={structuredData} ogImage={ogImage}>
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  structuredData={structuredData}
+  ogImage={ogImage}
+>
   <article class="lesson container">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
       <a href="/idiomas">Idiomas</a>
@@ -129,7 +135,8 @@ const structuredData = {
 
     <header class="lesson-head">
       <span class="badge" style={`border-color:${levelMeta.color}; color:${levelMeta.color}`}>
-        {levelMeta.emoji} {levelMeta.name}
+        {levelMeta.emoji}
+        {levelMeta.name}
       </span>
       <h1>{title}</h1>
       <p class="lede">{description}</p>
@@ -150,22 +157,42 @@ const structuredData = {
 
     {phrases.length > 0 && <PhraseBank phrases={phrases} lang={languageMeta.bcp47} />}
 
-    {vocabulary.length > 0 && (
-      <div class="vocab-carousel card" data-vocab-carousel data-vocabulary={JSON.stringify(vocabulary)} data-lang={languageMeta.bcp47}>
-        <span class="eyebrow">📚 Vocabulario de esta lección</span>
-        <div class="vocab-counter" data-vocab-counter></div>
-        <div class="vocab-card-inner">
-          <span class="vocab-term" data-vocab-term></span>
-          <span class="vocab-translation" data-vocab-translation></span>
-          <button type="button" class="speak-btn vocab-speak" data-vocab-speak aria-label="Escuchar">🔊 Escuchar</button>
-        </div>
-        <div class="vocab-nav">
-          <button type="button" class="btn btn-ghost vocab-prev" data-vocab-prev disabled>← Anterior</button>
-          <button type="button" class="btn btn-primary vocab-next" data-vocab-next>Siguiente →</button>
-        </div>
-      </div>
-      <div hidden data-vocab-tracker data-vocabulary={JSON.stringify(vocabulary)}></div>
-    )}
+    {
+      vocabulary.length > 0 && (
+        <>
+          <div
+            class="vocab-carousel card"
+            data-vocab-carousel
+            data-vocabulary={JSON.stringify(vocabulary)}
+            data-lang={languageMeta.bcp47}
+          >
+            <span class="eyebrow">📚 Vocabulario de esta lección</span>
+            <div class="vocab-counter" data-vocab-counter />
+            <div class="vocab-card-inner">
+              <span class="vocab-term" data-vocab-term />
+              <span class="vocab-translation" data-vocab-translation />
+              <button
+                type="button"
+                class="speak-btn vocab-speak"
+                data-vocab-speak
+                aria-label="Escuchar"
+              >
+                🔊 Escuchar
+              </button>
+            </div>
+            <div class="vocab-nav">
+              <button type="button" class="btn btn-ghost vocab-prev" data-vocab-prev disabled>
+                ← Anterior
+              </button>
+              <button type="button" class="btn btn-primary vocab-next" data-vocab-next>
+                Siguiente →
+              </button>
+            </div>
+          </div>
+          <div hidden data-vocab-tracker data-vocabulary={JSON.stringify(vocabulary)} />
+        </>
+      )
+    }
 
     <Practice
       quiz={quiz}
@@ -177,14 +204,24 @@ const structuredData = {
     />
 
     <footer class="lesson-nav">
-      {prevLesson ? (
-        <a class="btn btn-ghost" href={prevLesson.href}>← {prevLesson.title}</a>
-      ) : (
-        <a class="btn btn-ghost" href={`/idiomas/${language}/${level}`}>← {languageMeta.name} {levelMeta.name}</a>
-      )}
-      {nextLesson && (
-        <a class="btn btn-primary" href={nextLesson.href}>{nextLesson.title} →</a>
-      )}
+      {
+        prevLesson ? (
+          <a class="btn btn-ghost" href={prevLesson.href}>
+            ← {prevLesson.title}
+          </a>
+        ) : (
+          <a class="btn btn-ghost" href={`/idiomas/${language}/${level}`}>
+            ← {languageMeta.name} {levelMeta.name}
+          </a>
+        )
+      }
+      {
+        nextLesson && (
+          <a class="btn btn-primary" href={nextLesson.href}>
+            {nextLesson.title} →
+          </a>
+        )
+      }
     </footer>
   </article>
 </BaseLayout>
@@ -321,7 +358,11 @@ const structuredData = {
     const carousel = document.querySelector<HTMLElement>('[data-vocab-carousel]');
     if (!carousel) return;
     let items: { term: string; translation: string }[];
-    try { items = JSON.parse(carousel.dataset.vocabulary ?? '[]'); } catch { return; }
+    try {
+      items = JSON.parse(carousel.dataset.vocabulary ?? '[]');
+    } catch {
+      return;
+    }
     if (items.length === 0) return;
 
     const lang = carousel.dataset.lang ?? 'de';
@@ -342,10 +383,19 @@ const structuredData = {
       nextBtn.textContent = current === items.length - 1 ? 'Empezar práctica →' : 'Siguiente →';
     }
 
-    prevBtn.addEventListener('click', () => { if (current > 0) { current--; render(); } });
+    prevBtn.addEventListener('click', () => {
+      if (current > 0) {
+        current--;
+        render();
+      }
+    });
     nextBtn.addEventListener('click', () => {
-      if (current < items.length - 1) { current++; render(); }
-      else { document.querySelector('[data-practice-root]')?.scrollIntoView({ behavior: 'smooth' }); }
+      if (current < items.length - 1) {
+        current++;
+        render();
+      } else {
+        document.querySelector('[data-practice-root]')?.scrollIntoView({ behavior: 'smooth' });
+      }
     });
     speakBtn.addEventListener('click', () => {
       if ('speechSynthesis' in window) {

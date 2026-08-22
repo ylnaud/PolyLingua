@@ -2,8 +2,8 @@
 name: create-lesson
 description: Genera automáticamente el archivo Markdown de una nueva lección de alemán con el frontmatter correcto (Zod schema) y contenido pedagógico gamificado.
 when_to_use: "Usa esta skill automáticamente cuando el usuario te pida crear, generar o escribir una nueva lección, tema o nivel de alemán (ej: 'crea una lección de A1 sobre acusativos')."
-argument-hint: "[nivel/nombre-archivo.md]"
-allowed-tools: ["Bash", "Write"]
+argument-hint: '[nivel/nombre-archivo.md]'
+allowed-tools: ['Bash', 'Write']
 ---
 
 # Flujo de Creación de Lecciones para PolyLingua
@@ -12,6 +12,7 @@ Eres un creador de contenido experto para PolyLingua. Tu objetivo es generar lec
 
 1. **Estructura Obligatoria**:
    Crea el archivo en `src/content/lessons/de/[nivel]/[nombre-archivo].md`. El archivo DEBE empezar con este frontmatter exacto:
+
    ```yaml
    ---
    language: 'de'

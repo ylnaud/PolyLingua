@@ -79,35 +79,35 @@ vocabulary:
     translation: 'contracción de in + dem (meses, estaciones)'
 ---
 
-¿Sabías que el español tiene una sola palabra — "en" — donde el alemán tiene al menos tres? Bienvenido al mundo de las preposiciones alemanas. Pero tranquilo: en A1 no necesitas entender *por qué* se usa cada una. Solo necesitas memorizar **bloques fijos** que funcionan siempre.
+¿Sabías que el español tiene una sola palabra — "en" — donde el alemán tiene al menos tres? Bienvenido al mundo de las preposiciones alemanas. Pero tranquilo: en A1 no necesitas entender _por qué_ se usa cada una. Solo necesitas memorizar **bloques fijos** que funcionan siempre.
 
 ## Las 3 preposiciones de lugar que más vas a usar
 
-| Preposición | Cuándo usarla | Ejemplo |
-|---|---|---|
-| **in** | Dentro de un espacio cerrado | *Ich bin **in** der Schule.* — Estoy en la escuela. |
-| **auf** | Sobre una superficie / en la calle | *Das Buch liegt **auf** dem Tisch.* — El libro está sobre la mesa. |
-| **an** | Junto a / en el borde de | *Ich stehe **an** der Tür.* — Estoy junto a la puerta. |
+| Preposición | Cuándo usarla                      | Ejemplo                                                            |
+| ----------- | ---------------------------------- | ------------------------------------------------------------------ |
+| **in**      | Dentro de un espacio cerrado       | _Ich bin **in** der Schule._ — Estoy en la escuela.                |
+| **auf**     | Sobre una superficie / en la calle | _Das Buch liegt **auf** dem Tisch._ — El libro está sobre la mesa. |
+| **an**      | Junto a / en el borde de           | _Ich stehe **an** der Tür._ — Estoy junto a la puerta.             |
 
 ## Las 3 preposiciones de tiempo que necesitas desde el día 1
 
-| Expresión | Regla | Ejemplo |
-|---|---|---|
-| **am** + día | Días de la semana | ***Am** Montag habe ich Deutsch.* — El lunes tengo alemán. |
-| **um** + hora | Hora exacta | *Der Film beginnt **um** 20 Uhr.* — La película empieza a las 20h. |
-| **im** + mes/estación | Meses y estaciones | ***Im** Winter schneit es.* — En invierno nieva. |
+| Expresión             | Regla              | Ejemplo                                                            |
+| --------------------- | ------------------ | ------------------------------------------------------------------ |
+| **am** + día          | Días de la semana  | _**Am** Montag habe ich Deutsch._ — El lunes tengo alemán.         |
+| **um** + hora         | Hora exacta        | _Der Film beginnt **um** 20 Uhr._ — La película empieza a las 20h. |
+| **im** + mes/estación | Meses y estaciones | _**Im** Winter schneit es._ — En invierno nieva.                   |
 
 ## El truco de las contracciones
 
 No te asustes si ves "am" o "im" — son simplemente atajos:
 
-- **am** = an + dem → *am Montag* en vez de *an dem Montag*
-- **im** = in + dem → *im Januar* en vez de *in dem Januar*
+- **am** = an + dem → _am Montag_ en vez de _an dem Montag_
+- **im** = in + dem → _im Januar_ en vez de _in dem Januar_
 
 Son tan naturales que nadie dice la versión larga. Apréndetelas como palabras normales.
 
 ## Errores típicos de hispanohablantes
 
-- *Ich bin **in** der Straße* — Suena raro. En la calle se dice **auf** der Straße.
-- *In Montag* — Los días van con **am**, no con "in".
-- *In 8 Uhr* — La hora va con **um**, no con "in".
+- _Ich bin **in** der Straße_ — Suena raro. En la calle se dice **auf** der Straße.
+- _In Montag_ — Los días van con **am**, no con "in".
+- _In 8 Uhr_ — La hora va con **um**, no con "in".

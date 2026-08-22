@@ -79,42 +79,42 @@ vocabulary:
     translation: 'a favor de, en beneficio de'
 ---
 
-En B2 aprendiste las preposiciones de Genitiv "esenciales" — *wegen, trotz, während, aufgrund*. Son correctas, pero suenan a lo que son: vocabulario de libro de texto. Ahora es el momento de dar el salto al **registro que usan los nativos cuando escriben en serio**: artículos académicos, informes profesionales, discursos y correspondencia formal.
+En B2 aprendiste las preposiciones de Genitiv "esenciales" — _wegen, trotz, während, aufgrund_. Son correctas, pero suenan a lo que son: vocabulario de libro de texto. Ahora es el momento de dar el salto al **registro que usan los nativos cuando escriben en serio**: artículos académicos, informes profesionales, discursos y correspondencia formal.
 
 ## Las 6 preposiciones que te separan del B2
 
-| Preposición | Caso | Significado | Ejemplo formal |
-|---|---|---|---|
-| **angesichts** | Gen | en vista de | *Angesichts der Ergebnisse...* |
-| **bezüglich** | Gen | con respecto a | *Bezüglich Ihres Antrags...* |
-| **hinsichtlich** | Gen | en cuanto a | *Hinsichtlich der Qualität...* |
-| **infolge** | Gen | como resultado de | *Infolge des Unfalls...* |
-| **anlässlich** | Gen | con motivo de | *Anlässlich des Firmenjubiläums...* |
-| **zugunsten** | Gen | a favor de | *Zugunsten der Mitarbeiter...* |
+| Preposición      | Caso | Significado       | Ejemplo formal                      |
+| ---------------- | ---- | ----------------- | ----------------------------------- |
+| **angesichts**   | Gen  | en vista de       | _Angesichts der Ergebnisse..._      |
+| **bezüglich**    | Gen  | con respecto a    | _Bezüglich Ihres Antrags..._        |
+| **hinsichtlich** | Gen  | en cuanto a       | _Hinsichtlich der Qualität..._      |
+| **infolge**      | Gen  | como resultado de | _Infolge des Unfalls..._            |
+| **anlässlich**   | Gen  | con motivo de     | _Anlässlich des Firmenjubiläums..._ |
+| **zugunsten**    | Gen  | a favor de        | _Zugunsten der Mitarbeiter..._      |
 
 ## Cuándo usarlas (y cuándo no)
 
 Estas preposiciones no son para el chat con amigos. Úsalas en:
 
-- **Textos académicos**: *Hinsichtlich der Forschungsergebnisse lässt sich feststellen, dass...*
-- **Correspondencia formal**: *Bezüglich Ihres Schreibens vom 3. Mai...*
-- **Presentaciones y discursos**: *Angesichts der aktuellen Herausforderungen...*
-- **Informes y documentos oficiales**: *Infolge der Gesetzesänderung...*
+- **Textos académicos**: _Hinsichtlich der Forschungsergebnisse lässt sich feststellen, dass..._
+- **Correspondencia formal**: _Bezüglich Ihres Schreibens vom 3. Mai..._
+- **Presentaciones y discursos**: _Angesichts der aktuellen Herausforderungen..._
+- **Informes y documentos oficiales**: _Infolge der Gesetzesänderung..._
 
 En conversación oral, usa las alternativas coloquiales sin culpa:
 
-| Formal | Coloquial |
-|---|---|
-| *angesichts der Lage* | *wegen der Lage* |
-| *bezüglich des Projekts* | *zum Projekt / über das Projekt* |
-| *infolge des Sturms* | *wegen des Sturms* |
-| *anlässlich der Feier* | *zur Feier / wegen der Feier* |
+| Formal                   | Coloquial                        |
+| ------------------------ | -------------------------------- |
+| _angesichts der Lage_    | _wegen der Lage_                 |
+| _bezüglich des Projekts_ | _zum Projekt / über das Projekt_ |
+| _infolge des Sturms_     | _wegen des Sturms_               |
+| _anlässlich der Feier_   | _zur Feier / wegen der Feier_    |
 
 ## El atajo "bezüglich" → "bzgl."
 
 En correos y documentos oficiales verás la abreviatura **bzgl.** constantemente:
 
-*Bzgl. unseres Telefonats möchte ich bestätigen, dass...* — Con respecto a nuestra llamada telefónica, quisiera confirmar que...
+_Bzgl. unseres Telefonats möchte ich bestätigen, dass..._ — Con respecto a nuestra llamada telefónica, quisiera confirmar que...
 
 Es perfectamente aceptable en correspondencia profesional escrita, pero nunca en un ensayo académico.
 
@@ -122,6 +122,6 @@ Es perfectamente aceptable en correspondencia profesional escrita, pero nunca en
 
 Estas preposiciones casi siempre van **al principio de la oración** como marco temático, seguidas del sustantivo en Genitiv y una coma:
 
-*Angesichts der steigenden Kosten, hat die Firma neue Maßnahmen beschlossen.*
+_Angesichts der steigenden Kosten, hat die Firma neue Maßnahmen beschlossen._
 
 Ese patrón "Preposición + Genitiv + coma + verbo" es tu plantilla para sonar profesional.

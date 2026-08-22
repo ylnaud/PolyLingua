@@ -7,12 +7,30 @@ const posts = (await getCollection('blog')).sort(
 );
 
 const dateFormatter = new Intl.DateTimeFormat('es', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Blog de PolyLingua',
+  description: 'Trucos de gramática, comparativas con otras apps y consejos para aprender idiomas gratis.',
+  url: 'https://poly-lingua.vercel.app/blog',
+  mainEntity: {
+    '@type': 'Blog',
+    blogPost: posts.map((p) => ({
+      '@type': 'BlogPosting',
+      headline: p.data.title,
+      url: `https://poly-lingua.vercel.app/blog/${p.id}`,
+      datePublished: p.data.publishDate.toISOString(),
+    })),
+  },
+};
 ---
 
 <BaseLayout
   title="Blog de PolyLingua"
   description="Trucos de gramática, comparativas con otras apps y consejos para aprender alemán, inglés, francés, italiano y portugués gratis."
   path="/blog"
+  structuredData={structuredData}
 >
   <section class="container page-head">
     <span class="eyebrow">Blog</span>

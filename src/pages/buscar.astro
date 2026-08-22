@@ -14,12 +14,23 @@ const searchManifest = allLessons.map((l) => {
     href: `/idiomas/${l.data.language}/${l.data.level}/${slug}`,
   };
 });
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  url: 'https://poly-lingua.vercel.app',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://poly-lingua.vercel.app/buscar?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
+};
 ---
 
 <BaseLayout
   title="Buscar lecciones"
   description="Busca entre más de 240 lecciones de alemán, inglés, francés, italiano y portugués por tema gramatical o palabra clave."
   path="/buscar"
+  structuredData={structuredData}
 >
   <section class="container search-head">
     <h1>🔎 Buscar lecciones</h1>
@@ -36,7 +47,7 @@ const searchManifest = allLessons.map((l) => {
   </section>
 
   <section class="container search-body">
-    <p class="search-status" data-search-status></p>
+    <p class="search-status" role="status" aria-live="polite" data-search-status></p>
     <div class="search-results" data-search-results></div>
   </section>
 

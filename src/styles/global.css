@@ -396,3 +396,25 @@ blockquote {
   cursor: pointer;
   line-height: 1;
 }
+
+@media print {
+  header, footer, .bottom-nav, .skip-link, .scroll-top-btn,
+  .sw-update-toast, .cookie-notice, .streak-reminder,
+  .install-prompt, #more-sheet {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: 0 !important;
+    background: #fff;
+    color: #000;
+  }
+
+  main { padding-top: 0; }
+
+  a[href^="/"]:not([aria-hidden])::after {
+    content: " (poly-lingua.vercel.app" attr(href) ")";
+    font-size: 0.8em;
+    color: #555;
+  }
+}

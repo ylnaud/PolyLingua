@@ -16,6 +16,7 @@ interface Props {
   path?: string;
   structuredData?: Record<string, unknown>;
   noindex?: boolean;
+  ogType?: string;
 }
 
 const {
@@ -24,12 +25,13 @@ const {
   path = Astro.url.pathname,
   structuredData,
   noindex = false,
+  ogType = 'website',
 } = Astro.props;
 
 const siteName = 'PolyLingua';
 const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 const canonicalURL = new URL(path, Astro.site);
-const ogImage = new URL('/og-image.svg', Astro.site);
+const ogImage = new URL('/og-image.png', Astro.site);
 ---
 
 <!doctype html>
@@ -63,7 +65,7 @@ const ogImage = new URL('/og-image.svg', Astro.site);
       })();
     </script>
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />

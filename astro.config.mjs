@@ -16,6 +16,7 @@ const NOINDEX_LAST_SEGMENTS = [
   'pronunciacion',
   'recursos',
   'situaciones',
+  'dialogos',
   'gramatica',
   'mis-errores',
   'offline',

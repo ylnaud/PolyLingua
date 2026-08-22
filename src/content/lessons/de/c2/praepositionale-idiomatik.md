@@ -92,47 +92,47 @@ Has llegado al nivel donde la gramática ya no es tu problema — el **matiz** s
 
 Estas frases hechas no se pueden traducir palabra por palabra. Se aprenden como unidades:
 
-| Expresión | Significado | Ejemplo |
-|---|---|---|
-| **auf keinen Fall** | de ninguna manera | *Das mache ich auf keinen Fall!* |
-| **unter vier Augen** | en privado | *Können wir unter vier Augen sprechen?* |
-| **hinter dem Mond leben** | vivir en las nubes | *Er lebt wirklich hinter dem Mond.* |
-| **auf Anhieb** | a la primera | *Sie hat die Prüfung auf Anhieb bestanden.* |
-| **über den Tellerrand schauen** | ampliar horizontes | *Man muss über den Tellerrand schauen.* |
-| **unter keinen Umständen** | bajo ninguna circunstancia | *Das darf unter keinen Umständen passieren.* |
-| **in keinem Verhältnis stehen zu** | no guardar proporción | *Die Kosten stehen in keinem Verhältnis zum Nutzen.* |
+| Expresión                          | Significado                | Ejemplo                                              |
+| ---------------------------------- | -------------------------- | ---------------------------------------------------- |
+| **auf keinen Fall**                | de ninguna manera          | _Das mache ich auf keinen Fall!_                     |
+| **unter vier Augen**               | en privado                 | _Können wir unter vier Augen sprechen?_              |
+| **hinter dem Mond leben**          | vivir en las nubes         | _Er lebt wirklich hinter dem Mond._                  |
+| **auf Anhieb**                     | a la primera               | _Sie hat die Prüfung auf Anhieb bestanden._          |
+| **über den Tellerrand schauen**    | ampliar horizontes         | _Man muss über den Tellerrand schauen._              |
+| **unter keinen Umständen**         | bajo ninguna circunstancia | _Das darf unter keinen Umständen passieren._         |
+| **in keinem Verhältnis stehen zu** | no guardar proporción      | _Die Kosten stehen in keinem Verhältnis zum Nutzen._ |
 
 ## Preposiciones arcaicas y literarias
 
 En textos literarios, poesía y expresiones fijas encontrarás preposiciones que ya no se usan en el habla cotidiana:
 
-| Preposición | Significado original | Dónde sobrevive |
-|---|---|---|
-| **gen** | hacia (forma antigua de *gegen*) | *gen Himmel blicken* (mirar hacia el cielo), *gen Süden* (hacia el sur) |
-| **wider** | contra (hoy reemplazada por *gegen*) | *wider Erwarten* (contra todo pronóstico), *wider Willen* (a pesar suyo) |
-| **ob** | a causa de / encima de | *ob des Lärms* (a causa del ruido) — casi solo en textos muy formales |
+| Preposición | Significado original                 | Dónde sobrevive                                                          |
+| ----------- | ------------------------------------ | ------------------------------------------------------------------------ |
+| **gen**     | hacia (forma antigua de _gegen_)     | _gen Himmel blicken_ (mirar hacia el cielo), _gen Süden_ (hacia el sur)  |
+| **wider**   | contra (hoy reemplazada por _gegen_) | _wider Erwarten_ (contra todo pronóstico), _wider Willen_ (a pesar suyo) |
+| **ob**      | a causa de / encima de               | _ob des Lärms_ (a causa del ruido) — casi solo en textos muy formales    |
 
-**Ojo**: *wider Erwarten* y *wider Willen* siguen siendo expresiones perfectamente vivas. No son arcaísmos muertos — son fósiles útiles.
+**Ojo**: _wider Erwarten_ y _wider Willen_ siguen siendo expresiones perfectamente vivas. No son arcaísmos muertos — son fósiles útiles.
 
 ## Variación regional: la misma idea, distinta preposición
 
-| Estándar (Hochdeutsch) | Regional | Zona |
-|---|---|---|
-| *am Wochenende* | ***auf** dem Wochenende* | Suiza |
-| *Er steht **an** der Haltestelle* | *Er steht **auf** der Haltestelle* | Sur de Alemania, Austria |
-| *Ich bin **bei** der Arbeit* | *Ich bin **auf** der Arbeit* | Coloquial en toda Alemania |
-| *um 8 Uhr* | *auf 8 Uhr* | Algunos dialectos del sur |
+| Estándar (Hochdeutsch)            | Regional                           | Zona                       |
+| --------------------------------- | ---------------------------------- | -------------------------- |
+| _am Wochenende_                   | _**auf** dem Wochenende_           | Suiza                      |
+| _Er steht **an** der Haltestelle_ | _Er steht **auf** der Haltestelle_ | Sur de Alemania, Austria   |
+| _Ich bin **bei** der Arbeit_      | _Ich bin **auf** der Arbeit_       | Coloquial en toda Alemania |
+| _um 8 Uhr_                        | _auf 8 Uhr_                        | Algunos dialectos del sur  |
 
 No se trata de "correcto vs. incorrecto" — se trata de **registros y regiones**. En un examen, usa el estándar. En una conversación en Múnich, adapta.
 
 ## El arte de la preposición invisible
 
-A nivel C2, el verdadero dominio no es saber *qué* preposición usar, sino saber **cuándo evitarla**. Compara:
+A nivel C2, el verdadero dominio no es saber _qué_ preposición usar, sino saber **cuándo evitarla**. Compara:
 
-- *Angesichts der Tatsache, dass...* → pesado, burocrático
-- *Da...* → limpio, directo
+- _Angesichts der Tatsache, dass..._ → pesado, burocrático
+- _Da..._ → limpio, directo
 
-- *In Bezug auf die Frage der Finanzierung...* → inflado
-- *Zur Finanzierung...* → elegante
+- _In Bezug auf die Frage der Finanzierung..._ → inflado
+- _Zur Finanzierung..._ → elegante
 
 El alemán de verdad alto nivel es **conciso**. Las preposiciones complejas son herramientas, no adornos.

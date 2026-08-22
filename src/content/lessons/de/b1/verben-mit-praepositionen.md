@@ -89,44 +89,44 @@ vocabulary:
     translation: 'pedir (algo)'
 ---
 
-En A2 aprendiste qué caso rige cada preposición. Ahora viene el plot twist: **hay verbos que llevan una preposición pegada** y no puedes cambiarla ni traducirla literalmente. "Esperar" es "warten", pero "esperar algo" no es *warten etwas* — es **warten auf etwas**. Bienvenido al club de los *Verben mit Präpositionen*.
+En A2 aprendiste qué caso rige cada preposición. Ahora viene el plot twist: **hay verbos que llevan una preposición pegada** y no puedes cambiarla ni traducirla literalmente. "Esperar" es "warten", pero "esperar algo" no es _warten etwas_ — es **warten auf etwas**. Bienvenido al club de los _Verben mit Präpositionen_.
 
 ## La regla de oro
 
 > El verbo decide la preposición. La preposición decide el caso. Tú solo memorizas el combo.
 
-No intentes deducir la preposición desde el español — "pensar **en**" no es *denken **in***, es *denken **an***. Cada combo es una unidad que se aprende entera.
+No intentes deducir la preposición desde el español — "pensar **en**" no es _denken **in**_, es _denken **an**_. Cada combo es una unidad que se aprende entera.
 
 ## Los 10 combos más frecuentes
 
-| Verbo + Preposición | Caso | Ejemplo | Traducción |
-|---|---|---|---|
-| **warten auf** | Akk | *Ich warte **auf** den Bus.* | Espero el autobús. |
-| **denken an** | Akk | *Ich denke **an** dich.* | Pienso en ti. |
-| **sich freuen auf** | Akk | *Ich freue mich **auf** den Urlaub.* | Me alegro por las vacaciones (futuras). |
-| **sich freuen über** | Akk | *Ich freue mich **über** das Geschenk.* | Me alegro por el regalo (recibido). |
-| **sich interessieren für** | Akk | *Er interessiert sich **für** Kunst.* | Le interesa el arte. |
-| **sich ärgern über** | Akk | *Sie ärgert sich **über** den Lärm.* | Se enfada por el ruido. |
-| **Angst haben vor** | Dat | *Ich habe Angst **vor** Hunden.* | Tengo miedo de los perros. |
-| **träumen von** | Dat | *Er träumt **von** einer Reise.* | Sueña con un viaje. |
-| **sich beschweren über** | Akk | *Wir beschweren uns **über** den Service.* | Nos quejamos del servicio. |
-| **bitten um** | Akk | *Ich bitte **um** Hilfe.* | Pido ayuda. |
+| Verbo + Preposición        | Caso | Ejemplo                                    | Traducción                              |
+| -------------------------- | ---- | ------------------------------------------ | --------------------------------------- |
+| **warten auf**             | Akk  | _Ich warte **auf** den Bus._               | Espero el autobús.                      |
+| **denken an**              | Akk  | _Ich denke **an** dich._                   | Pienso en ti.                           |
+| **sich freuen auf**        | Akk  | _Ich freue mich **auf** den Urlaub._       | Me alegro por las vacaciones (futuras). |
+| **sich freuen über**       | Akk  | _Ich freue mich **über** das Geschenk._    | Me alegro por el regalo (recibido).     |
+| **sich interessieren für** | Akk  | _Er interessiert sich **für** Kunst._      | Le interesa el arte.                    |
+| **sich ärgern über**       | Akk  | _Sie ärgert sich **über** den Lärm._       | Se enfada por el ruido.                 |
+| **Angst haben vor**        | Dat  | _Ich habe Angst **vor** Hunden._           | Tengo miedo de los perros.              |
+| **träumen von**            | Dat  | _Er träumt **von** einer Reise._           | Sueña con un viaje.                     |
+| **sich beschweren über**   | Akk  | _Wir beschweren uns **über** den Service._ | Nos quejamos del servicio.              |
+| **bitten um**              | Akk  | _Ich bitte **um** Hilfe._                  | Pido ayuda.                             |
 
 ## El caso "freuen auf" vs. "freuen über"
 
 Este par confunde a todo el mundo, pero la lógica es sencilla:
 
 - **sich freuen auf** → algo que **todavía no pasó** (anticipación)
-  *Ich freue mich auf Weihnachten.* — Me hace ilusión la Navidad (que viene).
+  _Ich freue mich auf Weihnachten._ — Me hace ilusión la Navidad (que viene).
 
 - **sich freuen über** → algo que **ya pasó o está pasando** (reacción)
-  *Ich freue mich über das Geschenk.* — Me alegra el regalo (que ya tengo).
+  _Ich freue mich über das Geschenk._ — Me alegra el regalo (que ya tengo).
 
 ## Truco para memorizar
 
 Crea **mini-frases personales** con cada combo. En vez de memorizar "warten auf + Akk" como una fórmula, escribe:
 
-- *Ich warte auf meinen Kaffee.* (Espero mi café.)
-- *Ich denke an meine Familie.* (Pienso en mi familia.)
+- _Ich warte auf meinen Kaffee._ (Espero mi café.)
+- _Ich denke an meine Familie._ (Pienso en mi familia.)
 
 Las frases con significado personal se quedan en la memoria mucho mejor que las listas.

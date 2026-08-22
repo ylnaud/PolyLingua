@@ -6,14 +6,24 @@ export async function getStaticPaths() {
   const lessons = await getCollection('lessons');
   return lessons.map((lesson) => {
     const [lang, level, slug] = lesson.id.split('/');
+    const siblings = lessons
+      .filter((l) => l.data.language === lang && l.data.level === level)
+      .sort((a, b) => a.data.order - b.data.order);
+    const idx = siblings.findIndex((s) => s.id === lesson.id);
+    const prev = idx > 0 ? siblings[idx - 1] : null;
+    const next = idx < siblings.length - 1 ? siblings[idx + 1] : null;
     return {
       params: { lang, level, slug },
-      props: { lesson },
+      props: {
+        lesson,
+        prevLesson: prev ? { title: prev.data.title, href: `/idiomas/${lang}/${level}/${prev.id.split('/').pop()}` } : null,
+        nextLesson: next ? { title: next.data.title, href: `/idiomas/${lang}/${level}/${next.id.split('/').pop()}` } : null,
+      },
     };
   });
 }
 
-const { lesson } = Astro.props;
+const { lesson, prevLesson, nextLesson } = Astro.props;
 const { Content } = await render(lesson);
 const { lang, level, slug } = Astro.params;
 ---
@@ -33,6 +43,8 @@ const { lang, level, slug } = Astro.params;
   situation={lesson.data.situation}
   lessonId={lesson.id}
   path={`/idiomas/${lang}/${level}/${slug}`}
+  prevLesson={prevLesson}
+  nextLesson={nextLesson}
 >
   <Content />
 </LessonLayout>

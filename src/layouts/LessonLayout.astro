@@ -39,6 +39,8 @@ interface Props {
   situation?: string;
   lessonId?: string;
   path: string;
+  prevLesson?: { title: string; href: string } | null;
+  nextLesson?: { title: string; href: string } | null;
 }
 
 const {
@@ -56,6 +58,8 @@ const {
   situation,
   lessonId = '',
   path,
+  prevLesson = null,
+  nextLesson = null,
 } = Astro.props;
 const levelMeta = LEVEL_MAP[level];
 const languageMeta = LANGUAGE_MAP[language];
@@ -69,13 +73,18 @@ const structuredData = {
       '@type': 'LearningResource',
       name: title,
       description,
+      url: `${siteURL}${path}`,
       educationalLevel: levelMeta.name,
       learningResourceType: 'Lesson',
       inLanguage: language,
       teaches: situation ? `${situation} — ${grammarTopic}` : grammarTopic,
+      timeRequired: `PT${minutes}M`,
+      interactivityType: 'mixed',
+      provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
       isPartOf: {
         '@type': 'Course',
         name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
+        url: `${siteURL}/idiomas/${language}/${level}`,
       },
     },
     {
@@ -166,7 +175,14 @@ const structuredData = {
     />
 
     <footer class="lesson-nav">
-      <a class="btn btn-ghost" href={`/idiomas/${language}/${level}`}>← Volver a {languageMeta.name} {levelMeta.name}</a>
+      {prevLesson ? (
+        <a class="btn btn-ghost" href={prevLesson.href}>← {prevLesson.title}</a>
+      ) : (
+        <a class="btn btn-ghost" href={`/idiomas/${language}/${level}`}>← {languageMeta.name} {levelMeta.name}</a>
+      )}
+      {nextLesson && (
+        <a class="btn btn-primary" href={nextLesson.href}>{nextLesson.title} →</a>
+      )}
     </footer>
   </article>
 </BaseLayout>
@@ -291,6 +307,10 @@ const structuredData = {
 
   .lesson-nav {
     margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
 </style>
 

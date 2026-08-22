@@ -27,12 +27,26 @@ for (const lvl of LEVELS) {
     .map((l) => l.id.split('/').pop()!);
 }
 
+const siteURL = 'https://poly-lingua.vercel.app';
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: `${languageMeta.name} — PolyLingua`,
-  description: languageMeta.description,
-  inLanguage: lang,
+  '@graph': [
+    {
+      '@type': 'Course',
+      name: `${languageMeta.name} — PolyLingua`,
+      description: languageMeta.description,
+      url: `${siteURL}/idiomas/${lang}`,
+      inLanguage: lang,
+      provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Idiomas', item: `${siteURL}/idiomas` },
+        { '@type': 'ListItem', position: 2, name: languageMeta.name, item: `${siteURL}/idiomas/${lang}` },
+      ],
+    },
+  ],
 };
 ---
 

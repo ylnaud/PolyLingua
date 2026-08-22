@@ -68,7 +68,7 @@ una opción rápida.
 **Necesitás preparar un examen oficial** (Goethe-Zertifikat, DELF,
 CELPE-Bras, etc.). Ninguna de las tres reemplaza un curso preparatorio
 específico, pero para la base gramatical que esos exámenes exigen,
-PolyLingua tiene una ventaja concreta: los exámenes de nivel por MCER
+PolyLingua tiene una ventaja concreta: los [exámenes de nivel por MCER](/idiomas)
 (A1 a C2) obligan a dominar la gramática de un nivel antes de avanzar al
 siguiente, en vez de dejarte "flotar" entre niveles como pasa en
 Duolingo. Babbel, con su progresión más tradicional, también sirve bien
@@ -77,12 +77,12 @@ para esto si podés pagar la suscripción.
 **Trabajás en un entorno donde necesitás alemán o inglés formal**
 (reuniones, correos, documentación técnica). Babbel es la que más invierte
 en diálogos de registro profesional y contexto cultural realista — ahí
-paga la suscripción. PolyLingua cubre gramática avanzada (C1-C2, incluida
-retórica y registro formal) pero con menos práctica conversacional
+paga la suscripción. PolyLingua cubre [gramática avanzada (C1-C2)](/idiomas/de/c1), incluida
+retórica y registro formal, pero con menos práctica conversacional
 guiada que Babbel.
 
 **Querés aprender varios idiomas a la vez sin gastar en cada uno por
-separado.** Acá PolyLingua tiene una ventaja estructural: los 5 idiomas
+separado.** Acá PolyLingua tiene una ventaja estructural: los [5 idiomas](/idiomas)
 (alemán, inglés, francés, italiano, portugués) están en la misma cuenta
 (o más bien, en el mismo navegador, ya que no hay cuentas) sin costo
 adicional por idioma. Duolingo también permite varios idiomas gratis,
@@ -106,6 +106,6 @@ No existe una app "mejor" en abstracto — depende de qué estés dispuesto a
 tolerar. Si el dinero y el registro no son un problema para vos, Duolingo o
 Babbel tienen features que PolyLingua todavía no tiene. Si lo que buscás es
 literalmente **no pagar nada, no registrarte, y entender la gramática en vez
-de adivinarla**, ahí es donde tiene sentido probar PolyLingua — y si no te
+de adivinarla**, ahí es donde tiene sentido [probar PolyLingua](/idiomas) — y si no te
 convence, no perdiste nada: no hay cuenta que cancelar ni tarjeta que
 recordar quitar.

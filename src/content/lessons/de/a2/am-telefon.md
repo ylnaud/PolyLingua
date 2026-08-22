@@ -18,7 +18,7 @@ phrases:
     note: 'Lo normal es atender diciendo tu apellido.'
   - text: 'Kann ich bitte mit Herrn Müller sprechen?'
     es: '¿Puedo hablar con el señor Müller, por favor?'
-    note: '«mit» rige Dativ, por eso «Herrn» y no «Herr».'
+    note: 'Después de «mit», el sustantivo cambia de forma: «Herr» pasa a «Herrn».'
   - text: 'Einen Moment, bitte.'
     es: 'Un momento, por favor.'
   - text: 'Er ist gerade nicht da.'
@@ -133,7 +133,8 @@ Kann ich bitte mit Herrn Müller sprechen?    ¿Puedo hablar con el señor Müll
 — Er ist gerade nicht da.                     Ahora no está.
 ```
 
-Fijate en `mit Herrn Müller`: `mit` rige **Dativ**, y `Herr` en Dativ es `Herrn`.
+Fijate en `mit Herrn Müller`: después de `mit`, las palabras cambian de forma — `Herr`
+pasa a `Herrn`.
 
 ## Si no está
 

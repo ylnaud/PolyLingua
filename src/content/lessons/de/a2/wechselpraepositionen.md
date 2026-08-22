@@ -2,11 +2,11 @@
 language: de
 level: a2
 title: 'Wechselpräpositionen: las preposiciones de doble personalidad'
-description: 'Las Wechselpräpositionen del alemán: nueve preposiciones de doble caso que cambian entre Akkusativ y Dativ según haya movimiento o no.'
+description: 'Las Wechselpräpositionen del alemán: nueve preposiciones que cambian el artículo según haya movimiento (den) o posición fija (dem).'
 order: 7
 unit: 2
 grammarTopic: 'Preposiciones de doble régimen (Wechselpräpositionen)'
-funFact: "Pregúntate: '¿HAY movimiento de un lugar a otro, o describo una posición fija?' Si hay movimiento con destino → Akkusativ ('¿wohin?'). Si es una posición estática → Dativ ('¿wo?'). Es la misma preposición, el caso cambia el significado por completo."
+funFact: "Preguntate: '¿HAY movimiento de un lugar a otro, o describo una posición fija?' Si hay movimiento con destino → Akkusativ, el artículo toma la forma «den» ('¿wohin?'). Si es una posición estática → Dativ, el artículo toma la forma «dem» ('¿wo?'). Es la misma preposición, pero el artículo cambia el significado por completo."
 minutes: 9
 quiz:
   - question: "'Ich lege das Buch auf ___ Tisch' (pongo el libro sobre la mesa — hay movimiento). ¿Qué caso/artículo va?"
@@ -73,10 +73,11 @@ vocabulary:
     translation: 'estar sentado'
 ---
 
-Estas nueve preposiciones son especiales: no tienen un caso fijo — cambian entre
-Akkusativ y Dativ según el significado de la frase.
+Estas nueve preposiciones son especiales: el artículo que les sigue cambia según si hay
+movimiento o no. Con movimiento → `den/die/das` (Akkusativ). Sin movimiento → `dem/der`
+(Dativ).
 
-## Las nueve preposiciones de doble régimen
+## Las nueve preposiciones que cambian
 
 ```
 in, an, auf, über, unter, vor, hinter, neben, zwischen
@@ -84,10 +85,10 @@ in, an, auf, über, unter, vor, hinter, neben, zwischen
 
 ## La pregunta que lo resuelve todo
 
-| Pregunta               | Situación                     | Caso      |
-| ---------------------- | ----------------------------- | --------- |
-| Wohin? (¿hacia dónde?) | Movimiento con destino        | Akkusativ |
-| Wo? (¿dónde?)          | Posición fija, sin movimiento | Dativ     |
+| Pregunta               | Situación                     | Caso      | Artículo masc. |
+| ---------------------- | ----------------------------- | --------- | -------------- |
+| Wohin? (¿hacia dónde?) | Movimiento con destino        | Akkusativ | den            |
+| Wo? (¿dónde?)          | Posición fija, sin movimiento | Dativ     | dem            |
 
 ## Comparación lado a lado
 
@@ -99,14 +100,14 @@ Bewegung (Akkusativ):   Die Katze springt auf den Tisch. (El gato salta sobre la
 Position (Dativ):        Die Katze sitzt auf dem Tisch.   (El gato está sentado sobre la mesa)
 ```
 
-## El verbo suele delatar el caso
+## El verbo suele delatar la forma del artículo
 
-Los verbos de movimiento (gehen, legen, stellen, springen) casi siempre acompañan al
-Akkusativ. Los verbos de posición (sein, liegen, stehen, sitzen) casi siempre acompañan
-al Dativ — un atajo útil mientras automatizas la regla de "wohin/wo".
+Los verbos de movimiento (gehen, legen, stellen, springen) casi siempre van con
+Akkusativ (den/die). Los verbos de posición (sein, liegen, stehen, sitzen) casi siempre
+van con Dativ (dem/der) — un atajo útil mientras automatizás la regla de "wohin/wo".
 
 ## El truco final
 
-Antes de elegir el caso, hazte la pregunta en voz alta: "¿estoy describiendo un
+Antes de elegir la forma, hacete la pregunta en voz alta: "¿estoy describiendo un
 movimiento HACIA algún lugar, o dónde algo YA ESTÁ?" Esa sola pregunta resuelve el 90%
-de los casos con estas preposiciones.
+de las situaciones con estas preposiciones.

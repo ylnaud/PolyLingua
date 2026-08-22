@@ -19,7 +19,7 @@ phrases:
     note: '«kaputt sein» es la forma normal de decir que algo se rompió.'
   - text: 'Können Sie mir helfen?'
     es: '¿Me puede ayudar?'
-    note: '«helfen» rige Dativ: mir, dir, ihm.'
+    note: '«helfen» siempre va con mir/dir/ihm (Dativ) — nunca mich/dich/ihn.'
   - text: 'Ich verstehe nicht.'
     es: 'No entiendo.'
   - text: 'Können Sie das bitte wiederholen?'
@@ -43,11 +43,11 @@ quiz:
     explanation: '«kaputt» es un adjetivo, así que va con sein: die Waschmaschine ist kaputt.'
   - question: '«Können Sie mir helfen?» — ¿por qué es «mir» y no «mich»?'
     options:
-      - 'Porque «helfen» rige Dativ.'
+      - 'Porque «helfen» siempre va con mir/dir/ihm (Dativ).'
       - 'Porque siempre se usa «mir» con können.'
       - 'Es un error, debería ser «mich».'
     answerIndex: 0
-    explanation: '«helfen» es uno de los verbos que piden Dativ: ich helfe dir, kannst du mir helfen.'
+    explanation: '«helfen» siempre va con la forma «a quién» (Dativ): ich helfe dir, kannst du mir helfen — nunca «mich».'
   - question: 'Si no entendiste lo que te dijeron, la frase más útil es...'
     options:
       - 'Ich weiß nicht.'
@@ -67,7 +67,7 @@ exercises:
     sentence: 'Können Sie ___ helfen?'
     answer: 'mir'
     accepted: ['Mir']
-    hint: '«helfen» rige Dativ.'
+    hint: '«helfen» siempre va con mir/dir/ihm (Dativ).'
     translation: '¿Me puede ayudar?'
     placeholder: 'mich / mir'
   - type: 'match'
@@ -105,7 +105,7 @@ vocabulary:
   - term: 'funktionieren'
     translation: 'funcionar'
   - term: 'helfen'
-    translation: 'ayudar (rige Dativ)'
+    translation: 'ayudar (siempre con mir/dir/ihm)'
   - term: 'wiederholen'
     translation: 'repetir'
   - term: 'verlieren'
@@ -147,14 +147,14 @@ Fijate la estructura de `können`: el verbo conjugado va segundo y el infinitivo
 Können   Sie das bitte   wiederholen?
 ```
 
-## Pedir ayuda: helfen va con Dativ
+## Pedir ayuda: helfen siempre va con mir/dir/ihm
 
 ```
 Können Sie mir helfen?      ¿Me puede ayudar?
 ```
 
-Es `mir`, no `mich`, porque `helfen` es uno de esos verbos que rigen **Dativ**. Igual
-que `danken` y `gefallen`, que ya viste.
+Es `mir`, no `mich`, porque `helfen` siempre va con la forma "a quién" (**Dativ**:
+mir, dir, ihm). Igual que `danken` y `gefallen`, que ya viste.
 
 ## Disculparse
 

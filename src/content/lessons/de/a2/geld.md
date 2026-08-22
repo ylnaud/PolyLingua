@@ -28,7 +28,7 @@ phrases:
     es: 'Eso me resulta demasiado caro.'
   - text: 'Das kann ich mir nicht leisten.'
     es: 'No me lo puedo permitir.'
-    note: '«sich etwas leisten» lleva el pronombre en Dativ: mir, dir, sich.'
+    note: '«sich etwas leisten» lleva el pronombre en la forma «a quién» (Dativ): mir, dir, sich.'
   - text: 'Ich spare für ein Auto.'
     es: 'Ahorro para un auto.'
   - text: 'Ich verdiene 2000 Euro im Monat.'

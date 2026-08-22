@@ -12,7 +12,7 @@ minutes: 9
 phrases:
   - text: 'Ich fahre mit dem Bus.'
     es: 'Voy en autobús.'
-    note: '«mit dem» + medio de transporte. Siempre Dativ.'
+    note: '«mit dem» + medio de transporte. Después de «mit» el artículo siempre es «dem».'
   - text: 'Ich fahre mit dem Zug.'
     es: 'Voy en tren.'
   - text: 'Ich gehe zu Fuß.'
@@ -127,7 +127,8 @@ vehículo siempre `fahren`.
 
 ## La fórmula del transporte: mit dem
 
-El medio de transporte va siempre con `mit dem` (Dativ), sin excepción:
+El medio de transporte va siempre con `mit dem` — después de `mit`, el artículo siempre
+toma la forma `dem`, sin excepción:
 
 ```
 mit dem Bus        mit dem Zug        mit dem Auto        mit dem Fahrrad

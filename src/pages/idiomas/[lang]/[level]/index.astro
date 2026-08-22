@@ -28,16 +28,33 @@ const lessons = allLessons
 
 const unitMetas = UNITS[`${lang}-${level}`] ?? null;
 
+const siteURL = 'https://poly-lingua.vercel.app';
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
-  description: levelMeta.description,
-  inLanguage: lang,
-  hasCourseInstance: lessons.map((l) => ({
-    '@type': 'CourseInstance',
-    name: l.data.title,
-  })),
+  '@graph': [
+    {
+      '@type': 'Course',
+      name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
+      description: levelMeta.description,
+      url: `${siteURL}/idiomas/${lang}/${level}`,
+      inLanguage: lang,
+      provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
+      hasCourseInstance: lessons.map((l) => ({
+        '@type': 'CourseInstance',
+        name: l.data.title,
+        url: `${siteURL}/idiomas/${lang}/${level}/${l.id.split('/').pop()}`,
+        courseMode: 'online',
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Idiomas', item: `${siteURL}/idiomas` },
+        { '@type': 'ListItem', position: 2, name: languageMeta.name, item: `${siteURL}/idiomas/${lang}` },
+        { '@type': 'ListItem', position: 3, name: levelMeta.name, item: `${siteURL}/idiomas/${lang}/${level}` },
+      ],
+    },
+  ],
 };
 ---
 

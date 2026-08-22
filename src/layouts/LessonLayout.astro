@@ -68,26 +68,34 @@ const languageMeta = LANGUAGE_MAP[language];
 
 const siteURL = 'https://poly-lingua.vercel.app';
 
+const lessonURL = `${siteURL}${path}`;
+const courseURL = `${siteURL}/idiomas/${language}/${level}`;
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'Course',
+      '@id': `${courseURL}#course`,
+      name: `Curso de ${languageMeta.name} Interactivo — PolyLingua`,
+      description: `Aprende ${languageMeta.name.toLowerCase()} de A1 a C2 gratis con gramática divertida y ejercicios interactivos.`,
+      url: courseURL,
+      publisher: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
+    },
+    {
       '@type': 'LearningResource',
+      '@id': lessonURL,
+      isPartOf: { '@id': `${courseURL}#course` },
       name: title,
       description,
-      url: `${siteURL}${path}`,
-      educationalLevel: levelMeta.name,
+      url: lessonURL,
+      educationalLevel: level.toUpperCase(),
       learningResourceType: 'Lesson',
       inLanguage: language,
       teaches: situation ? `${situation} — ${grammarTopic}` : grammarTopic,
       timeRequired: `PT${minutes}M`,
-      interactivityType: 'mixed',
-      provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
-      isPartOf: {
-        '@type': 'Course',
-        name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
-        url: `${siteURL}/idiomas/${language}/${level}`,
-      },
+      interactivityType: 'active',
+      assesses: quiz.map((q) => q.question),
     },
     {
       '@type': 'BreadcrumbList',
@@ -103,13 +111,13 @@ const structuredData = {
           '@type': 'ListItem',
           position: 3,
           name: levelMeta.name,
-          item: `${siteURL}/idiomas/${language}/${level}`,
+          item: courseURL,
         },
         {
           '@type': 'ListItem',
           position: 4,
           name: title,
-          item: `${siteURL}${path}`,
+          item: lessonURL,
         },
       ],
     },

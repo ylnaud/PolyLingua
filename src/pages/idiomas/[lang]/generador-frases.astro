@@ -1,7 +1,13 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
-import { MATRIX_DATA, type PhraseMatrix, type PhraseAssembler } from '../../../data/matrices';
+import { LEVEL_MAP } from '../../../data/levels';
+import {
+  MATRIX_DATA,
+  assembleSpanishSentence,
+  type PhraseMatrix,
+  type PhraseAssembler,
+} from '../../../data/matrices';
 
 export async function getStaticPaths() {
   return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
@@ -11,6 +17,8 @@ interface DeckPhrase {
   text: string;
   es: string;
   comboKey: string;
+  actionIdx: number;
+  objectIdx: number;
 }
 
 interface Deck {
@@ -20,10 +28,18 @@ interface Deck {
   phrases: DeckPhrase[];
 }
 
+interface FilterOption {
+  idx: number;
+  word: string;
+  es: string;
+}
+
 function buildDecks(matrix: PhraseMatrix, assemble: PhraseAssembler): Deck[] {
   const lengths = matrix.columns.map((col) => col.items.length);
   const total = lengths.reduce((a, b) => a * b, 1);
   const deckMap = new Map<string, Deck>();
+  const actionColIdx = matrix.columns.findIndex((c) => c.role === 'action');
+  const objectColIdx = matrix.columns.findIndex((c) => c.role === 'object');
 
   for (let i = 0; i < total; i++) {
     const colIndices: number[] = [];
@@ -36,11 +52,9 @@ function buildDecks(matrix: PhraseMatrix, assemble: PhraseAssembler): Deck[] {
     const subjectIdx = colIndices[0];
     const modalIdx = colIndices[1];
     const words: string[] = [];
-    const esWords: string[] = [];
     matrix.columns.forEach((col, colIdx) => {
       const item = col.items[colIndices[colIdx]];
       words.push(item.forms?.[subjectIdx] ?? item.word);
-      esWords.push(item.es);
     });
 
     const deckId = `${subjectIdx}-${modalIdx}`;
@@ -57,8 +71,10 @@ function buildDecks(matrix: PhraseMatrix, assemble: PhraseAssembler): Deck[] {
     }
     deckMap.get(deckId)!.phrases.push({
       text: assemble(words),
-      es: esWords.join(' · '),
+      es: assembleSpanishSentence(matrix, colIndices),
       comboKey: colIndices.join('-'),
+      actionIdx: colIndices[actionColIdx],
+      objectIdx: colIndices[objectColIdx],
     });
   }
 
@@ -69,8 +85,22 @@ const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 const matrixConfig = MATRIX_DATA[lang as keyof typeof MATRIX_DATA];
 const matrix = matrixConfig.matrices[0];
+const levelMeta = LEVEL_MAP[matrix.level];
 const totalCombinations = matrix.columns.reduce((acc, col) => acc * col.items.length, 1);
 const decks = buildDecks(matrix, matrixConfig.assemble);
+
+const actionColumn = matrix.columns.find((c) => c.role === 'action')!;
+const objectColumn = matrix.columns.find((c) => c.role === 'object')!;
+const actionOptions: FilterOption[] = actionColumn.items.map((item, idx) => ({
+  idx,
+  word: item.word,
+  es: item.es,
+}));
+const objectOptions: FilterOption[] = objectColumn.items.map((item, idx) => ({
+  idx,
+  word: item.word,
+  es: item.es,
+}));
 ---
 
 <BaseLayout
@@ -90,18 +120,39 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
     <span class="emoji" aria-hidden="true">🧩</span>
     <h1>Generador de frases en {languageMeta?.name}</h1>
     <p class="desc">Elegí una tanda chica y estudiala de a una frase, a tu ritmo.</p>
+    <span class="badge" style={`border-color:${levelMeta.color}; color:${levelMeta.color}`}>
+      {levelMeta.emoji} {levelMeta.name}
+    </span>
   </section>
 
   <section class="container gen-body" data-gen-root data-lang-id={lang} data-bcp47={languageMeta?.bcp47} data-matrix-id={matrix.id} data-total={totalCombinations}>
     <div data-deck-picker>
       <p class="gen-overall-progress" data-gen-overall-progress></p>
+
+      <div class="gen-filters">
+        <label>
+          Verbo
+          <select data-filter-action>
+            <option value="">Todos</option>
+            {actionOptions.map((opt) => <option value={opt.idx}>{opt.es}</option>)}
+          </select>
+        </label>
+        <label>
+          Tema
+          <select data-filter-object>
+            <option value="">Todos</option>
+            {objectOptions.map((opt) => <option value={opt.idx}>{opt.es}</option>)}
+          </select>
+        </label>
+      </div>
+
       <div class="deck-grid">
         {
           decks.map((deck) => (
             <button type="button" class="card deck-card" data-deck-id={deck.id}>
               <span class="deck-title">{deck.title}</span>
               <span class="deck-gloss">{deck.glossEs}</span>
-              <span class="deck-count">{deck.phrases.length} frases</span>
+              <span class="deck-count" data-deck-count>{deck.phrases.length} frases</span>
             </button>
           ))
         }
@@ -134,7 +185,7 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
       </div>
     </div>
 
-    <script type="application/json" data-decks-json set:html={JSON.stringify(decks)} />
+    <script type="application/json" data-decks-json set:html={JSON.stringify({ decks, actionOptions, objectOptions })} />
   </section>
 </BaseLayout>
 
@@ -158,7 +209,7 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
   .gen-head .desc {
     color: var(--muted);
     max-width: 540px;
-    margin: 0 auto;
+    margin: 0 auto 0.75rem;
   }
 
   .gen-body {
@@ -170,6 +221,31 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
     color: var(--muted);
     font-size: 0.85rem;
     margin: 0 0 1rem;
+  }
+
+  .gen-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .gen-filters label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .gen-filters select {
+    padding: 0.45rem 0.6rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 0.9rem;
   }
 
   .deck-grid {
@@ -305,6 +381,8 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
     text: string;
     es: string;
     comboKey: string;
+    actionIdx: number;
+    objectIdx: number;
   }
 
   interface Deck {
@@ -312,6 +390,12 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
     title: string;
     glossEs: string;
     phrases: DeckPhrase[];
+  }
+
+  interface GenPageData {
+    decks: Deck[];
+    actionOptions: { idx: number; word: string; es: string }[];
+    objectOptions: { idx: number; word: string; es: string }[];
   }
 
   function initGeneradorFrases(): void {
@@ -325,10 +409,12 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
     const total = parseInt(root.dataset.total ?? '0', 10);
 
     const decksJsonEl = root.querySelector<HTMLScriptElement>('[data-decks-json]')!;
-    const decks: Deck[] = JSON.parse(decksJsonEl.textContent ?? '[]');
+    const { decks }: GenPageData = JSON.parse(decksJsonEl.textContent ?? '{"decks":[]}');
 
     const deckPicker = root.querySelector<HTMLElement>('[data-deck-picker]')!;
     const overallProgress = root.querySelector<HTMLElement>('[data-gen-overall-progress]')!;
+    const filterAction = root.querySelector<HTMLSelectElement>('[data-filter-action]')!;
+    const filterObject = root.querySelector<HTMLSelectElement>('[data-filter-object]')!;
     const flashPanel = root.querySelector<HTMLElement>('[data-flash-panel]')!;
     const flashBack = root.querySelector<HTMLButtonElement>('[data-flash-back]')!;
     const flashDeckTitle = root.querySelector<HTMLElement>('[data-flash-deck-title]')!;
@@ -340,10 +426,11 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
     const flashProgress = root.querySelector<HTMLElement>('[data-flash-progress]')!;
 
     let practiced = loadProgress(langId, matrixId);
-    let currentDeck: Deck | null = null;
+    let currentPhrases: DeckPhrase[] = [];
     let currentIndex = 0;
 
     updateOverallProgress();
+    updateDeckCounts();
 
     root.querySelectorAll<HTMLButtonElement>('[data-deck-id]').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -353,6 +440,9 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
       });
     });
 
+    filterAction.addEventListener('change', updateDeckCounts);
+    filterObject.addEventListener('change', updateDeckCounts);
+
     flashBack.addEventListener('click', () => {
       flashPanel.hidden = true;
       deckPicker.hidden = false;
@@ -360,14 +450,14 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
     });
 
     flashPrev.addEventListener('click', () => {
-      if (!currentDeck) return;
-      currentIndex = (currentIndex - 1 + currentDeck.phrases.length) % currentDeck.phrases.length;
+      if (currentPhrases.length === 0) return;
+      currentIndex = (currentIndex - 1 + currentPhrases.length) % currentPhrases.length;
       showCard();
     });
 
     flashNext.addEventListener('click', () => {
-      if (!currentDeck) return;
-      currentIndex = (currentIndex + 1) % currentDeck.phrases.length;
+      if (currentPhrases.length === 0) return;
+      currentIndex = (currentIndex + 1) % currentPhrases.length;
       showCard();
     });
 
@@ -376,8 +466,32 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
       if (text) speak(text, bcp47);
     });
 
+    function getActiveFilters(): { actionIdx: number | null; objectIdx: number | null } {
+      const actionIdx = filterAction.value === '' ? null : parseInt(filterAction.value, 10);
+      const objectIdx = filterObject.value === '' ? null : parseInt(filterObject.value, 10);
+      return { actionIdx, objectIdx };
+    }
+
+    function getFilteredPhrases(deck: Deck): DeckPhrase[] {
+      const { actionIdx, objectIdx } = getActiveFilters();
+      return deck.phrases.filter(
+        (p) =>
+          (actionIdx === null || p.actionIdx === actionIdx) &&
+          (objectIdx === null || p.objectIdx === objectIdx),
+      );
+    }
+
+    function updateDeckCounts(): void {
+      root!.querySelectorAll<HTMLButtonElement>('[data-deck-id]').forEach((btn) => {
+        const deck = decks.find((d) => d.id === btn.dataset.deckId);
+        if (!deck) return;
+        const countEl = btn.querySelector<HTMLElement>('[data-deck-count]');
+        if (countEl) countEl.textContent = `${getFilteredPhrases(deck).length} frases`;
+      });
+    }
+
     function openDeck(deck: Deck): void {
-      currentDeck = deck;
+      currentPhrases = getFilteredPhrases(deck);
       currentIndex = 0;
       deckPicker.hidden = true;
       flashPanel.hidden = false;
@@ -386,11 +500,11 @@ const decks = buildDecks(matrix, matrixConfig.assemble);
     }
 
     function showCard(): void {
-      if (!currentDeck) return;
-      const phrase = currentDeck.phrases[currentIndex];
+      if (currentPhrases.length === 0) return;
+      const phrase = currentPhrases[currentIndex];
       flashText.textContent = phrase.text;
       flashEs.textContent = phrase.es;
-      flashProgress.textContent = `${currentIndex + 1} / ${currentDeck.phrases.length}`;
+      flashProgress.textContent = `${currentIndex + 1} / ${currentPhrases.length}`;
 
       if (!practiced.has(phrase.comboKey)) {
         practiced.add(phrase.comboKey);

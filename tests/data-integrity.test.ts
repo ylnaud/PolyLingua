@@ -140,10 +140,13 @@ describe('resources', () => {
 describe('matrices (Generador de frases)', () => {
   const langIds = ['de', 'en', 'fr', 'it', 'pt'] as const;
 
-  it('every language has at least one b2 matrix', () => {
+  it('every language has at least one matrix per level from a1 through c2', () => {
+    const levels = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'] as const;
     for (const lang of langIds) {
-      const b2Matrices = MATRIX_DATA[lang].matrices.filter((m) => m.level === 'b2');
-      expect(b2Matrices.length, `${lang} has no b2 matrix`).toBeGreaterThan(0);
+      for (const level of levels) {
+        const matches = MATRIX_DATA[lang].matrices.filter((m) => m.level === level);
+        expect(matches.length, `${lang} has no ${level} matrix`).toBeGreaterThan(0);
+      }
     }
   });
 

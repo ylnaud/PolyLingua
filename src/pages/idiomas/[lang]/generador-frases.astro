@@ -34,10 +34,21 @@ interface FilterOption {
   es: string;
 }
 
+// Resuelve, para una columna dada, qué índice de `colIndices` hay que usar
+// para leer su `forms`/`esForms` — el de su propia columna `agreesWith`
+// (por defecto 'subject'), no siempre el sujeto de la frase.
+function resolveAgreeIdx(matrix: PhraseMatrix, colIdx: number, colIndices: number[]): number {
+  const agreesWithRole = matrix.columns[colIdx].agreesWith ?? 'subject';
+  const agreeColIdx = matrix.columns.findIndex((c) => c.role === agreesWithRole);
+  return agreeColIdx === -1 ? colIndices[colIdx] : colIndices[agreeColIdx];
+}
+
 function buildDecks(matrix: PhraseMatrix, assemble: PhraseAssembler): Deck[] {
   const lengths = matrix.columns.map((col) => col.items.length);
   const total = lengths.reduce((a, b) => a * b, 1);
   const deckMap = new Map<string, Deck>();
+  const subjectColIdx = matrix.columns.findIndex((c) => c.role === 'subject');
+  const modalColIdx = matrix.columns.findIndex((c) => c.role === 'modal');
   const actionColIdx = matrix.columns.findIndex((c) => c.role === 'action');
   const objectColIdx = matrix.columns.findIndex((c) => c.role === 'object');
 
@@ -49,19 +60,21 @@ function buildDecks(matrix: PhraseMatrix, assemble: PhraseAssembler): Deck[] {
       remaining = Math.floor(remaining / lengths[j]);
     }
 
-    const subjectIdx = colIndices[0];
-    const modalIdx = colIndices[1];
+    const subjectIdx = subjectColIdx === -1 ? colIndices[0] : colIndices[subjectColIdx];
+    const modalIdx = modalColIdx === -1 ? (colIndices[1] ?? 0) : colIndices[modalColIdx];
     const words: string[] = [];
     matrix.columns.forEach((col, colIdx) => {
       const item = col.items[colIndices[colIdx]];
-      words.push(item.forms?.[subjectIdx] ?? item.word);
+      const agreeIdx = resolveAgreeIdx(matrix, colIdx, colIndices);
+      words.push(item.forms?.[agreeIdx] ?? item.word);
     });
 
     const deckId = `${subjectIdx}-${modalIdx}`;
     if (!deckMap.has(deckId)) {
-      const subjItem = matrix.columns[0].items[subjectIdx];
-      const modalItem = matrix.columns[1].items[modalIdx];
-      const modalWord = modalItem.forms?.[subjectIdx] ?? modalItem.word;
+      const subjItem = matrix.columns[subjectColIdx].items[subjectIdx];
+      const modalItem = matrix.columns[modalColIdx].items[modalIdx];
+      const modalAgreeIdx = resolveAgreeIdx(matrix, modalColIdx, colIndices);
+      const modalWord = modalItem.forms?.[modalAgreeIdx] ?? modalItem.word;
       deckMap.set(deckId, {
         id: deckId,
         title: assemble([subjItem.word, modalWord]),
@@ -73,8 +86,8 @@ function buildDecks(matrix: PhraseMatrix, assemble: PhraseAssembler): Deck[] {
       text: assemble(words),
       es: assembleSpanishSentence(matrix, colIndices),
       comboKey: colIndices.join('-'),
-      actionIdx: colIndices[actionColIdx],
-      objectIdx: colIndices[objectColIdx],
+      actionIdx: actionColIdx === -1 ? -1 : colIndices[actionColIdx],
+      objectIdx: objectColIdx === -1 ? -1 : colIndices[objectColIdx],
     });
   }
 
@@ -95,15 +108,19 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 const matrixConfig = MATRIX_DATA[lang as keyof typeof MATRIX_DATA];
 
 const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
-  const actionColumn = matrix.columns.find((c) => c.role === 'action')!;
-  const objectColumn = matrix.columns.find((c) => c.role === 'object')!;
+  const actionColumn = matrix.columns.find((c) => c.role === 'action');
+  const objectColumn = matrix.columns.find((c) => c.role === 'object');
   return {
     matrix,
     levelMeta: LEVEL_MAP[matrix.level],
     totalCombinations: matrix.columns.reduce((acc, col) => acc * col.items.length, 1),
     decks: buildDecks(matrix, matrixConfig.assemble),
-    actionOptions: actionColumn.items.map((item, idx) => ({ idx, word: item.word, es: item.es })),
-    objectOptions: objectColumn.items.map((item, idx) => ({ idx, word: item.word, es: item.es })),
+    actionOptions: actionColumn
+      ? actionColumn.items.map((item, idx) => ({ idx, word: item.word, es: item.es }))
+      : [],
+    objectOptions: objectColumn
+      ? objectColumn.items.map((item, idx) => ({ idx, word: item.word, es: item.es }))
+      : [],
   };
 });
 ---
@@ -136,40 +153,52 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
             aria-pressed={idx === 0 ? 'true' : 'false'}
             style={`--tab-color:${md.levelMeta.color}`}
           >
-            {md.levelMeta.emoji} {md.matrix.level.toUpperCase()}
+            {md.levelMeta.emoji} {md.matrix.tabLabel ?? md.matrix.level.toUpperCase()}
           </button>
         ))
       }
     </div>
   </section>
 
-  <section class="container gen-body" data-gen-root data-lang-id={lang} data-bcp47={languageMeta?.bcp47}>
+  <section
+    class="container gen-body"
+    data-gen-root
+    data-lang-id={lang}
+    data-bcp47={languageMeta?.bcp47}
+  >
     {
       matrixPanels.map((md, idx) => (
         <div data-matrix-panel={md.matrix.id} data-total={md.totalCombinations} hidden={idx !== 0}>
           <div data-deck-picker>
+            <p class="gen-pedagogy-note">{md.matrix.description}</p>
             <p class="gen-overall-progress" data-gen-overall-progress />
 
-            <div class="gen-filters">
-              <label>
-                Verbo
-                <select data-filter-action>
-                  <option value="">Todos</option>
-                  {md.actionOptions.map((opt) => (
-                    <option value={opt.idx}>{opt.es}</option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                Tema
-                <select data-filter-object>
-                  <option value="">Todos</option>
-                  {md.objectOptions.map((opt) => (
-                    <option value={opt.idx}>{opt.es}</option>
-                  ))}
-                </select>
-              </label>
-            </div>
+            {(md.actionOptions.length > 0 || md.objectOptions.length > 0) && (
+              <div class="gen-filters">
+                {md.actionOptions.length > 0 && (
+                  <label>
+                    Verbo
+                    <select data-filter-action>
+                      <option value="">Todos</option>
+                      {md.actionOptions.map((opt) => (
+                        <option value={opt.idx}>{opt.es}</option>
+                      ))}
+                    </select>
+                  </label>
+                )}
+                {md.objectOptions.length > 0 && (
+                  <label>
+                    Tema
+                    <select data-filter-object>
+                      <option value="">Todos</option>
+                      {md.objectOptions.map((opt) => (
+                        <option value={opt.idx}>{opt.es}</option>
+                      ))}
+                    </select>
+                  </label>
+                )}
+              </div>
+            )}
 
             <div class="deck-grid">
               {md.decks.map((deck) => (
@@ -274,6 +303,15 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
 
   .gen-body {
     padding-bottom: calc(2rem + var(--bottom-nav-h));
+  }
+
+  .gen-pedagogy-note {
+    max-width: 620px;
+    margin: 0 auto 1rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 
   .gen-overall-progress {
@@ -490,8 +528,8 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
 
     const deckPicker = panel.querySelector<HTMLElement>('[data-deck-picker]')!;
     const overallProgress = panel.querySelector<HTMLElement>('[data-gen-overall-progress]')!;
-    const filterAction = panel.querySelector<HTMLSelectElement>('[data-filter-action]')!;
-    const filterObject = panel.querySelector<HTMLSelectElement>('[data-filter-object]')!;
+    const filterAction = panel.querySelector<HTMLSelectElement>('[data-filter-action]');
+    const filterObject = panel.querySelector<HTMLSelectElement>('[data-filter-object]');
     const flashPanel = panel.querySelector<HTMLElement>('[data-flash-panel]')!;
     const flashBack = panel.querySelector<HTMLButtonElement>('[data-flash-back]')!;
     const flashDeckTitle = panel.querySelector<HTMLElement>('[data-flash-deck-title]')!;
@@ -517,8 +555,8 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
       });
     });
 
-    filterAction.addEventListener('change', updateDeckCounts);
-    filterObject.addEventListener('change', updateDeckCounts);
+    filterAction?.addEventListener('change', updateDeckCounts);
+    filterObject?.addEventListener('change', updateDeckCounts);
 
     flashBack.addEventListener('click', () => {
       flashPanel.hidden = true;
@@ -544,8 +582,10 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
     });
 
     function getActiveFilters(): { actionIdx: number | null; objectIdx: number | null } {
-      const actionIdx = filterAction.value === '' ? null : parseInt(filterAction.value, 10);
-      const objectIdx = filterObject.value === '' ? null : parseInt(filterObject.value, 10);
+      const actionIdx =
+        !filterAction || filterAction.value === '' ? null : parseInt(filterAction.value, 10);
+      const objectIdx =
+        !filterObject || filterObject.value === '' ? null : parseInt(filterObject.value, 10);
       return { actionIdx, objectIdx };
     }
 

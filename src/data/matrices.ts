@@ -8,21 +8,33 @@ export interface MatrixWord {
   esForms?: string[];
 }
 
-export type MatrixColumnRole = 'subject' | 'modal' | 'action' | 'object';
+export type MatrixColumnRole = 'subject' | 'modal' | 'action' | 'object' | 'adjective' | 'noun';
 
 export interface MatrixColumn {
   label: string;
   labelTarget: string;
   role: MatrixColumnRole;
   items: MatrixWord[];
+  /**
+   * Qué columna elige el índice para resolver `forms`/`esForms` de esta
+   * columna. Por defecto 'subject' (comportamiento de siempre, no rompe
+   * nada existente). Un adjetivo que concuerda con un sustantivo pone
+   * agreesWith: 'noun'; en la matriz pasiva, el participio concuerda con
+   * el sujeto-sustantivo con agreesWith: 'subject' (default).
+   */
+  agreesWith?: MatrixColumnRole;
 }
 
 export interface PhraseMatrix {
   id: string;
   name: string;
+  /** Nota pedagógica corta: se renderiza en la UI debajo de la pestaña de nivel. */
   description: string;
   level: LevelId;
   columns: MatrixColumn[];
+  /** Label corto de pestaña. Sin esto, cae a level.toUpperCase(). Necesario
+   *  cuando un nivel tiene más de una matriz (B2 pasiva + subjuntivo). */
+  tabLabel?: string;
 }
 
 export type PhraseAssembler = (words: string[]) => string;
@@ -36,9 +48,30 @@ export interface LanguageMatrixConfig {
 // el sujeto ("Yo quiero", no solo "quiero") para poder resolver de forma
 // pareja construcciones irregulares como "gustar" (pronombre + "gusta", no
 // conjugación por sujeto) sin reglas especiales por verbo.
-const ES_QUERER = ['Yo quiero', 'Tú quieres', 'Él quiere', 'Ella quiere', 'Nosotros queremos', 'Vosotros queréis'];
-const ES_DEBER = ['Yo debo', 'Tú debes', 'Él debe', 'Ella debe', 'Nosotros debemos', 'Vosotros debéis'];
-const ES_PODER = ['Yo puedo', 'Tú puedes', 'Él puede', 'Ella puede', 'Nosotros podemos', 'Vosotros podéis'];
+const ES_QUERER = [
+  'Yo quiero',
+  'Tú quieres',
+  'Él quiere',
+  'Ella quiere',
+  'Nosotros queremos',
+  'Vosotros queréis',
+];
+const ES_DEBER = [
+  'Yo debo',
+  'Tú debes',
+  'Él debe',
+  'Ella debe',
+  'Nosotros debemos',
+  'Vosotros debéis',
+];
+const ES_PODER = [
+  'Yo puedo',
+  'Tú puedes',
+  'Él puede',
+  'Ella puede',
+  'Nosotros podemos',
+  'Vosotros podéis',
+];
 const ES_DEBERIA = [
   'Yo debería',
   'Tú deberías',
@@ -79,11 +112,50 @@ const ES_PREFERIR = [
   'Nosotros preferimos',
   'Vosotros preferís',
 ];
+// Nuevo modal compartido A1-B1: "saber (hacer algo)" en fr/it/pt, y su
+// equivalente de permiso "poder/tener permiso de" en de/en.
+const ES_SABER = [
+  'Yo sé',
+  'Tú sabes',
+  'Él sabe',
+  'Ella sabe',
+  'Nosotros sabemos',
+  'Vosotros sabéis',
+];
+const ES_TENGO_PERMISO = [
+  'Yo tengo permiso de',
+  'Tú tienes permiso de',
+  'Él tiene permiso de',
+  'Ella tiene permiso de',
+  'Nosotros tenemos permiso de',
+  'Vosotros tenéis permiso de',
+];
 
 // Mismos verbos, ahora en pretérito imperfecto (para la matriz de A2 "pasado").
-const ES_QUERIA = ['Yo quería', 'Tú querías', 'Él quería', 'Ella quería', 'Nosotros queríamos', 'Vosotros queríais'];
-const ES_DEBIA = ['Yo debía', 'Tú debías', 'Él debía', 'Ella debía', 'Nosotros debíamos', 'Vosotros debíais'];
-const ES_PODIA = ['Yo podía', 'Tú podías', 'Él podía', 'Ella podía', 'Nosotros podíamos', 'Vosotros podíais'];
+const ES_QUERIA = [
+  'Yo quería',
+  'Tú querías',
+  'Él quería',
+  'Ella quería',
+  'Nosotros queríamos',
+  'Vosotros queríais',
+];
+const ES_DEBIA = [
+  'Yo debía',
+  'Tú debías',
+  'Él debía',
+  'Ella debía',
+  'Nosotros debíamos',
+  'Vosotros debíais',
+];
+const ES_PODIA = [
+  'Yo podía',
+  'Tú podías',
+  'Él podía',
+  'Ella podía',
+  'Nosotros podíamos',
+  'Vosotros podíais',
+];
 const ES_NECESITABA = [
   'Yo necesitaba',
   'Tú necesitabas',
@@ -116,6 +188,22 @@ const ES_PREFERIA = [
   'Nosotros preferíamos',
   'Vosotros preferíais',
 ];
+const ES_SABIA = [
+  'Yo sabía',
+  'Tú sabías',
+  'Él sabía',
+  'Ella sabía',
+  'Nosotros sabíamos',
+  'Vosotros sabíais',
+];
+const ES_TENIA_PERMISO = [
+  'Yo tenía permiso de',
+  'Tú tenías permiso de',
+  'Él tenía permiso de',
+  'Ella tenía permiso de',
+  'Nosotros teníamos permiso de',
+  'Vosotros teníais permiso de',
+];
 
 // Mismos verbos, ahora en condicional (para la matriz de B1 "cortesía/hipótesis").
 const ES_QUISIERA = [
@@ -126,7 +214,14 @@ const ES_QUISIERA = [
   'Nosotros quisiéramos',
   'Vosotros quisierais',
 ];
-const ES_PODRIA = ['Yo podría', 'Tú podrías', 'Él podría', 'Ella podría', 'Nosotros podríamos', 'Vosotros podríais'];
+const ES_PODRIA = [
+  'Yo podría',
+  'Tú podrías',
+  'Él podría',
+  'Ella podría',
+  'Nosotros podríamos',
+  'Vosotros podríais',
+];
 const ES_NECESITARIA = [
   'Yo necesitaría',
   'Tú necesitarías',
@@ -159,6 +254,31 @@ const ES_PREFERIRIA = [
   'Nosotros preferiríamos',
   'Vosotros preferiríais',
 ];
+const ES_SABRIA = [
+  'Yo sabría',
+  'Tú sabrías',
+  'Él sabría',
+  'Ella sabría',
+  'Nosotros sabríamos',
+  'Vosotros sabríais',
+];
+const ES_TENDRIA_PERMISO = [
+  'Yo tendría permiso de',
+  'Tú tendrías permiso de',
+  'Él tendría permiso de',
+  'Ella tendría permiso de',
+  'Nosotros tendríamos permiso de',
+  'Vosotros tendríais permiso de',
+];
+
+// Glosas compartidas para las matrices nuevas de B2 (subjuntivo: "hablar"/
+// "leer" conjugados en indicativo español, ya que el discurso indirecto o la
+// subordinada impersonal en español no exige subjuntivo en la traducción).
+// A diferencia de ES_QUERER y compañía, van SIN pronombre: en la matriz de
+// subjuntivo el sujeto ya se emite por separado (ver assembleSpanishSentence),
+// así que acá el pronombre se duplicaría ("Ella dice que yo Yo hablo...").
+const ES_HABLA = ['hablo', 'hablas', 'habla', 'habla', 'hablamos', 'habláis'];
+const ES_LEE = ['leo', 'lees', 'lee', 'lee', 'leemos', 'leéis'];
 
 const GERMAN_SUBJECTS: MatrixWord[] = [
   { word: 'Ich', es: 'yo' },
@@ -194,6 +314,12 @@ const GERMAN_MODALS: MatrixWord[] = [
     forms: ['soll', 'sollst', 'soll', 'soll', 'sollen', 'sollt'],
     esForms: ES_DEBERIA,
   },
+  {
+    word: 'dürfen',
+    es: 'tener permiso de',
+    forms: ['darf', 'darfst', 'darf', 'darf', 'dürfen', 'dürft'],
+    esForms: ES_TENGO_PERMISO,
+  },
 ];
 
 const GERMAN_MODALS_PAST: MatrixWord[] = [
@@ -221,11 +347,17 @@ const GERMAN_MODALS_PAST: MatrixWord[] = [
     forms: ['sollte', 'solltest', 'sollte', 'sollte', 'sollten', 'solltet'],
     esForms: ES_DEBIA,
   },
+  {
+    word: 'dürfen',
+    es: 'tenía permiso de',
+    forms: ['durfte', 'durftest', 'durfte', 'durfte', 'durften', 'durftet'],
+    esForms: ES_TENIA_PERMISO,
+  },
 ];
 
 // wollen no usa condicional regular en alemán: la forma natural y cortés es
 // "möchte" (de mögen), no "würde wollen" — así lo enseñan las lecciones del
-// sitio. müssen/können/sollen sí usan su propio Konjunktiv II.
+// sitio. müssen/können/sollen/dürfen sí usan su propio Konjunktiv II.
 const GERMAN_MODALS_COND: MatrixWord[] = [
   {
     word: 'möchten',
@@ -251,6 +383,12 @@ const GERMAN_MODALS_COND: MatrixWord[] = [
     forms: ['sollte', 'solltest', 'sollte', 'sollte', 'sollten', 'solltet'],
     esForms: ES_DEBERIA,
   },
+  {
+    word: 'dürfen',
+    es: 'tendría permiso de',
+    forms: ['dürfte', 'dürftest', 'dürfte', 'dürfte', 'dürften', 'dürftet'],
+    esForms: ES_TENDRIA_PERMISO,
+  },
 ];
 
 const GERMAN_OBJECTS: MatrixWord[] = [
@@ -265,6 +403,70 @@ const GERMAN_VERBS: MatrixWord[] = [
   { word: 'sprechen', es: 'hablar' },
   { word: 'lesen', es: 'leer' },
   { word: 'studieren', es: 'estudiar' },
+  { word: 'reisen', es: 'viajar' },
+  { word: 'kaufen', es: 'comprar' },
+];
+
+// Sustantivos + adjetivos nuevos para la matriz "Vocabulario" (A2): frases
+// predicativas "sustantivo + ser/estar + adjetivo" — el alemán no declina el
+// adjetivo en posición predicativa, así que no hace falta concordancia.
+const GERMAN_NOUNS: MatrixWord[] = [
+  { word: 'Das Haus', es: 'la casa' },
+  { word: 'Das Auto', es: 'el auto' },
+  { word: 'Das Buch', es: 'el libro' },
+  { word: 'Die Stadt', es: 'la ciudad' },
+  { word: 'Das Wetter', es: 'el clima' },
+  { word: 'Die Arbeit', es: 'el trabajo' },
+];
+const GERMAN_COPULA: MatrixWord[] = [{ word: 'ist', es: 'es' }];
+const GERMAN_ADJECTIVES: MatrixWord[] = [
+  { word: 'groß', es: 'grande' },
+  { word: 'klein', es: 'chico/a' },
+  { word: 'gut', es: 'bueno/a' },
+  { word: 'neu', es: 'nuevo/a' },
+  { word: 'schnell', es: 'rápido/a' },
+  { word: 'wichtig', es: 'importante' },
+];
+
+// B2 · Pasiva: sustantivos-paciente + auxiliar invariable (wird) + participio
+// invariable (el alemán no concuerda el participio con el sujeto).
+const GERMAN_PASSIVE_NOUNS: MatrixWord[] = [
+  { word: 'Der Bericht', es: 'el informe' },
+  { word: 'Der Vertrag', es: 'el contrato' },
+  { word: 'Das Projekt', es: 'el proyecto' },
+  { word: 'Der Brief', es: 'la carta' },
+  { word: 'Der Vorschlag', es: 'la propuesta' },
+  { word: 'Die Entscheidung', es: 'la decisión' },
+];
+const GERMAN_PASSIVE_AUX: MatrixWord[] = [{ word: 'wird', es: 'es' }];
+// El participio alemán es invariable, pero la glosa en español sí concuerda
+// con el género del sustantivo español (informe/contrato/proyecto = m,
+// carta/propuesta/decisión = f), por eso lleva esForms aunque `forms` no.
+const GERMAN_PASSIVE_PARTICIPLE: MatrixWord[] = [
+  {
+    word: 'geschrieben',
+    es: 'escrito',
+    esForms: ['escrito', 'escrito', 'escrito', 'escrita', 'escrita', 'escrita'],
+  },
+];
+
+// B2 · Subjuntivo (Konjunktiv I, discurso indirecto): "Sie sagt, dass..." es
+// el disparador natural en alemán — no hay subjuntivo tras expresiones
+// impersonales como en francés/italiano/portugués.
+const GERMAN_REPORT_TRIGGER: MatrixWord[] = [{ word: 'Sie sagt, dass', es: 'Ella dice que' }];
+const GERMAN_SUBJUNCTIVE_VERBS: MatrixWord[] = [
+  {
+    word: 'sprechen',
+    es: 'hablar',
+    forms: ['spreche', 'sprechest', 'spreche', 'spreche', 'sprechen', 'sprechet'],
+    esForms: ES_HABLA,
+  },
+  {
+    word: 'lesen',
+    es: 'leer',
+    forms: ['lese', 'lesest', 'lese', 'lese', 'lesen', 'leset'],
+    esForms: ES_LEE,
+  },
 ];
 
 const ENGLISH_SUBJECTS: MatrixWord[] = [
@@ -301,6 +503,19 @@ const ENGLISH_MODALS: MatrixWord[] = [
     forms: ['like to', 'like to', 'likes to', 'likes to', 'like to', 'like to'],
     esForms: ES_GUSTAR,
   },
+  {
+    word: 'are allowed to',
+    es: 'tener permiso de',
+    forms: [
+      'am allowed to',
+      'are allowed to',
+      'is allowed to',
+      'is allowed to',
+      'are allowed to',
+      'are allowed to',
+    ],
+    esForms: ES_TENGO_PERMISO,
+  },
 ];
 
 const ENGLISH_MODALS_PAST: MatrixWord[] = [
@@ -327,6 +542,19 @@ const ENGLISH_MODALS_PAST: MatrixWord[] = [
     es: 'gustar',
     forms: ['liked to', 'liked to', 'liked to', 'liked to', 'liked to', 'liked to'],
     esForms: ES_GUSTABA,
+  },
+  {
+    word: 'were allowed to',
+    es: 'tener permiso de',
+    forms: [
+      'was allowed to',
+      'were allowed to',
+      'was allowed to',
+      'was allowed to',
+      'were allowed to',
+      'were allowed to',
+    ],
+    esForms: ES_TENIA_PERMISO,
   },
 ];
 
@@ -383,6 +611,19 @@ const ENGLISH_MODALS_COND: MatrixWord[] = [
     ],
     esForms: ES_GUSTARIA,
   },
+  {
+    word: 'would be allowed to',
+    es: 'tener permiso de',
+    forms: [
+      'would be allowed to',
+      'would be allowed to',
+      'would be allowed to',
+      'would be allowed to',
+      'would be allowed to',
+      'would be allowed to',
+    ],
+    esForms: ES_TENDRIA_PERMISO,
+  },
 ];
 
 const ENGLISH_ACTIONS: MatrixWord[] = [
@@ -390,6 +631,8 @@ const ENGLISH_ACTIONS: MatrixWord[] = [
   { word: 'speak', es: 'hablar' },
   { word: 'read', es: 'leer' },
   { word: 'study', es: 'estudiar' },
+  { word: 'travel', es: 'viajar' },
+  { word: 'buy', es: 'comprar' },
 ];
 
 const ENGLISH_OBJECTS: MatrixWord[] = [
@@ -397,6 +640,61 @@ const ENGLISH_OBJECTS: MatrixWord[] = [
   { word: 'English', es: 'inglés' },
   { word: 'French', es: 'francés' },
   { word: 'Spanish', es: 'español' },
+];
+
+const ENGLISH_NOUNS: MatrixWord[] = [
+  { word: 'The house', es: 'la casa' },
+  { word: 'The car', es: 'el auto' },
+  { word: 'The book', es: 'el libro' },
+  { word: 'The city', es: 'la ciudad' },
+  { word: 'The weather', es: 'el clima' },
+  { word: 'The job', es: 'el trabajo' },
+];
+const ENGLISH_COPULA: MatrixWord[] = [{ word: 'is', es: 'es' }];
+const ENGLISH_ADJECTIVES: MatrixWord[] = [
+  { word: 'big', es: 'grande' },
+  { word: 'small', es: 'chico/a' },
+  { word: 'good', es: 'bueno/a' },
+  { word: 'new', es: 'nuevo/a' },
+  { word: 'fast', es: 'rápido/a' },
+  { word: 'important', es: 'importante' },
+];
+
+const ENGLISH_PASSIVE_NOUNS: MatrixWord[] = [
+  { word: 'The report', es: 'el informe' },
+  { word: 'The contract', es: 'el contrato' },
+  { word: 'The project', es: 'el proyecto' },
+  { word: 'The letter', es: 'la carta' },
+  { word: 'The proposal', es: 'la propuesta' },
+  { word: 'The decision', es: 'la decisión' },
+];
+const ENGLISH_PASSIVE_AUX: MatrixWord[] = [{ word: 'is', es: 'es' }];
+// El participio inglés es invariable, pero la glosa en español sí concuerda
+// con el género del sustantivo español (mismo orden que ENGLISH_PASSIVE_NOUNS).
+const ENGLISH_PASSIVE_PARTICIPLE: MatrixWord[] = [
+  {
+    word: 'written',
+    es: 'escrito',
+    esForms: ['escrito', 'escrito', 'escrito', 'escrita', 'escrita', 'escrita'],
+  },
+];
+
+const ENGLISH_MANDATIVE_TRIGGER: MatrixWord[] = [
+  { word: "It's essential that", es: 'Es esencial que' },
+];
+const ENGLISH_SUBJUNCTIVE_VERBS: MatrixWord[] = [
+  {
+    word: 'speak',
+    es: 'hablar',
+    forms: ['speak', 'speak', 'speak', 'speak', 'speak', 'speak'],
+    esForms: ES_HABLA,
+  },
+  {
+    word: 'read',
+    es: 'leer',
+    forms: ['read', 'read', 'read', 'read', 'read', 'read'],
+    esForms: ES_LEE,
+  },
 ];
 
 const FRENCH_SUBJECTS: MatrixWord[] = [
@@ -433,6 +731,12 @@ const FRENCH_MODALS: MatrixWord[] = [
     forms: ['aime', 'aimes', 'aime', 'aime', 'aimons', 'aimez'],
     esForms: ES_GUSTAR,
   },
+  {
+    word: 'savoir',
+    es: 'saber',
+    forms: ['sais', 'sais', 'sait', 'sait', 'savons', 'savez'],
+    esForms: ES_SABER,
+  },
 ];
 
 const FRENCH_MODALS_PAST: MatrixWord[] = [
@@ -459,6 +763,12 @@ const FRENCH_MODALS_PAST: MatrixWord[] = [
     es: 'gustar',
     forms: ['aimais', 'aimais', 'aimait', 'aimait', 'aimions', 'aimiez'],
     esForms: ES_GUSTABA,
+  },
+  {
+    word: 'savoir',
+    es: 'saber',
+    forms: ['savais', 'savais', 'savait', 'savait', 'savions', 'saviez'],
+    esForms: ES_SABIA,
   },
 ];
 
@@ -487,6 +797,12 @@ const FRENCH_MODALS_COND: MatrixWord[] = [
     forms: ['aimerais', 'aimerais', 'aimerait', 'aimerait', 'aimerions', 'aimeriez'],
     esForms: ES_GUSTARIA,
   },
+  {
+    word: 'savoir',
+    es: 'saber',
+    forms: ['saurais', 'saurais', 'saurait', 'saurait', 'saurions', 'sauriez'],
+    esForms: ES_SABRIA,
+  },
 ];
 
 const FRENCH_ACTIONS: MatrixWord[] = [
@@ -494,6 +810,8 @@ const FRENCH_ACTIONS: MatrixWord[] = [
   { word: 'parler', es: 'hablar' },
   { word: 'lire', es: 'leer' },
   { word: 'étudier', es: 'estudiar' },
+  { word: 'voyager', es: 'viajar' },
+  { word: 'acheter', es: 'comprar' },
 ];
 
 const FRENCH_OBJECTS: MatrixWord[] = [
@@ -501,6 +819,117 @@ const FRENCH_OBJECTS: MatrixWord[] = [
   { word: "l'anglais", es: 'inglés' },
   { word: 'le français', es: 'francés' },
   { word: "l'espagnol", es: 'español' },
+];
+
+// Sustantivos con género para "Vocabulario" (adjetivo predicativo, siempre
+// después de être, sin importar si ese adjetivo iría antes en posición
+// atributiva — así se evita esa irregularidad de orden por completo).
+const FRENCH_NOUNS: MatrixWord[] = [
+  { word: 'La maison', es: 'la casa' },
+  { word: 'La voiture', es: 'el auto' },
+  { word: 'Le livre', es: 'el libro' },
+  { word: 'La ville', es: 'la ciudad' },
+  { word: 'Le temps', es: 'el clima' },
+  { word: 'Le travail', es: 'el trabajo' },
+];
+const FRENCH_COPULA: MatrixWord[] = [{ word: 'est', es: 'es' }];
+// forms alineados 1:1 con FRENCH_NOUNS por género (f,f,m,f,m,m).
+const FRENCH_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'grande',
+    es: 'grande',
+    forms: ['grande', 'grande', 'grand', 'grande', 'grand', 'grand'],
+    esForms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
+  },
+  {
+    word: 'petite',
+    es: 'chico/a',
+    forms: ['petite', 'petite', 'petit', 'petite', 'petit', 'petit'],
+    esForms: ['chica', 'chica', 'chico', 'chica', 'chico', 'chico'],
+  },
+  {
+    word: 'bonne',
+    es: 'bueno/a',
+    forms: ['bonne', 'bonne', 'bon', 'bonne', 'bon', 'bon'],
+    esForms: ['buena', 'buena', 'bueno', 'buena', 'bueno', 'bueno'],
+  },
+  {
+    word: 'nouvelle',
+    es: 'nuevo/a',
+    forms: ['nouvelle', 'nouvelle', 'nouveau', 'nouvelle', 'nouveau', 'nouveau'],
+    esForms: ['nueva', 'nueva', 'nuevo', 'nueva', 'nuevo', 'nuevo'],
+  },
+  {
+    word: 'rapide',
+    es: 'rápido/a',
+    forms: ['rapide', 'rapide', 'rapide', 'rapide', 'rapide', 'rapide'],
+    esForms: ['rápida', 'rápida', 'rápido', 'rápida', 'rápido', 'rápido'],
+  },
+  {
+    word: 'importante',
+    es: 'importante',
+    forms: ['importante', 'importante', 'important', 'importante', 'important', 'important'],
+    esForms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
+  },
+];
+
+// B2 · Pasiva: 3 sustantivos masculinos + 3 femeninos (orden: m,f,m,f,m,f)
+// para practicar la concordancia del participio con "être".
+const FRENCH_PASSIVE_NOUNS: MatrixWord[] = [
+  { word: 'Le rapport', es: 'el informe' },
+  { word: 'La lettre', es: 'la carta' },
+  { word: 'Le contrat', es: 'el contrato' },
+  { word: 'La proposition', es: 'la propuesta' },
+  { word: 'Le projet', es: 'el proyecto' },
+  { word: 'La décision', es: 'la decisión' },
+];
+const FRENCH_PASSIVE_AUX: MatrixWord[] = [{ word: 'est', es: 'es' }];
+const FRENCH_PASSIVE_PARTICIPLE: MatrixWord[] = [
+  {
+    word: 'écrit',
+    es: 'escrito/a',
+    forms: ['écrit', 'écrite', 'écrit', 'écrite', 'écrit', 'écrite'],
+    esForms: ['escrito', 'escrita', 'escrito', 'escrita', 'escrito', 'escrita'],
+  },
+];
+
+// B2 · Subjuntivo: "il faut que" exige elisión con il/elle ("qu'il"/"qu'elle")
+// y el sujeto no vuelve a aparecer suelto — se hornea sujeto+trigger juntos
+// por persona, y la columna "subject" solo aporta el gloss en español (su
+// `word` queda vacío y se filtra al armar la frase en francés).
+const FRENCH_SUBJUNCTIVE_SUBJECTS_SILENT: MatrixWord[] = FRENCH_SUBJECTS.map((s) => ({
+  word: '',
+  es: s.es,
+}));
+const FRENCH_SUBJUNCTIVE_TRIGGER: MatrixWord[] = [
+  {
+    word: 'Il faut que',
+    es: 'Es necesario que',
+    forms: [
+      'Il faut que je',
+      'Il faut que tu',
+      "Il faut qu'il",
+      "Il faut qu'elle",
+      'Il faut que nous',
+      'Il faut que vous',
+    ],
+  },
+];
+// parler/lire: ninguna forma empieza con vocal, así se evita necesitar otra
+// elisión ("j'apprenne") además de la ya resuelta en el disparador.
+const FRENCH_SUBJUNCTIVE_VERBS: MatrixWord[] = [
+  {
+    word: 'parler',
+    es: 'hablar',
+    forms: ['parle', 'parles', 'parle', 'parle', 'parlions', 'parliez'],
+    esForms: ES_HABLA,
+  },
+  {
+    word: 'lire',
+    es: 'leer',
+    forms: ['lise', 'lises', 'lise', 'lise', 'lisions', 'lisiez'],
+    esForms: ES_LEE,
+  },
 ];
 
 const ITALIAN_SUBJECTS: MatrixWord[] = [
@@ -537,6 +966,12 @@ const ITALIAN_MODALS: MatrixWord[] = [
     forms: ['preferisco', 'preferisci', 'preferisce', 'preferisce', 'preferiamo', 'preferite'],
     esForms: ES_PREFERIR,
   },
+  {
+    word: 'sapere',
+    es: 'saber',
+    forms: ['so', 'sai', 'sa', 'sa', 'sappiamo', 'sapete'],
+    esForms: ES_SABER,
+  },
 ];
 
 const ITALIAN_MODALS_PAST: MatrixWord[] = [
@@ -564,6 +999,12 @@ const ITALIAN_MODALS_PAST: MatrixWord[] = [
     forms: ['preferivo', 'preferivi', 'preferiva', 'preferiva', 'preferivamo', 'preferivate'],
     esForms: ES_PREFERIA,
   },
+  {
+    word: 'sapere',
+    es: 'saber',
+    forms: ['sapevo', 'sapevi', 'sapeva', 'sapeva', 'sapevamo', 'sapevate'],
+    esForms: ES_SABIA,
+  },
 ];
 
 const ITALIAN_MODALS_COND: MatrixWord[] = [
@@ -588,8 +1029,21 @@ const ITALIAN_MODALS_COND: MatrixWord[] = [
   {
     word: 'preferire',
     es: 'preferir',
-    forms: ['preferirei', 'preferiresti', 'preferirebbe', 'preferirebbe', 'preferiremmo', 'preferireste'],
+    forms: [
+      'preferirei',
+      'preferiresti',
+      'preferirebbe',
+      'preferirebbe',
+      'preferiremmo',
+      'preferireste',
+    ],
     esForms: ES_PREFERIRIA,
+  },
+  {
+    word: 'sapere',
+    es: 'saber',
+    forms: ['saprei', 'sapresti', 'saprebbe', 'saprebbe', 'sapremmo', 'sapreste'],
+    esForms: ES_SABRIA,
   },
 ];
 
@@ -598,6 +1052,8 @@ const ITALIAN_ACTIONS: MatrixWord[] = [
   { word: 'parlare', es: 'hablar' },
   { word: 'leggere', es: 'leer' },
   { word: 'studiare', es: 'estudiar' },
+  { word: 'viaggiare', es: 'viajar' },
+  { word: 'comprare', es: 'comprar' },
 ];
 
 const ITALIAN_OBJECTS: MatrixWord[] = [
@@ -605,6 +1061,89 @@ const ITALIAN_OBJECTS: MatrixWord[] = [
   { word: "l'inglese", es: 'inglés' },
   { word: 'il francese', es: 'francés' },
   { word: 'lo spagnolo', es: 'español' },
+];
+
+const ITALIAN_NOUNS: MatrixWord[] = [
+  { word: 'La casa', es: 'la casa' },
+  { word: 'La macchina', es: 'el auto' },
+  { word: 'Il libro', es: 'el libro' },
+  { word: 'La città', es: 'la ciudad' },
+  { word: 'Il tempo', es: 'el clima' },
+  { word: 'Il lavoro', es: 'el trabajo' },
+];
+const ITALIAN_COPULA: MatrixWord[] = [{ word: 'è', es: 'es' }];
+// forms alineados 1:1 con ITALIAN_NOUNS por género (f,f,m,f,m,m).
+const ITALIAN_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'grande',
+    es: 'grande',
+    forms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
+    esForms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
+  },
+  {
+    word: 'piccola',
+    es: 'chico/a',
+    forms: ['piccola', 'piccola', 'piccolo', 'piccola', 'piccolo', 'piccolo'],
+    esForms: ['chica', 'chica', 'chico', 'chica', 'chico', 'chico'],
+  },
+  {
+    word: 'buona',
+    es: 'bueno/a',
+    forms: ['buona', 'buona', 'buono', 'buona', 'buono', 'buono'],
+    esForms: ['buena', 'buena', 'bueno', 'buena', 'bueno', 'bueno'],
+  },
+  {
+    word: 'nuova',
+    es: 'nuevo/a',
+    forms: ['nuova', 'nuova', 'nuovo', 'nuova', 'nuovo', 'nuovo'],
+    esForms: ['nueva', 'nueva', 'nuevo', 'nueva', 'nuevo', 'nuevo'],
+  },
+  {
+    word: 'veloce',
+    es: 'rápido/a',
+    forms: ['veloce', 'veloce', 'veloce', 'veloce', 'veloce', 'veloce'],
+    esForms: ['rápida', 'rápida', 'rápido', 'rápida', 'rápido', 'rápido'],
+  },
+  {
+    word: 'importante',
+    es: 'importante',
+    forms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
+    esForms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
+  },
+];
+
+const ITALIAN_PASSIVE_NOUNS: MatrixWord[] = [
+  { word: 'Il rapporto', es: 'el informe' },
+  { word: 'La lettera', es: 'la carta' },
+  { word: 'Il contratto', es: 'el contrato' },
+  { word: 'La proposta', es: 'la propuesta' },
+  { word: 'Il progetto', es: 'el proyecto' },
+  { word: 'La decisione', es: 'la decisión' },
+];
+const ITALIAN_PASSIVE_AUX: MatrixWord[] = [{ word: 'è', es: 'es' }];
+const ITALIAN_PASSIVE_PARTICIPLE: MatrixWord[] = [
+  {
+    word: 'scritto',
+    es: 'escrito/a',
+    forms: ['scritto', 'scritta', 'scritto', 'scritta', 'scritto', 'scritta'],
+    esForms: ['escrito', 'escrita', 'escrito', 'escrita', 'escrito', 'escrita'],
+  },
+];
+
+const ITALIAN_SUBJUNCTIVE_TRIGGER: MatrixWord[] = [{ word: 'Bisogna che', es: 'Es necesario que' }];
+const ITALIAN_SUBJUNCTIVE_VERBS: MatrixWord[] = [
+  {
+    word: 'parlare',
+    es: 'hablar',
+    forms: ['parli', 'parli', 'parli', 'parli', 'parliamo', 'parliate'],
+    esForms: ES_HABLA,
+  },
+  {
+    word: 'leggere',
+    es: 'leer',
+    forms: ['legga', 'legga', 'legga', 'legga', 'leggiamo', 'leggiate'],
+    esForms: ES_LEE,
+  },
 ];
 
 const PORTUGUESE_SUBJECTS: MatrixWord[] = [
@@ -641,6 +1180,12 @@ const PORTUGUESE_MODALS: MatrixWord[] = [
     forms: ['devo', 'deves', 'deve', 'deve', 'devemos', 'devem'],
     esForms: ES_DEBER,
   },
+  {
+    word: 'saber',
+    es: 'saber',
+    forms: ['sei', 'sabes', 'sabe', 'sabe', 'sabemos', 'sabem'],
+    esForms: ES_SABER,
+  },
 ];
 
 const PORTUGUESE_MODALS_PAST: MatrixWord[] = [
@@ -668,6 +1213,12 @@ const PORTUGUESE_MODALS_PAST: MatrixWord[] = [
     forms: ['devia', 'devias', 'devia', 'devia', 'devíamos', 'deviam'],
     esForms: ES_DEBIA,
   },
+  {
+    word: 'saber',
+    es: 'saber',
+    forms: ['sabia', 'sabias', 'sabia', 'sabia', 'sabíamos', 'sabiam'],
+    esForms: ES_SABIA,
+  },
 ];
 
 const PORTUGUESE_MODALS_COND: MatrixWord[] = [
@@ -687,7 +1238,14 @@ const PORTUGUESE_MODALS_COND: MatrixWord[] = [
   {
     word: 'precisar',
     es: 'necesitar',
-    forms: ['precisaria', 'precisarias', 'precisaria', 'precisaria', 'precisaríamos', 'precisariam'],
+    forms: [
+      'precisaria',
+      'precisarias',
+      'precisaria',
+      'precisaria',
+      'precisaríamos',
+      'precisariam',
+    ],
     esForms: ES_NECESITARIA,
   },
   {
@@ -702,6 +1260,12 @@ const PORTUGUESE_MODALS_COND: MatrixWord[] = [
     forms: ['deveria', 'deverias', 'deveria', 'deveria', 'deveríamos', 'deveriam'],
     esForms: ES_DEBERIA,
   },
+  {
+    word: 'saber',
+    es: 'saber',
+    forms: ['saberia', 'saberias', 'saberia', 'saberia', 'saberíamos', 'saberiam'],
+    esForms: ES_SABRIA,
+  },
 ];
 
 const PORTUGUESE_ACTIONS: MatrixWord[] = [
@@ -709,6 +1273,8 @@ const PORTUGUESE_ACTIONS: MatrixWord[] = [
   { word: 'falar', es: 'hablar' },
   { word: 'ler', es: 'leer' },
   { word: 'estudar', es: 'estudiar' },
+  { word: 'viajar', es: 'viajar' },
+  { word: 'comprar', es: 'comprar' },
 ];
 
 const PORTUGUESE_OBJECTS: MatrixWord[] = [
@@ -718,50 +1284,168 @@ const PORTUGUESE_OBJECTS: MatrixWord[] = [
   { word: 'espanhol', es: 'español' },
 ];
 
+const PORTUGUESE_NOUNS: MatrixWord[] = [
+  { word: 'A casa', es: 'la casa' },
+  { word: 'O carro', es: 'el auto' },
+  { word: 'O livro', es: 'el libro' },
+  { word: 'A cidade', es: 'la ciudad' },
+  { word: 'O tempo', es: 'el clima' },
+  { word: 'O trabalho', es: 'el trabajo' },
+];
+const PORTUGUESE_COPULA: MatrixWord[] = [{ word: 'é', es: 'es' }];
+// forms alineados 1:1 con PORTUGUESE_NOUNS por género (f,m,m,f,m,m).
+const PORTUGUESE_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'grande',
+    es: 'grande',
+    forms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
+    esForms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
+  },
+  {
+    word: 'pequena',
+    es: 'chico/a',
+    forms: ['pequena', 'pequeno', 'pequeno', 'pequena', 'pequeno', 'pequeno'],
+    esForms: ['chica', 'chico', 'chico', 'chica', 'chico', 'chico'],
+  },
+  {
+    word: 'boa',
+    es: 'bueno/a',
+    forms: ['boa', 'bom', 'bom', 'boa', 'bom', 'bom'],
+    esForms: ['buena', 'bueno', 'bueno', 'buena', 'bueno', 'bueno'],
+  },
+  {
+    word: 'nova',
+    es: 'nuevo/a',
+    forms: ['nova', 'novo', 'novo', 'nova', 'novo', 'novo'],
+    esForms: ['nueva', 'nuevo', 'nuevo', 'nueva', 'nuevo', 'nuevo'],
+  },
+  {
+    word: 'rápida',
+    es: 'rápido/a',
+    forms: ['rápida', 'rápido', 'rápido', 'rápida', 'rápido', 'rápido'],
+    esForms: ['rápida', 'rápido', 'rápido', 'rápida', 'rápido', 'rápido'],
+  },
+  {
+    word: 'importante',
+    es: 'importante',
+    forms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
+    esForms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
+  },
+];
+
+const PORTUGUESE_PASSIVE_NOUNS: MatrixWord[] = [
+  { word: 'O relatório', es: 'el informe' },
+  { word: 'A carta', es: 'la carta' },
+  { word: 'O contrato', es: 'el contrato' },
+  { word: 'A proposta', es: 'la propuesta' },
+  { word: 'O projeto', es: 'el proyecto' },
+  { word: 'A decisão', es: 'la decisión' },
+];
+const PORTUGUESE_PASSIVE_AUX: MatrixWord[] = [{ word: 'é', es: 'es' }];
+const PORTUGUESE_PASSIVE_PARTICIPLE: MatrixWord[] = [
+  {
+    word: 'escrito',
+    es: 'escrito/a',
+    forms: ['escrito', 'escrita', 'escrito', 'escrita', 'escrito', 'escrita'],
+    esForms: ['escrito', 'escrita', 'escrito', 'escrita', 'escrito', 'escrita'],
+  },
+];
+
+const PORTUGUESE_SUBJUNCTIVE_TRIGGER: MatrixWord[] = [
+  { word: 'É importante que', es: 'Es importante que' },
+];
+const PORTUGUESE_SUBJUNCTIVE_VERBS: MatrixWord[] = [
+  {
+    word: 'falar',
+    es: 'hablar',
+    forms: ['fale', 'fales', 'fale', 'fale', 'falemos', 'falem'],
+    esForms: ES_HABLA,
+  },
+  {
+    word: 'ler',
+    es: 'leer',
+    forms: ['leia', 'leias', 'leia', 'leia', 'leiamos', 'leiam'],
+    esForms: ES_LEE,
+  },
+];
+
 function joinWords(words: string[]): string {
-  return words.join(' ');
+  return words.filter((w) => w.length > 0).join(' ');
 }
 
 const VOWELS = 'aeiouyâàéèêëîïôùûüœæ';
 
 function frenchAssemble(words: string[]): string {
-  if (words.length < 2) return words.join(' ');
-  const [subject, ...rest] = words;
+  const clean = words.filter((w) => w.length > 0);
+  if (clean.length < 2) return clean.join(' ');
+  const [subject, ...rest] = clean;
   if (subject.toLowerCase() === 'je' && rest.length > 0) {
     const next = rest[0];
     if (next && VOWELS.includes(next[0].toLowerCase())) {
       return "J'" + next + (rest.length > 1 ? ' ' + rest.slice(1).join(' ') : '');
     }
   }
-  return words.join(' ');
+  return clean.join(' ');
 }
 
-// El español siempre va sujeto-modal-acción-objeto, sin importar el orden de
-// palabras del idioma meta (a diferencia de assemble()) — por eso ubica cada
-// columna por su `role` en vez de por posición.
+function esTextFor(matrix: PhraseMatrix, colIdx: number, colIndices: number[]): string {
+  const column = matrix.columns[colIdx];
+  const item = column.items[colIndices[colIdx]];
+  const agreesWithRole = column.agreesWith ?? 'subject';
+  const agreeColIdx = matrix.columns.findIndex((c) => c.role === agreesWithRole);
+  const agreeIdx = agreeColIdx === -1 ? colIndices[colIdx] : colIndices[agreeColIdx];
+  return item.esForms?.[agreeIdx] ?? item.es;
+}
+
+// El resto de los roles (todo lo que no sea sujeto/modal) siempre va en este
+// orden en español, sin importar el orden de palabras del idioma meta.
+const SPANISH_TAIL_ORDER: MatrixColumnRole[] = ['noun', 'adjective', 'action', 'object'];
+
+// El español arma sujeto+modal de dos formas distintas según el tipo de
+// matriz:
+//  - Matrices "de siempre" (modales conjugados): el modal ya lleva el sujeto
+//    adentro vía esForms ("Yo quiero", no solo "quiero") — se emite un solo
+//    bloque, igual que siempre.
+//  - Matrices nuevas (cópula/disparador invariable, sin esForms): sujeto y
+//    modal se emiten por separado, en el orden en que aparecen las columnas
+//    de la matriz, así "Ella dice que" sale antes que "yo" y no al revés.
 export function assembleSpanishSentence(matrix: PhraseMatrix, colIndices: number[]): string {
+  const parts: string[] = [];
   const subjectColIdx = matrix.columns.findIndex((c) => c.role === 'subject');
   const modalColIdx = matrix.columns.findIndex((c) => c.role === 'modal');
-  const actionColIdx = matrix.columns.findIndex((c) => c.role === 'action');
-  const objectColIdx = matrix.columns.findIndex((c) => c.role === 'object');
+  const modalColumn = modalColIdx === -1 ? undefined : matrix.columns[modalColIdx];
+  const modalItem = modalColumn ? modalColumn.items[colIndices[modalColIdx]] : undefined;
+  const modalIsPersonBaked =
+    modalItem?.esForms !== undefined && (modalColumn?.agreesWith ?? 'subject') === 'subject';
 
-  const subjectIdx = colIndices[subjectColIdx];
-  const modalItem = matrix.columns[modalColIdx].items[colIndices[modalColIdx]];
-  const actionEs = matrix.columns[actionColIdx].items[colIndices[actionColIdx]].es;
-  const objectEs = matrix.columns[objectColIdx].items[colIndices[objectColIdx]].es;
-  const subjectModalEs = modalItem.esForms?.[subjectIdx] ?? modalItem.es;
+  if (modalIsPersonBaked && subjectColIdx !== -1) {
+    parts.push(esTextFor(matrix, modalColIdx, colIndices));
+  } else {
+    matrix.columns.forEach((col, colIdx) => {
+      if (col.role !== 'subject' && col.role !== 'modal') return;
+      const text = esTextFor(matrix, colIdx, colIndices);
+      if (text) parts.push(text);
+    });
+  }
 
-  return `${subjectModalEs} ${actionEs} ${objectEs}.`;
+  for (const role of SPANISH_TAIL_ORDER) {
+    const colIdx = matrix.columns.findIndex((c) => c.role === role);
+    if (colIdx === -1) continue;
+    const text = esTextFor(matrix, colIdx, colIndices);
+    if (text) parts.push(text);
+  }
+
+  return `${parts.join(' ')}.`;
 }
 
 export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
   de: {
     matrices: [
       {
-        id: 'basico-modal',
+        id: 'basico-modal-v2',
         name: 'Verbos modales',
         description:
-          'Combina sujetos, verbos modales, idiomas e infinitivos. En alemán el infinitivo va al final de la frase.',
+          'Empezás por la base: sujetos, verbos modales en presente y los primeros sustantivos y adjetivos. Acá no hay tiempos verbales que confundan — solo automatizás el orden de la frase alemana (sujeto-modal-objeto-infinitivo) y vocabulario nuevo.',
         level: 'a1',
         columns: [
           { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
@@ -771,10 +1455,10 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'pasado-modal',
+        id: 'pasado-modal-v2',
         name: 'Verbos modales en pasado',
         description:
-          'Combina sujetos, verbos modales en pasado (Präteritum), idiomas e infinitivos — para contar qué querías, podías o debías hacer.',
+          'Mismos modales, ahora en Präteritum (pasado), sobre el mismo vocabulario. Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.',
         level: 'a2',
         columns: [
           { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
@@ -784,10 +1468,10 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'condicional-modal',
+        id: 'condicional-modal-v2',
         name: 'Verbos modales de cortesía',
         description:
-          'Combina sujetos con möchte/müsste/könnte/sollte para pedir las cosas con cortesía, como en alemán se pide realmente.',
+          'Subís a los modales de cortesía (möchte/müsste/könnte/sollte/dürfte) para pedir las cosas como se pide realmente en alemán. Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
         level: 'b1',
         columns: [
           { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
@@ -796,16 +1480,81 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
         ],
       },
+      {
+        id: 'vocabulario-a2',
+        name: 'Sustantivos y adjetivos',
+        description:
+          'Practicás sustantivo + "ist" + adjetivo — frases cortas y autocontenidas para sumar vocabulario nuevo sin depender de los modales. El adjetivo en posición predicativa no se declina en alemán, así que podés enfocarte solo en el vocabulario.',
+        level: 'a2',
+        tabLabel: 'A2 · Vocabulario',
+        columns: [
+          { label: 'Sustantivo', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_NOUNS },
+          { label: 'Verbo', labelTarget: 'Kopula', role: 'modal', items: GERMAN_COPULA },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjektiv',
+            role: 'adjective',
+            items: GERMAN_ADJECTIVES,
+          },
+        ],
+      },
+      {
+        id: 'pasiva-b2',
+        name: 'Voz pasiva',
+        description:
+          'El foco cambia: en vez de quién hace algo, practicás quién lo recibe con el Passiv (wird + participio). Llega después de B1 porque necesitás los verbos automatizados — la pasiva es reorganizar esa misma info con el foco en otro lado.',
+        level: 'b2',
+        tabLabel: 'B2 · Pasiva',
+        columns: [
+          {
+            label: 'Sustantivo',
+            labelTarget: 'Subjekt',
+            role: 'subject',
+            items: GERMAN_PASSIVE_NOUNS,
+          },
+          { label: 'Auxiliar', labelTarget: 'Hilfsverb', role: 'modal', items: GERMAN_PASSIVE_AUX },
+          {
+            label: 'Participio',
+            labelTarget: 'Partizip',
+            role: 'action',
+            items: GERMAN_PASSIVE_PARTICIPLE,
+          },
+        ],
+      },
+      {
+        id: 'subjuntivo-b2',
+        name: 'Konjunktiv I (discurso indirecto)',
+        description:
+          'Practicás el Konjunktiv I, la forma que usa el alemán para citar lo que dijo otra persona — el equivalente más cercano al subjuntivo que buscás. Va después de la pasiva porque ya sabés separar sujeto y acción; ahora el desafío es una conjugación distinta, no un orden de palabras nuevo.',
+        level: 'b2',
+        tabLabel: 'B2 · Subjuntivo',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Auslöser',
+            role: 'modal',
+            items: GERMAN_REPORT_TRIGGER,
+          },
+          { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
+          {
+            label: 'Acción',
+            labelTarget: 'Konjunktiv I',
+            role: 'action',
+            items: GERMAN_SUBJUNCTIVE_VERBS,
+          },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
+        ],
+      },
     ],
     assemble: joinWords,
   },
   en: {
     matrices: [
       {
-        id: 'basico-modal',
+        id: 'basico-modal-v2',
         name: 'Modal verbs',
         description:
-          'Combina sujetos, modales, acciones y objetos. El orden en inglés es sujeto-modal-acción-objeto.',
+          "You start with the base: subjects, modal verbs in the present, and your first nouns and adjectives. There's no tense to confuse you yet — you're just automating English word order (subject-modal-action-object) and new vocabulary.",
         level: 'a1',
         columns: [
           { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
@@ -815,10 +1564,10 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'pasado-modal',
+        id: 'pasado-modal-v2',
         name: 'Modal verbs in the past',
         description:
-          'Combina sujetos, modales en pasado, acciones y objetos — para contar qué querías, necesitabas o tenías que hacer.',
+          'Same modals, now in the past, over the same vocabulary. It follows A1 because you already have the sentence order down — the challenge now is the past tense, not the structure.',
         level: 'a2',
         columns: [
           { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
@@ -828,15 +1577,85 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'condicional-modal',
+        id: 'condicional-modal-v2',
         name: 'Polite modal verbs',
         description:
-          'Combina sujetos con would like to/would need to/would have to/would love to para pedir las cosas con cortesía.',
+          'You move up to polite modals (would like to/would need to/would have to/would love to/would be allowed to) to ask for things politely. It comes after A2 because asking politely first requires mastering the modal in its basic tenses.',
         level: 'b1',
         columns: [
           { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS_COND },
           { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
+          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
+        ],
+      },
+      {
+        id: 'vocabulario-a2',
+        name: 'Nouns and adjectives',
+        description:
+          'You practice noun + "is" + adjective — short, self-contained sentences to build vocabulary without depending on modals. English adjectives never change form, so you can focus purely on new words.',
+        level: 'a2',
+        tabLabel: 'A2 · Vocabulary',
+        columns: [
+          { label: 'Sustantivo', labelTarget: 'Subject', role: 'subject', items: ENGLISH_NOUNS },
+          { label: 'Verbo', labelTarget: 'Copula', role: 'modal', items: ENGLISH_COPULA },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjective',
+            role: 'adjective',
+            items: ENGLISH_ADJECTIVES,
+          },
+        ],
+      },
+      {
+        id: 'pasiva-b2',
+        name: 'Passive voice',
+        description:
+          'The focus shifts: instead of who does something, you practice who receives it, with be + participle. It comes after B1 because you need the verbs automatized already — passive voice is that same information reorganized with the focus moved.',
+        level: 'b2',
+        tabLabel: 'B2 · Passive',
+        columns: [
+          {
+            label: 'Sustantivo',
+            labelTarget: 'Subject',
+            role: 'subject',
+            items: ENGLISH_PASSIVE_NOUNS,
+          },
+          {
+            label: 'Auxiliar',
+            labelTarget: 'Auxiliary',
+            role: 'modal',
+            items: ENGLISH_PASSIVE_AUX,
+          },
+          {
+            label: 'Participio',
+            labelTarget: 'Participle',
+            role: 'action',
+            items: ENGLISH_PASSIVE_PARTICIPLE,
+          },
+        ],
+      },
+      {
+        id: 'subjuntivo-b2',
+        name: 'Mandative subjunctive',
+        description:
+          'You practice the mandative subjunctive — the base form of the verb after triggers like "it\'s essential that", with no -s even for he/she. It comes after passive voice because you already separate subject from action; now the challenge is a form that stays invariable, not a new word order.',
+        level: 'b2',
+        tabLabel: 'B2 · Subjunctive',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Trigger',
+            role: 'modal',
+            items: ENGLISH_MANDATIVE_TRIGGER,
+          },
+          { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
+          {
+            label: 'Acción',
+            labelTarget: 'Subjunctive',
+            role: 'action',
+            items: ENGLISH_SUBJUNCTIVE_VERBS,
+          },
           { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
         ],
       },
@@ -846,10 +1665,10 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
   fr: {
     matrices: [
       {
-        id: 'basico-modal',
+        id: 'basico-modal-v2',
         name: 'Verbes modaux',
         description:
-          'Combina sujetos, modales, acciones y objetos. El francés aplica elisión (je + vocal = j\').',
+          'Empezás por la base: sujetos, verbos modales en presente y los primeros sustantivos y adjetivos. Acá no hay tiempos verbales que confundan — solo automatizás el orden de la frase francesa y vocabulario nuevo.',
         level: 'a1',
         columns: [
           { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
@@ -859,10 +1678,10 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'pasado-modal',
-        name: 'Verbes modaux à l\'imparfait',
+        id: 'pasado-modal-v2',
+        name: "Verbes modaux à l'imparfait",
         description:
-          'Combina sujetos, modales en imparfait, acciones y objetos — para contar qué querías, debías o podías hacer.',
+          'Mismos modales, ahora en imparfait, sobre el mismo vocabulario. Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.',
         level: 'a2',
         columns: [
           { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
@@ -872,15 +1691,92 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'condicional-modal',
+        id: 'condicional-modal-v2',
         name: 'Verbes modaux au conditionnel',
         description:
-          'Combina sujetos con voudrais/devrais/pourrais/aimerais para pedir las cosas con cortesía.',
+          'Subís a los modales de cortesía (voudrais/devrais/pourrais/aimerais/saurais) para pedir las cosas con cortesía. Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
         level: 'b1',
         columns: [
           { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: FRENCH_MODALS_COND },
           { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_ACTIONS },
+          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
+        ],
+      },
+      {
+        id: 'vocabulario-a2',
+        name: 'Substantifs et adjectifs',
+        description:
+          'Practicás sustantivo + "est" + adjetivo en posición predicativa — así el adjetivo siempre va después del sustantivo, sin las excepciones de orden que tiene el francés en posición atributiva. Sumás vocabulario nuevo con concordancia de género real.',
+        level: 'a2',
+        tabLabel: 'A2 · Vocabulaire',
+        columns: [
+          { label: 'Sustantivo', labelTarget: 'Sujet', role: 'subject', items: FRENCH_NOUNS },
+          { label: 'Verbo', labelTarget: 'Copule', role: 'modal', items: FRENCH_COPULA },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjectif',
+            role: 'adjective',
+            items: FRENCH_ADJECTIVES,
+            agreesWith: 'subject',
+          },
+        ],
+      },
+      {
+        id: 'pasiva-b2',
+        name: 'Voix passive',
+        description:
+          'El foco cambia: en vez de quién hace algo, practicás quién lo recibe con être + participio, concordando en género con el sustantivo. Llega después de B1 porque necesitás los verbos automatizados — la pasiva es reorganizar esa misma info con el foco en otro lado.',
+        level: 'b2',
+        tabLabel: 'B2 · Passive',
+        columns: [
+          {
+            label: 'Sustantivo',
+            labelTarget: 'Sujet',
+            role: 'subject',
+            items: FRENCH_PASSIVE_NOUNS,
+          },
+          {
+            label: 'Auxiliar',
+            labelTarget: 'Auxiliaire',
+            role: 'modal',
+            items: FRENCH_PASSIVE_AUX,
+          },
+          {
+            label: 'Participio',
+            labelTarget: 'Participe',
+            role: 'action',
+            items: FRENCH_PASSIVE_PARTICIPLE,
+            agreesWith: 'subject',
+          },
+        ],
+      },
+      {
+        id: 'subjuntivo-b2',
+        name: 'Subjonctif (déclencheur impersonnel)',
+        description:
+          'Practicás el subjuntivo real del francés, disparado por "il faut que" — la construcción impersonal más común para expresar necesidad. Va después de la pasiva porque ya sabés separar sujeto y acción; ahora el desafío es un modo verbal nuevo, no un orden de palabras nuevo.',
+        level: 'b2',
+        tabLabel: 'B2 · Subjonctif',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Déclencheur',
+            role: 'modal',
+            items: FRENCH_SUBJUNCTIVE_TRIGGER,
+          },
+          {
+            label: 'Quién',
+            labelTarget: 'Sujet',
+            role: 'subject',
+            items: FRENCH_SUBJUNCTIVE_SUBJECTS_SILENT,
+          },
+          {
+            label: 'Acción',
+            labelTarget: 'Subjonctif',
+            role: 'action',
+            items: FRENCH_SUBJUNCTIVE_VERBS,
+          },
           { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
         ],
       },
@@ -890,10 +1786,10 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
   it: {
     matrices: [
       {
-        id: 'basico-modal',
+        id: 'basico-modal-v2',
         name: 'Verbi modali',
         description:
-          'Combina sujetos, modales, acciones y objetos. El italiano sigue el orden sujeto-modal-acción-objeto.',
+          'Empezás por la base: sujetos, verbos modales en presente y los primeros sustantivos y adjetivos. Acá no hay tiempos verbales que confundan — solo automatizás el orden de la frase italiana y vocabulario nuevo.',
         level: 'a1',
         columns: [
           { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
@@ -903,10 +1799,10 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'pasado-modal',
+        id: 'pasado-modal-v2',
         name: "Verbi modali all'imperfetto",
         description:
-          'Combina sujetos, modales en imperfetto, acciones y objetos — para contar qué querías, debías o podías hacer.',
+          'Mismos modales, ahora en imperfetto, sobre el mismo vocabulario. Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.',
         level: 'a2',
         columns: [
           { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
@@ -916,15 +1812,87 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'condicional-modal',
+        id: 'condicional-modal-v2',
         name: 'Verbi modali al condizionale',
         description:
-          'Combina sujetos con vorrei/dovrei/potrei/preferirei para pedir las cosas con cortesía.',
+          'Subís a los modales de cortesía (vorrei/dovrei/potrei/preferirei/saprei) para pedir las cosas con cortesía. Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
         level: 'b1',
         columns: [
           { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modale', role: 'modal', items: ITALIAN_MODALS_COND },
           { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_ACTIONS },
+          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
+        ],
+      },
+      {
+        id: 'vocabulario-a2',
+        name: 'Sostantivi e aggettivi',
+        description:
+          'Practicás sustantivo + "è" + adjetivo en posición predicativa, con concordancia de género real. Sumás vocabulario nuevo sin depender de los verbos modales.',
+        level: 'a2',
+        tabLabel: 'A2 · Vocabolario',
+        columns: [
+          { label: 'Sustantivo', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_NOUNS },
+          { label: 'Verbo', labelTarget: 'Copula', role: 'modal', items: ITALIAN_COPULA },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Aggettivo',
+            role: 'adjective',
+            items: ITALIAN_ADJECTIVES,
+            agreesWith: 'subject',
+          },
+        ],
+      },
+      {
+        id: 'pasiva-b2',
+        name: 'Voce passiva',
+        description:
+          'El foco cambia: en vez de quién hace algo, practicás quién lo recibe con essere + participio, concordando en género con el sustantivo. Llega después de B1 porque necesitás los verbos automatizados — la pasiva es reorganizar esa misma info con el foco en otro lado.',
+        level: 'b2',
+        tabLabel: 'B2 · Passiva',
+        columns: [
+          {
+            label: 'Sustantivo',
+            labelTarget: 'Soggetto',
+            role: 'subject',
+            items: ITALIAN_PASSIVE_NOUNS,
+          },
+          {
+            label: 'Auxiliar',
+            labelTarget: 'Ausiliare',
+            role: 'modal',
+            items: ITALIAN_PASSIVE_AUX,
+          },
+          {
+            label: 'Participio',
+            labelTarget: 'Participio',
+            role: 'action',
+            items: ITALIAN_PASSIVE_PARTICIPLE,
+            agreesWith: 'subject',
+          },
+        ],
+      },
+      {
+        id: 'subjuntivo-b2',
+        name: 'Congiuntivo (disparador impersonale)',
+        description:
+          'Practicás el congiuntivo real del italiano, disparado por "bisogna che" — la construcción impersonal más común para expresar necesidad. Va después de la pasiva porque ya sabés separar sujeto y acción; ahora el desafío es un modo verbal nuevo, no un orden de palabras nuevo.',
+        level: 'b2',
+        tabLabel: 'B2 · Congiuntivo',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Disparador',
+            role: 'modal',
+            items: ITALIAN_SUBJUNCTIVE_TRIGGER,
+          },
+          { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
+          {
+            label: 'Acción',
+            labelTarget: 'Congiuntivo',
+            role: 'action',
+            items: ITALIAN_SUBJUNCTIVE_VERBS,
+          },
           { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
         ],
       },
@@ -934,10 +1902,10 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
   pt: {
     matrices: [
       {
-        id: 'basico-modal',
+        id: 'basico-modal-v2',
         name: 'Verbos modais',
         description:
-          'Combina sujetos, modales, acciones y objetos. El portugués sigue sujeto-modal-acción-objeto.',
+          'Empezás por la base: sujetos, verbos modales en presente y los primeros sustantivos y adjetivos. Acá no hay tiempos verbales que confundan — solo automatizás el orden de la frase portuguesa y vocabulario nuevo.',
         level: 'a1',
         columns: [
           { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
@@ -947,10 +1915,10 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'pasado-modal',
+        id: 'pasado-modal-v2',
         name: 'Verbos modais no pretérito imperfeito',
         description:
-          'Combina sujetos, modales en pretérito imperfecto, acciones y objetos — para contar qué querías, precisabas o podías hacer.',
+          'Mismos modales, ahora en pretérito imperfecto, sobre el mismo vocabulario. Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.',
         level: 'a2',
         columns: [
           { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
@@ -960,15 +1928,87 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'condicional-modal',
+        id: 'condicional-modal-v2',
         name: 'Verbos modais no condicional',
         description:
-          'Combina sujetos con gostaria de/precisaria/poderia/deveria para pedir las cosas con cortesía.',
+          'Subís a los modales de cortesía (gostaria de/precisaria/poderia/deveria/saberia) para pedir las cosas con cortesía. Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
         level: 'b1',
         columns: [
           { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS_COND },
           { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
+          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
+        ],
+      },
+      {
+        id: 'vocabulario-a2',
+        name: 'Substantivos e adjetivos',
+        description:
+          'Practicás sustantivo + "é" + adjetivo en posición predicativa, con concordancia de género real. Sumás vocabulario nuevo sin depender de los verbos modales.',
+        level: 'a2',
+        tabLabel: 'A2 · Vocabulário',
+        columns: [
+          { label: 'Sustantivo', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_NOUNS },
+          { label: 'Verbo', labelTarget: 'Cópula', role: 'modal', items: PORTUGUESE_COPULA },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjetivo',
+            role: 'adjective',
+            items: PORTUGUESE_ADJECTIVES,
+            agreesWith: 'subject',
+          },
+        ],
+      },
+      {
+        id: 'pasiva-b2',
+        name: 'Voz passiva',
+        description:
+          'El foco cambia: en vez de quién hace algo, practicás quién lo recibe con ser + participio, concordando en género con el sustantivo. Llega después de B1 porque necesitás los verbos automatizados — la pasiva es reorganizar esa misma info con el foco en otro lado.',
+        level: 'b2',
+        tabLabel: 'B2 · Passiva',
+        columns: [
+          {
+            label: 'Sustantivo',
+            labelTarget: 'Sujeito',
+            role: 'subject',
+            items: PORTUGUESE_PASSIVE_NOUNS,
+          },
+          {
+            label: 'Auxiliar',
+            labelTarget: 'Auxiliar',
+            role: 'modal',
+            items: PORTUGUESE_PASSIVE_AUX,
+          },
+          {
+            label: 'Participio',
+            labelTarget: 'Particípio',
+            role: 'action',
+            items: PORTUGUESE_PASSIVE_PARTICIPLE,
+            agreesWith: 'subject',
+          },
+        ],
+      },
+      {
+        id: 'subjuntivo-b2',
+        name: 'Subjuntivo (disparador impessoal)',
+        description:
+          'Practicás el subjuntivo real del portugués, disparado por "é importante que" — la construcción impersonal más común para expresar necesidad. Va después de la pasiva porque ya sabés separar sujeto y acción; ahora el desafío es un modo verbal nuevo, no un orden de palabras nuevo.',
+        level: 'b2',
+        tabLabel: 'B2 · Subjuntivo',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Disparador',
+            role: 'modal',
+            items: PORTUGUESE_SUBJUNCTIVE_TRIGGER,
+          },
+          { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
+          {
+            label: 'Acción',
+            labelTarget: 'Subjuntivo',
+            role: 'action',
+            items: PORTUGUESE_SUBJUNCTIVE_VERBS,
+          },
           { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
         ],
       },

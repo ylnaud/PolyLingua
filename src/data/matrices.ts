@@ -8,7 +8,7 @@ export interface MatrixWord {
   esForms?: string[];
 }
 
-export type MatrixColumnRole = 'subject' | 'modal' | 'action' | 'object' | 'adjective' | 'noun';
+export type MatrixColumnRole = 'subject' | 'modal' | 'action' | 'object';
 
 export interface MatrixColumn {
   label: string;
@@ -18,9 +18,8 @@ export interface MatrixColumn {
   /**
    * Qué columna elige el índice para resolver `forms`/`esForms` de esta
    * columna. Por defecto 'subject' (comportamiento de siempre, no rompe
-   * nada existente). Un adjetivo que concuerda con un sustantivo pone
-   * agreesWith: 'noun'; en la matriz pasiva, el participio concuerda con
-   * el sujeto-sustantivo con agreesWith: 'subject' (default).
+   * nada existente). En la matriz pasiva, el participio concuerda en
+   * género con el sujeto-sustantivo vía agreesWith: 'subject' (default).
    */
   agreesWith?: MatrixColumnRole;
 }
@@ -407,27 +406,6 @@ const GERMAN_VERBS: MatrixWord[] = [
   { word: 'kaufen', es: 'comprar' },
 ];
 
-// Sustantivos + adjetivos nuevos para la matriz "Vocabulario" (A2): frases
-// predicativas "sustantivo + ser/estar + adjetivo" — el alemán no declina el
-// adjetivo en posición predicativa, así que no hace falta concordancia.
-const GERMAN_NOUNS: MatrixWord[] = [
-  { word: 'Das Haus', es: 'la casa' },
-  { word: 'Das Auto', es: 'el auto' },
-  { word: 'Das Buch', es: 'el libro' },
-  { word: 'Die Stadt', es: 'la ciudad' },
-  { word: 'Das Wetter', es: 'el clima' },
-  { word: 'Die Arbeit', es: 'el trabajo' },
-];
-const GERMAN_COPULA: MatrixWord[] = [{ word: 'ist', es: 'es' }];
-const GERMAN_ADJECTIVES: MatrixWord[] = [
-  { word: 'groß', es: 'grande' },
-  { word: 'klein', es: 'chico/a' },
-  { word: 'gut', es: 'bueno/a' },
-  { word: 'neu', es: 'nuevo/a' },
-  { word: 'schnell', es: 'rápido/a' },
-  { word: 'wichtig', es: 'importante' },
-];
-
 // B2 · Pasiva: sustantivos-paciente + auxiliar invariable (wird) + participio
 // invariable (el alemán no concuerda el participio con el sujeto).
 const GERMAN_PASSIVE_NOUNS: MatrixWord[] = [
@@ -642,24 +620,6 @@ const ENGLISH_OBJECTS: MatrixWord[] = [
   { word: 'Spanish', es: 'español' },
 ];
 
-const ENGLISH_NOUNS: MatrixWord[] = [
-  { word: 'The house', es: 'la casa' },
-  { word: 'The car', es: 'el auto' },
-  { word: 'The book', es: 'el libro' },
-  { word: 'The city', es: 'la ciudad' },
-  { word: 'The weather', es: 'el clima' },
-  { word: 'The job', es: 'el trabajo' },
-];
-const ENGLISH_COPULA: MatrixWord[] = [{ word: 'is', es: 'es' }];
-const ENGLISH_ADJECTIVES: MatrixWord[] = [
-  { word: 'big', es: 'grande' },
-  { word: 'small', es: 'chico/a' },
-  { word: 'good', es: 'bueno/a' },
-  { word: 'new', es: 'nuevo/a' },
-  { word: 'fast', es: 'rápido/a' },
-  { word: 'important', es: 'importante' },
-];
-
 const ENGLISH_PASSIVE_NOUNS: MatrixWord[] = [
   { word: 'The report', es: 'el informe' },
   { word: 'The contract', es: 'el contrato' },
@@ -819,58 +779,6 @@ const FRENCH_OBJECTS: MatrixWord[] = [
   { word: "l'anglais", es: 'inglés' },
   { word: 'le français', es: 'francés' },
   { word: "l'espagnol", es: 'español' },
-];
-
-// Sustantivos con género para "Vocabulario" (adjetivo predicativo, siempre
-// después de être, sin importar si ese adjetivo iría antes en posición
-// atributiva — así se evita esa irregularidad de orden por completo).
-const FRENCH_NOUNS: MatrixWord[] = [
-  { word: 'La maison', es: 'la casa' },
-  { word: 'La voiture', es: 'el auto' },
-  { word: 'Le livre', es: 'el libro' },
-  { word: 'La ville', es: 'la ciudad' },
-  { word: 'Le temps', es: 'el clima' },
-  { word: 'Le travail', es: 'el trabajo' },
-];
-const FRENCH_COPULA: MatrixWord[] = [{ word: 'est', es: 'es' }];
-// forms alineados 1:1 con FRENCH_NOUNS por género (f,f,m,f,m,m).
-const FRENCH_ADJECTIVES: MatrixWord[] = [
-  {
-    word: 'grande',
-    es: 'grande',
-    forms: ['grande', 'grande', 'grand', 'grande', 'grand', 'grand'],
-    esForms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
-  },
-  {
-    word: 'petite',
-    es: 'chico/a',
-    forms: ['petite', 'petite', 'petit', 'petite', 'petit', 'petit'],
-    esForms: ['chica', 'chica', 'chico', 'chica', 'chico', 'chico'],
-  },
-  {
-    word: 'bonne',
-    es: 'bueno/a',
-    forms: ['bonne', 'bonne', 'bon', 'bonne', 'bon', 'bon'],
-    esForms: ['buena', 'buena', 'bueno', 'buena', 'bueno', 'bueno'],
-  },
-  {
-    word: 'nouvelle',
-    es: 'nuevo/a',
-    forms: ['nouvelle', 'nouvelle', 'nouveau', 'nouvelle', 'nouveau', 'nouveau'],
-    esForms: ['nueva', 'nueva', 'nuevo', 'nueva', 'nuevo', 'nuevo'],
-  },
-  {
-    word: 'rapide',
-    es: 'rápido/a',
-    forms: ['rapide', 'rapide', 'rapide', 'rapide', 'rapide', 'rapide'],
-    esForms: ['rápida', 'rápida', 'rápido', 'rápida', 'rápido', 'rápido'],
-  },
-  {
-    word: 'importante',
-    es: 'importante',
-    forms: ['importante', 'importante', 'important', 'importante', 'important', 'important'],
-    esForms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
-  },
 ];
 
 // B2 · Pasiva: 3 sustantivos masculinos + 3 femeninos (orden: m,f,m,f,m,f)
@@ -1063,55 +971,6 @@ const ITALIAN_OBJECTS: MatrixWord[] = [
   { word: 'lo spagnolo', es: 'español' },
 ];
 
-const ITALIAN_NOUNS: MatrixWord[] = [
-  { word: 'La casa', es: 'la casa' },
-  { word: 'La macchina', es: 'el auto' },
-  { word: 'Il libro', es: 'el libro' },
-  { word: 'La città', es: 'la ciudad' },
-  { word: 'Il tempo', es: 'el clima' },
-  { word: 'Il lavoro', es: 'el trabajo' },
-];
-const ITALIAN_COPULA: MatrixWord[] = [{ word: 'è', es: 'es' }];
-// forms alineados 1:1 con ITALIAN_NOUNS por género (f,f,m,f,m,m).
-const ITALIAN_ADJECTIVES: MatrixWord[] = [
-  {
-    word: 'grande',
-    es: 'grande',
-    forms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
-    esForms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
-  },
-  {
-    word: 'piccola',
-    es: 'chico/a',
-    forms: ['piccola', 'piccola', 'piccolo', 'piccola', 'piccolo', 'piccolo'],
-    esForms: ['chica', 'chica', 'chico', 'chica', 'chico', 'chico'],
-  },
-  {
-    word: 'buona',
-    es: 'bueno/a',
-    forms: ['buona', 'buona', 'buono', 'buona', 'buono', 'buono'],
-    esForms: ['buena', 'buena', 'bueno', 'buena', 'bueno', 'bueno'],
-  },
-  {
-    word: 'nuova',
-    es: 'nuevo/a',
-    forms: ['nuova', 'nuova', 'nuovo', 'nuova', 'nuovo', 'nuovo'],
-    esForms: ['nueva', 'nueva', 'nuevo', 'nueva', 'nuevo', 'nuevo'],
-  },
-  {
-    word: 'veloce',
-    es: 'rápido/a',
-    forms: ['veloce', 'veloce', 'veloce', 'veloce', 'veloce', 'veloce'],
-    esForms: ['rápida', 'rápida', 'rápido', 'rápida', 'rápido', 'rápido'],
-  },
-  {
-    word: 'importante',
-    es: 'importante',
-    forms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
-    esForms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
-  },
-];
-
 const ITALIAN_PASSIVE_NOUNS: MatrixWord[] = [
   { word: 'Il rapporto', es: 'el informe' },
   { word: 'La lettera', es: 'la carta' },
@@ -1284,55 +1143,6 @@ const PORTUGUESE_OBJECTS: MatrixWord[] = [
   { word: 'espanhol', es: 'español' },
 ];
 
-const PORTUGUESE_NOUNS: MatrixWord[] = [
-  { word: 'A casa', es: 'la casa' },
-  { word: 'O carro', es: 'el auto' },
-  { word: 'O livro', es: 'el libro' },
-  { word: 'A cidade', es: 'la ciudad' },
-  { word: 'O tempo', es: 'el clima' },
-  { word: 'O trabalho', es: 'el trabajo' },
-];
-const PORTUGUESE_COPULA: MatrixWord[] = [{ word: 'é', es: 'es' }];
-// forms alineados 1:1 con PORTUGUESE_NOUNS por género (f,m,m,f,m,m).
-const PORTUGUESE_ADJECTIVES: MatrixWord[] = [
-  {
-    word: 'grande',
-    es: 'grande',
-    forms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
-    esForms: ['grande', 'grande', 'grande', 'grande', 'grande', 'grande'],
-  },
-  {
-    word: 'pequena',
-    es: 'chico/a',
-    forms: ['pequena', 'pequeno', 'pequeno', 'pequena', 'pequeno', 'pequeno'],
-    esForms: ['chica', 'chico', 'chico', 'chica', 'chico', 'chico'],
-  },
-  {
-    word: 'boa',
-    es: 'bueno/a',
-    forms: ['boa', 'bom', 'bom', 'boa', 'bom', 'bom'],
-    esForms: ['buena', 'bueno', 'bueno', 'buena', 'bueno', 'bueno'],
-  },
-  {
-    word: 'nova',
-    es: 'nuevo/a',
-    forms: ['nova', 'novo', 'novo', 'nova', 'novo', 'novo'],
-    esForms: ['nueva', 'nuevo', 'nuevo', 'nueva', 'nuevo', 'nuevo'],
-  },
-  {
-    word: 'rápida',
-    es: 'rápido/a',
-    forms: ['rápida', 'rápido', 'rápido', 'rápida', 'rápido', 'rápido'],
-    esForms: ['rápida', 'rápido', 'rápido', 'rápida', 'rápido', 'rápido'],
-  },
-  {
-    word: 'importante',
-    es: 'importante',
-    forms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
-    esForms: ['importante', 'importante', 'importante', 'importante', 'importante', 'importante'],
-  },
-];
-
 const PORTUGUESE_PASSIVE_NOUNS: MatrixWord[] = [
   { word: 'O relatório', es: 'el informe' },
   { word: 'A carta', es: 'la carta' },
@@ -1399,7 +1209,7 @@ function esTextFor(matrix: PhraseMatrix, colIdx: number, colIndices: number[]): 
 
 // El resto de los roles (todo lo que no sea sujeto/modal) siempre va en este
 // orden en español, sin importar el orden de palabras del idioma meta.
-const SPANISH_TAIL_ORDER: MatrixColumnRole[] = ['noun', 'adjective', 'action', 'object'];
+const SPANISH_TAIL_ORDER: MatrixColumnRole[] = ['action', 'object'];
 
 // El español arma sujeto+modal de dos formas distintas según el tipo de
 // matriz:
@@ -1478,24 +1288,6 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Motivo', labelTarget: 'Modalverb', role: 'modal', items: GERMAN_MODALS_COND },
           { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
           { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
-        ],
-      },
-      {
-        id: 'vocabulario-a2',
-        name: 'Sustantivos y adjetivos',
-        description:
-          'Practicás sustantivo + "ist" + adjetivo — frases cortas y autocontenidas para sumar vocabulario nuevo sin depender de los modales. El adjetivo en posición predicativa no se declina en alemán, así que podés enfocarte solo en el vocabulario.',
-        level: 'a2',
-        tabLabel: 'A2 · Vocabulario',
-        columns: [
-          { label: 'Sustantivo', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_NOUNS },
-          { label: 'Verbo', labelTarget: 'Kopula', role: 'modal', items: GERMAN_COPULA },
-          {
-            label: 'Adjetivo',
-            labelTarget: 'Adjektiv',
-            role: 'adjective',
-            items: GERMAN_ADJECTIVES,
-          },
         ],
       },
       {
@@ -1587,24 +1379,6 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS_COND },
           { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
           { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
-        ],
-      },
-      {
-        id: 'vocabulario-a2',
-        name: 'Nouns and adjectives',
-        description:
-          'You practice noun + "is" + adjective — short, self-contained sentences to build vocabulary without depending on modals. English adjectives never change form, so you can focus purely on new words.',
-        level: 'a2',
-        tabLabel: 'A2 · Vocabulary',
-        columns: [
-          { label: 'Sustantivo', labelTarget: 'Subject', role: 'subject', items: ENGLISH_NOUNS },
-          { label: 'Verbo', labelTarget: 'Copula', role: 'modal', items: ENGLISH_COPULA },
-          {
-            label: 'Adjetivo',
-            labelTarget: 'Adjective',
-            role: 'adjective',
-            items: ENGLISH_ADJECTIVES,
-          },
         ],
       },
       {
@@ -1701,25 +1475,6 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: FRENCH_MODALS_COND },
           { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_ACTIONS },
           { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
-        ],
-      },
-      {
-        id: 'vocabulario-a2',
-        name: 'Substantifs et adjectifs',
-        description:
-          'Practicás sustantivo + "est" + adjetivo en posición predicativa — así el adjetivo siempre va después del sustantivo, sin las excepciones de orden que tiene el francés en posición atributiva. Sumás vocabulario nuevo con concordancia de género real.',
-        level: 'a2',
-        tabLabel: 'A2 · Vocabulaire',
-        columns: [
-          { label: 'Sustantivo', labelTarget: 'Sujet', role: 'subject', items: FRENCH_NOUNS },
-          { label: 'Verbo', labelTarget: 'Copule', role: 'modal', items: FRENCH_COPULA },
-          {
-            label: 'Adjetivo',
-            labelTarget: 'Adjectif',
-            role: 'adjective',
-            items: FRENCH_ADJECTIVES,
-            agreesWith: 'subject',
-          },
         ],
       },
       {
@@ -1825,25 +1580,6 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         ],
       },
       {
-        id: 'vocabulario-a2',
-        name: 'Sostantivi e aggettivi',
-        description:
-          'Practicás sustantivo + "è" + adjetivo en posición predicativa, con concordancia de género real. Sumás vocabulario nuevo sin depender de los verbos modales.',
-        level: 'a2',
-        tabLabel: 'A2 · Vocabolario',
-        columns: [
-          { label: 'Sustantivo', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_NOUNS },
-          { label: 'Verbo', labelTarget: 'Copula', role: 'modal', items: ITALIAN_COPULA },
-          {
-            label: 'Adjetivo',
-            labelTarget: 'Aggettivo',
-            role: 'adjective',
-            items: ITALIAN_ADJECTIVES,
-            agreesWith: 'subject',
-          },
-        ],
-      },
-      {
         id: 'pasiva-b2',
         name: 'Voce passiva',
         description:
@@ -1938,25 +1674,6 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS_COND },
           { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
           { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
-        ],
-      },
-      {
-        id: 'vocabulario-a2',
-        name: 'Substantivos e adjetivos',
-        description:
-          'Practicás sustantivo + "é" + adjetivo en posición predicativa, con concordancia de género real. Sumás vocabulario nuevo sin depender de los verbos modales.',
-        level: 'a2',
-        tabLabel: 'A2 · Vocabulário',
-        columns: [
-          { label: 'Sustantivo', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_NOUNS },
-          { label: 'Verbo', labelTarget: 'Cópula', role: 'modal', items: PORTUGUESE_COPULA },
-          {
-            label: 'Adjetivo',
-            labelTarget: 'Adjetivo',
-            role: 'adjective',
-            items: PORTUGUESE_ADJECTIVES,
-            agreesWith: 'subject',
-          },
         ],
       },
       {

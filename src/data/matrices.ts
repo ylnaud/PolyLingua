@@ -278,6 +278,87 @@ const ES_TENDRIA_PERMISO = [
 // así que acá el pronombre se duplicaría ("Ella dice que yo Yo hablo...").
 const ES_HABLA = ['hablo', 'hablas', 'habla', 'habla', 'hablamos', 'habláis'];
 const ES_LEE = ['leo', 'lees', 'lee', 'lee', 'leemos', 'leéis'];
+const ES_VIAJA = ['viajo', 'viajas', 'viaja', 'viaja', 'viajamos', 'viajáis'];
+
+// Glosas compartidas para C1 "Condicional hipotético" (si + subjuntivo
+// imperfecto + condicional). El sujeto va SIEMPRE separado en español
+// ("Si yo fuera..."), así que estas glosas van sin pronombre repetido salvo
+// en ES_SI_SUBJECT, que es justamente el disparador+sujeto.
+const ES_SI_SUBJECT = ['Si yo', 'Si tú', 'Si él', 'Si ella', 'Si nosotros', 'Si vosotros'];
+// índice 3 = "ella" (femenino real); 4/5 = plural. El resto usa masculino
+// por defecto — no hay forma de saber el género real de "yo/tú" a partir
+// de datos fijos, así que se sigue la convención de género no marcado.
+const ES_FUERA_RICO = [
+  'fuera rico,',
+  'fueras rico,',
+  'fuera rico,',
+  'fuera rica,',
+  'fuéramos ricos,',
+  'fuerais ricos,',
+];
+const ES_FUERA_POBRE = [
+  'fuera pobre,',
+  'fueras pobre,',
+  'fuera pobre,',
+  'fuera pobre,',
+  'fuéramos pobres,',
+  'fuerais pobres,',
+];
+const ES_FUERA_FELIZ = [
+  'fuera feliz,',
+  'fueras feliz,',
+  'fuera feliz,',
+  'fuera feliz,',
+  'fuéramos felices,',
+  'fuerais felices,',
+];
+const ES_FUERA_OCUPADO = [
+  'fuera ocupado,',
+  'fueras ocupado,',
+  'fuera ocupado,',
+  'fuera ocupada,',
+  'fuéramos ocupados,',
+  'fuerais ocupados,',
+];
+const ES_FUERA_FUERTE = [
+  'fuera fuerte,',
+  'fueras fuerte,',
+  'fuera fuerte,',
+  'fuera fuerte,',
+  'fuéramos fuertes,',
+  'fuerais fuertes,',
+];
+const ES_FUERA_INTELIGENTE = [
+  'fuera inteligente,',
+  'fueras inteligente,',
+  'fuera inteligente,',
+  'fuera inteligente,',
+  'fuéramos inteligentes,',
+  'fuerais inteligentes,',
+];
+const ES_VIAJARIA_MAS = [
+  'viajaría más',
+  'viajarías más',
+  'viajaría más',
+  'viajaría más',
+  'viajaríamos más',
+  'viajaríais más',
+];
+
+// Glosas compartidas para C2 "Discurso indirecto en pasado" (backshift:
+// "Dijo que había hablado..."). Sin pronombre propio: en este generador el
+// disparador ya es un sujeto fijo en 3ra persona ("Él dijo que..."), y el
+// sujeto de la cláusula reportada se emite por separado en su propia
+// columna — así que acá alcanza con la forma verbal.
+const ES_DIJO_QUE = 'Él dijo que';
+const ES_HABIA_HABLADO = [
+  'había hablado',
+  'habías hablado',
+  'había hablado',
+  'había hablado',
+  'habíamos hablado',
+  'habíais hablado',
+];
 
 const GERMAN_SUBJECTS: MatrixWord[] = [
   { word: 'Ich', es: 'yo' },
@@ -404,6 +485,8 @@ const GERMAN_VERBS: MatrixWord[] = [
   { word: 'studieren', es: 'estudiar' },
   { word: 'reisen', es: 'viajar' },
   { word: 'kaufen', es: 'comprar' },
+  { word: 'arbeiten', es: 'trabajar' },
+  { word: 'leben', es: 'vivir' },
 ];
 
 // B2 · Pasiva: sustantivos-paciente + auxiliar invariable (wird) + participio
@@ -426,6 +509,11 @@ const GERMAN_PASSIVE_PARTICIPLE: MatrixWord[] = [
     es: 'escrito',
     esForms: ['escrito', 'escrito', 'escrito', 'escrita', 'escrita', 'escrita'],
   },
+  {
+    word: 'geschickt',
+    es: 'enviado',
+    esForms: ['enviado', 'enviado', 'enviado', 'enviada', 'enviada', 'enviada'],
+  },
 ];
 
 // B2 · Subjuntivo (Konjunktiv I, discurso indirecto): "Sie sagt, dass..." es
@@ -444,6 +532,145 @@ const GERMAN_SUBJUNCTIVE_VERBS: MatrixWord[] = [
     es: 'leer',
     forms: ['lese', 'lesest', 'lese', 'lese', 'lesen', 'leset'],
     esForms: ES_LEE,
+  },
+  {
+    word: 'reisen',
+    es: 'viajar',
+    forms: ['reise', 'reisest', 'reise', 'reise', 'reisen', 'reiset'],
+    esForms: ES_VIAJA,
+  },
+];
+
+// C1 · Condicional hipotético: "Wenn ich reich wäre, würde ich mehr
+// reisen." El sujeto (Ich/Du/...) va MUDO (word: '') porque ya viene
+// horneado dentro del disparador ("Wenn ich"); si no, se repetiría.
+const GERMAN_C1_SILENT_SUBJECTS: MatrixWord[] = GERMAN_SUBJECTS.map((s) => ({
+  word: '',
+  es: s.es,
+}));
+const GERMAN_C1_TRIGGER: MatrixWord[] = [
+  {
+    word: 'Wenn',
+    es: 'Si',
+    forms: ['Wenn ich', 'Wenn du', 'Wenn er', 'Wenn sie', 'Wenn wir', 'Wenn ihr'],
+  },
+];
+// El adjetivo va ANTES del verbo (orden verbo-final del alemán en
+// subordinadas), con la coma horneada al final de cada forma.
+const GERMAN_C1_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'reich',
+    es: 'rico/a',
+    forms: [
+      'reich wäre,',
+      'reich wärst,',
+      'reich wäre,',
+      'reich wäre,',
+      'reich wären,',
+      'reich wärt,',
+    ],
+    esForms: ES_FUERA_RICO,
+  },
+  {
+    word: 'arm',
+    es: 'pobre',
+    forms: ['arm wäre,', 'arm wärst,', 'arm wäre,', 'arm wäre,', 'arm wären,', 'arm wärt,'],
+    esForms: ES_FUERA_POBRE,
+  },
+  {
+    word: 'glücklich',
+    es: 'feliz',
+    forms: [
+      'glücklich wäre,',
+      'glücklich wärst,',
+      'glücklich wäre,',
+      'glücklich wäre,',
+      'glücklich wären,',
+      'glücklich wärt,',
+    ],
+    esForms: ES_FUERA_FELIZ,
+  },
+  {
+    word: 'beschäftigt',
+    es: 'ocupado/a',
+    forms: [
+      'beschäftigt wäre,',
+      'beschäftigt wärst,',
+      'beschäftigt wäre,',
+      'beschäftigt wäre,',
+      'beschäftigt wären,',
+      'beschäftigt wärt,',
+    ],
+    esForms: ES_FUERA_OCUPADO,
+  },
+  {
+    word: 'stark',
+    es: 'fuerte',
+    forms: [
+      'stark wäre,',
+      'stark wärst,',
+      'stark wäre,',
+      'stark wäre,',
+      'stark wären,',
+      'stark wärt,',
+    ],
+    esForms: ES_FUERA_FUERTE,
+  },
+  {
+    word: 'intelligent',
+    es: 'inteligente',
+    forms: [
+      'intelligent wäre,',
+      'intelligent wärst,',
+      'intelligent wäre,',
+      'intelligent wäre,',
+      'intelligent wären,',
+      'intelligent wärt,',
+    ],
+    esForms: ES_FUERA_INTELIGENTE,
+  },
+];
+const GERMAN_C1_APODOSIS: MatrixWord[] = [
+  {
+    word: 'würde',
+    es: 'viajaría',
+    forms: [
+      'würde ich mehr reisen',
+      'würdest du mehr reisen',
+      'würde er mehr reisen',
+      'würde sie mehr reisen',
+      'würden wir mehr reisen',
+      'würdet ihr mehr reisen',
+    ],
+    esForms: ES_VIAJARIA_MAS,
+  },
+];
+
+// C2 · Discurso indirecto en pasado: "Er sagte, dass ich Deutsch
+// gesprochen habe." Konjunktiv-I-Perfekt ("habe gesprochen") es la forma
+// real de discurso indirecto en pasado en alemán — se reusa el objeto
+// "idioma" (GERMAN_OBJECTS) en vez de un sustantivo con caso acusativo,
+// para no necesitar declinación (der Bericht → den Bericht) acá.
+const GERMAN_PAST_TRIGGER: MatrixWord[] = [{ word: 'Er sagte, dass', es: ES_DIJO_QUE }];
+// dass-Sätze van con el verbo al final, y el pronombre no va mayúscula
+// salvo al inicio de la oración — por eso una variante en minúscula.
+const GERMAN_SUBJECTS_LOWER: MatrixWord[] = GERMAN_SUBJECTS.map((s) => ({
+  word: s.word.toLowerCase(),
+  es: s.es,
+}));
+const GERMAN_PLUPERFECT_SPRECHEN: MatrixWord[] = [
+  {
+    word: 'gesprochen',
+    es: 'hablado',
+    forms: [
+      'gesprochen habe',
+      'gesprochen habest',
+      'gesprochen habe',
+      'gesprochen habe',
+      'gesprochen haben',
+      'gesprochen habet',
+    ],
+    esForms: ES_HABIA_HABLADO,
   },
 ];
 
@@ -611,6 +838,8 @@ const ENGLISH_ACTIONS: MatrixWord[] = [
   { word: 'study', es: 'estudiar' },
   { word: 'travel', es: 'viajar' },
   { word: 'buy', es: 'comprar' },
+  { word: 'work', es: 'trabajar' },
+  { word: 'live', es: 'vivir' },
 ];
 
 const ENGLISH_OBJECTS: MatrixWord[] = [
@@ -637,6 +866,11 @@ const ENGLISH_PASSIVE_PARTICIPLE: MatrixWord[] = [
     es: 'escrito',
     esForms: ['escrito', 'escrito', 'escrito', 'escrita', 'escrita', 'escrita'],
   },
+  {
+    word: 'sent',
+    es: 'enviado',
+    esForms: ['enviado', 'enviado', 'enviado', 'enviada', 'enviada', 'enviada'],
+  },
 ];
 
 const ENGLISH_MANDATIVE_TRIGGER: MatrixWord[] = [
@@ -654,6 +888,111 @@ const ENGLISH_SUBJUNCTIVE_VERBS: MatrixWord[] = [
     es: 'leer',
     forms: ['read', 'read', 'read', 'read', 'read', 'read'],
     esForms: ES_LEE,
+  },
+  {
+    word: 'travel',
+    es: 'viajar',
+    forms: ['travel', 'travel', 'travel', 'travel', 'travel', 'travel'],
+    esForms: ES_VIAJA,
+  },
+];
+
+// C1 · Hypothetical conditional: "If I were rich, I would travel more."
+const ENGLISH_C1_SILENT_SUBJECTS: MatrixWord[] = ENGLISH_SUBJECTS.map((s) => ({
+  word: '',
+  es: s.es,
+}));
+const ENGLISH_C1_TRIGGER: MatrixWord[] = [
+  {
+    word: 'If',
+    es: 'Si',
+    forms: ['If I', 'If you', 'If he', 'If she', 'If we', 'If they'],
+  },
+];
+const ENGLISH_C1_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'rich',
+    es: 'rico/a',
+    forms: ['were rich,', 'were rich,', 'were rich,', 'were rich,', 'were rich,', 'were rich,'],
+    esForms: ES_FUERA_RICO,
+  },
+  {
+    word: 'poor',
+    es: 'pobre',
+    forms: ['were poor,', 'were poor,', 'were poor,', 'were poor,', 'were poor,', 'were poor,'],
+    esForms: ES_FUERA_POBRE,
+  },
+  {
+    word: 'happy',
+    es: 'feliz',
+    forms: [
+      'were happy,',
+      'were happy,',
+      'were happy,',
+      'were happy,',
+      'were happy,',
+      'were happy,',
+    ],
+    esForms: ES_FUERA_FELIZ,
+  },
+  {
+    word: 'busy',
+    es: 'ocupado/a',
+    forms: ['were busy,', 'were busy,', 'were busy,', 'were busy,', 'were busy,', 'were busy,'],
+    esForms: ES_FUERA_OCUPADO,
+  },
+  {
+    word: 'strong',
+    es: 'fuerte',
+    forms: [
+      'were strong,',
+      'were strong,',
+      'were strong,',
+      'were strong,',
+      'were strong,',
+      'were strong,',
+    ],
+    esForms: ES_FUERA_FUERTE,
+  },
+  {
+    word: 'intelligent',
+    es: 'inteligente',
+    forms: [
+      'were intelligent,',
+      'were intelligent,',
+      'were intelligent,',
+      'were intelligent,',
+      'were intelligent,',
+      'were intelligent,',
+    ],
+    esForms: ES_FUERA_INTELIGENTE,
+  },
+];
+const ENGLISH_C1_APODOSIS: MatrixWord[] = [
+  {
+    word: 'would',
+    es: 'viajaría',
+    forms: [
+      'I would travel more',
+      'you would travel more',
+      'he would travel more',
+      'she would travel more',
+      'we would travel more',
+      'they would travel more',
+    ],
+    esForms: ES_VIAJARIA_MAS,
+  },
+];
+
+// C2 · Reported speech with tense backshift: "He said that I had spoken
+// German." English pluperfect ("had spoken") doesn't conjugate by person.
+const ENGLISH_PAST_TRIGGER: MatrixWord[] = [{ word: 'He said that', es: ES_DIJO_QUE }];
+const ENGLISH_PLUPERFECT_SPOKEN: MatrixWord[] = [
+  {
+    word: 'spoken',
+    es: 'hablado',
+    forms: ['had spoken', 'had spoken', 'had spoken', 'had spoken', 'had spoken', 'had spoken'],
+    esForms: ES_HABIA_HABLADO,
   },
 ];
 
@@ -772,6 +1111,8 @@ const FRENCH_ACTIONS: MatrixWord[] = [
   { word: 'étudier', es: 'estudiar' },
   { word: 'voyager', es: 'viajar' },
   { word: 'acheter', es: 'comprar' },
+  { word: 'travailler', es: 'trabajar' },
+  { word: 'vivre', es: 'vivir' },
 ];
 
 const FRENCH_OBJECTS: MatrixWord[] = [
@@ -798,6 +1139,12 @@ const FRENCH_PASSIVE_PARTICIPLE: MatrixWord[] = [
     es: 'escrito/a',
     forms: ['écrit', 'écrite', 'écrit', 'écrite', 'écrit', 'écrite'],
     esForms: ['escrito', 'escrita', 'escrito', 'escrita', 'escrito', 'escrita'],
+  },
+  {
+    word: 'envoyé',
+    es: 'enviado/a',
+    forms: ['envoyé', 'envoyée', 'envoyé', 'envoyée', 'envoyé', 'envoyée'],
+    esForms: ['enviado', 'enviada', 'enviado', 'enviada', 'enviado', 'enviada'],
   },
 ];
 
@@ -837,6 +1184,156 @@ const FRENCH_SUBJUNCTIVE_VERBS: MatrixWord[] = [
     es: 'leer',
     forms: ['lise', 'lises', 'lise', 'lise', 'lisions', 'lisiez'],
     esForms: ES_LEE,
+  },
+  {
+    word: 'voyager',
+    es: 'viajar',
+    forms: ['voyage', 'voyages', 'voyage', 'voyage', 'voyagions', 'voyagiez'],
+    esForms: ES_VIAJA,
+  },
+];
+
+// C1 · Conditionnel hypothétique: "Si j'étais riche, je voyagerais plus."
+// El francés necesita elisión ("j'étais", "s'il était") que no se puede
+// resolver con un simple join de columnas separadas — por eso acá TODO
+// (disparador+sujeto+verbo+adjetivo+coma) va horneado a mano en un solo
+// item por adjetivo. subject/modal quedan mudos (word: ''), solo aportan
+// el gloss en español vía `es`.
+const FRENCH_C1_SILENT_SUBJECTS: MatrixWord[] = FRENCH_SUBJECTS.map((s) => ({
+  word: '',
+  es: s.es,
+}));
+const FRENCH_C1_TRIGGER_PLACEHOLDER: MatrixWord[] = [{ word: '', es: 'Si' }];
+const FRENCH_C1_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'riche',
+    es: 'rico/a',
+    forms: [
+      "Si j'étais riche,",
+      'Si tu étais riche,',
+      "S'il était riche,",
+      'Si elle était riche,',
+      'Si nous étions riches,',
+      'Si vous étiez riches,',
+    ],
+    esForms: ES_FUERA_RICO,
+  },
+  {
+    word: 'pauvre',
+    es: 'pobre',
+    forms: [
+      "Si j'étais pauvre,",
+      'Si tu étais pauvre,',
+      "S'il était pauvre,",
+      'Si elle était pauvre,',
+      'Si nous étions pauvres,',
+      'Si vous étiez pauvres,',
+    ],
+    esForms: ES_FUERA_POBRE,
+  },
+  {
+    word: 'heureux',
+    es: 'feliz',
+    forms: [
+      "Si j'étais heureux,",
+      'Si tu étais heureux,',
+      "S'il était heureux,",
+      'Si elle était heureuse,',
+      'Si nous étions heureux,',
+      'Si vous étiez heureux,',
+    ],
+    esForms: ES_FUERA_FELIZ,
+  },
+  {
+    word: 'occupé',
+    es: 'ocupado/a',
+    forms: [
+      "Si j'étais occupé,",
+      'Si tu étais occupé,',
+      "S'il était occupé,",
+      'Si elle était occupée,',
+      'Si nous étions occupés,',
+      'Si vous étiez occupés,',
+    ],
+    esForms: ES_FUERA_OCUPADO,
+  },
+  {
+    word: 'fort',
+    es: 'fuerte',
+    forms: [
+      "Si j'étais fort,",
+      'Si tu étais fort,',
+      "S'il était fort,",
+      'Si elle était forte,',
+      'Si nous étions forts,',
+      'Si vous étiez forts,',
+    ],
+    esForms: ES_FUERA_FUERTE,
+  },
+  {
+    word: 'intelligent',
+    es: 'inteligente',
+    forms: [
+      "Si j'étais intelligent,",
+      'Si tu étais intelligent,',
+      "S'il était intelligent,",
+      'Si elle était intelligente,',
+      'Si nous étions intelligents,',
+      'Si vous étiez intelligents,',
+    ],
+    esForms: ES_FUERA_INTELIGENTE,
+  },
+];
+const FRENCH_C1_APODOSIS: MatrixWord[] = [
+  {
+    word: 'voyagerais',
+    es: 'viajaría',
+    forms: [
+      'je voyagerais plus',
+      'tu voyagerais plus',
+      'il voyagerait plus',
+      'elle voyagerait plus',
+      'nous voyagerions plus',
+      'vous voyageriez plus',
+    ],
+    esForms: ES_VIAJARIA_MAS,
+  },
+];
+
+// C2 · Discours indirect avec recul du temps: "Il a dit qu'il avait parlé
+// allemand." Reusa el mismo patrón de disparador horneado que el
+// subjuntivo de B2 (FRENCH_SUBJUNCTIVE_SUBJECTS_SILENT), ahora en passé
+// composé.
+// El verbo que sigue (avais/avait...) siempre empieza con vocal, así que
+// "je" queda pre-elidido con apóstrofo final ("j'") — frenchAssemble lo
+// funde con la siguiente palabra sin espacio ("j'avais").
+const FRENCH_PAST_TRIGGER: MatrixWord[] = [
+  {
+    word: 'Il a dit que',
+    es: ES_DIJO_QUE,
+    forms: [
+      "Il a dit que j'",
+      'Il a dit que tu',
+      "Il a dit qu'il",
+      "Il a dit qu'elle",
+      'Il a dit que nous',
+      'Il a dit que vous',
+    ],
+  },
+];
+const FRENCH_PLUPERFECT_PARLE: MatrixWord[] = [
+  {
+    word: 'parlé',
+    es: 'hablado',
+    forms: [
+      'avais parlé',
+      'avais parlé',
+      'avait parlé',
+      'avait parlé',
+      'avions parlé',
+      'aviez parlé',
+    ],
+    esForms: ES_HABIA_HABLADO,
   },
 ];
 
@@ -962,6 +1459,8 @@ const ITALIAN_ACTIONS: MatrixWord[] = [
   { word: 'studiare', es: 'estudiar' },
   { word: 'viaggiare', es: 'viajar' },
   { word: 'comprare', es: 'comprar' },
+  { word: 'lavorare', es: 'trabajar' },
+  { word: 'vivere', es: 'vivir' },
 ];
 
 const ITALIAN_OBJECTS: MatrixWord[] = [
@@ -987,6 +1486,12 @@ const ITALIAN_PASSIVE_PARTICIPLE: MatrixWord[] = [
     forms: ['scritto', 'scritta', 'scritto', 'scritta', 'scritto', 'scritta'],
     esForms: ['escrito', 'escrita', 'escrito', 'escrita', 'escrito', 'escrita'],
   },
+  {
+    word: 'inviato',
+    es: 'enviado/a',
+    forms: ['inviato', 'inviata', 'inviato', 'inviata', 'inviato', 'inviata'],
+    esForms: ['enviado', 'enviada', 'enviado', 'enviada', 'enviado', 'enviada'],
+  },
 ];
 
 const ITALIAN_SUBJUNCTIVE_TRIGGER: MatrixWord[] = [{ word: 'Bisogna che', es: 'Es necesario que' }];
@@ -1002,6 +1507,146 @@ const ITALIAN_SUBJUNCTIVE_VERBS: MatrixWord[] = [
     es: 'leer',
     forms: ['legga', 'legga', 'legga', 'legga', 'leggiamo', 'leggiate'],
     esForms: ES_LEE,
+  },
+  {
+    word: 'viaggiare',
+    es: 'viajar',
+    forms: ['viaggi', 'viaggi', 'viaggi', 'viaggi', 'viaggiamo', 'viaggiate'],
+    esForms: ES_VIAJA,
+  },
+];
+
+// C1 · Condizionale ipotetico: "Se fossi ricco, viaggerei di più." El
+// italiano no tiene problemas de elisión acá, así que sujeto/disparador
+// van separados como en cualquier otra matriz.
+const ITALIAN_C1_SILENT_SUBJECTS: MatrixWord[] = ITALIAN_SUBJECTS.map((s) => ({
+  word: '',
+  es: s.es,
+}));
+const ITALIAN_C1_TRIGGER: MatrixWord[] = [
+  {
+    word: 'Se',
+    es: 'Si',
+    forms: ['Se io', 'Se tu', 'Se lui', 'Se lei', 'Se noi', 'Se voi'],
+  },
+];
+const ITALIAN_C1_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'ricco',
+    es: 'rico/a',
+    forms: [
+      'fossi ricco,',
+      'fossi ricco,',
+      'fosse ricco,',
+      'fosse ricca,',
+      'fossimo ricchi,',
+      'foste ricchi,',
+    ],
+    esForms: ES_FUERA_RICO,
+  },
+  {
+    word: 'povero',
+    es: 'pobre',
+    forms: [
+      'fossi povero,',
+      'fossi povero,',
+      'fosse povero,',
+      'fosse povera,',
+      'fossimo poveri,',
+      'foste poveri,',
+    ],
+    esForms: ES_FUERA_POBRE,
+  },
+  {
+    word: 'felice',
+    es: 'feliz',
+    forms: [
+      'fossi felice,',
+      'fossi felice,',
+      'fosse felice,',
+      'fosse felice,',
+      'fossimo felici,',
+      'foste felici,',
+    ],
+    esForms: ES_FUERA_FELIZ,
+  },
+  {
+    word: 'occupato',
+    es: 'ocupado/a',
+    forms: [
+      'fossi occupato,',
+      'fossi occupato,',
+      'fosse occupato,',
+      'fosse occupata,',
+      'fossimo occupati,',
+      'foste occupati,',
+    ],
+    esForms: ES_FUERA_OCUPADO,
+  },
+  {
+    word: 'forte',
+    es: 'fuerte',
+    forms: [
+      'fossi forte,',
+      'fossi forte,',
+      'fosse forte,',
+      'fosse forte,',
+      'fossimo forti,',
+      'foste forti,',
+    ],
+    esForms: ES_FUERA_FUERTE,
+  },
+  {
+    word: 'intelligente',
+    es: 'inteligente',
+    forms: [
+      'fossi intelligente,',
+      'fossi intelligente,',
+      'fosse intelligente,',
+      'fosse intelligente,',
+      'fossimo intelligenti,',
+      'foste intelligenti,',
+    ],
+    esForms: ES_FUERA_INTELIGENTE,
+  },
+];
+// El italiano es pro-drop: no repite el pronombre en la apódosis.
+const ITALIAN_C1_APODOSIS: MatrixWord[] = [
+  {
+    word: 'viaggerei',
+    es: 'viajaría',
+    forms: [
+      'viaggerei di più',
+      'viaggeresti di più',
+      'viaggerebbe di più',
+      'viaggerebbe di più',
+      'viaggeremmo di più',
+      'viaggereste di più',
+    ],
+    esForms: ES_VIAJARIA_MAS,
+  },
+];
+
+// C2 · Discorso indiretto al passato: "Ha detto che io avevo parlato
+// tedesco." El pronombre no va mayúscula fuera del inicio de la oración.
+const ITALIAN_SUBJECTS_LOWER: MatrixWord[] = ITALIAN_SUBJECTS.map((s) => ({
+  word: s.word.toLowerCase(),
+  es: s.es,
+}));
+const ITALIAN_PAST_TRIGGER: MatrixWord[] = [{ word: 'Ha detto che', es: ES_DIJO_QUE }];
+const ITALIAN_PLUPERFECT_PARLATO: MatrixWord[] = [
+  {
+    word: 'parlato',
+    es: 'hablado',
+    forms: [
+      'avevo parlato',
+      'avevi parlato',
+      'aveva parlato',
+      'aveva parlato',
+      'avevamo parlato',
+      'avevate parlato',
+    ],
+    esForms: ES_HABIA_HABLADO,
   },
 ];
 
@@ -1134,6 +1779,8 @@ const PORTUGUESE_ACTIONS: MatrixWord[] = [
   { word: 'estudar', es: 'estudiar' },
   { word: 'viajar', es: 'viajar' },
   { word: 'comprar', es: 'comprar' },
+  { word: 'trabalhar', es: 'trabajar' },
+  { word: 'viver', es: 'vivir' },
 ];
 
 const PORTUGUESE_OBJECTS: MatrixWord[] = [
@@ -1159,6 +1806,12 @@ const PORTUGUESE_PASSIVE_PARTICIPLE: MatrixWord[] = [
     forms: ['escrito', 'escrita', 'escrito', 'escrita', 'escrito', 'escrita'],
     esForms: ['escrito', 'escrita', 'escrito', 'escrita', 'escrito', 'escrita'],
   },
+  {
+    word: 'enviado',
+    es: 'enviado/a',
+    forms: ['enviado', 'enviada', 'enviado', 'enviada', 'enviado', 'enviada'],
+    esForms: ['enviado', 'enviada', 'enviado', 'enviada', 'enviado', 'enviada'],
+  },
 ];
 
 const PORTUGUESE_SUBJUNCTIVE_TRIGGER: MatrixWord[] = [
@@ -1177,6 +1830,144 @@ const PORTUGUESE_SUBJUNCTIVE_VERBS: MatrixWord[] = [
     forms: ['leia', 'leias', 'leia', 'leia', 'leiamos', 'leiam'],
     esForms: ES_LEE,
   },
+  {
+    word: 'viajar',
+    es: 'viajar',
+    forms: ['viaje', 'viajes', 'viaje', 'viaje', 'viajemos', 'viajem'],
+    esForms: ES_VIAJA,
+  },
+];
+
+// C1 · Condicional hipotético: "Se eu fosse rico, viajaria mais."
+const PORTUGUESE_C1_SILENT_SUBJECTS: MatrixWord[] = PORTUGUESE_SUBJECTS.map((s) => ({
+  word: '',
+  es: s.es,
+}));
+const PORTUGUESE_C1_TRIGGER: MatrixWord[] = [
+  {
+    word: 'Se',
+    es: 'Si',
+    forms: ['Se eu', 'Se tu', 'Se ele', 'Se ela', 'Se nós', 'Se vocês'],
+  },
+];
+const PORTUGUESE_C1_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'rico',
+    es: 'rico/a',
+    forms: [
+      'fosse rico,',
+      'fosses rico,',
+      'fosse rico,',
+      'fosse rica,',
+      'fôssemos ricos,',
+      'fossem ricos,',
+    ],
+    esForms: ES_FUERA_RICO,
+  },
+  {
+    word: 'pobre',
+    es: 'pobre',
+    forms: [
+      'fosse pobre,',
+      'fosses pobre,',
+      'fosse pobre,',
+      'fosse pobre,',
+      'fôssemos pobres,',
+      'fossem pobres,',
+    ],
+    esForms: ES_FUERA_POBRE,
+  },
+  {
+    word: 'feliz',
+    es: 'feliz',
+    forms: [
+      'fosse feliz,',
+      'fosses feliz,',
+      'fosse feliz,',
+      'fosse feliz,',
+      'fôssemos felizes,',
+      'fossem felizes,',
+    ],
+    esForms: ES_FUERA_FELIZ,
+  },
+  {
+    word: 'ocupado',
+    es: 'ocupado/a',
+    forms: [
+      'fosse ocupado,',
+      'fosses ocupado,',
+      'fosse ocupado,',
+      'fosse ocupada,',
+      'fôssemos ocupados,',
+      'fossem ocupados,',
+    ],
+    esForms: ES_FUERA_OCUPADO,
+  },
+  {
+    word: 'forte',
+    es: 'fuerte',
+    forms: [
+      'fosse forte,',
+      'fosses forte,',
+      'fosse forte,',
+      'fosse forte,',
+      'fôssemos fortes,',
+      'fossem fortes,',
+    ],
+    esForms: ES_FUERA_FUERTE,
+  },
+  {
+    word: 'inteligente',
+    es: 'inteligente',
+    forms: [
+      'fosse inteligente,',
+      'fosses inteligente,',
+      'fosse inteligente,',
+      'fosse inteligente,',
+      'fôssemos inteligentes,',
+      'fossem inteligentes,',
+    ],
+    esForms: ES_FUERA_INTELIGENTE,
+  },
+];
+// El portugués es pro-drop: no repite el pronombre en la apódosis.
+const PORTUGUESE_C1_APODOSIS: MatrixWord[] = [
+  {
+    word: 'viajaria',
+    es: 'viajaría',
+    forms: [
+      'viajaria mais',
+      'viajarias mais',
+      'viajaria mais',
+      'viajaria mais',
+      'viajaríamos mais',
+      'viajariam mais',
+    ],
+    esForms: ES_VIAJARIA_MAS,
+  },
+];
+
+// C2 · Discurso indireto no passado: "Disse que eu tinha falado alemão."
+// El pronombre no va mayúscula fuera del inicio de la oración.
+const PORTUGUESE_SUBJECTS_LOWER: MatrixWord[] = PORTUGUESE_SUBJECTS.map((s) => ({
+  word: s.word.toLowerCase(),
+  es: s.es,
+}));
+const PORTUGUESE_PAST_TRIGGER: MatrixWord[] = [{ word: 'Disse que', es: ES_DIJO_QUE }];
+const PORTUGUESE_PLUPERFECT_FALADO: MatrixWord[] = [
+  {
+    word: 'falado',
+    es: 'hablado',
+    forms: [
+      'tinha falado',
+      'tinhas falado',
+      'tinha falado',
+      'tinha falado',
+      'tínhamos falado',
+      'tinham falado',
+    ],
+    esForms: ES_HABIA_HABLADO,
+  },
 ];
 
 function joinWords(words: string[]): string {
@@ -1187,15 +1978,31 @@ const VOWELS = 'aeiouyâàéèêëîïôùûüœæ';
 
 function frenchAssemble(words: string[]): string {
   const clean = words.filter((w) => w.length > 0);
-  if (clean.length < 2) return clean.join(' ');
-  const [subject, ...rest] = clean;
+  if (clean.length === 0) return '';
+
+  // Funde cualquier elemento que termine en apóstrofo con el siguiente, sin
+  // espacio ("Il a dit que j'" + "avais parlé" → "Il a dit que j'avais
+  // parlé"). Esta elisión se hornea a mano en los datos (nunca aparece en
+  // las matrices existentes), así que es un agregado seguro y no cambia el
+  // comportamiento de ninguna matriz previa.
+  const fused: string[] = [];
+  for (const word of clean) {
+    if (fused.length > 0 && fused[fused.length - 1].endsWith("'")) {
+      fused[fused.length - 1] += word;
+    } else {
+      fused.push(word);
+    }
+  }
+
+  if (fused.length < 2) return fused.join(' ');
+  const [subject, ...rest] = fused;
   if (subject.toLowerCase() === 'je' && rest.length > 0) {
     const next = rest[0];
     if (next && VOWELS.includes(next[0].toLowerCase())) {
       return "J'" + next + (rest.length > 1 ? ' ' + rest.slice(1).join(' ') : '');
     }
   }
-  return clean.join(' ');
+  return fused.join(' ');
 }
 
 function esTextFor(matrix: PhraseMatrix, colIdx: number, colIndices: number[]): string {
@@ -1337,6 +2144,59 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
         ],
       },
+      {
+        id: 'condicional-hipotetico-c1',
+        name: 'Condicional hipotético',
+        description:
+          'Retomás los modales de B1, pero ahora dentro de una condición real: "Wenn ich reich wäre, würde ich mehr reisen." Viene después de B2 porque ya sabés separar sujeto y acción por separado — acá se combinan una prótasis y una consecuencia en una sola frase.',
+        level: 'c1',
+        tabLabel: 'C1 · Hipotético',
+        columns: [
+          { label: 'Condición', labelTarget: 'Bedingung', role: 'modal', items: GERMAN_C1_TRIGGER },
+          {
+            label: 'Quién',
+            labelTarget: 'Subjekt',
+            role: 'subject',
+            items: GERMAN_C1_SILENT_SUBJECTS,
+          },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjektiv',
+            role: 'action',
+            items: GERMAN_C1_ADJECTIVES,
+          },
+          {
+            label: 'Consecuencia',
+            labelTarget: 'Folge',
+            role: 'object',
+            items: GERMAN_C1_APODOSIS,
+          },
+        ],
+      },
+      {
+        id: 'discurso-indirecto-c2',
+        name: 'Konjunktiv I en pasado',
+        description:
+          'El disparador pasa de presente a pasado ("Er sagte, dass...") y el verbo reportado retrocede un tiempo — esa es la marca de dominio C2 en discurso indirecto. Viene después de C1 porque ya sabés armar prótasis y consecuencia; acá el desafío es una conjugación en pasado, no una estructura nueva.',
+        level: 'c2',
+        tabLabel: 'C2 · Discurso indirecto',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Auslöser',
+            role: 'modal',
+            items: GERMAN_PAST_TRIGGER,
+          },
+          { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS_LOWER },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
+          {
+            label: 'Acción',
+            labelTarget: 'Plusquamperfekt',
+            role: 'action',
+            items: GERMAN_PLUPERFECT_SPRECHEN,
+          },
+        ],
+      },
     ],
     assemble: joinWords,
   },
@@ -1429,6 +2289,64 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
             labelTarget: 'Subjunctive',
             role: 'action',
             items: ENGLISH_SUBJUNCTIVE_VERBS,
+          },
+          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
+        ],
+      },
+      {
+        id: 'condicional-hipotetico-c1',
+        name: 'Hypothetical conditional',
+        description:
+          'You go back to B1\'s modals, but now inside a real condition: "If I were rich, I would travel more." It comes after B2 because you already separate subject from action — here a protasis and a consequence combine into one sentence.',
+        level: 'c1',
+        tabLabel: 'C1 · Hypothetical',
+        columns: [
+          {
+            label: 'Condición',
+            labelTarget: 'Condition',
+            role: 'modal',
+            items: ENGLISH_C1_TRIGGER,
+          },
+          {
+            label: 'Quién',
+            labelTarget: 'Subject',
+            role: 'subject',
+            items: ENGLISH_C1_SILENT_SUBJECTS,
+          },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjective',
+            role: 'action',
+            items: ENGLISH_C1_ADJECTIVES,
+          },
+          {
+            label: 'Consecuencia',
+            labelTarget: 'Consequence',
+            role: 'object',
+            items: ENGLISH_C1_APODOSIS,
+          },
+        ],
+      },
+      {
+        id: 'discurso-indirecto-c2',
+        name: 'Reported speech with backshift',
+        description:
+          'The trigger shifts from present to past ("He said that...") and the reported verb moves one tense further back — that\'s the mark of C2 mastery in reported speech. It comes after C1 because you already build a protasis and a consequence; the challenge here is a past tense, not a new structure.',
+        level: 'c2',
+        tabLabel: 'C2 · Reported speech',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Trigger',
+            role: 'modal',
+            items: ENGLISH_PAST_TRIGGER,
+          },
+          { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
+          {
+            label: 'Acción',
+            labelTarget: 'Pluperfect',
+            role: 'action',
+            items: ENGLISH_PLUPERFECT_SPOKEN,
           },
           { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
         ],
@@ -1535,6 +2453,69 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
         ],
       },
+      {
+        id: 'condicional-hipotetico-c1',
+        name: 'Conditionnel hypothétique',
+        description:
+          'Retomás los modales de B1, pero ahora dentro de una condición real: "Si j\'étais riche, je voyagerais plus." Viene después de B2 porque ya sabés separar sujeto y acción por separado — acá se combinan una prótasis y una consecuencia en una sola frase.',
+        level: 'c1',
+        tabLabel: 'C1 · Hypothétique',
+        columns: [
+          {
+            label: 'Condición',
+            labelTarget: 'Condition',
+            role: 'modal',
+            items: FRENCH_C1_TRIGGER_PLACEHOLDER,
+          },
+          {
+            label: 'Quién',
+            labelTarget: 'Sujet',
+            role: 'subject',
+            items: FRENCH_C1_SILENT_SUBJECTS,
+          },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjectif',
+            role: 'action',
+            items: FRENCH_C1_ADJECTIVES,
+          },
+          {
+            label: 'Consecuencia',
+            labelTarget: 'Conséquence',
+            role: 'object',
+            items: FRENCH_C1_APODOSIS,
+          },
+        ],
+      },
+      {
+        id: 'discurso-indirecto-c2',
+        name: 'Discours indirect au passé',
+        description:
+          'El disparador pasa de presente a pasado ("Il a dit que...") y el verbo reportado retrocede un tiempo — esa es la marca de dominio C2 en discurso indirecto. Viene después de C1 porque ya sabés armar prótasis y consecuencia; acá el desafío es una conjugación en pasado, no una estructura nueva.',
+        level: 'c2',
+        tabLabel: 'C2 · Discours indirect',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Déclencheur',
+            role: 'modal',
+            items: FRENCH_PAST_TRIGGER,
+          },
+          {
+            label: 'Quién',
+            labelTarget: 'Sujet',
+            role: 'subject',
+            items: FRENCH_SUBJUNCTIVE_SUBJECTS_SILENT,
+          },
+          {
+            label: 'Acción',
+            labelTarget: 'Plus-que-parfait',
+            role: 'action',
+            items: FRENCH_PLUPERFECT_PARLE,
+          },
+          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
+        ],
+      },
     ],
     assemble: frenchAssemble,
   },
@@ -1632,6 +2613,69 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
         ],
       },
+      {
+        id: 'condicional-hipotetico-c1',
+        name: 'Condizionale ipotetico',
+        description:
+          'Retomás los modales de B1, pero ahora dentro de una condición real: "Se fossi ricco, viaggerei di più." Viene después de B2 porque ya sabés separar sujeto y acción por separado — acá se combinan una prótasis y una consecuencia en una sola frase.',
+        level: 'c1',
+        tabLabel: 'C1 · Ipotetico',
+        columns: [
+          {
+            label: 'Condición',
+            labelTarget: 'Condizione',
+            role: 'modal',
+            items: ITALIAN_C1_TRIGGER,
+          },
+          {
+            label: 'Quién',
+            labelTarget: 'Soggetto',
+            role: 'subject',
+            items: ITALIAN_C1_SILENT_SUBJECTS,
+          },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Aggettivo',
+            role: 'action',
+            items: ITALIAN_C1_ADJECTIVES,
+          },
+          {
+            label: 'Consecuencia',
+            labelTarget: 'Conseguenza',
+            role: 'object',
+            items: ITALIAN_C1_APODOSIS,
+          },
+        ],
+      },
+      {
+        id: 'discurso-indirecto-c2',
+        name: 'Discorso indiretto al passato',
+        description:
+          'El disparador pasa de presente a pasado ("Ha detto che...") y el verbo reportado retrocede un tiempo — esa es la marca de dominio C2 en discurso indirecto. Viene después de C1 porque ya sabés armar prótasis y consecuencia; acá el desafío es una conjugación en pasado, no una estructura nueva.',
+        level: 'c2',
+        tabLabel: 'C2 · Discorso indiretto',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Disparador',
+            role: 'modal',
+            items: ITALIAN_PAST_TRIGGER,
+          },
+          {
+            label: 'Quién',
+            labelTarget: 'Soggetto',
+            role: 'subject',
+            items: ITALIAN_SUBJECTS_LOWER,
+          },
+          {
+            label: 'Acción',
+            labelTarget: 'Trapassato',
+            role: 'action',
+            items: ITALIAN_PLUPERFECT_PARLATO,
+          },
+          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
+        ],
+      },
     ],
     assemble: joinWords,
   },
@@ -1725,6 +2769,69 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
             labelTarget: 'Subjuntivo',
             role: 'action',
             items: PORTUGUESE_SUBJUNCTIVE_VERBS,
+          },
+          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
+        ],
+      },
+      {
+        id: 'condicional-hipotetico-c1',
+        name: 'Condicional hipotético',
+        description:
+          'Retomás los modales de B1, pero ahora dentro de una condición real: "Se eu fosse rico, viajaria mais." Viene después de B2 porque ya sabés separar sujeto y acción por separado — acá se combinan una prótasis y una consecuencia en una sola frase.',
+        level: 'c1',
+        tabLabel: 'C1 · Hipotético',
+        columns: [
+          {
+            label: 'Condición',
+            labelTarget: 'Condição',
+            role: 'modal',
+            items: PORTUGUESE_C1_TRIGGER,
+          },
+          {
+            label: 'Quién',
+            labelTarget: 'Sujeito',
+            role: 'subject',
+            items: PORTUGUESE_C1_SILENT_SUBJECTS,
+          },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjetivo',
+            role: 'action',
+            items: PORTUGUESE_C1_ADJECTIVES,
+          },
+          {
+            label: 'Consecuencia',
+            labelTarget: 'Consequência',
+            role: 'object',
+            items: PORTUGUESE_C1_APODOSIS,
+          },
+        ],
+      },
+      {
+        id: 'discurso-indirecto-c2',
+        name: 'Discurso indireto no passado',
+        description:
+          'El disparador pasa de presente a pasado ("Disse que...") y el verbo reportado retrocede un tiempo — esa es la marca de dominio C2 en discurso indirecto. Viene después de C1 porque ya sabés armar prótasis y consecuencia; acá el desafío es una conjugación en pasado, no una estructura nueva.',
+        level: 'c2',
+        tabLabel: 'C2 · Discurso indireto',
+        columns: [
+          {
+            label: 'Disparador',
+            labelTarget: 'Disparador',
+            role: 'modal',
+            items: PORTUGUESE_PAST_TRIGGER,
+          },
+          {
+            label: 'Quién',
+            labelTarget: 'Sujeito',
+            role: 'subject',
+            items: PORTUGUESE_SUBJECTS_LOWER,
+          },
+          {
+            label: 'Acción',
+            labelTarget: 'Mais-que-perfeito',
+            role: 'action',
+            items: PORTUGUESE_PLUPERFECT_FALADO,
           },
           { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
         ],

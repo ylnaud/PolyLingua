@@ -218,6 +218,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       description: 'Conectores avanzados y vocabulario temático',
       emoji: '🎨',
     },
+    {
+      id: 3,
+      name: 'Wishes & Deduction',
+      description: 'Deseos, arrepentimiento y deducción modal',
+      emoji: '🔮',
+    },
   ],
   'fr-b2': [
     {
@@ -231,6 +237,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Expression et style',
       description: 'Conectores avanzados y vocabulario temático',
       emoji: '🎨',
+    },
+    {
+      id: 3,
+      name: 'Temps composés et démonstratifs',
+      description: 'Plus-que-parfait y pronombres demostrativos',
+      emoji: '⏳',
     },
   ],
   'it-b2': [
@@ -246,6 +258,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       description: 'Conectores avanzados y vocabulario temático',
       emoji: '🎨',
     },
+    {
+      id: 3,
+      name: 'Trapassato e periodo ipotetico',
+      description: 'Pasado compuesto e hipótesis',
+      emoji: '⏳',
+    },
   ],
   'pt-b2': [
     {
@@ -259,6 +277,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Expressão e estilo',
       description: 'Conectores avanzados y vocabulario temático',
       emoji: '🎨',
+    },
+    {
+      id: 3,
+      name: 'Tempos compostos e demonstrativos',
+      description: 'Pasado compuesto y pronombres demostrativos',
+      emoji: '⏳',
     },
   ],
   'de-c1': [
@@ -288,6 +312,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       description: 'Colocaciones, conectores y vocabulario de negocios',
       emoji: '📖',
     },
+    {
+      id: 3,
+      name: 'Reduced Clauses & Formal Register',
+      description: 'Cláusulas de participio y subjuntivo formal',
+      emoji: '🧩',
+    },
   ],
   'fr-c1': [
     {
@@ -301,6 +331,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Le français professionnel',
       description: 'Expresiones idiomáticas y vocabulario especializado',
       emoji: '📖',
+    },
+    {
+      id: 3,
+      name: 'Relatifs complexes et futur antérieur',
+      description: 'Relativos compuestos y futuro anterior',
+      emoji: '🧩',
     },
   ],
   'it-c1': [
@@ -316,6 +352,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       description: 'Expresiones idiomáticas y vocabulario especializado',
       emoji: '📖',
     },
+    {
+      id: 3,
+      name: 'Congiuntivo avanzato e futuro anteriore',
+      description: 'Subjuntivo compuesto y futuro anterior',
+      emoji: '🧩',
+    },
   ],
   'pt-c1': [
     {
@@ -329,6 +371,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Português profissional',
       description: 'Expresiones idiomáticas y vocabulario especializado',
       emoji: '📖',
+    },
+    {
+      id: 3,
+      name: 'Estruturas exclusivas do português',
+      description: 'Passiva com se e infinitivo pessoal',
+      emoji: '🧩',
     },
   ],
   'de-c2': [
@@ -358,6 +406,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       description: 'Retórica, humor y estilo literario',
       emoji: '✨',
     },
+    {
+      id: 3,
+      name: 'Nuance & Indirection',
+      description: 'Nominalización y sutileza británica',
+      emoji: '🗨️',
+    },
   ],
   'fr-c2': [
     {
@@ -371,6 +425,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Le français créatif',
       description: 'Francofonía, juegos de palabras y retórica',
       emoji: '✨',
+    },
+    {
+      id: 3,
+      name: 'Français des jeunes et emprunts',
+      description: 'Argot, verlan y anglicismos',
+      emoji: '🗨️',
     },
   ],
   'it-c2': [
@@ -386,6 +446,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       description: 'Variedades regionales, juegos de palabras y retórica',
       emoji: '✨',
     },
+    {
+      id: 3,
+      name: 'Italiano dei giovani',
+      description: 'Slang, anglicismos y neologismos',
+      emoji: '🗨️',
+    },
   ],
   'pt-c2': [
     {
@@ -399,6 +465,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Português criativo',
       description: 'Variedades regionales, juegos de palabras y retórica',
       emoji: '✨',
+    },
+    {
+      id: 3,
+      name: 'Português informal',
+      description: 'Gírias, estrangeirismos y diminutivos',
+      emoji: '🗨️',
     },
   ],
 };

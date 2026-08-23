@@ -1,10 +1,44 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PhraseBank from '../../../components/PhraseBank.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
-import { MATRIX_DATA } from '../../../data/matrices';
+import { MATRIX_DATA, type PhraseMatrix, type PhraseAssembler } from '../../../data/matrices';
 
 export async function getStaticPaths() {
   return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
+}
+
+interface GeneratedPhrase {
+  text: string;
+  es: string;
+}
+
+function buildAllPhrases(matrix: PhraseMatrix, assemble: PhraseAssembler): GeneratedPhrase[] {
+  const lengths = matrix.columns.map((col) => col.items.length);
+  const total = lengths.reduce((a, b) => a * b, 1);
+  const results: GeneratedPhrase[] = [];
+
+  for (let i = 0; i < total; i++) {
+    const colIndices: number[] = [];
+    let remaining = i;
+    for (let j = lengths.length - 1; j >= 0; j--) {
+      colIndices.unshift(remaining % lengths[j]);
+      remaining = Math.floor(remaining / lengths[j]);
+    }
+
+    const subjectIdx = colIndices[0];
+    const words: string[] = [];
+    const esWords: string[] = [];
+    matrix.columns.forEach((col, colIdx) => {
+      const item = col.items[colIndices[colIdx]];
+      words.push(item.forms?.[subjectIdx] ?? item.word);
+      esWords.push(item.es);
+    });
+
+    results.push({ text: assemble(words), es: esWords.join(' · ') });
+  }
+
+  return results;
 }
 
 const { lang } = Astro.params;
@@ -12,6 +46,7 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 const matrixConfig = MATRIX_DATA[lang as keyof typeof MATRIX_DATA];
 const matrix = matrixConfig.matrices[0];
 const totalCombinations = matrix.columns.reduce((acc, col) => acc * col.items.length, 1);
+const allPhrases = buildAllPhrases(matrix, matrixConfig.assemble);
 ---
 
 <BaseLayout
@@ -34,6 +69,13 @@ const totalCombinations = matrix.columns.reduce((acc, col) => acc * col.items.le
   </section>
 
   <section class="container gen-body">
+    <PhraseBank phrases={allPhrases} lang={languageMeta?.bcp47} />
+
+    <h2 class="gen-interactive-title">🎮 Práctica interactiva</h2>
+    <p class="gen-interactive-desc">
+      ¿Preferís armar las frases vos mismo o hacer un drill cronometrado? Usá esta sección.
+    </p>
+
     <div
       class="card gen-game"
       data-gen-game
@@ -137,6 +179,17 @@ const totalCombinations = matrix.columns.reduce((acc, col) => acc * col.items.le
 
   .gen-body {
     padding-bottom: calc(2rem + var(--bottom-nav-h));
+  }
+
+  .gen-interactive-title {
+    font-size: 1.15rem;
+    margin: 2rem 0 0.25rem;
+  }
+
+  .gen-interactive-desc {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0 0 1rem;
   }
 
   .gen-game {
@@ -334,6 +387,7 @@ const totalCombinations = matrix.columns.reduce((acc, col) => acc * col.items.le
   import { read, write } from '../../../lib/storage';
   import { speak } from '../../../lib/sound';
   import { shuffle } from '../../../lib/shuffle';
+  import { MATRIX_DATA } from '../../../data/matrices';
 
   interface ColMeta {
     colIdx: number;
@@ -449,7 +503,8 @@ const totalCombinations = matrix.columns.reduce((acc, col) => acc * col.items.le
         esWords.push(btn.dataset.es ?? '');
       });
 
-      const assembled = assembleForLang(words, langId);
+      const assemble = MATRIX_DATA[langId as keyof typeof MATRIX_DATA]?.assemble ?? ((w: string[]) => w.join(' '));
+      const assembled = assemble(words);
       phraseText.textContent = assembled;
       phraseText.classList.remove('placeholder');
       phraseEs.textContent = esWords.join(' · ');
@@ -461,19 +516,6 @@ const totalCombinations = matrix.columns.reduce((acc, col) => acc * col.items.le
         saveProgress(langId, matrixId, practiced);
         updateProgressUI();
       }
-    }
-
-    function assembleForLang(words: string[], lang: string): string {
-      if (lang === 'fr') {
-        if (words.length >= 2) {
-          const [subject, ...rest] = words;
-          const vowels = 'aeiouyâàéèêëîïôùûüœæ';
-          if (subject.toLowerCase() === 'je' && rest[0] && vowels.includes(rest[0][0].toLowerCase())) {
-            return "J'" + rest[0] + (rest.length > 1 ? ' ' + rest.slice(1).join(' ') : '');
-          }
-        }
-      }
-      return words.join(' ');
     }
 
     function updateProgressUI(): void {

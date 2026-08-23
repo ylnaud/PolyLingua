@@ -29,11 +29,3 @@ import { LANGUAGES } from '../data/languages';
   </section>
 </BaseLayout>
 
-<script>
-  import { mostRecentLangWithPrefix } from '../lib/storage';
-
-  const latestLang = mostRecentLangWithPrefix('polylingua-dialogo-cycle-');
-  if (latestLang) {
-    window.location.replace(`/idiomas/${latestLang}/dialogos`);
-  }
-</script>

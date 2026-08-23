@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LANGUAGES } from '../data/languages';
+---
+
+<BaseLayout
+  title="Generador de frases"
+  description="Genera cientos de frases combinando sujetos, verbos y objetos con el método Janulus. Practica hasta que te salgan automáticamente."
+  path="/generador-frases"
+  noindex
+>
+  <section class="container picker">
+    <h1>Genera frases en el idioma que quieras</h1>
+    <p class="desc">
+      Elige un idioma para practicar combinaciones de frases con el método Janulus.
+    </p>
+    <div class="lang-grid">
+      {
+        LANGUAGES.map((language) => (
+          <a class="lang-item card" href={`/idiomas/${language.id}/generador-frases`}>
+            <span class="flag" aria-hidden="true">
+              {language.flag}
+            </span>
+            <span>{language.name}</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { mostRecentLangWithPrefix } from '../lib/storage';
+
+  const latestLang = mostRecentLangWithPrefix('polylingua-lesson-done-');
+  if (latestLang) {
+    window.location.replace(`/idiomas/${latestLang}/generador-frases`);
+  }
+</script>

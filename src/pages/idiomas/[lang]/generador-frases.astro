@@ -1,0 +1,554 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { MATRIX_DATA } from '../../../data/matrices';
+
+export async function getStaticPaths() {
+  return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
+}
+
+const { lang } = Astro.params;
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const matrixConfig = MATRIX_DATA[lang as keyof typeof MATRIX_DATA];
+const matrix = matrixConfig.matrices[0];
+const totalCombinations = matrix.columns.reduce((acc, col) => acc * col.items.length, 1);
+---
+
+<BaseLayout
+  title={`Generador de frases en ${languageMeta?.name}`}
+  description={`Genera cientos de frases en ${languageMeta?.name?.toLowerCase()} combinando sujetos, verbos y objetos. Método Janulus para crear memoria automática.`}
+  path={`/idiomas/${lang}/generador-frases`}
+  noindex
+>
+  <section class="container gen-head">
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="/idiomas">Idiomas</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <span aria-hidden="true">/</span>
+      <span>Generador de frases</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">🧩</span>
+    <h1>Generador de frases en {languageMeta?.name}</h1>
+    <p class="desc">{matrix.description}</p>
+  </section>
+
+  <section class="container gen-body">
+    <div
+      class="card gen-game"
+      data-gen-game
+      data-lang-id={lang}
+      data-bcp47={languageMeta?.bcp47}
+      data-matrix-id={matrix.id}
+      data-total={totalCombinations}
+    >
+      <div class="gen-matrix-grid">
+        {
+          matrix.columns.map((col, colIdx) => (
+            <div class="gen-column">
+              <span class="gen-col-label">{col.label}</span>
+              <span class="gen-col-label-target">{col.labelTarget}</span>
+              <div class="gen-col-items">
+                {col.items.map((item, itemIdx) => (
+                  <button
+                    type="button"
+                    class="gen-word"
+                    data-col={colIdx}
+                    data-item={itemIdx}
+                    data-word={item.word}
+                    data-es={item.es}
+                    data-forms={item.forms ? JSON.stringify(item.forms) : undefined}
+                  >
+                    <span class="gen-word-text">{item.word}</span>
+                    <span class="gen-word-es">{item.es}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="gen-phrase-display" data-gen-phrase-display>
+        <p class="gen-phrase-text" data-gen-phrase-text aria-live="polite">
+          Selecciona una palabra de cada columna
+        </p>
+        <p class="gen-phrase-es" data-gen-phrase-es></p>
+      </div>
+
+      <div class="gen-actions">
+        <button type="button" class="btn btn-primary" data-gen-speak disabled>
+          <span aria-hidden="true">🔊</span> Escuchar
+        </button>
+        <button type="button" class="btn btn-ghost" data-gen-random>
+          <span aria-hidden="true">🎲</span> Aleatorio
+        </button>
+        <button type="button" class="btn btn-ghost" data-gen-drill>
+          <span aria-hidden="true">▶</span> Modo drill
+        </button>
+      </div>
+
+      <div class="gen-progress" data-gen-progress>
+        <div class="gen-progress-bar">
+          <div class="gen-progress-fill" data-gen-progress-fill></div>
+        </div>
+        <span class="gen-progress-text" data-gen-progress-text>
+          0 / {totalCombinations} combinaciones
+        </span>
+      </div>
+
+      <div class="gen-drill-panel" data-gen-drill-panel hidden>
+        <p class="gen-drill-info" data-gen-drill-info></p>
+        <div class="gen-drill-actions">
+          <button type="button" class="btn btn-primary" data-gen-drill-next>
+            Siguiente &rarr;
+          </button>
+          <button type="button" class="btn btn-ghost" data-gen-drill-stop>
+            Detener
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gen-head {
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .gen-head .emoji {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .gen-head h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .gen-head .desc {
+    color: var(--muted);
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .gen-body {
+    padding-bottom: calc(2rem + var(--bottom-nav-h));
+  }
+
+  .gen-game {
+    padding: 1.5rem;
+  }
+
+  .gen-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .gen-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .gen-col-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  .gen-col-label-target {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+
+  .gen-col-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .gen-word {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    padding: 0.5rem 0.35rem;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    text-align: center;
+    width: 100%;
+  }
+
+  .gen-word:hover {
+    border-color: var(--accent);
+  }
+
+  .gen-word.selected {
+    border-color: var(--accent);
+    background: rgba(255, 206, 58, 0.12);
+  }
+
+  [data-theme='light'] .gen-word.selected {
+    background: rgba(224, 169, 21, 0.12);
+  }
+
+  .gen-word-text {
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .gen-word-es {
+    font-size: 0.7rem;
+    color: var(--muted);
+    line-height: 1.2;
+  }
+
+  .gen-phrase-display {
+    text-align: center;
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius);
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    margin-bottom: 1rem;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .gen-phrase-text {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .gen-phrase-text.placeholder {
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .gen-phrase-es {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .gen-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .gen-progress {
+    margin-bottom: 1rem;
+  }
+
+  .gen-progress-bar {
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border);
+    overflow: hidden;
+    margin-bottom: 0.35rem;
+  }
+
+  .gen-progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.3s;
+  }
+
+  .gen-progress-text {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: center;
+    display: block;
+  }
+
+  .gen-drill-panel {
+    text-align: center;
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1.5px dashed var(--accent);
+    background: rgba(255, 206, 58, 0.06);
+  }
+
+  .gen-drill-info {
+    font-size: 0.9rem;
+    color: var(--text);
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+  }
+
+  .gen-drill-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .gen-matrix-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    .gen-game {
+      padding: 1rem;
+    }
+
+    .gen-phrase-text {
+      font-size: 1.1rem;
+    }
+
+    .gen-actions .btn {
+      font-size: 0.8rem;
+      padding: 0.5rem 0.75rem;
+    }
+  }
+</style>
+
+<script>
+  import { read, write } from '../../../lib/storage';
+  import { speak } from '../../../lib/sound';
+  import { shuffle } from '../../../lib/shuffle';
+
+  interface ColMeta {
+    colIdx: number;
+    buttons: HTMLButtonElement[];
+  }
+
+  function initGeneradorFrases(): void {
+    const root = document.querySelector<HTMLElement>('[data-gen-game]');
+    if (!root || root.dataset.initialized) return;
+    root.dataset.initialized = 'true';
+
+    const langId = root.dataset.langId ?? '';
+    const bcp47 = root.dataset.bcp47 ?? '';
+    const matrixId = root.dataset.matrixId ?? '';
+    const total = parseInt(root.dataset.total ?? '0', 10);
+
+    const phraseText = root.querySelector<HTMLElement>('[data-gen-phrase-text]')!;
+    const phraseEs = root.querySelector<HTMLElement>('[data-gen-phrase-es]')!;
+    const speakBtn = root.querySelector<HTMLButtonElement>('[data-gen-speak]')!;
+    const randomBtn = root.querySelector<HTMLButtonElement>('[data-gen-random]')!;
+    const drillBtn = root.querySelector<HTMLButtonElement>('[data-gen-drill]')!;
+    const progressFill = root.querySelector<HTMLElement>('[data-gen-progress-fill]')!;
+    const progressText = root.querySelector<HTMLElement>('[data-gen-progress-text]')!;
+    const drillPanel = root.querySelector<HTMLElement>('[data-gen-drill-panel]')!;
+    const drillInfo = root.querySelector<HTMLElement>('[data-gen-drill-info]')!;
+    const drillNext = root.querySelector<HTMLButtonElement>('[data-gen-drill-next]')!;
+    const drillStop = root.querySelector<HTMLButtonElement>('[data-gen-drill-stop]')!;
+
+    const columns: ColMeta[] = [];
+    root.querySelectorAll<HTMLElement>('.gen-column').forEach((colEl, colIdx) => {
+      const buttons = Array.from(colEl.querySelectorAll<HTMLButtonElement>('.gen-word'));
+      columns.push({ colIdx, buttons });
+    });
+
+    const selections: (number | null)[] = columns.map(() => null);
+    let practiced = loadProgress(langId, matrixId);
+    let drilling = false;
+    let drillOrder: number[][] = [];
+    let drillIndex = 0;
+
+    updateProgressUI();
+
+    columns.forEach((col, cIdx) => {
+      col.buttons.forEach((btn, iIdx) => {
+        btn.addEventListener('click', () => {
+          selectCell(cIdx, iIdx);
+        });
+      });
+    });
+
+    speakBtn.addEventListener('click', () => {
+      const text = phraseText.textContent ?? '';
+      if (text && !phraseText.classList.contains('placeholder')) {
+        speak(text, bcp47);
+      }
+    });
+
+    randomBtn.addEventListener('click', () => {
+      columns.forEach((col, cIdx) => {
+        const rnd = Math.floor(Math.random() * col.buttons.length);
+        selectCell(cIdx, rnd);
+      });
+    });
+
+    drillBtn.addEventListener('click', () => {
+      if (drilling) {
+        stopDrill();
+      } else {
+        startDrill();
+      }
+    });
+
+    drillNext.addEventListener('click', () => {
+      advanceDrill();
+    });
+
+    drillStop.addEventListener('click', () => {
+      stopDrill();
+    });
+
+    function selectCell(colIdx: number, itemIdx: number): void {
+      const col = columns[colIdx];
+      col.buttons.forEach((b) => b.classList.remove('selected'));
+      col.buttons[itemIdx].classList.add('selected');
+      selections[colIdx] = itemIdx;
+      assemblePhrase();
+    }
+
+    function assemblePhrase(): void {
+      const allSelected = selections.every((s) => s !== null);
+      if (!allSelected) {
+        phraseText.textContent = 'Selecciona una palabra de cada columna';
+        phraseText.classList.add('placeholder');
+        phraseEs.textContent = '';
+        speakBtn.disabled = true;
+        return;
+      }
+
+      const subjectIdx = selections[0]!;
+      const words: string[] = [];
+      const esWords: string[] = [];
+
+      columns.forEach((col, cIdx) => {
+        const idx = selections[cIdx]!;
+        const btn = col.buttons[idx];
+        const formsRaw = btn.dataset.forms;
+        if (formsRaw) {
+          const forms: string[] = JSON.parse(formsRaw);
+          words.push(forms[subjectIdx] ?? btn.dataset.word ?? '');
+        } else {
+          words.push(btn.dataset.word ?? '');
+        }
+        esWords.push(btn.dataset.es ?? '');
+      });
+
+      const assembled = assembleForLang(words, langId);
+      phraseText.textContent = assembled;
+      phraseText.classList.remove('placeholder');
+      phraseEs.textContent = esWords.join(' · ');
+      speakBtn.disabled = false;
+
+      const comboKey = selections.join('-');
+      if (!practiced.has(comboKey)) {
+        practiced.add(comboKey);
+        saveProgress(langId, matrixId, practiced);
+        updateProgressUI();
+      }
+    }
+
+    function assembleForLang(words: string[], lang: string): string {
+      if (lang === 'fr') {
+        if (words.length >= 2) {
+          const [subject, ...rest] = words;
+          const vowels = 'aeiouyâàéèêëîïôùûüœæ';
+          if (subject.toLowerCase() === 'je' && rest[0] && vowels.includes(rest[0][0].toLowerCase())) {
+            return "J'" + rest[0] + (rest.length > 1 ? ' ' + rest.slice(1).join(' ') : '');
+          }
+        }
+      }
+      return words.join(' ');
+    }
+
+    function updateProgressUI(): void {
+      const count = practiced.size;
+      const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+      progressFill.style.width = pct + '%';
+      progressText.textContent = `${count} / ${total} combinaciones (${pct}%)`;
+    }
+
+    function startDrill(): void {
+      drilling = true;
+      const combos = generateAllCombinations(columns.map((c) => c.buttons.length));
+      drillOrder = shuffle(combos);
+      drillIndex = 0;
+      drillPanel.hidden = false;
+      drillBtn.innerHTML = '<span aria-hidden="true">⏸</span> Pausar drill';
+      showDrillCombo();
+    }
+
+    function stopDrill(): void {
+      drilling = false;
+      drillPanel.hidden = true;
+      drillBtn.innerHTML = '<span aria-hidden="true">▶</span> Modo drill';
+    }
+
+    function advanceDrill(): void {
+      drillIndex++;
+      if (drillIndex >= drillOrder.length) {
+        drillInfo.textContent = '¡Has completado todas las combinaciones!';
+        drillNext.disabled = true;
+        return;
+      }
+      showDrillCombo();
+    }
+
+    function showDrillCombo(): void {
+      const combo = drillOrder[drillIndex];
+      combo.forEach((itemIdx, colIdx) => {
+        selectCell(colIdx, itemIdx);
+      });
+      drillInfo.textContent = `Frase ${drillIndex + 1} / ${drillOrder.length}`;
+      drillNext.disabled = false;
+    }
+
+    function generateAllCombinations(lengths: number[]): number[][] {
+      const result: number[][] = [];
+      const totalCount = lengths.reduce((a, b) => a * b, 1);
+      for (let i = 0; i < totalCount; i++) {
+        const combo: number[] = [];
+        let remaining = i;
+        for (let j = lengths.length - 1; j >= 0; j--) {
+          combo.unshift(remaining % lengths[j]);
+          remaining = Math.floor(remaining / lengths[j]);
+        }
+        result.push(combo);
+      }
+      return result;
+    }
+  }
+
+  function loadProgress(lang: string, matrixId: string): Set<string> {
+    const raw = read(`polylingua-gen-${lang}-${matrixId}`);
+    if (!raw) return new Set();
+    try {
+      const arr = JSON.parse(raw);
+      return Array.isArray(arr) ? new Set<string>(arr) : new Set<string>();
+    } catch {
+      return new Set();
+    }
+  }
+
+  function saveProgress(lang: string, matrixId: string, practiced: Set<string>): void {
+    write(`polylingua-gen-${lang}-${matrixId}`, JSON.stringify([...practiced]));
+  }
+
+  initGeneradorFrases();
+  document.addEventListener('astro:page-load', initGeneradorFrases);
+</script>

@@ -2,7 +2,7 @@
 language: pt
 level: c2
 title: 'Né, então, tipo assim, pois é: el portugués que no está en los libros'
-description: 'Las palabritas que un nativo usa constantemente en conversación y que marcan la diferencia entre sonar de manual o sonar auténtico.'
+description: 'Né, então, tipo assim, pois é: las palabritas portuguesas que usa un nativo todo el tiempo y marcan la diferencia entre sonar de manual o auténtico.'
 order: 1
 unit: 1
 grammarTopic: 'Registro coloquial e partículas do dia a dia'

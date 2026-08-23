@@ -124,6 +124,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       description: 'Gramática aplicada y vocabulario profesional',
       emoji: '💼',
     },
+    {
+      id: 3,
+      name: 'Reported & Passive',
+      description: 'Voz pasiva y estilo indirecto',
+      emoji: '🗣️',
+    },
   ],
   'fr-b1': [
     {
@@ -137,6 +143,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Le français en pratique',
       description: 'Gramática aplicada y vocabulario profesional',
       emoji: '💼',
+    },
+    {
+      id: 3,
+      name: 'Voix passive et discours rapporté',
+      description: 'Voz pasiva y estilo indirecto',
+      emoji: '🗣️',
     },
   ],
   'it-b1': [
@@ -152,6 +164,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       description: 'Gramática aplicada y vocabulario profesional',
       emoji: '💼',
     },
+    {
+      id: 3,
+      name: 'Forma passiva e discorso indiretto',
+      description: 'Voz pasiva y estilo indirecto',
+      emoji: '🗣️',
+    },
   ],
   'pt-b1': [
     {
@@ -165,6 +183,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Português na prática',
       description: 'Gramática aplicada y vocabulario profesional',
       emoji: '💼',
+    },
+    {
+      id: 3,
+      name: 'Voz passiva e discurso indireto',
+      description: 'Voz pasiva y estilo indirecto',
+      emoji: '🗣️',
     },
   ],
   'de-b2': [

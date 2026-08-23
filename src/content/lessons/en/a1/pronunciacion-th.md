@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'El sonido TH: think y this'
-description: 'El TH inglés tiene dos sonidos y ninguno existe en el español latinoamericano. Aprendé a sacarlos con la lengua entre los dientes, con pronunciación escrita, símbolos fonéticos y audio.'
+description: 'El TH inglés tiene dos sonidos que no existen en el español latinoamericano. Aprendé a sacarlos con la lengua entre los dientes, con audio.'
 order: 0.2
 unit: 1
 grammarTopic: 'Pronunciación: los dos sonidos de TH'

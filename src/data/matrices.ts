@@ -1,14 +1,19 @@
 import type { LanguageId } from './languages';
+import type { LevelId } from './levels';
 
 export interface MatrixWord {
   word: string;
   es: string;
   forms?: string[];
+  esForms?: string[];
 }
+
+export type MatrixColumnRole = 'subject' | 'modal' | 'action' | 'object';
 
 export interface MatrixColumn {
   label: string;
   labelTarget: string;
+  role: MatrixColumnRole;
   items: MatrixWord[];
 }
 
@@ -16,6 +21,7 @@ export interface PhraseMatrix {
   id: string;
   name: string;
   description: string;
+  level: LevelId;
   columns: MatrixColumn[];
 }
 
@@ -25,6 +31,54 @@ export interface LanguageMatrixConfig {
   matrices: PhraseMatrix[];
   assemble: PhraseAssembler;
 }
+
+// Conjugaciones al español compartidas entre idiomas: cada string ya incluye
+// el sujeto ("Yo quiero", no solo "quiero") para poder resolver de forma
+// pareja construcciones irregulares como "gustar" (pronombre + "gusta", no
+// conjugación por sujeto) sin reglas especiales por verbo.
+const ES_QUERER = ['Yo quiero', 'Tú quieres', 'Él quiere', 'Ella quiere', 'Nosotros queremos', 'Vosotros queréis'];
+const ES_DEBER = ['Yo debo', 'Tú debes', 'Él debe', 'Ella debe', 'Nosotros debemos', 'Vosotros debéis'];
+const ES_PODER = ['Yo puedo', 'Tú puedes', 'Él puede', 'Ella puede', 'Nosotros podemos', 'Vosotros podéis'];
+const ES_DEBERIA = [
+  'Yo debería',
+  'Tú deberías',
+  'Él debería',
+  'Ella debería',
+  'Nosotros deberíamos',
+  'Vosotros deberíais',
+];
+const ES_NECESITAR = [
+  'Yo necesito',
+  'Tú necesitas',
+  'Él necesita',
+  'Ella necesita',
+  'Nosotros necesitamos',
+  'Vosotros necesitáis',
+];
+const ES_TENER_QUE = [
+  'Yo tengo que',
+  'Tú tienes que',
+  'Él tiene que',
+  'Ella tiene que',
+  'Nosotros tenemos que',
+  'Vosotros tenéis que',
+];
+const ES_GUSTAR = [
+  'A mí me gusta',
+  'A ti te gusta',
+  'A él le gusta',
+  'A ella le gusta',
+  'A nosotros nos gusta',
+  'A vosotros os gusta',
+];
+const ES_PREFERIR = [
+  'Yo prefiero',
+  'Tú prefieres',
+  'Él prefiere',
+  'Ella prefiere',
+  'Nosotros preferimos',
+  'Vosotros preferís',
+];
 
 const GERMAN_SUBJECTS: MatrixWord[] = [
   { word: 'Ich', es: 'yo' },
@@ -40,21 +94,25 @@ const GERMAN_MODALS: MatrixWord[] = [
     word: 'wollen',
     es: 'querer',
     forms: ['will', 'willst', 'will', 'will', 'wollen', 'wollt'],
+    esForms: ES_QUERER,
   },
   {
     word: 'müssen',
     es: 'deber',
     forms: ['muss', 'musst', 'muss', 'muss', 'müssen', 'müsst'],
+    esForms: ES_DEBER,
   },
   {
     word: 'können',
     es: 'poder',
     forms: ['kann', 'kannst', 'kann', 'kann', 'können', 'könnt'],
+    esForms: ES_PODER,
   },
   {
     word: 'sollen',
     es: 'debería',
     forms: ['soll', 'sollst', 'soll', 'soll', 'sollen', 'sollt'],
+    esForms: ES_DEBERIA,
   },
 ];
 
@@ -86,21 +144,25 @@ const ENGLISH_MODALS: MatrixWord[] = [
     word: 'want to',
     es: 'querer',
     forms: ['want to', 'want to', 'wants to', 'wants to', 'want to', 'want to'],
+    esForms: ES_QUERER,
   },
   {
     word: 'need to',
     es: 'necesitar',
     forms: ['need to', 'need to', 'needs to', 'needs to', 'need to', 'need to'],
+    esForms: ES_NECESITAR,
   },
   {
     word: 'have to',
     es: 'tener que',
     forms: ['have to', 'have to', 'has to', 'has to', 'have to', 'have to'],
+    esForms: ES_TENER_QUE,
   },
   {
     word: 'like to',
     es: 'gustar',
     forms: ['like to', 'like to', 'likes to', 'likes to', 'like to', 'like to'],
+    esForms: ES_GUSTAR,
   },
 ];
 
@@ -132,21 +194,25 @@ const FRENCH_MODALS: MatrixWord[] = [
     word: 'vouloir',
     es: 'querer',
     forms: ['veux', 'veux', 'veut', 'veut', 'voulons', 'voulez'],
+    esForms: ES_QUERER,
   },
   {
     word: 'devoir',
     es: 'deber',
     forms: ['dois', 'dois', 'doit', 'doit', 'devons', 'devez'],
+    esForms: ES_DEBER,
   },
   {
     word: 'pouvoir',
     es: 'poder',
     forms: ['peux', 'peux', 'peut', 'peut', 'pouvons', 'pouvez'],
+    esForms: ES_PODER,
   },
   {
     word: 'aimer',
     es: 'gustar',
     forms: ['aime', 'aimes', 'aime', 'aime', 'aimons', 'aimez'],
+    esForms: ES_GUSTAR,
   },
 ];
 
@@ -178,21 +244,25 @@ const ITALIAN_MODALS: MatrixWord[] = [
     word: 'volere',
     es: 'querer',
     forms: ['voglio', 'vuoi', 'vuole', 'vuole', 'vogliamo', 'volete'],
+    esForms: ES_QUERER,
   },
   {
     word: 'dovere',
     es: 'deber',
     forms: ['devo', 'devi', 'deve', 'deve', 'dobbiamo', 'dovete'],
+    esForms: ES_DEBER,
   },
   {
     word: 'potere',
     es: 'poder',
     forms: ['posso', 'puoi', 'può', 'può', 'possiamo', 'potete'],
+    esForms: ES_PODER,
   },
   {
     word: 'preferire',
     es: 'preferir',
     forms: ['preferisco', 'preferisci', 'preferisce', 'preferisce', 'preferiamo', 'preferite'],
+    esForms: ES_PREFERIR,
   },
 ];
 
@@ -224,21 +294,25 @@ const PORTUGUESE_MODALS: MatrixWord[] = [
     word: 'querer',
     es: 'querer',
     forms: ['quero', 'queres', 'quer', 'quer', 'queremos', 'querem'],
+    esForms: ES_QUERER,
   },
   {
     word: 'precisar',
     es: 'necesitar',
     forms: ['preciso', 'precisas', 'precisa', 'precisa', 'precisamos', 'precisam'],
+    esForms: ES_NECESITAR,
   },
   {
     word: 'poder',
     es: 'poder',
     forms: ['posso', 'podes', 'pode', 'pode', 'podemos', 'podem'],
+    esForms: ES_PODER,
   },
   {
     word: 'dever',
     es: 'deber',
     forms: ['devo', 'deves', 'deve', 'deve', 'devemos', 'devem'],
+    esForms: ES_DEBER,
   },
 ];
 
@@ -274,6 +348,24 @@ function frenchAssemble(words: string[]): string {
   return words.join(' ');
 }
 
+// El español siempre va sujeto-modal-acción-objeto, sin importar el orden de
+// palabras del idioma meta (a diferencia de assemble()) — por eso ubica cada
+// columna por su `role` en vez de por posición.
+export function assembleSpanishSentence(matrix: PhraseMatrix, colIndices: number[]): string {
+  const subjectColIdx = matrix.columns.findIndex((c) => c.role === 'subject');
+  const modalColIdx = matrix.columns.findIndex((c) => c.role === 'modal');
+  const actionColIdx = matrix.columns.findIndex((c) => c.role === 'action');
+  const objectColIdx = matrix.columns.findIndex((c) => c.role === 'object');
+
+  const subjectIdx = colIndices[subjectColIdx];
+  const modalItem = matrix.columns[modalColIdx].items[colIndices[modalColIdx]];
+  const actionEs = matrix.columns[actionColIdx].items[colIndices[actionColIdx]].es;
+  const objectEs = matrix.columns[objectColIdx].items[colIndices[objectColIdx]].es;
+  const subjectModalEs = modalItem.esForms?.[subjectIdx] ?? modalItem.es;
+
+  return `${subjectModalEs} ${actionEs} ${objectEs}.`;
+}
+
 export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
   de: {
     matrices: [
@@ -282,11 +374,12 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         name: 'Verbos modales',
         description:
           'Combina sujetos, verbos modales, idiomas e infinitivos. En alemán el infinitivo va al final de la frase.',
+        level: 'a1',
         columns: [
-          { label: 'Quién', labelTarget: 'Subjekt', items: GERMAN_SUBJECTS },
-          { label: 'Motivo', labelTarget: 'Modalverb', items: GERMAN_MODALS },
-          { label: 'Qué', labelTarget: 'Objekt', items: GERMAN_OBJECTS },
-          { label: 'Acción', labelTarget: 'Infinitiv', items: GERMAN_VERBS },
+          { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modalverb', role: 'modal', items: GERMAN_MODALS },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
+          { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
         ],
       },
     ],
@@ -299,11 +392,12 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         name: 'Modal verbs',
         description:
           'Combina sujetos, modales, acciones y objetos. El orden en inglés es sujeto-modal-acción-objeto.',
+        level: 'a1',
         columns: [
-          { label: 'Quién', labelTarget: 'Subject', items: ENGLISH_SUBJECTS },
-          { label: 'Motivo', labelTarget: 'Modal', items: ENGLISH_MODALS },
-          { label: 'Acción', labelTarget: 'Action', items: ENGLISH_ACTIONS },
-          { label: 'Qué', labelTarget: 'Object', items: ENGLISH_OBJECTS },
+          { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
+          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
         ],
       },
     ],
@@ -316,11 +410,12 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         name: 'Verbes modaux',
         description:
           'Combina sujetos, modales, acciones y objetos. El francés aplica elisión (je + vocal = j\').',
+        level: 'a1',
         columns: [
-          { label: 'Quién', labelTarget: 'Sujet', items: FRENCH_SUBJECTS },
-          { label: 'Motivo', labelTarget: 'Modal', items: FRENCH_MODALS },
-          { label: 'Acción', labelTarget: 'Action', items: FRENCH_ACTIONS },
-          { label: 'Qué', labelTarget: 'Objet', items: FRENCH_OBJECTS },
+          { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: FRENCH_MODALS },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_ACTIONS },
+          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
         ],
       },
     ],
@@ -333,11 +428,12 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         name: 'Verbi modali',
         description:
           'Combina sujetos, modales, acciones y objetos. El italiano sigue el orden sujeto-modal-acción-objeto.',
+        level: 'a1',
         columns: [
-          { label: 'Quién', labelTarget: 'Soggetto', items: ITALIAN_SUBJECTS },
-          { label: 'Motivo', labelTarget: 'Modale', items: ITALIAN_MODALS },
-          { label: 'Acción', labelTarget: 'Azione', items: ITALIAN_ACTIONS },
-          { label: 'Qué', labelTarget: 'Oggetto', items: ITALIAN_OBJECTS },
+          { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modale', role: 'modal', items: ITALIAN_MODALS },
+          { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_ACTIONS },
+          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
         ],
       },
     ],
@@ -350,11 +446,12 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         name: 'Verbos modais',
         description:
           'Combina sujetos, modales, acciones y objetos. El portugués sigue sujeto-modal-acción-objeto.',
+        level: 'a1',
         columns: [
-          { label: 'Quién', labelTarget: 'Sujeito', items: PORTUGUESE_SUBJECTS },
-          { label: 'Motivo', labelTarget: 'Modal', items: PORTUGUESE_MODALS },
-          { label: 'Acción', labelTarget: 'Ação', items: PORTUGUESE_ACTIONS },
-          { label: 'Qué', labelTarget: 'Objeto', items: PORTUGUESE_OBJECTS },
+          { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS },
+          { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
+          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
         ],
       },
     ],

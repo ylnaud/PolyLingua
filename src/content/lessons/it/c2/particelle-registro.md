@@ -2,7 +2,7 @@
 language: it
 level: c2
 title: 'Mica, dai, magari, ecco: el italiano que no está en los libros'
-description: 'Las palabritas que un nativo usa constantemente en conversación y que marcan la diferencia entre sonar de manual o sonar auténtico.'
+description: 'Mica, dai, magari, ecco: las palabritas italianas que usa un nativo todo el tiempo y marcan la diferencia entre sonar de manual o auténtico.'
 order: 1
 unit: 1
 grammarTopic: 'Particelle colloquiali e registro'

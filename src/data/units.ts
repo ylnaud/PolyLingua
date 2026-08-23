@@ -126,9 +126,9 @@ export const UNITS: Record<string, UnitMeta[]> = {
     },
     {
       id: 3,
-      name: 'Reported & Passive',
-      description: 'Voz pasiva y estilo indirecto',
-      emoji: '🗣️',
+      name: 'Pronouns & Time',
+      description: 'Indefinidos y expresiones de duración',
+      emoji: '🕐',
     },
   ],
   'fr-b1': [
@@ -146,9 +146,9 @@ export const UNITS: Record<string, UnitMeta[]> = {
     },
     {
       id: 3,
-      name: 'Voix passive et discours rapporté',
-      description: 'Voz pasiva y estilo indirecto',
-      emoji: '🗣️',
+      name: 'Pronoms et durée',
+      description: 'Indefinidos y expresiones de duración',
+      emoji: '🕐',
     },
   ],
   'it-b1': [
@@ -166,9 +166,9 @@ export const UNITS: Record<string, UnitMeta[]> = {
     },
     {
       id: 3,
-      name: 'Forma passiva e discorso indiretto',
-      description: 'Voz pasiva y estilo indirecto',
-      emoji: '🗣️',
+      name: 'Pronomi e durata',
+      description: 'Indefinidos y expresiones de duración',
+      emoji: '🕐',
     },
   ],
   'pt-b1': [
@@ -186,9 +186,9 @@ export const UNITS: Record<string, UnitMeta[]> = {
     },
     {
       id: 3,
-      name: 'Voz passiva e discurso indireto',
-      description: 'Voz pasiva y estilo indirecto',
-      emoji: '🗣️',
+      name: 'Pronomes e duração',
+      description: 'Indefinidos y expresiones de duración',
+      emoji: '🕐',
     },
   ],
   'de-b2': [

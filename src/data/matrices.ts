@@ -80,6 +80,43 @@ const ES_PREFERIR = [
   'Vosotros preferís',
 ];
 
+// Mismos verbos, ahora en pretérito imperfecto (para la matriz de A2 "pasado").
+const ES_QUERIA = ['Yo quería', 'Tú querías', 'Él quería', 'Ella quería', 'Nosotros queríamos', 'Vosotros queríais'];
+const ES_DEBIA = ['Yo debía', 'Tú debías', 'Él debía', 'Ella debía', 'Nosotros debíamos', 'Vosotros debíais'];
+const ES_PODIA = ['Yo podía', 'Tú podías', 'Él podía', 'Ella podía', 'Nosotros podíamos', 'Vosotros podíais'];
+const ES_NECESITABA = [
+  'Yo necesitaba',
+  'Tú necesitabas',
+  'Él necesitaba',
+  'Ella necesitaba',
+  'Nosotros necesitábamos',
+  'Vosotros necesitabais',
+];
+const ES_TENIA_QUE = [
+  'Yo tenía que',
+  'Tú tenías que',
+  'Él tenía que',
+  'Ella tenía que',
+  'Nosotros teníamos que',
+  'Vosotros teníais que',
+];
+const ES_GUSTABA = [
+  'A mí me gustaba',
+  'A ti te gustaba',
+  'A él le gustaba',
+  'A ella le gustaba',
+  'A nosotros nos gustaba',
+  'A vosotros os gustaba',
+];
+const ES_PREFERIA = [
+  'Yo prefería',
+  'Tú preferías',
+  'Él prefería',
+  'Ella prefería',
+  'Nosotros preferíamos',
+  'Vosotros preferíais',
+];
+
 const GERMAN_SUBJECTS: MatrixWord[] = [
   { word: 'Ich', es: 'yo' },
   { word: 'Du', es: 'tú' },
@@ -113,6 +150,33 @@ const GERMAN_MODALS: MatrixWord[] = [
     es: 'debería',
     forms: ['soll', 'sollst', 'soll', 'soll', 'sollen', 'sollt'],
     esForms: ES_DEBERIA,
+  },
+];
+
+const GERMAN_MODALS_PAST: MatrixWord[] = [
+  {
+    word: 'wollen',
+    es: 'querer',
+    forms: ['wollte', 'wolltest', 'wollte', 'wollte', 'wollten', 'wolltet'],
+    esForms: ES_QUERIA,
+  },
+  {
+    word: 'müssen',
+    es: 'deber',
+    forms: ['musste', 'musstest', 'musste', 'musste', 'mussten', 'musstet'],
+    esForms: ES_DEBIA,
+  },
+  {
+    word: 'können',
+    es: 'poder',
+    forms: ['konnte', 'konntest', 'konnte', 'konnte', 'konnten', 'konntet'],
+    esForms: ES_PODIA,
+  },
+  {
+    word: 'sollen',
+    es: 'debía',
+    forms: ['sollte', 'solltest', 'sollte', 'sollte', 'sollten', 'solltet'],
+    esForms: ES_DEBIA,
   },
 ];
 
@@ -166,6 +230,33 @@ const ENGLISH_MODALS: MatrixWord[] = [
   },
 ];
 
+const ENGLISH_MODALS_PAST: MatrixWord[] = [
+  {
+    word: 'wanted to',
+    es: 'querer',
+    forms: ['wanted to', 'wanted to', 'wanted to', 'wanted to', 'wanted to', 'wanted to'],
+    esForms: ES_QUERIA,
+  },
+  {
+    word: 'needed to',
+    es: 'necesitar',
+    forms: ['needed to', 'needed to', 'needed to', 'needed to', 'needed to', 'needed to'],
+    esForms: ES_NECESITABA,
+  },
+  {
+    word: 'had to',
+    es: 'tener que',
+    forms: ['had to', 'had to', 'had to', 'had to', 'had to', 'had to'],
+    esForms: ES_TENIA_QUE,
+  },
+  {
+    word: 'liked to',
+    es: 'gustar',
+    forms: ['liked to', 'liked to', 'liked to', 'liked to', 'liked to', 'liked to'],
+    esForms: ES_GUSTABA,
+  },
+];
+
 const ENGLISH_ACTIONS: MatrixWord[] = [
   { word: 'learn', es: 'aprender' },
   { word: 'speak', es: 'hablar' },
@@ -213,6 +304,33 @@ const FRENCH_MODALS: MatrixWord[] = [
     es: 'gustar',
     forms: ['aime', 'aimes', 'aime', 'aime', 'aimons', 'aimez'],
     esForms: ES_GUSTAR,
+  },
+];
+
+const FRENCH_MODALS_PAST: MatrixWord[] = [
+  {
+    word: 'vouloir',
+    es: 'querer',
+    forms: ['voulais', 'voulais', 'voulait', 'voulait', 'voulions', 'vouliez'],
+    esForms: ES_QUERIA,
+  },
+  {
+    word: 'devoir',
+    es: 'deber',
+    forms: ['devais', 'devais', 'devait', 'devait', 'devions', 'deviez'],
+    esForms: ES_DEBIA,
+  },
+  {
+    word: 'pouvoir',
+    es: 'poder',
+    forms: ['pouvais', 'pouvais', 'pouvait', 'pouvait', 'pouvions', 'pouviez'],
+    esForms: ES_PODIA,
+  },
+  {
+    word: 'aimer',
+    es: 'gustar',
+    forms: ['aimais', 'aimais', 'aimait', 'aimait', 'aimions', 'aimiez'],
+    esForms: ES_GUSTABA,
   },
 ];
 
@@ -266,6 +384,33 @@ const ITALIAN_MODALS: MatrixWord[] = [
   },
 ];
 
+const ITALIAN_MODALS_PAST: MatrixWord[] = [
+  {
+    word: 'volere',
+    es: 'querer',
+    forms: ['volevo', 'volevi', 'voleva', 'voleva', 'volevamo', 'volevate'],
+    esForms: ES_QUERIA,
+  },
+  {
+    word: 'dovere',
+    es: 'deber',
+    forms: ['dovevo', 'dovevi', 'doveva', 'doveva', 'dovevamo', 'dovevate'],
+    esForms: ES_DEBIA,
+  },
+  {
+    word: 'potere',
+    es: 'poder',
+    forms: ['potevo', 'potevi', 'poteva', 'poteva', 'potevamo', 'potevate'],
+    esForms: ES_PODIA,
+  },
+  {
+    word: 'preferire',
+    es: 'preferir',
+    forms: ['preferivo', 'preferivi', 'preferiva', 'preferiva', 'preferivamo', 'preferivate'],
+    esForms: ES_PREFERIA,
+  },
+];
+
 const ITALIAN_ACTIONS: MatrixWord[] = [
   { word: 'imparare', es: 'aprender' },
   { word: 'parlare', es: 'hablar' },
@@ -313,6 +458,33 @@ const PORTUGUESE_MODALS: MatrixWord[] = [
     es: 'deber',
     forms: ['devo', 'deves', 'deve', 'deve', 'devemos', 'devem'],
     esForms: ES_DEBER,
+  },
+];
+
+const PORTUGUESE_MODALS_PAST: MatrixWord[] = [
+  {
+    word: 'querer',
+    es: 'querer',
+    forms: ['queria', 'querias', 'queria', 'queria', 'queríamos', 'queriam'],
+    esForms: ES_QUERIA,
+  },
+  {
+    word: 'precisar',
+    es: 'necesitar',
+    forms: ['precisava', 'precisavas', 'precisava', 'precisava', 'precisávamos', 'precisavam'],
+    esForms: ES_NECESITABA,
+  },
+  {
+    word: 'poder',
+    es: 'poder',
+    forms: ['podia', 'podias', 'podia', 'podia', 'podíamos', 'podiam'],
+    esForms: ES_PODIA,
+  },
+  {
+    word: 'dever',
+    es: 'deber',
+    forms: ['devia', 'devias', 'devia', 'devia', 'devíamos', 'deviam'],
+    esForms: ES_DEBIA,
   },
 ];
 
@@ -382,6 +554,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
         ],
       },
+      {
+        id: 'pasado-modal',
+        name: 'Verbos modales en pasado',
+        description:
+          'Combina sujetos, verbos modales en pasado (Präteritum), idiomas e infinitivos — para contar qué querías, podías o debías hacer.',
+        level: 'a2',
+        columns: [
+          { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modalverb', role: 'modal', items: GERMAN_MODALS_PAST },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
+          { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
+        ],
+      },
     ],
     assemble: joinWords,
   },
@@ -396,6 +581,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         columns: [
           { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
+          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
+        ],
+      },
+      {
+        id: 'pasado-modal',
+        name: 'Modal verbs in the past',
+        description:
+          'Combina sujetos, modales en pasado, acciones y objetos — para contar qué querías, necesitabas o tenías que hacer.',
+        level: 'a2',
+        columns: [
+          { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS_PAST },
           { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
           { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
         ],
@@ -418,6 +616,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
         ],
       },
+      {
+        id: 'pasado-modal',
+        name: 'Verbes modaux à l\'imparfait',
+        description:
+          'Combina sujetos, modales en imparfait, acciones y objetos — para contar qué querías, debías o podías hacer.',
+        level: 'a2',
+        columns: [
+          { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: FRENCH_MODALS_PAST },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_ACTIONS },
+          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
+        ],
+      },
     ],
     assemble: frenchAssemble,
   },
@@ -436,6 +647,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
         ],
       },
+      {
+        id: 'pasado-modal',
+        name: "Verbi modali all'imperfetto",
+        description:
+          'Combina sujetos, modales en imperfetto, acciones y objetos — para contar qué querías, debías o podías hacer.',
+        level: 'a2',
+        columns: [
+          { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modale', role: 'modal', items: ITALIAN_MODALS_PAST },
+          { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_ACTIONS },
+          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
+        ],
+      },
     ],
     assemble: joinWords,
   },
@@ -450,6 +674,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         columns: [
           { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS },
+          { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
+          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
+        ],
+      },
+      {
+        id: 'pasado-modal',
+        name: 'Verbos modais no pretérito imperfeito',
+        description:
+          'Combina sujetos, modales en pretérito imperfecto, acciones y objetos — para contar qué querías, precisabas o podías hacer.',
+        level: 'a2',
+        columns: [
+          { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS_PAST },
           { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
           { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
         ],

@@ -1,27 +1,13 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { NOINDEX_LAST_SEGMENTS } from './src/data/noindex-routes.ts';
 
-// Páginas con <meta name="robots" content="noindex"> en su BaseLayout (buscar
-// `noindex` en src/pages para la lista viva). @astrojs/sitemap no lee ese meta
-// tag — solo enumera rutas del build — así que hay que excluirlas a mano acá
-// o terminan en el sitemap contradiciendo su propio noindex.
-const NOINDEX_LAST_SEGMENTS = [
-  'repasar',
-  'practica-libre',
-  'vocabulario',
-  'examen',
-  'logros',
-  'ahorcado',
-  'diario',
-  'pronunciacion',
-  'recursos',
-  'situaciones',
-  'dialogos',
-  'gramatica',
-  'mis-errores',
-  'offline',
-];
-
+// Páginas con <meta name="robots" content="noindex"> en su BaseLayout.
+// @astrojs/sitemap no lee ese meta tag — solo enumera rutas del build — así
+// que hay que excluirlas a mano acá o terminan en el sitemap contradiciendo
+// su propio noindex. La lista vive en src/data/noindex-routes.ts (única
+// fuente de verdad) y tests/noindex-sitemap.test.ts verifica que siga
+// sincronizada con las páginas reales.
 function isNoindexPage(pageUrl) {
   const path = new URL(pageUrl).pathname.replace(/\/$/, '');
   return NOINDEX_LAST_SEGMENTS.includes(path.split('/').pop());

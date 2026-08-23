@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'sch, ch y ck: la ch tiene dos sonidos distintos'
-description: '«sch» suena «sh», «ck» suena como una k fuerte, y la «ch» cambia de sonido según la vocal que tenga antes. Aprendé cuál va cuándo, con audio y símbolos fonéticos.'
+description: '«sch» suena «sh», «ck» como una k fuerte, y «ch» cambia según la vocal anterior. Aprendé cuál va cuándo, con audio y símbolos fonéticos.'
 order: 0.3
 unit: 1
 grammarTopic: 'Pronunciación: sch, ch y ck'

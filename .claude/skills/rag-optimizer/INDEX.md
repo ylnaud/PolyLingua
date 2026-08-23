@@ -9,9 +9,9 @@ modelo recupere fragmentos individuales.
 
 | Nivel | Título | Descripción | Tema gramatical |
 | --- | --- | --- | --- |
-| a1 | Cómo se leen ä, ö y ü: los Umlaute | Los dos puntitos cambian el sonido por completo. Aprendé a leer ä, ö y ü en alemán, con la pronunciación escrita, los símbolos fonéticos y el audio de cada palabra. | Pronunciación: los Umlaute (ä, ö, ü) |
-| a1 | ei, ie, eu y au: los diptongos que todos confunden | «ei» se lee «ai» y «ie» se lee «i larga»: la confusión número uno al leer alemán. Aprendé los cuatro diptongos con pronunciación escrita, símbolos fonéticos y audio. | Pronunciación: diptongos (ei, ie, eu, au) |
-| a1 | sch, ch y ck: la ch tiene dos sonidos distintos | «sch» suena «sh», «ck» suena como una k fuerte, y la «ch» cambia de sonido según la vocal que tenga antes. Aprendé cuál va cuándo, con audio y símbolos fonéticos. | Pronunciación: sch, ch y ck |
+| a1 | Cómo se leen ä, ö y ü: los Umlaute | Los dos puntitos cambian el sonido por completo. Aprendé a leer ä, ö y ü en alemán, con pronunciación escrita, símbolos fonéticos y audio. | Pronunciación: los Umlaute (ä, ö, ü) |
+| a1 | ei, ie, eu y au: los diptongos que todos confunden | «ei» se lee «ai» y «ie» se lee «i larga»: la confusión más común al leer alemán. Aprendé los cuatro diptongos con pronunciación escrita y audio. | Pronunciación: diptongos (ei, ie, eu, au) |
+| a1 | sch, ch y ck: la ch tiene dos sonidos distintos | «sch» suena «sh», «ck» como una k fuerte, y «ch» cambia según la vocal anterior. Aprendé cuál va cuándo, con audio y símbolos fonéticos. | Pronunciación: sch, ch y ck |
 | a1 | st, sp, pf, tz y ß: por qué «Sport» se lee «SHPORT» | Al inicio de palabra, st y sp se leen «sht» y «shp». Aprendé esa regla y los sonidos pf, tz y ß, con pronunciación escrita, símbolos fonéticos y audio. | Pronunciación: st, sp, pf, tz y ß |
 | a1 | La h muda, la terminación -er y las letras que engañan | Por qué «Lehrer» se lee «LÉE-ra» y no «le-rer»: la h que alarga, la terminación -er que suena a «a», y las letras v, z y s que no suenan como parecen. | Pronunciación: h muda, terminación -er, y v/z/s |
 | a1 | Saludos y presentarse: tus primeras 5 frases en alemán | Hallo, Wie heißt du?, Woher kommst du?: las frases con las que arranca cualquier conversación en alemán, sin aprender gramática todavía. | Saludos y presentación personal (Begrüßung / Sich vorstellen) |
@@ -24,7 +24,7 @@ modelo recupere fragmentos individuales.
 | a1 | Die Familie: presenta a los tuyos en alemán | Vocabulario de la familia en alemán: cómo nombrar a padres, hermanos, abuelos y demás parientes usando el patrón der/die predecible. | Vocabulario: la familia |
 | a1 | Essen und Trinken: pide comida sin pasar hambre | Vocabulario de comida y bebida en alemán para pedir en restaurantes, comprar en el supermercado y entender cualquier menú sin pasar hambre. | Vocabulario: comida y bebida |
 | a1 | Haben y sein: los dos verbos imprescindibles del alemán | Haben (tener) y sein (ser/estar) aparecen en casi toda frase alemana, incluido el pasado Perfekt. Apréndelos primero, antes que cualquier otro verbo. | Verbos haben y sein (presente) |
-| a1 | Nicht vs. kein: cómo decir 'no' en alemán sin equivocarte | La regla más simple para negar en alemán: kein niega sustantivos, nicht niega todo lo demás. Con la posición correcta de nicht y cómo cambia kein según el género. | La negación: nicht vs. kein |
+| a1 | Nicht vs. kein: cómo decir 'no' en alemán sin equivocarte | La regla más simple para negar en alemán: kein niega sustantivos, nicht niega el resto. Con la posición de nicht y cómo cambia kein según el género. | La negación: nicht vs. kein |
 | a1 | El imperativo alemán: cómo dar órdenes y pedir cosas | Aprende a formar órdenes en alemán para du, ihr y Sie — la forma verbal que usás sin darte cuenta cada vez que pedís algo (¡Komm!, ¡Kommen Sie!). | El imperativo (du / ihr / Sie) |
 | a1 | Pronombres personales: ich, du, er, sie, es, wir, ihr, sie/Sie | Los 8 pronombres personales del alemán, con la distinción clave entre 'du' (informal) y 'Sie' (formal) que vas a usar en cada frase que digas. | Pronombres personales (ich, du, er/sie/es, wir, ihr, sie/Sie) |
 | a1 | El plural en alemán: -e, -er, -(e)n, -s y el artículo die | Los 5 patrones para formar el plural en alemán, con la regla que nunca falla: TODOS los plurales usan el artículo 'die', sin importar el género en singular. | Formación del plural de sustantivos |
@@ -95,9 +95,9 @@ modelo recupere fragmentos individuales.
 
 | Nivel | Título | Descripción | Tema gramatical |
 | --- | --- | --- | --- |
-| a1 | Las vocales que no existen en español: ship vs. sheep | El español tiene 5 vocales y el inglés más de diez. Aprendé a distinguir la i corta de la larga, la a de cat y la u de cup, con pronunciación escrita, símbolos fonéticos y audio. | Pronunciación: vocales cortas y largas |
-| a1 | El sonido TH: think y this | El TH inglés tiene dos sonidos y ninguno existe en el español latinoamericano. Aprendé a sacarlos con la lengua entre los dientes, con pronunciación escrita, símbolos fonéticos y audio. | Pronunciación: los dos sonidos de TH |
-| a1 | La e muda: por qué «hat» y «hate» suenan distinto | Una e final que no se pronuncia pero cambia la vocal anterior: hat/hate, hop/hope, bit/bite. La regla más rentable para leer inglés, con audio y símbolos fonéticos. | Pronunciación: la e muda final (magic e) |
+| a1 | Las vocales que no existen en español: ship vs. sheep | El español tiene 5 vocales y el inglés más de diez. Aprendé a distinguir la i corta de la larga, la a de cat y la u de cup, con audio. | Pronunciación: vocales cortas y largas |
+| a1 | El sonido TH: think y this | El TH inglés tiene dos sonidos que no existen en el español latinoamericano. Aprendé a sacarlos con la lengua entre los dientes, con audio. | Pronunciación: los dos sonidos de TH |
+| a1 | La e muda: por qué «hat» y «hate» suenan distinto | Una e final que no se pronuncia pero cambia la vocal anterior: hat/hate, hop/hope, bit/bite. La regla más rentable para leer inglés en voz alta. | Pronunciación: la e muda final (magic e) |
 | a1 | Las terminaciones -ed y -s: tres sonidos cada una | «Worked» se dice «UÉRKT» y «wanted» se dice «UÓN-tid». Aprendé los tres sonidos de -ed y los tres de -s, con la regla exacta para saber cuál va en cada palabra. | Pronunciación: terminaciones -ed y -s |
 | a1 | Los tres errores que más te delatan como hispanohablante | La e fantasma antes de school, la h que sí se pronuncia y la v que no es b. Tres arreglos concretos que cambian tu acento en inglés más que cualquier otra cosa. | Pronunciación: errores típicos del hispanohablante |
 | a1 | El verbo 'to be': la navaja suiza del inglés | El verbo 'to be' en inglés (am/is/are), que reemplaza a los verbos 'ser' y 'estar' del español, para presentarte, describir cosas y hacer preguntas. | Verbo 'to be' (am/is/are) |

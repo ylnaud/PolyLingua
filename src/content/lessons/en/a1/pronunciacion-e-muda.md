@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'La e muda: por qué «hat» y «hate» suenan distinto'
-description: 'Una e final que no se pronuncia pero cambia la vocal anterior: hat/hate, hop/hope, bit/bite. La regla más rentable para leer inglés, con audio y símbolos fonéticos.'
+description: 'Una e final que no se pronuncia pero cambia la vocal anterior: hat/hate, hop/hope, bit/bite. La regla más rentable para leer inglés en voz alta.'
 order: 0.3
 unit: 1
 grammarTopic: 'Pronunciación: la e muda final (magic e)'

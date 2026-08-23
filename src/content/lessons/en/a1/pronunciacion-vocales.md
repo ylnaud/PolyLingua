@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'Las vocales que no existen en español: ship vs. sheep'
-description: 'El español tiene 5 vocales y el inglés más de diez. Aprendé a distinguir la i corta de la larga, la a de cat y la u de cup, con pronunciación escrita, símbolos fonéticos y audio.'
+description: 'El español tiene 5 vocales y el inglés más de diez. Aprendé a distinguir la i corta de la larga, la a de cat y la u de cup, con audio.'
 order: 0.1
 unit: 1
 grammarTopic: 'Pronunciación: vocales cortas y largas'

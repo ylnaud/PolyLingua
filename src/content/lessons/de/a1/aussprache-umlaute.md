@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'Cómo se leen ä, ö y ü: los Umlaute'
-description: 'Los dos puntitos cambian el sonido por completo. Aprendé a leer ä, ö y ü en alemán, con la pronunciación escrita, los símbolos fonéticos y el audio de cada palabra.'
+description: 'Los dos puntitos cambian el sonido por completo. Aprendé a leer ä, ö y ü en alemán, con pronunciación escrita, símbolos fonéticos y audio.'
 order: 0.1
 unit: 1
 grammarTopic: 'Pronunciación: los Umlaute (ä, ö, ü)'

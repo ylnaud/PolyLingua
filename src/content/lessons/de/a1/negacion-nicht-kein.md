@@ -93,10 +93,10 @@ Ich habe keine Zeit. (niega "Zeit", un sustantivo)
 `kein` cambia según el género del sustantivo y cómo se usa en la frase, exactamente como
 el artículo indefinido `ein`:
 
-|                                          | maskulin | feminin | neutral | Plural |
-| ---------------------------------------- | -------- | ------- | ------- | ------ |
-| Forma normal (el sujeto de la frase)     | kein     | keine   | kein    | keine  |
-| Cuando es lo que tenés/ves/comprás       | keinen   | keine   | kein    | keine  |
+|                                      | maskulin | feminin | neutral | Plural |
+| ------------------------------------ | -------- | ------- | ------- | ------ |
+| Forma normal (el sujeto de la frase) | kein     | keine   | kein    | keine  |
+| Cuando es lo que tenés/ves/comprás   | keinen   | keine   | kein    | keine  |
 
 ```
 Kein Mann ist hier.        (forma normal, masculino)

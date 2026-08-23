@@ -95,11 +95,11 @@ exactamente las mismas terminaciones — solo cambia la raíz.
 Las terminaciones son idénticas a las del artículo indefinido — si ya las sabés con
 `ein`, ya las sabés acá:
 
-|                                               | maskulin | feminin | neutral | Plural |
-| --------------------------------------------- | -------- | ------- | ------- | ------ |
-| Forma normal (Nominativ)                      | mein     | meine   | mein    | meine  |
-| Lo que ves/tenés/comprás (Akkusativ)          | meinen   | meine   | mein    | meine  |
-| A quién le das/decís algo (Dativ)             | meinem   | meiner  | meinem  | meinen |
+|                                      | maskulin | feminin | neutral | Plural |
+| ------------------------------------ | -------- | ------- | ------- | ------ |
+| Forma normal (Nominativ)             | mein     | meine   | mein    | meine  |
+| Lo que ves/tenés/comprás (Akkusativ) | meinen   | meine   | mein    | meine  |
+| A quién le das/decís algo (Dativ)    | meinem   | meiner  | meinem  | meinen |
 
 ```
 Forma normal:   Mein Bruder ist hier.       (mein, sin terminación — como "ein")

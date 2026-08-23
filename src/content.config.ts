@@ -68,6 +68,12 @@ const situationPhrase = z.object({
   note: z.string().optional(),
 });
 
+const dialogueLine = z.object({
+  speaker: z.string(),
+  text: z.string(),
+  es: z.string(),
+});
+
 const lessons = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/lessons' }),
   schema: z.object({
@@ -102,4 +108,20 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { lessons, blog };
+const dialogos = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/dialogos' }),
+  schema: z.object({
+    language: z.enum(['de', 'en', 'fr', 'it', 'pt']),
+    level: z.enum(['a1', 'a2', 'b1', 'b2', 'c1', 'c2']),
+    title: z.string(),
+    description: z.string(),
+    order: z.number(),
+    situation: z.string(),
+    dialogue: z.array(dialogueLine).min(2).max(6),
+    anatomy: z.array(z.string()).min(1).max(3),
+    vocabulary: z.array(vocabularyItem).default([]),
+    minutes: z.number().default(5),
+  }),
+});
+
+export const collections = { lessons, blog, dialogos };

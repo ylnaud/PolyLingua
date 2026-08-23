@@ -75,7 +75,7 @@ vocabulary:
 
 En español, "yo veo a Juan" y "Juan me ve a mí" usan las mismas palabras pero en
 distinto orden. En alemán pasa algo parecido, pero además **el artículo cambia de forma**
-para indicar quién hace qué. A esas formas distintas se les llama *casos* — y son la
+para indicar quién hace qué. A esas formas distintas se les llama _casos_ — y son la
 razón por la que `der` a veces aparece como `den` o `dem`.
 
 En las lecciones anteriores ya viste que lo que tenés/ves/comprás cambia el masculino
@@ -84,10 +84,10 @@ entender por qué: son dos roles distintos de la palabra en la frase.
 
 ## Las dos preguntas clave
 
-| Nombre del caso | La pregunta que te hacés                                                     | Ejemplo                   |
-| --------------- | ---------------------------------------------------------------------------- | ------------------------- |
-| **Akkusativ**   | ¿QUÉ doy/veo/compro? (la cosa o persona que recibe la acción)               | den Ball (la pelota)      |
-| **Dativ**       | ¿A QUIÉN se lo doy/digo/mando? (la persona a la que le llega algo)          | dem Kind (al niño)        |
+| Nombre del caso | La pregunta que te hacés                                           | Ejemplo              |
+| --------------- | ------------------------------------------------------------------ | -------------------- |
+| **Akkusativ**   | ¿QUÉ doy/veo/compro? (la cosa o persona que recibe la acción)      | den Ball (la pelota) |
+| **Dativ**       | ¿A QUIÉN se lo doy/digo/mando? (la persona a la que le llega algo) | dem Kind (al niño)   |
 
 ```
 Ich gebe    dem Kind (¿a quién? → Dativ)    den Ball (¿qué? → Akkusativ).
@@ -96,11 +96,11 @@ Le doy      al niño                          la pelota.
 
 ## Cómo cambia el artículo
 
-| Rol de la palabra                            | maskulin | feminin | neutral | Plural   |
-| -------------------------------------------- | -------- | ------- | ------- | -------- |
-| Forma normal (el sujeto, el que hace algo)   | der      | die     | das     | die      |
-| Akkusativ (lo que ves/comprás/das)           | **den**  | die     | das     | die      |
-| Dativ (a quién le das/decís/mandás algo)     | **dem**  | **der** | **dem** | **den** (+n) |
+| Rol de la palabra                          | maskulin | feminin | neutral | Plural       |
+| ------------------------------------------ | -------- | ------- | ------- | ------------ |
+| Forma normal (el sujeto, el que hace algo) | der      | die     | das     | die          |
+| Akkusativ (lo que ves/comprás/das)         | **den**  | die     | das     | die          |
+| Dativ (a quién le das/decís/mandás algo)   | **dem**  | **der** | **dem** | **den** (+n) |
 
 Fijate: en Akkusativ solo el masculino cambia (`der` → `den`); en Dativ cambian todos
 los géneros.

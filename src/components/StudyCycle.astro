@@ -1,0 +1,267 @@
+---
+interface Props {
+  dialogueId: string;
+  lang: string;
+}
+
+const { dialogueId, lang } = Astro.props;
+
+const slug = dialogueId.split('/').pop()!;
+const storageKey = `polylingua-dialogo-cycle-${lang}-${slug}`;
+
+const days = [
+  { num: 1, label: 'Comprensión + leer en voz alta', icon: '👂' },
+  { num: 2, label: 'Traducir al español en cuaderno', icon: '✍️' },
+  { num: 3, label: 'Descanso (incubación)', icon: '😴' },
+  { num: 4, label: 'Traducción inversa: español al idioma', icon: '🔄' },
+];
+---
+
+<div class="study-cycle card" data-study-cycle data-storage-key={storageKey}>
+  <span class="eyebrow">📅 Ciclo de 4 días</span>
+  <p class="cycle-intro">
+    Repetí este diálogo en 4 días espaciados. El descanso del día 3 no es pereza — es cuando el
+    cerebro consolida lo aprendido.
+  </p>
+
+  <div class="days-grid">
+    {
+      days.map((day) => (
+        <div class="day-card" data-day={day.num}>
+          <span class="day-icon" aria-hidden="true">
+            {day.icon}
+          </span>
+          <span class="day-num">Día {day.num}</span>
+          <span class="day-label">{day.label}</span>
+          <span class="day-check" data-day-check aria-hidden="true">
+            ✓
+          </span>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="cycle-actions">
+    <button type="button" class="btn btn-primary" data-cycle-mark> Marcar día completado </button>
+    <button type="button" class="cycle-reset" data-cycle-reset> Reiniciar ciclo </button>
+  </div>
+
+  <p class="cycle-status" data-cycle-status></p>
+</div>
+
+<script>
+  import { read, write, today } from '../lib/storage';
+  import { playCorrect } from '../lib/sound';
+
+  interface CycleState {
+    startDate: string;
+    completed: number[];
+  }
+
+  function initStudyCycles() {
+    document.querySelectorAll<HTMLElement>('[data-study-cycle]').forEach((el) => {
+      if (el.dataset.initialized) return;
+      el.dataset.initialized = 'true';
+
+      const key = el.dataset.storageKey ?? '';
+
+      function getState(): CycleState | null {
+        const raw = read(key);
+        if (!raw) return null;
+        try {
+          const s = JSON.parse(raw) as Partial<CycleState>;
+          if (!s.startDate || !Array.isArray(s.completed)) return null;
+          return s as CycleState;
+        } catch {
+          return null;
+        }
+      }
+
+      function saveState(state: CycleState) {
+        write(key, JSON.stringify(state));
+      }
+
+      function render() {
+        const state = getState();
+        const completed = state?.completed ?? [];
+
+        el.querySelectorAll<HTMLElement>('[data-day]').forEach((dayEl) => {
+          const num = Number(dayEl.dataset.day);
+          const isDone = completed.includes(num);
+          const isActive =
+            !isDone &&
+            (num === 1 || completed.includes(num - 1) || (num === 4 && completed.includes(2)));
+          dayEl.classList.toggle('completed', isDone);
+          dayEl.classList.toggle('active', isActive);
+          dayEl.classList.toggle('future', !isDone && !isActive);
+        });
+
+        const markBtn = el.querySelector<HTMLButtonElement>('[data-cycle-mark]');
+        const resetBtn = el.querySelector<HTMLButtonElement>('[data-cycle-reset]');
+        const statusEl = el.querySelector<HTMLElement>('[data-cycle-status]');
+
+        const allDone = [1, 2, 3, 4].every((d) => completed.includes(d));
+
+        if (markBtn) {
+          markBtn.hidden = allDone;
+        }
+        if (resetBtn) {
+          resetBtn.hidden = !state;
+        }
+        if (statusEl) {
+          if (allDone) {
+            statusEl.textContent =
+              '¡Ciclo completado! Podés reiniciar o pasar al siguiente diálogo.';
+          } else if (state) {
+            statusEl.textContent = `Empezaste el ${state.startDate}`;
+          } else {
+            statusEl.textContent =
+              'Empezá marcando el día 1 cuando hayas leído el diálogo en voz alta.';
+          }
+        }
+      }
+
+      el.querySelector('[data-cycle-mark]')?.addEventListener('click', () => {
+        let state = getState();
+        if (!state) {
+          state = { startDate: today(), completed: [] };
+        }
+
+        const nextDay = [1, 2, 3, 4].find((d) => !state!.completed.includes(d));
+        if (!nextDay) return;
+
+        state.completed.push(nextDay);
+
+        if (nextDay === 2 && !state.completed.includes(3)) {
+          state.completed.push(3);
+        }
+
+        saveState(state);
+        playCorrect();
+        render();
+      });
+
+      el.querySelector('[data-cycle-reset]')?.addEventListener('click', () => {
+        write(key, '');
+        render();
+      });
+
+      render();
+    });
+  }
+
+  initStudyCycles();
+  document.addEventListener('astro:page-load', initStudyCycles);
+</script>
+
+<style>
+  .study-cycle {
+    margin: 1.75rem 0;
+    padding: 1.1rem 1.25rem;
+  }
+
+  .cycle-intro {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0.35rem 0 1rem;
+  }
+
+  .days-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .day-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 1rem 0.5rem;
+    border-radius: var(--radius, 8px);
+    border: 2px solid var(--border);
+    text-align: center;
+    transition:
+      border-color 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .day-card.active {
+    border-color: var(--accent);
+  }
+
+  .day-card.completed {
+    opacity: 0.65;
+    border-color: #22c55e;
+  }
+
+  .day-card.future {
+    opacity: 0.4;
+  }
+
+  .day-icon {
+    font-size: 1.5rem;
+  }
+
+  .day-num {
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .day-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.3;
+  }
+
+  .day-check {
+    display: none;
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    font-size: 0.85rem;
+    color: #22c55e;
+    font-weight: 700;
+  }
+
+  .completed .day-check {
+    display: block;
+  }
+
+  .cycle-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cycle-reset {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  .cycle-reset:hover {
+    color: var(--text);
+  }
+
+  .cycle-status {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0.75rem 0 0;
+  }
+
+  @media (max-width: 560px) {
+    .days-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

@@ -1,0 +1,252 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { LEVEL_MAP } from '../../../data/levels';
+
+export async function getStaticPaths() {
+  return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
+}
+
+const { lang } = Astro.params;
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+const LEVEL_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+const allDialogos = (await getCollection('dialogos', (entry) => entry.data.language === lang)).sort(
+  (a, b) => {
+    const byLevel = LEVEL_ORDER.indexOf(a.data.level) - LEVEL_ORDER.indexOf(b.data.level);
+    return byLevel !== 0 ? byLevel : a.data.order - b.data.order;
+  },
+);
+
+const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((sit) => ({
+  situation: sit,
+  dialogues: allDialogos.filter((d) => d.data.situation === sit),
+}));
+---
+
+<BaseLayout
+  title={`Diálogos en ${languageMeta?.name}`}
+  description={`Aprendé ${languageMeta?.name} con diálogos cortos y naturales — sin reglas, solo repetición e imitación.`}
+  path={`/idiomas/${lang}/dialogos`}
+  noindex
+>
+  <section class="container dlg-head">
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="/idiomas">Idiomas</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <span aria-hidden="true">/</span>
+      <span>Diálogos</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">💬</span>
+    <h1>Diálogos para asimilar</h1>
+    <p class="desc">
+      Diálogos cortos y reales que asimilás por repetición, no por análisis. Leelos, traducilos y
+      dejalos reposar — en 4 días el patrón se graba solo.
+    </p>
+  </section>
+
+  <section class="container dlg-body">
+    {
+      situations.length === 0 ? (
+        <div class="card empty-state">
+          <p class="empty-emoji">🚧</p>
+          <h2>Todavía no hay diálogos en {languageMeta?.name}</h2>
+          <p>Estamos armando este modo idioma por idioma — volvé pronto.</p>
+          <a class="btn btn-primary" href={`/idiomas/${lang}`}>
+            Ver lecciones
+          </a>
+        </div>
+      ) : (
+        situations.map((group) => (
+          <div class="sit-group">
+            <h2 class="sit-title">{group.situation}</h2>
+            <div class="dlg-grid">
+              {group.dialogues.map((dlg) => {
+                const slug = dlg.id.split('/').pop()!;
+                const levelMeta = LEVEL_MAP[dlg.data.level as keyof typeof LEVEL_MAP];
+                return (
+                  <a
+                    class="dlg-item card"
+                    href={`/idiomas/${lang}/dialogos/${slug}`}
+                    data-dlg-card
+                    data-dlg-key={`polylingua-dialogo-cycle-${lang}-${slug}`}
+                  >
+                    <span class="dlg-level" style={`color:${levelMeta?.color}`}>
+                      {levelMeta?.emoji} {dlg.data.level.toUpperCase()}
+                    </span>
+                    <span class="dlg-name">{dlg.data.title}</span>
+                    <span class="dlg-desc">{dlg.data.description}</span>
+                    <div class="dlg-meta">
+                      <span>{dlg.data.dialogue.length} líneas</span>
+                      <span>⏱ {dlg.data.minutes} min</span>
+                      <span class="dlg-cycle-badge" data-cycle-badge />
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        ))
+      )
+    }
+  </section>
+</BaseLayout>
+
+<script>
+  import { read } from '../../../lib/storage';
+
+  function initCycleBadges() {
+    document.querySelectorAll<HTMLElement>('[data-dlg-card]').forEach((card) => {
+      const key = card.dataset.dlgKey ?? '';
+      const badge = card.querySelector<HTMLElement>('[data-cycle-badge]');
+      if (!badge || !key) return;
+
+      const raw = read(key);
+      if (!raw) return;
+
+      try {
+        const state = JSON.parse(raw);
+        if (!Array.isArray(state.completed)) return;
+        const done = state.completed.length;
+        if (done >= 4) {
+          badge.textContent = '✓ Completado';
+          badge.classList.add('badge-done');
+        } else if (done > 0) {
+          badge.textContent = `${done}/4 días`;
+          badge.classList.add('badge-progress');
+        }
+      } catch {
+        /* ignore */
+      }
+    });
+  }
+
+  initCycleBadges();
+  document.addEventListener('astro:page-load', initCycleBadges);
+</script>
+
+<style>
+  .dlg-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .dlg-body {
+    max-width: 680px;
+    padding-block: 0 4rem;
+  }
+
+  .sit-group {
+    margin-bottom: 2rem;
+  }
+
+  .sit-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.85rem;
+  }
+
+  .dlg-grid {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .dlg-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.1rem 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease;
+  }
+
+  .dlg-item:hover {
+    border-color: var(--accent);
+  }
+
+  .dlg-level {
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .dlg-name {
+    font-weight: 700;
+  }
+
+  .dlg-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .dlg-meta {
+    display: flex;
+    gap: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 0.2rem;
+  }
+
+  .badge-done {
+    color: #22c55e;
+  }
+
+  .badge-progress {
+    color: var(--accent-text);
+  }
+
+  .empty-state {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .empty-emoji {
+    font-size: 2.5rem;
+    margin: 0 0 1rem;
+  }
+
+  .empty-state h2 {
+    margin: 0 0 0.5rem;
+  }
+
+  .empty-state p {
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+  }
+
+  .breadcrumbs {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumbs a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--accent);
+  }
+
+  .breadcrumbs span[aria-hidden] {
+    margin: 0 0.3rem;
+    opacity: 0.5;
+  }
+</style>

@@ -1,0 +1,289 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import DialogueCard from '../../../../components/DialogueCard.astro';
+import StudyCycle from '../../../../components/StudyCycle.astro';
+import { getCollection, render } from 'astro:content';
+import { LANGUAGE_MAP } from '../../../../data/languages';
+import { LEVEL_MAP } from '../../../../data/levels';
+
+export async function getStaticPaths() {
+  const allDialogos = await getCollection('dialogos');
+
+  return allDialogos.map((entry) => {
+    const parts = entry.id.split('/');
+    const lang = parts[0];
+    const slug = parts[parts.length - 1];
+
+    const siblings = allDialogos
+      .filter((d) => d.data.language === lang)
+      .sort((a, b) => {
+        const la = a.data.level,
+          lb = b.data.level;
+        if (la !== lb) return la < lb ? -1 : 1;
+        return a.data.order - b.data.order;
+      });
+
+    const idx = siblings.findIndex((s) => s.id === entry.id);
+    const prev = idx > 0 ? siblings[idx - 1] : null;
+    const next = idx < siblings.length - 1 ? siblings[idx + 1] : null;
+
+    return {
+      params: { lang, slug },
+      props: {
+        entry,
+        prevDialogue: prev
+          ? {
+              title: prev.data.title,
+              href: `/idiomas/${lang}/dialogos/${prev.id.split('/').pop()}`,
+            }
+          : null,
+        nextDialogue: next
+          ? {
+              title: next.data.title,
+              href: `/idiomas/${lang}/dialogos/${next.id.split('/').pop()}`,
+            }
+          : null,
+      },
+    };
+  });
+}
+
+const { entry, prevDialogue, nextDialogue } = Astro.props;
+const { Content } = await render(entry);
+const { lang, slug } = Astro.params;
+const d = entry.data;
+const langMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const levelMeta = LEVEL_MAP[d.level as keyof typeof LEVEL_MAP];
+
+const siteURL = 'https://poly-lingua.vercel.app';
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'LearningResource',
+  name: d.title,
+  description: d.description,
+  inLanguage: lang,
+  educationalLevel: d.level.toUpperCase(),
+  learningResourceType: 'dialogue',
+  provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
+  url: `${siteURL}/idiomas/${lang}/dialogos/${slug}`,
+  timeRequired: `PT${d.minutes}M`,
+};
+---
+
+<BaseLayout
+  title={`${d.title} · Diálogo ${d.level.toUpperCase()}`}
+  description={d.description}
+  path={`/idiomas/${lang}/dialogos/${slug}`}
+  structuredData={structuredData}
+  ogImage={`/og-${lang}.png`}
+>
+  <section class="container dialogue-head">
+    <nav class="breadcrumbs" aria-label="Ruta de navegación">
+      <a href="/idiomas">Idiomas</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/idiomas/${lang}`}>{langMeta.flag} {langMeta.name}</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/idiomas/${lang}/dialogos`}>Diálogos</a>
+      <span aria-hidden="true">/</span>
+      <span>{d.title}</span>
+    </nav>
+
+    <div class="head-meta">
+      <span class="badge" style={`border-color:${levelMeta.color};color:${levelMeta.color}`}>
+        {d.level.toUpperCase()}
+      </span>
+      <span class="badge">{d.dialogue.length} líneas</span>
+      <span class="badge">⏱ {d.minutes} min</span>
+    </div>
+
+    <h1>{d.title}</h1>
+    <p class="situation-tag">{d.situation}</p>
+  </section>
+
+  <section class="container">
+    <DialogueCard dialogue={d.dialogue} lang={langMeta.bcp47} />
+  </section>
+
+  <section class="container anatomy-section">
+    <span class="eyebrow">🔍 Anatomía del diálogo</span>
+    <ul class="anatomy-list">
+      {d.anatomy.map((point) => <li>{point}</li>)}
+    </ul>
+  </section>
+
+  <section class="container">
+    <StudyCycle dialogueId={entry.id} lang={lang} />
+  </section>
+
+  {
+    d.vocabulary.length > 0 && (
+      <section class="container vocab-section">
+        <span class="eyebrow">📚 Vocabulario</span>
+        <ul class="vocab-list">
+          {d.vocabulary.map((v) => (
+            <li class="vocab-item">
+              <span class="vocab-term">{v.term}</span>
+              <span class="vocab-trans">{v.translation}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <section class="container body-content">
+    <Content />
+  </section>
+
+  <nav class="container prev-next" aria-label="Navegación entre diálogos">
+    {
+      prevDialogue ? (
+        <a class="pn-link prev" href={prevDialogue.href}>
+          ← {prevDialogue.title}
+        </a>
+      ) : (
+        <span />
+      )
+    }
+    {
+      nextDialogue ? (
+        <a class="pn-link next" href={nextDialogue.href}>
+          {nextDialogue.title} →
+        </a>
+      ) : (
+        <span />
+      )
+    }
+  </nav>
+</BaseLayout>
+
+<style>
+  .dialogue-head {
+    padding-block: 2rem 0.5rem;
+    max-width: 720px;
+  }
+
+  .breadcrumbs {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumbs a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--accent);
+  }
+
+  .breadcrumbs span[aria-hidden] {
+    margin: 0 0.3rem;
+    opacity: 0.5;
+  }
+
+  .head-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    margin: 0 0 0.35rem;
+  }
+
+  .situation-tag {
+    color: var(--accent-text);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .anatomy-section {
+    max-width: 720px;
+  }
+
+  .anatomy-list {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .anatomy-list li {
+    line-height: 1.5;
+    color: var(--text);
+    font-size: 0.95rem;
+  }
+
+  .vocab-section {
+    max-width: 720px;
+  }
+
+  .vocab-list {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .vocab-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .vocab-item:last-child {
+    border-bottom: none;
+  }
+
+  .vocab-term {
+    font-weight: 700;
+  }
+
+  .vocab-trans {
+    color: var(--text-muted);
+    text-align: right;
+  }
+
+  .body-content {
+    max-width: 720px;
+    padding-block: 0 1rem;
+  }
+
+  .body-content :global(p) {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .prev-next {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1.5rem 4rem;
+    max-width: 720px;
+  }
+
+  .pn-link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--accent-text);
+  }
+
+  .pn-link:hover {
+    text-decoration: underline;
+  }
+
+  .pn-link.next {
+    margin-left: auto;
+    text-align: right;
+  }
+</style>

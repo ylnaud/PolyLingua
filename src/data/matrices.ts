@@ -658,16 +658,20 @@ const GERMAN_SUBJECTS_LOWER: MatrixWord[] = GERMAN_SUBJECTS.map((s) => ({
   word: s.word.toLowerCase(),
   es: s.es,
 }));
+// "ich"/"wir" pasan a Konjunktiv II (hätte/hätten) porque ahí el
+// Konjunktiv I de haben coincide con el indicativo (ich habe, wir haben)
+// y no suena a discurso indirecto para un hablante nativo. du/er/sie/ihr
+// sí usan Konjunktiv I real (habest/habe/habet), distinto del indicativo.
 const GERMAN_PLUPERFECT_SPRECHEN: MatrixWord[] = [
   {
     word: 'gesprochen',
     es: 'hablado',
     forms: [
-      'gesprochen habe',
+      'gesprochen hätte',
       'gesprochen habest',
       'gesprochen habe',
       'gesprochen habe',
-      'gesprochen haben',
+      'gesprochen hätten',
       'gesprochen habet',
     ],
     esForms: ES_HABIA_HABLADO,

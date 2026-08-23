@@ -17,40 +17,33 @@ const days = [
 ];
 ---
 
-<div
-  class="study-cycle card"
-  data-study-cycle
-  data-storage-key={storageKey}
->
+<div class="study-cycle card" data-study-cycle data-storage-key={storageKey}>
   <span class="eyebrow">📅 Ciclo de 4 días</span>
   <p class="cycle-intro">
-    Repetí este diálogo en 4 días espaciados. El descanso del día 3 no es
-    pereza — es cuando el cerebro consolida lo aprendido.
+    Repetí este diálogo en 4 días espaciados. El descanso del día 3 no es pereza — es cuando el
+    cerebro consolida lo aprendido.
   </p>
 
   <div class="days-grid">
     {
       days.map((day) => (
-        <div
-          class="day-card"
-          data-day={day.num}
-        >
-          <span class="day-icon" aria-hidden="true">{day.icon}</span>
+        <div class="day-card" data-day={day.num}>
+          <span class="day-icon" aria-hidden="true">
+            {day.icon}
+          </span>
           <span class="day-num">Día {day.num}</span>
           <span class="day-label">{day.label}</span>
-          <span class="day-check" data-day-check aria-hidden="true">✓</span>
+          <span class="day-check" data-day-check aria-hidden="true">
+            ✓
+          </span>
         </div>
       ))
     }
   </div>
 
   <div class="cycle-actions">
-    <button type="button" class="btn btn-primary" data-cycle-mark>
-      Marcar día completado
-    </button>
-    <button type="button" class="cycle-reset" data-cycle-reset>
-      Reiniciar ciclo
-    </button>
+    <button type="button" class="btn btn-primary" data-cycle-mark> Marcar día completado </button>
+    <button type="button" class="cycle-reset" data-cycle-reset> Reiniciar ciclo </button>
   </div>
 
   <p class="cycle-status" data-cycle-status></p>
@@ -95,7 +88,9 @@ const days = [
         el.querySelectorAll<HTMLElement>('[data-day]').forEach((dayEl) => {
           const num = Number(dayEl.dataset.day);
           const isDone = completed.includes(num);
-          const isActive = !isDone && (num === 1 || completed.includes(num - 1) || (num === 4 && completed.includes(2)));
+          const isActive =
+            !isDone &&
+            (num === 1 || completed.includes(num - 1) || (num === 4 && completed.includes(2)));
           dayEl.classList.toggle('completed', isDone);
           dayEl.classList.toggle('active', isActive);
           dayEl.classList.toggle('future', !isDone && !isActive);
@@ -115,11 +110,13 @@ const days = [
         }
         if (statusEl) {
           if (allDone) {
-            statusEl.textContent = '¡Ciclo completado! Podés reiniciar o pasar al siguiente diálogo.';
+            statusEl.textContent =
+              '¡Ciclo completado! Podés reiniciar o pasar al siguiente diálogo.';
           } else if (state) {
             statusEl.textContent = `Empezaste el ${state.startDate}`;
           } else {
-            statusEl.textContent = 'Empezá marcando el día 1 cuando hayas leído el diálogo en voz alta.';
+            statusEl.textContent =
+              'Empezá marcando el día 1 cuando hayas leído el diálogo en voz alta.';
           }
         }
       }
@@ -186,7 +183,9 @@ const days = [
     border-radius: var(--radius, 8px);
     border: 2px solid var(--border);
     text-align: center;
-    transition: border-color 0.2s ease, opacity 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      opacity 0.2s ease;
   }
 
   .day-card.active {

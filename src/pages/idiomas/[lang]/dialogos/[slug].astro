@@ -17,7 +17,8 @@ export async function getStaticPaths() {
     const siblings = allDialogos
       .filter((d) => d.data.language === lang)
       .sort((a, b) => {
-        const la = a.data.level, lb = b.data.level;
+        const la = a.data.level,
+          lb = b.data.level;
         if (la !== lb) return la < lb ? -1 : 1;
         return a.data.order - b.data.order;
       });
@@ -31,10 +32,16 @@ export async function getStaticPaths() {
       props: {
         entry,
         prevDialogue: prev
-          ? { title: prev.data.title, href: `/idiomas/${lang}/dialogos/${prev.id.split('/').pop()}` }
+          ? {
+              title: prev.data.title,
+              href: `/idiomas/${lang}/dialogos/${prev.id.split('/').pop()}`,
+            }
           : null,
         nextDialogue: next
-          ? { title: next.data.title, href: `/idiomas/${lang}/dialogos/${next.id.split('/').pop()}` }
+          ? {
+              title: next.data.title,
+              href: `/idiomas/${lang}/dialogos/${next.id.split('/').pop()}`,
+            }
           : null,
       },
     };
@@ -108,35 +115,45 @@ const structuredData = {
     <StudyCycle dialogueId={entry.id} lang={lang} />
   </section>
 
-  {d.vocabulary.length > 0 && (
-    <section class="container vocab-section">
-      <span class="eyebrow">📚 Vocabulario</span>
-      <ul class="vocab-list">
-        {d.vocabulary.map((v) => (
-          <li class="vocab-item">
-            <span class="vocab-term">{v.term}</span>
-            <span class="vocab-trans">{v.translation}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  )}
+  {
+    d.vocabulary.length > 0 && (
+      <section class="container vocab-section">
+        <span class="eyebrow">📚 Vocabulario</span>
+        <ul class="vocab-list">
+          {d.vocabulary.map((v) => (
+            <li class="vocab-item">
+              <span class="vocab-term">{v.term}</span>
+              <span class="vocab-trans">{v.translation}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
 
   <section class="container body-content">
     <Content />
   </section>
 
   <nav class="container prev-next" aria-label="Navegación entre diálogos">
-    {prevDialogue ? (
-      <a class="pn-link prev" href={prevDialogue.href}>
-        ← {prevDialogue.title}
-      </a>
-    ) : <span />}
-    {nextDialogue ? (
-      <a class="pn-link next" href={nextDialogue.href}>
-        {nextDialogue.title} →
-      </a>
-    ) : <span />}
+    {
+      prevDialogue ? (
+        <a class="pn-link prev" href={prevDialogue.href}>
+          ← {prevDialogue.title}
+        </a>
+      ) : (
+        <span />
+      )
+    }
+    {
+      nextDialogue ? (
+        <a class="pn-link next" href={nextDialogue.href}>
+          {nextDialogue.title} →
+        </a>
+      ) : (
+        <span />
+      )
+    }
   </nav>
 </BaseLayout>
 

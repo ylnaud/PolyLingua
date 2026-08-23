@@ -25,7 +25,7 @@ dialogue:
     text: 'Prego!'
     es: '¡De nada!'
 anatomy:
-  - '«Dov''è...?» + lugar = bloque fijo para preguntar la ubicación. Es la contracción de «dove» + «è».'
+  - "«Dov'è...?» + lugar = bloque fijo para preguntar la ubicación. Es la contracción de «dove» + «è»."
   - '«Dritto e poi a sinistra/destra» — las indicaciones en italiano son muy parecidas al español.'
   - '«A piedi» = a pie. Bloque fijo, igual que en español.'
 vocabulary:

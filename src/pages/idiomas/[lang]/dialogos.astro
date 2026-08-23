@@ -12,12 +12,12 @@ const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 
 const LEVEL_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
-const allDialogos = (
-  await getCollection('dialogos', (entry) => entry.data.language === lang)
-).sort((a, b) => {
-  const byLevel = LEVEL_ORDER.indexOf(a.data.level) - LEVEL_ORDER.indexOf(b.data.level);
-  return byLevel !== 0 ? byLevel : a.data.order - b.data.order;
-});
+const allDialogos = (await getCollection('dialogos', (entry) => entry.data.language === lang)).sort(
+  (a, b) => {
+    const byLevel = LEVEL_ORDER.indexOf(a.data.level) - LEVEL_ORDER.indexOf(b.data.level);
+    return byLevel !== 0 ? byLevel : a.data.order - b.data.order;
+  },
+);
 
 const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((sit) => ({
   situation: sit,
@@ -42,8 +42,8 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
     <span class="emoji" aria-hidden="true">💬</span>
     <h1>Diálogos para asimilar</h1>
     <p class="desc">
-      Diálogos cortos y reales que asimilás por repetición, no por análisis.
-      Leelos, traducilos y dejalos reposar — en 4 días el patrón se graba solo.
+      Diálogos cortos y reales que asimilás por repetición, no por análisis. Leelos, traducilos y
+      dejalos reposar — en 4 días el patrón se graba solo.
     </p>
   </section>
 
@@ -67,7 +67,12 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
                 const slug = dlg.id.split('/').pop()!;
                 const levelMeta = LEVEL_MAP[dlg.data.level as keyof typeof LEVEL_MAP];
                 return (
-                  <a class="dlg-item card" href={`/idiomas/${lang}/dialogos/${slug}`} data-dlg-card data-dlg-key={`polylingua-dialogo-cycle-${lang}-${slug}`}>
+                  <a
+                    class="dlg-item card"
+                    href={`/idiomas/${lang}/dialogos/${slug}`}
+                    data-dlg-card
+                    data-dlg-key={`polylingua-dialogo-cycle-${lang}-${slug}`}
+                  >
                     <span class="dlg-level" style={`color:${levelMeta?.color}`}>
                       {levelMeta?.emoji} {dlg.data.level.toUpperCase()}
                     </span>
@@ -76,7 +81,7 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
                     <div class="dlg-meta">
                       <span>{dlg.data.dialogue.length} líneas</span>
                       <span>⏱ {dlg.data.minutes} min</span>
-                      <span class="dlg-cycle-badge" data-cycle-badge></span>
+                      <span class="dlg-cycle-badge" data-cycle-badge />
                     </div>
                   </a>
                 );
@@ -112,7 +117,9 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
           badge.textContent = `${done}/4 días`;
           badge.classList.add('badge-progress');
         }
-      } catch { /* ignore */ }
+      } catch {
+        /* ignore */
+      }
     });
   }
 

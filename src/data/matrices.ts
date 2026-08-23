@@ -117,6 +117,49 @@ const ES_PREFERIA = [
   'Vosotros preferíais',
 ];
 
+// Mismos verbos, ahora en condicional (para la matriz de B1 "cortesía/hipótesis").
+const ES_QUISIERA = [
+  'Yo quisiera',
+  'Tú quisieras',
+  'Él quisiera',
+  'Ella quisiera',
+  'Nosotros quisiéramos',
+  'Vosotros quisierais',
+];
+const ES_PODRIA = ['Yo podría', 'Tú podrías', 'Él podría', 'Ella podría', 'Nosotros podríamos', 'Vosotros podríais'];
+const ES_NECESITARIA = [
+  'Yo necesitaría',
+  'Tú necesitarías',
+  'Él necesitaría',
+  'Ella necesitaría',
+  'Nosotros necesitaríamos',
+  'Vosotros necesitaríais',
+];
+const ES_TENDRIA_QUE = [
+  'Yo tendría que',
+  'Tú tendrías que',
+  'Él tendría que',
+  'Ella tendría que',
+  'Nosotros tendríamos que',
+  'Vosotros tendríais que',
+];
+const ES_GUSTARIA = [
+  'A mí me gustaría',
+  'A ti te gustaría',
+  'A él le gustaría',
+  'A ella le gustaría',
+  'A nosotros nos gustaría',
+  'A vosotros os gustaría',
+];
+const ES_PREFERIRIA = [
+  'Yo preferiría',
+  'Tú preferirías',
+  'Él preferiría',
+  'Ella preferiría',
+  'Nosotros preferiríamos',
+  'Vosotros preferiríais',
+];
+
 const GERMAN_SUBJECTS: MatrixWord[] = [
   { word: 'Ich', es: 'yo' },
   { word: 'Du', es: 'tú' },
@@ -177,6 +220,36 @@ const GERMAN_MODALS_PAST: MatrixWord[] = [
     es: 'debía',
     forms: ['sollte', 'solltest', 'sollte', 'sollte', 'sollten', 'solltet'],
     esForms: ES_DEBIA,
+  },
+];
+
+// wollen no usa condicional regular en alemán: la forma natural y cortés es
+// "möchte" (de mögen), no "würde wollen" — así lo enseñan las lecciones del
+// sitio. müssen/können/sollen sí usan su propio Konjunktiv II.
+const GERMAN_MODALS_COND: MatrixWord[] = [
+  {
+    word: 'möchten',
+    es: 'querer',
+    forms: ['möchte', 'möchtest', 'möchte', 'möchte', 'möchten', 'möchtet'],
+    esForms: ES_QUISIERA,
+  },
+  {
+    word: 'müssen',
+    es: 'deber',
+    forms: ['müsste', 'müsstest', 'müsste', 'müsste', 'müssten', 'müsstet'],
+    esForms: ES_DEBERIA,
+  },
+  {
+    word: 'können',
+    es: 'poder',
+    forms: ['könnte', 'könntest', 'könnte', 'könnte', 'könnten', 'könntet'],
+    esForms: ES_PODRIA,
+  },
+  {
+    word: 'sollen',
+    es: 'debería',
+    forms: ['sollte', 'solltest', 'sollte', 'sollte', 'sollten', 'solltet'],
+    esForms: ES_DEBERIA,
   },
 ];
 
@@ -257,6 +330,61 @@ const ENGLISH_MODALS_PAST: MatrixWord[] = [
   },
 ];
 
+const ENGLISH_MODALS_COND: MatrixWord[] = [
+  {
+    word: 'would like to',
+    es: 'querer',
+    forms: [
+      'would like to',
+      'would like to',
+      'would like to',
+      'would like to',
+      'would like to',
+      'would like to',
+    ],
+    esForms: ES_QUISIERA,
+  },
+  {
+    word: 'would need to',
+    es: 'necesitar',
+    forms: [
+      'would need to',
+      'would need to',
+      'would need to',
+      'would need to',
+      'would need to',
+      'would need to',
+    ],
+    esForms: ES_NECESITARIA,
+  },
+  {
+    word: 'would have to',
+    es: 'tener que',
+    forms: [
+      'would have to',
+      'would have to',
+      'would have to',
+      'would have to',
+      'would have to',
+      'would have to',
+    ],
+    esForms: ES_TENDRIA_QUE,
+  },
+  {
+    word: 'would love to',
+    es: 'gustar',
+    forms: [
+      'would love to',
+      'would love to',
+      'would love to',
+      'would love to',
+      'would love to',
+      'would love to',
+    ],
+    esForms: ES_GUSTARIA,
+  },
+];
+
 const ENGLISH_ACTIONS: MatrixWord[] = [
   { word: 'learn', es: 'aprender' },
   { word: 'speak', es: 'hablar' },
@@ -331,6 +459,33 @@ const FRENCH_MODALS_PAST: MatrixWord[] = [
     es: 'gustar',
     forms: ['aimais', 'aimais', 'aimait', 'aimait', 'aimions', 'aimiez'],
     esForms: ES_GUSTABA,
+  },
+];
+
+const FRENCH_MODALS_COND: MatrixWord[] = [
+  {
+    word: 'vouloir',
+    es: 'querer',
+    forms: ['voudrais', 'voudrais', 'voudrait', 'voudrait', 'voudrions', 'voudriez'],
+    esForms: ES_QUISIERA,
+  },
+  {
+    word: 'devoir',
+    es: 'deber',
+    forms: ['devrais', 'devrais', 'devrait', 'devrait', 'devrions', 'devriez'],
+    esForms: ES_DEBERIA,
+  },
+  {
+    word: 'pouvoir',
+    es: 'poder',
+    forms: ['pourrais', 'pourrais', 'pourrait', 'pourrait', 'pourrions', 'pourriez'],
+    esForms: ES_PODRIA,
+  },
+  {
+    word: 'aimer',
+    es: 'gustar',
+    forms: ['aimerais', 'aimerais', 'aimerait', 'aimerait', 'aimerions', 'aimeriez'],
+    esForms: ES_GUSTARIA,
   },
 ];
 
@@ -411,6 +566,33 @@ const ITALIAN_MODALS_PAST: MatrixWord[] = [
   },
 ];
 
+const ITALIAN_MODALS_COND: MatrixWord[] = [
+  {
+    word: 'volere',
+    es: 'querer',
+    forms: ['vorrei', 'vorresti', 'vorrebbe', 'vorrebbe', 'vorremmo', 'vorreste'],
+    esForms: ES_QUISIERA,
+  },
+  {
+    word: 'dovere',
+    es: 'deber',
+    forms: ['dovrei', 'dovresti', 'dovrebbe', 'dovrebbe', 'dovremmo', 'dovreste'],
+    esForms: ES_DEBERIA,
+  },
+  {
+    word: 'potere',
+    es: 'poder',
+    forms: ['potrei', 'potresti', 'potrebbe', 'potrebbe', 'potremmo', 'potreste'],
+    esForms: ES_PODRIA,
+  },
+  {
+    word: 'preferire',
+    es: 'preferir',
+    forms: ['preferirei', 'preferiresti', 'preferirebbe', 'preferirebbe', 'preferiremmo', 'preferireste'],
+    esForms: ES_PREFERIRIA,
+  },
+];
+
 const ITALIAN_ACTIONS: MatrixWord[] = [
   { word: 'imparare', es: 'aprender' },
   { word: 'parlare', es: 'hablar' },
@@ -485,6 +667,40 @@ const PORTUGUESE_MODALS_PAST: MatrixWord[] = [
     es: 'deber',
     forms: ['devia', 'devias', 'devia', 'devia', 'devíamos', 'deviam'],
     esForms: ES_DEBIA,
+  },
+];
+
+const PORTUGUESE_MODALS_COND: MatrixWord[] = [
+  {
+    word: 'gostaria de',
+    es: 'querer',
+    forms: [
+      'gostaria de',
+      'gostarias de',
+      'gostaria de',
+      'gostaria de',
+      'gostaríamos de',
+      'gostariam de',
+    ],
+    esForms: ES_QUISIERA,
+  },
+  {
+    word: 'precisar',
+    es: 'necesitar',
+    forms: ['precisaria', 'precisarias', 'precisaria', 'precisaria', 'precisaríamos', 'precisariam'],
+    esForms: ES_NECESITARIA,
+  },
+  {
+    word: 'poder',
+    es: 'poder',
+    forms: ['poderia', 'poderias', 'poderia', 'poderia', 'poderíamos', 'poderiam'],
+    esForms: ES_PODRIA,
+  },
+  {
+    word: 'dever',
+    es: 'deber',
+    forms: ['deveria', 'deverias', 'deveria', 'deveria', 'deveríamos', 'deveriam'],
+    esForms: ES_DEBERIA,
   },
 ];
 
@@ -567,6 +783,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
         ],
       },
+      {
+        id: 'condicional-modal',
+        name: 'Verbos modales de cortesía',
+        description:
+          'Combina sujetos con möchte/müsste/könnte/sollte para pedir las cosas con cortesía, como en alemán se pide realmente.',
+        level: 'b1',
+        columns: [
+          { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modalverb', role: 'modal', items: GERMAN_MODALS_COND },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
+          { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
+        ],
+      },
     ],
     assemble: joinWords,
   },
@@ -594,6 +823,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         columns: [
           { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS_PAST },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
+          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
+        ],
+      },
+      {
+        id: 'condicional-modal',
+        name: 'Polite modal verbs',
+        description:
+          'Combina sujetos con would like to/would need to/would have to/would love to para pedir las cosas con cortesía.',
+        level: 'b1',
+        columns: [
+          { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS_COND },
           { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
           { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
         ],
@@ -629,6 +871,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
         ],
       },
+      {
+        id: 'condicional-modal',
+        name: 'Verbes modaux au conditionnel',
+        description:
+          'Combina sujetos con voudrais/devrais/pourrais/aimerais para pedir las cosas con cortesía.',
+        level: 'b1',
+        columns: [
+          { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: FRENCH_MODALS_COND },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_ACTIONS },
+          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
+        ],
+      },
     ],
     assemble: frenchAssemble,
   },
@@ -660,6 +915,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
           { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
         ],
       },
+      {
+        id: 'condicional-modal',
+        name: 'Verbi modali al condizionale',
+        description:
+          'Combina sujetos con vorrei/dovrei/potrei/preferirei para pedir las cosas con cortesía.',
+        level: 'b1',
+        columns: [
+          { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modale', role: 'modal', items: ITALIAN_MODALS_COND },
+          { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_ACTIONS },
+          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
+        ],
+      },
     ],
     assemble: joinWords,
   },
@@ -687,6 +955,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         columns: [
           { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS_PAST },
+          { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
+          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
+        ],
+      },
+      {
+        id: 'condicional-modal',
+        name: 'Verbos modais no condicional',
+        description:
+          'Combina sujetos con gostaria de/precisaria/poderia/deveria para pedir las cosas con cortesía.',
+        level: 'b1',
+        columns: [
+          { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS_COND },
           { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
           { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
         ],

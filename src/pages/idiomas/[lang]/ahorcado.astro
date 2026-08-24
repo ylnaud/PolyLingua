@@ -16,9 +16,15 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 // juego interesante) y frases claramente demasiado largas para adivinar
 // letra por letra.
 const lessonsForLang = await getCollection('lessons', (entry) => entry.data.language === lang);
+// Se conserva el nivel de la lección donde aparece cada término (primer match
+// gana, igual que el propio Map dedup por término) — hace falta para poder
+// armar un id de SRS con la misma forma "lang/level/slug" que usan las
+// lecciones reales cuando se falla una palabra en el juego.
 const vocabPool = Array.from(
   new Map(
-    lessonsForLang.flatMap((l) => l.data.vocabulary).map((v) => [v.term.toLowerCase(), v]),
+    lessonsForLang.flatMap((l) =>
+      l.data.vocabulary.map((v) => [v.term.toLowerCase(), { ...v, level: l.data.level }]),
+    ),
   ).values(),
 ).filter((v) => v.term.trim().length >= 2 && v.term.trim().length <= 24);
 ---
@@ -50,7 +56,14 @@ const vocabPool = Array.from(
       <a class="btn btn-primary" href={`/idiomas/${lang}`}>Ver lecciones</a>
     </div>
 
-    <div class="card hangman-game" data-hangman data-lang={languageMeta?.bcp47} hidden>
+    <div
+      class="card hangman-game"
+      data-hangman
+      data-lang={languageMeta?.bcp47}
+      data-lang-code={lang}
+      data-lang-name={languageMeta?.name}
+      hidden
+    >
       <div class="hangman-status">
         <span class="hangman-lives" data-hangman-lives aria-live="polite"></span>
         <button type="button" class="btn btn-ghost hangman-speak" data-hangman-speak hidden
@@ -79,6 +92,7 @@ const vocabPool = Array.from(
   interface VocabItem {
     term: string;
     translation: string;
+    level: string;
   }
 
   const MAX_WRONG = 6;
@@ -105,6 +119,59 @@ const vocabPool = Array.from(
     } catch {
       return [];
     }
+  }
+
+  // Mismo patrón de "quitar acentos/diacríticos" que ya usan
+  // Practice.astro (normalize()) y buscar.astro — acá para armar un slug
+  // estable a partir del término y poder identificar la misma palabra entre
+  // rondas distintas.
+  function slugify(term: string): string {
+    return term
+      .trim()
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  // Reusa el mismo evento que Practice.astro dispara al terminar un ítem —
+  // ProgressTracker.astro ya escucha "practice-complete" en document y sabe
+  // meter/sacar ítems del pool de repetición espaciada (polylingua-srs-pool)
+  // con las mismas cajas tipo Leitner que usa el resto del sitio. No hace
+  // falta reimplementar esa matemática acá: alcanza con darle la forma que
+  // ya espera (id "lang/level/slug#kind-i", data de un ejercicio "write").
+  function recordSrsResult(root: HTMLElement, item: VocabItem, correct: boolean) {
+    const langCode = root.dataset.langCode ?? '';
+    const langName = root.dataset.langName ?? '';
+    if (!langCode || !item.level) return;
+    const id = `${langCode}/${item.level}/ahorcado-${slugify(item.term)}#write-0`;
+    root.dispatchEvent(
+      new CustomEvent('practice-complete', {
+        bubbles: true,
+        detail: {
+          score: correct ? 1 : 0,
+          total: 1,
+          minutes: 1,
+          sessionType: 'ahorcado',
+          lessonId: '',
+          results: [
+            {
+              id,
+              kind: 'write',
+              data: {
+                type: 'write',
+                prompt: `Escribe esta palabra en ${langName}: "${item.translation}"`,
+                answer: item.term,
+              },
+              correct,
+              userAnswer: '',
+              correctAnswer: item.term,
+            },
+          ],
+        },
+      }),
+    );
   }
 
   // El teclado se arma con el alfabeto base + cualquier letra con acento o
@@ -203,6 +270,8 @@ const vocabPool = Array.from(
       const wins = Number(read('polylingua-hangman-wins') ?? '0') + 1;
       write('polylingua-hangman-wins', String(wins));
     }
+
+    recordSrsResult(root, target, won);
   }
 
   function guessLetter(root: HTMLElement, letter: string) {

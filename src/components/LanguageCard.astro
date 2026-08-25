@@ -9,59 +9,28 @@ interface Props {
 const { language, lessonCount } = Astro.props;
 ---
 
-<a class="lang-card card" href={`/idiomas/${language.id}`} style={`--accent-c: ${language.color}`}>
+<a
+  class="lang-card card card-glow"
+  href={`/idiomas/${language.id}`}
+  style={`--accent-c: ${language.color}`}
+>
   <div class="top">
     <span class="flag" aria-hidden="true">{language.flag}</span>
     <span class="badge">{lessonCount} lección{lessonCount === 1 ? '' : 'es'}</span>
   </div>
   <h3>{language.name}</h3>
-  <p class="tagline">{language.tagline}</p>
+  <p class="tagline underline-draw">{language.tagline}</p>
   <p class="desc">{language.description}</p>
   <span class="link">Ver niveles →</span>
 </a>
 
 <style>
   .lang-card {
-    position: relative;
-    overflow: hidden;
     display: block;
     padding: 1.5rem;
     text-decoration: none;
     color: var(--text);
     border-top: 3px solid var(--accent-c);
-    transition:
-      transform 0.15s ease,
-      border-color 0.15s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .lang-card::before {
-    content: '';
-    position: absolute;
-    inset: -40% -40% auto auto;
-    width: 60%;
-    aspect-ratio: 1;
-    background: radial-gradient(circle, var(--accent-c), transparent 70%);
-    opacity: 0;
-    transform: scale(0.8);
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease;
-    pointer-events: none;
-  }
-
-  .lang-card > * {
-    position: relative;
-  }
-
-  .lang-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-c) 25%, transparent);
-  }
-
-  .lang-card:hover::before {
-    opacity: 0.14;
-    transform: scale(1);
   }
 
   .top {
@@ -81,21 +50,10 @@ const { language, lessonCount } = Astro.props;
   }
 
   .tagline {
-    display: inline-block;
     color: var(--accent-c);
     font-weight: 700;
     margin: 0 0 0.5rem;
     font-size: 0.9rem;
-    padding-bottom: 2px;
-    background-image: linear-gradient(var(--accent-c), var(--accent-c));
-    background-repeat: no-repeat;
-    background-position: 0 100%;
-    background-size: 0% 2px;
-    transition: background-size 0.3s ease;
-  }
-
-  .lang-card:hover .tagline {
-    background-size: 100% 2px;
   }
 
   .desc {

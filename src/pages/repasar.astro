@@ -15,11 +15,15 @@ import { LANGUAGES } from '../data/languages';
     <div class="lang-grid">
       {
         LANGUAGES.map((language) => (
-          <a class="lang-item card" href={`/idiomas/${language.id}/repasar`}>
+          <a
+            class="lang-item card card-glow"
+            href={`/idiomas/${language.id}/repasar`}
+            style={`--accent-c: ${language.color}`}
+          >
             <span class="flag" aria-hidden="true">
               {language.flag}
             </span>
-            <span>{language.name}</span>
+            <span class="underline-draw">{language.name}</span>
           </a>
         ))
       }

@@ -79,7 +79,7 @@ const structuredData = {
   description="5 idiomas, A1 a C2, 100% gratis y sin registro. Gramática con trucos fáciles de recordar, ejercicios interactivos y funciona sin internet."
   structuredData={structuredData}
 >
-  <section class="hero">
+  <section class="hero texture-noise">
     <div class="container hero-grid">
       <div>
         <span class="eyebrow">🌐 5 idiomas · Gratis · MCER A1–C2</span>
@@ -181,7 +181,7 @@ const structuredData = {
   </section>
 
   <section class="final-cta container">
-    <div class="card final-cta-card">
+    <div class="card final-cta-card texture-noise">
       <h2>Tu primera lección te espera</h2>
       <p>Sin registros, sin tarjetas de crédito. Solo tú, el idioma que elijas y cinco minutos.</p>
       <a class="btn btn-primary" href="/idiomas">Elegir idioma y empezar →</a>
@@ -191,23 +191,12 @@ const structuredData = {
 
 <style>
   .hero {
-    position: relative;
     padding-block: 3.5rem 4rem;
     background: radial-gradient(
       circle at 20% 0%,
       color-mix(in srgb, var(--accent) 8%, transparent),
       transparent 55%
     );
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.035;
-    mix-blend-mode: overlay;
-    pointer-events: none;
   }
 
   .hero-grid {

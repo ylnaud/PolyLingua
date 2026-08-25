@@ -127,10 +127,11 @@ const structuredData = {
                     return (
                       <li>
                         <a
-                          class="lesson-item card"
+                          class="lesson-item card card-glow"
                           data-lesson-item
                           data-slug={lesson.id.split('/').pop()}
                           href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+                          style={`--accent-c:${levelMeta.color}`}
                         >
                           <span
                             class="lesson-num"
@@ -140,7 +141,7 @@ const structuredData = {
                             {gi + 1}
                           </span>
                           <div>
-                            <h2>{lesson.data.title}</h2>
+                            <h2 class="underline-draw">{lesson.data.title}</h2>
                             <p>{lesson.data.description}</p>
                             <span class="lesson-meta">
                               📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min
@@ -160,16 +161,17 @@ const structuredData = {
           {lessons.map((lesson, i) => (
             <li>
               <a
-                class="lesson-item card"
+                class="lesson-item card card-glow"
                 data-lesson-item
                 data-slug={lesson.id.split('/').pop()}
                 href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+                style={`--accent-c:${levelMeta.color}`}
               >
                 <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>
                   {i + 1}
                 </span>
                 <div>
-                  <h2>{lesson.data.title}</h2>
+                  <h2 class="underline-draw">{lesson.data.title}</h2>
                   <p>{lesson.data.description}</p>
                   <span class="lesson-meta">
                     📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min
@@ -187,15 +189,16 @@ const structuredData = {
         <ol class="lesson-list exam-list">
           <li>
             <a
-              class="lesson-item card exam-item"
+              class="lesson-item card card-glow exam-item"
               data-exam-item
               href={`/idiomas/${lang}/${level}/examen`}
+              style={`--accent-c:${levelMeta.color}`}
             >
               <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>
                 🏆
               </span>
               <div>
-                <h2>Examen de nivel</h2>
+                <h2 class="underline-draw">Examen de nivel</h2>
                 <p>
                   Combina todo lo que aprendiste en {levelMeta.name} — apruébalo para desbloquear el
                   siguiente nivel.
@@ -454,6 +457,15 @@ const structuredData = {
 
   .locked:hover {
     transform: none;
+    box-shadow: none;
+  }
+
+  .locked:hover::before {
+    opacity: 0;
+  }
+
+  .locked:hover .underline-draw {
+    background-size: 0 2px;
   }
 
   .tsa {

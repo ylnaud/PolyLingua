@@ -192,7 +192,11 @@ const structuredData = {
 <style>
   .hero {
     padding-block: 3.5rem 4rem;
-    background: radial-gradient(circle at 20% 0%, rgba(255, 206, 58, 0.08), transparent 55%);
+    background: radial-gradient(
+      circle at 20% 0%,
+      color-mix(in srgb, var(--accent) 8%, transparent),
+      transparent 55%
+    );
   }
 
   .hero-grid {
@@ -351,7 +355,7 @@ const structuredData = {
   .final-cta-card {
     text-align: center;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, rgba(255, 206, 58, 0.1), transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent);
   }
 
   .final-cta-card h2 {

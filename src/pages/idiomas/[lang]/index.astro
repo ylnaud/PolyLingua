@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { LEVELS } from '../../../data/levels';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { TSA_LANG } from '../../../data/tsa';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -10,6 +11,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const tsaEntry = TSA_LANG[lang as string] ?? null;
 
 const allLessons = await getCollection('lessons');
 const lessonCounts = Object.fromEntries(
@@ -172,6 +174,37 @@ const structuredData = {
       </a>
     </div>
   </section>
+
+  {
+    tsaEntry && (
+      <section class="container tsa">
+        <h2>{tsaEntry.heading}</h2>
+        <p class="tsa-intro">{tsaEntry.intro}</p>
+
+        <ul class="tsa-achievements">
+          {tsaEntry.achievements.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+
+        <blockquote class="tsa-insight">{tsaEntry.insight}</blockquote>
+
+        <p class="tsa-stat">
+          <strong>{tsaEntry.stat.value}</strong> {tsaEntry.stat.label}
+        </p>
+
+        <p class="tsa-links">
+          Seguí con:{' '}
+          {tsaEntry.links.map((link, i) => (
+            <>
+              <a href={link.href}>{link.label}</a>
+              {i < tsaEntry.links.length - 1 ? ' · ' : ''}
+            </>
+          ))}
+        </p>
+      </section>
+    )
+  }
 </BaseLayout>
 
 <script define:vars={{ lang, levelIds: LEVELS.map((l) => l.id), levelLessonSlugs }}>

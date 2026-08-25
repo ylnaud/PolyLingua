@@ -626,3 +626,110 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
     ],
   },
 };
+
+// Misma idea que TSA, pero para /idiomas/[lang]/ (la página de idioma
+// completa, un nivel más arriba que /idiomas/[lang]/[level]/): en vez de
+// hablar de un nivel puntual, vende la ruta completa A1-C2 y linkea a
+// niveles en vez de lecciones. Clave: el id del idioma (de/en/fr/it/pt).
+export const TSA_LANG: Partial<Record<string, TsaEntry>> = {
+  de: {
+    heading: 'Aprender alemán gratis online: la ruta completa de A1 a C2',
+    intro:
+      'El alemán tiene fama de ser el idioma más difícil de Europa, pero esa fama viene de generalizar: la gramática básica es predecible una vez entendés el patrón, y el vocabulario técnico ya lo reconocés (Auto, Hotel, Musik). Acá seguís la ruta MCER completa, desde tu primera frase hasta el registro académico.',
+    achievements: [
+      'Presentarte y sobrevivir el día a día (A1-A2)',
+      'Opinar y debatir con matices (B1-B2)',
+      'Leer textos académicos y noticias (C1)',
+      'Entender ironía y humor como un nativo (C2)',
+      'Practicar con quizzes interactivos en cada lección',
+    ],
+    insight:
+      'Los tres obstáculos reales del alemán —género gramatical, orden de palabras y los casos (Dativ/Akkusativ)— aparecen temprano, en A1-A2. Una vez los superás, el resto del camino es mayormente memorizar vocabulario y patrones, no pelear con reglas nuevas.',
+    stat: { value: '81 lecciones', label: 'en 6 niveles MCER, gratis' },
+    links: [
+      { href: '/idiomas/de/a1', label: 'Empezar en A1' },
+      { href: '/idiomas/de/b1', label: 'Nivel B1' },
+      { href: '/idiomas/de/c1', label: 'Nivel C1' },
+    ],
+  },
+  en: {
+    heading: 'Aprender inglés gratis online: la ruta completa de A1 a C2',
+    intro:
+      "El inglés es el idioma más fácil de empezar para un hispanohablante — compartís miles de palabras — pero también el que más rápido se estanca en un 'nivel intermedio para siempre'. Acá seguís la ruta MCER completa, diseñada para que sigas avanzando después del 'ya entiendo casi todo'.",
+    achievements: [
+      'Sobrevivir conversaciones básicas (A1-A2)',
+      'Distinguir Present Perfect y condicionales (B1-B2)',
+      'Escribir y hablar en registro profesional (C1)',
+      'Usar phrasal verbs y entender el humor nativo (C2)',
+      'Practicar con quizzes interactivos en cada lección',
+    ],
+    insight:
+      'La mayoría de los hispanohablantes se estanca en B1 porque deja de estudiar estructura y solo "practica hablando" — funciona para lo básico, pero el salto a B2-C1 (condicionales, voz pasiva, registro formal) necesita estudio explícito, no solo exposición.',
+    stat: { value: '67 lecciones', label: 'en 6 niveles MCER, gratis' },
+    links: [
+      { href: '/idiomas/en/a1', label: 'Empezar en A1' },
+      { href: '/idiomas/en/b1', label: 'Nivel B1' },
+      { href: '/idiomas/en/c1', label: 'Nivel C1' },
+    ],
+  },
+  fr: {
+    heading: 'Aprender francés gratis online: la ruta completa de A1 a C2',
+    intro:
+      'El francés tiene fama de romántico pero intimidante: la pronunciación silenciosa, el género, el subjonctif. Acá seguís la ruta MCER completa, que desarma cada uno de esos miedos paso a paso, sin necesidad de vivir en Francia.',
+    achievements: [
+      'Sobrevivir el día a día con las bases (A1-A2)',
+      'Conectar ideas con fluidez (B1-B2)',
+      'Dominar le subjonctif y el registro formal (C1)',
+      'Entender argot y humor como un local (C2)',
+      'Practicar con quizzes interactivos en cada lección',
+    ],
+    insight:
+      'Le subjonctif, el gran temido del francés, no aparece hasta C1 en esta ruta — porque primero necesitás una base sólida de presente, pasado y condicional. Intentar aprenderlo antes de tiempo es la razón #1 por la que tanta gente abandona el francés a mitad de camino.',
+    stat: { value: '67 lecciones', label: 'en 6 niveles MCER, gratis' },
+    links: [
+      { href: '/idiomas/fr/a1', label: 'Empezar en A1' },
+      { href: '/idiomas/fr/b1', label: 'Nivel B1' },
+      { href: '/idiomas/fr/c1', label: 'Nivel C1' },
+    ],
+  },
+  it: {
+    heading: 'Aprender italiano gratis online: la ruta completa de A1 a C2',
+    intro:
+      'El italiano es, lejos, el idioma más rápido de aprender para un hispanohablante — compartís vocabulario, sonidos y hasta estructura de frase. Acá seguís la ruta MCER completa, que aprovecha esa cercanía en vez de tratarte como si empezaras de cero.',
+    achievements: [
+      'Sobrevivir el día a día con las bases (A1-A2)',
+      'Conectar ideas y opinar con matices (B1-B2)',
+      'Dominar il congiuntivo y el registro formal (C1)',
+      'Entender slang y humor como un local (C2)',
+      'Practicar con quizzes interactivos en cada lección',
+    ],
+    insight:
+      "La cercanía con el español es una ventaja enorme, pero también una trampa: los falsos amigos ('burro' no es burro, 'pila' no es solo pila) aparecen desde A1, y confiar demasiado en la intuición es el error #1 de los hispanohablantes que aprenden italiano.",
+    stat: { value: '65 lecciones', label: 'en 6 niveles MCER, gratis' },
+    links: [
+      { href: '/idiomas/it/a1', label: 'Empezar en A1' },
+      { href: '/idiomas/it/b1', label: 'Nivel B1' },
+      { href: '/idiomas/it/c1', label: 'Nivel C1' },
+    ],
+  },
+  pt: {
+    heading: 'Aprender portugués gratis online: la ruta completa de A1 a C2',
+    intro:
+      'El portugués parece un espejo del español, y en la gramática casi lo es — la verdadera curva de aprendizaje está en el oído, no en la lógica. Acá seguís la ruta MCER completa, que le da a la pronunciación el lugar que otros cursos le niegan.',
+    achievements: [
+      'Sobrevivir el día a día con las bases (A1-A2)',
+      'Conectar ideas con fluidez (B1-B2)',
+      'Dominar el futuro do subjuntivo, único del portugués (C1)',
+      'Entender gírias y humor como un local (C2)',
+      'Practicar con quizzes interactivos en cada lección',
+    ],
+    insight:
+      'Entender portugués escrito es casi automático para un hispanohablante — entenderlo hablado no. Las vocales nasales y el ritmo distinto hacen que muchos lean perfecto pero se pierdan en una conversación real; por eso esta ruta mete pronunciación desde la primera lección, no al final.',
+    stat: { value: '65 lecciones', label: 'en 6 niveles MCER, gratis' },
+    links: [
+      { href: '/idiomas/pt/a1', label: 'Empezar en A1' },
+      { href: '/idiomas/pt/b1', label: 'Nivel B1' },
+      { href: '/idiomas/pt/c1', label: 'Nivel C1' },
+    ],
+  },
+};

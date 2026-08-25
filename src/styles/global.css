@@ -346,6 +346,92 @@ a {
   position: relative;
 }
 
+/* TSA (texto SEO de autoridad): bloque de contenido escaneable para páginas
+   de listado con poco texto propio (niveles, idiomas). Usado por
+   /idiomas/[lang]/[level]/ y /idiomas/[lang]/ — ver src/data/tsa.ts. */
+.tsa {
+  max-width: 760px;
+  padding-block: 0 4rem;
+}
+
+.tsa h2 {
+  font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+  margin: 0 0 0.75rem;
+}
+
+.tsa-intro {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.tsa-achievements {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 1.1rem 1.25rem;
+  display: grid;
+  gap: 0.65rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.tsa-achievements li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.tsa-achievements li::before {
+  content: '✓';
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.tsa-insight {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.tsa-stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin: 0 0 1.5rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.tsa-stat strong {
+  font-size: 1rem;
+  color: var(--accent-text);
+}
+
+.tsa-links {
+  font-weight: 600;
+}
+
+.tsa-links a {
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+.tsa-links a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .tsa-achievements {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* Subrayado tipo marcador que se dibuja de izquierda a derecha al hover del
    .card-glow contenedor, en el mismo color que el glow (--accent-c si está
    definido, si no el acento del sitio). No toca el color del texto. */

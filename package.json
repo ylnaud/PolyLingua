@@ -8,6 +8,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "postbuild": "node scripts/stamp-sw.mjs",
     "preview": "astro preview",
     "check": "astro check",
     "format": "prettier --write .",

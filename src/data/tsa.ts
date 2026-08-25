@@ -141,4 +141,488 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       { href: '/idiomas/de/c2/particulas-modales', label: 'Partículas modales' },
     ],
   },
+
+  'en-a1': {
+    heading: 'Aprender inglés A1 gratis: lo básico que ya casi sabés (sin darte cuenta)',
+    intro:
+      'El inglés comparte tanto vocabulario con el español (información, nación, posible) que A1 avanza más rápido que en otros idiomas — el reto real está en la pronunciación y en un verbo que hace todo el trabajo.',
+    achievements: [
+      'Presentarte y hablar de tu familia',
+      'Pedir en un restaurante y hacer compras',
+      'Preguntar y decir la hora',
+      'Contar rutinas con Simple Present',
+      "Usar 'to be' en cualquier frase",
+    ],
+    insight:
+      "El verbo 'to be' aparece en casi cada frase en inglés — para describir, ubicar y hasta decir la edad ('I am 20', no 'I have 20 years' como en español). Dominarlo desde el día uno evita que arrastres ese error durante meses.",
+    stat: { value: '5-7 semanas', label: 'gracias al vocabulario compartido con el español' },
+    links: [
+      { href: '/idiomas/en/a1/to-be', label: "El verbo 'to be'" },
+      { href: '/idiomas/en/a1/simple-present', label: 'Simple Present' },
+      { href: '/idiomas/en/a1/articles', label: 'A, An, The' },
+    ],
+  },
+  'en-a2': {
+    heading: "Inglés A2 gratis: el pasado, las comparaciones y el 'do' que tanto cuesta",
+    intro:
+      'En A2 empezás a contar historias (Past Simple) y a comparar todo, pero también aparece la estructura que más le cuesta a los hispanohablantes: hacer preguntas con do/does.',
+    achievements: [
+      'Contar en pasado lo que hiciste',
+      'Comparar cosas con -er/-est y more',
+      'Hablar por teléfono y en el médico',
+      'Usar preposiciones in/on/at sin adivinar',
+      'Formar preguntas con do/does',
+    ],
+    insight:
+      "En español preguntás invirtiendo el orden ('¿Comes pizza?'); en inglés necesitás un verbo auxiliar que no significa nada ('Do you eat pizza?'). Es el error #1 de los hispanohablantes en A2 — y una vez que hace clic, no se olvida.",
+    stat: { value: '7-9 semanas', label: 'si ya completaste A1' },
+    links: [
+      { href: '/idiomas/en/a2/past-simple', label: 'Past Simple' },
+      { href: '/idiomas/en/a2/question-formation', label: 'Question Formation' },
+      { href: '/idiomas/en/a2/comparatives-superlatives', label: 'Comparatives and Superlatives' },
+    ],
+  },
+  'en-b1': {
+    heading: 'Inglés B1: la confusión #1 de los hispanohablantes (Present Perfect) y más',
+    intro:
+      'B1 te da fluidez real: hablás del futuro con distintos matices, conectás ideas con relative clauses, y por fin enfrentás el tiempo verbal que en español simplemente no existe igual.',
+    achievements: [
+      'Distinguir Present Perfect de Past Simple',
+      'Hablar del futuro con will/going to',
+      'Conectar frases con who/which/that',
+      'Usar gerundios e infinitivos correctamente',
+      'Hablar de hábitos pasados con used to',
+    ],
+    insight:
+      "El Present Perfect ('I have lived here for 5 years') no tiene equivalente exacto en español — no es ni pasado ni presente, es una acción que empezó antes y sigue conectada a ahora. Es la trampa gramatical más común de este nivel.",
+    stat: { value: '9-11 semanas', label: 'nivel intermedio real' },
+    links: [
+      { href: '/idiomas/en/b1/present-perfect', label: 'Present Perfect vs. Past Simple' },
+      { href: '/idiomas/en/b1/future-forms', label: 'Future Forms' },
+      { href: '/idiomas/en/b1/relative-clauses', label: 'Relative Clauses' },
+    ],
+  },
+  'en-b2': {
+    heading: 'Inglés B2: domina los condicionales y la voz pasiva de las noticias',
+    intro:
+      'B2 es leer el New York Times y entender casi todo: condicionales para hipótesis, voz pasiva para reportar hechos sin culpar a nadie, y los conectores que usan los adultos para argumentar.',
+    achievements: [
+      'Usar los 3 tipos de condicionales',
+      'Formar la voz pasiva en cualquier tiempo',
+      'Reportar preguntas indirectamente',
+      'Conectar ideas con however/moreover/despite',
+      'Hablar de deseos y arrepentimientos con wish',
+    ],
+    insight:
+      "Los Mixed Conditionals (mezclar un condicional de pasado con uno de presente: 'If I had studied medicine, I would be a doctor now') son donde más se traban los hablantes de B2, porque combinan dos estructuras aprendidas por separado.",
+    stat: { value: '3-4 meses', label: 'nivel intermedio alto' },
+    links: [
+      { href: '/idiomas/en/b2/conditionals', label: 'Conditionals' },
+      { href: '/idiomas/en/b2/passive-voice', label: 'Passive Voice' },
+      { href: '/idiomas/en/b2/advanced-connectors', label: 'Advanced Connectors' },
+    ],
+  },
+  'en-c1': {
+    heading: 'Inglés C1: el registro formal, académico y de negocios',
+    intro:
+      'C1 es el inglés de la universidad y la sala de juntas: reported speech para citar sin comillas, cleft sentences para dar énfasis, y el vocabulario para un email profesional en inglés.',
+    achievements: [
+      'Reportar lo que otros dijeron sin comillas',
+      'Escribir con collocations avanzadas',
+      'Dar énfasis con cleft sentences',
+      'Comprender participle clauses',
+      'Comunicarte en inglés de negocios',
+    ],
+    insight:
+      "Las collocations (qué palabras 'van juntas' en inglés — 'make a decision', no 'do a decision') son lo que separa un inglés técnicamente correcto de uno que suena natural. Nadie las adivina por lógica, hay que aprenderlas como bloques.",
+    stat: { value: '4-6 meses', label: 'nivel avanzado' },
+    links: [
+      { href: '/idiomas/en/c1/reported-speech', label: 'Reported Speech' },
+      { href: '/idiomas/en/c1/collocations', label: 'Advanced Collocations' },
+      { href: '/idiomas/en/c1/business-english', label: 'Business English' },
+    ],
+  },
+  'en-c2': {
+    heading: 'Inglés C2: phrasal verbs, ironía y el humor que solo entiende un nativo',
+    intro:
+      'C2 no es más gramática — es el código secreto del inglés hablado real: phrasal verbs, entender un chiste sin que te lo expliquen, y notar la diferencia entre el inglés británico y el americano.',
+    achievements: [
+      'Usar phrasal verbs con fluidez',
+      'Detectar understatement e ironía',
+      'Distinguir inglés británico y americano',
+      'Reconocer proverbios y dichos',
+      'Usar inversion para sonar casi nativo',
+    ],
+    insight:
+      "Los phrasal verbs (look up, give in, put off) son la razón por la que muchos C1 avanzados se sienten 'perdidos' escuchando a nativos — no están en ningún examen tradicional, pero son gran parte del inglés hablado real.",
+    stat: { value: 'maestría', label: 'sin techo fijo de tiempo' },
+    links: [
+      { href: '/idiomas/en/c2/phrasal-verbs', label: 'Phrasal Verbs' },
+      { href: '/idiomas/en/c2/wordplay-irony', label: 'Wordplay and Irony' },
+      { href: '/idiomas/en/c2/british-american', label: 'British vs. American English' },
+    ],
+  },
+
+  'fr-a1': {
+    heading: 'Aprender francés A1 gratis: sobrevive al género (y a la pronunciación)',
+    intro:
+      'El francés A1 tiene fama de romántico pero difícil de pronunciar — la buena noticia es que la gramática básica es predecible una vez agarrás el patrón de le/la y los tres grupos de verbos.',
+    achievements: [
+      'Saludar y presentarte en francés',
+      'Pedir en un restaurante y hacer compras',
+      'Preguntar y decir la hora',
+      'Usar el presente de los 3 grupos de verbos',
+      'Contar del 0 al 100',
+    ],
+    insight:
+      'Cada sustantivo en francés es masculino o femenino sin lógica aparente (le vs. la) — como en español, pero sin las pistas de -o/-a. La estrategia que funciona es memorizar cada palabra CON su artículo desde el día uno.',
+    stat: { value: '6-8 semanas', label: 'a 15-20 min diarios' },
+    links: [
+      { href: '/idiomas/fr/a1/salutations', label: 'Salutations' },
+      { href: '/idiomas/fr/a1/articles-genre', label: 'Le, la, un, une' },
+      { href: '/idiomas/fr/a1/present-indicatif', label: 'Le présent' },
+    ],
+  },
+  'fr-a2': {
+    heading: 'Francés A2: el pasado, los pronombres COD/COI y las primeras frases con fluidez',
+    intro:
+      'En A2 empezás a contar el pasado con le passé composé, a reemplazar sustantivos con pronombres para no repetir, y a decidir dónde va cada adjetivo — el francés tiene reglas propias para eso.',
+    achievements: [
+      'Contar en pasado con le passé composé',
+      'Reemplazar objetos con pronombres COD/COI',
+      'Ubicar adjetivos antes o después del sustantivo',
+      'Pedir con il faut y los verbos modales',
+      'Comparar cosas con plus/moins/aussi',
+    ],
+    insight:
+      "A diferencia del español, en francés la posición del adjetivo cambia el significado a veces ('un homme grand' = un hombre alto, 'un grand homme' = un gran hombre) — detalles que separan un francés correcto de uno elegante.",
+    stat: { value: '8-10 semanas', label: 'si ya completaste A1' },
+    links: [
+      { href: '/idiomas/fr/a2/passe-compose', label: 'Le passé composé' },
+      { href: '/idiomas/fr/a2/pronoms-cod-coi', label: 'Pronoms COD et COI' },
+      { href: '/idiomas/fr/a2/place-adjectifs', label: 'La place des adjectifs' },
+    ],
+  },
+  'fr-b1': {
+    heading: 'Francés B1: el condicional, los conectores de tiempo y sonar más fluido',
+    intro:
+      'B1 te da matices reales: pedís cosas con cortesía usando le conditionnel, marcás con precisión cuándo pasa algo, y por fin distinguís el fondo de una historia de la acción principal.',
+    achievements: [
+      'Pedir con cortesía usando le conditionnel',
+      'Marcar el tiempo con depuis/pendant/il y a',
+      'Distinguir imparfait de passé composé',
+      'Reemplazar lugares e ideas con y/en',
+      'Hablar de tu trabajo y vida profesional',
+    ],
+    insight:
+      "L'imparfait (el fondo de una historia: 'il pleuvait') y le passé composé (la acción puntual: 'je suis sorti') son la trampa #1 de este nivel — el español los distingue igual (imperfecto vs. pretérito), la lógica ya la tenés.",
+    stat: { value: '10-12 semanas', label: 'nivel intermedio real' },
+    links: [
+      { href: '/idiomas/fr/b1/conditionnel-present', label: 'Le conditionnel présent' },
+      { href: '/idiomas/fr/b1/imparfait-passe-compose', label: 'Imparfait vs. passé composé' },
+      { href: '/idiomas/fr/b1/depuis-pendant-il-y-a-dans', label: 'Depuis, pendant, il y a, dans' },
+    ],
+  },
+  'fr-b2': {
+    heading: 'Francés B2: domina la voz pasiva, el gerundio y el francés de las noticias',
+    intro:
+      'B2 es leer Le Monde y entender casi todo: voz pasiva para reportar sin culpar, pronombres relativos para frases elegantes, y los conectores lógicos que usan los adultos para argumentar.',
+    achievements: [
+      'Formar la voz pasiva en cualquier tiempo',
+      'Conectar ideas con pronombres relativos',
+      'Usar le gérondif para dos acciones a la vez',
+      'Explicar causa y consecuencia con precisión',
+      'Hablar de lo que ya había pasado con le plus-que-parfait',
+    ],
+    insight:
+      "Los pronombres relativos compuestos (celui qui, ce dont, ce à quoi) son lo que hace que una frase suene elegante en vez de repetitiva — cambiar 'la persona que...' por 'celui qui...' es donde se nota el salto de nivel.",
+    stat: { value: '3-4 meses', label: 'nivel intermedio alto' },
+    links: [
+      { href: '/idiomas/fr/b2/voix-passive', label: 'La voix passive' },
+      { href: '/idiomas/fr/b2/pronoms-relatifs', label: 'Les pronoms relatifs' },
+      { href: '/idiomas/fr/b2/connecteurs-logiques', label: 'Connecteurs logiques' },
+    ],
+  },
+  'fr-c1': {
+    heading: 'Francés C1: el subjuntivo, el registro formal y el francés de negocios',
+    intro:
+      'C1 es el francés de la universidad y la sala de juntas: le subjonctif para expresar duda y emoción, le discours indirect para citar con precisión, y el vocabulario para escribir como un profesional.',
+    achievements: [
+      'Usar le subjonctif para duda y emoción',
+      'Reportar lo que otros dijeron con precisión',
+      'Dar énfasis con la mise en relief',
+      'Comunicarte en francés de negocios',
+      'Escribir con vocabulario académico',
+    ],
+    insight:
+      "Le subjonctif no se traduce por lógica desde el español — se activa por ciertos verbos y expresiones ('il faut que', 'je doute que'), no por el significado de la frase. Es lo que más diferencia a un C1 real de alguien que memorizó reglas.",
+    stat: { value: '4-6 meses', label: 'nivel avanzado' },
+    links: [
+      { href: '/idiomas/fr/c1/subjonctif', label: 'Le subjonctif' },
+      { href: '/idiomas/fr/c1/discours-indirect', label: 'Le discours indirect' },
+      { href: '/idiomas/fr/c1/francais-affaires', label: 'Le français des affaires' },
+    ],
+  },
+  'fr-c2': {
+    heading: 'Francés C2: argot, ironía y el humor que solo entiende un nativo',
+    intro:
+      'C2 no es más gramática — es el argot que no está en los libros, entender un chiste sin que te lo expliquen, y notar que un québécois y un parisino no hablan exactamente el mismo francés.',
+    achievements: [
+      'Entender argot y verlan cotidiano',
+      'Detectar ironía y humor en francés',
+      'Reconocer variantes de la Francophonie',
+      'Usar partículas como donc/quand même/enfin',
+      'Escribir con el estilo soutenu de un editorial',
+    ],
+    insight:
+      'Las partículas de discurso —donc, quand même, enfin, ben— no tienen traducción directa y casi no aparecen en los libros, pero son lo que más delata a un hablante no nativo. Es la diferencia entre "hablar francés perfecto" y "sonar francés".',
+    stat: { value: 'maestría', label: 'sin techo fijo de tiempo' },
+    links: [
+      { href: '/idiomas/fr/c2/registres-particules', label: 'Particules de discours' },
+      { href: '/idiomas/fr/c2/ironie-humour', label: "L'ironie et l'humour" },
+      { href: '/idiomas/fr/c2/francophonie', label: 'La Francophonie' },
+    ],
+  },
+
+  'it-a1': {
+    heading: 'Aprender italiano A1 gratis: el idioma más cercano al español (con trampas)',
+    intro:
+      'El italiano es el idioma más fácil para un hispanohablante — comparten vocabulario y sonidos — pero justo esa cercanía esconde falsos amigos y detalles que te delatan como principiante.',
+    achievements: [
+      'Saludar y presentarte en italiano',
+      'Pedir en un restaurante y hacer compras',
+      'Preguntar y decir la hora',
+      'Usar el presente de los verbos regulares',
+      'Formar preguntas sin invertir nada',
+    ],
+    insight:
+      "En italiano no invertís el orden para preguntar como en inglés — 'Parli italiano?' se forma igual que la afirmación, solo cambia la entonación. Es una de las pocas reglas donde el italiano es más simple que el español.",
+    stat: { value: '5-7 semanas', label: 'el idioma más rápido para hispanohablantes' },
+    links: [
+      { href: '/idiomas/it/a1/saluti', label: 'Saluti' },
+      { href: '/idiomas/it/a1/presente-indicativo', label: 'Il presente' },
+      { href: '/idiomas/it/a1/fare-domande', label: 'Fare domande' },
+    ],
+  },
+  'it-a2': {
+    heading: 'Italiano A2: el pasado, los pronombres y las primeras frases con fluidez',
+    intro:
+      'En A2 contás el pasado con il passato prossimo, reemplazás objetos con pronombres para no repetir, y aprendés cuándo usar dovere, potere y volere — los tres verbos que abren cualquier puerta.',
+    achievements: [
+      'Contar en pasado con il passato prossimo',
+      'Reemplazar objetos con pronomi diretti e indiretti',
+      'Pedir y opinar con dovere/potere/volere',
+      'Ubicar adjetivos antes o después del sustantivo',
+      'Comparar cosas con più/meno/come',
+    ],
+    insight:
+      "Il passato prossimo se forma con essere o avere según el verbo, y con essere el participio concuerda en género y número ('sono andata' si sos mujer) — un detalle que el español no tiene y sorprende a muchos en este nivel.",
+    stat: { value: '7-9 semanas', label: 'si ya completaste A1' },
+    links: [
+      { href: '/idiomas/it/a2/passato-prossimo', label: 'Il passato prossimo' },
+      { href: '/idiomas/it/a2/pronomi-diretti-indiretti', label: 'Pronomi diretti e indiretti' },
+      { href: '/idiomas/it/a2/verbi-modali', label: 'Dovere, potere, volere' },
+    ],
+  },
+  'it-b1': {
+    heading: 'Italiano B1: el condicional, la trampa da/per y sonar más fluido',
+    intro:
+      'B1 te da matices reales: pedís con cortesía usando il condizionale, distinguís el fondo de una historia de la acción principal, y enfrentás una preposición que confunde a todo hispanohablante.',
+    achievements: [
+      'Pedir con cortesía usando il condizionale',
+      'Distinguir da y per en el tiempo',
+      'Distinguir imperfetto de passato prossimo',
+      'Conectar ideas con perché/sebbene/quando',
+      'Hablar de tu trabajo y vida profesional',
+    ],
+    insight:
+      "Da y per parecen intercambiables desde el español, pero en italiano marcan duración distinta: 'da tre anni' (desde hace 3 años, sigue) vs. 'per tre anni' (durante 3 años, ya terminó). La trampa temporal #1 de este nivel.",
+    stat: { value: '9-11 semanas', label: 'nivel intermedio real' },
+    links: [
+      { href: '/idiomas/it/b1/condizionale-presente', label: 'Il condizionale presente' },
+      { href: '/idiomas/it/b1/da-per', label: 'Da vs. per' },
+      { href: '/idiomas/it/b1/imperfetto-passato-prossimo', label: 'Imperfetto vs. passato prossimo' },
+    ],
+  },
+  'it-b2': {
+    heading: 'Italiano B2: domina la voz pasiva, el gerundio y el italiano de las noticias',
+    intro:
+      'B2 es leer il Corriere della Sera y entender casi todo: voz pasiva para reportar sin culpar, pronombres relativos para frases elegantes, y el periodo ipotetico para hablar de lo que podría pasar.',
+    achievements: [
+      'Formar la voz pasiva en cualquier tiempo',
+      'Conectar ideas con pronomi relativi',
+      'Usar il gerundio para dos acciones a la vez',
+      'Hablar de hipótesis con il periodo ipotetico',
+      'Explicar causa y consecuencia con precisión',
+    ],
+    insight:
+      'Il periodo ipotetico tiene tres tipos —realidad, posibilidad e irrealidad— y cada uno exige una combinación distinta de modos y tiempos verbales. Dominarlos es matizar exactamente cuán probable es algo, no solo "hablar de hipótesis".',
+    stat: { value: '3-4 meses', label: 'nivel intermedio alto' },
+    links: [
+      { href: '/idiomas/it/b2/voce-passiva', label: 'La voce passiva' },
+      { href: '/idiomas/it/b2/pronomi-relativi', label: 'I pronomi relativi' },
+      { href: '/idiomas/it/b2/periodo-ipotetico', label: 'Periodo ipotetico' },
+    ],
+  },
+  'it-c1': {
+    heading: 'Italiano C1: il congiuntivo, el registro formal y el italiano de negocios',
+    intro:
+      'C1 es el italiano de la universidad y la sala de juntas: il congiuntivo para expresar duda y emoción, il discorso indiretto para citar con precisión, y el vocabulario para escribir como un profesional.',
+    achievements: [
+      'Usar il congiuntivo para duda y emoción',
+      'Reportar lo que otros dijeron con precisión',
+      'Dar énfasis con la dislocazione',
+      'Comunicarte en italiano de negocios',
+      'Reconocer il passato remoto en textos literarios',
+    ],
+    insight:
+      "Il congiuntivo no se traduce por lógica desde el español — se activa por ciertos verbos y expresiones ('penso che', 'è possibile che'), no por el significado de la frase. Es lo que más diferencia a un C1 real de alguien que memorizó reglas.",
+    stat: { value: '4-6 meses', label: 'nivel avanzado' },
+    links: [
+      { href: '/idiomas/it/c1/congiuntivo', label: 'Il congiuntivo' },
+      { href: '/idiomas/it/c1/discorso-indiretto', label: 'Il discorso indiretto' },
+      { href: '/idiomas/it/c1/italiano-affari', label: "L'italiano degli affari" },
+    ],
+  },
+  'it-c2': {
+    heading: 'Italiano C2: slang, ironía y el humor que solo entiende un nativo',
+    intro:
+      'C2 no es más gramática — es el slang giovanile que no está en los libros, entender un chiste sin que te lo expliquen, y notar que un siciliano y un milanés no hablan exactamente el mismo italiano.',
+    achievements: [
+      'Entender slang giovanile y neologismos',
+      'Detectar ironia e umorismo en italiano',
+      'Reconocer varianti regionali',
+      'Usar partículas como mica/dai/magari',
+      'Escribir con el estilo formale de un editorial',
+    ],
+    insight:
+      'Las partículas de discurso —mica, dai, magari, ecco— no tienen traducción directa y casi no aparecen en los libros, pero son lo que más delata a un hablante no nativo. Es la diferencia entre "hablar italiano perfecto" y "sonar italiano".',
+    stat: { value: 'maestría', label: 'sin techo fijo de tiempo' },
+    links: [
+      { href: '/idiomas/it/c2/particelle-registro', label: 'Particelle di registro' },
+      { href: '/idiomas/it/c2/ironia-umorismo', label: "L'ironia e l'umorismo" },
+      { href: '/idiomas/it/c2/varianti-regionali', label: 'Varianti regionali' },
+    ],
+  },
+
+  'pt-a1': {
+    heading: 'Aprender portugués A1 gratis: el primo cercano que sorprende con sus sonidos',
+    intro:
+      'El portugués parece un espejo del español en la gramática, pero la pronunciación (vocales nasales, la letra x) es otro mundo — eso hace que suene distinto desde el primer día.',
+    achievements: [
+      'Saludar y presentarte en portugués',
+      'Hacer preguntas desde el día uno',
+      'Preguntar y decir la hora',
+      'Usar el presente de los verbos regulares',
+      'Contar del 0 al 100',
+    ],
+    insight:
+      'Las vocales nasales (ão, ãe, õe) no existen en español y son la principal marca de acento — practicarlas desde A1, en vez de ignorarlas, es lo que más rápido te hace sonar auténtico en portugués.',
+    stat: { value: '5-7 semanas', label: 'gracias a la cercanía con el español' },
+    links: [
+      { href: '/idiomas/pt/a1/saudacoes', label: 'Saudações' },
+      { href: '/idiomas/pt/a1/presente-indicativo', label: 'O presente' },
+      { href: '/idiomas/pt/a1/perguntas', label: 'Como fazer perguntas' },
+    ],
+  },
+  'pt-a2': {
+    heading: 'Portugués A2: el pasado, los pronombres de objeto y las primeras frases con fluidez',
+    intro:
+      'En A2 contás el pasado con o pretérito perfeito (sin auxiliar, a diferencia del inglés o francés), reemplazás objetos con o/a/lhe, y aprendés a expresar necesidad con é preciso.',
+    achievements: [
+      'Contar en pasado con o pretérito perfeito',
+      'Reemplazar objetos con o/a/lhe',
+      'Expresar necesidad con é preciso',
+      'Pedir y opinar con poder/dever/querer',
+      'Comparar cosas con mais... do que',
+    ],
+    insight:
+      "A diferencia del inglés o francés, el portugués forma el pasado simple sin auxiliar: 'eu falei' (hablé). Es más simple que otros idiomas en este punto — el reto está en las terminaciones irregulares de los verbos más comunes.",
+    stat: { value: '7-9 semanas', label: 'si ya completaste A1' },
+    links: [
+      { href: '/idiomas/pt/a2/preterito-perfeito', label: 'O pretérito perfeito' },
+      { href: '/idiomas/pt/a2/pronomes-diretos-indiretos', label: 'O, a, lhe' },
+      { href: '/idiomas/pt/a2/e-preciso', label: 'É preciso' },
+    ],
+  },
+  'pt-b1': {
+    heading: 'Portugués B1: la colocación pronominal y sonar más fluido',
+    intro:
+      'B1 te da matices reales: pedís con cortesía usando o condicional, distinguís el fondo de una historia de la acción principal, y enfrentás algo que no existe en español — dónde va el pronombre.',
+    achievements: [
+      'Pedir con cortesía usando o condicional',
+      'Distinguir imperfeito de pretérito perfeito',
+      'Ubicar el pronombre con próclise, ênclise e mesóclise',
+      'Conectar ideas con porque/embora/quando',
+      'Hablar de tu trabajo y vida profesional',
+    ],
+    insight:
+      "La colocación pronominal ('te vejo' vs 'vejo-te') no tiene equivalente en español y varía entre el portugués de Brasil y de Portugal. Es la trampa más particular de este nivel — y la que más rápido delata qué variante aprendiste.",
+    stat: { value: '9-11 semanas', label: 'nivel intermedio real' },
+    links: [
+      { href: '/idiomas/pt/b1/colocacao-pronominal', label: 'Colocação pronominal' },
+      { href: '/idiomas/pt/b1/condicional-presente', label: 'O condicional presente' },
+      { href: '/idiomas/pt/b1/imperfeito-preterito-perfeito', label: 'Imperfeito vs. pretérito perfeito' },
+    ],
+  },
+  'pt-b2': {
+    heading: 'Portugués B2: domina la voz pasiva, el gerundio y el portugués de las noticias',
+    intro:
+      "B2 es leer un diario en portugués y entender casi todo: voz pasiva (incluida la versión con 'se', muy usada), pronombres relativos para frases elegantes, y conectores para argumentar como un adulto.",
+    achievements: [
+      'Formar la voz pasiva y la voz pasiva con se',
+      'Conectar ideas con pronomes relativos',
+      'Usar o gerúndio (mucho más que en español)',
+      'Explicar causa y consecuencia con precisión',
+      'Hablar de lo que ya había pasado con mais-que-perfeito',
+    ],
+    insight:
+      "El portugués usa el gerundio con mucha más libertad que el español ('estou fazendo' es la forma cotidiana, no la excepción) — uno de los rasgos que más rápido distingue a alguien que aprendió portugués de alguien que solo lo entiende por el español.",
+    stat: { value: '3-4 meses', label: 'nivel intermedio alto' },
+    links: [
+      { href: '/idiomas/pt/b2/voz-passiva', label: 'A voz passiva' },
+      { href: '/idiomas/pt/b2/pronomes-relativos', label: 'Os pronomes relativos' },
+      { href: '/idiomas/pt/b2/gerundio', label: 'O gerúndio' },
+    ],
+  },
+  'pt-c1': {
+    heading: 'Portugués C1: el futuro do subjuntivo (único del portugués) y el registro formal',
+    intro:
+      'C1 es el portugués de la universidad y la sala de juntas: un tiempo verbal que no existe en ningún otro idioma romance, el infinitivo pessoal, y el vocabulario para escribir como un profesional.',
+    achievements: [
+      'Usar o futuro do subjuntivo (exclusivo del portugués)',
+      'Conjugar o infinitivo pessoal',
+      'Reportar lo que otros dijeron con o discurso indireto',
+      'Comunicarte en português dos negócios',
+      'Dar énfasis con frases clivadas',
+    ],
+    insight:
+      "O futuro do subjuntivo ('quando eu falar') no existe en español, inglés, francés ni italiano — es exclusivo del portugués, y se usa en frases condicionales cotidianas ('se você quiser'). Sorprende a quien ya domina otro idioma romance.",
+    stat: { value: '4-6 meses', label: 'nivel avanzado' },
+    links: [
+      { href: '/idiomas/pt/c1/futuro-subjuntivo', label: 'O futuro do subjuntivo' },
+      { href: '/idiomas/pt/c1/infinitivo-pessoal', label: 'O infinitivo pessoal' },
+      { href: '/idiomas/pt/c1/portugues-negocios', label: 'Português dos negócios' },
+    ],
+  },
+  'pt-c2': {
+    heading: 'Portugués C2: gírias, ironía y el humor que solo entiende un nativo',
+    intro:
+      'C2 no es más gramática — son las gírias que no están en el libro, entender un chiste sin que te lo expliquen, y notar que un carioca y un lisboeta casi no hablan el mismo portugués.',
+    achievements: [
+      'Entender gírias y estrangeirismos cotidianos',
+      'Detectar ironia e humor en portugués',
+      'Reconocer variantes regionales (Brasil vs. Portugal)',
+      'Usar diminutivos y aumentativos con matiz',
+      'Escribir con el estilo formal de un editorial',
+    ],
+    insight:
+      'Las partículas de discurso —né, então, tipo assim, pois é— no tienen traducción directa y casi no aparecen en los libros, pero son lo que más delata a un hablante no nativo. Es la diferencia entre "hablar portugués perfecto" y "sonar portugués".',
+    stat: { value: 'maestría', label: 'sin techo fijo de tiempo' },
+    links: [
+      { href: '/idiomas/pt/c2/registro-particulas', label: 'Partículas de registro' },
+      { href: '/idiomas/pt/c2/ironia-humor', label: 'Ironia e humor' },
+      { href: '/idiomas/pt/c2/variantes-regionais', label: 'Variantes regionais' },
+    ],
+  },
 };

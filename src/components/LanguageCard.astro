@@ -9,13 +9,17 @@ interface Props {
 const { language, lessonCount } = Astro.props;
 ---
 
-<a class="lang-card card" href={`/idiomas/${language.id}`} style={`--accent-c: ${language.color}`}>
+<a
+  class="lang-card card card-glow"
+  href={`/idiomas/${language.id}`}
+  style={`--accent-c: ${language.color}`}
+>
   <div class="top">
     <span class="flag" aria-hidden="true">{language.flag}</span>
     <span class="badge">{lessonCount} lección{lessonCount === 1 ? '' : 'es'}</span>
   </div>
   <h3>{language.name}</h3>
-  <p class="tagline">{language.tagline}</p>
+  <p class="tagline underline-draw">{language.tagline}</p>
   <p class="desc">{language.description}</p>
   <span class="link">Ver niveles →</span>
 </a>
@@ -27,13 +31,6 @@ const { language, lessonCount } = Astro.props;
     text-decoration: none;
     color: var(--text);
     border-top: 3px solid var(--accent-c);
-    transition:
-      transform 0.15s ease,
-      border-color 0.15s ease;
-  }
-
-  .lang-card:hover {
-    transform: translateY(-3px);
   }
 
   .top {

@@ -282,6 +282,90 @@ a {
   border-radius: var(--radius);
 }
 
+/* Tarjeta-enlace con glow radial al hover, en el color de --accent-c si el
+   elemento lo define (idioma), o del acento del sitio si no. Usada por
+   LanguageCard y los selectores de idioma de practica-libre/repasar/vocabulario. */
+.card-glow {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.card-glow::before {
+  content: '';
+  position: absolute;
+  inset: -40% -40% auto auto;
+  width: 60%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, var(--accent-c, var(--accent)), transparent 70%);
+  opacity: 0;
+  transform: scale(0.8);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  pointer-events: none;
+}
+
+.card-glow > * {
+  position: relative;
+}
+
+.card-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-c, var(--accent)) 25%, transparent);
+}
+
+.card-glow:hover::before {
+  opacity: 0.14;
+  transform: scale(1);
+}
+
+/* Grano/ruido sutil (SVG feTurbulence) para dar atmósfera a fondos con
+   gradiente de acento, en vez de un color plano. El elemento que la usa
+   necesita position: relative (o ya la tiene, como .card) y sus hijos
+   directos quedan por encima automáticamente. */
+.texture-noise {
+  position: relative;
+}
+
+.texture-noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.texture-noise > * {
+  position: relative;
+}
+
+/* Subrayado tipo marcador que se dibuja de izquierda a derecha al hover del
+   .card-glow contenedor, en el mismo color que el glow (--accent-c si está
+   definido, si no el acento del sitio). No toca el color del texto. */
+.underline-draw {
+  display: inline-block;
+  padding-bottom: 2px;
+  background-image: linear-gradient(
+    var(--accent-c, var(--accent)),
+    var(--accent-c, var(--accent))
+  );
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size 0.3s ease;
+}
+
+.card-glow:hover .underline-draw {
+  background-size: 100% 2px;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -324,11 +408,6 @@ a {
   text-decoration: none;
   color: var(--text);
   font-weight: 700;
-  transition: transform 0.15s ease;
-}
-
-.picker .lang-item:hover {
-  transform: translateY(-2px);
 }
 
 .picker .flag {

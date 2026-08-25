@@ -106,6 +106,22 @@ export function clearSprint(): void {
   write(SPRINT_KEY, '{}');
 }
 
+// Cuenta cuántas lecciones hay marcadas como completadas en total, sin
+// importar idioma o nivel — usado por el aviso de copia de seguridad para
+// decidir si ya hay progreso real que valga la pena avisar que se puede
+// perder (no tiene sentido mostrarlo con 0-1 lecciones hechas).
+export function countCompletedLessons(): number {
+  let count = 0;
+  try {
+    for (const key of Object.keys(localStorage)) {
+      if (key.startsWith('polylingua-lesson-done-')) count++;
+    }
+  } catch {
+    /* localStorage unavailable */
+  }
+  return count;
+}
+
 // Busca, entre las keys "<prefix><idioma>-...", la del idioma con la fecha
 // más reciente guardada como valor — usado por los selectores de idioma de
 // /practica-libre y /repasar para saltar directo al idioma que el usuario

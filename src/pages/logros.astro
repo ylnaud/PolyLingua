@@ -160,7 +160,7 @@ const lessonCounts = Object.fromEntries(
     }
   </section>
 
-  <section class="container backup-head">
+  <section class="container backup-head" id="backup">
     <div class="card backup-card">
       <span class="eyebrow">💾 Copia de seguridad</span>
       <p class="backup-desc">
@@ -531,7 +531,7 @@ const lessonCounts = Object.fromEntries(
 </script>
 
 <script>
-  import { exportAll, importAll, today } from '../lib/storage';
+  import { exportAll, importAll, today, write } from '../lib/storage';
 
   function initBackup() {
     const exportBtn = document.querySelector<HTMLButtonElement>('[data-export-progress]');
@@ -550,6 +550,7 @@ const lessonCounts = Object.fromEntries(
       a.download = `polylingua-progreso-${today()}.json`;
       a.click();
       URL.revokeObjectURL(url);
+      write('polylingua-backup-exported-at', today());
       status.textContent = '✅ Progreso exportado.';
     });
 

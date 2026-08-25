@@ -653,6 +653,7 @@ blockquote {
   .sw-update-toast,
   .cookie-notice,
   .streak-reminder,
+  .backup-reminder,
   .install-prompt,
   #more-sheet {
     display: none !important;

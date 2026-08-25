@@ -1,0 +1,121 @@
+---
+
+---
+
+<div class="backup-reminder" data-backup-reminder hidden role="status" aria-live="polite">
+  <div class="container backup-reminder-bar">
+    <p>
+      <span aria-hidden="true">💾</span> Tu progreso vive solo en este navegador — hacé una copia antes
+      de perderlo.
+    </p>
+    <div class="backup-reminder-actions">
+      <a class="btn btn-primary" href="/logros#backup">Hacer copia</a>
+      <button
+        type="button"
+        class="backup-reminder-dismiss"
+        data-backup-reminder-dismiss
+        aria-label="Cerrar aviso"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .backup-reminder {
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+
+  .backup-reminder-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-block: 0.65rem;
+  }
+
+  .backup-reminder-bar p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .backup-reminder-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .backup-reminder-actions .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-height: 36px;
+  }
+
+  .backup-reminder-dismiss {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .backup-reminder-dismiss:hover {
+    background: var(--bg-elevated);
+    color: var(--text);
+  }
+</style>
+
+<script>
+  import { addDays, countCompletedLessons, read, today, write } from '../lib/storage';
+
+  // No tiene sentido avisar con 0-2 lecciones — recién ahí hay progreso real
+  // que valga la pena perder. Si ya exportó una vez no se le vuelve a
+  // insistir (el propio botón de exportar guarda esa fecha). Si lo cierra
+  // sin exportar, vuelve a aparecer a los 14 días — un recordatorio
+  // insistente pero no diario, distinto del de racha que sí es diario.
+  const MIN_LESSONS = 3;
+  const SNOOZE_DAYS = 14;
+
+  function alreadyExported(): boolean {
+    return !!read('polylingua-backup-exported-at');
+  }
+
+  function dismissedRecently(): boolean {
+    const dismissed = read('polylingua-backup-reminder-dismissed-at');
+    if (!dismissed) return false;
+    return today() < addDays(dismissed, SNOOZE_DAYS);
+  }
+
+  function shouldShow(): boolean {
+    if (alreadyExported() || dismissedRecently()) return false;
+    return countCompletedLessons() >= MIN_LESSONS;
+  }
+
+  function initBackupReminder() {
+    const el = document.querySelector<HTMLElement>('[data-backup-reminder]');
+    const dismissBtn = el?.querySelector<HTMLButtonElement>('[data-backup-reminder-dismiss]');
+    if (!el || !dismissBtn) return;
+
+    el.hidden = !shouldShow();
+
+    if (!dismissBtn.dataset.initialized) {
+      dismissBtn.dataset.initialized = 'true';
+      dismissBtn.addEventListener('click', () => {
+        write('polylingua-backup-reminder-dismissed-at', today());
+        el.hidden = true;
+      });
+    }
+  }
+
+  initBackupReminder();
+  document.addEventListener('astro:page-load', initBackupReminder);
+</script>

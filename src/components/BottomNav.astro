@@ -47,27 +47,63 @@ const tabs = [
 </nav>
 
 <dialog id="more-sheet" aria-label="Más opciones">
-  <a href="/buscar" class="sheet-link">🔎 Buscar lecciones</a>
-  <a href="/situaciones" data-astro-reload class="sheet-link">🗺️ Situaciones</a>
-  <a href="/dialogos" data-astro-reload class="sheet-link">💬 Diálogos</a>
-  <a href="/vocabulario" data-astro-reload class="sheet-link">📖 Vocabulario</a>
-  <a href="/practica-libre" data-astro-reload class="sheet-link">🎲 Práctica libre</a>
-  <a href="/ahorcado" data-astro-reload class="sheet-link">🔤 Ahorcado</a>
-  <a href="/pronunciacion" data-astro-reload class="sheet-link">🗣️ Escuchar y repetir</a>
-  <a href="/generador-frases" data-astro-reload class="sheet-link">🧩 Generador de frases</a>
-  <a href="#" data-sheet-errors class="sheet-link sheet-lang-link" hidden>❌ Mis errores</a>
-  <a href="#" data-sheet-grammar class="sheet-link sheet-lang-link" hidden>📝 Gramática</a>
-  <a href="/recursos" data-astro-reload class="sheet-link">📻 Recursos</a>
-  <a href="/diario" data-astro-reload class="sheet-link">✍️ Diario</a>
-  <a href="/logros#backup" class="sheet-link">💾 Copia de seguridad</a>
-  <a href="/blog" class="sheet-link">📰 Blog</a>
-  <a href="/#por-que" class="sheet-link">💡 Por qué PolyLingua</a>
-  <a href="/#faq" class="sheet-link">❓ FAQ</a>
-  <InstallPrompt variant="sheet" />
-  <ShadowingToggle variant="sheet" />
-  <SoundToggle variant="sheet" />
-  <ThemeToggle variant="sheet" />
-  <a href="/idiomas" class="sheet-link cta">Empezar gratis</a>
+  <div class="sheet-handle" aria-hidden="true"><span class="sheet-handle-bar"></span></div>
+
+  <div class="sheet-body">
+    <div class="sheet-group">
+      <p class="sheet-group-label">Practicar</p>
+      <div class="sheet-group-links">
+        <a href="/buscar" class="sheet-link"><span class="sheet-icon" aria-hidden="true">🔎</span>Buscar lecciones</a>
+        <a href="/situaciones" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🗺️</span>Situaciones</a>
+        <a href="/dialogos" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">💬</span>Diálogos</a>
+        <a href="/vocabulario" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">📖</span>Vocabulario</a>
+        <a href="/practica-libre" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🎲</span>Práctica libre</a>
+        <a href="/ahorcado" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🔤</span>Ahorcado</a>
+        <a href="/pronunciacion" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🗣️</span>Escuchar y repetir</a>
+        <a href="/generador-frases" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🧩</span>Generador de frases</a>
+      </div>
+    </div>
+
+    <div class="sheet-group">
+      <p class="sheet-group-label">Tu progreso</p>
+      <div class="sheet-group-links">
+        <a href="#" data-sheet-errors class="sheet-link sheet-lang-link" hidden><span class="sheet-icon" aria-hidden="true">❌</span>Mis errores</a>
+        <a href="#" data-sheet-grammar class="sheet-link sheet-lang-link" hidden><span class="sheet-icon" aria-hidden="true">📝</span>Gramática</a>
+        <a href="/logros#backup" class="sheet-link"><span class="sheet-icon" aria-hidden="true">💾</span>Copia de seguridad</a>
+      </div>
+    </div>
+
+    <div class="sheet-group">
+      <p class="sheet-group-label">Recursos</p>
+      <div class="sheet-group-links">
+        <a href="/recursos" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">📻</span>Recursos</a>
+        <a href="/diario" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">✍️</span>Diario</a>
+        <a href="/blog" class="sheet-link"><span class="sheet-icon" aria-hidden="true">📰</span>Blog</a>
+      </div>
+    </div>
+
+    <div class="sheet-group">
+      <p class="sheet-group-label">Sobre PolyLingua</p>
+      <div class="sheet-group-links">
+        <a href="/#por-que" class="sheet-link"><span class="sheet-icon" aria-hidden="true">💡</span>Por qué PolyLingua</a>
+        <a href="/#faq" class="sheet-link"><span class="sheet-icon" aria-hidden="true">❓</span>FAQ</a>
+      </div>
+    </div>
+
+    <div class="sheet-group">
+      <p class="sheet-group-label">Preferencias</p>
+      <div class="sheet-group-links">
+        <InstallPrompt variant="sheet" />
+        <ShadowingToggle variant="sheet" />
+        <SoundToggle variant="sheet" />
+        <ThemeToggle variant="sheet" />
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-footer">
+    <a href="/idiomas" class="sheet-link cta">Empezar gratis</a>
+  </div>
 </dialog>
 
 <style>
@@ -128,22 +164,68 @@ const tabs = [
     inset: auto 0 calc(var(--bottom-nav-h) + var(--bottom-nav-gap)) 0;
     width: 100%;
     max-width: none;
+    max-height: min(75vh, 620px);
     border: none;
     border-top: 1px solid var(--border);
     border-radius: var(--radius) var(--radius) 0 0;
-    padding: 0.75rem;
+    padding: 0;
     background: var(--bg-card);
     color: var(--text);
+    overflow: hidden;
   }
 
   #more-sheet[open] {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
   }
 
   #more-sheet::backdrop {
     background: rgba(0, 0, 0, 0.5);
+  }
+
+  .sheet-handle {
+    display: flex;
+    justify-content: center;
+    flex: 0 0 auto;
+    padding: 0.55rem 0 0.35rem;
+  }
+
+  .sheet-handle-bar {
+    width: 36px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--border);
+  }
+
+  .sheet-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.1rem 0.75rem 0.5rem;
+  }
+
+  .sheet-group + .sheet-group {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .sheet-group-label {
+    margin: 0 0 0.2rem;
+    padding: 0 0.4rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-text);
+  }
+
+  .sheet-group-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
   }
 
   .sheet-link {
@@ -161,9 +243,26 @@ const tabs = [
     background: var(--bg-elevated);
   }
 
+  .sheet-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.6rem;
+    margin-right: 0.65rem;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+
+  .sheet-footer {
+    flex: 0 0 auto;
+    padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+
   .sheet-link.cta {
     justify-content: center;
-    margin-top: 0.3rem;
+    margin: 0;
     background: var(--accent);
     color: var(--de-black);
     font-weight: 700;

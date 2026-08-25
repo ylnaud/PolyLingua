@@ -4,6 +4,7 @@ import { LEVEL_MAP } from '../../../../data/levels';
 import { LANGUAGE_MAP } from '../../../../data/languages';
 import { getCollection } from 'astro:content';
 import { UNITS } from '../../../../data/units';
+import { TSA } from '../../../../data/tsa';
 
 export async function getStaticPaths() {
   const allLessons = await getCollection('lessons');
@@ -27,6 +28,7 @@ const lessons = allLessons
   .sort((a, b) => a.data.order - b.data.order);
 
 const unitMetas = UNITS[`${lang}-${level}`] ?? null;
+const tsaEntry = TSA[`${lang}-${level}`] ?? null;
 
 const siteURL = 'https://poly-lingua.vercel.app';
 const structuredData = {
@@ -205,6 +207,26 @@ const structuredData = {
       )
     }
   </section>
+
+  {
+    tsaEntry && (
+      <section class="container tsa">
+        <h2>{tsaEntry.heading}</h2>
+        {tsaEntry.paragraphs.map((p) => (
+          <p>{p}</p>
+        ))}
+        <p class="tsa-links">
+          Seguí con:{' '}
+          {tsaEntry.links.map((link, i) => (
+            <>
+              <a href={link.href}>{link.label}</a>
+              {i < tsaEntry.links.length - 1 ? ' · ' : ''}
+            </>
+          ))}
+        </p>
+      </section>
+    )
+  }
 </BaseLayout>
 
 <script define:vars={{ lang, level, slugs: lessons.map((l) => l.id.split('/').pop()) }}>
@@ -421,5 +443,34 @@ const structuredData = {
 
   .locked:hover {
     transform: none;
+  }
+
+  .tsa {
+    max-width: 720px;
+    padding-block: 0 4rem;
+  }
+
+  .tsa h2 {
+    font-size: clamp(1.3rem, 2.6vw, 1.6rem);
+    margin: 0 0 1rem;
+  }
+
+  .tsa p {
+    color: var(--text-muted);
+  }
+
+  .tsa-links {
+    margin-top: 1.25rem;
+    font-weight: 600;
+    color: var(--text) !important;
+  }
+
+  .tsa-links a {
+    color: var(--accent-text);
+    text-decoration: none;
+  }
+
+  .tsa-links a:hover {
+    text-decoration: underline;
   }
 </style>

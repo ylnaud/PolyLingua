@@ -68,8 +68,6 @@
 }
 
 @theme {
-  --font-sans: var(--font-sans);
-  --font-heading: var(--font-heading);
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
   --color-accent-text: var(--accent-text);

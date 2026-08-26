@@ -5,6 +5,7 @@ import { LEVEL_MAP, type LevelMeta } from '../../../data/levels';
 import {
   MATRIX_DATA,
   assembleSpanishSentence,
+  isActionObjectCompatible,
   type PhraseMatrix,
   type PhraseAssembler,
 } from '../../../data/matrices';
@@ -60,6 +61,14 @@ function buildDecks(matrix: PhraseMatrix, assemble: PhraseAssembler): Deck[] {
       remaining = Math.floor(remaining / lengths[j]);
     }
 
+    if (actionColIdx !== -1 && objectColIdx !== -1) {
+      const actionEs = matrix.columns[actionColIdx].items[colIndices[actionColIdx]].es;
+      const objectEs = matrix.columns[objectColIdx].items[colIndices[objectColIdx]].es;
+      if (!isActionObjectCompatible(actionEs, objectEs)) {
+        continue;
+      }
+    }
+
     const subjectIdx = subjectColIdx === -1 ? colIndices[0] : colIndices[subjectColIdx];
     const modalIdx = modalColIdx === -1 ? (colIndices[1] ?? 0) : colIndices[modalColIdx];
     const words: string[] = [];
@@ -75,10 +84,12 @@ function buildDecks(matrix: PhraseMatrix, assemble: PhraseAssembler): Deck[] {
       const modalItem = matrix.columns[modalColIdx].items[modalIdx];
       const modalAgreeIdx = resolveAgreeIdx(matrix, modalColIdx, colIndices);
       const modalWord = modalItem.forms?.[modalAgreeIdx] ?? modalItem.word;
+      const [firstEs, secondEs] =
+        subjectColIdx < modalColIdx ? [subjItem.es, modalItem.es] : [modalItem.es, subjItem.es];
       deckMap.set(deckId, {
         id: deckId,
         title: assemble([subjItem.word, modalWord]),
-        glossEs: `${subjItem.es} ${modalItem.es}`,
+        glossEs: `${firstEs} ${secondEs}`,
         phrases: [],
       });
     }
@@ -99,6 +110,8 @@ interface MatrixPanelData {
   levelMeta: LevelMeta;
   totalCombinations: number;
   decks: Deck[];
+  actionLabel: string;
+  objectLabel: string;
   actionOptions: FilterOption[];
   objectOptions: FilterOption[];
 }
@@ -110,16 +123,25 @@ const matrixConfig = MATRIX_DATA[lang as keyof typeof MATRIX_DATA];
 const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
   const actionColumn = matrix.columns.find((c) => c.role === 'action');
   const objectColumn = matrix.columns.find((c) => c.role === 'object');
+  const decks = buildDecks(matrix, matrixConfig.assemble);
+  const survivingActionIdx = new Set(decks.flatMap((d) => d.phrases.map((p) => p.actionIdx)));
+  const survivingObjectIdx = new Set(decks.flatMap((d) => d.phrases.map((p) => p.objectIdx)));
   return {
     matrix,
     levelMeta: LEVEL_MAP[matrix.level],
     totalCombinations: matrix.columns.reduce((acc, col) => acc * col.items.length, 1),
-    decks: buildDecks(matrix, matrixConfig.assemble),
+    decks,
+    actionLabel: actionColumn?.label ?? 'Verbo',
+    objectLabel: objectColumn?.label ?? 'Tema',
     actionOptions: actionColumn
-      ? actionColumn.items.map((item, idx) => ({ idx, word: item.word, es: item.es }))
+      ? actionColumn.items
+          .map((item, idx) => ({ idx, word: item.word, es: item.es }))
+          .filter((opt) => survivingActionIdx.has(opt.idx))
       : [],
     objectOptions: objectColumn
-      ? objectColumn.items.map((item, idx) => ({ idx, word: item.word, es: item.es }))
+      ? objectColumn.items
+          .map((item, idx) => ({ idx, word: item.word, es: item.es }))
+          .filter((opt) => survivingObjectIdx.has(opt.idx))
       : [],
   };
 });
@@ -177,7 +199,7 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
               <div class="gen-filters">
                 {md.actionOptions.length > 0 && (
                   <label>
-                    Verbo
+                    {md.actionLabel}
                     <select data-filter-action>
                       <option value="">Todos</option>
                       {md.actionOptions.map((opt) => (
@@ -188,7 +210,7 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
                 )}
                 {md.objectOptions.length > 0 && (
                   <label>
-                    Tema
+                    {md.objectLabel}
                     <select data-filter-object>
                       <option value="">Todos</option>
                       {md.objectOptions.map((opt) => (

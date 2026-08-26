@@ -3,7 +3,7 @@ import { LEVELS, LEVEL_MAP } from '../src/data/levels';
 import { LANGUAGES, LANGUAGE_MAP } from '../src/data/languages';
 import { UNITS } from '../src/data/units';
 import { RESOURCES, CATEGORY_LABELS } from '../src/data/resources';
-import { MATRIX_DATA, type MatrixColumnRole } from '../src/data/matrices';
+import { MATRIX_DATA, isActionObjectCompatible, type MatrixColumnRole } from '../src/data/matrices';
 
 describe('levels', () => {
   it('has exactly 6 CEFR levels', () => {
@@ -222,6 +222,34 @@ describe('matrices (Generador de frases)', () => {
     for (const lang of langIds) {
       for (const matrix of MATRIX_DATA[lang].matrices) {
         expect(matrix.description, `${lang}/${matrix.id} missing description`).toBeTruthy();
+      }
+    }
+  });
+
+  it('isActionObjectCompatible correctly flags known nonsensical vs. sensible pairs', () => {
+    expect(isActionObjectCompatible('aprender', 'alemán')).toBe(true);
+    expect(isActionObjectCompatible('hablar', 'francés')).toBe(true);
+    expect(isActionObjectCompatible('viajar', 'alemán')).toBe(false);
+    expect(isActionObjectCompatible('comprar', 'francés')).toBe(false);
+    expect(isActionObjectCompatible('trabajar', 'español')).toBe(false);
+    expect(isActionObjectCompatible('viajar', 'el informe')).toBe(true); // no es objeto-idioma
+  });
+
+  it('every matrix keeps at least one compatible action per object once incompatible pairs are filtered out (no deck ends up empty)', () => {
+    for (const lang of langIds) {
+      for (const matrix of MATRIX_DATA[lang].matrices) {
+        const actionColumn = matrix.columns.find((c) => c.role === 'action');
+        const objectColumn = matrix.columns.find((c) => c.role === 'object');
+        if (!actionColumn || !objectColumn) continue;
+        for (const object of objectColumn.items) {
+          const hasCompatibleAction = actionColumn.items.some((action) =>
+            isActionObjectCompatible(action.es, object.es),
+          );
+          expect(
+            hasCompatibleAction,
+            `${lang}/${matrix.id}: no action is compatible with object "${object.es}"`,
+          ).toBe(true);
+        }
       }
     }
   });

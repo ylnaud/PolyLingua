@@ -38,6 +38,21 @@ export interface PhraseMatrix {
 
 export type PhraseAssembler = (words: string[]) => string;
 
+// Los 5 idiomas comparten el mismo esqueleto de vocabulario para las
+// columnas 'action'/'object' (mismo orden, mismos glosses en español), así
+// que estos dos sets — usados para filtrar combinaciones acción×objeto sin
+// sentido semántico en generador-frases.astro — cubren los 5 a la vez sin
+// duplicar nada por idioma. Ej.: "aprender alemán" tiene sentido, "viajar
+// alemán"/"comprar el francés" no (esos verbos no toman un idioma como
+// objeto directo).
+export const LANGUAGE_OBJECT_GLOSSES = new Set(['alemán', 'inglés', 'francés', 'español']);
+export const INCOMPATIBLE_ACTION_GLOSSES = new Set(['viajar', 'comprar', 'trabajar', 'vivir']);
+
+/** Filtro de sentido semántico usado al armar el producto cartesiano acción×objeto. */
+export function isActionObjectCompatible(actionEs: string, objectEs: string): boolean {
+  return !(LANGUAGE_OBJECT_GLOSSES.has(objectEs) && INCOMPATIBLE_ACTION_GLOSSES.has(actionEs));
+}
+
 export interface LanguageMatrixConfig {
   matrices: PhraseMatrix[];
   assemble: PhraseAssembler;
@@ -270,15 +285,22 @@ const ES_TENDRIA_PERMISO = [
   'Vosotros tendríais permiso de',
 ];
 
-// Glosas compartidas para las matrices nuevas de B2 (subjuntivo: "hablar"/
-// "leer" conjugados en indicativo español, ya que el discurso indirecto o la
-// subordinada impersonal en español no exige subjuntivo en la traducción).
-// A diferencia de ES_QUERER y compañía, van SIN pronombre: en la matriz de
-// subjuntivo el sujeto ya se emite por separado (ver assembleSpanishSentence),
-// así que acá el pronombre se duplicaría ("Ella dice que yo Yo hablo...").
+// Glosas compartidas para las matrices nuevas de B2. ES_HABLA/ES_LEE/ES_VIAJA
+// van en indicativo — correctas solo para discurso indirecto (alemán "Sie
+// sagt, dass..." → "Ella dice que..."), que en español no exige subjuntivo.
+// ES_HABLE/ES_LEA/ES_VIAJE van en subjuntivo presente — para el disparador
+// impersonal de subjuntivo (francés "Il faut que...", inglés "It's essential
+// that...", italiano "Bisogna che...", portugués "É importante que..."), que
+// en español SÍ exige subjuntivo ("Es necesario que hable", no "que hablo").
+// En ambos casos, sin pronombre: en la matriz de subjuntivo el sujeto ya se
+// emite por separado (ver assembleSpanishSentence), así que acá el pronombre
+// se duplicaría ("Ella dice que yo Yo hablo...").
 const ES_HABLA = ['hablo', 'hablas', 'habla', 'habla', 'hablamos', 'habláis'];
 const ES_LEE = ['leo', 'lees', 'lee', 'lee', 'leemos', 'leéis'];
 const ES_VIAJA = ['viajo', 'viajas', 'viaja', 'viaja', 'viajamos', 'viajáis'];
+const ES_HABLE = ['hable', 'hables', 'hable', 'hable', 'hablemos', 'habléis'];
+const ES_LEA = ['lea', 'leas', 'lea', 'lea', 'leamos', 'leáis'];
+const ES_VIAJE = ['viaje', 'viajes', 'viaje', 'viaje', 'viajemos', 'viajéis'];
 
 // Glosas compartidas para C1 "Condicional hipotético" (si + subjuntivo
 // imperfecto + condicional). El sujeto va SIEMPRE separado en español
@@ -885,19 +907,19 @@ const ENGLISH_SUBJUNCTIVE_VERBS: MatrixWord[] = [
     word: 'speak',
     es: 'hablar',
     forms: ['speak', 'speak', 'speak', 'speak', 'speak', 'speak'],
-    esForms: ES_HABLA,
+    esForms: ES_HABLE,
   },
   {
     word: 'read',
     es: 'leer',
     forms: ['read', 'read', 'read', 'read', 'read', 'read'],
-    esForms: ES_LEE,
+    esForms: ES_LEA,
   },
   {
     word: 'travel',
     es: 'viajar',
     forms: ['travel', 'travel', 'travel', 'travel', 'travel', 'travel'],
-    esForms: ES_VIAJA,
+    esForms: ES_VIAJE,
   },
 ];
 
@@ -1181,19 +1203,19 @@ const FRENCH_SUBJUNCTIVE_VERBS: MatrixWord[] = [
     word: 'parler',
     es: 'hablar',
     forms: ['parle', 'parles', 'parle', 'parle', 'parlions', 'parliez'],
-    esForms: ES_HABLA,
+    esForms: ES_HABLE,
   },
   {
     word: 'lire',
     es: 'leer',
     forms: ['lise', 'lises', 'lise', 'lise', 'lisions', 'lisiez'],
-    esForms: ES_LEE,
+    esForms: ES_LEA,
   },
   {
     word: 'voyager',
     es: 'viajar',
     forms: ['voyage', 'voyages', 'voyage', 'voyage', 'voyagions', 'voyagiez'],
-    esForms: ES_VIAJA,
+    esForms: ES_VIAJE,
   },
 ];
 
@@ -1504,19 +1526,19 @@ const ITALIAN_SUBJUNCTIVE_VERBS: MatrixWord[] = [
     word: 'parlare',
     es: 'hablar',
     forms: ['parli', 'parli', 'parli', 'parli', 'parliamo', 'parliate'],
-    esForms: ES_HABLA,
+    esForms: ES_HABLE,
   },
   {
     word: 'leggere',
     es: 'leer',
     forms: ['legga', 'legga', 'legga', 'legga', 'leggiamo', 'leggiate'],
-    esForms: ES_LEE,
+    esForms: ES_LEA,
   },
   {
     word: 'viaggiare',
     es: 'viajar',
     forms: ['viaggi', 'viaggi', 'viaggi', 'viaggi', 'viaggiamo', 'viaggiate'],
-    esForms: ES_VIAJA,
+    esForms: ES_VIAJE,
   },
 ];
 
@@ -1826,19 +1848,19 @@ const PORTUGUESE_SUBJUNCTIVE_VERBS: MatrixWord[] = [
     word: 'falar',
     es: 'hablar',
     forms: ['fale', 'fales', 'fale', 'fale', 'falemos', 'falem'],
-    esForms: ES_HABLA,
+    esForms: ES_HABLE,
   },
   {
     word: 'ler',
     es: 'leer',
     forms: ['leia', 'leias', 'leia', 'leia', 'leiamos', 'leiam'],
-    esForms: ES_LEE,
+    esForms: ES_LEA,
   },
   {
     word: 'viajar',
     es: 'viajar',
     forms: ['viaje', 'viajes', 'viaje', 'viaje', 'viajemos', 'viajem'],
-    esForms: ES_VIAJA,
+    esForms: ES_VIAJE,
   },
 ];
 

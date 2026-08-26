@@ -94,6 +94,20 @@ const structuredData = {
           <a class="btn btn-ghost" href="/idiomas/de">Empezar con alemán</a>
         </div>
         <p class="hero-note">100% gratis · sin registro · funciona en cualquier dispositivo</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count-to={LANGUAGES.length}>0</span>
+            <span class="hero-stat-label">idiomas</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count-to={lessons.length}>0</span>
+            <span class="hero-stat-label">lecciones</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-num" data-count-to={6}>0</span>
+            <span class="hero-stat-label">niveles MCER</span>
+          </div>
+        </div>
       </div>
       <div class="hero-card card" aria-hidden="true">
         <p class="hero-card-label">Vista previa de una lección</p>
@@ -230,8 +244,46 @@ const structuredData = {
     font-size: 0.85rem;
   }
 
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .hero-stat-num {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent-text);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
   .hero-card {
     padding: 1.75rem;
+    transition:
+      transform 0.4s ease,
+      box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+  }
+
+  .hero-card:hover,
+  .hero-card:focus-within {
+    transform: perspective(1000px) rotateX(-6deg) rotateY(6deg);
+    box-shadow: var(--shadow-card-hover);
   }
 
   .hero-card-label {
@@ -388,5 +440,71 @@ const structuredData = {
     .why-grid {
       grid-template-columns: 1fr;
     }
+
+    .hero-stats {
+      gap: 1.1rem;
+    }
+
+    .hero-stat-num {
+      font-size: 1.35rem;
+    }
   }
 </style>
+
+<script>
+  // Cuenta ascendente de 0 al valor real (idiomas/lecciones/niveles) al
+  // entrar en viewport — usa datos ya calculados server-side en el
+  // frontmatter (data-count-to), sin fetch ni librerías. Guard por
+  // dataset.initialized + astro:page-load, mismo patrón que
+  // BottomNav.astro/ProgressTracker.astro para sobrevivir la navegación SPA.
+  function initHeroStats() {
+    const nums = document.querySelectorAll<HTMLElement>('.hero-stat-num');
+    if (nums.length === 0) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const animate = (el: HTMLElement) => {
+      if (el.dataset.animated) return;
+      el.dataset.animated = 'true';
+      const target = Number(el.dataset.countTo ?? '0');
+
+      if (prefersReducedMotion || target === 0) {
+        el.textContent = String(target);
+        return;
+      }
+
+      const duration = 800;
+      const start = performance.now();
+
+      const step = (now: number) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = String(Math.round(target * eased));
+        if (progress < 1) requestAnimationFrame(step);
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      nums.forEach(animate);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          animate(entry.target as HTMLElement);
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.4 },
+    );
+
+    nums.forEach((el) => observer.observe(el));
+  }
+
+  initHeroStats();
+  document.addEventListener('astro:page-load', initHeroStats);
+</script>

@@ -4,6 +4,9 @@ import SoundToggle from './SoundToggle.astro';
 import ShadowingToggle from './ShadowingToggle.astro';
 import InstallPrompt from './InstallPrompt.astro';
 import DailyGoal from './DailyGoal.astro';
+
+const langMatch = Astro.url.pathname.match(/^\/idiomas\/(de|en|fr|it|pt)/);
+const headerLang = langMatch?.[1];
 ---
 
 <header class="site-header">
@@ -50,9 +53,9 @@ import DailyGoal from './DailyGoal.astro';
           <a class="tools-link" href="/logros" aria-label="Ver tus logros">🏆 Logros</a>
           <a
             class="tools-link header-lang-link"
-            href="#"
+            href={headerLang ? `/idiomas/${headerLang}/mis-errores` : '/idiomas'}
             data-header-errors
-            hidden
+            hidden={!headerLang}
             aria-label="Ver tus errores frecuentes">❌ Mis errores</a
           >
           <ShadowingToggle variant="sheet" />

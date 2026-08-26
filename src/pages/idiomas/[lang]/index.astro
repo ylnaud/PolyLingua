@@ -29,6 +29,11 @@ for (const lvl of LEVELS) {
     .map((l) => l.id.split('/').pop()!);
 }
 
+const firstLessonSlug = levelLessonSlugs['a1']?.[0];
+const defaultContinueHref = firstLessonSlug
+  ? `/idiomas/${lang}/a1/${firstLessonSlug}`
+  : `/idiomas/${lang}`;
+
 const siteURL = 'https://poly-lingua.vercel.app';
 const structuredData = {
   '@context': 'https://schema.org',
@@ -86,7 +91,9 @@ const structuredData = {
           </div>
           <span class="dash-progress-text" data-dash-progress></span>
         </div>
-        <a class="btn btn-primary dash-continue" data-dash-continue href="#">Continuar</a>
+        <a class="btn btn-primary dash-continue" data-dash-continue href={defaultContinueHref}
+          >Continuar</a
+        >
       </div>
       <div class="dash-stats">
         <div class="dash-stat">

@@ -9,6 +9,9 @@ const path = Astro.url.pathname;
 const isActive = (route: string) =>
   route === '/' ? path === '/' : path === route || path.startsWith(`${route}/`);
 
+const navLangMatch = path.match(/^\/idiomas\/(de|en|fr|it|pt)/);
+const navLang = navLangMatch?.[1];
+
 const tabs = [
   { href: '/', icon: '🏠', label: 'Inicio' },
   { href: '/idiomas', icon: '📚', label: 'Idiomas' },
@@ -67,8 +70,8 @@ const tabs = [
     <div class="sheet-group">
       <p class="sheet-group-label">Tu progreso</p>
       <div class="sheet-group-links">
-        <a href="#" data-sheet-errors class="sheet-link sheet-lang-link" hidden><span class="sheet-icon" aria-hidden="true">❌</span>Mis errores</a>
-        <a href="#" data-sheet-grammar class="sheet-link sheet-lang-link" hidden><span class="sheet-icon" aria-hidden="true">📝</span>Gramática</a>
+        <a href={navLang ? `/idiomas/${navLang}/mis-errores` : '/idiomas'} data-sheet-errors class="sheet-link sheet-lang-link" hidden={!navLang}><span class="sheet-icon" aria-hidden="true">❌</span>Mis errores</a>
+        <a href={navLang ? `/idiomas/${navLang}/gramatica` : '/idiomas'} data-sheet-grammar class="sheet-link sheet-lang-link" hidden={!navLang}><span class="sheet-icon" aria-hidden="true">📝</span>Gramática</a>
         <a href="/logros#backup" class="sheet-link"><span class="sheet-icon" aria-hidden="true">💾</span>Copia de seguridad</a>
       </div>
     </div>

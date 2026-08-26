@@ -509,6 +509,7 @@ const GERMAN_A1_VERBS: MatrixWord[] = [
   { word: 'brauchen', es: 'necesitar' },
   { word: 'probieren', es: 'probar' },
   { word: 'kaufen', es: 'comprar' },
+  { word: 'bestellen', es: 'pedir' },
 ];
 // essen-trinken.md
 const GERMAN_A1_OBJECTS: MatrixWord[] = [
@@ -544,6 +545,7 @@ const GERMAN_MOTION_VERBS: MatrixWord[] = [
   { word: 'gehen', es: 'ir' },
   { word: 'fahren', es: 'ir (en vehículo)' },
   { word: 'springen', es: 'saltar' },
+  { word: 'laufen', es: 'caminar' },
 ];
 // wechselpraepositionen.md
 const GERMAN_DIRECTIONAL_OBJECTS: MatrixWord[] = [
@@ -577,6 +579,12 @@ const GERMAN_B1_ADJECTIVES: MatrixWord[] = [
     es: 'bueno/a',
     forms: ['einen guten', 'eine gute', 'ein gutes', 'eine gute'],
     esForms: ['un buen', 'una buena', 'un buen', 'una buena'],
+  },
+  {
+    word: 'aktuell',
+    es: 'actual',
+    forms: ['einen aktuellen', 'eine aktuelle', 'ein aktuelles', 'eine aktuelle'],
+    esForms: ['un actual', 'una actual', 'un actual', 'una actual'],
   },
 ];
 
@@ -2270,14 +2278,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
             role: 'modal',
             items: GERMAN_REPORT_TRIGGER,
           },
-          { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
+          {
+            label: 'Quién',
+            labelTarget: 'Subjekt',
+            role: 'subject',
+            items: GERMAN_SUBJECTS_LOWER,
+          },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
           {
             label: 'Acción',
             labelTarget: 'Konjunktiv I',
             role: 'action',
             items: GERMAN_SUBJUNCTIVE_VERBS,
           },
-          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
         ],
       },
       {

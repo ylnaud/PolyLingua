@@ -8,7 +8,7 @@ export interface MatrixWord {
   esForms?: string[];
 }
 
-export type MatrixColumnRole = 'subject' | 'modal' | 'action' | 'object';
+export type MatrixColumnRole = 'subject' | 'modal' | 'action' | 'object' | 'adjective';
 
 export interface MatrixColumn {
   label: string;
@@ -500,15 +500,84 @@ const GERMAN_OBJECTS: MatrixWord[] = [
   { word: 'Spanisch', es: 'español' },
 ];
 
-const GERMAN_VERBS: MatrixWord[] = [
-  { word: 'lernen', es: 'aprender' },
-  { word: 'sprechen', es: 'hablar' },
-  { word: 'lesen', es: 'leer' },
-  { word: 'studieren', es: 'estudiar' },
-  { word: 'reisen', es: 'viajar' },
+// Bancos A1/A2/B1 propios (uno por nivel, ya no comparten vocabulario): los
+// verbos son siempre "genéricamente compatibles" (tener/necesitar/comprar-
+// estilo) para que TODA combinación verbo×objeto tenga sentido sin filtro
+// adicional — el mismo principio que evita el bug de "viajar el alemán".
+const GERMAN_A1_VERBS: MatrixWord[] = [
+  { word: 'haben', es: 'tener' },
+  { word: 'brauchen', es: 'necesitar' },
+  { word: 'probieren', es: 'probar' },
   { word: 'kaufen', es: 'comprar' },
-  { word: 'arbeiten', es: 'trabajar' },
-  { word: 'leben', es: 'vivir' },
+];
+// essen-trinken.md
+const GERMAN_A1_OBJECTS: MatrixWord[] = [
+  { word: 'Brot', es: 'pan' },
+  { word: 'Käse', es: 'queso' },
+  { word: 'Suppe', es: 'sopa' },
+  { word: 'Kaffee', es: 'café' },
+];
+
+const GERMAN_A2_VERBS: MatrixWord[] = [
+  { word: 'haben', es: 'tener' },
+  { word: 'brauchen', es: 'necesitar' },
+  { word: 'suchen', es: 'buscar' },
+];
+// geld.md — Bargeld/Miete son masivos/abstractos, quedan sin artículo (mismo
+// patrón que el resto del sitio); Geldautomat/Konto son contables y suenan
+// raros sin artículo, así que llevan el indefinido horneado en la palabra
+// ("Geldautomat" es de declinación débil: Akkusativ = "einen Geldautomaten").
+const GERMAN_A2_OBJECTS: MatrixWord[] = [
+  { word: 'Bargeld', es: 'efectivo' },
+  { word: 'einen Geldautomaten', es: 'un cajero automático' },
+  { word: 'Miete', es: 'alquiler' },
+  { word: 'ein Konto', es: 'una cuenta' },
+];
+
+// A2 · Wechselpräpositionen: solo el sentido acusativo/movimiento ("¿adónde?")
+// — verbos de movimiento son compatibles con cualquier frase direccional, así
+// que no hace falta filtrar combinaciones. El sentido dativo/estado
+// ("¿dónde?") queda fuera: exigiría que cada objeto cargue dos declinaciones
+// de caso distintas según el verbo elegido, algo que el motor de una sola
+// columna `agreesWith` no resuelve.
+const GERMAN_MOTION_VERBS: MatrixWord[] = [
+  { word: 'gehen', es: 'ir' },
+  { word: 'fahren', es: 'ir (en vehículo)' },
+  { word: 'springen', es: 'saltar' },
+];
+// wechselpraepositionen.md
+const GERMAN_DIRECTIONAL_OBJECTS: MatrixWord[] = [
+  { word: 'in die Küche', es: 'a la cocina' },
+  { word: 'auf den Tisch', es: 'a la mesa' },
+  { word: 'unter die Brücke', es: 'debajo del puente' },
+  { word: 'hinter das Haus', es: 'detrás de la casa' },
+];
+
+const GERMAN_B1_VERBS: MatrixWord[] = [
+  { word: 'haben', es: 'tener' },
+  { word: 'brauchen', es: 'necesitar' },
+];
+// arbeit.md — sin "Vertrag": ya se usa en GERMAN_PASSIVE_NOUNS (B2)
+const GERMAN_B1_OBJECTS: MatrixWord[] = [
+  { word: 'Lebenslauf', es: 'currículum' }, // der (masc.)
+  { word: 'Bewerbung', es: 'solicitud' }, // die (fem.)
+  { word: 'Gehalt', es: 'sueldo' }, // das (neutro)
+  { word: 'Besprechung', es: 'reunión' }, // die (fem.)
+];
+// adjektivdeklination.md: sin artículo → declinación fuerte; con artículo
+// indefinido → mixta (coincide con la fuerte en Akkusativ). El artículo
+// indefinido va horneado en la MISMA forma que la terminación (no en el
+// objeto) para que el orden salga "einen guten Lebenslauf" y no
+// "guten einen Lebenslauf". agreesWith:'object' hace que la forma se elija
+// según qué objeto se sorteó, no según el sujeto — declinación real, no una
+// forma fija.
+const GERMAN_B1_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'gut',
+    es: 'bueno/a',
+    forms: ['einen guten', 'eine gute', 'ein gutes', 'eine gute'],
+    esForms: ['un buen', 'una buena', 'un buen', 'una buena'],
+  },
 ];
 
 // B2 · Pasiva: sustantivos-paciente + auxiliar invariable (wird) + participio
@@ -2042,7 +2111,7 @@ function esTextFor(matrix: PhraseMatrix, colIdx: number, colIndices: number[]): 
 
 // El resto de los roles (todo lo que no sea sujeto/modal) siempre va en este
 // orden en español, sin importar el orden de palabras del idioma meta.
-const SPANISH_TAIL_ORDER: MatrixColumnRole[] = ['action', 'object'];
+const SPANISH_TAIL_ORDER: MatrixColumnRole[] = ['action', 'adjective', 'object'];
 
 // El español arma sujeto+modal de dos formas distintas según el tipo de
 // matriz:
@@ -2088,39 +2157,73 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         id: 'basico-modal-v2',
         name: 'Verbos modales',
         description:
-          'Empezás por la base: sujetos, verbos modales en presente y los primeros sustantivos y adjetivos. Acá no hay tiempos verbales que confundan — solo automatizás el orden de la frase alemana (sujeto-modal-objeto-infinitivo) y vocabulario nuevo.',
+          'Empezás por la base: sujetos, verbos modales en presente y vocabulario de comida (essen-trinken.md). Acá no hay tiempos verbales que confundan — solo automatizás el orden de la frase alemana (sujeto-modal-objeto-infinitivo) y vocabulario nuevo.',
         level: 'a1',
+        tabLabel: 'A1 · Modalverben',
         columns: [
           { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modalverb', role: 'modal', items: GERMAN_MODALS },
-          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
-          { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_A1_OBJECTS },
+          { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_A1_VERBS },
         ],
       },
       {
         id: 'pasado-modal-v2',
         name: 'Verbos modales en pasado',
         description:
-          'Mismos modales, ahora en Präteritum (pasado), sobre el mismo vocabulario. Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.',
+          'Mismos modales, ahora en Präteritum (pasado), sobre vocabulario de dinero (geld.md) — propio de A2, no repetido de A1. Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.',
         level: 'a2',
+        tabLabel: 'A2 · Präteritum',
         columns: [
           { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modalverb', role: 'modal', items: GERMAN_MODALS_PAST },
-          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
-          { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_A2_OBJECTS },
+          { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_A2_VERBS },
+        ],
+      },
+      {
+        id: 'wechselpraepositionen-a2',
+        name: 'Wechselpräpositionen (Akkusativ)',
+        description:
+          'Preposiciones de doble régimen (wechselpraepositionen.md) en su sentido de movimiento — "¿adónde?", siempre Akkusativ. Verbos de movimiento (gehen/fahren/springen) combinan con cualquier frase direccional, así que no hay combinaciones raras.',
+        level: 'a2',
+        tabLabel: 'A2 · Wechselpräpositionen',
+        columns: [
+          { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modalverb', role: 'modal', items: GERMAN_MODALS_PAST },
+          {
+            label: 'Adónde',
+            labelTarget: 'Wohin',
+            role: 'object',
+            items: GERMAN_DIRECTIONAL_OBJECTS,
+          },
+          {
+            label: 'Acción',
+            labelTarget: 'Infinitiv',
+            role: 'action',
+            items: GERMAN_MOTION_VERBS,
+          },
         ],
       },
       {
         id: 'condicional-modal-v2',
         name: 'Verbos modales de cortesía',
         description:
-          'Subís a los modales de cortesía (möchte/müsste/könnte/sollte/dürfte) para pedir las cosas como se pide realmente en alemán. Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
+          'Subís a los modales de cortesía (möchte/müsste/könnte/sollte/dürfte) para pedir las cosas como se pide realmente en alemán, sobre vocabulario de trabajo (arbeit.md) y adjetivos declinados según el género del objeto (adjektivdeklination.md). Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
         level: 'b1',
+        tabLabel: 'B1 · Modalverben',
         columns: [
           { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modalverb', role: 'modal', items: GERMAN_MODALS_COND },
-          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
-          { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_VERBS },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjektiv',
+            role: 'adjective',
+            items: GERMAN_B1_ADJECTIVES,
+            agreesWith: 'object',
+          },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_B1_OBJECTS },
+          { label: 'Acción', labelTarget: 'Infinitiv', role: 'action', items: GERMAN_B1_VERBS },
         ],
       },
       {

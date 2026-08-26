@@ -318,13 +318,13 @@ const ES_FUERA_RICO = [
   'fuéramos ricos,',
   'fuerais ricos,',
 ];
-const ES_FUERA_POBRE = [
-  'fuera pobre,',
-  'fueras pobre,',
-  'fuera pobre,',
-  'fuera pobre,',
-  'fuéramos pobres,',
-  'fuerais pobres,',
+const ES_FUERA_LIBRE = [
+  'fuera libre,',
+  'fueras libre,',
+  'fuera libre,',
+  'fuera libre,',
+  'fuéramos libres,',
+  'fuerais libres,',
 ];
 const ES_FUERA_FELIZ = [
   'fuera feliz,',
@@ -334,13 +334,13 @@ const ES_FUERA_FELIZ = [
   'fuéramos felices,',
   'fuerais felices,',
 ];
-const ES_FUERA_OCUPADO = [
-  'fuera ocupado,',
-  'fueras ocupado,',
-  'fuera ocupado,',
-  'fuera ocupada,',
-  'fuéramos ocupados,',
-  'fuerais ocupados,',
+const ES_FUERA_AVENTURERO = [
+  'fuera aventurero,',
+  'fueras aventurero,',
+  'fuera aventurero,',
+  'fuera aventurera,',
+  'fuéramos aventureros,',
+  'fuerais aventureros,',
 ];
 const ES_FUERA_FUERTE = [
   'fuera fuerte,',
@@ -509,6 +509,7 @@ const GERMAN_A1_VERBS: MatrixWord[] = [
   { word: 'brauchen', es: 'necesitar' },
   { word: 'probieren', es: 'probar' },
   { word: 'kaufen', es: 'comprar' },
+  { word: 'bestellen', es: 'pedir' },
 ];
 // essen-trinken.md
 const GERMAN_A1_OBJECTS: MatrixWord[] = [
@@ -544,6 +545,7 @@ const GERMAN_MOTION_VERBS: MatrixWord[] = [
   { word: 'gehen', es: 'ir' },
   { word: 'fahren', es: 'ir (en vehículo)' },
   { word: 'springen', es: 'saltar' },
+  { word: 'laufen', es: 'caminar' },
 ];
 // wechselpraepositionen.md
 const GERMAN_DIRECTIONAL_OBJECTS: MatrixWord[] = [
@@ -577,6 +579,12 @@ const GERMAN_B1_ADJECTIVES: MatrixWord[] = [
     es: 'bueno/a',
     forms: ['einen guten', 'eine gute', 'ein gutes', 'eine gute'],
     esForms: ['un buen', 'una buena', 'un buen', 'una buena'],
+  },
+  {
+    word: 'aktuell',
+    es: 'actual',
+    forms: ['einen aktuellen', 'eine aktuelle', 'ein aktuelles', 'eine aktuelle'],
+    esForms: ['un actual', 'una actual', 'un actual', 'una actual'],
   },
 ];
 
@@ -663,10 +671,10 @@ const GERMAN_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_RICO,
   },
   {
-    word: 'arm',
-    es: 'pobre',
-    forms: ['arm wäre,', 'arm wärst,', 'arm wäre,', 'arm wäre,', 'arm wären,', 'arm wärt,'],
-    esForms: ES_FUERA_POBRE,
+    word: 'frei',
+    es: 'libre',
+    forms: ['frei wäre,', 'frei wärst,', 'frei wäre,', 'frei wäre,', 'frei wären,', 'frei wärt,'],
+    esForms: ES_FUERA_LIBRE,
   },
   {
     word: 'glücklich',
@@ -682,17 +690,17 @@ const GERMAN_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_FELIZ,
   },
   {
-    word: 'beschäftigt',
-    es: 'ocupado/a',
+    word: 'abenteuerlustig',
+    es: 'aventurero/a',
     forms: [
-      'beschäftigt wäre,',
-      'beschäftigt wärst,',
-      'beschäftigt wäre,',
-      'beschäftigt wäre,',
-      'beschäftigt wären,',
-      'beschäftigt wärt,',
+      'abenteuerlustig wäre,',
+      'abenteuerlustig wärst,',
+      'abenteuerlustig wäre,',
+      'abenteuerlustig wäre,',
+      'abenteuerlustig wären,',
+      'abenteuerlustig wärt,',
     ],
-    esForms: ES_FUERA_OCUPADO,
+    esForms: ES_FUERA_AVENTURERO,
   },
   {
     word: 'stark',
@@ -1012,10 +1020,10 @@ const ENGLISH_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_RICO,
   },
   {
-    word: 'poor',
-    es: 'pobre',
-    forms: ['were poor,', 'were poor,', 'were poor,', 'were poor,', 'were poor,', 'were poor,'],
-    esForms: ES_FUERA_POBRE,
+    word: 'free',
+    es: 'libre',
+    forms: ['were free,', 'were free,', 'were free,', 'were free,', 'were free,', 'were free,'],
+    esForms: ES_FUERA_LIBRE,
   },
   {
     word: 'happy',
@@ -1031,10 +1039,17 @@ const ENGLISH_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_FELIZ,
   },
   {
-    word: 'busy',
-    es: 'ocupado/a',
-    forms: ['were busy,', 'were busy,', 'were busy,', 'were busy,', 'were busy,', 'were busy,'],
-    esForms: ES_FUERA_OCUPADO,
+    word: 'adventurous',
+    es: 'aventurero/a',
+    forms: [
+      'were adventurous,',
+      'were adventurous,',
+      'were adventurous,',
+      'were adventurous,',
+      'were adventurous,',
+      'were adventurous,',
+    ],
+    esForms: ES_FUERA_AVENTURERO,
   },
   {
     word: 'strong',
@@ -1314,17 +1329,17 @@ const FRENCH_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_RICO,
   },
   {
-    word: 'pauvre',
-    es: 'pobre',
+    word: 'libre',
+    es: 'libre',
     forms: [
-      "Si j'étais pauvre,",
-      'Si tu étais pauvre,',
-      "S'il était pauvre,",
-      'Si elle était pauvre,',
-      'Si nous étions pauvres,',
-      'Si vous étiez pauvres,',
+      "Si j'étais libre,",
+      'Si tu étais libre,',
+      "S'il était libre,",
+      'Si elle était libre,',
+      'Si nous étions libres,',
+      'Si vous étiez libres,',
     ],
-    esForms: ES_FUERA_POBRE,
+    esForms: ES_FUERA_LIBRE,
   },
   {
     word: 'heureux',
@@ -1340,17 +1355,17 @@ const FRENCH_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_FELIZ,
   },
   {
-    word: 'occupé',
-    es: 'ocupado/a',
+    word: 'aventureux',
+    es: 'aventurero/a',
     forms: [
-      "Si j'étais occupé,",
-      'Si tu étais occupé,',
-      "S'il était occupé,",
-      'Si elle était occupée,',
-      'Si nous étions occupés,',
-      'Si vous étiez occupés,',
+      "Si j'étais aventureux,",
+      'Si tu étais aventureux,',
+      "S'il était aventureux,",
+      'Si elle était aventureuse,',
+      'Si nous étions aventureux,',
+      'Si vous étiez aventureux,',
     ],
-    esForms: ES_FUERA_OCUPADO,
+    esForms: ES_FUERA_AVENTURERO,
   },
   {
     word: 'fort',
@@ -1640,17 +1655,17 @@ const ITALIAN_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_RICO,
   },
   {
-    word: 'povero',
-    es: 'pobre',
+    word: 'libero',
+    es: 'libre',
     forms: [
-      'fossi povero,',
-      'fossi povero,',
-      'fosse povero,',
-      'fosse povera,',
-      'fossimo poveri,',
-      'foste poveri,',
+      'fossi libero,',
+      'fossi libero,',
+      'fosse libero,',
+      'fosse libera,',
+      'fossimo liberi,',
+      'foste liberi,',
     ],
-    esForms: ES_FUERA_POBRE,
+    esForms: ES_FUERA_LIBRE,
   },
   {
     word: 'felice',
@@ -1666,17 +1681,17 @@ const ITALIAN_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_FELIZ,
   },
   {
-    word: 'occupato',
-    es: 'ocupado/a',
+    word: 'avventuroso',
+    es: 'aventurero/a',
     forms: [
-      'fossi occupato,',
-      'fossi occupato,',
-      'fosse occupato,',
-      'fosse occupata,',
-      'fossimo occupati,',
-      'foste occupati,',
+      'fossi avventuroso,',
+      'fossi avventuroso,',
+      'fosse avventuroso,',
+      'fosse avventurosa,',
+      'fossimo avventurosi,',
+      'foste avventurosi,',
     ],
-    esForms: ES_FUERA_OCUPADO,
+    esForms: ES_FUERA_AVENTURERO,
   },
   {
     word: 'forte',
@@ -1960,17 +1975,17 @@ const PORTUGUESE_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_RICO,
   },
   {
-    word: 'pobre',
-    es: 'pobre',
+    word: 'livre',
+    es: 'libre',
     forms: [
-      'fosse pobre,',
-      'fosses pobre,',
-      'fosse pobre,',
-      'fosse pobre,',
-      'fôssemos pobres,',
-      'fossem pobres,',
+      'fosse livre,',
+      'fosses livre,',
+      'fosse livre,',
+      'fosse livre,',
+      'fôssemos livres,',
+      'fossem livres,',
     ],
-    esForms: ES_FUERA_POBRE,
+    esForms: ES_FUERA_LIBRE,
   },
   {
     word: 'feliz',
@@ -1986,17 +2001,17 @@ const PORTUGUESE_C1_ADJECTIVES: MatrixWord[] = [
     esForms: ES_FUERA_FELIZ,
   },
   {
-    word: 'ocupado',
-    es: 'ocupado/a',
+    word: 'aventureiro',
+    es: 'aventurero/a',
     forms: [
-      'fosse ocupado,',
-      'fosses ocupado,',
-      'fosse ocupado,',
-      'fosse ocupada,',
-      'fôssemos ocupados,',
-      'fossem ocupados,',
+      'fosse aventureiro,',
+      'fosses aventureiro,',
+      'fosse aventureiro,',
+      'fosse aventureira,',
+      'fôssemos aventureiros,',
+      'fossem aventureiros,',
     ],
-    esForms: ES_FUERA_OCUPADO,
+    esForms: ES_FUERA_AVENTURERO,
   },
   {
     word: 'forte',
@@ -2263,14 +2278,19 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
             role: 'modal',
             items: GERMAN_REPORT_TRIGGER,
           },
-          { label: 'Quién', labelTarget: 'Subjekt', role: 'subject', items: GERMAN_SUBJECTS },
+          {
+            label: 'Quién',
+            labelTarget: 'Subjekt',
+            role: 'subject',
+            items: GERMAN_SUBJECTS_LOWER,
+          },
+          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
           {
             label: 'Acción',
             labelTarget: 'Konjunktiv I',
             role: 'action',
             items: GERMAN_SUBJUNCTIVE_VERBS,
           },
-          { label: 'Qué', labelTarget: 'Objekt', role: 'object', items: GERMAN_OBJECTS },
         ],
       },
       {

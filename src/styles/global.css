@@ -552,6 +552,13 @@ pre {
   overflow-wrap: break-word;
 }
 
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
 table {
   display: block;
   overflow-x: auto;

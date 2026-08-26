@@ -1,0 +1,22 @@
+# PolyLingua
+
+> Aprende idiomas gratis online: alemán, inglés, francés, italiano y portugués, de A1 a C2 (Marco Común Europeo de Referencia), con lecciones de gramática gamificada, quizzes interactivos, repetición espaciada y diálogos reales. Sitio estático, sin registro, 100% gratis.
+
+PolyLingua es un curso de idiomas abierto y gratuito, sin cuentas de usuario ni servidor propio que procese datos. Todo el contenido de lecciones (gramática, vocabulario, quizzes, ejercicios) es texto estático generado en tiempo de build, apto para indexar, citar y resumir.
+
+## Idiomas
+
+- [Alemán](https://poly-lingua.vercel.app/idiomas/de)
+- [Inglés](https://poly-lingua.vercel.app/idiomas/en)
+- [Francés](https://poly-lingua.vercel.app/idiomas/fr)
+- [Italiano](https://poly-lingua.vercel.app/idiomas/it)
+- [Portugués](https://poly-lingua.vercel.app/idiomas/pt)
+
+## Recursos
+
+- [Mapa del sitio](https://poly-lingua.vercel.app/sitemap-index.xml)
+- [Blog](https://poly-lingua.vercel.app/blog)
+- [Por qué PolyLingua](https://poly-lingua.vercel.app/#por-que)
+- [Preguntas frecuentes](https://poly-lingua.vercel.app/#faq)
+- [Política de privacidad](https://poly-lingua.vercel.app/privacidad)
+- [Código fuente](https://github.com/ylnaud/polylingua)

@@ -5,9 +5,18 @@ title: 'Il cibo: pide comida como un local'
 description: "Vocabulario italiano de comida y restaurante: cómo pedir con cortesía usando 'vorrei', leer un menú y desenvolverte en un mercado sin apuros."
 order: 6
 unit: 2
+situation: 'Restaurante'
 grammarTopic: 'Vocabulario: comida y restaurante'
 funFact: "En un restaurante italiano, decir 'vorrei' (quisiera) en vez de 'voglio' (quiero) es la diferencia entre sonar educado y sonar brusco — 'vorrei' es el condizionale de 'volere' y es la fórmula estándar para pedir cualquier cosa educadamente, igual que en francés o alemán."
 minutes: 6
+phrases:
+  - text: 'Vorrei un caffè, per favore.'
+    es: 'Quisiera un café, por favor.'
+    note: "'vorrei' es más cortés que 'voglio'."
+  - text: 'Il conto, per favore.'
+    es: 'La cuenta, por favor.'
+  - text: 'Cosa mi consiglia?'
+    es: '¿Qué me recomienda?'
 quiz:
   - question: "¿Cuál es el artículo correcto para 'acqua' (agua)?"
     options: ['il acqua', 'la acqua', "l'acqua"]

@@ -85,9 +85,11 @@ siendo `npm run build` (no `astro build` solo — hay que correr el hook
 puro, sin adapter de servidor. `public/_headers` es hoy la config de
 seguridad activa (Cloudflare la lee directo del build output).
 
-Vercel dejó de ser el hosting real, pero `vercel.json` (mismos headers
-que `public/_headers`, en formato Vercel) sigue en el repo por ahora —
-ver "Pendiente" abajo.
+Vercel dejó de ser el hosting real. `vercel.json` ya se borró del repo —
+la config de seguridad activa vive solo en `public/_headers` (formato
+Cloudflare). El proyecto de Vercel en sí (dashboard, integración con
+GitHub) queda pendiente de desconectar/borrar a mano — Claude Code no
+tiene acceso de escritura a la cuenta de Vercel.
 
 ### Pendiente para terminar el corte a Cloudflare
 
@@ -102,8 +104,10 @@ ver "Pendiente" abajo.
    `src/pages/privacidad.astro`), ya apuntan al `*.workers.dev` de
    arriba — cuando se compre el dominio propio, hay que volver a tocar
    esos mismos archivos.
-2. **Vercel**: confirmar que el proyecto de Vercel ya no recibe tráfico
-   real y, si es así, borrar `vercel.json` y desconectarlo.
+2. **Vercel**: desconectar la integración con GitHub y/o borrar el
+   proyecto desde el dashboard de Vercel (vercel.com/dashboard →
+   proyecto PolyLingua → Settings → Git / Delete Project). Es un paso
+   manual, fuera del repo.
 
 ## Reglas de trabajo
 

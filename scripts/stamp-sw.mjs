@@ -18,8 +18,26 @@ const distSwPath = path.join(
   'sw.js',
 );
 
+// En algunos entornos de build (confirmado en Cloudflare Pages) dist/sw.js
+// puede no estar disponible todavía en el instante exacto en que arranca
+// postbuild, aunque astro build ya haya terminado con éxito — reintenta unas
+// pocas veces antes de darse por vencido, en vez de asumir que el primer
+// intento siempre alcanza.
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function readWithRetry(filePath, attempts = 10, delayMs = 300) {
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return readFileSync(filePath, 'utf8');
+    } catch (err) {
+      if (err.code !== 'ENOENT' || i === attempts - 1) throw err;
+      await sleep(delayMs);
+    }
+  }
+}
+
 const buildId = new Date().toISOString().replace(/[-:TZ.]/g, '').slice(0, 14);
-const original = readFileSync(distSwPath, 'utf8');
+const original = await readWithRetry(distSwPath);
 const stamped = original.replace(
   /const CACHE_NAME = '[^']*';/,
   `const CACHE_NAME = 'polylingua-${buildId}';`,

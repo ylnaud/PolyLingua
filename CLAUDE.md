@@ -4,7 +4,7 @@
 
 Sitio estático de aprendizaje de idiomas (alemán, inglés, francés, italiano, portugués)
 con niveles MCER A1–C2. Repositorio: github.com/ylnaud/PolyLingua
-Producción: https://poly-lingua.vercel.app
+Producción: https://polylingua.thyronemiguelvegasantana-c6e.workers.dev
 
 ## Stack — respétalo SIEMPRE
 
@@ -96,17 +96,13 @@ ver "Pendiente" abajo.
    está preparado para cuando se compre uno — la URL del sitio se lee
    de `Astro.site` (`astro.config.mjs`, `site:`) en vez de estar
    hardcodeada, así que apuntar a un dominio nuevo es editar **una sola
-   línea** ahí. Hoy esa línea todavía dice `poly-lingua.vercel.app`
-   (desactualizada — no refleja ni el dominio viejo real ni el
-   `*.workers.dev` actual) y hay que corregirla.
-2. **URLs hardcodeadas al dominio viejo**: `public/robots.txt` (línea
-   del Sitemap), `public/llms.txt`, `public/og-image.svg` (texto visible
-   en la imagen), `src/styles/global.css` (CSS de impresión que muestra
-   la URL junto a links externos) y `src/pages/privacidad.astro` (texto
-   visible en la política de privacidad) todavía apuntan a
-   `poly-lingua.vercel.app` — actualizar a mano al dominio final
-   (propio, o el `*.workers.dev` de arriba mientras tanto).
-3. **Vercel**: confirmar que el proyecto de Vercel ya no recibe tráfico
+   línea** ahí. Esa línea, junto con las URLs hardcodeadas que se
+   listaban acá (`public/robots.txt`, `public/llms.txt`,
+   `public/og-image.svg`, `src/styles/global.css`,
+   `src/pages/privacidad.astro`), ya apuntan al `*.workers.dev` de
+   arriba — cuando se compre el dominio propio, hay que volver a tocar
+   esos mismos archivos.
+2. **Vercel**: confirmar que el proyecto de Vercel ya no recibe tráfico
    real y, si es así, borrar `vercel.json` y desconectarlo.
 
 ## Reglas de trabajo

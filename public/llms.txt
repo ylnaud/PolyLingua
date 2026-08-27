@@ -6,17 +6,17 @@ PolyLingua es un curso de idiomas abierto y gratuito, sin cuentas de usuario ni 
 
 ## Idiomas
 
-- [Alemán](https://poly-lingua.vercel.app/idiomas/de)
-- [Inglés](https://poly-lingua.vercel.app/idiomas/en)
-- [Francés](https://poly-lingua.vercel.app/idiomas/fr)
-- [Italiano](https://poly-lingua.vercel.app/idiomas/it)
-- [Portugués](https://poly-lingua.vercel.app/idiomas/pt)
+- [Alemán](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/de)
+- [Inglés](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/en)
+- [Francés](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/fr)
+- [Italiano](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/it)
+- [Portugués](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/pt)
 
 ## Recursos
 
-- [Mapa del sitio](https://poly-lingua.vercel.app/sitemap-index.xml)
-- [Blog](https://poly-lingua.vercel.app/blog)
-- [Por qué PolyLingua](https://poly-lingua.vercel.app/#por-que)
-- [Preguntas frecuentes](https://poly-lingua.vercel.app/#faq)
-- [Política de privacidad](https://poly-lingua.vercel.app/privacidad)
+- [Mapa del sitio](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/sitemap-index.xml)
+- [Blog](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/blog)
+- [Por qué PolyLingua](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/#por-que)
+- [Preguntas frecuentes](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/#faq)
+- [Política de privacidad](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/privacidad)
 - [Código fuente](https://github.com/ylnaud/polylingua)

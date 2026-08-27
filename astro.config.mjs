@@ -15,7 +15,7 @@ function isNoindexPage(pageUrl) {
 }
 
 export default defineConfig({
-  site: 'https://poly-lingua.vercel.app',
+  site: 'https://polylingua.thyronemiguelvegasantana-c6e.workers.dev',
   integrations: [sitemap({ filter: (page) => !isNoindexPage(page) })],
   compressHTML: true,
   build: {

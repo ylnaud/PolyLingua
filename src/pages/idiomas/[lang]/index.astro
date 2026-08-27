@@ -34,7 +34,7 @@ const defaultContinueHref = firstLessonSlug
   ? `/idiomas/${lang}/a1/${firstLessonSlug}`
   : `/idiomas/${lang}`;
 
-const siteURL = 'https://poly-lingua.vercel.app';
+const siteURL = Astro.site!.origin;
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [

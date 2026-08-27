@@ -9,6 +9,8 @@ const lessonCounts = Object.fromEntries(
   LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length]),
 );
 
+const siteURL = Astro.site!.origin;
+
 const faqs = [
   {
     q: '¿PolyLingua es realmente gratis?',
@@ -67,7 +69,7 @@ const structuredData = {
     {
       '@type': 'WebSite',
       name: 'PolyLingua',
-      url: 'https://poly-lingua.vercel.app',
+      url: siteURL,
       inLanguage: 'es',
     },
   ],

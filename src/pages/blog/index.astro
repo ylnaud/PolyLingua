@@ -12,19 +12,21 @@ const dateFormatter = new Intl.DateTimeFormat('es', {
   year: 'numeric',
 });
 
+const siteURL = Astro.site!.origin;
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Blog de PolyLingua',
   description:
     'Trucos de gramática, comparativas con otras apps y consejos para aprender idiomas gratis.',
-  url: 'https://poly-lingua.vercel.app/blog',
+  url: `${siteURL}/blog`,
   mainEntity: {
     '@type': 'Blog',
     blogPost: posts.map((p) => ({
       '@type': 'BlogPosting',
       headline: p.data.title,
-      url: `https://poly-lingua.vercel.app/blog/${p.id}`,
+      url: `${siteURL}/blog/${p.id}`,
       datePublished: p.data.publishDate.toISOString(),
     })),
   },

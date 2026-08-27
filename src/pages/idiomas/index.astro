@@ -9,6 +9,8 @@ const lessonCounts = Object.fromEntries(
   LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length]),
 );
 
+const siteURL = Astro.site!.origin;
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -19,7 +21,7 @@ const structuredData = {
     item: {
       '@type': 'Course',
       name: `Curso de ${l.name}`,
-      url: `https://poly-lingua.vercel.app/idiomas/${l.id}`,
+      url: `${siteURL}/idiomas/${l.id}`,
       inLanguage: l.id,
     },
   })),

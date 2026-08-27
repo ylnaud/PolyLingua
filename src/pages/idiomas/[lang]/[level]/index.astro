@@ -30,7 +30,7 @@ const lessons = allLessons
 const unitMetas = UNITS[`${lang}-${level}`] ?? null;
 const tsaEntry = TSA[`${lang}-${level}`] ?? null;
 
-const siteURL = 'https://poly-lingua.vercel.app';
+const siteURL = Astro.site!.origin;
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [

@@ -5,9 +5,17 @@ title: 'La famiglia: presenta a los tuyos en italiano'
 description: 'Vocabulario italiano de la familia: padre, madre, fratello, sorella y demás parientes, con palabras casi idénticas a las del español, fáciles de memorizar.'
 order: 5
 unit: 2
+situation: 'Familia y amigos'
 grammarTopic: 'Vocabulario: la familia'
 funFact: "'madre/padre' en italiano son 'madre/padre' — prácticamente idénticos al español. De los cinco idiomas del curso, el vocabulario familiar italiano es el que menos esfuerzo de memorización requiere gracias a su cercanía directa con el español."
 minutes: 5
+phrases:
+  - text: 'Ho due fratelli e una sorella.'
+    es: 'Tengo dos hermanos y una hermana.'
+  - text: 'Mia madre si chiama Anna.'
+    es: 'Mi madre se llama Anna.'
+  - text: "Mio fratello ha vent'anni."
+    es: 'Mi hermano tiene veinte años.'
 quiz:
   - question: "¿Cuál es el artículo correcto para 'madre' (madre)?"
     options: ['il madre', 'la madre', 'lo madre']

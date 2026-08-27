@@ -5,9 +5,17 @@ title: 'Family: presenta a los tuyos en inglés'
 description: 'Vocabulario esencial de la familia en inglés — padres, hermanos, abuelos y demás parientes — sin los géneros gramaticales que complican otros idiomas.'
 order: 8
 unit: 3
+situation: 'Familia y amigos'
 grammarTopic: 'Vocabulario: la familia'
 funFact: 'Ventaja del inglés: no tiene género gramatical, así que no hay artículos que memorizar (der/die/das, el/la) para cada palabra de familia. Solo necesitas aprender la palabra — mucho más simple que en los otros idiomas de PolyLingua.'
 minutes: 5
+phrases:
+  - text: 'I have two siblings: a brother and a sister.'
+    es: 'Tengo dos hermanos: un hermano y una hermana.'
+  - text: "My mother's name is Ana."
+    es: 'Mi madre se llama Ana.'
+  - text: 'My brother is 20 years old.'
+    es: 'Mi hermano tiene 20 años.'
 quiz:
   - question: "¿Cómo se dice 'hermanos' (varios, sin especificar género) en inglés?"
     options: ['brothers', 'siblings', 'sisters']

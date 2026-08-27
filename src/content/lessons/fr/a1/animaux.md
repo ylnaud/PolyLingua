@@ -5,9 +5,17 @@ title: 'Les animaux: vocabulario de mascotas y animales en francés'
 description: 'Vocabulario esencial de animales en francés: mascotas como le chien y le chat, animales de granja y salvajes, con frases usando être y avoir.'
 order: 17
 unit: 2
+situation: 'Animales'
 grammarTopic: 'Vocabulario: les animaux'
 funFact: "Los nombres de animales en francés casi siempre traen su artículo pegado en la memoria: le chien, le chat, la vache. Apréndelos siempre junto al artículo desde el primer día — así nunca tendrás que adivinar el género más adelante."
 minutes: 6
+phrases:
+  - text: "J'ai un chat."
+    es: 'Tengo un gato.'
+  - text: 'Le chien est grand.'
+    es: 'El perro es grande.'
+  - text: 'Le lion est fort.'
+    es: 'El león es fuerte.'
 quiz:
   - question: "¿Cuál es el artículo correcto para 'chat' (gato)?"
     options: ['le chat', 'la chat', "l'chat"]

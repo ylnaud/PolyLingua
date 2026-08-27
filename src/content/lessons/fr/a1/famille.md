@@ -5,9 +5,17 @@ title: 'La famille: presenta a los tuyos en francés'
 description: 'Vocabulario esencial de la familia en francés: padres, hermanos y parientes, con artículos incluidos y el género que sigue a la persona real.'
 order: 5
 unit: 2
+situation: 'Familia y amigos'
 grammarTopic: 'Vocabulario: la familia'
 funFact: 'Como en español, las palabras de familia francesa casi siempre siguen el género real de la persona: le père/la mère, le frère/la sœur. Apréndelas en parejas y duplicarás tu vocabulario con el mismo esfuerzo, reforzando también el patrón le/la que ya conoces.'
 minutes: 6
+phrases:
+  - text: "J'ai deux frères et une sœur."
+    es: 'Tengo dos hermanos y una hermana.'
+  - text: "Ma mère s'appelle Anne."
+    es: 'Mi madre se llama Anne.'
+  - text: 'Mon frère a vingt ans.'
+    es: 'Mi hermano tiene veinte años.'
 quiz:
   - question: "¿Cuál es el artículo correcto para 'mère' (madre)?"
     options: ['le mère', 'la mère', 'les mère']

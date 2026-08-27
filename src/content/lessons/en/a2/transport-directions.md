@@ -5,9 +5,19 @@ title: 'Transport & Directions: cómo moverte en inglés'
 description: 'Vocabulario de transporte en inglés (bus, train, subway) y frases para pedir y dar direcciones básicas como "turn left" o "go straight".'
 order: 10
 unit: 2
+situation: 'Transporte y ciudad'
 grammarTopic: 'Vocabulario: transporte y direcciones'
 funFact: '"How do I get to...?" es la pregunta mágica para pedir direcciones en cualquier situación — funciona con lugares, edificios y hasta personas ("How do I get to the station?"). Memoriza esta única frase y ya puedes preguntar cómo llegar a cualquier parte.'
 minutes: 7
+phrases:
+  - text: 'How do I get to the station?'
+    es: '¿Cómo llego a la estación?'
+  - text: 'Turn left at the corner.'
+    es: 'Gira a la izquierda en la esquina.'
+  - text: 'Go straight and turn right.'
+    es: 'Sigue recto y gira a la derecha.'
+  - text: 'The bank is next to the train station.'
+    es: 'El banco está al lado de la estación de tren.'
 quiz:
   - question: "¿Cómo se dice 'metro' (transporte subterráneo) en inglés americano?"
     options: ['bus', 'subway', 'taxi']

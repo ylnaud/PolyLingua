@@ -13,7 +13,7 @@ interface Props {
 
 const { title, description, publishDate, updatedDate, tags = [], path, ogImage } = Astro.props;
 
-const siteURL = 'https://poly-lingua.vercel.app';
+const siteURL = Astro.site!.origin;
 
 const dateFormatter = new Intl.DateTimeFormat('es', {
   day: 'numeric',

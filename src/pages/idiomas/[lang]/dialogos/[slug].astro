@@ -55,7 +55,7 @@ const d = entry.data;
 const langMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 const levelMeta = LEVEL_MAP[d.level as keyof typeof LEVEL_MAP];
 
-const siteURL = 'https://poly-lingua.vercel.app';
+const siteURL = Astro.site!.origin;
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LearningResource',

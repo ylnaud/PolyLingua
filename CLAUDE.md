@@ -78,6 +78,37 @@ No hace falta adaptador @astrojs/vercel para el build. El único
 `vercel.json` del repo existe solo para declarar los headers de seguridad
 (CSP, X-Frame-Options, etc.) — no configura el build ni ningún adapter.
 
+### Migración a Cloudflare Pages (pendiente)
+
+El plan es mudar el hosting a Cloudflare Pages y comprar un dominio
+propio ahí más adelante. El repo ya está preparado para esto — la URL
+del sitio se lee de `Astro.site` (configurado en `astro.config.mjs`,
+`site:`) en vez de estar hardcodeada, así que cambiar de dominio en el
+futuro es editar **una sola línea**. También existe `public/_headers`
+con los mismos headers de seguridad que `vercel.json`, en formato
+Cloudflare Pages, ya listo. Nada de esto cambia el comportamiento
+actual — el sitio sigue sirviéndose en `poly-lingua.vercel.app` hasta
+que se haga el corte real. Pasos manuales cuando se quiera avanzar
+(fuera del repo, requieren acceso a la cuenta de Cloudflare):
+
+1. **Ahora, sin apurar nada**: crear el proyecto en el dashboard de
+   Cloudflare Pages, conectar este repo de GitHub, y configurar
+   **Build command: `npm run build`** (no `astro build` solo — hay que
+   correr el hook `postbuild` que versiona el Service Worker) y
+   **Build output directory: `dist`**. Esto da un subdominio
+   `*.pages.dev` de prueba sin tocar el tráfico real de Vercel.
+2. **Cuando se compre el dominio propio en Cloudflare**: apuntar el DNS
+   al proyecto de Cloudflare Pages, actualizar `site:` en
+   `astro.config.mjs` al dominio nuevo, y actualizar las URLs que
+   siguen apuntando a `poly-lingua.vercel.app` a mano porque reflejan
+   el dominio que está vivo hoy: `public/robots.txt` (línea del
+   Sitemap), `public/llms.txt`, `public/og-image.svg` (texto visible en
+   la imagen) y `src/styles/global.css` (CSS de impresión que muestra
+   la URL junto a links externos).
+3. **Recién después de confirmar que el dominio nuevo anda bien en
+   Cloudflare**: borrar `vercel.json` y desconectar el proyecto de
+   Vercel.
+
 ## Reglas de trabajo
 
 1. Explica cada paso en lenguaje sencillo (desarrollador principiante en Astro).

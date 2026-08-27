@@ -14,13 +14,15 @@ const searchManifest = allLessons.map((l) => {
     href: `/idiomas/${l.data.language}/${l.data.level}/${slug}`,
   };
 });
+const siteURL = Astro.site!.origin;
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  url: 'https://poly-lingua.vercel.app',
+  url: siteURL,
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://poly-lingua.vercel.app/buscar?q={search_term_string}',
+    target: `${siteURL}/buscar?q={search_term_string}`,
     'query-input': 'required name=search_term_string',
   },
 };

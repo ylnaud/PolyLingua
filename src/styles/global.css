@@ -677,7 +677,7 @@ blockquote {
   }
 
   a[href^='/']:not([aria-hidden])::after {
-    content: ' (poly-lingua.vercel.app' attr(href) ')';
+    content: ' (polylingua.thyronemiguelvegasantana-c6e.workers.dev' attr(href) ')';
     font-size: 0.8em;
     color: #555;
   }

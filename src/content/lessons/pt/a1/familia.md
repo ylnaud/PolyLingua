@@ -5,9 +5,19 @@ title: 'A família: vocabulario esencial para hablar de los tuyos'
 description: 'El vocabulario de la familia en portugués: términos de parentesco con los cambios de género que más despistan a un hispanohablante.'
 order: 5
 unit: 2
+situation: 'Familia y amigos'
 grammarTopic: 'Vocabulário da família'
 funFact: "'Os pais' en portugués significa 'los padres' (papá y mamá juntos), no 'los países' — un falso amigo clásico con el español que ha confundido a generaciones de estudiantes hispanohablantes desde el primer día de clase."
 minutes: 6
+phrases:
+  - text: 'Este é o meu pai.'
+    es: 'Este es mi padre.'
+  - text: 'Esta é a minha mãe.'
+    es: 'Esta es mi madre.'
+  - text: 'Eu tenho dois irmãos e uma irmã.'
+    es: 'Tengo dos hermanos y una hermana.'
+  - text: 'Meus avós moram no Porto.'
+    es: 'Mis abuelos viven en Porto.'
 quiz:
   - question: "¿Qué significa 'os pais' en portugués?"
     options: ['los países', 'los padres (papá y mamá)', 'los papás (solo el padre)']

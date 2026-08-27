@@ -5,9 +5,21 @@ title: 'Vocabulario de la casa: habitaciones y muebles en portugués'
 description: 'Aprende el vocabulario esencial de la casa en portugués: habitaciones, muebles básicos y cómo describirlos con frases simples de tem/há.'
 order: 14
 unit: 2
+situation: 'Casa'
 grammarTopic: 'Vocabulário: a casa'
 funFact: "'Tem' es la forma más usada en el habla cotidiana (sobre todo en Brasil) para decir que algo 'hay' en un lugar, mientras que 'há' es más formal y común en Portugal — ambas son correctas, así que puedes usar la que te resulte más natural."
 minutes: 6
+phrases:
+  - text: 'Tem uma mesa na cozinha.'
+    es: 'Hay una mesa en la cocina.'
+    note: "'tem' es la forma coloquial de 'hay', sobre todo en Brasil."
+  - text: 'Há uma cama no quarto.'
+    es: 'Hay una cama en el dormitorio.'
+    note: "'há' es la forma más formal, típica de Portugal."
+  - text: 'Tem um sofá na sala.'
+    es: 'Hay un sofá en el salón.'
+  - text: 'Tem uma mesa e quatro cadeiras na cozinha.'
+    es: 'Hay una mesa y cuatro sillas en la cocina.'
 quiz:
   - question: "¿Cómo se dice 'la cocina' en portugués?"
     options: ['o quarto', 'a cozinha', 'a sala']

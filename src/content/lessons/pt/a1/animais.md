@@ -5,9 +5,19 @@ title: 'Vocabulario de los animales en portugués: mascotas y granja'
 description: 'Aprende el vocabulario de los animales más comunes en portugués: mascotas, animales de granja y salvajes, con frases simples usando ser y ter.'
 order: 15
 unit: 2
+situation: 'Animales'
 grammarTopic: 'Vocabulário: os animais'
 funFact: "En Brasil 'cachorro' es la palabra normal para perro (de cualquier edad), mientras que en Portugal 'cachorro' se usa más para cachorro/cría — allí lo habitual es 'cão'. Si viajas, ambas palabras te van a entender."
 minutes: 6
+phrases:
+  - text: 'Eu tenho um gato.'
+    es: 'Tengo un gato.'
+  - text: 'O cachorro é grande.'
+    es: 'El perro es grande.'
+  - text: 'O gato é pequeno.'
+    es: 'El gato es pequeño.'
+  - text: 'Eu tenho dois cachorros.'
+    es: 'Tengo dos perros.'
 quiz:
   - question: "¿Cómo se dice 'el perro' en portugués de Brasil?"
     options: ['o gato', 'o cachorro', 'o peixe']

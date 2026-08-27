@@ -4,7 +4,7 @@
 
 Sitio estático de aprendizaje de idiomas (alemán, inglés, francés, italiano, portugués)
 con niveles MCER A1–C2. Repositorio: github.com/ylnaud/PolyLingua
-Producción: https://poly-lingua.vercel.app
+Producción: https://polylingua.thyronemiguelvegasantana-c6e.workers.dev
 
 ## Stack — respétalo SIEMPRE
 
@@ -73,41 +73,41 @@ Ejecuta siempre `npm run check && npm run build` antes de dar una tarea por term
 
 ## Despliegue
 
-Push a `main` → Vercel construye y publica automáticamente.
-No hace falta adaptador @astrojs/vercel para el build. El único
-`vercel.json` del repo existe solo para declarar los headers de seguridad
-(CSP, X-Frame-Options, etc.) — no configura el build ni ningún adapter.
+El hosting real hoy es **Cloudflare** (Workers con assets estáticos, vía
+`wrangler.jsonc`, que le dice a Cloudflare que sirva `dist/` como sitio
+estático). Producción vive en:
 
-### Migración a Cloudflare Pages (pendiente)
+**https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/**
 
-El plan es mudar el hosting a Cloudflare Pages y comprar un dominio
-propio ahí más adelante. El repo ya está preparado para esto — la URL
-del sitio se lee de `Astro.site` (configurado en `astro.config.mjs`,
-`site:`) en vez de estar hardcodeada, así que cambiar de dominio en el
-futuro es editar **una sola línea**. También existe `public/_headers`
-con los mismos headers de seguridad que `vercel.json`, en formato
-Cloudflare Pages, ya listo. Nada de esto cambia el comportamiento
-actual — el sitio sigue sirviéndose en `poly-lingua.vercel.app` hasta
-que se haga el corte real. Pasos manuales cuando se quiera avanzar
-(fuera del repo, requieren acceso a la cuenta de Cloudflare):
+Push a `main` construye y publica ahí automáticamente. El build sigue
+siendo `npm run build` (no `astro build` solo — hay que correr el hook
+`postbuild` que versiona el Service Worker); Astro sigue en modo SSG
+puro, sin adapter de servidor. `public/_headers` es hoy la config de
+seguridad activa (Cloudflare la lee directo del build output).
 
-1. **Ahora, sin apurar nada**: crear el proyecto en el dashboard de
-   Cloudflare Pages, conectar este repo de GitHub, y configurar
-   **Build command: `npm run build`** (no `astro build` solo — hay que
-   correr el hook `postbuild` que versiona el Service Worker) y
-   **Build output directory: `dist`**. Esto da un subdominio
-   `*.pages.dev` de prueba sin tocar el tráfico real de Vercel.
-2. **Cuando se compre el dominio propio en Cloudflare**: apuntar el DNS
-   al proyecto de Cloudflare Pages, actualizar `site:` en
-   `astro.config.mjs` al dominio nuevo, y actualizar las URLs que
-   siguen apuntando a `poly-lingua.vercel.app` a mano porque reflejan
-   el dominio que está vivo hoy: `public/robots.txt` (línea del
-   Sitemap), `public/llms.txt`, `public/og-image.svg` (texto visible en
-   la imagen) y `src/styles/global.css` (CSS de impresión que muestra
-   la URL junto a links externos).
-3. **Recién después de confirmar que el dominio nuevo anda bien en
-   Cloudflare**: borrar `vercel.json` y desconectar el proyecto de
-   Vercel.
+Vercel dejó de ser el hosting real. `vercel.json` ya se borró del repo —
+la config de seguridad activa vive solo en `public/_headers` (formato
+Cloudflare). El proyecto de Vercel en sí (dashboard, integración con
+GitHub) queda pendiente de desconectar/borrar a mano — Claude Code no
+tiene acceso de escritura a la cuenta de Vercel.
+
+### Pendiente para terminar el corte a Cloudflare
+
+1. **Dominio propio**: todavía se sirve desde el subdominio
+   `*.workers.dev` de arriba, no desde un dominio comprado. El repo ya
+   está preparado para cuando se compre uno — la URL del sitio se lee
+   de `Astro.site` (`astro.config.mjs`, `site:`) en vez de estar
+   hardcodeada, así que apuntar a un dominio nuevo es editar **una sola
+   línea** ahí. Esa línea, junto con las URLs hardcodeadas que se
+   listaban acá (`public/robots.txt`, `public/llms.txt`,
+   `public/og-image.svg`, `src/styles/global.css`,
+   `src/pages/privacidad.astro`), ya apuntan al `*.workers.dev` de
+   arriba — cuando se compre el dominio propio, hay que volver a tocar
+   esos mismos archivos.
+2. **Vercel**: desconectar la integración con GitHub y/o borrar el
+   proyecto desde el dashboard de Vercel (vercel.com/dashboard →
+   proyecto PolyLingua → Settings → Git / Delete Project). Es un paso
+   manual, fuera del repo.
 
 ## Reglas de trabajo
 

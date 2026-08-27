@@ -5,9 +5,19 @@ title: 'Transportes y direcciones en portugués: cómo moverte por la ciudad'
 description: 'Aprende los medios de transporte y las direcciones básicas en portugués para preguntar y dar indicaciones al moverte por la ciudad.'
 order: 10
 unit: 2
+situation: 'Transporte y ciudad'
 grammarTopic: 'Vocabulário: transportes e direções'
 funFact: "'Ônibus' es la palabra brasileña para autobús, pero en Portugal se dice 'autocarro'; lo mismo pasa con 'trem' (BR) y 'comboio' (PT) — conocer ambas te evita confusiones al viajar por el mundo lusófono."
 minutes: 7
+phrases:
+  - text: 'Como chego à estação?'
+    es: '¿Cómo llego a la estación?'
+  - text: 'Vire à esquerda na esquina.'
+    es: 'Gira a la izquierda en la esquina.'
+  - text: 'Eu vou de ônibus para o trabalho.'
+    es: 'Voy en autobús al trabajo.'
+  - text: 'O metrô fica ao lado do banco.'
+    es: 'El metro está al lado del banco.'
 quiz:
   - question: "¿Cómo se dice 'el autobús' en portugués de Brasil?"
     options: ['o comboio', 'o ônibus', 'o táxi']

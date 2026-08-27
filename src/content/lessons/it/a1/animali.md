@@ -5,9 +5,17 @@ title: 'Los animales en italiano: mascotas y granja'
 description: "Vocabulario italiano de animales: il cane, il gatto, la mucca, il leone y más, con frases simples usando essere y avere para describirlos."
 order: 15
 unit: 2
+situation: 'Animales'
 grammarTopic: 'Vocabolario: gli animali'
 funFact: "'Il cane' y 'il gatto' se parecen poco al español, pero 'il leone' (león) y 'l'elefante' (elefante) sí — cuando dudes con un animal, prueba primero la palabra española con terminación italiana, muchas veces funciona."
 minutes: 6
+phrases:
+  - text: 'Il cane è grande.'
+    es: 'El perro es grande.'
+  - text: 'Ho un gatto.'
+    es: 'Tengo un gato.'
+  - text: 'Ho un gatto piccolo.'
+    es: 'Tengo un gato pequeño.'
 quiz:
   - question: "¿Cuál es el artículo correcto para 'gatto' (gato)?"
     options: ['il gatto', 'la gatto', "l'gatto"]

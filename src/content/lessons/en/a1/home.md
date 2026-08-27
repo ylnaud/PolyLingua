@@ -5,9 +5,18 @@ title: 'Home: la casa y sus habitaciones en inglés'
 description: 'Vocabulario esencial de la casa en inglés — habitaciones y muebles básicos — con frases simples usando "there is/there are" para describir espacios.'
 order: 9
 unit: 3
+situation: 'Casa'
 grammarTopic: 'Vocabulario: la casa'
 funFact: '"There is" (singular) y "there are" (plural) son las frases más útiles para describir cualquier lugar en inglés: "There is a table" / "There are two chairs". Domínalas aquí y las usarás toda tu vida para describir habitaciones, ciudades y hasta problemas ("There is a problem").'
 minutes: 6
+phrases:
+  - text: 'There is a table in the kitchen.'
+    es: 'Hay una mesa en la cocina.'
+    note: "'there is' es singular; 'there are' es plural."
+  - text: 'There are two chairs in the living room.'
+    es: 'Hay dos sillas en la sala de estar.'
+  - text: 'There is a bed in the bedroom.'
+    es: 'Hay una cama en el dormitorio.'
 quiz:
   - question: "¿Cómo se dice 'sala de estar' en inglés?"
     options: ['bedroom', 'living room', 'bathroom']

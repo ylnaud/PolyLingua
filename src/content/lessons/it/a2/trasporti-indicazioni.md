@@ -5,9 +5,19 @@ title: 'Transporte e indicaciones en italiano'
 description: "Aprende a pedir y dar indicaciones en italiano: l'autobus, il treno, girare a sinistra/a destra, dritto y frases como 'Come arrivo alla stazione?'."
 order: 10
 unit: 2
+situation: 'Transporte y ciudad'
 grammarTopic: 'Vocabolario: i trasporti e le indicazioni'
 funFact: "'Dritto' (recto/derecho) es una de esas palabras que confunde por sonar como 'derecho' en español, pero significa 'todo recto' — no confundas 'vai dritto' (sigue recto) con 'a destra' (a la derecha)."
 minutes: 7
+phrases:
+  - text: 'Come arrivo alla stazione?'
+    es: '¿Cómo llego a la estación?'
+  - text: "Giri a sinistra all'angolo."
+    es: 'Gire a la izquierda en la esquina.'
+  - text: "Prendo l'autobus per andare in centro."
+    es: 'Tomo el autobús para ir al centro.'
+  - text: 'Vai dritto e poi a destra.'
+    es: 'Sigue recto y luego a la derecha.'
 quiz:
   - question: "¿Cuál es el artículo correcto para 'autobus' (autobús)?"
     options: ["l'autobus", 'il autobus', 'la autobus']

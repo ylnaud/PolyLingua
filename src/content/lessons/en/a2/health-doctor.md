@@ -5,9 +5,19 @@ title: 'Health & Doctor: síntomas y frases para el médico'
 description: 'Vocabulario de salud en inglés — partes del cuerpo, síntomas comunes como headache y fever, y frases prácticas para explicarle al médico qué te pasa.'
 order: 9
 unit: 2
+situation: 'Salud y cuerpo'
 grammarTopic: 'Vocabulario: salud y el médico'
 funFact: '"hurt" es un verbo irregular pero muy fácil: es igual en presente y pasado ("My throat hurts" / "My throat hurt yesterday"). Aprenderlo así desde ahora te ahorra memorizar una forma extra.'
 minutes: 7
+phrases:
+  - text: 'I have a headache.'
+    es: 'Tengo dolor de cabeza.'
+  - text: 'My throat hurts.'
+    es: 'Me duele la garganta.'
+  - text: 'I have a fever and a cough.'
+    es: 'Tengo fiebre y tos.'
+  - text: 'You should take this medicine.'
+    es: 'Deberías tomar esta medicina.'
 quiz:
   - question: "¿Cómo se dice 'dolor de cabeza' en inglés?"
     options: ['headache', 'stomachache', 'toothache']

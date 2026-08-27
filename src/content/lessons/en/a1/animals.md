@@ -5,9 +5,17 @@ title: 'Animals: los animales en inglés'
 description: 'Vocabulario de animales domésticos y salvajes en inglés — dog, cat, cow, lion — con frases simples usando "to be" y "have got".'
 order: 10
 unit: 3
+situation: 'Animales'
 grammarTopic: 'Vocabulario: los animales'
 funFact: '"have got" es la forma británica de decir "tener" (igual de común que "have") — "I have got a cat" y "I have a cat" significan exactamente lo mismo. Verás ambas formas en inglés real, así que reconocer "have got" desde ahora te evita confusiones más adelante.'
 minutes: 6
+phrases:
+  - text: 'The dog is big.'
+    es: 'El perro es grande.'
+  - text: 'I have got a cat.'
+    es: 'Tengo un gato.'
+  - text: 'Lions are wild animals.'
+    es: 'Los leones son animales salvajes.'
 quiz:
   - question: "¿Cómo se dice 'perro' en inglés?"
     options: ['cat', 'dog', 'bird']

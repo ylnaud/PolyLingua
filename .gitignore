@@ -8,6 +8,10 @@ node_modules/
 # Env
 .env
 .env.production
+.dev.vars
+
+# Cloudflare / Wrangler
+.wrangler/
 
 # Logs
 npm-debug.log*

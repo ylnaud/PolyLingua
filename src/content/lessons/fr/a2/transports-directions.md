@@ -5,9 +5,19 @@ title: 'Les transports et les directions: muévete en francés'
 description: 'Vocabulario de medios de transporte y direcciones en francés: le bus, le métro, tourner à gauche, tout droit, para pedir y dar indicaciones en la calle.'
 order: 10
 unit: 2
+situation: 'Transporte y ciudad'
 grammarTopic: 'Vocabulario: les transports et les directions'
 funFact: "'Tout droit' significa 'todo recto', no 'todo derecho' como en español — y no confundas 'à droite' (a la derecha) con 'tout droit' (recto): comparten la palabra 'droit', pero una es dirección y la otra es rumbo fijo hacia adelante."
 minutes: 7
+phrases:
+  - text: 'Comment aller à la gare?'
+    es: '¿Cómo llego a la estación?'
+  - text: 'Tournez à gauche au coin.'
+    es: 'Gire a la izquierda en la esquina.'
+  - text: 'Continuez tout droit.'
+    es: 'Siga todo recto.'
+  - text: 'La banque est en face de la gare.'
+    es: 'El banco está enfrente de la estación.'
 quiz:
   - question: "¿Cómo preguntarías 'Cómo llegar a la estación?'"
     options: ['Comment aller à la gare?', 'Comment aller la gare?', 'Comment à la gare?']

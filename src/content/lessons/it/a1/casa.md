@@ -5,9 +5,19 @@ title: 'La casa: habitaciones y muebles en italiano'
 description: "Vocabulario italiano de la casa: la cucina, la camera da letto, il bagno y muebles básicos, con frases con \"c'è/ci sono\" para describir tu hogar."
 order: 14
 unit: 2
+situation: 'Casa'
 grammarTopic: 'Vocabulario: la casa'
 funFact: "\"C'è\" (hay, singular) y \"ci sono\" (hay, plural) son las dos palabras más útiles para describir cualquier casa — memorízalas como un par, igual que \"hay\" en español no cambia entre singular y plural pero en italiano sí."
 minutes: 6
+phrases:
+  - text: "C'è un tavolo in cucina."
+    es: 'Hay una mesa en la cocina.'
+    note: "\"c'è\" es para un solo elemento."
+  - text: 'Ci sono due sedie in soggiorno.'
+    es: 'Hay dos sillas en el salón.'
+    note: '"ci sono" es para varios elementos.'
+  - text: "C'è un divano in soggiorno."
+    es: 'Hay un sofá en el salón.'
 quiz:
   - question: "¿Cuál es el artículo correcto para 'cucina' (cocina)?"
     options: ['il cucina', 'la cucina', 'lo cucina']

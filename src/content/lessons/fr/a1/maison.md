@@ -5,9 +5,18 @@ title: 'La maison: aprende las habitaciones y los muebles en francés'
 description: "Vocabulario esencial de la casa en francés: habitaciones como la cuisine y la chambre, muebles básicos, y cómo usar 'il y a' para describir tu hogar."
 order: 16
 unit: 2
+situation: 'Casa'
 grammarTopic: 'Vocabulario: la maison'
 funFact: "'Il y a' (hay) no cambia nunca, sin importar si hablas de una cosa o de diez — 'il y a une table' y 'il y a trois chaises' usan la misma forma. Es mucho más simple que el español, donde 'hay' tampoco cambia, así que este es un vocabulario gratis para ti."
 minutes: 6
+phrases:
+  - text: 'Il y a une table dans la cuisine.'
+    es: 'Hay una mesa en la cocina.'
+    note: "'il y a' es invariable: sirve para singular y plural."
+  - text: 'Il y a un lit dans la chambre.'
+    es: 'Hay una cama en el dormitorio.'
+  - text: 'Il y a une chaise dans le salon.'
+    es: 'Hay una silla en el salón.'
 quiz:
   - question: "¿Dónde preparas la comida en una casa francesa?"
     options: ['dans la chambre', 'dans la cuisine', 'dans le salon']

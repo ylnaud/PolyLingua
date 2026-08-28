@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import LanguageCard from '../../components/LanguageCard.astro';
 import { LANGUAGES } from '../../data/languages';
 import { ACTIVE_USER_LANGUAGES } from '../../data/userLanguages';
+import { parseLessonId } from '../../lib/lessonPath';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -13,7 +14,11 @@ const { userLang } = Astro.params;
 
 const lessons = await getCollection('lessons');
 const lessonCounts = Object.fromEntries(
-  LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length]),
+  LANGUAGES.map((l) => [
+    l.id,
+    lessons.filter((les) => les.data.language === l.id && parseLessonId(les.id).userLang === userLang)
+      .length,
+  ]),
 );
 
 const siteURL = Astro.site!.origin;

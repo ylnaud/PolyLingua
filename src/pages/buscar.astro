@@ -2,9 +2,12 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { parseLessonId } from '../lib/lessonPath';
 
 const userLang = ACTIVE_USER_LANGUAGES[0].id;
-const allLessons = await getCollection('lessons');
+const allLessons = (await getCollection('lessons')).filter(
+  (l) => parseLessonId(l.id).userLang === userLang,
+);
 const searchManifest = allLessons.map((l) => {
   const slug = l.id.split('/').pop();
   return {

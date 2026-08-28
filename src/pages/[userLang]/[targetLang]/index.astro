@@ -24,17 +24,19 @@ const languageMeta = LANGUAGE_MAP[targetLang as keyof typeof LANGUAGE_MAP];
 const tsaEntry = TSA_LANG[targetLang as string] ?? null;
 
 const allLessons = await getCollection('lessons');
+const sameSilo = (l: (typeof allLessons)[number], lvlId: string) =>
+  l.data.language === targetLang &&
+  l.data.level === lvlId &&
+  parseLessonId(l.id).userLang === userLang;
+
 const lessonCounts = Object.fromEntries(
-  LEVELS.map((lvl) => [
-    lvl.id,
-    allLessons.filter((l) => l.data.language === targetLang && l.data.level === lvl.id).length,
-  ]),
+  LEVELS.map((lvl) => [lvl.id, allLessons.filter((l) => sameSilo(l, lvl.id)).length]),
 );
 
 const levelLessonSlugs: Record<string, string[]> = {};
 for (const lvl of LEVELS) {
   levelLessonSlugs[lvl.id] = allLessons
-    .filter((l) => l.data.language === targetLang && l.data.level === lvl.id)
+    .filter((l) => sameSilo(l, lvl.id))
     .sort((a, b) => a.data.order - b.data.order)
     .map((l) => l.id.split('/').pop()!);
 }

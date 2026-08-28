@@ -4,14 +4,18 @@ import LanguageCard from '../components/LanguageCard.astro';
 import { LANGUAGES } from '../data/languages';
 import { getCollection } from 'astro:content';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { parseLessonId } from '../lib/lessonPath';
 
-const lessons = await getCollection('lessons');
+const defaultUserLang = ACTIVE_USER_LANGUAGES[0].id;
+const lessons = (await getCollection('lessons')).filter(
+  (l) => parseLessonId(l.id).userLang === defaultUserLang,
+);
 const lessonCounts = Object.fromEntries(
   LANGUAGES.map((l) => [l.id, lessons.filter((les) => les.data.language === l.id).length]),
 );
 
 const siteURL = Astro.site!.origin;
-const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
+const defaultUserLangHref = `/${defaultUserLang}`;
 
 const faqs = [
   {

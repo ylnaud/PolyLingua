@@ -25,7 +25,12 @@ const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
 
 const allLessons = await getCollection('lessons');
 const lessons = allLessons
-  .filter((l) => l.data.language === targetLang && l.data.level === level)
+  .filter(
+    (l) =>
+      l.data.language === targetLang &&
+      l.data.level === level &&
+      parseLessonId(l.id).userLang === userLang,
+  )
   .sort((a, b) => a.data.order - b.data.order);
 
 const PER_LESSON_CHOICE = 2;

@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { LANGUAGES } from '../data/languages';
 import { LEVELS } from '../data/levels';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { parseLessonId } from '../lib/lessonPath';
 
 interface Badge {
   id: string;
@@ -92,9 +94,17 @@ const allLessons = await getCollection('lessons');
 const topicManifest = Object.fromEntries(allLessons.map((l) => [l.id, l.data.grammarTopic]));
 
 // Total de lecciones por idioma, para el panel "Tu progreso por idioma" —
-// mismo cálculo que usa index.astro para las tarjetas de idioma en la home.
+// mismo cálculo que usa index.astro para las tarjetas de idioma en la home,
+// scopeado al userLang activo (con más de un userLang enseñando el mismo
+// idioma objetivo, contar sin filtrar duplicaría el total).
+const defaultUserLang = ACTIVE_USER_LANGUAGES[0].id;
 const lessonCounts = Object.fromEntries(
-  LANGUAGES.map((l) => [l.id, allLessons.filter((les) => les.data.language === l.id).length]),
+  LANGUAGES.map((l) => [
+    l.id,
+    allLessons.filter(
+      (les) => les.data.language === l.id && parseLessonId(les.id).userLang === defaultUserLang,
+    ).length,
+  ]),
 );
 ---
 

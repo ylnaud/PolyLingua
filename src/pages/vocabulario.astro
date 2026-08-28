@@ -30,34 +30,3 @@ import { LANGUAGES } from '../data/languages';
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  import { read } from '../lib/storage';
-
-  interface VocabEntry {
-    term: string;
-    translation: string;
-    lang: string;
-    lessonId: string;
-    learnedAt: string;
-  }
-
-  let latestLang = '';
-  let latestDate = '';
-  try {
-    const learned: Record<string, VocabEntry> = JSON.parse(
-      read('polylingua-vocab-learned') ?? '{}',
-    );
-    for (const entry of Object.values(learned)) {
-      if (entry.learnedAt > latestDate) {
-        latestDate = entry.learnedAt;
-        latestLang = entry.lang;
-      }
-    }
-  } catch {
-    /* localStorage unavailable */
-  }
-  if (latestLang) {
-    window.location.replace(`/idiomas/${latestLang}/vocabulario`);
-  }
-</script>

@@ -92,7 +92,7 @@ async function runSmoke({ port, out }) {
   const consoleErrors = [];
   page.on('pageerror', (err) => consoleErrors.push(String(err)));
 
-  await page.goto(`${baseURL}/idiomas/de/a1/articulos-der-die-das/`, { waitUntil: 'networkidle' });
+  await page.goto(`${baseURL}/es/de/a1/articulos-der-die-das/`, { waitUntil: 'networkidle' });
 
   for (let i = 0; i < 30; i++) {
     const visibleLocator = page.locator('[data-practice-item]:not([hidden])');

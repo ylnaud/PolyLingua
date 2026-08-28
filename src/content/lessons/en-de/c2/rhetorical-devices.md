@@ -15,14 +15,14 @@ quiz:
       - 'A question that expects no answer'
       - 'A word that imitates a sound'
     answerIndex: 0
-    explanation: 'Anaphora repeats an opening phrase across consecutive clauses for building emphasis — a famous German example is Martin Luther King\'s "Ich habe einen Traum" repeated at the start of successive sentences in the German translation of his speech.'
+    explanation: "Anaphora repeats an opening phrase across consecutive clauses for building emphasis — a famous German example is Martin Luther King's \"Ich habe einen Traum\" repeated at the start of successive sentences in the German translation of his speech."
   - question: "A speaker asks 'Wollen wir wirklich tatenlos zusehen?' without expecting a literal answer. What device is this?"
     options:
       - 'A rhetorical question (rhetorische Frage), used to make a point rather than to genuinely request information'
       - 'A direct command'
       - 'An example of onomatopoeia'
     answerIndex: 0
-    explanation: '"Do we really want to just stand by and do nothing?" is a rhetorische Frage — its purpose is to lead the audience toward an obvious conclusion (no, we don\'t), not to elicit a genuine answer.'
+    explanation: "\"Do we really want to just stand by and do nothing?\" is a rhetorische Frage — its purpose is to lead the audience toward an obvious conclusion (no, we don't), not to elicit a genuine answer."
   - question: "What does the 'Dreierfigur' (rule of three) involve, and why is it persuasive?"
     options:
       - 'Repeating an argument exactly three times in a row'

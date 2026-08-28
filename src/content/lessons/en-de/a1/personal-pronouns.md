@@ -120,7 +120,7 @@ attached to nearly every verb for the rest of your German studies.
 | ----------- | --------------- | ------------------------------------------ |
 | ich         | I               | always lowercase                          |
 | du          | you (informal)  | one friend, child, family member          |
-| er / sie / es | he / she / it | matches the noun\'s grammatical gender     |
+| er / sie / es | he / she / it | matches the noun's grammatical gender     |
 | wir         | we               | first-person plural                        |
 | ihr         | you all (informal) | more than one friend                   |
 | sie / Sie   | they / you (formal) | lowercase = they, capitalized = formal you |

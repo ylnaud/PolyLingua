@@ -934,15 +934,76 @@ const ENGLISH_MODALS_COND: MatrixWord[] = [
   },
 ];
 
-const ENGLISH_ACTIONS: MatrixWord[] = [
-  { word: 'learn', es: 'aprender' },
-  { word: 'speak', es: 'hablar' },
-  { word: 'read', es: 'leer' },
-  { word: 'study', es: 'estudiar' },
-  { word: 'travel', es: 'viajar' },
-  { word: 'buy', es: 'comprar' },
-  { word: 'work', es: 'trabajar' },
-  { word: 'live', es: 'vivir' },
+// Bancos A1/A2/B1 propios (uno por nivel, ya no comparten vocabulario): los
+// verbos son siempre "genéricamente compatibles" para que TODA combinación
+// verbo×objeto tenga sentido sin filtro adicional — mismo principio que
+// evita el bug de "viajar el alemán". Los modales en inglés ya llevan
+// "to"/"would" horneado (ENGLISH_MODALS/_PAST/_COND), así que las acciones
+// acá son siempre infinitivo pelado y nunca "want/need/have/like/allowed"
+// (esos ya son el modal).
+const ENGLISH_A1_VERBS: MatrixWord[] = [
+  { word: 'order', es: 'pedir' },
+  { word: 'try', es: 'probar' },
+  { word: 'bring', es: 'traer' },
+];
+// at-the-restaurant.md
+const ENGLISH_A1_OBJECTS: MatrixWord[] = [
+  { word: 'an appetizer', es: 'una entrada' },
+  { word: 'the main course', es: 'el plato principal' },
+  { word: 'a dessert', es: 'un postre' },
+  { word: 'some sparkling water', es: 'agua con gas' },
+];
+
+const ENGLISH_A2_VERBS: MatrixWord[] = [
+  { word: 'use', es: 'usar' },
+  { word: 'look for', es: 'buscar' },
+  { word: 'find', es: 'encontrar' },
+];
+// money.md
+const ENGLISH_A2_OBJECTS: MatrixWord[] = [
+  { word: 'cash', es: 'efectivo' },
+  { word: 'an ATM', es: 'un cajero automático' },
+  { word: 'a card', es: 'una tarjeta' },
+];
+
+// A2 · destino con verbo de movimiento (transport-directions.md). El inglés
+// no declina la preposición como los otros 4 idiomas (sin contracciones),
+// así que "to" queda horneado en el OBJETO, no en la acción — la acción
+// tiene que quedar pelada para no duplicar el "to" que ya trae el modal:
+// "wanted to" + "get" + "to the station" = "wanted to get to the station".
+const ENGLISH_MOTION_VERBS: MatrixWord[] = [
+  { word: 'go', es: 'ir' },
+  { word: 'get', es: 'llegar' },
+  { word: 'walk', es: 'caminar' },
+];
+const ENGLISH_DIRECTIONAL_OBJECTS: MatrixWord[] = [
+  { word: 'to the station', es: 'a la estación' },
+  { word: 'to the bank', es: 'al banco' },
+  { word: 'to the market', es: 'al mercado' },
+  { word: 'to school', es: 'a la escuela' },
+];
+
+const ENGLISH_B1_VERBS: MatrixWord[] = [
+  { word: 'schedule', es: 'agendar' },
+  { word: 'attend', es: 'asistir a' },
+];
+// work-travel.md
+const ENGLISH_B1_OBJECTS: MatrixWord[] = [
+  { word: 'meeting', es: 'reunión' },
+  { word: 'job interview', es: 'entrevista de trabajo' },
+];
+// El inglés no declina adjetivos por género/caso (a diferencia de los otros
+// 4 idiomas) — el desafío real y análogo es el comparativo
+// (comparatives-superlatives.md), cuya FORMA depende del propio adjetivo
+// elegido (regular -er / "more" / irregular), no del objeto — por eso no
+// lleva agreesWith. El artículo "a/an" va horneado en el adjetivo (no en el
+// objeto, que queda pelado) para que "a better"/"an easier" concuerden con
+// el sonido inicial del propio adjetivo.
+const ENGLISH_B1_ADJECTIVES: MatrixWord[] = [
+  { word: 'a better', es: 'una mejor' },
+  { word: 'a worse', es: 'una peor' },
+  { word: 'a more difficult', es: 'una más difícil' },
+  { word: 'an easier', es: 'una más fácil' },
 ];
 
 const ENGLISH_OBJECTS: MatrixWord[] = [
@@ -1214,15 +1275,74 @@ const FRENCH_MODALS_COND: MatrixWord[] = [
   },
 ];
 
-const FRENCH_ACTIONS: MatrixWord[] = [
-  { word: 'apprendre', es: 'aprender' },
-  { word: 'parler', es: 'hablar' },
-  { word: 'lire', es: 'leer' },
-  { word: 'étudier', es: 'estudiar' },
-  { word: 'voyager', es: 'viajar' },
+// Bancos A1/A2/B1 propios (uno por nivel, ya no comparten vocabulario): los
+// verbos son siempre "genéricamente compatibles" (tener/comprar/buscar-
+// estilo) para que TODA combinación verbo×objeto tenga sentido sin filtro
+// adicional — mismo principio que evita el bug de "viajar el alemán".
+const FRENCH_A1_VERBS: MatrixWord[] = [
+  { word: 'avoir', es: 'tener' },
   { word: 'acheter', es: 'comprar' },
-  { word: 'travailler', es: 'trabajar' },
-  { word: 'vivre', es: 'vivir' },
+  { word: 'chercher', es: 'buscar' },
+];
+// articles-genre.md (primera lección real de fr, unit 1)
+const FRENCH_A1_OBJECTS: MatrixWord[] = [
+  { word: 'un livre', es: 'un libro' },
+  { word: 'du lait', es: 'leche' },
+  { word: 'une table', es: 'una mesa' },
+  { word: 'une voiture', es: 'un auto' },
+];
+
+const FRENCH_A2_VERBS: MatrixWord[] = [
+  { word: 'avoir', es: 'tener' },
+  { word: 'acheter', es: 'comprar' },
+  { word: 'goûter', es: 'probar' },
+];
+// nourriture.md
+const FRENCH_A2_OBJECTS: MatrixWord[] = [
+  { word: 'du pain', es: 'pan' },
+  { word: 'du fromage', es: 'queso' },
+  { word: 'une pomme', es: 'una manzana' },
+  { word: 'de la soupe', es: 'sopa' },
+];
+
+// A2 · destino con verbo de movimiento (transports-directions.md). Verbos de
+// movimiento son compatibles con cualquier frase direccional, así que no
+// hace falta filtro de combinaciones. Las 4 preposiciones cubren las 3
+// contracciones reales del francés: au (à+le), à la (femenino, sin
+// contraer), à l' (elisión ante vocal), à la (otra vez femenino).
+const FRENCH_MOTION_VERBS: MatrixWord[] = [
+  { word: 'aller', es: 'ir' },
+  { word: 'arriver', es: 'llegar' },
+  { word: 'retourner', es: 'volver' },
+];
+const FRENCH_DIRECTIONAL_OBJECTS: MatrixWord[] = [
+  { word: 'au marché', es: 'al mercado' },
+  { word: 'à la gare', es: 'a la estación' },
+  { word: "à l'école", es: 'a la escuela' },
+  { word: 'à la banque', es: 'al banco' },
+];
+
+const FRENCH_B1_VERBS: MatrixWord[] = [
+  { word: 'avoir', es: 'tener' },
+  { word: 'chercher', es: 'buscar' },
+];
+// travail.md — sin "contrat": ya se usa en FRENCH_PASSIVE_NOUNS (B2)
+const FRENCH_B1_OBJECTS: MatrixWord[] = [
+  { word: 'salaire', es: 'salario' }, // le (masc.)
+  { word: 'bureau', es: 'oficina' }, // le (masc.) — ojo: "oficina" es fem. en español
+  { word: 'candidature', es: 'solicitud' }, // la (fem.)
+  { word: 'réunion', es: 'reunión' }, // la (fem.)
+];
+// place-adjectifs.md: adjetivo antes del sustantivo, con el artículo
+// horneado en la MISMA forma ("un bon" no "bon un") — agreesWith:'object'
+// elige la forma según qué objeto se sorteó, declinación real por género.
+const FRENCH_B1_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'bon',
+    es: 'bueno/a',
+    forms: ['un bon', 'un bon', 'une bonne', 'une bonne'],
+    esForms: ['un buen', 'una buena', 'una buena', 'una buena'],
+  },
 ];
 
 const FRENCH_OBJECTS: MatrixWord[] = [
@@ -1562,15 +1682,78 @@ const ITALIAN_MODALS_COND: MatrixWord[] = [
   },
 ];
 
-const ITALIAN_ACTIONS: MatrixWord[] = [
-  { word: 'imparare', es: 'aprender' },
-  { word: 'parlare', es: 'hablar' },
-  { word: 'leggere', es: 'leer' },
-  { word: 'studiare', es: 'estudiar' },
-  { word: 'viaggiare', es: 'viajar' },
+// Bancos A1/A2/B1 propios (uno por nivel, ya no comparten vocabulario): los
+// verbos son siempre "genéricamente compatibles" (tener/comprar/buscar-
+// estilo) para que TODA combinación verbo×objeto tenga sentido sin filtro
+// adicional — mismo principio que evita el bug de "viajar el alemán".
+const ITALIAN_A1_VERBS: MatrixWord[] = [
+  { word: 'avere', es: 'tener' },
   { word: 'comprare', es: 'comprar' },
-  { word: 'lavorare', es: 'trabajar' },
-  { word: 'vivere', es: 'vivir' },
+  { word: 'cercare', es: 'buscar' },
+];
+// articoli-genere.md (primera lección real de it, unit 1)
+const ITALIAN_A1_OBJECTS: MatrixWord[] = [
+  { word: 'un libro', es: 'un libro' },
+  { word: 'uno zaino', es: 'una mochila' },
+  { word: 'una casa', es: 'una casa' },
+  { word: 'una penna', es: 'una lapicera' },
+];
+
+const ITALIAN_A2_VERBS: MatrixWord[] = [
+  { word: 'avere', es: 'tener' },
+  { word: 'comprare', es: 'comprar' },
+  { word: 'assaggiare', es: 'probar' },
+];
+// cibo.md
+const ITALIAN_A2_OBJECTS: MatrixWord[] = [
+  { word: 'del pane', es: 'pan' },
+  { word: 'del formaggio', es: 'queso' },
+  { word: 'una mela', es: 'una manzana' },
+  { word: 'della zuppa', es: 'sopa' },
+];
+
+// A2 · destino con verbo de movimiento (trasporti-indicazioni.md). Verbos de
+// movimiento son compatibles con cualquier frase direccional, así que no
+// hace falta filtro de combinaciones. Las 4 preposiciones cubren las 3
+// contracciones reales del italiano: al (a+il), alla (a+la, dos veces),
+// all' (a+l', elisión ante vocal).
+const ITALIAN_MOTION_VERBS: MatrixWord[] = [
+  { word: 'andare', es: 'ir' },
+  { word: 'arrivare', es: 'llegar' },
+  { word: 'tornare', es: 'volver' },
+];
+const ITALIAN_DIRECTIONAL_OBJECTS: MatrixWord[] = [
+  { word: 'al mercato', es: 'al mercado' },
+  { word: 'alla stazione', es: 'a la estación' },
+  { word: "all'aeroporto", es: 'al aeropuerto' },
+  { word: 'alla banca', es: 'al banco' },
+];
+
+const ITALIAN_B1_VERBS: MatrixWord[] = [
+  { word: 'avere', es: 'tener' },
+  { word: 'cercare', es: 'buscar' },
+];
+// lavoro.md — sin "contratto": ya se usa en ITALIAN_PASSIVE_NOUNS (B2)
+const ITALIAN_B1_OBJECTS: MatrixWord[] = [
+  { word: 'stipendio', es: 'salario' }, // lo (masc., s+consonante)
+  { word: 'ufficio', es: 'oficina' }, // l' (masc.) — ojo: "oficina" es fem. en español
+  { word: 'candidatura', es: 'solicitud' }, // la (fem.)
+  { word: 'riunione', es: 'reunión' }, // la (fem.)
+];
+// posizione-aggettivi.md: adjetivo antes del sustantivo. Se usa "ottimo" en
+// vez de "buono" a propósito — "buono" tiene una elisión irregular ante
+// s+consonante/z/gn/ps/x (como el artículo "uno") que puede dar una forma
+// incorrecta si no se verifica con cuidado letra por letra; "ottimo/ottima"
+// es -o/-a regular y solo interactúa con la elisión estándar de "un/una" →
+// "un'" ante vocal, así que la forma escrita a mano es segura.
+// agreesWith:'object' elige la forma según qué objeto se sorteó.
+const ITALIAN_B1_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'ottimo',
+    es: 'excelente',
+    forms: ['un ottimo', 'un ottimo', "un'ottima", "un'ottima"],
+    esForms: ['un excelente', 'una excelente', 'una excelente', 'una excelente'],
+  },
 ];
 
 const ITALIAN_OBJECTS: MatrixWord[] = [
@@ -1882,15 +2065,76 @@ const PORTUGUESE_MODALS_COND: MatrixWord[] = [
   },
 ];
 
-const PORTUGUESE_ACTIONS: MatrixWord[] = [
-  { word: 'aprender', es: 'aprender' },
-  { word: 'falar', es: 'hablar' },
-  { word: 'ler', es: 'leer' },
-  { word: 'estudar', es: 'estudiar' },
-  { word: 'viajar', es: 'viajar' },
+// Bancos A1/A2/B1 propios (uno por nivel, ya no comparten vocabulario): los
+// verbos son siempre "genéricamente compatibles" (tener/comprar/buscar-
+// estilo) para que TODA combinación verbo×objeto tenga sentido sin filtro
+// adicional — mismo principio que evita el bug de "viajar el alemán".
+const PORTUGUESE_A1_VERBS: MatrixWord[] = [
+  { word: 'ter', es: 'tener' },
   { word: 'comprar', es: 'comprar' },
-  { word: 'trabalhar', es: 'trabajar' },
-  { word: 'viver', es: 'vivir' },
+  { word: 'procurar', es: 'buscar' },
+];
+// artigos-genero.md (primera lección real de pt, unit 1)
+const PORTUGUESE_A1_OBJECTS: MatrixWord[] = [
+  { word: 'um livro', es: 'un libro' },
+  { word: 'um carro', es: 'un auto' },
+  { word: 'uma casa', es: 'una casa' },
+  { word: 'uma mesa', es: 'una mesa' },
+];
+
+const PORTUGUESE_A2_VERBS: MatrixWord[] = [
+  { word: 'ter', es: 'tener' },
+  { word: 'comprar', es: 'comprar' },
+  { word: 'provar', es: 'probar' },
+];
+// comida.md — sustantivos masivos/genéricos, el portugués los usa sin
+// artículo como objeto directo ("comprar pão"), a diferencia del francés/
+// italiano que necesitan partitivo — mismo patrón que essen-trinken.md en
+// alemán (Brot/Käse sin artículo).
+const PORTUGUESE_A2_OBJECTS: MatrixWord[] = [
+  { word: 'pão', es: 'pan' },
+  { word: 'queijo', es: 'queso' },
+  { word: 'fruta', es: 'fruta' },
+  { word: 'carne', es: 'carne' },
+];
+
+// A2 · destino con verbo de movimiento (transportes-direcoes.md). Verbos de
+// movimiento son compatibles con cualquier frase direccional, así que no
+// hace falta filtro de combinaciones. Las 4 preposiciones cubren las 2
+// contracciones reales del portugués: à (a+a, femenino) y ao (a+o, masc.).
+const PORTUGUESE_MOTION_VERBS: MatrixWord[] = [
+  { word: 'ir', es: 'ir' },
+  { word: 'chegar', es: 'llegar' },
+  { word: 'voltar', es: 'volver' },
+];
+const PORTUGUESE_DIRECTIONAL_OBJECTS: MatrixWord[] = [
+  { word: 'à estação', es: 'a la estación' },
+  { word: 'ao banco', es: 'al banco' },
+  { word: 'ao mercado', es: 'al mercado' },
+  { word: 'à escola', es: 'a la escuela' },
+];
+
+const PORTUGUESE_B1_VERBS: MatrixWord[] = [
+  { word: 'ter', es: 'tener' },
+  { word: 'procurar', es: 'buscar' },
+];
+// trabalho.md
+const PORTUGUESE_B1_OBJECTS: MatrixWord[] = [
+  { word: 'emprego', es: 'empleo' }, // o (masc.)
+  { word: 'currículo', es: 'currículum' }, // o (masc.)
+  { word: 'vaga', es: 'vacante' }, // a (fem.)
+  { word: 'reunião', es: 'reunión' }, // a (fem.)
+];
+// posicao-adjetivos.md: adjetivo antes del sustantivo, con el artículo
+// horneado en la MISMA forma ("um bom" no "bom um") — agreesWith:'object'
+// elige la forma según qué objeto se sorteó, declinación real por género.
+const PORTUGUESE_B1_ADJECTIVES: MatrixWord[] = [
+  {
+    word: 'bom',
+    es: 'bueno/a',
+    forms: ['um bom', 'um bom', 'uma boa', 'uma boa'],
+    esForms: ['un buen', 'un buen', 'una buena', 'una buena'],
+  },
 ];
 
 const PORTUGUESE_OBJECTS: MatrixWord[] = [
@@ -2357,37 +2601,70 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         description:
           "You start with the base: subjects, modal verbs in the present, and your first nouns and adjectives. There's no tense to confuse you yet — you're just automating English word order (subject-modal-action-object) and new vocabulary.",
         level: 'a1',
+        tabLabel: 'A1 · Modal verbs',
         columns: [
           { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS },
-          { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
-          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_A1_VERBS },
+          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_A1_OBJECTS },
         ],
       },
       {
         id: 'pasado-modal-v2',
         name: 'Modal verbs in the past',
         description:
-          'Same modals, now in the past, over the same vocabulary. It follows A1 because you already have the sentence order down — the challenge now is the past tense, not the structure.',
+          'Same modals, now in the past, over money vocabulary (money.md). It follows A1 because you already have the sentence order down — the challenge now is the past tense, not the structure.',
         level: 'a2',
+        tabLabel: 'A2 · Past',
         columns: [
           { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS_PAST },
-          { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
-          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_A2_VERBS },
+          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_A2_OBJECTS },
+        ],
+      },
+      {
+        id: 'direcciones-a2',
+        name: 'Getting around',
+        description:
+          'Movement verbs (go/get/walk) with real destinations from transport-directions.md — "How do I get to the station?". English doesn\'t decline the preposition like the other 4 languages, but you still automate choosing "to" before a place.',
+        level: 'a2',
+        tabLabel: 'A2 · Directions',
+        columns: [
+          { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS_PAST },
+          {
+            label: 'Acción',
+            labelTarget: 'Action',
+            role: 'action',
+            items: ENGLISH_MOTION_VERBS,
+          },
+          {
+            label: 'Adónde',
+            labelTarget: 'Where to',
+            role: 'object',
+            items: ENGLISH_DIRECTIONAL_OBJECTS,
+          },
         ],
       },
       {
         id: 'condicional-modal-v2',
         name: 'Polite modal verbs',
         description:
-          'You move up to polite modals (would like to/would need to/would have to/would love to/would be allowed to) to ask for things politely. It comes after A2 because asking politely first requires mastering the modal in its basic tenses.',
+          'You move up to polite modals (would like to/would need to/would have to/would love to/would be allowed to) to ask for things politely, over work vocabulary (work-travel.md) and comparatives (comparatives-superlatives.md) — English has no gender agreement, so the challenge here is the comparative\'s own irregular form. It comes after A2 because asking politely first requires mastering the modal in its basic tenses.',
         level: 'b1',
+        tabLabel: 'B1 · Modal verbs',
         columns: [
           { label: 'Quién', labelTarget: 'Subject', role: 'subject', items: ENGLISH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: ENGLISH_MODALS_COND },
-          { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_ACTIONS },
-          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_OBJECTS },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: ENGLISH_B1_VERBS },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjective',
+            role: 'adjective',
+            items: ENGLISH_B1_ADJECTIVES,
+          },
+          { label: 'Qué', labelTarget: 'Object', role: 'object', items: ENGLISH_B1_OBJECTS },
         ],
       },
       {
@@ -2511,37 +2788,71 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         description:
           'Empezás por la base: sujetos, verbos modales en presente y los primeros sustantivos y adjetivos. Acá no hay tiempos verbales que confundan — solo automatizás el orden de la frase francesa y vocabulario nuevo.',
         level: 'a1',
+        tabLabel: 'A1 · Modaux',
         columns: [
           { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: FRENCH_MODALS },
-          { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_ACTIONS },
-          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_A1_VERBS },
+          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_A1_OBJECTS },
         ],
       },
       {
         id: 'pasado-modal-v2',
         name: "Verbes modaux à l'imparfait",
         description:
-          'Mismos modales, ahora en imparfait, sobre el mismo vocabulario. Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.',
+          "Mismos modales, ahora en imparfait, sobre vocabulario de comida (nourriture.md). Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.",
         level: 'a2',
+        tabLabel: 'A2 · Imparfait',
         columns: [
           { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: FRENCH_MODALS_PAST },
-          { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_ACTIONS },
-          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_A2_VERBS },
+          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_A2_OBJECTS },
+        ],
+      },
+      {
+        id: 'directions-a2',
+        name: 'Se déplacer en ville',
+        description:
+          'Verbos de movimiento (aller/arriver/retourner) con destinos reales de transports-directions.md — "Comment aller à la gare?". Practicás las contracciones au/à la/à l\' con preposiciones de destino.',
+        level: 'a2',
+        tabLabel: 'A2 · Directions',
+        columns: [
+          { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: FRENCH_MODALS_PAST },
+          {
+            label: 'Acción',
+            labelTarget: 'Action',
+            role: 'action',
+            items: FRENCH_MOTION_VERBS,
+          },
+          {
+            label: 'Adónde',
+            labelTarget: 'Où',
+            role: 'object',
+            items: FRENCH_DIRECTIONAL_OBJECTS,
+          },
         ],
       },
       {
         id: 'condicional-modal-v2',
         name: 'Verbes modaux au conditionnel',
         description:
-          'Subís a los modales de cortesía (voudrais/devrais/pourrais/aimerais/saurais) para pedir las cosas con cortesía. Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
+          'Subís a los modales de cortesía (voudrais/devrais/pourrais/aimerais/saurais) para pedir las cosas con cortesía, sobre vocabulario de trabajo (travail.md) y adjetivos concordados en género (place-adjectifs.md). Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
         level: 'b1',
+        tabLabel: 'B1 · Modaux',
         columns: [
           { label: 'Quién', labelTarget: 'Sujet', role: 'subject', items: FRENCH_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: FRENCH_MODALS_COND },
-          { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_ACTIONS },
-          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_OBJECTS },
+          { label: 'Acción', labelTarget: 'Action', role: 'action', items: FRENCH_B1_VERBS },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjectif',
+            role: 'adjective',
+            items: FRENCH_B1_ADJECTIVES,
+            agreesWith: 'object',
+          },
+          { label: 'Qué', labelTarget: 'Objet', role: 'object', items: FRENCH_B1_OBJECTS },
         ],
       },
       {
@@ -2676,37 +2987,71 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         description:
           'Empezás por la base: sujetos, verbos modales en presente y los primeros sustantivos y adjetivos. Acá no hay tiempos verbales que confundan — solo automatizás el orden de la frase italiana y vocabulario nuevo.',
         level: 'a1',
+        tabLabel: 'A1 · Modali',
         columns: [
           { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modale', role: 'modal', items: ITALIAN_MODALS },
-          { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_ACTIONS },
-          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
+          { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_A1_VERBS },
+          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_A1_OBJECTS },
         ],
       },
       {
         id: 'pasado-modal-v2',
         name: "Verbi modali all'imperfetto",
         description:
-          'Mismos modales, ahora en imperfetto, sobre el mismo vocabulario. Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.',
+          "Mismos modales, ahora en imperfetto, sobre vocabulario de comida (cibo.md). Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.",
         level: 'a2',
+        tabLabel: 'A2 · Imperfetto',
         columns: [
           { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modale', role: 'modal', items: ITALIAN_MODALS_PAST },
-          { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_ACTIONS },
-          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
+          { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_A2_VERBS },
+          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_A2_OBJECTS },
+        ],
+      },
+      {
+        id: 'direzioni-a2',
+        name: 'Muoversi in città',
+        description:
+          'Verbos de movimiento (andare/arrivare/tornare) con destinos reales de trasporti-indicazioni.md — "Come arrivo alla stazione?". Practicás las preposizioni articolate al/alla/all\' con destinos.',
+        level: 'a2',
+        tabLabel: 'A2 · Direzioni',
+        columns: [
+          { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modale', role: 'modal', items: ITALIAN_MODALS_PAST },
+          {
+            label: 'Acción',
+            labelTarget: 'Azione',
+            role: 'action',
+            items: ITALIAN_MOTION_VERBS,
+          },
+          {
+            label: 'Adónde',
+            labelTarget: 'Dove',
+            role: 'object',
+            items: ITALIAN_DIRECTIONAL_OBJECTS,
+          },
         ],
       },
       {
         id: 'condicional-modal-v2',
         name: 'Verbi modali al condizionale',
         description:
-          'Subís a los modales de cortesía (vorrei/dovrei/potrei/preferirei/saprei) para pedir las cosas con cortesía. Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
+          'Subís a los modales de cortesía (vorrei/dovrei/potrei/preferirei/saprei) para pedir las cosas con cortesía, sobre vocabulario de trabajo (lavoro.md) y adjetivos concordados en género (posizione-aggettivi.md). Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
         level: 'b1',
+        tabLabel: 'B1 · Modali',
         columns: [
           { label: 'Quién', labelTarget: 'Soggetto', role: 'subject', items: ITALIAN_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modale', role: 'modal', items: ITALIAN_MODALS_COND },
-          { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_ACTIONS },
-          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_OBJECTS },
+          { label: 'Acción', labelTarget: 'Azione', role: 'action', items: ITALIAN_B1_VERBS },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Aggettivo',
+            role: 'adjective',
+            items: ITALIAN_B1_ADJECTIVES,
+            agreesWith: 'object',
+          },
+          { label: 'Qué', labelTarget: 'Oggetto', role: 'object', items: ITALIAN_B1_OBJECTS },
         ],
       },
       {
@@ -2836,37 +3181,71 @@ export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
         description:
           'Empezás por la base: sujetos, verbos modales en presente y los primeros sustantivos y adjetivos. Acá no hay tiempos verbales que confundan — solo automatizás el orden de la frase portuguesa y vocabulario nuevo.',
         level: 'a1',
+        tabLabel: 'A1 · Modais',
         columns: [
           { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS },
-          { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
-          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
+          { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_A1_VERBS },
+          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_A1_OBJECTS },
         ],
       },
       {
         id: 'pasado-modal-v2',
         name: 'Verbos modais no pretérito imperfeito',
         description:
-          'Mismos modales, ahora en pretérito imperfecto, sobre el mismo vocabulario. Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.',
+          "Mismos modales, ahora en pretérito imperfecto, sobre vocabulario de comida (comida.md). Sigue al A1 porque el orden de la frase ya lo tenés incorporado — el desafío ahora es la conjugación en pasado, no la estructura.",
         level: 'a2',
+        tabLabel: 'A2 · Imperfeito',
         columns: [
           { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS_PAST },
-          { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
-          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
+          { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_A2_VERBS },
+          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_A2_OBJECTS },
+        ],
+      },
+      {
+        id: 'direcoes-a2',
+        name: 'Se locomover na cidade',
+        description:
+          'Verbos de movimiento (ir/chegar/voltar) con destinos reales de transportes-direcoes.md — "Como chego à estação?". Practicás las contrações à/ao con destinos.',
+        level: 'a2',
+        tabLabel: 'A2 · Direções',
+        columns: [
+          { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
+          { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS_PAST },
+          {
+            label: 'Acción',
+            labelTarget: 'Ação',
+            role: 'action',
+            items: PORTUGUESE_MOTION_VERBS,
+          },
+          {
+            label: 'Adónde',
+            labelTarget: 'Para onde',
+            role: 'object',
+            items: PORTUGUESE_DIRECTIONAL_OBJECTS,
+          },
         ],
       },
       {
         id: 'condicional-modal-v2',
         name: 'Verbos modais no condicional',
         description:
-          'Subís a los modales de cortesía (gostaria de/precisaria/poderia/deveria/saberia) para pedir las cosas con cortesía. Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
+          'Subís a los modales de cortesía (gostaria de/precisaria/poderia/deveria/saberia) para pedir las cosas con cortesía, sobre vocabulario de trabajo (trabalho.md) y adjetivos concordados en género (posicao-adjetivos.md). Viene después del A2 porque para pedir con cortesía primero necesitás dominar el modal en sus tiempos básicos.',
         level: 'b1',
+        tabLabel: 'B1 · Modais',
         columns: [
           { label: 'Quién', labelTarget: 'Sujeito', role: 'subject', items: PORTUGUESE_SUBJECTS },
           { label: 'Motivo', labelTarget: 'Modal', role: 'modal', items: PORTUGUESE_MODALS_COND },
-          { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_ACTIONS },
-          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_OBJECTS },
+          { label: 'Acción', labelTarget: 'Ação', role: 'action', items: PORTUGUESE_B1_VERBS },
+          {
+            label: 'Adjetivo',
+            labelTarget: 'Adjetivo',
+            role: 'adjective',
+            items: PORTUGUESE_B1_ADJECTIVES,
+            agreesWith: 'object',
+          },
+          { label: 'Qué', labelTarget: 'Objeto', role: 'object', items: PORTUGUESE_B1_OBJECTS },
         ],
       },
       {

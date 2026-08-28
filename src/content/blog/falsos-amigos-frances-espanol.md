@@ -141,7 +141,7 @@ Los falsos amigos se neutralizan con contexto. Si aprendés "J'attends le
 bus" (espero el colectivo) como frase completa, nunca vas a confundir
 _attendre_ con "atender".
 
-Las [lecciones de francés A1](/idiomas/fr/a1) de PolyLingua enseñan
+Las [lecciones de francés A1](/es/fr/a1) de PolyLingua enseñan
 vocabulario en contexto — con frases de ejemplo y situaciones reales — en
 vez de listas de palabras sueltas, precisamente para evitar este tipo de
 confusiones.
@@ -199,5 +199,5 @@ se parecen tanto. No los vas a evitar todos, pero podés minimizar los
 errores: sospechá de las palabras que suenan igual, aprendé vocabulario en
 contexto (no como traducciones 1:1), y cuando caigas — porque vas a caer —
 anotalo y seguí. Podés empezar a practicar francés con contexto real en las
-[lecciones de francés](/idiomas/fr) de PolyLingua, donde cada palabra viene
+[lecciones de francés](/es/fr) de PolyLingua, donde cada palabra viene
 con su frase y su situación, no suelta en una lista.

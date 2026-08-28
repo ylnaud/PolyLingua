@@ -11,7 +11,7 @@ const searchManifest = allLessons.map((l) => {
     description: l.data.description,
     lang: l.data.language,
     level: l.data.level,
-    href: `/idiomas/${l.data.language}/${l.data.level}/${slug}`,
+    href: `/es/${l.data.language}/${l.data.level}/${slug}`,
   };
 });
 const siteURL = Astro.site!.origin;

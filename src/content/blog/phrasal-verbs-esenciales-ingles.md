@@ -132,7 +132,7 @@ completa, no aislado.
    figure out, run out of.
 
 4. **Practicá con ejercicios interactivos.** Las lecciones de
-   [inglés A2](/idiomas/en/a2) y [B1](/idiomas/en/b1) en PolyLingua
+   [inglés A2](/es/en/a2) y [B1](/es/en/b1) en PolyLingua
    incluyen ejercicios de completar y emparejar que refuerzan el
    vocabulario en contexto real, no en listas sueltas.
 
@@ -164,4 +164,4 @@ que vas a escuchar todo el tiempo en conversación real. Agrupalos por
 partícula para encontrar patrones, aprendelos en frases completas (nunca
 traduciendo literalmente), y empezá por los 15-20 más frecuentes antes de
 intentar memorizar listas gigantes. Podés practicar con contexto real
-ahora mismo en las [lecciones de inglés](/idiomas/en) de PolyLingua.
+ahora mismo en las [lecciones de inglés](/es/en) de PolyLingua.

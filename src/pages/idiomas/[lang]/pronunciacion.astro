@@ -35,9 +35,9 @@ const vocabPool = Array.from(
 >
   <section class="container pron-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/idiomas">Idiomas</a>
+      <a href="/es">Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Escuchar y repetir</span>
     </nav>
@@ -54,7 +54,7 @@ const vocabPool = Array.from(
       <p class="empty-emoji">📭</p>
       <h2>Todavía no hay vocabulario</h2>
       <p>Completa alguna lección de {languageMeta?.name} primero para desbloquear esta práctica.</p>
-      <a class="btn btn-primary" href={`/idiomas/${lang}`}>Ver lecciones</a>
+      <a class="btn btn-primary" href={`/es/${lang}`}>Ver lecciones</a>
     </div>
 
     <div class="card pron-game" data-pron-game data-lang={languageMeta?.bcp47} hidden>

@@ -4,14 +4,15 @@ import type { LanguageMeta } from '../data/languages';
 interface Props {
   language: LanguageMeta;
   lessonCount: number;
+  basePath?: string;
 }
 
-const { language, lessonCount } = Astro.props;
+const { language, lessonCount, basePath = '/es' } = Astro.props;
 ---
 
 <a
   class="lang-card card card-glow"
-  href={`/idiomas/${language.id}`}
+  href={`${basePath}/${language.id}`}
   style={`--accent-c: ${language.color}`}
 >
   <div class="top">

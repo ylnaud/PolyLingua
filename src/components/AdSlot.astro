@@ -1,0 +1,44 @@
+---
+// Contenedor con altura reservada para un futuro bloque de Google AdSense.
+// El punto es evitar CLS (Cumulative Layout Shift): el espacio ya existe en
+// el layout antes de que AdSense inyecte nada, así que cuando el script real
+// se agregue (con un pub-id aprobado) el anuncio no empuja el contenido.
+// Por ahora no carga ningún script de terceros — eso queda para cuando
+// exista una cuenta de AdSense real que aprobar.
+interface Props {
+  slotId: string;
+}
+
+const { slotId } = Astro.props;
+---
+
+<div class="ad-slot" data-ad-slot={slotId}>
+  <span class="ad-slot-label">Publicidad</span>
+  <!-- Cuando haya un pub-id real de AdSense, el <ins class="adsbygoogle">
+       correspondiente a este slotId va acá adentro, sin tocar el contenedor
+       ni su min-height (así se preserva la reserva de espacio anti-CLS). -->
+</div>
+
+<style>
+  .ad-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px;
+    margin: 1.75rem 0;
+    border-radius: var(--radius, 12px);
+    background: #f3f4f6;
+  }
+
+  :root:not([data-theme='light']) .ad-slot {
+    background: color-mix(in srgb, var(--bg-elevated) 100%, transparent);
+  }
+
+  .ad-slot-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+</style>

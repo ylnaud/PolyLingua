@@ -118,6 +118,6 @@ tener que reaprender la palabra entera más adelante.
 Leer sobre las categorías ayuda, pero lo que realmente fija el patrón en tu
 memoria es practicar con ejercicios que te obliguen a decidir el artículo una
 y otra vez, con corrección inmediata. En PolyLingua tenés una
-[lección completa de der/die/das](/idiomas/de/a1/articulos-der-die-das) con
+[lección completa de der/die/das](/es/de/a1/articulos-der-die-das) con
 estas mismas categorías, ejercicios interactivos de emparejar, completar
 huecos y escribir — gratis y sin necesidad de crear una cuenta.

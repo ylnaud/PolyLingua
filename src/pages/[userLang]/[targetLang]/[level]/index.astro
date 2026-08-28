@@ -2,6 +2,7 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { LEVEL_MAP } from '../../../../data/levels';
 import { LANGUAGE_MAP } from '../../../../data/languages';
+import { parseLessonId } from '../../../../lib/lessonPath';
 import { getCollection } from 'astro:content';
 import { UNITS } from '../../../../data/units';
 import { TSA } from '../../../../data/tsa';
@@ -10,78 +11,67 @@ export async function getStaticPaths() {
   const allLessons = await getCollection('lessons');
   const combos = new Set<string>();
   for (const lesson of allLessons) {
-    combos.add(`${lesson.data.language}/${lesson.data.level}`);
+    const { userLang, targetLang, level } = parseLessonId(lesson.id);
+    combos.add(`${userLang}/${targetLang}/${level}`);
   }
   return Array.from(combos).map((combo) => {
-    const [lang, level] = combo.split('/');
-    return { params: { lang, level } };
+    const [userLang, targetLang, level] = combo.split('/');
+    return { params: { userLang, targetLang, level } };
   });
 }
 
-const { lang, level } = Astro.params;
-const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const { userLang, targetLang, level } = Astro.params;
+const languageMeta = LANGUAGE_MAP[targetLang as keyof typeof LANGUAGE_MAP];
 const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
 
 const allLessons = await getCollection('lessons');
 const lessons = allLessons
-  .filter((l) => l.data.language === lang && l.data.level === level)
+  .filter((l) => l.data.language === targetLang && l.data.level === level)
   .sort((a, b) => a.data.order - b.data.order);
 
-const unitMetas = UNITS[`${lang}-${level}`] ?? null;
-const tsaEntry = TSA[`${lang}-${level}`] ?? null;
+const unitMetas = UNITS[`${targetLang}-${level}`] ?? null;
+const tsaEntry = TSA[`${targetLang}-${level}`] ?? null;
 
 const siteURL = Astro.site!.origin;
 const structuredData = {
   '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Course',
-      name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
-      description: levelMeta.description,
-      url: `${siteURL}/idiomas/${lang}/${level}`,
-      inLanguage: lang,
-      provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
-      hasCourseInstance: lessons.map((l) => ({
-        '@type': 'CourseInstance',
-        name: l.data.title,
-        url: `${siteURL}/idiomas/${lang}/${level}/${l.id.split('/').pop()}`,
-        courseMode: 'online',
-      })),
-    },
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Idiomas', item: `${siteURL}/idiomas` },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: languageMeta.name,
-          item: `${siteURL}/idiomas/${lang}`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 3,
-          name: levelMeta.name,
-          item: `${siteURL}/idiomas/${lang}/${level}`,
-        },
-      ],
-    },
-  ],
+  '@type': 'Course',
+  name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
+  description: levelMeta.description,
+  url: `${siteURL}/${userLang}/${targetLang}/${level}`,
+  inLanguage: targetLang,
+  provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
+  hasCourseInstance: lessons.map((l) => ({
+    '@type': 'CourseInstance',
+    name: l.data.title,
+    url: `${siteURL}/${userLang}/${targetLang}/${level}/${l.id.split('/').pop()}`,
+    courseMode: 'online',
+  })),
 };
 ---
 
 <BaseLayout
   title={`${languageMeta.name} ${levelMeta.name}`}
   description={`${levelMeta.description} Gramática de ${languageMeta.name}, gratis y gamificada.`}
-  path={`/idiomas/${lang}/${level}`}
+  path={`/${userLang}/${targetLang}/${level}`}
   structuredData={structuredData}
-  ogImage={`/og-${lang}.png`}
+  ogImage={`/og-${targetLang}.png`}
+  siloContext={{
+    userLang,
+    targetLang,
+    restPath: `/${level}`,
+    breadcrumbs: [
+      { name: 'Idiomas', href: `/${userLang}` },
+      { name: languageMeta.name, href: `/${userLang}/${targetLang}` },
+      { name: levelMeta.name, href: `/${userLang}/${targetLang}/${level}` },
+    ],
+  }}
 >
   <section class="container level-head" style={`--accent-c:${levelMeta.color}`}>
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/idiomas">Idiomas</a>
+      <a href={`/${userLang}`}>Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/idiomas/${lang}`}>{languageMeta.flag} {languageMeta.name}</a>
+      <a href={`/${userLang}/${targetLang}`}>{languageMeta.flag} {languageMeta.name}</a>
       <span aria-hidden="true">/</span>
       <span>{levelMeta.name}</span>
     </nav>
@@ -130,7 +120,7 @@ const structuredData = {
                           class="lesson-item card card-glow"
                           data-lesson-item
                           data-slug={lesson.id.split('/').pop()}
-                          href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+                          href={`/${userLang}/${targetLang}/${level}/${lesson.id.split('/').pop()}`}
                           style={`--accent-c:${levelMeta.color}`}
                         >
                           <span
@@ -164,7 +154,7 @@ const structuredData = {
                 class="lesson-item card card-glow"
                 data-lesson-item
                 data-slug={lesson.id.split('/').pop()}
-                href={`/idiomas/${lang}/${level}/${lesson.id.split('/').pop()}`}
+                href={`/${userLang}/${targetLang}/${level}/${lesson.id.split('/').pop()}`}
                 style={`--accent-c:${levelMeta.color}`}
               >
                 <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>
@@ -191,7 +181,7 @@ const structuredData = {
             <a
               class="lesson-item card card-glow exam-item"
               data-exam-item
-              href={`/idiomas/${lang}/${level}/examen`}
+              href={`/${userLang}/${targetLang}/${level}/examen`}
               style={`--accent-c:${levelMeta.color}`}
             >
               <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>
@@ -243,7 +233,7 @@ const structuredData = {
   }
 </BaseLayout>
 
-<script define:vars={{ lang, level, slugs: lessons.map((l) => l.id.split('/').pop()) }}>
+<script define:vars={{ targetLang, level, slugs: lessons.map((l) => l.id.split('/').pop()) }}>
   function read(key) {
     try {
       return localStorage.getItem(key);
@@ -253,7 +243,7 @@ const structuredData = {
   }
 
   function isLessonDone(slug) {
-    return !!read(`polylingua-lesson-done-${lang}-${level}-${slug}`);
+    return !!read(`polylingua-lesson-done-${targetLang}-${level}-${slug}`);
   }
 
   function lockItem(el) {
@@ -291,7 +281,7 @@ const structuredData = {
       examItem &&
       lastSlug &&
       isLessonDone(lastSlug) &&
-      read('polylingua-level-passed-' + lang + '-' + level)
+      read('polylingua-level-passed-' + targetLang + '-' + level)
     ) {
       examItem.classList.add('done');
     }
@@ -467,5 +457,4 @@ const structuredData = {
   .locked:hover .underline-draw {
     background-size: 0 2px;
   }
-
 </style>

@@ -42,9 +42,9 @@ const themes = [...new Set(situationLessons.map((l) => l.data.situation as strin
 >
   <section class="container sit-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/idiomas">Idiomas</a>
+      <a href="/es">Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Situaciones</span>
     </nav>
@@ -63,7 +63,7 @@ const themes = [...new Set(situationLessons.map((l) => l.data.situation as strin
           <p class="empty-emoji">🚧</p>
           <h2>Todavía no hay situaciones en {languageMeta?.name}</h2>
           <p>Estamos armando este modo idioma por idioma — volvé pronto.</p>
-          <a class="btn btn-primary" href={`/idiomas/${lang}`}>
+          <a class="btn btn-primary" href={`/es/${lang}`}>
             Ver lecciones
           </a>
         </div>
@@ -76,7 +76,7 @@ const themes = [...new Set(situationLessons.map((l) => l.data.situation as strin
                 const [, level, slug] = lesson.id.split('/');
                 const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
                 return (
-                  <a class="sit-item card" href={`/idiomas/${lang}/${level}/${slug}`}>
+                  <a class="sit-item card" href={`/es/${lang}/${level}/${slug}`}>
                     <span class="sit-level" style={`color:${levelMeta?.color}`}>
                       {levelMeta?.emoji} {level.toUpperCase()}
                     </span>

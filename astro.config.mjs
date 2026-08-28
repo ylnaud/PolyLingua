@@ -22,7 +22,7 @@ export default defineConfig({
     inlineStylesheets: 'auto',
   },
   redirects: {
-    '/niveles': '/idiomas/de',
+    '/niveles': '/es/de',
   },
   prefetch: {
     prefetchAll: true,

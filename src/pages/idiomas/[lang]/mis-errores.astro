@@ -32,9 +32,9 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 >
   <section class="container errors-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/idiomas">Idiomas</a>
+      <a href="/es">Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Mis errores</span>
     </nav>
@@ -49,7 +49,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
       <p class="empty-emoji">🎉</p>
       <h2>No tienes errores registrados</h2>
       <p>Cuando falles un ejercicio, aparecerá aquí para que puedas repasarlo.</p>
-      <a class="btn btn-primary" href={`/idiomas/${lang}`}>Ver lecciones</a>
+      <a class="btn btn-primary" href={`/es/${lang}`}>Ver lecciones</a>
     </div>
 
     <div class="error-list" data-error-list hidden></div>

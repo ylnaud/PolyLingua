@@ -6,11 +6,11 @@ PolyLingua es un curso de idiomas abierto y gratuito, sin cuentas de usuario ni 
 
 ## Idiomas
 
-- [Alemán](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/de)
-- [Inglés](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/en)
-- [Francés](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/fr)
-- [Italiano](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/it)
-- [Portugués](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/idiomas/pt)
+- [Alemán](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/es/de)
+- [Inglés](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/es/en)
+- [Francés](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/es/fr)
+- [Italiano](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/es/it)
+- [Portugués](https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/es/pt)
 
 ## Recursos
 

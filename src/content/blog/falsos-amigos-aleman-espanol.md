@@ -102,7 +102,7 @@ esa es justo la que más cuidado necesita.
 "Gift" y "Konkurs" no son palabras raras de manual — aparecen en conversaciones
 comunes. Mejor memorizarlas de una vez, antes de que te agarren desprevenido, en
 vez de descubrirlas en el momento incómodo. Podés arrancar por las
-[lecciones de alemán A1](/idiomas/de/a1) de PolyLingua, donde el vocabulario
+[lecciones de alemán A1](/es/de/a1) de PolyLingua, donde el vocabulario
 viene siempre metido en una frase real, no suelto.
 
 ### 3. Usá frases completas, no palabras sueltas
@@ -164,5 +164,5 @@ El alemán te va a sorprender menos veces que el francés o el italiano con
 falsos amigos, pero cuando lo hace, suele ser porque tendiste vos mismo la
 trampa al apoyarte en el inglés. Conocer estos casos de antemano — sobre todo
 "Gift" y "bekommen" — te ahorra más de un momento incómodo. Practicá vocabulario
-en contexto real con las [lecciones de alemán](/idiomas/de) de PolyLingua, donde
+en contexto real con las [lecciones de alemán](/es/de) de PolyLingua, donde
 cada palabra viene siempre acompañada de su frase y su situación, nunca suelta.

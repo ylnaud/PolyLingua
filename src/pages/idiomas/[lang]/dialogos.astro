@@ -33,9 +33,9 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
 >
   <section class="container dlg-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/idiomas">Idiomas</a>
+      <a href="/es">Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Diálogos</span>
     </nav>
@@ -54,7 +54,7 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
           <p class="empty-emoji">🚧</p>
           <h2>Todavía no hay diálogos en {languageMeta?.name}</h2>
           <p>Estamos armando este modo idioma por idioma — volvé pronto.</p>
-          <a class="btn btn-primary" href={`/idiomas/${lang}`}>
+          <a class="btn btn-primary" href={`/es/${lang}`}>
             Ver lecciones
           </a>
         </div>

@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import tailwindcss from '@tailwindcss/vite';
 import { NOINDEX_LAST_SEGMENTS } from './src/data/noindex-routes.ts';
 
 // Páginas con <meta name="robots" content="noindex"> en su BaseLayout.
@@ -26,8 +25,5 @@ export default defineConfig({
   },
   prefetch: {
     prefetchAll: true,
-  },
-  vite: {
-    plugins: [tailwindcss()],
   },
 });

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../../../data/userLanguages';
 
 export async function getStaticPaths() {
   return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
@@ -9,6 +10,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const userLang = ACTIVE_USER_LANGUAGES[0].id;
 
 // Vocabulario de todas las lecciones de este idioma, deduplicado por término
 // (varias lecciones pueden repetir la misma palabra) — es el pool de
@@ -37,9 +39,9 @@ const vocabPool = Array.from(
 >
   <section class="container hangman-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/es">Idiomas</a>
+      <a href={`/${userLang}`}>Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Ahorcado</span>
     </nav>
@@ -53,7 +55,7 @@ const vocabPool = Array.from(
       <p class="empty-emoji">📭</p>
       <h2>Todavía no hay vocabulario</h2>
       <p>Completa alguna lección de {languageMeta?.name} primero para desbloquear el ahorcado.</p>
-      <a class="btn btn-primary" href={`/es/${lang}`}>Ver lecciones</a>
+      <a class="btn btn-primary" href={`/${userLang}/${lang}`}>Ver lecciones</a>
     </div>
 
     <div

@@ -1,5 +1,6 @@
 ---
 import type { LanguageMeta } from '../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 
 interface Props {
   language: LanguageMeta;
@@ -7,7 +8,7 @@ interface Props {
   basePath?: string;
 }
 
-const { language, lessonCount, basePath = '/es' } = Astro.props;
+const { language, lessonCount, basePath = `/${ACTIVE_USER_LANGUAGES[0].id}` } = Astro.props;
 ---
 
 <a

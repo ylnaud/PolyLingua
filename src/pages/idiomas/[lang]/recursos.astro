@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../../../data/userLanguages';
 import { RESOURCES, CATEGORY_LABELS, type ResourceItem } from '../../../data/resources';
 
 export async function getStaticPaths() {
@@ -9,6 +10,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const userLang = ACTIVE_USER_LANGUAGES[0].id;
 const items = RESOURCES[lang as keyof typeof RESOURCES] ?? [];
 
 const categories = (Object.keys(CATEGORY_LABELS) as ResourceItem['category'][]).map((category) => ({
@@ -26,9 +28,9 @@ const categories = (Object.keys(CATEGORY_LABELS) as ResourceItem['category'][]).
 >
   <section class="container resources-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/es">Idiomas</a>
+      <a href={`/${userLang}`}>Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Recursos</span>
     </nav>

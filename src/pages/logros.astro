@@ -272,6 +272,7 @@ const lessonCounts = Object.fromEntries(
 <script>
   import { exportAll } from '../lib/storage';
   import { LANGUAGES } from '../data/languages';
+  import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 
   function initLanguageProgress() {
     const grid = document.querySelector<HTMLElement>('[data-lang-progress-grid]');
@@ -305,7 +306,7 @@ const lessonCounts = Object.fromEntries(
 
       const card = document.createElement('a');
       card.className = 'lang-progress-card';
-      card.href = `/es/${lang.id}`;
+      card.href = `/${ACTIVE_USER_LANGUAGES[0].id}/${lang.id}`;
 
       const head = document.createElement('span');
       head.className = 'lang-progress-head-row';

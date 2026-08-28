@@ -4,6 +4,7 @@ import DialogueCard from '../../../../components/DialogueCard.astro';
 import StudyCycle from '../../../../components/StudyCycle.astro';
 import { getCollection, render } from 'astro:content';
 import { LANGUAGE_MAP } from '../../../../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../../../../data/userLanguages';
 import { LEVEL_MAP } from '../../../../data/levels';
 
 export async function getStaticPaths() {
@@ -53,6 +54,7 @@ const { Content } = await render(entry);
 const { lang, slug } = Astro.params;
 const d = entry.data;
 const langMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const userLang = ACTIVE_USER_LANGUAGES[0].id;
 const levelMeta = LEVEL_MAP[d.level as keyof typeof LEVEL_MAP];
 
 const siteURL = Astro.site!.origin;
@@ -79,9 +81,9 @@ const structuredData = {
 >
   <section class="container dialogue-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/es">Idiomas</a>
+      <a href={`/${userLang}`}>Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/es/${lang}`}>{langMeta.flag} {langMeta.name}</a>
+      <a href={`/${userLang}/${lang}`}>{langMeta.flag} {langMeta.name}</a>
       <span aria-hidden="true">/</span>
       <a href={`/idiomas/${lang}/dialogos`}>Diálogos</a>
       <span aria-hidden="true">/</span>

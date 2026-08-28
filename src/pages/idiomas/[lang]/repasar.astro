@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../../../data/userLanguages';
 
 export async function getStaticPaths() {
   return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
@@ -10,6 +11,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const userLang = ACTIVE_USER_LANGUAGES[0].id;
 
 // Manifest lección→ítems de este idioma, para poder ofrecer al repasar un
 // ejercicio distinto de la misma lección en vez de repetir exactamente la
@@ -41,9 +43,9 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 >
   <section class="container review-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/es">Idiomas</a>
+      <a href={`/${userLang}`}>Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Repasar</span>
     </nav>
@@ -58,7 +60,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
       <p class="empty-emoji">🎉</p>
       <h2>No te queda nada por repasar hoy</h2>
       <p>Vuelve mañana, o sigue avanzando con lecciones nuevas mientras tanto.</p>
-      <a class="btn btn-primary" href={`/es/${lang}`}>Ver lecciones</a>
+      <a class="btn btn-primary" href={`/${userLang}/${lang}`}>Ver lecciones</a>
     </div>
 
     <Practice

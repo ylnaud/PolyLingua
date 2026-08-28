@@ -5,29 +5,33 @@ import ShadowingToggle from './ShadowingToggle.astro';
 import InstallPrompt from './InstallPrompt.astro';
 import DailyGoal from './DailyGoal.astro';
 import LanguageSelector from './LanguageSelector.astro';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
 
 const langMatch = Astro.url.pathname.match(/^\/(?:idiomas|[a-z]{2})\/(de|en|fr|it|pt)/);
 const headerLang = langMatch?.[1];
+const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
+const t = getDictionary(ACTIVE_USER_LANGUAGES[0].id);
 ---
 
 <header class="site-header">
   <div class="container bar">
-    <a href="/" class="logo" aria-label="PolyLingua — inicio">
+    <a href="/" class="logo" aria-label={t.header.logoAria}>
       <span class="logo-mark" aria-hidden="true">🌐</span>
       <span class="logo-text">PolyLingua</span>
     </a>
-    <nav class="nav-desktop" aria-label="Navegación principal">
-      <a href="/es">Idiomas</a>
-      <a href="/buscar">Buscar</a>
-      <a href="/blog">Blog</a>
-      <a href="/#por-que">Por qué</a>
-      <a href="/#faq">FAQ</a>
+    <nav class="nav-desktop" aria-label={t.header.navAria}>
+      <a href={defaultUserLangHref}>{t.header.nav.idiomas}</a>
+      <a href="/buscar">{t.header.nav.buscar}</a>
+      <a href="/blog">{t.header.nav.blog}</a>
+      <a href="/#por-que">{t.header.nav.porQue}</a>
+      <a href="/#faq">{t.header.nav.faq}</a>
     </nav>
     <div class="actions">
       <LanguageSelector />
       <DailyGoal />
       <details class="tools-menu">
-        <summary class="tools-trigger" aria-label="Más herramientas">
+        <summary class="tools-trigger" aria-label={t.header.toolsAria}>
           <span aria-hidden="true">🧰</span>
         </summary>
         <div class="tools-panel">
@@ -35,30 +39,35 @@ const headerLang = langMatch?.[1];
             class="tools-link"
             href="/repasar"
             data-astro-reload
-            aria-label="Repasar palabras falladas">📚 Repasar</a
+            aria-label={t.header.tools.repasarAria}>📚 {t.header.tools.repasar}</a
           >
           <a
             class="tools-link"
             href="/vocabulario"
             data-astro-reload
-            aria-label="Ver y repasar tu vocabulario">📖 Vocabulario</a
+            aria-label={t.header.tools.vocabularioAria}>📖 {t.header.tools.vocabulario}</a
           >
           <a
             class="tools-link"
             href="/practica-libre"
             data-astro-reload
-            aria-label="Práctica libre aleatoria">🎲 Práctica libre</a
+            aria-label={t.header.tools.practicaLibreAria}>🎲 {t.header.tools.practicaLibre}</a
           >
-          <a class="tools-link" href="/ahorcado" data-astro-reload aria-label="Jugar al ahorcado"
-            >🔤 Ahorcado</a
+          <a
+            class="tools-link"
+            href="/ahorcado"
+            data-astro-reload
+            aria-label={t.header.tools.ahorcadoAria}>🔤 {t.header.tools.ahorcado}</a
           >
-          <a class="tools-link" href="/logros" aria-label="Ver tus logros">🏆 Logros</a>
+          <a class="tools-link" href="/logros" aria-label={t.header.tools.logrosAria}
+            >🏆 {t.header.tools.logros}</a
+          >
           <a
             class="tools-link header-lang-link"
-            href={headerLang ? `/idiomas/${headerLang}/mis-errores` : '/es'}
+            href={headerLang ? `/idiomas/${headerLang}/mis-errores` : defaultUserLangHref}
             data-header-errors
             hidden={!headerLang}
-            aria-label="Ver tus errores frecuentes">❌ Mis errores</a
+            aria-label={t.header.tools.misErroresAria}>❌ {t.header.tools.misErrores}</a
           >
           <ShadowingToggle variant="sheet" />
           <InstallPrompt variant="sheet" />
@@ -66,7 +75,7 @@ const headerLang = langMatch?.[1];
       </details>
       <SoundToggle />
       <ThemeToggle />
-      <a class="btn btn-primary cta" href="/es">Empezar gratis</a>
+      <a class="btn btn-primary cta" href={defaultUserLangHref}>{t.header.ctaStart}</a>
     </div>
   </div>
 </header>

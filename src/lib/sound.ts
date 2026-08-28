@@ -86,6 +86,16 @@ export function playAchievement(): void {
   [523, 659, 784, 1046].forEach((f, i) => tone(f, i * 0.1, 0.18, 'sine', 0.13));
 }
 
+if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+  // Dispara la carga de voces temprano (asíncrona en el navegador) apenas se
+  // importa este módulo, mucho antes del primer click real. Chrome puede
+  // reproducir una frase DOS VECES cuando speak() se llama con la lista de
+  // voces todavía sin resolver (elige una por default y la vuelve a
+  // resolver a mitad de camino) — para cuando el usuario llega a hacer
+  // click, ya pasó tiempo de sobra para que la lista esté lista.
+  window.speechSynthesis.getVoices();
+}
+
 export function speak(text: string, lang: string): void {
   if (!text || typeof window === 'undefined' || !('speechSynthesis' in window)) return;
   const synth = window.speechSynthesis;
@@ -99,5 +109,14 @@ export function speak(text: string, lang: string): void {
   if (synth.speaking || synth.pending) synth.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   if (lang) utterance.lang = lang;
+  // Fijar la voz explícitamente (sin esperar nada, síncrono) evita que Chrome
+  // tenga que resolver una voz por default a mitad de la síntesis — la causa
+  // más común de que la misma frase se escuche dos veces. Si la lista todavía
+  // no cargó (getVoices() devuelve vacío), sigue igual que antes sin voz fija.
+  const voices = synth.getVoices();
+  const match = lang
+    ? (voices.find((v) => v.lang === lang) ?? voices.find((v) => v.lang.startsWith(lang.split('-')[0])))
+    : undefined;
+  if (match) utterance.voice = match;
   synth.speak(utterance);
 }

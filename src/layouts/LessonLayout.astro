@@ -356,9 +356,12 @@ const restPath = `/${level}/${path.split('/').pop()}`;
 </style>
 
 <script>
+  import { speak } from '../lib/sound';
+
   function initVocabCarousel() {
     const carousel = document.querySelector<HTMLElement>('[data-vocab-carousel]');
-    if (!carousel) return;
+    if (!carousel || carousel.dataset.initialized) return;
+    carousel.dataset.initialized = 'true';
     let items: { term: string; translation: string }[];
     try {
       items = JSON.parse(carousel.dataset.vocabulary ?? '[]');
@@ -396,15 +399,11 @@ const restPath = `/${level}/${path.split('/').pop()}`;
         current++;
         render();
       } else {
-        document.querySelector('[data-practice-root]')?.scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('[data-practice]')?.scrollIntoView({ behavior: 'smooth' });
       }
     });
     speakBtn.addEventListener('click', () => {
-      if ('speechSynthesis' in window) {
-        const u = new SpeechSynthesisUtterance(items[current].term);
-        u.lang = lang;
-        speechSynthesis.speak(u);
-      }
+      speak(items[current].term, lang);
     });
 
     render();

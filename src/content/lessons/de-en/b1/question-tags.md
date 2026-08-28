@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b1'
 title: 'Question Tags: Nicht wahr? und oder? auf Englisch'
-description: 'Question Tags im Englischen erklärt: isn't it?, don't you?, aren't you? – wann der Tag negativ und wann positiv wird, plus die Sonderfälle I am und Let's.'
+description: "Question Tags im Englischen erklärt: isn't it?, don't you?, aren't you? – wann der Tag negativ und wann positiv wird, plus die Sonderfälle I am und Let's."
 order: 4
 unit: 1
 grammarTopic: "Question Tags (isn't it?, don't you?, aren't you?)"
@@ -15,7 +15,7 @@ quiz:
       - 'Der Tag hat immer dieselbe Polarität wie der Hauptsatz.'
       - 'Der Tag ist grammatikalisch immer negativ.'
     answerIndex: 0
-    explanation: 'Question Tags spiegeln den Hauptsatz: positiv → negativer Tag ("You are tired, aren't you?"), negativ → positiver Tag ("You aren't tired, are you?").'
+    explanation: "Question Tags spiegeln den Hauptsatz: positiv → negativer Tag (\"You are tired, aren't you?\"), negativ → positiver Tag (\"You aren't tired, are you?\")."
   - question: "'You are from Berlin, ___?' – welcher Tag passt?"
     options:
       - "aren't you"

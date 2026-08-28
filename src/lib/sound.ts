@@ -88,8 +88,16 @@ export function playAchievement(): void {
 
 export function speak(text: string, lang: string): void {
   if (!text || typeof window === 'undefined' || !('speechSynthesis' in window)) return;
-  window.speechSynthesis.cancel();
+  const synth = window.speechSynthesis;
+  // Cancelar solo cuando hay algo en cola: llamar a cancel() sin necesidad (ej.
+  // en el primer click de la sesión, cuando el motor está idle) deja a Chrome en
+  // un estado donde el speak() siguiente se descarta en silencio — el usuario
+  // ve que "hay que hacer doble click" porque el segundo click recién sale de
+  // ese estado colgado. Saltear el cancel() innecesario evita el bug sin
+  // introducir ningún delay (mantiene el speak() síncrono con el click, que
+  // Safari necesita para no perder el gesto de usuario).
+  if (synth.speaking || synth.pending) synth.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   if (lang) utterance.lang = lang;
-  window.speechSynthesis.speak(utterance);
+  synth.speak(utterance);
 }

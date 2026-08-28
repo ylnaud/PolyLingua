@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../../../data/userLanguages';
 import { LEVEL_MAP } from '../../../data/levels';
 
 export async function getStaticPaths() {
@@ -10,6 +11,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const userLang = ACTIVE_USER_LANGUAGES[0].id;
 
 // Solo las lecciones marcadas como situacionales (las que tienen `situation`),
 // agrupadas por tema. Las lecciones de gramática clásica quedan fuera de esta
@@ -42,9 +44,9 @@ const themes = [...new Set(situationLessons.map((l) => l.data.situation as strin
 >
   <section class="container sit-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/es">Idiomas</a>
+      <a href={`/${userLang}`}>Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Situaciones</span>
     </nav>
@@ -63,7 +65,7 @@ const themes = [...new Set(situationLessons.map((l) => l.data.situation as strin
           <p class="empty-emoji">🚧</p>
           <h2>Todavía no hay situaciones en {languageMeta?.name}</h2>
           <p>Estamos armando este modo idioma por idioma — volvé pronto.</p>
-          <a class="btn btn-primary" href={`/es/${lang}`}>
+          <a class="btn btn-primary" href={`/${userLang}/${lang}`}>
             Ver lecciones
           </a>
         </div>
@@ -76,7 +78,7 @@ const themes = [...new Set(situationLessons.map((l) => l.data.situation as strin
                 const [, level, slug] = lesson.id.split('/');
                 const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
                 return (
-                  <a class="sit-item card" href={`/es/${lang}/${level}/${slug}`}>
+                  <a class="sit-item card" href={`/${userLang}/${lang}/${level}/${slug}`}>
                     <span class="sit-level" style={`color:${levelMeta?.color}`}>
                       {levelMeta?.emoji} {level.toUpperCase()}
                     </span>

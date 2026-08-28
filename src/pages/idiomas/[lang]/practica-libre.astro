@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../../../data/userLanguages';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -10,6 +11,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const userLang = ACTIVE_USER_LANGUAGES[0].id;
 
 const lessons = await getCollection('lessons', (entry) => entry.data.language === lang);
 
@@ -49,9 +51,9 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
 >
   <section class="container free-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/es">Idiomas</a>
+      <a href={`/${userLang}`}>Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Práctica libre</span>
     </nav>
@@ -65,7 +67,7 @@ const pool: PoolItem[] = lessons.flatMap((lesson) => {
       <p class="empty-emoji">🌱</p>
       <h2>Todavía no hay ejercicios para practicar</h2>
       <p>Completa alguna lección primero y vuelve por aquí.</p>
-      <a class="btn btn-primary" href={`/es/${lang}`}>Ver lecciones</a>
+      <a class="btn btn-primary" href={`/${userLang}/${lang}`}>Ver lecciones</a>
     </div>
 
     <Practice

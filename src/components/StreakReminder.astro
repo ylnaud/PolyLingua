@@ -1,12 +1,14 @@
 ---
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 
+const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
 ---
 
 <div class="streak-reminder" data-streak-reminder hidden role="status" aria-live="polite">
   <div class="container streak-reminder-bar">
     <p><span aria-hidden="true">🔥</span> <span data-streak-reminder-text></span></p>
     <div class="streak-reminder-actions">
-      <a class="btn btn-primary" href="/es">Practicar ahora</a>
+      <a class="btn btn-primary" href={defaultUserLangHref}>Practicar ahora</a>
       <button
         type="button"
         class="streak-reminder-dismiss"

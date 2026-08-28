@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../../../data/userLanguages';
 
 export async function getStaticPaths() {
   return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
@@ -10,6 +11,7 @@ export async function getStaticPaths() {
 
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const userLang = ACTIVE_USER_LANGUAGES[0].id;
 
 const lessonsForLang = await getCollection('lessons', (entry) => entry.data.language === lang);
 const exerciseManifest = Object.fromEntries(
@@ -32,9 +34,9 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 >
   <section class="container errors-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/es">Idiomas</a>
+      <a href={`/${userLang}`}>Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Mis errores</span>
     </nav>
@@ -49,7 +51,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
       <p class="empty-emoji">🎉</p>
       <h2>No tienes errores registrados</h2>
       <p>Cuando falles un ejercicio, aparecerá aquí para que puedas repasarlo.</p>
-      <a class="btn btn-primary" href={`/es/${lang}`}>Ver lecciones</a>
+      <a class="btn btn-primary" href={`/${userLang}/${lang}`}>Ver lecciones</a>
     </div>
 
     <div class="error-list" data-error-list hidden></div>

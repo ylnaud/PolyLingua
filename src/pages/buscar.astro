@@ -1,7 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 
+const userLang = ACTIVE_USER_LANGUAGES[0].id;
 const allLessons = await getCollection('lessons');
 const searchManifest = allLessons.map((l) => {
   const slug = l.id.split('/').pop();
@@ -11,7 +13,7 @@ const searchManifest = allLessons.map((l) => {
     description: l.data.description,
     lang: l.data.language,
     level: l.data.level,
-    href: `/es/${l.data.language}/${l.data.level}/${slug}`,
+    href: `/${userLang}/${l.data.language}/${l.data.level}/${slug}`,
   };
 });
 const siteURL = Astro.site!.origin;

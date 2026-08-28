@@ -64,8 +64,8 @@ Dos tareas:
 Acá es donde la gramática básica importa. No te piden un ensayo — te piden
 que puedas escribir una nota como "Hola María, no puedo ir el martes, ¿puede
 ser el jueves a las 3? Saludos, Pablo." Si sabés
-[conjugar verbos en presente](/idiomas/de/a1/presente-verbos) y usar
-[los artículos der/die/das](/idiomas/de/a1/articulos-der-die-das), cubrís el
+[conjugar verbos en presente](/es/de/a1/presente-verbos) y usar
+[los artículos der/die/das](/es/de/a1/articulos-der-die-das), cubrís el
 80% de lo que necesitás para esta sección.
 
 ### 4. Hablar (Sprechen) — 15 minutos
@@ -78,8 +78,8 @@ Tres partes, en pareja con otro candidato:
 - **Parte 3:** Formular pedidos y reaccionar a pedidos del compañero.
 
 El truco acá es que las preguntas son predecibles. Si practicás
-[saludos y presentaciones](/idiomas/de/a1/saludos-presentarse) y
-[las palabras interrogativas](/idiomas/de/a1/fragewoerter) (Wie? Wo? Was?
+[saludos y presentaciones](/es/de/a1/saludos-presentarse) y
+[las palabras interrogativas](/es/de/a1/fragewoerter) (Wie? Wo? Was?
 Wann?), ya tenés la mitad resuelta.
 
 ## Los temas que sí o sí tenés que dominar
@@ -100,20 +100,20 @@ El A1 evalúa gramática básica. Lo que tenés que saber:
 
 ### Imprescindible
 
-- **[Artículos der/die/das](/idiomas/de/a1/articulos-der-die-das):** no hace
+- **[Artículos der/die/das](/es/de/a1/articulos-der-die-das):** no hace
   falta saberlos todos de memoria, pero sí entender el concepto de género
   gramatical y los patrones más comunes (terminaciones en -ung, -keit, -tion
   son siempre femeninas, por ejemplo).
-- **[Presente de los verbos](/idiomas/de/a1/presente-verbos):** conjugación
+- **[Presente de los verbos](/es/de/a1/presente-verbos):** conjugación
   regular (ich mache, du machst, er/sie macht...) y los irregulares más
   comunes (sein, haben, können, möchten).
-- **[Haben y sein](/idiomas/de/a1/haben-sein):** los dos verbos más
+- **[Haben y sein](/es/de/a1/haben-sein):** los dos verbos más
   importantes. "Ich habe" / "Ich bin".
-- **[Negación con nicht y kein](/idiomas/de/a1/negacion-nicht-kein):** cuándo
+- **[Negación con nicht y kein](/es/de/a1/negacion-nicht-kein):** cuándo
   se usa cada uno.
-- **[Números](/idiomas/de/a1/zahlen):** del 0 al 100 como mínimo, idealmente
+- **[Números](/es/de/a1/zahlen):** del 0 al 100 como mínimo, idealmente
   hasta 1000 para entender precios.
-- **[La hora](/idiomas/de/a1/uhrzeit):** saber decir y entender horarios.
+- **[La hora](/es/de/a1/uhrzeit):** saber decir y entender horarios.
 
 ### Útil pero no crítico
 
@@ -134,25 +134,25 @@ plazo realista para llegar preparado.
 
 ### Semanas 1-2: Las bases absolutas
 
-- Pronunciación: [las vocales con Umlaut](/idiomas/de/a1/aussprache-umlaute)
+- Pronunciación: [las vocales con Umlaut](/es/de/a1/aussprache-umlaute)
   y las combinaciones que no existen en español (ch, sch, ei/ie).
-- [Saludos y presentarte](/idiomas/de/a1/saludos-presentarse).
-- [Números y la hora](/idiomas/de/a1/zahlen).
+- [Saludos y presentarte](/es/de/a1/saludos-presentarse).
+- [Números y la hora](/es/de/a1/zahlen).
 - El alfabeto (para deletrear tu nombre en la parte oral).
 
 ### Semanas 3-4: Gramática esencial
 
-- [Artículos](/idiomas/de/a1/articulos-der-die-das) y género.
-- [Conjugación del presente](/idiomas/de/a1/presente-verbos).
-- [Haben y sein](/idiomas/de/a1/haben-sein).
-- [Negación](/idiomas/de/a1/negacion-nicht-kein).
+- [Artículos](/es/de/a1/articulos-der-die-das) y género.
+- [Conjugación del presente](/es/de/a1/presente-verbos).
+- [Haben y sein](/es/de/a1/haben-sein).
+- [Negación](/es/de/a1/negacion-nicht-kein).
 
 ### Semanas 5-6: Vocabulario temático
 
-- [Familia](/idiomas/de/a1/familie).
-- [Comida y bebida](/idiomas/de/a1/essen-trinken).
-- [En el restaurante](/idiomas/de/a1/im-restaurant) y
-  [de compras](/idiomas/de/a1/einkaufen).
+- [Familia](/es/de/a1/familie).
+- [Comida y bebida](/es/de/a1/essen-trinken).
+- [En el restaurante](/es/de/a1/im-restaurant) y
+  [de compras](/es/de/a1/einkaufen).
 
 ### Semanas 7-8: Práctica de examen
 
@@ -193,7 +193,7 @@ te falta.
 
 ## Recursos gratuitos para practicar
 
-- **[Lecciones de alemán A1 en PolyLingua](/idiomas/de/a1):** cubren toda la
+- **[Lecciones de alemán A1 en PolyLingua](/es/de/a1):** cubren toda la
   gramática del nivel, con ejercicios interactivos, quiz, vocabulario y
   repaso espaciado — sin cuenta, sin costo, sin conexión.
 - **Modelos de examen del Goethe-Institut:** en la web oficial del
@@ -225,5 +225,5 @@ No. Podés escribir en letra imprenta sin problema.
 El Goethe A1 es un examen accesible si sabés qué te van a pedir y te
 preparás con el contenido correcto. No necesitás saber mucha gramática — pero
 la que necesitás, la tenés que saber bien. Empezá por
-[las lecciones de alemán A1](/idiomas/de/a1), practicá con los modelos
+[las lecciones de alemán A1](/es/de/a1), practicá con los modelos
 oficiales del Goethe-Institut, y en 8 semanas podés estar listo.

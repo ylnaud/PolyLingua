@@ -38,10 +38,10 @@ Cada verbo irregular tiene tres formas que tenés que conocer:
 | see       | saw         | seen            |
 
 - **Base form:** la forma del diccionario. Se usa con
-  [Simple Present](/idiomas/en/a1/simple-present) (_I go_, _she goes_).
+  [Simple Present](/es/en/a1/simple-present) (_I go_, _she goes_).
 - **Past simple:** para acciones terminadas en el pasado
   (_I went yesterday_). Se usa con
-  [Past Simple](/idiomas/en/a2/past-simple).
+  [Past Simple](/es/en/a2/past-simple).
 - **Past participle:** para tiempos perfectos (_I have gone_) y la voz
   pasiva (_it was eaten_).
 
@@ -230,8 +230,8 @@ Algunos verbos "suenan" como que deberían ser irregulares pero no lo son:
    fija la memoria.
 
 3. **Practicá con ejercicios interactivos.** Las lecciones de
-   [Simple Present](/idiomas/en/a1/simple-present) y
-   [Past Simple](/idiomas/en/a2/past-simple) en PolyLingua incluyen
+   [Simple Present](/es/en/a1/simple-present) y
+   [Past Simple](/es/en/a2/past-simple) en PolyLingua incluyen
    ejercicios de completar, emparejar y escribir que te obligan a usar las
    formas correctas en contexto.
 
@@ -267,5 +267,5 @@ Los verbos irregulares del inglés no son un muro imposible — son un conjunto
 finito de palabras muy comunes que siguen patrones reconocibles. Agrupá por
 patrón (AAA, ABB, ABC), empezá por los 20 más frecuentes, practicá con
 frases reales, y en unas semanas vas a usarlos sin pensar. Podés empezar
-ahora mismo con las [lecciones de inglés A1](/idiomas/en/a1) y
-[A2](/idiomas/en/a2) en PolyLingua.
+ahora mismo con las [lecciones de inglés A1](/es/en/a1) y
+[A2](/es/en/a2) en PolyLingua.

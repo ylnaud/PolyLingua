@@ -116,7 +116,7 @@ extra antes de usarla en una frase importante.
 
 En vez de traducir mentalmente, memorizá el significado italiano desde el
 inicio: "burro = mantequilla", no "burro = ¿el animal, no?". Las
-[lecciones de italiano A1](/idiomas/it/a1) de PolyLingua enseñan vocabulario
+[lecciones de italiano A1](/es/it/a1) de PolyLingua enseñan vocabulario
 con frases de ejemplo, no listas sueltas, precisamente para fijar el
 significado correcto desde el principio.
 
@@ -179,5 +179,5 @@ rápido, pero también el terreno perfecto para los falsos amigos: cuanto más
 familiar suena una palabra, menos la cuestionás, y ahí es donde te
 equivocás. Sospechá de lo obvio, aprendé vocabulario en frases (no en listas
 sueltas) y anotá tus propios tropiezos. Podés empezar a practicar con
-contexto real en las [lecciones de italiano](/idiomas/it) de PolyLingua,
+contexto real en las [lecciones de italiano](/es/it) de PolyLingua,
 donde cada palabra viene acompañada de su frase y su situación.

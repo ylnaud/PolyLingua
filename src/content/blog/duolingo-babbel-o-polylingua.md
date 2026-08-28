@@ -77,7 +77,7 @@ para esto si podés pagar la suscripción.
 **Trabajás en un entorno donde necesitás alemán o inglés formal**
 (reuniones, correos, documentación técnica). Babbel es la que más invierte
 en diálogos de registro profesional y contexto cultural realista — ahí
-paga la suscripción. PolyLingua cubre [gramática avanzada (C1-C2)](/idiomas/de/c1), incluida
+paga la suscripción. PolyLingua cubre [gramática avanzada (C1-C2)](/es/de/c1), incluida
 retórica y registro formal, pero con menos práctica conversacional
 guiada que Babbel.
 

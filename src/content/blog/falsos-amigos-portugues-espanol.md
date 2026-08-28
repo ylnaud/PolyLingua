@@ -117,7 +117,7 @@ importante.
 
 En vez de traducir mentalmente, memorizá el significado directamente en
 portugués: "esquisito = raro", no "esquisito = ¿exquisito, no?". Las
-[lecciones de portugués A1](/idiomas/pt/a1) de PolyLingua enseñan
+[lecciones de portugués A1](/es/pt/a1) de PolyLingua enseñan
 vocabulario con frases de ejemplo, no listas sueltas, para fijar bien el
 significado desde el principio.
 
@@ -179,5 +179,5 @@ rápido, pero también genera una confianza que a veces te traiciona. Prestá
 atención especial a los que cambian totalmente de significado (embaraçada,
 esquisito, ano), aprendé vocabulario en frases y no en listas sueltas, y
 anotá tus propios tropiezos a medida que aparezcan. Podés empezar a
-practicar con contexto real en las [lecciones de portugués](/idiomas/pt) de
+practicar con contexto real en las [lecciones de portugués](/es/pt) de
 PolyLingua, donde cada palabra viene con su frase y su situación.

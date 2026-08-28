@@ -31,9 +31,9 @@ const vocabManifest = Object.fromEntries(
 >
   <section class="container vocab-head">
     <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/idiomas">Idiomas</a>
+      <a href="/es">Idiomas</a>
       <span aria-hidden="true">/</span>
-      <a href={`/idiomas/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
+      <a href={`/es/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
       <span>Vocabulario</span>
     </nav>
@@ -47,7 +47,7 @@ const vocabManifest = Object.fromEntries(
       <p class="empty-emoji">✏️</p>
       <h2>Todavía no aprendiste vocabulario en {languageMeta?.name}</h2>
       <p>Completa una lección para que sus palabras nuevas empiecen a aparecer acá.</p>
-      <a class="btn btn-primary" href={`/idiomas/${lang}`}>Ver lecciones</a>
+      <a class="btn btn-primary" href={`/es/${lang}`}>Ver lecciones</a>
     </div>
 
     <div class="card word-list-card" data-word-list-card hidden>

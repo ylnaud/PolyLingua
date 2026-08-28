@@ -2,7 +2,14 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LanguageCard from '../../components/LanguageCard.astro';
 import { LANGUAGES } from '../../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../../data/userLanguages';
 import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return ACTIVE_USER_LANGUAGES.map((userLang) => ({ params: { userLang: userLang.id } }));
+}
+
+const { userLang } = Astro.params;
 
 const lessons = await getCollection('lessons');
 const lessonCounts = Object.fromEntries(
@@ -21,7 +28,7 @@ const structuredData = {
     item: {
       '@type': 'Course',
       name: `Curso de ${l.name}`,
-      url: `${siteURL}/idiomas/${l.id}`,
+      url: `${siteURL}/${userLang}/${l.id}`,
       inLanguage: l.id,
     },
   })),
@@ -31,8 +38,13 @@ const structuredData = {
 <BaseLayout
   title="Idiomas disponibles"
   description="Elige el idioma que quieres aprender: alemán, inglés, francés, italiano o portugués. Gramática gamificada de A1 a C2, gratis."
-  path="/idiomas"
+  path={`/${userLang}`}
   structuredData={structuredData}
+  siloContext={{
+    userLang,
+    targetLang: '',
+    breadcrumbs: [{ name: 'Idiomas', href: `/${userLang}` }],
+  }}
 >
   <section class="container page-head">
     <span class="eyebrow">Catálogo de idiomas</span>
@@ -46,7 +58,11 @@ const structuredData = {
   <section class="container languages-grid">
     {
       LANGUAGES.map((language) => (
-        <LanguageCard language={language} lessonCount={lessonCounts[language.id] ?? 0} />
+        <LanguageCard
+          language={language}
+          lessonCount={lessonCounts[language.id] ?? 0}
+          basePath={`/${userLang}`}
+        />
       ))
     }
   </section>

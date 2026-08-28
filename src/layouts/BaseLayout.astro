@@ -9,7 +9,24 @@ import SoundEffects from '../components/SoundEffects.astro';
 import CookieNotice from '../components/CookieNotice.astro';
 import ScrollTopButton from '../components/ScrollTopButton.astro';
 import BottomNav from '../components/BottomNav.astro';
+import BaseSEO from '../components/BaseSEO.astro';
 import '../styles/global.css';
+
+interface SiloContext {
+  userLang: string;
+  targetLang: string;
+  restPath?: string;
+  breadcrumbs: { name: string; href: string }[];
+  learningResource?: {
+    title: string;
+    description: string;
+    minutes: number;
+    grammarTopic: string;
+    situation?: string;
+    level: string;
+    quiz?: { question: string }[];
+  };
+}
 
 interface Props {
   title: string;
@@ -19,6 +36,9 @@ interface Props {
   noindex?: boolean;
   ogType?: string;
   ogImage?: string;
+  // Solo lo pasan las páginas del silo [userLang]/[targetLang]/... — inyecta
+  // hreflang cruzados + JSON-LD BreadcrumbList/LearningResource vía BaseSEO.
+  siloContext?: SiloContext;
 }
 
 const {
@@ -29,6 +49,7 @@ const {
   noindex = false,
   ogType = 'website',
   ogImage: ogImagePath = '/og-image.png',
+  siloContext,
 } = Astro.props;
 
 const siteName = 'PolyLingua';
@@ -90,6 +111,8 @@ const ogImage = new URL(ogImagePath, Astro.site);
         />
       )
     }
+
+    {siloContext && <BaseSEO {...siloContext} />}
 
     <ClientRouter />
   </head>

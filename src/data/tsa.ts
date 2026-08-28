@@ -1,5 +1,5 @@
 // Texto SEO de Autoridad (TSA): un bloque de contenido con profundidad
-// temática para páginas de listado (como /idiomas/[lang]/[level]) que de
+// temática para páginas de listado (como /es/[lang]/[level]) que de
 // otra forma tienen poco texto propio para Google. Se coloca después del
 // grid de lecciones, no antes, para no retrasar el contenido que el
 // usuario realmente busca. Formato pensado para escanear, no para leer de
@@ -36,9 +36,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'El género gramatical (der, die, das), el orden de palabras (el verbo va en segunda posición) y algunos sonidos nuevos (ch, ü, ö) son la única dificultad real de este nivel — el resto es bastante regular y predecible una vez entendés el patrón.',
     stat: { value: '6-8 semanas', label: 'a 15-20 min diarios' },
     links: [
-      { href: '/idiomas/de/a1/saludos-presentarse', label: 'Saludos y presentarse' },
-      { href: '/idiomas/de/a1/articulos-der-die-das', label: 'Der, die, das' },
-      { href: '/idiomas/de/a1/presente-verbos', label: 'El presente (Präsens)' },
+      { href: '/es/de/a1/saludos-presentarse', label: 'Saludos y presentarse' },
+      { href: '/es/de/a1/articulos-der-die-das', label: 'Der, die, das' },
+      { href: '/es/de/a1/presente-verbos', label: 'El presente (Präsens)' },
     ],
   },
   'de-a2': {
@@ -56,9 +56,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'El verdadero salto de dificultad en A2 no es el vocabulario nuevo, es el Dativ vs. Akkusativ: decidir qué artículo usar según si algo "recibe" o "es" la acción. Es la base gramatical de todo lo que viene después, así que vale la pena dominarlo acá y no arrastrarlo.',
     stat: { value: '8-10 semanas', label: 'si ya completaste A1' },
     links: [
-      { href: '/idiomas/de/a2/perfekt-pasado', label: 'Perfekt: el pasado' },
-      { href: '/idiomas/de/a2/dativ-akkusativ', label: 'Dativ vs. Akkusativ' },
-      { href: '/idiomas/de/a2/verbos-modales', label: 'Verbos modales' },
+      { href: '/es/de/a2/perfekt-pasado', label: 'Perfekt: el pasado' },
+      { href: '/es/de/a2/dativ-akkusativ', label: 'Dativ vs. Akkusativ' },
+      { href: '/es/de/a2/verbos-modales', label: 'Verbos modales' },
     ],
   },
   'de-b1': {
@@ -76,9 +76,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'El Adjektivdeklination (qué terminación lleva un adjetivo según el caso, género y si hay artículo) tiene fama de ser lo más temido del alemán intermedio. La buena noticia: sigue un patrón de tabla fijo, no hay que memorizar excepciones — solo la tabla correcta.',
     stat: { value: '10-12 semanas', label: 'nivel intermedio real' },
     links: [
-      { href: '/idiomas/de/b1/oraciones-subordinadas', label: 'Oraciones subordinadas' },
-      { href: '/idiomas/de/b1/adjektivdeklination', label: 'Adjektivdeklination' },
-      { href: '/idiomas/de/b1/genitiv', label: 'Der Genitiv' },
+      { href: '/es/de/b1/oraciones-subordinadas', label: 'Oraciones subordinadas' },
+      { href: '/es/de/b1/adjektivdeklination', label: 'Adjektivdeklination' },
+      { href: '/es/de/b1/genitiv', label: 'Der Genitiv' },
     ],
   },
   'de-b2': {
@@ -96,9 +96,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'La voz pasiva en alemán no es solo "werden + participio" — cambia según si es un proceso (Vorgangspassiv) o un resultado (Zustandspassiv), una distinción que el español no tiene y que hace sonar mucho más nativo a quien la domina.',
     stat: { value: '3-4 meses', label: 'nivel intermedio alto' },
     links: [
-      { href: '/idiomas/de/b2/voz-pasiva', label: 'Passiv' },
-      { href: '/idiomas/de/b2/konjunktiv-2', label: 'Konjunktiv II' },
-      { href: '/idiomas/de/b2/konnektoren', label: 'Konnektoren' },
+      { href: '/es/de/b2/voz-pasiva', label: 'Passiv' },
+      { href: '/es/de/b2/konjunktiv-2', label: 'Konjunktiv II' },
+      { href: '/es/de/b2/konnektoren', label: 'Konnektoren' },
     ],
   },
   'de-c1': {
@@ -116,9 +116,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'El Konjunktiv I (para el discurso indirecto: "dijo que había llegado") casi no se usa al hablar, pero es el estándar en noticias y textos formales — reconocerlo es lo que separa entender un artículo del diario de solo entender una conversación.',
     stat: { value: '4-6 meses', label: 'nivel avanzado' },
     links: [
-      { href: '/idiomas/de/c1/konjunktiv-1', label: 'Konjunktiv I' },
-      { href: '/idiomas/de/c1/nominalstil', label: 'Nominalstil vs. Verbalstil' },
-      { href: '/idiomas/de/c1/wissenschaft', label: 'Wissenschaftssprache' },
+      { href: '/es/de/c1/konjunktiv-1', label: 'Konjunktiv I' },
+      { href: '/es/de/c1/nominalstil', label: 'Nominalstil vs. Verbalstil' },
+      { href: '/es/de/c1/wissenschaft', label: 'Wissenschaftssprache' },
     ],
   },
   'de-c2': {
@@ -136,9 +136,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'Las partículas modales — ja, doch, mal, halt — no tienen traducción directa y casi no aparecen en los libros de texto, pero son lo que más delata a un hablante no nativo. Dominarlas es la diferencia entre "hablar alemán perfecto" y "sonar alemán".',
     stat: { value: 'maestría', label: 'sin techo fijo de tiempo' },
     links: [
-      { href: '/idiomas/de/c2/redewendungen', label: 'Redewendungen' },
-      { href: '/idiomas/de/c2/ironie-register', label: 'Ironie und Register' },
-      { href: '/idiomas/de/c2/particulas-modales', label: 'Partículas modales' },
+      { href: '/es/de/c2/redewendungen', label: 'Redewendungen' },
+      { href: '/es/de/c2/ironie-register', label: 'Ironie und Register' },
+      { href: '/es/de/c2/particulas-modales', label: 'Partículas modales' },
     ],
   },
 
@@ -157,9 +157,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "El verbo 'to be' aparece en casi cada frase en inglés — para describir, ubicar y hasta decir la edad ('I am 20', no 'I have 20 years' como en español). Dominarlo desde el día uno evita que arrastres ese error durante meses.",
     stat: { value: '5-7 semanas', label: 'gracias al vocabulario compartido con el español' },
     links: [
-      { href: '/idiomas/en/a1/to-be', label: "El verbo 'to be'" },
-      { href: '/idiomas/en/a1/simple-present', label: 'Simple Present' },
-      { href: '/idiomas/en/a1/articles', label: 'A, An, The' },
+      { href: '/es/en/a1/to-be', label: "El verbo 'to be'" },
+      { href: '/es/en/a1/simple-present', label: 'Simple Present' },
+      { href: '/es/en/a1/articles', label: 'A, An, The' },
     ],
   },
   'en-a2': {
@@ -177,9 +177,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "En español preguntás invirtiendo el orden ('¿Comes pizza?'); en inglés necesitás un verbo auxiliar que no significa nada ('Do you eat pizza?'). Es el error #1 de los hispanohablantes en A2 — y una vez que hace clic, no se olvida.",
     stat: { value: '7-9 semanas', label: 'si ya completaste A1' },
     links: [
-      { href: '/idiomas/en/a2/past-simple', label: 'Past Simple' },
-      { href: '/idiomas/en/a2/question-formation', label: 'Question Formation' },
-      { href: '/idiomas/en/a2/comparatives-superlatives', label: 'Comparatives and Superlatives' },
+      { href: '/es/en/a2/past-simple', label: 'Past Simple' },
+      { href: '/es/en/a2/question-formation', label: 'Question Formation' },
+      { href: '/es/en/a2/comparatives-superlatives', label: 'Comparatives and Superlatives' },
     ],
   },
   'en-b1': {
@@ -197,9 +197,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "El Present Perfect ('I have lived here for 5 years') no tiene equivalente exacto en español — no es ni pasado ni presente, es una acción que empezó antes y sigue conectada a ahora. Es la trampa gramatical más común de este nivel.",
     stat: { value: '9-11 semanas', label: 'nivel intermedio real' },
     links: [
-      { href: '/idiomas/en/b1/present-perfect', label: 'Present Perfect vs. Past Simple' },
-      { href: '/idiomas/en/b1/future-forms', label: 'Future Forms' },
-      { href: '/idiomas/en/b1/relative-clauses', label: 'Relative Clauses' },
+      { href: '/es/en/b1/present-perfect', label: 'Present Perfect vs. Past Simple' },
+      { href: '/es/en/b1/future-forms', label: 'Future Forms' },
+      { href: '/es/en/b1/relative-clauses', label: 'Relative Clauses' },
     ],
   },
   'en-b2': {
@@ -217,9 +217,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "Los Mixed Conditionals (mezclar un condicional de pasado con uno de presente: 'If I had studied medicine, I would be a doctor now') son donde más se traban los hablantes de B2, porque combinan dos estructuras aprendidas por separado.",
     stat: { value: '3-4 meses', label: 'nivel intermedio alto' },
     links: [
-      { href: '/idiomas/en/b2/conditionals', label: 'Conditionals' },
-      { href: '/idiomas/en/b2/passive-voice', label: 'Passive Voice' },
-      { href: '/idiomas/en/b2/advanced-connectors', label: 'Advanced Connectors' },
+      { href: '/es/en/b2/conditionals', label: 'Conditionals' },
+      { href: '/es/en/b2/passive-voice', label: 'Passive Voice' },
+      { href: '/es/en/b2/advanced-connectors', label: 'Advanced Connectors' },
     ],
   },
   'en-c1': {
@@ -237,9 +237,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "Las collocations (qué palabras 'van juntas' en inglés — 'make a decision', no 'do a decision') son lo que separa un inglés técnicamente correcto de uno que suena natural. Nadie las adivina por lógica, hay que aprenderlas como bloques.",
     stat: { value: '4-6 meses', label: 'nivel avanzado' },
     links: [
-      { href: '/idiomas/en/c1/reported-speech', label: 'Reported Speech' },
-      { href: '/idiomas/en/c1/collocations', label: 'Advanced Collocations' },
-      { href: '/idiomas/en/c1/business-english', label: 'Business English' },
+      { href: '/es/en/c1/reported-speech', label: 'Reported Speech' },
+      { href: '/es/en/c1/collocations', label: 'Advanced Collocations' },
+      { href: '/es/en/c1/business-english', label: 'Business English' },
     ],
   },
   'en-c2': {
@@ -257,9 +257,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "Los phrasal verbs (look up, give in, put off) son la razón por la que muchos C1 avanzados se sienten 'perdidos' escuchando a nativos — no están en ningún examen tradicional, pero son gran parte del inglés hablado real.",
     stat: { value: 'maestría', label: 'sin techo fijo de tiempo' },
     links: [
-      { href: '/idiomas/en/c2/phrasal-verbs', label: 'Phrasal Verbs' },
-      { href: '/idiomas/en/c2/wordplay-irony', label: 'Wordplay and Irony' },
-      { href: '/idiomas/en/c2/british-american', label: 'British vs. American English' },
+      { href: '/es/en/c2/phrasal-verbs', label: 'Phrasal Verbs' },
+      { href: '/es/en/c2/wordplay-irony', label: 'Wordplay and Irony' },
+      { href: '/es/en/c2/british-american', label: 'British vs. American English' },
     ],
   },
 
@@ -278,9 +278,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'Cada sustantivo en francés es masculino o femenino sin lógica aparente (le vs. la) — como en español, pero sin las pistas de -o/-a. La estrategia que funciona es memorizar cada palabra CON su artículo desde el día uno.',
     stat: { value: '6-8 semanas', label: 'a 15-20 min diarios' },
     links: [
-      { href: '/idiomas/fr/a1/salutations', label: 'Salutations' },
-      { href: '/idiomas/fr/a1/articles-genre', label: 'Le, la, un, une' },
-      { href: '/idiomas/fr/a1/present-indicatif', label: 'Le présent' },
+      { href: '/es/fr/a1/salutations', label: 'Salutations' },
+      { href: '/es/fr/a1/articles-genre', label: 'Le, la, un, une' },
+      { href: '/es/fr/a1/present-indicatif', label: 'Le présent' },
     ],
   },
   'fr-a2': {
@@ -298,9 +298,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "A diferencia del español, en francés la posición del adjetivo cambia el significado a veces ('un homme grand' = un hombre alto, 'un grand homme' = un gran hombre) — detalles que separan un francés correcto de uno elegante.",
     stat: { value: '8-10 semanas', label: 'si ya completaste A1' },
     links: [
-      { href: '/idiomas/fr/a2/passe-compose', label: 'Le passé composé' },
-      { href: '/idiomas/fr/a2/pronoms-cod-coi', label: 'Pronoms COD et COI' },
-      { href: '/idiomas/fr/a2/place-adjectifs', label: 'La place des adjectifs' },
+      { href: '/es/fr/a2/passe-compose', label: 'Le passé composé' },
+      { href: '/es/fr/a2/pronoms-cod-coi', label: 'Pronoms COD et COI' },
+      { href: '/es/fr/a2/place-adjectifs', label: 'La place des adjectifs' },
     ],
   },
   'fr-b1': {
@@ -318,9 +318,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "L'imparfait (el fondo de una historia: 'il pleuvait') y le passé composé (la acción puntual: 'je suis sorti') son la trampa #1 de este nivel — el español los distingue igual (imperfecto vs. pretérito), la lógica ya la tenés.",
     stat: { value: '10-12 semanas', label: 'nivel intermedio real' },
     links: [
-      { href: '/idiomas/fr/b1/conditionnel-present', label: 'Le conditionnel présent' },
-      { href: '/idiomas/fr/b1/imparfait-passe-compose', label: 'Imparfait vs. passé composé' },
-      { href: '/idiomas/fr/b1/depuis-pendant-il-y-a-dans', label: 'Depuis, pendant, il y a, dans' },
+      { href: '/es/fr/b1/conditionnel-present', label: 'Le conditionnel présent' },
+      { href: '/es/fr/b1/imparfait-passe-compose', label: 'Imparfait vs. passé composé' },
+      { href: '/es/fr/b1/depuis-pendant-il-y-a-dans', label: 'Depuis, pendant, il y a, dans' },
     ],
   },
   'fr-b2': {
@@ -338,9 +338,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "Los pronombres relativos compuestos (celui qui, ce dont, ce à quoi) son lo que hace que una frase suene elegante en vez de repetitiva — cambiar 'la persona que...' por 'celui qui...' es donde se nota el salto de nivel.",
     stat: { value: '3-4 meses', label: 'nivel intermedio alto' },
     links: [
-      { href: '/idiomas/fr/b2/voix-passive', label: 'La voix passive' },
-      { href: '/idiomas/fr/b2/pronoms-relatifs', label: 'Les pronoms relatifs' },
-      { href: '/idiomas/fr/b2/connecteurs-logiques', label: 'Connecteurs logiques' },
+      { href: '/es/fr/b2/voix-passive', label: 'La voix passive' },
+      { href: '/es/fr/b2/pronoms-relatifs', label: 'Les pronoms relatifs' },
+      { href: '/es/fr/b2/connecteurs-logiques', label: 'Connecteurs logiques' },
     ],
   },
   'fr-c1': {
@@ -358,9 +358,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "Le subjonctif no se traduce por lógica desde el español — se activa por ciertos verbos y expresiones ('il faut que', 'je doute que'), no por el significado de la frase. Es lo que más diferencia a un C1 real de alguien que memorizó reglas.",
     stat: { value: '4-6 meses', label: 'nivel avanzado' },
     links: [
-      { href: '/idiomas/fr/c1/subjonctif', label: 'Le subjonctif' },
-      { href: '/idiomas/fr/c1/discours-indirect', label: 'Le discours indirect' },
-      { href: '/idiomas/fr/c1/francais-affaires', label: 'Le français des affaires' },
+      { href: '/es/fr/c1/subjonctif', label: 'Le subjonctif' },
+      { href: '/es/fr/c1/discours-indirect', label: 'Le discours indirect' },
+      { href: '/es/fr/c1/francais-affaires', label: 'Le français des affaires' },
     ],
   },
   'fr-c2': {
@@ -378,9 +378,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'Las partículas de discurso —donc, quand même, enfin, ben— no tienen traducción directa y casi no aparecen en los libros, pero son lo que más delata a un hablante no nativo. Es la diferencia entre "hablar francés perfecto" y "sonar francés".',
     stat: { value: 'maestría', label: 'sin techo fijo de tiempo' },
     links: [
-      { href: '/idiomas/fr/c2/registres-particules', label: 'Particules de discours' },
-      { href: '/idiomas/fr/c2/ironie-humour', label: "L'ironie et l'humour" },
-      { href: '/idiomas/fr/c2/francophonie', label: 'La Francophonie' },
+      { href: '/es/fr/c2/registres-particules', label: 'Particules de discours' },
+      { href: '/es/fr/c2/ironie-humour', label: "L'ironie et l'humour" },
+      { href: '/es/fr/c2/francophonie', label: 'La Francophonie' },
     ],
   },
 
@@ -399,9 +399,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "En italiano no invertís el orden para preguntar como en inglés — 'Parli italiano?' se forma igual que la afirmación, solo cambia la entonación. Es una de las pocas reglas donde el italiano es más simple que el español.",
     stat: { value: '5-7 semanas', label: 'el idioma más rápido para hispanohablantes' },
     links: [
-      { href: '/idiomas/it/a1/saluti', label: 'Saluti' },
-      { href: '/idiomas/it/a1/presente-indicativo', label: 'Il presente' },
-      { href: '/idiomas/it/a1/fare-domande', label: 'Fare domande' },
+      { href: '/es/it/a1/saluti', label: 'Saluti' },
+      { href: '/es/it/a1/presente-indicativo', label: 'Il presente' },
+      { href: '/es/it/a1/fare-domande', label: 'Fare domande' },
     ],
   },
   'it-a2': {
@@ -419,9 +419,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "Il passato prossimo se forma con essere o avere según el verbo, y con essere el participio concuerda en género y número ('sono andata' si sos mujer) — un detalle que el español no tiene y sorprende a muchos en este nivel.",
     stat: { value: '7-9 semanas', label: 'si ya completaste A1' },
     links: [
-      { href: '/idiomas/it/a2/passato-prossimo', label: 'Il passato prossimo' },
-      { href: '/idiomas/it/a2/pronomi-diretti-indiretti', label: 'Pronomi diretti e indiretti' },
-      { href: '/idiomas/it/a2/verbi-modali', label: 'Dovere, potere, volere' },
+      { href: '/es/it/a2/passato-prossimo', label: 'Il passato prossimo' },
+      { href: '/es/it/a2/pronomi-diretti-indiretti', label: 'Pronomi diretti e indiretti' },
+      { href: '/es/it/a2/verbi-modali', label: 'Dovere, potere, volere' },
     ],
   },
   'it-b1': {
@@ -439,9 +439,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "Da y per parecen intercambiables desde el español, pero en italiano marcan duración distinta: 'da tre anni' (desde hace 3 años, sigue) vs. 'per tre anni' (durante 3 años, ya terminó). La trampa temporal #1 de este nivel.",
     stat: { value: '9-11 semanas', label: 'nivel intermedio real' },
     links: [
-      { href: '/idiomas/it/b1/condizionale-presente', label: 'Il condizionale presente' },
-      { href: '/idiomas/it/b1/da-per', label: 'Da vs. per' },
-      { href: '/idiomas/it/b1/imperfetto-passato-prossimo', label: 'Imperfetto vs. passato prossimo' },
+      { href: '/es/it/b1/condizionale-presente', label: 'Il condizionale presente' },
+      { href: '/es/it/b1/da-per', label: 'Da vs. per' },
+      { href: '/es/it/b1/imperfetto-passato-prossimo', label: 'Imperfetto vs. passato prossimo' },
     ],
   },
   'it-b2': {
@@ -459,9 +459,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'Il periodo ipotetico tiene tres tipos —realidad, posibilidad e irrealidad— y cada uno exige una combinación distinta de modos y tiempos verbales. Dominarlos es matizar exactamente cuán probable es algo, no solo "hablar de hipótesis".',
     stat: { value: '3-4 meses', label: 'nivel intermedio alto' },
     links: [
-      { href: '/idiomas/it/b2/voce-passiva', label: 'La voce passiva' },
-      { href: '/idiomas/it/b2/pronomi-relativi', label: 'I pronomi relativi' },
-      { href: '/idiomas/it/b2/periodo-ipotetico', label: 'Periodo ipotetico' },
+      { href: '/es/it/b2/voce-passiva', label: 'La voce passiva' },
+      { href: '/es/it/b2/pronomi-relativi', label: 'I pronomi relativi' },
+      { href: '/es/it/b2/periodo-ipotetico', label: 'Periodo ipotetico' },
     ],
   },
   'it-c1': {
@@ -479,9 +479,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "Il congiuntivo no se traduce por lógica desde el español — se activa por ciertos verbos y expresiones ('penso che', 'è possibile che'), no por el significado de la frase. Es lo que más diferencia a un C1 real de alguien que memorizó reglas.",
     stat: { value: '4-6 meses', label: 'nivel avanzado' },
     links: [
-      { href: '/idiomas/it/c1/congiuntivo', label: 'Il congiuntivo' },
-      { href: '/idiomas/it/c1/discorso-indiretto', label: 'Il discorso indiretto' },
-      { href: '/idiomas/it/c1/italiano-affari', label: "L'italiano degli affari" },
+      { href: '/es/it/c1/congiuntivo', label: 'Il congiuntivo' },
+      { href: '/es/it/c1/discorso-indiretto', label: 'Il discorso indiretto' },
+      { href: '/es/it/c1/italiano-affari', label: "L'italiano degli affari" },
     ],
   },
   'it-c2': {
@@ -499,9 +499,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'Las partículas de discurso —mica, dai, magari, ecco— no tienen traducción directa y casi no aparecen en los libros, pero son lo que más delata a un hablante no nativo. Es la diferencia entre "hablar italiano perfecto" y "sonar italiano".',
     stat: { value: 'maestría', label: 'sin techo fijo de tiempo' },
     links: [
-      { href: '/idiomas/it/c2/particelle-registro', label: 'Particelle di registro' },
-      { href: '/idiomas/it/c2/ironia-umorismo', label: "L'ironia e l'umorismo" },
-      { href: '/idiomas/it/c2/varianti-regionali', label: 'Varianti regionali' },
+      { href: '/es/it/c2/particelle-registro', label: 'Particelle di registro' },
+      { href: '/es/it/c2/ironia-umorismo', label: "L'ironia e l'umorismo" },
+      { href: '/es/it/c2/varianti-regionali', label: 'Varianti regionali' },
     ],
   },
 
@@ -520,9 +520,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'Las vocales nasales (ão, ãe, õe) no existen en español y son la principal marca de acento — practicarlas desde A1, en vez de ignorarlas, es lo que más rápido te hace sonar auténtico en portugués.',
     stat: { value: '5-7 semanas', label: 'gracias a la cercanía con el español' },
     links: [
-      { href: '/idiomas/pt/a1/saudacoes', label: 'Saudações' },
-      { href: '/idiomas/pt/a1/presente-indicativo', label: 'O presente' },
-      { href: '/idiomas/pt/a1/perguntas', label: 'Como fazer perguntas' },
+      { href: '/es/pt/a1/saudacoes', label: 'Saudações' },
+      { href: '/es/pt/a1/presente-indicativo', label: 'O presente' },
+      { href: '/es/pt/a1/perguntas', label: 'Como fazer perguntas' },
     ],
   },
   'pt-a2': {
@@ -540,9 +540,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "A diferencia del inglés o francés, el portugués forma el pasado simple sin auxiliar: 'eu falei' (hablé). Es más simple que otros idiomas en este punto — el reto está en las terminaciones irregulares de los verbos más comunes.",
     stat: { value: '7-9 semanas', label: 'si ya completaste A1' },
     links: [
-      { href: '/idiomas/pt/a2/preterito-perfeito', label: 'O pretérito perfeito' },
-      { href: '/idiomas/pt/a2/pronomes-diretos-indiretos', label: 'O, a, lhe' },
-      { href: '/idiomas/pt/a2/e-preciso', label: 'É preciso' },
+      { href: '/es/pt/a2/preterito-perfeito', label: 'O pretérito perfeito' },
+      { href: '/es/pt/a2/pronomes-diretos-indiretos', label: 'O, a, lhe' },
+      { href: '/es/pt/a2/e-preciso', label: 'É preciso' },
     ],
   },
   'pt-b1': {
@@ -560,9 +560,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "La colocación pronominal ('te vejo' vs 'vejo-te') no tiene equivalente en español y varía entre el portugués de Brasil y de Portugal. Es la trampa más particular de este nivel — y la que más rápido delata qué variante aprendiste.",
     stat: { value: '9-11 semanas', label: 'nivel intermedio real' },
     links: [
-      { href: '/idiomas/pt/b1/colocacao-pronominal', label: 'Colocação pronominal' },
-      { href: '/idiomas/pt/b1/condicional-presente', label: 'O condicional presente' },
-      { href: '/idiomas/pt/b1/imperfeito-preterito-perfeito', label: 'Imperfeito vs. pretérito perfeito' },
+      { href: '/es/pt/b1/colocacao-pronominal', label: 'Colocação pronominal' },
+      { href: '/es/pt/b1/condicional-presente', label: 'O condicional presente' },
+      { href: '/es/pt/b1/imperfeito-preterito-perfeito', label: 'Imperfeito vs. pretérito perfeito' },
     ],
   },
   'pt-b2': {
@@ -580,9 +580,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "El portugués usa el gerundio con mucha más libertad que el español ('estou fazendo' es la forma cotidiana, no la excepción) — uno de los rasgos que más rápido distingue a alguien que aprendió portugués de alguien que solo lo entiende por el español.",
     stat: { value: '3-4 meses', label: 'nivel intermedio alto' },
     links: [
-      { href: '/idiomas/pt/b2/voz-passiva', label: 'A voz passiva' },
-      { href: '/idiomas/pt/b2/pronomes-relativos', label: 'Os pronomes relativos' },
-      { href: '/idiomas/pt/b2/gerundio', label: 'O gerúndio' },
+      { href: '/es/pt/b2/voz-passiva', label: 'A voz passiva' },
+      { href: '/es/pt/b2/pronomes-relativos', label: 'Os pronomes relativos' },
+      { href: '/es/pt/b2/gerundio', label: 'O gerúndio' },
     ],
   },
   'pt-c1': {
@@ -600,9 +600,9 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       "O futuro do subjuntivo ('quando eu falar') no existe en español, inglés, francés ni italiano — es exclusivo del portugués, y se usa en frases condicionales cotidianas ('se você quiser'). Sorprende a quien ya domina otro idioma romance.",
     stat: { value: '4-6 meses', label: 'nivel avanzado' },
     links: [
-      { href: '/idiomas/pt/c1/futuro-subjuntivo', label: 'O futuro do subjuntivo' },
-      { href: '/idiomas/pt/c1/infinitivo-pessoal', label: 'O infinitivo pessoal' },
-      { href: '/idiomas/pt/c1/portugues-negocios', label: 'Português dos negócios' },
+      { href: '/es/pt/c1/futuro-subjuntivo', label: 'O futuro do subjuntivo' },
+      { href: '/es/pt/c1/infinitivo-pessoal', label: 'O infinitivo pessoal' },
+      { href: '/es/pt/c1/portugues-negocios', label: 'Português dos negócios' },
     ],
   },
   'pt-c2': {
@@ -620,15 +620,15 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
       'Las partículas de discurso —né, então, tipo assim, pois é— no tienen traducción directa y casi no aparecen en los libros, pero son lo que más delata a un hablante no nativo. Es la diferencia entre "hablar portugués perfecto" y "sonar portugués".',
     stat: { value: 'maestría', label: 'sin techo fijo de tiempo' },
     links: [
-      { href: '/idiomas/pt/c2/registro-particulas', label: 'Partículas de registro' },
-      { href: '/idiomas/pt/c2/ironia-humor', label: 'Ironia e humor' },
-      { href: '/idiomas/pt/c2/variantes-regionais', label: 'Variantes regionais' },
+      { href: '/es/pt/c2/registro-particulas', label: 'Partículas de registro' },
+      { href: '/es/pt/c2/ironia-humor', label: 'Ironia e humor' },
+      { href: '/es/pt/c2/variantes-regionais', label: 'Variantes regionais' },
     ],
   },
 };
 
-// Misma idea que TSA, pero para /idiomas/[lang]/ (la página de idioma
-// completa, un nivel más arriba que /idiomas/[lang]/[level]/): en vez de
+// Misma idea que TSA, pero para /es/[lang]/ (la página de idioma
+// completa, un nivel más arriba que /es/[lang]/[level]/): en vez de
 // hablar de un nivel puntual, vende la ruta completa A1-C2 y linkea a
 // niveles en vez de lecciones. Clave: el id del idioma (de/en/fr/it/pt).
 export const TSA_LANG: Partial<Record<string, TsaEntry>> = {
@@ -647,9 +647,9 @@ export const TSA_LANG: Partial<Record<string, TsaEntry>> = {
       'Los tres obstáculos reales del alemán —género gramatical, orden de palabras y los casos (Dativ/Akkusativ)— aparecen temprano, en A1-A2. Una vez los superás, el resto del camino es mayormente memorizar vocabulario y patrones, no pelear con reglas nuevas.',
     stat: { value: '81 lecciones', label: 'en 6 niveles MCER, gratis' },
     links: [
-      { href: '/idiomas/de/a1', label: 'Empezar en A1' },
-      { href: '/idiomas/de/b1', label: 'Nivel B1' },
-      { href: '/idiomas/de/c1', label: 'Nivel C1' },
+      { href: '/es/de/a1', label: 'Empezar en A1' },
+      { href: '/es/de/b1', label: 'Nivel B1' },
+      { href: '/es/de/c1', label: 'Nivel C1' },
     ],
   },
   en: {
@@ -667,9 +667,9 @@ export const TSA_LANG: Partial<Record<string, TsaEntry>> = {
       'La mayoría de los hispanohablantes se estanca en B1 porque deja de estudiar estructura y solo "practica hablando" — funciona para lo básico, pero el salto a B2-C1 (condicionales, voz pasiva, registro formal) necesita estudio explícito, no solo exposición.',
     stat: { value: '67 lecciones', label: 'en 6 niveles MCER, gratis' },
     links: [
-      { href: '/idiomas/en/a1', label: 'Empezar en A1' },
-      { href: '/idiomas/en/b1', label: 'Nivel B1' },
-      { href: '/idiomas/en/c1', label: 'Nivel C1' },
+      { href: '/es/en/a1', label: 'Empezar en A1' },
+      { href: '/es/en/b1', label: 'Nivel B1' },
+      { href: '/es/en/c1', label: 'Nivel C1' },
     ],
   },
   fr: {
@@ -687,9 +687,9 @@ export const TSA_LANG: Partial<Record<string, TsaEntry>> = {
       'Le subjonctif, el gran temido del francés, no aparece hasta C1 en esta ruta — porque primero necesitás una base sólida de presente, pasado y condicional. Intentar aprenderlo antes de tiempo es la razón #1 por la que tanta gente abandona el francés a mitad de camino.',
     stat: { value: '67 lecciones', label: 'en 6 niveles MCER, gratis' },
     links: [
-      { href: '/idiomas/fr/a1', label: 'Empezar en A1' },
-      { href: '/idiomas/fr/b1', label: 'Nivel B1' },
-      { href: '/idiomas/fr/c1', label: 'Nivel C1' },
+      { href: '/es/fr/a1', label: 'Empezar en A1' },
+      { href: '/es/fr/b1', label: 'Nivel B1' },
+      { href: '/es/fr/c1', label: 'Nivel C1' },
     ],
   },
   it: {
@@ -707,9 +707,9 @@ export const TSA_LANG: Partial<Record<string, TsaEntry>> = {
       "La cercanía con el español es una ventaja enorme, pero también una trampa: los falsos amigos ('burro' no es burro, 'pila' no es solo pila) aparecen desde A1, y confiar demasiado en la intuición es el error #1 de los hispanohablantes que aprenden italiano.",
     stat: { value: '65 lecciones', label: 'en 6 niveles MCER, gratis' },
     links: [
-      { href: '/idiomas/it/a1', label: 'Empezar en A1' },
-      { href: '/idiomas/it/b1', label: 'Nivel B1' },
-      { href: '/idiomas/it/c1', label: 'Nivel C1' },
+      { href: '/es/it/a1', label: 'Empezar en A1' },
+      { href: '/es/it/b1', label: 'Nivel B1' },
+      { href: '/es/it/c1', label: 'Nivel C1' },
     ],
   },
   pt: {
@@ -727,9 +727,9 @@ export const TSA_LANG: Partial<Record<string, TsaEntry>> = {
       'Entender portugués escrito es casi automático para un hispanohablante — entenderlo hablado no. Las vocales nasales y el ritmo distinto hacen que muchos lean perfecto pero se pierdan en una conversación real; por eso esta ruta mete pronunciación desde la primera lección, no al final.',
     stat: { value: '65 lecciones', label: 'en 6 niveles MCER, gratis' },
     links: [
-      { href: '/idiomas/pt/a1', label: 'Empezar en A1' },
-      { href: '/idiomas/pt/b1', label: 'Nivel B1' },
-      { href: '/idiomas/pt/c1', label: 'Nivel C1' },
+      { href: '/es/pt/a1', label: 'Empezar en A1' },
+      { href: '/es/pt/b1', label: 'Nivel B1' },
+      { href: '/es/pt/c1', label: 'Nivel C1' },
     ],
   },
 };

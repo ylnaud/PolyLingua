@@ -1,0 +1,81 @@
+---
+// Metadatos SEO internacionales para una página del silo [userLang]/[targetLang]/...
+// Se usa desde BaseLayout (prop `siloContext`), nunca importado a mano en una
+// página — así todas las páginas del silo comparten el mismo cálculo de
+// hreflang y JSON-LD en vez de repetirlo cada una.
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+
+interface Breadcrumb {
+  name: string;
+  href: string;
+}
+
+interface LearningResourceInfo {
+  title: string;
+  description: string;
+  minutes: number;
+  grammarTopic: string;
+  situation?: string;
+  level: string;
+  quiz?: { question: string }[];
+}
+
+interface Props {
+  userLang: string;
+  targetLang: string;
+  // Resto de la ruta después de /[userLang]/[targetLang], p.ej. "/a1/articulos-der-die-das".
+  // Se reutiliza tal cual para armar la URL equivalente en cada idioma de interfaz activo.
+  restPath?: string;
+  breadcrumbs: Breadcrumb[];
+  learningResource?: LearningResourceInfo;
+}
+
+const { userLang, targetLang, restPath = '', breadcrumbs, learningResource } = Astro.props;
+
+const siteURL = Astro.site!.origin;
+
+const alternates = ACTIVE_USER_LANGUAGES.map((lang) => ({
+  hreflang: lang.bcp47,
+  href: targetLang ? `${siteURL}/${lang.id}/${targetLang}${restPath}` : `${siteURL}/${lang.id}`,
+}));
+
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((b, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: b.name,
+      item: `${siteURL}${b.href}`,
+    })),
+  },
+];
+
+if (learningResource) {
+  graph.push({
+    '@type': 'LearningResource',
+    name: learningResource.title,
+    description: learningResource.description,
+    url: `${siteURL}${Astro.url.pathname}`,
+    educationalLevel: learningResource.level.toUpperCase(),
+    learningResourceType: 'Lesson',
+    inLanguage: targetLang,
+    teaches: learningResource.situation
+      ? `${learningResource.situation} — ${learningResource.grammarTopic}`
+      : learningResource.grammarTopic,
+    timeRequired: `PT${learningResource.minutes}M`,
+    interactivityType: 'active',
+    ...(learningResource.quiz ? { assesses: learningResource.quiz.map((q) => q.question) } : {}),
+  });
+}
+
+const structuredData = { '@context': 'https://schema.org', '@graph': graph };
+---
+
+{alternates.map((alt) => <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />)}
+<link rel="alternate" hreflang="x-default" href={siteURL} />
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')}
+/>

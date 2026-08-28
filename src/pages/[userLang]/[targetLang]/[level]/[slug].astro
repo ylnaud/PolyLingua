@@ -1,31 +1,32 @@
 ---
 import LessonLayout from '../../../../layouts/LessonLayout.astro';
+import { parseLessonId } from '../../../../lib/lessonPath';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const lessons = await getCollection('lessons');
   return lessons.map((lesson) => {
-    const [lang, level, slug] = lesson.id.split('/');
+    const { userLang, targetLang, level, slug } = parseLessonId(lesson.id);
     const siblings = lessons
-      .filter((l) => l.data.language === lang && l.data.level === level)
+      .filter((l) => l.data.language === targetLang && l.data.level === level)
       .sort((a, b) => a.data.order - b.data.order);
     const idx = siblings.findIndex((s) => s.id === lesson.id);
     const prev = idx > 0 ? siblings[idx - 1] : null;
     const next = idx < siblings.length - 1 ? siblings[idx + 1] : null;
     return {
-      params: { lang, level, slug },
+      params: { userLang, targetLang, level, slug },
       props: {
         lesson,
         prevLesson: prev
           ? {
               title: prev.data.title,
-              href: `/idiomas/${lang}/${level}/${prev.id.split('/').pop()}`,
+              href: `/${userLang}/${targetLang}/${level}/${prev.id.split('/').pop()}`,
             }
           : null,
         nextLesson: next
           ? {
               title: next.data.title,
-              href: `/idiomas/${lang}/${level}/${next.id.split('/').pop()}`,
+              href: `/${userLang}/${targetLang}/${level}/${next.id.split('/').pop()}`,
             }
           : null,
       },
@@ -35,10 +36,11 @@ export async function getStaticPaths() {
 
 const { lesson, prevLesson, nextLesson } = Astro.props;
 const { Content } = await render(lesson);
-const { lang, level, slug } = Astro.params;
+const { userLang, targetLang, level, slug } = Astro.params;
 ---
 
 <LessonLayout
+  userLang={userLang}
   language={lesson.data.language}
   level={lesson.data.level}
   title={lesson.data.title}
@@ -52,10 +54,10 @@ const { lang, level, slug } = Astro.params;
   phrases={lesson.data.phrases}
   situation={lesson.data.situation}
   lessonId={lesson.id}
-  path={`/idiomas/${lang}/${level}/${slug}`}
+  path={`/${userLang}/${targetLang}/${level}/${slug}`}
   prevLesson={prevLesson}
   nextLesson={nextLesson}
-  ogImage={`/og-${lang}.png`}
+  ogImage={`/og-${targetLang}.png`}
 >
   <Content />
 </LessonLayout>

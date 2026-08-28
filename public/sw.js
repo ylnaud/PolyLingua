@@ -7,11 +7,11 @@ const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 const PRECACHE_URLS = [
   '/',
   '/offline',
-  '/idiomas',
+  '/es',
   '/logros',
   '/repasar',
-  ...LANGS.map((l) => `/idiomas/${l}`),
-  ...LANGS.flatMap((l) => LEVELS.map((lv) => `/idiomas/${l}/${lv}`)),
+  ...LANGS.map((l) => `/es/${l}`),
+  ...LANGS.flatMap((l) => LEVELS.map((lv) => `/es/${l}/${lv}`)),
 ];
 
 self.addEventListener('install', (event) => {

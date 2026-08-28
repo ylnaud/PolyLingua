@@ -30,12 +30,3 @@ import { LANGUAGES } from '../data/languages';
     </div>
   </section>
 </BaseLayout>
-
-<script>
-  import { mostRecentLangWithPrefix } from '../lib/storage';
-
-  const latestLang = mostRecentLangWithPrefix('polylingua-lesson-done-');
-  if (latestLang) {
-    window.location.replace(`/idiomas/${latestLang}/practica-libre`);
-  }
-</script>

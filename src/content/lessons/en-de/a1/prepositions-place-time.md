@@ -8,7 +8,7 @@ grammarTopic: 'Basic prepositions of place and time'
 funFact: "German time prepositions are surprisingly fixed: um is always for a clock time (um acht Uhr), am is always for a day (am Montag), and im is always for a month or season (im Mai, im Winter). Memorize which preposition goes with which TYPE of time expression, and you will almost never have to guess again."
 minutes: 9
 quiz:
-  - question: 'Which preposition is used with a specific clock time, like "at eight oclock"?'
+  - question: "Which preposition is used with a specific clock time, like \"at eight o'clock\"?"
     options: ['am', 'um', 'im']
     answerIndex: 1
     explanation: "\"um\" is used with exact clock times: um acht Uhr (at eight o'clock), um zwölf Uhr (at twelve o'clock)."
@@ -42,11 +42,11 @@ quiz:
     explanation: '"zwischen" means "between" — zwischen dem Tisch und dem Stuhl (between the table and the chair).'
 exercises:
   - type: 'fill-blank'
-    sentence: 'Der Film beginnt ___ acht Uhr. (The film starts at eight o\'clock)'
+    sentence: "Der Film beginnt ___ acht Uhr. (The film starts at eight o'clock)"
     answer: 'um'
     accepted: ['um']
     hint: '"um" always pairs with an exact clock time.'
-    translation: 'The film starts at eight o\'clock.'
+    translation: "The film starts at eight o'clock."
     placeholder: 'um / am / im'
   - type: 'fill-blank'
     sentence: 'Wir haben ___ Montag keine Schule. (We do not have school on Monday)'

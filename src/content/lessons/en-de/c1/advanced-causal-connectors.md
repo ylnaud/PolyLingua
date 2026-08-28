@@ -18,7 +18,7 @@ quiz:
     answerIndex: 1
     explanation: 'weil is a subordinating conjunction, so the conjugated verb moves to the end of its clause: ..., weil er krank ist.'
   - question: 'What word order does "denn" require, unlike weil?'
-    options: ['Verb-final', 'Verb-second, exactly like an independent main clause', 'Verb-first'],
+    options: ['Verb-final', 'Verb-second, exactly like an independent main clause', 'Verb-first']
     answerIndex: 1
     explanation: 'denn is a coordinating conjunction: the clause after it keeps normal main-clause (verb-second) word order — ..., denn er ist krank — and denn can never start a sentence or move to the front.'
   - question: 'Which causal connector typically introduces a reason the listener already knows or can easily infer, and often opens the sentence?'
@@ -26,11 +26,11 @@ quiz:
     answerIndex: 0
     explanation: 'da introduces a reason presented as already known, given, or obvious to the listener, and is common at the start of a sentence: Da es regnete, blieben wir zu Hause.'
   - question: 'Can "da" be answered to a direct "warum?" question the way "weil" can?'
-    options: ['Yes, they are fully interchangeable in every context', 'No — da presents background/known information and sounds odd as a direct answer to "warum?"', 'da is used only in questions'],
+    options: ['Yes, they are fully interchangeable in every context', 'No — da presents background/known information and sounds odd as a direct answer to "warum?"', 'da is used only in questions']
     answerIndex: 1
     explanation: '"Warum kommst du nicht?" — "Weil ich krank bin." is natural; "Da ich krank bin." as a standalone answer sounds unnatural, because da introduces given/background reasons, not a direct answer.'
   - question: 'What does "zumal" add to a reason that weil or da does not?'
-    options: ['It marks the reason as an ADDITIONAL, reinforcing point, often after another reason has already been given', 'It reverses the meaning to a contrast', 'It introduces a time clause, not a reason'],
+    options: ['It marks the reason as an ADDITIONAL, reinforcing point, often after another reason has already been given', 'It reverses the meaning to a contrast', 'It introduces a time clause, not a reason']
     answerIndex: 0
     explanation: 'zumal (= "especially since / all the more because") adds an extra, reinforcing reason on top of one already stated, and is largely restricted to formal written German.'
   - question: 'Which sentence correctly uses "zumal"?'
@@ -42,7 +42,7 @@ quiz:
     answerIndex: 1
     explanation: 'zumal behaves like weil/da (verb-final subordinate clause) and typically follows a main clause, adding a reinforcing reason: ..., zumal er krank war und es draußen regnete.'
   - question: 'Which register is "denn" most associated with, compared to "weil"?'
-    options: ['denn is slightly more formal/written and less common in casual speech than weil', 'denn is only used in children’s speech', 'denn and weil are used in identical contexts with no register difference'],
+    options: ['denn is slightly more formal/written and less common in casual speech than weil', 'denn is only used in children’s speech', 'denn and weil are used in identical contexts with no register difference']
     answerIndex: 0
     explanation: 'denn is common in writing, narration, and more careful speech, while weil dominates casual everyday conversation; both are fully standard German.'
 exercises:

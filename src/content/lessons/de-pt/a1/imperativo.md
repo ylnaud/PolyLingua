@@ -84,9 +84,6 @@ vocabulary:
     translation: 'hab!, hier: nimm! (tu, unregelmäßig)'
   - term: 'espera'
     translation: 'warte'
-vocabulary:
-  - term: 'fala!'
-    translation: 'sprich! (tu, bejaht)'
 ---
 
 Im Deutschen kennst du den Imperativ als eigene, aber recht einfache Form: "Sprich!",

@@ -12,7 +12,9 @@ import {
 } from '../../../data/matrices';
 
 export async function getStaticPaths() {
-  return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
+  return LANGUAGES.filter((language) => MATRIX_DATA[language.id]).map((language) => ({
+    params: { lang: language.id },
+  }));
 }
 
 interface DeckPhrase {
@@ -120,7 +122,7 @@ interface MatrixPanelData {
 const { lang } = Astro.params;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 const userLang = ACTIVE_USER_LANGUAGES[0].id;
-const matrixConfig = MATRIX_DATA[lang as keyof typeof MATRIX_DATA];
+const matrixConfig = MATRIX_DATA[lang as keyof typeof MATRIX_DATA]!;
 
 const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
   const actionColumn = matrix.columns.find((c) => c.role === 'action');

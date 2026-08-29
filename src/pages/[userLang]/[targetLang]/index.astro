@@ -4,6 +4,7 @@ import { LEVELS } from '../../../data/levels';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { TSA_LANG } from '../../../data/tsa';
 import { parseLessonId } from '../../../lib/lessonPath';
+import { MATRIX_DATA } from '../../../data/matrices';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -180,10 +181,14 @@ const structuredData = {
         <span aria-hidden="true">📖</span>
         <span>Gramática</span>
       </a>
-      <a class="explore-item card" href={`/idiomas/${targetLang}/generador-frases`}>
-        <span aria-hidden="true">🧩</span>
-        <span>Generador de frases</span>
-      </a>
+      {
+        MATRIX_DATA[targetLang as keyof typeof MATRIX_DATA] && (
+          <a class="explore-item card" href={`/idiomas/${targetLang}/generador-frases`}>
+            <span aria-hidden="true">🧩</span>
+            <span>Generador de frases</span>
+          </a>
+        )
+      }
     </div>
   </section>
 

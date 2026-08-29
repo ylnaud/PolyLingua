@@ -39,13 +39,13 @@ describe('levels', () => {
 });
 
 describe('languages', () => {
-  it('has exactly 5 languages', () => {
-    expect(LANGUAGES).toHaveLength(5);
+  it('has exactly 6 languages', () => {
+    expect(LANGUAGES).toHaveLength(6);
   });
 
-  it('covers de, en, fr, it, pt', () => {
+  it('covers de, en, es, fr, it, pt', () => {
     const ids = LANGUAGES.map((l) => l.id).sort();
-    expect(ids).toEqual(['de', 'en', 'fr', 'it', 'pt']);
+    expect(ids).toEqual(['de', 'en', 'es', 'fr', 'it', 'pt']);
   });
 
   it('has no duplicate ids', () => {
@@ -111,15 +111,16 @@ describe('resources', () => {
   it('has resources for every language', () => {
     for (const lang of langIds) {
       expect(RESOURCES[lang as keyof typeof RESOURCES], `missing ${lang}`).toBeDefined();
-      expect(RESOURCES[lang as keyof typeof RESOURCES].length, `${lang} is empty`).toBeGreaterThan(
-        0,
-      );
+      expect(
+        RESOURCES[lang as keyof typeof RESOURCES]!.length,
+        `${lang} is empty`,
+      ).toBeGreaterThan(0);
     }
   });
 
   it('every resource has a valid category', () => {
     for (const [lang, items] of Object.entries(RESOURCES)) {
-      for (const item of items) {
+      for (const item of items ?? []) {
         expect(validCategories, `${lang}: invalid category "${item.category}"`).toContain(
           item.category,
         );
@@ -129,7 +130,7 @@ describe('resources', () => {
 
   it('every resource has title and note', () => {
     for (const [lang, items] of Object.entries(RESOURCES)) {
-      for (const item of items) {
+      for (const item of items ?? []) {
         expect(item.title, `${lang}: resource missing title`).toBeTruthy();
         expect(item.note, `${lang}: resource missing note`).toBeTruthy();
       }
@@ -144,7 +145,7 @@ describe('matrices (Generador de frases)', () => {
     const levels = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'] as const;
     for (const lang of langIds) {
       for (const level of levels) {
-        const matches = MATRIX_DATA[lang].matrices.filter((m) => m.level === level);
+        const matches = MATRIX_DATA[lang]!.matrices.filter((m) => m.level === level);
         expect(matches.length, `${lang} has no ${level} matrix`).toBeGreaterThan(0);
       }
     }
@@ -152,14 +153,14 @@ describe('matrices (Generador de frases)', () => {
 
   it('matrix ids are unique within each language', () => {
     for (const lang of langIds) {
-      const ids = MATRIX_DATA[lang].matrices.map((m) => m.id);
+      const ids = MATRIX_DATA[lang]!.matrices.map((m) => m.id);
       expect(new Set(ids).size, `${lang} has duplicate matrix ids`).toBe(ids.length);
     }
   });
 
   it('every matrix has exactly one subject and one modal column', () => {
     for (const lang of langIds) {
-      for (const matrix of MATRIX_DATA[lang].matrices) {
+      for (const matrix of MATRIX_DATA[lang]!.matrices) {
         const subjectCount = matrix.columns.filter((c) => c.role === 'subject').length;
         const modalCount = matrix.columns.filter((c) => c.role === 'modal').length;
         expect(subjectCount, `${lang}/${matrix.id}: subject columns`).toBe(1);
@@ -171,7 +172,7 @@ describe('matrices (Generador de frases)', () => {
   it('when two matrices share a level, each has a distinct tabLabel', () => {
     for (const lang of langIds) {
       const byLevel = new Map<string, string[]>();
-      for (const matrix of MATRIX_DATA[lang].matrices) {
+      for (const matrix of MATRIX_DATA[lang]!.matrices) {
         const labels = byLevel.get(matrix.level) ?? [];
         labels.push(matrix.tabLabel ?? matrix.level.toUpperCase());
         byLevel.set(matrix.level, labels);
@@ -188,7 +189,7 @@ describe('matrices (Generador de frases)', () => {
 
   it('every column has non-empty items, and forms/esForms (when present) match their agreesWith column length', () => {
     for (const lang of langIds) {
-      for (const matrix of MATRIX_DATA[lang].matrices) {
+      for (const matrix of MATRIX_DATA[lang]!.matrices) {
         for (const column of matrix.columns) {
           expect(
             column.items.length,
@@ -220,7 +221,7 @@ describe('matrices (Generador de frases)', () => {
 
   it('every matrix has a description (rendered as the pedagogy note)', () => {
     for (const lang of langIds) {
-      for (const matrix of MATRIX_DATA[lang].matrices) {
+      for (const matrix of MATRIX_DATA[lang]!.matrices) {
         expect(matrix.description, `${lang}/${matrix.id} missing description`).toBeTruthy();
       }
     }
@@ -237,7 +238,7 @@ describe('matrices (Generador de frases)', () => {
 
   it('every matrix keeps at least one compatible action per object once incompatible pairs are filtered out (no deck ends up empty)', () => {
     for (const lang of langIds) {
-      for (const matrix of MATRIX_DATA[lang].matrices) {
+      for (const matrix of MATRIX_DATA[lang]!.matrices) {
         const actionColumn = matrix.columns.find((c) => c.role === 'action');
         const objectColumn = matrix.columns.find((c) => c.role === 'object');
         if (!actionColumn || !objectColumn) continue;

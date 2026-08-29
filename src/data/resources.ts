@@ -12,7 +12,7 @@ export interface ResourceItem {
 // técnicas de estudio que compartió el usuario; las de los otros 4 idiomas son
 // equivalentes de alta confianza (medios/series/podcasts hechos específicamente
 // para estudiantes, o muy conocidos en su idioma original).
-export const RESOURCES: Record<LanguageId, ResourceItem[]> = {
+export const RESOURCES: Partial<Record<LanguageId, ResourceItem[]>> = {
   de: [
     {
       category: 'podcast',

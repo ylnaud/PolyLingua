@@ -2409,7 +2409,7 @@ export function assembleSpanishSentence(matrix: PhraseMatrix, colIndices: number
   return `${parts.join(' ')}.`;
 }
 
-export const MATRIX_DATA: Record<LanguageId, LanguageMatrixConfig> = {
+export const MATRIX_DATA: Partial<Record<LanguageId, LanguageMatrixConfig>> = {
   de: {
     matrices: [
       {

@@ -1,4 +1,24 @@
 ---
+import { LANGUAGE_MAP } from '../data/languages';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getTargetLangsFor } from '../lib/courses';
+
+interface Props {
+  userLang?: string;
+}
+
+// El footer se renderiza en TODAS las páginas, incluidas las de un silo
+// con idioma de interfaz distinto al principal. Antes tenía los links
+// hardcodeados a /es/<lang>, así que un usuario navegando en /de/... veía
+// un footer que lo expulsaba al silo español. Ahora respeta su silo.
+const { userLang = ACTIVE_USER_LANGUAGES[0].id } = Astro.props;
+
+// Solo se listan los cursos que EXISTEN para este idioma de interfaz: no
+// todos los userLang tienen los mismos targets (es-* tiene 5, en-* solo
+// en-de). El cálculo vive en src/lib/courses.ts, que lo resuelve una vez
+// por build — hacerlo acá lo repetiría en las ~1300 páginas del sitio.
+const targetLangs = getTargetLangsFor(userLang);
+
 const year = new Date().getFullYear();
 ---
 
@@ -14,11 +34,15 @@ const year = new Date().getFullYear();
     <div>
       <h2>Idiomas</h2>
       <ul>
-        <li><a href="/es/de">🇩🇪 Alemán</a></li>
-        <li><a href="/es/en">🇬🇧 Inglés</a></li>
-        <li><a href="/es/fr">🇫🇷 Francés</a></li>
-        <li><a href="/es/it">🇮🇹 Italiano</a></li>
-        <li><a href="/es/pt">🇧🇷 Portugués</a></li>
+        {
+          targetLangs.map((id) => (
+            <li>
+              <a href={`/${userLang}/${id}`}>
+                {LANGUAGE_MAP[id].flag} {LANGUAGE_MAP[id].name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
     <div>

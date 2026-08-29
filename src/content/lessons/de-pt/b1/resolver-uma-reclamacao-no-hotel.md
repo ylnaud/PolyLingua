@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b1'
 title: 'Está resolvido oder foi resolvido? Vorgang vs. Zustand im Portugiesischen | PolyLingua'
-description: "Der Unterschied zwischen foi resolvido (Vorgang) und está resolvido (Zustand) im Portugiesischen — wie das deutsche werden-Passiv vs. sein-Passiv, bei einer gelösten Hotelreklamation."
+description: "Der Unterschied zwischen foi resolvido und está resolvido im Portugiesischen — wie deutsches werden-Passiv vs. sein-Passiv, bei einer gelösten Hotelreklamation."
 order: 13
 unit: 3
 grammarTopic: 'Pretérito perfeito simples / passiva com ser vs. estar + particípio (ação vs. estado)'

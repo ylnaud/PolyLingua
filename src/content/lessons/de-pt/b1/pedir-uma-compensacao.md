@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b1'
 title: 'Conjuntivo nach Erwartungsverben: eine Entschädigung verlangen | PolyLingua'
-description: "Wie man mit dem presente und pretérito perfeito do conjuntivo nach espero que, é justo que im europäischen Portugiesisch höflich eine Entschädigung im Hotel verlangt."
+description: "Wie man mit dem presente und pretérito perfeito do conjuntivo nach espero que, é justo que im Portugiesischen höflich eine Entschädigung im Hotel verlangt."
 order: 12
 unit: 3
 grammarTopic: 'Conjuntivo nach Ausdrücken der Erwartung (espero que, é justo que)'

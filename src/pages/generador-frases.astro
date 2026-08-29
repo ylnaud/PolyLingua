@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { LANGUAGES } from '../data/languages';
+import { MATRIX_DATA } from '../data/matrices';
+
+const availableLanguages = LANGUAGES.filter((language) => MATRIX_DATA[language.id]);
 ---
 
 <BaseLayout
@@ -16,7 +19,7 @@ import { LANGUAGES } from '../data/languages';
     </p>
     <div class="lang-grid">
       {
-        LANGUAGES.map((language) => (
+        availableLanguages.map((language) => (
           <a class="lang-item card" href={`/idiomas/${language.id}/generador-frases`}>
             <span class="flag" aria-hidden="true">
               {language.flag}

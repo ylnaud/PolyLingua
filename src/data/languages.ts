@@ -1,4 +1,4 @@
-export type LanguageId = 'de' | 'en' | 'fr' | 'it' | 'pt';
+export type LanguageId = 'de' | 'en' | 'es' | 'fr' | 'it' | 'pt';
 
 export interface LanguageMeta {
   id: LanguageId;
@@ -66,6 +66,17 @@ export const LANGUAGES: LanguageMeta[] = [
       'Parecido al español en superficie, con sonidos nasales propios y estructuras (como el futuro do subjuntivo) que no existen en tu idioma.',
     color: '#1f8a5c',
     bcp47: 'pt-PT',
+  },
+  {
+    id: 'es',
+    name: 'Español',
+    nativeName: 'Español',
+    flag: '🇪🇸',
+    tagline: 'Ser o estar: esa es la cuestión',
+    description:
+      'Uno de los idiomas más hablados del mundo, con una gramática verbal rica (el subjuntivo aparece en todas partes) pero sin declinación por casos.',
+    color: '#c8102e',
+    bcp47: 'es-ES',
   },
 ];
 

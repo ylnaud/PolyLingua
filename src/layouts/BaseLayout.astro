@@ -124,7 +124,7 @@ const ogImage = new URL(ogImagePath, Astro.site);
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <Footer userLang={siloContext?.userLang} />
     <ProgressTracker />
     <SoundEffects />
     <CookieNotice />

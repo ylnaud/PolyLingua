@@ -30,6 +30,13 @@ quiz:
       - 'Mit nichts, sie sind unveränderlich'
     answerIndex: 1
     explanation: 'Genau wie die Possessivadjektive kongruieren die Pronomen mit dem Genus und Numerus des besessenen GEGENSTANDS, nicht mit der besitzenden Person – anders als im Deutschen, wo "sein" bei männlichem Besitzer und "ihr" bei weiblichem Besitzer nach der Person unterscheidet, bevor überhaupt das Genus des Objekts eine Rolle spielt.'
+  - question: "Was behält das italienische Possessivpronomen immer, anders als der deutsche Genitiv/Dativ-Ausdruck von 'meiner'?"
+    options:
+      - 'Seinen festen Artikel (il/la/i/le)'
+      - 'Eine Kasusendung wie im Deutschen'
+      - 'Gar nichts, es ist komplett unveränderlich'
+    answerIndex: 0
+    explanation: "Das italienische Possessivpronomen behält immer seinen Artikel als feste Einheit (il mio, la sua...), während das Deutsche stattdessen den ganzen Wortstamm je nach Fall dekliniert (meiner/meinen/meinem/meines)."
 exercises:
   - type: 'fill-blank'
     sentence: 'È il mio libro. → È ___.'

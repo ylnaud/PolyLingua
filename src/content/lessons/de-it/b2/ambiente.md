@@ -30,6 +30,13 @@ quiz:
       - 'ausschließlich Kernenergie'
     answerIndex: 1
     explanation: "'le energie rinnovabili' sind die erneuerbaren Energien (Solar, Wind usw.) — ein Schlüsselbegriff in Umweltdiskussionen."
+  - question: "Welches deutsche Wort entspricht in der Wortbildung nicht dem italienischen 'i diritti umani'?"
+    options:
+      - "'die Menschenrechte' — ein Kompositum, während Italienisch mehrere Wörter nutzt"
+      - "'i diritti umani' — dieselbe Wortbildung wie im Deutschen"
+      - 'Es gibt kein deutsches Äquivalent'
+    answerIndex: 0
+    explanation: "Deutsch bildet 'Menschenrechte' als ein einziges Kompositum, während Italienisch denselben Begriff aus mehreren Wörtern zusammensetzt: 'i diritti umani' (wörtlich: die Rechte menschlichen)."
 exercises:
   - type: 'fill-blank'
     sentence: 'Dobbiamo investire di più nelle energie ___.'

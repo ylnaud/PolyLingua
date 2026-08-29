@@ -34,10 +34,27 @@ function isInactiveUserLangPage(pageUrl) {
   return INACTIVE_USER_LANG_IDS.includes(firstSegment);
 }
 
+// /niveles/* son rutas legacy anteriores a la arquitectura SILO: cada una es
+// una redirección 301 a su equivalente en /es/de/*, no una página de contenido.
+// Astro ya les pone <meta name="robots" content="noindex"> automáticamente, así
+// que anunciarlas en el sitemap era pedirle a Google que indexe 176 URLs que
+// ellas mismas se declaran no indexables — la misma contradicción que
+// isNoindexPage() evita para el resto del sitio.
+//
+// Las redirecciones se mantienen: cualquier link viejo que apunte a /niveles/*
+// sigue funcionando y transfiere su valor al destino. Simplemente se dejan de
+// ofrecer como si fueran destinos finales.
+function isLegacyRedirectPage(pageUrl) {
+  return new URL(pageUrl).pathname.split('/').filter(Boolean)[0] === 'niveles';
+}
+
 export default defineConfig({
   site: 'https://polylingua.thyronemiguelvegasantana-c6e.workers.dev',
   integrations: [
-    sitemap({ filter: (page) => !isNoindexPage(page) && !isInactiveUserLangPage(page) }),
+    sitemap({
+      filter: (page) =>
+        !isNoindexPage(page) && !isInactiveUserLangPage(page) && !isLegacyRedirectPage(page),
+    }),
   ],
   compressHTML: true,
   build: {

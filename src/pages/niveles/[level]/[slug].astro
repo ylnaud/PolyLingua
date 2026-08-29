@@ -1,12 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
+import { parseLessonId } from '../../../lib/lessonPath';
 
+// Rutas legacy anteriores a la arquitectura SILO: /niveles/a1/<slug> redirige
+// (301) a /es/de/a1/<slug>. Como el destino está fijo en el silo es-de, acá
+// SOLO pueden generarse redirecciones para lecciones de ese curso.
+//
+// Filtrar por `data.language === 'de'` a secas no alcanza: ese campo es el
+// idioma META, así que también matchea en-de (inglés enseñando alemán). Esas
+// 84 lecciones tienen slugs propios ("animals-vocabulary", "purpose-clauses")
+// que NO existen bajo /es/de/, así que generaban 84 redirecciones a un 404.
+// Por eso se filtra además por userLang, que sale del nombre de la carpeta.
 export async function getStaticPaths() {
   const lessons = await getCollection('lessons', ({ data }) => data.language === 'de');
-  return lessons.map((lesson) => {
-    const [, level, slug] = lesson.id.split('/');
-    return { params: { level, slug } };
-  });
+  return lessons
+    .filter((lesson) => parseLessonId(lesson.id).userLang === 'es')
+    .map((lesson) => {
+      const { level, slug } = parseLessonId(lesson.id);
+      return { params: { level, slug } };
+    });
 }
 
 const { level, slug } = Astro.params;

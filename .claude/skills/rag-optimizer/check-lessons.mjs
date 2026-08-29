@@ -15,7 +15,24 @@ const REPO_ROOT = join(SKILL_DIR, '..', '..', '..');
 const LESSONS_DIR = join(REPO_ROOT, 'src', 'content', 'lessons');
 const INDEX_PATH = join(SKILL_DIR, 'INDEX.md');
 
-const LANGS = ['de', 'en', 'fr', 'it', 'pt'];
+// Las lecciones viven en src/content/lessons/<userLang>-<targetLang>/<nivel>/.
+// Antes de la arquitectura SILO la carpeta era solo <targetLang> ('de/a1/...'),
+// y este script tenía esa lista hardcodeada — por eso dejó de encontrar
+// lecciones cuando se renombraron las carpetas a 'es-de/a1/...'. Ahora los
+// cursos se descubren leyendo el filesystem, así que cualquier curso nuevo
+// entra solo, sin tocar este archivo.
+function discoverCourses() {
+  try {
+    return readdirSync(LESSONS_DIR, { withFileTypes: true })
+      .filter((e) => e.isDirectory() && /^[a-z]{2}-[a-z]{2}$/.test(e.name))
+      .map((e) => e.name)
+      .sort();
+  } catch {
+    return [];
+  }
+}
+
+const COURSES = discoverCourses();
 const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 const REQUIRED_FIELDS = ['level', 'title', 'description', 'order', 'grammarTopic', 'funFact', 'minutes'];
 const MAX_BODY_WORDS = 1500;
@@ -51,14 +68,14 @@ const GENERIC_DESCRIPTION = /^lecci[oó]n de \w+$/i;
 
 function loadLessons() {
   const lessons = [];
-  for (const lang of LANGS) {
+  for (const course of COURSES) {
     for (const level of LEVELS) {
-      const dir = join(LESSONS_DIR, lang, level);
+      const dir = join(LESSONS_DIR, course, level);
       let entries;
       try {
         entries = readdirSync(dir);
       } catch {
-        continue; // el par idioma/nivel puede no existir aún
+        continue; // el par curso/nivel puede no existir aún
       }
       for (const entry of entries) {
         if (!entry.endsWith('.md')) continue;
@@ -66,19 +83,19 @@ function loadLessons() {
         if (!statSync(filePath).isFile()) continue;
         const raw = readFileSync(filePath, 'utf-8');
         const split = splitFrontmatter(raw);
-        const relPath = `${lang}/${level}/${entry}`;
+        const relPath = `${course}/${level}/${entry}`;
         if (!split) {
-          lessons.push({ relPath, lang, level, parseError: 'sin frontmatter válido (delimitadores --- faltantes)' });
+          lessons.push({ relPath, course, level, parseError: 'sin frontmatter válido (delimitadores --- faltantes)' });
           continue;
         }
         let frontmatter;
         try {
           frontmatter = yaml.load(split.frontmatter) ?? {};
         } catch (e) {
-          lessons.push({ relPath, lang, level, parseError: `YAML inválido: ${e.message}` });
+          lessons.push({ relPath, course, level, parseError: `YAML inválido: ${e.message}` });
           continue;
         }
-        lessons.push({ relPath, lang, level, frontmatter, body: split.body });
+        lessons.push({ relPath, course, level, frontmatter, body: split.body });
       }
     }
   }
@@ -87,15 +104,18 @@ function loadLessons() {
 
 function validate(lessons) {
   const warnings = [];
-  const byLangLevelTitle = new Map(); // "lang/level" -> Map(title -> [relPath...])
-  const descByLang = new Map(); // lang -> [{relPath, normalized}]
+  // Los duplicados se buscan DENTRO de cada curso, no entre cursos: es-de y
+  // en-de enseñan los mismos temas a públicos distintos, así que compartir
+  // título/description entre ellos no es un error de copy-paste.
+  const byCourseLevelTitle = new Map(); // "curso/nivel" -> Map(title -> [relPath...])
+  const descByCourse = new Map(); // curso -> [{relPath, normalized}]
 
   for (const lesson of lessons) {
     if (lesson.parseError) {
       warnings.push(`${lesson.relPath}: ${lesson.parseError}`);
       continue;
     }
-    const { frontmatter, body, relPath, lang, level } = lesson;
+    const { frontmatter, body, relPath, course, level } = lesson;
 
     for (const field of REQUIRED_FIELDS) {
       const value = frontmatter[field];
@@ -123,21 +143,21 @@ function validate(lessons) {
 
     const title = typeof frontmatter.title === 'string' ? frontmatter.title : null;
     if (title) {
-      const key = `${lang}/${level}`;
-      if (!byLangLevelTitle.has(key)) byLangLevelTitle.set(key, new Map());
-      const titleMap = byLangLevelTitle.get(key);
+      const key = `${course}/${level}`;
+      if (!byCourseLevelTitle.has(key)) byCourseLevelTitle.set(key, new Map());
+      const titleMap = byCourseLevelTitle.get(key);
       const normTitle = normalize(title);
       if (!titleMap.has(normTitle)) titleMap.set(normTitle, []);
       titleMap.get(normTitle).push(relPath);
     }
 
     if (description) {
-      if (!descByLang.has(lang)) descByLang.set(lang, []);
-      descByLang.get(lang).push({ relPath, normalized: normalize(description) });
+      if (!descByCourse.has(course)) descByCourse.set(course, []);
+      descByCourse.get(course).push({ relPath, normalized: normalize(description) });
     }
   }
 
-  for (const [key, titleMap] of byLangLevelTitle) {
+  for (const [key, titleMap] of byCourseLevelTitle) {
     for (const [title, paths] of titleMap) {
       if (paths.length > 1) {
         warnings.push(`Título duplicado en ${key} ("${title}"): ${paths.join(', ')}`);
@@ -145,15 +165,15 @@ function validate(lessons) {
     }
   }
 
-  for (const [lang, items] of descByLang) {
+  for (const [course, items] of descByCourse) {
     for (let i = 0; i < items.length; i++) {
       for (let j = i + 1; j < items.length; j++) {
         const a = items[i];
         const b = items[j];
         if (a.normalized === b.normalized) {
-          warnings.push(`Description idéntica en ${lang} entre ${a.relPath} y ${b.relPath}`);
+          warnings.push(`Description idéntica en ${course} entre ${a.relPath} y ${b.relPath}`);
         } else if (jaccard(a.normalized, b.normalized) >= NEAR_DUP_THRESHOLD) {
-          warnings.push(`Description casi idéntica en ${lang} entre ${a.relPath} y ${b.relPath}`);
+          warnings.push(`Description casi idéntica en ${course} entre ${a.relPath} y ${b.relPath}`);
         }
       }
     }
@@ -164,10 +184,10 @@ function validate(lessons) {
 
 function buildIndex(lessons) {
   const valid = lessons.filter((l) => !l.parseError && l.frontmatter);
-  const byLang = new Map();
+  const byCourse = new Map();
   for (const lesson of valid) {
-    if (!byLang.has(lesson.lang)) byLang.set(lesson.lang, []);
-    byLang.get(lesson.lang).push(lesson);
+    if (!byCourse.has(lesson.course)) byCourse.set(lesson.course, []);
+    byCourse.get(lesson.course).push(lesson);
   }
 
   const levelRank = Object.fromEntries(LEVELS.map((l, i) => [l, i]));
@@ -181,15 +201,15 @@ function buildIndex(lessons) {
     '',
   ];
 
-  for (const lang of LANGS) {
-    const items = byLang.get(lang) ?? [];
+  for (const course of COURSES) {
+    const items = byCourse.get(course) ?? [];
     if (items.length === 0) continue;
     items.sort((a, b) => {
       const levelDiff = (levelRank[a.level] ?? 99) - (levelRank[b.level] ?? 99);
       if (levelDiff !== 0) return levelDiff;
       return (a.frontmatter.order ?? 0) - (b.frontmatter.order ?? 0);
     });
-    lines.push(`## ${lang}`, '', '| Nivel | Título | Descripción | Tema gramatical |', '| --- | --- | --- | --- |');
+    lines.push(`## ${course}`, '', '| Nivel | Título | Descripción | Tema gramatical |', '| --- | --- | --- | --- |');
     for (const item of items) {
       const { title = '', description = '', grammarTopic = '' } = item.frontmatter;
       const clean = (s) => String(s).replace(/\|/g, '\\|').replace(/\r?\n/g, ' ');

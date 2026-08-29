@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'c1'
 title: 'Pretérito imperfeito do conjuntivo: das portugiesische Gegenstück zum Konjunktiv II'
-description: 'Se eu falasse: das pretérito imperfeito do conjuntivo im Portugiesischen und sein enger Bezug zum deutschen Konjunktiv II in der Vergangenheit — mit den wichtigsten Unterschieden.'
+description: "Se eu falasse: das pretérito imperfeito do conjuntivo im Portugiesischen und sein enger Bezug zum deutschen Konjunktiv II — mit den Unterschieden."
 order: 3
 unit: 1
 grammarTopic: 'Pretérito imperfeito do conjuntivo'

@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'a1'
 title: 'Der französische Imperativ: tu, nous und vous | PolyLingua'
-description: 'Lerne den französischen Imperativ: die Formen für tu, nous und vous, die Regel zum Wegfall des -s bei -er-Verben und die unregelmäßigen Formen von être, avoir und savoir.'
+description: 'Der französische Imperativ: die Formen für tu, nous und vous, der Wegfall des -s bei -er-Verben und die unregelmäßigen Formen von être und avoir.'
 order: 11
 unit: 3
 grammarTopic: 'Der Imperativ (tu / nous / vous)'

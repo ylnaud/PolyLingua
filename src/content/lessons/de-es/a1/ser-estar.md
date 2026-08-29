@@ -2,7 +2,7 @@
 language: es
 level: 'a1'
 title: 'Ser vs. estar: der große Unterschied im Spanischen | PolyLingua'
-description: "Ser oder estar? Die spanische Unterscheidung, die es im Deutschen mit 'sein' nicht gibt: ser für Identität und feste Eigenschaften, estar für Zustand und Ort. Mit klaren Beispielen erklärt."
+description: "Ser oder estar? Die Unterscheidung, die es im deutschen 'sein' nicht gibt: ser für Identität und feste Eigenschaften, estar für Zustand und Ort."
 order: 12
 unit: 3
 grammarTopic: 'Ser vs. estar'

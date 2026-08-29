@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'c1'
 title: 'Vocabulário acadêmico: portugiesische Wissenschaftssprache verstehen'
-description: 'Akademisches Register im Portugiesischen — Konnektoren, Nominalisierungen und formelle Verben für Referate, Hausarbeiten und wissenschaftliche Texte, mit direktem Deutsch-Vergleich.'
+description: "Akademisches Register im Portugiesischen — Konnektoren, Nominalisierungen und formelle Verben für Referate, Hausarbeiten und wissenschaftliche Texte."
 order: 7
 unit: 2
 grammarTopic: 'Vocabulário e registo acadêmico'

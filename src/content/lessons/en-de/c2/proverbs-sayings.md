@@ -2,7 +2,7 @@
 language: 'de'
 level: 'c2'
 title: 'German Proverbs and Sayings: Sprichwörter Explained | PolyLingua'
-description: 'Explore real German Sprichwörter like Der Apfel fällt nicht weit vom Stamm and Morgenstund hat Gold im Mund, with meanings, origins and how natives actually use them.'
+description: "Explore real German Sprichwörter like Der Apfel fällt nicht weit vom Stamm, with meanings, origins and how native speakers actually use them."
 order: 4
 unit: 1
 grammarTopic: 'Proverbs and sayings (Sprichwörter)'

@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: "Environnement et société: über Klima und Umwelt auf Französisch sprechen"
-description: "Wortschatz rund um Umwelt und Gesellschaft im Französischen: le réchauffement climatique, le développement durable, l'empreinte carbone — für Diskussionen und Aufsätze auf B2-Niveau."
+description: "Wortschatz rund um Umwelt und Gesellschaft im Französischen: le réchauffement climatique, le développement durable, l'empreinte carbone — für B2-Debatten."
 order: 8
 unit: 2
 grammarTopic: "Vocabulaire de l'environnement et de la société"

@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b2'
 title: "Pronomes relativos: que, quem, cujo statt deklinierter Relativpronomen"
-description: "Die portugiesischen Relativpronomen que, quem, cujo und onde im Vergleich zu den deutschen deklinierten Formen der/die/das — und warum cujo keine deutsche Ein-Wort-Entsprechung hat."
+description: "Die portugiesischen Relativpronomen que, quem, cujo und onde im Vergleich zu den deutschen Formen der/die/das — und warum cujo keine Entsprechung hat."
 order: 2
 unit: 1
 grammarTopic: 'Pronomes relativos (que, quem, cujo, onde)'

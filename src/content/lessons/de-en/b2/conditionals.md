@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'First & Second Conditional: reale und irreale Bedingungssätze im Englischen'
-description: 'First Conditional (if + present, will + Infinitiv) für reale Zukunftsbedingungen und Second Conditional (if + past, would + Infinitiv) für hypothetische Situationen — mit klaren Regeln und Beispielen.'
+description: 'First Conditional (if + present, will) für reale Zukunftsbedingungen und Second Conditional (if + past, would) für hypothetische Situationen, mit Beispielen.'
 order: 1
 unit: 1
 grammarTopic: 'First Conditional und Second Conditional'

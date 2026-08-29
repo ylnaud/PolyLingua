@@ -2,7 +2,7 @@
 language: 'de'
 level: 'c2'
 title: 'Ja, Doch, Mal, Halt: German Modal Particles Explained | PolyLingua'
-description: 'Master German modal particles like ja, doch, mal, halt and eben — the tiny words that carry no dictionary meaning but instantly separate fluent German from textbook German.'
+description: "Master German modal particles like ja, doch, mal, halt and eben — tiny words with no dictionary meaning that separate fluent from textbook German."
 order: 1
 unit: 1
 grammarTopic: 'Modal particles (Modalpartikeln: ja, doch, mal, halt, eben, denn)'

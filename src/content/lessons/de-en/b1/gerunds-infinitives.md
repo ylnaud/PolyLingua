@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b1'
 title: 'Gerund oder Infinitiv: Welche Form nach welchem Verb?'
-description: 'Gerund (-ing) vs. Infinitiv (to + Verb) nach englischen Verben: welche Verben welche Form verlangen und wann sich die Bedeutung mit stop, remember und try ändert.'
+description: 'Gerund (-ing) vs. Infinitiv (to + Verb) nach englischen Verben: welche Verben welche Form verlangen und wann sich die Bedeutung dadurch ändert.'
 order: 3
 unit: 1
 grammarTopic: 'Gerund (-ing) vs. Infinitiv (to + Verb) nach Verben'

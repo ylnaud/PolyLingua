@@ -2,7 +2,7 @@
 language: es
 level: 'a1'
 title: 'Die Familie auf Spanisch: la familia | PolyLingua'
-description: "Lerne den spanischen Wortschatz für die Familie: padre, madre, hermano, hijo und mehr. Mit Merkhilfen für die Pluralform bei gemischten Gruppen (los padres, los hijos)."
+description: "Lerne den spanischen Wortschatz für die Familie: padre, madre, hermano, hijo und mehr — mit Merkhilfen für den Plural bei gemischten Gruppen (los padres)."
 order: 5
 unit: 2
 grammarTopic: 'La familia'

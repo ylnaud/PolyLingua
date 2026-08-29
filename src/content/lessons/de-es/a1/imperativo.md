@@ -2,7 +2,7 @@
 language: es
 level: 'a1'
 title: 'Der spanische Imperativ: tú, usted, vosotros, ustedes | PolyLingua'
-description: "Der bejahte Imperativ im Spanischen für tú, usted, vosotros und ustedes: Bildung bei -ar/-er/-ir-Verben und warum die tú-Form der er/sie-Form im Präsens gleicht."
+description: "Der bejahte Imperativ im Spanischen für tú, usted, vosotros und ustedes: Bildung bei -ar/-er/-ir-Verben und warum die tú-Form der er/sie-Form gleicht."
 order: 11
 unit: 3
 grammarTopic: 'Der Imperativ (bejaht)'

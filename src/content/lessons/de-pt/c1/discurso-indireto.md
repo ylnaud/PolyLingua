@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'c1'
 title: 'Discurso indireto: wenn portugiesische Zeiten mitrutschen'
-description: 'Discurso indireto im Portugiesischen im Vergleich zum deutschen Konjunktiv I: Warum Portugiesisch die Zeitform statt des Modus verschiebt, wenn es fremde Rede wiedergibt.'
+description: "Discurso indireto im Portugiesischen im Vergleich zum deutschen Konjunktiv I: Warum bei fremder Rede die Zeitform statt des Modus verschoben wird."
 order: 2
 unit: 1
 grammarTopic: 'Discurso indireto (concordância verbal/temporal)'

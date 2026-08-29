@@ -2,7 +2,7 @@
 language: 'de'
 level: 'a2'
 title: 'German Dativ vs. Akkusativ: Direct and Indirect Objects | PolyLingua'
-description: 'Learn to tell German Dativ and Akkusativ cases apart — the wen/wem question test, article changes, dative-only verbs like helfen, and word order with two objects.'
+description: "Learn to tell German Dativ and Akkusativ cases apart — the wen/wem question test, article changes, dative-only verbs, and word order with two objects."
 order: 6
 unit: 2
 grammarTopic: 'Dativ and Akkusativ cases (direct vs. indirect object)'

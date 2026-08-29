@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'Humor, Ironie und Wortspiele im Englischen verstehen'
-description: "Warum 'I am nowhere near ready' witzig-ironisch klingen kann und was einen guten Pun ausmacht: englischer Humor, sarkastischer Tonfall und Wortspiele auf C2-Niveau entschlüsseln."
+description: "Warum 'I am nowhere near ready' ironisch klingen kann und was einen guten Pun ausmacht: englischer Humor und Wortspiele auf C2-Niveau entschlüsseln."
 order: 6
 unit: 2
 grammarTopic: 'Humor, irony, sarcasm, and puns'

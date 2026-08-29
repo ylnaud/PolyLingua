@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'Imperativ im Portugiesischen: Befehle mit tu und você bilden'
-description: "Der Imperativ im Portugiesischen: die bejahte Form bei tu und você, die wichtigsten unregelmäßigen Verben und warum die Verneinung eine ganz andere Form braucht als im Deutschen."
+description: "Der Imperativ im Portugiesischen: die bejahte Form bei tu und você, die unregelmäßigen Verben und warum die Verneinung eine ganz andere Form braucht."
 order: 11
 unit: 3
 grammarTopic: 'Imperativ (Befehlsform)'

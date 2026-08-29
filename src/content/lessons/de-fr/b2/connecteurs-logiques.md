@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: 'Connecteurs logiques avancés: einen strukturierten Text auf Französisch bauen'
-description: 'Die Konnektoren für Gegensatz, Zugeständnis, Ergänzung und Zusammenfassung, die einen B2-Text zusammenhalten — cependant, néanmoins, bien que, de plus, en revanche, en somme.'
+description: 'Die Konnektoren für Gegensatz, Zugeständnis und Ergänzung, die einen B2-Text zusammenhalten — cependant, néanmoins, bien que, de plus, en revanche.'
 order: 7
 unit: 2
 grammarTopic: 'Connecteurs logiques (opposition, concession, addition, synthèse)'

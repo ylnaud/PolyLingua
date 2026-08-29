@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: 'Cause et conséquence: von parce que bis par conséquent'
-description: "Die wichtigsten Konnektoren für Ursache (parce que, car, puisque, comme, à cause de, grâce à) und Folge (donc, alors, par conséquent, c'est pourquoi) mit ihren Registerunterschieden erklärt."
+description: 'Die wichtigsten Konnektoren für Ursache (parce que, car, puisque, à cause de, grâce à) und Folge (donc, alors, par conséquent) mit Registerunterschieden.'
 order: 5
 unit: 2
 grammarTopic: 'Connecteurs de cause et de conséquence'

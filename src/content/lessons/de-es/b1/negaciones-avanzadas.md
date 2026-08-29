@@ -2,7 +2,7 @@
 language: 'es'
 level: 'b1'
 title: 'Doppelte Verneinung im Spanischen: nunca, nada, nadie, tampoco | PolyLingua'
-description: "Wie das Spanische mehrere Verneinungswörter im selben Satz kombiniert (nunca, nada, nadie, ninguno, tampoco) und wann vor dem Verb ein zusätzliches no nötig ist."
+description: "Wie das Spanische mehrere Verneinungswörter im selben Satz kombiniert (nunca, nada, nadie, ninguno) und wann vor dem Verb ein zusätzliches no nötig ist."
 order: 8
 unit: 2
 grammarTopic: 'Erweiterte Verneinung: nunca, nada, nadie, ninguno, tampoco (doppelte Verneinung)'

@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b2'
 title: "Conectores lógicos de contraste: contudo, no entanto, apesar de statt aber/trotzdem"
-description: "Die portugiesischen Konnektoren contudo, no entanto und apesar de für Kontrast und Konzession — im Vergleich zu den deutschen Konnektoren aber, trotzdem und obwohl."
+description: "Die portugiesischen Konnektoren contudo, no entanto und apesar de für Kontrast und Konzession — im Vergleich zu aber, trotzdem und obwohl im Deutschen."
 order: 7
 unit: 2
 grammarTopic: 'Conectores lógicos de contraste e concessão'

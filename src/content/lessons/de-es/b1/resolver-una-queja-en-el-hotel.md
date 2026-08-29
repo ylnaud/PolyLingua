@@ -2,7 +2,7 @@
 language: 'es'
 level: 'b1'
 title: 'Pretérito perfecto compuesto vs. estar + participio: eine Hotelbeschwerde lösen | PolyLingua'
-description: 'Der Unterschied zwischen "han resuelto" (Vorgang, pretérito perfecto compuesto) und "está resuelto" (Zustand, estar + Partizip) im Spanischen — wichtig, um zu erklären, dass ein Problem im Hotel gelöst wurde.'
+description: "Der Unterschied zwischen \"han resuelto\" (Vorgang, pretérito perfecto) und \"está resuelto\" (Zustand, estar + Partizip) bei einer Beschwerde im Hotel."
 order: 13
 unit: 3
 grammarTopic: 'Pretérito perfecto compuesto vs. estar + participio (Vorgang vs. Zustand)'

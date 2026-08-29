@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'c1'
 title: 'Mais-que-perfeito simples: die literarische Kurzform des Plusquamperfekts'
-description: 'Das synthetische pretérito mais-que-perfeito simples (fizera, dissera) im europäischen Portugiesisch — eine gehobene Schriftform, die es im gesprochenen Deutsch nie in dieser Kürze gibt.'
+description: "Das synthetische pretérito mais-que-perfeito simples (fizera, dissera) im europäischen Portugiesisch — eine gehobene Schriftform ohne deutsche Kurzform."
 order: 5
 unit: 2
 grammarTopic: 'Pretérito mais-que-perfeito simples (registro literário)'

@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'Rhetorische Stilmittel im Englischen: Reden und Texte überzeugend gestalten'
-description: "Wie 'I have a dream' durch Anapher wirkt und warum Chiasmus, Tricolon und Antithese englische Reden unvergesslich machen: die wichtigsten rhetorischen Stilmittel auf C2-Niveau."
+description: "Wie 'I have a dream' durch Anapher wirkt und warum Chiasmus, Tricolon und Antithese Reden unvergesslich machen: rhetorische Stilmittel auf C2-Niveau."
 order: 5
 unit: 2
 grammarTopic: 'Rhetorical devices (anaphora, tricolon, antithesis, chiasmus)'

@@ -2,7 +2,7 @@
 language: 'it'
 level: 'b1'
 title: 'Da oder per? Zeitdauer im Italienischen richtig ausdrücken | PolyLingua'
-description: "Der Unterschied zwischen da und per bei Zeitangaben im Italienischen: da für eine andauernde Handlung im Presente (wie seit), per für einen abgeschlossenen Zeitraum (wie für)."
+description: "Der Unterschied zwischen da und per bei Zeitangaben im Italienischen: da für eine andauernde Handlung im Presente, per für einen abgeschlossenen Zeitraum."
 order: 10
 unit: 3
 grammarTopic: 'Zeitangaben mit da und per (Dauer)'

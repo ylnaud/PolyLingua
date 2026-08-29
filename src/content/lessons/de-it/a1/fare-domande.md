@@ -2,7 +2,7 @@
 language: 'it'
 level: 'a1'
 title: 'Fragen stellen auf Italienisch'
-description: 'Anders als das Deutsche mit fester Verb-Subjekt-Inversion reicht im Italienischen oft die Intonation, um aus einer Aussage eine Ja/Nein-Frage zu machen — plus die wichtigsten Fragewörter.'
+description: "Im Italienischen reicht oft die Intonation, um aus einer Aussage eine Ja/Nein-Frage zu machen — anders als im Deutschen — plus die wichtigsten Fragewörter."
 order: 8
 unit: 2
 grammarTopic: 'Fragebildung (domande): Intonation und Fragewörter'

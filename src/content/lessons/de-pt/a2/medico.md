@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'a2'
 title: 'Beim Arzt auf Portugiesisch: Symptome und Beschwerden'
-description: 'Lerne portugiesisches Vokabular für den Arztbesuch: Symptome beschreiben, Schmerzen benennen und wichtige Sätze beim Arzt oder in der Apotheke auf Portugiesisch.'
+description: "Portugiesisches Vokabular für den Arztbesuch: Symptome beschreiben, Schmerzen benennen und die wichtigsten Sätze beim Arzt oder in der Apotheke."
 order: 14
 unit: 2
 grammarTopic: 'Vokabular: der Arzt'

@@ -2,7 +2,7 @@
 language: es
 level: 'c2'
 title: 'Spanische Varietäten: Spanien, Mexiko, Río de la Plata, Karibik'
-description: 'Regionale Unterschiede im Spanischen erkennen: vosotros vs. ustedes, vos, Seseo und Ceceo — ein Überblick über die wichtigsten Varietäten, ohne jede im Detail zu lehren.'
+description: "Regionale Unterschiede im Spanischen erkennen: vosotros vs. ustedes, vos, Seseo und Ceceo — ein Überblick über die wichtigsten Varietäten."
 order: 5
 unit: 2
 grammarTopic: 'Variedades regionales del español (España, México, Río de la Plata, Caribe)'

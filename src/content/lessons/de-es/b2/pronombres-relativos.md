@@ -2,7 +2,7 @@
 language: 'es'
 level: 'b2'
 title: "Pronombres relativos: que, quien, cuyo statt deklinierter Relativpronomen"
-description: "Die spanischen Relativpronomen que, quien, cuyo und donde im Vergleich zu den deutschen deklinierten Formen der/die/das — und warum cuyo keine deutsche Ein-Wort-Entsprechung hat."
+description: "Die spanischen Relativpronomen que, quien, cuyo und donde im Vergleich zu den deutschen Formen der/die/das — und warum cuyo keine Entsprechung hat."
 order: 2
 unit: 1
 grammarTopic: 'Pronombres relativos (que, quien, cuyo, donde)'

@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a2'
 title: 'Past Simple: Regelmäßige und unregelmäßige Verben im Englischen'
-description: 'Das englische Past Simple erklärt: regelmäßige Verben mit -ed und unregelmäßige Verben, die du einzeln auswendig lernen musst — mit klaren Beispielen und der Hilfsverb-Regel mit "did".'
+description: 'Das englische Past Simple: regelmäßige Verben mit -ed, unregelmäßige Verben zum Auswendiglernen und die Hilfsverb-Regel mit "did", mit klaren Beispielen.'
 order: 1
 unit: 1
 grammarTopic: 'Past Simple (regelmäßige und unregelmäßige Verben)'

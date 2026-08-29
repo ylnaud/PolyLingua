@@ -2,7 +2,7 @@
 language: 'es'
 level: 'c2'
 title: 'Literarischer Stil im Spanischen: gehobene Prosa | PolyLingua'
-description: 'Merkmale des gehobenen literarischen Stils im Spanischen: pretérito imperfecto de subjuntivo als literarisches Passiv-Äquivalent, lange hypotaktische Sätze und ausgewählte Adjektivstellung.'
+description: "Merkmale des gehobenen literarischen Stils im Spanischen: pretérito imperfecto de subjuntivo, lange hypotaktische Sätze und gewählte Adjektivstellung."
 order: 8
 unit: 2
 grammarTopic: 'Estilo literario y prosa elevada'

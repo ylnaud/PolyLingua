@@ -2,7 +2,7 @@
 language: 'es'
 level: 'b2'
 title: "Conectores de causa y consecuencia: porque, ya que, por tanto im Vergleich zu weil/da/also"
-description: "Die spanischen Konnektoren porque, ya que, por tanto und por eso für Ursache und Folge — im direkten Vergleich zu den deutschen Konnektoren weil, da, deshalb und also."
+description: "Die spanischen Konnektoren porque, ya que, por tanto und por eso für Ursache und Folge — im Vergleich zu weil, da, deshalb und also im Deutschen."
 order: 5
 unit: 2
 grammarTopic: 'Conectores de causa y consecuencia'

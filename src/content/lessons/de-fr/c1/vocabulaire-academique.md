@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: "Vocabulaire académique: französisch für Aufsätze und Vorträge"
-description: "Akademisches Vokabular und Konnektoren für französische Aufsätze und Vorträge: analyser, souligner, néanmoins, dans la mesure où — der Wortschatz für C1-Textproduktion."
+description: 'Akademisches Vokabular und Konnektoren für französische Aufsätze: analyser, souligner, néanmoins, dans la mesure où — Wortschatz für C1-Texte.'
 order: 7
 unit: 2
 grammarTopic: "Vocabulaire académique et connecteurs logiques"

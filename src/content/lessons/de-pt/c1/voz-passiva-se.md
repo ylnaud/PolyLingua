@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'c1'
 title: 'Voz passiva com "se": die synthetische Passivkonstruktion'
-description: 'Die passiva sintética mit "se" im Portugiesischen ("vende-se casas") im Vergleich zur deutschen man-Konstruktion — ein nützlicher funktionaler Anker für dieses portugiesische Muster.'
+description: 'Die passiva sintética mit "se" im Portugiesischen ("vende-se casas") im Vergleich zur deutschen man-Konstruktion — ein funktionaler Anker dafür.'
 order: 9
 unit: 3
 grammarTopic: 'Voz passiva com se (passiva sintética)'

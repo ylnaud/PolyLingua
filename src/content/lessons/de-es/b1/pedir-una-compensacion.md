@@ -2,7 +2,7 @@
 language: 'es'
 level: 'b1'
 title: 'Subjuntivo nach Erwartungsausdrücken: eine Entschädigung verlangen | PolyLingua'
-description: 'Wie du im Spanischen mit dem presente de subjuntivo nach Ausdrücken der Erwartung ("espero que", "es justo que") höflich eine Entschädigung verlangst — inklusive der wichtigsten unregelmäßigen Formen.'
+description: "Wie du im Spanischen mit dem presente de subjuntivo nach Ausdrücken der Erwartung (\"espero que\", \"es justo que\") höflich eine Entschädigung verlangst."
 order: 12
 unit: 3
 grammarTopic: 'Subjuntivo nach Erwartungsausdrücken (espero que, es justo que)'

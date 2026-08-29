@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'c1'
 title: 'Português dos negócios: formelle Kommunikation im Berufsalltag'
-description: 'Geschäftsportugiesisch — E-Mail-Konventionen, Höflichkeitsformeln und Verhandlungssprache im europäischen Portugiesisch, mit dem deutschen Geschäftsbrief-Register als Vergleichsfolie.'
+description: "Geschäftsportugiesisch — E-Mail-Konventionen, Höflichkeitsformeln und Verhandlungssprache im europäischen Portugiesisch, mit dem deutschen Register verglichen."
 order: 8
 unit: 2
 grammarTopic: 'Português dos negócios'

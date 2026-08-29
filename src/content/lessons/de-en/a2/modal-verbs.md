@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a2'
 title: 'Modal Verbs: can, must, should, have to — und die Fallen für Deutschsprachige'
-description: 'Die englischen Modalverben can, must, should und have to im Vergleich zu können, müssen und sollen — mit den typischen Übersetzungsfallen, die Deutschsprachigen passieren.'
+description: 'Die englischen Modalverben can, must, should und have to im Vergleich zu können, müssen und sollen — mit den typischen Übersetzungsfallen im Deutschen.'
 order: 2
 unit: 1
 grammarTopic: 'Modalverben (can, must, should, have to)'

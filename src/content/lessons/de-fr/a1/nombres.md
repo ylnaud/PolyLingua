@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'a1'
 title: 'Zahlen 0-100 auf Französisch: die 70-80-90-Falle'
-description: 'Die Zahlen von null bis hundert im Französischen — inklusive der berühmten Ausnahmen soixante-dix, quatre-vingts und quatre-vingt-dix, die es im Deutschen nicht gibt.'
+description: 'Die Zahlen von null bis hundert im Französischen — inklusive der berühmten Ausnahmen soixante-dix, quatre-vingts und quatre-vingt-dix.'
 order: 3
 unit: 1
 grammarTopic: 'Kardinalzahlen 0-100'

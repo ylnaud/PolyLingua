@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c2'
 title: "Les anglicismes: Englisches Lehngut im heutigen Französisch"
-description: "Anglizismen im modernen Französisch: le week-end, le marketing, un e-mail — wo sie fest etabliert sind, welche Académie-française-Alternativen existieren, und wie Register über ihre Verwendung entscheidet."
+description: 'Anglizismen im modernen Französisch: le week-end, le marketing, un e-mail — wo sie etabliert sind, welche Alternativen die Académie française bietet.'
 order: 10
 unit: 3
 grammarTopic: "Les anglicismes dans le français contemporain"

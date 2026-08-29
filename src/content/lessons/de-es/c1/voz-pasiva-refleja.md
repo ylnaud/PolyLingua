@@ -2,7 +2,7 @@
 language: es
 level: 'c1'
 title: 'Pasiva refleja mit "se" im Spanischen: "se venden casas" | PolyLingua'
-description: 'Die spanische Pasiva refleja mit "se" (se venden casas, se habla español): wann sie statt der echten Passivform benutzt wird, und wie sie sich vom deutschen "man"-Konstrukt unterscheidet.'
+description: "Die spanische Pasiva refleja mit \"se\" (se venden casas, se habla español): wann sie statt der echten Passivform steht und wie sie sich von \"man\" abhebt."
 order: 9
 unit: 3
 grammarTopic: 'Pasiva refleja (Passiv mit "se")'

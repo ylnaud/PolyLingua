@@ -2,7 +2,7 @@
 language: 'es'
 level: 'c2'
 title: 'Diminutive und Augmentative im Spanischen: mehr als nur Größe | PolyLingua'
-description: 'Spanische Diminutive (-ito/-ita) und Augmentative (-ón/-ona): wie sie nicht nur Größe, sondern Zuneigung, Ironie oder Intensität ausdrücken — ein produktives System ohne echtes deutsches Äquivalent.'
+description: "Spanische Diminutive (-ito/-ita) und Augmentative (-ón/-ona): wie sie nicht nur Größe, sondern auch Zuneigung, Ironie oder Intensität ausdrücken."
 order: 10
 unit: 3
 grammarTopic: 'Diminutivos y aumentativos (además del tamaño)'

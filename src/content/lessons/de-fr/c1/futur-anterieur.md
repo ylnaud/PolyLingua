@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: 'Le futur antérieur: die vollendete Zukunft im Französischen'
-description: "Das futur antérieur drückt eine abgeschlossene Handlung vor einem anderen Zukunftsereignis aus — vor allem nach quand, dès que und lorsque. Bildung mit avoir/être im futur simple, mit klaren Beispielen für Deutschsprachige."
+description: 'Das futur antérieur drückt eine vor einem anderen Zukunftsereignis abgeschlossene Handlung aus — nach quand, dès que und lorsque, mit avoir/être im futur.'
 order: 10
 unit: 3
 grammarTopic: 'Le futur antérieur'

@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'a1'
 title: 'Vokabular Familie auf Portugiesisch: pai, mãe, irmão und mehr'
-description: 'Die wichtigsten portugiesischen Familienwörter (pai, mãe, irmão, avô, filho...) und ihre männlich/weiblich-Paare – ein Muster, das oft mit dem deutschen Wortschatz übereinstimmt, aber nicht immer.'
+description: "Die wichtigsten portugiesischen Familienwörter (pai, mãe, irmão) und ihre männlich/weiblich-Paare – ein Muster, das dem Deutschen oft, aber nicht immer folgt."
 order: 5
 unit: 2
 grammarTopic: 'Vocabulário da família'

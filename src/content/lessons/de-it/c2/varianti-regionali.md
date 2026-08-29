@@ -2,7 +2,7 @@
 language: 'it'
 level: 'c2'
 title: 'Italienische Dialekte: eine Sprache, viele Stimmen'
-description: 'Wie sich das Italienische aus Neapel, Sizilien, Venetien und der Toskana in Wortschatz, Aussprache und teils Grammatik unterscheidet — und was das mit deutscher Dialektvielfalt gemeinsam hat.'
+description: "Wie sich das Italienische aus Neapel, Sizilien, Venetien und der Toskana in Wortschatz und Aussprache unterscheidet — wie bei den deutschen Dialekten."
 order: 5
 unit: 2
 grammarTopic: 'Variedades regionales del italiano (dialetti regionali)'

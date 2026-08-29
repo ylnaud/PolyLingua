@@ -2,7 +2,7 @@
 language: es
 level: 'c1'
 title: 'Expresiones idiomáticas: über die Wörter hinaus denken'
-description: 'Spanische Redewendungen (echar de menos, tomar el pelo, meter la pata) und warum wörtliche Übersetzung ins Deutsche fast immer scheitert — mit Bildlogik und Kontext.'
+description: "Spanische Redewendungen (echar de menos, tomar el pelo, meter la pata) und warum die wörtliche Übersetzung ins Deutsche fast immer scheitert."
 order: 6
 unit: 2
 grammarTopic: 'Expresiones idiomáticas'

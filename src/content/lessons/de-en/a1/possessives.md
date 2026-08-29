@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: 'Possessives: wem gehört was'
-description: "Das Apostroph-s und die Possessivadjektive (my, your, his) im Englischen, um Besitz auszudrücken — mit Apostroph an einer Stelle, wo der deutsche Genitiv keinen setzt."
+description: 'Das Apostroph-s und die Possessivadjektive (my, your, his) im Englischen, um Besitz auszudrücken — mit Apostroph dort, wo der deutsche Genitiv keinen setzt.'
 order: 5
 unit: 2
 grammarTopic: "Possessive ('s und Possessivadjektive)"

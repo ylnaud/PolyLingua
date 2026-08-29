@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: 'Le plus-que-parfait: die Vorvergangenheit im Französischen'
-description: "Das plus-que-parfait bildet die Vorvergangenheit im Französischen — fast wie das deutsche Plusquamperfekt. Bildung mit avoir/être im imparfait + participe passé, plus die Regeln zur Angleichung."
+description: 'Das plus-que-parfait ist die Vorvergangenheit im Französischen: Bildung mit avoir/être im imparfait + participe passé, plus die Regeln zur Angleichung.'
 order: 9
 unit: 3
 grammarTopic: 'Le plus-que-parfait'

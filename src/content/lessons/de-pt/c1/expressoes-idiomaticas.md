@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'c1'
 title: 'Expressões idiomáticas: Redewendungen, die man nicht wörtlich übersetzt'
-description: 'Die wichtigsten portugiesischen Redewendungen (expressões idiomáticas) auf C1-Niveau — mit deutschen Bildern zum Vergleich, damit du sie dir über Analogie statt Auswendiglernen merkst.'
+description: "Die wichtigsten portugiesischen Redewendungen (expressões idiomáticas) auf C1-Niveau — mit deutschen Bildern zum Vergleich statt Auswendiglernen."
 order: 6
 unit: 2
 grammarTopic: 'Expressões idiomáticas'

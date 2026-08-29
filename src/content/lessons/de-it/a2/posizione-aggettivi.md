@@ -2,7 +2,7 @@
 language: 'it'
 level: 'a2'
 title: 'La posizione degli aggettivi: davor oder danach — wer entscheidet?'
-description: 'Wo das Adjektiv in einem italienischen Satz steht: warum die meisten NACH dem Substantiv stehen — anders als im Deutschen — und die kleine Gruppe, die vorher die Bedeutung ändert.'
+description: "Wo das Adjektiv in einem italienischen Satz steht: warum die meisten NACH dem Substantiv stehen und die kleine Gruppe, die davor die Bedeutung ändert."
 order: 8
 unit: 2
 grammarTopic: 'Posizione degli aggettivi'

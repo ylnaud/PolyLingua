@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'Mixed Conditionals: Vergangenheit und Gegenwart im Englischen kombinieren'
-description: 'Mixed Conditionals, die eine Bedingung in der Vergangenheit mit einer Konsequenz in der Gegenwart kombinieren (und umgekehrt) — mit klaren Regeln, Beispielen und dem Unterschied zu den klassischen drei Conditionals.'
+description: 'Mixed Conditionals, die eine Bedingung in der Vergangenheit mit einer Konsequenz in der Gegenwart verbinden (und umgekehrt) — mit Regeln und Beispielen.'
 order: 7
 unit: 2
 grammarTopic: 'Mixed Conditionals'

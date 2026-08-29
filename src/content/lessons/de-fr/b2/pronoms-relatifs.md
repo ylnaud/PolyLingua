@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: 'Les pronoms relatifs: qui, que, dont, où ohne Fallendenken'
-description: 'Die vier wichtigsten Relativpronomen des Französischen — qui, que, dont, où — erklärt über ihre Funktion im Satz, nicht über deutsche Fälle, die es im Französischen so nicht gibt.'
+description: 'Die vier wichtigsten Relativpronomen des Französischen — qui, que, dont, où — erklärt über ihre Funktion im Satz, nicht über die deutschen Fälle.'
 order: 2
 unit: 1
 grammarTopic: 'Les pronoms relatifs (qui, que, dont, où)'

@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'Literarischer Stil im Englischen: gehobene Prosa lesen und schreiben'
-description: "Wie englische Literatursprache durch Satzrhythmus, seltenes Vokabular und Bildsprache wirkt: die Merkmale gehobener, literarischer Prosa auf C2-Niveau erkennen und selbst einsetzen."
+description: 'Wie englische Literatursprache durch Satzrhythmus, seltenes Vokabular und Bildsprache wirkt: literarische Prosa auf C2-Niveau erkennen und einsetzen.'
 order: 8
 unit: 2
 grammarTopic: 'Literary style and elevated prose'

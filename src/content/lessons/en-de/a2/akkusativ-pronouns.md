@@ -2,7 +2,7 @@
 language: 'de'
 level: 'a2'
 title: 'Akkusativ Personal Pronouns in German: mich, dich, ihn | PolyLingua'
-description: 'Learn the German accusative personal pronouns — mich, dich, ihn, sie, es, uns, euch, sie/Sie — and the one pronoun that changes completely instead of just adding a letter.'
+description: "Learn the German accusative personal pronouns — mich, dich, ihn, sie, es, uns, euch — and the one pronoun that changes completely instead of adding a letter."
 order: 10
 unit: 3
 grammarTopic: 'Akkusativ personal pronouns (mich, dich, ihn, sie, es, uns, euch, sie/Sie)'

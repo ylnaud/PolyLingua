@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: 'Le gérondif: die "en + -ant"-Form für gleichzeitige Handlungen'
-description: 'Wie man mit en + participe présent zwei gleichzeitige Handlungen, die Art und Weise oder eine Bedingung ausdrückt — mit klarer Abgrenzung zum deutschen "beim/während/indem".'
+description: 'Wie man mit en + participe présent Gleichzeitigkeit, Art und Weise oder eine Bedingung ausdrückt — mit Abgrenzung zum deutschen "beim/während/indem".'
 order: 4
 unit: 1
 grammarTopic: 'Le gérondif (en + participe présent)'

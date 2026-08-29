@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: 'Direkte und indirekte Objektpronomen im Portugiesischen: o, a, lhe'
-description: 'Direkte (o, a, os, as) und indirekte (lhe, lhes) Objektpronomen im Portugiesischen im Vergleich zum deutschen Akkusativ und Dativ - mit Fokus auf die Wortstellung.'
+description: "Direkte (o, a, os, as) und indirekte (lhe, lhes) Objektpronomen im Portugiesischen im Vergleich zu Akkusativ und Dativ - mit Fokus auf die Wortstellung."
 order: 4
 unit: 1
 grammarTopic: 'Pronomes diretos e indiretos (o/a/os/as, lhe/lhes)'

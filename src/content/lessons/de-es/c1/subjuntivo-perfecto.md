@@ -2,7 +2,7 @@
 language: es
 level: 'c1'
 title: 'El subjuntivo perfecto: haya hablado statt Präsens'
-description: 'Das subjuntivo perfecto im Spanischen (haya hablado): wann es statt subjuntivo presente gebraucht wird und wie es abgeschlossene Handlungen im Modus des Zweifels markiert.'
+description: "Das subjuntivo perfecto im Spanischen (haya hablado): wann es statt subjuntivo presente steht und wie es abgeschlossene Handlungen markiert."
 order: 3
 unit: 1
 grammarTopic: 'El pretérito perfecto de subjuntivo'

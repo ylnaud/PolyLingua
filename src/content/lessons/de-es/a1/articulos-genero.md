@@ -2,7 +2,7 @@
 language: es
 level: 'a1'
 title: 'El, la: Artikel und Genus im Spanischen | PolyLingua'
-description: "Bestimmte und unbestimmte Artikel im Spanischen: nur zwei Genera wie im Deutschen, aber mit unabhängiger Zuordnung — el sol ist maskulin, obwohl die Sonne im Deutschen feminin ist."
+description: "Bestimmte und unbestimmte Artikel im Spanischen: nur zwei Genera wie im Deutschen, aber mit eigener Zuordnung — el sol ist maskulin, die Sonne dagegen feminin."
 order: 1
 unit: 1
 grammarTopic: 'Artikel und Genus (el/la, un/una)'

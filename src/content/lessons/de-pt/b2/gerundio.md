@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b2'
 title: "Gerúndio und estar a + Infinitiv: eine Form, die es im Deutschen nicht gibt"
-description: "Das portugiesische Gerúndio (falando, comendo) und die Verlaufsform estar a + Infinitiv — Grammatik, die im Deutschen schlicht keine strukturelle Entsprechung hat."
+description: "Das portugiesische Gerúndio (falando, comendo) und die Verlaufsform estar a + Infinitiv — Grammatik ohne strukturelle Entsprechung im Deutschen."
 order: 4
 unit: 1
 grammarTopic: 'Gerúndio (estar a + infinitivo / estar + gerúndio)'

@@ -2,7 +2,7 @@
 language: 'es'
 level: 'c2'
 title: 'Rhetorische Figuren im Spanischen: figuras retóricas | PolyLingua'
-description: 'Die wichtigsten rhetorischen Figuren des Spanischen (metáfora, hipérbole, ironía, anáfora) — erkennen und selbst formulieren, für gehobenes und literarisches Spanisch auf C2-Niveau.'
+description: "Die wichtigsten rhetorischen Figuren des Spanischen (metáfora, hipérbole, ironía, anáfora) — erkennen und selbst formulieren, auf C2-Niveau."
 order: 7
 unit: 2
 grammarTopic: 'Figuras retóricas'

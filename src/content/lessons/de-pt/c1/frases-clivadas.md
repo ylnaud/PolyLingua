@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'c1'
 title: 'Frases clivadas: die é-que-Konstruktion ohne deutsche Entsprechung'
-description: 'Frases clivadas mit "é que" im Portugiesischen — eine Betonungsstruktur, für die das Deutsche keine grammatische Parallele hat, nur andere Mittel wie Wortstellung oder Partikeln.'
+description: 'Frases clivadas mit "é que" im Portugiesischen — eine Betonungsstruktur, für die das Deutsche keine grammatische Parallele hat, nur Wortstellung und Partikeln.'
 order: 4
 unit: 1
 grammarTopic: 'Frases clivadas (é que)'

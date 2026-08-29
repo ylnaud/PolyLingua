@@ -2,7 +2,7 @@
 language: es
 level: 'a1'
 title: 'Zahlen 0-100 auf Spanisch | PolyLingua'
-description: "Kardinalzahlen 0-100 im Spanischen: von 16-29 verschmelzen Zehner und Einer zu einem Wort, ab 31 werden sie mit 'y' zu drei getrennten Wörtern — anders als im Deutschen."
+description: "Kardinalzahlen 0-100 im Spanischen: von 16-29 verschmelzen Zehner und Einer zu einem Wort, ab 31 stehen sie mit 'y' getrennt — anders als im Deutschen."
 order: 3
 unit: 1
 grammarTopic: 'Kardinalzahlen (números cardinales) 0-100'

@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: "La mise en relief: mit c'est...qui/que Satzteile betonen"
-description: "Wie man mit Hervorhebungskonstruktionen wie c'est...qui, c'est...que und ce qui/ce que...c'est ein Satzglied im Französischen betont, ohne die Satzmelodie zu ändern."
+description: "Wie man mit c'est...qui, c'est...que und ce qui/ce que...c'est ein Satzglied im Französischen betont, ohne die Satzmelodie zu ändern."
 order: 4
 unit: 1
 grammarTopic: "La mise en relief (c'est...qui/que)"

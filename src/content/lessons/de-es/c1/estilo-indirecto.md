@@ -2,7 +2,7 @@
 language: es
 level: 'c1'
 title: 'El estilo indirecto: Zeitenfolge statt Konjunktiv I'
-description: 'Wie das Spanische indirekte Rede bildet: Zeitverschiebung im Indikativ/Subjuntivo statt eines eigenen Modus wie im deutschen Konjunktiv I — mit klaren Umwandlungsregeln.'
+description: "Wie das Spanische indirekte Rede bildet: Zeitverschiebung im Indikativ und Subjuntivo statt eines Modus wie der deutsche Konjunktiv I — mit Regeln."
 order: 2
 unit: 1
 grammarTopic: 'Estilo indirecto (concordancia de tiempos)'

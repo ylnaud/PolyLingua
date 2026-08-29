@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: 'Le conditionnel passé: der Konjunktiv II der Vergangenheit auf Französisch'
-description: 'Wie man Reue und irreale Bedingungen in der Vergangenheit ausdrückt — avoir/être im conditionnel + participe passé, fast wie das deutsche "wäre gekommen" oder "hätte gewusst".'
+description: 'Wie man Reue und irreale Bedingungen in der Vergangenheit ausdrückt — avoir/être im conditionnel + participe passé, wie das deutsche "wäre gekommen".'
 order: 3
 unit: 1
 grammarTopic: 'Le conditionnel passé'

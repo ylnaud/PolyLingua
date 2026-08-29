@@ -2,7 +2,7 @@
 language: 'es'
 level: 'a2'
 title: 'Verbos modales im Spanischen: poder, deber, querer + Infinitiv'
-description: 'Poder, deber und querer plus Infinitiv im Spanischen — und warum das Verbpaar anders als im Deutschen zusammenbleibt statt den Infinitiv ans Satzende zu schicken.'
+description: "Poder, deber und querer plus Infinitiv im Spanischen — und warum das Verbpaar zusammenbleibt, statt den Infinitiv ans Satzende zu schicken."
 order: 2
 unit: 1
 grammarTopic: 'Perífrasis modales (poder, deber, querer + infinitivo)'

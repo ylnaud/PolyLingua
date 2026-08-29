@@ -2,7 +2,7 @@
 language: es
 level: 'a1'
 title: 'Possessivpronomen im Spanischen: mi, tu, su | PolyLingua'
-description: "Spanische Possessivpronomen richten sich nur nach der Anzahl des besessenen Dings, nicht nach dem Geschlecht des Besitzers — anders als im Deutschen. Lerne mi, tu, su mit klaren Beispielen."
+description: "Spanische Possessivpronomen richten sich nur nach der Anzahl des besessenen Dings, nicht nach dem Geschlecht des Besitzers — lerne mi, tu, su mit Beispielen."
 order: 7
 unit: 2
 grammarTopic: 'Los posesivos'

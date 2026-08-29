@@ -2,7 +2,7 @@
 language: es
 level: 'a1'
 title: 'Die Uhrzeit auf Spanisch | PolyLingua'
-description: "Wie du auf Spanisch nach der Uhrzeit fragst und sie sagst: Es la una für ein Uhr, aber Son las dos ab zwei Uhr — das Verb ser stimmt im Numerus mit der Stunde überein, anders als im Deutschen."
+description: "Wie du auf Spanisch nach der Uhrzeit fragst und sie sagst: Es la una für ein Uhr, aber Son las dos ab zwei Uhr — ser richtet sich nach der Stunde."
 order: 4
 unit: 1
 grammarTopic: 'Uhrzeit (la hora): es la una / son las dos'

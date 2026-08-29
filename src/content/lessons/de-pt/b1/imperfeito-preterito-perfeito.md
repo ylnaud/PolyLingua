@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b1'
 title: 'Pretérito Imperfeito vs. Pretérito Perfeito: eine echte Bedeutungsfrage'
-description: 'Pretérito Imperfeito und Pretérito Perfeito im Portugiesischen: anders als beim deutschen Präteritum/Perfekt ist das hier keine Stilfrage, sondern echter Bedeutungsunterschied.'
+description: "Pretérito Imperfeito und Pretérito Perfeito im Portugiesischen: anders als bei Präteritum/Perfekt ist das keine Stilfrage, sondern ein Bedeutungsunterschied."
 order: 2
 unit: 1
 grammarTopic: 'Pretérito Imperfeito vs. Pretérito Perfeito Simples'

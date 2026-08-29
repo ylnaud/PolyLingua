@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: 'La voix passive: warum être hier nicht "sein" bedeutet'
-description: 'Das französische Passiv mit être + participe passé, die Übereinstimmung des Partizips und die Präposition par — mit klarem Vergleich zum deutschen werden-Passiv.'
+description: 'Das französische Passiv mit être + participe passé, die Übereinstimmung des Partizips und die Präposition par — verglichen mit dem werden-Passiv.'
 order: 1
 unit: 1
 grammarTopic: 'La voix passive (être + participe passé)'

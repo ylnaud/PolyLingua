@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: "Discours indirect au passé: die Zeitenverschiebung im Französischen"
-description: "Konkordanz der Zeiten (concordance des temps) bei der indirekten Rede in der Vergangenheit: wie Präsens, passé composé und futur beim Berichten verschoben werden."
+description: 'Die concordance des temps bei der indirekten Rede in der Vergangenheit: wie Präsens, passé composé und futur beim Berichten verschoben werden.'
 order: 2
 unit: 1
 grammarTopic: "Discours indirect au passé (concordance des temps)"

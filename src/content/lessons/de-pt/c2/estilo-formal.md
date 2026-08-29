@@ -2,7 +2,7 @@
 language: pt
 level: c2
 title: "Portugiesischer Amtsstil: formelles Register und Nominalisierung"
-description: "Wie du portugiesische Texte in formellem Register schreibst: Nominalisierung, gehobene Konnektoren wie 'contudo' und 'outrossim' und der Unterschied zur gesprochenen Sprache."
+description: "Wie du portugiesische Texte im formellen Register schreibst: Nominalisierung, gehobene Konnektoren wie 'contudo' und der Abstand zur Alltagssprache."
 order: 2
 unit: 1
 grammarTopic: "Registo formal e nominalização"

@@ -2,7 +2,7 @@
 language: 'de'
 level: 'a2'
 title: 'German Reflexive Verbs: sich freuen, sich waschen, sich anziehen | PolyLingua'
-description: 'Master German reflexive verbs with sich — learn the reflexive pronouns for every person, the rare dative exceptions, and common verbs like sich freuen and sich anziehen.'
+description: "Master German reflexive verbs with sich — learn the reflexive pronouns for every person, the rare dative exceptions, and common verbs like sich freuen."
 order: 5
 unit: 2
 grammarTopic: 'Reflexive verbs (sich + verb)'

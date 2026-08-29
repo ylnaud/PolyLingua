@@ -2,7 +2,7 @@
 language: es
 level: 'c1'
 title: 'El pluscuamperfecto de subjuntivo: hubiera hablado'
-description: 'Das pretérito pluscuamperfecto de subjuntivo (hubiera/hubiese hablado) im Vergleich zum deutschen Konjunktiv II der Vergangenheit — für Irreales, das nie geschah.'
+description: "Das pretérito pluscuamperfecto de subjuntivo (hubiera/hubiese hablado) im Vergleich zum deutschen Konjunktiv II der Vergangenheit — für Irreales."
 order: 5
 unit: 2
 grammarTopic: 'Pretérito pluscuamperfecto de subjuntivo'

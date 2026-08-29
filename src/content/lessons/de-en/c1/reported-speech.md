@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c1'
 title: 'Reported Speech: berichte, was andere gesagt haben, ohne Anführungszeichen'
-description: 'Der Backshift im englischen Reported Speech: die Zeitverschiebung beim Wiedergeben fremder Aussagen, erklärt als einfache mechanische Regel mit klaren Beispielen.'
+description: 'Der Backshift im englischen Reported Speech: die Zeitverschiebung beim Wiedergeben fremder Aussagen, als einfache mechanische Regel erklärt.'
 order: 1
 unit: 1
 grammarTopic: 'Reported Speech (indirekte Rede)'

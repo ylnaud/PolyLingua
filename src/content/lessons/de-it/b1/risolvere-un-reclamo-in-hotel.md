@@ -2,7 +2,7 @@
 language: 'it'
 level: 'b1'
 title: 'È risolto oder è stato risolto? Aktion vs. Zustand im Italienischen | PolyLingua'
-description: "Der Unterschied zwischen è stato risolto (Vorgang) und è risolto (Zustand) im Italienischen — genau wie das deutsche werden-Passiv vs. sein-Passiv, angewendet auf eine gelöste Hotelreklamation."
+description: "Der Unterschied zwischen è stato risolto (Vorgang) und è risolto (Zustand) — genau wie das deutsche werden-Passiv vs. sein-Passiv, im Hotel angewendet."
 order: 13
 unit: 3
 grammarTopic: 'Passato prossimo passivo vs. Zustandsbeschreibung mit essere + Partizip'

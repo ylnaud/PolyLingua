@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b2'
 title: "Condicional composto: futuro do pretérito ohne Konjunktiv-Endung"
-description: "Das portugiesische Futuro do pretérito composto (condicional composto) mit ter + particípio im Vergleich zum deutschen Konjunktiv II der Vergangenheit ('hätte gesprochen')."
+description: "Das portugiesische Futuro do pretérito composto (condicional composto) mit ter + particípio im Vergleich zum deutschen Konjunktiv II der Vergangenheit."
 order: 3
 unit: 1
 grammarTopic: 'Futuro do pretérito composto (condicional composto)'

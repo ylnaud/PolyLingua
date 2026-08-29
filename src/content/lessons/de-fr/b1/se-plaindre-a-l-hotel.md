@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b1'
 title: "Sich im Hotel beschweren auf Französisch: das Imparfait nach « si »"
-description: "Höflich an der Hotelrezeption reklamieren auf Französisch, mit dem Imparfait nach « si » für höfliche, hypothetische Bitten - inklusive Vergleich mit dem deutschen Konjunktiv II."
+description: 'Höflich an der Hotelrezeption reklamieren auf Französisch, mit dem Imparfait nach « si » für höfliche, hypothetische Bitten wie im Konjunktiv II.'
 order: 11
 unit: 3
 grammarTopic: "Imparfait nach « si » (Höflichkeit und Hypothese)"

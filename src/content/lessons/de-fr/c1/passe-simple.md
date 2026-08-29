@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: "Le passé simple: die literarische Vergangenheit erkennen"
-description: "Bildung und Wiedererkennung des passé simple im Französischen — die Erzählzeit von Romanen, Märchen und historischen Texten, die im gesprochenen Französisch nicht benutzt wird."
+description: 'Bildung und Wiedererkennung des passé simple — die Erzählzeit von Romanen, Märchen und historischen Texten, die man gesprochen nie hört.'
 order: 5
 unit: 2
 grammarTopic: "Le passé simple"

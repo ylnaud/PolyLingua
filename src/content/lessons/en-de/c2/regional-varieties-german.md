@@ -2,7 +2,7 @@
 language: 'de'
 level: 'c2'
 title: 'Austrian German vs Swiss German vs Standard German | PolyLingua'
-description: 'Understand the key differences between Austrian German, Swiss German and Standard High German — vocabulary, pronunciation and cultural markers advanced learners need to recognize.'
+description: "Understand the key differences between Austrian German, Swiss German and Standard High German — vocabulary, pronunciation and cultural markers."
 order: 5
 unit: 2
 grammarTopic: 'Regional varieties of German (Österreichisches Deutsch, Schweizerdeutsch)'

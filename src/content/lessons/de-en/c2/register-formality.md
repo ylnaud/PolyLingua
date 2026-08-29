@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'Register und Formality im Englischen: von Slang bis akademischem Stil'
-description: "Warum 'gonna' und 'I would like to inquire' niemals im selben Text stehen: die fünf Register des Englischen und wie du Wortschatz, Grammatik und Satzbau ans Publikum anpasst."
+description: "Warum 'gonna' und 'I would like to inquire' nie im selben Text stehen: die fünf Register des Englischen und wie du deine Sprache ans Publikum anpasst."
 order: 3
 unit: 1
 grammarTopic: 'Register (formal, neutral, informal, colloquial, slang)'

@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: "Expressions idiomatiques: französische Redewendungen wie ein Muttersprachler"
-description: "Die wichtigsten französischen Redewendungen für C1: avoir le cafard, poser un lapin, coûter les yeux de la tête und mehr — mit wörtlicher und tatsächlicher Bedeutung."
+description: 'Die wichtigsten französischen Redewendungen für C1: avoir le cafard, poser un lapin, coûter les yeux de la tête — mit ihrer echten Bedeutung.'
 order: 6
 unit: 2
 grammarTopic: "Expressions idiomatiques (Redewendungen)"

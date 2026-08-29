@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b2'
 title: "Meio ambiente e sustentabilidade: Umweltvokabular auf Portugiesisch"
-description: "Wortschatz rund um Umwelt und Nachhaltigkeit auf europäischem Portugiesisch — von alterações climáticas bis energias renováveis, mit typischen Kollokationen für Diskussionen und Aufsätze."
+description: "Wortschatz zu Umwelt und Nachhaltigkeit auf europäischem Portugiesisch — von alterações climáticas bis energias renováveis, mit typischen Kollokationen."
 order: 8
 unit: 2
 grammarTopic: 'Vocabulário: meio ambiente e sustentabilidade'

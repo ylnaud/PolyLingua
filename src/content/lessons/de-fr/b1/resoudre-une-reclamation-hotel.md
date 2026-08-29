@@ -29,7 +29,7 @@ quiz:
       - 'der erste Satz stellt heraus, wer gehandelt hat; der zweite stellt das Ergebnis heraus, unabhängig davon, wer gehandelt hat'
       - 'der zweite Satz ist falsch'
     answerIndex: 1
-    explanation: 'Das Passé Composé behält das Subjekt und seine Handlung im Zentrum; « est/c\'est + Partizip » als Zustand verschiebt den Fokus auf das Ergebnis selbst.'
+    explanation: "Das Passé Composé behält das Subjekt und seine Handlung im Zentrum; « est/c'est + Partizip » als Zustand verschiebt den Fokus auf das Ergebnis selbst."
   - question: "Welches deutsche Sprachmuster entspricht dieser Unterscheidung am genauesten?"
     options:
       - "Perfekt (haben + Partizip, Handlung) gegen sein + Partizip als Zustand ('die Sache ist geregelt')"

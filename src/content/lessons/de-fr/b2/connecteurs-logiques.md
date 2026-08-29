@@ -13,7 +13,7 @@ quiz:
     options: ['cependant', 'de plus', 'bien que']
     answerIndex: 1
     explanation: "'de plus' (außerdem) fügt ein zusätzliches Argument in dieselbe Richtung hinzu — es verstärkt den bisherigen Gedanken, statt ihn zu widersprechen."
-  - question: "'Bien qu\'il pleuve, nous sortons.' Welchen Modus verlangt 'bien que'?"
+  - question: "'Bien qu'il pleuve, nous sortons.' Welchen Modus verlangt 'bien que'?"
     options: ['Indicatif', 'Subjonctif', 'Conditionnel']
     answerIndex: 1
     explanation: "'bien que' (obwohl) gehört zu den Konnektoren, die immer den Subjonctif verlangen: bien qu'il pleuve (nicht 'il pleut')."
@@ -57,7 +57,7 @@ exercises:
         right: 'starker Gegensatz'
   - type: 'write'
     prompt: "Schreibe auf Französisch: 'Obwohl es regnet, gehen wir raus.' (bien que, pleuvoir, sortir)"
-    answer: 'Bien qu\'il pleuve, nous sortons.'
+    answer: "Bien qu'il pleuve, nous sortons."
     accepted:
       - "Bien qu'il pleuve, nous sortons"
     hint: 'bien que + Subjonctif von pleuvoir (il pleuve).'

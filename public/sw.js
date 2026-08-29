@@ -57,9 +57,23 @@ self.addEventListener('fetch', (event) => {
           }
           return response;
         })
-        .catch(() =>
-          caches.match(event.request).then((cached) => cached || caches.match(OFFLINE_URL)),
-        ),
+        .catch(async () => {
+          // `ignoreSearch` es imprescindible acá: la PWA instalada arranca en
+          // `/?utm_source=pwa`, que sin esto NO matchea la portada cacheada
+          // como `/` y hace fallar el fallback entero.
+          const cached =
+            (await caches.match(event.request, { ignoreSearch: true })) ??
+            (await caches.match(OFFLINE_URL));
+          if (cached) return cached;
+          // Nunca resolver a undefined: `respondWith(undefined)` le da al
+          // navegador un error de red crudo (ERR_FAILED, "no se puede acceder
+          // a este sitio") en vez de una pantalla de sin-conexión legible.
+          return new Response(
+            '<!doctype html><meta charset="utf-8"><title>Sin conexión</title>' +
+              '<p style="font-family:system-ui;padding:2rem">Sin conexión. Volvé a intentar cuando tengas internet.</p>',
+            { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } },
+          );
+        }),
     );
     return;
   }

@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'British vs. American English: Unterschiede, die C2-Niveau ausmachen'
-description: "'Flat' oder 'apartment'? 'Colour' oder 'color'? Die wichtigsten Unterschiede zwischen britischem und amerikanischem Englisch in Wortschatz, Rechtschreibung, Aussprache und Grammatik."
+description: "'Flat' oder 'apartment'? Die wichtigsten Unterschiede zwischen britischem und amerikanischem Englisch in Wortschatz, Rechtschreibung, Aussprache und Grammatik."
 order: 4
 unit: 1
 grammarTopic: 'British English vs. American English'

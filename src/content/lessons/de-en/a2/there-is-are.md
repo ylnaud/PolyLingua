@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a2'
 title: 'There is / There are: sagen, dass etwas existiert'
-description: "'There is' und 'there are' im Englischen, um auszudrücken, dass etwas existiert oder sich an einem Ort befindet, zusammen mit 'some' und 'any' für unbestimmte Mengen."
+description: "'There is' und 'there are' im Englischen, um auszudrücken, dass etwas existiert oder sich irgendwo befindet, plus 'some' und 'any' für unbestimmte Mengen."
 order: 3
 unit: 1
 grammarTopic: 'There is/are + some/any'

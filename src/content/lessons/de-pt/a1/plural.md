@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'Plural im Portugiesischen: -s, -ões, -ães und -ais verstehen'
-description: "Die Pluralbildung im Portugiesischen: die Grundregel mit -s, die drei möglichen Endungen bei -ão sowie -al/-el/-ol → -ais/-eis/-ois, klar erklärt für Deutschsprachige."
+description: "Die Pluralbildung im Portugiesischen: die Grundregel mit -s, die drei Endungen bei -ão und -al/-el/-ol → -ais/-eis/-ois, für Deutschsprachige erklärt."
 order: 10
 unit: 3
 grammarTopic: 'Pluralbildung (Plural)'

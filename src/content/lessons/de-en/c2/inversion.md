@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'Inversion im Englischen: Betonung durch Umkehrung der Wortstellung'
-description: "Wie 'Never have I seen...' oder 'Not only did she win...' entstehen: die Inversionsregeln nach negativen und einschränkenden Adverbien für gehobenes, emphatisches Englisch."
+description: "Wie 'Never have I seen...' entsteht: die Inversionsregeln nach negativen und einschränkenden Adverbien für gehobenes, emphatisches Englisch."
 order: 1
 unit: 1
 grammarTopic: 'Inversion (emphatic structures)'

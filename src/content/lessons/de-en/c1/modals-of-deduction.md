@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c1'
 title: 'Modals of Deduction: logische Vermutungen im Englischen ausdruecken'
-description: 'Present und Past Modals of Deduction (must/might/could/cant plus Infinitiv oder have plus Partizip), um logische Vermutungen im Englischen praezise auszudruecken.'
+description: 'Present und Past Modals of Deduction (must/might/could/cant plus Infinitiv oder have plus Partizip) fuer logische Vermutungen im Englischen.'
 order: 2
 unit: 1
 grammarTopic: 'Modals of Deduction (must/might/could/cant + have + participle)'

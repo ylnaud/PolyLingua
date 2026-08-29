@@ -2,7 +2,7 @@
 language: 'it'
 level: 'b2'
 title: 'Trapassato prossimo: dein Plusquamperfekt auf Italienisch'
-description: 'Das Trapassato prossimo (avere/essere im Imperfetto + Partizip) für eine Handlung vor einer anderen Vergangenheitshandlung – fast deckungsgleich mit dem deutschen Plusquamperfekt.'
+description: "Das Trapassato prossimo (avere/essere im Imperfetto + Partizip) für eine Handlung vor einer anderen in der Vergangenheit – wie das Plusquamperfekt."
 order: 9
 unit: 3
 grammarTopic: 'Trapassato prossimo'

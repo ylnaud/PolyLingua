@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: "Das Verb 'to be': am, is, are statt sechs Formen"
-description: "Das englische Verb 'to be' (am/is/are) hat im Präsens nur drei Formen statt der sechs deutschen (bin/bist/ist/sind/seid/sind) — und braucht bei Fragen kein 'do', genau wie 'sein' im Deutschen."
+description: "Das englische Verb 'to be' (am/is/are) hat im Präsens nur drei Formen statt der sechs deutschen — und braucht bei Fragen kein 'do', anders als im Deutschen."
 order: 1
 unit: 2
 grammarTopic: "Verb 'to be' (am/is/are)"

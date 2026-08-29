@@ -2,7 +2,7 @@
 language: 'es'
 level: 'a2'
 title: 'Futuro próximo: ir a + Infinitiv als spanisches Zukunftsformel'
-description: 'Ir a + Infinitiv drückt im Spanischen die nahe Zukunft aus, parallel zum deutschen werden + Infinitiv — mit einem entscheidenden Unterschied in der Wortstellung.'
+description: "Ir a + Infinitiv drückt im Spanischen die nahe Zukunft aus, parallel zum deutschen werden + Infinitiv — mit einem Unterschied in der Wortstellung."
 order: 7
 unit: 2
 grammarTopic: 'Futuro próximo (ir a + infinitivo)'

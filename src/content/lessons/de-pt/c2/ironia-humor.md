@@ -2,7 +2,7 @@
 language: pt
 level: c2
 title: "Portugiesische Ironie und Humor: zwischen den Zeilen lesen"
-description: "Wie Portugiesischsprecher Ironie, Sarkasmus und Selbstironie einsetzen — mit Tonfall-Markern, die kein Wörterbuch übersetzt, aber jeder Muttersprachler sofort erkennt."
+description: "Wie Portugiesischsprecher Ironie, Sarkasmus und Selbstironie einsetzen — mit Tonfall-Markern, die kein Wörterbuch übersetzt, aber Muttersprachler erkennen."
 order: 3
 unit: 1
 grammarTopic: "Ironia, sarcasmo e humor no registo coloquial"

@@ -2,7 +2,7 @@
 language: pt
 level: c2
 title: "Diminutive und Augmentative im Portugiesischen: -inho und -ão"
-description: "Wie produktiv -inho/-inha und -ão/-ona im Portugiesischen sind — weit über die Größe hinaus, mit Zuneigung, Ironie und Übertreibung, ohne systematisches deutsches Gegenstück."
+description: "Wie produktiv -inho/-inha und -ão/-ona im Portugiesischen sind — weit über Größe hinaus, mit Zuneigung, Ironie und Übertreibung, anders als im Deutschen."
 order: 10
 unit: 3
 grammarTopic: "Diminutivos e aumentativos (-inho/-inha, -ão/-ona)"

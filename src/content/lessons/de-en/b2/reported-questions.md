@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'Reported Questions: indirekte Fragen im Englischen richtig bilden'
-description: 'Direkte Fragen im Englischen in indirekte Fragen (reported questions) umwandeln — mit Zeitverschiebung, normaler Satzstellung ohne Inversion und dem Unterschied zwischen "if/whether" und Fragewörtern.'
+description: 'Direkte Fragen im Englischen in indirekte Fragen umwandeln — mit Zeitverschiebung, Satzstellung ohne Inversion und dem Unterschied zwischen "if" und "whether".'
 order: 4
 unit: 1
 grammarTopic: 'Reported Questions (indirekte Fragen)'

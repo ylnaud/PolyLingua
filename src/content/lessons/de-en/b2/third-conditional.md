@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'Third Conditional: über die Vergangenheit spekulieren im Englischen'
-description: 'Das Third Conditional (if + past perfect, would have + past participle) für unerfüllte Bedingungen in der Vergangenheit — mit klaren Regeln, Beispielen und den typischen Fehlern deutscher Lernender.'
+description: 'Das Third Conditional (if + past perfect, would have + past participle) für unerfüllte Bedingungen in der Vergangenheit — mit Regeln und Beispielen.'
 order: 3
 unit: 1
 grammarTopic: 'Third Conditional'

@@ -2,7 +2,7 @@
 language: 'es'
 level: 'b2'
 title: 'Wortschatz: Umwelt und Gesellschaft auf Spanisch | PolyLingua'
-description: 'Spanischer Wortschatz rund um Umwelt und Gesellschaft: el cambio climático, el reciclaje, la sostenibilidad und weitere Begriffe, um über aktuelle Themen zu diskutieren.'
+description: "Spanischer Wortschatz rund um Umwelt und Gesellschaft: el cambio climático, el reciclaje, la sostenibilidad und mehr, um aktuelle Themen zu diskutieren."
 order: 8
 unit: 2
 grammarTopic: 'Vocabulario: medio ambiente y sociedad'

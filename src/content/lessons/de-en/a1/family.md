@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: 'Family: die Familie auf Englisch vorstellen'
-description: 'Grundwortschatz zur Familie auf Englisch — Eltern, Geschwister, Großeltern und mehr — ganz ohne die grammatischen Artikel, die im Deutschen jedes Wort begleiten.'
+description: 'Grundwortschatz zur Familie auf Englisch — Eltern, Geschwister, Großeltern — ganz ohne die grammatischen Artikel, die im Deutschen jedes Wort begleiten.'
 order: 8
 unit: 3
 grammarTopic: 'Wortschatz: die Familie'

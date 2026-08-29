@@ -2,7 +2,7 @@
 language: 'it'
 level: 'a1'
 title: 'Doppelte Konsonanten im Italienischen: pala vs palla | PolyLingua'
-description: 'Die Aussprache doppelter Konsonanten im Italienischen (pp, tt, ll, rr, nn): wie du sie unterscheidest und warum ein zusätzlicher Buchstabe das ganze Wort verändert.'
+description: "Die Aussprache doppelter Konsonanten im Italienischen (pp, tt, ll): wie du sie unterscheidest und warum ein zusätzlicher Buchstabe das ganze Wort verändert."
 order: 12
 unit: 3
 grammarTopic: 'Aussprache: doppelte Konsonanten'

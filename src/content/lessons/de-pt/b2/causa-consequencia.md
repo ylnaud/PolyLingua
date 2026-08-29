@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b2'
 title: "Conectores de causa e consequência: porque, já que, portanto im Vergleich zu weil/da/also"
-description: "Die portugiesischen Konnektoren porque, já que, portanto und por isso für Ursache und Folge — im direkten Vergleich zu den deutschen Konnektoren weil, da, deshalb und also."
+description: "Die portugiesischen Konnektoren porque, já que, portanto und por isso für Ursache und Folge — im Vergleich zu weil, da, deshalb und also im Deutschen."
 order: 5
 unit: 2
 grammarTopic: 'Conectores de causa e consequência'

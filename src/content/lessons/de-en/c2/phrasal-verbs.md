@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'Fortgeschrittene Phrasal Verbs: Register und Bedeutungsnuancen'
-description: "Warum 'to give up' und 'to relinquish' nicht austauschbar sind: wie Phrasal Verbs das englische Register prägen und welche Nuancen zwischen 'put up with', 'come across' und 'get around to' liegen."
+description: "Warum 'to give up' und 'to relinquish' nicht austauschbar sind: wie Phrasal Verbs das englische Register prägen und welche Nuancen sie transportieren."
 order: 2
 unit: 1
 grammarTopic: 'Advanced phrasal verbs and their register'

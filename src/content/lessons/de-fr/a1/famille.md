@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'a1'
 title: 'Die Familie auf Französisch: Wortschatz und Genus-Paare'
-description: 'Wortschatz rund um die Familie im Französischen — und wie sich männliche und weibliche Wortformen oft symmetrisch bilden, anders als im Deutschen mit völlig eigenen Wörtern.'
+description: 'Wortschatz rund um die Familie im Französischen — und wie sich männliche und weibliche Wortformen oft symmetrisch bilden, anders als im Deutschen.'
 order: 5
 unit: 2
 grammarTopic: 'Familienwortschatz und Genus-Paare'

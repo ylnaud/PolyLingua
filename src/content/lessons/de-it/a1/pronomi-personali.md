@@ -2,7 +2,7 @@
 language: 'it'
 level: 'a1'
 title: 'Personalpronomen im Italienischen: io, tu, lui, lei...'
-description: 'Anders als im Deutschen, wo das Subjektpronomen Pflicht ist, lässt das Italienische es meist weg, weil die Verbendung die Person schon verrät — pro-drop erklärt.'
+description: "Anders als im Deutschen lässt das Italienische das Subjektpronomen meist weg, weil die Verbendung die Person schon verrät — pro-drop einfach erklärt."
 order: 9
 unit: 3
 grammarTopic: 'Personalpronomen (Subjekt): io, tu, lui/lei, noi, voi, loro'

@@ -2,7 +2,7 @@
 language: 'de'
 level: 'b2'
 title: 'Zustandspassiv vs. Vorgangspassiv in German | PolyLingua'
-description: 'Understand the difference between Zustandspassiv (sein + Partizip II, a resulting state) and Vorgangspassiv (werden + Partizip II, an action in progress) in German.'
+description: "Understand the difference between German Zustandspassiv (sein + Partizip II, a resulting state) and Vorgangspassiv (werden + Partizip II, an action)."
 order: 6
 unit: 2
 grammarTopic: 'Zustandspassiv (sein + Partizip II) vs. Vorgangspassiv (werden + Partizip II)'

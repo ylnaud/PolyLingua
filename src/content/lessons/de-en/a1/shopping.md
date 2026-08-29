@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: 'Shopping: einkaufen auf Englisch'
-description: 'Nützliche Redewendungen zum Einkaufen auf Englisch — nach Preisen fragen, Größen, Umtausch — und der Unterschied zwischen "How much" und "How many", der oft verwechselt wird.'
+description: 'Nützliche Redewendungen zum Einkaufen auf Englisch — nach Preisen, Größen und Umtausch fragen — plus der Unterschied zwischen "How much" und "How many".'
 order: 14
 unit: 4
 grammarTopic: '"How much" vs. "How many" und Redewendungen zum Einkaufen'

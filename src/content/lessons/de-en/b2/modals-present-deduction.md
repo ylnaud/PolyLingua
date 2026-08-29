@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'Modals of Present Deduction: Vermutungen mit must, might, could, can not im Englischen'
-description: 'Modalverben der Vermutung über die Gegenwart — must, might, could und can not + Infinitiv — um Sicherheit, Möglichkeit und Unmöglichkeit auszudrücken, mit klaren Regeln und Beispielen.'
+description: 'Modalverben der Vermutung über die Gegenwart — must, might, could und can not + Infinitiv — für Sicherheit, Möglichkeit und Unmöglichkeit im Englischen.'
 order: 10
 unit: 3
 grammarTopic: 'Modals of Present Deduction (must / might / could / can not)'

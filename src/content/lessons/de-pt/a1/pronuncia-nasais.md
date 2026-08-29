@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'Portugiesische Nasalvokale: ão, ãe, em, im, om, um richtig aussprechen'
-description: "Die Nasalvokale des Portugiesischen (ão, ãe, em, im, om, um) haben kein Äquivalent im Deutschen. Lerne die Technik dahinter und übe mit häufigen Wörtern wie não, pão und bem."
+description: "Die Nasalvokale des Portugiesischen (ão, ãe, em, im, om, um) haben kein deutsches Äquivalent. Lerne die Technik und übe mit Wörtern wie não und pão."
 order: 12
 unit: 3
 grammarTopic: 'Aussprache: Nasalvokale'

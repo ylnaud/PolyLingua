@@ -2,7 +2,7 @@
 language: es
 level: 'c1'
 title: 'Oraciones hendidas: die Betonungsstruktur ohne deutsches Vorbild'
-description: 'Spanische Spaltsätze (es que, lo que... es) zur Hervorhebung: eine Satzstruktur ohne direkte deutsche Entsprechung, die im Deutschen meist mit Betonung gelöst wird.'
+description: "Spanische Spaltsätze (es que, lo que... es) zur Hervorhebung: eine Struktur ohne deutsche Entsprechung, die im Deutschen mit Betonung gelöst wird."
 order: 4
 unit: 1
 grammarTopic: 'Oraciones hendidas / enfáticas'

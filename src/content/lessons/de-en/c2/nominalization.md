@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'Nominalisierung im Englischen: der Schlüssel zu akademischem Stil'
-description: "Warum 'the implementation of the policy' formeller klingt als 'implementing the policy': wie Nominalisierung Verben und Adjektive in Substantive verwandelt und akademisches, formelles Englisch prägt."
+description: "Warum 'the implementation of the policy' formeller klingt als 'implementing the policy': wie Nominalisierung Verben in Substantive verwandelt."
 order: 9
 unit: 3
 grammarTopic: 'Nominalization and academic noun phrases'

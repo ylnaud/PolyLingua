@@ -2,7 +2,7 @@
 language: es
 level: 'a1'
 title: 'Personalpronomen im Spanischen: yo, tú, él... und warum sie oft fehlen | PolyLingua'
-description: 'Die spanischen Personalpronomen (yo, tú, él/ella, nosotros, vosotros, ellos) und das Pro-Drop-Phänomen: warum Spanischsprachige sie meistens weglassen — etwas, das es im Deutschen nicht gibt.'
+description: "Die spanischen Personalpronomen (yo, tú, él/ella, nosotros, ellos) und das Pro-Drop-Phänomen: warum Spanischsprachige sie meistens weglassen."
 order: 9
 unit: 3
 grammarTopic: 'Personalpronomen und Pro-Drop'

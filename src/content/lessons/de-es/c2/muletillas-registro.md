@@ -2,7 +2,7 @@
 language: es
 level: 'c2'
 title: 'Bueno, pues, o sea: spanische Muletillas und Register'
-description: 'Muletillas wie bueno, pues, o sea, vale und venga: die spanischen Füllwörter, die jeder Muttersprachler ständig benutzt und die kein Wörterbuch richtig übersetzt.'
+description: "Muletillas wie bueno, pues, o sea, vale und venga: die spanischen Füllwörter, die jeder Muttersprachler benutzt und die kein Wörterbuch übersetzt."
 order: 1
 unit: 1
 grammarTopic: 'Muletillas coloquiales y registro (bueno, pues, o sea, vale, venga)'

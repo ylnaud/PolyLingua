@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b1'
 title: 'Eine Hotelbeschwerde lösen: Present Perfect vs. Present Passive'
-description: 'Present Perfect (Handlung) vs. Present Passive (Zustand) im Englischen: der feine Unterschied zwischen "has been resolved" und "is resolved" am Beispiel einer gelösten Hotelbeschwerde.'
+description: 'Present Perfect (Handlung) vs. Present Passive (Zustand) im Englischen: der feine Unterschied zwischen "has been resolved" und "is resolved".'
 order: 13
 unit: 3
 grammarTopic: 'Present Perfect (Handlung) vs. Present Passive (resultierender Zustand)'

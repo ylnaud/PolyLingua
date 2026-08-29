@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b1'
 title: 'Condicional (Futuro do Pretérito): Höflichkeit und Hypothesen'
-description: 'Das Condicional im Portugiesischen bilden und benutzen: für Höflichkeit (gostaria), Ratschläge und Se-Sätze mit Imperfeito do Conjuntivo - das Pendant zum deutschen Konjunktiv II.'
+description: "Das Condicional im Portugiesischen bilden und benutzen: für Höflichkeit (gostaria), Ratschläge und Se-Sätze - das Pendant zum deutschen Konjunktiv II."
 order: 6
 unit: 2
 grammarTopic: 'Condicional (Futuro do Pretérito)'

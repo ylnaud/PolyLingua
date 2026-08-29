@@ -2,7 +2,7 @@
 language: 'it'
 level: 'a1'
 title: 'Possessivadjektive im Italienischen: il mio, la tua...'
-description: "Anders als 'mein/dein' im Deutschen braucht das Italienische fast immer einen Artikel davor (il mio libro) — außer bei Familienwörtern im Singular wie mio padre."
+description: "Anders als 'mein/dein' im Deutschen braucht das Italienische fast immer einen Artikel davor (il mio libro) — außer bei Familienwörtern im Singular."
 order: 7
 unit: 2
 grammarTopic: 'Possessivadjektive (mio/tuo/suo) mit Artikel'

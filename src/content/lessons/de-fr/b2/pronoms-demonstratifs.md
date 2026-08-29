@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: 'Celui, celle, ceux, celles: die Demonstrativpronomen im Französischen'
-description: "Die französischen Demonstrativpronomen celui, celle, ceux, celles ersetzen ein schon genanntes Nomen — mit -ci/-là, mit de, oder mit qui/que. Erklärt für Deutschsprachige mit klaren Beispielen."
+description: 'Die französischen Demonstrativpronomen celui, celle, ceux, celles ersetzen ein schon genanntes Nomen — mit -ci/-là, mit de oder mit qui/que.'
 order: 10
 unit: 3
 grammarTopic: 'Les pronoms démonstratifs (celui, celle, ceux, celles)'

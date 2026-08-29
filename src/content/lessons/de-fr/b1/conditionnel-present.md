@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b1'
 title: 'Conditionnel présent: Höflichkeit und Hypothesen'
-description: 'Das Conditionnel présent im Französischen bilden und benutzen: für Höflichkeit (je voudrais), Ratschläge und Si-Sätze mit Imparfait – das Pendant zum deutschen Konjunktiv II.'
+description: 'Das Conditionnel présent bilden und benutzen: für Höflichkeit (je voudrais), Ratschläge und Si-Sätze — das Pendant zum deutschen Konjunktiv II.'
 order: 6
 unit: 2
 grammarTopic: 'Conditionnel présent'

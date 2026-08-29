@@ -2,7 +2,7 @@
 language: 'it'
 level: 'b2'
 title: 'Periodo ipotetico: dein wenn-Satz auf Italienisch'
-description: 'Der italienische Periodo ipotetico della realtà und della possibilità mit se + Indicativo/Congiuntivo – im direkten Vergleich zu den deutschen Konditionalsätzen Typ I und II.'
+description: "Der italienische Periodo ipotetico della realtà und della possibilità mit se + Indicativo/Congiuntivo – wie die deutschen Konditionalsätze Typ I und II."
 order: 10
 unit: 3
 grammarTopic: 'Periodo ipotetico della realtà e della possibilità'

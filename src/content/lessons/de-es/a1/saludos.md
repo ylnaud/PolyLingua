@@ -2,7 +2,7 @@
 language: es
 level: 'a1'
 title: 'Spanische Begrüßungen: sich vorstellen und Small Talk | PolyLingua'
-description: 'Lerne die wichtigsten spanischen Begrüßungsformeln, wie du dich vorstellst und höflich nach dem Befinden fragst – Grundwortschatz für jedes erste Gespräch auf Spanisch.'
+description: "Lerne die wichtigsten spanischen Begrüßungsformeln, wie du dich vorstellst und höflich nach dem Befinden fragst – Grundwortschatz für das erste Gespräch."
 order: 13
 unit: 3
 situation: 'Vorstellung'

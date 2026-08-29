@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: 'Die drei Aussprachefehler, die dich als Deutschsprachigen verraten | PolyLingua'
-description: 'Wine klingt wie vine, das R kommt aus der Kehle statt vom Mundraum, und TH wird zu s oder d: die drei häufigsten Aussprachefehler deutscher Englischlerner, klar erklärt.'
+description: 'Wine klingt wie vine, das R kommt aus der Kehle, und TH wird zu s oder d: die drei häufigsten Aussprachefehler deutscher Englischlerner, klar erklärt.'
 order: 0.5
 unit: 1
 grammarTopic: 'Aussprache: typische Fehler deutscher Sprecher'

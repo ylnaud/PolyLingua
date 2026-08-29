@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: 'Stellung der Adjektive im Portugiesischen: meist nach dem Substantiv'
-description: 'Die Position der Adjektive im Portugiesischen - meistens NACH dem Substantiv, anders als im Deutschen, wo Adjektive immer davor stehen. Mit den wichtigsten Ausnahmen.'
+description: "Die Position der Adjektive im Portugiesischen - meistens NACH dem Substantiv, anders als im Deutschen, wo sie davor stehen. Mit den wichtigsten Ausnahmen."
 order: 8
 unit: 2
 grammarTopic: 'Posição dos adjetivos'

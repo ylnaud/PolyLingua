@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'Environment and Society: Wortschatz Umwelt und Gesellschaft im Englischen'
-description: 'Englischer Wortschatz zu Umwelt und Gesellschaft — climate change, sustainability, pollution — mit typischen Kollokationen und Passivkonstruktionen aus Nachrichten- und Sachtexten.'
+description: 'Englischer Wortschatz zu Umwelt und Gesellschaft — climate change, sustainability, pollution — mit typischen Kollokationen und Passivkonstruktionen.'
 order: 8
 unit: 2
 grammarTopic: 'Wortschatz: Umwelt und Gesellschaft (mit Passiv-Kollokationen)'

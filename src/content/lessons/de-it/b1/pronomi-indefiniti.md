@@ -2,7 +2,7 @@
 language: 'it'
 level: 'b1'
 title: 'Unbestimmte Pronomen im Italienischen: qualcuno, qualcosa, nessuno | PolyLingua'
-description: "Qualcuno, qualcosa, nessuno und niente: die wichtigsten unbestimmten Pronomen im Italienischen, ihre Verwendung mit 'di + Adjektiv' und der Unterschied zum Deutschen."
+description: "Qualcuno, qualcosa, nessuno und niente: die wichtigsten unbestimmten Pronomen im Italienischen und ihre Verwendung mit 'di + Adjektiv'."
 order: 9
 unit: 3
 grammarTopic: 'Unbestimmte Pronomen (qualcuno, qualcosa, nessuno, niente)'

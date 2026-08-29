@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'a1'
 title: 'Fragen bilden auf Französisch: drei Register, ein Ziel'
-description: 'Wie man auf Französisch fragt — mit Intonation, est-ce que oder Inversion — und warum Verb-Subjekt-Inversion für Deutschsprachige leichter ist als für die meisten anderen Lerner.'
+description: 'Wie man auf Französisch fragt — mit Intonation, est-ce que oder Inversion — und warum die Verb-Subjekt-Inversion für Deutschsprachige leichter ist.'
 order: 8
 unit: 2
 grammarTopic: 'Fragebildung (Intonation, est-ce que, Inversion)'

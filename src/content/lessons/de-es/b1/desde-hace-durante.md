@@ -2,7 +2,7 @@
 language: 'es'
 level: 'b1'
 title: 'Desde, desde hace und durante: Zeitausdrücke im Spanischen | PolyLingua'
-description: "Der Unterschied zwischen desde, desde hace und durante im Spanischen — mit direktem Vergleich zum deutschen seit und für/während, inklusive der Präsens-Falle bei desde hace."
+description: "Der Unterschied zwischen desde, desde hace und durante im Spanischen — mit Vergleich zum deutschen seit und während, inklusive der Präsens-Falle."
 order: 10
 unit: 3
 grammarTopic: "Desde, desde hace und durante: Zeitpunkt vs. Dauer"

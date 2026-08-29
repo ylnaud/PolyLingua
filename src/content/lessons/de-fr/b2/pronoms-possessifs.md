@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b2'
 title: 'Les pronoms possessifs: le mien, le tien und die doppelte Übereinstimmung'
-description: 'Wie man "meiner", "deiner", "seiner" ohne Substantiv ausdrückt — le mien, la tienne, les siens — mit der Regel, dass Genus UND Numerus vom besessenen Gegenstand kommen, nie vom Besitzer.'
+description: 'Wie man "meiner", "deiner", "seiner" ohne Substantiv ausdrückt — le mien, la tienne, les siens — wobei Genus und Numerus vom besessenen Gegenstand kommen.'
 order: 6
 unit: 2
 grammarTopic: 'Les pronoms possessifs (le mien, le tien, le sien...)'

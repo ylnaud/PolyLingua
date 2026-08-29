@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: 'Telling Time: die Uhrzeit auf Englisch'
-description: 'Die Uhrzeit auf Englisch angeben — half past, quarter to, AM/PM — und die klassische Falle, in der "half eight" das genaue Gegenteil von "halb acht" bedeuten kann.'
+description: 'Die Uhrzeit auf Englisch angeben — half past, quarter to, AM/PM — und die klassische Falle, in der "half eight" das Gegenteil von "halb acht" heißt.'
 order: 7
 unit: 3
 grammarTopic: 'Uhrzeiten (telling time)'

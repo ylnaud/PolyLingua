@@ -2,7 +2,7 @@
 language: 'it'
 level: 'c1'
 title: 'Congiuntivo trapassato: was sich nicht mehr ändern lässt'
-description: 'Der congiuntivo trapassato schließt den periodo ipotetico dell irrealtà ab: "se avessi saputo, sarei venuto" — strukturell dem deutschen irrealen Konjunktiv II der Vergangenheit sehr ähnlich.'
+description: 'Der congiuntivo trapassato schließt den periodo ipotetico dell irrealtà ab: "se avessi saputo, sarei venuto" — wie der deutsche Konjunktiv II der Vergangenheit.'
 order: 9
 unit: 3
 grammarTopic: 'Il congiuntivo trapassato'

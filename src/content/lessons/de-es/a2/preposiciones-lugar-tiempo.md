@@ -2,7 +2,7 @@
 language: 'es'
 level: 'a2'
 title: 'Spanische Präpositionen für Ort und Zeit (en, a, de, para, con...)'
-description: 'Lerne die wichtigsten spanischen Präpositionen für Ort und Zeit — en, a, de, para, con, sobre, durante — inklusive der Kontraktionen al und del mit Beispielsätzen.'
+description: "Lerne die wichtigsten spanischen Präpositionen für Ort und Zeit — en, a, de, para, con, sobre, durante — inklusive der Kontraktionen al und del."
 order: 9
 unit: 1
 grammarTopic: 'Präpositionen: Ort und Zeit (en, a, de, para, con, sobre, durante)'

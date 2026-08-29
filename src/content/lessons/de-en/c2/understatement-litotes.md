@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'Understatement und Litotes: britische Indirektheit im Englischen'
-description: "Warum 'not bad' oft 'ausgezeichnet' bedeutet und 'a bit of a problem' eine echte Katastrophe sein kann: understatement und Litotes als Schlüssel zu britischer Höflichkeit und Ironie."
+description: "Warum 'not bad' oft 'ausgezeichnet' bedeutet und 'a bit of a problem' eine Katastrophe sein kann: understatement und Litotes im britischen Englisch."
 order: 10
 unit: 3
 grammarTopic: 'Understatement and litotes (British indirectness)'

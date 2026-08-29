@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'Wish und If Only: Wünsche und Bedauern im Englischen ausdrücken'
-description: 'Die Strukturen "wish" und "if only" für Wünsche und Bedauern in Gegenwart und Vergangenheit sowie "wish + would" für Beschwerden — mit klaren Regeln und Beispielen.'
+description: 'Die Strukturen "wish" und "if only" für Wünsche und Bedauern in Gegenwart und Vergangenheit sowie "wish + would" für Beschwerden, mit klaren Beispielen.'
 order: 9
 unit: 3
 grammarTopic: 'wish / if only (Wünsche und Bedauern)'

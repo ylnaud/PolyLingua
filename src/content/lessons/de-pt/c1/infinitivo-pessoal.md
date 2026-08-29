@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'c1'
 title: 'Infinitivo pessoal: der konjugierte Infinitiv, einzigartig im Portugiesischen'
-description: 'Der infinitivo pessoal (para eu falar, para tu falares) ist ein grammatisches Alleinstellungsmerkmal des Portugiesischen — ohne Entsprechung im Deutschen oder in den meisten anderen romanischen Sprachen.'
+description: "Der infinitivo pessoal (para eu falar, para tu falares) ist ein grammatisches Alleinstellungsmerkmal des Portugiesischen — ohne Entsprechung im Deutschen."
 order: 10
 unit: 3
 grammarTopic: 'Infinitivo pessoal'

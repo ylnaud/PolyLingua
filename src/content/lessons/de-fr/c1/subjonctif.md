@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: "Der subjonctif présent: der französische Konjunktiv Schritt für Schritt"
-description: "Bildung und Gebrauch des subjonctif présent im Französischen: unregelmäßige Formen, die typischen Auslöser und der Unterschied zum indicatif — mit klaren C1-Beispielen."
+description: 'Bildung und Gebrauch des subjonctif présent: unregelmäßige Formen, die typischen Auslöser und der Unterschied zum indicatif — mit C1-Beispielen.'
 order: 1
 unit: 1
 grammarTopic: "Der subjonctif présent"

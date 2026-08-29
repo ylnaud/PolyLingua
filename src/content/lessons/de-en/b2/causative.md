@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'Causative Verbs: have/get + Objekt + Partizip im Englischen'
-description: 'Die Causative-Struktur "have/get something done" für Dienstleistungen, die man von jemand anderem erledigen lässt — mit klaren Regeln, Beispielen und dem Unterschied zu "have somebody do something".'
+description: 'Die Causative-Struktur "have/get something done" für Dienstleistungen, die man erledigen lässt — mit Regeln und Abgrenzung zu "have somebody do something".'
 order: 5
 unit: 2
 grammarTopic: 'Causative Verbs (have/get + Objekt + Past Participle)'

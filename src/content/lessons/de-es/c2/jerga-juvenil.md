@@ -2,7 +2,7 @@
 language: 'es'
 level: 'c2'
 title: 'Jugendsprache und Anglizismen im Spanischen | PolyLingua'
-description: 'Aktuelle spanische Jugendsprache und Anglizismen: guay, mola, flipar, hacer match und mehr — mit direktem Vergleich zur deutschen Jugendsprache (chillen, cringe).'
+description: "Aktuelle spanische Jugendsprache und Anglizismen: guay, mola, flipar, hacer match und mehr — mit Vergleich zur deutschen Jugendsprache (cringe)."
 order: 9
 unit: 3
 grammarTopic: 'Jerga juvenil y anglicismos'

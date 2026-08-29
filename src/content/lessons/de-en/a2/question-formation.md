@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a2'
 title: "Question Formation: das 'do' endlich meistern"
-description: 'Wie du im Englischen jede Frage richtig bildest, indem du das passende Hilfsverb (do/does/did) mit dem richtigen Fragewort kombinierst — Schritt für Schritt und ohne Fehler.'
+description: 'Wie du im Englischen jede Frage bildest, indem du das passende Hilfsverb (do/does/did) mit dem richtigen Fragewort kombinierst — Schritt für Schritt.'
 order: 7
 unit: 2
 grammarTopic: 'Fragebildung (do/does/did + Fragewörter)'

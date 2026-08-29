@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: "Ce dont, ce à quoi: zusammengesetzte Relativpronomen ohne Bezugswort"
-description: "Die komplexen Relativpronomen 'ce dont' und 'ce à quoi' im Französischen: wie man einen Relativsatz ohne konkretes Bezugswort bildet — mit den Verben 'avoir besoin de' und 'penser à' als Schlüssel."
+description: "Die Relativpronomen 'ce dont' und 'ce à quoi': wie man einen Relativsatz ohne konkretes Bezugswort bildet — mit avoir besoin de und penser à."
 order: 9
 unit: 3
 grammarTopic: "Ce dont, ce à quoi (pronoms relatifs composés)"

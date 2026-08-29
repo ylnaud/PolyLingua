@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: 'Home: das Zuhause auf Englisch beschreiben'
-description: 'Wortschatz rund ums Zuhause auf Englisch — Zimmer, Möbel, Präpositionen — plus "there is/there are", das im Englischen zwei Formen für das deutsche "es gibt" braucht.'
+description: 'Wortschatz rund ums Zuhause auf Englisch — Zimmer, Möbel, Präpositionen — plus "there is/there are", die zwei englischen Formen für "es gibt".'
 order: 9
 unit: 3
 grammarTopic: "'there is' / 'there are' und Wortschatz: das Zuhause"

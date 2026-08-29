@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'b1'
 title: "Eine Entschädigung fordern auf Französisch: das Subjonctif nach einem Erwartungsausdruck"
-description: "Wie du im Hotel bestimmt, aber höflich eine Lösung forderst - mit dem Subjonctif nach « je m'attendrais à ce que ». Eine Struktur ohne echte Entsprechung im Deutschen."
+description: "Wie du im Hotel bestimmt, aber höflich eine Lösung forderst - mit dem Subjonctif nach « je m'attendrais à ce que », ohne Entsprechung im Deutschen."
 order: 12
 unit: 3
 grammarTopic: "Subjonctif nach einem Erwartungsausdruck"

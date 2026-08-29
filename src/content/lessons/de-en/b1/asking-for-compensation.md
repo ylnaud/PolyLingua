@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b1'
 title: 'Entschädigung fordern: höfliches "would" auf Englisch'
-description: "'would' für höfliche Erwartungen und Bitten im Englischen: wie du im Hotel diplomatisch eine Entschädigung oder Rückerstattung forderst, ohne unhöflich zu wirken."
+description: "'would' für höfliche Erwartungen und Bitten im Englischen: wie du im Hotel diplomatisch eine Entschädigung forderst, ohne unhöflich zu wirken."
 order: 12
 unit: 3
 grammarTopic: "would für höfliche Erwartungen und Bitten"

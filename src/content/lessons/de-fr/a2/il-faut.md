@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'a2'
 title: 'Il faut: die Verpflichtung ohne Besitzer'
-description: "'Il faut', der meistgenutzte unpersönliche Ausdruck des Französischen, um Ratschläge, Regeln und allgemeine Bedürfnisse auszudrücken, ohne jemanden direkt anzusprechen."
+description: "'Il faut', der meistgenutzte unpersönliche Ausdruck des Französischen, um Ratschläge, Regeln und Bedürfnisse auszudrücken, ohne jemanden anzusprechen."
 order: 6
 unit: 2
 grammarTopic: 'Unpersönliche Ausdrücke (il faut, il y a, il est important de)'

@@ -2,7 +2,7 @@
 language: 'it'
 level: 'b1'
 title: 'Congiuntivo imperfetto nach se: sich höflich im Hotel beschweren | PolyLingua'
-description: "Wie man mit dem congiuntivo imperfetto nach se höfliche Hypothesen bildet, um sich im Hotel zu beschweren: Bildung, unregelmäßige Formen und der periodo ipotetico della possibilità."
+description: "Wie du mit dem congiuntivo imperfetto nach se höfliche Hypothesen bildest, um dich im Hotel zu beschweren: Bildung und unregelmäßige Formen."
 order: 11
 unit: 3
 grammarTopic: 'Congiuntivo imperfetto nach se (periodo ipotetico)'

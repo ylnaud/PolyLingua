@@ -2,7 +2,7 @@
 language: 'it'
 level: 'b2'
 title: 'Connettivi logici: dein dennoch/außerdem auf Italienisch'
-description: 'Tuttavia, inoltre, di conseguenza: die fortgeschrittenen italienischen Konnektoren im Vergleich zu dennoch, außerdem und folglich für strukturierte Argumentation.'
+description: "Tuttavia, inoltre, di conseguenza: die italienischen Konnektoren im Vergleich zu dennoch, außerdem und folglich für strukturierte Argumentation."
 order: 7
 unit: 2
 grammarTopic: 'Conectores lógicos avanzados'

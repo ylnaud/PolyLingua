@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: 'Simple Present: deine Routinen auf Englisch'
-description: 'Das Simple Present für Alltagsroutinen und allgemeine Wahrheiten im Englischen — mit der Falle des -s bei he/she/it und dem Hilfsverb "do", das im Deutschen keine Entsprechung hat.'
+description: 'Das Simple Present für Alltagsroutinen und allgemeine Wahrheiten im Englischen — mit der Falle des -s bei he/she/it und dem Hilfsverb "do".'
 order: 2
 unit: 2
 grammarTopic: 'Simple Present'

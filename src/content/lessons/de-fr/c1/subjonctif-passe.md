@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: "Der subjonctif passé: Vorzeitigkeit im Konjunktiv ausdrücken"
-description: "Bildung und Gebrauch des subjonctif passé im Französischen — wann die Handlung im Nebensatz VOR der Handlung im Hauptsatz liegt, mit avoir/être + participe passé."
+description: 'Bildung und Gebrauch des subjonctif passé — wann die Handlung im Nebensatz VOR der im Hauptsatz liegt, mit avoir/être + participe passé.'
 order: 3
 unit: 1
 grammarTopic: "Der subjonctif passé"

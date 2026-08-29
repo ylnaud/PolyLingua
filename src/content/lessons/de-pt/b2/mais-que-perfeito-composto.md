@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b2'
 title: "Pretérito mais-que-perfeito composto: tinha + particípio wie Plusquamperfekt"
-description: "Das portugiesische Pretérito mais-que-perfeito composto (tinha + particípio) für die Vorvergangenheit — parallel zum deutschen Plusquamperfekt 'hatte gesprochen'."
+description: "Das portugiesische Pretérito mais-que-perfeito composto (tinha + particípio) für die Vorvergangenheit — parallel zum deutschen Plusquamperfekt."
 order: 9
 unit: 3
 grammarTopic: 'Pretérito mais-que-perfeito composto'

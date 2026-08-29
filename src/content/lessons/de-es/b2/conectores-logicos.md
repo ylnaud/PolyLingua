@@ -2,7 +2,7 @@
 language: 'es'
 level: 'b2'
 title: 'Konnektoren für Kontrast und Konzession im Spanischen | PolyLingua'
-description: 'Fortgeschrittene spanische Konnektoren für Kontrast und Konzession: sin embargo, no obstante, a pesar de und aunque — mit klaren Regeln, wann welcher benutzt wird.'
+description: "Fortgeschrittene spanische Konnektoren für Kontrast und Konzession: sin embargo, no obstante, a pesar de und aunque — mit Regeln, wann welcher passt."
 order: 7
 unit: 2
 grammarTopic: 'Conectores lógicos de contraste y concesión'

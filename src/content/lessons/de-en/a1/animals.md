@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: 'Animals: Tiere auf Englisch benennen'
-description: 'Grundwortschatz zu Tieren auf Englisch — Haustiere, Bauernhof- und Wildtiere — und die unregelmäßigen Pluralformen wie "mouse" zu "mice", die keiner Regel folgen.'
+description: 'Grundwortschatz zu Tieren auf Englisch — Haustiere, Bauernhof- und Wildtiere — plus die unregelmäßigen Pluralformen wie "mouse" zu "mice".'
 order: 10
 unit: 3
 grammarTopic: 'Wortschatz: Tiere und unregelmäßige Pluralformen'

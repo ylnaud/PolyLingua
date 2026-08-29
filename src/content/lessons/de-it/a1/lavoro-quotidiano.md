@@ -2,7 +2,7 @@
 language: 'it'
 level: 'a1'
 title: 'Il lavoro: über deinen Arbeitsalltag auf Italienisch sprechen | PolyLingua'
-description: 'Lerne, auf Italienisch über deine Arbeit zu sprechen: Beruf, Arbeitszeiten und Sätze mit lavorare und fare, um zu erzählen, was du arbeitest und wie dein Tag aussieht.'
+description: "Lerne, auf Italienisch über deine Arbeit zu sprechen: Beruf, Arbeitszeiten und Sätze mit lavorare und fare, um deinen Arbeitsalltag zu erzählen."
 order: 16
 unit: 2
 situation: 'Arbeit'

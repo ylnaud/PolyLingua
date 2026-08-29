@@ -2,7 +2,7 @@
 language: 'en'
 level: 'a1'
 title: 'Im Restaurant auf Englisch: bestellen und die Rechnung verlangen'
-description: "I'd like, could I have, the check please: alle Redewendungen zum Bestellen und Bezahlen in einem englischsprachigen Restaurant, ohne auf die Karte zeigen zu müssen."
+description: "I'd like, could I have, the check please: die Redewendungen zum Bestellen und Bezahlen im englischsprachigen Restaurant, ohne auf die Karte zu zeigen."
 order: 15
 unit: 4
 grammarTopic: 'Essen bestellen und die Rechnung verlangen'

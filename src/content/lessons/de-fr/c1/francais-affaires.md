@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'c1'
 title: "Français des affaires: Geschäftsfranzösisch für Beruf und Verhandlung"
-description: "Wichtiges Vokabular für das Geschäftsfranzösisch: la réunion, le chiffre d'affaires, conclure un contrat — plus feste Wendungen für formelle E-Mails, auf C1-Niveau."
+description: "Vokabular für das Geschäftsfranzösisch: la réunion, le chiffre d'affaires, conclure un contrat — plus feste Wendungen für formelle E-Mails auf C1."
 order: 8
 unit: 2
 grammarTopic: "Vocabulaire du français des affaires"

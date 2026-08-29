@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'Passive Voice im Englischen: be + Past Participle richtig anwenden'
-description: 'Das englische Passiv (be + past participle) in verschiedenen Zeitformen bilden, wissen wann man es statt Aktiv verwendet, und den Handelnden mit "by" richtig einbauen — mit Beispielen für Present, Past und Perfect.'
+description: 'Das englische Passiv (be + past participle) in Present, Past und Perfect bilden, wissen wann man es statt Aktiv nutzt und den Handelnden mit "by" einbauen.'
 order: 2
 unit: 1
 grammarTopic: 'Passive Voice (be + Past Participle)'

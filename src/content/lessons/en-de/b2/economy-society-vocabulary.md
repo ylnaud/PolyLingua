@@ -2,7 +2,7 @@
 language: 'de'
 level: 'b2'
 title: 'German Economy and Society Vocabulary | PolyLingua'
-description: 'Build B2-level German vocabulary for economy, politics, and society, including die Wirtschaft, die Arbeitslosigkeit, die Steuer, and die Gesellschaft, with real usage.'
+description: "Build B2-level German vocabulary for economy, politics, and society, including die Wirtschaft, die Arbeitslosigkeit, and die Gesellschaft, with real usage."
 order: 7
 unit: 2
 grammarTopic: 'Economy and society vocabulary: compound nouns and abstract concepts'

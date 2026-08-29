@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'b1'
 title: 'Conjunções Temporais: quando, enquanto, assim que + Futuro do Conjuntivo'
-description: 'Zeitliche Konjunktionen im Portugiesischen (quando, enquanto, assim que, antes que): warum bei Zukunftsbezug NICHT das Präsens, sondern das Futuro do Conjuntivo nötig ist.'
+description: "Zeitliche Konjunktionen im Portugiesischen (quando, enquanto, assim que): warum bei Zukunftsbezug nicht das Präsens, sondern das Futuro do Conjuntivo steht."
 order: 5
 unit: 2
 grammarTopic: 'Conjunções Temporais und Futuro do Conjuntivo'

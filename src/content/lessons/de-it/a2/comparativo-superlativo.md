@@ -2,7 +2,7 @@
 language: 'it'
 level: 'a2'
 title: 'Il comparativo e il superlativo: alles vergleichen auf Italienisch'
-description: 'Personen und Dinge auf Italienisch vergleichen mit più, meno, come/quanto, und den superlativo assoluto mit der Endung -issimo bilden, ohne das Adjektiv zu verändern.'
+description: "Personen und Dinge auf Italienisch vergleichen mit più, meno, come/quanto, und den superlativo assoluto mit der Endung -issimo bilden."
 order: 3
 unit: 1
 grammarTopic: 'Comparativo e superlativo'

@@ -2,7 +2,7 @@
 language: 'en'
 level: 'b2'
 title: 'Advanced Connectors: gehobene Verbindungswörter im Englischen'
-description: 'Fortgeschrittene Konnektoren wie however, nevertheless, moreover, consequently und although für formelle Texte und Aufsätze im Englischen — mit Zeichensetzung, Bedeutungsunterschieden und Beispielen.'
+description: 'Fortgeschrittene Konnektoren wie however, nevertheless, moreover und consequently für formelle englische Texte — mit Zeichensetzung und Bedeutungsnuancen.'
 order: 6
 unit: 2
 grammarTopic: 'Advanced Discourse Connectors (however, moreover, consequently...)'

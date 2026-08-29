@@ -2,7 +2,7 @@
 language: 'fr'
 level: 'a1'
 title: 'Présent de l’indicatif: die Gegenwart im Französischen'
-description: 'Regelmäßige -er-Verben sowie être und avoir im Präsens — und warum sich vier verschiedene Formen im Französischen identisch anhören, obwohl sie unterschiedlich geschrieben werden.'
+description: 'Regelmäßige -er-Verben sowie être und avoir im Präsens — und warum sich vier verschiedene Formen im Französischen identisch anhören.'
 order: 2
 unit: 1
 grammarTopic: 'Präsens (présent de l’indicatif)'

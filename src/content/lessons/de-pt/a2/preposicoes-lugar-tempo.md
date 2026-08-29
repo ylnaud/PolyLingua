@@ -2,7 +2,7 @@
 language: 'pt'
 level: 'a2'
 title: 'Präpositionen für Ort und Zeit auf Portugiesisch: em, sobre, às'
-description: 'Lerne die portugiesischen Präpositionen für Ort (em, sobre, entre) und Zeit (às, em, daqui a) mit klaren Beispielen und den typischen Kontraktionen wie "às" oder "no".'
+description: "Die portugiesischen Präpositionen für Ort (em, sobre, entre) und Zeit (às, em, daqui a) mit klaren Beispielen und den typischen Kontraktionen."
 order: 9
 unit: 1
 grammarTopic: 'Preposições de lugar e tempo'

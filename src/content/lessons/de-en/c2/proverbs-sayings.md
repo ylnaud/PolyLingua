@@ -2,7 +2,7 @@
 language: 'en'
 level: 'c2'
 title: 'Englische Sprichwörter und Redewendungen für C2-Niveau'
-description: "'Don't count your chickens before they hatch' oder 'The early bird catches the worm': die wichtigsten englischen Sprichwörter, ihre Bedeutung und wann Muttersprachler sie tatsächlich benutzen."
+description: "'The early bird catches the worm': die wichtigsten englischen Sprichwörter, ihre Bedeutung und wann Muttersprachler sie tatsächlich benutzen."
 order: 7
 unit: 2
 grammarTopic: 'English proverbs and idiomatic sayings'

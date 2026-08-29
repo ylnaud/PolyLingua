@@ -4,7 +4,7 @@ import Practice from '../components/Practice.astro';
 import PhraseBank from '../components/PhraseBank.astro';
 import AdSlot from '../components/AdSlot.astro';
 import { LEVEL_MAP } from '../data/levels';
-import { LANGUAGE_MAP } from '../data/languages';
+import { LANGUAGE_MAP, type LanguageId } from '../data/languages';
 
 interface QuizQuestion {
   question: string;
@@ -27,7 +27,7 @@ interface Phrase {
 
 interface Props {
   userLang: string;
-  language: 'de' | 'en' | 'fr' | 'it' | 'pt';
+  language: LanguageId;
   level: 'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2';
   title: string;
   description: string;

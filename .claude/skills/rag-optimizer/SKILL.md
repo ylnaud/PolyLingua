@@ -13,10 +13,19 @@ description: >
 
 ## Qué hace
 
-`check-lessons.mjs` recorre `src/content/lessons/<idioma>/<nivel>/*.md`
-(los 5 idiomas × 6 niveles reales del repo — no `src/content/lessons/<nivel>/*.md`,
-que es un nivel de carpeta menos del que realmente existe) y por cada
-lección valida:
+`check-lessons.mjs` recorre `src/content/lessons/<curso>/<nivel>/*.md`,
+donde `<curso>` es `<userLang>-<targetLang>` (`es-de`, `de-pt`, ...).
+
+**Los cursos se descubren leyendo el filesystem**, no de una lista
+hardcodeada: el script enumera los directorios que matcheen `<xx>-<xx>`.
+Esto es deliberado. Antes tenía `['de','en','fr','it','pt']` a mano y
+buscaba en `lessons/<idioma>/<nivel>/`; cuando la arquitectura SILO
+renombró las carpetas a `es-de/`, dejó de encontrar **nada** y durante dos
+días reportó "Lecciones encontradas: 0 / Sin advertencias" mientras pisaba
+`INDEX.md` con un índice vacío. Falla silenciosa, parecía éxito. Si
+agregás un curso nuevo, entra solo — **no vuelvas a hardcodear la lista.**
+
+Por cada lección valida:
 
 - Frontmatter completo: `level`, `title`, `description`, `order`,
   `grammarTopic`, `funFact`, `minutes` (mismos campos obligatorios que
@@ -24,17 +33,20 @@ lección valida:
   de verdad, léela si el schema cambió).
 - `description` entre 20 y 160 caracteres (ni vacía ni un genérico tipo
   "Lección de alemán").
-- `title` único dentro del mismo `(idioma, nivel)`.
+- `title` único dentro del mismo `(curso, nivel)`.
 - El cuerpo Markdown no supera ~1500 palabras; si lo supera, sugiere
   dividir en dos lecciones (RAG recupera fragmentos, no documentos
   completos, así que una lección larga diluye la relevancia del chunk).
-- `description` duplicadas o casi idénticas dentro del mismo idioma
+- `description` duplicadas o casi idénticas dentro del mismo **curso**
   (confunden la búsqueda semántica) — exacta siempre se reporta, "casi
-  idéntica" vía similitud de palabras con umbral 0.8.
+  idéntica" vía similitud de palabras con umbral 0.8. El scope es por
+  curso a propósito: `es-de` y `en-de` enseñan los mismos temas a públicos
+  distintos, así que compartir tema entre ellos no es copy-paste.
 
 Al final regenera `.claude/skills/rag-optimizer/INDEX.md`: una tabla por
-idioma (Nivel | Título | Descripción | Tema gramatical), ordenada por nivel
-y luego por `order`.
+curso (Nivel | Título | Descripción | Tema gramatical), ordenada por nivel
+y luego por `order`. El índice es un archivo generado y versionado — si lo
+corrés y cambió, commiteá el resultado.
 
 **El índice no vive en `src/content/lessons/`.** Esa carpeta es
 exactamente la que escanea la colección `lessons` de Astro

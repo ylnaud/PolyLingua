@@ -19,20 +19,25 @@ Producción: https://polylingua.thyronemiguelvegasantana-c6e.workers.dev
 
 ```
 
-src/pages/          → rutas .astro (index, idiomas/[lang]/[level]/...)
+src/pages/[userLang]/[targetLang]/[level]/[slug].astro  → el silo principal
+src/pages/idiomas/[lang]/...  → herramientas por idioma (generador, recursos...)
 src/layouts/        → layouts reutilizables con <head>, meta tags, header/footer
 src/components/     → componentes .astro (tarjetas, quiz, nav...)
-src/content/lessons/<idioma>/<slug>.md  → lecciones en Markdown
+src/content/lessons/<userLang>-<targetLang>/<nivel>/<slug>.md  → lecciones
 src/content.config.ts  → esquema Zod de la colección "lessons"
+src/lib/lessonPath.ts  → parseLessonId(): ÚNICO lugar que conoce el formato del id
+src/data/userLanguages.ts  → idiomas de INTERFAZ (cuáles están activos)
+src/data/languages.ts      → idiomas META (los que se enseñan)
 src/styles/         → CSS global puro
 public/             → assets estáticos (favicons, og-image, robots.txt)
-astro.config.mjs    → config principal
+astro.config.mjs    → config principal + filtros del sitemap
 ```
 
 ## Frontmatter obligatorio en cada lección
 
 ```yaml
 ---
+language: 'de' # OBLIGATORIO. de | en | es | fr | it | pt
 level: 'a1' # a1 | a2 | b1 | b2 | c1 | c2
 title: 'Título SEO con keyword'
 description: '130–160 caracteres con keyword. Para meta description.'
@@ -40,25 +45,79 @@ order: 1 # número entero, orden dentro del nivel
 grammarTopic: 'Tema gramatical'
 funFact: 'Truco mnemotécnico para recordar'
 minutes: 7 # duración estimada
+unit: 1 # opcional: agrupa lecciones dentro del nivel
 quiz:
   - question: '¿Pregunta?'
     options: ['Opción A', 'Opción B', 'Opción C']
     answerIndex: 0
     explanation: 'Por qué es correcta'
+exercises: # opcional, ver tipos abajo
+  - type: 'fill-blank'
+    sentence: 'Ich ___ Deutsch.' # debe contener ___ literal
+    answer: 'lerne'
+vocabulary: # opcional
+  - term: 'lernen'
+    translation: 'aprender'
 ---
 ```
 
+`language` es el idioma **que se enseña** (el meta), nunca el de la
+interfaz — ese se infiere del nombre de la carpeta. Es el único campo sin
+valor por defecto además de los de texto, así que olvidarlo rompe el build.
+
+Tipos de `exercises` que acepta el schema: `fill-blank` (necesita `___` en
+`sentence`), `match` (mínimo 3 `pairs`), `write`, `order`.
+
 Si un campo no cumple el esquema Zod, el build falla. Valida siempre antes de commitear.
 
-## Los 5 idiomas y sus códigos de ruta
+## Dos ejes: idioma de interfaz × idioma meta
 
-| Idioma    | Código |
-| --------- | ------ |
-| Alemán    | de     |
-| Inglés    | en     |
-| Francés   | fr     |
-| Italiano  | it     |
-| Portugués | pt     |
+Desde la arquitectura SILO el sitio tiene **dos** ejes de idioma, y
+confundirlos es la fuente de errores más común:
+
+- **`userLang` (interfaz)**: en qué idioma está escrita la explicación.
+  Definido en `src/data/userLanguages.ts`. **Hoy solo `es` está activo.**
+- **`targetLang` (meta)**: qué idioma se enseña. Definido en
+  `src/data/languages.ts`. Son 6: `de`, `en`, `es`, `fr`, `it`, `pt`.
+
+La URL es `/<userLang>/<targetLang>/<nivel>/<slug>` y la carpeta es
+`src/content/lessons/<userLang>-<targetLang>/<nivel>/`. El campo
+`language` del frontmatter es **siempre el targetLang**; el userLang NO
+está en el frontmatter, se infiere del nombre de la carpeta vía
+`parseLessonId()`.
+
+### Los 11 cursos que existen
+
+| Curso   | Interfaz | Enseña    | Estado                     |
+| ------- | -------- | --------- | -------------------------- |
+| `es-de` | Español  | Alemán    | Visible                    |
+| `es-en` | Español  | Inglés    | Visible                    |
+| `es-fr` | Español  | Francés   | Visible                    |
+| `es-it` | Español  | Italiano  | Visible                    |
+| `es-pt` | Español  | Portugués | Visible                    |
+| `en-de` | Inglés   | Alemán    | Publicado pero **oculto**  |
+| `de-en` | Alemán   | Inglés    | Publicado pero **oculto**  |
+| `de-es` | Alemán   | Español   | Publicado pero **oculto**  |
+| `de-fr` | Alemán   | Francés   | Publicado pero **oculto**  |
+| `de-it` | Alemán   | Italiano  | Publicado pero **oculto**  |
+| `de-pt` | Alemán   | Portugués | Publicado pero **oculto**  |
+
+### Por qué hay cursos ocultos
+
+`de` y `en` están en `active: false` en `userLanguages.ts` porque la
+interfaz (menús, botones, textos) sigue **solo en español**. Activarlos
+sin traducirla mostraría lecciones en alemán dentro de una cáscara en
+español.
+
+Mientras sigan inactivos, esas ~500 páginas:
+
+- se generan y son accesibles por URL directa,
+- no aparecen en `LanguageSelector` (sale "Próximamente"),
+- **no entran al sitemap** — el filtro en `astro.config.mjs` se deriva de
+  `USER_LANGUAGES`, así que al poner `active: true` vuelven solas.
+
+Para activar un idioma de interfaz: traducir la UI primero, después
+cambiar el flag. No al revés.
 
 ## Comandos
 

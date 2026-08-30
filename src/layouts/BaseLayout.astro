@@ -118,7 +118,7 @@ const ogImage = new URL(ogImagePath, Astro.site);
   </head>
   <body>
     <a href="#main" class="skip-link">Saltar al contenido</a>
-    <Header />
+    <Header userLang={siloContext?.userLang} />
     <StreakReminder />
     <BackupReminder />
     <main id="main">
@@ -127,9 +127,9 @@ const ogImage = new URL(ogImagePath, Astro.site);
     <Footer userLang={siloContext?.userLang} />
     <ProgressTracker />
     <SoundEffects />
-    <CookieNotice />
+    <CookieNotice userLang={siloContext?.userLang} />
     <ScrollTopButton />
-    <BottomNav />
+    <BottomNav userLang={siloContext?.userLang} />
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {

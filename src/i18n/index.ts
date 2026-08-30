@@ -1,5 +1,5 @@
 import type { UserLanguageId } from '../data/userLanguages';
-import { es, type Dictionary } from './dictionary';
+import { de, es, type Dictionary } from './dictionary';
 
 // Un diccionario por UserLanguageId, poblado a medida que se traduzca la
 // interfaz. Hoy solo `es` existe — es el único idioma de interfaz activo
@@ -8,6 +8,7 @@ import { es, type Dictionary } from './dictionary';
 // USER_LANGUAGES.
 const dictionaries: Partial<Record<UserLanguageId, Dictionary>> = {
   es,
+  de,
 };
 
 // Si el userLang pedido todavía no tiene diccionario propio, cae a `es`

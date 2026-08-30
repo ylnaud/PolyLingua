@@ -5,6 +5,7 @@ import PhraseBank from '../components/PhraseBank.astro';
 import AdSlot from '../components/AdSlot.astro';
 import { LEVEL_MAP } from '../data/levels';
 import { LANGUAGE_MAP, type LanguageId } from '../data/languages';
+import { getDictionary } from '../i18n';
 
 interface QuizQuestion {
   question: string;
@@ -67,6 +68,10 @@ const {
   ogImage,
 } = Astro.props;
 const levelMeta = LEVEL_MAP[level];
+const dict = getDictionary(userLang as never);
+const t = dict.lesson;
+const languageName = dict.languageNames[language];
+const levelName = dict.levelNames[level];
 const languageMeta = LANGUAGE_MAP[language];
 
 const siteURL = Astro.site!.origin;
@@ -79,8 +84,8 @@ const structuredData = {
     {
       '@type': 'Course',
       '@id': `${courseURL}#course`,
-      name: `Curso de ${languageMeta.name} Interactivo — PolyLingua`,
-      description: `Aprende ${languageMeta.name.toLowerCase()} de A1 a C2 gratis con gramática divertida y ejercicios interactivos.`,
+      name: t.cursoNombre.replace('{lang}', languageName),
+      description: t.cursoDescripcion.replace('{lang}', languageName),
       url: courseURL,
       publisher: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
     },
@@ -101,9 +106,9 @@ const restPath = `/${level}/${path.split('/').pop()}`;
     targetLang: language,
     restPath,
     breadcrumbs: [
-      { name: 'Idiomas', href: `/${userLang}` },
-      { name: languageMeta.name, href: `/${userLang}/${language}` },
-      { name: levelMeta.name, href: courseURL.replace(siteURL, '') },
+      { name: dict.silo.idiomas, href: `/${userLang}` },
+      { name: languageName, href: `/${userLang}/${language}` },
+      { name: levelName, href: courseURL.replace(siteURL, '') },
       { name: title, href: path },
     ],
     learningResource: {
@@ -118,18 +123,18 @@ const restPath = `/${level}/${path.split('/').pop()}`;
   }}
 >
   <article class="lesson container">
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
+    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
       <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${language}`}>{languageMeta.flag} {languageMeta.name}</a>
+      <a href={`/${userLang}/${language}`}>{languageMeta.flag} {languageName}</a>
       <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${language}/${level}`}>{levelMeta.name}</a>
+      <a href={`/${userLang}/${language}/${level}`}>{levelName}</a>
     </nav>
 
     <header class="lesson-head">
       <span class="badge" style={`border-color:${levelMeta.color}; color:${levelMeta.color}`}>
         {levelMeta.emoji}
-        {levelMeta.name}
+        {levelName}
       </span>
       <h1>{title}</h1>
       <p class="lede">{description}</p>
@@ -140,7 +145,7 @@ const restPath = `/${level}/${path.split('/').pop()}`;
     </header>
 
     <div class="fun-fact card texture-noise">
-      <span class="eyebrow">💡 Truco para no aburrirte</span>
+      <span class="eyebrow">{t.trucoTitulo}</span>
       <p>{funFact}</p>
     </div>
 
@@ -148,7 +153,7 @@ const restPath = `/${level}/${path.split('/').pop()}`;
       <slot />
     </div>
 
-    {phrases.length > 0 && <PhraseBank phrases={phrases} lang={languageMeta.bcp47} />}
+    {phrases.length > 0 && <PhraseBank phrases={phrases} lang={languageMeta.bcp47} userLang={userLang} />}
 
     {
       vocabulary.length > 0 && (
@@ -158,8 +163,10 @@ const restPath = `/${level}/${path.split('/').pop()}`;
             data-vocab-carousel
             data-vocabulary={JSON.stringify(vocabulary)}
             data-lang={languageMeta.bcp47}
+            data-txt-siguiente={t.siguiente}
+            data-txt-empezar={t.empezarPractica}
           >
-            <span class="eyebrow">📚 Vocabulario de esta lección</span>
+            <span class="eyebrow">{t.vocabularioTitulo}</span>
             <div class="vocab-counter" data-vocab-counter />
             <div class="vocab-card-inner">
               <span class="vocab-term" data-vocab-term />
@@ -168,17 +175,17 @@ const restPath = `/${level}/${path.split('/').pop()}`;
                 type="button"
                 class="speak-btn vocab-speak"
                 data-vocab-speak
-                aria-label="Escuchar"
+                aria-label={t.escuchar}
               >
-                🔊 Escuchar
+                🔊 {t.escuchar}
               </button>
             </div>
             <div class="vocab-nav">
               <button type="button" class="btn btn-ghost vocab-prev" data-vocab-prev disabled>
-                ← Anterior
+                {t.anterior}
               </button>
               <button type="button" class="btn btn-primary vocab-next" data-vocab-next>
-                Siguiente →
+                {t.siguiente}
               </button>
             </div>
           </div>
@@ -187,9 +194,10 @@ const restPath = `/${level}/${path.split('/').pop()}`;
       )
     }
 
-    <AdSlot slotId={`lesson-top-${language}-${level}`} />
+    <AdSlot slotId={`lesson-top-${language}-${level}`} userLang={userLang} />
 
     <Practice
+      userLang={userLang}
       quiz={quiz}
       exercises={exercises}
       minutes={minutes}
@@ -198,7 +206,7 @@ const restPath = `/${level}/${path.split('/').pop()}`;
       lang={languageMeta.bcp47}
     />
 
-    <AdSlot slotId={`lesson-bottom-${language}-${level}`} />
+    <AdSlot slotId={`lesson-bottom-${language}-${level}`} userLang={userLang} />
 
     <footer class="lesson-nav">
       {
@@ -208,7 +216,7 @@ const restPath = `/${level}/${path.split('/').pop()}`;
           </a>
         ) : (
           <a class="btn btn-ghost" href={`/${userLang}/${language}/${level}`}>
-            ← {languageMeta.name} {levelMeta.name}
+            ← {languageName} {levelName}
           </a>
         )
       }
@@ -371,6 +379,12 @@ const restPath = `/${level}/${path.split('/').pop()}`;
     if (items.length === 0) return;
 
     const lang = carousel.dataset.lang ?? 'de';
+    // Textos inyectados por data-* desde el frontmatter: este script corre en
+    // el cliente y no ve las variables de Astro. Se leen acá (una vez) y no
+    // dentro de render() porque ahí TypeScript pierde el narrowing del guard
+    // de arriba y `carousel` vuelve a ser posiblemente null.
+    const txtSiguiente = carousel.dataset.txtSiguiente ?? 'Siguiente →';
+    const txtEmpezar = carousel.dataset.txtEmpezar ?? 'Empezar práctica →';
     const counter = carousel.querySelector<HTMLElement>('[data-vocab-counter]')!;
     const term = carousel.querySelector<HTMLElement>('[data-vocab-term]')!;
     const translation = carousel.querySelector<HTMLElement>('[data-vocab-translation]')!;
@@ -385,7 +399,7 @@ const restPath = `/${level}/${path.split('/').pop()}`;
       term.textContent = items[current].term;
       translation.textContent = items[current].translation;
       prevBtn.disabled = current === 0;
-      nextBtn.textContent = current === items.length - 1 ? 'Empezar práctica →' : 'Siguiente →';
+      nextBtn.textContent = current === items.length - 1 ? txtEmpezar : txtSiguiente;
     }
 
     prevBtn.addEventListener('click', () => {

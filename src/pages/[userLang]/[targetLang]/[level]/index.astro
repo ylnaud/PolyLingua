@@ -3,6 +3,7 @@ import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import { LEVEL_MAP } from '../../../../data/levels';
 import { LANGUAGE_MAP } from '../../../../data/languages';
 import { parseLessonId } from '../../../../lib/lessonPath';
+import { getDictionary } from '../../../../i18n';
 import { getCollection } from 'astro:content';
 import { UNITS } from '../../../../data/units';
 import { TSA } from '../../../../data/tsa';
@@ -21,6 +22,9 @@ export async function getStaticPaths() {
 }
 
 const { userLang, targetLang, level } = Astro.params;
+const dict = getDictionary(userLang as never);
+const levelName = dict.levelNames[level as keyof typeof dict.levelNames];
+const languageName = dict.languageNames[targetLang as keyof typeof dict.languageNames];
 const languageMeta = LANGUAGE_MAP[targetLang as keyof typeof LANGUAGE_MAP];
 const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
 
@@ -41,7 +45,7 @@ const siteURL = Astro.site!.origin;
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Course',
-  name: `${languageMeta.name} ${levelMeta.name} — PolyLingua`,
+  name: `${languageName} ${levelName} — PolyLingua`,
   description: levelMeta.description,
   url: `${siteURL}/${userLang}/${targetLang}/${level}`,
   inLanguage: targetLang,
@@ -56,8 +60,8 @@ const structuredData = {
 ---
 
 <BaseLayout
-  title={`${languageMeta.name} ${levelMeta.name}`}
-  description={`${levelMeta.description} Gramática de ${languageMeta.name}, gratis y gamificada.`}
+  title={`${languageName} ${levelName}`}
+  description={dict.levelDescriptions[level as keyof typeof dict.levelDescriptions]}
   path={`/${userLang}/${targetLang}/${level}`}
   structuredData={structuredData}
   ogImage={`/og-${targetLang}.png`}
@@ -66,30 +70,30 @@ const structuredData = {
     targetLang,
     restPath: `/${level}`,
     breadcrumbs: [
-      { name: 'Idiomas', href: `/${userLang}` },
-      { name: languageMeta.name, href: `/${userLang}/${targetLang}` },
-      { name: levelMeta.name, href: `/${userLang}/${targetLang}/${level}` },
+      { name: dict.silo.idiomas, href: `/${userLang}` },
+      { name: languageName, href: `/${userLang}/${targetLang}` },
+      { name: levelName, href: `/${userLang}/${targetLang}/${level}` },
     ],
   }}
 >
   <section class="container level-head" style={`--accent-c:${levelMeta.color}`}>
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
+    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
       <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${targetLang}`}>{languageMeta.flag} {languageMeta.name}</a>
+      <a href={`/${userLang}/${targetLang}`}>{languageMeta.flag} {languageName}</a>
       <span aria-hidden="true">/</span>
-      <span>{levelMeta.name}</span>
+      <span>{levelName}</span>
     </nav>
     <span class="emoji" aria-hidden="true">{levelMeta.emoji}</span>
-    <h1>{languageMeta.name} — {levelMeta.name}</h1>
-    <p class="tagline">{levelMeta.tagline}</p>
+    <h1>{languageName} — {levelName}</h1>
+    <p class="tagline">{dict.levelTaglines[level as keyof typeof dict.levelTaglines]}</p>
     <p class="desc">{levelMeta.description}</p>
   </section>
 
   <section class="container lessons">
     {
       lessons.length === 0 && (
-        <p class="empty">Estamos preparando lecciones para este nivel. ¡Vuelve pronto!</p>
+        <p class="empty">{dict.silo.nivelVacio}</p>
       )
     }
 
@@ -193,11 +197,8 @@ const structuredData = {
                 🏆
               </span>
               <div>
-                <h2 class="underline-draw">Examen de nivel</h2>
-                <p>
-                  Combina todo lo que aprendiste en {levelMeta.name} — apruébalo para desbloquear el
-                  siguiente nivel.
-                </p>
+                <h2 class="underline-draw">{dict.silo.examenNivel}</h2>
+                <p>{dict.silo.examenDesc.replace('{nivel}', levelName)}</p>
               </div>
             </a>
           </li>

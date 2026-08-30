@@ -4,6 +4,7 @@ import Practice from '../../../../components/Practice.astro';
 import { LEVELS, LEVEL_MAP } from '../../../../data/levels';
 import { LANGUAGE_MAP } from '../../../../data/languages';
 import { parseLessonId } from '../../../../lib/lessonPath';
+import { getDictionary } from '../../../../i18n';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -20,6 +21,10 @@ export async function getStaticPaths() {
 }
 
 const { userLang, targetLang, level } = Astro.params;
+const dict = getDictionary(userLang as never);
+const t = dict.exam;
+const languageName = dict.languageNames[targetLang as keyof typeof dict.languageNames];
+const levelName = dict.levelNames[level as keyof typeof dict.levelNames];
 const languageMeta = LANGUAGE_MAP[targetLang as keyof typeof LANGUAGE_MAP];
 const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
 
@@ -87,34 +92,47 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
 ---
 
 <BaseLayout
-  title={`Examen de ${languageMeta?.name} — ${levelMeta?.name}`}
-  description={`Examen final de ${levelMeta?.name} de ${languageMeta?.name}: combina todo lo aprendido en el nivel. Apruébalo con 70% o más para desbloquear el siguiente nivel.`}
+  title={t.metaTitulo.replace('{lang}', languageName).replace('{nivel}', levelName)}
+  description={t.metaDescripcion
+    .replace('{lang}', languageName)
+    .replace('{nivel}', levelName)}
   path={`/${userLang}/${targetLang}/${level}/examen`}
   noindex
+  siloContext={{
+    userLang,
+    targetLang,
+    restPath: `/${level}/examen`,
+    breadcrumbs: [
+      { name: dict.silo.idiomas, href: `/${userLang}` },
+      { name: languageName, href: `/${userLang}/${targetLang}` },
+      { name: levelName, href: `/${userLang}/${targetLang}/${level}` },
+      { name: t.titulo, href: `/${userLang}/${targetLang}/${level}/examen` },
+    ],
+  }}
 >
   <section class="container exam-head">
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
+    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
       <span aria-hidden="true">/</span>
       <a href={`/${userLang}/${targetLang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
       <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${targetLang}/${level}`}>{levelMeta?.name}</a>
+      <a href={`/${userLang}/${targetLang}/${level}`}>{levelName}</a>
       <span aria-hidden="true">/</span>
-      <span>Examen</span>
+      <span>{t.titulo}</span>
     </nav>
     <span class="emoji" aria-hidden="true">🏆</span>
-    <h1>Examen de nivel — {levelMeta?.name}</h1>
+    <h1>{t.tituloPagina} — {levelName}</h1>
     <p class="desc">
-      Este examen combina preguntas y ejercicios de las {lessons.length} lecciones de{' '}
-      {levelMeta?.name}. Necesitas <strong>70% o más</strong> para aprobar
+      {t.intro.replace('{n}', String(lessons.length)).replace('{nivel}', levelName)}{' '}
+      <strong>{t.umbral}</strong>
       {
         nextLevel ? (
           <>
             {' '}
-            y desbloquear <strong>{nextLevel.name}</strong>
+            {t.yDesbloquear} <strong>{dict.levelNames[nextLevel.id]}</strong>
           </>
         ) : (
-          <> y completar el idioma</>
+          <> {t.yCompletarIdioma}</>
         )
       }.
     </p>
@@ -122,6 +140,7 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
 
   <section class="container exam-body">
     <Practice
+      userLang={userLang}
       quiz={examQuiz}
       exercises={examExercises}
       minutes={estimatedMinutes}
@@ -134,36 +153,36 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
     <div class="exam-result" data-exam-result hidden>
       <div class="card result-card" data-result-pass hidden>
         <p class="result-emoji">🎉</p>
-        <h2>¡Aprobado!</h2>
+        <h2>{t.aprobado}</h2>
         {
           nextLevel ? (
             <p>
-              Desbloqueaste <strong>{nextLevel.name}</strong>.
+              {t.desbloqueaste} <strong>{dict.levelNames[nextLevel.id]}</strong>.
             </p>
           ) : (
-            <p>Completaste todo el curso de {languageMeta?.name}. ¡Felicidades!</p>
+            <p>{t.cursoCompleto.replace('{lang}', languageName)}</p>
           )
         }
         <div class="result-actions">
           {
             nextLevel && (
               <a class="btn btn-primary" href={`/${userLang}/${targetLang}/${nextLevel.id}`}>
-                Ir a {nextLevel.name} →
+                {t.irA} {dict.levelNames[nextLevel.id]} →
               </a>
             )
           }
-          <a class="btn btn-ghost" href="/logros">Ver mis logros</a>
+          <a class="btn btn-ghost" href="/logros">{t.verMisLogros}</a>
         </div>
       </div>
       <div class="card result-card" data-result-fail hidden>
         <p class="result-emoji">💪</p>
-        <h2>Todavía no</h2>
-        <p>Necesitas al menos 70% para aprobar. Tus fallos ya quedaron guardados para repasar.</p>
+        <h2>{t.todaviaNo}</h2>
+        <p>{t.explicacionFallo}</p>
         <div class="result-actions">
           <a class="btn btn-primary" href={`/${userLang}/${targetLang}/${level}/examen`}
-            >Reintentar</a
+            >{t.reintentar}</a
           >
-          <a class="btn btn-ghost" href={`/idiomas/${targetLang}/repasar`}>Repasar ahora</a>
+          <a class="btn btn-ghost" href={`/idiomas/${targetLang}/repasar`}>{t.repasarAhora}</a>
         </div>
       </div>
     </div>

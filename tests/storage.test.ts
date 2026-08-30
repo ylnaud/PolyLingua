@@ -43,15 +43,6 @@ function createMockStorage(): Storage {
   );
 }
 
-function mockStorageKeys(storage: Storage): string[] {
-  const keys: string[] = [];
-  for (let i = 0; i < storage.length; i++) {
-    const k = storage.key(i);
-    if (k) keys.push(k);
-  }
-  return keys;
-}
-
 let mockStorage: Storage;
 
 beforeEach(() => {

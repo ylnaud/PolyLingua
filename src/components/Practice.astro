@@ -1,4 +1,7 @@
 ---
+import { getDictionary } from '../i18n';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+
 interface QuizQuestion {
   question: string;
   options: string[];
@@ -41,6 +44,7 @@ interface OrderExercise {
 type Exercise = FillBlankExercise | MatchExercise | WriteExercise | OrderExercise;
 
 interface Props {
+  userLang?: string;
   quiz: QuizQuestion[];
   exercises?: Exercise[];
   minutes?: number;
@@ -52,6 +56,7 @@ interface Props {
 }
 
 const {
+  userLang,
   quiz,
   exercises = [],
   minutes = 8,
@@ -61,6 +66,19 @@ const {
   dynamic = false,
   lang = '',
 } = Astro.props;
+
+const dict = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never);
+const t = dict.practice;
+
+// Los 4 strings que necesita el <script> del navegador. Se pasan por
+// data-* (patrón ya usado en el resto del proyecto) porque el script se
+// ejecuta en el cliente y no ve las variables del frontmatter de Astro.
+const scriptStrings = JSON.stringify({
+  correcto: t.correcto,
+  incorrecto: t.incorrecto,
+  respuestaCorrecta: t.respuestaCorrecta,
+  resultado: t.resultado,
+});
 
 type Item =
   | { kind: 'choice'; data: QuizQuestion }
@@ -80,11 +98,11 @@ const items: Item[] = [
 ];
 
 const kindLabels: Record<Item['kind'], string> = {
-  choice: '🔘 Opción múltiple',
-  'fill-blank': '✏️ Completa el hueco',
-  match: '🔗 Empareja',
-  write: '⌨️ Escribe la respuesta',
-  order: '🧩 Ordena la frase',
+  choice: t.kinds.choice,
+  'fill-blank': t.kinds.fillBlank,
+  match: t.kinds.match,
+  write: t.kinds.write,
+  order: t.kinds.order,
 };
 
 function splitSentence(sentence: string): { before: string; after: string } {
@@ -99,15 +117,16 @@ function splitSentence(sentence: string): { before: string; after: string } {
     <section
       class="practice"
       data-practice
+      data-i18n={scriptStrings}
       data-lesson-minutes={minutes}
       data-session-type={sessionType}
       data-lesson-id={lessonId}
       data-dynamic={dynamic ? 'true' : 'false'}
       data-lang={lang}
-      aria-label="Práctica interactiva"
+      aria-label={t.aria}
     >
       <div class="practice-head">
-        <span class="eyebrow">🎮 Ponte a prueba</span>
+        <span class="eyebrow">{t.tituloSeccion}</span>
         <span class="streak-badge" data-streak-badge hidden>
           🔥 x2
         </span>
@@ -154,7 +173,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
             {item.kind === 'fill-blank' && (
               <>
-                <legend tabindex="-1">Completa la frase</legend>
+                <legend tabindex="-1">{t.completaLaFrase}</legend>
                 <p class="prompt-sentence">
                   {splitSentence(item.data.sentence).before}
                   <span class="blank-marker" aria-hidden="true">
@@ -185,7 +204,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                 </div>
                 {item.data.hint && (
                   <details class="hint">
-                    <summary>💡 Pista</summary>
+                    <summary>{t.pista}</summary>
                     <p>{item.data.hint}</p>
                   </details>
                 )}
@@ -203,9 +222,9 @@ function splitSentence(sentence: string): { before: string; after: string } {
                     class="speak-btn spoken-only-speak"
                     data-speak
                     data-speak-text={item.data.answer}
-                    aria-label="Escuchar de nuevo"
+                    aria-label={t.escucharDeNuevo}
                   >
-                    🔊 Escuchar
+                    🔊 {dict.lesson.escuchar}
                   </button>
                 )}
                 <label class="visually-hidden" for={`input-${i}`}>
@@ -230,7 +249,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                 </div>
                 {item.data.hint && (
                   <details class="hint">
-                    <summary>💡 Pista</summary>
+                    <summary>{t.pista}</summary>
                     <p>{item.data.hint}</p>
                   </details>
                 )}
@@ -240,7 +259,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
             {item.kind === 'match' && (
               <>
                 <legend tabindex="-1">
-                  {item.data.instructions ?? 'Empareja cada elemento con su pareja correcta'}
+                  {item.data.instructions ?? t.emparejaElementos}
                 </legend>
                 <div class="match-board" data-match-board data-remaining={item.data.pairs.length}>
                   <div class="match-col" data-match-col="left">
@@ -261,7 +280,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                           class="speak-btn match-speak"
                           data-speak
                           data-speak-text={pair.left}
-                          aria-label={`Escuchar «${pair.left}»`}
+                          aria-label={`${dict.lesson.escuchar} «${pair.left}»`}
                         >
                           🔊
                         </button>
@@ -288,13 +307,13 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
             {item.kind === 'order' && (
               <>
-                <legend tabindex="-1">Ordena las palabras para formar la frase correcta</legend>
+                <legend tabindex="-1">{t.ordenaPalabras}</legend>
                 {item.data.translation && <p class="prompt-translation">{item.data.translation}</p>}
                 <div
                   class="order-assembled"
                   data-order-assembled
                   data-answer={item.data.sentence}
-                  aria-label="Frase que estás construyendo"
+                  aria-label={t.fraseConstruyendo}
                 />
                 <div class="order-bank" data-order-bank>
                   {item.data.sentence.split(' ').map((_, wi) => (
@@ -322,7 +341,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                   data-reveal-speak
                   hidden
                 >
-                  🔊 Escuchar
+                  🔊 {dict.lesson.escuchar}
                 </button>
                 <button
                   type="button"
@@ -335,7 +354,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
               </>
             )}
             <button type="button" class="btn btn-primary next" data-next hidden>
-              Siguiente →
+              {dict.lesson.siguiente}
             </button>
           </fieldset>
         ))}
@@ -345,8 +364,8 @@ function splitSentence(sentence: string): { before: string; after: string } {
         <p class="score-emoji" data-score-emoji>
           🎉
         </p>
-        <h3>¡Completado!</h3>
-        <p data-score-text>Acertaste 0 / {items.length}</p>
+        <h3>{t.completado}</h3>
+        <p data-score-text>{t.resultado} 0 / {items.length}</p>
         <button type="button" class="btn btn-ghost" data-restart>
           Repetir
         </button>
@@ -841,10 +860,10 @@ function splitSentence(sentence: string): { before: string; after: string } {
     container.appendChild(frag);
   }
 
-  function showCorrection(afterEl: Element, answerText: string) {
+  function showCorrection(afterEl: Element, answerText: string, label: string) {
     const p = document.createElement('p');
     p.className = 'prompt-translation';
-    p.textContent = `Correcto: ${answerText}`;
+    p.textContent = `${label} ${answerText}`;
     afterEl.after(p);
   }
 
@@ -854,6 +873,21 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
   function initPractice() {
     document.querySelectorAll<HTMLElement>('[data-practice]').forEach((root) => {
+      // Strings de interfaz inyectados desde el frontmatter vía data-i18n
+      // (el script corre en el cliente y no ve las variables de Astro). Los
+      // valores por defecto son el español, para que un [data-practice]
+      // renderizado sin el atributo siga funcionando.
+      const i18n = ((): Record<string, string> => {
+        try {
+          return JSON.parse(root.dataset.i18n ?? '{}');
+        } catch {
+          return {};
+        }
+      })();
+      const txtCorrecto = i18n.correcto ?? '✅ ¡Correcto!';
+      const txtIncorrecto = i18n.incorrecto ?? '❌ No del todo.';
+      const txtRespuesta = i18n.respuestaCorrecta ?? 'Correcto:';
+      const txtResultado = i18n.resultado ?? 'Acertaste';
       if (root.dataset.initialized) return;
 
       const items = Array.from(root.querySelectorAll<HTMLElement>('[data-practice-item]'));
@@ -959,7 +993,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
         if (progressBarFill) progressBarFill.style.width = '100%';
         const pct = score / items.length;
         if (scoreEmoji) scoreEmoji.textContent = pct === 1 ? '🏆' : pct >= 0.5 ? '🎉' : '💪';
-        if (scoreText) scoreText.textContent = `Acertaste ${score} / ${items.length}`;
+        if (scoreText) scoreText.textContent = `${txtResultado} ${score} / ${items.length}`;
         const estimatedMinutes = Number(root.dataset.lessonMinutes ?? 8);
         const elapsedMinutes = Math.round((Date.now() - startedAt) / 60000);
         const minutes = Math.min(Math.max(elapsedMinutes, 1), Math.max(estimatedMinutes * 4, 10));
@@ -1003,7 +1037,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
         if (kind === 'order') shuffleChildren(item.querySelector('[data-order-bank]'));
 
         function reveal(correct: boolean, userAnswer = '', correctAnswer = '') {
-          if (feedback) feedback.textContent = correct ? '✅ ¡Correcto!' : '❌ No del todo.';
+          if (feedback) feedback.textContent = correct ? txtCorrecto : txtIncorrecto;
           if (correct) playCorrect();
           else playIncorrect();
           updateStreak(correct);
@@ -1096,7 +1130,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
             input.classList.add(isCorrect ? 'correct' : 'incorrect');
             if (!isCorrect) {
               const row = input.closest('.answer-row') ?? input;
-              showCorrection(row, answer);
+              showCorrection(row, answer, txtRespuesta);
             }
             if (checkBtn) checkBtn.hidden = true;
             if (revealSpeak && answer) {
@@ -1219,7 +1253,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
             checkBtn.hidden = true;
             if (assembled) {
               assembled.classList.add(isCorrect ? 'correct' : 'incorrect');
-              if (!isCorrect) showCorrection(assembled, correctSentence);
+              if (!isCorrect) showCorrection(assembled, correctSentence, txtRespuesta);
             }
             if (revealSpeak && correctSentence) {
               revealSpeak.dataset.speakText = correctSentence;

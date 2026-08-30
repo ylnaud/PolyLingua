@@ -4,6 +4,7 @@ import LanguageCard from '../../components/LanguageCard.astro';
 import { LANGUAGES } from '../../data/languages';
 import { ACTIVE_USER_LANGUAGES } from '../../data/userLanguages';
 import { parseLessonId } from '../../lib/lessonPath';
+import { getDictionary } from '../../i18n';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -11,6 +12,8 @@ export async function getStaticPaths() {
 }
 
 const { userLang } = Astro.params;
+const dict = getDictionary(userLang as never);
+const t = dict.silo;
 
 const lessons = await getCollection('lessons');
 const lessonCounts = Object.fromEntries(
@@ -48,12 +51,12 @@ const structuredData = {
   siloContext={{
     userLang,
     targetLang: '',
-    breadcrumbs: [{ name: 'Idiomas', href: `/${userLang}` }],
+    breadcrumbs: [{ name: t.idiomas, href: `/${userLang}` }],
   }}
 >
   <section class="container page-head">
-    <span class="eyebrow">Catálogo de idiomas</span>
-    <h1>¿Qué idioma quieres aprender?</h1>
+    <span class="eyebrow">{t.catalogoEyebrow}</span>
+    <h1>{t.catalogoTitulo}</h1>
     <p>
       Cada idioma tiene su propia ruta de A1 a C2, con la misma gramática gamificada que hace que
       aprender no se sienta como estudiar.

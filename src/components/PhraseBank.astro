@@ -1,4 +1,7 @@
 ---
+import { getDictionary } from '../i18n';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+
 interface Phrase {
   text: string;
   es: string;
@@ -9,14 +12,16 @@ interface Phrase {
 interface Props {
   phrases: Phrase[];
   lang?: string;
+  userLang?: string;
 }
 
-const { phrases, lang = '' } = Astro.props;
+const { phrases, lang = '', userLang } = Astro.props;
+const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).lesson;
 ---
 
 <div class="phrase-bank card" data-phrase-bank data-lang={lang}>
-  <span class="eyebrow">🗣️ Frases para usar hoy</span>
-  <p class="phrase-intro">Escuchá cada frase y repetila en voz alta antes de practicar.</p>
+  <span class="eyebrow">{t.frasesTitulo}</span>
+  <p class="phrase-intro">{t.frasesIntro}</p>
   <ul class="phrase-list">
     {
       phrases.map((phrase) => (

@@ -5,15 +5,20 @@
 // se agregue (con un pub-id aprobado) el anuncio no empuja el contenido.
 // Por ahora no carga ningún script de terceros — eso queda para cuando
 // exista una cuenta de AdSense real que aprobar.
+import { getDictionary } from '../i18n';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+
 interface Props {
   slotId: string;
+  userLang?: string;
 }
 
-const { slotId } = Astro.props;
+const { slotId, userLang } = Astro.props;
+const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).practice;
 ---
 
 <div class="ad-slot" data-ad-slot={slotId}>
-  <span class="ad-slot-label">Publicidad</span>
+  <span class="ad-slot-label">{t.publicidad}</span>
   <!-- Cuando haya un pub-id real de AdSense, el <ins class="adsbygoogle">
        correspondiente a este slotId va acá adentro, sin tocar el contenedor
        ni su min-height (así se preserva la reserva de espacio anti-CLS). -->

@@ -1,13 +1,20 @@
 ---
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
 
+interface Props {
+  userLang?: string;
+}
+
+const { userLang = ACTIVE_USER_LANGUAGES[0].id } = Astro.props;
+const t = getDictionary(userLang as never).cookies;
 ---
 
 <div class="cookie-notice" data-cookie-notice hidden role="status" aria-live="polite">
   <p>
-    PolyLingua guarda tu progreso solo en tu navegador — no usamos cookies de rastreo. Más
-    detalles en la <a href="/privacidad">Política de privacidad</a>.
+    <Fragment set:html={t.texto.replace('{enlace}', `<a href="/privacidad">${t.enlace}</a>`)} />
   </p>
-  <button type="button" class="btn btn-primary" data-cookie-dismiss>Entendido</button>
+  <button type="button" class="btn btn-primary" data-cookie-dismiss>{t.entendido}</button>
 </div>
 
 <style>

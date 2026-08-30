@@ -5,6 +5,7 @@ import { LANGUAGE_MAP } from '../../../data/languages';
 import { TSA_LANG } from '../../../data/tsa';
 import { parseLessonId } from '../../../lib/lessonPath';
 import { MATRIX_DATA } from '../../../data/matrices';
+import { getDictionary } from '../../../i18n';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -21,6 +22,11 @@ export async function getStaticPaths() {
 }
 
 const { userLang, targetLang } = Astro.params;
+const dict = getDictionary(userLang as never);
+const t = dict.silo;
+const languageName = dict.languageNames[targetLang as keyof typeof dict.languageNames];
+const languageTagline = dict.languageTaglines[targetLang as keyof typeof dict.languageNames];
+const languageDescription = dict.languageDescriptions[targetLang as keyof typeof dict.languageNames];
 const languageMeta = LANGUAGE_MAP[targetLang as keyof typeof LANGUAGE_MAP];
 const tsaEntry = TSA_LANG[targetLang as string] ?? null;
 
@@ -51,8 +57,8 @@ const siteURL = Astro.site!.origin;
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Course',
-  name: `${languageMeta.name} — PolyLingua`,
-  description: languageMeta.description,
+  name: `${languageName} — PolyLingua`,
+  description: languageDescription,
   url: `${siteURL}/${userLang}/${targetLang}`,
   inLanguage: targetLang,
   provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
@@ -60,8 +66,8 @@ const structuredData = {
 ---
 
 <BaseLayout
-  title={`Aprende ${languageMeta.name}`}
-  description={languageMeta.description}
+  title={`${languageName} — PolyLingua`}
+  description={languageDescription}
   path={`/${userLang}/${targetLang}`}
   structuredData={structuredData}
   ogImage={`/og-${targetLang}.png`}
@@ -70,21 +76,21 @@ const structuredData = {
     targetLang,
     restPath: '',
     breadcrumbs: [
-      { name: 'Idiomas', href: `/${userLang}` },
-      { name: languageMeta.name, href: `/${userLang}/${targetLang}` },
+      { name: t.idiomas, href: `/${userLang}` },
+      { name: languageName, href: `/${userLang}/${targetLang}` },
     ],
   }}
 >
   <section class="container lang-head" style={`--accent-c:${languageMeta.color}`}>
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
+    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+      <a href={`/${userLang}`}>{t.idiomas}</a>
       <span aria-hidden="true">/</span>
-      <span>{languageMeta.name}</span>
+      <span>{languageName}</span>
     </nav>
     <span class="flag" aria-hidden="true">{languageMeta.flag}</span>
-    <h1>{languageMeta.name} <span class="native">· {languageMeta.nativeName}</span></h1>
-    <p class="tagline">{languageMeta.tagline}</p>
-    <p class="desc">{languageMeta.description}</p>
+    <h1>{languageName} <span class="native">· {languageMeta.nativeName}</span></h1>
+    <p class="tagline">{languageTagline}</p>
+    <p class="desc">{languageDescription}</p>
   </section>
 
   <section class="container dashboard" hidden data-dashboard>
@@ -98,21 +104,21 @@ const structuredData = {
           <span class="dash-progress-text" data-dash-progress></span>
         </div>
         <a class="btn btn-primary dash-continue" data-dash-continue href={defaultContinueHref}
-          >Continuar</a
+          >{t.continuar}</a
         >
       </div>
       <div class="dash-stats">
         <div class="dash-stat">
           <span class="dash-stat-num" data-dash-review>0</span>
-          <span class="dash-stat-label">Repaso</span>
+          <span class="dash-stat-label">{t.repaso}</span>
         </div>
         <a class="dash-stat dash-stat-link" href={`/idiomas/${targetLang}/mis-errores`}>
           <span class="dash-stat-num" data-dash-errors>0</span>
-          <span class="dash-stat-label">Errores</span>
+          <span class="dash-stat-label">{t.errores}</span>
         </a>
         <div class="dash-stat">
           <span class="dash-stat-num" data-dash-streak>0</span>
-          <span class="dash-stat-label">Racha</span>
+          <span class="dash-stat-label">{t.racha}</span>
         </div>
       </div>
     </div>
@@ -133,59 +139,59 @@ const structuredData = {
               {level.emoji}
             </span>
             <span class="badge" data-level-badge>
-              {lessonCounts[level.id] ?? 0} lección{(lessonCounts[level.id] ?? 0) === 1 ? '' : 'es'}
+              {lessonCounts[level.id] ?? 0}{' '}{(lessonCounts[level.id] ?? 0) === 1 ? t.leccion : t.lecciones}
             </span>
           </div>
-          <h2>{level.name}</h2>
+          <h2>{dict.levelNames[level.id]}</h2>
           <p class="lvl-tagline" style={`color:${level.color}`}>
-            {level.tagline}
+            {dict.levelTaglines[level.id]}
           </p>
-          <p class="lvl-desc">{level.description}</p>
+          <p class="lvl-desc">{dict.levelDescriptions[level.id]}</p>
         </a>
       ))
     }
   </section>
 
   <section class="container explore-more">
-    <span class="eyebrow">🧭 Explorá más</span>
+    <span class="eyebrow">{t.explorarMas}</span>
     <div class="explore-grid">
       <a class="explore-item card" href={`/idiomas/${targetLang}/situaciones`}>
         <span aria-hidden="true">🗺️</span>
-        <span>Situaciones</span>
+        <span>{t.explorar.situaciones}</span>
       </a>
       <a class="explore-item card" href={`/idiomas/${targetLang}/dialogos`}>
         <span aria-hidden="true">💬</span>
-        <span>Diálogos</span>
+        <span>{t.explorar.dialogos}</span>
       </a>
       <a class="explore-item card" href={`/idiomas/${targetLang}/pronunciacion`}>
         <span aria-hidden="true">🗣️</span>
-        <span>Escuchar y repetir</span>
+        <span>{t.explorar.pronunciacion}</span>
       </a>
       <a class="explore-item card" href={`/idiomas/${targetLang}/recursos`}>
         <span aria-hidden="true">📻</span>
-        <span>Recursos</span>
+        <span>{t.explorar.recursos}</span>
       </a>
       <a class="explore-item card" href="/logros">
         <span aria-hidden="true">🎯</span>
-        <span>Sprint semanal</span>
+        <span>{t.explorar.sprintSemanal}</span>
       </a>
       <a class="explore-item card" href={`/idiomas/${targetLang}/diario`}>
         <span aria-hidden="true">✍️</span>
-        <span>Diario</span>
+        <span>{t.explorar.diario}</span>
       </a>
       <a class="explore-item card" href={`/idiomas/${targetLang}/mis-errores`}>
         <span aria-hidden="true">🔴</span>
-        <span>Mis errores</span>
+        <span>{t.explorar.misErrores}</span>
       </a>
       <a class="explore-item card" href={`/idiomas/${targetLang}/gramatica`}>
         <span aria-hidden="true">📖</span>
-        <span>Gramática</span>
+        <span>{t.explorar.gramatica}</span>
       </a>
       {
         MATRIX_DATA[targetLang as keyof typeof MATRIX_DATA] && (
           <a class="explore-item card" href={`/idiomas/${targetLang}/generador-frases`}>
             <span aria-hidden="true">🧩</span>
-            <span>Generador de frases</span>
+            <span>{t.explorar.generadorFrases}</span>
           </a>
         )
       }
@@ -224,7 +230,16 @@ const structuredData = {
   }
 </BaseLayout>
 
-<script define:vars={{ userLang, targetLang, levelIds: LEVELS.map((l) => l.id), levelLessonSlugs }}>
+<script
+  define:vars={{
+    userLang,
+    targetLang,
+    levelIds: LEVELS.map((l) => l.id),
+    levelLessonSlugs,
+    txtLecciones: t.lecciones,
+    txtBloqueado: t.bloqueado,
+  }}
+>
   function read(key) {
     try {
       return localStorage.getItem(key);
@@ -275,7 +290,7 @@ const structuredData = {
         el.classList.add('locked');
         el.setAttribute('aria-disabled', 'true');
         el.setAttribute('data-astro-prefetch', 'false');
-        if (badge) badge.textContent = '🔒 Bloqueado';
+        if (badge) badge.textContent = txtBloqueado;
         el.addEventListener('click', function (e) {
           e.preventDefault();
         });
@@ -319,7 +334,8 @@ const structuredData = {
     var fill = dashboard.querySelector('[data-dash-fill]');
     if (fill) fill.style.width = pct + '%';
     var progressText = dashboard.querySelector('[data-dash-progress]');
-    if (progressText) progressText.textContent = doneCount + '/' + slugs.length + ' lecciones';
+    if (progressText)
+      progressText.textContent = doneCount + '/' + slugs.length + ' ' + txtLecciones;
 
     var continueBtn = dashboard.querySelector('[data-dash-continue]');
     if (continueBtn && firstUndone) {

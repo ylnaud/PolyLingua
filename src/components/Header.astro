@@ -11,7 +11,14 @@ import { getDictionary } from '../i18n';
 const langMatch = Astro.url.pathname.match(/^\/(?:idiomas|[a-z]{2})\/(de|en|fr|it|pt)/);
 const headerLang = langMatch?.[1];
 const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
-const t = getDictionary(ACTIVE_USER_LANGUAGES[0].id);
+interface Props {
+  userLang?: string;
+}
+
+// Recibe el userLang de la página en vez de forzar el idioma principal: si
+// no, un usuario navegando en /de/... veía la navegación en español.
+const { userLang = ACTIVE_USER_LANGUAGES[0].id } = Astro.props;
+const t = getDictionary(userLang as never);
 ---
 
 <header class="site-header">

@@ -2,6 +2,7 @@
 import { LANGUAGE_MAP } from '../data/languages';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 import { getTargetLangsFor } from '../lib/courses';
+import { getDictionary } from '../i18n';
 
 interface Props {
   userLang?: string;
@@ -19,6 +20,8 @@ const { userLang = ACTIVE_USER_LANGUAGES[0].id } = Astro.props;
 // por build — hacerlo acá lo repetiría en las ~1300 páginas del sitio.
 const targetLangs = getTargetLangsFor(userLang);
 
+const dict = getDictionary(userLang as never);
+const t = dict.footer;
 const year = new Date().getFullYear();
 ---
 
@@ -26,19 +29,16 @@ const year = new Date().getFullYear();
   <div class="container foot-grid">
     <div>
       <p class="foot-logo">PolyLingua</p>
-      <p class="foot-tagline">
-        Idiomas de A1 a C2, con gramática que se aprende jugando. Gratis mientras construimos la
-        comunidad.
-      </p>
+      <p class="foot-tagline">{t.tagline}</p>
     </div>
     <div>
-      <h2>Idiomas</h2>
+      <h2>{t.idiomas}</h2>
       <ul>
         {
           targetLangs.map((id) => (
             <li>
               <a href={`/${userLang}/${id}`}>
-                {LANGUAGE_MAP[id].flag} {LANGUAGE_MAP[id].name}
+                {LANGUAGE_MAP[id].flag} {dict.languageNames[id]}
               </a>
             </li>
           ))
@@ -46,18 +46,20 @@ const year = new Date().getFullYear();
       </ul>
     </div>
     <div>
-      <h2>Proyecto</h2>
+      <h2>{t.proyecto}</h2>
       <ul>
-        <li><a href="https://github.com/ylnaud/polylingua" rel="noopener">Código en GitHub</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/#faq">Preguntas frecuentes</a></li>
-        <li><a href="/acerca">Acerca de</a></li>
-        <li><a href="/privacidad">Privacidad</a></li>
+        <li>
+          <a href="https://github.com/ylnaud/polylingua" rel="noopener">{t.codigoGitHub}</a>
+        </li>
+        <li><a href="/blog">{t.blog}</a></li>
+        <li><a href="/#faq">{t.faq}</a></li>
+        <li><a href="/acerca">{t.acercaDe}</a></li>
+        <li><a href="/privacidad">{t.privacidad}</a></li>
       </ul>
     </div>
   </div>
   <div class="container foot-bottom">
-    <p>© {year} PolyLingua. Hecho con ☕ para quienes aman los idiomas.</p>
+    <p>© {year} PolyLingua. {t.hechoCon}</p>
   </div>
 </footer>
 

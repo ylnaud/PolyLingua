@@ -463,6 +463,12 @@ const structuredData = {
     grid-column: 1 / -1;
   }
 
+  /* "8 min" es corto y queda feo partido; el chip del tema gramatical, en
+     cambio, tiene que poder partirse (ver .silo-chip en global.css). */
+  .chip-time {
+    white-space: nowrap;
+  }
+
   .chip-time::before {
     content: '⏱ ';
   }

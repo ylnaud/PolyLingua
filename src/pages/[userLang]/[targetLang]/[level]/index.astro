@@ -46,7 +46,7 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Course',
   name: `${languageName} ${levelName} — PolyLingua`,
-  description: levelMeta.description,
+  description: dict.levelDescriptions[level as keyof typeof dict.levelDescriptions],
   url: `${siteURL}/${userLang}/${targetLang}/${level}`,
   inLanguage: targetLang,
   provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
@@ -87,7 +87,7 @@ const structuredData = {
     <span class="emoji" aria-hidden="true">{levelMeta.emoji}</span>
     <h1>{languageName} — {levelName}</h1>
     <p class="tagline">{dict.levelTaglines[level as keyof typeof dict.levelTaglines]}</p>
-    <p class="desc">{levelMeta.description}</p>
+    <p class="desc">{dict.levelDescriptions[level as keyof typeof dict.levelDescriptions]}</p>
   </section>
 
   <section class="container lessons">

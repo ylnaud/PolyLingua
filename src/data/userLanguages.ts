@@ -6,9 +6,11 @@
 // enlazan desde el sitio y entran al sitemap (ver el filtro en
 // astro.config.mjs, que se deriva de esta lista).
 //
-// `es` y `de` están activos. `en` tiene el curso en-de escrito pero NO tiene
-// diccionario de interfaz, así que sigue inactivo: activarlo mostraría
-// lecciones en inglés dentro de una interfaz en español.
+// Hoy solo `es` está activo, y es una decisión de producto: la interfaz se
+// mantiene en un solo idioma. `de` llegó a estar activo (con sus 5 cursos y
+// su diccionario) y se quitó entero. `en` tiene el curso en-de escrito pero
+// no tiene diccionario, así que activarlo mostraría lecciones en inglés
+// dentro de una interfaz en español.
 export type UserLanguageId = 'es' | 'de' | 'en' | 'fr' | 'it' | 'pt';
 
 export interface UserLanguageMeta {
@@ -21,7 +23,7 @@ export interface UserLanguageMeta {
 
 export const USER_LANGUAGES: UserLanguageMeta[] = [
   { id: 'es', name: 'Español', flag: '🇪🇸', bcp47: 'es-ES', active: true },
-  { id: 'de', name: 'Deutsch', flag: '🇩🇪', bcp47: 'de-DE', active: true },
+  { id: 'de', name: 'Deutsch', flag: '🇩🇪', bcp47: 'de-DE', active: false },
   { id: 'en', name: 'English', flag: '🇬🇧', bcp47: 'en-US', active: false },
   { id: 'fr', name: 'Français', flag: '🇫🇷', bcp47: 'fr-FR', active: false },
   { id: 'it', name: 'Italiano', flag: '🇮🇹', bcp47: 'it-IT', active: false },

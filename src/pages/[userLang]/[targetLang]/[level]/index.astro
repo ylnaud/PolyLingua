@@ -100,8 +100,8 @@ const structuredData = {
     ],
   }}
 >
-  <div class="container level-layout">
-    <aside class="level-aside" style={`--accent-c:${levelMeta.color}`}>
+  <div class="container silo-layout">
+    <aside class="silo-aside" style={`--accent-c:${levelMeta.color}`}>
       <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
         <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
         <span aria-hidden="true">/</span>
@@ -121,13 +121,13 @@ const structuredData = {
 
       {
         lessons.length > 0 && (
-          <div class="level-progress" data-level-progress>
-            <div class="lp-track">
-              <span class="lp-fill" data-level-fill />
+          <div class="silo-progress" data-level-progress>
+            <div class="silo-track">
+              <span class="silo-fill" data-level-fill />
             </div>
-            <p class="lp-text" data-level-text />
+            <p class="silo-progress-text" data-level-text />
             <a
-              class="btn btn-primary lp-cta"
+              class="btn btn-primary silo-cta"
               data-continue-cta
               href={`/${userLang}/${targetLang}/${level}`}
               hidden
@@ -161,32 +161,32 @@ const structuredData = {
                   data-unit-progress
                   data-unit-slugs={group.items.map((l) => l.id.split('/').pop()).join(',')}
                 />
-                <div class="unit-track">
-                  <span class="unit-fill" data-unit-fill />
+                <div class="silo-track unit-track">
+                  <span class="silo-fill" data-unit-fill />
                 </div>
               </header>
             )}
 
-            <ol class="path">
+            <ol class="silo-path">
               {group.items.map((lesson) => {
                 const slug = lesson.id.split('/').pop();
                 return (
-                  <li class="path-item">
+                  <li class="silo-item">
                     <a
-                      class="path-link"
+                      class="silo-link"
                       data-lesson-item
                       data-slug={slug}
                       href={`/${userLang}/${targetLang}/${level}/${slug}`}
                     >
-                      <span class="node" data-lesson-num aria-hidden="true">
+                      <span class="silo-node" data-lesson-num aria-hidden="true">
                         {pathOrder.indexOf(lesson) + 1}
                       </span>
-                      <div class="path-body">
-                        <h3 class="path-title underline-draw">{lesson.data.title}</h3>
-                        <p class="path-desc">{lesson.data.description}</p>
-                        <span class="path-meta">
-                          <span class="chip">{lesson.data.grammarTopic}</span>
-                          <span class="chip chip-time">{lesson.data.minutes} min</span>
+                      <div class="silo-body">
+                        <h3 class="silo-title underline-draw">{lesson.data.title}</h3>
+                        <p class="silo-desc">{lesson.data.description}</p>
+                        <span class="silo-meta">
+                          <span class="silo-chip">{lesson.data.grammarTopic}</span>
+                          <span class="silo-chip chip-time">{lesson.data.minutes} min</span>
                         </span>
                       </div>
                     </a>
@@ -206,12 +206,12 @@ const structuredData = {
             href={`/${userLang}/${targetLang}/${level}/examen`}
             style={`--accent-c:${levelMeta.color}`}
           >
-            <span class="node exam-node" data-lesson-num aria-hidden="true">
+            <span class="silo-node exam-node" data-lesson-num aria-hidden="true">
               🏆
             </span>
-            <div class="path-body">
-              <h2 class="path-title underline-draw">{dict.silo.examenNivel}</h2>
-              <p class="path-desc">{dict.silo.examenDesc.replace('{nivel}', levelName)}</p>
+            <div class="silo-body">
+              <h2 class="silo-title underline-draw">{dict.silo.examenNivel}</h2>
+              <p class="silo-desc">{dict.silo.examenDesc.replace('{nivel}', levelName)}</p>
             </div>
           </a>
         )
@@ -361,32 +361,11 @@ const structuredData = {
 </script>
 
 <style>
-  /* ── Estructura general ──────────────────────────────────────────────
-     Dos columnas en escritorio: a la izquierda la ficha del nivel (que
-     queda fija al hacer scroll, porque es el contexto de todo lo demás) y
-     a la derecha el camino de lecciones. En móvil se apila: primero la
-     ficha, después el camino. */
-  .level-layout {
-    display: grid;
-    gap: 2rem;
-    align-items: start;
-    padding-block: 2.25rem 4rem;
-  }
+  /* Las primitivas del camino (.silo-layout, .silo-path, .silo-node, la barra
+     de progreso y los estados hecho/actual/bloqueado) viven en
+     src/styles/global.css: las comparte con la página de curso. Acá queda
+     solo lo propio de la página de nivel. */
 
-  @media (min-width: 960px) {
-    .level-layout {
-      grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
-      gap: 3.5rem;
-    }
-
-    .level-aside {
-      position: sticky;
-      /* Debajo del header sticky, que mide ~4rem. */
-      top: 5rem;
-    }
-  }
-
-  /* ── Columna izquierda: ficha del nivel ─────────────────────────────── */
   /* El h1 lleva idioma y nivel (los dos importan para SEO), pero en dos
      renglones propios: en una sola línea, "Alemán — A1 · Principiante" se
      partía por cualquier lado y el "·" quedaba huérfano al inicio del
@@ -427,49 +406,11 @@ const structuredData = {
     line-height: 1.55;
   }
 
-  .level-progress {
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .lp-track,
-  .unit-track {
-    height: 6px;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--text-muted) 22%, transparent);
-    overflow: hidden;
-  }
-
-  .lp-fill,
-  .unit-fill {
-    display: block;
-    height: 100%;
-    width: 0;
-    border-radius: inherit;
-    background: var(--accent-c, var(--accent));
-    transition: width 0.4s ease;
-  }
-
-  .lp-text {
-    margin: 0.5rem 0 0;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--text-muted);
-  }
-
-  .lp-cta {
-    display: inline-flex;
-    margin-top: 1rem;
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* ── Columna derecha: el camino ─────────────────────────────────────── */
   .empty {
     color: var(--text-muted);
   }
 
+  /* ── Cabecera de unidad ─────────────────────────────────────────────── */
   .unit + .unit {
     margin-top: 2.5rem;
   }
@@ -522,159 +463,8 @@ const structuredData = {
     grid-column: 1 / -1;
   }
 
-  /* La lista es el camino: un hilo vertical detrás de los nodos, dibujado
-     con un pseudo-elemento del <li> en vez de un borde, para poder cortarlo
-     en el último item sin que sobre línea al final del grupo. */
-  .path {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .path-item {
-    position: relative;
-  }
-
-  /* El hilo va del centro de este nodo al centro del siguiente (de ahí el
-     bottom negativo: se mete en el <li> de abajo). El nodo tiene fondo
-     opaco, así que la parte que le pasa por detrás no se ve. */
-  .path-item::before {
-    content: '';
-    position: absolute;
-    left: 19px;
-    top: calc(0.85rem + 20px);
-    bottom: calc(-0.85rem - 20px);
-    width: 2px;
-    background: var(--border);
-  }
-
-  .path-item:last-child::before {
-    display: none;
-  }
-
-  .path-link {
-    position: relative;
-    display: grid;
-    grid-template-columns: 40px minmax(0, 1fr);
-    gap: 1rem;
-    align-items: start;
-    padding: 0.85rem 0.9rem 0.85rem 0;
-    text-decoration: none;
-    color: var(--text);
-    /* Borde transparente siempre presente: así, cuando .current lo pinta,
-       el contenido no se corre 1px respecto al resto del camino. */
-    border: 1px solid transparent;
-    border-radius: var(--radius);
-    transition:
-      background 0.15s ease,
-      transform 0.15s ease;
-  }
-
-  .path-link:hover {
-    background: color-mix(in srgb, var(--accent-c, var(--accent)) 7%, transparent);
-    transform: translateX(3px);
-  }
-
-  .path-link:hover .underline-draw {
-    background-size: 100% 2px;
-  }
-
-  /* El nodo del camino. Fondo opaco (no transparente) para tapar el hilo
-     que pasa por detrás. */
-  .node {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-weight: 800;
-    font-size: 0.95rem;
-    background: var(--bg-card);
-    color: var(--text-muted);
-    border: 2px solid var(--border);
-    flex-shrink: 0;
-  }
-
-  .path-body {
-    display: block;
-    min-width: 0;
-    padding-top: 0.15rem;
-  }
-
-  .path-title {
-    margin: 0 0 0.25rem;
-    font-size: 1.02rem;
-    line-height: 1.35;
-  }
-
-  .path-desc {
-    margin: 0 0 0.5rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .path-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-
-  .chip {
-    font-size: 0.73rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 0.15rem 0.55rem;
-  }
-
   .chip-time::before {
     content: '⏱ ';
-  }
-
-  /* ── Estados: hecha / actual / bloqueada ────────────────────────────── */
-  .path-link.done .node {
-    background: #22c55e;
-    border-color: #22c55e;
-    color: #fff;
-  }
-
-  .path-link.done .path-title,
-  .path-link.done .path-desc {
-    color: var(--text-muted);
-  }
-
-  /* "Dónde estás": la única lección que se levanta del camino como tarjeta,
-     para que la vista tenga un solo punto de entrada obvio. */
-  .path-link.current {
-    background: var(--bg-card);
-    border-color: color-mix(in srgb, var(--accent-c, var(--accent)) 55%, var(--border));
-    box-shadow: var(--shadow-card);
-    /* El margen negativo compensa el padding: la tarjeta se extiende hacia
-       la izquierda sin mover el nodo, que tiene que seguir sobre el hilo. */
-    margin-left: -0.9rem;
-    padding-left: 0.9rem;
-  }
-
-  .path-link.current .node {
-    background: var(--accent-c, var(--accent));
-    border-color: var(--accent-c, var(--accent));
-    color: var(--de-black);
-  }
-
-  .path-link.locked {
-    cursor: default;
-    opacity: 0.45;
-  }
-
-  .path-link.locked:hover {
-    background: none;
-    transform: none;
-  }
-
-  .path-link.locked:hover .underline-draw {
-    background-size: 0 2px;
   }
 
   /* ── Meta final del nivel: el examen ────────────────────────────────── */
@@ -710,11 +500,11 @@ const structuredData = {
     font-size: 1.15rem;
   }
 
-  .exam-milestone .path-title {
+  .exam-milestone .silo-title {
     font-size: 1.08rem;
   }
 
-  .exam-milestone .path-desc {
+  .exam-milestone .silo-desc {
     margin-bottom: 0;
   }
 

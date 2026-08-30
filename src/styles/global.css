@@ -857,7 +857,11 @@ blockquote {
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.15rem 0.55rem;
-  white-space: nowrap;
+  /* Sin nowrap: un grammarTopic largo ("Saludos y presentación personal
+     (Begrüßung / Sich vorstellen)") no cabe en 390px y, si no puede partirse,
+     empuja la página entera a scroll horizontal. Los chips cortos que sí
+     conviene mantener en una línea lo piden ellos. */
+  overflow-wrap: anywhere;
 }
 
 /* ── Estados: hecho / actual / bloqueado ──────────────────────────────── */

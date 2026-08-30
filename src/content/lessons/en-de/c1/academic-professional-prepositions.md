@@ -6,6 +6,7 @@ description: 'Learn formal German prepositions like hinsichtlich, bezüglich, au
 order: 9
 grammarTopic: 'Prepositions in academic/professional register'
 funFact: "These prepositions are basically formalwear for sentences you'd otherwise write with wegen or über: hinsichtlich, bezüglich, aufgrund, angesichts, and gemäß all show up almost exclusively in reports, emails to your boss, and academic papers — never in casual chat. Learn which case each one takes (mostly Genitiv, with gemäß and zufolge the Dativ exceptions) and you can instantly dress up plain German into the register a business email or thesis actually needs."
+unit: 3
 minutes: 10
 quiz:
   - question: 'Which case does "hinsichtlich" (regarding, with respect to) typically govern?'

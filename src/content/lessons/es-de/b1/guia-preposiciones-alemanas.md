@@ -3,7 +3,7 @@ language: de
 level: b1
 title: 'Guía completa de preposiciones alemanas: caso, significado y ejemplos'
 description: 'Las preposiciones alemanas más usadas organizadas por caso — Wechselpräpositionen, Dativ, Akkusativ y Genitiv — con ejemplos reales y expresiones fijas.'
-order: 13
+order: 14
 unit: 4
 grammarTopic: 'Preposiciones alemanas: resumen completo por caso'
 funFact: 'No memorices las preposiciones sueltas: memorizalas SIEMPRE con el caso que rigen, como si fueran una sola palabra ("mit + Dativ", no solo "mit"). Es la única forma de que la declinación te salga automática cuando hables.'

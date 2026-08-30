@@ -6,6 +6,7 @@ description: 'Master idiomatic German prepositions in fixed expressions like sic
 order: 9
 grammarTopic: 'Idiomatic expressions and stylistic nuances with prepositions'
 funFact: "Verb-preposition pairs in German (sich freuen auf vs. sich freuen über) are not random — they are fixed collocations, like English 'good at' versus 'good with.' No case-and-preposition rule can predict them; the only real fix is memorizing each verb together with its preposition, as one inseparable chunk."
+unit: 3
 minutes: 10
 quiz:
   - question: "What is the key difference between 'sich freuen auf' and 'sich freuen über'?"

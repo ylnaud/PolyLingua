@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { ACTIVE_USER_LANGUAGES, USER_LANGUAGE_MAP } from '../data/userLanguages';
 import Header from '../components/Header.astro';
 import StreakReminder from '../components/StreakReminder.astro';
 import BackupReminder from '../components/BackupReminder.astro';
@@ -55,11 +56,18 @@ const {
 const siteName = 'PolyLingua';
 const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
 const canonicalURL = new URL(path, Astro.site);
+
+// El <html lang> tiene que declarar el idioma de la INTERFAZ, no uno fijo.
+// Estaba hardcodeado a "es", así que una lección del silo alemán salía
+// etiquetada como española: contenido en alemán con señal de idioma
+// contradictoria para buscadores y lectores de pantalla.
+const pageLang = siloContext?.userLang ?? ACTIVE_USER_LANGUAGES[0].id;
+const htmlLang = USER_LANGUAGE_MAP[pageLang as keyof typeof USER_LANGUAGE_MAP]?.bcp47 ?? 'es-ES';
 const ogImage = new URL(ogImagePath, Astro.site);
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />

@@ -1,0 +1,330 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Practice from '../../../components/Practice.astro';
+import { LANGUAGE_MAP } from '../../../data/languages';
+import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
+import { getDictionary } from '../../../i18n';
+import { fill } from '../../../lib/interpolate';
+
+export const getStaticPaths = getCourseStaticPaths;
+
+const { userLang, targetLang: lang } = Astro.params;
+const dict = getDictionary(userLang as never);
+const tt = dict.tools.vocabulario;
+// El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
+// un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
+// una sola versión (en español), por eso sale del diccionario.
+const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+// Manifest lección→vocabulario de este idioma, para poder completar
+// retroactivamente en el cliente el vocabulario de lecciones que el usuario ya
+// había terminado ANTES de que existiera esta página (su localStorage tiene el
+// "lección completada" pero nunca tuvo la oportunidad de registrar las
+// palabras). Acotado a un idioma por página, como ya hace practica-libre.astro
+// con su pool de ejercicios.
+const lessonsForLang = getCourseLessons(userLang!, lang!);
+const vocabManifest = Object.fromEntries(
+  lessonsForLang.filter((l) => l.data.vocabulary.length > 0).map((l) => [l.id, l.data.vocabulary]),
+);
+---
+
+<BaseLayout
+  userLang={userLang}
+  title={fill(tt.metaTitulo, { lang: langName })}
+  description={fill(tt.metaDescripcion, { lang: langName })}
+  path={`/${userLang}/${lang}/vocabulario`}
+  noindex
+>
+  <section class="container vocab-head">
+    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
+      <span aria-hidden="true">/</span>
+      <span>{dict.tools.nombres.vocabulario}</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">📖</span>
+    <h1>{fill(tt.h1, { lang: langName })}</h1>
+    <p class="desc" data-vocab-desc>{tt.cargando}</p>
+  </section>
+
+  <section class="container vocab-body">
+    <div class="card empty-state" data-empty-state hidden>
+      <p class="empty-emoji">✏️</p>
+      <h2>Todavía no aprendiste vocabulario en {languageMeta?.name}</h2>
+      <p>Completa una lección para que sus palabras nuevas empiecen a aparecer acá.</p>
+      <a class="btn btn-primary" href={`/${userLang}/${lang}`}>{dict.tools.comun.verLecciones}</a>
+    </div>
+
+    <div class="card word-list-card" data-word-list-card hidden>
+      <span class="eyebrow">{tt.palabrasTitulo}</span>
+      <dl class="word-list" data-word-list></dl>
+    </div>
+
+    <div class="review-card" data-review-card hidden>
+      <span class="eyebrow">{tt.pruebaTitulo}</span>
+      <Practice
+        quiz={[]}
+        exercises={[]}
+        dynamic={true}
+        sessionType="vocab"
+        lessonId="vocab"
+        minutes={1}
+        lang={languageMeta?.bcp47}
+        userLang={userLang}
+      />
+    </div>
+
+    <div hidden data-vocab-manifest={JSON.stringify(vocabManifest)}></div>
+    <div
+      hidden
+      data-page-strings={JSON.stringify({
+        palabraAprendida: tt.palabraAprendida,
+        palabrasAprendidas: tt.palabrasAprendidas,
+        comoSeDice: tt.comoSeDice,
+      })}
+    >
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import {
+    buildItemFieldset,
+    primePracticeCounters,
+    type SrsEntry,
+  } from '../../../lib/practiceItemMarkup';
+  import { shuffle } from '../../../lib/shuffle';
+  import { read, write } from '../../../lib/storage';
+  import { readPageStrings, fill } from '../../../lib/pageStrings';
+
+  const REVIEW_SIZE = 20;
+  const strings = readPageStrings({
+    palabraAprendida: '{n} palabra aprendida.',
+    palabrasAprendidas: '{n} palabras aprendidas.',
+    comoSeDice: '¿Cómo se dice "{x}"?',
+  });
+
+  interface VocabEntry {
+    term: string;
+    translation: string;
+    lang: string;
+    lessonId: string;
+    learnedAt: string;
+  }
+
+  interface VocabularyItem {
+    term: string;
+    translation: string;
+  }
+
+  function readLearned(): Record<string, VocabEntry> {
+    try {
+      return JSON.parse(read('polylingua-vocab-learned') ?? '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  // Completa retroactivamente el vocabulario de lecciones que el usuario ya
+  // había terminado antes de que existiera esta página — su localStorage tiene
+  // `polylingua-lesson-done-{lang}-{level}-{slug}` (con la fecha real en que la
+  // completó) pero nunca tuvo la tarjeta data-vocab-tracker que dispara el
+  // registro (eso solo pasa la próxima vez que TERMINE esa lección). Usa el
+  // manifest lección→vocabulario embebido en la página (`[data-vocab-manifest]`,
+  // generado en build time para este idioma) y la fecha de "lección completada"
+  // ya guardada, en vez de "hoy", para no falsear cuándo se aprendió cada palabra.
+  function backfillFromCompletedLessons(lang: string) {
+    const manifestEl = document.querySelector<HTMLElement>('[data-vocab-manifest]');
+    if (!manifestEl) return;
+    let manifest: Record<string, VocabularyItem[]> = {};
+    try {
+      manifest = JSON.parse(manifestEl.dataset.vocabManifest ?? '{}');
+    } catch {
+      return;
+    }
+
+    const learned = readLearned();
+    let changed = false;
+    for (const [lessonId, vocabulary] of Object.entries(manifest)) {
+      const doneDate = read(`polylingua-lesson-done-${lessonId.replace(/\//g, '-')}`);
+      if (!doneDate) continue;
+      for (const v of vocabulary) {
+        const vkey = `${lang}::${v.term}`;
+        if (learned[vkey]) continue;
+        learned[vkey] = {
+          term: v.term,
+          translation: v.translation,
+          lang,
+          lessonId,
+          learnedAt: doneDate,
+        };
+        changed = true;
+      }
+    }
+    if (changed) write('polylingua-vocab-learned', JSON.stringify(learned));
+  }
+
+  function initVocabPage() {
+    // Igual que repasar.astro: el data-session-type="vocab" solo existe en esta
+    // página, así que sirve de guard natural contra el listener de
+    // astro:page-load (que queda vivo el resto de la navegación SPA) tocando
+    // markup de otra página.
+    const desc = document.querySelector<HTMLElement>('[data-vocab-desc]');
+    const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
+    const wordListCard = document.querySelector<HTMLElement>('[data-word-list-card]');
+    const wordList = document.querySelector<HTMLElement>('[data-word-list]');
+    const reviewCard = document.querySelector<HTMLElement>('[data-review-card]');
+    const practiceRoot = document.querySelector<HTMLElement>(
+      '[data-practice][data-session-type="vocab"]',
+    );
+    if (!desc || !emptyState || !wordListCard || !wordList || !reviewCard || !practiceRoot) return;
+    if (practiceRoot.dataset.vocabBuilt) return;
+    practiceRoot.dataset.vocabBuilt = 'true';
+
+    const lang = window.location.pathname.split('/')[2] ?? '';
+    backfillFromCompletedLessons(lang);
+    const learned = Object.values(readLearned())
+      .filter((entry) => entry.lang === lang)
+      .sort((a, b) => (a.learnedAt < b.learnedAt ? 1 : -1));
+
+    if (learned.length === 0) {
+      emptyState.hidden = false;
+      desc.hidden = true;
+      return;
+    }
+
+    desc.textContent = fill(
+      learned.length === 1 ? strings.palabraAprendida : strings.palabrasAprendidas,
+      { n: learned.length },
+    );
+
+    wordListCard.hidden = false;
+    for (const entry of learned) {
+      const dt = document.createElement('dt');
+      dt.textContent = entry.term;
+      const dd = document.createElement('dd');
+      dd.textContent = entry.translation;
+      const item = document.createElement('div');
+      item.className = 'word-item';
+      item.append(dt, dd);
+      wordList.appendChild(item);
+    }
+
+    reviewCard.hidden = false;
+    const container = practiceRoot.querySelector<HTMLElement>('[data-items-container]');
+    if (!container) return;
+
+    const items = shuffle(learned).slice(0, REVIEW_SIZE);
+    items.forEach((entry, i) => {
+      const syntheticEntry: SrsEntry = {
+        id: `vocab/${lang}#write-${i}`,
+        kind: 'write',
+        data: {
+          type: 'write',
+          prompt: fill(strings.comoSeDice, { x: entry.translation }),
+          answer: entry.term,
+        },
+        box: 0,
+        due: '',
+        lang: 'vocab',
+        level: lang,
+      };
+      container.appendChild(buildItemFieldset(syntheticEntry, i));
+    });
+
+    primePracticeCounters(practiceRoot, items.length);
+
+    document.dispatchEvent(new Event('astro:page-load'));
+  }
+
+  initVocabPage();
+  document.addEventListener('astro:page-load', initVocabPage);
+</script>
+
+<style>
+  .vocab-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .vocab-body {
+    max-width: 680px;
+    padding-block: 0 4rem;
+  }
+
+  .word-list-card {
+    margin-bottom: 1.75rem;
+    padding: 1.5rem 1.5rem 0.5rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .eyebrow {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--accent-text);
+    margin-bottom: 0.9rem;
+  }
+
+  .word-list {
+    display: block;
+    margin: 0;
+    max-height: 420px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .word-list :global(.word-item) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: background-color 0.15s ease;
+  }
+
+  .word-list :global(.word-item:last-child) {
+    border-bottom: none;
+  }
+
+  .word-list :global(.word-item:hover) {
+    background: var(--bg-elevated);
+    margin-inline: -0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  .word-list :global(dt) {
+    font-weight: 700;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .word-list :global(dd) {
+    margin: 0;
+    flex-shrink: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-align: right;
+  }
+</style>

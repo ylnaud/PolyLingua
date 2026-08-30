@@ -5,8 +5,15 @@ import { LANGUAGES } from '../data/languages';
 import { getCollection } from 'astro:content';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 import { parseLessonId } from '../lib/lessonPath';
+import { getTargetLangsFor } from '../lib/courses';
 
 const defaultUserLang = ACTIVE_USER_LANGUAGES[0].id;
+
+// Los idiomas que se pueden estudiar DESDE esta interfaz, no los 6 del
+// catálogo: nadie estudia su propio idioma, así que no existe el curso es-es.
+// Listarlo igual daba una tarjeta con 0 lecciones enlazando a /es/es, que no
+// se genera — un 404 en la portada.
+const catalogLanguages = LANGUAGES.filter((l) => getTargetLangsFor(defaultUserLang).includes(l.id));
 const lessons = (await getCollection('lessons')).filter(
   (l) => parseLessonId(l.id).userLang === defaultUserLang,
 );
@@ -48,7 +55,7 @@ const structuredData = {
       name: 'Cursos de idiomas gratis — PolyLingua',
       description:
         'Aprende alemán, inglés, francés, italiano o portugués gratis de A1 a C2, con gramática gamificada, quizzes interactivos y explicaciones que no aburren.',
-      itemListElement: LANGUAGES.map((lang, i) => ({
+      itemListElement: catalogLanguages.map((lang, i) => ({
         '@type': 'Course',
         position: i + 1,
         name: `${lang.name} — PolyLingua`,
@@ -139,7 +146,7 @@ const structuredData = {
     </div>
     <div class="languages-grid">
       {
-        LANGUAGES.map((language) => (
+        catalogLanguages.map((language) => (
           <LanguageCard
             language={language}
             lessonCount={lessonCounts[language.id] ?? 0}
@@ -420,7 +427,11 @@ const structuredData = {
   .final-cta-card {
     text-align: center;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent);
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 10%, transparent),
+      transparent
+    );
   }
 
   .final-cta-card h2 {

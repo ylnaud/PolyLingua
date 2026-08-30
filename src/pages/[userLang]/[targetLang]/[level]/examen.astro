@@ -93,9 +93,7 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
 
 <BaseLayout
   title={t.metaTitulo.replace('{lang}', languageName).replace('{nivel}', levelName)}
-  description={t.metaDescripcion
-    .replace('{lang}', languageName)
-    .replace('{nivel}', levelName)}
+  description={t.metaDescripcion.replace('{lang}', languageName).replace('{nivel}', levelName)}
   path={`/${userLang}/${targetLang}/${level}/examen`}
   noindex
   siloContext={{
@@ -182,7 +180,7 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
           <a class="btn btn-primary" href={`/${userLang}/${targetLang}/${level}/examen`}
             >{t.reintentar}</a
           >
-          <a class="btn btn-ghost" href={`/idiomas/${targetLang}/repasar`}>{t.repasarAhora}</a>
+          <a class="btn btn-ghost" href={`/${userLang}/${targetLang}/repasar`}>{t.repasarAhora}</a>
         </div>
       </div>
     </div>

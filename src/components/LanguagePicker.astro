@@ -1,0 +1,51 @@
+---
+// Los selectores "¿en qué idioma?" de /[userLang]/<herramienta> son todos la
+// misma página con otro texto, así que el markup vive acá una sola vez en vez
+// de repetirse en 7 archivos casi idénticos.
+//
+// La lista de idiomas NO son los 6 de src/data/languages.ts: son los que este
+// idioma de interfaz puede estudiar de verdad (un alemán no tiene curso de
+// alemán), así que sale de los cursos que existen en disco.
+import { LANGUAGE_MAP } from '../data/languages';
+import { getDictionary } from '../i18n';
+import type { PickerStrings } from '../i18n/dictionary';
+
+interface Props {
+  userLang: string;
+  targetLangs: string[];
+  tool: string;
+  strings: PickerStrings;
+  glow?: boolean;
+}
+
+const { userLang, targetLangs, tool, strings, glow = false } = Astro.props;
+const dict = getDictionary(userLang as never);
+---
+
+<section class="container picker">
+  <h1>{strings.h1}</h1>
+  <p class="desc">{strings.desc}</p>
+  <div class="lang-grid">
+    {
+      targetLangs.map((id) => {
+        const meta = LANGUAGE_MAP[id as keyof typeof LANGUAGE_MAP];
+        return (
+          <a
+            class={glow ? 'lang-item card card-glow' : 'lang-item card'}
+            href={`/${userLang}/${id}/${tool}`}
+            style={glow ? `--accent-c: ${meta?.color}` : undefined}
+          >
+            <span class="flag" aria-hidden="true">
+              {meta?.flag}
+            </span>
+            {glow ? (
+              <span class="underline-draw">{dict.languageNames[id as 'de']}</span>
+            ) : (
+              <span>{dict.languageNames[id as 'de']}</span>
+            )}
+          </a>
+        );
+      })
+    }
+  </div>
+</section>

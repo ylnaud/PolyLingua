@@ -21,7 +21,7 @@ const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
     <div class="offline-actions">
       <a class="btn btn-primary" href="/">Ir al inicio</a>
       <a class="btn btn-ghost" href={defaultUserLangHref}>Mis idiomas</a>
-      <a class="btn btn-ghost" href="/repasar">Repasar</a>
+      <a class="btn btn-ghost" href={`${defaultUserLangHref}/repasar`}>Repasar</a>
     </div>
     <p class="offline-tip">
       Consejo: visita las lecciones mientras tengas conexión para que queden disponibles sin

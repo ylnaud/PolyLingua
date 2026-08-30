@@ -5,6 +5,7 @@ import { LANGUAGE_MAP } from '../../../data/languages';
 import { TSA_LANG } from '../../../data/tsa';
 import { parseLessonId } from '../../../lib/lessonPath';
 import { MATRIX_DATA } from '../../../data/matrices';
+import { SPANISH_GLOSS_USER_LANG } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
 import { getCollection } from 'astro:content';
 
@@ -26,9 +27,16 @@ const dict = getDictionary(userLang as never);
 const t = dict.silo;
 const languageName = dict.languageNames[targetLang as keyof typeof dict.languageNames];
 const languageTagline = dict.languageTaglines[targetLang as keyof typeof dict.languageNames];
-const languageDescription = dict.languageDescriptions[targetLang as keyof typeof dict.languageNames];
+const languageDescription =
+  dict.languageDescriptions[targetLang as keyof typeof dict.languageNames];
 const languageMeta = LANGUAGE_MAP[targetLang as keyof typeof LANGUAGE_MAP];
 const tsaEntry = TSA_LANG[targetLang as string] ?? null;
+
+// Diálogos, recursos y generador de frases solo existen dentro del silo
+// español: su contenido guarda la traducción en un solo idioma de interfaz
+// (ver SPANISH_GLOSS_USER_LANG en src/lib/courses.ts). Enlazarlos desde otro
+// silo sería mandar al usuario a una página que no se genera.
+const hasSpanishGlossTools = userLang === SPANISH_GLOSS_USER_LANG;
 
 const allLessons = await getCollection('lessons');
 const sameSilo = (l: (typeof allLessons)[number], lvlId: string) =>
@@ -112,7 +120,7 @@ const structuredData = {
           <span class="dash-stat-num" data-dash-review>0</span>
           <span class="dash-stat-label">{t.repaso}</span>
         </div>
-        <a class="dash-stat dash-stat-link" href={`/idiomas/${targetLang}/mis-errores`}>
+        <a class="dash-stat dash-stat-link" href={`/${userLang}/${targetLang}/mis-errores`}>
           <span class="dash-stat-num" data-dash-errors>0</span>
           <span class="dash-stat-label">{t.errores}</span>
         </a>
@@ -139,7 +147,8 @@ const structuredData = {
               {level.emoji}
             </span>
             <span class="badge" data-level-badge>
-              {lessonCounts[level.id] ?? 0}{' '}{(lessonCounts[level.id] ?? 0) === 1 ? t.leccion : t.lecciones}
+              {lessonCounts[level.id] ?? 0}{' '}
+              {(lessonCounts[level.id] ?? 0) === 1 ? t.leccion : t.lecciones}
             </span>
           </div>
           <h2>{dict.levelNames[level.id]}</h2>
@@ -155,41 +164,49 @@ const structuredData = {
   <section class="container explore-more">
     <span class="eyebrow">{t.explorarMas}</span>
     <div class="explore-grid">
-      <a class="explore-item card" href={`/idiomas/${targetLang}/situaciones`}>
+      <a class="explore-item card" href={`/${userLang}/${targetLang}/situaciones`}>
         <span aria-hidden="true">🗺️</span>
         <span>{t.explorar.situaciones}</span>
       </a>
-      <a class="explore-item card" href={`/idiomas/${targetLang}/dialogos`}>
-        <span aria-hidden="true">💬</span>
-        <span>{t.explorar.dialogos}</span>
-      </a>
-      <a class="explore-item card" href={`/idiomas/${targetLang}/pronunciacion`}>
+      {
+        hasSpanishGlossTools && (
+          <a class="explore-item card" href={`/${userLang}/${targetLang}/dialogos`}>
+            <span aria-hidden="true">💬</span>
+            <span>{t.explorar.dialogos}</span>
+          </a>
+        )
+      }
+      <a class="explore-item card" href={`/${userLang}/${targetLang}/pronunciacion`}>
         <span aria-hidden="true">🗣️</span>
         <span>{t.explorar.pronunciacion}</span>
       </a>
-      <a class="explore-item card" href={`/idiomas/${targetLang}/recursos`}>
-        <span aria-hidden="true">📻</span>
-        <span>{t.explorar.recursos}</span>
-      </a>
+      {
+        hasSpanishGlossTools && (
+          <a class="explore-item card" href={`/${userLang}/${targetLang}/recursos`}>
+            <span aria-hidden="true">📻</span>
+            <span>{t.explorar.recursos}</span>
+          </a>
+        )
+      }
       <a class="explore-item card" href="/logros">
         <span aria-hidden="true">🎯</span>
         <span>{t.explorar.sprintSemanal}</span>
       </a>
-      <a class="explore-item card" href={`/idiomas/${targetLang}/diario`}>
+      <a class="explore-item card" href={`/${userLang}/${targetLang}/diario`}>
         <span aria-hidden="true">✍️</span>
         <span>{t.explorar.diario}</span>
       </a>
-      <a class="explore-item card" href={`/idiomas/${targetLang}/mis-errores`}>
+      <a class="explore-item card" href={`/${userLang}/${targetLang}/mis-errores`}>
         <span aria-hidden="true">🔴</span>
         <span>{t.explorar.misErrores}</span>
       </a>
-      <a class="explore-item card" href={`/idiomas/${targetLang}/gramatica`}>
+      <a class="explore-item card" href={`/${userLang}/${targetLang}/gramatica`}>
         <span aria-hidden="true">📖</span>
         <span>{t.explorar.gramatica}</span>
       </a>
       {
-        MATRIX_DATA[targetLang as keyof typeof MATRIX_DATA] && (
-          <a class="explore-item card" href={`/idiomas/${targetLang}/generador-frases`}>
+        hasSpanishGlossTools && MATRIX_DATA[targetLang as keyof typeof MATRIX_DATA] && (
+          <a class="explore-item card" href={`/${userLang}/${targetLang}/generador-frases`}>
             <span aria-hidden="true">🧩</span>
             <span>{t.explorar.generadorFrases}</span>
           </a>

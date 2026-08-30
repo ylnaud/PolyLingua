@@ -4,6 +4,15 @@
 // UserLanguageId con `active: true`); agregar un diccionario nuevo acá es
 // el paso de "traducir la interfaz" cuando se active otro idioma — ver
 // src/i18n/index.ts para el mecanismo de fallback.
+// Los selectores de idioma ("¿Qué idioma quieres repasar?") son todos la
+// misma página con otro texto, así que comparten forma.
+export interface PickerStrings {
+  metaTitulo: string;
+  metaDescripcion: string;
+  h1: string;
+  desc: string;
+}
+
 export interface Dictionary {
   header: {
     logoAria: string;
@@ -187,6 +196,169 @@ export interface Dictionary {
     repasarAhora: string;
     verMisLogros: string;
     yCompletarIdioma: string;
+  };
+  // Strings de las HERRAMIENTAS: los selectores de idioma de /[userLang]/… y
+  // las páginas por idioma de /[userLang]/[targetLang]/… Hasta que existió
+  // esta sección cada herramienta tenía su texto hardcodeado en español, así
+  // que un usuario alemán salía del silo y caía en una página en español.
+  //
+  // Las que terminan en una página con JS de cliente exponen sus strings al
+  // navegador vía [data-page-strings] (ver src/lib/pageStrings.ts): los
+  // scripts de esas páginas usan `import`, y un <script define:vars> no
+  // soporta imports.
+  tools: {
+    // Última miga de pan de cada herramienta ("Idiomas / 🇩🇪 Alemán / Aquí").
+    nombres: {
+      vocabulario: string;
+      repasar: string;
+      practicaLibre: string;
+      ahorcado: string;
+      diario: string;
+      gramatica: string;
+      misErrores: string;
+      pronunciacion: string;
+      situaciones: string;
+    };
+    // Compartidos por casi todas las herramientas.
+    comun: {
+      verLecciones: string;
+      // {n} = cantidad total. Chip "ver todos" de los filtros por tema.
+      todos: string;
+      // Etiquetas de las 6 cajas del SRS. src/lib/srs.ts las tiene solo en
+      // español porque también las usa lógica que no ve el usuario.
+      mastery: [string, string, string, string, string, string];
+      // Fallback cuando el índice de caja se sale de `mastery`. Lleva {n}.
+      caja: string;
+      practicar: string;
+      sinDatos: string;
+    };
+    // Los selectores "¿en qué idioma?" de /[userLang]/<herramienta>.
+    selectores: {
+      vocabulario: PickerStrings;
+      repasar: PickerStrings;
+      practicaLibre: PickerStrings;
+      ahorcado: PickerStrings;
+      diario: PickerStrings;
+      pronunciacion: PickerStrings;
+      situaciones: PickerStrings;
+    };
+    // De acá para abajo, una entrada por herramienta. {lang} se reemplaza por
+    // el nombre del idioma meta ya traducido; {n} por una cantidad.
+    vocabulario: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      cargando: string;
+      vacioTitulo: string;
+      vacioDesc: string;
+      palabrasTitulo: string;
+      pruebaTitulo: string;
+      palabraAprendida: string;
+      palabrasAprendidas: string;
+      // Consigna de los ítems generados a partir del vocabulario. Lleva {x}.
+      comoSeDice: string;
+    };
+    repasar: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      cargando: string;
+      vacioTitulo: string;
+      vacioDesc: string;
+      // Llevan {n} y {detalle}.
+      pendientes: string;
+      pendiente: string;
+    };
+    practicaLibre: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      armando: string;
+      vacioTitulo: string;
+      vacioDesc: string;
+      // Lleva {n}.
+      sesion: string;
+    };
+    gramatica: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      desc: string;
+      ejercicio: string;
+      ejercicios: string;
+    };
+    misErrores: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      cargando: string;
+      vacioTitulo: string;
+      vacioDesc: string;
+      practicarBtn: string;
+      // Llevan {n}.
+      conErrores: string;
+      conError: string;
+      falladoVeces: string;
+      tuRespuesta: string;
+      correcta: string;
+    };
+    diario: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      desc: string;
+      etiquetaTextarea: string;
+      // Arranque de la entrada, en el idioma META. Uno por idioma.
+      placeholder: Record<'de' | 'en' | 'es' | 'fr' | 'it' | 'pt', string>;
+      // Lleva {n}.
+      palabras: string;
+      guardado: string;
+      // Lleva {enlace}, reemplazado por el link a DeepL.
+      pista: string;
+      anterioresTitulo: string;
+    };
+    pronunciacion: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      desc: string;
+      vacioTitulo: string;
+      vacioDesc: string;
+      escuchar: string;
+      guia: string;
+      meSalio: string;
+      meCosto: string;
+      // Llevan {x} / {n}.
+      traduccion: string;
+      practicada: string;
+      practicadas: string;
+    };
+    situaciones: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      desc: string;
+      vacioTitulo: string;
+      vacioDesc: string;
+      frase: string;
+      frases: string;
+    };
+    ahorcado: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      desc: string;
+      vacioTitulo: string;
+      vacioDesc: string;
+      escuchar: string;
+      jugarDeNuevo: string;
+      // Llevan {x} (el término), {y} (su traducción) y {lang}.
+      pista: string;
+      ganaste: string;
+      perdiste: string;
+      // Consigna del ítem que el juego manda al pool de repaso al fallar.
+      consignaSrs: string;
+    };
   };
 }
 
@@ -407,227 +579,197 @@ export const es: Dictionary = {
     verMisLogros: 'Ver mis logros',
     yCompletarIdioma: 'y completar el idioma',
   },
-};
-
-// Interfaz en alemán, para los cursos de-* (alemán aprendiendo otro idioma).
-// El objeto tiene que estar COMPLETO: el tipo Dictionary no permite claves
-// parciales, así que si falta una el build falla en vez de dejar un hueco
-// silencioso en la UI.
-export const de: Dictionary = {
-  header: {
-    logoAria: 'PolyLingua — Startseite',
-    navAria: 'Hauptnavigation',
-    nav: {
-      idiomas: 'Sprachen',
-      buscar: 'Suchen',
-      blog: 'Blog',
-      porQue: 'Warum',
-      faq: 'FAQ',
+  tools: {
+    nombres: {
+      vocabulario: 'Vocabulario',
+      repasar: 'Repasar',
+      practicaLibre: 'Práctica libre',
+      ahorcado: 'Ahorcado',
+      diario: 'Diario',
+      gramatica: 'Gramática',
+      misErrores: 'Mis errores',
+      pronunciacion: 'Escuchar y repetir',
+      situaciones: 'Situaciones',
     },
-    toolsAria: 'Weitere Werkzeuge',
-    tools: {
-      repasar: 'Wiederholen',
-      repasarAria: 'Vokabeln wiederholen',
-      vocabulario: 'Wortschatz',
-      vocabularioAria: 'Meinen Wortschatz ansehen',
-      practicaLibre: 'Freies Üben',
-      practicaLibreAria: 'Frei üben',
-      ahorcado: 'Galgenmännchen',
-      ahorcadoAria: 'Galgenmännchen spielen',
-      logros: 'Erfolge',
-      logrosAria: 'Meine Erfolge ansehen',
-      misErrores: 'Meine Fehler',
-      misErroresAria: 'Meine Fehler ansehen',
+    comun: {
+      verLecciones: 'Ver lecciones',
+      todos: 'Todos ({n})',
+      mastery: ['Nueva', 'Aprendiendo', 'Familiar', 'Buena', 'Dominada', 'Muy dominada'],
+      caja: 'Caja {n}',
+      practicar: 'Practicar',
+      sinDatos: 'Sin datos',
     },
-    ctaStart: 'Kostenlos starten',
-  },
-  bottomNav: {
-    navAria: 'Mobile Hauptnavigation',
-    tabs: {
-      inicio: 'Start',
-      idiomas: 'Sprachen',
-      repasar: 'Wiederholen',
-      logros: 'Erfolge',
-      mas: 'Mehr',
+    selectores: {
+      vocabulario: {
+        metaTitulo: 'Vocabulario',
+        metaDescripcion:
+          'Todas las palabras nuevas que aprendiste en tus lecciones, en un solo lugar para verlas y repasarlas.',
+        h1: '¿Vocabulario de qué idioma quieres ver?',
+        desc: 'Elige un idioma para ver las palabras que ya aprendiste.',
+      },
+      repasar: {
+        metaTitulo: 'Repasar',
+        metaDescripcion:
+          'Repasa las palabras y ejercicios que fallaste, con repetición espaciada, hasta que los aprendas de verdad.',
+        h1: '¿Qué idioma quieres repasar?',
+        desc: 'Elige un idioma para ver tu repaso pendiente.',
+      },
+      practicaLibre: {
+        metaTitulo: 'Práctica libre',
+        metaDescripcion:
+          'Practica con una sesión aleatoria de preguntas y ejercicios de todas tus lecciones, distinta cada vez.',
+        h1: '¿Qué idioma quieres practicar?',
+        desc: 'Elige un idioma para una sesión de práctica libre.',
+      },
+      ahorcado: {
+        metaTitulo: 'Ahorcado',
+        metaDescripcion:
+          'Juega al ahorcado con el vocabulario que ya aprendiste en PolyLingua, en el idioma que estés estudiando.',
+        h1: '¿En qué idioma quieres jugar?',
+        desc: 'Elige un idioma para jugar al ahorcado con tu vocabulario.',
+      },
+      diario: {
+        metaTitulo: 'Diario de escritura',
+        metaDescripcion:
+          'Escribe unas líneas cada día en el idioma que estudias para practicar escritura libre, sin respuestas fijas.',
+        h1: '¿En qué idioma quieres escribir hoy?',
+        desc: 'Elige un idioma para escribir tu entrada de hoy.',
+      },
+      pronunciacion: {
+        metaTitulo: 'Escuchar y repetir',
+        metaDescripcion:
+          'Escuchá palabras con voz nativa y repetilas en voz alta para practicar tu pronunciación en el idioma que estudias.',
+        h1: '¿En qué idioma quieres practicar?',
+        desc: 'Elige un idioma para escuchar palabras y repetirlas en voz alta.',
+      },
+      situaciones: {
+        metaTitulo: 'Situaciones cotidianas',
+        metaDescripcion:
+          'Aprendé idiomas por situaciones reales — trabajo, casa, compras — con las frases que de verdad se usan todos los días.',
+        h1: '¿En qué idioma quieres practicar situaciones?',
+        desc: 'Elige un idioma para aprender con frases reales, no con reglas sueltas.',
+      },
     },
-    sheetAria: 'Weitere Optionen',
-    groups: {
-      practicar: 'Üben',
-      tuProgreso: 'Dein Fortschritt',
-      recursos: 'Ressourcen',
-      sobrePolyLingua: 'Über PolyLingua',
-      preferencias: 'Einstellungen',
+    vocabulario: {
+      metaTitulo: 'Vocabulario de {lang}',
+      metaDescripcion:
+        'Todas las palabras de {lang} que aprendiste en tus lecciones, en un solo lugar para verlas y repasarlas.',
+      h1: 'Tu vocabulario de {lang}',
+      cargando: 'Cargando tu vocabulario…',
+      vacioTitulo: 'Todavía no aprendiste vocabulario en {lang}',
+      vacioDesc: 'Completa una lección para que sus palabras nuevas empiecen a aparecer acá.',
+      palabrasTitulo: '📚 Palabras aprendidas',
+      pruebaTitulo: '🎯 Ponte a prueba',
+      palabraAprendida: '{n} palabra aprendida.',
+      palabrasAprendidas: '{n} palabras aprendidas.',
+      comoSeDice: '¿Cómo se dice "{x}"?',
     },
-    links: {
-      buscarLecciones: 'Lektionen suchen',
-      situaciones: 'Situationen',
-      dialogos: 'Dialoge',
-      vocabulario: 'Wortschatz',
-      practicaLibre: 'Freies Üben',
-      ahorcado: 'Galgenmännchen',
-      escucharRepetir: 'Hören und nachsprechen',
-      generadorFrases: 'Satzgenerator',
-      misErrores: 'Meine Fehler',
-      gramatica: 'Grammatik',
-      copiaSeguridad: 'Sicherungskopie',
-      recursos: 'Ressourcen',
-      diario: 'Tagebuch',
-      blog: 'Blog',
-      porQuePolyLingua: 'Warum PolyLingua',
-      faq: 'FAQ',
+    repasar: {
+      metaTitulo: 'Repasar {lang}',
+      metaDescripcion:
+        'Repasa las palabras y ejercicios de {lang} que fallaste, con repetición espaciada, hasta que los aprendas de verdad.',
+      h1: 'Repasar {lang}',
+      cargando: 'Cargando tu repaso…',
+      vacioTitulo: 'No te queda nada por repasar hoy',
+      vacioDesc: 'Vuelve mañana, o sigue avanzando con lecciones nuevas mientras tanto.',
+      pendientes: 'Tienes {n} ítems por repasar{detalle}',
+      pendiente: 'Tienes {n} ítem por repasar{detalle}',
     },
-    ctaStart: 'Kostenlos starten',
-  },
-  footer: {
-    tagline:
-      'Sprachen von A1 bis C2, mit Grammatik zum spielerischen Lernen. Kostenlos, solange wir die Community aufbauen.',
-    idiomas: 'Sprachen',
-    proyecto: 'Projekt',
-    codigoGitHub: 'Code auf GitHub',
-    blog: 'Blog',
-    faq: 'Häufige Fragen',
-    acercaDe: 'Über uns',
-    privacidad: 'Datenschutz',
-    hechoCon: 'Mit ☕ gemacht für alle, die Sprachen lieben.',
-  },
-  breadcrumbAria: 'Navigationspfad',
-  cookies: {
-    texto:
-      'PolyLingua speichert deinen Fortschritt nur in deinem Browser — wir verwenden keine Tracking-Cookies. Mehr dazu in der {enlace}.',
-    enlace: 'Datenschutzerklärung',
-    entendido: 'Verstanden',
-  },
-  languageNames: {
-    de: 'Deutsch',
-    en: 'Englisch',
-    es: 'Spanisch',
-    fr: 'Französisch',
-    it: 'Italienisch',
-    pt: 'Portugiesisch',
-  },
-  levelNames: {
-    a1: 'A1 · Anfänger',
-    a2: 'A2 · Grundlagen',
-    b1: 'B1 · Mittelstufe',
-    b2: 'B2 · Obere Mittelstufe',
-    c1: 'C1 · Fortgeschritten',
-    c2: 'C2 · Meisterschaft',
-  },
-  levelTaglines: {
-    a1: 'Deine ersten Wörter',
-    a2: 'Erzähl, was du gestern gemacht hast',
-    b1: 'Gespräche mit Substanz',
-    b2: 'Passiv und Konjunktiv im Griff',
-    c1: 'Stil, Nuancen und Konjunktiv',
-    c2: 'Die Sprache auf dem Niveau gebildeter Muttersprachler',
-  },
-  levelDescriptions: {
-    a1: 'Stell dich vor, bestell etwas zu essen und überlebe deinen ersten Tag in der Sprache.',
-    a2: 'Vergangenheit, Alltagsroutinen und die ersten Sätze, mit denen du (fast) wie ein Einheimischer klingst.',
-    b1: 'Verknüpfe Ideen mit Ursache, Kontrast und Bedingung — und fang an, wie ein Könner zu argumentieren.',
-    b2: 'Sprich über Hypothesen, Nachrichten und Nuancen mit der Präzision fortgeschrittener Sprecher.',
-    c1: 'Schreib, diskutiere und verstehe komplexe Texte mit nahezu muttersprachlicher Leichtigkeit.',
-    c2: 'Ironie, Umgangssprache und stilistische Feinheiten, die nur Profis beherrschen.',
-  },
-  languageTaglines: {
-    de: 'Präzision, Fälle und sehr lange Wörter',
-    en: 'Die Sprache, die du längst benutzt, ohne es zu merken',
-    es: 'Ser oder estar: das ist hier die Frage',
-    fr: 'Eleganz, Genus und der berühmte Subjonctif',
-    it: 'Melodisch, ausdrucksstark und näher, als du denkst',
-    pt: 'Der nahe Verwandte, der mit seinen Nuancen überrascht',
-  },
-  languageDescriptions: {
-    de: 'Die Sprache der Logik: klare Regeln, eine eigenwillige Wortstellung und ein Wortschatz, der sich wie Legosteine zusammensetzt.',
-    en: 'An der Oberfläche einfache Grammatik, mit Feinheiten (Zeitformen, Phrasal Verbs), die den Unterschied zwischen gut und muttersprachlich ausmachen.',
-    es: 'Eine der meistgesprochenen Sprachen der Welt: reiche Verbgrammatik — der Subjuntivo taucht überall auf — aber ohne Fälle.',
-    fr: 'Nasale Laute, ein Genus-System zum Meistern und ein Subjonctif, der gute von exzellenten Sprechern trennt.',
-    it: 'Klanglich sehr eigen, mit Doppelkonsonanten, eigenem Rhythmus und einem Congiuntivo, den zu erobern sich lohnt.',
-    pt: 'An der Oberfläche vertraut, mit eigenen Nasallauten und Strukturen wie dem Futuro do Subjuntivo, die es im Deutschen nicht gibt.',
-  },
-  silo: {
-    idiomas: 'Sprachen',
-    catalogoEyebrow: 'Sprachkatalog',
-    catalogoTitulo: 'Welche Sprache möchtest du lernen?',
-    continuar: 'Weiter',
-    repaso: 'Wiederholung',
-    errores: 'Fehler',
-    racha: 'Serie',
-    explorarMas: '🧭 Mehr entdecken',
-    explorar: {
-      situaciones: 'Situationen',
-      dialogos: 'Dialoge',
-      pronunciacion: 'Hören und nachsprechen',
-      recursos: 'Ressourcen',
-      sprintSemanal: 'Wochen-Sprint',
-      diario: 'Tagebuch',
-      misErrores: 'Meine Fehler',
-      gramatica: 'Grammatik',
-      generadorFrases: 'Satzgenerator',
+    practicaLibre: {
+      metaTitulo: 'Práctica libre de {lang}',
+      metaDescripcion:
+        'Practica {lang} con una sesión aleatoria de preguntas y ejercicios de todas tus lecciones, distinta cada vez.',
+      h1: 'Práctica libre de {lang}',
+      armando: 'Armando una sesión aleatoria…',
+      vacioTitulo: 'Todavía no hay ejercicios para practicar',
+      vacioDesc: 'Completa alguna lección primero y vuelve por aquí.',
+      sesion: 'Una sesión aleatoria de {n} ítems, distinta cada vez que visitas esta página.',
     },
-    nivelVacio: 'Wir bereiten die Lektionen für dieses Niveau gerade vor. Schau bald wieder vorbei!',
-    examenNivel: 'Niveautest',
-    examenDesc:
-      'Verbindet alles, was du in {nivel} gelernt hast — bestehe ihn, um das nächste Niveau freizuschalten.',
-    bloqueado: '🔒 Gesperrt',
-    leccion: 'Lektion',
-    lecciones: 'Lektionen',
-  },
-  lesson: {
-    anterior: '← Zurück',
-    cursoNombre: 'Interaktiver {lang}-Kurs — PolyLingua',
-    cursoDescripcion:
-      'Lerne {lang} von A1 bis C2 — kostenlos, mit unterhaltsamer Grammatik und interaktiven Übungen.',
-    trucoTitulo: '💡 Damit es nicht langweilig wird',
-    vocabularioTitulo: '📚 Wortschatz dieser Lektion',
-    escuchar: 'Anhören',
-    empezarPractica: 'Übung starten →',
-    siguiente: 'Weiter →',
-    frasesTitulo: '🗣️ Sätze für heute',
-    frasesIntro: 'Hör dir jeden Satz an und sprich ihn laut nach, bevor du übst.',
-  },
-  practice: {
-    kinds: {
-      choice: '🔘 Multiple Choice',
-      fillBlank: '✏️ Lücke ausfüllen',
-      match: '🔗 Zuordnen',
-      write: '⌨️ Antwort schreiben',
-      order: '🧩 Satz ordnen',
+    gramatica: {
+      metaTitulo: 'Gramática — {lang}',
+      metaDescripcion:
+        'Repasa los temas gramaticales de {lang}: mira tu nivel de dominio y practica los que más necesites.',
+      h1: 'Gramática de {lang}',
+      desc: 'Tu dominio por tema gramatical.',
+      ejercicio: '{n} ejercicio',
+      ejercicios: '{n} ejercicios',
     },
-    publicidad: 'Werbung',
-    tituloSeccion: '🎮 Teste dich selbst',
-    aria: 'Interaktive Übung',
-    pista: '💡 Tipp',
-    completado: 'Geschafft!',
-    completaLaFrase: 'Vervollständige den Satz',
-    ordenaPalabras: 'Ordne die Wörter zum richtigen Satz',
-    emparejaElementos: 'Ordne jedes Element seinem Gegenstück zu',
-    escucharDeNuevo: 'Noch einmal anhören',
-    fraseConstruyendo: 'Satz, den du gerade baust',
-    correcto: '✅ Richtig!',
-    incorrecto: '❌ Nicht ganz.',
-    respuestaCorrecta: 'Richtig:',
-    resultado: 'Du hast',
-  },
-  exam: {
-    titulo: 'Test',
-    tituloPagina: 'Niveautest',
-    metaTitulo: '{lang}-Test — {nivel}',
-    metaDescripcion:
-      'Abschlusstest für {nivel} in {lang}: verbindet alles, was du im Niveau gelernt hast. Bestehe ihn mit 70% oder mehr, um das nächste Niveau freizuschalten.',
-    intro: 'Dieser Test verbindet Fragen und Übungen aus den {n} Lektionen von {nivel}. Du brauchst',
-    yDesbloquear: 'und freizuschalten:',
-    desbloqueaste: 'Freigeschaltet:',
-    cursoCompleto: 'Du hast den gesamten {lang}-Kurs abgeschlossen. Glückwunsch!',
-    irA: 'Weiter zu',
-    aprobado: 'Bestanden!',
-    todaviaNo: 'Noch nicht',
-    umbral: '70% oder mehr',
-    explicacionFallo:
-      'Du brauchst mindestens 70% zum Bestehen. Deine Fehler wurden zum Wiederholen gespeichert.',
-    reintentar: 'Nochmal versuchen',
-    repasarAhora: 'Jetzt wiederholen',
-    verMisLogros: 'Meine Erfolge ansehen',
-    yCompletarIdioma: 'und die Sprache abzuschließen',
+    misErrores: {
+      metaTitulo: 'Mis errores — {lang}',
+      metaDescripcion: 'Revisa y practica los ejercicios de {lang} que más te cuestan.',
+      h1: 'Mis errores',
+      cargando: 'Cargando tus errores…',
+      vacioTitulo: 'No tienes errores registrados',
+      vacioDesc: 'Cuando falles un ejercicio, aparecerá aquí para que puedas repasarlo.',
+      practicarBtn: 'Practicar mis errores',
+      conErrores: 'Tienes {n} ejercicios con errores.',
+      conError: 'Tienes {n} ejercicio con errores.',
+      falladoVeces: '{n}× fallado',
+      tuRespuesta: 'Tu respuesta:',
+      correcta: 'Correcta:',
+    },
+    diario: {
+      metaTitulo: 'Diario de escritura en {lang}',
+      metaDescripcion:
+        'Escribe unas líneas cada día en {lang} para practicar escritura libre, sin respuestas fijas — guardado solo en tu navegador.',
+      h1: 'Diario de {lang}',
+      desc: 'Escribe unas líneas sobre tu día — sin presión, sin respuesta correcta. Se guarda solo en este navegador.',
+      etiquetaTextarea: 'Tu entrada de hoy',
+      placeholder: {
+        de: 'Heute habe ich...',
+        en: 'Today I...',
+        es: 'Hoy he...',
+        fr: "Aujourd'hui j'ai...",
+        it: 'Oggi ho...',
+        pt: 'Hoje eu...',
+      },
+      palabras: '{n} palabras',
+      guardado: '✅ Guardado',
+      pista:
+        '💡 Si querés revisar tu texto, podés pegarlo en {enlace} para chequear la gramática — no es parte de PolyLingua, es una herramienta externa opcional.',
+      anterioresTitulo: '📅 Entradas anteriores',
+    },
+    pronunciacion: {
+      metaTitulo: 'Escuchar y repetir en {lang}',
+      metaDescripcion:
+        'Escuchá palabras de {lang} con voz nativa, repetilas en voz alta y marcá cuáles te cuestan — las difíciles vuelven más seguido.',
+      h1: 'Escuchar y repetir en {lang}',
+      desc: 'Escuchá la palabra, hacé una pausa y repetila en voz alta. Después marcá si te salió — las que te cuestan van a volver más seguido.',
+      vacioTitulo: 'Todavía no hay vocabulario',
+      vacioDesc: 'Completa alguna lección de {lang} primero para desbloquear esta práctica.',
+      escuchar: '🔊 Escuchar',
+      guia: 'Escuchá, hacé una pausa, y repetila en voz alta.',
+      meSalio: '✅ Me salió',
+      meCosto: '🔁 Me costó',
+      traduccion: 'Traducción: {x}',
+      practicada: '{n} palabra practicada',
+      practicadas: '{n} palabras practicadas',
+    },
+    situaciones: {
+      metaTitulo: 'Situaciones cotidianas en {lang}',
+      metaDescripcion:
+        'Aprendé {lang} por situaciones reales — trabajo, casa, compras — con las frases que de verdad se usan todos los días.',
+      h1: 'Situaciones cotidianas',
+      desc: 'En vez de estudiar reglas sueltas, aprendé las frases que se usan de verdad en cada situación. Escuchalas, repetilas en voz alta y practicá produciéndolas vos.',
+      vacioTitulo: 'Todavía no hay situaciones en {lang}',
+      vacioDesc: 'Estamos armando este modo idioma por idioma — volvé pronto.',
+      frase: '{n} frase',
+      frases: '{n} frases',
+    },
+    ahorcado: {
+      metaTitulo: 'Ahorcado de {lang}',
+      metaDescripcion:
+        'Juega al ahorcado con el vocabulario de {lang} que ya aprendiste en PolyLingua — adivina la palabra letra por letra.',
+      h1: 'Ahorcado de {lang}',
+      desc: 'Adivina la palabra letra por letra antes de quedarte sin intentos.',
+      vacioTitulo: 'Todavía no hay vocabulario',
+      vacioDesc: 'Completa alguna lección de {lang} primero para desbloquear el ahorcado.',
+      escuchar: '🔊 Escuchar',
+      jugarDeNuevo: '🔁 Jugar de nuevo',
+      pista: 'Pista: {x}',
+      ganaste: '🎉 ¡Bien! La palabra era "{x}" ({y}).',
+      perdiste: '💀 Se acabaron los intentos. La palabra era "{x}" ({y}).',
+      consignaSrs: 'Escribe esta palabra en {lang}: "{x}"',
+    },
   },
 };

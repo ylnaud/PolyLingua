@@ -1,30 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { LANGUAGES } from '../data/languages';
----
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 
-<BaseLayout
-  title="Recursos para practicar fuera de la app"
-  description="Podcasts, series, películas y libros reales recomendados para practicar alemán, inglés, francés, italiano o portugués fuera de PolyLingua."
-  path="/recursos"
-  noindex
->
-  <section class="container picker">
-    <h1>¿En qué idioma quieres ver recursos?</h1>
-    <p class="desc">
-      Podcasts, series, películas y libros para seguir practicando fuera de la app.
-    </p>
-    <div class="lang-grid">
-      {
-        LANGUAGES.map((language) => (
-          <a class="lang-item card" href={`/idiomas/${language.id}/recursos`}>
-            <span class="flag" aria-hidden="true">
-              {language.flag}
-            </span>
-            <span>{language.name}</span>
-          </a>
-        ))
-      }
-    </div>
-  </section>
-</BaseLayout>
+// Ruta legacy anterior a que las herramientas entraran al silo: el selector de
+// idioma vivía en /recursos, sin eje de idioma de interfaz, así que solo podía
+// estar en un idioma. Ahora hay uno por silo (/es/recursos, /de/recursos...) y esto
+// redirige (301) al del idioma de interfaz principal. La navegación ya apunta
+// al silo del usuario, así que esta URL queda solo para links viejos.
+return Astro.redirect(`/${ACTIVE_USER_LANGUAGES[0].id}/recursos`, 301);
+---

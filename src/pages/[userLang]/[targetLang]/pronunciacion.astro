@@ -1,0 +1,302 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LANGUAGE_MAP } from '../../../data/languages';
+import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
+import { getDictionary } from '../../../i18n';
+import { fill } from '../../../lib/interpolate';
+
+export const getStaticPaths = getCourseStaticPaths;
+
+const { userLang, targetLang: lang } = Astro.params;
+const dict = getDictionary(userLang as never);
+const tt = dict.tools.pronunciacion;
+// El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
+// un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
+// una sola versión (en español), por eso sale del diccionario.
+const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+// Mismo pool deduplicado que ahorcado.astro: todo el vocabulario de las
+// lecciones de este idioma, sin repetir término. Se suman también las frases
+// del modo "situaciones" — repetir una frase entera es mejor shadowing que
+// repetir una palabra suelta, que es justo el punto de esta práctica.
+const lessonsForLang = getCourseLessons(userLang!, lang!);
+const vocabPool = Array.from(
+  new Map(
+    [
+      ...lessonsForLang.flatMap((l) => l.data.vocabulary),
+      ...lessonsForLang.flatMap((l) =>
+        l.data.phrases.map((p) => ({ term: p.text, translation: p.es })),
+      ),
+    ].map((v) => [v.term.toLowerCase(), v]),
+  ).values(),
+);
+---
+
+<BaseLayout
+  userLang={userLang}
+  title={fill(tt.metaTitulo, { lang: langName })}
+  description={fill(tt.metaDescripcion, { lang: langName })}
+  path={`/${userLang}/${lang}/pronunciacion`}
+  noindex
+>
+  <section class="container pron-head">
+    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
+      <span aria-hidden="true">/</span>
+      <span>{dict.tools.nombres.pronunciacion}</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">🗣️</span>
+    <h1>{fill(tt.h1, { lang: langName })}</h1>
+    <p class="desc">{tt.desc}</p>
+  </section>
+
+  <section class="container pron-body">
+    <div class="card empty-state" data-pron-empty hidden>
+      <p class="empty-emoji">📭</p>
+      <h2>Todavía no hay vocabulario</h2>
+      <p>Completa alguna lección de {languageMeta?.name} primero para desbloquear esta práctica.</p>
+      <a class="btn btn-primary" href={`/${userLang}/${lang}`}>{dict.tools.comun.verLecciones}</a>
+    </div>
+
+    <div class="card pron-game" data-pron-game data-lang={languageMeta?.bcp47} hidden>
+      <p class="pron-word" data-pron-word></p>
+      <p class="pron-clue" data-pron-clue></p>
+
+      <button type="button" class="btn btn-primary pron-listen" data-pron-listen
+        >{tt.escuchar}</button
+      >
+
+      <p class="pron-guide">{tt.guia}</p>
+
+      <div class="pron-actions">
+        <button type="button" class="btn btn-ghost" data-pron-easy>{tt.meSalio}</button>
+        <button type="button" class="btn btn-ghost" data-pron-hard>{tt.meCosto}</button>
+      </div>
+
+      <p class="pron-count" data-pron-count role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <div hidden data-vocab-pool={JSON.stringify(vocabPool)}></div>
+  <div
+    hidden
+    data-page-strings={JSON.stringify({
+      traduccion: tt.traduccion,
+      practicada: tt.practicada,
+      practicadas: tt.practicadas,
+    })}
+  >
+  </div>
+</BaseLayout>
+
+<script>
+  import { speak, isMuted } from '../../../lib/sound';
+  import { read, write } from '../../../lib/storage';
+  import { readPageStrings, fill } from '../../../lib/pageStrings';
+
+  const strings = readPageStrings({
+    traduccion: 'Traducción: {x}',
+    practicada: '{n} palabra practicada',
+    practicadas: '{n} palabras practicadas',
+  });
+
+  interface VocabItem {
+    term: string;
+    translation: string;
+  }
+
+  let pool: VocabItem[] = [];
+  let current: VocabItem | null = null;
+  let practiced = 0;
+
+  function readVocabPool(): VocabItem[] {
+    const el = document.querySelector<HTMLElement>('[data-vocab-pool]');
+    if (!el) return [];
+    try {
+      return JSON.parse(el.dataset.vocabPool ?? '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  // "Peso de dificultad" por término: cuanto más alto, más seguido vuelve la
+  // palabra. Deliberadamente NO se llama "shadowing" para no confundirlo con
+  // polylingua-shadowing-mode, que es el toggle de los ejercicios y no tiene
+  // nada que ver con esto.
+  function scoresKey(lang: string): string {
+    return `polylingua-repeat-${lang}`;
+  }
+
+  function readScores(lang: string): Record<string, number> {
+    try {
+      const parsed = JSON.parse(read(scoresKey(lang)) ?? '{}');
+      return typeof parsed === 'object' && parsed !== null && !Array.isArray(parsed) ? parsed : {};
+    } catch {
+      return {};
+    }
+  }
+
+  function bumpScore(lang: string, term: string, delta: number) {
+    const scores = readScores(lang);
+    scores[term] = Math.max(0, (scores[term] ?? 0) + delta);
+    write(scoresKey(lang), JSON.stringify(scores));
+  }
+
+  // Selección ponderada: cada término entra en la bolsa (1 + score) veces, así
+  // las difíciles quedan sobre-representadas sin necesidad de colas ni
+  // intervalos. Se excluye la palabra actual para no repetirla dos veces
+  // seguidas, con el mismo fallback de siempre: si al excluir no queda nada,
+  // se usa la lista completa.
+  function pickWord(items: VocabItem[], lang: string, excludeTerm?: string): VocabItem | null {
+    if (items.length === 0) return null;
+    const candidates = items.filter((v) => v.term !== excludeTerm);
+    const list = candidates.length > 0 ? candidates : items;
+    const scores = readScores(lang);
+    const bag: VocabItem[] = [];
+    for (const item of list) {
+      const weight = 1 + (scores[item.term] ?? 0);
+      for (let i = 0; i < weight; i++) bag.push(item);
+    }
+    return bag[Math.floor(Math.random() * bag.length)];
+  }
+
+  function renderWord(root: HTMLElement) {
+    const wordEl = root.querySelector<HTMLElement>('[data-pron-word]');
+    const clueEl = root.querySelector<HTMLElement>('[data-pron-clue]');
+    if (wordEl && current) wordEl.textContent = current.term;
+    if (clueEl && current)
+      clueEl.textContent = fill(strings.traduccion, { x: current.translation });
+  }
+
+  function renderCount(root: HTMLElement) {
+    const countEl = root.querySelector<HTMLElement>('[data-pron-count]');
+    if (!countEl) return;
+    countEl.textContent =
+      practiced === 0
+        ? ''
+        : fill(practiced === 1 ? strings.practicada : strings.practicadas, { n: practiced });
+  }
+
+  // Avanzar siempre viene de un click, así que acá sí se puede auto-reproducir
+  // sin que el navegador lo bloquee por falta de gesto de usuario. Respeta el
+  // mute (mismo criterio que maybeAutoSpeak() en Practice.astro); el botón
+  // manual "Escuchar", en cambio, suena siempre — mismo precedente que los
+  // botones [data-speak] del resto de la app.
+  function nextWord(root: HTMLElement) {
+    const lang = window.location.pathname.split('/')[2] ?? '';
+    current = pickWord(pool, lang, current?.term);
+    renderWord(root);
+    if (current && !isMuted()) speak(current.term, root.dataset.lang ?? '');
+  }
+
+  function initPronunciacion() {
+    const root = document.querySelector<HTMLElement>('[data-pron-game]');
+    const emptyState = document.querySelector<HTMLElement>('[data-pron-empty]');
+    if (!root) return;
+    if (root.dataset.initialized) return;
+    root.dataset.initialized = 'true';
+
+    pool = readVocabPool();
+    if (pool.length === 0) {
+      if (emptyState) emptyState.hidden = false;
+      return;
+    }
+
+    root.hidden = false;
+    const lang = window.location.pathname.split('/')[2] ?? '';
+
+    // Primera palabra SIN auto-reproducir: en la carga inicial no hubo ningún
+    // gesto del usuario todavía, y el navegador bloquearía el audio. Para
+    // escucharla, el usuario toca "🔊 Escuchar".
+    current = pickWord(pool, lang);
+    renderWord(root);
+    renderCount(root);
+
+    root.querySelector<HTMLButtonElement>('[data-pron-listen]')?.addEventListener('click', () => {
+      if (current) speak(current.term, root.dataset.lang ?? '');
+    });
+
+    root.querySelector<HTMLButtonElement>('[data-pron-easy]')?.addEventListener('click', () => {
+      if (current) bumpScore(lang, current.term, -1);
+      practiced += 1;
+      renderCount(root);
+      nextWord(root);
+    });
+
+    root.querySelector<HTMLButtonElement>('[data-pron-hard]')?.addEventListener('click', () => {
+      if (current) bumpScore(lang, current.term, 2);
+      practiced += 1;
+      renderCount(root);
+      nextWord(root);
+    });
+  }
+
+  initPronunciacion();
+  document.addEventListener('astro:page-load', initPronunciacion);
+</script>
+
+<style>
+  .pron-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .pron-body {
+    max-width: 680px;
+    padding-block: 0 4rem;
+  }
+
+  .pron-game {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .pron-word {
+    font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+    font-weight: 800;
+    margin: 0 0 0.4rem;
+  }
+
+  .pron-clue {
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+  }
+
+  .pron-guide {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 1.25rem 0;
+  }
+
+  .pron-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .pron-count {
+    margin: 1.25rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+  }
+</style>

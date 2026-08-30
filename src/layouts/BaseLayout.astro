@@ -40,6 +40,11 @@ interface Props {
   // Solo lo pasan las páginas del silo [userLang]/[targetLang]/... — inyecta
   // hreflang cruzados + JSON-LD BreadcrumbList/LearningResource vía BaseSEO.
   siloContext?: SiloContext;
+  // Idioma de INTERFAZ de la página, para las que no son del silo pero sí
+  // están traducidas: las herramientas de /[userLang]/... Sin esto, la
+  // cáscara (header, footer, nav) caía siempre al idioma principal, así que
+  // un usuario en /de/es/vocabulario veía la navegación en español.
+  userLang?: string;
 }
 
 const {
@@ -51,6 +56,7 @@ const {
   ogType = 'website',
   ogImage: ogImagePath = '/og-image.png',
   siloContext,
+  userLang,
 } = Astro.props;
 
 const siteName = 'PolyLingua';
@@ -61,7 +67,7 @@ const canonicalURL = new URL(path, Astro.site);
 // Estaba hardcodeado a "es", así que una lección del silo alemán salía
 // etiquetada como española: contenido en alemán con señal de idioma
 // contradictoria para buscadores y lectores de pantalla.
-const pageLang = siloContext?.userLang ?? ACTIVE_USER_LANGUAGES[0].id;
+const pageLang = siloContext?.userLang ?? userLang ?? ACTIVE_USER_LANGUAGES[0].id;
 const htmlLang = USER_LANGUAGE_MAP[pageLang as keyof typeof USER_LANGUAGE_MAP]?.bcp47 ?? 'es-ES';
 const ogImage = new URL(ogImagePath, Astro.site);
 ---
@@ -126,18 +132,18 @@ const ogImage = new URL(ogImagePath, Astro.site);
   </head>
   <body>
     <a href="#main" class="skip-link">Saltar al contenido</a>
-    <Header userLang={siloContext?.userLang} />
+    <Header userLang={pageLang} />
     <StreakReminder />
     <BackupReminder />
     <main id="main">
       <slot />
     </main>
-    <Footer userLang={siloContext?.userLang} />
+    <Footer userLang={pageLang} />
     <ProgressTracker />
     <SoundEffects />
-    <CookieNotice userLang={siloContext?.userLang} />
+    <CookieNotice userLang={pageLang} />
     <ScrollTopButton />
-    <BottomNav userLang={siloContext?.userLang} />
+    <BottomNav userLang={pageLang} />
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {

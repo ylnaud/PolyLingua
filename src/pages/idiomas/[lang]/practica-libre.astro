@@ -1,164 +1,22 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Practice from '../../../components/Practice.astro';
-import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { LANGUAGES } from '../../../data/languages';
 import { ACTIVE_USER_LANGUAGES } from '../../../data/userLanguages';
-import { getCollection } from 'astro:content';
+import { getTargetLangsFor } from '../../../lib/courses';
 
+// Ruta legacy anterior a que las herramientas entraran al silo: la
+// herramienta vivía en /idiomas/<idioma>/practica-libre, sin eje de idioma de
+// interfaz. Ahora vive en /<userLang>/<idioma>/practica-libre, así que esto es una
+// redirección 301 al silo del idioma de interfaz principal — mismo patrón que
+// src/pages/niveles/, las otras rutas legacy del sitio.
+// Solo los idiomas meta que el silo destino tiene de verdad: /idiomas/es/… no
+// puede redirigir a /es/es/…, que no existe (nadie estudia su propio idioma).
 export async function getStaticPaths() {
-  return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
+  const targets = getTargetLangsFor(ACTIVE_USER_LANGUAGES[0].id);
+  return LANGUAGES.filter((language) => targets.includes(language.id)).map((language) => ({
+    params: { lang: language.id },
+  }));
 }
 
 const { lang } = Astro.params;
-const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
-const userLang = ACTIVE_USER_LANGUAGES[0].id;
-
-const lessons = await getCollection('lessons', (entry) => entry.data.language === lang);
-
-interface PoolItem {
-  id: string;
-  kind: string;
-  data: unknown;
-  box: number;
-  due: string;
-  lang: string;
-  level: string;
-}
-
-const pool: PoolItem[] = lessons.flatMap((lesson) => {
-  const level = lesson.id.split('/')[1] ?? '';
-  const combined = [
-    ...lesson.data.quiz.map((data) => ({ kind: 'choice', data })),
-    ...lesson.data.exercises.map((data) => ({ kind: data.type, data })),
-  ];
-  return combined.map((item, i) => ({
-    id: `${lesson.id}#${item.kind}-${i}`,
-    kind: item.kind,
-    data: item.data,
-    box: 0,
-    due: '',
-    lang: lang ?? '',
-    level,
-  }));
-});
+return Astro.redirect(`/${ACTIVE_USER_LANGUAGES[0].id}/${lang}/practica-libre`, 301);
 ---
-
-<BaseLayout
-  title={`Práctica libre de ${languageMeta?.name}`}
-  description={`Practica ${languageMeta?.name} con una sesión aleatoria de preguntas y ejercicios de todas tus lecciones, distinta cada vez.`}
-  path={`/idiomas/${lang}/practica-libre`}
-  noindex
->
-  <section class="container free-head">
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
-      <span aria-hidden="true">/</span>
-      <span>Práctica libre</span>
-    </nav>
-    <span class="emoji" aria-hidden="true">🎲</span>
-    <h1>Práctica libre de {languageMeta?.name}</h1>
-    <p class="desc" data-free-desc>Armando una sesión aleatoria…</p>
-  </section>
-
-  <section class="container free-body">
-    <div class="card empty-state" data-empty-state hidden>
-      <p class="empty-emoji">🌱</p>
-      <h2>Todavía no hay ejercicios para practicar</h2>
-      <p>Completa alguna lección primero y vuelve por aquí.</p>
-      <a class="btn btn-primary" href={`/${userLang}/${lang}`}>Ver lecciones</a>
-    </div>
-
-    <Practice
-      quiz={[]}
-      exercises={[]}
-      dynamic={true}
-      sessionType="practice-libre"
-      lessonId="practice-libre"
-      minutes={5}
-      lang={languageMeta?.bcp47}
-    />
-  </section>
-</BaseLayout>
-
-<script define:vars={{ pool }}>
-  window.POOL_ITEMS = pool;
-</script>
-<script>
-  import {
-    buildItemFieldset,
-    primePracticeCounters,
-    type SrsEntry,
-  } from '../../../lib/practiceItemMarkup';
-  import { shuffle } from '../../../lib/shuffle';
-
-  const SESSION_SIZE = 12;
-
-  function initFreePractice() {
-    // [data-practice] es el markup genérico que Practice.astro renderiza en
-    // toda página que lo use — acotarlo a esta sesión evita que este script
-    // (cuyo listener de astro:page-load queda activo el resto de la
-    // navegación SPA) toque el quiz de una lección o examen ajenos.
-    const practiceRoot = document.querySelector<HTMLElement>(
-      '[data-practice][data-session-type="practice-libre"]',
-    );
-    const container = practiceRoot?.querySelector<HTMLElement>('[data-items-container]');
-    const emptyState = document.querySelector<HTMLElement>('[data-empty-state]');
-    const desc = document.querySelector<HTMLElement>('[data-free-desc]');
-    if (!practiceRoot || !container) return;
-    if (practiceRoot.dataset.freeBuilt) return;
-    practiceRoot.dataset.freeBuilt = 'true';
-
-    const pool = (window as unknown as { POOL_ITEMS?: SrsEntry[] }).POOL_ITEMS ?? [];
-    const session = shuffle(pool).slice(0, SESSION_SIZE);
-
-    if (session.length === 0) {
-      if (emptyState) emptyState.hidden = false;
-      practiceRoot.hidden = true;
-      if (desc) desc.hidden = true;
-      return;
-    }
-
-    if (desc) {
-      desc.textContent = `Una sesión aleatoria de ${session.length} ítems, distinta cada vez que visitas esta página.`;
-    }
-
-    session.forEach((entry, i) => {
-      container.appendChild(buildItemFieldset(entry, i));
-    });
-
-    primePracticeCounters(practiceRoot, session.length);
-
-    document.dispatchEvent(new Event('astro:page-load'));
-  }
-
-  initFreePractice();
-  document.addEventListener('astro:page-load', initFreePractice);
-</script>
-
-<style>
-  .free-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
-  .emoji {
-    font-size: 2rem;
-  }
-
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.6rem;
-  }
-
-  .desc {
-    color: var(--text-muted);
-    margin: 0;
-  }
-
-  .free-body {
-    max-width: 680px;
-    padding-block: 0 4rem;
-  }
-</style>

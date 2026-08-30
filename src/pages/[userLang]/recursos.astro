@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LanguagePicker from '../../components/LanguagePicker.astro';
+import { getSpanishGlossUserLangStaticPaths, getTargetLangsFor } from '../../lib/courses';
+
+// Esta herramienta solo existe dentro del silo español: su contenido guarda
+// la traducción en español y no tiene eje userLang (ver
+// SPANISH_GLOSS_USER_LANG en src/lib/courses.ts). Por eso los textos van
+// escritos acá y no salen del diccionario: nunca se renderizan en otro idioma.
+export const getStaticPaths = getSpanishGlossUserLangStaticPaths;
+
+const { userLang } = Astro.params;
+const targetLangs = getTargetLangsFor(userLang!);
+
+const strings = {
+  metaTitulo: 'Recursos para practicar fuera de la app',
+  metaDescripcion:
+    'Podcasts, series, películas y libros reales recomendados para practicar alemán, inglés, francés, italiano o portugués fuera de PolyLingua.',
+  h1: '¿En qué idioma quieres ver recursos?',
+  desc: 'Podcasts, series, películas y libros para seguir practicando fuera de la app.',
+};
+---
+
+<BaseLayout
+  title={strings.metaTitulo}
+  description={strings.metaDescripcion}
+  path={`/${userLang}/recursos`}
+  userLang={userLang}
+  noindex
+>
+  <LanguagePicker
+    userLang={userLang!}
+    targetLangs={targetLangs}
+    tool="recursos"
+    strings={strings}
+  />
+</BaseLayout>

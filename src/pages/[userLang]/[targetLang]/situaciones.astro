@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LANGUAGE_MAP } from '../../../data/languages';
+import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
+import { getDictionary } from '../../../i18n';
+import { fill } from '../../../lib/interpolate';
+import { LEVEL_MAP } from '../../../data/levels';
+
+export const getStaticPaths = getCourseStaticPaths;
+
+const { userLang, targetLang: lang } = Astro.params;
+const dict = getDictionary(userLang as never);
+const tt = dict.tools.situaciones;
+// El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
+// un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
+// una sola versión (en español), por eso sale del diccionario.
+const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+// Solo las lecciones marcadas como situacionales (las que tienen `situation`),
+// agrupadas por tema. Las lecciones de gramática clásica quedan fuera de esta
+// vista a propósito: son la otra vía, organizada por nivel.
+//
+// Se ordena primero por nivel y después por `order`. Ordenar solo por `order`
+// mezclaría los niveles (un A2 con order 12 quedaría antes que un A1 con order
+// 15), y acá lo que importa es que lo más fácil aparezca primero.
+const LEVEL_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
+const situationLessons = getCourseLessons(userLang!, lang!)
+  .filter((entry) => !!entry.data.situation)
+  .sort((a, b) => {
+    const byLevel = LEVEL_ORDER.indexOf(a.data.level) - LEVEL_ORDER.indexOf(b.data.level);
+    return byLevel !== 0 ? byLevel : a.data.order - b.data.order;
+  });
+
+const themes = [...new Set(situationLessons.map((l) => l.data.situation as string))].map(
+  (theme) => ({
+    theme,
+    lessons: situationLessons.filter((l) => l.data.situation === theme),
+  }),
+);
+---
+
+<BaseLayout
+  userLang={userLang}
+  title={fill(tt.metaTitulo, { lang: langName })}
+  description={fill(tt.metaDescripcion, { lang: langName })}
+  path={`/${userLang}/${lang}/situaciones`}
+  noindex
+>
+  <section class="container sit-head">
+    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
+      <span aria-hidden="true">/</span>
+      <span>{dict.tools.nombres.situaciones}</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">🗺️</span>
+    <h1>{tt.h1}</h1>
+    <p class="desc">{tt.desc}</p>
+  </section>
+
+  <section class="container sit-body">
+    {
+      themes.length === 0 ? (
+        <div class="card empty-state">
+          <p class="empty-emoji">🚧</p>
+          <h2>{fill(tt.vacioTitulo, { lang: langName })}</h2>
+          <p>{tt.vacioDesc}</p>
+          <a class="btn btn-primary" href={`/${userLang}/${lang}`}>
+            {dict.tools.comun.verLecciones}
+          </a>
+        </div>
+      ) : (
+        themes.map((group) => (
+          <div class="theme-group">
+            <h2 class="theme-title">{group.theme}</h2>
+            <div class="sit-grid">
+              {group.lessons.map((lesson) => {
+                const [, level, slug] = lesson.id.split('/');
+                const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
+                return (
+                  <a class="sit-item card" href={`/${userLang}/${lang}/${level}/${slug}`}>
+                    <span class="sit-level" style={`color:${levelMeta?.color}`}>
+                      {levelMeta?.emoji} {level.toUpperCase()}
+                    </span>
+                    <span class="sit-name">{lesson.data.title}</span>
+                    <span class="sit-desc">{lesson.data.description}</span>
+                    <span class="sit-count">
+                      {fill(lesson.data.phrases.length === 1 ? tt.frase : tt.frases, {
+                        n: lesson.data.phrases.length,
+                      })}
+                    </span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        ))
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .sit-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .sit-body {
+    max-width: 680px;
+    padding-block: 0 4rem;
+  }
+
+  .theme-group {
+    margin-bottom: 2rem;
+  }
+
+  .theme-title {
+    font-size: 1.1rem;
+    margin: 0 0 0.85rem;
+  }
+
+  .sit-grid {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .sit-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.1rem 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease;
+  }
+
+  .sit-item:hover {
+    border-color: var(--accent);
+  }
+
+  .sit-level {
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .sit-name {
+    font-weight: 700;
+  }
+
+  .sit-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .sit-count {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-top: 0.2rem;
+  }
+</style>

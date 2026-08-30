@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LanguagePicker from '../../components/LanguagePicker.astro';
+import { getSpanishGlossUserLangStaticPaths, getTargetLangsFor } from '../../lib/courses';
+import { MATRIX_DATA } from '../../data/matrices';
+
+// Esta herramienta solo existe dentro del silo español: su contenido guarda
+// la traducción en español y no tiene eje userLang (ver
+// SPANISH_GLOSS_USER_LANG en src/lib/courses.ts). Por eso los textos van
+// escritos acá y no salen del diccionario: nunca se renderizan en otro idioma.
+export const getStaticPaths = getSpanishGlossUserLangStaticPaths;
+
+const { userLang } = Astro.params;
+const targetLangs = getTargetLangsFor(userLang!).filter(
+  (id) => MATRIX_DATA[id as keyof typeof MATRIX_DATA],
+);
+
+const strings = {
+  metaTitulo: 'Generador de frases',
+  metaDescripcion:
+    'Genera cientos de frases combinando sujetos, verbos y objetos con el método Janulus. Practica hasta que te salgan automáticamente.',
+  h1: 'Genera frases en el idioma que quieras',
+  desc: 'Elige un idioma para practicar combinaciones de frases con el método Janulus.',
+};
+---
+
+<BaseLayout
+  title={strings.metaTitulo}
+  description={strings.metaDescripcion}
+  path={`/${userLang}/generador-frases`}
+  userLang={userLang}
+  noindex
+>
+  <LanguagePicker
+    userLang={userLang!}
+    targetLangs={targetLangs}
+    tool="generador-frases"
+    strings={strings}
+  />
+</BaseLayout>

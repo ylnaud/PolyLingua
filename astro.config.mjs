@@ -34,8 +34,10 @@ function isInactiveUserLangPage(pageUrl) {
   return INACTIVE_USER_LANG_IDS.includes(firstSegment);
 }
 
-// /niveles/* son rutas legacy anteriores a la arquitectura SILO: cada una es
-// una redirección 301 a su equivalente en /es/de/*, no una página de contenido.
+// /niveles/* y /idiomas/* son rutas legacy: cada una es una redirección 301 a
+// su equivalente en el silo, no una página de contenido. Las primeras son
+// anteriores a la arquitectura SILO; las segundas, anteriores a que las
+// herramientas (vocabulario, repasar, diálogos...) entraran al silo.
 // Astro ya les pone <meta name="robots" content="noindex"> automáticamente, así
 // que anunciarlas en el sitemap era pedirle a Google que indexe 176 URLs que
 // ellas mismas se declaran no indexables — la misma contradicción que
@@ -44,8 +46,11 @@ function isInactiveUserLangPage(pageUrl) {
 // Las redirecciones se mantienen: cualquier link viejo que apunte a /niveles/*
 // sigue funcionando y transfiere su valor al destino. Simplemente se dejan de
 // ofrecer como si fueran destinos finales.
+const LEGACY_REDIRECT_PREFIXES = ['niveles', 'idiomas'];
+
 function isLegacyRedirectPage(pageUrl) {
-  return new URL(pageUrl).pathname.split('/').filter(Boolean)[0] === 'niveles';
+  const firstSegment = new URL(pageUrl).pathname.split('/').filter(Boolean)[0];
+  return LEGACY_REDIRECT_PREFIXES.includes(firstSegment);
 }
 
 export default defineConfig({

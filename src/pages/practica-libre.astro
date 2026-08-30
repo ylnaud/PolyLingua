@@ -1,32 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import { LANGUAGES } from '../data/languages';
----
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 
-<BaseLayout
-  title="Práctica libre"
-  description="Practica con una sesión aleatoria de preguntas y ejercicios de todas tus lecciones, distinta cada vez."
-  path="/practica-libre"
-  noindex
->
-  <section class="container picker">
-    <h1>¿Qué idioma quieres practicar?</h1>
-    <p class="desc">Elige un idioma para una sesión de práctica libre.</p>
-    <div class="lang-grid">
-      {
-        LANGUAGES.map((language) => (
-          <a
-            class="lang-item card card-glow"
-            href={`/idiomas/${language.id}/practica-libre`}
-            style={`--accent-c: ${language.color}`}
-          >
-            <span class="flag" aria-hidden="true">
-              {language.flag}
-            </span>
-            <span class="underline-draw">{language.name}</span>
-          </a>
-        ))
-      }
-    </div>
-  </section>
-</BaseLayout>
+// Ruta legacy anterior a que las herramientas entraran al silo: el selector de
+// idioma vivía en /practica-libre, sin eje de idioma de interfaz, así que solo podía
+// estar en un idioma. Ahora hay uno por silo (/es/practica-libre, /de/practica-libre...) y esto
+// redirige (301) al del idioma de interfaz principal. La navegación ya apunta
+// al silo del usuario, así que esta URL queda solo para links viejos.
+return Astro.redirect(`/${ACTIVE_USER_LANGUAGES[0].id}/practica-libre`, 301);
+---

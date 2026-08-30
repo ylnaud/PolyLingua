@@ -5,15 +5,15 @@ import ShadowingToggle from './ShadowingToggle.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 import { getDictionary } from '../i18n';
+import { parseSiloPath } from '../lib/siloPath';
+import { SPANISH_GLOSS_USER_LANG } from '../lib/courses';
 
 const path = Astro.url.pathname;
 
 const isActive = (route: string) =>
   route === '/' ? path === '/' : path === route || path.startsWith(`${route}/`);
 
-const navLangMatch = path.match(/^\/(?:idiomas|[a-z]{2})\/(de|en|fr|it|pt)/);
-const navLang = navLangMatch?.[1];
-const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
+const navLang = parseSiloPath(path).targetLang;
 interface Props {
   userLang?: string;
 }
@@ -22,11 +22,17 @@ interface Props {
 // no, un usuario navegando en /de/... veía la navegación en español.
 const { userLang = ACTIVE_USER_LANGUAGES[0].id } = Astro.props;
 const t = getDictionary(userLang as never);
+// Las herramientas viven dentro del silo del usuario, no en la raíz.
+const siloHref = `/${userLang}`;
+// Diálogos, generador de frases y recursos solo se generan en el silo español
+// (su contenido está glosado solo en español, ver SPANISH_GLOSS_USER_LANG):
+// enlazarlos desde otro silo sería mandar al usuario a un 404.
+const hasSpanishGlossTools = userLang === SPANISH_GLOSS_USER_LANG;
 
 const tabs = [
   { href: '/', icon: '🏠', label: t.bottomNav.tabs.inicio },
-  { href: defaultUserLangHref, icon: '📚', label: t.bottomNav.tabs.idiomas },
-  { href: '/repasar', icon: '🔁', label: t.bottomNav.tabs.repasar, reload: true },
+  { href: siloHref, icon: '📚', label: t.bottomNav.tabs.idiomas },
+  { href: `${siloHref}/repasar`, icon: '🔁', label: t.bottomNav.tabs.repasar, reload: true },
   { href: '/logros', icon: '🏆', label: t.bottomNav.tabs.logros },
 ];
 ---
@@ -67,40 +73,109 @@ const tabs = [
     <div class="sheet-group">
       <p class="sheet-group-label">{t.bottomNav.groups.practicar}</p>
       <div class="sheet-group-links">
-        <a href="/buscar" class="sheet-link"><span class="sheet-icon" aria-hidden="true">🔎</span>{t.bottomNav.links.buscarLecciones}</a>
-        <a href="/situaciones" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🗺️</span>{t.bottomNav.links.situaciones}</a>
-        <a href="/dialogos" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">💬</span>{t.bottomNav.links.dialogos}</a>
-        <a href="/vocabulario" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">📖</span>{t.bottomNav.links.vocabulario}</a>
-        <a href="/practica-libre" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🎲</span>{t.bottomNav.links.practicaLibre}</a>
-        <a href="/ahorcado" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🔤</span>{t.bottomNav.links.ahorcado}</a>
-        <a href="/pronunciacion" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🗣️</span>{t.bottomNav.links.escucharRepetir}</a>
-        <a href="/generador-frases" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">🧩</span>{t.bottomNav.links.generadorFrases}</a>
+        <a href="/buscar" class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">🔎</span>{
+            t.bottomNav.links.buscarLecciones
+          }</a
+        >
+        <a href={`${siloHref}/situaciones`} data-astro-reload class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">🗺️</span>{t.bottomNav.links.situaciones}</a
+        >
+        {
+          hasSpanishGlossTools && (
+            <a href={`${siloHref}/dialogos`} data-astro-reload class="sheet-link">
+              <span class="sheet-icon" aria-hidden="true">
+                💬
+              </span>
+              {t.bottomNav.links.dialogos}
+            </a>
+          )
+        }
+        <a href={`${siloHref}/vocabulario`} data-astro-reload class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">📖</span>{t.bottomNav.links.vocabulario}</a
+        >
+        <a href={`${siloHref}/practica-libre`} data-astro-reload class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">🎲</span>{t.bottomNav.links.practicaLibre}</a
+        >
+        <a href={`${siloHref}/ahorcado`} data-astro-reload class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">🔤</span>{t.bottomNav.links.ahorcado}</a
+        >
+        <a href={`${siloHref}/pronunciacion`} data-astro-reload class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">🗣️</span>{
+            t.bottomNav.links.escucharRepetir
+          }</a
+        >
+        {
+          hasSpanishGlossTools && (
+            <a href={`${siloHref}/generador-frases`} data-astro-reload class="sheet-link">
+              <span class="sheet-icon" aria-hidden="true">
+                🧩
+              </span>
+              {t.bottomNav.links.generadorFrases}
+            </a>
+          )
+        }
       </div>
     </div>
 
     <div class="sheet-group">
       <p class="sheet-group-label">{t.bottomNav.groups.tuProgreso}</p>
       <div class="sheet-group-links">
-        <a href={navLang ? `/idiomas/${navLang}/mis-errores` : defaultUserLangHref} data-sheet-errors class="sheet-link sheet-lang-link" hidden={!navLang}><span class="sheet-icon" aria-hidden="true">❌</span>{t.bottomNav.links.misErrores}</a>
-        <a href={navLang ? `/idiomas/${navLang}/gramatica` : defaultUserLangHref} data-sheet-grammar class="sheet-link sheet-lang-link" hidden={!navLang}><span class="sheet-icon" aria-hidden="true">📝</span>{t.bottomNav.links.gramatica}</a>
-        <a href="/logros#backup" class="sheet-link"><span class="sheet-icon" aria-hidden="true">💾</span>{t.bottomNav.links.copiaSeguridad}</a>
+        <a
+          href={navLang ? `${siloHref}/${navLang}/mis-errores` : siloHref}
+          data-sheet-errors
+          class="sheet-link sheet-lang-link"
+          hidden={!navLang}
+          ><span class="sheet-icon" aria-hidden="true">❌</span>{t.bottomNav.links.misErrores}</a
+        >
+        <a
+          href={navLang ? `${siloHref}/${navLang}/gramatica` : siloHref}
+          data-sheet-grammar
+          class="sheet-link sheet-lang-link"
+          hidden={!navLang}
+          ><span class="sheet-icon" aria-hidden="true">📝</span>{t.bottomNav.links.gramatica}</a
+        >
+        <a href="/logros#backup" class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">💾</span>{
+            t.bottomNav.links.copiaSeguridad
+          }</a
+        >
       </div>
     </div>
 
     <div class="sheet-group">
       <p class="sheet-group-label">{t.bottomNav.groups.recursos}</p>
       <div class="sheet-group-links">
-        <a href="/recursos" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">📻</span>{t.bottomNav.links.recursos}</a>
-        <a href="/diario" data-astro-reload class="sheet-link"><span class="sheet-icon" aria-hidden="true">✍️</span>{t.bottomNav.links.diario}</a>
-        <a href="/blog" class="sheet-link"><span class="sheet-icon" aria-hidden="true">📰</span>{t.bottomNav.links.blog}</a>
+        {
+          hasSpanishGlossTools && (
+            <a href={`${siloHref}/recursos`} data-astro-reload class="sheet-link">
+              <span class="sheet-icon" aria-hidden="true">
+                📻
+              </span>
+              {t.bottomNav.links.recursos}
+            </a>
+          )
+        }
+        <a href={`${siloHref}/diario`} data-astro-reload class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">✍️</span>{t.bottomNav.links.diario}</a
+        >
+        <a href="/blog" class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">📰</span>{t.bottomNav.links.blog}</a
+        >
       </div>
     </div>
 
     <div class="sheet-group">
       <p class="sheet-group-label">{t.bottomNav.groups.sobrePolyLingua}</p>
       <div class="sheet-group-links">
-        <a href="/#por-que" class="sheet-link"><span class="sheet-icon" aria-hidden="true">💡</span>{t.bottomNav.links.porQuePolyLingua}</a>
-        <a href="/#faq" class="sheet-link"><span class="sheet-icon" aria-hidden="true">❓</span>{t.bottomNav.links.faq}</a>
+        <a href="/#por-que" class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">💡</span>{
+            t.bottomNav.links.porQuePolyLingua
+          }</a
+        >
+        <a href="/#faq" class="sheet-link"
+          ><span class="sheet-icon" aria-hidden="true">❓</span>{t.bottomNav.links.faq}</a
+        >
       </div>
     </div>
 
@@ -116,7 +191,7 @@ const tabs = [
   </div>
 
   <div class="sheet-footer">
-    <a href={defaultUserLangHref} class="sheet-link cta">{t.bottomNav.ctaStart}</a>
+    <a href={siloHref} class="sheet-link cta">{t.bottomNav.ctaStart}</a>
   </div>
 </dialog>
 
@@ -284,6 +359,8 @@ const tabs = [
 </style>
 
 <script>
+  import { parseSiloPath } from '../lib/siloPath';
+
   function initBottomNav() {
     const btn = document.getElementById('more-btn');
     const dialog = document.getElementById('more-sheet') as HTMLDialogElement | null;
@@ -303,17 +380,16 @@ const tabs = [
       });
     }
 
-    const langMatch = location.pathname.match(/^\/(?:idiomas|[a-z]{2})\/(de|en|fr|it|pt)/);
+    const { userLang, targetLang } = parseSiloPath(location.pathname);
     const errLink = dialog.querySelector('[data-sheet-errors]') as HTMLAnchorElement | null;
     const gramLink = dialog.querySelector('[data-sheet-grammar]') as HTMLAnchorElement | null;
-    if (langMatch) {
-      const lang = langMatch[1];
+    if (userLang && targetLang) {
       if (errLink) {
-        errLink.href = `/idiomas/${lang}/mis-errores`;
+        errLink.href = `/${userLang}/${targetLang}/mis-errores`;
         errLink.hidden = false;
       }
       if (gramLink) {
-        gramLink.href = `/idiomas/${lang}/gramatica`;
+        gramLink.href = `/${userLang}/${targetLang}/gramatica`;
         gramLink.hidden = false;
       }
     } else {

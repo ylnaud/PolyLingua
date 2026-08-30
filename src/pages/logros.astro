@@ -145,7 +145,9 @@ const lessonCounts = Object.fromEntries(
       <div class="sprint-days" data-sprint-days aria-hidden="true"></div>
       <p class="sprint-status" data-sprint-status></p>
       <div class="sprint-actions">
-        <a class="btn btn-primary" data-sprint-go href="/repasar">Ir a repasar este tema</a>
+        <a class="btn btn-primary" data-sprint-go href={`/${defaultUserLang}/repasar`}
+          >Ir a repasar este tema</a
+        >
         <button type="button" class="btn btn-ghost" data-sprint-end>Terminar sprint</button>
       </div>
     </div>
@@ -284,6 +286,10 @@ const lessonCounts = Object.fromEntries(
   import { LANGUAGES } from '../data/languages';
   import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 
+  // /logros vive en la raíz (es progreso global, no de un curso), así que sus
+  // enlaces al silo usan el idioma de interfaz principal.
+  const defaultUserLang = ACTIVE_USER_LANGUAGES[0].id;
+
   function initLanguageProgress() {
     const grid = document.querySelector<HTMLElement>('[data-lang-progress-grid]');
     const countsEl = document.querySelector<HTMLElement>('[data-lesson-counts]');
@@ -316,7 +322,7 @@ const lessonCounts = Object.fromEntries(
 
       const card = document.createElement('a');
       card.className = 'lang-progress-card';
-      card.href = `/${ACTIVE_USER_LANGUAGES[0].id}/${lang.id}`;
+      card.href = `/${defaultUserLang}/${lang.id}`;
 
       const head = document.createElement('span');
       head.className = 'lang-progress-head-row';
@@ -350,6 +356,11 @@ const lessonCounts = Object.fromEntries(
     clearSprint,
     SPRINT_LENGTH_DAYS,
   } from '../lib/storage';
+  import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+
+  // /logros vive en la raíz (es progreso global, no de un curso), así que sus
+  // enlaces a las herramientas del silo usan el idioma de interfaz principal.
+  const defaultUserLang = ACTIVE_USER_LANGUAGES[0].id;
 
   interface SrsEntry {
     id: string;
@@ -440,7 +451,7 @@ const lessonCounts = Object.fromEntries(
 
       const a = document.createElement('a');
       a.className = 'pending-link';
-      a.href = `/idiomas/${row.lang}/repasar?tema=${encodeURIComponent(row.topic)}`;
+      a.href = `/${defaultUserLang}/${row.lang}/repasar?tema=${encodeURIComponent(row.topic)}`;
       a.dataset.astroReload = 'true';
 
       const info = document.createElement('span');
@@ -482,7 +493,7 @@ const lessonCounts = Object.fromEntries(
   }
 
   // El sprint es, en esencia, "repasá este tema en N días distintos" — reusa
-  // el filtro por tema de /idiomas/[lang]/repasar (ver ?tema= más arriba),
+  // el filtro por tema de /[userLang]/[targetLang]/repasar (ver ?tema= más arriba),
   // solo cuenta en qué fechas se visitó. Vive en el mismo script que el
   // panel de temas pendientes porque el botón "Iniciar sprint" de cada fila
   // necesita poder refrescar esta tarjeta al instante.
@@ -517,7 +528,7 @@ const lessonCounts = Object.fromEntries(
       done >= SPRINT_LENGTH_DAYS
         ? `¡Sprint completado! Practicaste ${done} de ${SPRINT_LENGTH_DAYS} días.`
         : `Practicaste ${done} de ${SPRINT_LENGTH_DAYS} días.`;
-    goLink.href = `/idiomas/${sprint.lang}/repasar?tema=${encodeURIComponent(sprint.topic)}`;
+    goLink.href = `/${defaultUserLang}/${sprint.lang}/repasar?tema=${encodeURIComponent(sprint.topic)}`;
   }
 
   function initSprintCard() {

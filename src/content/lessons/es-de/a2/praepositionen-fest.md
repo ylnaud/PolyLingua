@@ -84,7 +84,7 @@ Ya viste las Wechselpräpositionen, que cambian de caso según haya movimiento o
 preposiciones son más simples: **siempre** van con el mismo caso, sin excepción, así que
 no hay que pensar en movimiento ni en nada más — solo memorizar a qué grupo pertenece
 cada una. (Si no recordás qué es el Dativ y el Akkusativ, revisá la lección
-[Dativ y Akkusativ](/idiomas/de/a2/dativ-akkusativ).)
+[Dativ y Akkusativ](/es/de/a2/dativ-akkusativ).)
 
 ## Grupo Akkusativ (siempre)
 

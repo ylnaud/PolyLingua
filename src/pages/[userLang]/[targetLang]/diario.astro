@@ -1,0 +1,267 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LANGUAGE_MAP } from '../../../data/languages';
+import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
+import { getDictionary } from '../../../i18n';
+import { fill } from '../../../lib/interpolate';
+
+export const getStaticPaths = getCourseStaticPaths;
+
+const { userLang, targetLang: lang } = Astro.params;
+const dict = getDictionary(userLang as never);
+const tt = dict.tools.diario;
+// El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
+// un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
+// una sola versión (en español), por eso sale del diccionario.
+const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+---
+
+<BaseLayout
+  userLang={userLang}
+  title={fill(tt.metaTitulo, { lang: langName })}
+  description={fill(tt.metaDescripcion, { lang: langName })}
+  path={`/${userLang}/${lang}/diario`}
+  noindex
+>
+  <section class="container diary-head">
+    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
+      <span aria-hidden="true">/</span>
+      <span>{dict.tools.nombres.diario}</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">✍️</span>
+    <h1>{fill(tt.h1, { lang: langName })}</h1>
+    <p class="desc">{tt.desc}</p>
+  </section>
+
+  <section class="container diary-body">
+    <div class="card diary-card">
+      <label class="visually-hidden" for="diary-textarea">{tt.etiquetaTextarea}</label>
+      <textarea
+        id="diary-textarea"
+        class="diary-textarea"
+        data-diary-textarea
+        rows="8"
+        placeholder={tt.placeholder[lang as keyof typeof tt.placeholder]}></textarea>
+      <div class="diary-footer">
+        <span class="diary-count" data-diary-count>{fill(tt.palabras, { n: 0 })}</span>
+        <span class="diary-saved" data-diary-saved aria-live="polite"></span>
+      </div>
+    </div>
+
+    <p
+      class="diary-hint"
+      set:html={fill(tt.pista, {
+        enlace:
+          '<a href="https://www.deepl.com/translator" target="_blank" rel="noopener noreferrer">DeepL</a>',
+      })}
+    />
+
+    <div class="card entries-card" data-entries-card hidden>
+      <span class="eyebrow">{tt.anterioresTitulo}</span>
+      <div class="entries-list" data-entries-list></div>
+    </div>
+    <div
+      hidden
+      data-page-strings={JSON.stringify({ palabras: tt.palabras, guardado: tt.guardado })}
+    >
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { read, write, today, exportAll } from '../../../lib/storage';
+  import { readPageStrings, fill } from '../../../lib/pageStrings';
+
+  const s = readPageStrings({ palabras: '{n} palabras', guardado: '✅ Guardado' });
+
+  const MAX_PREVIOUS_ENTRIES = 14;
+
+  function diaryKey(lang: string, date: string): string {
+    return `polylingua-diary-${lang}-${date}`;
+  }
+
+  function countWords(text: string): number {
+    const trimmed = text.trim();
+    return trimmed === '' ? 0 : trimmed.split(/\s+/).length;
+  }
+
+  function renderEntries(lang: string, todayStr: string) {
+    const card = document.querySelector<HTMLElement>('[data-entries-card]');
+    const list = document.querySelector<HTMLElement>('[data-entries-list]');
+    if (!card || !list) return;
+
+    const all = exportAll();
+    const prefix = `polylingua-diary-${lang}-`;
+    const entries = Object.entries(all)
+      .filter(
+        ([key, value]) =>
+          key.startsWith(prefix) && key.slice(prefix.length) !== todayStr && value.trim() !== '',
+      )
+      .map(([key, value]) => ({ date: key.slice(prefix.length), text: value }))
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .slice(0, MAX_PREVIOUS_ENTRIES);
+
+    list.innerHTML = '';
+    if (entries.length === 0) {
+      card.hidden = true;
+      return;
+    }
+    card.hidden = false;
+
+    for (const entry of entries) {
+      const row = document.createElement('div');
+      row.className = 'entry-item';
+      const date = document.createElement('span');
+      date.className = 'entry-date';
+      date.textContent = entry.date;
+      const snippet = document.createElement('p');
+      snippet.className = 'entry-snippet';
+      snippet.textContent = entry.text.length > 140 ? `${entry.text.slice(0, 140)}…` : entry.text;
+      row.append(date, snippet);
+      list.appendChild(row);
+    }
+  }
+
+  function initDiary() {
+    const textarea = document.querySelector<HTMLTextAreaElement>('[data-diary-textarea]');
+    const countEl = document.querySelector<HTMLElement>('[data-diary-count]');
+    const savedEl = document.querySelector<HTMLElement>('[data-diary-saved]');
+    if (!textarea || !countEl) return;
+    if (textarea.dataset.initialized) return;
+    textarea.dataset.initialized = 'true';
+
+    const lang = window.location.pathname.split('/')[2] ?? '';
+    const todayStr = today();
+    const key = diaryKey(lang, todayStr);
+
+    textarea.value = read(key) ?? '';
+    countEl.textContent = fill(s.palabras, { n: countWords(textarea.value) });
+    renderEntries(lang, todayStr);
+
+    let saveTimeout: ReturnType<typeof setTimeout> | null = null;
+    textarea.addEventListener('input', () => {
+      countEl.textContent = fill(s.palabras, { n: countWords(textarea.value) });
+      if (saveTimeout) clearTimeout(saveTimeout);
+      saveTimeout = setTimeout(() => {
+        write(key, textarea.value);
+        if (savedEl) {
+          savedEl.textContent = s.guardado;
+          setTimeout(() => {
+            if (savedEl) savedEl.textContent = '';
+          }, 1500);
+        }
+      }, 600);
+    });
+  }
+
+  initDiary();
+  document.addEventListener('astro:page-load', initDiary);
+</script>
+
+<style>
+  .diary-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .diary-body {
+    max-width: 680px;
+    padding-block: 0 4rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .diary-card {
+    padding: 1.5rem;
+  }
+
+  .diary-textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 160px;
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .diary-textarea:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  .diary-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .diary-hint {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin: 0;
+  }
+
+  .diary-hint a {
+    color: var(--accent-text);
+  }
+
+  .entries-card {
+    padding: 1.5rem;
+  }
+
+  .entries-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  /* Las filas se crean con document.createElement en JS a partir de
+     localStorage — nunca reciben el atributo de scoping de Astro, así que
+     hace falta :global() para que este CSS las alcance. */
+  .entries-list :global(.entry-item) {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .entries-list :global(.entry-item:first-child) {
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .entries-list :global(.entry-date) {
+    display: block;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .entries-list :global(.entry-snippet) {
+    margin: 0;
+  }
+</style>

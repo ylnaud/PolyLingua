@@ -9,7 +9,9 @@ const PRECACHE_URLS = [
   '/offline',
   '/es',
   '/logros',
-  '/repasar',
+  // Las herramientas viven dentro del silo desde que se tradujo la interfaz:
+  // '/repasar' a secas hoy es solo una redirección 301 a esta URL.
+  '/es/repasar',
   ...LANGS.map((l) => `/es/${l}`),
   ...LANGS.flatMap((l) => LEVELS.map((lv) => `/es/${l}/${lv}`)),
 ];

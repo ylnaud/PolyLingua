@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LanguagePicker from '../../components/LanguagePicker.astro';
+import { getUserLangStaticPaths, getTargetLangsFor } from '../../lib/courses';
+import { getDictionary } from '../../i18n';
+
+export const getStaticPaths = getUserLangStaticPaths;
+
+const { userLang } = Astro.params;
+const strings = getDictionary(userLang as never).tools.selectores.diario;
+const targetLangs = getTargetLangsFor(userLang!);
+---
+
+<BaseLayout
+  title={strings.metaTitulo}
+  description={strings.metaDescripcion}
+  path={`/${userLang}/diario`}
+  userLang={userLang}
+  noindex
+>
+  <LanguagePicker userLang={userLang!} targetLangs={targetLangs} tool="diario" strings={strings} />
+</BaseLayout>

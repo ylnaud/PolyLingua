@@ -1,175 +1,22 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { LANGUAGES, LANGUAGE_MAP } from '../../../data/languages';
+import { LANGUAGES } from '../../../data/languages';
 import { ACTIVE_USER_LANGUAGES } from '../../../data/userLanguages';
-import { LEVEL_MAP } from '../../../data/levels';
+import { getTargetLangsFor } from '../../../lib/courses';
 
+// Ruta legacy anterior a que las herramientas entraran al silo: la
+// herramienta vivía en /idiomas/<idioma>/situaciones, sin eje de idioma de
+// interfaz. Ahora vive en /<userLang>/<idioma>/situaciones, así que esto es una
+// redirección 301 al silo del idioma de interfaz principal — mismo patrón que
+// src/pages/niveles/, las otras rutas legacy del sitio.
+// Solo los idiomas meta que el silo destino tiene de verdad: /idiomas/es/… no
+// puede redirigir a /es/es/…, que no existe (nadie estudia su propio idioma).
 export async function getStaticPaths() {
-  return LANGUAGES.map((language) => ({ params: { lang: language.id } }));
+  const targets = getTargetLangsFor(ACTIVE_USER_LANGUAGES[0].id);
+  return LANGUAGES.filter((language) => targets.includes(language.id)).map((language) => ({
+    params: { lang: language.id },
+  }));
 }
 
 const { lang } = Astro.params;
-const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
-const userLang = ACTIVE_USER_LANGUAGES[0].id;
-
-// Solo las lecciones marcadas como situacionales (las que tienen `situation`),
-// agrupadas por tema. Las lecciones de gramática clásica quedan fuera de esta
-// vista a propósito: son la otra vía, organizada por nivel.
-//
-// Se ordena primero por nivel y después por `order`. Ordenar solo por `order`
-// mezclaría los niveles (un A2 con order 12 quedaría antes que un A1 con order
-// 15), y acá lo que importa es que lo más fácil aparezca primero.
-const LEVEL_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
-const situationLessons = (
-  await getCollection('lessons', (entry) => entry.data.language === lang && !!entry.data.situation)
-).sort((a, b) => {
-  const byLevel = LEVEL_ORDER.indexOf(a.data.level) - LEVEL_ORDER.indexOf(b.data.level);
-  return byLevel !== 0 ? byLevel : a.data.order - b.data.order;
-});
-
-const themes = [...new Set(situationLessons.map((l) => l.data.situation as string))].map(
-  (theme) => ({
-    theme,
-    lessons: situationLessons.filter((l) => l.data.situation === theme),
-  }),
-);
+return Astro.redirect(`/${ACTIVE_USER_LANGUAGES[0].id}/${lang}/situaciones`, 301);
 ---
-
-<BaseLayout
-  title={`Situaciones cotidianas en ${languageMeta?.name}`}
-  description={`Aprendé ${languageMeta?.name} por situaciones reales — trabajo, casa, compras — con las frases que de verdad se usan todos los días.`}
-  path={`/idiomas/${lang}/situaciones`}
-  noindex
->
-  <section class="container sit-head">
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
-      <span aria-hidden="true">/</span>
-      <span>Situaciones</span>
-    </nav>
-    <span class="emoji" aria-hidden="true">🗺️</span>
-    <h1>Situaciones cotidianas</h1>
-    <p class="desc">
-      En vez de estudiar reglas sueltas, aprendé las frases que se usan de verdad en cada situación.
-      Escuchalas, repetilas en voz alta y practicá produciéndolas vos.
-    </p>
-  </section>
-
-  <section class="container sit-body">
-    {
-      themes.length === 0 ? (
-        <div class="card empty-state">
-          <p class="empty-emoji">🚧</p>
-          <h2>Todavía no hay situaciones en {languageMeta?.name}</h2>
-          <p>Estamos armando este modo idioma por idioma — volvé pronto.</p>
-          <a class="btn btn-primary" href={`/${userLang}/${lang}`}>
-            Ver lecciones
-          </a>
-        </div>
-      ) : (
-        themes.map((group) => (
-          <div class="theme-group">
-            <h2 class="theme-title">{group.theme}</h2>
-            <div class="sit-grid">
-              {group.lessons.map((lesson) => {
-                const [, level, slug] = lesson.id.split('/');
-                const levelMeta = LEVEL_MAP[level as keyof typeof LEVEL_MAP];
-                return (
-                  <a class="sit-item card" href={`/${userLang}/${lang}/${level}/${slug}`}>
-                    <span class="sit-level" style={`color:${levelMeta?.color}`}>
-                      {levelMeta?.emoji} {level.toUpperCase()}
-                    </span>
-                    <span class="sit-name">{lesson.data.title}</span>
-                    <span class="sit-desc">{lesson.data.description}</span>
-                    <span class="sit-count">
-                      {lesson.data.phrases.length} frase
-                      {lesson.data.phrases.length === 1 ? '' : 's'}
-                    </span>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-        ))
-      )
-    }
-  </section>
-</BaseLayout>
-
-<style>
-  .sit-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
-  .emoji {
-    font-size: 2rem;
-  }
-
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.6rem;
-  }
-
-  .desc {
-    color: var(--text-muted);
-    margin: 0;
-  }
-
-  .sit-body {
-    max-width: 680px;
-    padding-block: 0 4rem;
-  }
-
-  .theme-group {
-    margin-bottom: 2rem;
-  }
-
-  .theme-title {
-    font-size: 1.1rem;
-    margin: 0 0 0.85rem;
-  }
-
-  .sit-grid {
-    display: grid;
-    gap: 0.85rem;
-  }
-
-  .sit-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding: 1.1rem 1.25rem;
-    text-decoration: none;
-    color: var(--text);
-    transition: border-color 0.15s ease;
-  }
-
-  .sit-item:hover {
-    border-color: var(--accent);
-  }
-
-  .sit-level {
-    font-size: 0.78rem;
-    font-weight: 700;
-  }
-
-  .sit-name {
-    font-weight: 700;
-  }
-
-  .sit-desc {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-  }
-
-  .sit-count {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-top: 0.2rem;
-  }
-</style>

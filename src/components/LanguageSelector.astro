@@ -7,6 +7,13 @@
 // (`active: false`) se muestran deshabilitados como "Próximamente" — la
 // arquitectura ya los soporta, solo falta traducir la interfaz.
 import { USER_LANGUAGES, type UserLanguageId } from '../data/userLanguages';
+import {
+  courseHasLesson,
+  getTargetLangsFor,
+  SPANISH_GLOSS_TOOLS,
+  SPANISH_GLOSS_USER_LANG,
+} from '../lib/courses';
+import { LEVELS } from '../data/levels';
 
 const knownUserLangIds = USER_LANGUAGES.map((l) => l.id);
 const siloMatch = Astro.url.pathname.match(/^\/([a-z]{2})\/([a-z]{2})(\/.*)?$/);
@@ -17,8 +24,33 @@ const currentUserLang =
 const targetLang = siloMatch ? siloMatch[2] : null;
 const restPath = siloMatch?.[3] ?? '';
 
+// Cambiar de interfaz solo puede conservar el curso si ese curso EXISTE. No
+// todos los pares (interfaz, meta) existen: nadie estudia su propio idioma,
+// así que no hay de-de ni es-es. Sin este chequeo, un alemán mirando una
+// lección de /es/de/a1/... veía "Deutsch" enlazando a /de/de/a1/..., que no
+// se genera — un 404. Cuando el curso no existe se cae al catálogo de esa
+// interfaz, que siempre está.
+// Diálogos, recursos y generador de frases solo se generan en el silo español
+// (su contenido está glosado solo en español), así que tampoco se pueden
+// conservar al cambiar de interfaz.
+const restSegments = restPath.split('/').filter(Boolean);
+const restTool = restSegments[0] ?? '';
+const restIsSpanishOnly = SPANISH_GLOSS_TOOLS.includes(restTool);
+
+// Si la ruta apunta a una lección concreta (/a1/<slug>), hay que comprobar que
+// ese slug exista en el curso destino: los cursos no comparten slugs.
+const lessonLevel = LEVELS.some((l) => l.id === restTool) ? restTool : null;
+const lessonSlug = lessonLevel && restSegments.length === 2 ? restSegments[1] : null;
+
 function hrefFor(langId: UserLanguageId): string {
-  if (targetLang) return `/${langId}/${targetLang}${restPath}`;
+  const courseExists = !!targetLang && getTargetLangsFor(langId).includes(targetLang as never);
+  const toolExists = !restIsSpanishOnly || langId === SPANISH_GLOSS_USER_LANG;
+  const lessonExists =
+    !lessonSlug || (!!targetLang && courseHasLesson(langId, targetLang, lessonLevel!, lessonSlug));
+  if (courseExists && toolExists && lessonExists) return `/${langId}/${targetLang}${restPath}`;
+  // Sin equivalente exacto: se cae al nivel si la ruta lo tenía, y si no al
+  // catálogo. Mejor la página más cercana que existe que un 404.
+  if (courseExists && lessonLevel) return `/${langId}/${targetLang}/${lessonLevel}`;
   return `/${langId}`;
 }
 ---

@@ -1,0 +1,499 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { LANGUAGE_MAP } from '../../../data/languages';
+import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
+import { getDictionary } from '../../../i18n';
+import { fill } from '../../../lib/interpolate';
+
+export const getStaticPaths = getCourseStaticPaths;
+
+const { userLang, targetLang: lang } = Astro.params;
+const dict = getDictionary(userLang as never);
+const tt = dict.tools.ahorcado;
+// El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
+// un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
+// una sola versión (en español), por eso sale del diccionario.
+const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
+const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+
+// Vocabulario de todas las lecciones de este idioma, deduplicado por término
+// (varias lecciones pueden repetir la misma palabra) — es el pool de
+// palabras a adivinar. Se descartan términos de una sola letra (no dan un
+// juego interesante) y frases claramente demasiado largas para adivinar
+// letra por letra.
+const lessonsForLang = getCourseLessons(userLang!, lang!);
+// Se conserva el nivel de la lección donde aparece cada término (primer match
+// gana, igual que el propio Map dedup por término) — hace falta para poder
+// armar un id de SRS con la misma forma "lang/level/slug" que usan las
+// lecciones reales cuando se falla una palabra en el juego.
+const vocabPool = Array.from(
+  new Map(
+    lessonsForLang.flatMap((l) =>
+      l.data.vocabulary.map((v) => [v.term.toLowerCase(), { ...v, level: l.data.level }]),
+    ),
+  ).values(),
+).filter((v) => v.term.trim().length >= 2 && v.term.trim().length <= 24);
+---
+
+<BaseLayout
+  userLang={userLang}
+  title={fill(tt.metaTitulo, { lang: langName })}
+  description={fill(tt.metaDescripcion, { lang: langName })}
+  path={`/${userLang}/${lang}/ahorcado`}
+  noindex
+>
+  <section class="container hangman-head">
+    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
+      <span aria-hidden="true">/</span>
+      <span>{dict.tools.nombres.ahorcado}</span>
+    </nav>
+    <span class="emoji" aria-hidden="true">🔤</span>
+    <h1>{fill(tt.h1, { lang: langName })}</h1>
+    <p class="desc">{tt.desc}</p>
+  </section>
+
+  <section class="container hangman-body">
+    <div class="card empty-state" data-hangman-empty hidden>
+      <p class="empty-emoji">📭</p>
+      <h2>Todavía no hay vocabulario</h2>
+      <p>Completa alguna lección de {languageMeta?.name} primero para desbloquear el ahorcado.</p>
+      <a class="btn btn-primary" href={`/${userLang}/${lang}`}>{dict.tools.comun.verLecciones}</a>
+    </div>
+
+    <div
+      class="card hangman-game"
+      data-hangman
+      data-lang={languageMeta?.bcp47}
+      data-lang-code={lang}
+      data-lang-name={langName}
+      hidden
+    >
+      <div class="hangman-status">
+        <span class="hangman-lives" data-hangman-lives aria-live="polite"></span>
+        <button type="button" class="btn btn-ghost hangman-speak" data-hangman-speak hidden
+          >{tt.escuchar}</button
+        >
+      </div>
+      <p class="hangman-clue" data-hangman-clue></p>
+      <p class="hangman-word" data-hangman-word aria-live="polite"></p>
+
+      <div class="hangman-keyboard" data-hangman-keyboard></div>
+
+      <div class="hangman-result" data-hangman-result hidden>
+        <p data-hangman-result-text></p>
+        <button type="button" class="btn btn-primary" data-hangman-again>{tt.jugarDeNuevo}</button>
+      </div>
+    </div>
+  </section>
+
+  <div hidden data-vocab-pool={JSON.stringify(vocabPool)}></div>
+  <div
+    hidden
+    data-page-strings={JSON.stringify({
+      pista: tt.pista,
+      ganaste: tt.ganaste,
+      perdiste: tt.perdiste,
+      consignaSrs: tt.consignaSrs,
+    })}
+  >
+  </div>
+</BaseLayout>
+
+<script>
+  import { read, write } from '../../../lib/storage';
+  import { speak, playCorrect, playIncorrect, playAchievement } from '../../../lib/sound';
+  import { readPageStrings, fill } from '../../../lib/pageStrings';
+
+  const strings = readPageStrings({
+    pista: 'Pista: {x}',
+    ganaste: '🎉 ¡Bien! La palabra era "{x}" ({y}).',
+    perdiste: '💀 Se acabaron los intentos. La palabra era "{x}" ({y}).',
+    consignaSrs: 'Escribe esta palabra en {lang}: "{x}"',
+  });
+
+  interface VocabItem {
+    term: string;
+    translation: string;
+    level: string;
+  }
+
+  const MAX_WRONG = 6;
+  const HEART_FULL = '❤️';
+  const HEART_LOST = '🖤';
+
+  // Estado del juego en curso — a nivel de módulo porque solo existe una
+  // partida viva a la vez (nunca hay dos tableros de ahorcado en la misma
+  // página), y así el listener de teclado de más abajo (que se engancha una
+  // sola vez por sesión, no una vez por visita a esta página) siempre puede
+  // leer el estado vigente sin quedar atado al nodo de una visita anterior.
+  let pool: VocabItem[] = [];
+  let alphabet: string[] = [];
+  let target: VocabItem | null = null;
+  let guessed = new Set<string>();
+  let wrong = 0;
+  let hangmanKeyboardStarted = false;
+
+  function readVocabPool(): VocabItem[] {
+    const el = document.querySelector<HTMLElement>('[data-vocab-pool]');
+    if (!el) return [];
+    try {
+      return JSON.parse(el.dataset.vocabPool ?? '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  // Mismo patrón de "quitar acentos/diacríticos" que ya usan
+  // Practice.astro (normalize()) y buscar.astro — acá para armar un slug
+  // estable a partir del término y poder identificar la misma palabra entre
+  // rondas distintas.
+  function slugify(term: string): string {
+    return term
+      .trim()
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
+
+  // Reusa el mismo evento que Practice.astro dispara al terminar un ítem —
+  // ProgressTracker.astro ya escucha "practice-complete" en document y sabe
+  // meter/sacar ítems del pool de repetición espaciada (polylingua-srs-pool)
+  // con las mismas cajas tipo Leitner que usa el resto del sitio. No hace
+  // falta reimplementar esa matemática acá: alcanza con darle la forma que
+  // ya espera (id "lang/level/slug#kind-i", data de un ejercicio "write").
+  function recordSrsResult(root: HTMLElement, item: VocabItem, correct: boolean) {
+    const langCode = root.dataset.langCode ?? '';
+    const langName = root.dataset.langName ?? '';
+    if (!langCode || !item.level) return;
+    const id = `${langCode}/${item.level}/ahorcado-${slugify(item.term)}#write-0`;
+    root.dispatchEvent(
+      new CustomEvent('practice-complete', {
+        bubbles: true,
+        detail: {
+          score: correct ? 1 : 0,
+          total: 1,
+          minutes: 1,
+          sessionType: 'ahorcado',
+          lessonId: '',
+          results: [
+            {
+              id,
+              kind: 'write',
+              data: {
+                type: 'write',
+                prompt: fill(strings.consignaSrs, { lang: langName, x: item.translation }),
+                answer: item.term,
+              },
+              correct,
+              userAnswer: '',
+              correctAnswer: item.term,
+            },
+          ],
+        },
+      }),
+    );
+  }
+
+  // El teclado se arma con el alfabeto base + cualquier letra con acento o
+  // diacrítico presente en el vocabulario real de este idioma (ä/ö/ü/ß,
+  // é/è/ê, etc.) — así siempre alcanzan las teclas necesarias sin tener que
+  // mantener una tabla de acentos a mano por idioma.
+  function buildAlphabet(items: VocabItem[]): string[] {
+    const set = new Set<string>('abcdefghijklmnopqrstuvwxyz'.split(''));
+    for (const item of items) {
+      for (const ch of item.term.toLowerCase()) {
+        if (/\p{L}/u.test(ch)) set.add(ch);
+      }
+    }
+    return Array.from(set).sort();
+  }
+
+  function pickWord(items: VocabItem[], excludeTerm?: string): VocabItem | null {
+    if (items.length === 0) return null;
+    const candidates = items.filter((v) => v.term !== excludeTerm);
+    const list = candidates.length > 0 ? candidates : items;
+    return list[Math.floor(Math.random() * list.length)];
+  }
+
+  function isWordComplete(): boolean {
+    if (!target) return false;
+    return target.term
+      .split('')
+      .filter((ch) => /\p{L}/u.test(ch))
+      .every((ch) => guessed.has(ch.toLowerCase()));
+  }
+
+  function renderLives(root: HTMLElement) {
+    const livesEl = root.querySelector<HTMLElement>('[data-hangman-lives]');
+    if (!livesEl) return;
+    const remaining = Math.max(0, MAX_WRONG - wrong);
+    livesEl.textContent = HEART_FULL.repeat(remaining) + HEART_LOST.repeat(MAX_WRONG - remaining);
+  }
+
+  function renderWord(root: HTMLElement) {
+    const wordEl = root.querySelector<HTMLElement>('[data-hangman-word]');
+    if (!wordEl || !target) return;
+    wordEl.textContent = target.term
+      .split('')
+      .map((ch) => (!/\p{L}/u.test(ch) ? ch : guessed.has(ch.toLowerCase()) ? ch : '_'))
+      .join(' ');
+  }
+
+  function renderKeyboard(root: HTMLElement) {
+    const keyboard = root.querySelector<HTMLElement>('[data-hangman-keyboard]');
+    if (!keyboard) return;
+    keyboard.innerHTML = '';
+    for (const letter of alphabet) {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'hangman-key';
+      btn.textContent = letter.toUpperCase();
+      btn.dataset.letter = letter;
+      btn.addEventListener('click', () => guessLetter(root, letter));
+      keyboard.appendChild(btn);
+    }
+  }
+
+  function syncKeyboardState(root: HTMLElement) {
+    const keyboard = root.querySelector<HTMLElement>('[data-hangman-keyboard]');
+    if (!keyboard || !target) return;
+    const over = wrong >= MAX_WRONG || isWordComplete();
+    const lowerTerm = target.term.toLowerCase();
+    keyboard.querySelectorAll<HTMLButtonElement>('.hangman-key').forEach((btn) => {
+      const letter = btn.dataset.letter ?? '';
+      const isGuessed = guessed.has(letter);
+      btn.disabled = isGuessed || over;
+      btn.classList.toggle('correct', isGuessed && lowerTerm.includes(letter));
+      btn.classList.toggle('incorrect', isGuessed && !lowerTerm.includes(letter));
+    });
+  }
+
+  function endRound(root: HTMLElement, won: boolean) {
+    if (!target) return;
+    const resultEl = root.querySelector<HTMLElement>('[data-hangman-result]');
+    const resultText = root.querySelector<HTMLElement>('[data-hangman-result-text]');
+    const speakBtn = root.querySelector<HTMLButtonElement>('[data-hangman-speak]');
+
+    if (resultText) {
+      resultText.textContent = fill(won ? strings.ganaste : strings.perdiste, {
+        x: target.term,
+        y: target.translation,
+      });
+    }
+    if (resultEl) resultEl.hidden = false;
+    if (speakBtn) {
+      speakBtn.hidden = false;
+      speakBtn.dataset.speakText = target.term;
+    }
+
+    if (won) {
+      playAchievement();
+      const wins = Number(read('polylingua-hangman-wins') ?? '0') + 1;
+      write('polylingua-hangman-wins', String(wins));
+    }
+
+    recordSrsResult(root, target, won);
+  }
+
+  function guessLetter(root: HTMLElement, letter: string) {
+    if (!target || wrong >= MAX_WRONG || isWordComplete() || guessed.has(letter)) return;
+    guessed.add(letter);
+    const correct = target.term.toLowerCase().includes(letter);
+    if (correct) playCorrect();
+    else {
+      wrong += 1;
+      playIncorrect();
+    }
+
+    renderLives(root);
+    renderWord(root);
+    syncKeyboardState(root);
+
+    if (isWordComplete()) endRound(root, true);
+    else if (wrong >= MAX_WRONG) endRound(root, false);
+  }
+
+  function startRound(root: HTMLElement) {
+    target = pickWord(pool, target?.term);
+    guessed = new Set();
+    wrong = 0;
+
+    const resultEl = root.querySelector<HTMLElement>('[data-hangman-result]');
+    const speakBtn = root.querySelector<HTMLButtonElement>('[data-hangman-speak]');
+    const clueEl = root.querySelector<HTMLElement>('[data-hangman-clue]');
+    if (resultEl) resultEl.hidden = true;
+    if (speakBtn) speakBtn.hidden = true;
+    if (clueEl && target) clueEl.textContent = fill(strings.pista, { x: target.translation });
+
+    renderLives(root);
+    renderWord(root);
+    renderKeyboard(root);
+    syncKeyboardState(root);
+  }
+
+  function initHangman() {
+    const root = document.querySelector<HTMLElement>('[data-hangman]');
+    const emptyState = document.querySelector<HTMLElement>('[data-hangman-empty]');
+    if (!root) return;
+    if (root.dataset.initialized) return;
+    root.dataset.initialized = 'true';
+
+    pool = readVocabPool();
+    if (pool.length === 0) {
+      if (emptyState) emptyState.hidden = false;
+      return;
+    }
+    alphabet = buildAlphabet(pool);
+    root.hidden = false;
+
+    root
+      .querySelector<HTMLButtonElement>('[data-hangman-again]')
+      ?.addEventListener('click', () => startRound(root));
+    root
+      .querySelector<HTMLButtonElement>('[data-hangman-speak]')
+      ?.addEventListener('click', (e) => {
+        const btn = e.currentTarget as HTMLButtonElement;
+        speak(btn.dataset.speakText ?? '', root.dataset.lang ?? '');
+      });
+
+    startRound(root);
+
+    // Atajo de teclado: escribir la letra en el teclado físico equivale a
+    // clickear el botón correspondiente. Enganchado una sola vez por sesión
+    // (no una vez por visita a esta página bajo navegación SPA) — busca el
+    // tablero vigente en cada pulsación en vez de cerrar sobre el nodo de
+    // una visita anterior, así nunca se acumulan listeners duplicados que
+    // contarían una misma tecla varias veces.
+    if (!hangmanKeyboardStarted) {
+      hangmanKeyboardStarted = true;
+      document.addEventListener('keydown', (e) => {
+        const letter = e.key.toLowerCase();
+        if (letter.length !== 1 || !alphabet.includes(letter)) return;
+        const liveRoot = document.querySelector<HTMLElement>('[data-hangman]');
+        if (!liveRoot || liveRoot.hidden) return;
+        guessLetter(liveRoot, letter);
+      });
+    }
+  }
+
+  initHangman();
+  document.addEventListener('astro:page-load', initHangman);
+</script>
+
+<style>
+  .hangman-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .desc {
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .hangman-body {
+    max-width: 680px;
+    padding-block: 0 4rem;
+  }
+
+  .hangman-game {
+    padding: 1.75rem;
+    text-align: center;
+  }
+
+  .hangman-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hangman-lives {
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+  }
+
+  .hangman-clue {
+    color: var(--text-muted);
+    margin: 0 0 1rem;
+  }
+
+  .hangman-word {
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    margin: 0 0 1.5rem;
+    word-break: break-word;
+  }
+
+  .hangman-keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+  }
+
+  /* Las teclas se crean con document.createElement en JS a partir del
+     alfabeto calculado en runtime — nunca reciben el atributo de scoping de
+     Astro, así que hace falta :global() para que este CSS las alcance. */
+  .hangman-keyboard :global(.hangman-key) {
+    min-width: 2.4rem;
+    min-height: 2.4rem;
+    padding: 0.4rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  .hangman-keyboard :global(.hangman-key:hover:not(:disabled)) {
+    border-color: var(--accent);
+  }
+
+  .hangman-keyboard :global(.hangman-key:disabled) {
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  .hangman-keyboard :global(.hangman-key.correct) {
+    border-color: #2f9e6e;
+    background: rgba(47, 158, 110, 0.15);
+    opacity: 1;
+  }
+
+  .hangman-keyboard :global(.hangman-key.incorrect) {
+    border-color: var(--de-red);
+    background: rgba(216, 0, 39, 0.12);
+    opacity: 1;
+  }
+
+  .hangman-result {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .hangman-result p {
+    margin: 0 0 1rem;
+    font-weight: 600;
+  }
+</style>

@@ -20,7 +20,9 @@ Producción: https://polylingua.thyronemiguelvegasantana-c6e.workers.dev
 ```
 
 src/pages/[userLang]/[targetLang]/[level]/[slug].astro  → el silo principal
-src/pages/idiomas/[lang]/...  → herramientas por idioma (generador, recursos...)
+src/pages/[userLang]/[targetLang]/<herramienta>.astro  → herramientas por curso
+src/pages/[userLang]/<herramienta>.astro  → selector "¿en qué idioma?"
+src/pages/idiomas/[lang]/...  → SOLO redirecciones 301 legacy al silo
 src/layouts/        → layouts reutilizables con <head>, meta tags, header/footer
 src/components/     → componentes .astro (tarjetas, quiz, nav...)
 src/content/lessons/<userLang>-<targetLang>/<nivel>/<slug>.md  → lecciones
@@ -32,6 +34,32 @@ src/styles/         → CSS global puro
 public/             → assets estáticos (favicons, og-image, robots.txt)
 astro.config.mjs    → config principal + filtros del sitemap
 ```
+
+### Las herramientas también están siloadas
+
+Vocabulario, repasar, práctica libre, ahorcado, diario, gramática, mis
+errores, escuchar y repetir y situaciones viven **dentro** del silo:
+`/<userLang>/<targetLang>/<herramienta>`, con su selector de idioma en
+`/<userLang>/<herramienta>`. Estaban en `/idiomas/<targetLang>/...`, fuera
+del eje userLang, así que solo podían existir en un idioma — un usuario con
+la interfaz en alemán tocaba "Wiederholen" y caía en una página en español.
+Sus textos salen de `dict.tools` (`src/i18n/dictionary.ts`); el JS de cliente
+los recibe por `[data-page-strings]` (ver `src/lib/pageStrings.ts`), porque
+un `<script define:vars>` no soporta `import`.
+
+Tres quedan solo en el silo español: **diálogos, generador de frases y
+recursos**. Su contenido guarda la traducción en un único idioma (el campo
+`es` de `src/content/dialogos`, el `glossEs` de `src/data/matrices.ts`, la
+nota de `src/data/resources.ts`) y no tiene eje userLang. El filtro es
+`SPANISH_GLOSS_USER_LANG` en `src/lib/courses.ts`: cuando ese contenido se
+siloe, se borra y pasan a generarse como las demás.
+
+`src/lib/courses.ts` es el único lugar que sabe qué cursos existen — los
+deriva de las carpetas de `src/content/lessons/`, así que un curso nuevo
+entra solo. Úsalo (`getCourseStaticPaths`, `getTargetLangsFor`,
+`getCourseLessons`) en vez de recorrer `LANGUAGES`: no todos los pares
+existen (no hay `es-es` ni `de-de`) y filtrar solo por el campo `language`
+mezcla cursos distintos que enseñan el mismo idioma.
 
 ## Frontmatter obligatorio en cada lección
 
@@ -76,7 +104,7 @@ Desde la arquitectura SILO el sitio tiene **dos** ejes de idioma, y
 confundirlos es la fuente de errores más común:
 
 - **`userLang` (interfaz)**: en qué idioma está escrita la explicación.
-  Definido en `src/data/userLanguages.ts`. **Hoy solo `es` está activo.**
+  Definido en `src/data/userLanguages.ts`. **Hoy están activos `es` y `de`.**
 - **`targetLang` (meta)**: qué idioma se enseña. Definido en
   `src/data/languages.ts`. Son 6: `de`, `en`, `es`, `fr`, `it`, `pt`.
 
@@ -88,36 +116,38 @@ está en el frontmatter, se infiere del nombre de la carpeta vía
 
 ### Los 11 cursos que existen
 
-| Curso   | Interfaz | Enseña    | Estado                     |
-| ------- | -------- | --------- | -------------------------- |
-| `es-de` | Español  | Alemán    | Visible                    |
-| `es-en` | Español  | Inglés    | Visible                    |
-| `es-fr` | Español  | Francés   | Visible                    |
-| `es-it` | Español  | Italiano  | Visible                    |
-| `es-pt` | Español  | Portugués | Visible                    |
-| `en-de` | Inglés   | Alemán    | Publicado pero **oculto**  |
-| `de-en` | Alemán   | Inglés    | Publicado pero **oculto**  |
-| `de-es` | Alemán   | Español   | Publicado pero **oculto**  |
-| `de-fr` | Alemán   | Francés   | Publicado pero **oculto**  |
-| `de-it` | Alemán   | Italiano  | Publicado pero **oculto**  |
-| `de-pt` | Alemán   | Portugués | Publicado pero **oculto**  |
+| Curso   | Interfaz | Enseña    | Estado                    |
+| ------- | -------- | --------- | ------------------------- |
+| `es-de` | Español  | Alemán    | Visible                   |
+| `es-en` | Español  | Inglés    | Visible                   |
+| `es-fr` | Español  | Francés   | Visible                   |
+| `es-it` | Español  | Italiano  | Visible                   |
+| `es-pt` | Español  | Portugués | Visible                   |
+| `de-en` | Alemán   | Inglés    | Visible                   |
+| `de-es` | Alemán   | Español   | Visible                   |
+| `de-fr` | Alemán   | Francés   | Visible                   |
+| `de-it` | Alemán   | Italiano  | Visible                   |
+| `de-pt` | Alemán   | Portugués | Visible                   |
+| `en-de` | Inglés   | Alemán    | Publicado pero **oculto** |
 
 ### Por qué hay cursos ocultos
 
-`de` y `en` están en `active: false` en `userLanguages.ts` porque la
-interfaz (menús, botones, textos) sigue **solo en español**. Activarlos
-sin traducirla mostraría lecciones en alemán dentro de una cáscara en
-español.
+`en` sigue en `active: false` en `userLanguages.ts` porque no tiene
+diccionario de interfaz en `src/i18n/dictionary.ts`: activarlo mostraría
+lecciones en inglés dentro de una cáscara en español. `de` ya lo tiene (con
+las herramientas incluidas), así que está activo.
 
-Mientras sigan inactivos, esas ~500 páginas:
+Mientras un idioma siga inactivo, sus páginas:
 
 - se generan y son accesibles por URL directa,
 - no aparecen en `LanguageSelector` (sale "Próximamente"),
 - **no entran al sitemap** — el filtro en `astro.config.mjs` se deriva de
   `USER_LANGUAGES`, así que al poner `active: true` vuelven solas.
 
-Para activar un idioma de interfaz: traducir la UI primero, después
-cambiar el flag. No al revés.
+Para activar un idioma de interfaz: escribir su diccionario completo en
+`src/i18n/dictionary.ts` (el tipo `Dictionary` no admite claves parciales,
+así que si falta una el build falla) y recién después cambiar el flag. No al
+revés.
 
 ## Comandos
 

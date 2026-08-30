@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { LEVELS, LEVEL_MAP } from '../src/data/levels';
 import { LANGUAGES, LANGUAGE_MAP } from '../src/data/languages';
 import { UNITS } from '../src/data/units';
@@ -102,6 +104,39 @@ describe('units', () => {
       }
     }
   });
+
+  // La página de nivel agrupa las lecciones por unidad. Una lección sin `unit`,
+  // o con un `unit` que no está definido acá, no cae en ningún grupo: llegó a
+  // haber 15 así, invisibles en su nivel (solo accesibles por URL directa).
+  // La página ya no las pierde —las manda a un grupo final—, pero eso es la red
+  // de seguridad; lo correcto es que ninguna lección quede suelta.
+  it('every lesson belongs to a unit that exists for its level', () => {
+    const lessonsDir = join(import.meta.dirname, '..', 'src', 'content', 'lessons');
+    const huerfanas: string[] = [];
+
+    for (const course of readdirSync(lessonsDir)) {
+      if (!/^[a-z]{2}-[a-z]{2}$/.test(course)) continue;
+      const targetLang = course.split('-')[1];
+
+      for (const level of readdirSync(join(lessonsDir, course))) {
+        const units = UNITS[`${targetLang}-${level}`];
+        // Sin entrada en UNITS la página cae a lista plana y no pierde nada.
+        if (!units) continue;
+        const ids = new Set(units.map((u) => u.id));
+
+        for (const file of readdirSync(join(lessonsDir, course, level))) {
+          if (!file.endsWith('.md')) continue;
+          const raw = readFileSync(join(lessonsDir, course, level, file), 'utf-8');
+          const match = raw.match(/^unit:\s*(\d+)\s*$/m);
+          if (!match || !ids.has(Number(match[1]))) {
+            huerfanas.push(`${course}/${level}/${file} (unit: ${match?.[1] ?? 'ausente'})`);
+          }
+        }
+      }
+    }
+
+    expect(huerfanas, `lecciones sin unidad válida:\n${huerfanas.join('\n')}`).toEqual([]);
+  });
 });
 
 describe('resources', () => {
@@ -111,10 +146,9 @@ describe('resources', () => {
   it('has resources for every language', () => {
     for (const lang of langIds) {
       expect(RESOURCES[lang as keyof typeof RESOURCES], `missing ${lang}`).toBeDefined();
-      expect(
-        RESOURCES[lang as keyof typeof RESOURCES]!.length,
-        `${lang} is empty`,
-      ).toBeGreaterThan(0);
+      expect(RESOURCES[lang as keyof typeof RESOURCES]!.length, `${lang} is empty`).toBeGreaterThan(
+        0,
+      );
     }
   });
 

@@ -135,6 +135,8 @@ export interface Dictionary {
     examenNivel: string;
     examenDesc: string;
     bloqueado: string;
+    completado: string;
+    irAlExamen: string;
     leccion: string;
     lecciones: string;
   };
@@ -519,6 +521,8 @@ export const es: Dictionary = {
     examenDesc:
       'Combina todo lo que aprendiste en {nivel} — apruébalo para desbloquear el siguiente nivel.',
     bloqueado: '🔒 Bloqueado',
+    completado: '✓ Completado',
+    irAlExamen: 'Ir al examen →',
     leccion: 'lección',
     lecciones: 'lecciones',
   },

@@ -5,7 +5,7 @@ import { LANGUAGE_MAP } from '../../../../data/languages';
 import { parseLessonId } from '../../../../lib/lessonPath';
 import { getDictionary } from '../../../../i18n';
 import { getCollection } from 'astro:content';
-import { UNITS } from '../../../../data/units';
+import { UNITS, type UnitMeta } from '../../../../data/units';
 import { TSA } from '../../../../data/tsa';
 
 export async function getStaticPaths() {
@@ -40,6 +40,30 @@ const lessons = allLessons
 
 const unitMetas = UNITS[`${targetLang}-${level}`] ?? null;
 const tsaEntry = TSA[`${targetLang}-${level}`] ?? null;
+
+// Agrupar por unidad, sin perder ninguna lección por el camino.
+//
+// Antes esto era `unitMetas.map(u => lessons.filter(l => l.data.unit === u.id))`
+// a secas, y una lección sin `unit` —o con un `unit` que no existe en
+// src/data/units.ts— no entraba en ningún grupo y desaparecía de la página en
+// silencio: seguía en el sitemap y accesible por URL directa, pero nadie
+// podía llegar a ella navegando. Había 15 así. Ahora las que sobran caen en
+// un grupo final, de modo que un error de frontmatter se ve en pantalla en
+// vez de esconder contenido.
+const unitGroups: { unit: UnitMeta | null; items: typeof lessons }[] = (() => {
+  if (!unitMetas) return [{ unit: null, items: lessons }];
+  const grouped = unitMetas
+    .map((unit) => ({ unit, items: lessons.filter((l) => l.data.unit === unit.id) }))
+    .filter((g) => g.items.length > 0);
+  const agrupadas = new Set(grouped.flatMap((g) => g.items.map((l) => l.id)));
+  const sueltas = lessons.filter((l) => !agrupadas.has(l.id));
+  return sueltas.length > 0 ? [...grouped, { unit: null, items: sueltas }] : grouped;
+})();
+
+// El número de cada nodo del camino es su posición tal como se ve, no su
+// posición en `lessons`: agrupar por unidad puede reordenar, y numerar por la
+// lista sin agrupar dejaba saltos (…7, 8, 10, 11, 9…).
+const pathOrder = unitGroups.flatMap((g) => g.items);
 
 const siteURL = Astro.site!.origin;
 const structuredData = {
@@ -76,136 +100,124 @@ const structuredData = {
     ],
   }}
 >
-  <section class="container level-head" style={`--accent-c:${levelMeta.color}`}>
-    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${targetLang}`}>{languageMeta.flag} {languageName}</a>
-      <span aria-hidden="true">/</span>
-      <span>{levelName}</span>
-    </nav>
-    <span class="emoji" aria-hidden="true">{levelMeta.emoji}</span>
-    <h1>{languageName} — {levelName}</h1>
-    <p class="tagline">{dict.levelTaglines[level as keyof typeof dict.levelTaglines]}</p>
-    <p class="desc">{dict.levelDescriptions[level as keyof typeof dict.levelDescriptions]}</p>
-  </section>
+  <div class="container silo-layout">
+    <aside class="silo-aside" style={`--accent-c:${levelMeta.color}`}>
+      <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+        <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
+        <span aria-hidden="true">/</span>
+        <a href={`/${userLang}/${targetLang}`}>{languageMeta.flag} {languageName}</a>
+        <span aria-hidden="true">/</span>
+        <span>{levelName}</span>
+      </nav>
 
-  <section class="container lessons">
-    {
-      lessons.length === 0 && (
-        <p class="empty">{dict.silo.nivelVacio}</p>
-      )
-    }
+      <h1 class="level-title">
+        <span class="lt-lang">{languageName}</span>
+        <span class="lt-level">
+          <span class="lt-emoji" aria-hidden="true">{levelMeta.emoji}</span>{levelName}
+        </span>
+      </h1>
+      <p class="tagline">{dict.levelTaglines[level as keyof typeof dict.levelTaglines]}</p>
+      <p class="desc">{dict.levelDescriptions[level as keyof typeof dict.levelDescriptions]}</p>
 
-    {
-      unitMetas ? (
-        unitMetas.map((unit) => {
-          const unitLessons = lessons.filter((l) => l.data.unit === unit.id);
-          return (
-            unitLessons.length > 0 && (
-              <div class="unit-group">
-                <div class="unit-header">
-                  <span class="unit-emoji" aria-hidden="true">
-                    {unit.emoji}
-                  </span>
-                  <div>
-                    <h2 class="unit-name">
-                      Unidad {unit.id} — {unit.name}
-                    </h2>
-                    <p class="unit-desc">{unit.description}</p>
-                    <span
-                      class="unit-progress"
-                      data-unit-progress
-                      data-unit-slugs={unitLessons.map((l) => l.id.split('/').pop()).join(',')}
-                    />
-                  </div>
-                </div>
-                <ol class="lesson-list">
-                  {unitLessons.map((lesson) => {
-                    const gi = lessons.indexOf(lesson);
-                    return (
-                      <li>
-                        <a
-                          class="lesson-item card card-glow"
-                          data-lesson-item
-                          data-slug={lesson.id.split('/').pop()}
-                          href={`/${userLang}/${targetLang}/${level}/${lesson.id.split('/').pop()}`}
-                          style={`--accent-c:${levelMeta.color}`}
-                        >
-                          <span
-                            class="lesson-num"
-                            data-lesson-num
-                            style={`background:${levelMeta.color}`}
-                          >
-                            {gi + 1}
-                          </span>
-                          <div>
-                            <h2 class="underline-draw">{lesson.data.title}</h2>
-                            <p>{lesson.data.description}</p>
-                            <span class="lesson-meta">
-                              📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min
-                            </span>
-                          </div>
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </div>
-            )
-          );
-        })
-      ) : (
-        <ol class="lesson-list">
-          {lessons.map((lesson, i) => (
-            <li>
-              <a
-                class="lesson-item card card-glow"
-                data-lesson-item
-                data-slug={lesson.id.split('/').pop()}
-                href={`/${userLang}/${targetLang}/${level}/${lesson.id.split('/').pop()}`}
-                style={`--accent-c:${levelMeta.color}`}
-              >
-                <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>
-                  {i + 1}
-                </span>
-                <div>
-                  <h2 class="underline-draw">{lesson.data.title}</h2>
-                  <p>{lesson.data.description}</p>
-                  <span class="lesson-meta">
-                    📘 {lesson.data.grammarTopic} · ⏱️ {lesson.data.minutes} min
-                  </span>
-                </div>
-              </a>
-            </li>
-          ))}
-        </ol>
-      )
-    }
-
-    {
-      lessons.length > 0 && (
-        <ol class="lesson-list exam-list">
-          <li>
+      {
+        lessons.length > 0 && (
+          <div class="silo-progress" data-level-progress>
+            <div class="silo-track">
+              <span class="silo-fill" data-level-fill />
+            </div>
+            <p class="silo-progress-text" data-level-text />
             <a
-              class="lesson-item card card-glow exam-item"
-              data-exam-item
-              href={`/${userLang}/${targetLang}/${level}/examen`}
-              style={`--accent-c:${levelMeta.color}`}
+              class="btn btn-primary silo-cta"
+              data-continue-cta
+              href={`/${userLang}/${targetLang}/${level}`}
+              hidden
             >
-              <span class="lesson-num" data-lesson-num style={`background:${levelMeta.color}`}>
-                🏆
-              </span>
-              <div>
-                <h2 class="underline-draw">{dict.silo.examenNivel}</h2>
-                <p>{dict.silo.examenDesc.replace('{nivel}', levelName)}</p>
-              </div>
+              {dict.silo.continuar}
             </a>
-          </li>
-        </ol>
-      )
-    }
-  </section>
+          </div>
+        )
+      }
+    </aside>
+
+    <div class="level-path">
+      {lessons.length === 0 && <p class="empty">{dict.silo.nivelVacio}</p>}
+
+      {
+        unitGroups.map((group) => (
+          <section class="unit" style={`--accent-c:${levelMeta.color}`}>
+            {group.unit && (
+              <header class="unit-head">
+                <span class="unit-emoji" aria-hidden="true">
+                  {group.unit.emoji}
+                </span>
+                <div class="unit-titles">
+                  <h2 class="unit-name">
+                    Unidad {group.unit.id} — {group.unit.name}
+                  </h2>
+                  <p class="unit-desc">{group.unit.description}</p>
+                </div>
+                <span
+                  class="unit-count"
+                  data-unit-progress
+                  data-unit-slugs={group.items.map((l) => l.id.split('/').pop()).join(',')}
+                />
+                <div class="silo-track unit-track">
+                  <span class="silo-fill" data-unit-fill />
+                </div>
+              </header>
+            )}
+
+            <ol class="silo-path">
+              {group.items.map((lesson) => {
+                const slug = lesson.id.split('/').pop();
+                return (
+                  <li class="silo-item">
+                    <a
+                      class="silo-link"
+                      data-lesson-item
+                      data-slug={slug}
+                      href={`/${userLang}/${targetLang}/${level}/${slug}`}
+                    >
+                      <span class="silo-node" data-lesson-num aria-hidden="true">
+                        {pathOrder.indexOf(lesson) + 1}
+                      </span>
+                      <div class="silo-body">
+                        <h3 class="silo-title underline-draw">{lesson.data.title}</h3>
+                        <p class="silo-desc">{lesson.data.description}</p>
+                        <span class="silo-meta">
+                          <span class="silo-chip">{lesson.data.grammarTopic}</span>
+                          <span class="silo-chip chip-time">{lesson.data.minutes} min</span>
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                );
+              })}
+            </ol>
+          </section>
+        ))
+      }
+
+      {
+        lessons.length > 0 && (
+          <a
+            class="exam-milestone"
+            data-exam-item
+            href={`/${userLang}/${targetLang}/${level}/examen`}
+            style={`--accent-c:${levelMeta.color}`}
+          >
+            <span class="silo-node exam-node" data-lesson-num aria-hidden="true">
+              🏆
+            </span>
+            <div class="silo-body">
+              <h2 class="silo-title underline-draw">{dict.silo.examenNivel}</h2>
+              <p class="silo-desc">{dict.silo.examenDesc.replace('{nivel}', levelName)}</p>
+            </div>
+          </a>
+        )
+      }
+    </div>
+  </div>
 
   {
     tsaEntry && (
@@ -239,7 +251,17 @@ const structuredData = {
   }
 </BaseLayout>
 
-<script define:vars={{ targetLang, level, slugs: lessons.map((l) => l.id.split('/').pop()) }}>
+<script
+  define:vars={{
+    userLang,
+    targetLang,
+    level,
+    continuarLabel: dict.silo.continuar,
+    empezarLabel: dict.header.ctaStart,
+    leccionLabel: dict.silo.leccion,
+    leccionesLabel: dict.silo.lecciones,
+  }}
+>
   function read(key) {
     try {
       return localStorage.getItem(key);
@@ -267,17 +289,58 @@ const structuredData = {
   // navegación trae nodos DOM frescos (sin la clase locked, que solo la
   // agrega este script), así que reejecutarlo es seguro y no necesita guard.
   function initLevelIndex() {
-    document.querySelectorAll('[data-lesson-item]').forEach((el, i) => {
-      if (isLessonDone(slugs[i])) el.classList.add('done');
-      if (i === 0) return;
-      if (!isLessonDone(slugs[i - 1])) lockItem(el);
+    const items = Array.from(document.querySelectorAll('[data-lesson-item]'));
+    // El orden sale del DOM, no de una lista inyectada desde el frontmatter.
+    // Es la misma lista, pero agrupar por unidad puede reordenar o (si el
+    // frontmatter tiene un `unit` raro) dejar afuera alguna lección: con una
+    // lista aparte, el índice i apuntaba a otra lección y el candado se le
+    // ponía a la equivocada. Leyendo data-slug eso no puede desalinearse.
+    const slugs = items.map((el) => el.dataset.slug);
+    let firstPending = -1;
+
+    items.forEach((el, i) => {
+      const num = el.querySelector('[data-lesson-num]');
+      if (isLessonDone(slugs[i])) {
+        el.classList.add('done');
+        // El número deja paso al tilde: en un camino, lo que importa de una
+        // lección terminada es que está hecha, no en qué posición iba.
+        if (num) num.textContent = '\u2713';
+      } else if (i > 0 && !isLessonDone(slugs[i - 1])) {
+        lockItem(el);
+      } else if (firstPending === -1) {
+        // La primera sin hacer y desbloqueada es "dónde estás": es la única
+        // que se levanta del camino como tarjeta.
+        firstPending = i;
+        el.classList.add('current');
+      }
     });
+
+    // Progreso del nivel entero, en la columna lateral.
+    const done = slugs.filter(isLessonDone).length;
+    const fill = document.querySelector('[data-level-fill]');
+    const text = document.querySelector('[data-level-text]');
+    const pct = slugs.length ? Math.round((done / slugs.length) * 100) : 0;
+    if (fill) fill.style.width = pct + '%';
+    const unidad = slugs.length === 1 ? leccionLabel : leccionesLabel;
+    if (text) text.textContent = done + '/' + slugs.length + ' ' + unidad + ' · ' + pct + '%';
+
+    // El CTA lleva a donde te quedaste, no siempre a la primera lección.
+    const cta = document.querySelector('[data-continue-cta]');
+    if (cta && slugs.length) {
+      const target = firstPending === -1 ? slugs[slugs.length - 1] : slugs[firstPending];
+      cta.href = '/' + userLang + '/' + targetLang + '/' + level + '/' + target;
+      cta.textContent = done === 0 ? empezarLabel : continuarLabel;
+      cta.hidden = false;
+    }
 
     document.querySelectorAll('[data-unit-progress]').forEach((el) => {
       var uSlugs = (el.dataset.unitSlugs || '').split(',').filter(Boolean);
-      var done = uSlugs.filter(isLessonDone).length;
-      el.textContent = done + '/' + uSlugs.length;
-      if (done === uSlugs.length && uSlugs.length > 0) el.classList.add('complete');
+      var uDone = uSlugs.filter(isLessonDone).length;
+      el.textContent = uDone + '/' + uSlugs.length;
+      if (uDone === uSlugs.length && uSlugs.length > 0) el.classList.add('complete');
+      var head = el.closest('.unit-head');
+      var bar = head && head.querySelector('[data-unit-fill]');
+      if (bar) bar.style.width = (uSlugs.length ? (uDone / uSlugs.length) * 100 : 0) + '%';
     });
 
     const examItem = document.querySelector('[data-exam-item]');
@@ -298,127 +361,81 @@ const structuredData = {
 </script>
 
 <style>
-  .level-head {
-    padding-block: 2.5rem 2rem;
-    max-width: 640px;
+  /* Las primitivas del camino (.silo-layout, .silo-path, .silo-node, la barra
+     de progreso y los estados hecho/actual/bloqueado) viven en
+     src/styles/global.css: las comparte con la página de curso. Acá queda
+     solo lo propio de la página de nivel. */
+
+  /* El h1 lleva idioma y nivel (los dos importan para SEO), pero en dos
+     renglones propios: en una sola línea, "Alemán — A1 · Principiante" se
+     partía por cualquier lado y el "·" quedaba huérfano al inicio del
+     segundo renglón. */
+  .level-title {
+    margin: 1rem 0 0.5rem;
   }
 
-  .emoji {
-    font-size: 2rem;
+  .lt-lang {
+    display: block;
+    font-size: clamp(1.7rem, 3.4vw, 2.2rem);
+    line-height: 1.1;
   }
 
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.4rem;
+  .lt-level {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.45rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent-c);
+  }
+
+  .lt-emoji {
+    font-size: 1.2rem;
   }
 
   .tagline {
-    color: var(--accent-c);
-    font-weight: 700;
-    margin: 0 0 0.6rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
   }
 
   .desc {
     color: var(--text-muted);
     margin: 0;
-  }
-
-  .lessons {
-    padding-block: 1rem 4rem;
-  }
-
-  .lesson-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 1rem;
-  }
-
-  .lesson-item {
-    display: flex;
-    gap: 1.1rem;
-    padding: 1.25rem 1.4rem;
-    text-decoration: none;
-    color: var(--text);
-    align-items: flex-start;
-    transition: transform 0.15s ease;
-  }
-
-  .lesson-item:hover {
-    transform: translateX(4px);
-  }
-
-  .lesson-num {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-weight: 800;
-    color: #14161c;
-    font-size: 0.9rem;
-  }
-
-  .lesson-item h2 {
-    margin: 0 0 0.3rem;
-    font-size: 1.1rem;
-  }
-
-  .lesson-item p {
-    margin: 0 0 0.5rem;
-    color: var(--text-muted);
-    font-size: 0.93rem;
-  }
-
-  .lesson-meta {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-weight: 600;
+    font-size: 0.94rem;
+    line-height: 1.55;
   }
 
   .empty {
     color: var(--text-muted);
   }
 
-  .exam-item {
-    border-color: var(--accent);
+  /* ── Cabecera de unidad ─────────────────────────────────────────────── */
+  .unit + .unit {
+    margin-top: 2.5rem;
   }
 
-  .unit-group {
-    margin-bottom: 2rem;
-  }
-
-  .unit-header {
-    display: flex;
+  .unit-head {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
-    background: var(--surface, #f3f4f6);
-  }
-
-  :root[data-theme='dark'] .unit-header,
-  :root:not([data-theme='light']) .unit-header {
-    background: var(--surface, #1e1e2e);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) .unit-header {
-      background: var(--surface, #1e1e2e);
-    }
+    gap: 0.5rem 0.85rem;
+    margin-bottom: 1.25rem;
   }
 
   .unit-emoji {
     font-size: 1.5rem;
-    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .unit-titles {
+    min-width: 0;
   }
 
   .unit-name {
     margin: 0;
     font-size: 1.05rem;
+    letter-spacing: -0.01em;
   }
 
   .unit-desc {
@@ -427,40 +444,86 @@ const structuredData = {
     color: var(--text-muted);
   }
 
-  .unit-progress {
-    font-size: 0.8rem;
-    font-weight: 600;
+  .unit-count {
+    font-size: 0.78rem;
+    font-weight: 700;
     color: var(--text-muted);
+    white-space: nowrap;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
   }
 
-  .unit-progress.complete {
+  .unit-count.complete {
     color: #22c55e;
+    border-color: color-mix(in srgb, #22c55e 45%, transparent);
   }
 
-  .exam-list {
-    margin-top: 1rem;
+  .unit-track {
+    grid-column: 1 / -1;
   }
 
-  .lesson-item.done .lesson-num {
-    background: #22c55e !important;
-    color: #fff;
+  .chip-time::before {
+    content: '⏱ ';
   }
 
-  .locked {
-    opacity: 0.5;
+  /* ── Meta final del nivel: el examen ────────────────────────────────── */
+  .exam-milestone {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1.15rem 1.15rem 1.15rem 0.9rem;
+    text-decoration: none;
+    color: var(--text);
+    background: color-mix(in srgb, var(--accent-c, var(--accent)) 8%, var(--bg-card));
+    border: 1px solid color-mix(in srgb, var(--accent-c, var(--accent)) 45%, var(--border));
+    border-radius: var(--radius);
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .exam-milestone:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .exam-milestone:hover .underline-draw {
+    background-size: 100% 2px;
+  }
+
+  .exam-node {
+    background: transparent;
+    border-color: color-mix(in srgb, var(--accent-c, var(--accent)) 45%, var(--border));
+    font-size: 1.15rem;
+  }
+
+  .exam-milestone .silo-title {
+    font-size: 1.08rem;
+  }
+
+  .exam-milestone .silo-desc {
+    margin-bottom: 0;
+  }
+
+  .exam-milestone.locked {
     cursor: default;
+    opacity: 0.45;
   }
 
-  .locked:hover {
+  .exam-milestone.locked:hover {
     transform: none;
     box-shadow: none;
   }
 
-  .locked:hover::before {
-    opacity: 0;
+  .exam-milestone.locked:hover .underline-draw {
+    background-size: 0 2px;
   }
 
-  .locked:hover .underline-draw {
-    background-size: 0 2px;
+  .exam-milestone.done .exam-node {
+    background: #22c55e;
+    border-color: #22c55e;
   }
 </style>

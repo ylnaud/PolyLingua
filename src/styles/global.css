@@ -41,8 +41,7 @@
   --bottom-nav-gap: env(safe-area-inset-bottom, 0px);
   --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   --shadow-card-hover: 0 3px 8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  --font-sans:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-heading: 'Poppins', var(--font-sans);
   color-scheme: dark;
 }
@@ -434,10 +433,7 @@ a {
 .underline-draw {
   display: inline-block;
   padding-bottom: 2px;
-  background-image: linear-gradient(
-    var(--accent-c, var(--accent)),
-    var(--accent-c, var(--accent))
-  );
+  background-image: linear-gradient(var(--accent-c, var(--accent)), var(--accent-c, var(--accent)));
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 0% 2px;
@@ -679,4 +675,231 @@ blockquote {
     font-size: 0.8em;
     color: #555;
   }
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   El camino del silo
+   ────────────────────────────────────────────────────────────────────────
+   Lenguaje visual compartido por las dos páginas índice del silo: la de
+   curso (/es/de, los 6 niveles) y la de nivel (/es/de/a1, las lecciones).
+   Las dos cuentan la misma historia —dónde estás, cuánto llevás, qué sigue—
+   así que se ven igual: una columna lateral fija con la identidad y el
+   progreso, y a la derecha los pasos colgando de un hilo vertical.
+
+   Vive acá y no en cada página porque estaba duplicado: se escribió para la
+   página de nivel y la de curso lo necesitaba entero. Lo específico de cada
+   una (cabeceras de unidad, hito del examen, tarjetas de nivel) sigue en sus
+   estilos scoped.
+
+   Cada página define --accent-c (color del nivel o del idioma); si falta, se
+   cae al acento del sitio.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.silo-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+  padding-block: 2.25rem 4rem;
+}
+
+@media (min-width: 960px) {
+  .silo-layout {
+    grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
+    gap: 3.5rem;
+  }
+
+  .silo-aside {
+    position: sticky;
+    /* Debajo del header sticky, que mide ~4rem. */
+    top: 5rem;
+  }
+}
+
+/* ── Barra de progreso ────────────────────────────────────────────────── */
+.silo-track {
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-muted) 22%, transparent);
+  overflow: hidden;
+}
+
+.silo-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: var(--accent-c, var(--accent));
+  transition: width 0.4s ease;
+}
+
+/* El bloque de progreso de la lateral: barra + texto + CTA. */
+.silo-progress {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.silo-progress-text {
+  margin: 0.5rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.silo-cta {
+  display: inline-flex;
+  margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+}
+
+/* ── El camino ────────────────────────────────────────────────────────── */
+.silo-path {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.silo-item {
+  position: relative;
+}
+
+/* El hilo va del centro de este nodo al centro del siguiente (de ahí el
+   bottom negativo: se mete en el <li> de abajo). Se dibuja con un
+   pseudo-elemento y no con un borde para poder cortarlo en el último item
+   sin que sobre línea al final del grupo. El nodo tiene fondo opaco, así que
+   la parte del hilo que le pasa por detrás no se ve. */
+.silo-item::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: calc(0.85rem + 20px);
+  bottom: calc(-0.85rem - 20px);
+  width: 2px;
+  background: var(--border);
+}
+
+.silo-item:last-child::before {
+  display: none;
+}
+
+.silo-link {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 0.85rem 0.9rem 0.85rem 0;
+  text-decoration: none;
+  color: var(--text);
+  /* Borde transparente siempre presente: así, cuando .current lo pinta, el
+     contenido no se corre 1px respecto al resto del camino. */
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.silo-link:hover {
+  background: color-mix(in srgb, var(--accent-c, var(--accent)) 7%, transparent);
+  transform: translateX(3px);
+}
+
+.silo-link:hover .underline-draw {
+  background-size: 100% 2px;
+}
+
+/* El nodo del camino. Fondo opaco para tapar el hilo que pasa por detrás. */
+.silo-node {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  border: 2px solid var(--border);
+}
+
+.silo-body {
+  display: block;
+  min-width: 0;
+  padding-top: 0.15rem;
+}
+
+.silo-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.silo-desc {
+  margin: 0 0 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.silo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.silo-chip {
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  white-space: nowrap;
+}
+
+/* ── Estados: hecho / actual / bloqueado ──────────────────────────────── */
+.silo-link.done .silo-node {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: #fff;
+}
+
+.silo-link.done .silo-title,
+.silo-link.done .silo-desc {
+  color: var(--text-muted);
+}
+
+/* "Dónde estás": el único paso que se levanta del camino como tarjeta, para
+   que la vista tenga un solo punto de entrada obvio. */
+.silo-link.current {
+  background: var(--bg-card);
+  border-color: color-mix(in srgb, var(--accent-c, var(--accent)) 55%, var(--border));
+  box-shadow: var(--shadow-card);
+  /* El margen negativo compensa el padding: la tarjeta se extiende hacia la
+     izquierda sin mover el nodo, que tiene que seguir sobre el hilo. */
+  margin-left: -0.9rem;
+  padding-left: 0.9rem;
+}
+
+.silo-link.current .silo-node {
+  background: var(--accent-c, var(--accent));
+  border-color: var(--accent-c, var(--accent));
+  color: var(--de-black);
+}
+
+.silo-link.locked {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.silo-link.locked:hover {
+  background: none;
+  transform: none;
+}
+
+.silo-link.locked:hover .underline-draw {
+  background-size: 0 2px;
 }

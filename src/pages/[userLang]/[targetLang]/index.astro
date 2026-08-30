@@ -44,10 +44,6 @@ const sameSilo = (l: (typeof allLessons)[number], lvlId: string) =>
   l.data.level === lvlId &&
   parseLessonId(l.id).userLang === userLang;
 
-const lessonCounts = Object.fromEntries(
-  LEVELS.map((lvl) => [lvl.id, allLessons.filter((l) => sameSilo(l, lvl.id)).length]),
-);
-
 const levelLessonSlugs: Record<string, string[]> = {};
 for (const lvl of LEVELS) {
   levelLessonSlugs[lvl.id] = allLessons
@@ -55,6 +51,8 @@ for (const lvl of LEVELS) {
     .sort((a, b) => a.data.order - b.data.order)
     .map((l) => l.id.split('/').pop()!);
 }
+
+const totalLessons = LEVELS.reduce((n, lvl) => n + levelLessonSlugs[lvl.id].length, 0);
 
 const firstLessonSlug = levelLessonSlugs['a1']?.[0];
 const defaultContinueHref = firstLessonSlug
@@ -89,77 +87,95 @@ const structuredData = {
     ],
   }}
 >
-  <section class="container lang-head" style={`--accent-c:${languageMeta.color}`}>
-    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-      <a href={`/${userLang}`}>{t.idiomas}</a>
-      <span aria-hidden="true">/</span>
-      <span>{languageName}</span>
-    </nav>
-    <span class="flag" aria-hidden="true">{languageMeta.flag}</span>
-    <h1>{languageName} <span class="native">· {languageMeta.nativeName}</span></h1>
-    <p class="tagline">{languageTagline}</p>
-    <p class="desc">{languageDescription}</p>
-  </section>
+  <div class="container silo-layout">
+    <aside class="silo-aside" style={`--accent-c:${languageMeta.color}`}>
+      <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+        <a href={`/${userLang}`}>{t.idiomas}</a>
+        <span aria-hidden="true">/</span>
+        <span>{languageName}</span>
+      </nav>
 
-  <section class="container dashboard" hidden data-dashboard>
-    <div class="dash-hero card">
-      <div class="dash-main">
-        <span class="dash-level" data-dash-level></span>
-        <div class="dash-progress-wrap">
-          <div class="dash-progress-bar">
-            <div class="dash-progress-fill" data-dash-fill></div>
+      <h1 class="lang-title">
+        <span class="lt-name">
+          <span class="lt-flag" aria-hidden="true">{languageMeta.flag}</span>{languageName}
+        </span>
+        <span class="lt-native">{languageMeta.nativeName}</span>
+      </h1>
+      <p class="tagline">{languageTagline}</p>
+      <p class="desc">{languageDescription}</p>
+
+      {
+        totalLessons > 0 && (
+          <div class="silo-progress">
+            <div class="silo-track">
+              <span class="silo-fill" data-course-fill />
+            </div>
+            <p class="silo-progress-text" data-course-text />
+            <a class="btn btn-primary silo-cta" data-course-cta href={defaultContinueHref}>
+              {t.continuar}
+            </a>
+
+            <div class="stats">
+              <div class="stat">
+                <span class="stat-num" data-stat-review>
+                  0
+                </span>
+                <span class="stat-label">{t.repaso}</span>
+              </div>
+              <a class="stat stat-link" href={`/${userLang}/${targetLang}/mis-errores`}>
+                <span class="stat-num" data-stat-errors>
+                  0
+                </span>
+                <span class="stat-label">{t.errores}</span>
+              </a>
+              <div class="stat">
+                <span class="stat-num" data-stat-streak>
+                  0
+                </span>
+                <span class="stat-label">{t.racha}</span>
+              </div>
+            </div>
           </div>
-          <span class="dash-progress-text" data-dash-progress></span>
-        </div>
-        <a class="btn btn-primary dash-continue" data-dash-continue href={defaultContinueHref}
-          >{t.continuar}</a
-        >
-      </div>
-      <div class="dash-stats">
-        <div class="dash-stat">
-          <span class="dash-stat-num" data-dash-review>0</span>
-          <span class="dash-stat-label">{t.repaso}</span>
-        </div>
-        <a class="dash-stat dash-stat-link" href={`/${userLang}/${targetLang}/mis-errores`}>
-          <span class="dash-stat-num" data-dash-errors>0</span>
-          <span class="dash-stat-label">{t.errores}</span>
-        </a>
-        <div class="dash-stat">
-          <span class="dash-stat-num" data-dash-streak>0</span>
-          <span class="dash-stat-label">{t.racha}</span>
-        </div>
-      </div>
+        )
+      }
+    </aside>
+
+    <div class="levels">
+      <ol class="silo-path">
+        {
+          LEVELS.map((level) => (
+            <li class="silo-item">
+              <a
+                class="silo-link"
+                data-level-item
+                data-level-id={level.id}
+                href={`/${userLang}/${targetLang}/${level.id}`}
+                style={`--accent-c:${level.color}`}
+              >
+                <span class="silo-node" data-level-node aria-hidden="true">
+                  {level.emoji}
+                </span>
+                <div class="silo-body">
+                  <h2 class="silo-title underline-draw">{dict.levelNames[level.id]}</h2>
+                  <p class="lvl-tagline">{dict.levelTaglines[level.id]}</p>
+                  <p class="silo-desc">{dict.levelDescriptions[level.id]}</p>
+                  <div class="silo-meta">
+                    <span class="lvl-track silo-track">
+                      <span class="silo-fill" data-level-fill />
+                    </span>
+                    <span class="silo-chip" data-level-badge>
+                      {levelLessonSlugs[level.id].length}{' '}
+                      {levelLessonSlugs[level.id].length === 1 ? t.leccion : t.lecciones}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
     </div>
-  </section>
-
-  <section class="container levels-grid">
-    {
-      LEVELS.map((level) => (
-        <a
-          class="level-item card"
-          data-level-item
-          data-level-id={level.id}
-          href={`/${userLang}/${targetLang}/${level.id}`}
-          style={`border-top-color:${level.color}`}
-        >
-          <div class="top">
-            <span class="emoji" aria-hidden="true">
-              {level.emoji}
-            </span>
-            <span class="badge" data-level-badge>
-              {lessonCounts[level.id] ?? 0}{' '}
-              {(lessonCounts[level.id] ?? 0) === 1 ? t.leccion : t.lecciones}
-            </span>
-          </div>
-          <h2>{dict.levelNames[level.id]}</h2>
-          <p class="lvl-tagline" style={`color:${level.color}`}>
-            {dict.levelTaglines[level.id]}
-          </p>
-          <p class="lvl-desc">{dict.levelDescriptions[level.id]}</p>
-        </a>
-      ))
-    }
-  </section>
+  </div>
 
   <section class="container explore-more">
     <span class="eyebrow">{t.explorarMas}</span>
@@ -251,10 +267,14 @@ const structuredData = {
   define:vars={{
     userLang,
     targetLang,
-    levelIds: LEVELS.map((l) => l.id),
     levelLessonSlugs,
+    totalLessons,
     txtLecciones: t.lecciones,
     txtBloqueado: t.bloqueado,
+    txtCompletado: t.completado,
+    txtIrAlExamen: t.irAlExamen,
+    txtContinuar: t.continuar,
+    txtEmpezar: dict.header.ctaStart,
   }}
 >
   function read(key) {
@@ -273,6 +293,15 @@ const structuredData = {
     return !!read('polylingua-lesson-done-' + targetLang + '-' + lvl + '-' + slug);
   }
 
+  function doneIn(lvl) {
+    var slugs = levelLessonSlugs[lvl] || [];
+    var n = 0;
+    for (var i = 0; i < slugs.length; i++) {
+      if (isLessonDone(lvl, slugs[i])) n++;
+    }
+    return n;
+  }
+
   function todayStr() {
     var d = new Date();
     return (
@@ -284,93 +313,117 @@ const structuredData = {
     );
   }
 
-  function initLangIndex() {
-    document.querySelectorAll('[data-level-item]').forEach(function (el, i) {
-      var lvl = levelIds[i];
-      var lvlSlugs = levelLessonSlugs[lvl] || [];
-      var done = 0;
-      for (var s = 0; s < lvlSlugs.length; s++) {
-        if (isLessonDone(lvl, lvlSlugs[s])) done++;
-      }
+  function lockItem(el, badge) {
+    el.classList.add('locked');
+    el.setAttribute('aria-disabled', 'true');
+    el.setAttribute('data-astro-prefetch', 'false');
+    if (badge) badge.textContent = txtBloqueado;
+    var node = el.querySelector('[data-level-node]');
+    if (node) node.textContent = '🔒';
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+    });
+  }
+
+  // Sin envolver en initX()+astro:page-load esto solo correría en la carga
+  // completa: bajo navegación SPA (<ClientRouter />) volver acá no recalcularía
+  // qué niveles siguen bloqueados. Los nodos vienen frescos en cada navegación
+  // (sin .locked, que solo agrega este script), así que reejecutarlo es seguro.
+  function initCourseIndex() {
+    var items = Array.from(document.querySelectorAll('[data-level-item]'));
+    // El id sale del propio elemento, no de un array inyectado aparte: si el
+    // orden del DOM y el del array se separan, el candado le cae al nivel
+    // equivocado. El atributo ya estaba puesto y nadie lo usaba.
+    var ids = items.map(function (el) {
+      return el.dataset.levelId;
+    });
+
+    var currentLevel = null;
+
+    items.forEach(function (el, i) {
+      var lvl = ids[i];
+      var slugs = levelLessonSlugs[lvl] || [];
+      var done = doneIn(lvl);
       var badge = el.querySelector('[data-level-badge]');
-      if (isLevelPassed(lvl) && badge) {
-        badge.textContent = '✓ Completado';
-        el.classList.add('level-passed');
-      } else if (done > 0 && lvlSlugs.length > 0 && badge) {
-        var pct = Math.round((done / lvlSlugs.length) * 100);
-        badge.textContent = pct + '% · ' + done + '/' + lvlSlugs.length;
+      var fill = el.querySelector('[data-level-fill]');
+      var node = el.querySelector('[data-level-node]');
+      var pct = slugs.length ? Math.round((done / slugs.length) * 100) : 0;
+
+      if (fill) fill.style.width = pct + '%';
+
+      if (isLevelPassed(lvl)) {
+        el.classList.add('done');
+        if (node) node.textContent = '✓';
+        if (badge) badge.textContent = txtCompletado;
+        // Aprobado el examen, el nivel está cerrado aunque queden lecciones
+        // sueltas sin marcar: una barra al 28% al lado de "Completado" se
+        // contradice sola.
+        if (fill) fill.style.width = '100%';
+        return;
       }
 
-      if (i === 0) return;
-      var prevLevel = levelIds[i - 1];
-      if (!isLevelPassed(prevLevel)) {
-        el.classList.add('locked');
-        el.setAttribute('aria-disabled', 'true');
-        el.setAttribute('data-astro-prefetch', 'false');
-        if (badge) badge.textContent = txtBloqueado;
-        el.addEventListener('click', function (e) {
-          e.preventDefault();
-        });
+      // Un nivel se abre cuando el anterior está aprobado. El primero siempre.
+      if (i > 0 && !isLevelPassed(ids[i - 1])) {
+        lockItem(el, badge);
+        return;
+      }
+
+      if (badge && done > 0) badge.textContent = done + '/' + slugs.length + ' · ' + pct + '%';
+      if (currentLevel === null) {
+        currentLevel = lvl;
+        el.classList.add('current');
       }
     });
 
-    initDashboard();
+    initAside(currentLevel === null ? ids[ids.length - 1] : currentLevel);
   }
 
-  function initDashboard() {
-    var dashboard = document.querySelector('[data-dashboard]');
-    if (!dashboard) return;
+  function initAside(currentLevel) {
+    // Progreso del curso entero, no solo del nivel en curso: es la respuesta a
+    // "cuánto me falta para terminar alemán".
+    var doneTotal = 0;
+    for (var key in levelLessonSlugs) {
+      doneTotal += doneIn(key);
+    }
+    var pct = totalLessons ? Math.round((doneTotal / totalLessons) * 100) : 0;
 
-    var currentLevel = null;
-    for (var i = 0; i < levelIds.length; i++) {
-      if (!isLevelPassed(levelIds[i])) {
-        currentLevel = levelIds[i];
+    var fill = document.querySelector('[data-course-fill]');
+    if (fill) fill.style.width = pct + '%';
+    var text = document.querySelector('[data-course-text]');
+    if (text) {
+      text.textContent = doneTotal + '/' + totalLessons + ' ' + txtLecciones + ' · ' + pct + '%';
+    }
+
+    var cta = document.querySelector('[data-course-cta]');
+    var slugs = levelLessonSlugs[currentLevel] || [];
+    var pending = null;
+    for (var i = 0; i < slugs.length; i++) {
+      if (!isLessonDone(currentLevel, slugs[i])) {
+        pending = slugs[i];
         break;
       }
     }
-    if (!currentLevel) currentLevel = levelIds[levelIds.length - 1];
-
-    var slugs = levelLessonSlugs[currentLevel] || [];
-    if (slugs.length === 0) return;
-
-    var doneCount = 0;
-    var firstUndone = null;
-    for (var j = 0; j < slugs.length; j++) {
-      if (isLessonDone(currentLevel, slugs[j])) {
-        doneCount++;
-      } else if (!firstUndone) {
-        firstUndone = slugs[j];
+    if (cta && slugs.length) {
+      if (pending) {
+        cta.href = '/' + userLang + '/' + targetLang + '/' + currentLevel + '/' + pending;
+        // A quien no empezó nunca no se le dice "Continuar".
+        cta.textContent = doneTotal === 0 ? txtEmpezar : txtContinuar;
+      } else {
+        // Todas hechas y el nivel sin aprobar: lo que falta es el examen.
+        cta.href = '/' + userLang + '/' + targetLang + '/' + currentLevel + '/examen';
+        cta.textContent = txtIrAlExamen;
       }
-    }
-
-    var pct = Math.round((doneCount / slugs.length) * 100);
-
-    var levelEl = dashboard.querySelector('[data-dash-level]');
-    if (levelEl) levelEl.textContent = currentLevel.toUpperCase() + ' — ' + pct + '% completado';
-
-    var fill = dashboard.querySelector('[data-dash-fill]');
-    if (fill) fill.style.width = pct + '%';
-    var progressText = dashboard.querySelector('[data-dash-progress]');
-    if (progressText)
-      progressText.textContent = doneCount + '/' + slugs.length + ' ' + txtLecciones;
-
-    var continueBtn = dashboard.querySelector('[data-dash-continue]');
-    if (continueBtn && firstUndone) {
-      continueBtn.href = '/' + userLang + '/' + targetLang + '/' + currentLevel + '/' + firstUndone;
-    } else if (continueBtn) {
-      continueBtn.href = '/' + userLang + '/' + targetLang + '/' + currentLevel + '/examen';
-      continueBtn.textContent = 'Ir al examen →';
     }
 
     var reviewCount = 0;
     try {
       var pool = JSON.parse(read('polylingua-srs-pool') || '{}');
       var td = todayStr();
-      for (var key in pool) {
-        if (pool[key].lang === targetLang && pool[key].due <= td) reviewCount++;
+      for (var k in pool) {
+        if (pool[k].lang === targetLang && pool[k].due <= td) reviewCount++;
       }
     } catch (e) {}
-    var reviewEl = dashboard.querySelector('[data-dash-review]');
+    var reviewEl = document.querySelector('[data-stat-review]');
     if (reviewEl) reviewEl.textContent = String(reviewCount);
 
     var errorCount = 0;
@@ -380,282 +433,127 @@ const structuredData = {
         if (log[e2].lang === targetLang) errorCount++;
       }
     } catch (e) {}
-    var errorEl = dashboard.querySelector('[data-dash-errors]');
+    var errorEl = document.querySelector('[data-stat-errors]');
     if (errorEl) errorEl.textContent = String(errorCount);
 
-    var streak = Number(read('polylingua-streak-count') || '0');
-    var streakEl = dashboard.querySelector('[data-dash-streak]');
-    if (streakEl) streakEl.textContent = String(streak);
-
-    if (doneCount > 0 || reviewCount > 0 || errorCount > 0 || streak > 0) {
-      dashboard.hidden = false;
-    }
+    var streakEl = document.querySelector('[data-stat-streak]');
+    if (streakEl) streakEl.textContent = String(Number(read('polylingua-streak-count') || '0'));
   }
 
-  initLangIndex();
-  document.addEventListener('astro:page-load', initLangIndex);
+  initCourseIndex();
+  document.addEventListener('astro:page-load', initCourseIndex);
 </script>
 
 <style>
-  .lang-head {
-    padding-block: 2.5rem 2rem;
-    max-width: 680px;
+  /* Las primitivas del camino (.silo-layout, .silo-path, .silo-node, la barra
+     de progreso y los estados hecho/actual/bloqueado) viven en
+     src/styles/global.css: las comparte con la página de nivel. Acá queda solo
+     lo propio de la página de curso. */
+
+  /* Mismo criterio que el h1 de la página de nivel: nombre e idioma nativo en
+     renglones propios, para que ninguna línea se parta por un separador. */
+  .lang-title {
+    margin: 1rem 0 0.5rem;
   }
 
-  .flag {
-    font-size: 2.2rem;
+  .lt-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(1.7rem, 3.4vw, 2.2rem);
+    line-height: 1.1;
   }
 
-  h1 {
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
-    margin: 0.4rem 0 0.4rem;
+  .lt-flag {
+    font-size: 1.6rem;
   }
 
-  .native {
-    color: var(--text-muted);
-    font-weight: 500;
-    font-size: 0.6em;
+  .lt-native {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent-c);
   }
 
   .tagline {
-    color: var(--accent-c);
-    font-weight: 700;
-    margin: 0 0 0.6rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
   }
 
   .desc {
     color: var(--text-muted);
     margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.55;
   }
 
-  .levels-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-    padding-block: 1rem 4rem;
-  }
-
-  .level-item {
-    display: block;
-    padding: 1.5rem;
-    text-decoration: none;
-    color: var(--text);
-    border-top: 3px solid;
-    transition: transform 0.15s ease;
-  }
-
-  .level-item:hover {
-    transform: translateY(-3px);
-  }
-
-  .top {
+  /* ── Contadores de la lateral ───────────────────────────────────────── */
+  .stats {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.75rem;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
   }
 
-  .emoji {
-    font-size: 1.75rem;
-  }
-
-  .level-item h2 {
-    margin: 0 0 0.35rem;
-    font-size: 1.15rem;
-  }
-
-  .lvl-tagline {
-    font-weight: 700;
-    margin: 0 0 0.5rem;
-    font-size: 0.9rem;
-  }
-
-  .lvl-desc {
-    color: var(--text-muted);
-    margin: 0;
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 900px) {
-    .levels-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 560px) {
-    .levels-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .dashboard {
-    padding-block: 0 1.5rem;
-  }
-
-  .dash-hero {
-    padding: 1.5rem;
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .dash-main {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .dash-level {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 800;
-    margin-bottom: 0.75rem;
-  }
-
-  .dash-progress-wrap {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-  }
-
-  .dash-progress-bar {
-    flex: 1;
-    height: 8px;
-    border-radius: 4px;
-    background: var(--border, #e5e7eb);
-    overflow: hidden;
-  }
-
-  .dash-progress-fill {
-    height: 100%;
-    border-radius: 4px;
-    background: var(--accent-c, var(--accent));
-    transition: width 0.4s ease;
-    width: 0%;
-  }
-
-  .dash-progress-text {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    white-space: nowrap;
-  }
-
-  .dash-continue {
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 0.6rem 1.5rem;
-    border-radius: 8px;
-    font-size: 0.95rem;
-  }
-
-  .dash-stats {
-    display: flex;
-    gap: 1.5rem;
-    flex-shrink: 0;
-  }
-
-  .dash-stat {
+  .stat {
     text-align: center;
+    flex: 1;
   }
 
-  .dash-stat-link {
+  .stat-link {
     text-decoration: none;
     color: var(--text);
     transition: opacity 0.15s ease;
   }
 
-  .dash-stat-link:hover {
+  .stat-link:hover {
     opacity: 0.7;
   }
 
-  .dash-stat-num {
+  .stat-num {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 800;
     line-height: 1.2;
   }
 
-  .dash-stat-label {
-    font-size: 0.75rem;
+  .stat-label {
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
 
-  @media (max-width: 560px) {
-    .dash-hero {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 1.25rem;
-    }
-    .dash-stats {
-      justify-content: space-around;
-    }
+  /* ── Los 6 niveles ──────────────────────────────────────────────────── */
+  .levels {
+    padding-top: 0.5rem;
   }
 
-  .level-passed {
-    border-top-color: #22c55e !important;
-  }
-
-  .level-passed [data-level-badge] {
-    color: #22c55e;
+  .lvl-tagline {
+    margin: 0 0 0.35rem;
+    font-size: 0.85rem;
     font-weight: 700;
+    color: var(--accent-c);
   }
 
-  .locked {
-    opacity: 0.5;
-    cursor: default;
+  /* La barra ocupa el ancho que le deja el chip del conteo, a su derecha. */
+  .lvl-track {
+    flex: 1;
+    min-width: 90px;
   }
 
-  .locked:hover {
-    transform: none;
+  /* En un nivel bloqueado la barra siempre está en cero: cinco barras vacías
+     seguidas son ruido, y el chip "Bloqueado" ya dice todo lo que hay que
+     saber. */
+  .silo-link.locked .lvl-track {
+    display: none;
   }
 
-  .explore-more {
-    padding-block: 0 4rem;
-  }
-
-  .eyebrow {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: var(--accent-text);
-    margin-bottom: 0.9rem;
-  }
-
-  .explore-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 0.85rem;
-  }
-
-  .explore-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 1.1rem;
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 700;
-    transition: transform 0.15s ease;
-  }
-
-  .explore-item:hover {
-    transform: translateY(-2px);
-  }
-
-  .explore-item span:first-child {
-    font-size: 1.2rem;
-  }
-
-  @media (max-width: 560px) {
-    .explore-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .silo-link.done .silo-fill {
+    background: #22c55e;
   }
 </style>

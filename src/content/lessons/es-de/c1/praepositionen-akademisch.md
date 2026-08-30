@@ -6,6 +6,7 @@ description: 'Domina preposiciones cultas como angesichts, bezüglich, hinsichtl
 order: 9
 grammarTopic: 'Preposiciones de registro académico y profesional'
 funFact: 'Si escribes "wegen" en un examen C1, nadie te va a suspender. Pero si escribes "angesichts der aktuellen Lage" en vez de "wegen der Situation", el examinador piensa: "esta persona LEE en alemán". Estas preposiciones no son decoración — son la señal de que dominas el idioma, no solo lo usas.'
+unit: 3
 minutes: 9
 quiz:
   - question: '¿Qué caso rigen "angesichts", "bezüglich" e "hinsichtlich"?'

@@ -3,9 +3,10 @@ language: de
 level: b1
 title: 'Verbos con preposición: las parejas inseparables del alemán'
 description: 'Domina los verbos con preposición fija en alemán: warten auf, denken an, sich freuen über. La lista esencial con caso y ejemplos para nivel B1.'
-order: 9
+order: 13
 grammarTopic: 'Verbos con preposición fija (Verben mit Präpositionen)'
 funFact: 'En español "pensar en" siempre es "pensar en", pero en alemán "denken" cambia de personalidad según la preposición: "an jemanden denken" (pensar en alguien con cariño) vs. "über etwas nachdenken" (reflexionar sobre algo con calma). No es el verbo quien manda, es la preposición la que decide el significado.'
+unit: 4
 minutes: 10
 quiz:
   - question: '¿Cuál es la preposición correcta? "Ich warte ___ den Bus."'

@@ -73,7 +73,7 @@ order: 1 # número entero, orden dentro del nivel
 grammarTopic: 'Tema gramatical'
 funFact: 'Truco mnemotécnico para recordar'
 minutes: 7 # duración estimada
-unit: 1 # opcional: agrupa lecciones dentro del nivel
+unit: 1 # agrupa la lección dentro del nivel — ver nota abajo
 quiz:
   - question: '¿Pregunta?'
     options: ['Opción A', 'Opción B', 'Opción C']
@@ -92,6 +92,16 @@ vocabulary: # opcional
 `language` es el idioma **que se enseña** (el meta), nunca el de la
 interfaz — ese se infiere del nombre de la carpeta. Es el único campo sin
 valor por defecto además de los de texto, así que olvidarlo rompe el build.
+
+`unit` es opcional para Zod, pero **no** para la página de nivel: si el nivel
+tiene unidades definidas en `src/data/units.ts` (hoy todos las tienen), la
+página agrupa las lecciones por unidad, y una lección sin `unit` —o con un
+`unit` que no existe en esa lista— no pertenece a ningún grupo. Llegó a haber
+15 así, invisibles en su nivel aunque seguían en el sitemap. La página ya no
+las pierde (van a un grupo final) y hay un test en
+`tests/data-integrity.test.ts` que falla si aparece alguna, pero lo correcto es
+poner siempre un `unit` que exista. Si el tema no entra en ninguna unidad,
+agregá una nueva a `units.ts` en vez de dejar el campo vacío.
 
 Tipos de `exercises` que acepta el schema: `fill-blank` (necesita `___` en
 `sentence`), `match` (mínimo 3 `pairs`), `write`, `order`.

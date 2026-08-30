@@ -12,6 +12,7 @@ export const UNITS: Record<string, UnitMeta[]> = {
     { id: 3, name: 'Meine Welt', description: 'Vocabulario del día a día', emoji: '🌍' },
     { id: 4, name: 'Alltag', description: 'Situaciones cotidianas', emoji: '🏠' },
     { id: 5, name: 'Unterwegs', description: 'Fuera de casa', emoji: '🚌' },
+    { id: 6, name: 'Präpositionen', description: 'Preposiciones de lugar y tiempo', emoji: '🧭' },
   ],
   'en-a1': [
     { id: 1, name: 'First Sounds', description: 'Pronunciación desde cero', emoji: '🗣️' },
@@ -109,6 +110,18 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Deutsch im Alltag',
       description: 'Gramática aplicada y vocabulario profesional',
       emoji: '💼',
+    },
+    {
+      id: 3,
+      name: 'Konjunktiv II & Perfekt',
+      description: 'Reclamar, pedir y contar con cortesía',
+      emoji: '🙋',
+    },
+    {
+      id: 4,
+      name: 'Präpositionen',
+      description: 'Verbos con preposición fija y guía completa',
+      emoji: '🧭',
     },
   ],
   'en-b1': [
@@ -298,6 +311,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       description: 'Estilo nominal, conectores y vocabulario académico',
       emoji: '📖',
     },
+    {
+      id: 3,
+      name: 'Präpositionen',
+      description: 'Preposiciones de registro académico y profesional',
+      emoji: '🧭',
+    },
   ],
   'en-c1': [
     {
@@ -391,6 +410,12 @@ export const UNITS: Record<string, UnitMeta[]> = {
       name: 'Kreatives Deutsch',
       description: 'Variedades regionales, humor y retórica',
       emoji: '✨',
+    },
+    {
+      id: 3,
+      name: 'Präpositionen',
+      description: 'Idiomática y matices con preposiciones',
+      emoji: '🧭',
     },
   ],
   'en-c2': [

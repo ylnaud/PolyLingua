@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
@@ -42,13 +43,14 @@ const vocabPool = Array.from(
   noindex
 >
   <section class="container pron-head">
-    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
-      <span aria-hidden="true">/</span>
-      <span>{dict.tools.nombres.pronunciacion}</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
+        { name: dict.tools.nombres.pronunciacion },
+      ]}
+    />
     <span class="emoji" aria-hidden="true">🗣️</span>
     <h1>{fill(tt.h1, { lang: langName })}</h1>
     <p class="desc">{tt.desc}</p>
@@ -66,9 +68,7 @@ const vocabPool = Array.from(
       <p class="pron-word" data-pron-word></p>
       <p class="pron-clue" data-pron-clue></p>
 
-      <button type="button" class="btn btn-primary pron-listen" data-pron-listen
-        >{tt.escuchar}</button
-      >
+      <button type="button" class="btn btn-primary" data-pron-listen>{tt.escuchar}</button>
 
       <p class="pron-guide">{tt.guia}</p>
 
@@ -240,23 +240,14 @@ const vocabPool = Array.from(
 </script>
 
 <style>
-  .pron-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
-  .emoji {
-    font-size: 2rem;
-  }
-
   h1 {
     font-size: clamp(1.6rem, 3.6vw, 2.2rem);
     margin: 0.4rem 0 0.6rem;
   }
 
-  .desc {
-    color: var(--text-muted);
-    margin: 0;
+  .pron-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
   }
 
   .pron-body {

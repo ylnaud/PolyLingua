@@ -220,8 +220,13 @@ a {
   }
 }
 
+/* Etiqueta de sección ("EXPLORÁ MÁS", "🎯 Tus temas pendientes"). Siempre va
+   sola en su renglón, por eso es block-level: como inline-flex el
+   margin-bottom no empujaba nada, y por eso vocabulario.astro y logros.astro
+   la redefinían cada una por su lado con display:block — tres versiones del
+   mismo elemento. */
 .eyebrow {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.4rem;
   font-size: 0.8rem;
@@ -229,6 +234,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent-text);
+  margin-bottom: 0.9rem;
 }
 
 .btn {
@@ -423,7 +429,7 @@ a {
 
 @media (min-width: 640px) {
   .tsa-achievements {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
@@ -492,8 +498,9 @@ a {
   font-size: 1.5rem;
 }
 
-/* Breadcrumbs de navegación, usados en lecciones, blog, y las páginas de
-   idiomas/[lang]/... */
+/* Migas de pan. Única definición del sitio: dialogos.astro y
+   dialogos/[slug].astro tenían su propia copia sin `display: flex`, así que
+   ahí los separadores se espaciaban distinto que en el resto. */
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -512,8 +519,13 @@ a {
   color: var(--accent-text);
 }
 
-/* Estado vacío ("todavía no hay nada acá"), usado en vocabulario,
-   práctica libre y repasar dentro de idiomas/[lang]/... */
+.breadcrumbs span[aria-hidden] {
+  opacity: 0.5;
+}
+
+/* Estado vacío ("todavía no hay nada acá"), en las 10 herramientas del silo.
+   El margen del emoji lo pedían por su cuenta mis-errores.astro (0.75rem) y
+   dialogos.astro (1rem); se unifica acá. */
 .empty-state {
   text-align: center;
   padding: 2.5rem 1.5rem;
@@ -521,7 +533,7 @@ a {
 
 .empty-emoji {
   font-size: 2.5rem;
-  margin: 0;
+  margin: 0 0 0.75rem;
 }
 
 .empty-state .btn {
@@ -551,6 +563,35 @@ pre code {
   color: inherit;
   padding: 0;
   font-size: inherit;
+}
+
+/* Los títulos pueden traer palabras que no entran en una pantalla estrecha:
+   este sitio enseña alemán, y "Partizipialkonstruktionen" mide 25 caracteres.
+   Sin esto, esas palabras empujaban la página entera y en móvil se podía
+   mover en horizontal (dos lecciones de C1 lo hacían). Solo actúa cuando la
+   palabra no cabe de ninguna manera, así que no cambia nada en el resto. */
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+}
+
+/* El emoji y la bajada de la cabecera de página: estaban recopiados con los
+   mismos valores exactos en 12 y 13 archivos. La página que necesite otra cosa
+   lo pisa con su propio <style> scoped, que gana por especificidad.
+
+   El h1 NO sube acá: como selector de elemento también alcanza a las páginas
+   que solo definían parte de su h1, y les cambiaba el margen o el tamaño sin
+   querer (se vio en /es/de, /es/de/a1 y generador-frases). Sus 12 copias se
+   quedan donde estaban. */
+.emoji {
+  font-size: 2rem;
+}
+
+.desc {
+  color: var(--text-muted);
+  margin: 0;
 }
 
 table {

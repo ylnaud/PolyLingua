@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getDictionary } from '../../../i18n';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getSpanishGlossCourseStaticPaths } from '../../../lib/courses';
 import { RESOURCES, CATEGORY_LABELS, type ResourceItem } from '../../../data/resources';
@@ -10,6 +12,7 @@ import { RESOURCES, CATEGORY_LABELS, type ResourceItem } from '../../../data/res
 export const getStaticPaths = getSpanishGlossCourseStaticPaths;
 
 const { userLang, targetLang } = Astro.params;
+const dict = getDictionary(userLang as never);
 const lang = targetLang;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 const items = RESOURCES[lang as keyof typeof RESOURCES] ?? [];
@@ -29,13 +32,14 @@ const categories = (Object.keys(CATEGORY_LABELS) as ResourceItem['category'][]).
   noindex
 >
   <section class="container resources-head">
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
-      <span aria-hidden="true">/</span>
-      <span>Recursos</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: languageMeta?.name ?? '', flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
+        { name: dict.silo.explorar.recursos },
+      ]}
+    />
     <span class="emoji" aria-hidden="true">📻</span>
     <h1>Recursos de {languageMeta?.name}</h1>
     <p class="desc">
@@ -75,23 +79,14 @@ const categories = (Object.keys(CATEGORY_LABELS) as ResourceItem['category'][]).
 </BaseLayout>
 
 <style>
-  .resources-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
-  .emoji {
-    font-size: 2rem;
-  }
-
   h1 {
     font-size: clamp(1.6rem, 3.6vw, 2.2rem);
     margin: 0.4rem 0 0.6rem;
   }
 
-  .desc {
-    color: var(--text-muted);
-    margin: 0;
+  .resources-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
   }
 
   .resources-body {

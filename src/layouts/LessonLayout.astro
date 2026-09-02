@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Practice from '../components/Practice.astro';
 import PhraseBank from '../components/PhraseBank.astro';
 import AdSlot from '../components/AdSlot.astro';
@@ -123,13 +124,14 @@ const restPath = `/${level}/${path.split('/').pop()}`;
   }}
 >
   <article class="lesson container">
-    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${language}`}>{languageMeta.flag} {languageName}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${language}/${level}`}>{levelName}</a>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: languageName, flag: languageMeta.flag, href: `/${userLang}/${language}` },
+        { name: levelName, href: `/${userLang}/${language}/${level}` },
+      ]}
+    />
 
     <header class="lesson-head">
       <span class="badge" style={`border-color:${levelMeta.color}; color:${levelMeta.color}`}>
@@ -153,7 +155,11 @@ const restPath = `/${level}/${path.split('/').pop()}`;
       <slot />
     </div>
 
-    {phrases.length > 0 && <PhraseBank phrases={phrases} lang={languageMeta.bcp47} userLang={userLang} />}
+    {
+      phrases.length > 0 && (
+        <PhraseBank phrases={phrases} lang={languageMeta.bcp47} userLang={userLang} />
+      )
+    }
 
     {
       vocabulary.length > 0 && (

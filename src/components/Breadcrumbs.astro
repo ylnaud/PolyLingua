@@ -1,0 +1,51 @@
+---
+import { getDictionary } from '../i18n';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+
+// Migas de pan. El markup estaba escrito a mano en 18 archivos, siempre igual:
+// enlaces separados por un <span aria-hidden> con una barra, y el último tramo
+// sin enlace porque es la página en la que estás.
+//
+// Repetirlo tenía un coste real: tres de esos archivos (generador-frases,
+// recursos y dialogos/[slug]) se habían quedado con el aria-label y la palabra
+// "Idiomas" escritos en español a mano, salteando el diccionario. Acá salen
+// siempre de él.
+//
+// El CSS vive en global.css (.breadcrumbs), que ya es la única definición del
+// sitio, así que este componente no trae estilos propios.
+
+export interface Crumb {
+  name: string;
+  /** Sin href, el tramo se pinta como texto: es la página actual. */
+  href?: string;
+  /** Bandera del idioma, si el tramo es un idioma meta. */
+  flag?: string;
+}
+
+interface Props {
+  items: Crumb[];
+  /** Idioma de interfaz, para sacar el aria-label del diccionario. */
+  userLang?: string;
+}
+
+const { items, userLang } = Astro.props;
+const dict = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never);
+---
+
+<nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
+  {
+    items.map((item, i) => (
+      <>
+        {i > 0 && <span aria-hidden="true">/</span>}
+        {/* El texto va como UNA sola expresión, no como `{flag} {name}`: así
+            Prettier no puede partirlo en varias líneas y meter espacios
+            sueltos dentro del enlace. */}
+        {item.href ? (
+          <a href={item.href}>{item.flag ? `${item.flag} ${item.name}` : item.name}</a>
+        ) : (
+          <span>{item.flag ? `${item.flag} ${item.name}` : item.name}</span>
+        )}
+      </>
+    ))
+  }
+</nav>

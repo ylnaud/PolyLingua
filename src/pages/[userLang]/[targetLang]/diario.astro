@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
@@ -25,13 +26,14 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
   noindex
 >
   <section class="container diary-head">
-    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
-      <span aria-hidden="true">/</span>
-      <span>{dict.tools.nombres.diario}</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
+        { name: dict.tools.nombres.diario },
+      ]}
+    />
     <span class="emoji" aria-hidden="true">✍️</span>
     <h1>{fill(tt.h1, { lang: langName })}</h1>
     <p class="desc">{tt.desc}</p>
@@ -163,23 +165,14 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 </script>
 
 <style>
-  .diary-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
-  .emoji {
-    font-size: 2rem;
-  }
-
   h1 {
     font-size: clamp(1.6rem, 3.6vw, 2.2rem);
     margin: 0.4rem 0 0.6rem;
   }
 
-  .desc {
-    color: var(--text-muted);
-    margin: 0;
+  .diary-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
   }
 
   .diary-body {

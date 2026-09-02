@@ -1,4 +1,6 @@
 ---
+import SpeakButton from './SpeakButton.astro';
+
 interface DialogueLine {
   speaker: string;
   text: string;
@@ -13,7 +15,7 @@ interface Props {
 const { dialogue, lang } = Astro.props;
 ---
 
-<div class="dialogue-card card" data-dialogue-card data-lang={lang}>
+<div class="dialogue-card card" data-lang={lang}>
   <span class="eyebrow">🗣️ Diálogo</span>
   <ul class="dialogue-list">
     {
@@ -24,40 +26,12 @@ const { dialogue, lang } = Astro.props;
             <p class="line-text">{line.text}</p>
             <p class="line-es">{line.es}</p>
           </div>
-          <button
-            type="button"
-            class="line-speak"
-            data-dialogue-speak
-            data-speak-text={line.text}
-            aria-label={`Escuchar «${line.text}»`}
-          >
-            🔊
-          </button>
+          <SpeakButton text={line.text} />
         </li>
       ))
     }
   </ul>
 </div>
-
-<script>
-  import { speak } from '../lib/sound';
-
-  function initDialogueCards() {
-    document.querySelectorAll<HTMLElement>('[data-dialogue-card]').forEach((card) => {
-      if (card.dataset.initialized) return;
-      card.dataset.initialized = 'true';
-
-      card.addEventListener('click', (e) => {
-        const btn = (e.target as HTMLElement)?.closest<HTMLElement>('[data-dialogue-speak]');
-        if (!btn) return;
-        speak(btn.dataset.speakText ?? '', card.dataset.lang ?? '');
-      });
-    });
-  }
-
-  initDialogueCards();
-  document.addEventListener('astro:page-load', initDialogueCards);
-</script>
 
 <style>
   .dialogue-card {
@@ -74,11 +48,23 @@ const { dialogue, lang } = Astro.props;
   }
 
   .dialogue-line {
+    /* Es un hijo de grid: sin min-width:0 no baja de su min-content y se sale
+       del contenedor en pantallas estrechas. */
+    min-width: 0;
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
     padding: 0.85rem 0;
     border-top: 1px solid var(--border);
+  }
+
+  /* Un hijo de flex no baja de su min-content por defecto, así que una frase
+     alemana con una palabra larga ensanchaba la fila entera y en pantallas de
+     320px la página se movía en horizontal. Con min-width:0 puede encogerse y
+     el texto parte la palabra en vez de empujar. */
+  .line-content {
+    min-width: 0;
+    overflow-wrap: break-word;
   }
 
   .dialogue-line:first-child {
@@ -126,26 +112,18 @@ const { dialogue, lang } = Astro.props;
     font-size: 0.95rem;
   }
 
-  .line-speak {
-    flex-shrink: 0;
-    min-width: 44px;
-    min-height: 44px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--bg-elevated);
-    color: var(--text);
-    font-size: 1rem;
-    cursor: pointer;
-  }
-
-  .line-speak:hover {
-    border-color: var(--accent);
-  }
-
   @media (max-width: 560px) {
     .speaker {
       min-width: auto;
       font-size: 0.7rem;
+    }
+
+    /* En móvil el nombre de quien habla sí puede encogerse y partirse: con
+       flex-shrink:0 un nombre largo ("Farmacéutica") empujaba la línea entera
+       fuera de la pantalla. */
+    .speaker {
+      flex-shrink: 1;
+      overflow-wrap: break-word;
     }
   }
 </style>

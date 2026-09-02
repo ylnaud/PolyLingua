@@ -1,0 +1,73 @@
+---
+// Botón 🔊 que pronuncia un texto. Existe porque `.phrase-speak` (PhraseBank)
+// y `.line-speak` (DialogueCard) eran dos bloques de CSS byte-idénticos con
+// dos nombres distintos, cada uno con su propio listener delegado leyendo su
+// propia clave de dataset.
+//
+// El listener lo pone este componente una sola vez para todo el documento
+// (los <script> de Astro se agrupan y ejecutan una vez por carga, no por
+// instancia), así que quien lo use no tiene que escribir nada de JS: basta
+// con que el contenedor lleve `data-lang` con el BCP-47 del idioma.
+//
+// No convierte todos los botones de audio del sitio: el de Practice.astro y
+// el del carrusel de vocabulario de LessonLayout llevan etiqueta de texto y
+// otra forma, y el de ahorcado/pronunciación es un `.btn` normal. Este es
+// para el botón redondo pelado que aparece al lado de una frase.
+
+interface Props {
+  /** Texto que se pronuncia y que se anuncia en el aria-label. */
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<button
+  type="button"
+  class="speak-pill"
+  data-speak
+  data-speak-text={text}
+  aria-label={`Escuchar «${text}»`}
+>
+  🔊
+</button>
+
+<style>
+  .speak-pill {
+    flex-shrink: 0;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .speak-pill:hover {
+    border-color: var(--accent);
+  }
+</style>
+
+<script>
+  import { speak } from '../lib/sound';
+
+  // Un único listener delegado en el documento para todos los [data-speak] de
+  // la página. Sobrevive a la navegación SPA de <ClientRouter /> porque
+  // `document` no se reemplaza; por eso no hace falta reengancharlo en
+  // astro:page-load, y por eso el guard evita duplicarlo si el módulo se
+  // evaluara más de una vez.
+  const YA = '__polylinguaSpeakDelegated';
+  if (!(window as any)[YA]) {
+    (window as any)[YA] = true;
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement)?.closest<HTMLElement>('[data-speak]');
+      if (!btn) return;
+      // El idioma lo pone el contenedor (la tarjeta de diálogo, el banco de
+      // frases...), que es quien sabe qué idioma se está enseñando.
+      const lang = btn.closest<HTMLElement>('[data-lang]')?.dataset.lang ?? '';
+      speak(btn.dataset.speakText ?? '', lang);
+    });
+  }
+</script>

@@ -1,4 +1,5 @@
 ---
+import SpeakButton from './SpeakButton.astro';
 import { getDictionary } from '../i18n';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 
@@ -19,7 +20,7 @@ const { phrases, lang = '', userLang } = Astro.props;
 const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).lesson;
 ---
 
-<div class="phrase-bank card" data-phrase-bank data-lang={lang}>
+<div class="phrase-bank card" data-lang={lang}>
   <span class="eyebrow">{t.frasesTitulo}</span>
   <p class="phrase-intro">{t.frasesIntro}</p>
   <ul class="phrase-list">
@@ -32,43 +33,12 @@ const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).less
             <p class="phrase-es">{phrase.es}</p>
             {phrase.note && <p class="phrase-note">{phrase.note}</p>}
           </div>
-          <button
-            type="button"
-            class="phrase-speak"
-            data-phrase-speak
-            data-phrase-text={phrase.text}
-            aria-label={`Escuchar «${phrase.text}»`}
-          >
-            🔊
-          </button>
+          <SpeakButton text={phrase.text} />
         </li>
       ))
     }
   </ul>
 </div>
-
-<script>
-  import { speak } from '../lib/sound';
-
-  function initPhraseBank() {
-    document.querySelectorAll<HTMLElement>('[data-phrase-bank]').forEach((bank) => {
-      if (bank.dataset.initialized) return;
-      bank.dataset.initialized = 'true';
-
-      // Un solo listener delegado por banco en vez de uno por botón: el markup
-      // es estático (viene del frontmatter), así que no hay nodos que se
-      // agreguen después, y así no se recorre la lista entera al iniciar.
-      bank.addEventListener('click', (e) => {
-        const btn = (e.target as HTMLElement)?.closest<HTMLElement>('[data-phrase-speak]');
-        if (!btn) return;
-        speak(btn.dataset.phraseText ?? '', bank.dataset.lang ?? '');
-      });
-    });
-  }
-
-  initPhraseBank();
-  document.addEventListener('astro:page-load', initPhraseBank);
-</script>
 
 <style>
   .phrase-bank {
@@ -131,21 +101,5 @@ const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).less
     font-size: 0.85rem;
     font-style: italic;
     margin: 0.3rem 0 0;
-  }
-
-  .phrase-speak {
-    flex-shrink: 0;
-    min-width: 44px;
-    min-height: 44px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--bg-elevated);
-    color: var(--text);
-    font-size: 1rem;
-    cursor: pointer;
-  }
-
-  .phrase-speak:hover {
-    border-color: var(--accent);
   }
 </style>

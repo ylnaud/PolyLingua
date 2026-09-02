@@ -1,0 +1,94 @@
+---
+// Barra de aviso descartable que aparece bajo el header: emoji + texto, un
+// botón de acción y una ✕ para cerrarla.
+//
+// Existe porque StreakReminder y BackupReminder eran el mismo componente
+// escrito dos veces: 246 líneas entre las dos, con seis bloques de CSS
+// byte-idénticos. Lo único que cambia entre una y otra es CUÁNDO aparece y
+// qué dice, así que eso se queda en cada una y la cáscara vive acá.
+//
+// La barra nace oculta (`hidden`): quién la muestra es el <script> de quien
+// la usa, que es el que sabe leer el localStorage y decidir. Para un texto
+// que se arma en el cliente (la racha lleva el número de días), dejá `text`
+// vacío y escribí en `[data-bar-text]`.
+
+interface Props {
+  /** Identifica la barra para el JS de quien la usa: [data-bar="<id>"]. */
+  id: string;
+  emoji: string;
+  /** Texto fijo. Si se arma en el cliente, omitilo y usá [data-bar-text]. */
+  text?: string;
+  ctaLabel: string;
+  ctaHref: string;
+  dismissLabel?: string;
+}
+
+const { id, emoji, text = '', ctaLabel, ctaHref, dismissLabel = 'Cerrar aviso' } = Astro.props;
+---
+
+<div class="bar" data-bar={id} hidden role="status" aria-live="polite">
+  <div class="container bar-inner">
+    <p>
+      <span aria-hidden="true">{emoji}</span>
+      <span data-bar-text>{text}</span>
+    </p>
+    <div class="bar-actions">
+      <a class="btn btn-primary" href={ctaHref}>{ctaLabel}</a>
+      <button type="button" class="bar-dismiss" data-bar-dismiss aria-label={dismissLabel}>
+        ✕
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bar {
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+
+  .bar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-block: 0.65rem;
+  }
+
+  .bar-inner p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .bar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .bar-actions .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-height: 36px;
+  }
+
+  .bar-dismiss {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  .bar-dismiss:hover {
+    background: var(--bg-elevated);
+    color: var(--text);
+  }
+</style>

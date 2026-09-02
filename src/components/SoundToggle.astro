@@ -1,4 +1,6 @@
 ---
+import IconToggle from './IconToggle.astro';
+
 interface Props {
   // 'icon' es el botón circular del header (desktop/landscape); 'sheet' es la
   // variante de fila completa para el menú "Más" del bottom nav (portrait) —
@@ -11,74 +13,29 @@ interface Props {
 const { variant = 'icon' } = Astro.props;
 ---
 
-<button
-  type="button"
-  class:list={['sound-toggle', { 'sound-toggle-sheet': variant === 'sheet' }]}
-  aria-label="Silenciar sonidos"
-  aria-pressed="false"
->
+<IconToggle toggleClass="sound-toggle" variant={variant} ariaLabel="Silenciar sonidos">
   <span class="icon icon-on" aria-hidden="true"
     >🔊<span class="sheet-only"> Silenciar sonidos</span></span
   >
   <span class="icon icon-off" aria-hidden="true"
     >🔇<span class="sheet-only"> Activar sonidos</span></span
   >
-</button>
+</IconToggle>
 
 <style>
-  .sound-toggle {
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--bg-elevated);
-    cursor: pointer;
-    font-size: 1.1rem;
-    line-height: 1;
-    padding: 0;
-  }
-
-  .sound-toggle:hover {
-    border-color: var(--accent);
-  }
-
+  /* La forma del botón la pone IconToggle. Acá queda solo qué icono se ve.
+     El :global() es porque la clase .sound-toggle va en el <button> que
+     renderiza IconToggle, así que no lleva el scope de este archivo; los
+     iconos sí, porque salen de acá. */
   .icon-off {
     display: none;
   }
 
-  .sound-toggle.is-muted .icon-on {
+  :global(.sound-toggle.is-muted) .icon-on {
     display: none;
   }
 
-  .sound-toggle.is-muted .icon-off {
-    display: inline;
-  }
-
-  .sheet-only {
-    display: none;
-  }
-
-  .sound-toggle-sheet {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: flex-start;
-    border: none;
-    border-radius: 10px;
-    background: none;
-    min-height: 44px;
-    padding: 0.6rem 0.9rem;
-    font-size: 1rem;
-  }
-
-  .sound-toggle-sheet:hover {
-    border-color: transparent;
-    background: var(--bg-elevated);
-  }
-
-  .sound-toggle-sheet .sheet-only {
+  :global(.sound-toggle.is-muted) .icon-off {
     display: inline;
   }
 </style>

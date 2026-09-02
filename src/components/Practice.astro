@@ -258,9 +258,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
             {item.kind === 'match' && (
               <>
-                <legend tabindex="-1">
-                  {item.data.instructions ?? t.emparejaElementos}
-                </legend>
+                <legend tabindex="-1">{item.data.instructions ?? t.emparejaElementos}</legend>
                 <div class="match-board" data-match-board data-remaining={item.data.pairs.length}>
                   <div class="match-col" data-match-col="left">
                     {item.data.pairs.map((pair, pi) => (
@@ -365,7 +363,9 @@ function splitSentence(sentence: string): { before: string; after: string } {
           🎉
         </p>
         <h3>{t.completado}</h3>
-        <p data-score-text>{t.resultado} 0 / {items.length}</p>
+        <p data-score-text>
+          {t.resultado} 0 / {items.length}
+        </p>
         <button type="button" class="btn btn-ghost" data-restart>
           Repetir
         </button>
@@ -712,7 +712,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
   .match-board {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 0.75rem 1rem;
   }
 
@@ -811,7 +811,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
 
   @media (max-width: 480px) {
     .match-board {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 </style>

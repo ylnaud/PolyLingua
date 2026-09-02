@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { getDictionary } from '../../../../i18n';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import DialogueCard from '../../../../components/DialogueCard.astro';
 import StudyCycle from '../../../../components/StudyCycle.astro';
 import { getCollection, render } from 'astro:content';
@@ -56,6 +58,7 @@ export async function getStaticPaths() {
 const { entry, prevDialogue, nextDialogue } = Astro.props;
 const { Content } = await render(entry);
 const { userLang, targetLang: lang, slug } = Astro.params;
+const dict = getDictionary(userLang as never);
 const d = entry.data;
 const langMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 const levelMeta = LEVEL_MAP[d.level as keyof typeof LEVEL_MAP];
@@ -84,15 +87,15 @@ const structuredData = {
   ogImage={`/og-${lang}.png`}
 >
   <section class="container dialogue-head">
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{langMeta.flag} {langMeta.name}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}/dialogos`}>Diálogos</a>
-      <span aria-hidden="true">/</span>
-      <span>{d.title}</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: langMeta.name, flag: langMeta.flag, href: `/${userLang}/${lang}` },
+        { name: dict.silo.explorar.dialogos, href: `/${userLang}/${lang}/dialogos` },
+        { name: d.title },
+      ]}
+    />
 
     <div class="head-meta">
       <span class="badge" style={`border-color:${levelMeta.color};color:${levelMeta.color}`}>
@@ -167,26 +170,6 @@ const structuredData = {
   .dialogue-head {
     padding-block: 2rem 0.5rem;
     max-width: 720px;
-  }
-
-  .breadcrumbs {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 1rem;
-  }
-
-  .breadcrumbs a {
-    color: var(--text-muted);
-    text-decoration: none;
-  }
-
-  .breadcrumbs a:hover {
-    color: var(--accent);
-  }
-
-  .breadcrumbs span[aria-hidden] {
-    margin: 0 0.3rem;
-    opacity: 0.5;
   }
 
   .head-meta {

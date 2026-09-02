@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
@@ -48,13 +49,14 @@ const themes = [...new Set(situationLessons.map((l) => l.data.situation as strin
   noindex
 >
   <section class="container sit-head">
-    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
-      <span aria-hidden="true">/</span>
-      <span>{dict.tools.nombres.situaciones}</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
+        { name: dict.tools.nombres.situaciones },
+      ]}
+    />
     <span class="emoji" aria-hidden="true">🗺️</span>
     <h1>{tt.h1}</h1>
     <p class="desc">{tt.desc}</p>

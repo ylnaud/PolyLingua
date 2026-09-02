@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
@@ -42,13 +43,14 @@ const vocabPool = Array.from(
   noindex
 >
   <section class="container pron-head">
-    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
-      <span aria-hidden="true">/</span>
-      <span>{dict.tools.nombres.pronunciacion}</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
+        { name: dict.tools.nombres.pronunciacion },
+      ]}
+    />
     <span class="emoji" aria-hidden="true">🗣️</span>
     <h1>{fill(tt.h1, { lang: langName })}</h1>
     <p class="desc">{tt.desc}</p>

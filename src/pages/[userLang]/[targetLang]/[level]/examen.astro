@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import Practice from '../../../../components/Practice.astro';
 import { LEVELS, LEVEL_MAP } from '../../../../data/levels';
 import { LANGUAGE_MAP } from '../../../../data/languages';
@@ -109,15 +110,19 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
   }}
 >
   <section class="container exam-head">
-    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${targetLang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${targetLang}/${level}`}>{levelName}</a>
-      <span aria-hidden="true">/</span>
-      <span>{t.titulo}</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        {
+          name: languageMeta?.name ?? '',
+          flag: languageMeta?.flag,
+          href: `/${userLang}/${targetLang}`,
+        },
+        { name: levelName, href: `/${userLang}/${targetLang}/${level}` },
+        { name: t.titulo },
+      ]}
+    />
     <span class="emoji" aria-hidden="true">🏆</span>
     <h1>{t.tituloPagina} — {levelName}</h1>
     <p class="desc">

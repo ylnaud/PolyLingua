@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
@@ -38,13 +39,14 @@ const vocabManifest = Object.fromEntries(
   noindex
 >
   <section class="container vocab-head">
-    <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-      <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {langName}</a>
-      <span aria-hidden="true">/</span>
-      <span>{dict.tools.nombres.vocabulario}</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
+        { name: dict.tools.nombres.vocabulario },
+      ]}
+    />
     <span class="emoji" aria-hidden="true">📖</span>
     <h1>{fill(tt.h1, { lang: langName })}</h1>
     <p class="desc" data-vocab-desc>{tt.cargando}</p>

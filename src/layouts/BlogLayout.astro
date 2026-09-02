@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 interface Props {
   title: string;
@@ -61,11 +62,12 @@ const structuredData = {
   ogImage={ogImage}
 >
   <article class="post container">
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href="/">Inicio</a>
-      <span aria-hidden="true">/</span>
-      <a href="/blog">Blog</a>
-    </nav>
+    <Breadcrumbs
+      items={[
+        { name: 'Inicio', href: '/' },
+        { name: 'Blog', href: '/blog' },
+      ]}
+    />
 
     <header class="post-head">
       <h1>{title}</h1>

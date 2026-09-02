@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { LEVELS } from '../../../data/levels';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { TSA_LANG } from '../../../data/tsa';
@@ -89,11 +90,10 @@ const structuredData = {
 >
   <div class="container silo-layout">
     <aside class="silo-aside" style={`--accent-c:${languageMeta.color}`}>
-      <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-        <a href={`/${userLang}`}>{t.idiomas}</a>
-        <span aria-hidden="true">/</span>
-        <span>{languageName}</span>
-      </nav>
+      <Breadcrumbs
+        userLang={userLang}
+        items={[{ name: t.idiomas, href: `/${userLang}` }, { name: languageName }]}
+      />
 
       <h1 class="lang-title">
         <span class="lt-name">

@@ -1,5 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
+import { getDictionary } from '../../../i18n';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getSpanishGlossCourseStaticPaths } from '../../../lib/courses';
@@ -11,6 +13,7 @@ import { LEVEL_MAP } from '../../../data/levels';
 export const getStaticPaths = getSpanishGlossCourseStaticPaths;
 
 const { userLang, targetLang } = Astro.params;
+const dict = getDictionary(userLang as never);
 const lang = targetLang;
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 
@@ -36,13 +39,14 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
   noindex
 >
   <section class="container dlg-head">
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
-      <span aria-hidden="true">/</span>
-      <span>Diálogos</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: languageMeta?.name ?? '', flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
+        { name: dict.silo.explorar.dialogos },
+      ]}
+    />
     <span class="emoji" aria-hidden="true">💬</span>
     <h1>Diálogos para asimilar</h1>
     <p class="desc">

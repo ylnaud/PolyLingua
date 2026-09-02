@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import { LEVEL_MAP } from '../../../../data/levels';
 import { LANGUAGE_MAP } from '../../../../data/languages';
 import { parseLessonId } from '../../../../lib/lessonPath';
@@ -102,13 +103,14 @@ const structuredData = {
 >
   <div class="container silo-layout">
     <aside class="silo-aside" style={`--accent-c:${levelMeta.color}`}>
-      <nav class="breadcrumbs" aria-label={dict.breadcrumbAria}>
-        <a href={`/${userLang}`}>{dict.silo.idiomas}</a>
-        <span aria-hidden="true">/</span>
-        <a href={`/${userLang}/${targetLang}`}>{languageMeta.flag} {languageName}</a>
-        <span aria-hidden="true">/</span>
-        <span>{levelName}</span>
-      </nav>
+      <Breadcrumbs
+        userLang={userLang}
+        items={[
+          { name: dict.silo.idiomas, href: `/${userLang}` },
+          { name: languageName, flag: languageMeta.flag, href: `/${userLang}/${targetLang}` },
+          { name: levelName },
+        ]}
+      />
 
       <h1 class="level-title">
         <span class="lt-lang">{languageName}</span>

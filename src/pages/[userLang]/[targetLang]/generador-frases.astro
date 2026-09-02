@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getDictionary } from '../../../i18n';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getSpanishGlossCourseStaticPaths } from '../../../lib/courses';
 import { LEVEL_MAP, type LevelMeta } from '../../../data/levels';
@@ -122,6 +124,7 @@ interface MatrixPanelData {
 }
 
 const { userLang, targetLang: lang } = Astro.params;
+const dict = getDictionary(userLang as never);
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 const matrixConfig = MATRIX_DATA[lang as keyof typeof MATRIX_DATA]!;
 
@@ -160,13 +163,14 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
   noindex
 >
   <section class="container gen-head">
-    <nav class="breadcrumbs" aria-label="Ruta de navegación">
-      <a href={`/${userLang}`}>Idiomas</a>
-      <span aria-hidden="true">/</span>
-      <a href={`/${userLang}/${lang}`}>{languageMeta?.flag} {languageMeta?.name}</a>
-      <span aria-hidden="true">/</span>
-      <span>Generador de frases</span>
-    </nav>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: languageMeta?.name ?? '', flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
+        { name: dict.silo.explorar.generadorFrases },
+      ]}
+    />
     <span class="emoji" aria-hidden="true">🧩</span>
     <h1>Generador de frases en {languageMeta?.name}</h1>
     <p class="desc">Elegí un nivel y una tanda chica, y estudiala de a una frase, a tu ritmo.</p>

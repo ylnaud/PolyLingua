@@ -1,4 +1,7 @@
 import { describe, it, expect } from 'vitest';
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { SKILLS } from '../src/data/skills';
 import {
   applyAttempt,
   computeStatus,
@@ -386,5 +389,60 @@ describe('Test 9 — una habilidad dominada desaparece y vuelve como repaso', ()
     const orden = rankSkills({ skills, progress, errors: [], now: T0, random: () => 0.5 });
     expect(orden).toHaveLength(1);
     expect(orden[0].reason).toBe('due_review');
+  });
+});
+
+describe('catálogo de habilidades', () => {
+  it('ningún prerrequisito apunta a una habilidad que no existe', () => {
+    const ids = new Set(SKILLS.map((s) => s.id));
+    const rotos = SKILLS.flatMap((s) =>
+      s.prerequisites.filter((p) => !ids.has(p)).map((p) => `${s.id} → ${p}`),
+    );
+    expect(rotos, `prerrequisitos rotos:\n${rotos.join('\n')}`).toEqual([]);
+  });
+
+  it('todas las habilidades tienen al menos una lección que las enseña', () => {
+    const referenciadas = new Set<string>();
+    const dir = join(import.meta.dirname, '..', 'src', 'content', 'lessons');
+    for (const curso of readdirSync(dir)) {
+      if (!/^[a-z]{2}-[a-z]{2}$/.test(curso)) continue;
+      for (const nivel of readdirSync(join(dir, curso))) {
+        for (const f of readdirSync(join(dir, curso, nivel))) {
+          if (!f.endsWith('.md')) continue;
+          const raw = readFileSync(join(dir, curso, nivel, f), 'utf-8');
+          for (const m of raw.matchAll(/^ {2}- ([a-z]{2}\.[a-z0-9]+\.[a-z0-9.-]+)$/gm)) {
+            referenciadas.add(m[1]);
+          }
+        }
+      }
+    }
+    const huerfanas = SKILLS.map((s) => s.id).filter((id) => !referenciadas.has(id));
+    expect(huerfanas, `habilidades sin lección:\n${huerfanas.join('\n')}`).toEqual([]);
+  });
+
+  it('las lecciones no referencian habilidades inexistentes', () => {
+    const ids = new Set(SKILLS.map((s) => s.id));
+    const dir = join(import.meta.dirname, '..', 'src', 'content', 'lessons');
+    const fantasma: string[] = [];
+    for (const curso of readdirSync(dir)) {
+      if (!/^[a-z]{2}-[a-z]{2}$/.test(curso)) continue;
+      for (const nivel of readdirSync(join(dir, curso))) {
+        for (const f of readdirSync(join(dir, curso, nivel))) {
+          if (!f.endsWith('.md')) continue;
+          const raw = readFileSync(join(dir, curso, nivel, f), 'utf-8');
+          for (const m of raw.matchAll(/^ {2}- ([a-z]{2}\.[a-z0-9]+\.[a-z0-9.-]+)$/gm)) {
+            if (!ids.has(m[1])) fantasma.push(`${curso}/${nivel}/${f}: ${m[1]}`);
+          }
+        }
+      }
+    }
+    expect(fantasma, `referencias a habilidades inexistentes:\n${fantasma.join('\n')}`).toEqual([]);
+  });
+
+  it('la dificultad está entre 1 y 5', () => {
+    for (const s of SKILLS) {
+      expect(s.difficulty, s.id).toBeGreaterThanOrEqual(1);
+      expect(s.difficulty, s.id).toBeLessThanOrEqual(5);
+    }
   });
 });

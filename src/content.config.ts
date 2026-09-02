@@ -94,6 +94,16 @@ const lessons = defineCollection({
     // Al ser opcionales, las lecciones existentes siguen validando sin cambios.
     situation: z.string().optional(),
     phrases: z.array(situationPhrase).default([]),
+    // Habilidades del motor adaptativo que enseña esta lección (ver
+    // src/data/skills.ts). La relación es N:N a propósito: una lección puede
+    // enseñar varias y una habilidad aparece en varias lecciones, que es lo
+    // que permite que fallar el orden de palabras en la lección de saludos
+    // cuente para lo mismo que fallarlo en la de la hora.
+    //
+    // Opcional: sin esto, las 478 lecciones que ya existen dejarían de
+    // validar de golpe. Una lección sin `skills` simplemente no alimenta al
+    // motor todavía.
+    skills: z.array(z.string()).default([]),
   }),
 });
 

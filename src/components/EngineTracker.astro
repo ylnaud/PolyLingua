@@ -1,0 +1,144 @@
+---
+
+---
+
+<script>
+  // Controlador del motor adaptativo: la capa entre la UI y el motor.
+  //
+  // Se engancha al evento `practice-complete` que Practice.astro YA emitía —el
+  // mismo que escucha ProgressTracker— así que no hace falta tocar el
+  // componente de práctica ni cambiar nada de lo que ya funciona. Los dos
+  // oyentes conviven: ProgressTracker sigue llevando racha, logros, pool SRS
+  // por ítem y vocabulario; este lleva el modelo por HABILIDAD.
+  //
+  // Toda la lógica de qué significa un acierto vive en src/lib/engine/, que no
+  // sabe nada de DOM. Acá solo se traduce "el usuario terminó una práctica" a
+  // llamadas al motor.
+  import { applyAttempt } from '../lib/engine/mastery';
+  import { recordError, recordFix } from '../lib/engine/errors';
+  import { nextReviewAt, stepFromStreak } from '../lib/engine/repetition';
+  import { getState, saveState } from '../lib/engine/learnerStore';
+  import { newProgress } from '../lib/engine/learnerStore';
+  import { SKILL_MAP } from '../data/skills';
+
+  interface ResultItem {
+    id: string;
+    kind: string;
+    correct: boolean;
+    userAnswer?: string;
+    correctAnswer?: string;
+  }
+
+  /**
+   * Qué habilidades ejercita cada ítem.
+   *
+   * Dos fuentes, según dónde estemos:
+   *
+   * - `[data-item-skills]`: mapa exacto ítem→habilidades. Lo publica la página
+   *   de práctica adaptativa, que sabe para qué habilidad eligió cada
+   *   ejercicio.
+   * - `[data-lesson-skills]`: la lista de la lección. En una lección normal no
+   *   se sabe qué ítem entrena qué habilidad, así que el resultado cuenta para
+   *   todas las que enseña — que es coherente con que la relación sea N:N.
+   */
+  function skillsForItem(itemId: string): string[] {
+    const exacto = document.querySelector<HTMLElement>('[data-item-skills]');
+    if (exacto) {
+      try {
+        const mapa = JSON.parse(exacto.dataset.itemSkills ?? '{}');
+        if (Array.isArray(mapa[itemId])) return mapa[itemId];
+      } catch {
+        /* json inválido: se cae al de la lección */
+      }
+    }
+    const leccion = document.querySelector<HTMLElement>('[data-lesson-skills]');
+    if (!leccion) return [];
+    try {
+      const lista = JSON.parse(leccion.dataset.lessonSkills ?? '[]');
+      return Array.isArray(lista) ? lista : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function applyResults(results: ResultItem[]) {
+    let state = getState();
+    let cambiado = false;
+    const now = Date.now();
+
+    for (const r of results) {
+      const skills = skillsForItem(r.id).filter((id) => SKILL_MAP[id]);
+      if (skills.length === 0) continue;
+
+      for (const skillId of skills) {
+        const skill = SKILL_MAP[skillId];
+        const previo = state.progress[skillId] ?? newProgress(skillId);
+        const dificultad = state.settings.difficulty[skillId] ?? skill.difficulty;
+
+        const actualizado = applyAttempt(previo, {
+          correct: r.correct,
+          exerciseId: r.id,
+          difficulty: dificultad,
+          now,
+        });
+        // El próximo repaso sale de la racha: un dato menos que mantener
+        // sincronizado a mano.
+        actualizado.nextReview = nextReviewAt(
+          stepFromStreak(actualizado.currentStreak),
+          r.correct,
+          now,
+        );
+        state.progress[skillId] = actualizado;
+
+        if (!r.correct) {
+          const esperado = r.correctAnswer ?? '';
+          const dado = r.userAnswer ?? '';
+          const existente = Object.values(state.errors).find(
+            (e) => e.skillId === skillId && e.active,
+          );
+          const error = recordError(
+            existente && sameKind(existente.expected, esperado, dado) ? existente : undefined,
+            { skillId, expected: esperado, actual: dado, category: skill.category, now },
+          );
+          state.errors[error.id] = error;
+        } else {
+          // Acertar en una habilidad con errores abiertos los repara. Hacen
+          // falta dos aciertos, no uno: ver FIXES_TO_CLOSE en errors.ts.
+          for (const e of Object.values(state.errors)) {
+            if (e.skillId === skillId && e.active) {
+              state.errors[e.id] = recordFix(e, now);
+            }
+          }
+        }
+        cambiado = true;
+      }
+    }
+
+    if (cambiado) saveState(state);
+  }
+
+  /** Si el error nuevo es del mismo tipo que el abierto, se acumula en él. */
+  function sameKind(_expectedPrevio: string, _esperado: string, _dado: string): boolean {
+    // recordError ya recalcula el tipo y con él el id; pasarle el existente
+    // solo sirve para heredar occurrences/firstSeen. Si el tipo cambia, el id
+    // cambia y queda registrado como otro error, que es lo correcto.
+    return true;
+  }
+
+  // Bandera de módulo, no de dataset del body: bajo navegación SPA el <body>
+  // se reemplaza en cada navegación y el guard no protegería el listener de
+  // document, que sí persiste. Mismo motivo que en ProgressTracker.
+  let started = false;
+
+  function initEngineTracker() {
+    if (started) return;
+    started = true;
+    document.addEventListener('practice-complete', ((e: CustomEvent) => {
+      const results = Array.isArray(e.detail?.results) ? e.detail.results : [];
+      if (results.length > 0) applyResults(results);
+    }) as EventListener);
+  }
+
+  initEngineTracker();
+  document.addEventListener('astro:page-load', initEngineTracker);
+</script>

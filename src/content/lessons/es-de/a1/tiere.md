@@ -8,6 +8,8 @@ unit: 5
 grammarTopic: 'Vocabulario y frases de animales'
 situation: 'Animales'
 funFact: '«Ich habe einen Hund» lleva «einen» y no «ein» porque el perro es lo que tenés — y cuando algo es lo que tenés, ves o comprás, el artículo masculino cambia: ein → einen. Con la gata es «eine Katze» y con el caballo «ein Pferd» (femenino y neutro no cambian). Hablar de tus propios animales es la práctica más natural que hay de este cambio.'
+skills:
+  - de.a1.vocabulary.animals
 minutes: 8
 phrases:
   - text: 'Ich habe einen Hund.'

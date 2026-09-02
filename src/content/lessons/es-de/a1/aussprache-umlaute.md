@@ -7,6 +7,8 @@ order: 0.1
 unit: 1
 grammarTopic: 'Pronunciación: los Umlaute (ä, ö, ü)'
 funFact: 'ö y ü no existen en español, pero salen fácil con un truco mecánico: poné la boca como para una vocal y decí otra. Para ö, labios de «o» y decís «e». Para ü, labios de «u» y decís «i». No es oído, es posición de labios.'
+skills:
+  - de.a1.pron.umlaute
 minutes: 8
 phrases:
   - text: 'Mädchen'

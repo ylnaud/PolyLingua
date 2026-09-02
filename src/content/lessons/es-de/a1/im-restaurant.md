@@ -8,6 +8,8 @@ unit: 5
 grammarTopic: 'Frases para el restaurante'
 situation: 'Restaurante'
 funFact: 'En Alemania se pide la cuenta en la mesa, no en la caja, y hay que pedirla: nadie te la va a traer sola. La frase es «Die Rechnung, bitte» — y si sos varios, «Zusammen oder getrennt?» te van a preguntar siempre: junto o separado.'
+skills:
+  - de.a1.vocabulary.restaurant
 minutes: 8
 phrases:
   - text: 'Einen Tisch für zwei, bitte.'

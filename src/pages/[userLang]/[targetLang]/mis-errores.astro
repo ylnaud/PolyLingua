@@ -101,6 +101,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 </BaseLayout>
 
 <script>
+  import { matchesLang } from '../../../lib/srs';
   import {
     buildItemFieldset,
     primePracticeCounters,
@@ -254,7 +255,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     errorList.dataset.built = 'true';
 
     const lang = window.location.pathname.split('/')[2] ?? '';
-    const log = readErrorLog().filter((e) => e.lang === lang);
+    const log = readErrorLog().filter((e) => matchesLang(e.lang, lang!));
     const srsPool = readSrsPool();
     const topicManifest = readTopicManifest();
     const selectedTopic = new URLSearchParams(window.location.search).get('tema');

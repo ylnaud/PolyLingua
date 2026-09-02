@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Präsens de verbos con cambio de vocal (fahren, essen, sehen, lesen)'
 funFact: 'Piensa en estos verbos como adolescentes rebeldes: siguen la regla del Präsens normal (e, st, t, en, t, en)... excepto que cambian su vocal justo en du y er/sie/es, como si quisieran llamar la atención. Memorízalos como un grupo pequeño y cerrado, no como una regla general.'
+skills:
+  - de.a1.verb.present-irregular
 minutes: 6
 quiz:
   - question: "¿Cuál es la forma correcta de 'fahren' (conducir) con 'du'?"

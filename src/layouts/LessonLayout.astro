@@ -41,6 +41,7 @@ interface Props {
   vocabulary?: VocabularyItem[];
   phrases?: Phrase[];
   situation?: string;
+  skills?: string[];
   lessonId?: string;
   path: string;
   prevLesson?: { title: string; href: string } | null;
@@ -62,6 +63,7 @@ const {
   vocabulary = [],
   phrases = [],
   situation,
+  skills = [],
   lessonId = '',
   path,
   prevLesson = null,
@@ -213,6 +215,14 @@ const restPath = `/${level}/${path.split('/').pop()}`;
     />
 
     <AdSlot slotId={`lesson-bottom-${language}-${level}`} userLang={userLang} />
+
+    {
+      /* Qué habilidades del motor adaptativo entrena esta lección. Lo lee
+        EngineTracker cuando termina la práctica: en una lección no se sabe qué
+        ítem entrena qué habilidad, así que el resultado cuenta para todas las
+        que enseña, coherente con que la relación sea N:N. */
+    }
+    {skills.length > 0 && <div hidden data-lesson-skills={JSON.stringify(skills)} />}
 
     <footer class="lesson-nav">
       {

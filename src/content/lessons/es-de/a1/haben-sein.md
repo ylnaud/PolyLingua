@@ -7,6 +7,9 @@ order: 10
 unit: 3
 grammarTopic: 'Verbos haben y sein (presente)'
 funFact: "haben y sein no son un verbo más: son la base del Perfekt, el pasado que más vas a usar ('ich habe gemacht', 'ich bin gegangen'). Dominarlos ahora te ahorra confusión en cada pasado que digas de acá en adelante."
+skills:
+  - de.a1.verb.sein
+  - de.a1.verb.haben
 minutes: 7
 quiz:
   - question: "¿Cómo se dice 'yo tengo' en alemán?"

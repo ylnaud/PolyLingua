@@ -1,0 +1,471 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import Practice from '../../../components/Practice.astro';
+import { LANGUAGE_MAP } from '../../../data/languages';
+import { SKILLS } from '../../../data/skills';
+import { getCourseLessons, getCourseStaticPaths } from '../../../lib/courses';
+import { getDictionary } from '../../../i18n';
+
+// Solo para los cursos que tienen habilidades definidas: hoy, alemán. El resto
+// sigue con Repasar, que no ha cambiado. Cuando se definan las skills de otro
+// idioma, esta página aparece sola para ese curso.
+export async function getStaticPaths() {
+  const conSkills = new Set(SKILLS.map((s) => s.lang));
+  return (await getCourseStaticPaths()).filter((p: any) => conSkills.has(p.params.targetLang));
+}
+
+const { userLang, targetLang } = Astro.params;
+const dict = getDictionary(userLang as never);
+const languageMeta = LANGUAGE_MAP[targetLang as keyof typeof LANGUAGE_MAP];
+const languageName = dict.languageNames[targetLang as keyof typeof dict.languageNames];
+
+// El banco de ejercicios: cada ítem de cada lección etiquetada con skills,
+// con el mismo id que usa el pool SRS (`<lessonId>#<índice>`) para que las dos
+// cosas hablen de lo mismo.
+//
+// Se publica en el HTML y no se pide al servidor porque el sitio es estático:
+// el build no sabe qué va a necesitar cada visitante, así que se manda el
+// catálogo y el motor elige en el cliente. Es el mismo patrón que ya usa
+// repasar.astro con [data-exercise-manifest].
+const lessons = getCourseLessons(userLang!, targetLang!).filter(
+  (l) => (l.data.skills ?? []).length > 0,
+);
+
+const bank = lessons.flatMap((l) => {
+  const skills = l.data.skills ?? [];
+  const items = [
+    ...l.data.quiz.map((data) => ({ kind: 'choice', data })),
+    ...l.data.exercises.map((data) => ({ kind: data.type, data })),
+  ];
+  return items.map((item, i) => ({ id: `${l.id}#${i}`, ...item, skills }));
+});
+
+const skills = SKILLS.filter((s) => s.lang === targetLang);
+---
+
+<BaseLayout
+  title={`Practicar ${languageName}`}
+  description={`Practica ${languageName} con ejercicios elegidos según lo que ya sabes y lo que sueles fallar.`}
+  path={`/${userLang}/${targetLang}/practicar`}
+  userLang={userLang}
+  noindex
+  siloContext={{
+    userLang,
+    targetLang,
+    restPath: '/practicar',
+    breadcrumbs: [
+      { name: dict.silo.idiomas, href: `/${userLang}` },
+      { name: languageName, href: `/${userLang}/${targetLang}` },
+      { name: 'Practicar', href: `/${userLang}/${targetLang}/practicar` },
+    ],
+  }}
+>
+  <section class="container adaptive-head">
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: languageName, flag: languageMeta?.flag, href: `/${userLang}/${targetLang}` },
+        { name: 'Practicar' },
+      ]}
+    />
+    <span class="emoji" aria-hidden="true">🎯</span>
+    <h1>Practicar {languageName}</h1>
+    <p class="desc" data-practice-desc>Preparando tu sesión…</p>
+
+    {
+      /* Por qué el motor eligió esto. Se muestra para que la sesión no parezca
+        una lista al azar: si estás reparando un error, tenés que saberlo. */
+    }
+    <div class="reason-card card" data-reason hidden>
+      <span class="reason-tag" data-reason-tag></span>
+      <p class="reason-text" data-reason-text></p>
+    </div>
+  </section>
+
+  <section class="container adaptive-body">
+    <div class="card empty-state" data-empty hidden>
+      <p class="empty-emoji">🌱</p>
+      <h2>Todavía no hay nada que practicar</h2>
+      <p>Haz una lección primero y el motor empezará a saber qué necesitas reforzar.</p>
+      <a class="btn btn-primary" href={`/${userLang}/${targetLang}`}>Ver lecciones</a>
+    </div>
+
+    <Practice
+      quiz={[]}
+      exercises={[]}
+      dynamic={true}
+      sessionType="review"
+      lessonId="practicar"
+      minutes={5}
+      lang={languageMeta?.bcp47}
+      userLang={userLang}
+    />
+  </section>
+
+  <section class="container dashboard" data-dashboard hidden>
+    <span class="eyebrow">📊 Tu progreso en A1</span>
+    <div class="dash-overall">
+      <div class="silo-track"><span class="silo-fill" data-dash-fill></span></div>
+      <p class="dash-overall-text" data-dash-text></p>
+    </div>
+
+    <div class="dash-cats" data-dash-cats></div>
+
+    <div class="dash-weak" data-dash-weak hidden>
+      <h2>Necesitas practicar</h2>
+      <ul class="weak-list" data-weak-list></ul>
+    </div>
+  </section>
+
+  <div hidden data-skill-bank={JSON.stringify(bank)}></div>
+  <div hidden data-skill-catalog={JSON.stringify(skills)}></div>
+</BaseLayout>
+
+<script>
+  import { buildItemFieldset, primePracticeCounters } from '../../../lib/practiceItemMarkup';
+  import { getState } from '../../../lib/engine/learnerStore';
+  import { buildSession, type Candidate } from '../../../lib/engine/scheduler';
+  import {
+    generateExercise,
+    generateRepairSet,
+    type BankItem,
+  } from '../../../lib/engine/exerciseGenerator';
+  import { needsIntensiveRepair } from '../../../lib/engine/errors';
+  import type { Exercise, Skill } from '../../../lib/engine/types';
+
+  const SESSION_SIZE = 10;
+
+  function readJson<T>(selector: string, attr: string, fallback: T): T {
+    const el = document.querySelector<HTMLElement>(selector);
+    if (!el) return fallback;
+    try {
+      return JSON.parse(el.dataset[attr] ?? '') as T;
+    } catch {
+      return fallback;
+    }
+  }
+
+  const MOTIVOS: Record<string, { tag: string; texto: string }> = {
+    severe_error: {
+      tag: '🔴 Necesitas practicar esto',
+      texto: 'Este patrón se te ha resistido varias veces. Vamos a por él con calma.',
+    },
+    persistent_error: {
+      tag: '🟠 Se te repite',
+      texto: 'Has fallado esto más de una vez, así que toca reforzarlo.',
+    },
+    weak_skill: {
+      tag: '🟡 Aún no sale solo',
+      texto: 'Lo estás aprendiendo: un poco más de práctica.',
+    },
+    due_review: {
+      tag: '🔁 Toca repasar',
+      texto: 'Hace un tiempo que no lo ves. A ver si sigue ahí.',
+    },
+    new_skill: { tag: '🌱 Algo nuevo', texto: 'Estás listo para esto.' },
+    random_review: {
+      tag: '✨ Repaso suelto',
+      texto: 'Todo en orden: un repaso para mantenerlo fresco.',
+    },
+  };
+
+  function initAdaptivePractice() {
+    const root = document.querySelector<HTMLElement>('[data-practice][data-session-type="review"]');
+    const container = root?.querySelector<HTMLElement>('[data-items-container]');
+    const vacio = document.querySelector<HTMLElement>('[data-empty]');
+    const desc = document.querySelector<HTMLElement>('[data-practice-desc]');
+    if (!root || !container || root.dataset.adaptiveBuilt) return;
+    root.dataset.adaptiveBuilt = 'true';
+
+    const bank = readJson<BankItem[]>('[data-skill-bank]', 'skillBank', []);
+    const catalog = readJson<Skill[]>('[data-skill-catalog]', 'skillCatalog', []);
+    const state = getState();
+
+    // El motor decide. La página solo pinta lo que le dicen.
+    const sesion = buildSession(
+      { skills: catalog, progress: state.progress, errors: Object.values(state.errors) },
+      SESSION_SIZE,
+    );
+
+    const ejercicios: { exercise: Exercise; candidate: Candidate }[] = [];
+    const usados: string[] = [];
+
+    for (const candidato of sesion) {
+      const skill = catalog.find((s) => s.id === candidato.skillId);
+      if (!skill) continue;
+      const dificultad = state.settings.difficulty[skill.id] ?? skill.difficulty;
+
+      // Reparación intensiva: cinco variaciones dirigidas al patrón, no un
+      // ejercicio suelto. Es la diferencia entre "volvé a intentarlo" y
+      // "vamos a trabajar esto".
+      if (candidato.error && needsIntensiveRepair(candidato.error)) {
+        const tanda = generateRepairSet(skill, 5);
+        if (tanda.length > 0) {
+          for (const ej of tanda) ejercicios.push({ exercise: ej, candidate: candidato });
+          continue;
+        }
+      }
+
+      const ej = generateExercise({ skill, difficulty: dificultad, bank, exclude: usados });
+      if (!ej) continue;
+      usados.push(ej.id);
+      ejercicios.push({ exercise: ej, candidate: candidato });
+    }
+
+    if (ejercicios.length === 0) {
+      if (vacio) vacio.hidden = false;
+      root.hidden = true;
+      if (desc) desc.hidden = true;
+      return;
+    }
+
+    // Mapa exacto ítem→habilidad, para que EngineTracker atribuya cada
+    // resultado a la habilidad correcta en vez de a todas las de una lección.
+    const itemSkills: Record<string, string[]> = {};
+    for (const { exercise } of ejercicios) itemSkills[exercise.id] = [exercise.skillId];
+    const mapa = document.createElement('div');
+    mapa.hidden = true;
+    mapa.dataset.itemSkills = JSON.stringify(itemSkills);
+    document.body.appendChild(mapa);
+
+    ejercicios.forEach(({ exercise }, i) => {
+      const item = exercise.render ?? { kind: 'choice', data: {} };
+      const fieldset = buildItemFieldset({ ...item, id: exercise.id } as any, i);
+      container.appendChild(fieldset);
+    });
+
+    primePracticeCounters(root, ejercicios.length);
+
+    // El motivo del PRIMER ejercicio es el que explica la sesión.
+    const primero = ejercicios[0].candidate;
+    const motivo = MOTIVOS[primero.reason];
+    const caja = document.querySelector<HTMLElement>('[data-reason]');
+    if (caja && motivo) {
+      const skill = catalog.find((s) => s.id === primero.skillId);
+      caja.hidden = false;
+      const tag = caja.querySelector<HTMLElement>('[data-reason-tag]');
+      const texto = caja.querySelector<HTMLElement>('[data-reason-text]');
+      if (tag) tag.textContent = `${motivo.tag}${skill ? ` · ${skill.name}` : ''}`;
+      if (texto) {
+        // En reparación se explica la regla antes de preguntar: explicación
+        // corta, producción, repetición. No una clase.
+        texto.textContent = ejercicios[0].exercise.explanation || motivo.texto;
+      }
+    }
+
+    if (desc) {
+      desc.textContent = `${ejercicios.length} ejercicios elegidos para ti.`;
+    }
+
+    document.dispatchEvent(new Event('astro:page-load'));
+  }
+
+  /** Etiquetas de las categorías, en el orden en que se muestran. */
+  const CATEGORIAS: [string, string][] = [
+    ['grammar', 'Gramática'],
+    ['vocabulary', 'Vocabulario'],
+    ['word_order', 'Orden de palabras'],
+    ['pronunciation', 'Pronunciación'],
+    ['writing', 'Escritura'],
+  ];
+
+  /** Punto de color según lo urgente que sea, igual que en el documento. */
+  function semaforo(status: string): string {
+    if (status === 'weak') return '🔴';
+    if (status === 'learning') return '🟡';
+    return '🟢';
+  }
+
+  function renderDashboard() {
+    const caja = document.querySelector<HTMLElement>('[data-dashboard]');
+    if (!caja) return;
+    const catalog = readJson<Skill[]>('[data-skill-catalog]', 'skillCatalog', []);
+    const state = getState();
+    const practicadas = catalog.filter((s) => (state.progress[s.id]?.attempts ?? 0) > 0);
+
+    // Sin nada practicado el dashboard no dice nada útil: mejor no mostrarlo
+    // que mostrar seis ceros.
+    if (practicadas.length === 0) return;
+    caja.hidden = false;
+
+    const media = Math.round(
+      catalog.reduce((n, s) => n + (state.progress[s.id]?.mastery ?? 0), 0) / catalog.length,
+    );
+    const fill = caja.querySelector<HTMLElement>('[data-dash-fill]');
+    if (fill) fill.style.width = media + '%';
+    const texto = caja.querySelector<HTMLElement>('[data-dash-text]');
+    if (texto) {
+      texto.textContent = `Progreso general ${media}% · ${practicadas.length} de ${catalog.length} habilidades empezadas`;
+    }
+
+    // Media por categoría, solo de las que existen en este curso.
+    const cats = caja.querySelector<HTMLElement>('[data-dash-cats]');
+    if (cats) {
+      cats.innerHTML = '';
+      for (const [id, etiqueta] of CATEGORIAS) {
+        const delTipo = catalog.filter((s) => s.category === id);
+        if (delTipo.length === 0) continue;
+        const pct = Math.round(
+          delTipo.reduce((n, s) => n + (state.progress[s.id]?.mastery ?? 0), 0) / delTipo.length,
+        );
+        const fila = document.createElement('div');
+        fila.className = 'dash-cat';
+        const nombre = document.createElement('span');
+        nombre.className = 'dash-cat-name';
+        nombre.textContent = etiqueta;
+        const barra = document.createElement('span');
+        barra.className = 'silo-track dash-cat-track';
+        const relleno = document.createElement('span');
+        relleno.className = 'silo-fill';
+        relleno.style.width = pct + '%';
+        barra.appendChild(relleno);
+        const valor = document.createElement('span');
+        valor.className = 'dash-cat-value';
+        valor.textContent = pct + '%';
+        fila.append(nombre, barra, valor);
+        cats.appendChild(fila);
+      }
+    }
+
+    // Lo que hay que practicar, con el MISMO criterio con el que el motor
+    // elige: no una lista aparte que pueda contradecir a la sesión.
+    const flojas = buildSession(
+      { skills: catalog, progress: state.progress, errors: Object.values(state.errors) },
+      6,
+      // Solo lo que de verdad va mal: un repaso pendiente o una habilidad
+      // nueva no son un problema, y mezclarlos bajo "Necesitas practicar"
+      // hacía que apareciera una habilidad en verde en la lista de avisos.
+    ).filter(
+      (c) =>
+        c.reason === 'severe_error' || c.reason === 'persistent_error' || c.reason === 'weak_skill',
+    );
+
+    const bloque = caja.querySelector<HTMLElement>('[data-dash-weak]');
+    const lista = caja.querySelector<HTMLElement>('[data-weak-list]');
+    if (bloque && lista && flojas.length > 0) {
+      bloque.hidden = false;
+      lista.innerHTML = '';
+      for (const c of flojas) {
+        const skill = catalog.find((s) => s.id === c.skillId);
+        if (!skill) continue;
+        const p = state.progress[skill.id];
+        const li = document.createElement('li');
+        li.textContent = `${semaforo(p?.status ?? 'new')} ${skill.name}`;
+        if (c.error) li.textContent += ` · ${c.error.occurrences} fallos`;
+        lista.appendChild(li);
+      }
+    }
+  }
+
+  initAdaptivePractice();
+  renderDashboard();
+  document.addEventListener('astro:page-load', initAdaptivePractice);
+</script>
+
+<style>
+  /* No se llama .practice-head: ese nombre ya lo usa Practice.astro para su
+     propia cabecera con display:flex, y la regla alcanzaba a esta sección
+     dejándola en una fila. */
+  .adaptive-head {
+    padding-block: 2.5rem 1rem;
+    max-width: 680px;
+  }
+
+  .reason-card {
+    margin-top: 1.25rem;
+    padding: 1rem 1.15rem;
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+    background: color-mix(in srgb, var(--accent) 7%, var(--bg-card));
+  }
+
+  .reason-tag {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  .reason-text {
+    margin: 0.35rem 0 0;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .adaptive-body {
+    padding-block: 1rem 2rem;
+  }
+
+  /* Dashboard: mismo lenguaje visual que el camino del silo (.silo-track y
+     .silo-fill vienen de global.css), sin librerías de gráficos. */
+  .dashboard {
+    padding-block: 1rem 4rem;
+    max-width: 680px;
+  }
+
+  .dash-overall-text {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .dash-cats {
+    display: grid;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Estas filas las crea el JS, así que NO llevan el atributo de scope de
+     Astro y una regla scoped no las alcanza. Se anclan al contenedor, que sí
+     está en la plantilla, y el hijo va con :global(). Mismo patrón que
+     IconToggle con sus iconos por slot. */
+  .dash-cats :global(.dash-cat) {
+    display: grid;
+    grid-template-columns: minmax(90px, 30%) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+  }
+
+  .dash-cats :global(.dash-cat-name) {
+    font-weight: 600;
+  }
+
+  /* .silo-track está pensada para un contenedor de bloque; sobre un <span>
+     inline la altura no aplica y el border-radius lo deja hecho un círculo. */
+  .dash-cats :global(.dash-cat-track) {
+    display: block;
+  }
+
+  .dash-cats :global(.dash-cat-value) {
+    font-weight: 700;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .dash-weak {
+    margin-top: 2rem;
+  }
+
+  .dash-weak h2 {
+    font-size: 1.05rem;
+    margin: 0 0 0.6rem;
+  }
+
+  .weak-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.92rem;
+  }
+
+  /* Los <li> también los crea el JS. */
+  .weak-list :global(li) {
+    line-height: 1.4;
+  }
+</style>

@@ -7,6 +7,9 @@ order: 1
 unit: 1
 grammarTopic: 'Saludos y presentación personal (Begrüßung / Sich vorstellen)'
 funFact: 'No necesitas saber ni una sola regla de gramática para empezar a hablar alemán hoy mismo: estas frases son bloques fijos que se memorizan enteros, como una canción. Repítelas en voz alta hasta que salgan solas — la gramática viene después.'
+skills:
+  - de.a1.introduction.name
+  - de.a1.introduction.origin
 minutes: 8
 quiz:
   - question: 'Quieres saludar a alguien a cualquier hora del día, de forma neutral. ¿Qué dices?'

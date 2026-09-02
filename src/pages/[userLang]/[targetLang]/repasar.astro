@@ -105,6 +105,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     type SrsEntry,
   } from '../../../lib/practiceItemMarkup';
   import { today, getActiveSprint, markSprintDayDone } from '../../../lib/storage';
+  import { matchesLang } from '../../../lib/srs';
   import { shuffle } from '../../../lib/shuffle';
   import { readPageStrings, fill } from '../../../lib/pageStrings';
 
@@ -239,7 +240,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     const selectedTopic = new URLSearchParams(window.location.search).get('tema');
 
     const dueAll = Object.values(pool).filter(
-      (entry) => entry.lang === lang && entry.due <= today(),
+      (entry) => matchesLang(entry.lang, lang!) && entry.due <= today(),
     );
     renderTopicFilters(dueAll, topicManifest, selectedTopic);
 

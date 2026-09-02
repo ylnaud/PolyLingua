@@ -103,6 +103,15 @@ las pierde (van a un grupo final) y hay un test en
 poner siempre un `unit` que exista. Si el tema no entra en ninguna unidad,
 agregá una nueva a `units.ts` en vez de dejar el campo vacío.
 
+El campo `skills` es opcional y alimenta el **motor de aprendizaje
+adaptativo** (`src/lib/engine/`, documentado en `docs/LEARNING_ENGINE.md`).
+Lista las habilidades que enseña la lección, con ids del catálogo de
+`src/data/skills.ts` (`de.a1.wordorder.basic`). La relación es N:N: una
+lección enseña varias y una habilidad aparece en varias lecciones. Hoy solo
+están etiquetadas las 29 lecciones de A1 alemán; el resto simplemente no
+alimenta al motor todavía. Hay tests que fallan si se referencia una habilidad
+inexistente o si una habilidad se queda sin lección.
+
 Tipos de `exercises` que acepta el schema: `fill-blank` (necesita `___` en
 `sentence`), `match` (mínimo 3 `pairs`), `write`, `order`.
 

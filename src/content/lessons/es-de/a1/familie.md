@@ -7,6 +7,8 @@ order: 8
 unit: 3
 grammarTopic: 'Vocabulario: la familia'
 funFact: 'Casi todas las palabras de familia masculina y femenina siguen el patrón der/die predecible: der Vater, die Mutter, der Bruder, die Schwester. Apréndelas en parejas (padre/madre, hermano/hermana) y el vocabulario se duplica con la mitad del esfuerzo.'
+skills:
+  - de.a1.vocabulary.family
 minutes: 6
 quiz:
   - question: "¿Cuál es el artículo correcto para 'Mutter' (madre)?"

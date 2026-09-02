@@ -7,6 +7,8 @@ order: 0.3
 unit: 1
 grammarTopic: 'Pronunciación: sch, ch y ck'
 funFact: 'La «ch» alemana tiene dos sonidos y la vocal de antes decide cuál: después de a, o, u suena fuerte como la j española (Buch = «BUUJ»); después de e, i suena suave y adelante (Licht = «LIJT»). No hay que elegir de oído: se mira la letra anterior.'
+skills:
+  - de.a1.pron.consonantes
 minutes: 9
 phrases:
   - text: 'Schule'

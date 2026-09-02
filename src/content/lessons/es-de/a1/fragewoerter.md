@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Palabras interrogativas (W-Fragen)'
 funFact: "En alemán, todas las preguntas con palabra interrogativa se llaman 'W-Fragen' porque casi todas empiezan con W: wer, was, wo, wann, warum, wie, welche. Memoriza estas 6-7 palabras y podrás preguntar prácticamente cualquier cosa."
+skills:
+  - de.a1.question.words
+  - de.a1.wordorder.questions
 minutes: 6
 quiz:
   - question: "¿Qué palabra usarías para preguntar '¿Dónde vives?'"

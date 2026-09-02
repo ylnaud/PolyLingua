@@ -7,6 +7,8 @@ order: 0.5
 unit: 1
 grammarTopic: 'Pronunciación: h muda, terminación -er, y v/z/s'
 funFact: '«Lehrer» tiene dos trampas en una sola palabra: la h del medio no se pronuncia (solo alarga la e) y la terminación -er no suena «er» sino como una «a» relajada. Resultado: «LÉE-ra». Con estas dos reglas, cientos de palabras dejan de sonar raras.'
+skills:
+  - de.a1.pron.consonantes
 minutes: 9
 phrases:
   - text: 'Uhr'

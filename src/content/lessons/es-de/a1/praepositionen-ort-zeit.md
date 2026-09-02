@@ -7,6 +7,8 @@ order: 24
 grammarTopic: 'Preposiciones básicas de lugar y tiempo'
 funFact: 'No intentes traducir "en" al alemán — a veces es "in", a veces "auf", a veces "an". El truco es aprender cada expresión como un bloque: "in der Schule" (en la escuela), "auf der Straße" (en la calle), "am Montag" (el lunes). Memoriza el bloque entero y acertarás sin pensar.'
 unit: 6
+skills:
+  - de.a1.preposition.place-time
 minutes: 8
 quiz:
   - question: '¿Cómo se dice "el lunes" en alemán?'

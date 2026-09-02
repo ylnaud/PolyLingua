@@ -109,6 +109,7 @@ const topicManifest = Object.fromEntries(topics.map((t) => [t.topic, t.lessonIds
 </BaseLayout>
 
 <script>
+  import { matchesLang } from '../../../lib/srs';
   import { read } from '../../../lib/storage';
   import { MAX_BOX } from '../../../lib/srs';
   import { readPageStrings, fill } from '../../../lib/pageStrings';
@@ -163,7 +164,7 @@ const topicManifest = Object.fromEntries(topics.map((t) => [t.topic, t.lessonIds
 
       const entries: SrsEntry[] = [];
       for (const entry of Object.values(pool)) {
-        if (entry.lang !== lang) continue;
+        if (!matchesLang(entry.lang, lang!)) continue;
         const lessonId = (entry as any).id?.split('#')[0] ?? '';
         if (lessonIds.includes(lessonId)) entries.push(entry);
       }

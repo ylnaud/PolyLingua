@@ -7,6 +7,8 @@ order: 12
 unit: 3
 grammarTopic: 'El imperativo (du / ihr / Sie)'
 funFact: "El alemán usa el imperativo mucho más seguido que el español — hasta para pedidos amables. No te suena grosero decir '¡Komm!' a un amigo, así como en español tampoco suena grosero decir '¡Vení!'."
+skills:
+  - de.a1.verb.imperative
 minutes: 8
 quiz:
   - question: "¿Cómo se forma el imperativo para 'Sie' (usted/ustedes)?"

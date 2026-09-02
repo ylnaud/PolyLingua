@@ -8,6 +8,8 @@ unit: 5
 grammarTopic: 'Frases para hablar de gustos y tiempo libre'
 situation: 'Tiempo libre'
 funFact: 'El alemán no tiene un verbo «gustar» para las acciones: le agrega la palabra «gern» al verbo normal. «Ich spiele gern» es literalmente «juego con gusto». Una palabrita y ya podés decir que te gusta cualquier cosa que sepas hacer.'
+skills:
+  - de.a1.vocabulary.freetime
 minutes: 8
 phrases:
   - text: 'Was machst du gern?'

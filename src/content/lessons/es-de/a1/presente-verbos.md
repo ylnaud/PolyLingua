@@ -7,6 +7,9 @@ order: 4
 unit: 2
 grammarTopic: 'Präsens de verbos regulares'
 funFact: 'Las terminaciones -e, -st, -t, -en, -t, -en riman con una cancioncita: e-s-t-en-t-en. Cántala como una tabla de multiplicar y jamás se te olvidará.'
+skills:
+  - de.a1.verb.present-regular
+  - de.a1.wordorder.basic
 minutes: 6
 quiz:
   - question: "¿Cómo se conjuga 'machen' (hacer) con 'du' (tú)?"

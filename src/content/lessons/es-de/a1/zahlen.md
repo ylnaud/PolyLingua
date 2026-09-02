@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Números cardinales (0-100)'
 funFact: "El alemán construye los números del 21 al 99 al revés respecto al español: en vez de 'veintiuno' dicen 'un-y-veinte' (einundzwanzig). Una vez que te acostumbras a ese orden invertido, el resto es pura repetición de patrones."
+skills:
+  - de.a1.vocabulary.numbers
 minutes: 6
 quiz:
   - question: "¿Cómo se dice '21' en alemán?"

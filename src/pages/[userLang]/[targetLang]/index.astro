@@ -7,6 +7,7 @@ import { TSA_LANG } from '../../../data/tsa';
 import { parseLessonId } from '../../../lib/lessonPath';
 import { MATRIX_DATA } from '../../../data/matrices';
 import { SPANISH_GLOSS_USER_LANG } from '../../../lib/courses';
+import { SKILLS } from '../../../data/skills';
 import { getDictionary } from '../../../i18n';
 import { getCollection } from 'astro:content';
 
@@ -38,6 +39,10 @@ const tsaEntry = TSA_LANG[targetLang as string] ?? null;
 // (ver SPANISH_GLOSS_USER_LANG en src/lib/courses.ts). Enlazarlos desde otro
 // silo sería mandar al usuario a una página que no se genera.
 const hasSpanishGlossTools = userLang === SPANISH_GLOSS_USER_LANG;
+
+// ¿Este curso tiene habilidades definidas para el motor adaptativo? Hoy solo
+// alemán; el resto sigue con Repasar, que no cambió.
+const tieneMotor = SKILLS.some((s) => s.lang === targetLang);
 
 const allLessons = await getCollection('lessons');
 const sameSilo = (l: (typeof allLessons)[number], lvlId: string) =>
@@ -180,6 +185,18 @@ const structuredData = {
   <section class="container explore-more" style={`--accent-c:${languageMeta.color}`}>
     <span class="eyebrow">{t.explorarMas}</span>
     <div class="explore-grid">
+      {
+        /* Solo para los cursos con habilidades definidas: la página de práctica
+           adaptativa solo se genera para esos (ver practicar.astro). */
+        tieneMotor && (
+          <a class="explore-item card" href={`/${userLang}/${targetLang}/practicar`}>
+            <span class="explore-icon" aria-hidden="true">
+              🎯
+            </span>
+            <span>Practicar ahora</span>
+          </a>
+        )
+      }
       <a class="explore-item card" href={`/${userLang}/${targetLang}/situaciones`}>
         <span class="explore-icon" aria-hidden="true">🗺️</span>
         <span>{t.explorar.situaciones}</span>
@@ -289,6 +306,16 @@ const structuredData = {
     } catch {
       return null;
     }
+  }
+
+  // Misma regla que matchesLang() en src/lib/srs.ts, repetida acá porque un
+  // <script define:vars> se trata como is:inline y no admite import. El pool
+  // guardó durante un tiempo el curso ("es-de") donde va el idioma ("de"), así
+  // que se aceptan las dos formas para no perder el progreso ya guardado.
+  function matchesLang(guardado, lang) {
+    if (!guardado) return false;
+    if (guardado === lang) return true;
+    return guardado.indexOf('-') !== -1 && guardado.split('-')[1] === lang;
   }
 
   function isLevelPassed(levelId) {
@@ -426,7 +453,7 @@ const structuredData = {
       var pool = JSON.parse(read('polylingua-srs-pool') || '{}');
       var td = todayStr();
       for (var k in pool) {
-        if (pool[k].lang === targetLang && pool[k].due <= td) reviewCount++;
+        if (matchesLang(pool[k].lang, targetLang) && pool[k].due <= td) reviewCount++;
       }
     } catch (e) {}
     var reviewEl = document.querySelector('[data-stat-review]');
@@ -436,7 +463,7 @@ const structuredData = {
     try {
       var log = JSON.parse(read('polylingua-error-log') || '[]');
       for (var e2 = 0; e2 < log.length; e2++) {
-        if (log[e2].lang === targetLang) errorCount++;
+        if (matchesLang(log[e2].lang, targetLang)) errorCount++;
       }
     } catch (e) {}
     var errorEl = document.querySelector('[data-stat-errors]');

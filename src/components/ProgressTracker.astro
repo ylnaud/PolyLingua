@@ -4,7 +4,7 @@
 
 <script>
   import { today, addDays, read, write } from '../lib/storage';
-  import { INTERVAL_DAYS, MAX_BOX } from '../lib/srs';
+  import { INTERVAL_DAYS, MAX_BOX, targetLangFromId } from '../lib/srs';
 
   interface ResultItem {
     id: string;
@@ -82,7 +82,8 @@
       return;
     }
     if (vocabulary.length === 0) return;
-    const [lang = ''] = lessonId.split('/');
+    // Idioma META, no el curso: `es-de/a1/uhrzeit` es alemán, no "es-de".
+    const lang = targetLangFromId(lessonId);
     if (!lang) return;
     const learned = readVocabLearned();
     let changed = false;
@@ -127,7 +128,8 @@
     const pool = readPool();
     for (const r of results) {
       if (!r.id) continue;
-      const [lang = '', level = ''] = r.id.split('#')[0].split('/');
+      const [, level = ''] = r.id.split('#')[0].split('/');
+      const lang = targetLangFromId(r.id);
       if (!lang || !level) continue;
       if (!r.correct) {
         const existing = pool[r.id];

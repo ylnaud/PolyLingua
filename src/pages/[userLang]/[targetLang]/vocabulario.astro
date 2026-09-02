@@ -93,6 +93,7 @@ const vocabManifest = Object.fromEntries(
 </BaseLayout>
 
 <script>
+  import { matchesLang } from '../../../lib/srs';
   import {
     buildItemFieldset,
     primePracticeCounters,
@@ -189,7 +190,7 @@ const vocabManifest = Object.fromEntries(
     const lang = window.location.pathname.split('/')[2] ?? '';
     backfillFromCompletedLessons(lang);
     const learned = Object.values(readLearned())
-      .filter((entry) => entry.lang === lang)
+      .filter((entry) => matchesLang(entry.lang, lang!))
       .sort((a, b) => (a.learnedAt < b.learnedAt ? 1 : -1));
 
     if (learned.length === 0) {

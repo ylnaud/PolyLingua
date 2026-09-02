@@ -291,6 +291,16 @@ const structuredData = {
     }
   }
 
+  // Misma regla que matchesLang() en src/lib/srs.ts, repetida acá porque un
+  // <script define:vars> se trata como is:inline y no admite import. El pool
+  // guardó durante un tiempo el curso ("es-de") donde va el idioma ("de"), así
+  // que se aceptan las dos formas para no perder el progreso ya guardado.
+  function matchesLang(guardado, lang) {
+    if (!guardado) return false;
+    if (guardado === lang) return true;
+    return guardado.indexOf('-') !== -1 && guardado.split('-')[1] === lang;
+  }
+
   function isLevelPassed(levelId) {
     return read('polylingua-level-passed-' + targetLang + '-' + levelId) === 'true';
   }
@@ -426,7 +436,7 @@ const structuredData = {
       var pool = JSON.parse(read('polylingua-srs-pool') || '{}');
       var td = todayStr();
       for (var k in pool) {
-        if (pool[k].lang === targetLang && pool[k].due <= td) reviewCount++;
+        if (matchesLang(pool[k].lang, targetLang) && pool[k].due <= td) reviewCount++;
       }
     } catch (e) {}
     var reviewEl = document.querySelector('[data-stat-review]');
@@ -436,7 +446,7 @@ const structuredData = {
     try {
       var log = JSON.parse(read('polylingua-error-log') || '[]');
       for (var e2 = 0; e2 < log.length; e2++) {
-        if (log[e2].lang === targetLang) errorCount++;
+        if (matchesLang(log[e2].lang, targetLang)) errorCount++;
       }
     } catch (e) {}
     var errorEl = document.querySelector('[data-stat-errors]');

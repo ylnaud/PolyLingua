@@ -282,6 +282,7 @@ const lessonCounts = Object.fromEntries(
 </script>
 
 <script>
+  import { matchesLang } from '../lib/srs';
   import { exportAll } from '../lib/storage';
   import { LANGUAGES } from '../data/languages';
   import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
@@ -318,7 +319,9 @@ const lessonCounts = Object.fromEntries(
       const levelsPassed = Object.keys(all).filter((k) =>
         k.startsWith(`polylingua-level-passed-${lang.id}-`),
       ).length;
-      const wordsLearned = Object.values(vocabLearned).filter((v) => v.lang === lang.id).length;
+      const wordsLearned = Object.values(vocabLearned).filter((v) =>
+        matchesLang(v.lang, lang.id),
+      ).length;
 
       const card = document.createElement('a');
       card.className = 'lang-progress-card';

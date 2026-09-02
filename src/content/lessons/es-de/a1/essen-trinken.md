@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Vocabulario: comida y bebida'
 funFact: "En un restaurante alemán, decir simplemente 'Ich möchte...' (quisiera...) antes de cualquier plato es la fórmula mágica que suena educada y natural — mucho más que 'Ich will' (quiero), que puede sonar brusco."
+skills:
+  - de.a1.vocabulary.food
 minutes: 6
 quiz:
   - question: "¿Cuál es el artículo correcto para 'Wasser' (agua)?"

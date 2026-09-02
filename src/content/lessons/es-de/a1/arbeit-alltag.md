@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Vocabulario y frases de trabajo'
 situation: 'Trabajo'
 funFact: 'Con tres verbos — arbeiten, machen y brauchen — ya podés sostener casi cualquier conversación sobre trabajo. No hace falta el vocabulario técnico de tu oficio para empezar a hablar de él.'
+skills:
+  - de.a1.vocabulary.work
 minutes: 8
 phrases:
   - text: 'Ich arbeite viel.'

@@ -3,6 +3,7 @@ import { ClientRouter } from 'astro:transitions';
 import { ACTIVE_USER_LANGUAGES, USER_LANGUAGE_MAP } from '../data/userLanguages';
 import Header from '../components/Header.astro';
 import StreakReminder from '../components/StreakReminder.astro';
+import EngineTracker from '../components/EngineTracker.astro';
 import BackupReminder from '../components/BackupReminder.astro';
 import Footer from '../components/Footer.astro';
 import ProgressTracker from '../components/ProgressTracker.astro';
@@ -140,6 +141,7 @@ const ogImage = new URL(ogImagePath, Astro.site);
     </main>
     <Footer userLang={pageLang} />
     <ProgressTracker />
+    <EngineTracker />
     <SoundEffects />
     <CookieNotice userLang={pageLang} />
     <ScrollTopButton />

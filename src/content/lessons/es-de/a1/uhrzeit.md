@@ -7,6 +7,9 @@ order: 7
 unit: 2
 grammarTopic: 'Decir la hora (formal e informal)'
 funFact: "Los alemanes son muy precisos con los horarios — no es casualidad que tengan DOS sistemas para decir la hora: uno relajado para hablar con amigos ('halb drei' = las dos y media) y uno oficial de 24 horas para trenes, citas y todo lo formal ('14:30 Uhr'). Aprende ambos, los vas a necesitar."
+skills:
+  - de.a1.vocabulary.time
+  - de.a1.wordorder.time-verb-subject
 minutes: 7
 quiz:
   - question: "¿Qué significa 'halb drei' literalmente 'mitad de tres'?"

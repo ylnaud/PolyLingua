@@ -58,6 +58,7 @@ const { userLang, targetLang, level, slug } = Astro.params;
   vocabulary={lesson.data.vocabulary}
   phrases={lesson.data.phrases}
   situation={lesson.data.situation}
+  skills={lesson.data.skills}
   lessonId={lesson.id}
   path={`/${userLang}/${targetLang}/${level}/${slug}`}
   prevLesson={prevLesson}

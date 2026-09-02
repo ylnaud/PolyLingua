@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Vocabulario y frases de compras'
 situation: 'Compras y supermercado'
 funFact: 'Una compra entera se resuelve con cuatro frases: pedir, preguntar el precio, decidir y pagar. Aprendelas como bloques y ya podés entrar a cualquier tienda sin ensayar nada.'
+skills:
+  - de.a1.vocabulary.shopping
 minutes: 8
 phrases:
   - text: 'Was kostet das?'

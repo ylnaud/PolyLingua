@@ -8,6 +8,8 @@ unit: 5
 grammarTopic: 'Frases de transporte y orientación'
 situation: 'Transporte y ciudad'
 funFact: 'En alemán, si vas en un vehículo usás «fahren» y si vas a pie usás «gehen». Decir «ich gehe nach Berlin» significaría que te vas caminando hasta Berlín. Para el transporte, la fórmula fija es «mit dem» + medio: mit dem Bus, mit dem Zug, mit dem Auto.'
+skills:
+  - de.a1.vocabulary.transport
 minutes: 9
 phrases:
   - text: 'Ich fahre mit dem Bus.'

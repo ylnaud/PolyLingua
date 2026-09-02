@@ -8,6 +8,10 @@ unit: 4
 grammarTopic: 'Sein y haben en frases cotidianas'
 situation: 'Día a día'
 funFact: "No memorices la tabla de conjugación otra vez: memorizá frases enteras. 'Ich habe keine Ahnung' te sale automático mucho antes que 'la 1ª persona singular de haben'. El cerebro guarda bloques, no casillas."
+skills:
+  - de.a1.verb.sein
+  - de.a1.verb.haben
+  - de.a1.wordorder.basic
 minutes: 8
 phrases:
   - text: 'Ich bin müde.'

@@ -7,6 +7,8 @@ order: 0.4
 unit: 1
 grammarTopic: 'Pronunciación: st, sp, pf, tz y ß'
 funFact: '«Sport» se escribe igual que en español pero se lee «SHPORT», y «Student» se lee «SHTUDÉNT». La regla vale solo al principio de la palabra: en el medio, «gestern» se lee «GÉS-tan», con st normal. La posición lo decide todo.'
+skills:
+  - de.a1.pron.consonantes
 minutes: 9
 phrases:
   - text: 'Student'

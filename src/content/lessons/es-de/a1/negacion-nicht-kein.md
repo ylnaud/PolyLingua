@@ -7,6 +7,8 @@ order: 11
 unit: 3
 grammarTopic: 'La negación: nicht vs. kein'
 funFact: "Preguntate siempre: '¿estoy negando UN SUSTANTIVO?'. Si la respuesta es sí ('no tengo AUTO'), usa kein. Si estás negando un verbo, adjetivo, adverbio o nombre propio ('no ES bonito', 'no VOY'), usa nicht. Esa sola pregunta resuelve el 90% de los casos."
+skills:
+  - de.a1.negation.nicht-kein
 minutes: 8
 quiz:
   - question: "¿Cómo respondés 'no' a la pregunta '¿Hiciste la tarea?' (respuesta corta, sin el resto de la frase)?"

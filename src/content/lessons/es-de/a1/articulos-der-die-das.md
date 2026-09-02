@@ -7,6 +7,8 @@ order: 3
 unit: 2
 grammarTopic: 'Artículos determinados (der/die/das)'
 funFact: "Esto no son reglas fijas, son tendencias: con estas categorías acertarás la gran mayoría de las veces, pero el alemán siempre se reserva un puñado de excepciones. Aprende cada palabra nueva CON su artículo pegado — der Tisch, no solo 'Tisch' — y tu memoria hará el resto."
+skills:
+  - de.a1.article.der-die-das
 minutes: 12
 quiz:
   - question: "¿Cuál es el artículo correcto para 'Lehrer' (profesor)?"

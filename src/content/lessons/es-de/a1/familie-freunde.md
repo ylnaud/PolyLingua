@@ -8,6 +8,9 @@ unit: 4
 grammarTopic: 'Frases para hablar de la familia y los amigos'
 situation: 'Familia y amigos'
 funFact: '«Mein Freund» no siempre es «mi amigo»: con el posesivo suele entenderse como pareja. Si querés decir simplemente un amigo, lo natural es «ein Freund von mir». Un detalle chico que evita malentendidos grandes.'
+skills:
+  - de.a1.vocabulary.family
+  - de.a1.writing.about-me
 minutes: 8
 phrases:
   - text: 'Ich habe zwei Brüder.'

@@ -7,6 +7,8 @@ order: 14
 unit: 3
 grammarTopic: 'Formación del plural de sustantivos'
 funFact: "No hay una sola terminación de plural en alemán — pero hay una sola regla que nunca falla: el artículo plural SIEMPRE es 'die', sea der/die/das en singular. Aprendé esa regla primero; el resto es memorizar cada palabra nueva junto con su plural, como un paquete."
+skills:
+  - de.a1.noun.plural
 minutes: 8
 quiz:
   - question: '¿Cuál es el artículo plural de TODOS los sustantivos alemanes, sin importar su género en singular?'

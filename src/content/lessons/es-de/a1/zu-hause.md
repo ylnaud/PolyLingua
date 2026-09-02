@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Vocabulario y frases de la casa'
 situation: 'Casa'
 funFact: 'Ojo con «zu Hause» y «nach Hause»: el primero es estar en casa (sin moverte) y el segundo es ir hacia casa. Es la misma diferencia que hay entre «estoy en casa» y «voy a casa», y confundirlas es el error más común del tema.'
+skills:
+  - de.a1.vocabulary.home
 minutes: 8
 phrases:
   - text: 'Ich wohne in Berlin.'

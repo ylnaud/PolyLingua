@@ -6,6 +6,7 @@
 // último segmento acá o el test de sincronía va a fallar.
 export const NOINDEX_LAST_SEGMENTS = [
   'repasar',
+  'practicar',
   'practica-libre',
   'vocabulario',
   'examen',

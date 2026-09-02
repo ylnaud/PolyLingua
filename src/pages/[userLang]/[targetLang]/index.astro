@@ -7,6 +7,7 @@ import { TSA_LANG } from '../../../data/tsa';
 import { parseLessonId } from '../../../lib/lessonPath';
 import { MATRIX_DATA } from '../../../data/matrices';
 import { SPANISH_GLOSS_USER_LANG } from '../../../lib/courses';
+import { SKILLS } from '../../../data/skills';
 import { getDictionary } from '../../../i18n';
 import { getCollection } from 'astro:content';
 
@@ -38,6 +39,10 @@ const tsaEntry = TSA_LANG[targetLang as string] ?? null;
 // (ver SPANISH_GLOSS_USER_LANG en src/lib/courses.ts). Enlazarlos desde otro
 // silo sería mandar al usuario a una página que no se genera.
 const hasSpanishGlossTools = userLang === SPANISH_GLOSS_USER_LANG;
+
+// ¿Este curso tiene habilidades definidas para el motor adaptativo? Hoy solo
+// alemán; el resto sigue con Repasar, que no cambió.
+const tieneMotor = SKILLS.some((s) => s.lang === targetLang);
 
 const allLessons = await getCollection('lessons');
 const sameSilo = (l: (typeof allLessons)[number], lvlId: string) =>
@@ -180,6 +185,18 @@ const structuredData = {
   <section class="container explore-more" style={`--accent-c:${languageMeta.color}`}>
     <span class="eyebrow">{t.explorarMas}</span>
     <div class="explore-grid">
+      {
+        /* Solo para los cursos con habilidades definidas: la página de práctica
+           adaptativa solo se genera para esos (ver practicar.astro). */
+        tieneMotor && (
+          <a class="explore-item card" href={`/${userLang}/${targetLang}/practicar`}>
+            <span class="explore-icon" aria-hidden="true">
+              🎯
+            </span>
+            <span>Practicar ahora</span>
+          </a>
+        )
+      }
       <a class="explore-item card" href={`/${userLang}/${targetLang}/situaciones`}>
         <span class="explore-icon" aria-hidden="true">🗺️</span>
         <span>{t.explorar.situaciones}</span>

@@ -111,6 +111,14 @@ export function rankSkills(input: SchedulerInput): Candidate[] {
       continue;
     }
 
+    // Dominada y sin repaso pendiente: desaparece de la rotación hasta que le
+    // toque. Es lo que hace que dominar algo se note —deja de aparecer— y que
+    // vuelva más adelante como repaso en vez de seguir ocupando sitio.
+    if (p.status === 'mastered') {
+      yaPuestas.add(skill.id);
+      continue;
+    }
+
     // 6. Nada urgente: entra en el bombo del repaso aleatorio.
     candidatos.push({ skillId: skill.id, reason: 'random_review', score: random() });
     yaPuestas.add(skill.id);

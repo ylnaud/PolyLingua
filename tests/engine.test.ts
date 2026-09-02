@@ -351,3 +351,40 @@ describe('estados de mastery', () => {
     );
   });
 });
+
+describe('Test 9 — una habilidad dominada desaparece y vuelve como repaso', () => {
+  it('no se propone mientras no toque', () => {
+    const skills = [skill('dominada')];
+    const progress: Record<string, SkillProgress> = {
+      dominada: {
+        ...newProgress('dominada'),
+        attempts: 10,
+        correct: 10,
+        mastery: 95,
+        status: 'mastered',
+        nextReview: T0 + 60_000,
+        streakExerciseIds: ['a', 'b', 'c', 'd', 'e'],
+      },
+    };
+    const orden = rankSkills({ skills, progress, errors: [], now: T0, random: () => 0.5 });
+    expect(orden).toHaveLength(0);
+  });
+
+  it('vuelve cuando el repaso vence', () => {
+    const skills = [skill('dominada')];
+    const progress: Record<string, SkillProgress> = {
+      dominada: {
+        ...newProgress('dominada'),
+        attempts: 10,
+        correct: 10,
+        mastery: 95,
+        status: 'mastered',
+        nextReview: T0 - 1,
+        streakExerciseIds: ['a', 'b', 'c', 'd', 'e'],
+      },
+    };
+    const orden = rankSkills({ skills, progress, errors: [], now: T0, random: () => 0.5 });
+    expect(orden).toHaveLength(1);
+    expect(orden[0].reason).toBe('due_review');
+  });
+});

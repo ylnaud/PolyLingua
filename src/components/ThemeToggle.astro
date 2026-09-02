@@ -1,4 +1,6 @@
 ---
+import IconToggle from './IconToggle.astro';
+
 interface Props {
   // 'icon' es el botón circular del header (desktop/landscape); 'sheet' es la
   // variante de fila completa para el menú "Más" del bottom nav (portrait) —
@@ -11,11 +13,10 @@ interface Props {
 const { variant = 'icon' } = Astro.props;
 ---
 
-<button
-  type="button"
-  class:list={['theme-toggle', { 'theme-toggle-sheet': variant === 'sheet' }]}
-  aria-label="Cambiar entre modo oscuro y modo claro"
-  aria-pressed="false"
+<IconToggle
+  toggleClass="theme-toggle"
+  variant={variant}
+  ariaLabel="Cambiar entre modo oscuro y modo claro"
 >
   <span class="icon icon-sun" aria-hidden="true"
     >☀️<span class="sheet-only"> Cambiar a modo claro</span></span
@@ -23,27 +24,14 @@ const { variant = 'icon' } = Astro.props;
   <span class="icon icon-moon" aria-hidden="true"
     >🌙<span class="sheet-only"> Cambiar a modo oscuro</span></span
   >
-</button>
+</IconToggle>
 
 <style>
-  .theme-toggle {
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--bg-elevated);
-    cursor: pointer;
-    font-size: 1.1rem;
-    line-height: 1;
-    padding: 0;
-  }
-
-  .theme-toggle:hover {
-    border-color: var(--accent);
-  }
-
+  /* La forma del botón la pone IconToggle. El swap de iconos se hace con el
+     atributo data-theme del <html> y no con una clase que ponga el JS, para
+     que el icono correcto ya salga pintado en el primer frame: el script
+     inline que restaura el tema corre antes que este componente, así que no
+     hay parpadeo. */
   .icon-moon {
     display: none;
   }
@@ -53,32 +41,6 @@ const { variant = 'icon' } = Astro.props;
   }
 
   :root[data-theme='light'] .icon-moon {
-    display: inline;
-  }
-
-  .sheet-only {
-    display: none;
-  }
-
-  .theme-toggle-sheet {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: flex-start;
-    border: none;
-    border-radius: 10px;
-    background: none;
-    min-height: 44px;
-    padding: 0.6rem 0.9rem;
-    font-size: 1rem;
-  }
-
-  .theme-toggle-sheet:hover {
-    border-color: transparent;
-    background: var(--bg-elevated);
-  }
-
-  .theme-toggle-sheet .sheet-only {
     display: inline;
   }
 </style>

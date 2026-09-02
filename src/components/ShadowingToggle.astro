@@ -1,4 +1,6 @@
 ---
+import IconToggle from './IconToggle.astro';
+
 interface Props {
   // 'icon' es el botón circular del header (desktop/landscape); 'sheet' es la
   // variante de fila completa para el menú "Más" del bottom nav (portrait) —
@@ -11,70 +13,27 @@ interface Props {
 const { variant = 'icon' } = Astro.props;
 ---
 
-<button
-  type="button"
-  class:list={['shadowing-toggle', { 'shadowing-toggle-sheet': variant === 'sheet' }]}
-  aria-label="Modo shadowing: repetir en voz alta antes de seguir"
-  aria-pressed="false"
+<IconToggle
+  toggleClass="shadowing-toggle"
+  variant={variant}
+  ariaLabel="Modo shadowing: repetir en voz alta antes de seguir"
 >
   <span class="icon" aria-hidden="true">🎤</span>
   <span class="sheet-only">Modo shadowing (repetir en voz alta)</span>
-</button>
+</IconToggle>
 
 <style>
-  .shadowing-toggle {
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--bg-elevated);
-    cursor: pointer;
-    font-size: 1.1rem;
-    line-height: 1;
-    padding: 0;
-  }
-
-  .shadowing-toggle:hover {
-    border-color: var(--accent);
-  }
-
-  .shadowing-toggle.is-active {
+  /* La forma del botón la pone IconToggle; acá solo el estado activo, que es
+     lo propio de este toggle. Va con :global() porque .shadowing-toggle está
+     en el <button> de IconToggle, fuera del scope de este archivo. */
+  :global(.shadowing-toggle.is-active) {
     border-color: var(--accent);
     background: color-mix(in srgb, var(--accent) 18%, transparent);
   }
 
-  .sheet-only {
-    display: none;
-  }
-
-  .shadowing-toggle-sheet {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.6rem;
-    border: none;
-    border-radius: 10px;
-    background: none;
-    min-height: 44px;
-    padding: 0.6rem 0.9rem;
-    font-size: 1rem;
-  }
-
-  .shadowing-toggle-sheet:hover {
-    border-color: transparent;
-    background: var(--bg-elevated);
-  }
-
-  .shadowing-toggle-sheet .sheet-only {
-    display: inline;
-  }
-
-  .shadowing-toggle-sheet.is-active {
+  :global(.shadowing-toggle-sheet.is-active) {
     color: var(--accent-text);
+    background: none;
   }
 </style>
 

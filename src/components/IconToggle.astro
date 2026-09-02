@@ -1,0 +1,90 @@
+---
+// Cáscara compartida de los tres botones de preferencia de la barra superior
+// (sonido, tema, shadowing). Existe porque los tres tenían el mismo botón
+// redondo copiado: 372 líneas entre los tres, con el shell y la variante de
+// hoja idénticos al carácter.
+//
+// Acá vive SOLO la cáscara: la forma del botón, la variante `sheet` (fila
+// completa para el menú "Más" del bottom nav) y el mostrar/ocultar de los
+// textos que solo salen en esa variante. Los iconos van por <slot>, así que
+// siguen siendo del componente que los pone y sus reglas de swap
+// (`.is-muted`, `:root[data-theme]`, ...) siguen viviendo con él.
+//
+// La clase del botón la pone quien lo usa (`toggleClass`): es la que su
+// propio <script> busca con querySelectorAll para sincronizar todas las
+// instancias montadas (header + hoja).
+
+interface Props {
+  /** Clase que identifica el botón para su script, p. ej. 'sound-toggle'. */
+  toggleClass: string;
+  /** 'icon' = botón redondo del header; 'sheet' = fila del menú "Más". */
+  variant?: 'icon' | 'sheet';
+  ariaLabel: string;
+}
+
+const { toggleClass, variant = 'icon', ariaLabel } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={[
+    'icon-toggle',
+    toggleClass,
+    { 'icon-toggle-sheet': variant === 'sheet', [`${toggleClass}-sheet`]: variant === 'sheet' },
+  ]}
+  aria-label={ariaLabel}
+  aria-pressed="false"
+>
+  <slot />
+</button>
+
+<style>
+  .icon-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .icon-toggle:hover {
+    border-color: var(--accent);
+  }
+
+  .icon-toggle-sheet {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.6rem;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    min-height: 44px;
+    padding: 0.6rem 0.9rem;
+    font-size: 1rem;
+  }
+
+  .icon-toggle-sheet:hover {
+    border-color: transparent;
+    background: var(--bg-elevated);
+  }
+
+  /* Los textos largos solo existen en la variante de hoja. Van con :global()
+     porque el <span class="sheet-only"> lo escribe quien usa el componente,
+     así que lleva SU scope, no el de este archivo. */
+  .icon-toggle :global(.sheet-only) {
+    display: none;
+  }
+
+  .icon-toggle-sheet :global(.sheet-only) {
+    display: inline;
+  }
+</style>

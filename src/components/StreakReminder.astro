@@ -1,77 +1,14 @@
 ---
+import DismissibleBar from './DismissibleBar.astro';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 
+// La cáscara (markup y CSS) es de DismissibleBar; acá vive solo lo propio de
+// este aviso: cuándo aparece y qué dice. El texto lleva el número de días de
+// racha, así que se arma en el cliente sobre [data-bar-text].
 const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
 ---
 
-<div class="streak-reminder" data-streak-reminder hidden role="status" aria-live="polite">
-  <div class="container streak-reminder-bar">
-    <p><span aria-hidden="true">🔥</span> <span data-streak-reminder-text></span></p>
-    <div class="streak-reminder-actions">
-      <a class="btn btn-primary" href={defaultUserLangHref}>Practicar ahora</a>
-      <button
-        type="button"
-        class="streak-reminder-dismiss"
-        data-streak-reminder-dismiss
-        aria-label="Cerrar aviso"
-      >
-        ✕
-      </button>
-    </div>
-  </div>
-</div>
-
-<style>
-  .streak-reminder {
-    border-bottom: 1px solid var(--border);
-    background: color-mix(in srgb, var(--accent) 12%, transparent);
-  }
-
-  .streak-reminder-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    padding-block: 0.65rem;
-  }
-
-  .streak-reminder-bar p {
-    margin: 0;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-
-  .streak-reminder-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .streak-reminder-actions .btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    min-height: 36px;
-  }
-
-  .streak-reminder-dismiss {
-    display: grid;
-    place-items: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    border: none;
-    background: transparent;
-    color: var(--text-muted);
-    cursor: pointer;
-    font-size: 0.9rem;
-  }
-
-  .streak-reminder-dismiss:hover {
-    background: var(--bg-elevated);
-    color: var(--text);
-  }
-</style>
+<DismissibleBar id="streak" emoji="🔥" ctaLabel="Practicar ahora" ctaHref={defaultUserLangHref} />
 
 <script>
   import { today, yesterday, read, write } from '../lib/storage';
@@ -99,9 +36,9 @@ const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
   }
 
   function initStreakReminder() {
-    const el = document.querySelector<HTMLElement>('[data-streak-reminder]');
-    const text = el?.querySelector<HTMLElement>('[data-streak-reminder-text]');
-    const dismissBtn = el?.querySelector<HTMLButtonElement>('[data-streak-reminder-dismiss]');
+    const el = document.querySelector<HTMLElement>('[data-bar="streak"]');
+    const text = el?.querySelector<HTMLElement>('[data-bar-text]');
+    const dismissBtn = el?.querySelector<HTMLButtonElement>('[data-bar-dismiss]');
     if (!el || !text || !dismissBtn) return;
 
     const streak = getStreak();

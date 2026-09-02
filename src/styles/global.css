@@ -429,7 +429,7 @@ a {
 
 @media (min-width: 640px) {
   .tsa-achievements {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
@@ -563,6 +563,35 @@ pre code {
   color: inherit;
   padding: 0;
   font-size: inherit;
+}
+
+/* Los títulos pueden traer palabras que no entran en una pantalla estrecha:
+   este sitio enseña alemán, y "Partizipialkonstruktionen" mide 25 caracteres.
+   Sin esto, esas palabras empujaban la página entera y en móvil se podía
+   mover en horizontal (dos lecciones de C1 lo hacían). Solo actúa cuando la
+   palabra no cabe de ninguna manera, así que no cambia nada en el resto. */
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+}
+
+/* El emoji y la bajada de la cabecera de página: estaban recopiados con los
+   mismos valores exactos en 12 y 13 archivos. La página que necesite otra cosa
+   lo pisa con su propio <style> scoped, que gana por especificidad.
+
+   El h1 NO sube acá: como selector de elemento también alcanza a las páginas
+   que solo definían parte de su h1, y les cambiaba el margen o el tamaño sin
+   querer (se vio en /es/de, /es/de/a1 y generador-frases). Sus 12 copias se
+   quedan donde estaban. */
+.emoji {
+  font-size: 2rem;
+}
+
+.desc {
+  color: var(--text-muted);
+  margin: 0;
 }
 
 table {

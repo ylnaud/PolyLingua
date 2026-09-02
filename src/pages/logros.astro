@@ -615,11 +615,6 @@ const lessonCounts = Object.fromEntries(
     margin: 0 0 0.6rem;
   }
 
-  .desc {
-    color: var(--text-muted);
-    margin: 0;
-  }
-
   .lang-progress-head {
     max-width: 680px;
     padding-block: 0 1.5rem;
@@ -801,7 +796,7 @@ const lessonCounts = Object.fromEntries(
 
   .badges-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
     padding-block: 0.5rem 2.5rem;
   }
@@ -879,13 +874,13 @@ const lessonCounts = Object.fromEntries(
 
   @media (max-width: 900px) {
     .badges-grid {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
   @media (max-width: 560px) {
     .badges-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 </style>

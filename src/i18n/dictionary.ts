@@ -139,6 +139,18 @@ export interface Dictionary {
     irAlExamen: string;
     leccion: string;
     lecciones: string;
+    // El selector de nivel de inicio: quien ya sabe algo del idioma no
+    // debería tener que aprobar dos exámenes de lo que ya sabe para llegar a
+    // su nivel. Ver src/components/StartLevelPicker.astro.
+    inicio: {
+      titulo: string;
+      desc: string;
+      // Lleva {nivel}, el nombre del nivel elegido.
+      elegido: string;
+      cambiar: string;
+      cerrar: string;
+      aria: string;
+    };
   };
   lesson: {
     anterior: string;
@@ -525,6 +537,14 @@ export const es: Dictionary = {
     irAlExamen: 'Ir al examen →',
     leccion: 'lección',
     lecciones: 'lecciones',
+    inicio: {
+      titulo: '¿Ya sabés algo?',
+      desc: 'Elegí desde qué nivel querés empezar. Los anteriores quedan abiertos por si querés repasarlos.',
+      elegido: 'Empezás en {nivel}',
+      cambiar: 'Cambiar nivel',
+      cerrar: 'Listo',
+      aria: 'Elegir nivel de inicio',
+    },
   },
   lesson: {
     anterior: '← Anterior',

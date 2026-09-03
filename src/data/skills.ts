@@ -675,6 +675,15 @@ export const SKILLS: Skill[] = [
 
   // ── Preposiciones (unidad 4) ────────────────────────────────────────────
   {
+    id: 'de.b1.adverb.direction',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Adverbios de dirección (hin, her, da-)',
+    prerequisites: ['de.a2.preposition.wechsel'],
+    difficulty: 4,
+  },
+  {
     id: 'de.b1.verb.with-preposition',
     lang: 'de',
     level: 'b1',

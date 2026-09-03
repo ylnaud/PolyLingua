@@ -143,3 +143,6 @@ Agrupá las 12 preposiciones en dos columnas físicas (Akkusativ / Dativ) y repe
 del grupo Dativ en voz alta unas cuantas veces seguidas. Como son solo dos grupos
 cerrados — nada cambia nunca — memorizarlos de una vez te ahorra tener que dudar cada
 vez que arms una frase.
+
+📘 Todas las preposiciones alemanas juntas, ordenadas por caso, en la
+**[guía completa de preposiciones](/es/de/b1/guia-preposiciones-alemanas)**.

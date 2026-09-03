@@ -110,3 +110,6 @@ Usar estas cuatro preposiciones con su Genitiv correcto es una de las señales m
 rápidas y visibles de un nivel B2 sólido — aparecen constantemente en ensayos,
 informes y noticias, y su dominio correcto distingue claramente un texto cuidado de uno
 descuidado.
+
+📘 Todas las preposiciones alemanas juntas, ordenadas por caso, en la
+**[guía completa de preposiciones](/es/de/b1/guia-preposiciones-alemanas)**.

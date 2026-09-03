@@ -1854,6 +1854,53 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
     ],
   },
   {
+    skillId: 'de.b1.adverb.direction',
+    explanation:
+      'hin = allá (el movimiento se aleja del que habla), her = acá (se acerca). Y da- + preposición sustituye a «preposición + eso»: dahinter es «detrás de eso». Si la preposición empieza por vocal, entre medio va una -r-: darüber, darunter.',
+    variations: [
+      {
+        sentence: 'Komm ___! Hier ist es warm. (quien habla está adentro)',
+        answer: 'herein',
+        translation: '¡Entrá! Acá hace calor.',
+      },
+      {
+        sentence: 'Geh ___! Ich warte draußen. (quien habla está afuera)',
+        answer: 'hinein',
+        translation: '¡Entrá! Yo espero afuera.',
+      },
+      {
+        sentence: 'Ich gehe die Treppe ___. (subo alejándome)',
+        answer: 'hinauf',
+        translation: 'Subo la escalera.',
+      },
+      {
+        sentence: 'Das Haus ist schön, der Garten liegt ___. (detrás de eso)',
+        answer: 'dahinter',
+        translation: 'La casa es bonita, el jardín está detrás.',
+      },
+      {
+        sentence: 'Ein Bild hängt ___. (encima de eso)',
+        answer: 'darüber',
+        translation: 'Hay un cuadro colgado encima.',
+      },
+      {
+        sentence: 'Die Schuhe sind ___. (debajo de eso)',
+        answer: 'darunter',
+        translation: 'Los zapatos están debajo.',
+      },
+      {
+        sentence: 'Komm ___! Ich bin auf dieser Seite. (hacia este lado)',
+        answer: 'herüber',
+        translation: '¡Vení para acá! Estoy de este lado.',
+      },
+      {
+        sentence: 'Stelle die Tasche ___. (al lado de eso)',
+        answer: 'daneben',
+        translation: 'Poné la bolsa al lado.',
+      },
+    ],
+  },
+  {
     skillId: 'de.b1.verb.with-preposition',
     explanation:
       'Cada verbo se casa con una preposición y hay que memorizar la pareja entera: warten auf, denken an, sich freuen über, sich interessieren für, Angst haben vor. La preposición no se deduce de la del español.',

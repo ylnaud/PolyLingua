@@ -1,11 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiloToolPage from '../../../components/SiloToolPage.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
-import { fill } from '../../../lib/interpolate';
 
 export const getStaticPaths = getCourseStaticPaths;
 
@@ -37,27 +34,15 @@ const vocabPool = Array.from(
 ).filter((v) => v.term.trim().length >= 2 && v.term.trim().length <= 24);
 ---
 
-<BaseLayout
-  userLang={userLang}
-  title={fill(tt.metaTitulo, { lang: langName })}
-  description={fill(tt.metaDescripcion, { lang: langName })}
-  path={`/${userLang}/${lang}/ahorcado`}
-  noindex
+<SiloToolPage
+  userLang={userLang!}
+  targetLang={lang!}
+  tool="ahorcado"
+  slug="ahorcado"
+  emoji="🔤"
+  headClass="hangman-head"
+  desc={tt.desc}
 >
-  <section class="container hangman-head">
-    <Breadcrumbs
-      userLang={userLang}
-      items={[
-        { name: dict.silo.idiomas, href: `/${userLang}` },
-        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
-        { name: dict.tools.nombres.ahorcado },
-      ]}
-    />
-    <span class="emoji" aria-hidden="true">🔤</span>
-    <h1>{fill(tt.h1, { lang: langName })}</h1>
-    <p class="desc">{tt.desc}</p>
-  </section>
-
   <section class="container hangman-body">
     <div class="card empty-state" data-hangman-empty hidden>
       <p class="empty-emoji">📭</p>
@@ -101,7 +86,7 @@ const vocabPool = Array.from(
     })}
   >
   </div>
-</BaseLayout>
+</SiloToolPage>
 
 <script>
   import { read, write } from '../../../lib/storage';
@@ -387,16 +372,6 @@ const vocabPool = Array.from(
 </script>
 
 <style>
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.6rem;
-  }
-
-  .hangman-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
   .hangman-body {
     max-width: 680px;
     padding-block: 0 4rem;

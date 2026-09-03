@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Verbos modales con significado especulativo (subjektive Modalverben)'
 funFact: "Es el mismo fenómeno que 'must have / might have / can't have' en inglés: los modales alemanes cambian de significado 'objetivo' (obligación, capacidad) a 'subjetivo' (certeza, probabilidad) según el contexto. 'Er muss zu Hause sein' ya no es 'él debe estar en casa' (obligación) sino 'seguramente está en casa' (deducción)."
+skills:
+  - de.c1.verb.modal-subjective
 minutes: 10
 quiz:
   - question: "'Er muss zu Hause sein' en un contexto de deducción, ¿qué significa realmente?"

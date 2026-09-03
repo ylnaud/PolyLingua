@@ -1,12 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiloToolPage from '../../../components/SiloToolPage.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
-import { fill } from '../../../lib/interpolate';
 
 export const getStaticPaths = getCourseStaticPaths;
 
@@ -16,7 +13,6 @@ const tt = dict.tools.repasar;
 // El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
 // un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
 // una sola versión (en español), por eso sale del diccionario.
-const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 
 // Manifest lección→ítems de este idioma, para poder ofrecer al repasar un
@@ -41,27 +37,19 @@ const exerciseManifest = Object.fromEntries(
 const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data.grammarTopic]));
 ---
 
-<BaseLayout
-  userLang={userLang}
-  title={fill(tt.metaTitulo, { lang: langName })}
-  description={fill(tt.metaDescripcion, { lang: langName })}
-  path={`/${userLang}/${lang}/repasar`}
-  noindex
+<SiloToolPage
+  userLang={userLang!}
+  targetLang={lang!}
+  tool="repasar"
+  slug="repasar"
+  emoji="📚"
+  headClass="review-head"
+  desc={tt.cargando}
+  descAttr="data-review-desc"
 >
-  <section class="container review-head">
-    <Breadcrumbs
-      userLang={userLang}
-      items={[
-        { name: dict.silo.idiomas, href: `/${userLang}` },
-        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
-        { name: dict.tools.nombres.repasar },
-      ]}
-    />
-    <span class="emoji" aria-hidden="true">📚</span>
-    <h1>{fill(tt.h1, { lang: langName })}</h1>
-    <p class="desc" data-review-desc>{tt.cargando}</p>
+  <Fragment slot="head">
     <div class="topic-filters" data-topic-filters hidden></div>
-  </section>
+  </Fragment>
 
   <section class="container review-body">
     <div class="card empty-state" data-empty-state hidden>
@@ -96,7 +84,7 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
     })}
   >
   </div>
-</BaseLayout>
+</SiloToolPage>
 
 <script>
   import {
@@ -318,16 +306,6 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
 </script>
 
 <style>
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.6rem;
-  }
-
-  .review-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
   .topic-filters {
     display: flex;
     flex-wrap: wrap;

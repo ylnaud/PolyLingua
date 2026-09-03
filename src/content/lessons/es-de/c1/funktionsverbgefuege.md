@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Funktionsverbgefüge (locuciones verbonominales)'
 funFact: "Un Funktionsverbgefüge es la versión alemana de decir 'llevar a cabo' en vez de simplemente 'hacer'. 'Etwas in Kraft treten lassen' suena mucho más formal que 'etwas beginnen zu gelten' — el verbo simple se disuelve en una combinación fija de verbo débil + sustantivo, típica de textos legales, administrativos y de negocios."
+skills:
+  - de.c1.construction.funktionsverb
 minutes: 10
 quiz:
   - question: "'Das Gesetz tritt am 1. Januar in Kraft.' ¿Qué significa 'in Kraft treten'?"

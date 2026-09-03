@@ -7,6 +7,9 @@ order: 3
 unit: 1
 grammarTopic: 'Oraciones de relativo (Relativpronomen)'
 funFact: 'Sorpresa: der, die, das ya no son solo artículos — reciclados como pronombres relativos, conectan dos frases en una. La única regla nueva: el pronombre relativo concuerda en género/número con el sustantivo al que se refiere, pero su CASO depende de su función dentro de la frase relativa.'
+skills:
+  - de.b1.clause.relative
+  - de.b1.wordorder.subordinate
 minutes: 9
 quiz:
   - question: "'Der Mann, ___ dort steht, ist mein Lehrer' (el hombre que está parado ahí es mi profesor). ¿Qué pronombre va?"

@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Konjunktiv I (discurso indirecto)'
 funFact: "El Konjunktiv I es el modo de los chismes elegantes: le permite al hablante distanciarse ('yo solo repito lo que dijeron') sin usar comillas. Es la forma culta de decir 'según él...' sin sonar a cotilleo de pasillo."
+skills:
+  - de.c1.verb.konjunktiv1
 minutes: 11
 quiz:
   - question: '¿Para qué se usa principalmente el Konjunktiv I?'

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import StartLevelPicker from '../../../components/StartLevelPicker.astro';
 import { LEVELS } from '../../../data/levels';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { TSA_LANG } from '../../../data/tsa';
@@ -146,6 +147,11 @@ const structuredData = {
     </aside>
 
     <div class="levels">
+      <StartLevelPicker
+        userLang={userLang!}
+        targetLang={targetLang!}
+        levelIds={LEVELS.map((l) => l.id)}
+      />
       <ol class="silo-path">
         {
           LEVELS.map((level) => (
@@ -157,7 +163,12 @@ const structuredData = {
                 href={`/${userLang}/${targetLang}/${level.id}`}
                 style={`--accent-c:${level.color}`}
               >
-                <span class="silo-node" data-level-node aria-hidden="true">
+                <span
+                  class="silo-node"
+                  data-level-node
+                  data-level-emoji={level.emoji}
+                  aria-hidden="true"
+                >
                   {level.emoji}
                 </span>
                 <div class="silo-body">
@@ -322,6 +333,16 @@ const structuredData = {
     return read('polylingua-level-passed-' + targetLang + '-' + levelId) === 'true';
   }
 
+  // Misma regla que isLevelOpen() en src/lib/startLevel.ts, repetida acá
+  // porque un <script define:vars> se trata como is:inline y no admite import
+  // (igual que matchesLang más arriba). La versión de startLevel.ts es la que
+  // tiene los tests; esta tiene que seguirla.
+  function startLevelIndex(ids) {
+    var guardado = read('polylingua-start-level-' + targetLang);
+    var i = guardado ? ids.indexOf(guardado) : -1;
+    return i === -1 ? 0 : i;
+  }
+
   function isLessonDone(lvl, slug) {
     return !!read('polylingua-lesson-done-' + targetLang + '-' + lvl + '-' + slug);
   }
@@ -353,10 +374,16 @@ const structuredData = {
     if (badge) badge.textContent = txtBloqueado;
     var node = el.querySelector('[data-level-node]');
     if (node) node.textContent = '🔒';
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
-    });
   }
+
+  // El clic se corta mirando la clase EN EL MOMENTO, no enganchando un
+  // preventDefault al bloquear: un listener no se puede quitar después, así
+  // que al elegir un nivel de inicio más alto el candado desaparecía de la
+  // vista pero el enlace seguía sin navegar.
+  document.addEventListener('click', function (e) {
+    var item = e.target && e.target.closest && e.target.closest('[data-level-item]');
+    if (item && item.classList.contains('locked')) e.preventDefault();
+  });
 
   // Sin envolver en initX()+astro:page-load esto solo correría en la carga
   // completa: bajo navegación SPA (<ClientRouter />) volver acá no recalcularía
@@ -371,6 +398,7 @@ const structuredData = {
       return el.dataset.levelId;
     });
 
+    var inicio = startLevelIndex(ids);
     var currentLevel = null;
 
     items.forEach(function (el, i) {
@@ -378,6 +406,11 @@ const structuredData = {
       var slugs = levelLessonSlugs[lvl] || [];
       var done = doneIn(lvl);
       var badge = el.querySelector('[data-level-badge]');
+      // El texto de fábrica ("14 lecciones") se guarda antes de pisarlo: al
+      // cambiar el nivel de inicio hay que poder volver a él.
+      if (badge && !badge.dataset.original) {
+        badge.dataset.original = (badge.textContent || '').trim();
+      }
       var fill = el.querySelector('[data-level-fill]');
       var node = el.querySelector('[data-level-node]');
       var pct = slugs.length ? Math.round((done / slugs.length) * 100) : 0;
@@ -395,8 +428,11 @@ const structuredData = {
         return;
       }
 
-      // Un nivel se abre cuando el anterior está aprobado. El primero siempre.
-      if (i > 0 && !isLevelPassed(ids[i - 1])) {
+      // Un nivel se abre por dos caminos, y basta con uno: estar dentro del
+      // tramo que el usuario declaró conocer, o tener aprobado el examen del
+      // anterior. Sin nivel declarado, inicio es 0 y la regla es la de
+      // siempre: solo el primero está abierto de entrada.
+      if (i > inicio && !isLevelPassed(ids[i - 1])) {
         lockItem(el, badge);
         return;
       }
@@ -473,8 +509,24 @@ const structuredData = {
     if (streakEl) streakEl.textContent = String(Number(read('polylingua-streak-count') || '0'));
   }
 
+  function repintar() {
+    // Los nodos traen la clase .locked que puso la pasada anterior; hay que
+    // limpiarla antes, o un nivel que acaba de abrirse seguiría gris.
+    document.querySelectorAll('[data-level-item]').forEach(function (el) {
+      el.classList.remove('locked', 'current', 'done');
+      el.removeAttribute('aria-disabled');
+      el.removeAttribute('data-astro-prefetch');
+      var node = el.querySelector('[data-level-node]');
+      if (node && node.dataset.levelEmoji) node.textContent = node.dataset.levelEmoji;
+      var badge = el.querySelector('[data-level-badge]');
+      if (badge && badge.dataset.original) badge.textContent = badge.dataset.original;
+    });
+    initCourseIndex();
+  }
+
   initCourseIndex();
   document.addEventListener('astro:page-load', initCourseIndex);
+  document.addEventListener('start-level-changed', repintar);
 </script>
 
 <style>

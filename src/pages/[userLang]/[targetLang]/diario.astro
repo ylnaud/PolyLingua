@@ -1,8 +1,6 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import { LANGUAGE_MAP } from '../../../data/languages';
-import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
+import SiloToolPage from '../../../components/SiloToolPage.astro';
+import { getCourseStaticPaths } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
 import { fill } from '../../../lib/interpolate';
 
@@ -14,31 +12,17 @@ const tt = dict.tools.diario;
 // El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
 // un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
 // una sola versión (en español), por eso sale del diccionario.
-const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
-const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 ---
 
-<BaseLayout
-  userLang={userLang}
-  title={fill(tt.metaTitulo, { lang: langName })}
-  description={fill(tt.metaDescripcion, { lang: langName })}
-  path={`/${userLang}/${lang}/diario`}
-  noindex
+<SiloToolPage
+  userLang={userLang!}
+  targetLang={lang!}
+  tool="diario"
+  slug="diario"
+  emoji="✍️"
+  headClass="diary-head"
+  desc={tt.desc}
 >
-  <section class="container diary-head">
-    <Breadcrumbs
-      userLang={userLang}
-      items={[
-        { name: dict.silo.idiomas, href: `/${userLang}` },
-        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
-        { name: dict.tools.nombres.diario },
-      ]}
-    />
-    <span class="emoji" aria-hidden="true">✍️</span>
-    <h1>{fill(tt.h1, { lang: langName })}</h1>
-    <p class="desc">{tt.desc}</p>
-  </section>
-
   <section class="container diary-body">
     <div class="card diary-card">
       <label class="visually-hidden" for="diary-textarea">{tt.etiquetaTextarea}</label>
@@ -72,7 +56,7 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
     >
     </div>
   </section>
-</BaseLayout>
+</SiloToolPage>
 
 <script>
   import { read, write, today, exportAll } from '../../../lib/storage';
@@ -165,16 +149,6 @@ const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 </script>
 
 <style>
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.6rem;
-  }
-
-  .diary-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
   .diary-body {
     max-width: 680px;
     padding-block: 0 4rem;

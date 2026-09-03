@@ -7,6 +7,9 @@ order: 10
 unit: 3
 grammarTopic: 'Konjunktiv II — cortesía e hipótesis (wäre, hätte)'
 funFact: "wäre y hätte no son 'un tiempo más': son la forma educada de pedir algo sin sonar brusco. Memorízalas como frase fija (ich hätte gern..., wenn das möglich wäre) y las usarás automáticamente en cualquier reclamo, no solo en el hotel."
+skills:
+  - de.b1.verb.konjunktiv2
+  - de.b1.vocabulary.complaints
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta del Konjunktiv II de 'sein' en primera persona del singular?"
@@ -18,7 +21,12 @@ quiz:
     answerIndex: 1
     explanation: "'hätte gern' + sustantivo es la fórmula estándar de cortesía en alemán para pedir algo, mucho más suave que 'ich will' (quiero)."
   - question: "En 'wenn wir ein freies Zimmer **hätten**', ¿qué indica el verbo en Konjunktiv II?"
-    options: ['que la habitación libre existe ahora mismo', 'que es una condición hipotética, probablemente no real', 'que ya pasó en el pasado']
+    options:
+      [
+        'que la habitación libre existe ahora mismo',
+        'que es una condición hipotética, probablemente no real',
+        'que ya pasó en el pasado',
+      ]
     answerIndex: 1
     explanation: "El Konjunktiv II tras 'wenn' señala una condición irreal o poco probable en el presente — aquí, la recepcionista da a entender que NO hay habitación libre."
 exercises:
@@ -63,12 +71,12 @@ en vez de **ist** o **habe**.
 No memorices palabras sueltas — memoriza estas frases completas, listas para usar tal
 cual en cualquier recepción:
 
-| Alemán                                                          | Español                                             |
-| ---------------------------------------------------------------- | ---------------------------------------------------- |
-| Entschuldigung, ich habe leider ein Problem mit meinem Zimmer.   | Disculpe, lamentablemente tengo un problema con mi habitación. |
-| Die Heizung funktioniert seit heute Morgen nicht mehr.          | La calefacción no funciona desde esta mañana.        |
-| Könnten Sie bitte jemanden schicken, der sich das Problem ansieht? | ¿Podría enviar a alguien que revise el problema?     |
-| Ich hätte gern ein anderes Zimmer, wenn das möglich wäre.        | Me gustaría otra habitación, si fuera posible.       |
+| Alemán                                                                     | Español                                                            |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Entschuldigung, ich habe leider ein Problem mit meinem Zimmer.             | Disculpe, lamentablemente tengo un problema con mi habitación.     |
+| Die Heizung funktioniert seit heute Morgen nicht mehr.                     | La calefacción no funciona desde esta mañana.                      |
+| Könnten Sie bitte jemanden schicken, der sich das Problem ansieht?         | ¿Podría enviar a alguien que revise el problema?                   |
+| Ich hätte gern ein anderes Zimmer, wenn das möglich wäre.                  | Me gustaría otra habitación, si fuera posible.                     |
 | Vielen Dank für Ihr Verständnis — ich hoffe, das lässt sich schnell lösen. | Muchas gracias por su comprensión — espero que se resuelva rápido. |
 
 ## La conversación completa

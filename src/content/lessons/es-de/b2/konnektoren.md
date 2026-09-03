@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Konnektoren avanzados (conectores de discurso)'
 funFact: "Piensa en los conectores como señales de tránsito para tu oyente: 'trotzdem' avisa un giro inesperado (a pesar de eso), 'folglich' avisa una consecuencia lógica (por lo tanto), 'außerdem' avisa que viene más información (además). Sin ellos, tus ideas suenan como frases sueltas; con ellos, suenan como un argumento construido."
+skills:
+  - de.b2.connector.discourse
 minutes: 9
 quiz:
   - question: '¿Qué conector usarías para introducir una consecuencia lógica?'

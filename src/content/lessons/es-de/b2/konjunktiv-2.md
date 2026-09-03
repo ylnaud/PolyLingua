@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Konjunktiv II (würde + Infinitiv, hätte, wäre)'
 funFact: "'würde' + infinitivo es el comodín universal del Konjunktiv II: funciona con CUALQUIER verbo, siempre. Solo unos pocos verbos (sein, haben, los modales) tienen una forma propia más elegante (wäre, hätte, könnte) que los alemanes prefieren en vez de 'würde sein' o 'würde haben'."
+skills:
+  - de.b2.clause.conditional-irreal
+  - de.b1.verb.konjunktiv2-wuerde
 minutes: 10
 quiz:
   - question: "¿Cuál es la forma más natural de decir 'yo viajaría' (reisen)?"

@@ -1,6 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import SiloToolPage from '../../../components/SiloToolPage.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { SKILLS } from '../../../data/skills';
@@ -44,15 +43,22 @@ const bank = lessons.flatMap((l) => {
 const skills = SKILLS.filter((s) => s.lang === targetLang);
 ---
 
-<BaseLayout
+<SiloToolPage
+  userLang={userLang!}
+  targetLang={targetLang!}
+  slug="practicar"
+  emoji="🎯"
+  headClass="adaptive-head"
+  ownHeadStyles
+  name="Practicar"
   title={`Practicar ${languageName}`}
   description={`Practica ${languageName} con ejercicios elegidos según lo que ya sabes y lo que sueles fallar.`}
-  path={`/${userLang}/${targetLang}/practicar`}
-  userLang={userLang}
-  noindex
+  h1={`Practicar ${languageName}`}
+  desc="Preparando tu sesión…"
+  descAttr="data-practice-desc"
   siloContext={{
-    userLang,
-    targetLang,
+    userLang: userLang!,
+    targetLang: targetLang!,
     restPath: '/practicar',
     breadcrumbs: [
       { name: dict.silo.idiomas, href: `/${userLang}` },
@@ -61,19 +67,7 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
     ],
   }}
 >
-  <section class="container adaptive-head">
-    <Breadcrumbs
-      userLang={userLang}
-      items={[
-        { name: dict.silo.idiomas, href: `/${userLang}` },
-        { name: languageName, flag: languageMeta?.flag, href: `/${userLang}/${targetLang}` },
-        { name: 'Practicar' },
-      ]}
-    />
-    <span class="emoji" aria-hidden="true">🎯</span>
-    <h1>Practicar {languageName}</h1>
-    <p class="desc" data-practice-desc>Preparando tu sesión…</p>
-
+  <Fragment slot="head">
     {
       /* Por qué el motor eligió esto. Se muestra para que la sesión no parezca
         una lista al azar: si estás reparando un error, tenés que saberlo. */
@@ -82,7 +76,7 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
       <span class="reason-tag" data-reason-tag></span>
       <p class="reason-text" data-reason-text></p>
     </div>
-  </section>
+  </Fragment>
 
   <section class="container adaptive-body">
     <div class="card empty-state" data-empty hidden>
@@ -121,7 +115,7 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
 
   <div hidden data-skill-bank={JSON.stringify(bank)}></div>
   <div hidden data-skill-catalog={JSON.stringify(skills)}></div>
-</BaseLayout>
+</SiloToolPage>
 
 <script>
   import { buildItemFieldset, primePracticeCounters } from '../../../lib/practiceItemMarkup';
@@ -368,7 +362,7 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
   /* No se llama .practice-head: ese nombre ya lo usa Practice.astro para su
      propia cabecera con display:flex, y la regla alcanzaba a esta sección
      dejándola en una fila. */
-  .adaptive-head {
+  :global(.adaptive-head) {
     padding-block: 2.5rem 1rem;
     max-width: 680px;
   }

@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Partizipialkonstruktionen (construcciones de participio)'
 funFact: "Piensa en las Partizipialkonstruktionen como una maleta de compresión al vacío para las oraciones: toman una frase relativa entera ('die Studie, die im Jahr 2020 veröffentlicht wurde') y la comprimen en una sola frase compacta antes del sustantivo ('die im Jahr 2020 veröffentlichte Studie'). Menos palabras, mismo significado, mucho más formal."
+skills:
+  - de.c1.construction.participial
 minutes: 11
 quiz:
   - question: '¿Cuál es el objetivo principal de una Partizipialkonstruktion?'

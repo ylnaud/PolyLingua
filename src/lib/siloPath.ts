@@ -14,6 +14,30 @@ export interface SiloPath {
   targetLang: string | null;
 }
 
+/**
+ * Lo que una página del silo le pasa a BaseLayout para que BaseSEO arme los
+ * hreflang cruzados y el JSON-LD.
+ *
+ * Vive acá, y no dentro de `BaseLayout.astro`, porque desde que
+ * `SiloToolPage.astro` lo reenvía hay dos archivos que necesitan el tipo, y un
+ * `.astro` no es un buen sitio del que importar tipos.
+ */
+export interface SiloContext {
+  userLang: string;
+  targetLang: string;
+  restPath?: string;
+  breadcrumbs: { name: string; href: string }[];
+  learningResource?: {
+    title: string;
+    description: string;
+    minutes: number;
+    grammarTopic: string;
+    situation?: string;
+    level: string;
+    quiz?: { question: string }[];
+  };
+}
+
 export function parseSiloPath(pathname: string): SiloPath {
   const [first, second] = pathname.split('/').filter(Boolean);
   const userLang = LANG_IDS.includes(first) ? first : null;

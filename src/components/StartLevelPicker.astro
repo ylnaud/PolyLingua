@@ -1,0 +1,197 @@
+---
+/**
+ * "¿Ya sabés algo?" — el usuario declara desde qué nivel empieza.
+ *
+ * Va en la página del curso, encima de la escalera de niveles. Guarda la
+ * elección en localStorage (una clave por curso) y avisa con un evento para
+ * que la escalera se recalcule sin recargar; la lógica de qué queda abierto
+ * vive en src/lib/startLevel.ts, fuera del DOM y con tests.
+ */
+import { LEVELS } from '../data/levels';
+import { getDictionary } from '../i18n';
+
+interface Props {
+  userLang: string;
+  targetLang: string;
+  /** Los niveles que este curso tiene contenido, en orden. */
+  levelIds: string[];
+}
+
+const { userLang, targetLang, levelIds } = Astro.props;
+const dict = getDictionary(userLang as never);
+const t = dict.silo.inicio;
+const niveles = LEVELS.filter((l) => levelIds.includes(l.id));
+---
+
+<section
+  class="start-level"
+  data-start-level
+  data-target-lang={targetLang}
+  data-texto-elegido={t.elegido}
+  hidden
+>
+  <div class="start-level-row">
+    <div>
+      <p class="start-level-title">{t.titulo}</p>
+      <p class="start-level-desc" data-start-level-desc>{t.desc}</p>
+    </div>
+    <button type="button" class="btn btn-ghost start-level-toggle" data-start-level-toggle>
+      {t.cambiar}
+    </button>
+  </div>
+
+  <div class="start-level-options" data-start-level-options role="group" aria-label={t.aria} hidden>
+    {
+      niveles.map((nivel) => (
+        <button
+          type="button"
+          class="start-level-chip"
+          data-start-level-choice={nivel.id}
+          data-level-name={nivel.name}
+          aria-pressed="false"
+          style={`--nivel-color:${nivel.color}`}
+        >
+          <span aria-hidden="true">{nivel.emoji}</span> {nivel.name}
+        </button>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  // TypeScript, no un <script define:vars>: este no necesita inyectar datos del
+  // frontmatter, así que puede importar de verdad —`write` de storage.ts y la
+  // regla de startLevel.ts— en vez de repetirlas a mano como hace el script de
+  // la página del curso, que sí usa define:vars y por eso no puede importar.
+  import { writeStartLevel, readStartLevel } from '../lib/startLevel';
+  import { fill } from '../lib/interpolate';
+
+  function initStartLevelPicker() {
+    const root = document.querySelector<HTMLElement>('[data-start-level]');
+    if (!root) return;
+    // `astro:page-load` también dispara en la carga inicial, así que sin este
+    // guard los listeners se enganchaban dos veces y el toggle abría y cerraba
+    // el panel en el mismo clic. La marca va en el elemento y no en una
+    // variable de módulo porque bajo navegación SPA el DOM viene nuevo y sí
+    // hay que volver a enganchar.
+    if (root.dataset.ready) return;
+    root.dataset.ready = 'true';
+
+    const targetLang = root.dataset.targetLang ?? '';
+    const opciones = root.querySelector<HTMLElement>('[data-start-level-options]');
+    const toggle = root.querySelector<HTMLButtonElement>('[data-start-level-toggle]');
+    const desc = root.querySelector<HTMLElement>('[data-start-level-desc]');
+    const chips = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-start-level-choice]'));
+    const ids = chips.map((c) => c.dataset.startLevelChoice ?? '');
+    if (ids.length === 0) return;
+
+    // Los textos salen del DOM y no de `define:vars` para no perder el
+    // TypeScript de este script.
+    const textoDesc = desc?.textContent ?? '';
+    const textoElegido = root.dataset.textoElegido ?? '';
+
+    // Se muestra recién acá: sin JS la elección no se podría guardar, y un
+    // selector que no hace nada es peor que ninguno.
+    root.hidden = false;
+
+    function pintar(elegido: string) {
+      for (const chip of chips) {
+        const activo = chip.dataset.startLevelChoice === elegido;
+        chip.setAttribute('aria-pressed', activo ? 'true' : 'false');
+        chip.classList.toggle('is-active', activo);
+      }
+      if (!desc) return;
+      const nombre = chips.find((c) => c.dataset.startLevelChoice === elegido)?.dataset.levelName;
+      // En el primer nivel no hay nada que anunciar: es el estado por defecto.
+      desc.textContent =
+        elegido === ids[0] || !nombre ? textoDesc : fill(textoElegido, { nivel: nombre });
+    }
+
+    pintar(readStartLevel(targetLang, ids));
+
+    toggle?.addEventListener('click', () => {
+      if (!opciones) return;
+      opciones.hidden = !opciones.hidden;
+    });
+
+    for (const chip of chips) {
+      chip.addEventListener('click', () => {
+        const elegido = chip.dataset.startLevelChoice ?? '';
+        writeStartLevel(targetLang, elegido);
+        pintar(elegido);
+        if (opciones) opciones.hidden = true;
+        // La escalera de niveles la pinta el script de la página del curso;
+        // en vez de recargar, se le avisa y se repinta sola.
+        document.dispatchEvent(
+          new CustomEvent('start-level-changed', { detail: { targetLang, level: elegido } }),
+        );
+      });
+    }
+  }
+
+  initStartLevelPicker();
+  document.addEventListener('astro:page-load', initStartLevelPicker);
+</script>
+
+<style>
+  .start-level {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+  }
+
+  .start-level-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .start-level-title {
+    margin: 0 0 0.15rem;
+    font-weight: 800;
+    font-size: 0.95rem;
+  }
+
+  .start-level-desc {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    max-width: 46ch;
+  }
+
+  .start-level-toggle {
+    flex: none;
+  }
+
+  .start-level-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.9rem;
+  }
+
+  .start-level-chip {
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: inherit;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .start-level-chip:hover {
+    border-color: var(--nivel-color);
+  }
+
+  .start-level-chip.is-active {
+    border-color: var(--nivel-color);
+    background: color-mix(in srgb, var(--nivel-color) 16%, var(--bg-elevated));
+  }
+</style>

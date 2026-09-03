@@ -7,6 +7,9 @@ order: 1
 unit: 1
 grammarTopic: 'Oraciones subordinadas (weil, dass, obwohl, wenn)'
 funFact: "Imagina que el verbo conjugado va en una silla al final de la sala, esperando pacientemente. En cuanto ves 'weil', 'dass' u 'obwohl', ya sabes: el verbo se va a sentar al final de la frase, sin importar qué tan larga se ponga la fiesta."
+skills:
+  - de.b1.wordorder.subordinate
+  - de.b1.conjunction.subordinating
 minutes: 10
 quiz:
   - question: "¿Dónde va el verbo conjugado en una oración con 'weil'?"

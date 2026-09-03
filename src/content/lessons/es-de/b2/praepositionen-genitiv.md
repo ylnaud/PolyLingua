@@ -7,6 +7,9 @@ order: 5
 unit: 2
 grammarTopic: 'Preposiciones que rigen Genitiv'
 funFact: "En el habla cotidiana, muchos alemanes usan estas preposiciones con Dativ en vez de Genitiv ('wegen dem Regen' en vez de 'wegen des Regens') — es un error tan común que casi se acepta coloquialmente. Pero en un texto formal o un examen, el Genitiv correcto es el que se espera."
+skills:
+  - de.b2.preposition.genitiv
+  - de.b1.case.genitiv
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta y formal de 'debido a la lluvia' (der Regen)?"

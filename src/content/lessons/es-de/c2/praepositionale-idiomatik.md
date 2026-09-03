@@ -7,6 +7,8 @@ order: 9
 grammarTopic: 'Expresiones idiomáticas y matices estilísticos con preposiciones'
 funFact: 'Un alemán dice "hinter dem Mond leben" (vivir detrás de la luna) para decir que alguien está desconectado de la realidad. En España dirías "vivir en las nubes". Las preposiciones no solo indican lugar — construyen metáforas enteras. Dominarlas es pensar EN alemán, no traducir DESDE el español.'
 unit: 3
+skills:
+  - de.c2.idiom.prepositional
 minutes: 10
 quiz:
   - question: '¿Qué significa "unter vier Augen sprechen"?'

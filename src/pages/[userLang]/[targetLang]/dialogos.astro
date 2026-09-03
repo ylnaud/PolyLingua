@@ -1,8 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { getDictionary } from '../../../i18n';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiloToolPage from '../../../components/SiloToolPage.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getSpanishGlossCourseStaticPaths } from '../../../lib/courses';
 import { LEVEL_MAP } from '../../../data/levels';
@@ -31,30 +30,18 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
 }));
 ---
 
-<BaseLayout
-  userLang={userLang}
+<SiloToolPage
+  userLang={userLang!}
+  targetLang={lang!}
+  slug="dialogos"
+  emoji="💬"
+  headClass="dlg-head"
+  name={dict.silo.explorar.dialogos}
   title={`Diálogos en ${languageMeta?.name}`}
   description={`Aprendé ${languageMeta?.name} con diálogos cortos y naturales — sin reglas, solo repetición e imitación.`}
-  path={`/${userLang}/${lang}/dialogos`}
-  noindex
+  h1="Diálogos para asimilar"
+  desc="Diálogos cortos y reales que asimilás por repetición, no por análisis. Leelos, traducilos y dejalos reposar — en 4 días el patrón se graba solo."
 >
-  <section class="container dlg-head">
-    <Breadcrumbs
-      userLang={userLang}
-      items={[
-        { name: dict.silo.idiomas, href: `/${userLang}` },
-        { name: languageMeta?.name ?? '', flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
-        { name: dict.silo.explorar.dialogos },
-      ]}
-    />
-    <span class="emoji" aria-hidden="true">💬</span>
-    <h1>Diálogos para asimilar</h1>
-    <p class="desc">
-      Diálogos cortos y reales que asimilás por repetición, no por análisis. Leelos, traducilos y
-      dejalos reposar — en 4 días el patrón se graba solo.
-    </p>
-  </section>
-
   <section class="container dlg-body">
     {
       situations.length === 0 ? (
@@ -100,7 +87,7 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
       )
     }
   </section>
-</BaseLayout>
+</SiloToolPage>
 
 <script>
   import { read } from '../../../lib/storage';
@@ -136,16 +123,6 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
 </script>
 
 <style>
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.6rem;
-  }
-
-  .dlg-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
   .dlg-body {
     max-width: 680px;
     padding-block: 0 4rem;

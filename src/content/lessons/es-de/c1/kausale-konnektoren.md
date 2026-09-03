@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Conectores causales avanzados (weil, da, denn, zumal)'
 funFact: "'weil' es información NUEVA para el oyente; 'da' introduce una razón que el oyente probablemente YA CONOCE o puede deducir fácilmente; 'denn' es más informal/hablado y NUNCA manda el verbo al final; 'zumal' añade una razón adicional y enfática, casi como decir 'sobre todo porque...'."
+skills:
+  - de.c1.connector.causal
 minutes: 9
 quiz:
   - question: '¿Cuál conector NO manda el verbo al final de la oración?'

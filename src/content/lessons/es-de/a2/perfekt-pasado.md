@@ -7,6 +7,10 @@ order: 1
 unit: 1
 grammarTopic: 'Perfekt (haben/sein + participio)'
 funFact: "Piensa en el Perfekt como un sándwich: el verbo auxiliar (haben o sein) va justo después del sujeto, y el participio se va al FINAL de la frase, como la última rebanada de pan. 'Ich habe gestern Pizza gegessen' — habe abre el sándwich, gegessen lo cierra."
+skills:
+  - de.a2.verb.perfekt
+  - de.a2.verb.participle
+  - de.a2.wordorder.verb-final
 minutes: 9
 quiz:
   - question: "¿Cuál es la forma correcta para 'yo he comido'?"

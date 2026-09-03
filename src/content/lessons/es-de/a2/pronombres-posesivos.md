@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Pronombres posesivos (mein/dein/sein...)'
 funFact: "Los posesivos cambian EXACTAMENTE igual que 'ein': mismas terminaciones, mismos cambios por género y según cómo se usa la palabra. Si ya dominás cómo cambian los artículos (ein → einen, ein → einem), ya sabés el 90% de esta lección — solo hay que cambiar 'ein' por 'mein/dein/sein...'."
+skills:
+  - de.a2.pronoun.possessive
 minutes: 9
 quiz:
   - question: "¿Cómo se dice 'mi madre' (die Mutter, femenino) en Nominativ?"

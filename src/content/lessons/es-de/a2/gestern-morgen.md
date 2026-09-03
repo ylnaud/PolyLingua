@@ -8,6 +8,9 @@ unit: 3
 grammarTopic: 'Perfekt para el pasado y presente para el futuro'
 situation: 'Ayer y mañana'
 funFact: "Para hablar del pasado en la conversación diaria, los alemanes usan casi siempre el Perfekt: 'Ich bin ins Kino gegangen', no 'Ich ging ins Kino'. Y para el futuro cercano ni siquiera hace falta el futuro: alcanza con el presente y la palabra 'morgen'. Dos tiempos verbales menos que aprender."
+skills:
+  - de.a2.time.past-future
+  - de.a2.verb.perfekt
 minutes: 9
 phrases:
   - text: 'Was hast du gestern gemacht?'

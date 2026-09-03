@@ -7,6 +7,10 @@ order: 7
 unit: 2
 grammarTopic: 'Preposiciones de doble régimen (Wechselpräpositionen)'
 funFact: "Preguntate: '¿HAY movimiento de un lugar a otro, o describo una posición fija?' Si hay movimiento con destino → Akkusativ, el artículo toma la forma «den» ('¿wohin?'). Si es una posición estática → Dativ, el artículo toma la forma «dem» ('¿wo?'). Es la misma preposición, pero el artículo cambia el significado por completo."
+skills:
+  - de.a2.preposition.wechsel
+  - de.a2.case.dativ
+  - de.a2.case.akkusativ
 minutes: 9
 quiz:
   - question: "'Ich lege das Buch auf ___ Tisch' (pongo el libro sobre la mesa — hay movimiento). ¿Qué caso/artículo va?"

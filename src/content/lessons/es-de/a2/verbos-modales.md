@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Verbos modales (können, müssen, wollen, dürfen, sollen, möchten)'
 funFact: 'Los verbos modales mandan al verbo principal al FINAL de la frase, sin conjugar. Imagina que el modal es un jefe mandón: da la orden al principio y el verbo trabajador espera calladito hasta el final para ejecutarla.'
+skills:
+  - de.a2.verb.modal
+  - de.a2.wordorder.verb-final
 minutes: 8
 quiz:
   - question: "¿Cuál es la traducción correcta de 'Ich kann Deutsch sprechen'?"

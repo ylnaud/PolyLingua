@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Frases para problemas cotidianos'
 situation: 'Problemas cotidianos'
 funFact: '«Können Sie das bitte wiederholen?» es probablemente la frase más útil de todo tu alemán. Pedir que te repitan no es de principiante: es lo que hace cualquiera que quiere seguir la conversación en vez de asentir sin entender.'
+skills:
+  - de.a2.vocabulary.problems
 minutes: 9
 phrases:
   - text: 'Ich habe ein Problem.'

@@ -7,6 +7,9 @@ order: 6
 unit: 2
 grammarTopic: 'Casos: Dativ y Akkusativ'
 funFact: "Preguntate siempre: ¿QUÉ doy? → eso es lo que cambia a «den/einen» (Akkusativ). ¿A QUIÉN se lo doy? → eso cambia a «dem/einem» (Dativ). 'Ich gebe dem Mann den Ball' = le doy (¿a quién? al hombre → dem) la pelota (¿qué? → den). Una vez que separás estas dos preguntas, elegir la forma correcta se vuelve mecánico."
+skills:
+  - de.a2.case.akkusativ
+  - de.a2.case.dativ
 minutes: 10
 quiz:
   - question: "En 'Ich gebe dem Kind das Buch' (le doy el libro al niño), ¿qué caso es 'dem Kind'?"

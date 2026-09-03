@@ -7,6 +7,9 @@ order: 3
 unit: 1
 grammarTopic: 'Verbos separables (trennbare Verben)'
 funFact: "Imagina que el prefijo separable es un boomerang: sale disparado del verbo y aterriza al final de la frase, pero siempre vuelve a pegarse cuando el verbo está en infinitivo o participio. 'aufstehen' → 'ich stehe auf' (el 'auf' vuela al final)."
+skills:
+  - de.a2.verb.separable
+  - de.a2.wordorder.verb-final
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta de 'aufstehen' (levantarse) con 'ich' en una frase?"

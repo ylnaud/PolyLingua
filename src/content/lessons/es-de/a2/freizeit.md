@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulario: tiempo libre y pasatiempos'
 funFact: "El verbo 'machen' (hacer) es tu comodín para casi cualquier hobby: Sport machen, Musik machen, eine Pause machen. Combínalo con el vocabulario de esta lección y puedes describir tu tiempo libre completo con un solo verbo versátil."
+skills:
+  - de.a2.vocabulary.freetime
 minutes: 6
 quiz:
   - question: "¿Cómo dirías 'Me gusta leer' usando 'gern'?"

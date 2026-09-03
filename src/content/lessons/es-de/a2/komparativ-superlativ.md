@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Comparativo y superlativo'
 funFact: 'Piensa en una escalera de tres escalones: la forma normal (schnell), un escalón más arriba (schneller = más rápido), y el escalón más alto (am schnellsten = el más rápido). Solo dos terminaciones para subir toda la escalera: -er y -sten.'
+skills:
+  - de.a2.adjective.comparative
 minutes: 7
 quiz:
   - question: "¿Cuál es el comparativo correcto de 'schnell' (rápido)?"

@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Präteritum (pasado narrativo)'
 funFact: "Piensa en el Perfekt como el pasado de la charla de café (hablado) y el Präteritum como el pasado de los libros (escrito/narrado). Con 'sein', 'haben' y los modales, sin embargo, los alemanes usan el Präteritum incluso al hablar — son la excepción que rompe la regla."
+skills:
+  - de.b1.verb.praeteritum
 minutes: 9
 quiz:
   - question: "¿Cuál es la forma correcta de Präteritum de 'sein' (ser/estar) para 'ich'?"

@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Declinación del adjetivo'
 funFact: 'Piensa en la terminación del adjetivo como un trabajo de equipo: si el artículo YA muestra claramente el género/caso (der, die, das...), el adjetivo puede relajarse con una terminación débil (-e o -en). Si NO hay artículo, o es indefinido, el adjetivo tiene que cargar toda la información él solo, con terminaciones fuertes.'
+skills:
+  - de.b1.adjective.declension
 minutes: 10
 quiz:
   - question: "'der gut__ Mann' (con artículo definido, Nominativ masculino). ¿Qué terminación va?"

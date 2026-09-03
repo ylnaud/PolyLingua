@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Caso Genitiv'
 funFact: "En alemán hablado cotidiano, muchos usan 'von + Dativ' en vez del Genitiv ('das Auto von meinem Vater' en vez de 'das Auto meines Vaters'). Pero en textos formales, académicos y escritos, el Genitiv sigue siendo el estándar — y usarlo bien es una señal clara de nivel avanzado."
+skills:
+  - de.b1.case.genitiv
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta de Genitiv masculino/neutro de 'der Mann'?"

@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulario: trabajo y profesión'
 funFact: 'En alemán, muchas profesiones tienen versión masculina y femenina con la terminación -in: der Lehrer / die Lehrerin, der Arzt / die Ärztin. Aprende cada profesión en pareja desde el principio, y duplicas tu vocabulario con el mismo esfuerzo.'
+skills:
+  - de.b1.vocabulary.work
 minutes: 7
 quiz:
   - question: "¿Cómo se dice 'la entrevista de trabajo' en alemán?"

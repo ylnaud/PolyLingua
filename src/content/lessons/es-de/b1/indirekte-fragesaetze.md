@@ -7,6 +7,9 @@ order: 4
 unit: 1
 grammarTopic: 'Preguntas indirectas (ob, W-Wort + verbo final)'
 funFact: "Piensa en 'ob' como el equivalente alemán de 'si' cuando reportas una pregunta de sí/no: 'Kommst du?' (¿vienes?) se convierte en 'Ich weiß nicht, ob du kommst' (no sé si vienes). Para preguntas con W-Wort, simplemente reutilizas la misma palabra interrogativa."
+skills:
+  - de.b1.clause.indirect-question
+  - de.b1.wordorder.subordinate
 minutes: 8
 quiz:
   - question: "'Kommt sie heute?' → 'Ich frage mich, ___ sie heute kommt.' ¿Qué palabra va?"

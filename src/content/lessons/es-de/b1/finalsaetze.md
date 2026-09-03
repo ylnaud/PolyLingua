@@ -7,6 +7,9 @@ order: 5
 unit: 2
 grammarTopic: 'Oraciones finales (um...zu, damit)'
 funFact: "La regla es simple: si la MISMA persona hace las dos acciones, usa 'um...zu' + infinitivo. Si son DOS personas distintas, necesitas 'damit' + una oración completa con su propio sujeto y verbo. Un solo actor, un solo camino; dos actores, dos verbos."
+skills:
+  - de.b1.clause.final
+  - de.b1.wordorder.subordinate
 minutes: 8
 quiz:
   - question: "'Ich lerne Deutsch, ___ in Berlin zu arbeiten' (mismo sujeto: yo aprendo, yo trabajo). ¿Qué estructura va?"

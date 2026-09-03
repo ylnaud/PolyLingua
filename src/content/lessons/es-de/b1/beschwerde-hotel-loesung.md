@@ -6,7 +6,10 @@ description: 'Aprende a cerrar un reclamo de hotel en alemán con cortesía, dis
 order: 12
 unit: 3
 grammarTopic: 'Perfekt con haben vs. sein + Partizip (acción vs. estado)'
-funFact: "haben describe LA ACCIÓN de hacer algo (organisiert, geschickt); sein + participio describe EL RESULTADO ya asentado (ist erledigt, ist gelöst). Pregúntate: ¿estoy contando qué hice, o describiendo cómo quedó?"
+funFact: 'haben describe LA ACCIÓN de hacer algo (organisiert, geschickt); sein + participio describe EL RESULTADO ya asentado (ist erledigt, ist gelöst). Pregúntate: ¿estoy contando qué hice, o describiendo cómo quedó?'
+skills:
+  - de.b1.verb.perfekt-zustand
+  - de.b1.vocabulary.complaints
 minutes: 8
 quiz:
   - question: "En 'Wir haben Ihnen ein Upgrade organisiert', ¿qué describe esta frase?"
@@ -14,11 +17,21 @@ quiz:
     answerIndex: 1
     explanation: "'haben' + participio (Perfekt) narra una acción ya realizada — aquí, el hecho de haber organizado el upgrade."
   - question: "En 'Damit ist die Angelegenheit für mich erledigt', ¿por qué se usa 'ist' y no 'hat'?"
-    options: ["porque 'erledigt' es un adjetivo/estado resultante, no la acción de completar algo", 'porque es un error común que se acepta igual', "porque 'erledigen' siempre usa sein en el Perfekt"]
+    options:
+      [
+        "porque 'erledigt' es un adjetivo/estado resultante, no la acción de completar algo",
+        'porque es un error común que se acepta igual',
+        "porque 'erledigen' siempre usa sein en el Perfekt",
+      ]
     answerIndex: 0
     explanation: "'ist erledigt' describe el ESTADO final del asunto (ya resuelto), no la acción de resolverlo — por eso usa 'sein', como los adjetivos predicativos."
   - question: "¿Cuál es la diferencia de foco entre 'wir haben es organisiert' y 'es ist organisiert'?"
-    options: ['ninguna, son intercambiables siempre', 'la primera enfoca quién hizo la acción; la segunda enfoca el resultado ya asentado', 'la segunda es incorrecta']
+    options:
+      [
+        'ninguna, son intercambiables siempre',
+        'la primera enfoca quién hizo la acción; la segunda enfoca el resultado ya asentado',
+        'la segunda es incorrecta',
+      ]
     answerIndex: 1
     explanation: 'haben + participio pone el foco en el sujeto que actúa; sein + participio (como estado) pone el foco en cómo quedó la cosa, sin importar tanto quién lo hizo.'
 exercises:
@@ -60,13 +73,13 @@ significan lo mismo.
 
 ## Los 5 bloques de cierre
 
-| Alemán                                                                     | Español                                                          |
-| ----------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Alemán                                                                                       | Español                                                                       |
+| -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | Wir haben Ihnen ein Upgrade auf eine Suite organisiert, kostenlos für die restlichen Nächte. | Le hemos organizado una mejora a una suite, gratis por las noches que quedan. |
-| Das klingt nach einer fairen Lösung, vielen Dank.                             | Eso suena a una solución justa, muchas gracias.                       |
-| Könnten Sie mir das bitte schriftlich bestätigen?                             | ¿Podría confirmármelo por escrito, por favor?                          |
-| Damit ist die Angelegenheit für mich erledigt.                                | Con esto, para mí el asunto queda resuelto.                            |
-| Ich weiß Ihre schnelle Reaktion wirklich zu schätzen.                         | Realmente aprecio su rápida reacción.                                  |
+| Das klingt nach einer fairen Lösung, vielen Dank.                                            | Eso suena a una solución justa, muchas gracias.                               |
+| Könnten Sie mir das bitte schriftlich bestätigen?                                            | ¿Podría confirmármelo por escrito, por favor?                                 |
+| Damit ist die Angelegenheit für mich erledigt.                                               | Con esto, para mí el asunto queda resuelto.                                   |
+| Ich weiß Ihre schnelle Reaktion wirklich zu schätzen.                                        | Realmente aprecio su rápida reacción.                                         |
 
 ## La conversación completa
 
@@ -90,7 +103,7 @@ que "queda resuelto"? La diferencia no es aleatoria:
 - **haben + participio** (Perfekt de verdad) narra **la acción**: alguien hizo algo. Aquí,
   el hotel organizó el upgrade — el foco está en esa acción realizada.
 - **sein/ist + participio** aquí no es un Perfekt con "sein" (eso solo pasa con verbos de
-  movimiento o cambio de estado, como *ist gegangen*). Es un **participio usado como
+  movimiento o cambio de estado, como _ist gegangen_). Es un **participio usado como
   adjetivo de estado**: "erledigt" describe cómo quedó el asunto — resuelto — sin poner el
   foco en quién lo resolvió ni cuándo.
 

@@ -7,6 +7,9 @@ order: 11
 unit: 3
 grammarTopic: 'Konjunktiv II con würde + infinitivo'
 funFact: "würde + infinitivo es el 'modo seguro' del Konjunktiv II: sirve para casi cualquier verbo regular, mientras que hätte/wäre solo se usan con haben/sein. Si dudas cuál usar, würde nunca falla."
+skills:
+  - de.b1.verb.konjunktiv2-wuerde
+  - de.b1.vocabulary.complaints
 minutes: 8
 quiz:
   - question: "¿Cuál es la estructura correcta de 'würde' con un verbo como 'geben' (dar)?"
@@ -14,11 +17,21 @@ quiz:
     answerIndex: 0
     explanation: "'würde' + infinitivo al final de la frase: 'Ich würde erwarten, dass Sie mir einen Rabatt geben.'"
   - question: "¿Por qué el alemán prefiere 'würde geben' en vez de la forma corta 'gäbe' en el habla cotidiana?"
-    options: ["'gäbe' no existe en alemán", "las formas cortas de Konjunktiv II se reservan casi solo para 'haben', 'sein' y modales; el resto usa würde + infinitivo", "würde solo se usa en el pasado"]
+    options:
+      [
+        "'gäbe' no existe en alemán",
+        "las formas cortas de Konjunktiv II se reservan casi solo para 'haben', 'sein' y modales; el resto usa würde + infinitivo",
+        'würde solo se usa en el pasado',
+      ]
     answerIndex: 1
-    explanation: "Verbos comunes como haben, sein, y los modales (können, müssen...) tienen forma corta de Konjunktiv II (hätte, wäre, könnte); casi todos los demás verbos usan la perífrasis con würde."
+    explanation: 'Verbos comunes como haben, sein, y los modales (können, müssen...) tienen forma corta de Konjunktiv II (hätte, wäre, könnte); casi todos los demás verbos usan la perífrasis con würde.'
   - question: "'Wenn sich das Problem nicht lösen lässt, muss ich das Hotel wechseln' — esta frase con 'wenn' + presente indicativo (no Konjunktiv) expresa..."
-    options: ['una condición hipotética e improbable', 'una condición real y posible que aún puede pasar', 'algo que ya ocurrió']
+    options:
+      [
+        'una condición hipotética e improbable',
+        'una condición real y posible que aún puede pasar',
+        'algo que ya ocurrió',
+      ]
     answerIndex: 1
     explanation: 'A diferencia del Konjunktiv II (irreal), el "wenn" con indicativo describe una condición real que todavía puede cumplirse — el huésped realmente podría cambiar de hotel.'
 exercises:
@@ -26,7 +39,7 @@ exercises:
     sentence: 'Ich ___ erwarten, dass Sie mir einen Rabatt auf die Übernachtung geben.'
     answer: 'würde'
     accepted: ['Würde']
-    hint: "würde + infinitivo (erwarten) para expresar una expectativa con cortesía firme."
+    hint: 'würde + infinitivo (erwarten) para expresar una expectativa con cortesía firme.'
     translation: 'Esperaría que me diera un descuento en la noche de hotel.'
     placeholder: 'würde / werde / wurde'
   - type: 'write'
@@ -60,13 +73,13 @@ anterior: **würde**.
 
 ## Los 5 bloques de esta situación
 
-| Alemán                                                                 | Español                                                |
-| ------------------------------------------------------------------------ | -------------------------------------------------------- |
-| Ich habe vor zwei Stunden schon einmal Bescheid gesagt, aber es hat sich nichts geändert. | Ya avisé hace dos horas, pero no ha cambiado nada.       |
-| So kann ich hier leider nicht bleiben.                                   | Lamentablemente así no puedo quedarme aquí.               |
-| Ich würde erwarten, dass Sie mir einen Rabatt auf die Übernachtung geben. | Esperaría que me diera un descuento en la noche de hotel. |
-| Was schlagen Sie mir als Lösung vor?                                     | ¿Qué solución me propone?                                 |
-| Wenn sich das Problem nicht lösen lässt, muss ich leider das Hotel wechseln. | Si el problema no se puede resolver, tendré que cambiar de hotel. |
+| Alemán                                                                                    | Español                                                           |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Ich habe vor zwei Stunden schon einmal Bescheid gesagt, aber es hat sich nichts geändert. | Ya avisé hace dos horas, pero no ha cambiado nada.                |
+| So kann ich hier leider nicht bleiben.                                                    | Lamentablemente así no puedo quedarme aquí.                       |
+| Ich würde erwarten, dass Sie mir einen Rabatt auf die Übernachtung geben.                 | Esperaría que me diera un descuento en la noche de hotel.         |
+| Was schlagen Sie mir als Lösung vor?                                                      | ¿Qué solución me propone?                                         |
+| Wenn sich das Problem nicht lösen lässt, muss ich leider das Hotel wechseln.              | Si el problema no se puede resolver, tendré que cambiar de hotel. |
 
 ## La conversación completa
 

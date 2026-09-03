@@ -544,6 +544,145 @@ export const SKILLS: Skill[] = [
     prerequisites: [],
     difficulty: 2,
   },
+
+  // ══ B1 ═══════════════════════════════════════════════════════════════════
+
+  // ── Subordinadas y pasado narrativo (unidad 1) ──────────────────────────
+  {
+    // La habilidad transversal del nivel: casi todo B1 pasa por mandar el
+    // verbo al final. Por eso la comparten cuatro lecciones — es exactamente
+    // el caso que justifica que la relación lección↔habilidad sea N:N.
+    id: 'de.b1.wordorder.subordinate',
+    lang: 'de',
+    level: 'b1',
+    category: 'word_order',
+    name: 'El verbo al final en la subordinada',
+    prerequisites: ['de.a2.wordorder.verb-final'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.b1.conjunction.subordinating',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Elegir la conjunción (weil, dass, obwohl, wenn)',
+    prerequisites: ['de.a2.wordorder.verb-final'],
+    difficulty: 3,
+  },
+  {
+    id: 'de.b1.verb.praeteritum',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Präteritum: el pasado narrativo',
+    prerequisites: ['de.a2.verb.perfekt'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.b1.clause.relative',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Oraciones de relativo (der, die, das)',
+    prerequisites: ['de.b1.wordorder.subordinate', 'de.a2.case.dativ'],
+    difficulty: 5,
+  },
+  {
+    id: 'de.b1.clause.indirect-question',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Preguntas indirectas (ob, W-Wort)',
+    prerequisites: ['de.b1.wordorder.subordinate'],
+    difficulty: 4,
+  },
+
+  // ── Casos avanzados y adjetivo (unidad 2) ───────────────────────────────
+  {
+    id: 'de.b1.clause.final',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Oraciones finales (um…zu, damit)',
+    prerequisites: ['de.b1.wordorder.subordinate'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.b1.case.genitiv',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Genitiv: la posesión formal',
+    prerequisites: ['de.a2.case.dativ'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.b1.adjective.declension',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Declinación del adjetivo',
+    prerequisites: ['de.a2.case.dativ', 'de.a2.pronoun.possessive'],
+    difficulty: 5,
+  },
+  {
+    id: 'de.b1.vocabulary.work',
+    lang: 'de',
+    level: 'b1',
+    category: 'vocabulary',
+    name: 'Trabajo y profesión',
+    prerequisites: [],
+    difficulty: 2,
+  },
+
+  // ── Reclamos y Konjunktiv II (unidad 3) ─────────────────────────────────
+  {
+    id: 'de.b1.verb.konjunktiv2',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Konjunktiv II de cortesía (wäre, hätte, könnte)',
+    prerequisites: ['de.a2.verb.modal'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.b1.verb.konjunktiv2-wuerde',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Konjunktiv II con würde + infinitivo',
+    prerequisites: ['de.b1.verb.konjunktiv2'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.b1.verb.perfekt-zustand',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Acción (Perfekt) frente a estado (sein + participio)',
+    prerequisites: ['de.a2.verb.perfekt'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.b1.vocabulary.complaints',
+    lang: 'de',
+    level: 'b1',
+    category: 'vocabulary',
+    name: 'Reclamar y pedir una solución',
+    prerequisites: [],
+    difficulty: 3,
+  },
+
+  // ── Preposiciones (unidad 4) ────────────────────────────────────────────
+  {
+    id: 'de.b1.verb.with-preposition',
+    lang: 'de',
+    level: 'b1',
+    category: 'grammar',
+    name: 'Verbos con preposición fija (warten auf, denken an…)',
+    prerequisites: ['de.a2.preposition.fixed'],
+    difficulty: 5,
+  },
 ];
 
 export const SKILL_MAP: Record<string, Skill> = Object.fromEntries(SKILLS.map((s) => [s.id, s]));

@@ -1345,6 +1345,553 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+
+  // ══ B1 ═══════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'de.b1.wordorder.subordinate',
+    explanation:
+      'Toda conjunción subordinante (weil, dass, obwohl, wenn) manda el verbo conjugado al FINAL de su parte de la frase. Si hay dos verbos, el conjugado va el último de todos: «…weil sie arbeiten muss».',
+    variations: [
+      {
+        kind: 'order',
+        sentence: 'Ich bleibe zu Hause, weil ich krank bin',
+        answer: 'Ich bleibe zu Hause, weil ich krank bin',
+        translation: 'Me quedo en casa porque estoy enfermo.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Er sagt, dass er morgen kommt',
+        answer: 'Er sagt, dass er morgen kommt',
+        translation: 'Dice que viene mañana.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Obwohl es regnet, gehen wir spazieren',
+        answer: 'Obwohl es regnet, gehen wir spazieren',
+        translation: 'Aunque llueve, salimos a pasear.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Wenn ich Zeit habe, lese ich ein Buch',
+        answer: 'Wenn ich Zeit habe, lese ich ein Buch',
+        translation: 'Cuando tengo tiempo, leo un libro.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Ich weiß, dass du Recht hast',
+        answer: 'Ich weiß, dass du Recht hast',
+        translation: 'Sé que tienes razón.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Sie kommt nicht, weil sie arbeiten muss',
+        answer: 'Sie kommt nicht, weil sie arbeiten muss',
+        translation: 'No viene porque tiene que trabajar.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.conjunction.subordinating',
+    explanation:
+      'weil = porque (la causa), dass = que (el contenido), obwohl = aunque (el contraste), wenn = cuando o si (la condición). Las cuatro mandan el verbo al final; ojo con denn, que también significa «porque» pero NO lo manda.',
+    variations: [
+      {
+        sentence: 'Ich lerne Deutsch, ___ ich in Berlin arbeiten will.',
+        answer: 'weil',
+        translation: 'Aprendo alemán porque quiero trabajar en Berlín.',
+      },
+      {
+        sentence: 'Ich glaube, ___ er Recht hat.',
+        answer: 'dass',
+        translation: 'Creo que tiene razón.',
+      },
+      {
+        sentence: '___ es regnet, gehen wir spazieren.',
+        answer: 'Obwohl',
+        translation: 'Aunque llueve, salimos a pasear.',
+      },
+      {
+        sentence: '___ ich Zeit habe, rufe ich dich an.',
+        answer: 'Wenn',
+        translation: 'Cuando tenga tiempo, te llamo.',
+      },
+      {
+        sentence: 'Sie ist müde, ___ sie viel gearbeitet hat.',
+        answer: 'weil',
+        translation: 'Está cansada porque ha trabajado mucho.',
+      },
+      {
+        sentence: 'Es ist schade, ___ du nicht kommen kannst.',
+        answer: 'dass',
+        translation: 'Es una pena que no puedas venir.',
+      },
+      {
+        sentence: '___ er krank ist, geht er zur Arbeit.',
+        answer: 'Obwohl',
+        translation: 'Aunque está enfermo, va a trabajar.',
+      },
+      {
+        sentence: '___ du fertig bist, sag mir Bescheid.',
+        answer: 'Wenn',
+        translation: 'Cuando termines, avísame.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.verb.praeteritum',
+    explanation:
+      'El Präteritum es el pasado de los libros y las noticias, pero sein, haben y los modales lo usan también al hablar. Regulares: raíz + -te (machen → machte). Irregulares: cambian la vocal y no llevan -te (gehen → ging).',
+    variations: [
+      {
+        sentence: 'Gestern ___ ich krank. (sein)',
+        answer: 'war',
+        translation: 'Ayer estuve enfermo.',
+      },
+      {
+        sentence: 'Wir ___ keine Zeit. (haben)',
+        answer: 'hatten',
+        translation: 'No teníamos tiempo.',
+      },
+      { sentence: 'Er ___ nach Hause. (gehen)', answer: 'ging', translation: 'Él se fue a casa.' },
+      {
+        sentence: 'Sie ___ das ganze Buch. (lesen)',
+        answer: 'las',
+        translation: 'Ella leyó el libro entero.',
+      },
+      { sentence: 'Ich ___ das nicht. (können)', answer: 'konnte', translation: 'Yo no podía.' },
+      {
+        sentence: 'Das Kind ___ die Aufgabe. (machen)',
+        answer: 'machte',
+        translation: 'El niño hizo la tarea.',
+      },
+      {
+        sentence: 'Wir ___ nach Berlin. (fahren)',
+        answer: 'fuhren',
+        translation: 'Fuimos a Berlín.',
+      },
+      {
+        sentence: 'Er ___ mir einen Brief. (schreiben)',
+        answer: 'schrieb',
+        translation: 'Él me escribió una carta.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.clause.relative',
+    explanation:
+      'El pronombre relativo toma el GÉNERO de la palabra a la que se refiere, pero el CASO de su función dentro de la subordinada: der Mann, **der** hier arbeitet (sujeto) frente a der Mann, **den** ich sehe (objeto).',
+    variations: [
+      {
+        sentence: 'Das ist der Mann, ___ hier arbeitet.',
+        answer: 'der',
+        translation: 'Ese es el hombre que trabaja aquí. (sujeto)',
+      },
+      {
+        sentence: 'Das ist der Mann, ___ ich gestern gesehen habe.',
+        answer: 'den',
+        translation: 'Ese es el hombre al que vi ayer. (objeto → Akkusativ)',
+      },
+      {
+        sentence: 'Das ist die Frau, ___ mir geholfen hat.',
+        answer: 'die',
+        translation: 'Esa es la mujer que me ayudó.',
+      },
+      {
+        sentence: 'Das ist das Buch, ___ ich gerade lese.',
+        answer: 'das',
+        translation: 'Ese es el libro que estoy leyendo.',
+      },
+      {
+        sentence: 'Das ist der Freund, ___ ich das Buch gegeben habe.',
+        answer: 'dem',
+        translation: 'Ese es el amigo al que le di el libro. (Dativ)',
+      },
+      {
+        sentence: 'Kennst du die Leute, ___ dort stehen?',
+        answer: 'die',
+        translation: '¿Conoces a la gente que está ahí?',
+      },
+      {
+        sentence: 'Das ist die Stadt, in ___ ich wohne.',
+        answer: 'der',
+        translation: 'Esa es la ciudad en la que vivo.',
+      },
+      {
+        sentence: 'Das ist das Auto, ___ meinem Bruder gehört.',
+        answer: 'das',
+        translation: 'Ese es el coche que es de mi hermano.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.clause.indirect-question',
+    explanation:
+      'La pregunta indirecta pierde la inversión y manda el verbo al final. Si la directa era de sí o no, se introduce con ob; si tenía palabra W, esa misma palabra hace de conjunción.',
+    variations: [
+      {
+        sentence: 'Weißt du, ___ er heute kommt? (sí/no)',
+        answer: 'ob',
+        translation: '¿Sabes si viene hoy?',
+      },
+      {
+        sentence: 'Ich weiß nicht, ___ er wohnt. (dónde)',
+        answer: 'wo',
+        translation: 'No sé dónde vive.',
+      },
+      {
+        sentence: 'Kannst du mir sagen, ___ der Zug fährt? (cuándo)',
+        answer: 'wann',
+        translation: '¿Puedes decirme cuándo sale el tren?',
+      },
+      {
+        sentence: 'Sie fragt, ___ wir Zeit haben. (sí/no)',
+        answer: 'ob',
+        translation: 'Ella pregunta si tenemos tiempo.',
+      },
+      {
+        sentence: 'Weißt du, ___ das Buch gehört? (a quién)',
+        answer: 'wem',
+        translation: '¿Sabes de quién es el libro?',
+      },
+      {
+        sentence: 'Er will wissen, ___ du heißt. (cómo)',
+        answer: 'wie',
+        translation: 'Él quiere saber cómo te llamas.',
+      },
+      {
+        sentence: 'Ich habe keine Ahnung, ___ er das gemacht hat. (por qué)',
+        answer: 'warum',
+        translation: 'No tengo ni idea de por qué lo hizo.',
+      },
+      {
+        sentence: 'Sag mir bitte, ___ du am Wochenende machst. (qué)',
+        answer: 'was',
+        translation: 'Dime qué haces el fin de semana.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.clause.final',
+    explanation:
+      'um…zu cuando el sujeto es el MISMO en las dos partes; damit cuando cambia. «Ich lerne, um zu arbeiten» (yo y yo) frente a «Ich spreche langsam, damit du mich verstehst» (yo y vos).',
+    variations: [
+      {
+        sentence: 'Ich lerne Deutsch, ___ in Berlin zu arbeiten.',
+        answer: 'um',
+        translation: 'Aprendo alemán para trabajar en Berlín. (mismo sujeto)',
+      },
+      {
+        sentence: 'Ich spreche langsam, ___ du mich verstehst.',
+        answer: 'damit',
+        translation: 'Hablo despacio para que me entiendas. (cambia el sujeto)',
+      },
+      {
+        sentence: 'Sie geht früh los, ___ pünktlich zu sein.',
+        answer: 'um',
+        translation: 'Sale temprano para llegar puntual.',
+      },
+      {
+        sentence: 'Er erklärt es noch einmal, ___ alle es verstehen.',
+        answer: 'damit',
+        translation: 'Lo explica otra vez para que todos lo entiendan.',
+      },
+      {
+        sentence: 'Wir sparen Geld, ___ eine Reise zu machen.',
+        answer: 'um',
+        translation: 'Ahorramos dinero para hacer un viaje.',
+      },
+      {
+        sentence: 'Ich schreibe es auf, ___ ich es nicht vergesse.',
+        answer: 'damit',
+        translation: 'Lo apunto para no olvidarlo.',
+      },
+      {
+        sentence: 'Sie ruft an, ___ einen Termin zu vereinbaren.',
+        answer: 'um',
+        translation: 'Llama para concertar una cita.',
+      },
+      {
+        sentence: 'Ich mache das Fenster auf, ___ es nicht so warm ist.',
+        answer: 'damit',
+        translation: 'Abro la ventana para que no haga tanto calor.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.case.genitiv',
+    explanation:
+      'El Genitiv es la posesión formal. Masculino y neutro: des + una -(e)s en el sustantivo (des Mannes). Femenino y plural: der. Al hablar se sustituye casi siempre por von + Dativ.',
+    variations: [
+      {
+        sentence: 'Das Auto ___ Mannes ist neu. (der Mann)',
+        answer: 'des',
+        translation: 'El coche del hombre es nuevo.',
+      },
+      {
+        sentence: 'Die Farbe ___ Hauses gefällt mir. (das Haus)',
+        answer: 'des',
+        translation: 'Me gusta el color de la casa.',
+      },
+      {
+        sentence: 'Das Ende ___ Geschichte war traurig. (die Geschichte)',
+        answer: 'der',
+        translation: 'El final de la historia fue triste.',
+      },
+      {
+        sentence: 'Die Meinung ___ Leute ist wichtig. (die Leute)',
+        answer: 'der',
+        translation: 'La opinión de la gente es importante.',
+      },
+      {
+        sentence: 'Trotz ___ Regens gehe ich spazieren. (der Regen)',
+        answer: 'des',
+        translation: 'A pesar de la lluvia salgo a pasear.',
+      },
+      {
+        sentence: 'Während ___ Woche arbeite ich. (die Woche)',
+        answer: 'der',
+        translation: 'Durante la semana trabajo.',
+      },
+      {
+        sentence: 'Wegen ___ Wetters bleiben wir zu Hause. (das Wetter)',
+        answer: 'des',
+        translation: 'Por el tiempo nos quedamos en casa.',
+      },
+      {
+        sentence: 'Das ist das Büro ___ Chefin. (die Chefin)',
+        answer: 'der',
+        translation: 'Esa es la oficina de la jefa.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.adjective.declension',
+    explanation:
+      'La terminación depende de si el artículo ya marca el género. Con der/die/das ya está marcado y el adjetivo se relaja (-e o -en); con ein/kein/mein el adjetivo tiene que marcarlo él: ein gut**er** Mann, ein gut**es** Kind.',
+    variations: [
+      {
+        sentence: 'Der ___ Mann kommt. (gut)',
+        answer: 'gute',
+        translation: 'El hombre bueno viene.',
+      },
+      {
+        sentence: 'Ein ___ Mann kommt. (gut)',
+        answer: 'guter',
+        translation: 'Un hombre bueno viene. (ein no marca el masculino: lo marca el adjetivo)',
+      },
+      {
+        sentence: 'Das ___ Kind spielt. (klein)',
+        answer: 'kleine',
+        translation: 'El niño pequeño juega.',
+      },
+      {
+        sentence: 'Ein ___ Kind spielt. (klein)',
+        answer: 'kleines',
+        translation: 'Un niño pequeño juega.',
+      },
+      {
+        sentence: 'Ich sehe den ___ Hund. (groß)',
+        answer: 'großen',
+        translation: 'Veo al perro grande.',
+      },
+      {
+        sentence: 'Sie hat eine ___ Wohnung. (schön)',
+        answer: 'schöne',
+        translation: 'Ella tiene un piso bonito.',
+      },
+      {
+        sentence: 'Wir wohnen in einem ___ Haus. (alt)',
+        answer: 'alten',
+        translation: 'Vivimos en una casa vieja.',
+      },
+      {
+        sentence: 'Die ___ Bücher sind teuer. (neu)',
+        answer: 'neuen',
+        translation: 'Los libros nuevos son caros.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.verb.konjunktiv2',
+    explanation:
+      'wäre, hätte y könnte son la versión educada de sein, haben y können. No son pasado: sirven para pedir sin sonar brusco y para hablar de lo hipotético.',
+    variations: [
+      {
+        sentence: '___ Sie so nett, mir zu helfen? (sein)',
+        answer: 'Wären',
+        translation: '¿Sería tan amable de ayudarme?',
+      },
+      {
+        sentence: '___ ich bitte die Rechnung? (haben)',
+        answer: 'Hätte',
+        translation: '¿Me trae la cuenta, por favor?',
+      },
+      {
+        sentence: '___ Sie mir bitte helfen? (können)',
+        answer: 'Könnten',
+        translation: '¿Podría ayudarme, por favor?',
+      },
+      {
+        sentence: 'Das ___ sehr nett. (sein)',
+        answer: 'wäre',
+        translation: 'Eso sería muy amable.',
+      },
+      {
+        sentence: 'Ich ___ gern ein Zimmer mit Blick. (haben)',
+        answer: 'hätte',
+        translation: 'Querría una habitación con vistas.',
+      },
+      {
+        sentence: '___ du mir kurz helfen? (können)',
+        answer: 'Könntest',
+        translation: '¿Me echarías una mano un momento?',
+      },
+      {
+        sentence: 'Es ___ schön, wenn du kommst. (sein)',
+        answer: 'wäre',
+        translation: 'Sería bonito que vinieras.',
+      },
+      {
+        sentence: 'Wir ___ gern reserviert. (haben)',
+        answer: 'hätten',
+        translation: 'Nos gustaría haber reservado.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.verb.konjunktiv2-wuerde',
+    explanation:
+      'Para casi todos los verbos el Konjunktiv II se arma con würde + infinitivo al final. Solo sein, haben y los modales tienen forma propia (wäre, hätte, könnte); con el resto, würde.',
+    variations: [
+      {
+        sentence: 'Ich ___ mich über eine Lösung freuen.',
+        answer: 'würde',
+        translation: 'Me alegraría que hubiera una solución.',
+      },
+      {
+        sentence: '___ Sie mir bitte eine Antwort geben?',
+        answer: 'Würden',
+        translation: '¿Me daría una respuesta, por favor?',
+      },
+      {
+        sentence: 'Wir ___ gern ein anderes Zimmer bekommen.',
+        answer: 'würden',
+        translation: 'Nos gustaría que nos dieran otra habitación.',
+      },
+      {
+        sentence: '___ du das für mich machen?',
+        answer: 'Würdest',
+        translation: '¿Harías eso por mí?',
+      },
+      {
+        sentence: 'Er ___ nie so etwas sagen.',
+        answer: 'würde',
+        translation: 'Él nunca diría algo así.',
+      },
+      {
+        sentence: 'Ich ___ lieber morgen kommen.',
+        answer: 'würde',
+        translation: 'Preferiría venir mañana.',
+      },
+      {
+        sentence: 'Die Gäste ___ sich sehr freuen.',
+        answer: 'würden',
+        translation: 'Los huéspedes se alegrarían mucho.',
+      },
+      {
+        sentence: '___ ihr mir bitte helfen?',
+        answer: 'Würdet',
+        translation: '¿Me ayudaríais, por favor?',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.verb.perfekt-zustand',
+    explanation:
+      'haben + participio cuenta la ACCIÓN: «ich habe das Fenster geöffnet». sein + participio describe el ESTADO que quedó: «das Fenster ist geöffnet». La forma es casi la misma; lo que cambia es de qué se está hablando.',
+    variations: [
+      {
+        sentence: 'Ich ___ das Fenster geöffnet. (la acción)',
+        answer: 'habe',
+        translation: 'He abierto la ventana.',
+      },
+      {
+        sentence: 'Das Fenster ___ geöffnet. (el estado)',
+        answer: 'ist',
+        translation: 'La ventana está abierta.',
+      },
+      {
+        sentence: 'Wir ___ das Problem gelöst. (la acción)',
+        answer: 'haben',
+        translation: 'Hemos resuelto el problema.',
+      },
+      {
+        sentence: 'Das Problem ___ gelöst. (el estado)',
+        answer: 'ist',
+        translation: 'El problema está resuelto.',
+      },
+      {
+        sentence: 'Der Kellner ___ den Tisch reserviert. (la acción)',
+        answer: 'hat',
+        translation: 'El camarero ha reservado la mesa.',
+      },
+      {
+        sentence: 'Der Tisch ___ reserviert. (el estado)',
+        answer: 'ist',
+        translation: 'La mesa está reservada.',
+      },
+      {
+        sentence: 'Sie ___ die Tür geschlossen. (la acción)',
+        answer: 'hat',
+        translation: 'Ella ha cerrado la puerta.',
+      },
+      {
+        sentence: 'Die Tür ___ geschlossen. (el estado)',
+        answer: 'ist',
+        translation: 'La puerta está cerrada.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b1.verb.with-preposition',
+    explanation:
+      'Cada verbo se casa con una preposición y hay que memorizar la pareja entera: warten auf, denken an, sich freuen über, sich interessieren für, Angst haben vor. La preposición no se deduce de la del español.',
+    variations: [
+      { sentence: 'Ich warte ___ den Bus.', answer: 'auf', translation: 'Espero el autobús.' },
+      { sentence: 'Denkst du ___ mich?', answer: 'an', translation: '¿Piensas en mí?' },
+      {
+        sentence: 'Sie freut sich ___ das Geschenk.',
+        answer: 'über',
+        translation: 'Ella se alegra por el regalo.',
+      },
+      {
+        sentence: 'Er interessiert sich ___ Musik.',
+        answer: 'für',
+        translation: 'A él le interesa la música.',
+      },
+      {
+        sentence: 'Ich spreche ___ meinem Chef.',
+        answer: 'mit',
+        translation: 'Hablo con mi jefe.',
+      },
+      {
+        sentence: 'Wir hoffen ___ gutes Wetter.',
+        answer: 'auf',
+        translation: 'Esperamos que haga buen tiempo.',
+      },
+      {
+        sentence: 'Sie hat Angst ___ Hunden.',
+        answer: 'vor',
+        translation: 'Ella tiene miedo a los perros.',
+      },
+      {
+        sentence: 'Ich bedanke mich ___ deine Hilfe.',
+        answer: 'für',
+        translation: 'Te doy las gracias por tu ayuda.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

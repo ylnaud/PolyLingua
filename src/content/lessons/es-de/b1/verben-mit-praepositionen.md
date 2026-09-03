@@ -7,6 +7,8 @@ order: 13
 grammarTopic: 'Verbos con preposición fija (Verben mit Präpositionen)'
 funFact: 'En español "pensar en" siempre es "pensar en", pero en alemán "denken" cambia de personalidad según la preposición: "an jemanden denken" (pensar en alguien con cariño) vs. "über etwas nachdenken" (reflexionar sobre algo con calma). No es el verbo quien manda, es la preposición la que decide el significado.'
 unit: 4
+skills:
+  - de.b1.verb.with-preposition
 minutes: 10
 quiz:
   - question: '¿Cuál es la preposición correcta? "Ich warte ___ den Bus."'

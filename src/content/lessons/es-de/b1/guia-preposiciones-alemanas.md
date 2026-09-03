@@ -7,6 +7,11 @@ order: 14
 unit: 4
 grammarTopic: 'Preposiciones alemanas: resumen completo por caso'
 funFact: 'No memorices las preposiciones sueltas: memorizalas SIEMPRE con el caso que rigen, como si fueran una sola palabra ("mit + Dativ", no solo "mit"). Es la única forma de que la declinación te salga automática cuando hables.'
+skills:
+  - de.b1.verb.with-preposition
+  - de.b1.case.genitiv
+  - de.a2.preposition.wechsel
+  - de.a2.preposition.fixed
 minutes: 12
 quiz:
   - question: '¿Qué pregunta usás para saber si una Wechselpräposition rige Dativ o Akkusativ?'
@@ -110,95 +115,95 @@ Ya conocés las Wechselpräpositionen (`adjektivdeklination.md`, `wechselpraepos
 
 Rigen **Dativ** cuando responden "¿dónde?" (ubicación estática) y **Akkusativ** cuando responden "¿hacia dónde?" (movimiento con destino):
 
-| Preposición | Significado    | Wo? (Dativ)                                    | Wohin? (Akkusativ)                          |
-| ----------- | --------------- | ----------------------------------------------- | -------------------------------------------- |
-| in          | en, dentro de   | Das Buch liegt **in dem** Zimmer.               | Ich gehe **in das** Zimmer.                 |
-| auf         | sobre, encima de| Die Tasse steht **auf dem** Tisch.              | Ich stelle die Tasse **auf den** Tisch.     |
-| an          | al lado de, en  | Der Schrank steht **an dem** Fenster.           | Ich gehe **an das** Fenster.                |
-| neben       | al lado de      | Der Hund liegt **neben dem** Sofa.              | Ich setze mich **neben das** Sofa.          |
-| hinter      | detrás de       | Das Auto steht **hinter dem** Haus.             | Ich stelle mich **hinter das** Haus.        |
-| vor         | delante de      | Ein Baum steht **vor dem** Haus.                | Ich stelle mich **vor das** Haus.           |
-| über        | encima de, sobre| Ein Vogel fliegt **über dem** See.              | Ich fliege **über den** See.                |
-| unter       | debajo de       | Die Katze sitzt **unter dem** Tisch.            | Ich lege die Tasche **unter den** Tisch.    |
-| zwischen    | entre           | Die Katze sitzt **zwischen den** Bäumen.        | Ich gehe **zwischen die** Bäume.            |
+| Preposición | Significado      | Wo? (Dativ)                              | Wohin? (Akkusativ)                       |
+| ----------- | ---------------- | ---------------------------------------- | ---------------------------------------- |
+| in          | en, dentro de    | Das Buch liegt **in dem** Zimmer.        | Ich gehe **in das** Zimmer.              |
+| auf         | sobre, encima de | Die Tasse steht **auf dem** Tisch.       | Ich stelle die Tasse **auf den** Tisch.  |
+| an          | al lado de, en   | Der Schrank steht **an dem** Fenster.    | Ich gehe **an das** Fenster.             |
+| neben       | al lado de       | Der Hund liegt **neben dem** Sofa.       | Ich setze mich **neben das** Sofa.       |
+| hinter      | detrás de        | Das Auto steht **hinter dem** Haus.      | Ich stelle mich **hinter das** Haus.     |
+| vor         | delante de       | Ein Baum steht **vor dem** Haus.         | Ich stelle mich **vor das** Haus.        |
+| über        | encima de, sobre | Ein Vogel fliegt **über dem** See.       | Ich fliege **über den** See.             |
+| unter       | debajo de        | Die Katze sitzt **unter dem** Tisch.     | Ich lege die Tasche **unter den** Tisch. |
+| zwischen    | entre            | Die Katze sitzt **zwischen den** Bäumen. | Ich gehe **zwischen die** Bäume.         |
 
 **Recordá:** Wo? (¿dónde? = estático) → Dativ. Wohin? (¿a dónde? = movimiento) → Akkusativ.
 
 ## 2. Preposiciones de lugar con caso fijo
 
-| Preposición | Significado                    | Caso   | Ejemplo                                          |
-| ----------- | ------------------------------- | ------ | ------------------------------------------------- |
-| zu          | hacia (lugar/persona)           | Dativ  | Ich gehe **zu meinem** Freund.                    |
-| nach        | hacia (ciudades/países)         | Dativ  | Ich fahre **nach** Berlin.                        |
-| aus         | de, fuera de (salir de interior)| Dativ  | Ich komme **aus** Spanien.                        |
-| von         | desde, procedencia              | Dativ  | Das Geschenk ist **von meiner** Mutter.           |
-| durch       | a través de                     | Akkusativ | Wir gehen **durch den** Park.                  |
-| gegenüber   | en frente de                    | Dativ  | Die Bank ist **gegenüber der** Kirche.            |
+| Preposición | Significado                      | Caso      | Ejemplo                                 |
+| ----------- | -------------------------------- | --------- | --------------------------------------- |
+| zu          | hacia (lugar/persona)            | Dativ     | Ich gehe **zu meinem** Freund.          |
+| nach        | hacia (ciudades/países)          | Dativ     | Ich fahre **nach** Berlin.              |
+| aus         | de, fuera de (salir de interior) | Dativ     | Ich komme **aus** Spanien.              |
+| von         | desde, procedencia               | Dativ     | Das Geschenk ist **von meiner** Mutter. |
+| durch       | a través de                      | Akkusativ | Wir gehen **durch den** Park.           |
+| gegenüber   | en frente de                     | Dativ     | Die Bank ist **gegenüber der** Kirche.  |
 
 ## 3. Preposiciones cultas (rigen Genitiv)
 
 Típicas de registro formal y escrito:
 
-| Preposición | Significado              | Ejemplo                                              |
-| ----------- | ------------------------- | ----------------------------------------------------- |
-| außerhalb   | fuera de los límites de   | Das Parken ist **außerhalb des** Gebäudes verboten.   |
-| innerhalb   | dentro de los límites de  | **Innerhalb einer** Woche bekommst du die Antwort.    |
-| oberhalb    | por encima de              | Das Dorf liegt **oberhalb der** Stadt.                |
-| unterhalb   | por debajo de              | Die Höhle liegt **unterhalb des** Berges.             |
-| unweit      | no lejos de, cerca de      | **Unweit von hier** gibt es einen Supermarkt.         |
+| Preposición | Significado              | Ejemplo                                             |
+| ----------- | ------------------------ | --------------------------------------------------- |
+| außerhalb   | fuera de los límites de  | Das Parken ist **außerhalb des** Gebäudes verboten. |
+| innerhalb   | dentro de los límites de | **Innerhalb einer** Woche bekommst du die Antwort.  |
+| oberhalb    | por encima de            | Das Dorf liegt **oberhalb der** Stadt.              |
+| unterhalb   | por debajo de            | Die Höhle liegt **unterhalb des** Berges.           |
+| unweit      | no lejos de, cerca de    | **Unweit von hier** gibt es einen Supermarkt.       |
 
 ## 4. Adverbios de dirección (combinaciones con da-/hin-/her-)
 
 Se forman combinando **da-** (referencia a algo ya mencionado) o **hin-/her-** (dirección desde/hacia el hablante) con una preposición:
 
-| Palabra        | Significado          | Ejemplo                          |
-| --------------- | --------------------- | ----------------------------------- |
-| dabei           | al lado de eso        | Das Heft liegt dabei.               |
-| daneben         | al lado de eso        | Stelle die Tasche daneben.          |
-| dahinter        | detrás de eso          | Das Haus ist dahinter.              |
-| davor           | delante de eso         | Der Baum steht davor.               |
-| darüber         | encima de eso          | Ein Bild hängt darüber.             |
-| darunter        | debajo de eso          | Die Schuhe sind darunter.           |
-| hinein / heraus | hacia dentro / afuera  | Gehe in das Haus hinein.            |
-| hinauf / hinab  | hacia arriba / abajo   | Gehe die Treppe hinauf.             |
-| herüber / hinüber | hacia el otro lado   | Komm herüber!                       |
+| Palabra           | Significado           | Ejemplo                    |
+| ----------------- | --------------------- | -------------------------- |
+| dabei             | al lado de eso        | Das Heft liegt dabei.      |
+| daneben           | al lado de eso        | Stelle die Tasche daneben. |
+| dahinter          | detrás de eso         | Das Haus ist dahinter.     |
+| davor             | delante de eso        | Der Baum steht davor.      |
+| darüber           | encima de eso         | Ein Bild hängt darüber.    |
+| darunter          | debajo de eso         | Die Schuhe sind darunter.  |
+| hinein / heraus   | hacia dentro / afuera | Gehe in das Haus hinein.   |
+| hinauf / hinab    | hacia arriba / abajo  | Gehe die Treppe hinauf.    |
+| herüber / hinüber | hacia el otro lado    | Komm herüber!              |
 
 ## 5. Preposiciones de uso general (memorizalas con su caso)
 
-| Preposición | Significado           | Caso   | Ejemplo                                       |
-| ----------- | ----------------------- | ------ | ----------------------------------------------- |
-| mit         | con                      | Dativ  | Ich fahre **mit dem** Bus.                     |
-| ohne        | sin                      | Akkusativ | Ich gehe **ohne dich**.                     |
-| für         | para (destinatario)      | Akkusativ | Das ist ein Geschenk **für dich**.          |
-| gegen       | contra                   | Akkusativ | Er kämpft **gegen** Ungerechtigkeit.        |
-| um          | alrededor de, a la hora  | Akkusativ | Wir treffen uns **um** 18 Uhr.              |
-| seit        | desde (tiempo)           | Dativ  | Ich wohne **seit** 2019 hier.                  |
-| bis         | hasta (tiempo/lugar)     | Akkusativ | Ich bleibe **bis** morgen.                  |
-| trotz       | a pesar de               | Dativ (uso común) | **Trotz des** Regens spielen wir Fußball. |
+| Preposición | Significado             | Caso              | Ejemplo                                   |
+| ----------- | ----------------------- | ----------------- | ----------------------------------------- |
+| mit         | con                     | Dativ             | Ich fahre **mit dem** Bus.                |
+| ohne        | sin                     | Akkusativ         | Ich gehe **ohne dich**.                   |
+| für         | para (destinatario)     | Akkusativ         | Das ist ein Geschenk **für dich**.        |
+| gegen       | contra                  | Akkusativ         | Er kämpft **gegen** Ungerechtigkeit.      |
+| um          | alrededor de, a la hora | Akkusativ         | Wir treffen uns **um** 18 Uhr.            |
+| seit        | desde (tiempo)          | Dativ             | Ich wohne **seit** 2019 hier.             |
+| bis         | hasta (tiempo/lugar)    | Akkusativ         | Ich bleibe **bis** morgen.                |
+| trotz       | a pesar de              | Dativ (uso común) | **Trotz des** Regens spielen wir Fußball. |
 
 ## 6. Expresiones útiles con preposiciones
 
 Combinaciones fijas muy comunes en alemán formal y de todos los días:
 
-| Expresión      | Significado          | Ejemplo                                              |
-| --------------- | --------------------- | ------------------------------------------------------ |
-| in der Nähe von | cerca de              | Das Hotel ist **in der Nähe von** hier.               |
-| am Ende von     | al final de           | **Am Ende von** der Straße ist ein Park.              |
-| im Laufe von    | durante (período)     | **Im Laufe von** drei Jahren hat er viel gelernt.     |
-| aufgrund von     | debido a               | **Aufgrund von** Krankheit konnte er nicht kommen.    |
-| in Bezug auf     | en relación con        | **In Bezug auf** deine Frage: Ja, das stimmt.         |
-| anstatt          | en lugar de             | Ich bleibe zu Hause **anstatt** ins Kino zu gehen.    |
+| Expresión       | Significado       | Ejemplo                                            |
+| --------------- | ----------------- | -------------------------------------------------- |
+| in der Nähe von | cerca de          | Das Hotel ist **in der Nähe von** hier.            |
+| am Ende von     | al final de       | **Am Ende von** der Straße ist ein Park.           |
+| im Laufe von    | durante (período) | **Im Laufe von** drei Jahren hat er viel gelernt.  |
+| aufgrund von    | debido a          | **Aufgrund von** Krankheit konnte er nicht kommen. |
+| in Bezug auf    | en relación con   | **In Bezug auf** deine Frage: Ja, das stimmt.      |
+| anstatt         | en lugar de       | Ich bleibe zu Hause **anstatt** ins Kino zu gehen. |
 
 ## 7. Preposiciones con dos usos: lugar Y tiempo
 
 Las mismas preposiciones cambian de sentido (y a veces de caso) según el contexto:
 
-| Preposición | Uso de lugar          | Uso de tiempo                 |
-| ----------- | ----------------------- | -------------------------------- |
-| in          | Ich bin **in** Madrid.  | Ich komme **im** Juni.           |
-| an          | Das Bild hängt **an der** Wand. | Wir sehen uns **an** Montag. |
-| auf         | Das Buch liegt **auf dem** Tisch. | Er steht **auf der** Arbeit frei. |
-| vor         | Er steht **vor der** Tür. | Ich muss **vor der** Arbeit gehen. |
+| Preposición | Uso de lugar                        | Uso de tiempo                        |
+| ----------- | ----------------------------------- | ------------------------------------ |
+| in          | Ich bin **in** Madrid.              | Ich komme **im** Juni.               |
+| an          | Das Bild hängt **an der** Wand.     | Wir sehen uns **an** Montag.         |
+| auf         | Das Buch liegt **auf dem** Tisch.   | Er steht **auf der** Arbeit frei.    |
+| vor         | Er steht **vor der** Tür.           | Ich muss **vor der** Arbeit gehen.   |
 | unter       | Die Katze liegt **unter dem** Bett. | Wir treffen uns **unter der** Woche. |
 
 ## Consejos finales

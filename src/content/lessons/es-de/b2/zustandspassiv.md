@@ -7,6 +7,9 @@ order: 6
 unit: 2
 grammarTopic: 'Zustandspassiv (sein + Partizip) vs. Vorgangspassiv (werden + Partizip)'
 funFact: "Piensa en el Vorgangspassiv (con 'werden') como una cámara filmando el proceso en tiempo real: 'Die Tür wird geöffnet' (la puerta está siendo abierta, ahora mismo). El Zustandspassiv (con 'sein') es una foto del resultado final: 'Die Tür ist geöffnet' (la puerta está abierta, ya terminado el proceso)."
+skills:
+  - de.b2.voice.zustandspassiv
+  - de.b2.voice.passive
 minutes: 9
 quiz:
   - question: "'Das Geschäft ___ um 9 Uhr geöffnet' (la tienda ya está abierta, como resultado — es un hecho/estado). ¿Qué verbo va?"

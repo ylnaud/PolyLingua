@@ -1892,6 +1892,775 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+
+  // ══ B2 ═══════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'de.b2.verb.futur',
+    explanation:
+      'Futur I: werden + infinitivo al final. Futur II: werden + participio + haben/sein, para suponer algo que ya pasó. En el día a día el futuro se dice con presente; el Futur I sirve sobre todo para promesas y pronósticos.',
+    variations: [
+      {
+        sentence: 'Ich ___ dich morgen anrufen.',
+        answer: 'werde',
+        translation: 'Te llamaré mañana.',
+      },
+      { sentence: '___ du mir helfen?', answer: 'Wirst', translation: '¿Me ayudarás?' },
+      { sentence: 'Es ___ morgen regnen.', answer: 'wird', translation: 'Mañana lloverá.' },
+      {
+        sentence: 'Wir ___ nächstes Jahr umziehen.',
+        answer: 'werden',
+        translation: 'El año que viene nos mudaremos.',
+      },
+      {
+        sentence: 'Sie ___ das sicher schaffen.',
+        answer: 'wird',
+        translation: 'Seguro que lo consigue.',
+      },
+      {
+        sentence: 'Ihr ___ euch bestimmt freuen.',
+        answer: 'werdet',
+        translation: 'Seguro que os alegraréis.',
+      },
+      {
+        sentence: 'Er wird den Termin vergessen ___. (Futur II)',
+        answer: 'haben',
+        translation: 'Se habrá olvidado de la cita.',
+      },
+      {
+        sentence: 'Sie wird schon nach Hause gegangen ___. (Futur II)',
+        answer: 'sein',
+        translation: 'Ya se habrá ido a casa.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b2.clause.conditional-irreal',
+    explanation:
+      'El condicional irreal lleva Konjunktiv II en las DOS partes: «Wenn ich Zeit hätte, würde ich kommen». Para lo que ya no tiene arreglo se arma con hätte o wäre + participio: «Wenn ich Zeit gehabt hätte, wäre ich gekommen».',
+    variations: [
+      {
+        sentence: 'Wenn ich Zeit ___, würde ich kommen. (haben)',
+        answer: 'hätte',
+        translation: 'Si tuviera tiempo, iría.',
+      },
+      {
+        sentence: 'Wenn ich reich ___, würde ich viel reisen. (sein)',
+        answer: 'wäre',
+        translation: 'Si fuera rico, viajaría mucho.',
+      },
+      {
+        sentence: 'Wenn du früher gekommen ___, hättest du ihn getroffen. (sein)',
+        answer: 'wärst',
+        translation: 'Si hubieras venido antes, lo habrías visto.',
+      },
+      {
+        sentence: 'Wenn wir mehr Geld ___, würden wir ein Haus kaufen. (haben)',
+        answer: 'hätten',
+        translation: 'Si tuviéramos más dinero, compraríamos una casa.',
+      },
+      {
+        sentence: 'Ich ___ dir helfen, wenn ich könnte. (werden)',
+        answer: 'würde',
+        translation: 'Te ayudaría si pudiera.',
+      },
+      {
+        sentence: 'Wenn ich das gewusst ___, hätte ich nichts gesagt. (haben)',
+        answer: 'hätte',
+        translation: 'Si lo hubiera sabido, no habría dicho nada.',
+      },
+      {
+        sentence: 'An deiner Stelle ___ ich das nicht machen. (werden)',
+        answer: 'würde',
+        translation: 'Yo en tu lugar no lo haría.',
+      },
+      {
+        sentence: 'Wenn er nicht krank ___, wäre er gekommen. (sein)',
+        answer: 'wäre',
+        translation: 'Si no hubiera estado enfermo, habría venido.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b2.voice.passive',
+    explanation:
+      'La pasiva se arma con werden + participio al final: «Das Haus wird gebaut». En pasado, wurde; en Perfekt, ist + participio + worden. Quien hace la acción, si aparece, va con von.',
+    variations: [
+      {
+        sentence: 'Das Haus ___ gerade gebaut.',
+        answer: 'wird',
+        translation: 'La casa se está construyendo.',
+      },
+      {
+        sentence: 'Die Briefe ___ jeden Tag geschrieben.',
+        answer: 'werden',
+        translation: 'Las cartas se escriben todos los días.',
+      },
+      {
+        sentence: 'Das Auto ___ gestern repariert. (pasado)',
+        answer: 'wurde',
+        translation: 'El coche se reparó ayer.',
+      },
+      {
+        sentence: 'Die Fenster ___ letzte Woche geputzt. (pasado)',
+        answer: 'wurden',
+        translation: 'Las ventanas se limpiaron la semana pasada.',
+      },
+      {
+        sentence: 'Der Vertrag ist gestern unterschrieben ___. (Perfekt)',
+        answer: 'worden',
+        translation: 'El contrato se firmó ayer.',
+      },
+      { sentence: 'Hier ___ nicht geraucht.', answer: 'wird', translation: 'Aquí no se fuma.' },
+      {
+        sentence: 'Das Problem ___ von den Technikern gelöst.',
+        answer: 'wird',
+        translation: 'El problema lo resuelven los técnicos.',
+      },
+      {
+        sentence: 'Die Rechnung ___ schon bezahlt. (pasado)',
+        answer: 'wurde',
+        translation: 'La factura ya se pagó.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b2.voice.zustandspassiv',
+    explanation:
+      'werden + participio es el PROCESO (das Fenster wird geöffnet: lo están abriendo); sein + participio es el ESTADO que queda (das Fenster ist geöffnet: está abierto). La frase se parece; lo que cambia es de qué se habla.',
+    variations: [
+      {
+        sentence: 'Das Geschäft ___ um acht geöffnet. (el proceso)',
+        answer: 'wird',
+        translation: 'La tienda se abre a las ocho.',
+      },
+      {
+        sentence: 'Das Geschäft ___ jetzt geöffnet. (el estado)',
+        answer: 'ist',
+        translation: 'La tienda está abierta ahora.',
+      },
+      {
+        sentence: 'Der Brief ___ gerade geschrieben. (el proceso)',
+        answer: 'wird',
+        translation: 'La carta se está escribiendo.',
+      },
+      {
+        sentence: 'Der Brief ___ schon geschrieben. (el estado)',
+        answer: 'ist',
+        translation: 'La carta ya está escrita.',
+      },
+      {
+        sentence: 'Die Tür ___ abgeschlossen. (el estado)',
+        answer: 'ist',
+        translation: 'La puerta está cerrada con llave.',
+      },
+      {
+        sentence: 'Die Tür ___ jeden Abend abgeschlossen. (el proceso)',
+        answer: 'wird',
+        translation: 'La puerta se cierra con llave cada noche.',
+      },
+      {
+        sentence: 'Das Essen ___ schon vorbereitet. (el estado)',
+        answer: 'ist',
+        translation: 'La comida ya está lista.',
+      },
+      {
+        sentence: 'Das Essen ___ gerade vorbereitet. (el proceso)',
+        answer: 'wird',
+        translation: 'La comida se está preparando.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b2.connector.discourse',
+    explanation:
+      'deshalb, deswegen, trotzdem y allerdings NO son subordinantes: van primeros y el verbo se queda segundo. «Es regnet. Deshalb bleibe ich zu Hause» — nunca «deshalb ich bleibe».',
+    variations: [
+      {
+        sentence: 'Es regnet. ___ bleibe ich zu Hause. (por eso)',
+        answer: 'Deshalb',
+        translation: 'Llueve. Por eso me quedo en casa.',
+      },
+      {
+        sentence: 'Er hat viel gelernt. ___ hat er bestanden. (por eso)',
+        answer: 'Deswegen',
+        translation: 'Estudió mucho. Por eso aprobó.',
+      },
+      {
+        sentence: 'Es war kalt. ___ sind wir spazieren gegangen. (aun así)',
+        answer: 'Trotzdem',
+        translation: 'Hacía frío. Aun así salimos a pasear.',
+      },
+      {
+        sentence: 'Das Hotel war gut. ___ war es zu teuer. (sin embargo)',
+        answer: 'Allerdings',
+        translation: 'El hotel estaba bien. Sin embargo, era caro.',
+      },
+      {
+        sentence: 'Ich habe keine Zeit. ___ helfe ich dir. (aun así)',
+        answer: 'Trotzdem',
+        translation: 'No tengo tiempo. Aun así te ayudo.',
+      },
+      {
+        sentence: 'Sie ist krank. ___ kommt sie nicht. (por eso)',
+        answer: 'Deshalb',
+        translation: 'Está enferma. Por eso no viene.',
+      },
+      {
+        sentence: 'Zuerst essen wir. ___ gehen wir ins Kino. (después)',
+        answer: 'Danach',
+        translation: 'Primero comemos. Después vamos al cine.',
+      },
+      {
+        sentence: 'Der Zug hatte Verspätung. ___ kam ich zu spät. (por eso)',
+        answer: 'Deswegen',
+        translation: 'El tren llegó tarde. Por eso llegué tarde.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b2.conjunction.double',
+    explanation:
+      'Van en pareja y hay que poner las dos mitades: sowohl…als auch (tanto… como), entweder…oder (o… o), weder…noch (ni… ni), je…desto (cuanto más… más), nicht nur…sondern auch (no solo… sino también).',
+    variations: [
+      {
+        sentence: '___ Anna als auch Peter kommen.',
+        answer: 'Sowohl',
+        translation: 'Vienen tanto Anna como Peter.',
+      },
+      {
+        sentence: 'Sowohl Anna ___ auch Peter kommen.',
+        answer: 'als',
+        translation: 'Vienen tanto Anna como Peter.',
+      },
+      {
+        sentence: 'Entweder gehen wir ins Kino ___ wir bleiben zu Hause.',
+        answer: 'oder',
+        translation: 'O vamos al cine o nos quedamos en casa.',
+      },
+      {
+        sentence: 'Er spricht ___ Deutsch noch Englisch.',
+        answer: 'weder',
+        translation: 'No habla ni alemán ni inglés.',
+      },
+      {
+        sentence: 'Je mehr ich lerne, ___ besser verstehe ich.',
+        answer: 'desto',
+        translation: 'Cuanto más estudio, mejor entiendo.',
+      },
+      {
+        sentence: '___ mehr ich lerne, desto besser verstehe ich.',
+        answer: 'Je',
+        translation: 'Cuanto más estudio, mejor entiendo.',
+      },
+      {
+        sentence: 'Sie ist nicht nur klug, ___ auch nett.',
+        answer: 'sondern',
+        translation: 'No solo es lista, sino también simpática.',
+      },
+      {
+        sentence: 'Weder er ___ sie hat angerufen.',
+        answer: 'noch',
+        translation: 'Ni él ni ella han llamado.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.b2.preposition.genitiv',
+    explanation:
+      'trotz, wegen, während, aufgrund, statt e innerhalb rigen Genitiv: des en masculino y neutro, der en femenino y plural.',
+    variations: [
+      {
+        sentence: 'Trotz ___ Regens gehen wir raus. (der Regen)',
+        answer: 'des',
+        translation: 'A pesar de la lluvia salimos.',
+      },
+      {
+        sentence: 'Wegen ___ Wetters bleiben wir hier. (das Wetter)',
+        answer: 'des',
+        translation: 'Por el tiempo nos quedamos aquí.',
+      },
+      {
+        sentence: 'Während ___ Woche arbeite ich viel. (die Woche)',
+        answer: 'der',
+        translation: 'Durante la semana trabajo mucho.',
+      },
+      {
+        sentence: 'Aufgrund ___ Streiks fährt kein Zug. (der Streik)',
+        answer: 'des',
+        translation: 'A causa de la huelga no circula ningún tren.',
+      },
+      {
+        sentence: 'Statt ___ Autos nehme ich das Fahrrad. (das Auto)',
+        answer: 'des',
+        translation: 'En vez del coche cojo la bici.',
+      },
+      {
+        sentence: 'Innerhalb ___ Stadt gilt Tempo 50. (die Stadt)',
+        answer: 'der',
+        translation: 'Dentro de la ciudad el límite es 50.',
+      },
+      {
+        sentence: 'Während ___ Ferien lese ich viel. (die Ferien, plural)',
+        answer: 'der',
+        translation: 'Durante las vacaciones leo mucho.',
+      },
+      {
+        sentence: 'Trotz ___ Probleme war es schön. (die Probleme, plural)',
+        answer: 'der',
+        translation: 'A pesar de los problemas estuvo bien.',
+      },
+    ],
+  },
+
+  // ══ C1 ═══════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'de.c1.verb.konjunktiv1',
+    explanation:
+      'El Konjunktiv I marca que estás citando a alguien sin hacerte cargo de lo que dice: «Er sagt, er sei krank». Se forma con la raíz del infinitivo + -e (sei, habe, komme); cuando coincidiría con el indicativo se usa el Konjunktiv II (hätten en vez de haben).',
+    variations: [
+      {
+        sentence: 'Er sagt, er ___ krank. (sein)',
+        answer: 'sei',
+        translation: 'Dice que está enfermo.',
+      },
+      {
+        sentence: 'Sie behauptet, sie ___ keine Zeit. (haben)',
+        answer: 'habe',
+        translation: 'Afirma que no tiene tiempo.',
+      },
+      {
+        sentence: 'Der Minister erklärt, er ___ nichts gewusst. (haben)',
+        answer: 'habe',
+        translation: 'El ministro declara que no sabía nada.',
+      },
+      {
+        sentence: 'Man sagt, das Wetter ___ besser. (werden)',
+        answer: 'werde',
+        translation: 'Dicen que el tiempo va a mejorar.',
+      },
+      {
+        sentence: 'Sie sagt, sie ___ morgen. (kommen)',
+        answer: 'komme',
+        translation: 'Dice que viene mañana.',
+      },
+      {
+        sentence: 'Er meint, die Preise ___ gestiegen. (sein)',
+        answer: 'seien',
+        translation: 'Opina que los precios han subido.',
+      },
+      {
+        sentence: 'Die Zeitung schreibt, die Firma ___ Verluste. (machen)',
+        answer: 'mache',
+        translation: 'El periódico escribe que la empresa tiene pérdidas.',
+      },
+      {
+        sentence: 'Sie sagen, sie ___ keine Zeit. (haben, plural)',
+        answer: 'hätten',
+        translation:
+          'Dicen que no tienen tiempo. (haben coincidiría con el indicativo → Konjunktiv II)',
+      },
+    ],
+  },
+  {
+    skillId: 'de.c1.verb.modal-subjective',
+    explanation:
+      'Los modales también dicen cuánta seguridad tenés: müssen = casi seguro, dürfte = probable, können/könnte = posible, wollen = él lo afirma (y vos dudás), sollen = se dice por ahí.',
+    variations: [
+      {
+        sentence: 'Er ___ krank sein, er sieht schlecht aus. (casi seguro)',
+        answer: 'muss',
+        translation: 'Tiene que estar enfermo, tiene mala cara.',
+      },
+      {
+        sentence: 'Das ___ etwa 20 Euro kosten. (probable)',
+        answer: 'dürfte',
+        translation: 'Eso costará unos 20 euros.',
+      },
+      {
+        sentence: 'Sie ___ recht haben, sicher bin ich nicht. (posible)',
+        answer: 'könnte',
+        translation: 'Podría tener razón, no estoy seguro.',
+      },
+      {
+        sentence: 'Er ___ Millionär sein — das behauptet er. (él lo afirma)',
+        answer: 'will',
+        translation: 'Dice ser millonario.',
+      },
+      {
+        sentence: 'Das Restaurant ___ sehr gut sein. (se dice)',
+        answer: 'soll',
+        translation: 'Dicen que el restaurante es muy bueno.',
+      },
+      {
+        sentence: 'Sie ___ schon zu Hause sein, das Licht brennt. (casi seguro)',
+        answer: 'muss',
+        translation: 'Tiene que estar ya en casa, la luz está encendida.',
+      },
+      {
+        sentence: 'Das ___ ein Fehler gewesen sein. (posible)',
+        answer: 'kann',
+        translation: 'Puede que haya sido un error.',
+      },
+      {
+        sentence: 'Er ___ den Rekord gebrochen haben. (se dice)',
+        answer: 'soll',
+        translation: 'Dicen que batió el récord.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.c1.construction.participial',
+    explanation:
+      'El participio se coloca delante del sustantivo y se declina como un adjetivo: «die spielenden Kinder» (Partizip I, acción en curso), «das gelesene Buch» (Partizip II, acción terminada y sentido pasivo).',
+    variations: [
+      {
+        sentence: 'die ___ Kinder (spielen, Partizip I)',
+        answer: 'spielenden',
+        translation: 'los niños que juegan',
+      },
+      {
+        sentence: 'das ___ Buch (lesen, Partizip II)',
+        answer: 'gelesene',
+        translation: 'el libro leído',
+      },
+      {
+        sentence: 'der ___ Zug (ankommen, Partizip I)',
+        answer: 'ankommende',
+        translation: 'el tren que llega',
+      },
+      {
+        sentence: 'die ___ Tür (schließen, Partizip II)',
+        answer: 'geschlossene',
+        translation: 'la puerta cerrada',
+      },
+      {
+        sentence: 'ein ___ Problem (wachsen, Partizip I)',
+        answer: 'wachsendes',
+        translation: 'un problema creciente',
+      },
+      {
+        sentence: 'die ___ Ergebnisse (erwarten, Partizip II)',
+        answer: 'erwarteten',
+        translation: 'los resultados esperados',
+      },
+      {
+        sentence: 'der ___ Mann (schlafen, Partizip I)',
+        answer: 'schlafende',
+        translation: 'el hombre que duerme',
+      },
+      {
+        sentence: 'die ___ Frage (stellen, Partizip II)',
+        answer: 'gestellte',
+        translation: 'la pregunta planteada',
+      },
+    ],
+  },
+  {
+    skillId: 'de.c1.construction.funktionsverb',
+    explanation:
+      'Son parejas fijas de verbo + sustantivo que sustituyen a un verbo simple: «in Frage stellen» (cuestionar), «zur Verfügung stehen» (estar a disposición). El verbo pierde su significado propio y lo aporta el sustantivo.',
+    variations: [
+      {
+        sentence: 'Das stelle ich ___ Frage. (cuestionar)',
+        answer: 'in',
+        translation: 'Eso lo cuestiono.',
+      },
+      {
+        sentence: 'Die Unterlagen stehen Ihnen ___ Verfügung. (estar a disposición)',
+        answer: 'zur',
+        translation: 'La documentación está a su disposición.',
+      },
+      {
+        sentence: 'Wir nehmen Bezug ___ die Ergebnisse. (hacer referencia a)',
+        answer: 'auf',
+        translation: 'Nos remitimos a los resultados.',
+      },
+      {
+        sentence: 'Er bringt den Vorschlag ___ Sprache. (sacar el tema)',
+        answer: 'zur',
+        translation: 'Él saca el tema de la propuesta.',
+      },
+      {
+        sentence: 'Das Projekt kommt ___ Abschluss. (concluirse)',
+        answer: 'zum',
+        translation: 'El proyecto llega a su fin.',
+      },
+      {
+        sentence: 'Sie zieht die Aussage ___ Zweifel. (poner en duda)',
+        answer: 'in',
+        translation: 'Ella pone en duda la declaración.',
+      },
+      {
+        sentence: 'Wir setzen den Plan ___ die Tat um. (llevar a cabo)',
+        answer: 'in',
+        translation: 'Llevamos el plan a la práctica.',
+      },
+      {
+        sentence: 'Die Sache gerät ___ Vergessenheit. (caer en el olvido)',
+        answer: 'in',
+        translation: 'El asunto cae en el olvido.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.c1.style.nominal',
+    explanation:
+      'El estilo nominal convierte el verbo en sustantivo y la conjunción en preposición: «Weil es regnete, blieben wir» → «Wegen des Regens blieben wir». Es el registro de los textos formales.',
+    variations: [
+      {
+        sentence: 'Weil es regnete → ___ des Regens',
+        answer: 'wegen',
+        translation: 'porque llovía → a causa de la lluvia',
+      },
+      {
+        sentence: 'Nachdem er angekommen war → ___ seiner Ankunft',
+        answer: 'nach',
+        translation: 'después de que llegara → tras su llegada',
+      },
+      {
+        sentence: 'Bevor wir abfahren → ___ der Abfahrt',
+        answer: 'vor',
+        translation: 'antes de salir → antes de la salida',
+      },
+      {
+        sentence: 'Während er studierte → ___ des Studiums',
+        answer: 'während',
+        translation: 'mientras estudiaba → durante la carrera',
+      },
+      {
+        sentence: 'Obwohl es Probleme gab → ___ der Probleme',
+        answer: 'trotz',
+        translation: 'aunque hubo problemas → a pesar de los problemas',
+      },
+      {
+        sentence: 'Wenn es nötig ist → ___ Bedarf',
+        answer: 'bei',
+        translation: 'si hace falta → en caso necesario',
+      },
+      {
+        sentence: 'Weil sie krank war → ___ ihrer Krankheit',
+        answer: 'wegen',
+        translation: 'porque estaba enferma → a causa de su enfermedad',
+      },
+      {
+        sentence: 'Seit er hier arbeitet → ___ seinem Arbeitsbeginn',
+        answer: 'seit',
+        translation: 'desde que trabaja aquí → desde que empezó a trabajar',
+      },
+    ],
+  },
+  {
+    skillId: 'de.c1.connector.causal',
+    explanation:
+      'weil responde a la pregunta «¿por qué?» y manda el verbo al final; denn coordina y deja el verbo segundo; da presenta una causa que ya se conoce y suele ir delante; zumal añade una razón de peso.',
+    variations: [
+      {
+        sentence: 'Ich bleibe zu Hause, ___ ich krank bin. (subordinada)',
+        answer: 'weil',
+        translation: 'Me quedo en casa porque estoy enfermo.',
+      },
+      {
+        sentence: 'Ich bleibe zu Hause, ___ ich bin krank. (coordinante)',
+        answer: 'denn',
+        translation: 'Me quedo en casa, pues estoy enfermo.',
+      },
+      {
+        sentence: '___ es schon spät ist, gehen wir nach Hause. (causa conocida)',
+        answer: 'Da',
+        translation: 'Como ya es tarde, nos vamos a casa.',
+      },
+      {
+        sentence: 'Wir sollten fahren, ___ das Wetter schlecht wird. (razón de peso)',
+        answer: 'zumal',
+        translation: 'Deberíamos irnos, sobre todo porque el tiempo va a empeorar.',
+      },
+      {
+        sentence: 'Er kam nicht, ___ er keine Zeit hatte.',
+        answer: 'weil',
+        translation: 'No vino porque no tenía tiempo.',
+      },
+      {
+        sentence: '___ du krank bist, bleib im Bett.',
+        answer: 'Da',
+        translation: 'Como estás enfermo, quédate en cama.',
+      },
+      {
+        sentence: 'Ich nehme das Fahrrad, ___ das Auto ist kaputt.',
+        answer: 'denn',
+        translation: 'Cojo la bici, pues el coche está roto.',
+      },
+      {
+        sentence: 'Das Projekt lohnt sich, ___ die Kosten niedrig sind.',
+        answer: 'zumal',
+        translation: 'El proyecto vale la pena, sobre todo porque los costes son bajos.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.c1.wordformation.affixes',
+    explanation:
+      'Los afijos productivos multiplican el vocabulario sin memorizar palabras nuevas: un- niega, -bar hace adjetivos de posibilidad, -lich hace adjetivos, -ung y -heit hacen sustantivos, -los quita algo.',
+    variations: [
+      {
+        sentence: 'möglich → ___möglich (imposible)',
+        answer: 'un',
+        translation: 'posible → imposible',
+      },
+      { sentence: 'lesen → les___ (legible)', answer: 'bar', translation: 'leer → legible' },
+      { sentence: 'Kind → Kind___ (infancia)', answer: 'heit', translation: 'niño → infancia' },
+      {
+        sentence: 'Hoffnung → hoffnungs___ (desesperanzado)',
+        answer: 'los',
+        translation: 'esperanza → sin esperanza',
+      },
+      {
+        sentence: 'bilden → Bild___ (formación)',
+        answer: 'ung',
+        translation: 'formar → formación',
+      },
+      { sentence: 'Freund → freund___ (amable)', answer: 'lich', translation: 'amigo → amable' },
+      {
+        sentence: 'zufrieden → ___zufrieden (insatisfecho)',
+        answer: 'un',
+        translation: 'satisfecho → insatisfecho',
+      },
+      { sentence: 'trinken → trink___ (potable)', answer: 'bar', translation: 'beber → potable' },
+    ],
+  },
+  {
+    skillId: 'de.c1.preposition.academic',
+    explanation:
+      'El registro académico tiene sus propias preposiciones: anhand (a partir de), hinsichtlich (respecto a), bezüglich (en cuanto a), gemäß (según), infolge (a consecuencia de), im Hinblick auf (con vistas a).',
+    variations: [
+      {
+        sentence: '___ der Ergebnisse lässt sich sagen, dass… (a partir de)',
+        answer: 'Anhand',
+        translation: 'A partir de los resultados puede decirse que…',
+      },
+      {
+        sentence: '___ der Kosten gibt es Bedenken. (respecto a)',
+        answer: 'Hinsichtlich',
+        translation: 'Respecto a los costes hay reparos.',
+      },
+      {
+        sentence: '___ Ihrer Anfrage teilen wir mit… (en cuanto a)',
+        answer: 'Bezüglich',
+        translation: 'En cuanto a su consulta, le comunicamos…',
+      },
+      {
+        sentence: '___ den Vorschriften ist das verboten. (según)',
+        answer: 'Gemäß',
+        translation: 'Según la normativa, eso está prohibido.',
+      },
+      {
+        sentence: '___ des Streiks fiel der Unterricht aus. (a consecuencia de)',
+        answer: 'Infolge',
+        translation: 'A consecuencia de la huelga se suspendieron las clases.',
+      },
+      {
+        sentence: 'Im ___ auf die Zukunft ist das wichtig. (con vistas a)',
+        answer: 'Hinblick',
+        translation: 'Con vistas al futuro, eso es importante.',
+      },
+      {
+        sentence: '___ der Studie steigt die Zahl weiter. (según)',
+        answer: 'Laut',
+        translation: 'Según el estudio, la cifra sigue subiendo.',
+      },
+      {
+        sentence: '___ dieser Daten argumentiert der Autor. (a partir de)',
+        answer: 'Anhand',
+        translation: 'A partir de estos datos argumenta el autor.',
+      },
+    ],
+  },
+
+  // ══ C2 ═══════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'de.c2.particle.modal',
+    explanation:
+      'Las partículas modales no se traducen, colorean: doch insiste o contradice, mal suaviza un pedido, ja da algo por sabido entre los dos, wohl marca suposición, denn muestra interés en una pregunta y halt suena a resignación.',
+    variations: [
+      { sentence: 'Komm ___ her! (insistencia)', answer: 'doch', translation: '¡Pero ven aquí!' },
+      {
+        sentence: 'Mach ___ das Fenster auf. (suaviza el pedido)',
+        answer: 'mal',
+        translation: 'Abre la ventana, anda.',
+      },
+      {
+        sentence: 'Das ist ___ klar! (los dos lo sabemos)',
+        answer: 'ja',
+        translation: '¡Pero si está clarísimo!',
+      },
+      { sentence: 'Er ist ___ krank. (supongo)', answer: 'wohl', translation: 'Estará enfermo.' },
+      {
+        sentence: 'Was machst du ___ hier? (interés)',
+        answer: 'denn',
+        translation: '¿Y tú qué haces aquí?',
+      },
+      { sentence: 'Das ist ___ so. (resignación)', answer: 'halt', translation: 'Es lo que hay.' },
+      {
+        sentence: 'Sag ___ endlich die Wahrheit! (insistencia)',
+        answer: 'doch',
+        translation: '¡Di de una vez la verdad!',
+      },
+      {
+        sentence: 'Wie heißt du ___? (interés)',
+        answer: 'denn',
+        translation: 'Y tú, ¿cómo te llamas?',
+      },
+    ],
+  },
+  {
+    skillId: 'de.c2.idiom.prepositional',
+    explanation:
+      'Expresiones fijas en las que la preposición no se deduce de nada: auf Anhieb (a la primera), im Großen und Ganzen (en general), unter Umständen (según el caso), von Haus aus (de origen). Se memorizan enteras.',
+    variations: [
+      {
+        sentence: '___ Anhieb hat es geklappt. (a la primera)',
+        answer: 'Auf',
+        translation: 'Salió a la primera.',
+      },
+      {
+        sentence: '___ Großen und Ganzen war es gut. (en general)',
+        answer: 'Im',
+        translation: 'En general estuvo bien.',
+      },
+      {
+        sentence: '___ Umständen komme ich später. (según el caso)',
+        answer: 'Unter',
+        translation: 'Según cómo, llego más tarde.',
+      },
+      {
+        sentence: 'Er ist ___ Haus aus Musiker. (de origen)',
+        answer: 'von',
+        translation: 'Él es músico de formación.',
+      },
+      {
+        sentence: '___ jeden Fall rufe ich an. (en todo caso)',
+        answer: 'Auf',
+        translation: 'En todo caso, llamo.',
+      },
+      {
+        sentence: 'Das kommt nicht ___ Frage! (ni hablar)',
+        answer: 'in',
+        translation: '¡Ni hablar!',
+      },
+      {
+        sentence: 'Die Lösung liegt ___ der Hand. (es evidente)',
+        answer: 'auf',
+        translation: 'La solución es evidente.',
+      },
+      {
+        sentence: 'Er hat sich das ___ Herzen genommen. (tomárselo a pecho)',
+        answer: 'zu',
+        translation: 'Se lo tomó a pecho.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

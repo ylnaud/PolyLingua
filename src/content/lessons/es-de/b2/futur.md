@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Futur I y Futur II'
 funFact: "Los alemanes en realidad usan el PRESENTE para hablar del futuro cercano ('Ich fahre morgen nach Berlin' = mañana voy a Berlín), reservando el Futur I formal principalmente para SUPOSICIONES sobre el presente ('Er wird jetzt zu Hause sein' = probablemente está en casa ahora) más que para el futuro puro."
+skills:
+  - de.b2.verb.futur
 minutes: 8
 quiz:
   - question: '¿Cuál es la fórmula del Futur I?'

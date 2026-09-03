@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Ironía y registro lingüístico'
 funFact: "La ironía alemana casi nunca lleva una señal explícita como '(sarcasmo)' — se reconoce por el tono, el contexto y a veces por un pequeño exceso de entusiasmo sospechoso. 'Na toll!' (¡qué bien!) dicho después de que algo sale mal es pura ironía, aunque las palabras literalmente signifiquen lo contrario."
+skills:
+  - de.c2.style.irony-register
 minutes: 10
 quiz:
   - question: "Alguien derrama café en su laptop y dice 'Na toll!' ¿Qué está expresando realmente?"

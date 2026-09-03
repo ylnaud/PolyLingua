@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Idiomatische Redewendungen (expresiones idiomáticas)'
 funFact: "'Ich verstehe nur Bahnhof' significa literalmente 'solo entiendo estación de tren' — pero en realidad significa 'no entiendo absolutamente nada'. Ninguna gramática te prepara para esto: las Redewendungen se aprenden como imágenes mentales completas, no palabra por palabra."
+skills:
+  - de.c2.idiom.redewendungen
 minutes: 11
 quiz:
   - question: "'Das ist mir Wurst' significa literalmente 'eso es salchicha para mí'. ¿Qué significa realmente?"

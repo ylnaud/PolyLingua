@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Variedades regionales del alemán (Österreichisch, Schweizerdeutsch)'
 funFact: "En Austria dices 'Servus' para saludar Y despedirte, en Suiza el Perfekt reemplaza casi por completo al Präteritum incluso por escrito, y en el sur de Alemania es común escuchar 'Grüß Gott' en vez del 'Hallo' estándar. El 'Hochdeutsch' que aprendes en los libros es un estándar útil, pero no es lo único que vas a escuchar."
+skills:
+  - de.c2.variety.regional
 minutes: 9
 quiz:
   - question: "¿Qué significa 'Servus' en el alemán austriaco?"

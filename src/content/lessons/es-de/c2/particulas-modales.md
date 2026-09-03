@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Partículas modales (Modalpartikeln)'
 funFact: "Las partículas modales son el 'tono de voz' escrito del alemán: la misma frase con 'doch' suena a sorpresa, con 'ja' suena obvia, con 'mal' suena casual. Ningún diccionario las traduce bien porque no cambian el significado literal — cambian la actitud."
+skills:
+  - de.c2.particle.modal
 minutes: 12
 quiz:
   - question: "'Das ist doch klar!' — ¿qué matiz añade 'doch' aquí?"

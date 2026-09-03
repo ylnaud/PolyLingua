@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Formación de palabras: prefijos y sufijos productivos'
 funFact: "El alemán construye vocabulario como piezas de Lego: toma una palabra base conocida y le pega un prefijo o sufijo con significado predecible. Si sabes que 'un-' niega, '-los' significa 'sin', y '-bar' significa 'se puede', puedes deducir el significado de miles de palabras que nunca estudiaste."
+skills:
+  - de.c1.wordformation.affixes
 minutes: 10
 quiz:
   - question: "'lesbar' significa 'legible'. ¿Qué patrón general revela esto sobre el sufijo '-bar'?"

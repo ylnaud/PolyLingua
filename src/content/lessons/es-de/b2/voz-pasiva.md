@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Voz pasiva (Passiv) en presente y pasado'
 funFact: "Piensa en 'werden' como un camaleón: cambia de forma según el tiempo verbal, pero siempre lo acompaña el mismo participio fijo al final. Domina las formas de 'werden' y el Passiv se vuelve mecánico."
+skills:
+  - de.b2.voice.passive
 minutes: 9
 quiz:
   - question: "¿Cuál es la voz pasiva correcta de 'Der Kellner bringt den Kaffee' (el mesero trae el café)?"

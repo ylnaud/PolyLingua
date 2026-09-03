@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Jugendsprache (lenguaje juvenil) y anglicismos'
 funFact: "Cada año, el Langenscheidt-Verlag elige oficialmente un 'Jugendwort des Jahres' (palabra juvenil del año) en Alemania — una tradición que demuestra lo rápido que cambia este registro. Una palabra que suena 'actual' hoy puede sonar anticuada en solo dos o tres años, así que este vocabulario tiene fecha de caducidad."
+skills:
+  - de.c2.variety.youth
 minutes: 9
 quiz:
   - question: "¿Qué es un 'Anglizismus' en el contexto del alemán juvenil?"

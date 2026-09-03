@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Humor y juegos de palabras (Wortspiele)'
 funFact: 'Las palabras compuestas alemanas —esas larguísimas que unen varios sustantivos— son una mina de oro para el humor: basta con inventar una combinación absurda y ridículamente específica para generar una carcajada, porque el idioma técnicamente lo permite. Es un tipo de comedia que casi no existe en español.'
+skills:
+  - de.c2.style.wordplay
 minutes: 10
 quiz:
   - question: '¿Por qué las palabras compuestas alemanas son una fuente común de humor?'

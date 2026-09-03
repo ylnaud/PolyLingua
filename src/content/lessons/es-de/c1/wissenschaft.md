@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulario: lenguaje académico y científico'
 funFact: 'El alemán académico tiene sus propias fórmulas fijas para citar, argumentar y concluir, muy parecidas a las del español académico pero con su propio vocabulario específico. Aprenderlas como bloques completos (no palabra por palabra) te ahorra tener que construir cada frase desde cero.'
+skills:
+  - de.c1.vocabulary.academic
 minutes: 8
 quiz:
   - question: "¿Cómo dirías 'según el estudio' al citar una fuente académica?"

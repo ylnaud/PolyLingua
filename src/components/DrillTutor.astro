@@ -1,0 +1,261 @@
+---
+// Sin frontmatter: el componente es solo comportamiento. Se monta una vez en
+// BaseLayout, junto a EngineTracker.
+---
+
+<style is:global>
+  /* Estilos globales, no scoped: estos nodos los crea el JS y por eso nunca
+     llevan el atributo [data-astro-cid-*] que Astro añade en el build. Con
+     estilos scoped no les aplicaría ninguna regla. */
+  .drill-tip {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    margin-top: 0.9rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: var(--radius-sm, 8px);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    background: var(--bg-elevated);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .drill-tip-icon {
+    flex: none;
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .drill-tip strong {
+    display: block;
+    margin-bottom: 0.15rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+  }
+
+  .drill-tip.is-done {
+    border-left-color: var(--success, #2e7d32);
+  }
+
+  .drill-tip.is-paused {
+    border-left-color: var(--text-muted);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .drill-tip {
+      animation: drill-tip-in 0.25s ease-out;
+    }
+
+    @keyframes drill-tip-in {
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+    }
+  }
+</style>
+
+<script>
+  /**
+   * El tutor: cuando fallás, insiste en el momento.
+   *
+   * Antes, fallar dentro de una lección solo dejaba una explicación y pasaba al
+   * ejercicio siguiente; para volver sobre el tema había que ir a /practicar y
+   * acumular cinco fallos del mismo patrón en sesiones distintas. Esto lo
+   * arregla en el momento exacto en que el patrón está fresco.
+   *
+   * Cómo se engancha: escucha `practice-item-answered` y responde con
+   * `practice-insert-items`. No toca `Practice.astro` por dentro —misma forma
+   * que EngineTracker— así que una lección sin habilidades, o con una habilidad
+   * sin plantilla, se comporta exactamente como antes.
+   *
+   * Los tres números, y por qué:
+   *
+   * - **3 aciertos seguidos** para salir. Uno solo puede ser suerte; tres
+   *   seguidos en frases distintas ya no.
+   * - **6 ejercicios insertados** como tope. Sin tope, un mal día te deja
+   *   encerrado en un tema y la lección no termina nunca. Al llegar, el bucle
+   *   se rinde y deja el tema para /practicar, donde el motor lo va a seguir
+   *   priorizando: el fallo ya quedó registrado.
+   * - **Por habilidad y por sesión**: fallar dos temas distintos abre dos
+   *   bucles independientes, y ninguno se arrastra a la lección siguiente.
+   */
+  import { SKILL_MAP } from '../data/skills';
+  import { repairTemplateFor, toRepairExercise } from '../lib/engine/exerciseGenerator';
+  import { skillsForItem, declareItemSkills } from '../lib/itemSkills';
+
+  const ACIERTOS_PARA_SALIR = 3;
+  const MAX_INSERTADOS = 6;
+
+  interface Bucle {
+    /** Si el bucle está abierto ahora mismo. Cerrado no se borra: `insertados`
+     *  tiene que sobrevivir, o al siguiente fallo el tope volvería a cero y el
+     *  bucle se reabriría sin fin. */
+    activo: boolean;
+    racha: number;
+    insertados: number;
+    /** Índices de variación ya usados: se insiste con el patrón, no con la
+     *  misma frase. */
+    usados: number[];
+  }
+
+  const bucles = new Map<string, Bucle>();
+
+  /**
+   * La habilidad que se va a reforzar por este ítem.
+   *
+   * De todas las que ejercita, la primera que tenga plantilla de refuerzo: sin
+   * plantilla no hay con qué insistir, y proponer un ejercicio de otro tema
+   * sería peor que no hacer nada. Hoy tienen plantilla las de gramática y orden
+   * de palabras de A1 alemán; el resto simplemente no abre bucle.
+   */
+  function habilidadReforzable(itemId: string): string | null {
+    const conPlantilla = skillsForItem(itemId).filter(
+      (id) => SKILL_MAP[id] && repairTemplateFor(id),
+    );
+    return conPlantilla[0] ?? null;
+  }
+
+  function tip(item: HTMLElement, texto: string, icono: string, variante = '') {
+    // Se quita el anterior: durante un bucle el ítem cambia, pero si el mismo
+    // ítem recibiera dos avisos se apilarían.
+    item.querySelector('.drill-tip')?.remove();
+    const caja = document.createElement('aside');
+    caja.className = variante ? `drill-tip ${variante}` : 'drill-tip';
+    const ico = document.createElement('span');
+    ico.className = 'drill-tip-icon';
+    ico.setAttribute('aria-hidden', 'true');
+    ico.textContent = icono;
+    const cuerpo = document.createElement('p');
+    cuerpo.textContent = texto;
+    caja.append(ico, cuerpo);
+    // Antes del botón "Siguiente", para que se lea antes de avanzar.
+    const next = item.querySelector('[data-next]');
+    if (next) next.before(caja);
+    else item.appendChild(caja);
+  }
+
+  /** Inserta UNA variación nueva del patrón. Devuelve si pudo. */
+  function insertarRefuerzo(root: HTMLElement, skillId: string, bucle: Bucle): boolean {
+    const skill = SKILL_MAP[skillId];
+    const plantilla = repairTemplateFor(skillId);
+    if (!skill || !plantilla) return false;
+
+    const libres = plantilla.variations.map((_, i) => i).filter((i) => !bucle.usados.includes(i));
+    if (libres.length === 0) return false;
+
+    const indice = libres[Math.floor(Math.random() * libres.length)];
+    bucle.usados.push(indice);
+    const ejercicio = toRepairExercise(skill, plantilla, plantilla.variations[indice], indice);
+    const id = `drill::${skillId}::${indice}::${bucle.insertados}`;
+
+    // Se declara la habilidad del ítem para que EngineTracker cuente el
+    // resultado en la que se está reforzando y no en todas las de la lección.
+    declareItemSkills(id, [skillId]);
+
+    root.dispatchEvent(
+      new CustomEvent('practice-insert-items', {
+        detail: {
+          items: [
+            { id, kind: ejercicio.render?.kind ?? 'fill-blank', data: ejercicio.render?.data },
+          ],
+        },
+      }),
+    );
+    bucle.insertados += 1;
+    return true;
+  }
+
+  function onAnswered(detail: any) {
+    const root: HTMLElement | undefined = detail?.root;
+    const itemId: string = detail?.itemId ?? '';
+    if (!root) return;
+
+    const skillId = habilidadReforzable(itemId);
+    if (!skillId) return;
+
+    const item = root.querySelector<HTMLElement>(`[data-item-id="${CSS.escape(itemId)}"]`);
+    const bucle = bucles.get(skillId) ?? { activo: false, racha: 0, insertados: 0, usados: [] };
+    bucles.set(skillId, bucle);
+
+    if (detail.correct) {
+      if (!bucle.activo) return;
+      bucle.racha += 1;
+      if (bucle.racha >= ACIERTOS_PARA_SALIR) {
+        bucle.activo = false;
+        if (item) {
+          tip(
+            item,
+            `Tres seguidos con ${SKILL_MAP[skillId].name.toLowerCase()}. Tema dominado: seguimos con la lección.`,
+            '✅',
+            'is-done',
+          );
+        }
+      }
+      return;
+    }
+
+    // Fallo.
+    const estabaAbierto = bucle.activo;
+    bucle.racha = 0;
+
+    // El tope es por habilidad y por sesión, no por bucle: si se reiniciara al
+    // cerrar, fallar de nuevo abriría otro bucle y el tema no terminaría nunca.
+    if (bucle.insertados >= MAX_INSERTADOS) {
+      if (!estabaAbierto) return; // ya se avisó; no se repite el aviso
+      // Se rinde, no se ensaña. El error ya quedó registrado por
+      // EngineTracker, así que /practicar va a seguir priorizando el tema.
+      bucle.activo = false;
+      if (item) {
+        tip(
+          item,
+          'Este tema se te está resistiendo hoy. Seguimos con la lección y te lo guardo para «Practicar ahora».',
+          '🌱',
+          'is-paused',
+        );
+      }
+      return;
+    }
+
+    if (!insertarRefuerzo(root, skillId, bucle)) {
+      // Sin variaciones libres no hay con qué insistir: se cierra en silencio.
+      bucle.activo = false;
+      bucle.insertados = MAX_INSERTADOS;
+      return;
+    }
+    bucle.activo = true;
+
+    if (item) {
+      const plantilla = repairTemplateFor(skillId);
+      tip(
+        item,
+        estabaAbierto
+          ? 'Vamos otra vez con la misma estructura, en otra frase.'
+          : (plantilla?.explanation ?? ''),
+        estabaAbierto ? '🔁' : '💡',
+      );
+    }
+  }
+
+  // Bandera de módulo, no de dataset del body: bajo navegación SPA el <body> se
+  // reemplaza en cada navegación pero el listener de document persiste. Mismo
+  // motivo que en EngineTracker y ProgressTracker.
+  let started = false;
+
+  function initDrillTutor() {
+    if (!started) {
+      started = true;
+      document.addEventListener('practice-item-answered', ((e: CustomEvent) => {
+        onAnswered(e.detail);
+      }) as EventListener);
+    }
+    // Los bucles son por sesión de práctica: al cambiar de página se olvidan.
+    bucles.clear();
+  }
+
+  initDrillTutor();
+  document.addEventListener('astro:page-load', initDrillTutor);
+</script>

@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Frases sobre dinero y pagos'
 situation: 'Dinero'
 funFact: 'En Alemania todavía hay muchos lugares donde solo se puede pagar en efectivo, y te lo van a avisar con un seco «Nur Bargeld». Por eso la pregunta «Kann ich mit Karte zahlen?» conviene hacerla antes de pedir, no después de comer.'
+skills:
+  - de.a2.vocabulary.money
 minutes: 9
 phrases:
   - text: 'Kann ich mit Karte zahlen?'

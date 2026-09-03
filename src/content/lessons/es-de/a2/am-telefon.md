@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Frases para hablar por teléfono'
 situation: 'Hablar por teléfono'
 funFact: 'Los alemanes atienden el teléfono diciendo su apellido, no «hola». Escuchar un seco «Müller.» del otro lado no es mala educación: es lo normal. Y para presentarte se dice «hier ist Ana», literalmente «acá es Ana», nunca «ich bin Ana».'
+skills:
+  - de.a2.vocabulary.phone
 minutes: 9
 phrases:
   - text: 'Hallo, hier ist Ana.'

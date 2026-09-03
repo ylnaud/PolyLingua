@@ -466,12 +466,12 @@ describe('plantillas de refuerzo', () => {
   // que no es lo mismo que rendirse.
   const MINIMO_VARIACIONES = 6;
 
-  it('cada habilidad de gramática y orden de A1 alemán tiene plantilla', () => {
+  it('cada habilidad de gramática y orden de alemán tiene plantilla', () => {
+    // Sin plantilla, DrillTutor no abre bucle: la habilidad alimenta el modelo
+    // pero fallar en ella no trae más ejercicios. Este test es lo que impide
+    // que se etiquete un nivel nuevo y el refuerzo se quede mudo ahí.
     const necesitan = SKILLS.filter(
-      (s) =>
-        s.lang === 'de' &&
-        s.level === 'a1' &&
-        (s.category === 'grammar' || s.category === 'word_order'),
+      (s) => s.lang === 'de' && (s.category === 'grammar' || s.category === 'word_order'),
     ).map((s) => s.id);
     const sinPlantilla = necesitan.filter((id) => !repairTemplateFor(id));
     expect(sinPlantilla, `habilidades sin refuerzo:\n${sinPlantilla.join('\n')}`).toEqual([]);

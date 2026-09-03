@@ -7,6 +7,8 @@ order: 11
 unit: 3
 grammarTopic: 'Preposiciones fijas: siempre con Akkusativ o siempre con Dativ'
 funFact: "A diferencia de las Wechselpräpositionen (que ya viste), que cambian según haya movimiento o no, estas preposiciones SIEMPRE van con el mismo caso, sin excepción. Muchos profesores enseñan la lista de Dativ con esta rima: 'Aus, bei, mit, nach, seit, von, zu — immer nur den Dativ du!' ('siempre solo el Dativ tú [usas]')."
+skills:
+  - de.a2.preposition.fixed
 minutes: 8
 quiz:
   - question: "¿Con qué caso va siempre la preposición 'für' (para)?"

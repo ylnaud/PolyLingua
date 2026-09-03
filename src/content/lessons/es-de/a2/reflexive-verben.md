@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Verbos reflexivos (sich + verbo)'
 funFact: "Piensa en 'sich' como un espejo: la acción sale del sujeto y rebota de vuelta hacia él mismo. 'Ich freue mich' literalmente es 'yo alegro a mí mismo' — suena raro en español, pero es completamente natural en alemán."
+skills:
+  - de.a2.verb.reflexive
 minutes: 7
 quiz:
   - question: "¿Cuál es la forma correcta de 'sich freuen' (alegrarse) con 'ich'?"

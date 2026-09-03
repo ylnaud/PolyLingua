@@ -14,9 +14,10 @@ import type { Skill } from '../lib/engine/types';
  * cinco idiomas desde español, y sin ese prefijo el `a1.verb.sein` alemán y su
  * equivalente inglés compartirían espacio de nombres en el mismo localStorage.
  *
- * Esta primera tanda cubre A1 de alemán, que es el curso con más contenido
- * (29 lecciones, 707 ítems de práctica). El esquema ya sirve para el resto:
- * agregar A2 o francés es agregar entradas acá, sin tocar el motor.
+ * Cubre A1 y A2 de alemán, que es el curso con más contenido. El esquema ya
+ * sirve para el resto: agregar B1 o francés es agregar entradas acá, sin tocar
+ * el motor ni las páginas — `/practicar` se genera sola para cualquier curso
+ * que tenga habilidades definidas.
  *
  * `difficulty` (1-5) es la dificultad intrínseca del tema, no la del alumno:
  * el motor ajusta la suya aparte, en `difficulty.ts`.
@@ -345,6 +346,203 @@ export const SKILLS: Skill[] = [
     name: 'Preposiciones de lugar y tiempo',
     prerequisites: ['de.a1.article.der-die-das'],
     difficulty: 4,
+  },
+
+  // ══ A2 ═══════════════════════════════════════════════════════════════════
+  //
+  // Los prerrequisitos apuntan a A1 a propósito: `/practicar` es del CURSO, no
+  // del nivel, así que A1 y A2 comparten rotación. Sin ellos, el scheduler le
+  // propondría el Dativ a alguien que todavía no tiene los artículos.
+
+  // ── Tiempos y modales (unidad 1) ────────────────────────────────────────
+  {
+    id: 'de.a2.verb.perfekt',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Perfekt: elegir haben o sein',
+    prerequisites: ['de.a1.verb.haben', 'de.a1.verb.sein'],
+    difficulty: 4,
+  },
+  {
+    // Separada de la anterior porque son dos fallos distintos: equivocarse de
+    // auxiliar no es lo mismo que formar mal el participio, y se practican con
+    // ejercicios distintos.
+    id: 'de.a2.verb.participle',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Formar el participio (ge-…-t / ge-…-en)',
+    prerequisites: ['de.a1.verb.present-regular'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.a2.verb.modal',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Verbos modales (können, müssen, wollen…)',
+    prerequisites: ['de.a1.verb.present-irregular'],
+    difficulty: 3,
+  },
+  {
+    id: 'de.a2.wordorder.verb-final',
+    lang: 'de',
+    level: 'a2',
+    category: 'word_order',
+    name: 'El segundo verbo, al final de la frase',
+    prerequisites: ['de.a1.wordorder.basic'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.a2.verb.separable',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Verbos separables (trennbare Verben)',
+    prerequisites: ['de.a1.verb.present-regular'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.a2.adjective.comparative',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Comparativo y superlativo',
+    prerequisites: [],
+    difficulty: 3,
+  },
+
+  // ── Los casos (unidad 2) ────────────────────────────────────────────────
+  {
+    id: 'de.a2.case.akkusativ',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Akkusativ: el objeto directo',
+    prerequisites: ['de.a1.article.der-die-das'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.a2.case.dativ',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Dativ: a quién le llega la acción',
+    prerequisites: ['de.a2.case.akkusativ'],
+    difficulty: 5,
+  },
+  {
+    id: 'de.a2.preposition.fixed',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Preposiciones fijas de Akkusativ y Dativ',
+    prerequisites: ['de.a2.case.akkusativ'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.a2.preposition.wechsel',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Wechselpräpositionen: movimiento o posición',
+    prerequisites: ['de.a2.case.dativ'],
+    difficulty: 5,
+  },
+  {
+    id: 'de.a2.verb.reflexive',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Verbos reflexivos (sich + verbo)',
+    prerequisites: ['de.a1.pronoun.personal'],
+    difficulty: 3,
+  },
+  {
+    id: 'de.a2.vocabulary.freetime',
+    lang: 'de',
+    level: 'a2',
+    category: 'vocabulary',
+    name: 'Tiempo libre y hobbies',
+    prerequisites: [],
+    difficulty: 1,
+  },
+
+  // ── Pronombres y tiempo (unidad 3) ──────────────────────────────────────
+  {
+    id: 'de.a2.pronoun.akkusativ',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Pronombres en Akkusativ (mich, dich, ihn…)',
+    prerequisites: ['de.a1.pronoun.personal', 'de.a2.case.akkusativ'],
+    difficulty: 3,
+  },
+  {
+    id: 'de.a2.pronoun.possessive',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Posesivos (mein, dein, sein…)',
+    prerequisites: ['de.a1.article.der-die-das'],
+    difficulty: 4,
+  },
+  {
+    id: 'de.a2.time.past-future',
+    lang: 'de',
+    level: 'a2',
+    category: 'grammar',
+    name: 'Hablar del pasado y del futuro',
+    prerequisites: ['de.a2.verb.perfekt'],
+    difficulty: 3,
+  },
+
+  // ── Situaciones cotidianas (unidad 4) ───────────────────────────────────
+  {
+    id: 'de.a2.vocabulary.phone',
+    lang: 'de',
+    level: 'a2',
+    category: 'vocabulary',
+    name: 'Hablar por teléfono',
+    prerequisites: [],
+    difficulty: 2,
+  },
+  {
+    id: 'de.a2.vocabulary.health',
+    lang: 'de',
+    level: 'a2',
+    category: 'vocabulary',
+    name: 'Salud y médico',
+    prerequisites: [],
+    difficulty: 2,
+  },
+  {
+    id: 'de.a2.vocabulary.money',
+    lang: 'de',
+    level: 'a2',
+    category: 'vocabulary',
+    name: 'Dinero y pagos',
+    prerequisites: [],
+    difficulty: 2,
+  },
+  {
+    id: 'de.a2.vocabulary.problems',
+    lang: 'de',
+    level: 'a2',
+    category: 'vocabulary',
+    name: 'Problemas cotidianos',
+    prerequisites: [],
+    difficulty: 2,
+  },
+  {
+    id: 'de.a2.vocabulary.plans',
+    lang: 'de',
+    level: 'a2',
+    category: 'vocabulary',
+    name: 'Hacer planes: invitar, aceptar, cancelar',
+    prerequisites: [],
+    difficulty: 2,
   },
 ];
 

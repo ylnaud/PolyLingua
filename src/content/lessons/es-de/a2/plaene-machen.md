@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Frases para hacer planes y quedar con alguien'
 situation: 'Hacer planes'
 funFact: '«Wollen wir ins Kino gehen?» no es «¿queremos ir al cine?» sino «¿vamos al cine?». En alemán, «wollen wir...?» es la forma normal de proponer algo, igual que el «¿vamos...?» del español. Traducirlo literal confunde; usarlo como bloque, no.'
+skills:
+  - de.a2.vocabulary.plans
 minutes: 9
 phrases:
   - text: 'Hast du am Samstag Zeit?'

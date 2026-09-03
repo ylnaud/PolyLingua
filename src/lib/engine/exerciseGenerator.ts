@@ -740,6 +740,611 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+
+  // ══ A2 ═══════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'de.a2.verb.perfekt',
+    explanation:
+      'El Perfekt se arma con haben o sein + participio. Van con sein los verbos de movimiento (gehen, fahren, kommen) y de cambio de estado (aufstehen, bleiben, werden); todo lo demás, con haben.',
+    variations: [
+      {
+        sentence: 'Ich ___ gestern Pizza gegessen.',
+        answer: 'habe',
+        translation: 'Ayer comí pizza.',
+      },
+      {
+        sentence: 'Er ___ nach Berlin gefahren.',
+        answer: 'ist',
+        translation: 'Él fue a Berlín. (movimiento → sein)',
+      },
+      {
+        sentence: 'Wir ___ einen Film gesehen.',
+        answer: 'haben',
+        translation: 'Vimos una película.',
+      },
+      {
+        sentence: 'Sie ___ um acht aufgestanden.',
+        answer: 'ist',
+        translation: 'Ella se levantó a las ocho. (cambio de estado → sein)',
+      },
+      {
+        sentence: 'Ich ___ zu Hause geblieben.',
+        answer: 'bin',
+        translation: 'Me quedé en casa. (bleiben va con sein aunque no haya movimiento)',
+      },
+      { sentence: 'Du ___ viel gearbeitet.', answer: 'hast', translation: 'Has trabajado mucho.' },
+      {
+        sentence: 'Die Kinder ___ ins Kino gegangen.',
+        answer: 'sind',
+        translation: 'Los niños fueron al cine.',
+      },
+      {
+        sentence: 'Ihr ___ das Buch gelesen.',
+        answer: 'habt',
+        translation: 'Habéis leído el libro.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.verb.participle',
+    explanation:
+      'El participio regular es ge- + raíz + -t (machen → gemacht) y el irregular ge- + raíz + -en (lesen → gelesen). Dos excepciones que se olvidan siempre: los verbos en -ieren no llevan ge- (studiert), y en los separables el ge- se mete en medio (eingekauft).',
+    variations: [
+      { sentence: 'machen → ich habe ___', answer: 'gemacht', translation: 'hacer → he hecho' },
+      { sentence: 'lesen → ich habe ___', answer: 'gelesen', translation: 'leer → he leído' },
+      {
+        sentence: 'arbeiten → ich habe ___',
+        answer: 'gearbeitet',
+        translation: 'trabajar → he trabajado',
+      },
+      {
+        sentence: 'fahren → ich bin ___',
+        answer: 'gefahren',
+        translation: 'ir en vehículo → he ido',
+      },
+      {
+        sentence: 'studieren → ich habe ___',
+        answer: 'studiert',
+        translation: 'estudiar → he estudiado (los -ieren no llevan ge-)',
+      },
+      {
+        sentence: 'einkaufen → ich habe ___',
+        answer: 'eingekauft',
+        translation: 'hacer la compra → he comprado (el ge- va en medio)',
+      },
+      { sentence: 'trinken → ich habe ___', answer: 'getrunken', translation: 'beber → he bebido' },
+      {
+        sentence: 'verstehen → ich habe ___',
+        answer: 'verstanden',
+        translation: 'entender → he entendido (prefijo inseparable: sin ge-)',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.verb.modal',
+    explanation:
+      'Los modales son irregulares en singular: ich y er/sie/es no llevan terminación y suelen cambiar la vocal (ich kann, ich muss, ich will). El plural es regular.',
+    variations: [
+      {
+        sentence: 'Ich ___ gut schwimmen. (können)',
+        answer: 'kann',
+        translation: 'Sé nadar bien.',
+      },
+      {
+        sentence: 'Du ___ heute arbeiten. (müssen)',
+        answer: 'musst',
+        translation: 'Tienes que trabajar hoy.',
+      },
+      {
+        sentence: 'Er ___ ins Kino gehen. (wollen)',
+        answer: 'will',
+        translation: 'Él quiere ir al cine.',
+      },
+      {
+        sentence: 'Wir ___ hier nicht rauchen. (dürfen)',
+        answer: 'dürfen',
+        translation: 'Aquí no podemos fumar.',
+      },
+      {
+        sentence: 'Ihr ___ mehr lernen. (sollen)',
+        answer: 'sollt',
+        translation: 'Deberíais estudiar más.',
+      },
+      {
+        sentence: 'Ich ___ einen Kaffee, bitte. (möchten)',
+        answer: 'möchte',
+        translation: 'Quisiera un café, por favor.',
+      },
+      {
+        sentence: 'Das Kind ___ noch nicht lesen. (können)',
+        answer: 'kann',
+        translation: 'El niño todavía no sabe leer.',
+      },
+      {
+        sentence: 'Die Studenten ___ viel lernen. (müssen)',
+        answer: 'müssen',
+        translation: 'Los estudiantes tienen que estudiar mucho.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.wordorder.verb-final',
+    explanation:
+      'Cuando hay dos verbos, el conjugado se queda segundo y el otro —infinitivo o participio— se va al FINAL de la frase. Es el «sándwich» del alemán.',
+    variations: [
+      {
+        kind: 'order',
+        sentence: 'Ich kann heute nicht kommen',
+        answer: 'Ich kann heute nicht kommen',
+        translation: 'Hoy no puedo venir.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Wir haben einen Film gesehen',
+        answer: 'Wir haben einen Film gesehen',
+        translation: 'Hemos visto una película.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Er muss morgen früh aufstehen',
+        answer: 'Er muss morgen früh aufstehen',
+        translation: 'Mañana tiene que levantarse temprano.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Ich habe gestern Pizza gegessen',
+        answer: 'Ich habe gestern Pizza gegessen',
+        translation: 'Ayer comí pizza.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Sie will nach Berlin fahren',
+        answer: 'Sie will nach Berlin fahren',
+        translation: 'Ella quiere ir a Berlín.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Ich möchte einen Kaffee trinken',
+        answer: 'Ich möchte einen Kaffee trinken',
+        translation: 'Quiero tomar un café.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.verb.separable',
+    explanation:
+      'En presente el prefijo se despega del verbo y salta al final de la frase: aufstehen → ich stehe um sieben **auf**. Vuelve a pegarse en el infinitivo y en el participio.',
+    variations: [
+      {
+        sentence: 'Ich stehe um sieben ___. (aufstehen)',
+        answer: 'auf',
+        translation: 'Me levanto a las siete.',
+      },
+      {
+        sentence: 'Wir kaufen im Supermarkt ___. (einkaufen)',
+        answer: 'ein',
+        translation: 'Hacemos la compra en el supermercado.',
+      },
+      {
+        sentence: 'Der Zug kommt um zehn ___. (ankommen)',
+        answer: 'an',
+        translation: 'El tren llega a las diez.',
+      },
+      {
+        sentence: 'Ruf mich später ___! (anrufen)',
+        answer: 'an',
+        translation: '¡Llámame más tarde!',
+      },
+      {
+        sentence: 'Machst du bitte das Fenster ___? (aufmachen)',
+        answer: 'auf',
+        translation: '¿Abres la ventana, por favor?',
+      },
+      {
+        sentence: 'Sie sieht gern ___. (fernsehen)',
+        answer: 'fern',
+        translation: 'A ella le gusta ver la tele.',
+      },
+      {
+        sentence: 'Wann fängt der Film ___? (anfangen)',
+        answer: 'an',
+        translation: '¿Cuándo empieza la película?',
+      },
+      {
+        sentence: 'Ich ziehe morgen ___. (umziehen)',
+        answer: 'um',
+        translation: 'Mañana me mudo.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.adjective.comparative',
+    explanation:
+      'Comparativo: adjetivo + -er (schnell → schneller). Superlativo: am + adjetivo + -sten (am schnellsten). Los cortos suelen añadir Umlaut (groß → größer) y hay cuatro irregulares: gut → besser, viel → mehr, gern → lieber, hoch → höher.',
+    variations: [
+      {
+        sentence: 'Anna ist ___ als Peter. (schnell)',
+        answer: 'schneller',
+        translation: 'Anna es más rápida que Peter.',
+      },
+      {
+        sentence: 'Berlin ist ___ als München. (groß)',
+        answer: 'größer',
+        translation: 'Berlín es más grande que Múnich.',
+      },
+      {
+        sentence: 'Das ist der ___ Film. (gut)',
+        answer: 'beste',
+        translation: 'Esa es la mejor película.',
+      },
+      {
+        sentence: 'Ich trinke ___ Kaffee als Tee. (gern)',
+        answer: 'lieber',
+        translation: 'Prefiero el café al té.',
+      },
+      {
+        sentence: 'Er läuft am ___. (schnell)',
+        answer: 'schnellsten',
+        translation: 'Él es el que corre más rápido.',
+      },
+      {
+        sentence: 'Heute ist es ___ als gestern. (warm)',
+        answer: 'wärmer',
+        translation: 'Hoy hace más calor que ayer.',
+      },
+      {
+        sentence: 'Das Auto ist ___ als das Fahrrad. (teuer)',
+        answer: 'teurer',
+        translation: 'El coche es más caro que la bici.',
+      },
+      {
+        sentence: 'Sie hat ___ Zeit als ich. (viel)',
+        answer: 'mehr',
+        translation: 'Ella tiene más tiempo que yo.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.case.akkusativ',
+    explanation:
+      'En Akkusativ solo cambia el masculino: der → den, ein → einen. Femenino, neutro y plural se quedan igual. Es la mejor noticia del caso alemán.',
+    variations: [
+      { sentence: 'Ich sehe ___ Mann. (der)', answer: 'den', translation: 'Veo al hombre.' },
+      {
+        sentence: 'Sie kauft ___ Zeitung. (die)',
+        answer: 'die',
+        translation: 'Ella compra el periódico. (el femenino no cambia)',
+      },
+      { sentence: 'Wir haben ___ Auto. (das)', answer: 'das', translation: 'Tenemos el coche.' },
+      {
+        sentence: 'Er sucht ___ Schlüssel. (ein)',
+        answer: 'einen',
+        translation: 'Él busca una llave.',
+      },
+      {
+        sentence: 'Ich brauche ___ Stuhl. (der)',
+        answer: 'den',
+        translation: 'Necesito la silla.',
+      },
+      {
+        sentence: 'Trinkst du ___ Kaffee? (der)',
+        answer: 'den',
+        translation: '¿Te tomas el café?',
+      },
+      { sentence: 'Sie liest ___ Buch. (das)', answer: 'das', translation: 'Ella lee el libro.' },
+      {
+        sentence: 'Ich kenne ___ Lehrer. (der)',
+        answer: 'den',
+        translation: 'Conozco al profesor.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.case.dativ',
+    explanation:
+      'En Dativ cambian los tres: der → dem, die → der, das → dem, y el plural die → den (además el sustantivo suma una -n). Lo pide el objeto indirecto y verbos como helfen, danken y gehören.',
+    variations: [
+      {
+        sentence: 'Ich gebe ___ Mann das Buch. (der)',
+        answer: 'dem',
+        translation: 'Le doy el libro al hombre.',
+      },
+      {
+        sentence: 'Sie hilft ___ Frau. (die)',
+        answer: 'der',
+        translation: 'Ella ayuda a la mujer.',
+      },
+      {
+        sentence: 'Wir danken ___ Kind. (das)',
+        answer: 'dem',
+        translation: 'Le damos las gracias al niño.',
+      },
+      {
+        sentence: 'Er spricht mit ___ Lehrerin. (die)',
+        answer: 'der',
+        translation: 'Él habla con la profesora.',
+      },
+      {
+        sentence: 'Das Buch gehört ___ Studenten. (der)',
+        answer: 'dem',
+        translation: 'El libro es del estudiante.',
+      },
+      { sentence: 'Ich fahre mit ___ Bus. (der)', answer: 'dem', translation: 'Voy en autobús.' },
+      {
+        sentence: 'Sie schreibt ___ Kindern einen Brief. (die, plural)',
+        answer: 'den',
+        translation: 'Ella les escribe una carta a los niños.',
+      },
+      {
+        sentence: 'Nach ___ Arbeit gehe ich nach Hause. (die)',
+        answer: 'der',
+        translation: 'Después del trabajo me voy a casa.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.preposition.fixed',
+    explanation:
+      'No se piensan, se memorizan. Siempre Akkusativ: für, durch, gegen, ohne, um. Siempre Dativ: aus, bei, mit, nach, seit, von, zu.',
+    variations: [
+      {
+        sentence: 'Das Geschenk ist für ___ Vater. (der)',
+        answer: 'den',
+        translation: 'El regalo es para el padre.',
+      },
+      { sentence: 'Ich fahre mit ___ Zug. (der)', answer: 'dem', translation: 'Viajo en tren.' },
+      {
+        sentence: 'Wir gehen ohne ___ Hund spazieren. (der)',
+        answer: 'den',
+        translation: 'Salimos a pasear sin el perro.',
+      },
+      {
+        sentence: 'Sie kommt aus ___ Schweiz. (die)',
+        answer: 'der',
+        translation: 'Ella viene de Suiza.',
+      },
+      {
+        sentence: 'Nach ___ Kurs trinken wir Kaffee. (der)',
+        answer: 'dem',
+        translation: 'Después del curso tomamos café.',
+      },
+      {
+        sentence: 'Er arbeitet bei ___ Firma. (die)',
+        answer: 'der',
+        translation: 'Él trabaja en la empresa.',
+      },
+      {
+        sentence: 'Das Buch ist von ___ Lehrer. (der)',
+        answer: 'dem',
+        translation: 'El libro es del profesor.',
+      },
+      {
+        sentence: 'Ich gehe durch ___ Park. (der)',
+        answer: 'den',
+        translation: 'Paso por el parque.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.preposition.wechsel',
+    explanation:
+      'Las nueve de doble régimen se deciden con una pregunta: ¿wohin? (hay movimiento hacia un sitio) pide Akkusativ; ¿wo? (algo está quieto en un sitio) pide Dativ.',
+    variations: [
+      {
+        sentence: 'Ich gehe in ___ Park. (der, hay movimiento)',
+        answer: 'den',
+        translation: 'Voy al parque. → wohin, Akkusativ',
+      },
+      {
+        sentence: 'Ich bin in ___ Park. (der, estoy quieto)',
+        answer: 'dem',
+        translation: 'Estoy en el parque. → wo, Dativ',
+      },
+      {
+        sentence: 'Das Buch liegt auf ___ Tisch. (der, está quieto)',
+        answer: 'dem',
+        translation: 'El libro está sobre la mesa.',
+      },
+      {
+        sentence: 'Ich lege das Buch auf ___ Tisch. (der, hay movimiento)',
+        answer: 'den',
+        translation: 'Pongo el libro sobre la mesa.',
+      },
+      {
+        sentence: 'Wir hängen das Bild an ___ Wand. (die, hay movimiento)',
+        answer: 'die',
+        translation: 'Colgamos el cuadro en la pared.',
+      },
+      {
+        sentence: 'Das Bild hängt an ___ Wand. (die, está quieto)',
+        answer: 'der',
+        translation: 'El cuadro está colgado en la pared.',
+      },
+      {
+        sentence: 'Die Katze springt unter ___ Bett. (das, hay movimiento)',
+        answer: 'das',
+        translation: 'El gato salta debajo de la cama.',
+      },
+      {
+        sentence: 'Die Katze schläft unter ___ Bett. (das, está quieto)',
+        answer: 'dem',
+        translation: 'El gato duerme debajo de la cama.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.verb.reflexive',
+    explanation:
+      'El pronombre reflexivo cambia con la persona: mich, dich, sich, uns, euch, sich. Solo la tercera persona y el usted usan sich, que es el que se dice de memoria.',
+    variations: [
+      {
+        sentence: 'Ich freue ___ auf das Wochenende.',
+        answer: 'mich',
+        translation: 'Tengo ganas de que llegue el fin de semana.',
+      },
+      {
+        sentence: 'Er interessiert ___ für Musik.',
+        answer: 'sich',
+        translation: 'A él le interesa la música.',
+      },
+      { sentence: 'Wir treffen ___ um acht.', answer: 'uns', translation: 'Nos vemos a las ocho.' },
+      {
+        sentence: 'Ihr setzt ___ auf das Sofa.',
+        answer: 'euch',
+        translation: 'Os sentáis en el sofá.',
+      },
+      {
+        sentence: 'Sie erinnern ___ an den Film.',
+        answer: 'sich',
+        translation: 'Ellos se acuerdan de la película.',
+      },
+      { sentence: 'Ich ziehe ___ schnell an.', answer: 'mich', translation: 'Me visto rápido.' },
+      {
+        sentence: 'Wie fühlst du ___ heute?',
+        answer: 'dich',
+        translation: '¿Cómo te sientes hoy?',
+      },
+      {
+        sentence: 'Das Kind wäscht ___ allein.',
+        answer: 'sich',
+        translation: 'El niño se lava solo.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.pronoun.akkusativ',
+    explanation:
+      'Los pronombres en Akkusativ son mich, dich, ihn, sie, es, uns, euch, sie/Sie. El que más cuesta es ihn: der Mann → ihn, porque el pronombre sigue al género de la palabra.',
+    variations: [
+      {
+        sentence: 'Kennst du Peter? — Ja, ich kenne ___.',
+        answer: 'ihn',
+        translation: '¿Conoces a Peter? — Sí, lo conozco.',
+      },
+      {
+        sentence: 'Siehst du Anna? — Ja, ich sehe ___.',
+        answer: 'sie',
+        translation: '¿Ves a Anna? — Sí, la veo.',
+      },
+      {
+        sentence: 'Wo ist das Buch? Ich suche ___.',
+        answer: 'es',
+        translation: '¿Dónde está el libro? Lo estoy buscando.',
+      },
+      { sentence: 'Ruf ___ bitte an! (a mí)', answer: 'mich', translation: '¡Llámame, por favor!' },
+      {
+        sentence: 'Ich besuche ___ morgen. (a ti)',
+        answer: 'dich',
+        translation: 'Mañana te visito.',
+      },
+      {
+        sentence: 'Der Lehrer fragt ___. (a nosotros)',
+        answer: 'uns',
+        translation: 'El profesor nos pregunta.',
+      },
+      {
+        sentence: 'Ich verstehe ___ nicht. (a vosotros)',
+        answer: 'euch',
+        translation: 'No os entiendo.',
+      },
+      {
+        sentence: 'Die Kinder? Ich hole ___ um drei ab.',
+        answer: 'sie',
+        translation: '¿Los niños? Los recojo a las tres.',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.pronoun.possessive',
+    explanation:
+      'El posesivo se comporta como ein: sin terminación en masculino y neutro nominativo (mein Bruder, mein Auto), con -e en femenino y plural (meine Schwester), y con -en en el masculino de Akkusativ (meinen Vater).',
+    variations: [
+      { sentence: 'Das ist ___ Bruder. (mi)', answer: 'mein', translation: 'Este es mi hermano.' },
+      {
+        sentence: 'Das ist ___ Schwester. (mi)',
+        answer: 'meine',
+        translation: 'Esta es mi hermana.',
+      },
+      {
+        sentence: 'Ich sehe ___ Vater. (tu, Akkusativ)',
+        answer: 'deinen',
+        translation: 'Veo a tu padre.',
+      },
+      {
+        sentence: 'Wo ist ___ Auto? (su, de él)',
+        answer: 'sein',
+        translation: '¿Dónde está su coche?',
+      },
+      {
+        sentence: 'Ich fahre mit ___ Mutter. (mi, Dativ)',
+        answer: 'meiner',
+        translation: 'Voy con mi madre.',
+      },
+      {
+        sentence: 'Das sind ___ Kinder. (nuestros)',
+        answer: 'unsere',
+        translation: 'Estos son nuestros hijos.',
+      },
+      {
+        sentence: 'Sie liebt ___ Hund. (su, de ella, Akkusativ)',
+        answer: 'ihren',
+        translation: 'Ella quiere a su perro.',
+      },
+      {
+        sentence: 'Wie heißt ___ Lehrerin? (vuestra)',
+        answer: 'eure',
+        translation: '¿Cómo se llama vuestra profesora?',
+      },
+    ],
+  },
+  {
+    skillId: 'de.a2.time.past-future',
+    explanation:
+      'Con el Perfekt para el pasado y el presente para el futuro alcanza para el alemán del día a día: «Morgen fahre ich nach Berlin» es futuro aunque el verbo esté en presente. Lo que marca el tiempo es la expresión temporal.',
+    variations: [
+      {
+        sentence: '___ habe ich Deutsch gelernt. (ayer)',
+        answer: 'Gestern',
+        translation: 'Ayer estudié alemán.',
+      },
+      {
+        sentence: '___ fahre ich nach Berlin. (mañana)',
+        answer: 'Morgen',
+        translation: 'Mañana voy a Berlín.',
+      },
+      {
+        sentence: 'Nächste Woche ___ ich meine Familie. (besuchen)',
+        answer: 'besuche',
+        translation: 'La semana que viene visito a mi familia.',
+      },
+      {
+        sentence: 'Letzten Sommer ___ wir in Italien. (sein)',
+        answer: 'waren',
+        translation: 'El verano pasado estuvimos en Italia.',
+      },
+      {
+        sentence: '___ Jahr habe ich Deutsch angefangen. (el año pasado)',
+        answer: 'Letztes',
+        translation: 'El año pasado empecé con el alemán.',
+      },
+      {
+        sentence: '___ Woche war ich krank. (la semana pasada)',
+        answer: 'Letzte',
+        translation: 'La semana pasada estuve enfermo.',
+      },
+      {
+        sentence: 'In zwei Tagen ___ der Kurs. (beginnen)',
+        answer: 'beginnt',
+        translation: 'El curso empieza en dos días.',
+      },
+      {
+        sentence: 'Heute Abend ___ ich einen Film. (sehen)',
+        answer: 'sehe',
+        translation: 'Esta noche veo una película.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

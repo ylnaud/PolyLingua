@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Frases de salud y del médico'
 situation: 'Salud y cuerpo'
 funFact: 'Para decir que algo te duele, el alemán usa mir/dir/ihm (Dativ — la forma «a quién») y la parte del cuerpo como sujeto: «Mir tut der Kopf weh» es literalmente «a mí me duele la cabeza». Es exactamente la misma estructura del español, así que no hay que pelearla.'
+skills:
+  - de.a2.vocabulary.health
 minutes: 9
 phrases:
   - text: 'Ich bin krank.'

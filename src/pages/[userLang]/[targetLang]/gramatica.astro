@@ -1,8 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { LANGUAGE_MAP } from '../../../data/languages';
+import SiloToolPage from '../../../components/SiloToolPage.astro';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
 import { fill } from '../../../lib/interpolate';
@@ -15,8 +12,6 @@ const tt = dict.tools.gramatica;
 // El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
 // un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
 // una sola versión (en español), por eso sale del diccionario.
-const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
-const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 
 const lessonsForLang = getCourseLessons(userLang!, lang!);
 
@@ -44,27 +39,15 @@ const topics = [...topicMap.values()].sort((a, b) => a.topic.localeCompare(b.top
 const topicManifest = Object.fromEntries(topics.map((t) => [t.topic, t.lessonIds]));
 ---
 
-<BaseLayout
-  userLang={userLang}
-  title={fill(tt.metaTitulo, { lang: langName })}
-  description={fill(tt.metaDescripcion, { lang: langName })}
-  path={`/${userLang}/${lang}/gramatica`}
-  noindex
+<SiloToolPage
+  userLang={userLang!}
+  targetLang={lang!}
+  tool="gramatica"
+  slug="gramatica"
+  emoji="📖"
+  headClass="grammar-head"
+  desc={tt.desc}
 >
-  <section class="container grammar-head">
-    <Breadcrumbs
-      userLang={userLang}
-      items={[
-        { name: dict.silo.idiomas, href: `/${userLang}` },
-        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
-        { name: dict.tools.nombres.gramatica },
-      ]}
-    />
-    <span class="emoji" aria-hidden="true">📖</span>
-    <h1>{fill(tt.h1, { lang: langName })}</h1>
-    <p class="desc">{tt.desc}</p>
-  </section>
-
   <section class="container grammar-grid" data-grammar-grid>
     {
       topics.map((entry) => (
@@ -106,7 +89,7 @@ const topicManifest = Object.fromEntries(topics.map((t) => [t.topic, t.lessonIds
     })}
   >
   </div>
-</BaseLayout>
+</SiloToolPage>
 
 <script>
   import { matchesLang } from '../../../lib/srs';
@@ -197,16 +180,6 @@ const topicManifest = Object.fromEntries(topics.map((t) => [t.topic, t.lessonIds
 </script>
 
 <style>
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.6rem;
-  }
-
-  .grammar-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
   .grammar-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

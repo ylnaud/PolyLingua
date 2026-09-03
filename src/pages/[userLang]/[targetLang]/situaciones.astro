@@ -1,7 +1,5 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import { LANGUAGE_MAP } from '../../../data/languages';
+import SiloToolPage from '../../../components/SiloToolPage.astro';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
 import { fill } from '../../../lib/interpolate';
@@ -16,7 +14,6 @@ const tt = dict.tools.situaciones;
 // un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
 // una sola versión (en español), por eso sale del diccionario.
 const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
-const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 
 // Solo las lecciones marcadas como situacionales (las que tienen `situation`),
 // agrupadas por tema. Las lecciones de gramática clásica quedan fuera de esta
@@ -41,27 +38,15 @@ const themes = [...new Set(situationLessons.map((l) => l.data.situation as strin
 );
 ---
 
-<BaseLayout
-  userLang={userLang}
-  title={fill(tt.metaTitulo, { lang: langName })}
-  description={fill(tt.metaDescripcion, { lang: langName })}
-  path={`/${userLang}/${lang}/situaciones`}
-  noindex
+<SiloToolPage
+  userLang={userLang!}
+  targetLang={lang!}
+  tool="situaciones"
+  slug="situaciones"
+  emoji="🗺️"
+  headClass="sit-head"
+  desc={tt.desc}
 >
-  <section class="container sit-head">
-    <Breadcrumbs
-      userLang={userLang}
-      items={[
-        { name: dict.silo.idiomas, href: `/${userLang}` },
-        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
-        { name: dict.tools.nombres.situaciones },
-      ]}
-    />
-    <span class="emoji" aria-hidden="true">🗺️</span>
-    <h1>{tt.h1}</h1>
-    <p class="desc">{tt.desc}</p>
-  </section>
-
   <section class="container sit-body">
     {
       themes.length === 0 ? (
@@ -102,19 +87,9 @@ const themes = [...new Set(situationLessons.map((l) => l.data.situation as strin
       )
     }
   </section>
-</BaseLayout>
+</SiloToolPage>
 
 <style>
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.6rem;
-  }
-
-  .sit-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
   .sit-body {
     max-width: 680px;
     padding-block: 0 4rem;

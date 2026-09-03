@@ -1,7 +1,6 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiloToolPage from '../../../components/SiloToolPage.astro';
 import { getDictionary } from '../../../i18n';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getSpanishGlossCourseStaticPaths } from '../../../lib/courses';
 import { LEVEL_MAP, type LevelMeta } from '../../../data/levels';
@@ -155,26 +154,20 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
 });
 ---
 
-<BaseLayout
-  userLang={userLang}
+<SiloToolPage
+  userLang={userLang!}
+  targetLang={lang!}
+  slug="generador-frases"
+  emoji="🧩"
+  headClass="gen-head"
+  ownHeadStyles
+  name={dict.silo.explorar.generadorFrases}
   title={`Generador de frases en ${languageMeta?.name}`}
   description={`Genera cientos de frases en ${languageMeta?.name?.toLowerCase()} combinando sujetos, verbos y objetos. Método Janulus para crear memoria automática.`}
-  path={`/${userLang}/${lang}/generador-frases`}
-  noindex
+  h1={`Generador de frases en ${languageMeta?.name}`}
+  desc="Elegí un nivel y una tanda chica, y estudiala de a una frase, a tu ritmo."
 >
-  <section class="container gen-head">
-    <Breadcrumbs
-      userLang={userLang}
-      items={[
-        { name: dict.silo.idiomas, href: `/${userLang}` },
-        { name: languageMeta?.name ?? '', flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
-        { name: dict.silo.explorar.generadorFrases },
-      ]}
-    />
-    <span class="emoji" aria-hidden="true">🧩</span>
-    <h1>Generador de frases en {languageMeta?.name}</h1>
-    <p class="desc">Elegí un nivel y una tanda chica, y estudiala de a una frase, a tu ritmo.</p>
-
+  <Fragment slot="head">
     <div class="gen-level-tabs" role="tablist">
       {
         matrixPanels.map((md, idx) => (
@@ -190,7 +183,7 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
         ))
       }
     </div>
-  </section>
+  </Fragment>
 
   <section
     class="container gen-body"
@@ -284,26 +277,26 @@ const matrixPanels: MatrixPanelData[] = matrixConfig.matrices.map((matrix) => {
       ))
     }
   </section>
-</BaseLayout>
+</SiloToolPage>
 
 <style>
-  .gen-head {
+  :global(.gen-head) {
     text-align: center;
     padding-top: 2rem;
   }
 
-  .gen-head .emoji {
+  :global(.gen-head .emoji) {
     font-size: 2.5rem;
     display: block;
     margin-bottom: 0.5rem;
   }
 
-  .gen-head h1 {
+  :global(.gen-head h1) {
     font-size: 1.6rem;
     margin-bottom: 0.25rem;
   }
 
-  .gen-head .desc {
+  :global(.gen-head .desc) {
     color: var(--muted);
     max-width: 540px;
     margin: 0 auto 0.75rem;

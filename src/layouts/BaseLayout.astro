@@ -15,21 +15,7 @@ import BottomNav from '../components/BottomNav.astro';
 import BaseSEO from '../components/BaseSEO.astro';
 import '../styles/global.css';
 
-interface SiloContext {
-  userLang: string;
-  targetLang: string;
-  restPath?: string;
-  breadcrumbs: { name: string; href: string }[];
-  learningResource?: {
-    title: string;
-    description: string;
-    minutes: number;
-    grammarTopic: string;
-    situation?: string;
-    level: string;
-    quiz?: { question: string }[];
-  };
-}
+import type { SiloContext } from '../lib/siloPath';
 
 interface Props {
   title: string;

@@ -1,0 +1,152 @@
+---
+/**
+ * La cáscara de una herramienta del silo (`/<userLang>/<targetLang>/<slug>`).
+ *
+ * Las trece herramientas —vocabulario, repasar, práctica libre, ahorcado,
+ * diario, gramática, mis errores, pronunciación, situaciones, diálogos,
+ * generador de frases, recursos y practicar— repetían el mismo bloque de
+ * treinta líneas: BaseLayout con `noindex` y el `path` armado a mano,
+ * Breadcrumbs con las mismas tres migas, el emoji, el h1 y el párrafo de
+ * descripción. Trece copias del mismo `path` significaban trece sitios donde
+ * escribirlo mal, y trece sitios donde tocar cualquier cambio de la cabecera.
+ *
+ * Lo que NO absorbe: el cuerpo de cada página y su CSS propio. `headClass`
+ * conserva la clase que cada una ya tenía (`vocab-head`, `review-head`…)
+ * porque de ahí cuelgan sus estilos; unificarla habría sido otro cambio, y
+ * mezclado con este habría escondido las regresiones de uno en el otro.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
+import { LANGUAGE_MAP } from '../data/languages';
+import { getDictionary } from '../i18n';
+import type { Dictionary } from '../i18n/dictionary';
+import { fill } from '../lib/interpolate';
+import type { SiloContext } from '../lib/siloPath';
+
+/** Las herramientas que tienen entrada propia en el diccionario. */
+type ToolKey = keyof Dictionary['tools']['nombres'];
+
+/** La forma común a toda entrada de herramienta en `dict.tools`. */
+interface ToolStrings {
+  metaTitulo: string;
+  metaDescripcion: string;
+  h1: string;
+}
+
+interface Base {
+  userLang: string;
+  targetLang: string;
+  /** Último segmento de la URL. No se deriva de `tool`: la clave del
+   *  diccionario es camelCase (`practicaLibre`) y la URL lleva guion
+   *  (`practica-libre`). */
+  slug: string;
+  emoji: string;
+  /** La clase de la `<section>` de cabecera: es la que engancha el CSS propio
+   *  de cada página, así que se pasa tal cual estaba. */
+  headClass: string;
+  /** Párrafo bajo el h1. Varias páginas lo reescriben después desde el
+   *  cliente, y empiezan mostrando su texto de "cargando". */
+  desc: string;
+  /** Atributo `data-*` de ese párrafo, para las que lo reescriben. */
+  descAttr?: string;
+  /**
+   * Renuncia a los estilos compartidos de cabecera.
+   *
+   * Dos herramientas tienen cabecera propia a propósito —el generador de
+   * frases la centra y practicar usa otro padding— y sus reglas no podrían
+   * ganarle a las de acá por especificidad. Antes que subir la especificidad
+   * de un lado y bajarla del otro, el opt-out lo deja dicho en la página.
+   */
+  ownHeadStyles?: boolean;
+  siloContext?: SiloContext;
+}
+
+/**
+ * Dos formas de usarlo, y el tipo obliga a elegir una:
+ *
+ * - con `tool`, los textos salen del diccionario (y se pueden pisar sueltos);
+ * - sin `tool`, hay que dar los cuatro textos a mano. Es el caso de las tres
+ *   herramientas que solo existen en el silo español y no tienen entrada
+ *   propia en `dict.tools`.
+ */
+type ConDiccionario = Base & {
+  tool: ToolKey;
+  title?: string;
+  description?: string;
+  h1?: string;
+  name?: string;
+};
+
+type Explicita = Base & {
+  tool?: undefined;
+  title: string;
+  description: string;
+  h1: string;
+  /** Última miga de pan. */
+  name: string;
+};
+
+export type Props = ConDiccionario | Explicita;
+
+const props = Astro.props;
+const { userLang, targetLang, slug, emoji, headClass, desc, descAttr, ownHeadStyles, siloContext } =
+  props;
+
+const dict = getDictionary(userLang as never);
+const langName = dict.languageNames[targetLang as keyof typeof dict.languageNames];
+const languageMeta = LANGUAGE_MAP[targetLang as keyof typeof LANGUAGE_MAP];
+
+// Todas las entradas de `dict.tools` comparten estos tres campos, pero el tipo
+// del diccionario las declara una por una, así que hace falta estrecharlo acá.
+const textos: ToolStrings | null = props.tool
+  ? (dict.tools[props.tool] as unknown as ToolStrings)
+  : null;
+
+const vars = { lang: langName };
+const title = props.title ?? fill(textos!.metaTitulo, vars);
+const description = props.description ?? fill(textos!.metaDescripcion, vars);
+const h1 = props.h1 ?? fill(textos!.h1, vars);
+const name = props.name ?? dict.tools.nombres[props.tool!];
+---
+
+<BaseLayout
+  userLang={userLang}
+  title={title}
+  description={description}
+  path={`/${userLang}/${targetLang}/${slug}`}
+  siloContext={siloContext}
+  noindex
+>
+  <section class={`container ${ownHeadStyles ? '' : 'silo-tool-head '}${headClass}`}>
+    <Breadcrumbs
+      userLang={userLang}
+      items={[
+        { name: dict.silo.idiomas, href: `/${userLang}` },
+        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${targetLang}` },
+        { name },
+      ]}
+    />
+    <span class="emoji" aria-hidden="true">{emoji}</span>
+    <h1>{h1}</h1>
+    <p class="desc" {...descAttr ? { [descAttr]: '' } : {}}>{desc}</p>
+    <slot name="head" />
+  </section>
+
+  <slot />
+</BaseLayout>
+
+<style>
+  /* Estas dos reglas estaban COPIADAS, idénticas, en las trece páginas. Ahora
+     que la cabecera la pinta este componente, viven acá una sola vez —y tienen
+     que vivir acá: el `<section>` ya no lleva el data-astro-cid de la página,
+     así que un `.vocab-head { … }` escrito allá no lo alcanzaría. */
+  .silo-tool-head {
+    padding-block: 2.5rem 1.5rem;
+    max-width: 680px;
+  }
+
+  .silo-tool-head h1 {
+    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+</style>

@@ -1,12 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiloToolPage from '../../../components/SiloToolPage.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
-import { fill } from '../../../lib/interpolate';
 
 export const getStaticPaths = getCourseStaticPaths;
 
@@ -16,7 +13,6 @@ const tt = dict.tools.vocabulario;
 // El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
 // un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
 // una sola versión (en español), por eso sale del diccionario.
-const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 
 // Manifest lección→vocabulario de este idioma, para poder completar
@@ -31,27 +27,16 @@ const vocabManifest = Object.fromEntries(
 );
 ---
 
-<BaseLayout
-  userLang={userLang}
-  title={fill(tt.metaTitulo, { lang: langName })}
-  description={fill(tt.metaDescripcion, { lang: langName })}
-  path={`/${userLang}/${lang}/vocabulario`}
-  noindex
+<SiloToolPage
+  userLang={userLang!}
+  targetLang={lang!}
+  tool="vocabulario"
+  slug="vocabulario"
+  emoji="📖"
+  headClass="vocab-head"
+  desc={tt.cargando}
+  descAttr="data-vocab-desc"
 >
-  <section class="container vocab-head">
-    <Breadcrumbs
-      userLang={userLang}
-      items={[
-        { name: dict.silo.idiomas, href: `/${userLang}` },
-        { name: langName, flag: languageMeta?.flag, href: `/${userLang}/${lang}` },
-        { name: dict.tools.nombres.vocabulario },
-      ]}
-    />
-    <span class="emoji" aria-hidden="true">📖</span>
-    <h1>{fill(tt.h1, { lang: langName })}</h1>
-    <p class="desc" data-vocab-desc>{tt.cargando}</p>
-  </section>
-
   <section class="container vocab-body">
     <div class="card empty-state" data-empty-state hidden>
       <p class="empty-emoji">✏️</p>
@@ -90,7 +75,7 @@ const vocabManifest = Object.fromEntries(
     >
     </div>
   </section>
-</BaseLayout>
+</SiloToolPage>
 
 <script>
   import { matchesLang } from '../../../lib/srs';
@@ -248,16 +233,6 @@ const vocabManifest = Object.fromEntries(
 </script>
 
 <style>
-  h1 {
-    font-size: clamp(1.6rem, 3.6vw, 2.2rem);
-    margin: 0.4rem 0 0.6rem;
-  }
-
-  .vocab-head {
-    padding-block: 2.5rem 1.5rem;
-    max-width: 680px;
-  }
-
   .vocab-body {
     max-width: 680px;
     padding-block: 0 4rem;

@@ -23,6 +23,12 @@ import {
   nextStep,
   stepFromStreak,
 } from '../src/lib/engine/repetition';
+import {
+  REPAIR_TEMPLATES,
+  generateRepairSet,
+  repairTemplateFor,
+  toRepairExercise,
+} from '../src/lib/engine/exerciseGenerator';
 import { chooseNextSkill, rankSkills } from '../src/lib/engine/scheduler';
 import { emptyState, migrate, newProgress } from '../src/lib/engine/learnerStore';
 import type { LearnerError, Skill, SkillProgress } from '../src/lib/engine/types';
@@ -443,6 +449,77 @@ describe('catálogo de habilidades', () => {
     for (const s of SKILLS) {
       expect(s.difficulty, s.id).toBeGreaterThanOrEqual(1);
       expect(s.difficulty, s.id).toBeLessThanOrEqual(5);
+    }
+  });
+});
+
+describe('plantillas de refuerzo', () => {
+  // `Exercise.render.data` es `unknown` a propósito: el motor no conoce la
+  // forma de los ítems del sitio, solo los transporta hasta
+  // practiceItemMarkup.ts. El test sí sabe qué está mirando, así que la
+  // estrecha acá en vez de aflojar el tipo del motor.
+  const pintado = (data: unknown) => (data ?? {}) as { answer?: string; sentence?: string };
+
+  // El bucle del tutor (DrillTutor.astro) sale con 3 aciertos seguidos y se
+  // rinde a los 6 insertados: una plantilla con menos de 6 variaciones se
+  // quedaría sin material antes de llegar al tope y el bucle se cortaría solo,
+  // que no es lo mismo que rendirse.
+  const MINIMO_VARIACIONES = 6;
+
+  it('cada habilidad de gramática y orden de A1 alemán tiene plantilla', () => {
+    const necesitan = SKILLS.filter(
+      (s) =>
+        s.lang === 'de' &&
+        s.level === 'a1' &&
+        (s.category === 'grammar' || s.category === 'word_order'),
+    ).map((s) => s.id);
+    const sinPlantilla = necesitan.filter((id) => !repairTemplateFor(id));
+    expect(sinPlantilla, `habilidades sin refuerzo:\n${sinPlantilla.join('\n')}`).toEqual([]);
+  });
+
+  it('cada plantilla tiene variaciones suficientes y distintas entre sí', () => {
+    for (const t of REPAIR_TEMPLATES) {
+      expect(t.variations.length, t.skillId).toBeGreaterThanOrEqual(MINIMO_VARIACIONES);
+      const frases = t.variations.map((v) => v.sentence);
+      expect(new Set(frases).size, `${t.skillId} repite una frase`).toBe(frases.length);
+      expect(t.explanation.length, t.skillId).toBeGreaterThan(20);
+    }
+  });
+
+  it('cada plantilla apunta a una habilidad que existe', () => {
+    const ids = new Set(SKILLS.map((s) => s.id));
+    const fantasma = REPAIR_TEMPLATES.filter((t) => !ids.has(t.skillId)).map((t) => t.skillId);
+    expect(fantasma).toEqual([]);
+  });
+
+  it('las variaciones de hueco traen ___ y las de orden no', () => {
+    for (const t of REPAIR_TEMPLATES) {
+      for (const v of t.variations) {
+        if (v.kind === 'order') expect(v.sentence, t.skillId).not.toContain('___');
+        else expect(v.sentence, t.skillId).toContain('___');
+      }
+    }
+  });
+
+  it('una variación de orden se pinta como ejercicio de ordenar', () => {
+    const skill = SKILLS.find((s) => s.id === 'de.a1.wordorder.questions')!;
+    const plantilla = repairTemplateFor(skill.id)!;
+    const v = plantilla.variations.find((x) => x.kind === 'order')!;
+    const ej = toRepairExercise(skill, plantilla, v, 0);
+    expect(ej.type).toBe('reorder');
+    expect(ej.render?.kind).toBe('order');
+    expect(pintado(ej.render?.data).sentence).toBe(v.sentence);
+    expect(ej.expectedAnswer).toBe(v.sentence);
+  });
+
+  it('generateRepairSet sigue devolviendo ejercicios pintables', () => {
+    const skill = SKILLS.find((s) => s.id === 'de.a1.article.die')!;
+    const tanda = generateRepairSet(skill, 5);
+    expect(tanda).toHaveLength(5);
+    for (const ej of tanda) {
+      expect(ej.skillId).toBe(skill.id);
+      const data = pintado(ej.render?.data);
+      expect(data.answer ?? data.sentence).toBeTruthy();
     }
   });
 });

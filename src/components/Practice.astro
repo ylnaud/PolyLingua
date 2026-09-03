@@ -820,6 +820,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
   import { playCorrect, playIncorrect, playCombo, speak, isMuted } from '../lib/sound';
   import { shuffle } from '../lib/shuffle';
   import { read } from '../lib/storage';
+  import { buildItemFieldset } from '../lib/practiceItemMarkup';
 
   function isShadowingEnabled(): boolean {
     return read('polylingua-shadowing-mode') === 'true';
@@ -973,12 +974,20 @@ function splitSentence(sentence: string): { before: string; after: string } {
         if (answer) speak(answer, root.dataset.lang ?? '');
       }
 
+      // El contador se recalcula en vez de escribirse una vez al mostrar el
+      // ítem: la sesión puede CRECER a mitad de camino (ver el listener de
+      // `practice-insert-items` más abajo), y entonces "3 / 8" tiene que pasar
+      // a "3 / 11" sin esperar a que el usuario avance.
+      function refreshProgress() {
+        if (progressEl) progressEl.textContent = `${current + 1} / ${items.length}`;
+        if (progressBarFill) progressBarFill.style.width = `${(current / items.length) * 100}%`;
+      }
+
       function showItem(index: number) {
         items.forEach((it, i) => {
           it.hidden = i !== index;
         });
-        if (progressEl) progressEl.textContent = `${index + 1} / ${items.length}`;
-        if (progressBarFill) progressBarFill.style.width = `${(index / items.length) * 100}%`;
+        refreshProgress();
         maybeAutoSpeak(index);
         // showItem() solo se llama al avanzar (goNext), nunca en la carga
         // inicial, así que este foco nunca se roba al entrar a la página.
@@ -1019,7 +1028,11 @@ function splitSentence(sentence: string): { before: string; after: string } {
         else finish();
       }
 
-      items.forEach((item) => {
+      // Todo el cableado de un ítem, extraído a función: los ítems ya no son
+      // una lista fija montada una vez al arrancar, así que un ejercicio
+      // insertado a mitad de sesión tiene que poder cablearse igual que los
+      // del build.
+      function wireItem(item: HTMLElement) {
         const kind = item.dataset.kind;
         const feedback = item.querySelector<HTMLElement>('[data-feedback]');
         const explanation = item.querySelector<HTMLElement>('[data-explanation]');
@@ -1085,6 +1098,31 @@ function splitSentence(sentence: string): { before: string; after: string } {
           // posición en el teclado.
           if (shouldGateWithShadowing) shadowConfirm?.focus();
           else nextBtn?.focus();
+
+          // Frontera UI → tutor, hermana de `practice-complete`: aquella avisa
+          // al terminar la sesión, esta avisa ítem por ítem, en el momento
+          // exacto de responder, que es cuando tiene sentido reforzar.
+          // Practice no decide nada con ella; solo la anuncia.
+          //
+          // Se emite también al acertar, no solo al fallar: el tutor sale del
+          // bucle con tres aciertos seguidos, así que necesita ver los dos
+          // resultados. Filtrar por `correct` es asunto suyo.
+          root.dispatchEvent(
+            new CustomEvent('practice-item-answered', {
+              detail: {
+                root,
+                correct,
+                itemId: item.dataset.itemId ?? '',
+                kind: kind ?? '',
+                data,
+                userAnswer,
+                correctAnswer,
+                lessonId: root.dataset.lessonId ?? '',
+                sessionType: root.dataset.sessionType ?? 'lesson',
+              },
+              bubbles: true,
+            }),
+          );
         }
 
         shadowConfirm?.addEventListener('click', () => {
@@ -1269,9 +1307,48 @@ function splitSentence(sentence: string): { before: string; after: string } {
         }
 
         nextBtn?.addEventListener('click', goNext);
-      });
+      }
 
-      maybeAutoSpeak(current);
+      items.forEach(wireItem);
+
+      // Crecer a mitad de sesión. Quien quiera insertar ejercicios (hoy
+      // DrillTutor.astro, cuando el usuario falla) manda este evento con los
+      // ítems ya armados como datos; acá se montan con el mismo markup del
+      // build y se cablean igual. Sin nadie que lo emita, el componente se
+      // comporta exactamente como antes.
+      root.addEventListener('practice-insert-items', ((e: CustomEvent) => {
+        const entradas = Array.isArray(e.detail?.items) ? e.detail.items : [];
+        const ancla = items[current];
+        if (entradas.length === 0 || !ancla) return;
+
+        const nuevos: HTMLElement[] = entradas.map((entrada: any, i: number) => {
+          const fieldset = buildItemFieldset(
+            {
+              id: entrada.id,
+              kind: entrada.kind,
+              data: entrada.data,
+              box: 0,
+              due: '',
+              lang: root.dataset.lang ?? '',
+              level: '',
+            },
+            items.length + i,
+          );
+          fieldset.hidden = true;
+          return fieldset;
+        });
+
+        // Justo después del ítem actual: el refuerzo llega mientras el patrón
+        // está fresco, no al final de la lección.
+        let ref: Element = ancla;
+        for (const el of nuevos) {
+          ref.after(el);
+          ref = el;
+        }
+        items.splice(current + 1, 0, ...nuevos);
+        nuevos.forEach(wireItem);
+        refreshProgress();
+      }) as EventListener);
 
       restartBtn?.addEventListener('click', () => {
         window.location.reload();

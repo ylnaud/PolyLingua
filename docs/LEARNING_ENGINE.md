@@ -11,13 +11,13 @@ documento explica cómo está montado y cómo se amplía.
 Media infraestructura ya existía y se reutiliza tal cual. Conviene saberlo
 antes de tocar nada, para no construir en paralelo algo que ya está:
 
-| Pieza | Dónde | Papel |
-| --- | --- | --- |
-| Evento `practice-complete` | lo emite `src/components/Practice.astro` | La frontera UI → motor. Trae `results[]` con `id`, `correct`, `userAnswer`, `correctAnswer` |
-| `ProgressTracker.astro` | escucha ese evento | Racha, logros, pool SRS **por ítem**, vocabulario aprendido |
-| `src/lib/srs.ts` + `polylingua-srs-pool` | cajas Leitner en días | Repaso de preguntas concretas: «volvé a ver esta» |
-| `src/lib/practiceItemMarkup.ts` | `buildItemFieldset()` | Monta un ejercicio en el DOM desde datos, con el mismo markup que genera el build |
-| Banco de ejercicios | frontmatter de 478 lecciones | **4301 ítems ya escritos** (1844 quiz + 2457 ejercicios) |
+| Pieza                                    | Dónde                                    | Papel                                                                                       |
+| ---------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Evento `practice-complete`               | lo emite `src/components/Practice.astro` | La frontera UI → motor. Trae `results[]` con `id`, `correct`, `userAnswer`, `correctAnswer` |
+| `ProgressTracker.astro`                  | escucha ese evento                       | Racha, logros, pool SRS **por ítem**, vocabulario aprendido                                 |
+| `src/lib/srs.ts` + `polylingua-srs-pool` | cajas Leitner en días                    | Repaso de preguntas concretas: «volvé a ver esta»                                           |
+| `src/lib/practiceItemMarkup.ts`          | `buildItemFieldset()`                    | Monta un ejercicio en el DOM desde datos, con el mismo markup que genera el build           |
+| Banco de ejercicios                      | frontmatter de 478 lecciones             | **4301 ítems ya escritos** (1844 quiz + 2457 ejercicios)                                    |
 
 El motor **no reemplaza nada de eso**. Se engancha al mismo evento y lleva un
 modelo distinto, en paralelo.
@@ -87,7 +87,7 @@ patrón en frases distintas cuenta como el mismo error y puede escalar.
 
 - **tasa de acierto** (lo que sabés),
 - **confianza** según cuántos intentos hay detrás (cuánta evidencia hay),
-- **racha actual** (si lo sabés *ahora*).
+- **racha actual** (si lo sabés _ahora_).
 
 Ponderado por dificultad: dominar algo de dificultad 5 vale más que algo de
 dificultad 1.
@@ -152,6 +152,59 @@ Dos fuentes, en este orden:
    lo que hace falta para que dominar no sea repetir una frase.
 2. **Plantillas** (`REPAIR_TEMPLATES`), solo para reparación, donde hacen
    falta variaciones dirigidas a un patrón concreto.
+
+## El tutor: insistir en el momento del fallo
+
+El escalado de arriba tarda cinco fallos repartidos en sesiones distintas. Eso
+llega tarde: cuando alguien acaba de equivocarse, el patrón está fresco **ahora**.
+
+`DrillTutor.astro` cubre ese hueco dentro de la propia lección:
+
+1. Fallás → aparece la explicación de **una línea** de la plantilla, no una clase.
+2. Se inserta un ejercicio del mismo patrón justo detrás del que fallaste, y el
+   contador crece de forma honesta: `3 / 8` pasa a `3 / 9`.
+3. Salís con **3 aciertos seguidos**. Uno puede ser suerte; tres en frases
+   distintas, no.
+4. Tope de **6 ejercicios insertados por habilidad y por sesión**. Al llegar, el
+   bucle se rinde y sigue la lección: un mal día no puede dejarte encerrado. El
+   error ya quedó registrado, así que `/practicar` lo va a seguir priorizando.
+
+El tope es por habilidad **y por sesión**, no por bucle: si se reiniciara al
+cerrarse, fallar otra vez abriría un bucle nuevo y el tema no terminaría nunca.
+
+### Cómo se engancha sin tocar Practice por dentro
+
+Dos eventos nuevos, en el mismo estilo que el `practice-complete` que ya existía:
+
+| Evento                   | Quién lo emite                           | Qué lleva                                           |
+| ------------------------ | ---------------------------------------- | --------------------------------------------------- |
+| `practice-item-answered` | `Practice.astro`, al responder cada ítem | `correct`, el ítem, la respuesta dada y la esperada |
+| `practice-insert-items`  | el tutor, cuando quiere reforzar         | los ítems a insertar, como datos                    |
+
+`Practice.astro` dejó de montar una lista fija: los ítems se insertan detrás del
+actual y se cablean con la misma función que los del build. Sin nadie que emita
+el segundo evento el comportamiento es idéntico al de siempre, que es lo que
+mantiene intactas las 470 lecciones sin habilidades.
+
+`practice-item-answered` se emite **también al acertar**, no solo al fallar: el
+tutor necesita ver los dos resultados para contar la racha de tres.
+
+### De dónde salen los ejercicios del bucle
+
+De `REPAIR_TEMPLATES`. Una habilidad **sin plantilla no abre bucle**: proponer un
+ejercicio de otro tema sería peor que no hacer nada. Hoy tienen plantilla las 17
+habilidades de gramática y orden de palabras de A1 alemán, con 6-8 variaciones
+cada una — un test falla si alguna se queda corta, porque con menos de 6 el bucle
+se quedaría sin material antes de llegar al tope de 6.
+
+Las variaciones son casi todas de hueco (`fill-blank`), pero las de orden de
+palabras son de tipo `order`: un hueco en medio de la frase no obliga a colocar
+nada, así que no comprobaría la habilidad que dice comprobar.
+
+En las de artículos, algunas variaciones **rompen el patrón a propósito** (_die_
+Nacht entre los masculinos, _der_ Schmetterling entre los neutros). Un bloque de
+seis frases cuya respuesta es siempre «Der» enseña a escribir «Der», no a decidir
+el género.
 
 ## Almacenamiento
 

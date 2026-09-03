@@ -90,6 +90,36 @@ export const SKILLS: Skill[] = [
     prerequisites: [],
     difficulty: 3,
   },
+  // Un género por habilidad, además de la general de arriba. Es lo que hace
+  // que fallar el femenino traiga más femenino y no una mezcla de los tres:
+  // con una sola habilidad "artículos", el refuerzo no puede apuntar.
+  {
+    id: 'de.a1.article.der',
+    lang: 'de',
+    level: 'a1',
+    category: 'grammar',
+    name: 'Artículo der (masculino)',
+    prerequisites: ['de.a1.article.der-die-das'],
+    difficulty: 3,
+  },
+  {
+    id: 'de.a1.article.die',
+    lang: 'de',
+    level: 'a1',
+    category: 'grammar',
+    name: 'Artículo die (femenino)',
+    prerequisites: ['de.a1.article.der-die-das'],
+    difficulty: 3,
+  },
+  {
+    id: 'de.a1.article.das',
+    lang: 'de',
+    level: 'a1',
+    category: 'grammar',
+    name: 'Artículo das (neutro)',
+    prerequisites: ['de.a1.article.der-die-das'],
+    difficulty: 3,
+  },
   {
     id: 'de.a1.verb.present-regular',
     lang: 'de',

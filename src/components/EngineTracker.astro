@@ -20,6 +20,9 @@
   import { getState, saveState } from '../lib/engine/learnerStore';
   import { newProgress } from '../lib/engine/learnerStore';
   import { SKILL_MAP } from '../data/skills';
+  // Compartido con DrillTutor: los dos tienen que atribuir un ítem a la misma
+  // habilidad, o el bucle reforzaría algo distinto de lo que se registra.
+  import { skillsForItem } from '../lib/itemSkills';
 
   interface ResultItem {
     id: string;
@@ -27,38 +30,6 @@
     correct: boolean;
     userAnswer?: string;
     correctAnswer?: string;
-  }
-
-  /**
-   * Qué habilidades ejercita cada ítem.
-   *
-   * Dos fuentes, según dónde estemos:
-   *
-   * - `[data-item-skills]`: mapa exacto ítem→habilidades. Lo publica la página
-   *   de práctica adaptativa, que sabe para qué habilidad eligió cada
-   *   ejercicio.
-   * - `[data-lesson-skills]`: la lista de la lección. En una lección normal no
-   *   se sabe qué ítem entrena qué habilidad, así que el resultado cuenta para
-   *   todas las que enseña — que es coherente con que la relación sea N:N.
-   */
-  function skillsForItem(itemId: string): string[] {
-    const exacto = document.querySelector<HTMLElement>('[data-item-skills]');
-    if (exacto) {
-      try {
-        const mapa = JSON.parse(exacto.dataset.itemSkills ?? '{}');
-        if (Array.isArray(mapa[itemId])) return mapa[itemId];
-      } catch {
-        /* json inválido: se cae al de la lección */
-      }
-    }
-    const leccion = document.querySelector<HTMLElement>('[data-lesson-skills]');
-    if (!leccion) return [];
-    try {
-      const lista = JSON.parse(leccion.dataset.lessonSkills ?? '[]');
-      return Array.isArray(lista) ? lista : [];
-    } catch {
-      return [];
-    }
   }
 
   function applyResults(results: ResultItem[]) {

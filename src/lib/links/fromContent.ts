@@ -23,6 +23,7 @@ import { LEVELS } from '../../data/levels';
 import { USER_LANGUAGES } from '../../data/userLanguages';
 import { parseLessonId } from '../lessonPath';
 import { proposeLinks, type PageRecord, type Propuesta } from './engine';
+import { anclaDeNivel } from './labels';
 
 const ACTIVOS = new Set<string>(USER_LANGUAGES.filter((l) => l.active).map((l) => l.id));
 
@@ -83,7 +84,7 @@ for (const combo of cursos) {
       targetLang,
       level: nivel.id,
       title: `${nombre} ${nivel.id.toUpperCase()}`,
-      grammarTopic: `${nombre} ${nivel.id.toUpperCase()}`,
+      grammarTopic: anclaDeNivel(nombre, nivel.id),
       indexable,
     });
   }

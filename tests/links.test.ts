@@ -11,6 +11,7 @@ import {
   type Entrada,
   type PageRecord,
 } from '../src/lib/links/engine';
+import { anclaDeNivel } from '../src/lib/links/labels';
 import { TSA, TSA_LANG } from '../src/data/tsa';
 
 const ROOT = join(import.meta.dirname, '..');
@@ -142,10 +143,41 @@ describe('motor de enlaces internos', () => {
     }
   });
 
-  it('descarta todo lo que no llegue al umbral', () => {
+  it('descarta lo que no llegue al umbral, salvo los motivos de apoyo', () => {
     for (const lista of proposeLinks(fixture()).values()) {
-      for (const p of lista) expect(p.score).toBeGreaterThanOrEqual(UMBRAL);
+      for (const p of lista) {
+        if (p.motivo === 'misma-unidad') continue; // apoyo: se valida abajo
+        expect(p.score).toBeGreaterThanOrEqual(UMBRAL);
+      }
     }
+  });
+
+  // "Misma unidad" es un cajón del temario, no un tema: es-fr/a1/u1 mete en el
+  // mismo saco los artículos y decir la hora. Sirve para completar un bloque
+  // que ya tiene algo bueno, nunca para justificar uno entero.
+  it('"misma unidad" nunca aparece como única evidencia de un bloque', () => {
+    for (const lista of proposeLinks(fixture()).values()) {
+      if (lista.every((p) => p.motivo === 'misma-unidad')) {
+        throw new Error(`bloque sostenido solo por "misma-unidad": ${JSON.stringify(lista)}`);
+      }
+    }
+  });
+
+  it('"misma unidad" sí acompaña cuando ya hay una relación fuerte', () => {
+    const conFuerte = proposeLinks(fixture()).get('/es/de/a2/dativo') ?? [];
+    expect(conFuerte.some((p) => p.motivo === 'prerrequisito')).toBe(true);
+  });
+
+  it('una página cuyas únicas relaciones son de unidad se queda sin bloque', () => {
+    const soloUnidad: Entrada = {
+      pages: [
+        pagina({ route: '/es/de/a1/uno', unit: 9, grammarTopic: 'Uno' }),
+        pagina({ route: '/es/de/a1/dos', unit: 9, grammarTopic: 'Dos' }),
+      ],
+      skills: [],
+      languages: [],
+    };
+    expect(proposeLinks(soloUnidad).size).toBe(0);
   });
 
   it('una página sin ninguna relación se queda sin bloque, no se rellena', () => {
@@ -163,6 +195,42 @@ describe('motor de enlaces internos', () => {
     expect(
       anchorPara(pagina({ route: '/x', title: 'Der, die, das: cómo funciona el género' })),
     ).toBe('Der, die, das');
+  });
+
+  // Los grammarTopic están escritos como encabezados de temario y llegan a 59
+  // caracteres. Como texto de enlace eso no se lee.
+  it('acorta el ancla larga quitando el paréntesis, que es la aclaración', () => {
+    expect(
+      anchorPara(
+        pagina({ route: '/x', grammarTopic: 'Konjunktiv II (würde + Infinitiv, hätte, wäre)' }),
+      ),
+    ).toBe('Konjunktiv II');
+    expect(
+      anchorPara(
+        pagina({
+          route: '/x',
+          grammarTopic: 'Nominalstil (estilo nominal) vs. Verbalstil (estilo verbal)',
+          title: 'Nominalstil vs. Verbalstil: el registro escrito',
+        }),
+      ),
+    ).toBe('Nominalstil vs. Verbalstil');
+  });
+
+  it('no toca un ancla que ya se lee bien', () => {
+    const corta = 'Artículos determinados (der/die/das)';
+    expect(anchorPara(pagina({ route: '/x', grammarTopic: corta }))).toBe(corta);
+  });
+
+  // Truncar por número de caracteres deja anclas partidas a media palabra, que
+  // es peor que una larga.
+  it('deja el ancla larga intacta si no hay nada que quitar sin partir palabras', () => {
+    const sinParentesis = 'Perfekt para el pasado y presente para el futuro';
+    expect(anchorPara(pagina({ route: '/x', grammarTopic: sinParentesis }))).toBe(sinParentesis);
+  });
+
+  it('la etiqueta de una página de nivel describe qué hay al otro lado', () => {
+    expect(anclaDeNivel('Alemán', 'a1')).toBe('Todas las lecciones de alemán A1');
+    expect(anclaDeNivel('Portugués', 'a2')).toBe('Todas las lecciones de portugués A2');
   });
 
   it('no inventa relaciones de vocabulario (esa regla no existe)', () => {

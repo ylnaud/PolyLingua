@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Past Continuous vs. Past Simple'
 funFact: "Piensa en el Past Continuous como el telón de fondo de una película (una acción larga en curso) y el Past Simple como el actor que entra en escena (una acción puntual que interrumpe ese fondo). 'I was watching TV when the phone rang' — 'was watching' es el fondo, 'rang' es la interrupción."
+skills:
+  - en.b1.verb.past-continuous
 minutes: 9
 quiz:
   - question: "¿Cuál es la forma correcta: 'I ___ dinner when she called' (estaba cocinando cuando ella llamó)?"

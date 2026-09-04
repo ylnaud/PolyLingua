@@ -7,34 +7,41 @@ order: 9
 unit: 3
 grammarTopic: 'Future forms (will / going to / present continuous)'
 funFact: "Si ya tenés hora y lugar (like 'I'm meeting her at 6pm'), usá present continuous. Si solo tenés la intención pero no los detalles ('I'm going to look for a new job'), usá going to. Cuanto más concreto el plan, más natural suena el continuous."
+skills:
+  - en.b1.verb.future-forms
 minutes: 9
 quiz:
   - question: "Mirás el cielo lleno de nubes negras y decís: '___ rain.' ¿Cuál es correcta?"
-    options: ["It will", "It's going to", "It rains"]
+    options: ['It will', "It's going to", 'It rains']
     answerIndex: 1
     explanation: "'Going to' se usa para predicciones CON evidencia visible: ves las nubes negras ahora mismo, por eso 'It's going to rain'."
   - question: "Estás en un restaurante, mirás el menú y decidís en ese momento: '___ have the pasta.' ¿Cuál es correcta?"
-    options: ["I will", "I'm going to", "I have"]
+    options: ['I will', "I'm going to", 'I have']
     answerIndex: 0
     explanation: "'Will' se usa para decisiones espontáneas, tomadas en el momento de hablar: I think... I'll have the pasta."
   - question: "'I'm meeting her at 6pm' (ya quedaron, hay hora y lugar fijados). ¿Qué forma es esta?"
     options: ['Will', 'Going to', 'Present continuous']
     answerIndex: 2
     explanation: 'El present continuous con valor de futuro se usa para citas y planes ya organizados con hora/lugar concretos.'
-  - question: "¿Cuál de estas frases expresa una predicción SIN evidencia visible, solo una opinión?"
-    options: ["I think it will rain tomorrow.", "Look at those clouds, it's going to rain.", "I'm meeting the doctor at 5pm."]
+  - question: '¿Cuál de estas frases expresa una predicción SIN evidencia visible, solo una opinión?'
+    options:
+      [
+        'I think it will rain tomorrow.',
+        "Look at those clouds, it's going to rain.",
+        "I'm meeting the doctor at 5pm.",
+      ]
     answerIndex: 0
     explanation: "'I think...' señala opinión/predicción sin evidencia concreta — es el terreno clásico de 'will'."
 exercises:
   - type: 'fill-blank'
-    sentence: "Look at those clouds! It ___ rain soon."
-    answer: "is going to"
-    accepted: ["is going to", "'s going to"]
+    sentence: 'Look at those clouds! It ___ rain soon.'
+    answer: 'is going to'
+    accepted: ['is going to', "'s going to"]
     hint: 'Hay evidencia visible (las nubes) ahora mismo, así que se usa going to, no will.'
     translation: '¡Mirá esas nubes! Va a llover pronto.'
     placeholder: 'will'
   - type: 'fill-blank'
-    sentence: "A: The phone is ringing. B: I ___ get it!"
+    sentence: 'A: The phone is ringing. B: I ___ get it!'
     answer: "'ll"
     accepted: ["'ll", 'will']
     hint: 'Decisión espontánea, tomada en el momento de hablar: usá will.'
@@ -51,13 +58,18 @@ exercises:
         right: 'citas organizadas con hora y lugar concretos'
       - left: "I'm meeting her at 6pm"
         right: 'cita ya organizada'
-      - left: "I think it will rain"
+      - left: 'I think it will rain'
         right: 'predicción sin evidencia'
   - type: 'write'
     prompt: "Escribe en inglés, usando going to: 'Ella va a estudiar medicina' (ya lo decidió, es un plan)."
-    answer: "She is going to study medicine."
-    accepted: ["She is going to study medicine", "She's going to study medicine", "She's going to study medicine."]
-    hint: "Plan/intención ya decidida = going to."
+    answer: 'She is going to study medicine.'
+    accepted:
+      [
+        'She is going to study medicine',
+        "She's going to study medicine",
+        "She's going to study medicine.",
+      ]
+    hint: 'Plan/intención ya decidida = going to.'
     placeholder: 'She will study medicine.'
   - type: 'order'
     sentence: "I'm meeting her at 6pm"
@@ -69,9 +81,9 @@ vocabulary:
     translation: 'plan decidido / predicción con evidencia'
   - term: 'present continuous (futuro)'
     translation: 'cita u organización ya fijada'
-  - term: "I think..."
+  - term: 'I think...'
     translation: 'marcador típico de opinión/predicción con will'
-  - term: "Look at..."
+  - term: 'Look at...'
     translation: 'marcador típico de evidencia visible con going to'
 ---
 
@@ -80,11 +92,11 @@ de CUÁNTA certeza o planificación hay detrás de lo que decís.
 
 ## Las 3 formas y cuándo usarlas
 
-| Forma                 | Se usa para                                 | Ejemplo                             |
-| ---------------------- | -------------------------------------------- | ------------------------------------ |
-| will                   | decisiones espontáneas, predicciones sin evidencia | I think it will rain tomorrow. |
-| going to               | planes/intenciones ya decididas, predicciones con evidencia | Look at those clouds, it's going to rain. |
-| present continuous     | planes/citas ya organizadas (hora y lugar)   | I'm meeting her at 6pm.             |
+| Forma              | Se usa para                                                 | Ejemplo                                   |
+| ------------------ | ----------------------------------------------------------- | ----------------------------------------- |
+| will               | decisiones espontáneas, predicciones sin evidencia          | I think it will rain tomorrow.            |
+| going to           | planes/intenciones ya decididas, predicciones con evidencia | Look at those clouds, it's going to rain. |
+| present continuous | planes/citas ya organizadas (hora y lugar)                  | I'm meeting her at 6pm.                   |
 
 ## Will: decisión en el momento + predicción de opinión
 

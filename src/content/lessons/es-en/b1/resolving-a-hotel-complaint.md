@@ -7,18 +7,32 @@ order: 13
 unit: 3
 grammarTopic: 'Present perfect (action) vs. present passive (resulting state)'
 funFact: "'We've arranged an upgrade' tells you WHAT was done; 'the matter is settled' tells you HOW things stand now. Ask yourself: am I describing an action or a state? — that decides your tense."
+skills:
+  - en.b1.voice.perfect-vs-passive
+  - en.b1.vocabulary.complaints
 minutes: 8
 quiz:
   - question: "'We've arranged a free upgrade for you' describes..."
-    options: ['a permanent state', 'a completed action, with a link to the present result', 'a hypothesis']
+    options:
+      ['a permanent state', 'a completed action, with a link to the present result', 'a hypothesis']
     answerIndex: 1
-    explanation: "The present perfect (have/has + past participle) links a completed action to its relevance now — here, the act of arranging the upgrade."
+    explanation: 'The present perfect (have/has + past participle) links a completed action to its relevance now — here, the act of arranging the upgrade.'
   - question: "'The matter is settled' uses present simple passive instead of present perfect. Why?"
-    options: ["'settled' here describes the resulting STATE of the matter, not the action of settling it", "it's a mistake, it should be 'has settled'", "'settle' can never take the present perfect"]
+    options:
+      [
+        "'settled' here describes the resulting STATE of the matter, not the action of settling it",
+        "it's a mistake, it should be 'has settled'",
+        "'settle' can never take the present perfect",
+      ]
     answerIndex: 0
     explanation: "'is settled' (be + past participle) focuses on the current state — the matter, as it stands now — rather than on the act of settling it."
   - question: "What's the main difference in focus between 'we've arranged it' and 'it is arranged'?"
-    options: ['no difference, they mean exactly the same', 'the first highlights who acted; the second highlights the resulting state, regardless of who acted', 'the second is grammatically incorrect']
+    options:
+      [
+        'no difference, they mean exactly the same',
+        'the first highlights who acted; the second highlights the resulting state, regardless of who acted',
+        'the second is grammatically incorrect',
+      ]
     answerIndex: 1
     explanation: "Present perfect keeps the subject/action in focus; the passive 'is arranged' shifts the focus to the outcome itself."
 exercises:
@@ -59,13 +73,13 @@ ways of talking about "done" that look similar but don't mean the same thing.
 
 ## The 5 closing chunks
 
-| English                                                        | Español                                                |
-| --------------------------------------------------------------- | ---------------------------------------------------------- |
+| English                                                             | Español                                                                   |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | We've arranged a free upgrade to a suite for your remaining nights. | Le hemos organizado una mejora gratis a suite para las noches que quedan. |
-| That sounds like a fair solution, thank you.                     | Eso suena a una solución justa, gracias.                    |
-| Could you confirm that in writing, please?                       | ¿Podría confirmarlo por escrito, por favor?                 |
-| As far as I'm concerned, the matter is settled.                  | En lo que a mí respecta, el asunto queda resuelto.           |
-| I really appreciate your quick response.                         | Realmente aprecio su rápida respuesta.                       |
+| That sounds like a fair solution, thank you.                        | Eso suena a una solución justa, gracias.                                  |
+| Could you confirm that in writing, please?                          | ¿Podría confirmarlo por escrito, por favor?                               |
+| As far as I'm concerned, the matter is settled.                     | En lo que a mí respecta, el asunto queda resuelto.                        |
+| I really appreciate your quick response.                            | Realmente aprecio su rápida respuesta.                                    |
 
 ## The full conversation
 

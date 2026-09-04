@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulario: medio ambiente y sociedad'
 funFact: "Muchas palabras de este vocabulario son 'falsos amigos' parciales con el español: 'environment' se parece a 'entorno' más que a 'ambiente' en algunos contextos, y 'sustainable' (sostenible) es mucho más común en inglés cotidiano de lo que 'sostenible' lo es en español hablado."
+skills:
+  - en.b2.vocabulary.environment
 minutes: 8
 quiz:
   - question: "¿Cuál es la palabra correcta para 'cambio climático'?"

@@ -3307,6 +3307,943 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // INGLÉS · B1
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'en.b1.verb.present-perfect',
+    explanation:
+      'Present perfect para lo que sigue conectado con el ahora (I’ve lost my keys — siguen perdidas); past simple para lo terminado y fechado (I lost them yesterday). La pista está en el tiempo: si aparece yesterday, last week o in 2010, es past simple.',
+    variations: [
+      {
+        sentence: 'I ___ never been to Japan.',
+        answer: 'have',
+        translation: 'Nunca he estado en Japón.',
+      },
+      {
+        sentence: 'She ___ just finished her homework.',
+        answer: 'has',
+        translation: 'Acaba de terminar los deberes.',
+      },
+      {
+        sentence: 'I ___ my keys yesterday. (lose)',
+        answer: 'lost',
+        translation: 'Ayer perdí las llaves. (yesterday → past simple)',
+      },
+      {
+        sentence: 'We ___ lived here since 2010.',
+        answer: 'have',
+        translation: 'Vivimos aquí desde 2010.',
+      },
+      {
+        sentence: '___ you ever eaten sushi?',
+        answer: 'Have',
+        translation: '¿Has comido sushi alguna vez?',
+      },
+      {
+        sentence: 'He ___ to Paris last summer. (go)',
+        answer: 'went',
+        translation: 'Fue a París el verano pasado. (fechado → past simple)',
+      },
+      { sentence: 'They ___ already left.', answer: 'have', translation: 'Ya se han ido.' },
+      {
+        sentence: 'I ___ known her for ten years.',
+        answer: 'have',
+        translation: 'La conozco desde hace diez años.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b1.verb.past-continuous',
+    explanation:
+      'El past continuous pinta el fondo (was/were + -ing) y el past simple es lo que pasa encima e interrumpe: «I was cooking when she called».',
+    variations: [
+      {
+        sentence: 'I ___ dinner when she called. (cook)',
+        answer: 'was cooking',
+        translation: 'Estaba cocinando cuando llamó.',
+      },
+      {
+        sentence: 'While we ___, it started to rain. (walk)',
+        answer: 'were walking',
+        translation: 'Mientras caminábamos, empezó a llover.',
+      },
+      {
+        sentence: 'She ___ TV when the phone rang. (watch)',
+        answer: 'was watching',
+        translation: 'Veía la tele cuando sonó el teléfono.',
+      },
+      {
+        sentence: 'They ___ at 8 pm yesterday. (study)',
+        answer: 'were studying',
+        translation: 'Ayer a las 8 estaban estudiando.',
+      },
+      {
+        sentence: 'I was reading when the lights ___. (go out)',
+        answer: 'went out',
+        translation: 'Leía cuando se fue la luz. (lo breve va en past simple)',
+      },
+      {
+        sentence: 'What were you ___ at midnight? (do)',
+        answer: 'doing',
+        translation: '¿Qué hacías a medianoche?',
+      },
+      {
+        sentence: 'The sun ___ when we left. (shine)',
+        answer: 'was shining',
+        translation: 'Brillaba el sol cuando salimos.',
+      },
+      {
+        sentence: 'He ___ the door when I arrived. (open)',
+        answer: 'was opening',
+        translation: 'Estaba abriendo la puerta cuando llegué.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b1.verb.future-forms',
+    explanation:
+      'will para decisiones del momento y predicciones sin pruebas; going to para planes ya decididos y predicciones con pruebas delante; present continuous para citas ya cerradas con alguien.',
+    variations: [
+      {
+        sentence: 'Look at those clouds — it ___ rain.',
+        answer: 'is going to',
+        translation: 'Mira esas nubes: va a llover. (hay pruebas)',
+      },
+      {
+        sentence: "The phone's ringing. I ___ get it.",
+        answer: 'will',
+        translation: 'Suena el teléfono. Lo cojo yo. (decisión del momento)',
+      },
+      {
+        sentence: 'I ___ dinner with Ana tomorrow at 8. (have)',
+        answer: 'am having',
+        translation: 'Ceno con Ana mañana a las 8. (cita cerrada)',
+      },
+      {
+        sentence: 'We ___ buy a house next year.',
+        answer: 'are going to',
+        translation: 'Vamos a comprar una casa el año que viene.',
+      },
+      {
+        sentence: 'I think it ___ be a good year.',
+        answer: 'will',
+        translation: 'Creo que será un buen año.',
+      },
+      {
+        sentence: 'She ___ the doctor on Monday. (see)',
+        answer: 'is seeing',
+        translation: 'Tiene médico el lunes.',
+      },
+      {
+        sentence: "Don't worry, I ___ help you.",
+        answer: 'will',
+        translation: 'No te preocupes, te ayudo.',
+      },
+      {
+        sentence: 'They ___ get married in June.',
+        answer: 'are going to',
+        translation: 'Se van a casar en junio.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b1.verb.gerund-infinitive',
+    explanation:
+      'Unos verbos piden -ing (enjoy, avoid, finish, mind, suggest) y otros to + infinitivo (want, decide, hope, promise, need). No hay lógica: la lista se aprende. Lo que sí es regla: detrás de una preposición, siempre -ing.',
+    variations: [
+      {
+        sentence: 'I enjoy ___ books. (read)',
+        answer: 'reading',
+        translation: 'Me gusta leer libros.',
+      },
+      {
+        sentence: 'She wants ___ a doctor. (be)',
+        answer: 'to be',
+        translation: 'Quiere ser médica.',
+      },
+      {
+        sentence: 'We decided ___ early. (leave)',
+        answer: 'to leave',
+        translation: 'Decidimos irnos temprano.',
+      },
+      {
+        sentence: 'He avoided ___ the question. (answer)',
+        answer: 'answering',
+        translation: 'Evitó responder la pregunta.',
+      },
+      {
+        sentence: "I'm interested in ___ Spanish. (learn)",
+        answer: 'learning',
+        translation: 'Me interesa aprender español. (tras preposición, -ing)',
+      },
+      {
+        sentence: 'They finished ___ at six. (work)',
+        answer: 'working',
+        translation: 'Terminaron de trabajar a las seis.',
+      },
+      {
+        sentence: 'I promised ___ her. (call)',
+        answer: 'to call',
+        translation: 'Prometí llamarla.',
+      },
+      {
+        sentence: 'Do you mind ___ the window? (open)',
+        answer: 'opening',
+        translation: '¿Te importa abrir la ventana?',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b1.verb.used-to',
+    explanation:
+      'used to + infinitivo para hábitos del pasado que ya no existen. En negativa y pregunta pierde la -d: didn’t use to, did you use to. Y no confundir con be used to + -ing, que es «estar acostumbrado a».',
+    variations: [
+      {
+        sentence: 'I ___ play football every weekend.',
+        answer: 'used to',
+        translation: 'Antes jugaba al fútbol todos los fines de semana.',
+      },
+      {
+        sentence: 'She ___ live in London.',
+        answer: 'used to',
+        translation: 'Antes vivía en Londres.',
+      },
+      {
+        sentence: "I didn't ___ like coffee.",
+        answer: 'use to',
+        translation: 'Antes no me gustaba el café. (en negativa pierde la -d)',
+      },
+      { sentence: '___ you use to smoke?', answer: 'Did', translation: '¿Antes fumabas?' },
+      {
+        sentence: 'We ___ have a dog when I was a child.',
+        answer: 'used to',
+        translation: 'Teníamos un perro cuando yo era niño.',
+      },
+      { sentence: 'He ___ be very shy.', answer: 'used to', translation: 'Antes era muy tímido.' },
+      {
+        sentence: "I'm used to ___ up early. (get)",
+        answer: 'getting',
+        translation: 'Estoy acostumbrado a levantarme temprano. (be used to + -ing)',
+      },
+      {
+        sentence: "They didn't ___ travel much.",
+        answer: 'use to',
+        translation: 'Antes no viajaban mucho.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b1.clause.relative',
+    explanation:
+      'who para personas, which para cosas, that para las dos, whose para «cuyo» y where para lugares. Y una que ahorra palabras: el relativo se puede omitir cuando es el OBJETO — «the film (that) I saw».',
+    variations: [
+      {
+        sentence: 'The man ___ lives next door is a doctor.',
+        answer: 'who',
+        translation: 'El hombre que vive al lado es médico.',
+      },
+      {
+        sentence: 'The book ___ I bought is great.',
+        answer: 'that',
+        translation: 'El libro que compré es genial.',
+      },
+      {
+        sentence: "That's the house ___ we visited.",
+        answer: 'which',
+        translation: 'Esa es la casa que visitamos.',
+      },
+      {
+        sentence: 'The woman ___ car was stolen called the police.',
+        answer: 'whose',
+        translation: 'La mujer cuyo coche robaron llamó a la policía.',
+      },
+      {
+        sentence: 'I know a girl ___ speaks five languages.',
+        answer: 'who',
+        translation: 'Conozco a una chica que habla cinco idiomas.',
+      },
+      {
+        sentence: 'The film ___ won the Oscar was Spanish.',
+        answer: 'that',
+        translation: 'La película que ganó el Óscar era española.',
+      },
+      {
+        sentence: 'This is the restaurant ___ we met.',
+        answer: 'where',
+        translation: 'Este es el restaurante donde nos conocimos.',
+      },
+      {
+        sentence: 'The people ___ I work with are nice.',
+        answer: 'who',
+        translation: 'La gente con la que trabajo es maja.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b1.question.tags',
+    explanation:
+      'La coletilla va siempre al revés que la frase: afirmativa → tag negativa, y al revés. Repite el auxiliar de la frase; si no hay ninguno, usa do, does o did.',
+    variations: [
+      {
+        sentence: "You're Spanish, ___?",
+        answer: "aren't you",
+        translation: 'Eres español, ¿verdad?',
+      },
+      { sentence: "She isn't coming, ___?", answer: 'is she', translation: 'No viene, ¿verdad?' },
+      {
+        sentence: 'You like coffee, ___?',
+        answer: "don't you",
+        translation: 'Te gusta el café, ¿no?',
+      },
+      { sentence: "He didn't call, ___?", answer: 'did he', translation: 'No llamó, ¿verdad?' },
+      { sentence: 'They can swim, ___?', answer: "can't they", translation: 'Saben nadar, ¿no?' },
+      {
+        sentence: "It's cold today, ___?",
+        answer: "isn't it",
+        translation: 'Hace frío hoy, ¿verdad?',
+      },
+      { sentence: 'You went there, ___?', answer: "didn't you", translation: 'Fuiste allí, ¿no?' },
+      {
+        sentence: "We haven't met, ___?",
+        answer: 'have we',
+        translation: 'No nos conocemos, ¿verdad?',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b1.quantifier.few-little',
+    explanation:
+      'El artículo cambia el sentido entero: few y little son negativos («casi ninguno»), a few y a little son positivos («unos pocos, y alcanzan»). few va con contables, little con incontables.',
+    variations: [
+      {
+        sentence: 'I have ___ friends here, so I feel lonely.',
+        answer: 'few',
+        translation: 'Tengo pocos amigos aquí, me siento solo. (sin artículo → negativo)',
+      },
+      {
+        sentence: "I have ___ friends here, so I'm never bored.",
+        answer: 'a few',
+        translation: 'Tengo unos cuantos amigos aquí, nunca me aburro.',
+      },
+      {
+        sentence: "There's ___ milk left — enough for coffee.",
+        answer: 'a little',
+        translation: 'Queda un poco de leche, suficiente para el café.',
+      },
+      { sentence: "There's ___ hope.", answer: 'little', translation: 'Hay pocas esperanzas.' },
+      {
+        sentence: "She speaks ___ words of English, we can't talk.",
+        answer: 'few',
+        translation: 'Dice pocas palabras en inglés, no podemos hablar.',
+      },
+      {
+        sentence: 'Give me ___ time, please.',
+        answer: 'a little',
+        translation: 'Dame un poco de tiempo, por favor.',
+      },
+      {
+        sentence: '___ people came to the party, it was empty.',
+        answer: 'Few',
+        translation: 'Vino poca gente a la fiesta, estaba vacía.',
+      },
+      { sentence: 'I need ___ minutes.', answer: 'a few', translation: 'Necesito unos minutos.' },
+    ],
+  },
+  {
+    skillId: 'en.b1.intensifier.so-such',
+    explanation:
+      'so va con adjetivo o adverbio solo (so nice); such va cuando detrás hay un sustantivo (such a nice day). La regla corta: si hay sustantivo, such.',
+    variations: [
+      {
+        sentence: 'It was ___ a good film!',
+        answer: 'such',
+        translation: '¡Fue una película tan buena!',
+      },
+      { sentence: 'She is ___ kind.', answer: 'so', translation: 'Es tan amable.' },
+      {
+        sentence: 'They were ___ nice people.',
+        answer: 'such',
+        translation: 'Eran gente tan agradable.',
+      },
+      {
+        sentence: 'The exam was ___ difficult.',
+        answer: 'so',
+        translation: 'El examen fue tan difícil.',
+      },
+      {
+        sentence: "It's ___ a beautiful day.",
+        answer: 'such',
+        translation: 'Hace un día tan bonito.',
+      },
+      { sentence: 'He drives ___ fast.', answer: 'so', translation: 'Conduce tan rápido.' },
+      { sentence: 'We had ___ a great time.', answer: 'such', translation: 'Lo pasamos tan bien.' },
+      { sentence: "I'm ___ tired.", answer: 'so', translation: 'Estoy tan cansado.' },
+    ],
+  },
+  {
+    skillId: 'en.b1.conditional.second',
+    explanation:
+      'if + past simple, would + infinitivo. Habla de lo irreal o improbable. Con to be, el registro cuidado usa were para todas las personas: «If I were you».',
+    variations: [
+      {
+        sentence: 'If I ___ rich, I would travel. (be)',
+        answer: 'were',
+        translation: 'Si fuera rico, viajaría.',
+      },
+      {
+        sentence: 'If I had time, I ___ help you.',
+        answer: 'would',
+        translation: 'Si tuviera tiempo, te ayudaría.',
+      },
+      {
+        sentence: 'If she ___ harder, she would pass. (study)',
+        answer: 'studied',
+        translation: 'Si estudiara más, aprobaría.',
+      },
+      {
+        sentence: 'What would you do if you ___ me? (be)',
+        answer: 'were',
+        translation: '¿Qué harías en mi lugar?',
+      },
+      {
+        sentence: 'If we ___ a car, we would drive. (have)',
+        answer: 'had',
+        translation: 'Si tuviéramos coche, iríamos conduciendo.',
+      },
+      {
+        sentence: 'I would call him if I ___ his number. (know)',
+        answer: 'knew',
+        translation: 'Lo llamaría si supiera su número.',
+      },
+      {
+        sentence: 'If it ___ raining, we would go out. (not be)',
+        answer: "weren't",
+        translation: 'Si no estuviera lloviendo, saldríamos.',
+      },
+      {
+        sentence: 'They would come if you ___ them. (invite)',
+        answer: 'invited',
+        translation: 'Vendrían si los invitaras.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b1.modal.would-polite',
+    explanation:
+      'would suaviza cualquier petición o queja: «I would like» en vez de «I want», «Would you mind…?» en vez de un imperativo. Es la diferencia entre sonar exigente y sonar razonable.',
+    variations: [
+      {
+        sentence: 'I ___ like to speak to the manager.',
+        answer: 'would',
+        translation: 'Querría hablar con el encargado.',
+      },
+      {
+        sentence: '___ you mind waiting a moment?',
+        answer: 'Would',
+        translation: '¿Le importaría esperar un momento?',
+      },
+      {
+        sentence: 'I ___ appreciate a refund.',
+        answer: 'would',
+        translation: 'Agradecería un reembolso.',
+      },
+      {
+        sentence: '___ it be possible to change rooms?',
+        answer: 'Would',
+        translation: '¿Sería posible cambiar de habitación?',
+      },
+      {
+        sentence: 'We ___ prefer a quieter table.',
+        answer: 'would',
+        translation: 'Preferiríamos una mesa más tranquila.',
+      },
+      {
+        sentence: 'I ___ expect a better service.',
+        answer: 'would',
+        translation: 'Esperaría un mejor servicio.',
+      },
+      {
+        sentence: '___ you be able to help me?',
+        answer: 'Would',
+        translation: '¿Podría ayudarme?',
+      },
+      {
+        sentence: 'That ___ be very kind of you.',
+        answer: 'would',
+        translation: 'Sería muy amable de su parte.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b1.voice.perfect-vs-passive',
+    explanation:
+      'have + participio cuenta la ACCIÓN («we have fixed the problem»); be + participio describe el ESTADO que quedó («the problem is fixed»). La forma se parece; lo que cambia es de qué estás hablando.',
+    variations: [
+      {
+        sentence: 'We ___ fixed the problem. (la acción)',
+        answer: 'have',
+        translation: 'Hemos arreglado el problema.',
+      },
+      {
+        sentence: 'The problem ___ fixed. (el estado)',
+        answer: 'is',
+        translation: 'El problema está arreglado.',
+      },
+      {
+        sentence: 'They ___ cleaned the room. (la acción)',
+        answer: 'have',
+        translation: 'Han limpiado la habitación.',
+      },
+      {
+        sentence: 'The room ___ clean now. (el estado)',
+        answer: 'is',
+        translation: 'La habitación está limpia ahora.',
+      },
+      {
+        sentence: 'I ___ booked a table. (la acción)',
+        answer: 'have',
+        translation: 'He reservado mesa.',
+      },
+      {
+        sentence: 'The table ___ booked. (el estado)',
+        answer: 'is',
+        translation: 'La mesa está reservada.',
+      },
+      {
+        sentence: 'She ___ closed the account. (la acción)',
+        answer: 'has',
+        translation: 'Ha cerrado la cuenta.',
+      },
+      {
+        sentence: 'The account ___ closed. (el estado)',
+        answer: 'is',
+        translation: 'La cuenta está cerrada.',
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // INGLÉS · B2
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'en.b2.voice.passive',
+    explanation:
+      'be + participio, y el tiempo lo lleva be: is made, was made, has been made, will be made. Quien hace la acción, si importa, va detrás con by.',
+    variations: [
+      {
+        sentence: 'The house ___ built in 1990.',
+        answer: 'was',
+        translation: 'La casa se construyó en 1990.',
+      },
+      {
+        sentence: 'These cars ___ made in Japan.',
+        answer: 'are',
+        translation: 'Estos coches se fabrican en Japón.',
+      },
+      {
+        sentence: 'The letter has ___ sent.',
+        answer: 'been',
+        translation: 'La carta ha sido enviada.',
+      },
+      {
+        sentence: 'The work will ___ finished tomorrow.',
+        answer: 'be',
+        translation: 'El trabajo estará terminado mañana.',
+      },
+      { sentence: 'English ___ spoken here.', answer: 'is', translation: 'Aquí se habla inglés.' },
+      {
+        sentence: 'The windows ___ cleaned last week.',
+        answer: 'were',
+        translation: 'Las ventanas se limpiaron la semana pasada.',
+      },
+      {
+        sentence: 'This song ___ written by Lennon.',
+        answer: 'was',
+        translation: 'Esta canción la escribió Lennon.',
+      },
+      {
+        sentence: 'The report is ___ reviewed right now.',
+        answer: 'being',
+        translation: 'El informe se está revisando ahora mismo.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b2.conditional.first',
+    explanation:
+      'if + presente, will + infinitivo. Habla de lo probable. El fallo más repetido es meter will en la parte del if: ahí nunca va.',
+    variations: [
+      {
+        sentence: "If it ___ tomorrow, we'll stay home. (rain)",
+        answer: 'rains',
+        translation: 'Si llueve mañana, nos quedamos en casa.',
+      },
+      {
+        sentence: 'If you study, you ___ pass.',
+        answer: 'will',
+        translation: 'Si estudias, aprobarás.',
+      },
+      {
+        sentence: "I'll call you if I ___ time. (have)",
+        answer: 'have',
+        translation: 'Te llamo si tengo tiempo.',
+      },
+      {
+        sentence: "If she ___ late, we'll start without her. (be)",
+        answer: 'is',
+        translation: 'Si llega tarde, empezamos sin ella.',
+      },
+      {
+        sentence: "We won't go if it ___ cold. (be)",
+        answer: 'is',
+        translation: 'No iremos si hace frío.',
+      },
+      {
+        sentence: "If they ___ early, they'll get tickets. (arrive)",
+        answer: 'arrive',
+        translation: 'Si llegan temprano, conseguirán entradas.',
+      },
+      {
+        sentence: "You'll be tired if you ___ to bed late. (go)",
+        answer: 'go',
+        translation: 'Estarás cansado si te acuestas tarde.',
+      },
+      {
+        sentence: "If I ___ him, I'll tell him. (see)",
+        answer: 'see',
+        translation: 'Si lo veo, se lo digo.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b2.conditional.third',
+    explanation:
+      'if + had + participio, would have + participio. Es el condicional del arrepentimiento: habla del pasado que ya no se puede cambiar.',
+    variations: [
+      {
+        sentence: 'If I had known, I ___ have come.',
+        answer: 'would',
+        translation: 'Si lo hubiera sabido, habría venido.',
+      },
+      {
+        sentence: 'If she ___ studied, she would have passed.',
+        answer: 'had',
+        translation: 'Si hubiera estudiado, habría aprobado.',
+      },
+      {
+        sentence: 'We would have won if we ___ played better.',
+        answer: 'had',
+        translation: 'Habríamos ganado si hubiéramos jugado mejor.',
+      },
+      {
+        sentence: 'If they had left earlier, they ___ have missed the train.',
+        answer: "wouldn't",
+        translation: 'Si hubieran salido antes, no habrían perdido el tren.',
+      },
+      {
+        sentence: 'I would have called if I ___ had your number.',
+        answer: 'had',
+        translation: 'Habría llamado si hubiera tenido tu número.',
+      },
+      {
+        sentence: "If it hadn't rained, we ___ have gone out.",
+        answer: 'would',
+        translation: 'Si no hubiera llovido, habríamos salido.',
+      },
+      {
+        sentence: 'She ___ have got the job if she had applied.',
+        answer: 'would',
+        translation: 'Habría conseguido el trabajo si hubiera echado la solicitud.',
+      },
+      {
+        sentence: 'If you had asked, I ___ have helped.',
+        answer: 'would',
+        translation: 'Si me lo hubieras pedido, te habría ayudado.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b2.conditional.mixed',
+    explanation:
+      'Mezcla los tiempos porque la causa y la consecuencia están en momentos distintos. Pasado → presente: «If I had studied, I would be a doctor now». Presente → pasado: «If I were braver, I would have said something».',
+    variations: [
+      {
+        sentence: 'If I had studied medicine, I ___ be a doctor now.',
+        answer: 'would',
+        translation: 'Si hubiera estudiado medicina, ahora sería médico.',
+      },
+      {
+        sentence: "If she hadn't missed the train, she ___ be here.",
+        answer: 'would',
+        translation: 'Si no hubiera perdido el tren, estaría aquí.',
+      },
+      {
+        sentence: "If I ___ more organised, I wouldn't have lost it. (be)",
+        answer: 'were',
+        translation: 'Si fuera más ordenado, no lo habría perdido.',
+      },
+      {
+        sentence: "If he weren't so shy, he ___ have asked her out.",
+        answer: 'would',
+        translation: 'Si no fuera tan tímido, la habría invitado a salir.',
+      },
+      {
+        sentence: 'If we had saved money, we ___ be worried now.',
+        answer: "wouldn't",
+        translation: 'Si hubiéramos ahorrado, ahora no estaríamos preocupados.',
+      },
+      {
+        sentence: 'If I ___ afraid of flying, I would have visited you. (not be)',
+        answer: "weren't",
+        translation: 'Si no tuviera miedo a volar, te habría visitado.',
+      },
+      {
+        sentence: 'If they had left earlier, they ___ be here already.',
+        answer: 'would',
+        translation: 'Si hubieran salido antes, ya estarían aquí.',
+      },
+      {
+        sentence: 'If you were more careful, you ___ have broken it.',
+        answer: "wouldn't",
+        translation: 'Si fueras más cuidadoso, no lo habrías roto.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b2.verb.causative',
+    explanation:
+      'have o get + objeto + participio significa que lo hizo otro por vos: «I had my car repaired» no dice que lo arreglaras vos. El participio va al final, detrás del objeto.',
+    variations: [
+      {
+        sentence: 'I had my car ___. (repair)',
+        answer: 'repaired',
+        translation: 'Me arreglaron el coche.',
+      },
+      {
+        sentence: 'She got her hair ___. (cut)',
+        answer: 'cut',
+        translation: 'Se cortó el pelo (se lo cortaron).',
+      },
+      {
+        sentence: "We're having the kitchen ___. (paint)",
+        answer: 'painted',
+        translation: 'Nos están pintando la cocina.',
+      },
+      {
+        sentence: 'He had his wallet ___. (steal)',
+        answer: 'stolen',
+        translation: 'Le robaron la cartera.',
+      },
+      {
+        sentence: 'I need to get my eyes ___. (test)',
+        answer: 'tested',
+        translation: 'Necesito que me revisen la vista.',
+      },
+      {
+        sentence: 'They had the documents ___. (translate)',
+        answer: 'translated',
+        translation: 'Les tradujeron los documentos.',
+      },
+      {
+        sentence: 'We got the photos ___. (print)',
+        answer: 'printed',
+        translation: 'Nos revelaron las fotos.',
+      },
+      {
+        sentence: "She's having a dress ___. (make)",
+        answer: 'made',
+        translation: 'Le están haciendo un vestido.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b2.modal.deduction-present',
+    explanation:
+      'must para lo que das por seguro, might o could para lo posible, can’t para lo que descartás. Ojo con la negativa: lo contrario de «must be» aquí no es «mustn’t be», es «can’t be».',
+    variations: [
+      {
+        sentence: 'He ___ be tired, he worked all night. (casi seguro)',
+        answer: 'must',
+        translation: 'Debe de estar cansado, trabajó toda la noche.',
+      },
+      {
+        sentence: "She ___ be at home, her car isn't here. (descartado)",
+        answer: "can't",
+        translation: 'No puede estar en casa, su coche no está.',
+      },
+      {
+        sentence: "It ___ rain later, I'm not sure. (posible)",
+        answer: 'might',
+        translation: 'Puede que llueva luego, no estoy seguro.',
+      },
+      {
+        sentence: 'They ___ be rich, look at that house. (casi seguro)',
+        answer: 'must',
+        translation: 'Deben de ser ricos, mira esa casa.',
+      },
+      {
+        sentence: "That ___ be true, it's impossible. (descartado)",
+        answer: "can't",
+        translation: 'Eso no puede ser verdad, es imposible.',
+      },
+      {
+        sentence: 'He ___ be in the garden. (posible)',
+        answer: 'could',
+        translation: 'Podría estar en el jardín.',
+      },
+      {
+        sentence: 'You ___ be hungry after that walk. (casi seguro)',
+        answer: 'must',
+        translation: 'Debes de tener hambre después de esa caminata.',
+      },
+      {
+        sentence: 'She ___ know the answer, but I doubt it. (posible)',
+        answer: 'might',
+        translation: 'Puede que sepa la respuesta, pero lo dudo.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b2.reported.questions',
+    explanation:
+      'La pregunta reportada pierde la inversión y el auxiliar: vuelve al orden de una frase normal. «Where do you live?» → «She asked where I lived». Y no lleva signo de interrogación.',
+    variations: [
+      {
+        kind: 'order',
+        sentence: 'She asked where I lived',
+        answer: 'She asked where I lived',
+        translation: 'Me preguntó dónde vivía.',
+      },
+      {
+        kind: 'order',
+        sentence: 'He wanted to know if I was ready',
+        answer: 'He wanted to know if I was ready',
+        translation: 'Quería saber si estaba listo.',
+      },
+      {
+        kind: 'order',
+        sentence: 'They asked what time the film started',
+        answer: 'They asked what time the film started',
+        translation: 'Preguntaron a qué hora empezaba la película.',
+      },
+      {
+        kind: 'order',
+        sentence: 'I asked her why she was late',
+        answer: 'I asked her why she was late',
+        translation: 'Le pregunté por qué llegaba tarde.',
+      },
+      {
+        kind: 'order',
+        sentence: 'She asked if I had seen the news',
+        answer: 'She asked if I had seen the news',
+        translation: 'Me preguntó si había visto las noticias.',
+      },
+      {
+        kind: 'order',
+        sentence: 'He asked me where I had been',
+        answer: 'He asked me where I had been',
+        translation: 'Me preguntó dónde había estado.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b2.verb.wish',
+    explanation:
+      'wish + past simple para el presente que te gustaría distinto; wish + had + participio para el pasado que lamentás; wish + would para lo que te molesta de lo que hacen otros.',
+    variations: [
+      {
+        sentence: 'I wish I ___ more time. (have)',
+        answer: 'had',
+        translation: 'Ojalá tuviera más tiempo.',
+      },
+      {
+        sentence: 'I wish I ___ studied harder. (have)',
+        answer: 'had',
+        translation: 'Ojalá hubiera estudiado más.',
+      },
+      {
+        sentence: 'I wish it ___ raining. (not be)',
+        answer: "weren't",
+        translation: 'Ojalá no estuviera lloviendo.',
+      },
+      {
+        sentence: 'She wishes she ___ told him. (have)',
+        answer: 'had',
+        translation: 'Ojalá se lo hubiera dicho.',
+      },
+      {
+        sentence: 'I wish you ___ stop shouting.',
+        answer: 'would',
+        translation: 'Ojalá dejaras de gritar.',
+      },
+      {
+        sentence: 'If only I ___ speak French. (can)',
+        answer: 'could',
+        translation: 'Ojalá supiera hablar francés.',
+      },
+      {
+        sentence: 'I wish I ___ taller. (be)',
+        answer: 'were',
+        translation: 'Ojalá fuera más alto.',
+      },
+      {
+        sentence: 'He wishes he ___ bought the tickets. (have)',
+        answer: 'had',
+        translation: 'Ojalá hubiera comprado las entradas.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.b2.connector.discourse',
+    explanation:
+      'despite e in spite of van seguidos de sustantivo o de -ing, nunca de una frase con verbo conjugado — para eso está although. however y moreover conectan dos frases y llevan coma detrás.',
+    variations: [
+      {
+        sentence: '___ the rain, we went out.',
+        answer: 'Despite',
+        translation: 'A pesar de la lluvia, salimos. (+ sustantivo)',
+      },
+      {
+        sentence: '___ it was raining, we went out.',
+        answer: 'Although',
+        translation: 'Aunque llovía, salimos. (+ frase con verbo)',
+      },
+      {
+        sentence: 'It was expensive. ___, it was worth it.',
+        answer: 'However',
+        translation: 'Era caro. Sin embargo, mereció la pena.',
+      },
+      {
+        sentence: 'The plan is cheap. ___, it is fast.',
+        answer: 'Moreover',
+        translation: 'El plan es barato. Además, es rápido.',
+      },
+      {
+        sentence: '___ being tired, she finished.',
+        answer: 'Despite',
+        translation: 'A pesar de estar cansada, terminó. (+ -ing)',
+      },
+      {
+        sentence: 'He studied hard. ___, he failed.',
+        answer: 'However',
+        translation: 'Estudió mucho. Sin embargo, suspendió.',
+      },
+      {
+        sentence: '___ the traffic, we arrived on time.',
+        answer: 'Despite',
+        translation: 'A pesar del tráfico, llegamos a tiempo.',
+      },
+      {
+        sentence: "___ he tried hard, he didn't win.",
+        answer: 'Although',
+        translation: 'Aunque se esforzó, no ganó.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

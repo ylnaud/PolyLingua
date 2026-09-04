@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Oraciones de relativo (who/which/that/whose)'
 funFact: "'That' es el comodín universal: reemplaza tanto a 'who' (personas) como a 'which' (cosas) en oraciones de relativo esenciales — por eso es el que más usan los hablantes nativos en conversación informal, aunque 'who' suene un poco más formal para personas."
+skills:
+  - en.b1.clause.relative
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta: 'The man ___ lives next door is a doctor' (el hombre que vive al lado es doctor)?"

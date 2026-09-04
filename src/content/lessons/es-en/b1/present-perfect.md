@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Present Perfect (have/has + participio) vs. Past Simple'
 funFact: "Hazte una sola pregunta antes de elegir el tiempo verbal: '¿Menciono O me importa EXACTAMENTE cuándo pasó?' Si sí, usa Past Simple. Si el 'cuándo' no importa y solo importa el resultado presente, usa Present Perfect. Esa pregunta resuelve el 90% de los casos."
+skills:
+  - en.b1.verb.present-perfect
 minutes: 10
 quiz:
   - question: "¿Cuál es correcta: 'I ___ to Paris last year' (fui a París el año pasado)?"

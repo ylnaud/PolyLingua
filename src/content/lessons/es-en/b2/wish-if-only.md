@@ -1,12 +1,14 @@
 ---
 language: en
 level: b2
-title: "Wish / If only: cómo expresar deseos y arrepentimiento"
+title: 'Wish / If only: cómo expresar deseos y arrepentimiento'
 description: 'Aprende a usar wish e if only en inglés para expresar deseos sobre el presente y arrepentimiento sobre el pasado, con ejemplos y ejercicios de nivel B2.'
 order: 9
 unit: 3
 grammarTopic: 'Wish / If only (deseos y arrepentimiento)'
 funFact: "Piensa en 'wish' como una máquina del tiempo con dos botones: pasado simple = 'cambiar algo de AHORA' (I wish I had more time), pasado perfecto = 'cambiar algo de ANTES' (I wish I had studied). El tiempo verbal te dice a qué momento viaja el deseo."
+skills:
+  - en.b2.verb.wish
 minutes: 9
 quiz:
   - question: "¿Cómo se dice 'Ojalá tuviera más tiempo' (deseo sobre el presente)?"
@@ -22,14 +24,19 @@ quiz:
       [
         'Ninguna: If only es un sinónimo más enfático de I wish',
         "'If only' solo funciona con el pasado perfecto",
-        "'I wish' es informal y 'If only' es formal"
+        "'I wish' es informal y 'If only' es formal",
       ]
     answerIndex: 0
     explanation: "'If only' expresa exactamente lo mismo que 'I wish' pero con más énfasis emocional: If only I had more time! suena más intenso que I wish I had more time."
   - question: "¿Cuál es la traducción correcta de 'I wish it wasn't raining'?"
-    options: ['Ojalá no hubiera llovido', 'Ojalá no estuviera lloviendo (ahora)', 'Deseo que no llueva mañana']
+    options:
+      [
+        'Ojalá no hubiera llovido',
+        'Ojalá no estuviera lloviendo (ahora)',
+        'Deseo que no llueva mañana',
+      ]
     answerIndex: 1
-    explanation: "Pasado simple/continuo tras wish = deseo sobre el PRESENTE: ojalá no estuviera lloviendo ahora mismo."
+    explanation: 'Pasado simple/continuo tras wish = deseo sobre el PRESENTE: ojalá no estuviera lloviendo ahora mismo.'
 exercises:
   - type: 'fill-blank'
     sentence: 'I wish I ___ more time (right now).'
@@ -57,7 +64,8 @@ exercises:
   - type: 'write'
     prompt: "Escribe con 'I wish': tienes un deseo sobre AHORA — 'Ojalá no estuviera lloviendo.'"
     answer: "I wish it wasn't raining."
-    accepted: ["I wish it wasn't raining", 'I wish it were not raining.', 'I wish it were not raining']
+    accepted:
+      ["I wish it wasn't raining", 'I wish it were not raining.', 'I wish it were not raining']
     hint: 'Deseo presente = wish + pasado simple/continuo.'
     placeholder: 'I wish I had more time.'
   - type: 'order'
@@ -102,10 +110,10 @@ I wish I hadn't said that.     (lo dije, y me arrepiento)
 I wish I had listened to her.  (no la escuché, y me arrepiento)
 ```
 
-| Momento del deseo   | Estructura                | Ejemplo                       |
-| -------------------- | -------------------------- | ------------------------------- |
-| Presente (ahora)     | wish + pasado simple       | I wish I had more time.         |
-| Pasado (ya ocurrió)  | wish + pasado perfecto     | I wish I had studied.           |
+| Momento del deseo   | Estructura             | Ejemplo                 |
+| ------------------- | ---------------------- | ----------------------- |
+| Presente (ahora)    | wish + pasado simple   | I wish I had more time. |
+| Pasado (ya ocurrió) | wish + pasado perfecto | I wish I had studied.   |
 
 ## If only: el mismo significado, más énfasis
 

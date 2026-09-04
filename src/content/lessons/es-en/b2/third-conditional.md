@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Third Conditional'
 funFact: "Mientras el First Conditional habla de un futuro real y el Second de un presente imaginario, el Third Conditional viaja a un PASADO que ya no se puede cambiar — es el condicional del arrepentimiento y las reflexiones tipo '¿qué hubiera pasado si...?'"
+skills:
+  - en.b2.conditional.third
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta: 'If I ___ (know), I would have called you' (si lo hubiera sabido, te habría llamado)?"

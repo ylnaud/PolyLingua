@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Condicionales mixtos'
 funFact: "Los condicionales mixtos existen porque la vida real no siempre separa limpiamente pasado y presente: 'If I had studied medicine, I would be a doctor now' mezcla una condición del PASADO (no estudié medicina) con un resultado en el PRESENTE (no soy doctor ahora). Es el condicional más realista de todos, porque así es como realmente pensamos."
+skills:
+  - en.b2.conditional.mixed
 minutes: 9
 quiz:
   - question: "'If I had studied medicine, I ___ a doctor now.' ¿Qué forma va?"

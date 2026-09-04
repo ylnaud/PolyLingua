@@ -7,6 +7,9 @@ order: 2
 unit: 2
 grammarTopic: 'Simple Present'
 funFact: "Imagina que 'he/she/it' es un imán que atrae una 's' pegajosa al final de cada verbo. Ningún otro pronombre la atrae. Memoriza solo eso y el Simple Present deja de tener sorpresas."
+skills:
+  - en.a1.verb.simple-present
+  - en.a1.verb.third-person-s
 minutes: 6
 quiz:
   - question: "¿Cuál es la forma correcta para 'ella trabaja' (she / work)?"

@@ -466,12 +466,16 @@ describe('plantillas de refuerzo', () => {
   // que no es lo mismo que rendirse.
   const MINIMO_VARIACIONES = 6;
 
-  it('cada habilidad de gramática y orden de alemán tiene plantilla', () => {
+  it('toda habilidad de gramática y orden tiene plantilla, en cualquier idioma', () => {
     // Sin plantilla, DrillTutor no abre bucle: la habilidad alimenta el modelo
     // pero fallar en ella no trae más ejercicios. Este test es lo que impide
     // que se etiquete un nivel nuevo y el refuerzo se quede mudo ahí.
+    //
+    // El filtro era `lang === 'de'` mientras el alemán era el único idioma
+    // etiquetado. Al entrar el inglés se quitó a propósito: si el candado solo
+    // vigila un idioma, el siguiente entra sin material y nadie se entera.
     const necesitan = SKILLS.filter(
-      (s) => s.lang === 'de' && (s.category === 'grammar' || s.category === 'word_order'),
+      (s) => s.category === 'grammar' || s.category === 'word_order',
     ).map((s) => s.id);
     const sinPlantilla = necesitan.filter((id) => !repairTemplateFor(id));
     expect(sinPlantilla, `habilidades sin refuerzo:\n${sinPlantilla.join('\n')}`).toEqual([]);
@@ -492,11 +496,15 @@ describe('plantillas de refuerzo', () => {
     expect(fantasma).toEqual([]);
   });
 
-  it('las variaciones de hueco traen ___ y las de orden no', () => {
+  it('las variaciones de hueco traen UN ___ y las de orden ninguno', () => {
+    // Exactamente uno, no «al menos uno»: buildItemFieldset parte la frase por
+    // el primer ___ y el segundo se quedaría escrito en pantalla como texto.
+    // Se coló una así al escribir las de inglés y el test no la vio.
     for (const t of REPAIR_TEMPLATES) {
       for (const v of t.variations) {
-        if (v.kind === 'order') expect(v.sentence, t.skillId).not.toContain('___');
-        else expect(v.sentence, t.skillId).toContain('___');
+        const huecos = v.sentence.split('___').length - 1;
+        if (v.kind === 'order') expect(huecos, `${t.skillId}: ${v.sentence}`).toBe(0);
+        else expect(huecos, `${t.skillId}: ${v.sentence}`).toBe(1);
       }
     }
   });

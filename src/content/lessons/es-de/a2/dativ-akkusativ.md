@@ -2,129 +2,103 @@
 language: de
 level: a2
 title: 'Dativ vs. Akkusativ: quién recibe qué'
-description: 'El reto más importante del alemán intermedio: saber cuándo y cómo cambia el artículo según el papel de la palabra en la frase.'
+description: 'Las dos preguntas que deciden el caso en cada frase alemana: ¿QUÉ doy? y ¿A QUIÉN se lo doy? El punto de partida antes de ver cada caso por separado.'
 order: 6
 unit: 2
 grammarTopic: 'Casos: Dativ y Akkusativ'
-funFact: "Preguntate siempre: ¿QUÉ doy? → eso es lo que cambia a «den/einen» (Akkusativ). ¿A QUIÉN se lo doy? → eso cambia a «dem/einem» (Dativ). 'Ich gebe dem Mann den Ball' = le doy (¿a quién? al hombre → dem) la pelota (¿qué? → den). Una vez que separás estas dos preguntas, elegir la forma correcta se vuelve mecánico."
+funFact: "Preguntate siempre: ¿QUÉ doy? → eso cambia a «den/einen» (Akkusativ). ¿A QUIÉN se lo doy? → eso cambia a «dem/einem» (Dativ). 'Ich gebe dem Mann den Ball' = le doy (¿a quién? al hombre → dem) la pelota (¿qué? → den). Una vez que separás estas dos preguntas, elegir la forma correcta se vuelve mecánico."
 skills:
   - de.a2.case.akkusativ
   - de.a2.case.dativ
-minutes: 10
+minutes: 6
 quiz:
   - question: "En 'Ich gebe dem Kind das Buch' (le doy el libro al niño), ¿qué caso es 'dem Kind'?"
     options: ['Akkusativ', 'Dativ', 'Nominativ']
     answerIndex: 1
     explanation: "'dem Kind' responde a '¿a quién le doy?': al niño. Cuando la palabra es la persona que recibe algo, el artículo cambia a «dem» (Dativ)."
-  - question: "¿Cuál es el artículo Akkusativ masculino de 'der Ball'?"
-    options: ['der Ball', 'den Ball', 'dem Ball']
+  - question: '¿Cuál de los dos casos cambia SOLO el masculino?'
+    options:
+      - 'El Akkusativ: der → den, y el resto se queda igual'
+      - 'El Dativ: cambian los cuatro'
+      - 'Los dos cambian lo mismo'
+    answerIndex: 0
+    explanation: 'Es la diferencia práctica más útil entre los dos. En Akkusativ solo se mueve el masculino; en Dativ cambian masculino, femenino, neutro y plural.'
+  - question: "En 'Ich kaufe dem Mann einen Kaffee', ¿qué es el Akkusativ?"
+    options: ['dem Mann', 'einen Kaffee', 'los dos']
     answerIndex: 1
-    explanation: 'Solo el masculino cambia en Akkusativ: der → den. Femenino, neutro y plural se quedan igual que en Nominativ.'
-  - question: "¿Cuál es el artículo Dativ masculino/neutro de 'der/das Mann/Kind'?"
-    options: ['den', 'dem', 'der']
-    answerIndex: 1
-    explanation: "Masculino y neutro comparten la misma forma en Dativ: dem. Femenino usa 'der', y plural usa 'den' (+ -n al sustantivo)."
+    explanation: '¿QUÉ compro? Un café → einen Kaffee es el Akkusativ. ¿A QUIÉN? Al hombre → dem Mann es el Dativ. Una frase, los dos casos.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Ich gebe ___ Kind das Buch.'
     answer: 'dem'
-    accepted: ['dem']
-    hint: '¿A quién le doy? Al niño → dem (masculino/neutro).'
+    accepted: ['Dem']
+    hint: '¿A quién le doy? Al niño → Dativ.'
     translation: 'Le doy el libro al niño.'
-    placeholder: 'der / die / das'
+    placeholder: 'den / dem'
   - type: 'fill-blank'
     sentence: 'Ich sehe ___ Ball.'
     answer: 'den'
-    accepted: ['den']
-    hint: '¿Qué veo? La pelota (masculino) → der cambia a den.'
+    accepted: ['Den']
+    hint: '¿Qué veo? La pelota → Akkusativ, y el masculino cambia.'
     translation: 'Veo la pelota.'
-    placeholder: 'der / die / das'
+    placeholder: 'den / dem'
   - type: 'match'
-    instructions: 'Empareja cada situación con el artículo correcto.'
+    instructions: 'Emparejá cada pregunta con el caso que la responde.'
     pairs:
-      - left: 'Lo que ves/comprás (masculino)'
-        right: 'den'
-      - left: 'A quién le das algo (masculino/neutro)'
-        right: 'dem'
-      - left: 'A quién le das algo (femenino)'
-        right: 'der'
-      - left: 'Forma normal (neutro)'
-        right: 'das'
-      - left: 'A quién le das algo (plural)'
-        right: 'den (+n)'
-  - type: 'write'
-    prompt: "Escribe el pronombre correcto: 'Ich helfe ___.' (a ti — helfen siempre va con dem/dir)"
-    answer: 'dir'
-    accepted: ['Dir']
-    hint: "'helfen' (ayudar) siempre va con la forma «a quién» (Dativ): dir, mir, ihm."
-    placeholder: 'mir / ihm / uns'
+      - left: '¿QUÉ veo, tengo o compro?'
+        right: 'Akkusativ'
+      - left: '¿A QUIÉN le doy o le digo algo?'
+        right: 'Dativ'
+      - left: '¿QUIÉN hace la acción?'
+        right: 'Nominativ'
   - type: 'order'
     sentence: 'Ich gebe dem Kind das Buch'
     translation: 'Le doy el libro al niño.'
 vocabulary:
   - term: 'geben'
     translation: 'dar'
-  - term: 'helfen'
-    translation: 'ayudar'
-  - term: 'danken'
-    translation: 'agradecer'
-  - term: 'gefallen'
-    translation: 'gustar'
   - term: 'das Buch'
     translation: 'el libro'
   - term: 'das Kind'
     translation: 'el niño / la niña'
 ---
 
-En español, "yo veo a Juan" y "Juan me ve a mí" usan las mismas palabras pero en
-distinto orden. En alemán pasa algo parecido, pero además **el artículo cambia de forma**
-para indicar quién hace qué. A esas formas distintas se les llama _casos_ — y son la
-razón por la que `der` a veces aparece como `den` o `dem`.
-
-En las lecciones anteriores ya viste que lo que tenés/ves/comprás cambia el masculino
-(`ein` → `einen`), y que después de `mit` el artículo cambia a `dem`. Ahora vas a
-entender por qué: son dos roles distintos de la palabra en la frase.
+En español, «yo veo a Juan» y «Juan me ve a mí» usan las mismas palabras en distinto
+orden. En alemán pasa algo parecido, pero además **el artículo cambia de forma** para
+indicar quién hace qué. A esas formas distintas se les llama _casos_ — y son la razón por
+la que `der` a veces aparece como `den` o `dem`.
 
 ## Las dos preguntas clave
 
-| Nombre del caso | La pregunta que te hacés                                           | Ejemplo              |
-| --------------- | ------------------------------------------------------------------ | -------------------- |
-| **Akkusativ**   | ¿QUÉ doy/veo/compro? (la cosa o persona que recibe la acción)      | den Ball (la pelota) |
-| **Dativ**       | ¿A QUIÉN se lo doy/digo/mando? (la persona a la que le llega algo) | dem Kind (al niño)   |
+| Caso                                                | La pregunta que te hacés   | Ejemplo              |
+| --------------------------------------------------- | -------------------------- | -------------------- |
+| **[Akkusativ](/es/de/a2/akkusativ-caso-acusativo)** | ¿QUÉ doy, veo o compro?    | den Ball (la pelota) |
+| **[Dativ](/es/de/a2/dativ-caso-dativo)**            | ¿A QUIÉN se lo doy o digo? | dem Kind (al niño)   |
+
+En una frase con las dos cosas, aparecen los dos a la vez:
 
 ```
 Ich gebe    dem Kind (¿a quién? → Dativ)    den Ball (¿qué? → Akkusativ).
 Le doy      al niño                          la pelota.
 ```
 
-## Cómo cambia el artículo
+## La diferencia práctica
 
-| Rol de la palabra                          | maskulin | feminin | neutral | Plural       |
-| ------------------------------------------ | -------- | ------- | ------- | ------------ |
-| Forma normal (el sujeto, el que hace algo) | der      | die     | das     | die          |
-| Akkusativ (lo que ves/comprás/das)         | **den**  | die     | das     | die          |
-| Dativ (a quién le das/decís/mandás algo)   | **dem**  | **der** | **dem** | **den** (+n) |
+- En **[Akkusativ](/es/de/a2/akkusativ-caso-acusativo)** solo cambia el masculino:
+  `der` → `den`. Femenino, neutro y plural se quedan igual.
+- En **[Dativ](/es/de/a2/dativ-caso-dativo)** cambian los cuatro, y en plural el
+  sustantivo suma una `-n`.
 
-Fijate: en Akkusativ solo el masculino cambia (`der` → `den`); en Dativ cambian todos
-los géneros.
-
-## Verbos que siempre van con Dativ
-
-Algunos verbos comunes siempre van con la forma "a quién" (Dativ), aunque no haya una
-segunda cosa:
-
-```
-helfen (ayudar): Ich helfe dir.        gefallen (gustar): Das gefällt mir.
-danken (agradecer): Ich danke dir.
-```
+Cada uno tiene su página con las tablas completas, los verbos que lo piden y las
+preposiciones que no admiten otra cosa.
 
 ## El truco práctico
 
-Cuando armes una frase con dos cosas, preguntate primero: **¿a quién le llega algo?**
-Esa palabra va con `dem/der/einem` (Dativ). Lo que estás dando/viendo/comprando va con
-`den/einen` (Akkusativ). Practicá con el verbo `geben` (dar): es la forma más rápida de
-que el patrón se vuelva automático.
+Cuando armes una frase con dos cosas, preguntate primero: **¿a quién le llega algo?** Esa
+palabra va con `dem/der/einem`. Lo que estás dando, viendo o comprando va con
+`den/einen`. Practicá con el verbo `geben` (dar): es la forma más rápida de que el patrón
+se vuelva automático.
 
-> En gramática formal, al Akkusativ se le llama "objeto directo" y al Dativ "objeto
-> indirecto" — por si lo ves en otros recursos. Pero con las preguntas "¿qué?" y "¿a
-> quién le...?" alcanza.
+> En gramática formal, al Akkusativ se le llama «objeto directo» y al Dativ «objeto
+> indirecto» — por si lo ves en otros recursos. Pero con «¿qué?» y «¿a quién le…?»
+> alcanza.

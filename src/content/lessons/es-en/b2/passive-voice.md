@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Passive Voice (be + past participle)'
 funFact: 'El inglés adora la voz pasiva mucho más que el español en contextos formales: noticias, informes científicos y textos de negocios están llenos de ella. Dominarla no es solo gramática — es sonar profesional en inglés escrito.'
+skills:
+  - en.b2.voice.passive
 minutes: 9
 quiz:
   - question: "¿Cuál es la voz pasiva correcta de 'The chef cooks the meal'?"

@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Question tags (¿verdad?, ¿no es cierto?)'
 funFact: "La regla de oro: si la frase principal es AFIRMATIVA, el question tag es NEGATIVO. Si la frase es NEGATIVA, el tag es AFIRMATIVO. Es un espejo que siempre refleja lo opuesto — 'You're tired, aren't you?' (afirmativa + tag negativo)."
+skills:
+  - en.b1.question.tags
 minutes: 8
 quiz:
   - question: "'You like coffee, ___?' (te gusta el café, ¿verdad?). ¿Qué tag va?"

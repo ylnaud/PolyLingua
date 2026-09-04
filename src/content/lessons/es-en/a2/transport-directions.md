@@ -8,6 +8,8 @@ unit: 2
 situation: 'Transporte y ciudad'
 grammarTopic: 'Vocabulario: transporte y direcciones'
 funFact: '"How do I get to...?" es la pregunta mágica para pedir direcciones en cualquier situación — funciona con lugares, edificios y hasta personas ("How do I get to the station?"). Memoriza esta única frase y ya puedes preguntar cómo llegar a cualquier parte.'
+skills:
+  - en.a2.vocabulary.transport
 minutes: 7
 phrases:
   - text: 'How do I get to the station?'
@@ -27,8 +29,9 @@ quiz:
     options: ['turn left', 'turn right', 'go straight']
     answerIndex: 0
     explanation: "'turn left' es 'gira a la izquierda'. 'turn right' es 'gira a la derecha' y 'go straight' es 'sigue recto'."
-  - question: "¿Cuál es la pregunta correcta para pedir direcciones a la estación?"
-    options: ['How I get to the station?', 'How do I get to the station?', 'How I to get the station?']
+  - question: '¿Cuál es la pregunta correcta para pedir direcciones a la estación?'
+    options:
+      ['How I get to the station?', 'How do I get to the station?', 'How I to get the station?']
     answerIndex: 1
     explanation: "'How do I get to...?' es la estructura correcta con el auxiliar 'do': 'How do I get to the station?'"
   - question: "¿Qué significa 'next to'?"
@@ -96,23 +99,23 @@ tienes el vocabulario de transporte y direcciones más útil del día a día.
 
 ## Medios de transporte
 
-| Inglés | Español  |
-| ------ | -------- |
-| bus    | autobús  |
-| train  | tren     |
-| taxi   | taxi     |
-| subway | metro    |
+| Inglés | Español |
+| ------ | ------- |
+| bus    | autobús |
+| train  | tren    |
+| taxi   | taxi    |
+| subway | metro   |
 
 ## Direcciones básicas
 
-| Inglés     | Español           |
-| ---------- | ------------------ |
-| turn left  | gira a la izquierda |
-| turn right | gira a la derecha   |
-| go straight| sigue recto         |
-| next to    | al lado de          |
-| opposite   | enfrente de         |
-| near       | cerca de            |
+| Inglés      | Español             |
+| ----------- | ------------------- |
+| turn left   | gira a la izquierda |
+| turn right  | gira a la derecha   |
+| go straight | sigue recto         |
+| next to     | al lado de          |
+| opposite    | enfrente de         |
+| near        | cerca de            |
 
 ## Pedir direcciones
 

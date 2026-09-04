@@ -114,3 +114,6 @@ Son tan naturales que nadie dice la versión larga. Apréndetelas como palabras 
 - _Ich bin **in** der Straße_ — Suena raro. En la calle se dice **auf** der Straße.
 - _In Montag_ — Los días van con **am**, no con "in".
 - _In 8 Uhr_ — La hora va con **um**, no con "in".
+
+📘 Todas las preposiciones alemanas juntas, ordenadas por caso, en la
+**[guía completa de preposiciones](/es/de/b1/guia-preposiciones-alemanas)**.

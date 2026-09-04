@@ -7,23 +7,41 @@ order: 11
 unit: 3
 grammarTopic: 'Second conditional (if + past simple, would + infinitive)'
 funFact: "The second conditional isn't really about the past — it's about distance from reality. 'If I had a free room' doesn't mean the room existed once; it means the room probably doesn't exist right now."
+skills:
+  - en.b1.conditional.second
+  - en.b1.vocabulary.complaints
 minutes: 8
 quiz:
-  - question: "Which sentence correctly uses the second conditional?"
-    options: ['If we have a free room, that would be fine.', 'If we had a free room, that would be fine.', 'If we will have a free room, that would be fine.']
+  - question: 'Which sentence correctly uses the second conditional?'
+    options:
+      [
+        'If we have a free room, that would be fine.',
+        'If we had a free room, that would be fine.',
+        'If we will have a free room, that would be fine.',
+      ]
     answerIndex: 1
     explanation: "The second conditional pairs a past-simple verb after 'if' (had) with 'would' + infinitive in the main clause."
   - question: "'I'd like a different room, if that's possible' — why is 'that's possible' NOT in the past form here?"
-    options: ["it's a mistake", "the speaker is treating the condition as realistic and open, not hypothetical, so present tense is fine", "'if' never takes past tense"]
+    options:
+      [
+        "it's a mistake",
+        'the speaker is treating the condition as realistic and open, not hypothetical, so present tense is fine',
+        "'if' never takes past tense",
+      ]
     answerIndex: 1
     explanation: "This isn't a strict second conditional — 'if that's possible' is a softener for a real, open request, closer to a first conditional in spirit."
   - question: "'If we had a free room' (said by the receptionist) implies..."
-    options: ['there probably is a free room right now', 'there probably is NOT a free room right now', 'there was a free room yesterday']
+    options:
+      [
+        'there probably is a free room right now',
+        'there probably is NOT a free room right now',
+        'there was a free room yesterday',
+      ]
     answerIndex: 1
-    explanation: "The second conditional signals a hypothetical, unlikely-to-be-true situation in the present — the receptionist is politely implying the hotel is full."
+    explanation: 'The second conditional signals a hypothetical, unlikely-to-be-true situation in the present — the receptionist is politely implying the hotel is full.'
 exercises:
   - type: 'fill-blank'
-    sentence: "That would be fine, if we ___ a free room."
+    sentence: 'That would be fine, if we ___ a free room.'
     answer: 'had'
     accepted: ['Had']
     hint: "second conditional: past simple after 'if' for a hypothetical present situation."
@@ -61,12 +79,12 @@ here isn't a special word — it's a whole grammar structure: the **second condi
 
 Don't memorize single words — memorize these complete, ready-to-use phrases:
 
-| English                                                        | Español                                              |
-| ------------------------------------------------------------- | ------------------------------------------------------ |
-| Excuse me, I'm afraid I have a problem with my room.          | Disculpe, me temo que tengo un problema con mi habitación. |
-| The heating hasn't been working since this morning.            | La calefacción no funciona desde esta mañana.           |
-| Could you send someone to take a look at the problem?          | ¿Podría enviar a alguien a revisar el problema?          |
-| I'd like a different room, if that's possible.                 | Me gustaría otra habitación, si fuera posible.           |
+| English                                                                   | Español                                                     |
+| ------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Excuse me, I'm afraid I have a problem with my room.                      | Disculpe, me temo que tengo un problema con mi habitación.  |
+| The heating hasn't been working since this morning.                       | La calefacción no funciona desde esta mañana.               |
+| Could you send someone to take a look at the problem?                     | ¿Podría enviar a alguien a revisar el problema?             |
+| I'd like a different room, if that's possible.                            | Me gustaría otra habitación, si fuera posible.              |
 | Thank you for your understanding — I hope this can be sorted out quickly. | Gracias por su comprensión — espero que se resuelva rápido. |
 
 ## The full conversation

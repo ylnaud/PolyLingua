@@ -8,6 +8,8 @@ unit: 2
 situation: 'Salud y cuerpo'
 grammarTopic: 'Vocabulario: salud y el médico'
 funFact: '"hurt" es un verbo irregular pero muy fácil: es igual en presente y pasado ("My throat hurts" / "My throat hurt yesterday"). Aprenderlo así desde ahora te ahorra memorizar una forma extra.'
+skills:
+  - en.a2.vocabulary.health
 minutes: 7
 phrases:
   - text: 'I have a headache.'
@@ -27,12 +29,17 @@ quiz:
     options: ['My throat hurts.', 'My throat hurt.', 'I hurt throat.']
     answerIndex: 0
     explanation: "'My throat hurts' — el sujeto es 'my throat' (tercera persona singular), así que el verbo lleva 's': hurts."
-  - question: "¿Qué síntoma describe una temperatura corporal alta?"
+  - question: '¿Qué síntoma describe una temperatura corporal alta?'
     options: ['cough', 'fever', 'sore throat']
     answerIndex: 1
     explanation: "'fever' es 'fiebre', una temperatura corporal más alta de lo normal."
   - question: "¿Cuál es la frase correcta para pedir un consejo médico con 'should'?"
-    options: ['You should take this medicine.', 'You should takes this medicine.', 'You should to take this medicine.']
+    options:
+      [
+        'You should take this medicine.',
+        'You should takes this medicine.',
+        'You should to take this medicine.',
+      ]
     answerIndex: 0
     explanation: "Después de 'should' siempre va el verbo en su forma base, sin 's' y sin 'to': 'You should take this medicine'."
 exercises:
@@ -107,11 +114,11 @@ un entorno de habla inglesa. Aquí tienes el vocabulario básico para ir al méd
 ## Síntomas básicos
 
 | Inglés      | Español           |
-| ----------- | ------------------ |
-| headache    | dolor de cabeza     |
-| fever       | fiebre              |
-| cough       | tos                 |
-| sore throat | dolor de garganta   |
+| ----------- | ----------------- |
+| headache    | dolor de cabeza   |
+| fever       | fiebre            |
+| cough       | tos               |
+| sore throat | dolor de garganta |
 
 ## Frases para el médico
 

@@ -236,7 +236,7 @@ Algunos verbos "suenan" como que deberían ser irregulares pero no lo son:
    formas correctas en contexto.
 
 4. **Repaso espaciado.** No repases todo cada día — repasá lo que te cuesta.
-   El [sistema de repaso de PolyLingua](/idiomas) marca automáticamente las
+   El [sistema de repaso de PolyLingua](/es) marca automáticamente las
    palabras que fallás para que las practiques más.
 
 ## Preguntas frecuentes

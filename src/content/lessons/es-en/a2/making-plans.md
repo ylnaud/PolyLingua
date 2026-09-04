@@ -8,6 +8,8 @@ unit: 2
 situation: 'Hacer planes'
 grammarTopic: 'Vocabulario: hacer planes'
 funFact: "'Shall we?' es una forma elegante y muy británica de proponer un plan, aunque en el inglés cotidiano es mucho más común simplemente 'Do you want to...?' — reconocé ambas, pero usá la segunda si no querés sonar demasiado formal."
+skills:
+  - en.a2.vocabulary.plans
 minutes: 7
 phrases:
   - text: 'Are you free on Saturday?'

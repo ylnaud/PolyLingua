@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Inversion (estructuras enfáticas)'
 funFact: "La inversión es el equivalente inglés de decir 'Jamás en mi vida había visto algo así' en vez de 'No había visto algo así jamás en mi vida'. Es dramático, es formal, y cuando lo usas bien, suena a discurso de graduación o artículo de revista — el sello del inglés pulido."
+skills:
+  - en.c2.structure.inversion
 minutes: 10
 quiz:
   - question: "¿Cuál es la versión con inversión correcta de 'I have never seen such a mess'?"

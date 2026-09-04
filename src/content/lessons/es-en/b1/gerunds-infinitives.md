@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Gerundio (-ing) vs. Infinitivo (to + verbo) después de un verbo'
 funFact: 'No hay una regla lógica universal que decida cuál verbo pide gerundio y cuál pide infinitivo — es una propiedad de CADA verbo que hay que memorizar caso por caso, como el género gramatical en español. La buena noticia: los verbos más comunes forman patrones reconocibles.'
+skills:
+  - en.b1.verb.gerund-infinitive
 minutes: 10
 quiz:
   - question: "¿Cuál es correcta: 'I enjoy ___ (swim)'?"

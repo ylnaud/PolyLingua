@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Conectores académicos avanzados'
 funFact: "Un texto académico en inglés evita repetir el mismo conector una y otra vez — usar 'furthermore', 'consequently' y 'notwithstanding' en el lugar correcto demuestra un dominio del registro formal que ningún corrector automático puede enseñarte por sí solo."
+skills:
+  - en.c1.connector.academic
 minutes: 9
 quiz:
   - question: '¿Cuál conector introduce una consecuencia lógica en un ensayo formal?'

@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Reported Speech (discurso indirecto)'
 funFact: "Imagina que cada vez que reportas lo que alguien dijo, el tiempo verbal 'retrocede un casillero' en una línea de tiempo: presente → pasado, pasado → pasado perfecto, will → would. Es un juego de mesa donde todas las fichas se mueven una casilla hacia atrás al mismo tiempo. Ese movimiento se llama 'backshift'."
+skills:
+  - en.c1.reported.speech
 minutes: 11
 quiz:
   - question: "María dijo: 'I am tired.' ¿Cómo lo reportas?"

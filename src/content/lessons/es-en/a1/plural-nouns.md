@@ -7,6 +7,8 @@ order: 4
 unit: 2
 grammarTopic: 'Plural de sustantivos (regular e irregular)'
 funFact: "'child' se convierte en 'children', no en 'childs' — y no hay ninguna regla lógica detrás, es simplemente una reliquia del inglés antiguo. Los plurales irregulares más comunes son solo un puñado; memorízalos como un grupo cerrado y todo lo demás sigue la regla de -s."
+skills:
+  - en.a1.noun.plural
 minutes: 6
 quiz:
   - question: "¿Cuál es el plural correcto de 'box' (caja)?"

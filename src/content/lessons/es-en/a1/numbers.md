@@ -7,6 +7,8 @@ order: 6
 unit: 3
 grammarTopic: 'Números cardinales (0-100)'
 funFact: "El inglés tiene una trampa ortográfica clásica: 'forty' (40) NO lleva 'u' aunque 'four' (4) sí la lleva. Es uno de los errores de escritura más comunes incluso entre hablantes avanzados — memorízalo como una excepción aparte."
+skills:
+  - en.a1.vocabulary.numbers
 minutes: 6
 quiz:
   - question: '¿Cómo se escribe correctamente el número 40?'

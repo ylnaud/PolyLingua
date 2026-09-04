@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulario: rutina diaria'
 funFact: "Muchos verbos de rutina en inglés son 'phrasal verbs' simples que ya puedes usar: 'wake up' (despertarse), 'get up' (levantarse), 'get dressed' (vestirse). Aprenderlos como bloques completos desde ahora te prepara para el mundo más amplio de phrasal verbs que verás en niveles avanzados."
+skills:
+  - en.a2.vocabulary.routine
 minutes: 6
 quiz:
   - question: "¿Cuál es la diferencia entre 'wake up' y 'get up'?"

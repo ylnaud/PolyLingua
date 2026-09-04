@@ -7,6 +7,8 @@ order: 3
 unit: 2
 grammarTopic: 'Artículos (a/an/the)'
 funFact: "La elección entre 'a' y 'an' depende del SONIDO, no de la letra: 'an hour' (una hora) usa 'an' porque 'hour' suena como empieza con vocal (la 'h' es muda), aunque la palabra empiece con consonante escrita. Escucha, no mires la ortografía."
+skills:
+  - en.a1.article.a-an-the
 minutes: 6
 quiz:
   - question: "¿Cuál es correcto: 'I have ___ apple' (tengo una manzana)?"

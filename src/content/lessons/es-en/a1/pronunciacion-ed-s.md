@@ -7,6 +7,8 @@ order: 0.4
 unit: 1
 grammarTopic: 'Pronunciación: terminaciones -ed y -s'
 funFact: 'Casi nadie pronuncia «-ed» como «ed». En «worked» suena una simple t y en «played» una d: la e no está. Solo suena «id» cuando el verbo ya termina en t o d, porque si no sería imposible de decir.'
+skills:
+  - en.a1.pron.endings
 minutes: 9
 phrases:
   - text: 'worked'

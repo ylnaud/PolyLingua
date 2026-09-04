@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Conectores avanzados de discurso'
 funFact: "'Despite' y 'although' significan lo mismo (a pesar de), pero se construyen distinto: 'despite' va seguido de un sustantivo o gerundio ('despite the rain'), mientras 'although' va seguido de una frase completa con sujeto y verbo ('although it was raining'). Confundir su construcción es el error más común en este nivel."
+skills:
+  - en.b2.connector.discourse
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta: '___ the rain, we went for a walk' (a pesar de la lluvia)?"

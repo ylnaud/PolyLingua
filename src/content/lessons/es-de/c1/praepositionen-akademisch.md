@@ -128,3 +128,6 @@ Estas preposiciones casi siempre van **al principio de la oración** como marco 
 _Angesichts der steigenden Kosten, hat die Firma neue Maßnahmen beschlossen._
 
 Ese patrón "Preposición + Genitiv + coma + verbo" es tu plantilla para sonar profesional.
+
+📘 Todas las preposiciones alemanas juntas, ordenadas por caso, en la
+**[guía completa de preposiciones](/es/de/b1/guia-preposiciones-alemanas)**.

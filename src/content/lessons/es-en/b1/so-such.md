@@ -7,6 +7,8 @@ order: 10
 unit: 3
 grammarTopic: 'So / such (intensificadores)'
 funFact: "Truco rápido: si la siguiente palabra es un sustantivo (aunque tenga un adjetivo pegado delante), va 'such'. Si la siguiente palabra es un adjetivo o adverbio SOLO, sin sustantivo, va 'so'. 'Such a good idea' tiene sustantivo (idea); 'so good' no lo tiene."
+skills:
+  - en.b1.intensifier.so-such
 minutes: 8
 quiz:
   - question: "¿Cuál es correcta: 'I'm ___ tired today' (estoy tan cansado hoy)?"
@@ -34,14 +36,14 @@ exercises:
     translation: 'Estoy tan cansado hoy.'
     placeholder: 'such'
   - type: 'fill-blank'
-    sentence: "It was ___ good idea."
+    sentence: 'It was ___ good idea.'
     answer: 'such a'
     accepted: ['such a']
     hint: "Sustantivo contable singular (idea) con adjetivo delante: va 'such a'."
     translation: 'Fue tan buena idea.'
     placeholder: 'so'
   - type: 'fill-blank'
-    sentence: "They are ___ nice people."
+    sentence: 'They are ___ nice people.'
     answer: 'such'
     accepted: ['such']
     hint: "Sustantivo plural (people), sin 'a': va 'such'."
@@ -79,11 +81,11 @@ en lugares distintos de la frase, y confundirlos es un error muy común en B1.
 
 ## La regla base
 
-| Estructura                     | Ejemplo                |
-| ------------------------------- | ------------------------ |
-| so + adjetivo                   | I'm so tired.           |
-| so + adverbio                   | She runs so quickly.    |
-| such + a/an + sustantivo (+ adj.) | It was such a good idea. |
+| Estructura                        | Ejemplo                    |
+| --------------------------------- | -------------------------- |
+| so + adjetivo                     | I'm so tired.              |
+| so + adverbio                     | She runs so quickly.       |
+| such + a/an + sustantivo (+ adj.) | It was such a good idea.   |
 | such + sustantivo plural (+ adj.) | They are such nice people. |
 
 ## So: va antes de un adjetivo o adverbio SOLO

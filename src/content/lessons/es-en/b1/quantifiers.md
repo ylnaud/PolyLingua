@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Cuantificadores (few/a few, little/a little)'
 funFact: "'few' y 'a few' usan las mismas palabras pero significan casi lo opuesto en tono: 'few friends' suena a queja ('casi no tengo amigos'), mientras 'a few friends' suena neutral o positivo ('tengo algunos amigos'). El artículo 'a' es la diferencia entre pesimismo y neutralidad."
+skills:
+  - en.b1.quantifier.few-little
 minutes: 8
 quiz:
   - question: "'I have few friends here.' ¿Qué tono transmite esta frase?"

@@ -139,3 +139,6 @@ A nivel C2, el verdadero dominio no es saber _qué_ preposición usar, sino sabe
 - _Zur Finanzierung..._ → elegante
 
 El alemán de verdad alto nivel es **conciso**. Las preposiciones complejas son herramientas, no adornos.
+
+📘 Todas las preposiciones alemanas juntas, ordenadas por caso, en la
+**[guía completa de preposiciones](/es/de/b1/guia-preposiciones-alemanas)**.

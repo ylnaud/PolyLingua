@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Cleft sentences (It-clefts y Wh-clefts)'
 funFact: "Una 'cleft sentence' literalmente 'parte' una frase normal en dos, con el único propósito de poner el foco en una palabra específica. 'John broke the window' es neutral; 'It was JOHN who broke the window' grita 'fue John, no nadie más' — el mismo hecho, con énfasis totalmente distinto."
+skills:
+  - en.c1.structure.cleft
 minutes: 10
 quiz:
   - question: "¿Cuál es la versión con 'It-cleft' de 'John broke the window' (énfasis en JOHN)?"

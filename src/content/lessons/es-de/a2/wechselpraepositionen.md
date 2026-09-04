@@ -115,3 +115,6 @@ van con Dativ (dem/der) — un atajo útil mientras automatizás la regla de "wo
 Antes de elegir la forma, hacete la pregunta en voz alta: "¿estoy describiendo un
 movimiento HACIA algún lugar, o dónde algo YA ESTÁ?" Esa sola pregunta resuelve el 90%
 de las situaciones con estas preposiciones.
+
+📘 Todas las preposiciones alemanas juntas, ordenadas por caso, en la
+**[guía completa de preposiciones](/es/de/b1/guia-preposiciones-alemanas)**.

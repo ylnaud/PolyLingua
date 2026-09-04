@@ -129,6 +129,9 @@ Rigen **Dativ** cuando responden "¿dónde?" (ubicación estática) y **Akkusati
 
 **Recordá:** Wo? (¿dónde? = estático) → Dativ. Wohin? (¿a dónde? = movimiento) → Akkusativ.
 
+📘 Explicadas paso a paso en
+**[Wechselpräpositionen](/es/de/a2/wechselpraepositionen)**.
+
 ## 2. Preposiciones de lugar con caso fijo
 
 | Preposición | Significado                      | Caso      | Ejemplo                                 |
@@ -139,6 +142,9 @@ Rigen **Dativ** cuando responden "¿dónde?" (ubicación estática) y **Akkusati
 | von         | desde, procedencia               | Dativ     | Das Geschenk ist **von meiner** Mutter. |
 | durch       | a través de                      | Akkusativ | Wir gehen **durch den** Park.           |
 | gegenüber   | en frente de                     | Dativ     | Die Bank ist **gegenüber der** Kirche.  |
+
+📘 Practicalas en **[preposiciones de lugar y tiempo](/es/de/a1/praepositionen-ort-zeit)**
+y **[preposiciones fijas](/es/de/a2/praepositionen-fest)**.
 
 ## 3. Preposiciones cultas (rigen Genitiv)
 
@@ -152,34 +158,29 @@ Típicas de registro formal y escrito:
 | unterhalb   | por debajo de            | Die Höhle liegt **unterhalb des** Berges.           |
 | unweit      | no lejos de, cerca de    | **Unweit von hier** gibt es einen Supermarkt.       |
 
-## 4. Adverbios de dirección (combinaciones con da-/hin-/her-)
+📘 Con sus casos y ejemplos en **[preposiciones con Genitiv](/es/de/b2/praepositionen-genitiv)**.
 
-Se forman combinando **da-** (referencia a algo ya mencionado) o **hin-/her-** (dirección desde/hacia el hablante) con una preposición:
+## 4. Adverbios de dirección (hin, her, da-)
 
-| Palabra           | Significado           | Ejemplo                    |
-| ----------------- | --------------------- | -------------------------- |
-| dabei             | al lado de eso        | Das Heft liegt dabei.      |
-| daneben           | al lado de eso        | Stelle die Tasche daneben. |
-| dahinter          | detrás de eso         | Das Haus ist dahinter.     |
-| davor             | delante de eso        | Der Baum steht davor.      |
-| darüber           | encima de eso         | Ein Bild hängt darüber.    |
-| darunter          | debajo de eso         | Die Schuhe sind darunter.  |
-| hinein / heraus   | hacia dentro / afuera | Gehe in das Haus hinein.   |
-| hinauf / hinab    | hacia arriba / abajo  | Gehe die Treppe hinauf.    |
-| herüber / hinüber | hacia el otro lado    | Komm herüber!              |
+`hin` se aleja del que habla y `her` se acerca; `da-` + preposición quiere decir «eso»
+sin repetirlo (dahinter = detrás de eso). Es el único bloque de esta guía que no cabía en
+un párrafo, así que tiene página propia:
+**[hin y her en alemán](/es/de/b1/hin-her-adverbios)**.
 
 ## 5. Preposiciones de uso general (memorizalas con su caso)
 
-| Preposición | Significado             | Caso              | Ejemplo                                   |
-| ----------- | ----------------------- | ----------------- | ----------------------------------------- |
-| mit         | con                     | Dativ             | Ich fahre **mit dem** Bus.                |
-| ohne        | sin                     | Akkusativ         | Ich gehe **ohne dich**.                   |
-| für         | para (destinatario)     | Akkusativ         | Das ist ein Geschenk **für dich**.        |
-| gegen       | contra                  | Akkusativ         | Er kämpft **gegen** Ungerechtigkeit.      |
-| um          | alrededor de, a la hora | Akkusativ         | Wir treffen uns **um** 18 Uhr.            |
-| seit        | desde (tiempo)          | Dativ             | Ich wohne **seit** 2019 hier.             |
-| bis         | hasta (tiempo/lugar)    | Akkusativ         | Ich bleibe **bis** morgen.                |
-| trotz       | a pesar de              | Dativ (uso común) | **Trotz des** Regens spielen wir Fußball. |
+| Preposición | Significado             | Caso      | Ejemplo                                   |
+| ----------- | ----------------------- | --------- | ----------------------------------------- |
+| mit         | con                     | Dativ     | Ich fahre **mit dem** Bus.                |
+| ohne        | sin                     | Akkusativ | Ich gehe **ohne dich**.                   |
+| für         | para (destinatario)     | Akkusativ | Das ist ein Geschenk **für dich**.        |
+| gegen       | contra                  | Akkusativ | Er kämpft **gegen** Ungerechtigkeit.      |
+| um          | alrededor de, a la hora | Akkusativ | Wir treffen uns **um** 18 Uhr.            |
+| seit        | desde (tiempo)          | Dativ     | Ich wohne **seit** 2019 hier.             |
+| bis         | hasta (tiempo/lugar)    | Akkusativ | Ich bleibe **bis** morgen.                |
+| trotz       | a pesar de              | Genitiv   | **Trotz des** Regens spielen wir Fußball. |
+
+📘 Las de caso fijo, una por una, en **[preposiciones fijas](/es/de/a2/praepositionen-fest)**.
 
 ## 6. Expresiones útiles con preposiciones
 
@@ -194,6 +195,8 @@ Combinaciones fijas muy comunes en alemán formal y de todos los días:
 | in Bezug auf    | en relación con   | **In Bezug auf** deine Frage: Ja, das stimmt.      |
 | anstatt         | en lugar de       | Ich bleibe zu Hause **anstatt** ins Kino zu gehen. |
 
+📘 Más expresiones hechas en **[idiomática con preposiciones](/es/de/c2/praepositionale-idiomatik)**.
+
 ## 7. Preposiciones con dos usos: lugar Y tiempo
 
 Las mismas preposiciones cambian de sentido (y a veces de caso) según el contexto:
@@ -206,9 +209,23 @@ Las mismas preposiciones cambian de sentido (y a veces de caso) según el contex
 | vor         | Er steht **vor der** Tür.           | Ich muss **vor der** Arbeit gehen.   |
 | unter       | Die Katze liegt **unter dem** Bett. | Wir treffen uns **unter der** Woche. |
 
+📘 Desde cero en **[preposiciones de lugar y tiempo](/es/de/a1/praepositionen-ort-zeit)**.
+
 ## Consejos finales
 
 - Aprendé cada preposición siempre con su caso — nunca las dos por separado.
 - Fijate primero en el verbo: si hay movimiento con destino, preguntate "Wohin?" → Akkusativ; si no, "Wo?" → Dativ.
 - Las expresiones fijas de la sección 6 conviene memorizarlas como una sola unidad, no palabra por palabra.
 - Practicá con frases reales todos los días — la declinación se vuelve automática con repetición, no con memorización de reglas sueltas.
+
+## Seguí por acá
+
+Esta guía es el mapa; cada pieza se aprende en su propia lección:
+
+- **[Preposiciones de lugar y tiempo](/es/de/a1/praepositionen-ort-zeit)** — por dónde empezar.
+- **[Preposiciones fijas](/es/de/a2/praepositionen-fest)** — las que siempre van con el mismo caso.
+- **[Wechselpräpositionen](/es/de/a2/wechselpraepositionen)** — las nueve que cambian según haya movimiento.
+- **[Verbos con preposición](/es/de/b1/verben-mit-praepositionen)** — warten auf, denken an, sich freuen über.
+- **[hin y her](/es/de/b1/hin-her-adverbios)** — la dirección respecto a quien habla.
+- **[Preposiciones con Genitiv](/es/de/b2/praepositionen-genitiv)** — trotz, wegen, während.
+- **[Preposiciones académicas](/es/de/c1/praepositionen-akademisch)** — hinsichtlich, gemäß, infolge.

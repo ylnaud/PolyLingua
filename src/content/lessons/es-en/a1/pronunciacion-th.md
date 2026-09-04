@@ -7,6 +7,8 @@ order: 0.2
 unit: 1
 grammarTopic: 'Pronunciación: los dos sonidos de TH'
 funFact: 'El TH no se hace en la garganta ni con los labios: se hace sacando la punta de la lengua entre los dientes. Es raro al principio, pero es puramente mecánico — si la lengua asoma, el sonido sale bien sí o sí.'
+skills:
+  - en.a1.pron.th
 minutes: 8
 phrases:
   - text: 'think'

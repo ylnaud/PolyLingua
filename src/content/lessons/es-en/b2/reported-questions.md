@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Preguntas indirectas/reportadas'
 funFact: "El error más común al reportar preguntas es mantener el orden de pregunta original: 'She asked where did I live' es incorrecto — una vez que reportas una pregunta, se convierte en una afirmación normal (sujeto + verbo), sin el auxiliar 'did/do/does' invertido y sin signo de interrogación."
+skills:
+  - en.b2.reported.questions
 minutes: 9
 quiz:
   - question: "'Where do you live?' → 'She asked me ___.' ¿Cuál es la continuación correcta?"

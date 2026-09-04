@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Nominalización y frases nominales académicas'
 funFact: "Piensa en la nominalización como congelar una acción en una foto fija: 'They analyzed the data' (acción, en movimiento) se congela en 'the analysis of the data' (sustantivo, quieto). El inglés académico prefiere fotos fijas a películas — por eso está lleno de sustantivos abstractos en -tion, -ance, -ness."
+skills:
+  - en.c2.style.nominalization
 minutes: 10
 quiz:
   - question: "¿Cuál es la nominalización correcta de 'They analyzed the data carefully'?"
@@ -14,7 +16,7 @@ quiz:
       [
         'Their analyzing of the data was careful.',
         'The analysis of the data was careful.',
-        'The analyze of the data was careful.'
+        'The analyze of the data was careful.',
       ]
     answerIndex: 1
     explanation: "'Analyze' (verbo) se nominaliza como 'analysis' (sustantivo): The analysis of the data was careful."
@@ -31,10 +33,10 @@ quiz:
       [
         'Porque es más corto',
         'Porque los sustantivos abstractos suenan más objetivos e impersonales, típico del registro académico',
-        'Porque evita el uso de artículos'
+        'Porque evita el uso de artículos',
       ]
     answerIndex: 1
-    explanation: "La nominalización quita el foco de QUIÉN hizo la acción y lo pone en el proceso o resultado en sí, dando un tono objetivo e impersonal típico de papers y textos formales."
+    explanation: 'La nominalización quita el foco de QUIÉN hizo la acción y lo pone en el proceso o resultado en sí, dando un tono objetivo e impersonal típico de papers y textos formales.'
 exercises:
   - type: 'fill-blank'
     sentence: 'The ___ of the data revealed an important pattern.'
@@ -62,7 +64,11 @@ exercises:
   - type: 'write'
     prompt: "Nominaliza esta frase: 'They discovered the cause of the disease.' Empieza con The discovery..."
     answer: 'The discovery of the cause of the disease was significant.'
-    accepted: ['The discovery of the cause of the disease was important.', 'The discovery of the cause of the disease.']
+    accepted:
+      [
+        'The discovery of the cause of the disease was important.',
+        'The discovery of the cause of the disease.',
+      ]
     hint: "'Discover' se nominaliza como 'discovery'."
     placeholder: 'The analysis of the data was careful.'
   - type: 'order'
@@ -97,14 +103,14 @@ Nominalizado: Public awareness of the issue is growing.
 
 ## Sufijos comunes de nominalización
 
-| Sufijo | Verbo/adjetivo → sustantivo    |
-| ------ | -------------------------------- |
-| -tion  | decide → decision                |
-| -sis   | analyze → analysis                |
-| -ness  | aware → awareness                 |
-| -ance  | perform → performance             |
-| -ery   | discover → discovery              |
-| -ment  | develop → development             |
+| Sufijo | Verbo/adjetivo → sustantivo |
+| ------ | --------------------------- |
+| -tion  | decide → decision           |
+| -sis   | analyze → analysis          |
+| -ness  | aware → awareness           |
+| -ance  | perform → performance       |
+| -ery   | discover → discovery        |
+| -ment  | develop → development       |
 
 ## Por qué el inglés académico la prefiere
 

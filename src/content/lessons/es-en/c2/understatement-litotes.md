@@ -7,14 +7,26 @@ order: 10
 unit: 3
 grammarTopic: 'Understatement y litotes (indirección británica)'
 funFact: "Regla de oro británica: cuanto más pequeña suena la palabra, más grande es lo que describe. 'A bit of a problem' no es un problemita — puede ser un incendio. Aprender a medir esa distancia entre lo que se dice y lo que se quiere decir es la clave para entender el humor y la cortesía británicos."
+skills:
+  - en.c2.style.understatement
 minutes: 10
 quiz:
   - question: "Un crítico dice que una película es 'not bad'. ¿Qué quiere decir realmente?"
-    options: ['Que es mediocre', 'Que es bastante buena, incluso muy buena', 'Que es mala pero educadamente lo disimula']
+    options:
+      [
+        'Que es mediocre',
+        'Que es bastante buena, incluso muy buena',
+        'Que es mala pero educadamente lo disimula',
+      ]
     answerIndex: 1
     explanation: "'Not bad' es un understatement clásico: minimiza el elogio, pero en el registro británico suele significar 'muy buena', no 'mediocre'."
   - question: "Un colega dice que hay 'a bit of a problem' con el proyecto. ¿Qué sugiere el understatement?"
-    options: ['Un problema menor, casi trivial', 'Probablemente un problema grande, quizás serio', 'Que no hay ningún problema']
+    options:
+      [
+        'Un problema menor, casi trivial',
+        'Probablemente un problema grande, quizás serio',
+        'Que no hay ningún problema',
+      ]
     answerIndex: 1
     explanation: "'A bit of a problem' minimiza deliberadamente la gravedad — cuanto más se minimiza en el habla británica, más grave suele ser en realidad."
   - question: "Si alguien te ofrece más té y respondes 'I wouldn't say no', ¿qué estás diciendo?"
@@ -22,18 +34,23 @@ quiz:
     answerIndex: 1
     explanation: "'I wouldn't say no' es una forma indirecta y educada de aceptar con entusiasmo: significa 'sí, por favor'."
   - question: "¿Qué es la litotes 'not unattractive'?"
-    options: ['Una negación simple de attractive', 'Una afirmación indirecta y enfática: significa que algo/alguien es atractivo', 'Un error gramatical común']
+    options:
+      [
+        'Una negación simple de attractive',
+        'Una afirmación indirecta y enfática: significa que algo/alguien es atractivo',
+        'Un error gramatical común',
+      ]
     answerIndex: 1
     explanation: "La litotes niega el contrario para afirmar indirectamente: 'not unattractive' (no poco atractivo) significa 'attractive', a menudo con más énfasis que decirlo directamente."
 exercises:
   - type: 'fill-blank'
-    sentence: "The film was ___ bad — it was actually excellent."
+    sentence: 'The film was ___ bad — it was actually excellent.'
     answer: 'not'
     hint: "Understatement clásico: 'not bad' minimiza un elogio grande."
     translation: 'La película no estaba nada mal, de hecho fue excelente.'
     placeholder: 'very'
   - type: 'fill-blank'
-    sentence: "We have a ___ of a problem with the budget."
+    sentence: 'We have a ___ of a problem with the budget.'
     answer: 'bit'
     hint: "'A bit of a problem' minimiza algo que suele ser grave."
     translation: 'Tenemos un problemilla con el presupuesto (probablemente serio).'
@@ -52,11 +69,11 @@ exercises:
   - type: 'write'
     prompt: "Responde con understatement británico a '¿Quieres más pastel?' aceptando con gusto, sin decir directamente yes."
     answer: "I wouldn't say no."
-    accepted: ["I wouldn't say no", "I would not say no.", "I would not say no"]
+    accepted: ["I wouldn't say no", 'I would not say no.', 'I would not say no']
     hint: 'Aceptación indirecta y educada = sí, con gusto.'
     placeholder: "It's not bad."
   - type: 'order'
-    sentence: "We have a bit of a problem with the budget"
+    sentence: 'We have a bit of a problem with the budget'
     translation: 'Tenemos un problemilla con el presupuesto.'
 vocabulary:
   - term: 'not bad'
@@ -81,13 +98,13 @@ cortesía británicos.
 La regla no escrita: cuanto más extremo es el sentimiento real, más se minimiza al
 expresarlo. Es lo opuesto a la hipérbole.
 
-| Lo que se dice          | Lo que realmente significa       |
-| -------------------------- | ------------------------------------ |
-| not bad                    | muy bueno, incluso excelente         |
-| a bit of a problem         | un problema serio, quizás grave      |
-| a bit chilly (bajo cero)   | hace un frío terrible                |
-| I'm not thrilled about it  | estoy bastante molesto/a             |
-| I wouldn't say no          | sí, por favor, con mucho gusto       |
+| Lo que se dice            | Lo que realmente significa      |
+| ------------------------- | ------------------------------- |
+| not bad                   | muy bueno, incluso excelente    |
+| a bit of a problem        | un problema serio, quizás grave |
+| a bit chilly (bajo cero)  | hace un frío terrible           |
+| I'm not thrilled about it | estoy bastante molesto/a        |
+| I wouldn't say no         | sí, por favor, con mucho gusto  |
 
 ```
 "How was the exam?"

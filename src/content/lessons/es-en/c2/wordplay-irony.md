@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Humor, ironía y juegos de palabras'
 funFact: 'El sarcasmo británico es tan sutil que a menudo se dice con tono completamente serio — la única pista de que algo es irónico puede ser el contexto absurdo, no el tono de voz. Reírte de un chiste en inglés sin que nadie te lo explique después es una de las señales más claras de dominio real del idioma.'
+skills:
+  - en.c2.style.wordplay
 minutes: 10
 quiz:
   - question: "Alguien dice 'Oh great, another Monday' con tono plano después de derramar café. ¿Qué está expresando?"

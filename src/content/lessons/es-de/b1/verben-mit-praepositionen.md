@@ -133,3 +133,6 @@ Crea **mini-frases personales** con cada combo. En vez de memorizar "warten auf 
 - _Ich denke an meine Familie._ (Pienso en mi familia.)
 
 Las frases con significado personal se quedan en la memoria mucho mejor que las listas.
+
+📘 Todas las preposiciones alemanas juntas, ordenadas por caso, en la
+**[guía completa de preposiciones](/es/de/b1/guia-preposiciones-alemanas)**.

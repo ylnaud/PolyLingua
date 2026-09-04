@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulario: inglés de negocios'
 funFact: "El inglés de negocios ama los eufemismos indirectos: 'let go' en vez de 'fired' (despedido), 'downsizing' en vez de 'layoffs' (recortes de personal). Suavizar malas noticias con vocabulario más neutral es una estrategia comunicativa deliberada en el mundo corporativo angloparlante."
+skills:
+  - en.c1.vocabulary.business
 minutes: 8
 quiz:
   - question: "¿Qué significa 'to let someone go' en un contexto laboral?"

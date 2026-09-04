@@ -8,6 +8,8 @@ unit: 3
 situation: 'Familia y amigos'
 grammarTopic: 'Vocabulario: la familia'
 funFact: 'Ventaja del inglés: no tiene género gramatical, así que no hay artículos que memorizar (der/die/das, el/la) para cada palabra de familia. Solo necesitas aprender la palabra — mucho más simple que en los otros idiomas de PolyLingua.'
+skills:
+  - en.a1.vocabulary.family
 minutes: 5
 phrases:
   - text: 'I have two siblings: a brother and a sister.'

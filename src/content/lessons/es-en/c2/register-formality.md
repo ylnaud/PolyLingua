@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Registro y formalidad'
 funFact: "Decirle a tu jefe 'gimme a sec' (dame un segundo) en vez de 'could you give me a moment, please?' no es un error gramatical — es un error de REGISTRO, y en muchos contextos profesionales es igual de problemático que un error de gramática real. El inglés C2 exige saber leer la situación, no solo la gramática."
+skills:
+  - en.c2.style.register
 minutes: 10
 quiz:
   - question: '¿Cuál versión es apropiada para un correo formal a un cliente nuevo?'

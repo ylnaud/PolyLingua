@@ -7,6 +7,8 @@ order: 0.3
 unit: 1
 grammarTopic: 'Pronunciación: la e muda final (magic e)'
 funFact: 'La e del final no suena nunca, pero cambia la vocal de adelante: la convierte en «el nombre de la letra». La a deja de sonar «a» y pasa a sonar «ei», que es justo como se llama la letra A en inglés. Una sola regla te ordena cientos de palabras.'
+skills:
+  - en.a1.pron.silent-e
 minutes: 8
 phrases:
   - text: 'hat'

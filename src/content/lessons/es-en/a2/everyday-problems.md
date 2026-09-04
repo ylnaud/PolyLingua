@@ -8,6 +8,8 @@ unit: 2
 situation: 'Problemas cotidianos'
 grammarTopic: 'Vocabulario: problemas cotidianos'
 funFact: "'It doesn't work' sirve para casi cualquier cosa rota, del wifi a la lavadora — es probablemente la frase más útil del inglés cotidiano para resolver imprevistos sin vocabulario técnico."
+skills:
+  - en.a2.vocabulary.problems
 minutes: 7
 phrases:
   - text: "It doesn't work."

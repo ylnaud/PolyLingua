@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Frases de compras'
 situation: 'Compras y supermercado'
 funFact: 'En una compra típica solo necesitás cuatro momentos: preguntar si tienen algo, preguntar el precio, decidir y pagar. Cuatro frases fijas y ya podés entrar a cualquier tienda.'
+skills:
+  - en.a1.vocabulary.shopping
 minutes: 8
 phrases:
   - text: 'How much is this?'

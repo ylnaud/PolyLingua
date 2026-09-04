@@ -7,6 +7,8 @@ order: 1
 unit: 2
 grammarTopic: "Verbo 'to be' (am/is/are)"
 funFact: "En español divides 'ser' y 'estar' en dos verbos distintos. En inglés es solo UNO: 'to be'. Imagina que es una navaja suiza — sirve para todo: identidad, estado, edad, ubicación. Una sola herramienta, mil usos."
+skills:
+  - en.a1.verb.to-be
 minutes: 6
 quiz:
   - question: "¿Cuál es la forma correcta para 'yo soy'?"

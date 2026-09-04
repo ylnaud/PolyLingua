@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Pedir comida y la cuenta'
 situation: 'En el restaurante'
 funFact: "En EE.UU. la cuenta se pide con 'the check' y en Reino Unido con 'the bill'. El mesero no la trae hasta que la pedís — no como en muchos países donde te la traen automáticamente."
+skills:
+  - en.a1.vocabulary.restaurant
 minutes: 8
 phrases:
   - text: 'A table for two, please.'

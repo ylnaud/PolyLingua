@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Verbos modales (can, must, should, have to)'
 funFact: "Los modales son los verbos más 'perezosos' del inglés: nunca cambian de forma (no existe 'he cans' ni 'she musts'), nunca necesitan 'do' para preguntar, y siempre van seguidos de un verbo en infinitivo sin 'to'. Tres reglas de oro que nunca se rompen."
+skills:
+  - en.a2.verb.modal
 minutes: 7
 quiz:
   - question: "¿Cuál es la forma correcta con 'she' (ella puede nadar)?"

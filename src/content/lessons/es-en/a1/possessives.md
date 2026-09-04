@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: "Posesivos ('s y adjetivos posesivos)"
 funFact: "El apóstrofe 's' del inglés no tiene equivalente directo en español: 'Maria's book' literalmente pone el dueño ANTES de la cosa poseída, al revés que 'el libro de María'. Acostúmbrate a este orden invertido desde el principio, es uno de los primeros 'giros mentales' del inglés."
+skills:
+  - en.a1.possessive.forms
 minutes: 6
 quiz:
   - question: "¿Cómo dirías 'el libro de María' usando el apóstrofe?"

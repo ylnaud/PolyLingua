@@ -7,6 +7,8 @@ order: 0.5
 unit: 1
 grammarTopic: 'Pronunciación: errores típicos del hispanohablante'
 funFact: 'En español ninguna palabra empieza con s + consonante — por eso el cerebro mete una «e» sin permiso y sale «eschool» en vez de «school». No es falta de práctica: es que tu idioma nativo no tiene esa combinación. Se arregla arrancando directo por la s.'
+skills:
+  - en.a1.pron.spanish-errors
 minutes: 9
 phrases:
   - text: 'school'

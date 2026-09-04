@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Comparativo y superlativo'
 funFact: "La regla es sobre todo cuestión de LONGITUD: adjetivos cortos (1 sílaba, o 2 terminadas en -y) añaden '-er/-est'; adjetivos largos (3+ sílabas) usan 'more/most'. Los de 2 sílabas son la zona gris — algunos aceptan ambas formas."
+skills:
+  - en.a2.adjective.comparative
 minutes: 7
 quiz:
   - question: "¿Cuál es el comparativo correcto de 'big' (grande)?"

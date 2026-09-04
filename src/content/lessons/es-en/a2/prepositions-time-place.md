@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Preposiciones de tiempo y lugar (in/on/at)'
 funFact: "Piensa en 'in, on, at' como un zoom que se acerca: 'in' es lo más amplio (meses, años, ciudades), 'on' es intermedio (días, fechas, calles), y 'at' es lo más específico y puntual (horas, direcciones exactas). Cuanto más preciso el momento o lugar, más te acercas hacia 'at'."
+skills:
+  - en.a2.preposition.time-place
 minutes: 8
 quiz:
   - question: "¿Cuál es correcta: 'I was born ___ 1995' (nací en 1995)?"

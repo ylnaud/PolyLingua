@@ -8,6 +8,8 @@ unit: 3
 situation: 'Casa'
 grammarTopic: 'Vocabulario: la casa'
 funFact: '"There is" (singular) y "there are" (plural) son las frases más útiles para describir cualquier lugar en inglés: "There is a table" / "There are two chairs". Domínalas aquí y las usarás toda tu vida para describir habitaciones, ciudades y hasta problemas ("There is a problem").'
+skills:
+  - en.a1.vocabulary.home
 minutes: 6
 phrases:
   - text: 'There is a table in the kitchen.'
@@ -30,7 +32,7 @@ quiz:
     options: ['There is three chairs', 'There are three chairs', 'There be three chairs']
     answerIndex: 1
     explanation: "'There are' se usa con sustantivos plurales: 'There are three chairs'."
-  - question: "¿Dónde duermes normalmente en una casa?"
+  - question: '¿Dónde duermes normalmente en una casa?'
     options: ['bathroom', 'garden', 'bedroom']
     answerIndex: 2
     explanation: "'bedroom' es el dormitorio, la habitación donde duermes."
@@ -97,13 +99,13 @@ Describir tu casa es una de las conversaciones más básicas y útiles en inglé
 
 ## Las habitaciones de la casa
 
-| Inglés      | Español         |
-| ----------- | ---------------- |
-| kitchen     | cocina           |
-| bedroom     | dormitorio       |
-| bathroom    | baño             |
-| living room | sala de estar    |
-| garden      | jardín           |
+| Inglés      | Español       |
+| ----------- | ------------- |
+| kitchen     | cocina        |
+| bedroom     | dormitorio    |
+| bathroom    | baño          |
+| living room | sala de estar |
+| garden      | jardín        |
 
 ## Muebles básicos
 

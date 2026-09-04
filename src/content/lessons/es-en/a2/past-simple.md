@@ -7,6 +7,9 @@ order: 1
 unit: 1
 grammarTopic: 'Past Simple (regular e irregular)'
 funFact: "Los verbos regulares son fáciles: solo añades '-ed', como pegar una etiqueta. Los irregulares son como gatos: no siguen reglas, cada uno hace lo que quiere (go → went, eat → ate). No pelees contra ellos, solo memorízalos de a poco."
+skills:
+  - en.a2.verb.past-simple
+  - en.a2.verb.past-irregular
 minutes: 8
 quiz:
   - question: "¿Cuál es el pasado correcto de 'work' (trabajar)?"

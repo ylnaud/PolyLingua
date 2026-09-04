@@ -7,6 +7,8 @@ order: 7
 unit: 3
 grammarTopic: 'Decir la hora'
 funFact: "'half past three' significa 'las tres y media' — literalmente 'media hora después de las tres'. A diferencia del alemán ('halb vier' = mirando HACIA la próxima hora), el inglés mira HACIA ATRÁS, a la hora que acaba de pasar. Dirección opuesta, mismo concepto de mitad de camino."
+skills:
+  - en.a1.vocabulary.time
 minutes: 6
 quiz:
   - question: "¿Qué significa 'half past three'?"

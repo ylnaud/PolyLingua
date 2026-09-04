@@ -7,6 +7,8 @@ order: 0.1
 unit: 1
 grammarTopic: 'Pronunciación: vocales cortas y largas'
 funFact: '«Ship» (barco) y «sheep» (oveja) se diferencian solo por la duración y la tensión de la vocal. En español las cinco vocales suenan siempre igual, así que este es el primer músculo que hay que entrenar: no es el oído, es la boca.'
+skills:
+  - en.a1.pron.vowels
 minutes: 9
 phrases:
   - text: 'ship'

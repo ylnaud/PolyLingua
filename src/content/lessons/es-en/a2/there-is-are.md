@@ -7,6 +7,9 @@ order: 3
 unit: 1
 grammarTopic: 'There is/are + some/any'
 funFact: "'There is' y 'there are' no significan 'está ahí' literalmente — son la forma inglesa de decir 'hay'. 'There is a cat' no es 'ahí hay un gato' apuntando a un lugar específico, es simplemente 'hay un gato' en general."
+skills:
+  - en.a2.existential.there-is
+  - en.a2.quantifier.some-any
 minutes: 6
 quiz:
   - question: "¿Cuál es correcto: '___ a book on the table' (hay un libro en la mesa)?"

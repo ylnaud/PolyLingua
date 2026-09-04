@@ -8,6 +8,8 @@ unit: 2
 situation: 'Dinero'
 grammarTopic: 'Vocabulario: el dinero'
 funFact: "'Cash' es efectivo, no 'caja' — un falso amigo evidente pero que vale la pena confirmar, porque en inglés 'box' es caja y 'cash' siempre es dinero en efectivo."
+skills:
+  - en.a2.vocabulary.money
 minutes: 7
 phrases:
   - text: 'Can I pay by card?'

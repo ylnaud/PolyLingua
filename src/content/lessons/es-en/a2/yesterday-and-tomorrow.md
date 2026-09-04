@@ -8,6 +8,8 @@ unit: 2
 situation: 'Ayer y mañana'
 grammarTopic: 'Vocabulario: yesterday and tomorrow'
 funFact: "Para hablar de planes ya decididos, el inglés prefiere el presente continuo antes que el presente simple: 'I'm working tomorrow' suena mucho más natural que 'I work tomorrow' — a diferencia del resto de los idiomas del curso, que sí usan el presente simple para el futuro cercano."
+skills:
+  - en.a2.vocabulary.time-expressions
 minutes: 7
 phrases:
   - text: 'What did you do yesterday?'
@@ -29,7 +31,8 @@ phrases:
     es: 'La semana que viene estoy libre.'
 quiz:
   - question: "¿Cómo preguntarías 'Qué hiciste ayer?' en inglés?"
-    options: ['What do you do yesterday?', 'What did you do yesterday?', 'What will you do yesterday?']
+    options:
+      ['What do you do yesterday?', 'What did you do yesterday?', 'What will you do yesterday?']
     answerIndex: 1
     explanation: "'did' es el auxiliar del past simple, el tiempo que se usa para contar lo que pasó."
   - question: "¿Cómo decís 'Mañana trabajo' de forma más natural en inglés?"

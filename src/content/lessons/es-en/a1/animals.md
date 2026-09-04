@@ -8,6 +8,8 @@ unit: 3
 situation: 'Animales'
 grammarTopic: 'Vocabulario: los animales'
 funFact: '"have got" es la forma británica de decir "tener" (igual de común que "have") — "I have got a cat" y "I have a cat" significan exactamente lo mismo. Verás ambas formas en inglés real, así que reconocer "have got" desde ahora te evita confusiones más adelante.'
+skills:
+  - en.a1.vocabulary.animals
 minutes: 6
 phrases:
   - text: 'The dog is big.'
@@ -21,7 +23,7 @@ quiz:
     options: ['cat', 'dog', 'bird']
     answerIndex: 1
     explanation: "'dog' es 'perro'. 'cat' es 'gato' y 'bird' es 'pájaro'."
-  - question: "¿Cuál de estos es un animal de granja?"
+  - question: '¿Cuál de estos es un animal de granja?'
     options: ['lion', 'cow', 'elephant']
     answerIndex: 1
     explanation: "'cow' (vaca) es un animal de granja. 'lion' (león) y 'elephant' (elefante) son animales salvajes."

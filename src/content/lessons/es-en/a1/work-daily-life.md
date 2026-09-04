@@ -8,6 +8,8 @@ unit: 4
 situation: 'Trabajo'
 grammarTopic: 'Vocabulario: el trabajo'
 funFact: "Para preguntar la profesión de alguien, el inglés usa 'do': 'What do you do?' es literalmente '¿qué haces?', no '¿en qué trabajas?' — una pregunta corta que conviene memorizar entera."
+skills:
+  - en.a1.vocabulary.work
 minutes: 6
 phrases:
   - text: 'What do you do?'
@@ -32,7 +34,7 @@ quiz:
     options: ['Trabajo nueve días.', 'Trabajo de nueve a cinco.', 'Trabajo desde hace cinco años.']
     answerIndex: 1
     explanation: "'from ... to ...' es la fórmula para dar un horario: 'from nine to five' es 'de nueve a cinco'."
-  - question: "¿Cuál es el verbo correcto para preguntar la profesión de alguien?"
+  - question: '¿Cuál es el verbo correcto para preguntar la profesión de alguien?'
     options: ['work', 'do', 'have']
     answerIndex: 1
     explanation: "'do' (hacer) es el verbo que se usa en 'What do you do?', no 'work'."
@@ -117,13 +119,13 @@ I have a meeting at three.        (Tengo una reunión a las tres)
 
 ## Vocabulario de la oficina
 
-| Inglés         | Español              |
-| --------------- | --------------------- |
-| work            | el trabajo              |
-| the office      | la oficina               |
-| the boss        | el jefe                   |
-| the meeting     | la reunión                  |
-| take a break    | tomarse un descanso         |
+| Inglés       | Español             |
+| ------------ | ------------------- |
+| work         | el trabajo          |
+| the office   | la oficina          |
+| the boss     | el jefe             |
+| the meeting  | la reunión          |
+| take a break | tomarse un descanso |
 
 ## Una frase completa
 

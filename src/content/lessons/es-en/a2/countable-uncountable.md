@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Sustantivos contables e incontables (much/many/a lot of)'
 funFact: "En español dices 'la información' sin pensarlo dos veces, pero en inglés 'information' es incontable — no tiene plural ('informations' no existe) y no puedes decir 'an information'. La lista de sustantivos incontables sorprende porque no siempre coincide con la intuición del español."
+skills:
+  - en.a2.noun.countable
 minutes: 8
 quiz:
   - question: "¿Cuál es correcta: 'How ___ money do you have?' (¿cuánto dinero tienes?)"

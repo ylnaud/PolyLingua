@@ -8,6 +8,8 @@ unit: 4
 situation: 'Tiempo libre'
 grammarTopic: 'Vocabulario: el tiempo libre'
 funFact: "Después de 'like' el verbo va en gerundio (-ing): 'I like reading', no 'I like read' — a diferencia del español, donde 'me gusta leer' usa el infinitivo."
+skills:
+  - en.a1.vocabulary.freetime
 minutes: 6
 phrases:
   - text: 'What do you like doing?'
@@ -30,12 +32,13 @@ quiz:
     options: ['I like read.', 'I like reading.', 'I am like reading.']
     answerIndex: 1
     explanation: "Después de 'like' el verbo va en gerundio (-ing): I like reading, I like cooking."
-  - question: "¿Cómo negás que te gusta algo?"
+  - question: '¿Cómo negás que te gusta algo?'
     options: ["I don't like watching TV.", 'I not like watching TV.', 'I like not watching TV.']
     answerIndex: 0
     explanation: "'don't' + verbo en forma base + gerundio del segundo verbo: I don't like watching TV."
   - question: "¿Qué significa 'On weekends, I go to the cinema'?"
-    options: ['Voy al cine todos los días.', 'Los fines de semana voy al cine.', 'No voy nunca al cine.']
+    options:
+      ['Voy al cine todos los días.', 'Los fines de semana voy al cine.', 'No voy nunca al cine.']
     answerIndex: 1
     explanation: "'on weekends' marca cuándo pasa la acción: los fines de semana."
 exercises:

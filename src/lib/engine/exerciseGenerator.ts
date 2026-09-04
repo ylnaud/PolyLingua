@@ -2708,6 +2708,605 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // INGLÉS · A1
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'en.a1.verb.to-be',
+    explanation:
+      'to be tiene tres formas y no hay más: I am, he/she/it is, you/we/they are. Es el único verbo inglés con tres formas en presente, y por eso el que más se usa.',
+    variations: [
+      { sentence: 'I ___ from Spain.', answer: 'am', translation: 'Soy de España.' },
+      { sentence: 'She ___ a teacher.', answer: 'is', translation: 'Ella es profesora.' },
+      { sentence: 'They ___ my friends.', answer: 'are', translation: 'Son mis amigos.' },
+      { sentence: 'It ___ very cold today.', answer: 'is', translation: 'Hoy hace mucho frío.' },
+      { sentence: 'You ___ right.', answer: 'are', translation: 'Tienes razón.' },
+      { sentence: 'We ___ ready.', answer: 'are', translation: 'Estamos listos.' },
+      {
+        sentence: 'My brother ___ twenty.',
+        answer: 'is',
+        translation: 'Mi hermano tiene veinte años.',
+      },
+      { sentence: '___ you tired?', answer: 'Are', translation: '¿Estás cansado?' },
+    ],
+  },
+  {
+    skillId: 'en.a1.verb.simple-present',
+    explanation:
+      'El presente simple es el infinitivo tal cual, salvo en he/she/it. Y detrás de do, does, don’t o doesn’t el verbo vuelve SIEMPRE a su forma base: la marca la lleva el auxiliar, no el verbo.',
+    variations: [
+      {
+        sentence: 'I ___ coffee every morning. (drink)',
+        answer: 'drink',
+        translation: 'Tomo café cada mañana.',
+      },
+      { sentence: 'We ___ in Madrid. (live)', answer: 'live', translation: 'Vivimos en Madrid.' },
+      {
+        sentence: 'They ___ football on Sundays. (play)',
+        answer: 'play',
+        translation: 'Juegan al fútbol los domingos.',
+      },
+      {
+        sentence: "I don't ___ meat. (eat)",
+        answer: 'eat',
+        translation: 'No como carne. (tras don’t, forma base)',
+      },
+      {
+        sentence: "She doesn't ___ TV. (watch)",
+        answer: 'watch',
+        translation: 'Ella no ve la tele. (tras doesn’t, sin -s)',
+      },
+      { sentence: 'Do you ___ English? (speak)', answer: 'speak', translation: '¿Hablas inglés?' },
+      {
+        sentence: 'My parents ___ early. (get up)',
+        answer: 'get up',
+        translation: 'Mis padres se levantan temprano.',
+      },
+      {
+        sentence: 'I ___ to work by bus. (go)',
+        answer: 'go',
+        translation: 'Voy al trabajo en autobús.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a1.verb.third-person-s',
+    explanation:
+      'he, she e it suman -s (works), -es tras -ch, -sh, -s, -x u -o (watches, goes) y -ies si el verbo acaba en consonante + y (studies). Pero la -s desaparece detrás de does y doesn’t.',
+    variations: [
+      {
+        sentence: 'He ___ in a bank. (work)',
+        answer: 'works',
+        translation: 'Él trabaja en un banco.',
+      },
+      {
+        sentence: 'She ___ TV every night. (watch)',
+        answer: 'watches',
+        translation: 'Ella ve la tele cada noche.',
+      },
+      {
+        sentence: 'My sister ___ medicine. (study)',
+        answer: 'studies',
+        translation: 'Mi hermana estudia medicina.',
+      },
+      {
+        sentence: 'It ___ a lot in winter. (rain)',
+        answer: 'rains',
+        translation: 'Llueve mucho en invierno.',
+      },
+      {
+        sentence: 'He ___ to school by bike. (go)',
+        answer: 'goes',
+        translation: 'Va al colegio en bici.',
+      },
+      {
+        sentence: "She doesn't ___ coffee. (drink)",
+        answer: 'drink',
+        translation: 'Ella no toma café. (doesn’t ya lleva la marca)',
+      },
+      {
+        sentence: 'Does he ___ here? (live)',
+        answer: 'live',
+        translation: '¿Vive aquí? (does ya lleva la marca)',
+      },
+      {
+        sentence: 'My dog ___ the postman. (hate)',
+        answer: 'hates',
+        translation: 'Mi perro odia al cartero.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a1.article.a-an-the',
+    explanation:
+      'a/an es «uno cualquiera», the es «ese que los dos sabemos». an va antes de SONIDO vocálico, no de letra vocal: an hour (la h es muda), pero a university (suena «yu»).',
+    variations: [
+      { sentence: 'I have ___ dog.', answer: 'a', translation: 'Tengo un perro.' },
+      { sentence: 'She is ___ engineer.', answer: 'an', translation: 'Es ingeniera.' },
+      {
+        sentence: 'We waited ___ hour.',
+        answer: 'an',
+        translation: 'Esperamos una hora. (la h es muda: suena a vocal)',
+      },
+      {
+        sentence: '___ sun is very bright today.',
+        answer: 'The',
+        translation: 'El sol brilla mucho hoy.',
+      },
+      {
+        sentence: 'He is ___ university student.',
+        answer: 'a',
+        translation: 'Es estudiante universitario. (university suena «yu»)',
+      },
+      {
+        sentence: 'Can you close ___ door, please?',
+        answer: 'the',
+        translation: '¿Puedes cerrar la puerta?',
+      },
+      {
+        sentence: 'There is ___ apple on the table.',
+        answer: 'an',
+        translation: 'Hay una manzana en la mesa.',
+      },
+      {
+        sentence: 'I bought a shirt. ___ shirt was expensive.',
+        answer: 'The',
+        translation: 'Compré una camisa. La camisa era cara.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a1.noun.plural',
+    explanation:
+      'Casi siempre -s. Con -es tras -ch, -sh, -s o -x; con -ies si acaba en consonante + y; con -ves en varios acabados en -f. Y un puñado que no sigue nada: man/men, child/children, foot/feet.',
+    variations: [
+      { sentence: 'one book → two ___', answer: 'books', translation: 'un libro → dos libros' },
+      { sentence: 'one box → two ___', answer: 'boxes', translation: 'una caja → dos cajas' },
+      {
+        sentence: 'one city → two ___',
+        answer: 'cities',
+        translation: 'una ciudad → dos ciudades',
+      },
+      {
+        sentence: 'one knife → two ___',
+        answer: 'knives',
+        translation: 'un cuchillo → dos cuchillos',
+      },
+      {
+        sentence: 'one man → two ___',
+        answer: 'men',
+        translation: 'un hombre → dos hombres (irregular)',
+      },
+      {
+        sentence: 'one child → two ___',
+        answer: 'children',
+        translation: 'un niño → dos niños (irregular)',
+      },
+      {
+        sentence: 'one foot → two ___',
+        answer: 'feet',
+        translation: 'un pie → dos pies (irregular)',
+      },
+      { sentence: 'one watch → two ___', answer: 'watches', translation: 'un reloj → dos relojes' },
+    ],
+  },
+  {
+    skillId: 'en.a1.possessive.forms',
+    explanation:
+      'El ’s se le pone al POSEEDOR (Ana’s car). Los adjetivos posesivos van delante del sustantivo y nunca cambian con el número: my books, no «mys». Y ojo: its es «de ello», it’s es «it is».',
+    variations: [
+      { sentence: 'This is ___ book. (de mí)', answer: 'my', translation: 'Este es mi libro.' },
+      { sentence: "That's ___ car. (de él)", answer: 'his', translation: 'Ese es su coche.' },
+      { sentence: '___ name is Ana. (de ella)', answer: 'Her', translation: 'Se llama Ana.' },
+      { sentence: 'This is Ana___ bag.', answer: "'s", translation: 'Esta es la bolsa de Ana.' },
+      {
+        sentence: 'These are ___ friends. (de nosotros)',
+        answer: 'our',
+        translation: 'Estos son nuestros amigos.',
+      },
+      {
+        sentence: 'The dog wagged ___ tail. (de ello)',
+        answer: 'its',
+        translation: 'El perro movió la cola. (its, sin apóstrofo)',
+      },
+      {
+        sentence: 'Is this ___ jacket? (de ti)',
+        answer: 'your',
+        translation: '¿Es tuya esta chaqueta?',
+      },
+      {
+        sentence: 'The ___ toys are here. (de los niños)',
+        answer: "children's",
+        translation: 'Los juguetes de los niños están aquí.',
+      },
+    ],
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // INGLÉS · A2
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'en.a2.verb.past-simple',
+    explanation:
+      'El pasado regular es -ed para todas las personas, sin excepción. Escritura: -d si ya acaba en e (liked), consonante doble si acaba en consonante + vocal + consonante (stopped) y -ied tras consonante + y (studied). Tras did o didn’t, el verbo vuelve a su forma base.',
+    variations: [
+      {
+        sentence: 'I ___ to the cinema yesterday. (walk)',
+        answer: 'walked',
+        translation: 'Ayer fui andando al cine.',
+      },
+      {
+        sentence: 'She ___ the film. (like)',
+        answer: 'liked',
+        translation: 'Le gustó la película.',
+      },
+      {
+        sentence: 'The bus ___ suddenly. (stop)',
+        answer: 'stopped',
+        translation: 'El autobús frenó de golpe.',
+      },
+      {
+        sentence: 'We ___ all night. (study)',
+        answer: 'studied',
+        translation: 'Estudiamos toda la noche.',
+      },
+      {
+        sentence: 'They ___ in London last year. (live)',
+        answer: 'lived',
+        translation: 'Vivieron en Londres el año pasado.',
+      },
+      {
+        sentence: "I didn't ___ him. (call)",
+        answer: 'call',
+        translation: 'No lo llamé. (didn’t ya lleva el pasado)',
+      },
+      {
+        sentence: 'Did you ___ the door? (close)',
+        answer: 'close',
+        translation: '¿Cerraste la puerta? (did ya lleva el pasado)',
+      },
+      {
+        sentence: 'He ___ football when he was young. (play)',
+        answer: 'played',
+        translation: 'Jugaba al fútbol de joven.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a2.verb.past-irregular',
+    explanation:
+      'No siguen ninguna regla: se aprenden de a poco. La buena noticia es que los veinte más frecuentes cubren casi todo lo que vas a decir en el día a día.',
+    variations: [
+      { sentence: 'go → I ___ to Paris.', answer: 'went', translation: 'ir → Fui a París.' },
+      {
+        sentence: 'see → I ___ a good film.',
+        answer: 'saw',
+        translation: 'ver → Vi una buena película.',
+      },
+      {
+        sentence: 'have → I ___ a great time.',
+        answer: 'had',
+        translation: 'tener → Lo pasé genial.',
+      },
+      {
+        sentence: 'make → She ___ a cake.',
+        answer: 'made',
+        translation: 'hacer → Hizo un pastel.',
+      },
+      {
+        sentence: 'take → We ___ the train.',
+        answer: 'took',
+        translation: 'tomar → Tomamos el tren.',
+      },
+      {
+        sentence: 'buy → He ___ a new phone.',
+        answer: 'bought',
+        translation: 'comprar → Se compró un móvil nuevo.',
+      },
+      { sentence: 'think → I ___ about it.', answer: 'thought', translation: 'pensar → Lo pensé.' },
+      { sentence: 'come → They ___ late.', answer: 'came', translation: 'venir → Llegaron tarde.' },
+    ],
+  },
+  {
+    skillId: 'en.a2.verb.modal',
+    explanation:
+      'Los modales no llevan -s en he/she/it y van seguidos del infinitivo SIN to: she can swim. La excepción es have to, que no es un modal de verdad y sí se conjuga: he has to.',
+    variations: [
+      {
+        sentence: 'She ___ swim very well. (saber, poder)',
+        answer: 'can',
+        translation: 'Nada muy bien.',
+      },
+      {
+        sentence: 'You ___ wear a helmet. (obligación)',
+        answer: 'must',
+        translation: 'Tienes que llevar casco.',
+      },
+      {
+        sentence: "You ___ see that film, it's great. (consejo)",
+        answer: 'should',
+        translation: 'Deberías ver esa película.',
+      },
+      {
+        sentence: 'I ___ work tomorrow. (obligación externa)',
+        answer: 'have to',
+        translation: 'Tengo que trabajar mañana.',
+      },
+      {
+        sentence: 'He ___ work tomorrow. (obligación externa)',
+        answer: 'has to',
+        translation: 'Él tiene que trabajar mañana. (have to sí se conjuga)',
+      },
+      {
+        sentence: 'We ___ not smoke here. (prohibición)',
+        answer: 'must',
+        translation: 'Aquí no se puede fumar.',
+      },
+      {
+        sentence: '___ you help me, please? (petición)',
+        answer: 'Can',
+        translation: '¿Me ayudas, por favor?',
+      },
+      {
+        sentence: 'She ___ speak three languages. (saber)',
+        answer: 'can',
+        translation: 'Habla tres idiomas.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a2.existential.there-is',
+    explanation:
+      'there is con singular e incontable, there are con plural. Lo que manda es la palabra que viene DETRÁS, no la que hay delante.',
+    variations: [
+      {
+        sentence: '___ a book on the table.',
+        answer: 'There is',
+        translation: 'Hay un libro en la mesa.',
+      },
+      {
+        sentence: '___ two books on the table.',
+        answer: 'There are',
+        translation: 'Hay dos libros en la mesa.',
+      },
+      {
+        sentence: '___ some milk in the fridge.',
+        answer: 'There is',
+        translation: 'Hay leche en la nevera. (incontable → is)',
+      },
+      {
+        sentence: '___ many people here.',
+        answer: 'There are',
+        translation: 'Hay mucha gente aquí.',
+      },
+      { sentence: '___ a problem.', answer: 'There is', translation: 'Hay un problema.' },
+      {
+        sentence: '___ any chairs in the room?',
+        answer: 'Are there',
+        translation: '¿Hay sillas en la habitación?',
+      },
+      { sentence: '___ some water left.', answer: 'There is', translation: 'Queda algo de agua.' },
+      {
+        sentence: 'How many students ___ in the class?',
+        answer: 'are there',
+        translation: '¿Cuántos alumnos hay en clase?',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a2.quantifier.some-any',
+    explanation:
+      'some en afirmativas, any en negativas y preguntas. La excepción que hay que saberse: some vuelve en las preguntas que son un ofrecimiento o una petición — Would you like some tea?',
+    variations: [
+      {
+        sentence: 'There are ___ apples in the kitchen.',
+        answer: 'some',
+        translation: 'Hay manzanas en la cocina.',
+      },
+      {
+        sentence: "There aren't ___ apples left.",
+        answer: 'any',
+        translation: 'No queda ninguna manzana.',
+      },
+      {
+        sentence: 'Do you have ___ questions?',
+        answer: 'any',
+        translation: '¿Tienes alguna pregunta?',
+      },
+      {
+        sentence: 'Would you like ___ tea? (ofrecimiento)',
+        answer: 'some',
+        translation: '¿Quieres un té? (ofrecer → some, aunque sea pregunta)',
+      },
+      { sentence: "I don't have ___ money.", answer: 'any', translation: 'No tengo dinero.' },
+      { sentence: 'I bought ___ bread.', answer: 'some', translation: 'Compré pan.' },
+      { sentence: 'Is there ___ milk?', answer: 'any', translation: '¿Hay leche?' },
+      {
+        sentence: 'Can I have ___ water, please? (petición)',
+        answer: 'some',
+        translation: '¿Me das agua, por favor? (pedir → some)',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a2.adjective.comparative',
+    explanation:
+      'Adjetivos cortos: -er y the -est (taller, the tallest). Largos: more y the most (more expensive). Irregulares que hay que saberse: good → better → the best, bad → worse → the worst.',
+    variations: [
+      {
+        sentence: 'My brother is ___ than me. (tall)',
+        answer: 'taller',
+        translation: 'Mi hermano es más alto que yo.',
+      },
+      {
+        sentence: 'This book is ___ than that one. (interesting)',
+        answer: 'more interesting',
+        translation: 'Este libro es más interesante que ese.',
+      },
+      {
+        sentence: 'She is the ___ student in the class. (good)',
+        answer: 'best',
+        translation: 'Es la mejor alumna de la clase.',
+      },
+      {
+        sentence: 'Today is ___ than yesterday. (hot)',
+        answer: 'hotter',
+        translation: 'Hoy hace más calor que ayer.',
+      },
+      {
+        sentence: "This is the ___ film I've seen. (bad)",
+        answer: 'worst',
+        translation: 'Es la peor película que he visto.',
+      },
+      {
+        sentence: 'My car is ___ than yours. (expensive)',
+        answer: 'more expensive',
+        translation: 'Mi coche es más caro que el tuyo.',
+      },
+      {
+        sentence: 'He runs ___ than me. (fast)',
+        answer: 'faster',
+        translation: 'Corre más rápido que yo.',
+      },
+      {
+        sentence: "It's the ___ day of the year. (long)",
+        answer: 'longest',
+        translation: 'Es el día más largo del año.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a2.noun.countable',
+    explanation:
+      'many y few con contables (many books), much y little con incontables (much water). a lot of vale para los dos, y por eso es la salida segura al hablar. Los incontables no tienen plural: information, nunca «informations».',
+    variations: [
+      {
+        sentence: 'How ___ books do you have?',
+        answer: 'many',
+        translation: '¿Cuántos libros tienes?',
+      },
+      {
+        sentence: 'How ___ water do you drink?',
+        answer: 'much',
+        translation: '¿Cuánta agua bebes?',
+      },
+      {
+        sentence: "There isn't ___ time left.",
+        answer: 'much',
+        translation: 'No queda mucho tiempo.',
+      },
+      {
+        sentence: "There aren't ___ people here.",
+        answer: 'many',
+        translation: 'No hay mucha gente aquí.',
+      },
+      {
+        sentence: 'She gave me a lot of ___. (información)',
+        answer: 'information',
+        translation: 'Me dio mucha información. (incontable, sin -s)',
+      },
+      {
+        sentence: 'I have too ___ work today.',
+        answer: 'much',
+        translation: 'Hoy tengo demasiado trabajo.',
+      },
+      {
+        sentence: 'There are a ___ apples in the bowl. (unas pocas)',
+        answer: 'few',
+        translation: 'Hay unas pocas manzanas en el bol.',
+      },
+      {
+        sentence: 'There is a ___ milk left. (un poco)',
+        answer: 'little',
+        translation: 'Queda un poco de leche.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a2.wordorder.questions',
+    explanation:
+      'El orden es (palabra W) + auxiliar + sujeto + verbo base. El auxiliar —do, does, did— lleva el tiempo y la persona, así que el verbo principal se queda sin -s y sin -ed.',
+    variations: [
+      {
+        kind: 'order',
+        sentence: 'Where do you live',
+        answer: 'Where do you live',
+        translation: '¿Dónde vives?',
+      },
+      {
+        kind: 'order',
+        sentence: 'Does she speak English',
+        answer: 'Does she speak English',
+        translation: '¿Habla inglés?',
+      },
+      {
+        kind: 'order',
+        sentence: 'What did you do yesterday',
+        answer: 'What did you do yesterday',
+        translation: '¿Qué hiciste ayer?',
+      },
+      {
+        kind: 'order',
+        sentence: 'When does the film start',
+        answer: 'When does the film start',
+        translation: '¿Cuándo empieza la película?',
+      },
+      {
+        kind: 'order',
+        sentence: 'Do you like coffee',
+        answer: 'Do you like coffee',
+        translation: '¿Te gusta el café?',
+      },
+      {
+        kind: 'order',
+        sentence: 'Why did they leave early',
+        answer: 'Why did they leave early',
+        translation: '¿Por qué se fueron temprano?',
+      },
+    ],
+  },
+  {
+    skillId: 'en.a2.preposition.time-place',
+    explanation:
+      'La regla del embudo: in para lo grande (in 2020, in Madrid), on para lo intermedio (on Monday, on the table) y at para el punto exacto (at 5 o’clock, at the door).',
+    variations: [
+      {
+        sentence: 'The meeting is ___ Monday.',
+        answer: 'on',
+        translation: 'La reunión es el lunes.',
+      },
+      { sentence: 'I was born ___ 1995.', answer: 'in', translation: 'Nací en 1995.' },
+      {
+        sentence: "The film starts ___ eight o'clock.",
+        answer: 'at',
+        translation: 'La película empieza a las ocho.',
+      },
+      { sentence: 'She lives ___ London.', answer: 'in', translation: 'Vive en Londres.' },
+      {
+        sentence: 'The book is ___ the table.',
+        answer: 'on',
+        translation: 'El libro está sobre la mesa.',
+      },
+      {
+        sentence: "I'll see you ___ the weekend.",
+        answer: 'at',
+        translation: 'Nos vemos el fin de semana.',
+      },
+      {
+        sentence: 'We go on holiday ___ August.',
+        answer: 'in',
+        translation: 'Nos vamos de vacaciones en agosto.',
+      },
+      {
+        sentence: 'Wait for me ___ the bus stop.',
+        answer: 'at',
+        translation: 'Espérame en la parada.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

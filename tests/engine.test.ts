@@ -466,12 +466,16 @@ describe('plantillas de refuerzo', () => {
   // que no es lo mismo que rendirse.
   const MINIMO_VARIACIONES = 6;
 
-  it('cada habilidad de gramática y orden de alemán tiene plantilla', () => {
+  it('toda habilidad de gramática y orden tiene plantilla, en cualquier idioma', () => {
     // Sin plantilla, DrillTutor no abre bucle: la habilidad alimenta el modelo
     // pero fallar en ella no trae más ejercicios. Este test es lo que impide
     // que se etiquete un nivel nuevo y el refuerzo se quede mudo ahí.
+    //
+    // El filtro era `lang === 'de'` mientras el alemán era el único idioma
+    // etiquetado. Al entrar el inglés se quitó a propósito: si el candado solo
+    // vigila un idioma, el siguiente entra sin material y nadie se entera.
     const necesitan = SKILLS.filter(
-      (s) => s.lang === 'de' && (s.category === 'grammar' || s.category === 'word_order'),
+      (s) => s.category === 'grammar' || s.category === 'word_order',
     ).map((s) => s.id);
     const sinPlantilla = necesitan.filter((id) => !repairTemplateFor(id));
     expect(sinPlantilla, `habilidades sin refuerzo:\n${sinPlantilla.join('\n')}`).toEqual([]);

@@ -8,6 +8,8 @@ unit: 2
 situation: 'Hablar por teléfono'
 grammarTopic: 'Vocabulario: al teléfono'
 funFact: "En inglés te presentás al teléfono diciendo 'This is Emma', no 'I am Emma' — 'this is' es la fórmula fija, aunque suene raro traducida literalmente como 'esto es Emma'."
+skills:
+  - en.a2.vocabulary.phone
 minutes: 7
 phrases:
   - text: 'Hello?'

@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Formación de preguntas (do/does/did + W-words)'
 funFact: "El inglés necesita un auxiliar 'de apoyo' (do/does/did) para casi todas las preguntas, porque a diferencia del español, no puede simplemente invertir el orden o cambiar la entonación. 'Trabajas aquí' se convierte en '¿Trabajas aquí?' solo con la voz en español; en inglés necesitas construir 'Do you work here?' con una pieza gramatical extra."
+skills:
+  - en.a2.wordorder.questions
 minutes: 8
 quiz:
   - question: "¿Cuál es la pregunta correcta para 'Ella trabaja aquí' → '¿Ella trabaja aquí?'"

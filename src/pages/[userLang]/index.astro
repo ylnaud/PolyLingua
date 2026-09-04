@@ -2,15 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LanguageCard from '../../components/LanguageCard.astro';
 import { LANGUAGES } from '../../data/languages';
-import { ACTIVE_USER_LANGUAGES } from '../../data/userLanguages';
 import { parseLessonId } from '../../lib/lessonPath';
 import { getDictionary } from '../../i18n';
-import { getTargetLangsFor } from '../../lib/courses';
+import { getTargetLangsFor, getUserLangStaticPaths } from '../../lib/courses';
 import { getCollection } from 'astro:content';
 
-export async function getStaticPaths() {
-  return ACTIVE_USER_LANGUAGES.map((userLang) => ({ params: { userLang: userLang.id } }));
-}
+// Una página por idioma de interfaz CON CURSOS, no solo por los activos.
+//
+// Salía de ACTIVE_USER_LANGUAGES, y el resto del silo —lecciones, niveles,
+// herramientas— se genera para todos los cursos que existen. Resultado: el
+// silo inglés tenía sus 114 páginas pero no su raíz, así que la miga de pan
+// «Idiomas» de todas ellas apuntaba a /en, que era un 404. El silo se
+// generaba a medias.
+//
+// Con esto queda entero, y como `en` sigue inactivo su raíz nace con noindex
+// igual que el resto (ver BaseLayout), así que no se anuncia a nadie.
+export const getStaticPaths = getUserLangStaticPaths;
 
 const { userLang } = Astro.params;
 const dict = getDictionary(userLang as never);

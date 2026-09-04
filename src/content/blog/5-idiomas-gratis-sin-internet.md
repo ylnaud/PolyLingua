@@ -97,7 +97,7 @@ Si viajás seguido, tenés datos móviles limitados, o simplemente querés
 practicar en el subte o en un lugar sin señal, una app que de verdad
 funciona offline — no "modo avión con funciones reducidas", sino completa —
 es una diferencia real, no un detalle técnico menor. Podés probarlo vos
-mismo: entrá a [PolyLingua](/idiomas), abrí un par de lecciones — por ejemplo
+mismo: entrá a [PolyLingua](/es), abrí un par de lecciones — por ejemplo
 [artículos en alemán](/es/de/a1/articulos-der-die-das) o
 [present simple en inglés](/es/en/a1/simple-present) — con
 conexión, y después activá el modo avión para ver que siguen ahí.

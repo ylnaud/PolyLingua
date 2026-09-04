@@ -57,6 +57,21 @@ const canonicalURL = new URL(path, Astro.site);
 // contradictoria para buscadores y lectores de pantalla.
 const pageLang = siloContext?.userLang ?? userLang ?? ACTIVE_USER_LANGUAGES[0].id;
 const htmlLang = USER_LANGUAGE_MAP[pageLang as keyof typeof USER_LANGUAGE_MAP]?.bcp47 ?? 'es-ES';
+
+// El silo de un idioma de interfaz INACTIVO no se indexa.
+//
+// astro.config.mjs ya lo excluye del sitemap, y por buenos motivos: nadie
+// enlaza a esas páginas, y su cáscara cae al diccionario español, así que
+// /en/de/a1 y /es/de/a1 salían con el MISMO título y la MISMA descripción.
+// Pero el sitemap solo es una sugerencia: sin noindex, Google puede llegar
+// igual y quedarse con 91 duplicados del sitio que sí tiene tráfico.
+//
+// Se deriva de USER_LANGUAGES, la misma lista de la que sale el filtro del
+// sitemap, para que al marcar un idioma como `active: true` las dos cosas
+// vuelvan juntas y no haya que acordarse de esta.
+const inactiveUserLang =
+  USER_LANGUAGE_MAP[pageLang as keyof typeof USER_LANGUAGE_MAP]?.active === false;
+const noindexFinal = noindex || inactiveUserLang;
 const ogImage = new URL(ogImagePath, Astro.site);
 ---
 
@@ -70,8 +85,8 @@ const ogImage = new URL(ogImagePath, Astro.site);
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="canonical" href={canonicalURL} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
-    {!noindex && <meta name="robots" content="index, follow, max-image-preview:large" />}
+    {noindexFinal && <meta name="robots" content="noindex, nofollow" />}
+    {!noindexFinal && <meta name="robots" content="index, follow, max-image-preview:large" />}
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />

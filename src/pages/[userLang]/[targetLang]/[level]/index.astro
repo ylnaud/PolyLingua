@@ -66,12 +66,19 @@ const unitGroups: { unit: UnitMeta | null; items: typeof lessons }[] = (() => {
 // lista sin agrupar dejaba saltos (…7, 8, 10, 11, 9…).
 const pathOrder = unitGroups.flatMap((g) => g.items);
 
+// La descripción del nivel es la misma para los cinco cursos —la de A1 habla
+// de «hablando el idioma», sin decir cuál—, así que las 30 páginas de nivel
+// indexables compartían solo 6 descripciones. Para Google son casi
+// duplicados, y ninguna decía de qué idioma era. Se le antepone el curso y el
+// nivel, que es la información que las distingue.
+const levelDescription = `${languageName} ${levelName}. ${dict.levelDescriptions[level as keyof typeof dict.levelDescriptions]}`;
+
 const siteURL = Astro.site!.origin;
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Course',
   name: `${languageName} ${levelName} — PolyLingua`,
-  description: dict.levelDescriptions[level as keyof typeof dict.levelDescriptions],
+  description: levelDescription,
   url: `${siteURL}/${userLang}/${targetLang}/${level}`,
   inLanguage: targetLang,
   provider: { '@type': 'Organization', name: 'PolyLingua', url: siteURL },
@@ -86,7 +93,7 @@ const structuredData = {
 
 <BaseLayout
   title={`${languageName} ${levelName}`}
-  description={dict.levelDescriptions[level as keyof typeof dict.levelDescriptions]}
+  description={levelDescription}
   path={`/${userLang}/${targetLang}/${level}`}
   structuredData={structuredData}
   ogImage={`/og-${targetLang}.png`}

@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Estilo literario y prosa elevada'
 funFact: "La literatura inglesa a menudo prefiere la variación léxica sobre la repetición: en vez de decir 'said' cinco veces en una página, un escritor elige 'murmured', 'declared', 'whispered', 'insisted' — cada uno añadiendo matiz emocional que 'said' por sí solo no comunica."
+skills:
+  - en.c2.style.literary
 minutes: 10
 quiz:
   - question: "¿Por qué la prosa literaria evita repetir la misma palabra (como 'said') constantemente?"

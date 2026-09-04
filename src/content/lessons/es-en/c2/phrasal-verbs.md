@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Phrasal verbs avanzados y su registro'
 funFact: "Un phrasal verb no es un verbo más una preposición suelta — es una nueva palabra con significado propio. 'Give up' no tiene nada que ver con 'dar' ni con 'arriba': significa 'rendirse'. Los hablantes nativos los usan constantemente porque suenan naturales; sus equivalentes 'latinos' (abandon, surrender) suenan formales o distantes."
+skills:
+  - en.c2.verb.phrasal
 minutes: 11
 quiz:
   - question: "'I ran into an old friend yesterday.' ¿Qué significa 'ran into' aquí?"

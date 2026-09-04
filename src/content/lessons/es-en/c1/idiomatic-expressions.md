@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Expresiones idiomáticas comunes'
 funFact: "'Cost an arm and a leg' no tiene nada que ver con extremidades — significa 'costar muchísimo dinero'. Como toda expresión idiomática, no se puede traducir palabra por palabra: se aprende como una imagen mental completa, congelada en el tiempo por el uso repetido."
+skills:
+  - en.c1.vocabulary.idioms
 minutes: 10
 quiz:
   - question: "'That new car must have cost him an arm and a leg.' ¿Qué significa la expresión?"

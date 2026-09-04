@@ -7,6 +7,8 @@ order: 10
 unit: 3
 grammarTopic: 'Subjuntivo en inglés formal (mandative subjunctive)'
 funFact: "El truco: después de suggest/recommend/insist/demand + that, el verbo se queda 'congelado' en su forma base, sin -s ni -ed, sin importar el sujeto. 'She suggests that he GO' (no 'goes') suena raro, pero es correcto — el subjuntivo ignora las reglas normales de concordancia."
+skills:
+  - en.c1.verb.subjunctive
 minutes: 10
 quiz:
   - question: "¿Cuál es la forma correcta: 'It's essential that he ___ present at the meeting'?"
@@ -17,12 +19,12 @@ quiz:
     options: ['goes', 'go', 'went']
     answerIndex: 1
     explanation: "Después de 'suggest that', el verbo va en forma base sin -s: 'that she go', no 'that she goes'."
-  - question: "¿Qué tienen en común los verbos suggest, recommend, insist y demand en esta estructura?"
+  - question: '¿Qué tienen en común los verbos suggest, recommend, insist y demand en esta estructura?'
     options:
       [
         'Todos van seguidos de infinitivo con to',
         'Todos activan el subjuntivo mandativo: that + sujeto + forma base del verbo',
-        'Todos requieren el gerundio después de that'
+        'Todos requieren el gerundio después de that',
       ]
     answerIndex: 1
     explanation: "Son verbos de sugerencia/exigencia ('mandative verbs') que activan el subjuntivo: that + sujeto + forma base, sin conjugar y sin -s."
@@ -34,7 +36,7 @@ exercises:
   - type: 'fill-blank'
     sentence: "It's essential that he ___ present at the meeting."
     answer: 'be'
-    hint: "Subjuntivo mandativo: forma base del verbo, no conjugada."
+    hint: 'Subjuntivo mandativo: forma base del verbo, no conjugada.'
     translation: 'Es esencial que él esté presente en la reunión.'
     placeholder: 'is'
   - type: 'fill-blank'
@@ -58,7 +60,7 @@ exercises:
     prompt: "Escribe con subjuntivo mandativo: 'El juez exigió que el testigo dijera la verdad.' Empieza con The judge demanded that..."
     answer: 'The judge demanded that the witness tell the truth.'
     accepted: ['The judge demanded that the witness tell the truth']
-    hint: "demand that + sujeto + forma base (tell, no tells ni told)."
+    hint: 'demand that + sujeto + forma base (tell, no tells ni told).'
     placeholder: 'I suggest that she go to the doctor.'
   - type: 'order'
     sentence: 'It is essential that he be present'
@@ -98,9 +100,9 @@ Subjuntivo:  It's essential that he be present.   (NO "is")
 
 ## Verbos y expresiones que activan el subjuntivo
 
-| Disparador                 | Ejemplo                                          |
-| ---------------------------- | --------------------------------------------------- |
-| suggest that                 | I suggest that she go to the doctor.                |
+| Disparador                    | Ejemplo                                             |
+| ----------------------------- | --------------------------------------------------- |
+| suggest that                  | I suggest that she go to the doctor.                |
 | recommend that                | They recommend that he arrive early.                |
 | insist that                   | She insists that he apologize.                      |
 | demand that                   | The judge demanded that the witness tell the truth. |

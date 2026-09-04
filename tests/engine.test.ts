@@ -496,11 +496,15 @@ describe('plantillas de refuerzo', () => {
     expect(fantasma).toEqual([]);
   });
 
-  it('las variaciones de hueco traen ___ y las de orden no', () => {
+  it('las variaciones de hueco traen UN ___ y las de orden ninguno', () => {
+    // Exactamente uno, no «al menos uno»: buildItemFieldset parte la frase por
+    // el primer ___ y el segundo se quedaría escrito en pantalla como texto.
+    // Se coló una así al escribir las de inglés y el test no la vio.
     for (const t of REPAIR_TEMPLATES) {
       for (const v of t.variations) {
-        if (v.kind === 'order') expect(v.sentence, t.skillId).not.toContain('___');
-        else expect(v.sentence, t.skillId).toContain('___');
+        const huecos = v.sentence.split('___').length - 1;
+        if (v.kind === 'order') expect(huecos, `${t.skillId}: ${v.sentence}`).toBe(0);
+        else expect(huecos, `${t.skillId}: ${v.sentence}`).toBe(1);
       }
     }
   });

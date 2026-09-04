@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: "Modals of deduction (must/might/could/can't + have + participle)"
 funFact: "Estos modales son la versión gramatical de un detective razonando: 'must have' es 'estoy 95% seguro', 'might/could have' es 'es posible, no estoy seguro', y 'can't have' es 'es imposible, lo descarto por completo'. Cada uno marca un nivel distinto de certeza sobre algo que ya pasó."
+skills:
+  - en.c1.modal.deduction-past
 minutes: 10
 quiz:
   - question: 'Llegas a casa y ves la luz encendida pero no hay nadie. ¿Cuál expresa mayor certeza de que alguien SÍ estuvo ahí?'

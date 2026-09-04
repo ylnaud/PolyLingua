@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Proverbs (refranes y dichos populares)'
 funFact: "'The early bird catches the worm' (el pájaro madrugador atrapa el gusano) es prácticamente idéntico en sabiduría a 'a quien madruga, Dios le ayuda' — la imagen concreta cambia entre idiomas, pero la sabiduría popular sobre madrugar cruza fronteras casi intacta."
+skills:
+  - en.c2.vocabulary.proverbs
 minutes: 9
 quiz:
   - question: "'The early bird catches the worm.' ¿Cuál es su equivalente en español?"

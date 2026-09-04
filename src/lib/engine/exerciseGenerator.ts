@@ -4244,6 +4244,492 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // INGLÉS · C1 y C2
+  // ══════════════════════════════════════════════════════════════════════════
+
+  {
+    skillId: 'en.c1.reported.speech',
+    explanation:
+      'Al reportar, los tiempos retroceden un paso —present → past, past → past perfect, will → would— y con ellos cambian los pronombres y las marcas de tiempo: today → that day, tomorrow → the next day.',
+    variations: [
+      {
+        sentence: '«I am tired» → He said he ___ tired.',
+        answer: 'was',
+        translation: 'Dijo que estaba cansado.',
+      },
+      {
+        sentence: '«I live in Rome» → She said she ___ in Rome.',
+        answer: 'lived',
+        translation: 'Dijo que vivía en Roma.',
+      },
+      {
+        sentence: '«I saw him» → He said he ___ seen him.',
+        answer: 'had',
+        translation: 'Dijo que lo había visto.',
+      },
+      {
+        sentence: '«I will call» → She said she ___ call.',
+        answer: 'would',
+        translation: 'Dijo que llamaría.',
+      },
+      {
+        sentence: '«I can swim» → He said he ___ swim.',
+        answer: 'could',
+        translation: 'Dijo que sabía nadar.',
+      },
+      {
+        sentence: "«I'm working now» → She said she ___ working then.",
+        answer: 'was',
+        translation: 'Dijo que estaba trabajando en ese momento.',
+      },
+      {
+        sentence: '«We have finished» → They said they ___ finished.',
+        answer: 'had',
+        translation: 'Dijeron que habían terminado.',
+      },
+      {
+        sentence: "«I'll do it tomorrow» → He said he'd do it the ___ day.",
+        answer: 'next',
+        translation: 'Dijo que lo haría al día siguiente. (tomorrow → the next day)',
+      },
+    ],
+  },
+  {
+    skillId: 'en.c1.modal.deduction-past',
+    explanation:
+      'Para deducir sobre el pasado el modal no cambia: lo que cambia es lo que va detrás. must have + participio (casi seguro), might o could have (posible), can’t have (descartado).',
+    variations: [
+      {
+        sentence: "He ___ have missed the train, he's never late. (casi seguro)",
+        answer: 'must',
+        translation: 'Debe de haber perdido el tren.',
+      },
+      {
+        sentence: 'She ___ have forgotten, she has a great memory. (descartado)',
+        answer: "can't",
+        translation: 'No puede habérsele olvidado.',
+      },
+      {
+        sentence: "They ___ have left already, I'm not sure. (posible)",
+        answer: 'might',
+        translation: 'Puede que ya se hayan ido.',
+      },
+      {
+        sentence: 'You ___ have seen him, he was abroad. (descartado)',
+        answer: "can't",
+        translation: 'No puedes haberlo visto, estaba fuera.',
+      },
+      {
+        sentence: 'It ___ have been the wind. (posible)',
+        answer: 'could',
+        translation: 'Podría haber sido el viento.',
+      },
+      {
+        sentence: 'The road is wet — it ___ have rained. (casi seguro)',
+        answer: 'must',
+        translation: 'La carretera está mojada: debe de haber llovido.',
+      },
+      {
+        sentence: 'I ___ have left my keys at home. (posible)',
+        answer: 'might',
+        translation: 'Puede que me haya dejado las llaves en casa.',
+      },
+      {
+        sentence: 'She ___ have known, nobody told her. (descartado)',
+        answer: "can't",
+        translation: 'No puede haberlo sabido, nadie se lo dijo.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.c1.clause.participle',
+    explanation:
+      'La cláusula de participio recorta una subordinada quitando el sujeto y el auxiliar: -ing para lo activo (Walking home, I saw…) y participio pasado para lo pasivo (Written in 1920, the book…).',
+    variations: [
+      {
+        sentence: '___ home, I saw an accident. (walk)',
+        answer: 'Walking',
+        translation: 'Yendo a casa, vi un accidente.',
+      },
+      {
+        sentence: '___ in 1920, the book is still popular. (write)',
+        answer: 'Written',
+        translation: 'Escrito en 1920, el libro sigue siendo popular.',
+      },
+      {
+        sentence: '___ the news, she called me. (hear)',
+        answer: 'Hearing',
+        translation: 'Al oír la noticia, me llamó.',
+      },
+      {
+        sentence: '___ by the noise, he woke up. (wake)',
+        answer: 'Woken',
+        translation: 'Despertado por el ruido, se levantó.',
+      },
+      {
+        sentence: '___ tired, they went to bed early. (feel)',
+        answer: 'Feeling',
+        translation: 'Sintiéndose cansados, se acostaron temprano.',
+      },
+      {
+        sentence: '___ in Spain, the wine is excellent. (produce)',
+        answer: 'Produced',
+        translation: 'Producido en España, el vino es excelente.',
+      },
+      {
+        sentence: '___ the door, he went out. (open)',
+        answer: 'Opening',
+        translation: 'Abriendo la puerta, salió.',
+      },
+      {
+        sentence: '___ properly, the machine lasts years. (use)',
+        answer: 'Used',
+        translation: 'Usada correctamente, la máquina dura años.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.c1.structure.cleft',
+    explanation:
+      'La cleft parte la frase en dos para poner el foco donde vos querés: «It was John who broke it» señala a John, «What I need is a holiday» señala lo que necesitás. Es énfasis hecho con orden, no con voz.',
+    variations: [
+      {
+        kind: 'order',
+        sentence: 'It was John who broke the window',
+        answer: 'It was John who broke the window',
+        translation: 'Fue John quien rompió la ventana.',
+      },
+      {
+        kind: 'order',
+        sentence: 'What I need is a holiday',
+        answer: 'What I need is a holiday',
+        translation: 'Lo que necesito son unas vacaciones.',
+      },
+      {
+        kind: 'order',
+        sentence: 'It is the price that worries me',
+        answer: 'It is the price that worries me',
+        translation: 'Es el precio lo que me preocupa.',
+      },
+      {
+        kind: 'order',
+        sentence: 'What she did was call the police',
+        answer: 'What she did was call the police',
+        translation: 'Lo que hizo fue llamar a la policía.',
+      },
+      {
+        kind: 'order',
+        sentence: 'It was in Paris that we met',
+        answer: 'It was in Paris that we met',
+        translation: 'Fue en París donde nos conocimos.',
+      },
+      {
+        kind: 'order',
+        sentence: 'All I want is the truth',
+        answer: 'All I want is the truth',
+        translation: 'Todo lo que quiero es la verdad.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.c1.structure.ellipsis',
+    explanation:
+      'so y neither evitan repetir la frase entera: «I’m tired» → «So am I». so responde a las afirmativas, neither a las negativas, y detrás va el auxiliar delante del sujeto, como en una pregunta.',
+    variations: [
+      {
+        sentence: "«I'm tired.» «___ am I.»",
+        answer: 'So',
+        translation: '—Estoy cansado. —Yo también.',
+      },
+      {
+        sentence: "«I don't like it.» «___ do I.»",
+        answer: 'Neither',
+        translation: '—No me gusta. —A mí tampoco.',
+      },
+      {
+        sentence: '«She can swim.» «___ can he.»',
+        answer: 'So',
+        translation: '—Ella sabe nadar. —Él también.',
+      },
+      {
+        sentence: "«I haven't seen it.» «___ have I.»",
+        answer: 'Neither',
+        translation: '—No lo he visto. —Yo tampoco.',
+      },
+      {
+        sentence: '«They went home.» «___ did we.»',
+        answer: 'So',
+        translation: '—Se fueron a casa. —Nosotros también.',
+      },
+      {
+        sentence: 'Do you want the red one or the blue ___?',
+        answer: 'one',
+        translation: '¿Quieres el rojo o el azul?',
+      },
+      {
+        sentence: "«I've never been there.» «___ have I.»",
+        answer: 'Neither',
+        translation: '—Nunca he estado allí. —Yo tampoco.',
+      },
+      {
+        sentence: 'I asked him to help and he agreed to do ___.',
+        answer: 'so',
+        translation: 'Le pedí que ayudara y accedió a hacerlo.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.c1.verb.subjunctive',
+    explanation:
+      'Tras suggest, recommend, insist, demand y en «it is essential that», el verbo va en forma BASE para todas las personas: he go, no he goes. Suena raro al oído y es exactamente lo correcto.',
+    variations: [
+      {
+        sentence: 'I suggest that he ___ early. (leave)',
+        answer: 'leave',
+        translation: 'Sugiero que se vaya temprano.',
+      },
+      {
+        sentence: 'They demanded that she ___ present. (be)',
+        answer: 'be',
+        translation: 'Exigieron que estuviera presente.',
+      },
+      {
+        sentence: 'It is essential that everyone ___ on time. (be)',
+        answer: 'be',
+        translation: 'Es esencial que todos lleguen a tiempo.',
+      },
+      {
+        sentence: 'The doctor recommended that he ___ smoking. (stop)',
+        answer: 'stop',
+        translation: 'El médico recomendó que dejara de fumar.',
+      },
+      {
+        sentence: 'I insist that she ___ us. (join)',
+        answer: 'join',
+        translation: 'Insisto en que se una a nosotros.',
+      },
+      {
+        sentence: 'We propose that the meeting ___ postponed. (be)',
+        answer: 'be',
+        translation: 'Proponemos que se posponga la reunión.',
+      },
+      {
+        sentence: 'He asked that we ___ him informed. (keep)',
+        answer: 'keep',
+        translation: 'Pidió que lo mantuviéramos informado.',
+      },
+      {
+        sentence: 'It is vital that the report ___ ready. (be)',
+        answer: 'be',
+        translation: 'Es vital que el informe esté listo.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.c1.connector.academic',
+    explanation:
+      'whereas contrasta dos cosas dentro de la misma frase; thus, hence y therefore introducen la consecuencia; thereby une la causa con su efecto y va seguido de -ing; nevertheless concede.',
+    variations: [
+      {
+        sentence: 'Sales rose in Spain, ___ they fell in Italy. (contraste)',
+        answer: 'whereas',
+        translation: 'Las ventas subieron en España, mientras que cayeron en Italia.',
+      },
+      {
+        sentence: 'The data was incomplete; ___, the study was repeated.',
+        answer: 'thus',
+        translation: 'Los datos estaban incompletos; así pues, se repitió el estudio.',
+      },
+      {
+        sentence: 'He cut costs, ___ increasing profits. (con lo cual)',
+        answer: 'thereby',
+        translation: 'Recortó costes, aumentando así los beneficios.',
+      },
+      {
+        sentence: 'The results were poor. ___, the project continued.',
+        answer: 'Nevertheless',
+        translation: 'Los resultados fueron malos. Aun así, el proyecto siguió.',
+      },
+      {
+        sentence: 'The sample was small and ___ unreliable. (por tanto)',
+        answer: 'hence',
+        translation: 'La muestra era pequeña y, por tanto, poco fiable.',
+      },
+      {
+        sentence: 'Some prefer speed, ___ others value accuracy.',
+        answer: 'whereas',
+        translation: 'Unos prefieren la rapidez, mientras que otros valoran la precisión.',
+      },
+      {
+        sentence: 'The evidence is clear; ___, action is needed.',
+        answer: 'therefore',
+        translation: 'La evidencia es clara; por tanto, hace falta actuar.',
+      },
+      {
+        sentence: 'It rained heavily; ___, the match went on.',
+        answer: 'nevertheless',
+        translation: 'Llovió mucho; aun así, el partido continuó.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.c1.collocation.make-do',
+    explanation:
+      'Son parejas fijas y no hay lógica que deducir: make a decision pero do homework, take a photo pero have a shower. Se aprenden en bloque, igual que los verbos con preposición.',
+    variations: [
+      { sentence: '___ a decision', answer: 'make', translation: 'tomar una decisión' },
+      { sentence: '___ your homework', answer: 'do', translation: 'hacer los deberes' },
+      { sentence: '___ a photo', answer: 'take', translation: 'sacar una foto' },
+      { sentence: '___ a shower', answer: 'have', translation: 'ducharse' },
+      { sentence: '___ a mistake', answer: 'make', translation: 'cometer un error' },
+      {
+        sentence: '___ business with someone',
+        answer: 'do',
+        translation: 'hacer negocios con alguien',
+      },
+      { sentence: '___ a break', answer: 'take', translation: 'tomarse un descanso' },
+      { sentence: '___ a good time', answer: 'have', translation: 'pasarlo bien' },
+    ],
+  },
+  {
+    skillId: 'en.c2.structure.inversion',
+    explanation:
+      'Al poner delante una expresión negativa o restrictiva —never, rarely, not only, no sooner, only then— la frase invierte como si fuera una pregunta: «Never have I seen…».',
+    variations: [
+      {
+        kind: 'order',
+        sentence: 'Never have I seen such a mess',
+        answer: 'Never have I seen such a mess',
+        translation: 'Nunca había visto semejante desastre.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Rarely does he complain',
+        answer: 'Rarely does he complain',
+        translation: 'Rara vez se queja.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Not only did she win but she broke the record',
+        answer: 'Not only did she win but she broke the record',
+        translation: 'No solo ganó, sino que batió el récord.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Only then did I understand',
+        answer: 'Only then did I understand',
+        translation: 'Solo entonces lo entendí.',
+      },
+      {
+        kind: 'order',
+        sentence: 'No sooner had we arrived than it started raining',
+        answer: 'No sooner had we arrived than it started raining',
+        translation: 'Nada más llegar, empezó a llover.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Little did they know the truth',
+        answer: 'Little did they know the truth',
+        translation: 'Poco sabían de la verdad.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.c2.verb.phrasal',
+    explanation:
+      'El significado no sale de las partes: put off es aplazar y put up with es aguantar. Por eso no se traducen, se aprenden enteros, con su preposición pegada.',
+    variations: [
+      {
+        sentence: 'We had to ___ off the meeting. (aplazar)',
+        answer: 'put',
+        translation: 'Tuvimos que aplazar la reunión.',
+      },
+      {
+        sentence: "I can't ___ up with the noise. (aguantar)",
+        answer: 'put',
+        translation: 'No aguanto el ruido.',
+      },
+      {
+        sentence: 'She ___ up smoking last year. (dejar)',
+        answer: 'gave',
+        translation: 'Dejó de fumar el año pasado.',
+      },
+      {
+        sentence: 'The plane ___ off on time. (despegar)',
+        answer: 'took',
+        translation: 'El avión despegó a su hora.',
+      },
+      {
+        sentence: 'Can you ___ out the light? (apagar)',
+        answer: 'turn',
+        translation: '¿Puedes apagar la luz?',
+      },
+      {
+        sentence: 'He ___ across as arrogant. (dar la impresión)',
+        answer: 'comes',
+        translation: 'Da la impresión de ser arrogante.',
+      },
+      {
+        sentence: 'They ___ down the old cinema. (derribar)',
+        answer: 'pulled',
+        translation: 'Derribaron el viejo cine.',
+      },
+      {
+        sentence: 'I ___ into an old friend yesterday. (encontrarse por casualidad)',
+        answer: 'ran',
+        translation: 'Ayer me encontré con un viejo amigo.',
+      },
+    ],
+  },
+  {
+    skillId: 'en.c2.style.nominalization',
+    explanation:
+      'El registro académico convierte los verbos en sustantivos: «they decided» → «their decision». La frase se vuelve más densa y más impersonal, que es justo lo que ese registro pide.',
+    variations: [
+      {
+        sentence: 'they decided → their ___',
+        answer: 'decision',
+        translation: 'decidieron → su decisión',
+      },
+      {
+        sentence: 'he analysed → his ___',
+        answer: 'analysis',
+        translation: 'analizó → su análisis',
+      },
+      {
+        sentence: 'we assume → our ___',
+        answer: 'assumption',
+        translation: 'asumimos → nuestra suposición',
+      },
+      {
+        sentence: 'they failed → their ___',
+        answer: 'failure',
+        translation: 'fracasaron → su fracaso',
+      },
+      {
+        sentence: 'she argued → her ___',
+        answer: 'argument',
+        translation: 'argumentó → su argumento',
+      },
+      {
+        sentence: 'we conclude → our ___',
+        answer: 'conclusion',
+        translation: 'concluimos → nuestra conclusión',
+      },
+      {
+        sentence: 'they grew → their ___',
+        answer: 'growth',
+        translation: 'crecieron → su crecimiento',
+      },
+      {
+        sentence: 'he described → his ___',
+        answer: 'description',
+        translation: 'describió → su descripción',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

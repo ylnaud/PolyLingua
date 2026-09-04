@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Participle clauses (cláusulas reducidas con -ing/-ed)'
 funFact: "Piensa en las participle clauses como comprimir un archivo: 'The man who is standing' pesa 5 palabras; 'The man standing' pesa 3 y dice exactamente lo mismo. El inglés escrito avanzado ama comprimir — es más rápido de leer y suena más elegante."
+skills:
+  - en.c1.clause.participle
 minutes: 10
 quiz:
   - question: "¿Cuál es la reducción correcta de 'The man who is standing by the door is my uncle'?"
@@ -14,7 +16,7 @@ quiz:
       [
         'The man standing by the door is my uncle.',
         'The man stood by the door is my uncle.',
-        'The man to stand by the door is my uncle.'
+        'The man to stand by the door is my uncle.',
       ]
     answerIndex: 0
     explanation: "Cláusula relativa activa (who is + -ing) se reduce quitando 'who is' y dejando el participio presente: The man standing by the door."
@@ -23,7 +25,7 @@ quiz:
       [
         'The book writing in 1990 is a classic.',
         'The book written in 1990 is a classic.',
-        'The book was written in 1990 is a classic.'
+        'The book was written in 1990 is a classic.',
       ]
     answerIndex: 1
     explanation: "Cláusula relativa pasiva (which was + participio) se reduce quitando 'which was' y dejando solo el participio pasado: The book written in 1990."
@@ -32,7 +34,7 @@ quiz:
       [
         'Tired, she left the party early.',
         'Being tired, she left the party early.',
-        'Been tired, she left the party early.'
+        'Been tired, she left the party early.',
       ]
     answerIndex: 1
     explanation: "Cláusula adverbial de causa (Because + was) se reduce con 'Being' + adjetivo: Being tired, she left the party early."
@@ -40,7 +42,7 @@ exercises:
   - type: 'fill-blank'
     sentence: 'The man ___ by the door is my uncle.'
     answer: 'standing'
-    hint: "Cláusula relativa activa reducida: verbo + -ing (participio presente)."
+    hint: 'Cláusula relativa activa reducida: verbo + -ing (participio presente).'
     translation: 'El hombre que está parado junto a la puerta es mi tío.'
     placeholder: 'stood'
   - type: 'fill-blank'
@@ -106,11 +108,11 @@ Completa:  The book which was written in 1990 is a classic.
 Reducida:  The book written in 1990 is a classic.
 ```
 
-| Cláusula completa                  | Participle clause             |
-| ------------------------------------ | -------------------------------- |
-| The man who is standing...           | The man standing...              |
-| The book which was written...        | The book written...              |
-| The car that was parked outside      | The car parked outside           |
+| Cláusula completa               | Participle clause      |
+| ------------------------------- | ---------------------- |
+| The man who is standing...      | The man standing...    |
+| The book which was written...   | The book written...    |
+| The car that was parked outside | The car parked outside |
 
 ## Reducir cláusulas adverbiales de causa: Because + was → Being
 

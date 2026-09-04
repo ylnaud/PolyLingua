@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Colocaciones avanzadas (make/do/take/have + sustantivo)'
 funFact: "No hay ninguna regla lógica que explique por qué 'make a mistake' usa 'make' y 'do the shopping' usa 'do' — son combinaciones fijadas por el uso, no por significado. Los hablantes nativos las producen automáticamente porque las escucharon miles de veces juntas, nunca separadas."
+skills:
+  - en.c1.collocation.make-do
 minutes: 10
 quiz:
   - question: "¿Cuál es la colocación correcta: '___ a decision' (tomar una decisión)?"

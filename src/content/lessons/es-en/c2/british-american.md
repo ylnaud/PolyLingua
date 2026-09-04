@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Diferencias entre inglés británico y americano'
 funFact: "'I've just eaten' (británico) vs. 'I just ate' (americano) — ambos son correctos, pero el inglés británico prefiere el Present Perfect para acciones recién completadas, mientras el americano tiende a usar Past Simple con más libertad. No es un error, es una preferencia regional consolidada."
+skills:
+  - en.c2.variety.british-american
 minutes: 9
 quiz:
   - question: "¿Cuál es la ortografía americana de 'colour' (color, británico)?"

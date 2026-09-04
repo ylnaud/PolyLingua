@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Elipsis y sustitución (so/neither, do so, one/ones)'
 funFact: "Repetir la misma información palabra por palabra ('I think it will rain, and my brother thinks it will rain too') suena robótico en inglés fluido. Los hablantes nativos comprimen constantemente con atajos como 'so' ('I think so'), 'neither' ('Neither do I'), o simplemente omitiendo lo que ya se entiende por contexto."
+skills:
+  - en.c1.structure.ellipsis
 minutes: 9
 quiz:
   - question: "'Do you think it will rain?' 'I think ___.' ¿Qué palabra completa la respuesta de forma natural?"

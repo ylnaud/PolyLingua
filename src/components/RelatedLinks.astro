@@ -1,0 +1,96 @@
+---
+/**
+ * El bloque de "seguí por acá".
+ *
+ * Recibe una ruta y pinta los enlaces que el motor propuso para ella. Si no
+ * hay ninguno —porque nada llegó al umbral— no renderiza NADA: ni el título,
+ * ni un contenedor vacío. Una página sin relaciones demostrables se queda sin
+ * bloque a propósito.
+ *
+ * Los enlaces salen de `relatedFor()`, que resuelve el grafo una sola vez por
+ * build. El texto de cada uno es el `grammarTopic` o el título de la página
+ * destino, nunca una keyword metida a mano.
+ *
+ * Cero JavaScript de cliente: es una lista de enlaces.
+ *
+ * El contenedor es `aside` y no `nav`: esto es contenido relacionado, no un
+ * bloque de navegación del sitio. Además, las herramientas que miden el grafo
+ * de enlaces descartan lo que cuelga de un `nav` —justamente para no contar
+ * header, footer y migas—, así que con `nav` estos enlaces se habrían medido
+ * como chrome y no como enlace editorial.
+ */
+import { relatedFor } from '../lib/links/fromContent';
+
+interface Props {
+  /** Ruta de la página actual, tal como la genera el silo. */
+  route: string;
+  /** Encabezado del bloque. Cada tipo de página usa el suyo. */
+  title?: string;
+}
+
+const { route, title = 'Seguí por acá' } = Astro.props;
+const enlaces = relatedFor(route);
+---
+
+{
+  enlaces.length > 0 && (
+    <aside class="related" aria-labelledby="related-title">
+      <h2 id="related-title" class="related-title">
+        {title}
+      </h2>
+      <ul class="related-list">
+        {enlaces.map((e) => (
+          <li>
+            <a href={e.hasta}>{e.anchor}</a>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}
+
+<style>
+  .related {
+    margin-top: 2.5rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+  }
+
+  .related-title {
+    margin: 0 0 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .related-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .related-list a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+  }
+
+  .related-list a::before {
+    content: '→';
+    margin-right: 0.5rem;
+    color: var(--text-muted);
+  }
+
+  .related-list a:hover,
+  .related-list a:focus-visible {
+    border-bottom-color: currentColor;
+  }
+</style>

@@ -4,6 +4,7 @@ import { getDictionary } from '../../../../i18n';
 import Breadcrumbs from '../../../../components/Breadcrumbs.astro';
 import DialogueCard from '../../../../components/DialogueCard.astro';
 import StudyCycle from '../../../../components/StudyCycle.astro';
+import RelatedLinks from '../../../../components/RelatedLinks.astro';
 import { getCollection, render } from 'astro:content';
 import { LANGUAGE_MAP } from '../../../../data/languages';
 import { SPANISH_GLOSS_USER_LANG } from '../../../../lib/courses';
@@ -143,6 +144,13 @@ const structuredData = {
   <section class="container body-content">
     <Content />
   </section>
+
+  <div class="container">
+    <RelatedLinks
+      route={`/${userLang}/${lang}/dialogos/${slug}`}
+      title="Otros diálogos de lo mismo"
+    />
+  </div>
 
   <nav class="container prev-next" aria-label="Navegación entre diálogos">
     {

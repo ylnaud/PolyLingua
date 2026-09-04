@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Practice from '../components/Practice.astro';
 import PhraseBank from '../components/PhraseBank.astro';
 import AdSlot from '../components/AdSlot.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 import { LEVEL_MAP } from '../data/levels';
 import { LANGUAGE_MAP, type LanguageId } from '../data/languages';
 import { getDictionary } from '../i18n';
@@ -223,6 +224,13 @@ const restPath = `/${level}/${path.split('/').pop()}`;
         que enseña, coherente con que la relación sea N:N. */
     }
     {skills.length > 0 && <div hidden data-lesson-skills={JSON.stringify(skills)} />}
+
+    {
+      /* Va ANTES de la nav anterior/siguiente, no después: la nav es el final
+        del recorrido lineal, y estos enlaces son la alternativa a seguir esa
+        línea. Después de "siguiente lección" ya nadie los lee. */
+    }
+    <RelatedLinks route={path} />
 
     <footer class="lesson-nav">
       {

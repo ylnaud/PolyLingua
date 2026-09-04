@@ -21,6 +21,7 @@ import { LANGUAGE_MAP } from '../data/languages';
 import { getDictionary } from '../i18n';
 import type { Dictionary } from '../i18n/dictionary';
 import { fill } from '../lib/interpolate';
+import { isNoindexRoute } from '../data/noindex-routes';
 import type { SiloContext } from '../lib/siloPath';
 
 /** Las herramientas que tienen entrada propia en el diccionario. */
@@ -107,15 +108,22 @@ const title = props.title ?? fill(textos!.metaTitulo, vars);
 const description = props.description ?? fill(textos!.metaDescripcion, vars);
 const h1 = props.h1 ?? fill(textos!.h1, vars);
 const name = props.name ?? dict.tools.nombres[props.tool!];
+
+// El noindex no se pone a mano: sale de la misma función de la que sale la
+// exclusión del sitemap (`isNoindexRoute`, en src/data/noindex-routes.ts). Con
+// `noindex` fijo acá, el día que una herramienta pasara a indexarse había que
+// acordarse de tocar los dos sitios; ahora es imposible que discrepen.
+const path = `/${userLang}/${targetLang}/${slug}`;
+const noindex = isNoindexRoute(path);
 ---
 
 <BaseLayout
   userLang={userLang}
   title={title}
   description={description}
-  path={`/${userLang}/${targetLang}/${slug}`}
+  path={path}
   siloContext={siloContext}
-  noindex
+  noindex={noindex}
 >
   <section class={`container ${ownHeadStyles ? '' : 'silo-tool-head '}${headClass}`}>
     <Breadcrumbs

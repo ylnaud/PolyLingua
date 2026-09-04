@@ -189,11 +189,38 @@ estático). Producción vive en:
 
 **https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/**
 
-Push a `main` construye y publica ahí automáticamente. El build sigue
-siendo `npm run build` (no `astro build` solo — hay que correr el hook
-`postbuild` que versiona el Service Worker); Astro sigue en modo SSG
-puro, sin adapter de servidor. `public/_headers` es hoy la config de
-seguridad activa (Cloudflare la lee directo del build output).
+Push a `main` construye y publica ahí automáticamente. Cualquier comando
+de build sirve —`npm run build` o `astro build` a secas dan lo mismo—
+porque el Service Worker lo genera Astro como endpoint
+(`src/pages/sw.js.ts`). **Antes no era así**: vivía en `public/sw.js` y un
+hook `postbuild` le versionaba el `CACHE_NAME`, así que un build con
+`astro build` publicaba un Service Worker byte por byte idéntico al
+anterior, el navegador nunca detectaba la versión nueva y los usuarios se
+quedaban con la caché vieja. Astro sigue en modo SSG puro, sin adapter de
+servidor. `public/_headers` es hoy la config de seguridad activa
+(Cloudflare la lee directo del build output).
+
+### El Service Worker sirve las páginas de la red primero
+
+No es una preferencia, es obligatorio: `BaseLayout` monta `<ClientRouter />`
+y `astro.config.mjs` tiene `prefetchAll`, así que un clic en un enlace **no
+es una navegación del navegador** sino un `fetch()` que hace Astro para
+intercambiar el DOM. Ese fetch no lleva `mode: 'navigate'`, ni
+`destination: 'document'`, ni un `Accept` de HTML. Si el SW decide la
+estrategia mirando `request.mode`, todas las páginas caen en la rama de
+assets —caché primero, sin revalidar— y **dejan de cambiar al navegar**,
+congeladas en la copia de la primera visita. Pasó de verdad.
+
+Por eso `esDocumentoSW()` (en `src/lib/swPrecache.ts`) clasifica por la
+ruta: sin extensión de archivo = página = red primero. Esa función se
+inyecta en el SW con `.toString()` para que `tests/sw.test.ts` pruebe
+exactamente el código que se publica. Si tocás el SW, no vuelvas a decidir
+por `request.mode`.
+
+Y el precache va con `Promise.allSettled`, no con `cache.addAll`: `addAll`
+es atómico, así que una sola URL rota dejaba el precache entero vacío y la
+app sin conexión no abría nada. El test comprueba que las 40 URLs de
+`PRECACHE_URLS` existan en el build.
 
 Vercel dejó de ser el hosting real. `vercel.json` ya se borró del repo —
 la config de seguridad activa vive solo en `public/_headers` (formato

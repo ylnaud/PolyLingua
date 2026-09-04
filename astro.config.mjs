@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import { NOINDEX_LAST_SEGMENTS } from './src/data/noindex-routes.ts';
+import { isNoindexRoute } from './src/data/noindex-routes.ts';
 import { USER_LANGUAGES } from './src/data/userLanguages.ts';
 
 // Páginas con <meta name="robots" content="noindex"> en su BaseLayout.
@@ -10,8 +10,7 @@ import { USER_LANGUAGES } from './src/data/userLanguages.ts';
 // fuente de verdad) y tests/noindex-sitemap.test.ts verifica que siga
 // sincronizada con las páginas reales.
 function isNoindexPage(pageUrl) {
-  const path = new URL(pageUrl).pathname.replace(/\/$/, '');
-  return NOINDEX_LAST_SEGMENTS.includes(path.split('/').pop());
+  return isNoindexRoute(new URL(pageUrl).pathname);
 }
 
 // Los silos de un idioma de interfaz inactivo (hoy /de/*, /en/*) se generan y

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
 
 interface Props {
   title: string;
@@ -89,6 +90,8 @@ const structuredData = {
     <div class="content">
       <slot />
     </div>
+
+    <RelatedLinks route={path} title="Empezá el curso" />
 
     <footer class="post-nav">
       <a class="btn btn-ghost" href="/blog">← Volver al blog</a>

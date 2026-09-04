@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import StartLevelPicker from '../../../components/StartLevelPicker.astro';
+import RelatedLinks from '../../../components/RelatedLinks.astro';
 import { LEVELS } from '../../../data/levels';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { TSA_LANG } from '../../../data/tsa';
@@ -295,6 +296,10 @@ const structuredData = {
       </section>
     )
   }
+
+  <section class="container">
+    <RelatedLinks route={`/${userLang}/${targetLang}`} title="Del blog" />
+  </section>
 </BaseLayout>
 
 <script

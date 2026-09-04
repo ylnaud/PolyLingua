@@ -73,7 +73,9 @@ Con eso basta: la página de nivel y la lección se generan solas.
       muestra por nivel para validar formato y diseño)
 - [ ] Ejercicios de vocabulario y audio/pronunciación
 - [ ] Seguimiento de progreso del usuario (localStorage → cuenta)
-- [ ] Despliegue a producción (Netlify/Vercel) con dominio propio
+- [x] Despliegue a producción — Cloudflare Workers, publica solo en cada push
+      a `main`
+- [ ] Dominio propio (hoy se sirve desde el subdominio `*.workers.dev`)
 - [ ] Capa de monetización opcional (premium) sin cerrar el contenido
       gratuito existente
 

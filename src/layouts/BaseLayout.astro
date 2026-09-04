@@ -150,6 +150,13 @@ const ogImage = new URL(ogImagePath, Astro.site);
     <ScrollTopButton />
     <BottomNav userLang={pageLang} />
     <script is:inline>
+      // El Service Worker se actualiza solo: hace skipWaiting al instalarse, y
+      // como las páginas se sirven de la red primero, la siguiente navegación
+      // ya trae lo último publicado.
+      //
+      // Antes había acá un toast "Nueva versión disponible" y una recarga
+      // automática al cambiar de worker. Los dos sobran ahora, y la recarga
+      // encima era hostil: podía saltar en mitad de un ejercicio.
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {
           navigator.serviceWorker
@@ -160,44 +167,6 @@ const ogImage = new URL(ogImagePath, Astro.site);
               document.addEventListener('visibilitychange', function () {
                 if (document.visibilityState === 'visible')
                   registration.update().catch(function () {});
-              });
-
-              function showUpdateToast(worker) {
-                if (document.getElementById('sw-update-toast')) return;
-                var toast = document.createElement('div');
-                toast.id = 'sw-update-toast';
-                toast.className = 'sw-update-toast';
-                toast.setAttribute('role', 'alert');
-                toast.innerHTML =
-                  '<span>\u{1F504} Nueva versión disponible</span>' +
-                  '<button type="button" class="sw-update-btn">Actualizar</button>' +
-                  '<button type="button" class="sw-update-close" aria-label="Cerrar">×</button>';
-                document.body.appendChild(toast);
-                toast.querySelector('.sw-update-btn').addEventListener('click', function () {
-                  worker.postMessage({ type: 'SKIP_WAITING' });
-                });
-                toast.querySelector('.sw-update-close').addEventListener('click', function () {
-                  toast.remove();
-                });
-              }
-
-              if (registration.waiting) showUpdateToast(registration.waiting);
-
-              registration.addEventListener('updatefound', function () {
-                var newWorker = registration.installing;
-                if (!newWorker) return;
-                newWorker.addEventListener('statechange', function () {
-                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                    showUpdateToast(newWorker);
-                  }
-                });
-              });
-
-              var refreshed = false;
-              navigator.serviceWorker.addEventListener('controllerchange', function () {
-                if (refreshed) return;
-                refreshed = true;
-                window.location.reload();
               });
             })
             .catch(function () {});

@@ -231,16 +231,27 @@ tiene acceso de escritura a la cuenta de Vercel.
 ### Pendiente para terminar el corte a Cloudflare
 
 1. **Dominio propio**: todavía se sirve desde el subdominio
-   `*.workers.dev` de arriba, no desde un dominio comprado. El repo ya
-   está preparado para cuando se compre uno — la URL del sitio se lee
-   de `Astro.site` (`astro.config.mjs`, `site:`) en vez de estar
-   hardcodeada, así que apuntar a un dominio nuevo es editar **una sola
-   línea** ahí. Esa línea, junto con las URLs hardcodeadas que se
-   listaban acá (`public/robots.txt`, `public/llms.txt`,
-   `public/og-image.svg`, `src/styles/global.css`,
-   `src/pages/privacidad.astro`), ya apuntan al `*.workers.dev` de
-   arriba — cuando se compre el dominio propio, hay que volver a tocar
-   esos mismos archivos.
+   `*.workers.dev` de arriba, no desde un dominio comprado. La mudanza
+   está preparada de antemano y documentada paso a paso en
+   **`docs/MIGRACION-DOMINIO.md`** — leelo antes de tocar nada, sobre
+   todo por el orden de los pasos y por lo que NO hay que hacer.
+
+   Lo esencial: la URL vive en `src/data/site.ts` y de ahí salen el
+   `site:` de `astro.config.mjs` (y con él canonical, Open Graph y
+   sitemap), el host que muestra `/privacidad` y el que compara el
+   Worker de redirección. Cambiar de dominio es editar **esa** línea,
+   más los ficheros estáticos que no pueden importar nada
+   (`public/robots.txt`, `public/llms.txt`, `public/og-image.svg`,
+   `src/styles/global.css`). Esa lista no se mantiene a mano:
+   `tests/dominio.test.ts` recorre el repo y falla si la URL aparece en
+   un archivo que no esté documentado.
+
+   Un aviso que ya costó investigar: **`_redirects` NO sirve para esto.**
+   Cloudflare no soporta redirecciones por dominio, y una regla `/*`
+   haría que el dominio nuevo se redirigiera a sí mismo en bucle. La
+   redirección va en `worker/redirect.ts`, hoy inerte porque
+   `wrangler.jsonc` no lo referencia.
+
 2. **Vercel**: desconectar la integración con GitHub y/o borrar el
    proyecto desde el dashboard de Vercel (vercel.com/dashboard →
    proyecto PolyLingua → Settings → Git / Delete Project). Es un paso

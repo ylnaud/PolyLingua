@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { isNoindexRoute } from './src/data/noindex-routes.ts';
+import { SITE_URL } from './src/data/site.ts';
 import { USER_LANGUAGES } from './src/data/userLanguages.ts';
 
 // Páginas con <meta name="robots" content="noindex"> en su BaseLayout.
@@ -53,7 +54,7 @@ function isLegacyRedirectPage(pageUrl) {
 }
 
 export default defineConfig({
-  site: 'https://polylingua.thyronemiguelvegasantana-c6e.workers.dev',
+  site: SITE_URL,
   integrations: [
     sitemap({
       filter: (page) =>

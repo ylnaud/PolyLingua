@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'Pidiendo la cuenta en inglés'
+title: 'La cuenta'
 description: 'Pedí la cuenta en un restaurante en inglés: preguntá si aceptan tarjeta y aclará si va todo en una sola cuenta. Diálogo A1 con traducción y vocabulario.'
 order: 9
 situation: 'Restaurante'

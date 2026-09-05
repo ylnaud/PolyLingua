@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'Hablando del clima en inglés'
+title: 'Hablando del clima'
 description: 'Hablá del clima en inglés para romper el hielo: comentá el calor, contá que mañana llueve y recordale al otro que lleve paraguas. Diálogo A1 traducido.'
 order: 19
 situation: 'Conversación'

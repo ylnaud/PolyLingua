@@ -1,7 +1,7 @@
 ---
 language: en
 level: a2
-title: 'Problema en la habitación en inglés'
+title: 'Problema en la habitación'
 description: 'Reportá un problema en tu habitación de hotel en inglés: el aire acondicionado no funciona y pedís que lo arreglen. Diálogo A2 traducido.'
 order: 12
 situation: 'Alojamiento'

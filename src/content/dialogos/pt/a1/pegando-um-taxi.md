@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a1
-title: 'Tomando un taxi en portugués'
+title: 'Tomando un taxi'
 description: 'Tomá un taxi en Brasil: pedí que te lleven al aeropuerto, guardá la valija, preguntá cuánto sale y pedí el camino rápido. Diálogo A1 traducido.'
 order: 17
 situation: 'Transporte'

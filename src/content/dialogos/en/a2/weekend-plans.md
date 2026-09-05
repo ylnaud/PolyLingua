@@ -1,7 +1,7 @@
 ---
 language: en
 level: a2
-title: 'Planes del fin de semana en inglés'
+title: 'Planes del fin de semana'
 description: 'Organizá el fin de semana en inglés: preguntá si tiene planes, proponé ir a la playa y acordá el día y la hora. Diálogo A2 con traducción.'
 order: 20
 situation: 'Conversación'

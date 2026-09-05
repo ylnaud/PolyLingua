@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a1
-title: 'Presentándose en portugués'
+title: 'Presentándose'
 description: 'Presentate en portugués brasileño: arranca con el típico «tudo bem?», decí tu nombre, de dónde sos y a qué te dedicás. Diálogo A1 traducido.'
 order: 13
 situation: 'Presentaciones'

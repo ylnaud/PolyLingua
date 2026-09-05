@@ -2,6 +2,7 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import { execSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { isNoindexRoute } from '../src/data/noindex-routes';
 
 /**
  * Las meta descriptions de los diálogos.
@@ -39,9 +40,19 @@ function descriptionDe(archivo: string): string {
   return m[1]!.replace(/''/g, "'");
 }
 
+/** Mismo criterio que `descriptionDe`: la línea, no el YAML entero. */
+function titleDe(archivo: string): string {
+  const raw = readFileSync(archivo, 'utf-8');
+  const m = raw.match(/^title: '((?:[^']|'')*)'\s*$/m);
+  if (!m) throw new Error(`Sin title entre comillas simples: ${archivo}`);
+  return m[1]!.replace(/''/g, "'");
+}
+
 const dialogos = archivos(RAIZ).map((f) => ({
   id: relative(RAIZ, f).replace(/\.md$/, ''),
+  archivo: relative(RAIZ, f),
   description: descriptionDe(f),
+  title: titleDe(f),
 }));
 
 describe('meta descriptions de los diálogos', () => {
@@ -98,9 +109,16 @@ describe('meta descriptions de los diálogos', () => {
 /**
  * Datos estructurados de los diálogos y sus hubs.
  *
- * Los hubs se indexaron para desatascar los 100 diálogos, que no recibían
- * ningún enlace seguible. Pero salieron sin NINGÚN dato estructurado, y los
- * diálogos sin BreadcrumbList aunque pintaran las migas. Esto lo fija.
+ * Estos tests nacieron cuando los hubs se indexaron para desatascar los 100
+ * diálogos: salieron sin NINGÚN dato estructurado, y los diálogos sin
+ * BreadcrumbList aunque pintaran las migas.
+ *
+ * Toda la sección es hoy `noindex` (ver más abajo), así que estas
+ * comprobaciones ya no defienden un objetivo de posicionamiento. Se quedan
+ * igual por dos motivos: el JSON-LD sigue describiendo la página para
+ * cualquier cliente que la lea, y —sobre todo— si algún día se les escribe
+ * contenido y vuelven al índice, tienen que volver bien. Un test que se borra
+ * al apagar una función es un test que hay que reescribir al encenderla.
  */
 describe('datos estructurados de diálogos y hubs', () => {
   const DIST = join(import.meta.dirname, '..', 'dist');
@@ -180,5 +198,120 @@ describe('datos estructurados de diálogos y hubs', () => {
       (m) => new URL(m[1]!).pathname,
     );
     expect(alt).toEqual(['/es/de/dialogos/im-supermarkt']);
+  });
+});
+
+/**
+ * El título de un diálogo y el idioma que enseña.
+ *
+ * Son 20 situaciones × 5 cursos, así que el `title` del frontmatter nombra
+ * SOLO la situación («En el café») y es el mismo en los cinco idiomas. El
+ * idioma lo pone la plantilla, que es la única que lo sabe.
+ *
+ * Estuvo a medias y de las dos formas mal. En `de`, `fr` e `it` no se decía en
+ * ninguna parte: las tres páginas de una misma situación salían con el MISMO
+ * <h1> y el mismo `name` en los datos estructurados. Y en `en` y `pt` estaba
+ * metido dentro del propio título, que al sumarse al del layout salía repetido:
+ * «En el café en portugués · Diálogo A1 en Portugués».
+ *
+ * Los dos tests de abajo son las dos mitades de esa regla, y hacen falta las
+ * dos: uno impide que el idioma vuelva al frontmatter, el otro impide que
+ * desaparezca de la página.
+ */
+describe('el título dice qué idioma se enseña, y lo dice una sola vez', () => {
+  const DIST = join(import.meta.dirname, '..', 'dist');
+
+  it('ningún título del frontmatter nombra el idioma — eso es cosa de la plantilla', () => {
+    const culpables = dialogos
+      .filter((d) => / en (alemán|inglés|francés|italiano|portugués)$/i.test(d.title))
+      .map((d) => `${d.archivo}: ${d.title}`);
+    expect(culpables).toEqual([]);
+  });
+
+  it('las 20 situaciones son las mismas en los cinco idiomas', () => {
+    const veces = new Map<string, number>();
+    for (const d of dialogos) veces.set(d.title, (veces.get(d.title) ?? 0) + 1);
+    expect(veces.size).toBe(20);
+    expect([...new Set(veces.values())]).toEqual([5]);
+  });
+
+  it('los 100 <h1> publicados son distintos entre sí', () => {
+    const h1 = dialogos.map((d) => {
+      const [idioma, , slug] = d.id.split('/');
+      const html = readFileSync(
+        join(DIST, 'es', idioma!, 'dialogos', slug!, 'index.html'),
+        'utf-8',
+      );
+      return /<h1[^>]*>([^<]*)/.exec(html)?.[1] ?? '';
+    });
+    expect(h1.length).toBe(100);
+    expect(new Set(h1).size, 'hay <h1> repetidos entre idiomas').toBe(h1.length);
+    // Y ninguno repite el idioma dos veces, que era el defecto de en/pt.
+    expect(h1.filter((t) => /portugués.*portugués|inglés.*inglés/i.test(t))).toEqual([]);
+  });
+});
+
+/**
+ * La sección de diálogos está fuera del índice.
+ *
+ * Decisión de contenido, no un accidente: son las páginas más cortas del
+ * sitio con diferencia —235 palabras únicas de mediana frente a las 1140 de
+ * una lección— y quedan como herramienta, igual que repasar o vocabulario.
+ *
+ * Hacen falta las dos comprobaciones porque son dos mecanismos distintos que
+ * ya discreparon una vez: el `<meta robots>` lo pinta el layout y la
+ * exclusión del sitemap sale del filtro de astro.config.mjs. Los 100
+ * diálogos estuvieron en el sitemap con `index, follow` mientras `dialogos`
+ * ya figuraba en NOINDEX_LAST_SEGMENTS — el último segmento de
+ * /es/de/dialogos/im-cafe es `im-cafe`, así que ninguno de los cien cumplía
+ * la regla que creíamos aplicada.
+ */
+describe('los diálogos no se indexan', () => {
+  const DIST = join(import.meta.dirname, '..', 'dist');
+
+  const rutasDialogo = () =>
+    dialogos.map((d) => {
+      const [idioma, , slug] = d.id.split('/');
+      return {
+        ruta: `/es/${idioma}/dialogos/${slug}`,
+        archivo: join(DIST, 'es', idioma!, 'dialogos', slug!, 'index.html'),
+      };
+    });
+
+  it('la función de rutas cubre las tres formas: selector, hub y diálogo', () => {
+    expect(isNoindexRoute('/es/dialogos')).toBe(true);
+    expect(isNoindexRoute('/es/de/dialogos')).toBe(true);
+    expect(isNoindexRoute('/es/de/dialogos/im-cafe')).toBe(true);
+    // Control: una lección normal sigue indexándose. Sin esto, una función
+    // que devolviera `true` siempre pasaría los tres de arriba.
+    expect(isNoindexRoute('/es/de/a1/articulos-der-die-das')).toBe(false);
+  });
+
+  it('los 100 diálogos publicados llevan <meta robots> noindex', () => {
+    const conIndex = rutasDialogo().filter(({ archivo }) => {
+      const robots =
+        /<meta name="robots" content="([^"]*)"/.exec(readFileSync(archivo, 'utf-8'))?.[1] ?? '';
+      return !robots.includes('noindex');
+    });
+    expect(conIndex.map((x) => x.archivo)).toEqual([]);
+  });
+
+  it('los 5 hubs también', () => {
+    for (const lang of ['de', 'en', 'fr', 'it', 'pt']) {
+      const html = readFileSync(join(DIST, 'es', lang, 'dialogos', 'index.html'), 'utf-8');
+      expect(/<meta name="robots" content="([^"]*)"/.exec(html)?.[1], lang).toContain('noindex');
+    }
+  });
+
+  it('ninguna URL de diálogos queda en el sitemap', () => {
+    const urls = readdirSync(DIST)
+      .filter((f) => /^sitemap-\d+\.xml$/.test(f))
+      .flatMap((f) =>
+        [...readFileSync(join(DIST, f), 'utf-8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+          (m) => m[1]!,
+        ),
+      );
+    expect(urls.length).toBeGreaterThan(300); // control: el sitemap no está vacío
+    expect(urls.filter((u) => u.includes('/dialogos'))).toEqual([]);
   });
 });

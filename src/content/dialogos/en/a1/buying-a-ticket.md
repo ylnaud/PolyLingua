@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'Comprando un boleto en inglés'
+title: 'Comprando un boleto'
 description: 'Comprá un boleto de tren en inglés: pedí ida o ida y vuelta, preguntá el precio y confirmá desde qué andén sale. Diálogo A1 traducido.'
 order: 18
 situation: 'Transporte'

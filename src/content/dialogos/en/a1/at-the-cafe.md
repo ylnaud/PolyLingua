@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'En el café en inglés'
+title: 'En el café'
 description: 'Pedí en una cafetería en inglés: un café con leche, una porción de torta y respondé si es para tomar ahí. Diálogo A1 corto y traducido.'
 order: 7
 situation: 'Restaurante'

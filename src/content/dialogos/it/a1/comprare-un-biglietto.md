@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'Comprando un boleto'
-description: 'Comprá un boleto de tren en italiano con este diálogo práctico de 6 líneas.'
+description: 'Comprá un boleto de tren en Italia: pedí ida y vuelta, preguntá a qué hora sale el próximo y confirmá el andén. Diálogo A1 traducido.'
 order: 18
 situation: 'Transporte'
 dialogue:

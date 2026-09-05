@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'Tomando un taxi'
-description: 'Tomá un taxi y negociá el viaje en italiano con este diálogo práctico de nivel A1.'
+description: 'Tomá un taxi en Italia: dá el destino, preguntá cuánto se tarda y pedí pasar por otra calle para hacer una parada. Diálogo A1 con traducción.'
 order: 17
 situation: 'Transporte'
 dialogue:

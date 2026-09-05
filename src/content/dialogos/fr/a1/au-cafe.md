@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'En el café'
-description: 'Pedí un café, un jugo o una medialuna en un café parisino con este diálogo de nivel A1.'
+description: 'Pedí en un café francés: un café con leche, una medialuna y un jugo de naranja, con las frases que se usan de verdad. Diálogo A1 traducido.'
 order: 7
 situation: 'Restaurante'
 dialogue:

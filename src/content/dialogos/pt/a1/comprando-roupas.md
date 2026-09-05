@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'Comprando ropa en portugués'
-description: 'Aprendé a pedir talles, colores y precios cuando comprás ropa en una tienda brasileña con este diálogo práctico.'
+description: 'Comprá ropa en portugués: pedí el talle M, preguntá si la tienen en azul, consultá dónde está el probador y probátela. Diálogo A1 traducido.'
 order: 3
 situation: 'Compras'
 dialogue:

@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'Tomando un taxi'
-description: 'Tomá un taxi en Francia con confianza: dá la dirección, preguntá el precio y pedí el recibo.'
+description: 'Tomá un taxi en Francia: preguntá si está libre, dá el destino y consultá cuánto va a costar el viaje. Diálogo A1 con traducción y vocabulario.'
 order: 17
 situation: 'Transporte'
 dialogue:

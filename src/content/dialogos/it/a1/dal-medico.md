@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'En el médico'
-description: 'Describí tus síntomas en el consultorio médico en italiano con este diálogo práctico.'
+description: 'En la consulta médica en italiano: contá que te duele la cabeza y tenés algo de fiebre y tos, y entendé la receta. Diálogo A1 traducido.'
 order: 15
 situation: 'Salud'
 dialogue:

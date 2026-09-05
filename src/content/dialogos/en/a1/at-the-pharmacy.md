@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'En la farmacia en inglés'
-description: 'Pedí medicamentos y consultá al farmacéutico con este diálogo de nivel A1 en inglés. Frases útiles para viajes.'
+description: 'En la farmacia en inglés: explicá que estás resfriado, aclará si tenés fiebre y entendé cuántas veces por día tomar el jarabe. Diálogo A1 traducido.'
 order: 16
 situation: 'Salud'
 dialogue:

@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'En el colectivo'
-description: 'Preguntá por paradas y destinos en un colectivo en italiano con este diálogo práctico.'
+description: 'Moverte en colectivo en Italia: preguntá si va al centro, qué número tenés que tomar, dónde está la parada y cuánto tarda. Diálogo A1 traducido.'
 order: 6
 situation: 'Orientación'
 dialogue:

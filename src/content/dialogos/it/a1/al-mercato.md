@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'En el mercado'
-description: 'Comprá frutas y verduras en un mercado italiano con este diálogo práctico de 6 líneas.'
+description: 'Comprá en un mercado italiano: preguntá cuánto cuesta el kilo de frutillas, pedí medio kilo y sumá dos limones y un ramo. Diálogo A1 traducido.'
 order: 4
 situation: 'Compras'
 dialogue:

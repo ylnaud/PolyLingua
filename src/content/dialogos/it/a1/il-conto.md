@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'La cuenta'
-description: 'Pedí la cuenta y pagá en un restaurante italiano con este diálogo práctico.'
+description: 'Pedí la cuenta en un restaurante italiano y resolvé el clásico «solo efectivo»: preguntá por la tarjeta y buscá el cajero. Diálogo A1 traducido.'
 order: 9
 situation: 'Restaurante'
 dialogue:

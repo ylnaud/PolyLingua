@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: 'Alquilando un departamento'
-description: 'Preguntá por un alquiler en francés: precio, gastos incluidos y fecha de entrada con este diálogo A2.'
+description: 'Alquilá un departamento en Francia: preguntá cuántos ambientes tiene, cuánto es el alquiler con gastos y si viene amueblado. Diálogo A2 traducido.'
 order: 11
 situation: 'Alojamiento'
 dialogue:

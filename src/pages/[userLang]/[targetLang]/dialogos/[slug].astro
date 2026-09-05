@@ -77,6 +77,24 @@ const structuredData = {
   url: `${siteURL}/${userLang}/${lang}/dialogos/${slug}`,
   timeRequired: `PT${d.minutes}M`,
 };
+
+// Solo breadcrumbs: el LearningResource ya lo emite `structuredData` de arriba,
+// y duplicarlo en el @graph sería declarar el mismo recurso dos veces.
+//
+// `restPath` es obligatorio acá: BaseSEO arma los hreflang como
+// /<userLang>/<targetLang><restPath>, así que sin él este diálogo declararía la
+// portada del curso como su propia alternativa de idioma.
+const siloContext = {
+  userLang: userLang!,
+  targetLang: lang!,
+  restPath: `/dialogos/${slug}`,
+  breadcrumbs: [
+    { name: dict.silo.idiomas, href: `/${userLang}` },
+    { name: langMeta.name, href: `/${userLang}/${lang}` },
+    { name: dict.silo.explorar.dialogos, href: `/${userLang}/${lang}/dialogos` },
+    { name: d.title, href: `/${userLang}/${lang}/dialogos/${slug}` },
+  ],
+};
 ---
 
 <BaseLayout
@@ -85,6 +103,7 @@ const structuredData = {
   description={d.description}
   path={`/${userLang}/${lang}/dialogos/${slug}`}
   structuredData={structuredData}
+  siloContext={siloContext}
   ogImage={`/og-${lang}.png`}
 >
   <section class="container dialogue-head">

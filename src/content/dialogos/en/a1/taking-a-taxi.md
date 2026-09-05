@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'Tomando un taxi en inglés'
-description: 'Aprendé a pedirle al taxista que te lleve a un destino y preguntar cuánto cuesta con un diálogo A1.'
+description: 'Tomá un taxi en inglés: pedí que te lleven al aeropuerto, preguntá cuánto va a costar y avisá dónde querés bajar. Diálogo A1 traducido.'
 order: 17
 situation: 'Transporte'
 dialogue:

@@ -2,7 +2,7 @@
 language: it
 level: a2
 title: 'Alquilando un departamento'
-description: 'Consultá por un alquiler temporal en italiano con este diálogo de nivel A2.'
+description: 'Alquilá un departamento en Italia: preguntá si sigue disponible, cuántos ambientes tiene y cuánto es el alquiler mensual. Diálogo A2 traducido.'
 order: 11
 situation: 'Alojamiento'
 dialogue:

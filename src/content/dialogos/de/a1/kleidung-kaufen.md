@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'Comprando ropa'
-description: 'Aprendé a pedir tu talle y preguntar precios en una tienda de ropa alemana con este diálogo práctico.'
+description: 'Comprá ropa en Alemania: pedí tu talle, preguntá si podés probarte la remera y consultá el precio. Diálogo A1 con traducción y vocabulario.'
 order: 3
 situation: 'Compras'
 dialogue:

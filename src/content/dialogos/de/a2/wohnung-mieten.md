@@ -2,7 +2,7 @@
 language: de
 level: a2
 title: 'Alquilando un departamento'
-description: 'Visitá un departamento en Alemania y aprendé a preguntar por el alquiler, los gastos y las condiciones.'
+description: 'Visitá un departamento en Alemania: preguntá si sigue disponible, cuánto es el alquiler sin gastos y qué incluye. Diálogo A2 con traducción.'
 order: 11
 situation: 'Alojamiento'
 dialogue:

@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'En el café en portugués'
-description: 'Pedí un café y una medialuna en una cafetería brasileña con este diálogo simple de nivel A1 en portugués.'
+description: 'Pedí en un café brasileño: un café con leche y un pan de queso, y decidí si es para tomar ahí o para llevar. Diálogo A1 traducido.'
 order: 7
 situation: 'Restaurante'
 dialogue:

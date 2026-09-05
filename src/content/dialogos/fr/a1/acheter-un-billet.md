@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'Comprando un boleto'
-description: 'Comprá un boleto de tren en Francia: destino, clase, ida y vuelta y horarios en un diálogo A1.'
+description: 'Comprá un boleto de tren en Francia: pedí ida y vuelta en segunda clase, mirá el horario y confirmá el andén. Diálogo A1 traducido.'
 order: 18
 situation: 'Transporte'
 dialogue:

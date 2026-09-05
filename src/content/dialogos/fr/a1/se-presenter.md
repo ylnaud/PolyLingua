@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'Presentándose'
-description: 'Aprendé a presentarte en francés: tu nombre, de dónde sos y a qué te dedicás en pocas líneas.'
+description: 'Presentate en francés: decí tu nombre, contá de dónde sos y a qué te dedicás, y devolvé la pregunta para seguir la charla. Diálogo A1 traducido.'
 order: 13
 situation: 'Presentaciones'
 dialogue:

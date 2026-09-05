@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'Presentándose en inglés'
-description: 'Aprendé a presentarte, decir tu nombre, de dónde sos y qué hacés con un diálogo básico en inglés.'
+description: 'Presentate en inglés: decí tu nombre, de dónde sos y a qué te dedicás, y devolvé la pregunta. Diálogo A1 con traducción y vocabulario.'
 order: 13
 situation: 'Presentaciones'
 dialogue:

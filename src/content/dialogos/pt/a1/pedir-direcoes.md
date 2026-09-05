@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'Preguntando el camino'
-description: 'Pedí indicaciones en la calle en portugués con un diálogo de 6 líneas que podés usar tal cual.'
+description: 'Pedí indicaciones en portugués: preguntá dónde queda la estación, entendé «siga reto e depois à esquerda» y confirmá si está lejos. Diálogo A1 traducido.'
 order: 2
 situation: 'Orientación'
 dialogue:

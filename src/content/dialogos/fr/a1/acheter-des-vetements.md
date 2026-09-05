@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'Comprando ropa'
-description: 'Aprendé a pedir tu talle y preguntar precios en una tienda de ropa francesa con este diálogo práctico.'
+description: 'Comprá ropa en Francia: decí qué talle usás, elegí entre dos colores y pedí probártelo antes de pagar. Diálogo A1 con traducción y vocabulario.'
 order: 3
 situation: 'Compras'
 dialogue:

@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'En el supermercado'
-description: 'Preguntá dónde están las cosas y cuánto cuestan con un diálogo real de supermercado en portugués.'
+description: 'Supermercado en Brasil: preguntá dónde está la leche, ubicá el «corredor três» y preguntá el precio del pan en reales. Diálogo A1 traducido.'
 order: 1
 situation: 'Compras'
 dialogue:

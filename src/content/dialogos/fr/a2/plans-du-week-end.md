@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: 'Planes del fin de semana'
-description: 'Proponé y organizá un plan para el finde en francés: invitá, sugerí una actividad y coordiná.'
+description: 'Organizá el fin de semana en francés: preguntá qué planes tiene, proponé el cine el sábado y acordá la hora. Diálogo A2 traducido.'
 order: 20
 situation: 'Conversación'
 dialogue:

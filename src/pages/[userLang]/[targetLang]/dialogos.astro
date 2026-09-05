@@ -28,17 +28,42 @@ const situations = [...new Set(allDialogos.map((d) => d.data.situation))].map((s
   situation: sit,
   dialogues: allDialogos.filter((d) => d.data.situation === sit),
 }));
+
+// El ItemList del JSON-LD sale de aplanar los mismos grupos que se pintan, en
+// el mismo orden: es la única forma de que anuncie exactamente lo que hay en
+// la página y no una lista paralela que se desincronice.
+const enOrdenDeLaPagina = situations.flatMap((g) => g.dialogues);
+
+const siloContext = {
+  userLang: userLang!,
+  targetLang: lang!,
+  restPath: '/dialogos',
+  breadcrumbs: [
+    { name: dict.silo.idiomas, href: `/${userLang}` },
+    { name: languageMeta?.name ?? lang!, href: `/${userLang}/${lang}` },
+    { name: dict.silo.explorar.dialogos, href: `/${userLang}/${lang}/dialogos` },
+  ],
+  collection: {
+    name: `Diálogos en ${languageMeta?.name}`,
+    about: languageMeta?.name,
+    items: enOrdenDeLaPagina.map((d) => ({
+      name: d.data.title,
+      href: `/${userLang}/${lang}/dialogos/${d.id.split('/').pop()}`,
+    })),
+  },
+};
 ---
 
 <SiloToolPage
   userLang={userLang!}
   targetLang={lang!}
   slug="dialogos"
+  siloContext={siloContext}
   emoji="💬"
   headClass="dlg-head"
   name={dict.silo.explorar.dialogos}
   title={`Diálogos en ${languageMeta?.name}`}
-  description={`Aprendé ${languageMeta?.name} con diálogos cortos y naturales — sin reglas, solo repetición e imitación.`}
+  description={`Aprendé ${languageMeta?.name} con ${allDialogos.length} diálogos cortos de situaciones reales: pedir en un café, viajar, ir al médico o alquilar. Cada uno con traducción línea a línea.`}
   h1="Diálogos para asimilar"
   desc="Diálogos cortos y reales que asimilás por repetición, no por análisis. Leelos, traducilos y dejalos reposar — en 4 días el patrón se graba solo."
 >

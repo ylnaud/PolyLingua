@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'En una fiesta'
-description: 'Socializá en una fiesta en italiano con este diálogo de 6 líneas para nivel A1.'
+description: 'Charlá en una fiesta en italiano: contá de qué conocés a la gente, preguntá qué estudian y mantené la conversación. Diálogo A1 traducido.'
 order: 14
 situation: 'Presentaciones'
 dialogue:

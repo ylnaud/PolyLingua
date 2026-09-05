@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'En el mercado en portugués'
-description: 'Practicá cómo pedir frutas, verduras y cantidades en un mercado brasileño con este diálogo de nivel A1.'
+description: 'Comprá en un mercado brasileño: preguntá cuánto está el kilo de banana, pedí dos kilos, sumá medio de tomate y pagá. Diálogo A1 traducido.'
 order: 4
 situation: 'Compras'
 dialogue:

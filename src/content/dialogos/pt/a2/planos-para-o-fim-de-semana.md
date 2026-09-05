@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: 'Planes del fin de semana en portugués'
-description: 'Aprendé a hacer planes con amigos en portugués brasileño: proponer, aceptar y coordinar con este diálogo A2.'
+description: 'Organizá el fin de semana en portugués: proponé ir a la playa, acordá a qué hora se encuentran y qué lleva cada uno. Diálogo A2 traducido.'
 order: 20
 situation: 'Conversación'
 dialogue:

@@ -2,7 +2,7 @@
 language: de
 level: a2
 title: 'Planes del fin de semana'
-description: 'Hablá de tus planes del finde en alemán: proponer actividades, aceptar o sugerir alternativas.'
+description: 'Organizá el fin de semana en alemán: preguntá si tiene planes, proponé ir al cine y acordá hora y punto de encuentro. Diálogo A2 traducido.'
 order: 20
 situation: 'Conversación'
 dialogue:

@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'En el café'
-description: 'Pedí un café o una bebida en un café alemán con frases simples que podés usar desde el primer día.'
+description: 'Pedí en un café alemán: un café con leche, un pedazo de torta y decidí si es para tomar ahí o para llevar. Diálogo A1 con traducción y vocabulario.'
 order: 7
 situation: 'Restaurante'
 dialogue:

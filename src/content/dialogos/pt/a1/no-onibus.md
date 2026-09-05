@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'En el autobús en portugués'
-description: 'Aprendé a preguntar por paradas y líneas de colectivo en Brasil con un diálogo simple de nivel A1.'
+description: 'Moverte en colectivo en Brasil: preguntá si va al centro, qué línea tenés que tomar y dónde queda la parada. Diálogo A1 traducido.'
 order: 6
 situation: 'Orientación'
 dialogue:

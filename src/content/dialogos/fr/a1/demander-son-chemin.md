@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'Preguntando el camino'
-description: 'Pedí indicaciones en la calle en francés con un diálogo de 6 líneas que podés usar tal cual.'
+description: 'Pedí indicaciones en francés: preguntá dónde está la estación, entendé «tout droit puis à gauche» y confirmá si queda lejos. Diálogo A1 traducido.'
 order: 2
 situation: 'Orientación'
 dialogue:

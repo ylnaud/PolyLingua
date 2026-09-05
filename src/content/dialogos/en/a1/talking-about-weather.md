@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'Hablando del clima en inglés'
-description: 'Aprendé a hablar del clima y del pronóstico con un diálogo corto de nivel A1 en inglés. Small talk esencial.'
+description: 'Hablá del clima en inglés para romper el hielo: comentá el calor, contá que mañana llueve y recordale al otro que lleve paraguas. Diálogo A1 traducido.'
 order: 19
 situation: 'Conversación'
 dialogue:

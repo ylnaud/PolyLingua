@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'En una fiesta en portugués'
-description: 'Aprendé a charlar con alguien en una fiesta en Brasil: hobbies, gustos y planes con este diálogo A1.'
+description: 'Charlá en una fiesta en portugués: presentate, preguntá qué le gusta hacer en el tiempo libre y seguí la conversación. Diálogo A1 traducido.'
 order: 14
 situation: 'Presentaciones'
 dialogue:

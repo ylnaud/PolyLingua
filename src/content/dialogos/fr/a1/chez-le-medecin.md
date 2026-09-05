@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'En el médico'
-description: 'Describí tus síntomas en francés en una consulta médica: fiebre, dolor y malestar general.'
+description: 'En la consulta médica en francés: contá que te duele la cabeza y tenés fiebre, decí desde cuándo y sumá los otros síntomas. Diálogo A1 traducido.'
 order: 15
 situation: 'Salud'
 dialogue:

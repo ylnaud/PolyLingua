@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'Pidiendo comida'
-description: 'Ordená comida en un restaurante italiano con este diálogo de 6 líneas para nivel A1.'
+description: 'Pedí en un restaurante italiano: mirá el menú, elegí el plato del día, sumá agua sin gas y decidí sobre la guarnición. Diálogo A1 traducido.'
 order: 8
 situation: 'Restaurante'
 dialogue:

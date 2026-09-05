@@ -36,6 +36,18 @@ export interface SiloContext {
     level: string;
     quiz?: { question: string }[];
   };
+  /**
+   * Una página que lo que hace es LISTAR contenido, como el hub de diálogos.
+   *
+   * `items` tiene que ser exactamente lo que la página pinta y en el mismo
+   * orden: un ItemList que anuncie cosas que no están en el HTML es
+   * desinformación para Google, no un extra.
+   */
+  collection?: {
+    name: string;
+    about?: string;
+    items: { name: string; href: string }[];
+  };
 }
 
 export function parseSiloPath(pathname: string): SiloPath {

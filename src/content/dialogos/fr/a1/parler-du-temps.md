@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'Hablando del clima'
-description: 'Charlá sobre el clima en francés: sol, lluvia, frío y calor con este diálogo cotidiano de nivel A1.'
+description: 'Hablá del clima en francés para romper el hielo: comentá que hoy está lindo, que ayer llovía y qué dice el pronóstico. Diálogo A1 traducido.'
 order: 19
 situation: 'Conversación'
 dialogue:

@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'Hablando del clima'
-description: 'Charlá sobre el clima en alemán con frases de todos los días que te sirven para romper el hielo.'
+description: 'Hablá del clima en alemán para romper el hielo: quejate del frío, comentá el pronóstico de lluvia y compará con tu país. Diálogo A1 traducido.'
 order: 19
 situation: 'Conversación'
 dialogue:

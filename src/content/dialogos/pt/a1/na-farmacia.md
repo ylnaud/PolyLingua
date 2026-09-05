@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'En la farmacia en portugués'
-description: 'Comprá remedios en una farmacia brasileña: pedí un analgésico, preguntá la dosis y más con este diálogo A1.'
+description: 'En una farmacia brasileña: pedí algo para el dolor de garganta y entendé cada cuántas horas tomar las pastillas. Diálogo A1 traducido.'
 order: 16
 situation: 'Salud'
 dialogue:

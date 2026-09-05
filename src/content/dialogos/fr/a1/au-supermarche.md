@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'En el supermercado'
-description: 'Preguntá dónde están las cosas y cuánto cuestan con un diálogo real de supermercado en francés.'
+description: 'Supermercado en Francia: preguntá dónde está la leche, ubicá el «rayon trois» y consultá cuánto cuesta el pan. Cuatro líneas para salir del paso.'
 order: 1
 situation: 'Compras'
 dialogue:

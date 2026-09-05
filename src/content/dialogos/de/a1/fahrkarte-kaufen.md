@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'Comprando un boleto'
-description: 'Comprá un boleto de tren o colectivo en Alemania: pedir destino, tipo de pasaje y confirmar el andén.'
+description: 'Comprá un boleto de tren en Alemania: pedí ida o ida y vuelta, preguntá el precio y confirmá el andén y el horario. Diálogo A1 traducido.'
 order: 18
 situation: 'Transporte'
 dialogue:

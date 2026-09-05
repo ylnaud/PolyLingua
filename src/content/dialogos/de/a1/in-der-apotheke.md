@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'En la farmacia'
-description: 'Comprá medicamentos en una farmacia alemana explicando tus síntomas con frases simples y efectivas.'
+description: 'En una farmacia alemana: explicá que te duele la garganta, aclará si tenés fiebre y entendé cada cuánto tomar las pastillas. Diálogo A1 traducido.'
 order: 16
 situation: 'Salud'
 dialogue:

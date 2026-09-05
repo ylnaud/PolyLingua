@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'La cuenta'
-description: 'Pedí la cuenta y pagá en un restaurante alemán con frases directas que funcionan en cualquier local.'
+description: 'Pedí la cuenta en un restaurante alemán: decí si pagás todo junto o por separado y preguntá si aceptan tarjeta. Diálogo A1 con traducción y vocabulario.'
 order: 9
 situation: 'Restaurante'
 dialogue:

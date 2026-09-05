@@ -20,6 +20,12 @@ interface LearningResourceInfo {
   quiz?: { question: string }[];
 }
 
+interface CollectionInfo {
+  name: string;
+  about?: string;
+  items: { name: string; href: string }[];
+}
+
 interface Props {
   userLang: string;
   targetLang: string;
@@ -28,9 +34,17 @@ interface Props {
   restPath?: string;
   breadcrumbs: Breadcrumb[];
   learningResource?: LearningResourceInfo;
+  collection?: CollectionInfo;
 }
 
-const { userLang, targetLang, restPath = '', breadcrumbs, learningResource } = Astro.props;
+const {
+  userLang,
+  targetLang,
+  restPath = '',
+  breadcrumbs,
+  learningResource,
+  collection,
+} = Astro.props;
 
 const siteURL = Astro.site!.origin;
 
@@ -66,6 +80,27 @@ if (learningResource) {
     timeRequired: `PT${learningResource.minutes}M`,
     interactivityType: 'active',
     ...(learningResource.quiz ? { assesses: learningResource.quiz.map((q) => q.question) } : {}),
+  });
+}
+
+if (collection) {
+  graph.push({
+    '@type': 'CollectionPage',
+    name: collection.name,
+    url: `${siteURL}${Astro.url.pathname.replace(/\/$/, '')}`,
+    inLanguage: userLang,
+    ...(collection.about ? { about: { '@type': 'Language', name: collection.about } } : {}),
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: collection.items.length,
+      itemListOrder: 'https://schema.org/ItemListOrderAscending',
+      itemListElement: collection.items.map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: item.name,
+        url: `${siteURL}${item.href}`,
+      })),
+    },
   });
 }
 

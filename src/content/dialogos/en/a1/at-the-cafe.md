@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'En el café en inglés'
-description: 'Pedí un café y algo dulce en una cafetería con este diálogo de nivel A1 en inglés. Frases listas para usar.'
+description: 'Pedí en una cafetería en inglés: un café con leche, una porción de torta y respondé si es para tomar ahí. Diálogo A1 corto y traducido.'
 order: 7
 situation: 'Restaurante'
 dialogue:

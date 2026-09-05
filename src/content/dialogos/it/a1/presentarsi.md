@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'Presentarte'
-description: 'Presentate en italiano con este diálogo sencillo de 6 líneas para nivel A1.'
+description: 'Presentate en italiano: decí cómo te llamás, de dónde sos y qué hacés en el país, y devolvé la pregunta. Diálogo A1 con traducción y vocabulario.'
 order: 13
 situation: 'Presentaciones'
 dialogue:

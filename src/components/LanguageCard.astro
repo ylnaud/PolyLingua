@@ -18,7 +18,13 @@ const { language, lessonCount, basePath = `/${ACTIVE_USER_LANGUAGES[0].id}` } = 
 >
   <div class="top">
     <span class="flag" aria-hidden="true">{language.flag}</span>
-    <span class="badge">{lessonCount} lección{lessonCount === 1 ? '' : 'es'}</span>
+    {
+      /* La palabra entera, no la raíz más un sufijo: el plural de «lección» es
+        «lecciones», sin tilde. Pegarle «es» a «lección» daba «lecciónes», que
+        estuvo cinco veces en la portada —una por idioma— hasta que la
+        auditoría de contenido lo encontró. */
+    }
+    <span class="badge">{lessonCount} {lessonCount === 1 ? 'lección' : 'lecciones'}</span>
   </div>
   <h3>{language.name}</h3>
   <p class="tagline underline-draw">{language.tagline}</p>

@@ -65,8 +65,10 @@ Los más fáciles. La misma palabra para todo:
 | hit  | hit  | hit        |
 | hurt | hurt | hurt       |
 
-**Truco:** si el verbo termina en **-t** o **-d** y es corto (una sílaba),
-hay buenas chances de que sea AAA.
+**Ojo con el atajo fácil.** Es tentador deducir que todo verbo corto acabado
+en -t o -d es AAA, y no funciona: _get → got_, _sit → sat_, _send → sent_ y
+_find → found_ cumplen la descripción y cambian igual. Varios están en las
+tablas de acá abajo. Este grupo se aprende de memoria, y es corto a propósito.
 
 ### Patrón 2: Past y participle iguales (ABB)
 
@@ -242,8 +244,11 @@ Algunos verbos "suenan" como que deberían ser irregulares pero no lo son:
 ## Preguntas frecuentes
 
 **¿Cuántos verbos irregulares tiene el inglés?**
-Alrededor de 200, pero en la práctica cotidiana usás unos 50-60. Los 20 de
-la lista de arriba cubren la gran mayoría de las conversaciones.
+Depende de a quién le preguntes: las listas escolares y los diccionarios no
+coinciden, porque varias formas conviven como regulares e irregulares a la vez
+(_learned_ / _learnt_, _dreamed_ / _dreamt_) y algunas están cayendo en desuso.
+Lo que sí es estable: el puñado que se usa a diario es mucho menor que
+cualquier lista completa, y son los del top de arriba.
 
 **¿Hay alguna regla para saber si un verbo es irregular?**
 No hay una regla infalible, pero los verbos de una sílaba que vienen del

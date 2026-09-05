@@ -31,44 +31,48 @@ tiempo, igual que hizo el español, pero hacia un lado distinto.
 
 ### Los que heredaste del inglés (la trampa exclusiva del alemán)
 
-| Alemán | Parece que significa | Realmente significa |
-| --- | --- | --- |
-| **Gift** | regalo (por el inglés "gift") | veneno |
-| **bekommen** | convertirse en (por el inglés "become") | recibir, conseguir |
-| **also** | también (por el inglés "also") | entonces, o sea |
-| **eventuell** | eventual, eventualmente | posiblemente, tal vez |
+| Alemán        | Parece que significa                    | Realmente significa   |
+| ------------- | --------------------------------------- | --------------------- |
+| **Gift**      | regalo (por el inglés "gift")           | veneno                |
+| **bekommen**  | convertirse en (por el inglés "become") | recibir, conseguir    |
+| **also**      | también (por el inglés "also")          | entonces, o sea       |
+| **eventuell** | eventual, eventualmente                 | posiblemente, tal vez |
 
-Ninguno de los otros cuatro idiomas del curso tiene esta categoría — es un
-fenómeno pura y exclusivamente alemán, y es justo el que más problemas trae. El
-caso más famoso de todos es **Gift**: decir "Ich habe ein Gift für dich" no es
-"tengo un regalo para vos", es "tengo un veneno para vos" — una frase que en
-alemán te va a valer una mirada de pánico, no una sonrisa. Y **bekommen** es una
-trampa tan clásica que hasta tiene apodo entre profesores de alemán: "the
-embarrassing verb". "Ich bekomme ein Baby" no significa "me convierto en un
-bebé", significa "voy a tener un bebé" — recibir, no transformarse.
+El falso amigo mediado por el inglés existe también en los otros idiomas —el
+francés _éventuellement_, el italiano _eventualmente_— pero en alemán pesa
+mucho más, y por una razón concreta: el alemán y el inglés son primos
+hermanos, así que comparten cientos de palabras con la misma raíz y el
+significado corrido. Donde en francés esto son un puñado de casos, en alemán
+es una categoría entera.
+
+El más famoso es **Gift**: decir "Ich habe ein Gift für dich" no es "tengo un
+regalo para vos", es "tengo un veneno para vos" — una frase que te va a valer
+una mirada de pánico, no una sonrisa. Y **bekommen** es la trampa clásica:
+"Ich bekomme ein Baby" no significa "me convierto en un bebé", significa "voy
+a tener un bebé". Recibir, no transformarse.
 
 ### Préstamos latinos que derivaron distinto
 
-| Alemán | Parece que significa | Realmente significa |
-| --- | --- | --- |
-| **Konkurs** | concurso, competencia | quiebra, bancarrota |
-| **Rente** | renta, alquiler | jubilación, pensión |
+| Alemán         | Parece que significa     | Realmente significa        |
+| -------------- | ------------------------ | -------------------------- |
+| **Konkurs**    | concurso, competencia    | quiebra, bancarrota        |
+| **Rente**      | renta, alquiler          | jubilación, pensión        |
 | **Konfession** | confesión (admitir algo) | credo, confesión religiosa |
 
 **Konkurs** es el que más sorprende: suena idéntico a "concurso" y hasta
-comparten la misma raíz latina (*concursus*), pero mientras el español se quedó
+comparten la misma raíz latina (_concursus_), pero mientras el español se quedó
 con el sentido de "competencia", el alemán se fue derecho a la quiebra
 económica. "Die Firma ist in Konkurs gegangen" es "la empresa quebró", no "la
 empresa ganó un concurso".
 
 ### Los que cambian de tema por completo
 
-| Alemán | Parece que significa | Realmente significa |
-| --- | --- | --- |
-| **Gymnasium** | gimnasio (hacer ejercicio) | colegio secundario académico |
-| **Chef** | cocinero, chef de cocina | jefe, jefa |
-| **Mist** | niebla | estiércol / "¡mierda!" (interjección) |
-| **Meister** | maestro de escuela | campeón, maestro artesano |
+| Alemán        | Parece que significa       | Realmente significa                   |
+| ------------- | -------------------------- | ------------------------------------- |
+| **Gymnasium** | gimnasio (hacer ejercicio) | colegio secundario académico          |
+| **Chef**      | cocinero, chef de cocina   | jefe, jefa                            |
+| **Mist**      | niebla                     | estiércol / "¡mierda!" (interjección) |
+| **Meister**   | maestro de escuela         | campeón, maestro artesano             |
 
 El más traicionero de esta tabla es **Gymnasium**: en alemán es el tipo de
 colegio secundario más exigente, el que prepara para la universidad — nada que
@@ -124,18 +128,18 @@ incluida esta.
 No todo es trampa. El alemán tomó muchísimo vocabulario internacional del latín
 y el griego, y en esos casos suele coincidir con el español sin sorpresas:
 
-| Alemán | Español |
-| --- | --- |
-| die Universität | la universidad |
-| die Bibliothek | la biblioteca |
-| die Familie | la familia |
-| die Krise | la crisis |
-| der Direktor | el director |
-| sympathisch | simpático |
-| das Formular | el formulario |
-| die Fabrik | la fábrica |
-| das Rezept | la receta (de cocina y también médica, igual que en español) |
-| das Restaurant | el restaurante |
+| Alemán          | Español                                                      |
+| --------------- | ------------------------------------------------------------ |
+| die Universität | la universidad                                               |
+| die Bibliothek  | la biblioteca                                                |
+| die Familie     | la familia                                                   |
+| die Krise       | la crisis                                                    |
+| der Direktor    | el director                                                  |
+| sympathisch     | simpático                                                    |
+| das Formular    | el formulario                                                |
+| die Fabrik      | la fábrica                                                   |
+| das Rezept      | la receta (de cocina y también médica, igual que en español) |
+| das Restaurant  | el restaurante                                               |
 
 Diez palabras que podés usar con total confianza desde el primer día, sin
 sospechar nada raro.
@@ -154,7 +158,7 @@ portugués te tienden, porque en esos casos el punto de comparación siempre es
 directamente el español.
 
 **¿"Konkurs" y "concurso" son parientes de verdad?** Sí — comparten la misma
-raíz latina, *concursus*. Con el tiempo, el español se quedó con el sentido de
+raíz latina, _concursus_. Con el tiempo, el español se quedó con el sentido de
 "competencia" y el alemán derivó hacia "quiebra". Mismo origen, destino
 completamente distinto.
 

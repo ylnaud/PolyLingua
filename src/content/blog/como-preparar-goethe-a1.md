@@ -21,8 +21,11 @@ Común Europeo (MCER) significa que podés:
 - Presentarte y hacer preguntas básicas (dónde vivís, qué hacés, de dónde sos).
 - Comunicarte de forma elemental si la otra persona habla lento y claro.
 
-En términos prácticos: es el mínimo que piden para la visa de reagrupación
-familiar en Alemania y para muchos programas de integración.
+En términos prácticos, el A1 es el nivel que suele pedirse para la visa de
+reagrupación familiar en Alemania y para varios programas de integración.
+**Si lo rendís por un trámite concreto, confirmá el requisito en la fuente
+oficial de ese trámite antes de inscribirte**: las condiciones migratorias
+cambian y no son las mismas en todos los casos.
 
 ## Estructura del examen: las 4 partes
 
@@ -65,8 +68,8 @@ Acá es donde la gramática básica importa. No te piden un ensayo — te piden
 que puedas escribir una nota como "Hola María, no puedo ir el martes, ¿puede
 ser el jueves a las 3? Saludos, Pablo." Si sabés
 [conjugar verbos en presente](/es/de/a1/presente-verbos) y usar
-[los artículos der/die/das](/es/de/a1/articulos-der-die-das), cubrís el
-80% de lo que necesitás para esta sección.
+[los artículos der/die/das](/es/de/a1/articulos-der-die-das), tenés
+prácticamente todo lo que esta sección te va a pedir.
 
 ### 4. Hablar (Sprechen) — 15 minutos
 
@@ -102,8 +105,8 @@ El A1 evalúa gramática básica. Lo que tenés que saber:
 
 - **[Artículos der/die/das](/es/de/a1/articulos-der-die-das):** no hace
   falta saberlos todos de memoria, pero sí entender el concepto de género
-  gramatical y los patrones más comunes (terminaciones en -ung, -keit, -tion
-  son siempre femeninas, por ejemplo).
+  gramatical y los sufijos más fiables (los que terminan en -ung, -keit o
+  -tion son femeninos, por ejemplo).
 - **[Presente de los verbos](/es/de/a1/presente-verbos):** conjugación
   regular (ich mache, du machst, er/sie macht...) y los irregulares más
   comunes (sein, haben, können, möchten).
@@ -163,9 +166,9 @@ plazo realista para llegar preparado.
 
 ## Errores comunes que cuestan puntos
 
-1. **No leer la consigna completa.** Muchos candidatos pierden puntos en
-   Lesen porque responden lo que creen que preguntaron, no lo que realmente
-   dice la pregunta.
+1. **No leer la consigna completa.** En Lesen es fácil responder lo que creés
+   que preguntaron y no lo que la pregunta dice. Las consignas son cortas a
+   propósito: leerlas dos veces cuesta segundos.
 
 2. **Escribir de más en Schreiben.** La tarea 2 pide ~30 palabras. Si
    escribís 80, no ganás puntos extra y aumentás las chances de cometer
@@ -182,14 +185,25 @@ plazo realista para llegar preparado.
 
 ## Puntuación y aprobación
 
-El examen se divide en dos módulos:
+Esto conviene tenerlo claro antes de inscribirte, porque cambia cómo te
+preparás.
 
-- **Módulo escrito** (Lesen + Hören + Schreiben): máximo 100 puntos.
-- **Módulo oral** (Sprechen): máximo 100 puntos.
+El A1 es un **examen único**, no modular: las cuatro partes se rinden juntas y
+se aprueban juntas. Sobre un total de **100 puntos**, hacen falta **60 para
+aprobar**, y ese 60 es **del conjunto**, no de cada parte por separado.
 
-Necesitás **60 puntos sobre 100** en cada módulo para aprobar. Los módulos
-son independientes: si aprobás uno y fallás el otro, podés rendir solo el que
-te falta.
+Las dos consecuencias prácticas:
+
+- **No hay mínimo por sección.** Podés ir flojo en Schreiben y compensarlo con
+  Hören y Sprechen, siempre que el total llegue a 60.
+- **Si no aprobás, se repite el examen entero**, no solo la parte que falló.
+  Esa posibilidad de repetir por módulos existe, pero a partir del
+  Goethe-Zertifikat B1 — en A1 no.
+
+Es un error frecuente y caro darlo por sentado al revés. Antes de pagar la
+inscripción, confirmá las condiciones en la web del Goethe-Institut de tu
+país: la puntuación es igual en todo el mundo, pero fechas, precios y política
+de repetición los fija cada sede.
 
 ## Recursos gratuitos para practicar
 
@@ -205,17 +219,20 @@ te falta.
 ## Preguntas frecuentes
 
 **¿Cuánto cuesta rendir el Goethe A1?**
-El precio varía según el país y la sede, pero ronda los 100-150 EUR. Consultá
-la web del Goethe-Institut de tu país para el precio exacto.
+Lo fija cada sede y varía bastante de un país a otro, así que cualquier cifra
+que leas en un blog —incluido este— te va a quedar vieja. Buscá "Goethe
+Institut" + tu ciudad y mirá el precio en su propia web.
 
 **¿Cuántas veces por año se puede rendir?**
 Depende de la sede, pero generalmente hay varias fechas al año. Algunas sedes
 grandes ofrecen el examen cada mes.
 
 **¿Es difícil?**
-Si te preparás, no. El índice de aprobación es alto porque el nivel que pide
-es genuinamente básico. Lo que reprueba a la gente no es la dificultad sino
-la falta de preparación específica para el formato del examen.
+El nivel de idioma que pide es genuinamente básico: presente, vocabulario
+cotidiano y frases cortas. Lo que suele complicar no es el alemán sino el
+formato — llegar sin haber visto nunca cómo son las tareas, cuánto dura cada
+parte y qué se espera en la oral. Por eso el modelo de examen oficial vale más
+que cualquier resumen.
 
 **¿Necesito saber escribir en letra cursiva alemana?**
 No. Podés escribir en letra imprenta sin problema.

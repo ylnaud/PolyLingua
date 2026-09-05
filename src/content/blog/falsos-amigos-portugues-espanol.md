@@ -27,13 +27,13 @@ un _falso amigo_.
 
 ### Los que cambian el significado por completo
 
-| Portugués       | Parece que significa | Realmente significa                    |
-| ----------------- | ----------------------- | ---------------------------------------- |
-| **embaraçada**    | embarazada              | **avergonzada / con vergüenza**          |
-| **esquisito**     | exquisito                | **raro / extraño**                       |
-| **borracha**      | borracha (ebria)         | **goma de borrar**                       |
-| **rato**          | rato (un momento)        | **ratón (el animal)**                    |
-| **polvo**         | polvo (partículas)       | **pulpo (el animal marino)**             |
+| Portugués      | Parece que significa | Realmente significa             |
+| -------------- | -------------------- | ------------------------------- |
+| **embaraçada** | embarazada           | **avergonzada / con vergüenza** |
+| **esquisito**  | exquisito            | **raro / extraño**              |
+| **borracha**   | borracha (ebria)     | **goma de borrar**              |
+| **rato**       | rato (un momento)    | **ratón (el animal)**           |
+| **polvo**      | polvo (partículas)   | **pulpo (el animal marino)**    |
 
 Estas cinco son las que más anécdotas generan. Si una brasileña te dice que
 está "muito embaraçada" no te está anunciando un embarazo — te está diciendo
@@ -49,13 +49,13 @@ al escribir en portugués recordá que ahí "ano" sí es simplemente "year".
 
 ### Los que suenan igual pero cambian el objeto
 
-| Portugués      | En español parece      | En portugués es                         |
-| ---------------- | ------------------------- | ------------------------------------------ |
-| **oficina**      | oficina (de trabajo)      | **taller mecánico**                         |
-| **salsa**        | salsa (para comida)       | **perejil**                                 |
-| **cadeira**      | cadera (parte del cuerpo) | **silla**                                   |
-| **copo**         | copo (de nieve/algodón)   | **vaso (para beber)**                       |
-| **presunto**     | presunto (supuesto)       | **jamón**                                   |
+| Portugués    | En español parece         | En portugués es       |
+| ------------ | ------------------------- | --------------------- |
+| **oficina**  | oficina (de trabajo)      | **taller mecánico**   |
+| **salsa**    | salsa (para comida)       | **perejil**           |
+| **cadeira**  | cadera (parte del cuerpo) | **silla**             |
+| **copo**     | copo (de nieve/algodón)   | **vaso (para beber)** |
+| **presunto** | presunto (supuesto)       | **jamón**             |
 
 _Presunto_ es un clásico de las cartas de restaurante: un sándwich de
 "presunto e queijo" no es un sándwich "presunto" de algo — es un sándwich
@@ -68,11 +68,11 @@ silla", no tiene nada que ver con tu cadera.
 
 ### Los que cambian de matiz
 
-| Portugués     | Español aparente        | Diferencia                                             |
-| --------------- | -------------------------- | ---------------------------------------------------------- |
-| **ligar**       | ligar (coquetear)          | **llamar por teléfono / encender**                          |
-| **brincar**     | brincar (saltar)            | **jugar** (el juego de niños en general)                    |
-| **oficialmente** | oficialmente               | sí coincide, pero **oficialmente** suena más formal en portugués |
+| Portugués   | Español aparente   | Diferencia                                             |
+| ----------- | ------------------ | ------------------------------------------------------ |
+| **ligar**   | ligar (coquetear)  | **llamar por teléfono / encender**                     |
+| **brincar** | brincar (saltar)   | **jugar** (el juego de niños en general)               |
+| **apurar**  | apurar (apresurar) | **investigar / averiguar** (apurarse es _apressar-se_) |
 
 _Ligar_ es el que más confunde a los que ya saben español rioplatense: en
 portugués, "vou te ligar" significa **"te voy a llamar (por teléfono)"**,
@@ -83,15 +83,14 @@ portugués se usa **paquerar** o **flertar**.
 
 ### En el restaurante
 
-- Pedís un sándwich de _presunto_ pensando que es "supuesto algo" y te
-  traen jamón (que en realidad es justo lo que probablemente querías).
+- Ves _presunto_ en la carta y lo salteás porque en español suena a "presunto
+  culpable". Es jamón, y probablemente era lo que querías.
 - Pedís _salsa_ para acompañar la comida y te traen perejil picado.
 
 ### En el auto o pidiendo un servicio
 
-- Decís que vas a la _oficina_ pensando en tu trabajo y en realidad estás
-  anunciando que vas al taller mecánico (que en portugués también se
-  puede decir _oficina_, igual que en italiano).
+- Decís que vas a la _oficina_ pensando en tu trabajo y estás anunciando que
+  vas al taller mecánico. Tu oficina es _o escritório_.
 
 ### En situaciones sociales
 
@@ -137,17 +136,17 @@ a ser más útiles que cualquier lista genérica.
 El portugués y el español comparten muchísimo vocabulario que sí significa
 lo mismo:
 
-| Portugués  | Español    |
-| ---------- | ---------- |
-| importante | importante |
-| diferente  | diferente  |
-| possível   | posible    |
-| necessário | necesario  |
-| problema   | problema   |
-| música     | música     |
-| família    | familia    |
-| animal     | animal     |
-| hospital   | hospital   |
+| Portugués    | Español     |
+| ------------ | ----------- |
+| importante   | importante  |
+| diferente    | diferente   |
+| possível     | posible     |
+| necessário   | necesario   |
+| problema     | problema    |
+| música       | música      |
+| família      | familia     |
+| animal       | animal      |
+| hospital     | hospital    |
 | universidade | universidad |
 
 Esa base compartida es la razón por la que muchos hispanohablantes entienden
@@ -162,15 +161,18 @@ compartido. Las diferencias entre variantes brasileña y europea son más de
 pronunciación y algunos regionalismos, no tanto de estos falsos amigos
 clásicos.
 
-**¿Por qué "embaraçada" es tan conocido como error?** Porque es de los
-pocos falsos amigos que puede generar una situación realmente incómoda si
-no lo sabés — al punto de que muchos profesores de portugués lo enseñan en
-la primera clase, antes que cualquier otra cosa.
+**¿Por qué "embaraçada" es tan conocido como error?** Porque es de los pocos
+falsos amigos que puede generar una situación realmente incómoda si no lo
+sabés: anunciar un embarazo cuando lo que querías decir es que te da
+vergüenza. Es el ejemplo que aparece en casi cualquier lista del género, y
+por eso lo verás repetido en todas partes.
 
 **¿Hay una lista completa de falsos amigos portugués-español?**
-Hay listas académicas con decenas de entradas, pero los que te van a
-afectar de verdad en una conversación cotidiana son unos 20-25, y los de
-este artículo son los más frecuentes y los más comentados.
+No, y con el portugués hay un motivo extra: no es la misma lista para Brasil
+que para Portugal. Varias palabras cambian de uso o de frecuencia entre las
+dos variedades, así que una lista cerrada te serviría a medias según con quién
+hables. Los repertorios académicos ayudan a consultar; lo que de verdad se
+fija es la palabra oída en contexto.
 
 ## En resumen
 

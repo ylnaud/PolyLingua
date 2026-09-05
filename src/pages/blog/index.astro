@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { AUTHOR } from '../../data/author';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
@@ -28,6 +29,7 @@ const structuredData = {
       headline: p.data.title,
       url: `${siteURL}/blog/${p.id}`,
       datePublished: p.data.publishDate.toISOString(),
+      author: { '@type': 'Person', '@id': `${siteURL}/acerca#autor`, name: p.data.author },
     })),
   },
 };
@@ -43,8 +45,8 @@ const structuredData = {
     <span class="eyebrow">Blog</span>
     <h1>Artículos para aprender idiomas de verdad</h1>
     <p>
-      Trucos de gramática, comparativas honestas con otras apps, y todo lo que aprendimos
-      construyendo un curso gratuito de 5 idiomas.
+      Trucos de gramática, comparativas honestas con otras apps, y todo lo que aprendí construyendo
+      un curso gratuito de 5 idiomas. Los escribe <a href="/acerca">{AUTHOR.name}</a>.
     </p>
   </section>
 
@@ -84,6 +86,10 @@ const structuredData = {
 
   .page-head p {
     color: var(--text-muted);
+  }
+
+  .page-head a {
+    color: var(--accent-text);
   }
 
   /* Una columna en móvil, dos en tablet y tres en escritorio. Los cortes son

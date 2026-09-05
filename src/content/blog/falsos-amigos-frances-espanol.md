@@ -27,16 +27,16 @@ la alarma de "esto podría significar otra cosa".
 
 ### Los que cambian el significado completamente
 
-| Francés               | Parece que significa  | Realmente significa                     |
-| --------------------- | --------------------- | --------------------------------------- |
-| **attendre**          | atender               | **esperar**                             |
-| **constiper**         | constiparse (resfrío) | **estreñirse**                          |
-| **quitter**           | quitar                | **dejar / irse**                        |
-| **sortir**            | surtir                | **salir**                               |
-| **rester**            | restar                | **quedarse**                            |
-| **blesser**           | besar                 | **herir / lastimar**                    |
-| **salir**             | salir                 | **ensuciar**                            |
-| **éxito** (no existe) | —                     | (en francés "éxito" se dice **succès**) |
+| Francés       | Parece que significa  | Realmente significa         |
+| ------------- | --------------------- | --------------------------- |
+| **attendre**  | atender               | **esperar**                 |
+| **constiper** | constiparse (resfrío) | **estreñirse**              |
+| **quitter**   | quitar                | **dejar / irse**            |
+| **sortir**    | surtir                | **salir**                   |
+| **rester**    | restar                | **quedarse**                |
+| **blesser**   | besar                 | **herir / lastimar**        |
+| **salir**     | salir                 | **ensuciar**                |
+| **large**     | largo                 | **ancho** (largo es _long_) |
 
 Mirá esa lista otra vez. _Blesser_ suena a "besar" pero significa "herir".
 _Salir_ en francés significa "ensuciar". _Rester_ no es "restar" sino
@@ -49,13 +49,13 @@ francés, no te está pidiendo que lo atiendas — te está pidiendo que
 
 ### Los que cambian el género o la forma
 
-| Francés             | En español parece    | En francés es                     |
-| ------------------- | -------------------- | --------------------------------- |
-| **le bureau**       | buró (mueble)        | **escritorio / oficina**          |
-| **la librairie**    | librería (mueble)    | **librería (tienda de libros)**   |
-| **la bibliothèque** | biblioteca           | **biblioteca** (este sí coincide) |
-| **le journal**      | jornal (paga diaria) | **periódico / diario**            |
-| **le magazine**     | magazine             | **revista**                       |
+| Francés         | En español parece    | En francés es                        |
+| --------------- | -------------------- | ------------------------------------ |
+| **le bureau**   | buró (mueble)        | **escritorio / oficina**             |
+| **la veste**    | vestido              | **chaqueta** (vestido es _une robe_) |
+| **le journal**  | jornal (paga diaria) | **periódico / diario**               |
+| **le magazine** | magazine             | **revista**                          |
+| **la place**    | plaza                | también **asiento / sitio**          |
 
 _Bureau_ es especialmente traicionero: en español un "buró" es un mueble
 pequeño, pero en francés _le bureau_ es tu escritorio o directamente tu
@@ -84,13 +84,13 @@ el caso". Es mucho más tentativo.
 
 ### Los que existen en ambos idiomas pero con distinto uso
 
-| Palabra       | En español         | En francés                                                                               |
-| ------------- | ------------------ | ---------------------------------------------------------------------------------------- |
-| **conductor** | quien conduce      | **le conducteur** (igual, pero la forma femenina es _la conductrice_)                    |
-| **college**   | colegio            | **le collège** = la escuela secundaria inferior (11-15 años), no la universidad          |
-| **carte**     | carta (papel)      | **la carte** = menú del restaurante, mapa, tarjeta. Una "carta" (misiva) es _une lettre_ |
-| **monnaie**   | moneda             | **la monnaie** = el cambio/vuelto. Una moneda (pieza) es _une pièce_                     |
-| **chance**    | chance/oportunidad | **la chance** = la suerte. "Oportunidad" es _une occasion_ o _une opportunité_           |
+| Palabra     | En español         | En francés                                                                               |
+| ----------- | ------------------ | ---------------------------------------------------------------------------------------- |
+| **habit**   | hábito (costumbre) | **_l'habit_ = la prenda de vestir**. Una costumbre es _une habitude_                     |
+| **college** | colegio            | **le collège** = la escuela secundaria inferior (11-15 años), no la universidad          |
+| **carte**   | carta (papel)      | **la carte** = menú del restaurante, mapa, tarjeta. Una "carta" (misiva) es _une lettre_ |
+| **monnaie** | moneda             | **la monnaie** = el cambio/vuelto. Una moneda (pieza) es _une pièce_                     |
+| **chance**  | chance/oportunidad | **la chance** = la suerte. "Oportunidad" es _une occasion_ o _une opportunité_           |
 
 _Carte_ te va a confundir en los restaurantes. Cuando el mozo te pregunta
 "Vous avez choisi sur la carte?", te está preguntando si elegiste del
@@ -188,9 +188,10 @@ sutiles como _éventuellement_ o _réaliser_. La diferencia es que un avanzado
 los detecta más rápido por contexto.
 
 **¿Existe una lista completa de falsos amigos francés-español?**
-Hay varias listas académicas con cientos de entradas, pero en la práctica
-los que te van a afectar en el día a día son unos 30-40. Los de este
-artículo cubren los más frecuentes y peligrosos.
+Completa, no: la lista no se cierra nunca, porque cada registro y cada
+ámbito profesional trae los suyos. Existen repertorios académicos largos, y
+sirven para consultar; para hablar sirve más otra cosa: llevar tu propia
+lista con los que vos confundiste, que son los que se te van a repetir.
 
 ## En resumen
 

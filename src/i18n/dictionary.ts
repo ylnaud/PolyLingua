@@ -87,6 +87,7 @@ export interface Dictionary {
     faq: string;
     acercaDe: string;
     privacidad: string;
+    terminos: string;
     hechoCon: string;
   };
   breadcrumbAria: string;
@@ -450,6 +451,7 @@ export const es: Dictionary = {
     blog: 'Blog',
     faq: 'Preguntas frecuentes',
     acercaDe: 'Acerca de',
+    terminos: 'Términos de uso',
     privacidad: 'Privacidad',
     hechoCon: 'Hecho con ☕ para quienes aman los idiomas.',
   },

@@ -1,11 +1,45 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { AUTHOR, PUBLISHER } from '../data/author';
+
+const siteURL = Astro.site!.origin;
+
+// Esta página es la única del sitio que describe a la persona detrás. Emitir
+// aquí el nodo Person —y apuntar el `author` de cada post a esta URL— es lo
+// que hace que la firma sea una entidad y no un nombre suelto en un pie.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      name: 'Acerca de PolyLingua',
+      url: `${siteURL}/acerca`,
+      mainEntity: { '@id': `${siteURL}/acerca#autor` },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${siteURL}/acerca#autor`,
+      name: AUTHOR.name,
+      url: `${siteURL}/acerca`,
+      sameAs: [AUTHOR.github],
+      knowsAbout: [
+        'aprendizaje de idiomas',
+        'alemán',
+        'inglés',
+        'francés',
+        'italiano',
+        'portugués',
+      ],
+    },
+  ],
+};
 ---
 
 <BaseLayout
   title="Acerca de PolyLingua"
-  description="Qué es PolyLingua, por qué es gratis, y cómo contactar con el proyecto."
+  description="Quién está detrás de PolyLingua, cómo se escriben y se revisan las lecciones, por qué el sitio es gratis y cómo avisar de un error."
   path="/acerca"
+  structuredData={structuredData}
 >
   <section class="container legal-head">
     <span class="eyebrow">El proyecto</span>
@@ -21,26 +55,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       nivel, repaso espaciado de lo que fallas, y logros para mantenerte motivado.
     </p>
 
-    <h2>Por qué es gratis</h2>
+    <h2>Quién lo hace</h2>
     <p>
-      PolyLingua es un proyecto independiente, hecho por una sola persona sin empresa detrás. No hay
-      planes de pago ni cuentas de usuario: todo tu progreso se guarda en tu propio navegador
-      (puedes leer los detalles en la <a href="/privacidad">Política de privacidad</a>). El proyecto
-      se mantiene gratuito y, para poder seguir así a largo plazo, es posible que en el futuro se
-      muestren anuncios en la web.
+      Me llamo <strong>{AUTHOR.name}</strong> y PolyLingua lo escribo y lo programo yo. No hay empresa
+      detrás, ni redacción, ni un equipo: es un proyecto independiente de una sola persona, con el código
+      abierto en
+      <a href={PUBLISHER.repo} rel="noopener">GitHub</a>.
+    </p>
+    <p>
+      Lo digo con nombre y apellido a propósito. Un sitio que enseña algo debería dejar claro quién
+      lo firma, para que sepas a quién estás creyendo y a quién reclamarle cuando algo esté mal.
     </p>
 
-    <h2>Contacto</h2>
+    <h2>Cómo se escribe el contenido</h2>
     <p>
-      La forma más directa de contactar es a través del
-      <a href="https://github.com/ylnaud/polylingua" rel="noopener">
-        repositorio de GitHub del proyecto
-      </a> — puedes abrir un issue para reportar un error, sugerir una lección o hacer cualquier pregunta.
+      Las lecciones, los diálogos y los artículos del blog los redacto <strong
+        >con ayuda de inteligencia artificial</strong
+      >, y después los reviso y los edito a mano antes de publicarlos. La IA sirve para producir
+      volumen —son casi 500 lecciones en cinco idiomas— pero no decide qué se enseña ni sustituye la
+      revisión: el criterio pedagógico, el orden de los niveles y la corrección final son míos.
     </p>
-    <!-- TODO(owner): si quieres un contacto directo por email, sustituye este
-         párrafo por un mailto: o un formulario. No se ha publicado ningún
-         email personal en esta página porque no había consentimiento
-         explícito para hacerlo público. -->
+    <p>
+      Ese método tiene un riesgo concreto y conviene decirlo: se cuelan errores. Han pasado. Cuando
+      encuentro uno, lo corrijo y dejo constancia del cambio en el historial público del
+      repositorio, que cualquiera puede revisar. Si ves algo que no cuadra —una regla mal explicada,
+      un dato de un examen oficial que no coincide con la fuente— avísame y lo arreglo.
+    </p>
+    <p>
+      Para lo que dependa de una institución (fechas, precios, requisitos o formato de un examen
+      oficial), confía siempre en la web de esa institución antes que en este sitio: esos datos
+      cambian y aquí pueden quedarse viejos.
+    </p>
+
+    <h2>Por qué es gratis</h2>
+    <p>
+      No hay planes de pago ni cuentas de usuario: todo tu progreso se guarda en tu propio navegador
+      (puedes leer los detalles en la <a href="/privacidad">Política de privacidad</a>). El proyecto
+      se mantiene gratuito y, para poder seguir así a largo plazo, es posible que en el futuro se
+      muestren anuncios en la web. Hoy no hay ninguno, y tampoco hay enlaces de afiliado ni
+      contenido patrocinado.
+    </p>
+
+    <h2>Cómo avisar de un error</h2>
+    <p>
+      Por el
+      <a href={PUBLISHER.repo} rel="noopener">repositorio de GitHub</a> — puedes abrir un issue para reportar
+      un fallo, sugerir una lección o hacer cualquier pregunta. Es el único canal: no publico una dirección
+      de correo, así que si alguien te escribe diciendo que es PolyLingua, no soy yo.
+    </p>
+
+    <p class="terminos-nota">
+      También puedes leer los <a href="/terminos">Términos de uso</a>.
+    </p>
   </article>
 </BaseLayout>
 
@@ -76,5 +142,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .legal a {
     color: var(--accent-text);
+  }
+
+  .terminos-nota {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
   }
 </style>

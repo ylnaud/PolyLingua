@@ -7,18 +7,31 @@ order: 13
 unit: 3
 grammarTopic: 'Passato prossimo vs. presente passivo (azione vs. stato)'
 funFact: '"le abbiamo organizzato" racconta COSA è stato fatto; "la questione è risolta" descrive COME stanno le cose ora. Chiediti: sto raccontando un''azione o uno stato? — questo decide il tempo verbale.'
+skills:
+  - it.b1.verb.passive-state
 minutes: 8
 quiz:
   - question: '"Le abbiamo organizzato un upgrade gratuito" descrive...'
-    options: ['uno stato permanente', "un'azione già compiuta, con un legame al presente", "un'ipotesi"]
+    options:
+      ['uno stato permanente', "un'azione già compiuta, con un legame al presente", "un'ipotesi"]
     answerIndex: 1
-    explanation: 'Il passato prossimo (avere + participio passato) racconta un''azione conclusa e la sua rilevanza attuale — qui, il fatto di aver organizzato l''upgrade.'
+    explanation: "Il passato prossimo (avere + participio passato) racconta un'azione conclusa e la sua rilevanza attuale — qui, il fatto di aver organizzato l'upgrade."
   - question: 'Perché si dice "la questione è risolta" e non "la questione ha risolto"?'
-    options: ['perché "risolta" qui descrive lo stato risultante della questione, non l''azione di risolverla', 'è un errore comune ma tollerato', '"risolvere" non esiste al passato prossimo']
+    options:
+      [
+        'perché "risolta" qui descrive lo stato risultante della questione, non l''azione di risolverla',
+        'è un errore comune ma tollerato',
+        '"risolvere" non esiste al passato prossimo',
+      ]
     answerIndex: 0
     explanation: '"è risolta" (essere + participio, quasi come un aggettivo) descrive lo stato attuale della questione, senza mettere l''accento su chi l''ha risolta o quando.'
   - question: "Qual è la differenza di focus tra 'l'abbiamo organizzato' e 'è organizzato'?"
-    options: ['nessuna, sono identiche', 'la prima mette in primo piano chi ha agito; la seconda mette in primo piano il risultato, a prescindere da chi ha agito', 'la seconda è scorretta']
+    options:
+      [
+        'nessuna, sono identiche',
+        'la prima mette in primo piano chi ha agito; la seconda mette in primo piano il risultato, a prescindere da chi ha agito',
+        'la seconda è scorretta',
+      ]
     answerIndex: 1
     explanation: "Il passato prossimo mantiene al centro il soggetto e l'azione; 'essere + participio' come stato sposta il focus sul risultato stesso."
 exercises:
@@ -41,7 +54,7 @@ exercises:
     sentence: 'Apprezzo davvero la sua rapida risposta'
     translation: 'Realmente aprecio su rápida respuesta.'
 vocabulary:
-  - term: "Le abbiamo organizzato un upgrade gratuito a una suite per le notti restanti."
+  - term: 'Le abbiamo organizzato un upgrade gratuito a una suite per le notti restanti.'
     translation: 'Le hemos organizado una mejora gratis a suite para las noches restantes.'
   - term: 'Mi sembra una soluzione giusta, grazie.'
     translation: 'Me parece una solución justa, gracias.'
@@ -60,13 +73,13 @@ non significano la stessa cosa.
 
 ## I 5 blocchi di chiusura
 
-| Italiano                                                            | Español                                                        |
-| --------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Italiano                                                                      | Español                                                                  |
+| ----------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | Le abbiamo organizzato un upgrade gratuito a una suite per le notti restanti. | Le hemos organizado una mejora gratis a suite para las noches restantes. |
-| Mi sembra una soluzione giusta, grazie.                               | Me parece una solución justa, gracias.                                |
-| Potrebbe confermarmelo per iscritto, per favore?                      | ¿Podría confirmármelo por escrito, por favor?                          |
-| Per quanto mi riguarda, la questione è risolta.                       | En lo que a mí respecta, el asunto está resuelto.                      |
-| Apprezzo davvero la sua rapida risposta.                               | Realmente aprecio su rápida respuesta.                                 |
+| Mi sembra una soluzione giusta, grazie.                                       | Me parece una solución justa, gracias.                                   |
+| Potrebbe confermarmelo per iscritto, per favore?                              | ¿Podría confirmármelo por escrito, por favor?                            |
+| Per quanto mi riguarda, la questione è risolta.                               | En lo que a mí respecta, el asunto está resuelto.                        |
+| Apprezzo davvero la sua rapida risposta.                                      | Realmente aprecio su rápida respuesta.                                   |
 
 ## La conversazione completa
 

@@ -7,6 +7,9 @@ order: 11
 unit: 3
 grammarTopic: 'Congiuntivo imperfetto dopo "se" (cortesia e ipotesi)'
 funFact: '"se fosse possibile" non parla del passato — parla di un''ipotesi cortese. Memorizzalo come blocco fisso: "se + congiuntivo imperfetto" = richiesta gentile, mai un fatto passato.'
+skills:
+  - it.b1.subjunctive.imperfetto-se
+  - it.b1.verb.condizionale
 minutes: 8
 quiz:
   - question: 'Qual è la forma corretta del congiuntivo imperfetto di "essere" alla prima persona singolare?'
@@ -18,7 +21,12 @@ quiz:
     answerIndex: 1
     explanation: '"se fosse possibile" addolcisce la richiesta — molto più cortese di "voglio un''altra camera".'
   - question: 'In "se avessimo una camera libera", cosa indica il congiuntivo imperfetto dopo "se"?'
-    options: ['che la camera libera esiste davvero ora', "che è una condizione ipotetica, probabilmente non reale", 'che è successo ieri']
+    options:
+      [
+        'che la camera libera esiste davvero ora',
+        'che è una condizione ipotetica, probabilmente non reale',
+        'che è successo ieri',
+      ]
     answerIndex: 1
     explanation: '"se" + congiuntivo imperfetto esprime una condizione irreale o poco probabile al presente — qui, la receptionist lascia intendere che non ci sono camere libere.'
 exercises:
@@ -61,13 +69,13 @@ una parola speciale — è un tempo verbale intero: il **congiuntivo imperfetto 
 
 Non memorizzare parole isolate — memorizza queste frasi complete, pronte all'uso:
 
-| Italiano                                                    | Español                                              |
-| ------------------------------------------------------------ | -------------------------------------------------------- |
-| Mi scusi, purtroppo ho un problema con la mia camera.         | Disculpe, lamentablemente tengo un problema con mi habitación. |
-| Il riscaldamento non funziona più da stamattina.               | La calefacción ya no funciona desde esta mañana.          |
-| Potrebbe mandare qualcuno a controllare il problema?           | ¿Podría enviar a alguien a revisar el problema?            |
-| Vorrei un'altra camera, se fosse possibile.                    | Me gustaría otra habitación, si fuera posible.             |
-| Grazie per la comprensione — spero si possa risolvere in fretta. | Gracias por su comprensión — espero que se resuelva rápido. |
+| Italiano                                                         | Español                                                        |
+| ---------------------------------------------------------------- | -------------------------------------------------------------- |
+| Mi scusi, purtroppo ho un problema con la mia camera.            | Disculpe, lamentablemente tengo un problema con mi habitación. |
+| Il riscaldamento non funziona più da stamattina.                 | La calefacción ya no funciona desde esta mañana.               |
+| Potrebbe mandare qualcuno a controllare il problema?             | ¿Podría enviar a alguien a revisar el problema?                |
+| Vorrei un'altra camera, se fosse possibile.                      | Me gustaría otra habitación, si fuera posible.                 |
+| Grazie per la comprensione — spero si possa risolvere in fretta. | Gracias por su comprensión — espero que se resuelva rápido.    |
 
 ## La conversazione completa
 

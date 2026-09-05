@@ -2,12 +2,15 @@
 language: it
 level: a1
 title: 'Los animales en italiano: mascotas y granja'
-description: "Vocabulario italiano de animales: il cane, il gatto, la mucca, il leone y más, con frases simples usando essere y avere para describirlos."
+description: 'Vocabulario italiano de animales: il cane, il gatto, la mucca, il leone y más, con frases simples usando essere y avere para describirlos.'
 order: 15
 unit: 2
 situation: 'Animales'
 grammarTopic: 'Vocabolario: gli animali'
 funFact: "'Il cane' y 'il gatto' se parecen poco al español, pero 'il leone' (león) y 'l'elefante' (elefante) sí — cuando dudes con un animal, prueba primero la palabra española con terminación italiana, muchas veces funciona."
+skills:
+  - it.a1.vocabulary.animals
+  - it.a1.noun.plural
 minutes: 6
 phrases:
   - text: 'Il cane è grande.'
@@ -91,21 +94,21 @@ descripciones — aquí tienes los más comunes con frases listas para usar.
 
 ## Mascotas
 
-| Italiano     | Español   |
-| ------------ | --------- |
-| il cane      | el perro  |
-| il gatto     | el gato   |
-| il pesce     | el pez    |
-| l'uccello    | el pájaro |
+| Italiano  | Español   |
+| --------- | --------- |
+| il cane   | el perro  |
+| il gatto  | el gato   |
+| il pesce  | el pez    |
+| l'uccello | el pájaro |
 
 ## Animales de granja y salvajes
 
-| Italiano      | Español    |
-| ------------- | ---------- |
-| la mucca      | la vaca    |
-| il cavallo    | el caballo |
-| il leone      | el león    |
-| l'elefante    | el elefante |
+| Italiano   | Español     |
+| ---------- | ----------- |
+| la mucca   | la vaca     |
+| il cavallo | el caballo  |
+| il leone   | el león     |
+| l'elefante | el elefante |
 
 ## Describir animales con "essere" y "avere"
 

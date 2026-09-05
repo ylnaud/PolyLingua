@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Pronombres personales sujeto'
 funFact: "El italiano es un idioma 'pro-drop': puedes omitir el pronombre sujeto porque la terminación del verbo ya indica quién habla. 'Parlo italiano' basta, no necesitas decir 'Io parlo italiano' salvo que quieras enfatizar que eres TÚ quien habla."
+skills:
+  - it.a1.pronoun.subject
 minutes: 8
 quiz:
   - question: '¿Cuál es el pronombre formal para dirigirse a una persona en italiano?'

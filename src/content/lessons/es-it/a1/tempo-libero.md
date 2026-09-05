@@ -8,6 +8,8 @@ unit: 2
 situation: 'Tiempo libre'
 grammarTopic: 'Vocabolario: il tempo libero'
 funFact: "'Piacere' funciona al revés que la mayoría de los verbos: no decís 'yo gusto de leer', sino 'a mí me gusta leer' — 'Mi piace leggere', literalmente 'a mí place leer'. Es la misma lógica que el español 'me gusta'."
+skills:
+  - it.a1.vocabulary.freetime
 minutes: 6
 phrases:
   - text: 'Cosa ti piace fare?'
@@ -30,12 +32,13 @@ quiz:
     options: ['Io piaccio leggere.', 'Mi piace leggere.', 'Io mi piaccio leggere.']
     answerIndex: 1
     explanation: "'piacere' funciona al revés que en español directo: 'a mí me gusta' se dice 'mi piace'."
-  - question: "¿Cómo negás que te gusta algo?"
+  - question: '¿Cómo negás que te gusta algo?'
     options: ['Mi non piace.', 'Non mi piace.', 'Mi piace non.']
     answerIndex: 1
     explanation: "'non' va antes del pronombre y el verbo: non mi piace guardare la TV."
   - question: "¿Qué significa 'Il weekend vado al cinema'?"
-    options: ['Voy al cine todos los días.', 'El fin de semana voy al cine.', 'No voy nunca al cine.']
+    options:
+      ['Voy al cine todos los días.', 'El fin de semana voy al cine.', 'No voy nunca al cine.']
     answerIndex: 1
     explanation: "'il weekend' marca cuándo pasa la acción: el fin de semana."
 exercises:

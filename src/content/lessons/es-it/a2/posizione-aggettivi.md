@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Posición de los adjetivos'
 funFact: "Igual que en francés, la posición del adjetivo en italiano a veces cambia el significado: 'un vecchio amico' (un amigo de toda la vida, antigüedad de la amistad) vs. 'un amico vecchio' (un amigo que es literalmente viejo de edad). La posición no es solo estilo — puede ser semántica."
+skills:
+  - it.a2.adjective.position
 minutes: 8
 quiz:
   - question: '¿Dónde va la mayoría de los adjetivos en italiano respecto al sustantivo?'

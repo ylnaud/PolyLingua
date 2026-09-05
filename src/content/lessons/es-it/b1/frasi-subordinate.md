@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Frasi subordinate (perché, sebbene, quando) + introducción al congiuntivo'
 funFact: "Trata 'sebbene' como una alarma silenciosa: en cuanto la veas o la uses, tu cerebro debe avisar 'congiuntivo obligatorio'. No todas las conjunciones lo piden — pero las de contraste/concesión casi siempre sí. Memoriza esa lista corta y evitarás el error más común de los estudiantes intermedios."
+skills:
+  - it.b1.subjunctive.intro
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta: 'Resto a casa ___ sono malato' (porque estoy enfermo)?"

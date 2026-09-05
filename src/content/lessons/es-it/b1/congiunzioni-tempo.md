@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Conjunciones de tiempo (quando, appena, mentre, prima che)'
 funFact: "'Prima che' (antes de que) es una de las pocas conjunciones temporales que exige congiuntivo en italiano — porque describe algo que, en el momento de la acción principal, todavía no había pasado (una incertidumbre temporal). El resto de las conjunciones de tiempo usan indicativo normal."
+skills:
+  - it.b1.conjunction.time
 minutes: 8
 quiz:
   - question: "¿Cuál conjunción significa 'tan pronto como'?"

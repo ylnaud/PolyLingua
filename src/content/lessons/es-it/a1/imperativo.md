@@ -7,6 +7,8 @@ order: 11
 unit: 3
 grammarTopic: 'El imperativo'
 funFact: "Para decir 'no hagas algo' a un amigo (tu), el italiano usa 'non' + infinitivo: 'Non parlare!' (no hables). Es la única persona donde el imperativo negativo NO usa la forma conjugada del imperativo, sino el infinitivo. Para 'noi' y 'voi', simplemente pones 'non' delante de la forma normal."
+skills:
+  - it.a1.verb.imperative
 minutes: 9
 quiz:
   - question: "¿Cuál es la forma correcta del imperativo de 'parlare' (hablar) para 'tu'?"

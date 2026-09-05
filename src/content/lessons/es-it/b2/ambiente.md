@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulario: medio ambiente y sociedad'
 funFact: "'Il tempo' y 'il clima' son dos palabras distintas para lo que en español a veces confundimos con 'el clima': 'il clima' es el patrón climático de una región a largo plazo, mientras 'il tempo' es el tiempo que hace HOY (y también significa 'tiempo' en general, como en 'no tengo tiempo')."
+skills:
+  - it.b2.vocabulary.environment
 minutes: 8
 quiz:
   - question: "¿Cuál es la palabra correcta para 'cambio climático'?"

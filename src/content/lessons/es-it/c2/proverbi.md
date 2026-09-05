@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Proverbi (refranes y dichos populares)'
 funFact: "'Chi dorme non piglia pesci' (quien duerme no atrapa peces) es prácticamente idéntico en sabiduría a 'a quien madruga, Dios le ayuda' — la imagen concreta cambia entre culturas (peces vs. madrugar), pero la valoración de la acción sobre la pasividad es casi universal."
+skills:
+  - it.c2.idiom.proverbs
 minutes: 9
 quiz:
   - question: "'Chi dorme non piglia pesci.' ¿Cuál es su equivalente en español?"

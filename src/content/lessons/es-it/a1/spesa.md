@@ -8,6 +8,9 @@ unit: 2
 situation: 'Compras y supermercado'
 grammarTopic: 'Vocabolario: fare la spesa'
 funFact: "'Vorrei' (querría) es la forma cortés de pedir en italiano — viene de 'volere' (querer) en modo condicional. Mucho más educado que el directo 'voglio', igual que 'quisiera' frente a 'quiero' en español."
+skills:
+  - it.a1.vocabulary.shopping
+  - it.a1.number.cardinal
 minutes: 6
 phrases:
   - text: 'Vorrei un caffè.'
@@ -31,7 +34,12 @@ quiz:
     answerIndex: 0
     explanation: "'Quanto costa?' es la forma estándar para preguntar el precio."
   - question: "¿Por qué 'Vorrei un caffè' suena más cortés que 'Voglio un caffè'?"
-    options: ['Porque es más corto.', 'Porque usa el condicional en vez del presente.', 'No hay diferencia.']
+    options:
+      [
+        'Porque es más corto.',
+        'Porque usa el condicional en vez del presente.',
+        'No hay diferencia.',
+      ]
     answerIndex: 1
     explanation: "'vorrei' (condicional de 'volere') suaviza el pedido, igual que 'quisiera' en español frente a 'quiero'."
   - question: "'È troppo caro' significa..."

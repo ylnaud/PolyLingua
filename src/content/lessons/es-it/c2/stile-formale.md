@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Stile formale e nominalizzazione'
 funFact: "El italiano formal, igual que el francés, ama convertir verbos en sustantivos: en vez de 'decidere' (decidir), un texto formal prefiere 'la decisione'; en vez de 'analizzare', prefiere 'l'analisi'. Esta nominalización compacta las ideas y suena mucho más elevado."
+skills:
+  - it.c2.style.nominalizzazione
+  - it.c1.vocabulary.academic
 minutes: 11
 quiz:
   - question: '¿Cuál versión es más propia del estilo formal/académico?'

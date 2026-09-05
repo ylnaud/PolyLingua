@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Pronombres adverbiales (ci, ne)'
 funFact: "'Ci vado' (voy allí) es una de las frases más comunes del italiano cotidiano, y resume todo lo que necesitas saber sobre 'ci': reemplaza un LUGAR o algo introducido por 'a/in'. Su hermano 'ne' hace lo mismo pero para cantidades y cosas con 'di' — juntos, evitan repetir constantemente sustantivos ya mencionados."
+skills:
+  - it.b1.pronoun.ci-ne
 minutes: 9
 quiz:
   - question: "'Vado a Roma' → '___ vado' (voy allí). ¿Qué pronombre va?"

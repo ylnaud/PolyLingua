@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Discorso indiretto (concordanza dei tempi)'
 funFact: "Igual que en francés o inglés, el italiano retrocede sistemáticamente los tiempos verbales al reportar discurso: presente → imperfetto, passato prossimo → trapassato prossimo, futuro → condizionale passato. Es un movimiento mecánico de 'un paso hacia atrás' que, una vez automatizado, se vuelve instantáneo."
+skills:
+  - it.c1.speech.indirect
 minutes: 10
 quiz:
   - question: "Maria ha detto: 'Sono stanca.' ¿Cómo lo reportas?"

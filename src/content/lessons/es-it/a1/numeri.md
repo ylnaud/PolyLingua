@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Números cardinales (0-100)'
 funFact: "El italiano es, de los cinco idiomas de PolyLingua, el que tiene los números más parecidos al español: 'quaranta' (40) suena casi como 'cuarenta', 'cento' (100) como 'ciento'. Es el vocabulario numérico más fácil de memorizar de todo el curso."
+skills:
+  - it.a1.number.cardinal
 minutes: 6
 quiz:
   - question: "¿Cómo se dice '21' en italiano?"

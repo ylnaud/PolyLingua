@@ -8,6 +8,9 @@ unit: 2
 situation: 'Dinero'
 grammarTopic: 'Vocabolario: i soldi'
 funFact: "'Contanti' (efectivo) viene de 'contare' (contar) — la plata que literalmente se cuenta, a diferencia de la tarjeta. Un buen truco para no confundirlo con 'contento' o 'contatto', que suenan parecido."
+skills:
+  - it.a2.vocabulary.money
+  - it.a2.comparative.superlative
 minutes: 7
 phrases:
   - text: 'Posso pagare con la carta?'

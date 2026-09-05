@@ -7,6 +7,9 @@ order: 10
 unit: 3
 grammarTopic: 'Formación del plural'
 funFact: "En italiano el plural se forma cambiando la vocal final, no añadiendo una '-s' como en español. 'Libro' se convierte en 'libri', 'casa' en 'case'. Es un sistema diferente al español, pero tiene una lógica muy regular que se aprende rápido con tres reglas base."
+skills:
+  - it.a1.noun.plural
+  - it.a1.article.definite
 minutes: 8
 quiz:
   - question: "¿Cuál es el plural de 'libro' (libro)?"

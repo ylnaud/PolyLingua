@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Vocabulario: lenguaje académico'
 funFact: "El 'saggio breve' (ensayo breve) es un formato de escritura muy codificado en la educación italiana, evaluado en el examen de Stato (equivalente al bachillerato) — dominar sus fórmulas fijas de introducción, argumentación y conclusión es una habilidad que se enseña explícitamente en el liceo."
+skills:
+  - it.c1.vocabulary.academic
 minutes: 8
 quiz:
   - question: "¿Cómo dirías 'según el estudio' al citar una fuente académica?"

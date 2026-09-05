@@ -8,6 +8,8 @@ unit: 2
 situation: 'Restaurante'
 grammarTopic: 'Vocabulario: comida y restaurante'
 funFact: "En un restaurante italiano, decir 'vorrei' (quisiera) en vez de 'voglio' (quiero) es la diferencia entre sonar educado y sonar brusco — 'vorrei' es el condizionale de 'volere' y es la fórmula estándar para pedir cualquier cosa educadamente, igual que en francés o alemán."
+skills:
+  - it.a2.vocabulary.food
 minutes: 6
 phrases:
   - text: 'Vorrei un caffè, per favore.'

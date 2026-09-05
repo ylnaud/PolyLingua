@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Juegos de palabras y dobles sentidos (giochi di parole)'
 funFact: "El italiano tiene una larga tradición de 'barzellette' (chistes cortos) que dependen enteramente de dobles sentidos regionales o de palabras con múltiples significados — un tipo de humor que floreció especialmente en la comedia italiana clásica de posguerra."
+skills:
+  - it.c2.style.wordplay
 minutes: 10
 quiz:
   - question: '¿Por qué los dobles sentidos son una fuente común de humor en italiano?'

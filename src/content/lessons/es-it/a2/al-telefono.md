@@ -8,6 +8,8 @@ unit: 2
 situation: 'Hablar por teléfono'
 grammarTopic: 'Vocabolario: al telefono'
 funFact: "En italiano se atiende el teléfono diciendo 'Pronto?' (literalmente '¿listo?'), no 'ciao' — una de las palabras más reconocibles del italiano al teléfono, y no tiene nada que ver con la velocidad."
+skills:
+  - it.a2.vocabulary.phone
 minutes: 7
 phrases:
   - text: 'Pronto?'
@@ -28,7 +30,7 @@ phrases:
     es: 'Me equivoqué de número.'
 quiz:
   - question: '¿Cómo se atiende el teléfono en italiano?'
-    options: ['Ciao?', 'Pronto?', "Come stai?"]
+    options: ['Ciao?', 'Pronto?', 'Come stai?']
     answerIndex: 1
     explanation: "'Pronto?' es la forma estándar de atender el teléfono en italiano, literalmente '¿listo?'."
   - question: "'Posso lasciare un messaggio?' significa..."

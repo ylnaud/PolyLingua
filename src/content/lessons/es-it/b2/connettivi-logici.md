@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Conectores lógicos avanzados'
 funFact: "'Tuttavia' y 'però' significan casi lo mismo (sin embargo), pero 'tuttavia' suena más formal y se usa más en textos escritos, mientras 'però' es el más común en conversación cotidiana — el mismo tipo de matiz que separa 'sin embargo' de 'pero' en registro español."
+skills:
+  - it.b2.connector.logical
 minutes: 9
 quiz:
   - question: "¿Qué función cumple 'inoltre' en un argumento?"

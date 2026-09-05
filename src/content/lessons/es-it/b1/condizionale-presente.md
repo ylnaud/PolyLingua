@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Condizionale presente'
 funFact: 'El condizionale italiano se forma con la misma raíz del futuro que ya conoces, más un set de terminaciones propio — es literalmente una construcción sobre algo que ya sabes, sin gramática completamente nueva que memorizar desde cero.'
+skills:
+  - it.b1.verb.condizionale
 minutes: 8
 quiz:
   - question: '¿Cuál es la fórmula del Condizionale presente?'

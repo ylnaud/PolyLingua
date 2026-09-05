@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Futuro semplice'
 funFact: "El futuro italiano tiene un giro curioso: los verbos en '-are' cambian su vocal a '-er-' antes de las terminaciones ('parlare' → 'parlerò', no 'parlarò'), pero los verbos en '-ere' se quedan igual. Es una pequeña trampa ortográfica que sorprende incluso a estudiantes intermedios."
+skills:
+  - it.b1.verb.futuro-semplice
 minutes: 8
 quiz:
   - question: "¿Cuál es el futuro correcto de 'parlare' (hablar) con 'io'?"

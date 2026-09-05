@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Voce passiva (essere + participio passato)'
 funFact: "La voz pasiva italiana es casi calcada de la española: 'la casa es construida' = 'la casa è costruita'. Si ya la usas en español, la mayor parte del trabajo mental ya está hecho. Solo hay que recordar la concordancia del participio, igual que con 'essere' en el passato prossimo."
+skills:
+  - it.b2.verb.passive
 minutes: 9
 quiz:
   - question: "¿Cuál es la voz pasiva correcta de 'Lo chef prepara il pranzo' (el chef prepara el almuerzo)?"

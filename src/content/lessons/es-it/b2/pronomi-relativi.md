@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Pronomi relativi (che, cui, il quale)'
 funFact: "El italiano simplifica bastante respecto al francés: 'che' hace casi todo el trabajo (sujeto Y objeto directo), y solo necesitas 'cui' cuando hay una preposición de por medio. Dos reglas, no cuatro — el italiano es más generoso aquí que sus primos románicos."
+skills:
+  - it.b2.pronoun.relative
 minutes: 9
 quiz:
   - question: "'Ho un amico. Questo amico abita a Roma.' → 'Ho un amico ___ abita a Roma.' ¿Qué pronombre va?"

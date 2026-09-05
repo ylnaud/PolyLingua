@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Presente indicativo (verbi regolari -are/-ere/-ire)'
 funFact: "Si conjugar verbos en español ('hablar, comer, vivir') te resulta natural, el italiano te va a encantar: la lógica de tres grupos según la terminación del infinitivo (-are, -ere, -ire) es prácticamente un espejo del español (-ar, -er, -ir). Es el idioma donde menos tienes que 'reprogramar' tu cerebro."
+skills:
+  - it.a1.verb.present-regular
+  - it.a1.verb.essere-avere
 minutes: 6
 quiz:
   - question: "¿Cuál es la conjugación correcta de 'parlare' (hablar) con 'tu' (tú)?"

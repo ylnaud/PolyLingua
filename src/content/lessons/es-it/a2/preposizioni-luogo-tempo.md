@@ -7,6 +7,8 @@ order: 9
 unit: 1
 grammarTopic: 'Preposizioni di luogo e tempo'
 funFact: "'Tra' y 'fra' significan exactamente lo mismo (son intercambiables) — los italianos eligen uno u otro solo por sonido, para evitar repetir la misma consonante: se dice 'fra tre giorni' en vez de 'tra tre giorni' porque suena mejor."
+skills:
+  - it.a2.preposition.place-time
 minutes: 7
 quiz:
   - question: "¿Qué preposición usarías en 'Il libro è ___ il tavolo' (El libro está sobre la mesa)?"
@@ -83,15 +85,15 @@ cosas — dos usos distintos de las mismas palabras clave que conviene aprender 
 
 ## Preposiciones de lugar
 
-| Italiano     | Español         |
-| ------------ | --------------- |
-| a            | en/a            |
-| in           | en/dentro de    |
-| su           | sobre/encima de |
-| sotto        | debajo de       |
-| davanti a    | delante de      |
-| dietro       | detrás de       |
-| tra / fra    | entre           |
+| Italiano  | Español         |
+| --------- | --------------- |
+| a         | en/a            |
+| in        | en/dentro de    |
+| su        | sobre/encima de |
+| sotto     | debajo de       |
+| davanti a | delante de      |
+| dietro    | detrás de       |
+| tra / fra | entre           |
 
 ```
 Il gatto è sotto il tavolo.               (El gato está debajo de la mesa)
@@ -103,12 +105,12 @@ Il libro è tra il tavolo e la sedia.      (El libro está entre la mesa y la si
 Las mismas palabras "a", "in" y "tra/fra" también funcionan para hablar de tiempo, pero
 con reglas distintas según lo que sigue:
 
-| Uso                        | Ejemplo         | Significado           |
-| --------------------------- | --------------- | ---------------------- |
-| a + hora                   | alle 8          | a las 8                |
-| in + mes/estación          | in gennaio      | en enero               |
-| in + mes/estación          | in estate       | en verano              |
-| tra/fra + tiempo futuro    | tra tre giorni  | dentro de tres días     |
+| Uso                     | Ejemplo        | Significado         |
+| ----------------------- | -------------- | ------------------- |
+| a + hora                | alle 8         | a las 8             |
+| in + mes/estación       | in gennaio     | en enero            |
+| in + mes/estación       | in estate      | en verano           |
+| tra/fra + tiempo futuro | tra tre giorni | dentro de tres días |
 
 ```
 Ci vediamo alle 8.        (Nos vemos a las 8)

@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Ironía y humor en italiano'
 funFact: "El italiano conversacional está lleno de ironía cotidiana, muy integrada en el habla diaria — 'Complimenti!' (¡felicidades!) dicho tras un error obvio es ironía tan común que apenas se nota como recurso especial, simplemente forma parte del ritmo natural de la conversación italiana."
+skills:
+  - it.c2.style.irony
 minutes: 10
 quiz:
   - question: "Alguien dice 'Complimenti!' con tono plano después de que otra persona comete un error obvio. ¿Qué expresa?"

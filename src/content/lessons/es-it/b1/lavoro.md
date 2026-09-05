@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Vocabulario: trabajo y profesión'
 funFact: "En italiano, la mayoría de las profesiones cambian de forma predecible entre masculino y femenino: 'un professore' se convierte en 'una professoressa', 'un dottore' en 'una dottoressa'. El patrón '-essa' es mucho más consistente que en francés o alemán."
+skills:
+  - it.b1.vocabulary.work
 minutes: 7
 quiz:
   - question: "¿Cómo se dice 'la entrevista de trabajo' en italiano?"

@@ -7,24 +7,32 @@ order: 10
 unit: 3
 grammarTopic: 'Neologismi e prestiti linguistici'
 funFact: "El italiano tiene una fábrica casi automática para digerir palabras extranjeras: cualquier verbo prestado del inglés se adapta con la terminación -are, la más regular del idioma. Del inglés 'to click' sale 'cliccare', y de ahí ya se conjuga como cualquier verbo regular: clicco, clicchi, cliccano."
+skills:
+  - it.c2.lexicon.neologisms
 minutes: 9
 quiz:
   - question: "¿Qué es un 'neologismo'?"
-    options: ['una palabra antigua en desuso', 'una palabra nueva incorporada al idioma', 'un error gramatical común']
+    options:
+      [
+        'una palabra antigua en desuso',
+        'una palabra nueva incorporada al idioma',
+        'un error gramatical común',
+      ]
     answerIndex: 1
     explanation: 'Un neologismo es una palabra nueva que se incorpora a un idioma, muchas veces para nombrar tecnología o conceptos que antes no existían.'
   - question: "¿Cómo se adapta morfológicamente 'to click' al verbo italiano?"
     options: ['clicka', 'cliccare', 'clickare']
     answerIndex: 1
-    explanation: "El italiano adapta el verbo prestado con la terminación regular -are: cliccare, que luego se conjuga como cualquier verbo regular (clicco, clicchi, cliccano)."
-  - question: "¿Cuál es la diferencia principal entre esta lección y la de slang giovanile?"
-    options: [
-      'no hay ninguna diferencia',
-      'los neologismos son préstamos que se integran formalmente al idioma (verbos conjugables); el slang es vocabulario oral informal',
-      'los neologismos solo existen en italiano escrito antiguo',
-    ]
+    explanation: 'El italiano adapta el verbo prestado con la terminación regular -are: cliccare, que luego se conjuga como cualquier verbo regular (clicco, clicchi, cliccano).'
+  - question: '¿Cuál es la diferencia principal entre esta lección y la de slang giovanile?'
+    options:
+      [
+        'no hay ninguna diferencia',
+        'los neologismos son préstamos que se integran formalmente al idioma (verbos conjugables); el slang es vocabulario oral informal',
+        'los neologismos solo existen en italiano escrito antiguo',
+      ]
     answerIndex: 1
-    explanation: "El slang giovanile es vocabulario oral/informal (boh, figo). Los neologismos son préstamos que se integran morfológicamente al sistema del idioma, como verbos regulares en -are: cliccare, chattare, postare."
+    explanation: 'El slang giovanile es vocabulario oral/informal (boh, figo). Los neologismos son préstamos que se integran morfológicamente al sistema del idioma, como verbos regulares en -are: cliccare, chattare, postare.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Devo ___ su questo link per aprire il sito. (cliccare)'
@@ -102,11 +110,11 @@ to tag     →  taggare
 
 Una vez adaptados, se conjugan exactamente como cualquier otro verbo regular en -are:
 
-| Infinitivo | io      | tu       | participio passato |
-| ----------- | ------- | -------- | -------------------- |
-| cliccare    | clicco  | clicchi  | cliccato              |
-| chattare    | chatto  | chatti   | chattato              |
-| postare     | posto   | posti    | postato                |
+| Infinitivo | io     | tu      | participio passato |
+| ---------- | ------ | ------- | ------------------ |
+| cliccare   | clicco | clicchi | cliccato           |
+| chattare   | chatto | chatti  | chattato           |
+| postare    | posto  | posti   | postato            |
 
 ```
 Devo cliccare su questo link.          (Tengo que hacer clic en este enlace.)

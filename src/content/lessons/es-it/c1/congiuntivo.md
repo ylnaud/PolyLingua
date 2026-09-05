@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Il modo congiuntivo'
 funFact: "El indicativo describe el mundo como ES; el congiuntivo describe el mundo como lo SIENTES, DUDAS o DESEAS. Antes de conjugar, pregúntate: '¿estoy afirmando un hecho, o expresando emoción, duda, deseo u obligación subjetiva?' Si es lo segundo, casi seguro necesitas congiuntivo — igual que en español distingues 'creo que viene' de 'espero que venga'."
+skills:
+  - it.c1.subjunctive.full
 minutes: 12
 quiz:
   - question: '¿Para qué se usa principalmente el congiuntivo?'

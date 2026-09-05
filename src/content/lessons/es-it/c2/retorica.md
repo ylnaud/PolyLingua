@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Figuras retóricas (figure retoriche)'
 funFact: 'Italia tiene una tradición retórica que se remonta directamente a la Roma clásica y Cicerón — el arte de la persuasión oral tiene raíces particularmente profundas en la cultura italiana, y muchas figuras retóricas que estudias hoy llevan nombres derivados directamente del latín clásico.'
+skills:
+  - it.c2.style.rhetoric
 minutes: 10
 quiz:
   - question: "¿Cuál es el propósito de una 'domanda retorica' (pregunta retórica)?"

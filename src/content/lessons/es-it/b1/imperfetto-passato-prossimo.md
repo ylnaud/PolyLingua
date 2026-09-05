@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Imperfetto vs Passato prossimo'
 funFact: "Piensa en el imperfetto como una FOTO FIJA (una descripción, un estado, algo habitual) y en el passato prossimo como una PELÍCULA con inicio y fin (un evento puntual y completado). 'Pioveva quando sono uscito' — 'pioveva' es la foto de fondo, 'sono uscito' es la acción que ocurre en ese fondo."
+skills:
+  - it.b1.verb.imperfetto
 minutes: 10
 quiz:
   - question: "¿Cuál es correcta para describir el clima como telón de fondo: '___ quando sono arrivato' (llovía cuando llegué)?"

@@ -8,6 +8,9 @@ unit: 2
 situation: 'Hacer planes'
 grammarTopic: 'Vocabolario: fare piani'
 funFact: "'Ci sto!' es la forma italiana informal de aceptar un plan con entusiasmo — literalmente 'estoy ahí', pero funciona como '¡me apunto!' en cualquier invitación."
+skills:
+  - it.a2.vocabulary.plans
+  - it.a2.verb.futuro-immediato
 minutes: 7
 phrases:
   - text: 'Sei libero sabato?'

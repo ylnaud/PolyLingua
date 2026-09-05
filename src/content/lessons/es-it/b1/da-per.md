@@ -1,12 +1,14 @@
 ---
 language: it
 level: b1
-title: "Da vs. per: la trampa temporal que confunde a hispanohablantes"
+title: 'Da vs. per: la trampa temporal que confunde a hispanohablantes'
 description: "Da y per en expresiones de duración: por qué 'da' se usa con presente para acciones que continúan, y 'per' marca duración con principio y fin."
 order: 10
 unit: 3
 grammarTopic: 'Da / per (espressioni di durata e tempo)'
 funFact: "En español decís 'llevo tres años estudiando italiano' o 'estudio italiano desde hace tres años' — con un tiempo compuesto. En italiano, si la acción SIGUE pasando ahora, usás PRESENTE + da: 'Studio italiano da tre anni'. Traducir literalmente con un tiempo compuesto ('Ho studiato italiano da tre anni') es el error número uno de los hispanohablantes con este punto — y probablemente lo cometerás antes de terminar esta lección al menos una vez."
+skills:
+  - it.b1.preposition.da-per
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta para 'Vivo aquí desde hace diez años' (y todavía vivo aquí)?"
@@ -18,11 +20,21 @@ quiz:
     answerIndex: 0
     explanation: "'per' marca una duración con principio y fin, generalmente ya terminada: Ho viaggiato per due mesi (viajé durante dos meses, ya no viajo)."
   - question: "¿Qué diferencia principal separa 'da' de 'per' en expresiones de tiempo?"
-    options: ["'da' es duración terminada, 'per' es duración que continúa", "'da' marca un punto de inicio con acción que continúa, 'per' marca duración con principio y fin", "No hay diferencia, son intercambiables"]
+    options:
+      [
+        "'da' es duración terminada, 'per' es duración que continúa",
+        "'da' marca un punto de inicio con acción que continúa, 'per' marca duración con principio y fin",
+        'No hay diferencia, son intercambiables',
+      ]
     answerIndex: 1
     explanation: "'da' señala desde cuándo pasa algo que sigue pasando (con presente); 'per' señala cuánto duró algo con principio y fin definidos."
   - question: "¿Cómo dirías 'estudio italiano desde hace tres años' (y sigo estudiando)?"
-    options: ['Ho studiato italiano da tre anni', 'Studio italiano da tre anni', 'Studio italiano per tre anni']
+    options:
+      [
+        'Ho studiato italiano da tre anni',
+        'Studio italiano da tre anni',
+        'Studio italiano per tre anni',
+      ]
     answerIndex: 1
     explanation: "Presente + 'da' es la fórmula para una acción que sigue en curso: Studio italiano da tre anni."
 exercises:
@@ -111,10 +123,10 @@ tiempo verbal del ejemplo con "per", sino en que "per" no exige presente.
 
 ## La tabla que resuelve la duda
 
-| Pregunta que te hacés                          | Preposición | Tiempo verbal          |
-| ----------------------------------------------- | ----------- | ------------------------ |
-| ¿La acción sigue pasando ahora?                  | da          | PRESENTE                 |
-| ¿La acción ya terminó (o tiene fin definido)?    | per         | passato prossimo / futuro |
+| Pregunta que te hacés                         | Preposición | Tiempo verbal             |
+| --------------------------------------------- | ----------- | ------------------------- |
+| ¿La acción sigue pasando ahora?               | da          | PRESENTE                  |
+| ¿La acción ya terminó (o tiene fin definido)? | per         | passato prossimo / futuro |
 
 ## El error más común
 

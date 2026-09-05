@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Il congiuntivo trapassato'
 funFact: "El congiuntivo trapassato es la pieza que faltaba: en B2 aprendiste el periodo ipotetico della realtà y della possibilità; este es el tercer tipo, dell'irrealtà, para condiciones pasadas que ya no se pueden cambiar. 'Se avessi saputo, sarei venuto' (si hubiera sabido, habría venido) — ya pasó, ya no hay nada que hacer."
+skills:
+  - it.c1.subjunctive.trapassato
 minutes: 10
 quiz:
   - question: '¿Cómo se forma el congiuntivo trapassato?'
@@ -15,7 +17,7 @@ quiz:
       - 'avere/essere (congiuntivo imperfetto) + participio passato'
       - 'avere/essere (indicativo imperfetto) + participio passato'
     answerIndex: 1
-    explanation: "Congiuntivo trapassato = avere/essere en congiuntivo imperfetto (avessi, fossi) + participio passato: avessi saputo, fossi arrivato."
+    explanation: 'Congiuntivo trapassato = avere/essere en congiuntivo imperfetto (avessi, fossi) + participio passato: avessi saputo, fossi arrivato.'
   - question: "'Se avessi saputo, sarei venuto.' ¿A qué tipo de periodo ipotetico pertenece?"
     options: ['della realtà', 'della possibilità', "dell'irrealtà"]
     answerIndex: 2
@@ -62,7 +64,11 @@ exercises:
   - type: 'write'
     prompt: "Escribe en italiano (dell'irrealtà): 'Si hubiera partido antes, no habría perdido el tren' (partire → congiuntivo trapassato; perdere → condizionale passato)."
     answer: 'Se fossi partito prima, non avrei perso il treno'
-    accepted: ['Se fossi partito prima, non avrei perso il treno', 'se fossi partito prima non avrei perso il treno']
+    accepted:
+      [
+        'Se fossi partito prima, non avrei perso il treno',
+        'se fossi partito prima non avrei perso il treno',
+      ]
     hint: "'fossi partito' (essere, congiuntivo trapassato) + 'avrei perso' (avere, condizionale passato)."
     placeholder: 'Se avessi saputo, sarei venuto.'
   - type: 'order'
@@ -91,14 +97,14 @@ para condiciones pasadas que ya no tienen vuelta atrás.
 avere/essere (congiuntivo imperfetto)  +  participio passato
 ```
 
-| Verbo   | avere      | essere    |
-| ------- | ---------- | --------- |
-| io      | avessi     | fossi     |
-| tu      | avessi     | fossi     |
-| lui/lei | avesse     | fosse     |
-| noi     | avessimo   | fossimo   |
-| voi     | aveste     | foste     |
-| loro    | avessero   | fossero   |
+| Verbo   | avere    | essere  |
+| ------- | -------- | ------- |
+| io      | avessi   | fossi   |
+| tu      | avessi   | fossi   |
+| lui/lei | avesse   | fosse   |
+| noi     | avessimo | fossimo |
+| voi     | aveste   | foste   |
+| loro    | avessero | fossero |
 
 ```
 avessi saputo   (hubiera sabido)
@@ -119,11 +125,11 @@ se puede cambiar**. No es "quizás pase" — es "ya no pasó, y no hay nada que 
 
 ## Comparando los tres tipos, uno al lado del otro
 
-| Tipo               | Fórmula                                              | Ejemplo                              |
-| ------------------- | ------------------------------------------------------ | --------------------------------------- |
-| Della realtà        | se + indicativo presente + indicativo/imperativo       | Se piove, resto a casa.              |
-| Della possibilità   | se + congiuntivo imperfetto + condizionale presente     | Se avessi tempo, verrei.             |
-| Dell'irrealtà       | se + congiuntivo trapassato + condizionale passato       | Se avessi saputo, sarei venuto.      |
+| Tipo              | Fórmula                                             | Ejemplo                         |
+| ----------------- | --------------------------------------------------- | ------------------------------- |
+| Della realtà      | se + indicativo presente + indicativo/imperativo    | Se piove, resto a casa.         |
+| Della possibilità | se + congiuntivo imperfetto + condizionale presente | Se avessi tempo, verrei.        |
+| Dell'irrealtà     | se + congiuntivo trapassato + condizionale passato  | Se avessi saputo, sarei venuto. |
 
 ## Qué significa realmente
 

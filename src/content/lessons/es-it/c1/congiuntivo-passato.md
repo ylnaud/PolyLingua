@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Congiuntivo passato'
 funFact: 'El Congiuntivo passato no es un tiempo verbal nuevo desde cero — es simplemente el Congiuntivo presente del auxiliar (avere/essere) combinado con el participio que ya conoces del passato prossimo. Si ya dominas ambas piezas por separado, esta estructura es solo unirlas.'
+skills:
+  - it.c1.subjunctive.passato
 minutes: 9
 quiz:
   - question: '¿Cuál es la fórmula del Congiuntivo passato?'

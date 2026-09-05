@@ -1,12 +1,14 @@
 ---
 language: it
 level: b1
-title: "Pronomi indefiniti: qualcuno, qualcosa, nessuno y más"
-description: "Qualcuno, qualcosa, nessuno, niente, ognuno, tutti: los pronombres indefinidos del italiano, su concordancia singular y la doble negación con non."
+title: 'Pronomi indefiniti: qualcuno, qualcosa, nessuno y más'
+description: 'Qualcuno, qualcosa, nessuno, niente, ognuno, tutti: los pronombres indefinidos del italiano, su concordancia singular y la doble negación con non.'
 order: 9
 unit: 3
 grammarTopic: 'Pronomi indefiniti (qualcuno, qualcosa, nessuno, niente)'
 funFact: "Ya conoces 'non...mai' (nunca), donde 'mai' es un adverbio que modifica al verbo. Los pronombres indefinidos negativos funcionan distinto: 'nessuno' y 'niente' no describen CUÁNDO pasa algo, sino que REEMPLAZAN a un sustantivo (a la persona, a la cosa). 'Non vedo nessuno' no es 'no veo nunca' — es 'no veo a nadie', con 'nessuno' ocupando el lugar donde iría 'a esa persona'. Mismo 'non' obligatorio, pero un trabajo gramatical distinto."
+skills:
+  - it.b1.pronoun.indefinite
 minutes: 8
 quiz:
   - question: "¿Cuál es correcta para 'Alguien tocó el timbre'?"
@@ -18,7 +20,12 @@ quiz:
     answerIndex: 1
     explanation: "'ognuno' es siempre singular, aunque hable de un grupo de personas: Ognuno ha la sua opinione (cada uno TIENE, no tienen)."
   - question: "¿Cuál es la traducción correcta de 'Non ho visto nessuno in giardino'?"
-    options: ['No he visto nada en el jardín', 'No he visto a nadie en el jardín', 'Nadie ha visto el jardín']
+    options:
+      [
+        'No he visto nada en el jardín',
+        'No he visto a nadie en el jardín',
+        'Nadie ha visto el jardín',
+      ]
     answerIndex: 1
     explanation: "'nessuno' como objeto después del verbo significa 'a nadie': Non ho visto nessuno = no he visto a nadie. El 'non' antes del verbo es obligatorio."
   - question: "¿Cuál de estas frases usa 'niente' correctamente?"
@@ -86,19 +93,19 @@ muchos estudiantes.
 
 ## Los afirmativos: qualcuno, qualcosa, ognuno, tutti
 
-| Pronombre | Significado | Ejemplo                        |
-| --------- | ------------ | ------------------------------- |
-| qualcuno  | alguien      | Qualcuno ha citofonato.         |
-| qualcosa  | algo         | Vuoi qualcosa da bere?          |
-| ognuno    | cada uno     | Ognuno ha la sua opinione.      |
-| tutti     | todos        | Tutti sono venuti alla festa.   |
+| Pronombre | Significado | Ejemplo                       |
+| --------- | ----------- | ----------------------------- |
+| qualcuno  | alguien     | Qualcuno ha citofonato.       |
+| qualcosa  | algo        | Vuoi qualcosa da bere?        |
+| ognuno    | cada uno    | Ognuno ha la sua opinione.    |
+| tutti     | todos       | Tutti sono venuti alla festa. |
 
 ## Los negativos: nessuno y niente
 
-| Pronombre     | Significado | Ejemplo                  |
-| ------------- | ----------- | ------------------------- |
-| nessuno       | nadie       | Non ho visto nessuno.     |
-| niente / nulla | nada        | Non è successo niente.    |
+| Pronombre      | Significado | Ejemplo                |
+| -------------- | ----------- | ---------------------- |
+| nessuno        | nadie       | Non ho visto nessuno.  |
+| niente / nulla | nada        | Non è successo niente. |
 
 ## La doble negación: mismo "non", trabajo distinto
 

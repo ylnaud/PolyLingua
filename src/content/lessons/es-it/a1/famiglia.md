@@ -8,6 +8,9 @@ unit: 2
 situation: 'Familia y amigos'
 grammarTopic: 'Vocabulario: la familia'
 funFact: "'madre/padre' en italiano son 'madre/padre' — prácticamente idénticos al español. De los cinco idiomas del curso, el vocabulario familiar italiano es el que menos esfuerzo de memorización requiere gracias a su cercanía directa con el español."
+skills:
+  - it.a1.vocabulary.family
+  - it.a1.possessive.article
 minutes: 5
 phrases:
   - text: 'Ho due fratelli e una sorella.'

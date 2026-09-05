@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Estilo literario y prosa elevada'
 funFact: 'La literatura italiana, heredera directa de Dante, Petrarca y Boccaccio, tiene una tradición particularmente rica de atención al ritmo de la frase — la prosa literaria italiana a menudo prioriza la musicalidad y el equilibrio sonoro tanto como el significado, un rasgo que se remonta a sus raíces poéticas medievales.'
+skills:
+  - it.c2.style.literary
 minutes: 10
 quiz:
   - question: '¿Por qué la prosa literaria italiana a menudo usa el passato remoto en vez del passato prossimo?'

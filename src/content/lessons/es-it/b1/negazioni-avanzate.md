@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Negaciones avanzadas (non...mai/niente/nessuno/più)'
 funFact: "A diferencia del español, donde 'nunca' o 'nadie' pueden ir solos antes del verbo ('nunca como carne'), el italiano SIEMPRE necesita 'non' antes del verbo además de la palabra negativa después: 'Non mangio mai carne' — nunca se omite el 'non', aunque suene redundante comparado con el español."
+skills:
+  - it.b1.negation.advanced
 minutes: 8
 quiz:
   - question: "¿Cuál es la traducción correcta de 'Non mangio mai carne'?"

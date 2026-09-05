@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Passato remoto (tiempo literario/regional)'
 funFact: 'A diferencia del passé simple francés (que nadie usa al hablar en ningún lugar), el passato remoto italiano tiene una vida doble: en el norte de Italia es prácticamente solo literario, pero en varias regiones del sur (Sicilia, Campania) los hablantes lo usan activamente en conversación cotidiana para el pasado, en vez del passato prossimo.'
+skills:
+  - it.c1.verb.passato-remoto
 minutes: 10
 quiz:
   - question: '¿En qué contexto es más probable escuchar el passato remoto en conversación real?'

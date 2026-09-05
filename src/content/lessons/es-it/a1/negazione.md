@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Negación (non)'
 funFact: "El italiano tiene la negación más simple de los cinco idiomas de PolyLingua: solo 'non' antes del verbo, sin ninguna segunda palabra necesaria (a diferencia del francés 'ne...pas'). Es una de las estructuras que menos dolores de cabeza te va a dar en todo el curso."
+skills:
+  - it.a1.negation.non
 minutes: 5
 quiz:
   - question: "¿Cuál es la negación correcta de 'Parlo italiano' (hablo italiano)?"

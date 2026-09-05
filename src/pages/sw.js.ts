@@ -13,7 +13,13 @@
  * es Astro quien lo produce, y el CACHE_NAME sale de este archivo.
  */
 import type { APIRoute } from 'astro';
-import { esDocumentoSW, OFFLINE_URL, PRECACHE_URLS } from '../lib/swPrecache';
+import {
+  esDocumentoSW,
+  OFFLINE_URL,
+  PRECACHE_URLS,
+  redPrimeroSW,
+  TIMEOUT_RED_MS,
+} from '../lib/swPrecache';
 
 const BUILD_ID = new Date()
   .toISOString()
@@ -72,23 +78,23 @@ const sinConexion = () =>
     { status: 503, headers: { 'Content-Type': 'text/html; charset=utf-8' } },
   );
 
-/** Páginas: siempre lo último publicado; la caché es solo la red de seguridad. */
-async function redPrimero(request) {
-  try {
-    const response = await fetch(request);
-    guardar(request, response);
-    return response;
-  } catch {
-    // \`ignoreSearch\` es imprescindible acá: la PWA instalada arranca en
-    // \`/?utm_source=pwa\`, que sin esto NO matchea la portada cacheada como
-    // \`/\` y hace fallar el fallback entero.
-    const cached =
-      (await caches.match(request, { ignoreSearch: true })) || (await caches.match(OFFLINE_URL));
-    // Nunca resolver a undefined: respondWith(undefined) le da al navegador un
-    // error de red crudo en vez de una pantalla legible.
-    return cached || sinConexion();
-  }
-}
+// Páginas: siempre lo último publicado; la caché es solo la red de seguridad.
+// Inyectada desde src/lib/swPrecache.ts por el mismo motivo que esDocumento —
+// que el test pruebe este código y no una copia. Lleva timeout: sin él, una
+// red que ni responde ni falla dejaba la página cargando para siempre.
+const redPrimeroImpl = ${redPrimeroSW.toString()};
+
+const TIMEOUT_RED_MS = ${TIMEOUT_RED_MS};
+
+const redPrimero = (request) =>
+  redPrimeroImpl(request, {
+    fetch: (req) => fetch(req),
+    match: (req, opciones) => caches.match(req, opciones),
+    guardar,
+    sinConexion,
+    offlineUrl: OFFLINE_URL,
+    timeoutMs: TIMEOUT_RED_MS,
+  });
 
 /** Assets con hash en el nombre: el contenido no cambia sin cambiar la URL. */
 async function cachePrimero(request) {

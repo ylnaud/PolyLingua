@@ -3016,6 +3016,203 @@ export const SKILLS: Skill[] = [
     prerequisites: [],
     difficulty: 4,
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // ITALIANO — C1
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'it.c1.subjunctive.full',
+    lang: 'it',
+    level: 'c1',
+    category: 'grammar',
+    name: 'El congiuntivo completo',
+    prerequisites: ['it.b1.subjunctive.intro'],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c1.subjunctive.passato',
+    lang: 'it',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Congiuntivo passato',
+    prerequisites: ['it.c1.subjunctive.full'],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c1.subjunctive.trapassato',
+    lang: 'it',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Congiuntivo trapassato',
+    prerequisites: ['it.c1.subjunctive.passato', 'it.b2.verb.trapassato'],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c1.speech.indirect',
+    lang: 'it',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Discurso indirecto y concordancia de tiempos',
+    prerequisites: ['it.b2.verb.trapassato', 'it.b2.verb.condizionale-passato'],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c1.emphasis.cleft',
+    lang: 'it',
+    level: 'c1',
+    category: 'word_order',
+    name: 'Frase scissa y dislocación (è… che)',
+    prerequisites: ['it.b2.pronoun.relative'],
+    difficulty: 4,
+  },
+  {
+    id: 'it.c1.verb.futuro-anteriore',
+    lang: 'it',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Futuro anteriore',
+    prerequisites: ['it.b1.verb.futuro-semplice'],
+    difficulty: 4,
+  },
+  {
+    id: 'it.c1.verb.passato-remoto',
+    lang: 'it',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Passato remoto (literario y meridional)',
+    prerequisites: ['it.a2.verb.passato-prossimo'],
+    difficulty: 4,
+  },
+  {
+    id: 'it.c1.idiom.expressions',
+    lang: 'it',
+    level: 'c1',
+    category: 'vocabulary',
+    name: 'Expresiones idiomáticas',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'it.c1.vocabulary.academic',
+    lang: 'it',
+    level: 'c1',
+    category: 'vocabulary',
+    name: 'Lenguaje académico',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'it.c1.vocabulary.business',
+    lang: 'it',
+    level: 'c1',
+    category: 'vocabulary',
+    name: 'Italiano de negocios',
+    prerequisites: [],
+    difficulty: 4,
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // ITALIANO — C2
+  //
+  // Casi todo va con `writing` o `vocabulary`, y por tanto sin plantilla de
+  // refuerzo. Es la misma decisión que se tomó en alemán, inglés y francés: el
+  // registro, la ironía, la retórica y los juegos de palabras no son reglas que
+  // se completen en un hueco, son cosas que se producen; un ejercicio de hueco
+  // ahí inventaría una respuesta única donde no la hay.
+  //
+  // La excepción es la nominalización, que sí es una transformación con una
+  // forma correcta —igual que `de.c1.style.nominal`, `en.c2.style.nominalization`
+  // y `fr.c2.style.nominalisation`—, así que va con `grammar` y su plantilla.
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'it.c2.style.nominalizzazione',
+    lang: 'it',
+    level: 'c2',
+    category: 'grammar',
+    name: 'Nominalización y estilo formal',
+    prerequisites: ['it.c1.vocabulary.academic'],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c2.register.colloquial',
+    lang: 'it',
+    level: 'c2',
+    category: 'writing',
+    name: 'Partículas coloquiales y registro',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'it.c2.style.irony',
+    lang: 'it',
+    level: 'c2',
+    category: 'writing',
+    name: 'Ironía y humor',
+    prerequisites: [],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c2.style.rhetoric',
+    lang: 'it',
+    level: 'c2',
+    category: 'writing',
+    name: 'Figuras retóricas',
+    prerequisites: [],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c2.style.wordplay',
+    lang: 'it',
+    level: 'c2',
+    category: 'writing',
+    name: 'Juegos de palabras y dobles sentidos',
+    prerequisites: [],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c2.style.literary',
+    lang: 'it',
+    level: 'c2',
+    category: 'writing',
+    name: 'Estilo literario',
+    prerequisites: ['it.c1.verb.passato-remoto'],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c2.idiom.proverbs',
+    lang: 'it',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Refranes y proverbios',
+    prerequisites: ['it.c1.idiom.expressions'],
+    difficulty: 4,
+  },
+  {
+    id: 'it.c2.variety.regional',
+    lang: 'it',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Variedades regionales y dialectos',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'it.c2.register.slang',
+    lang: 'it',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Slang juvenil y anglicismos',
+    prerequisites: ['it.c2.register.colloquial'],
+    difficulty: 5,
+  },
+  {
+    id: 'it.c2.lexicon.neologisms',
+    lang: 'it',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Neologismos y préstamos',
+    prerequisites: [],
+    difficulty: 3,
+  },
 ];
 
 export const SKILL_MAP: Record<string, Skill> = Object.fromEntries(SKILLS.map((s) => [s.id, s]));

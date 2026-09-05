@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Frase scissa / dislocazione (è...che)'
 funFact: "'È Marco che ha chiamato' literalmente 'parte' la frase en dos, con el único propósito de gritar 'fue MARCO, no nadie más'. Es el equivalente italiano exacto de las cleft sentences inglesas o la mise en relief francesa — la misma herramienta retórica en su propio molde."
+skills:
+  - it.c1.emphasis.cleft
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta para dar énfasis en QUIÉN llamó: 'Marco ha chiamato'?"

@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Slang giovanile e anglicismi'
 funFact: "'Boh' es probablemente la palabra italiana más usada que ningún libro de texto enseña: es un sonido de incertidumbre total, tipo 'ni idea', acompañado casi siempre de encogerse de hombros. Si aprendés una sola palabra de esta lección, que sea esa."
+skills:
+  - it.c2.register.slang
 minutes: 9
 quiz:
   - question: "¿Qué significa 'boh' en italiano coloquial?"
@@ -14,10 +16,11 @@ quiz:
     answerIndex: 1
     explanation: "'Boh' expresa incertidumbre total, equivalente a 'ni idea' o 'qué sé yo', casi siempre acompañado de un gesto de hombros."
   - question: "'Questo film è mica male' significa..."
-    options: ['esta película es pésima', 'esta película no está nada mal', 'esta película no existe']
+    options:
+      ['esta película es pésima', 'esta película no está nada mal', 'esta película no existe']
     answerIndex: 1
     explanation: "'Mica male' es una doble negación que en realidad da un resultado positivo suave: 'no está nada mal' = está bastante bien."
-  - question: "¿Cuál de estas palabras es un anglicismo de uso cotidiano en italiano?"
+  - question: '¿Cuál de estas palabras es un anglicismo de uso cotidiano en italiano?'
     options: ['figata', 'weekend', 'sbatti']
     answerIndex: 1
     explanation: "'Weekend' es un anglicismo integrado al italiano cotidiano (junto con smartphone, selfie, cool), mientras que 'figata' y 'sbatti' son slang genuinamente italiano."
@@ -27,10 +30,10 @@ quiz:
     explanation: "'Che sbatti' (literalmente 'qué golpeteo') expresa pereza o el esfuerzo que da hacer algo, tipo 'qué paja' o 'qué flojera'."
 exercises:
   - type: 'fill-blank'
-    sentence: "Non lo so, ___. (no sé, ni idea)"
+    sentence: 'Non lo so, ___. (no sé, ni idea)'
     answer: 'boh'
     accepted: ['boh']
-    hint: "La interjección de incertidumbre total, la más común del italiano coloquial."
+    hint: 'La interjección de incertidumbre total, la más común del italiano coloquial.'
     translation: 'No sé, ni idea.'
     placeholder: 'boh / mica'
   - type: 'fill-blank'
@@ -107,12 +110,12 @@ Questo film è mica male, mi è piaciuto.
 
 ## Vocabulario de aprobación y desgana
 
-| Expresión      | Significado                          |
-| --------------- | --------------------------------------- |
-| figo / figa     | genial, copado (adjetivo)              |
-| una figata      | algo genial (sustantivo)               |
-| che sbatti      | qué pereza, qué esfuerzo                |
-| che palle       | qué fastidio (más vulgar, muy común)   |
+| Expresión   | Significado                          |
+| ----------- | ------------------------------------ |
+| figo / figa | genial, copado (adjetivo)            |
+| una figata  | algo genial (sustantivo)             |
+| che sbatti  | qué pereza, qué esfuerzo             |
+| che palle   | qué fastidio (más vulgar, muy común) |
 
 ```
 Che figata questo concerto!     (¡Qué genialidad este concierto!)
@@ -124,12 +127,12 @@ Ho troppo sbatti per uscire.    (Tengo demasiada pereza para salir.)
 El italiano informal incorpora anglicismos con total naturalidad, sin traducirlos ni
 adaptarlos morfológicamente:
 
-| Inglés     | Uso en italiano                       |
-| ----------- | --------------------------------------- |
-| weekend     | il weekend (el fin de semana)          |
-| smartphone  | lo smartphone                           |
-| selfie      | il selfie / farsi un selfie             |
-| cool        | è cool (es genial, está de moda)       |
+| Inglés     | Uso en italiano                  |
+| ---------- | -------------------------------- |
+| weekend    | il weekend (el fin de semana)    |
+| smartphone | lo smartphone                    |
+| selfie     | il selfie / farsi un selfie      |
+| cool       | è cool (es genial, está de moda) |
 
 ```
 Cosa fai questo weekend?        (¿Qué haces este fin de semana?)

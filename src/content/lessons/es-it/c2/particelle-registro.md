@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Particelle colloquiali e registro'
 funFact: "Estas palabras son el 'tono de voz' escrito del italiano: 'mica' niega con actitud ('non sono mica stupido' = no soy tonto, ¿eh?), 'dai' anima o insiste ('¡vamos!'), 'magari' expresa un deseo casi imposible ('¡ojalá!'). Ningún diccionario las traduce del todo bien porque no cambian el significado literal — cambian la actitud."
+skills:
+  - it.c2.register.colloquial
 minutes: 12
 quiz:
   - question: "'Non sono mica stanco.' — ¿qué matiz añade 'mica' aquí?"

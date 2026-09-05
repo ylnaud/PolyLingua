@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Variedades regionales del italiano (dialetti regionali)'
 funFact: "Italia tiene una diversidad dialectal enorme para su tamaño: el siciliano, el napolitano, el veneto y el sardo son a veces considerados lenguas propias por lingüistas, no simples 'acentos'. El italiano estándar que aprendes en clase es, en realidad, relativamente reciente — unificado formalmente hace poco más de un siglo."
+skills:
+  - it.c2.variety.regional
 minutes: 9
 quiz:
   - question: '¿Por qué los dialectos italianos son considerados por algunos lingüistas como lenguas propias?'

@@ -7,6 +7,8 @@ order: 10
 unit: 3
 grammarTopic: 'Il futuro anteriore'
 funFact: "El futuro anteriore tiene un segundo uso que sorprende: además de marcar 'lo que habrá pasado antes' ('Quando avrò finito, ti chiamerò'), sirve para suponer sobre el pasado reciente sin decir 'creo que': 'Avrà dimenticato' significa 'se habrá olvidado' — una forma elegante de especular sin comprometerte."
+skills:
+  - it.c1.verb.futuro-anteriore
 minutes: 9
 quiz:
   - question: '¿Cómo se forma el futuro anteriore?'
@@ -88,13 +90,13 @@ avere/essere (futuro semplice)  +  participio passato
 ```
 
 | Persona | avere (futuro) | essere (futuro) |
-| ------- | --------------- | ----------------- |
-| io      | avrò            | sarò               |
-| tu      | avrai           | sarai              |
-| lui/lei | avrà            | sarà                |
-| noi     | avremo          | saremo             |
-| voi     | avrete          | sarete              |
-| loro    | avranno         | saranno             |
+| ------- | -------------- | --------------- |
+| io      | avrò           | sarò            |
+| tu      | avrai          | sarai           |
+| lui/lei | avrà           | sarà            |
+| noi     | avremo         | saremo          |
+| voi     | avrete         | sarete          |
+| loro    | avranno        | saranno         |
 
 ## Uso 1: una acción futura anterior a otra
 
@@ -107,9 +109,10 @@ Quando sarò arrivato, ti scriverò.
 ```
 
 Fijate el patrón: en español usás "cuando haya + participio", en italiano es "quando
-+ futuro anteriore" — el italiano usa futuro en las dos partes, mientras el español
-mezcla subjuntivo con futuro. Es un punto donde muchos hispanohablantes se equivocan
-por calcar la estructura española.
+
+- futuro anteriore" — el italiano usa futuro en las dos partes, mientras el español
+  mezcla subjuntivo con futuro. Es un punto donde muchos hispanohablantes se equivocan
+  por calcar la estructura española.
 
 ```
 Español:   Cuando haya terminado, te llamaré.        (subjuntivo + futuro)
@@ -135,10 +138,10 @@ elegante, sin necesidad de un verbo introductorio como "creo" o "supongo".
 
 ## Los dos usos, uno al lado del otro
 
-| Uso                              | Ejemplo                                    | Función                          |
-| ---------------------------------- | -------------------------------------------- | ----------------------------------- |
-| Acción futura anterior a otra      | Quando avrò finito, ti chiamerò.            | Secuencia de dos acciones futuras |
-| Suposición sobre el pasado reciente | Avrà dimenticato il cellulare.              | Conjetura, sin verbo introductorio |
+| Uso                                 | Ejemplo                          | Función                            |
+| ----------------------------------- | -------------------------------- | ---------------------------------- |
+| Acción futura anterior a otra       | Quando avrò finito, ti chiamerò. | Secuencia de dos acciones futuras  |
+| Suposición sobre el pasado reciente | Avrà dimenticato il cellulare.   | Conjetura, sin verbo introductorio |
 
 ## El truco para reconocerlo rápido
 

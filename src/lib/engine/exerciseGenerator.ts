@@ -7858,6 +7858,305 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // ITALIANO — C1 y C2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    skillId: 'it.c1.subjunctive.full',
+    explanation:
+      'En C1 ya no basta con reconocer el disparador: hay que producir los irregulares. **essere → sia**, **avere → abbia**, **fare → faccia**, **dare → dia**, **stare → stia**, **venire → venga**, **potere → possa**. Y las tres personas del singular son idénticas, así que el pronombre deja de ser opcional.',
+    variations: [
+      {
+        sentence: 'Credo che lui ___ ragione. (avere)',
+        answer: 'abbia',
+        translation: 'Creo que él tiene razón.',
+      },
+      {
+        sentence: 'Bisogna che tu ___ subito. (venire)',
+        answer: 'venga',
+        translation: 'Hace falta que vengas enseguida.',
+      },
+      {
+        sentence: 'Non penso che loro ___ capito. (avere)',
+        answer: 'abbiano',
+        translation: 'No creo que hayan entendido.',
+      },
+      {
+        sentence: 'È meglio che voi ___ presto. (partire)',
+        answer: 'partiate',
+        translation: 'Es mejor que os vayáis pronto.',
+      },
+      {
+        sentence: 'Dubito che ___ possibile. (essere)',
+        answer: 'sia',
+        translation: 'Dudo que sea posible.',
+      },
+      {
+        sentence: 'Voglio che tu ___ attenzione. (fare)',
+        answer: 'faccia',
+        translation: 'Quiero que prestes atención.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.c1.subjunctive.passato',
+    explanation:
+      'Es el **congiuntivo de avere/essere + participio**, y marca lo ya ocurrido: *mi dispiace che tu **sia partito***. La elección entre presente y passato no depende del verbo principal, sino de si la acción de la subordinada es **anterior**.',
+    variations: [
+      {
+        sentence: 'Mi dispiace che tu ___ partito. (essere)',
+        answer: 'sia',
+        translation: 'Siento que te hayas ido.',
+      },
+      {
+        sentence: 'Sono contento che voi ___ vinto. (avere)',
+        answer: 'abbiate',
+        translation: 'Me alegra que hayáis ganado.',
+      },
+      {
+        sentence: 'Benché ___ studiato, non ha superato l’esame. (avere)',
+        answer: 'abbia',
+        translation: 'Aunque estudió, no aprobó el examen.',
+      },
+      {
+        sentence: 'È possibile che loro ___ arrivati ieri. (essere)',
+        answer: 'siano',
+        translation: 'Es posible que llegaran ayer.',
+      },
+      {
+        sentence: 'Dubito che noi ___ capito bene. (avere)',
+        answer: 'abbiamo',
+        translation: 'Dudo que hayamos entendido bien.',
+      },
+      {
+        sentence: 'Peccato che ___ finita così. (essere)',
+        answer: 'sia',
+        translation: 'Qué pena que haya terminado así.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.c1.subjunctive.trapassato',
+    explanation:
+      'Congiuntivo **imperfetto** de avere/essere + participio: *se **avessi saputo**, sarei venuto*. Es la forma del arrepentimiento — la hipótesis sobre algo que ya no tiene remedio— y va emparejada con el condizionale passato.',
+    variations: [
+      {
+        sentence: 'Se ___ saputo, sarei venuto. (avere, io)',
+        answer: 'avessi',
+        translation: 'Si lo hubiera sabido, habría venido.',
+      },
+      {
+        sentence: 'Se tu ___ partito prima, non avresti perso il treno. (essere)',
+        answer: 'fossi',
+        translation: 'Si te hubieras ido antes, no habrías perdido el tren.',
+      },
+      {
+        sentence: 'Pensavo che loro ___ già finito. (avere)',
+        answer: 'avessero',
+        translation: 'Pensaba que ya habían terminado.',
+      },
+      {
+        sentence: 'Se noi ___ studiato, avremmo superato l’esame. (avere)',
+        answer: 'avessimo',
+        translation: 'Si hubiéramos estudiado, habríamos aprobado.',
+      },
+      {
+        sentence: 'Non sapevo che voi ___ arrivati. (essere)',
+        answer: 'foste',
+        translation: 'No sabía que habíais llegado.',
+      },
+      {
+        sentence: 'Se ___ piovuto, avremmo annullato la gita. (avere)',
+        answer: 'avesse',
+        translation: 'Si hubiera llovido, habríamos anulado la excursión.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.c1.speech.indirect',
+    explanation:
+      'Al pasar a indirecto con verbo principal en pasado, cada tiempo **retrocede uno**: presente → imperfetto, passato prossimo → trapassato, futuro → **condizionale passato**. Ese último es el que se falla: *«verrò» → ha detto che **sarebbe venuto***, no «sarebbe venire» ni el condicional simple.',
+    variations: [
+      {
+        sentence: '«Sono stanco» → Ha detto che ___ stanco. (essere)',
+        answer: 'era',
+        translation: 'Dijo que estaba cansado.',
+      },
+      {
+        sentence: '«Ho finito» → Ha detto che ___ finito. (avere)',
+        answer: 'aveva',
+        translation: 'Dijo que había terminado.',
+      },
+      {
+        sentence: '«Verrò domani» → Ha promesso che ___ venuto. (essere)',
+        answer: 'sarebbe',
+        translation: 'Prometió que vendría.',
+      },
+      {
+        sentence: '«Dove vai?» → Mi ha chiesto dove ___. (andare, io)',
+        answer: 'andavo',
+        translation: 'Me preguntó adónde iba.',
+      },
+      {
+        sentence: '«Partiamo domani» → Hanno annunciato che ___ il giorno dopo. (partire)',
+        answer: 'sarebbero partiti',
+        translation: 'Anunciaron que se irían al día siguiente.',
+      },
+      {
+        sentence: '«Hai ragione» → Ha ammesso che ___ ragione. (avere, io)',
+        answer: 'avevo',
+        translation: 'Admitió que yo tenía razón.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.c1.emphasis.cleft',
+    explanation:
+      'Dos recursos distintos. La **frase scissa** destaca con *è… che*: ***è Marco che** ha telefonato*. La **dislocazione** saca el objeto al principio y lo repite con un pronombre: *il libro, **l**’ho già letto* — y ese pronombre es obligatorio, no un adorno.',
+    variations: [
+      {
+        sentence: '___ Marco che ha telefonato.',
+        answer: 'È',
+        translation: 'Fue Marco quien llamó.',
+      },
+      {
+        sentence: 'Il libro, ___ ho già letto.',
+        answer: 'l’',
+        translation: 'El libro, ya lo he leído.',
+      },
+      {
+        sentence: '___ a Roma che ci siamo conosciuti.',
+        answer: 'È',
+        translation: 'Fue en Roma donde nos conocimos.',
+      },
+      {
+        sentence: 'Di questo, non ne ___ voglio parlare.',
+        answer: 'ne',
+        translation: 'De esto no quiero hablar.',
+      },
+      {
+        sentence: 'A Marco, ___ ho detto tutto.',
+        answer: 'gli',
+        translation: 'A Marco le he dicho todo.',
+      },
+      {
+        sentence: '___ domani che si decide tutto.',
+        answer: 'È',
+        translation: 'Es mañana cuando se decide todo.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.c1.verb.futuro-anteriore',
+    explanation:
+      'Es el futuro que **se cierra antes que otro**: *quando arriverai, avrò già finito*. Se arma con avere/essere en futuro + participio, y tiene además el uso de **suposición sobre el pasado**: *avrà dimenticato* es «se habrá olvidado».',
+    variations: [
+      {
+        sentence: 'Quando arriverai, ___ già finito. (avere, io)',
+        answer: 'avrò',
+        translation: 'Cuando llegues, ya habré terminado.',
+      },
+      {
+        sentence: 'Fra un anno ___ traslocato. (essere, loro)',
+        answer: 'saranno',
+        translation: 'Dentro de un año se habrán mudado.',
+      },
+      {
+        sentence: 'Non risponde: ___ dimenticato. (avere)',
+        answer: 'avrà',
+        translation: 'No contesta: se habrá olvidado.',
+      },
+      {
+        sentence: 'Lei ___ partita prima di mezzogiorno. (essere)',
+        answer: 'sarà',
+        translation: 'Se habrá ido antes del mediodía.',
+      },
+      {
+        sentence: 'Noi ___ terminato il progetto a giugno. (avere)',
+        answer: 'avremo',
+        translation: 'Habremos terminado el proyecto en junio.',
+      },
+      {
+        sentence: 'Appena voi ___ arrivati, cominciamo. (essere)',
+        answer: 'sarete',
+        translation: 'En cuanto hayáis llegado, empezamos.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.c1.verb.passato-remoto',
+    explanation:
+      'En el norte **no se habla**: se lee, en la novela y en el ensayo histórico. En el sur sí es la forma corriente para el pasado. Hay que reconocerlo más que producirlo: *fu*, *ebbe*, *fece*, *disse*, *andarono*.',
+    variations: [
+      {
+        sentence: 'Nel 1861 l’Italia ___ unita. (essere)',
+        answer: 'fu',
+        translation: 'En 1861 Italia fue unificada.',
+      },
+      {
+        sentence: 'Dante ___ la Divina Commedia. (scrivere)',
+        answer: 'scrisse',
+        translation: 'Dante escribió la Divina Comedia.',
+      },
+      {
+        sentence: 'Il re ___ costruire il castello. (fare)',
+        answer: 'fece',
+        translation: 'El rey mandó construir el castillo.',
+      },
+      {
+        sentence: 'Non ___ una parola e uscì. (dire, lui)',
+        answer: 'disse',
+        translation: 'No dijo una palabra y salió.',
+      },
+      {
+        sentence: 'Loro ___ la città all’alba. (lasciare)',
+        answer: 'lasciarono',
+        translation: 'Dejaron la ciudad al amanecer.',
+      },
+      {
+        sentence: 'Lei ___ un’idea geniale. (avere)',
+        answer: 'ebbe',
+        translation: 'Tuvo una idea genial.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.c2.style.nominalizzazione',
+    explanation:
+      'El registro formal prefiere el **sustantivo al verbo**: *il prezzo è aumentato* → *l’**aumento** del prezzo*. No es adorno: es lo que permite condensar una idea entera en un sintagma y encadenar argumentos sin subordinadas.',
+    variations: [
+      {
+        sentence: 'Il prezzo è aumentato → l’___ del prezzo. (aumentare)',
+        answer: 'aumento',
+        translation: 'El aumento del precio.',
+      },
+      {
+        sentence: 'Hanno costruito il ponte → la ___ del ponte. (costruire)',
+        answer: 'costruzione',
+        translation: 'La construcción del puente.',
+      },
+      {
+        sentence: 'Il progetto è fallito → il ___ del progetto. (fallire)',
+        answer: 'fallimento',
+        translation: 'El fracaso del proyecto.',
+      },
+      {
+        sentence: 'Le vendite sono diminuite → la ___ delle vendite. (diminuire)',
+        answer: 'diminuzione',
+        translation: 'La disminución de las ventas.',
+      },
+      {
+        sentence: 'Si è dimesso → le sue ___. (dimettersi)',
+        answer: 'dimissioni',
+        translation: 'Su dimisión.',
+      },
+      {
+        sentence: 'Hanno soppresso il posto → la ___ del posto. (sopprimere)',
+        answer: 'soppressione',
+        translation: 'La supresión del puesto.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

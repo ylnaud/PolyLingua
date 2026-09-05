@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulario: italiano de negocios'
 funFact: "El italiano de negocios usa el 'Lei' formal (tercera persona) mucho más consistentemente que el francés o el español en contextos comerciales — incluso entre colegas de nivel similar, mantener el 'Lei' hasta que se ofrezca explícitamente el 'tu' es la norma esperada en un entorno corporativo tradicional."
+skills:
+  - it.c1.vocabulary.business
 minutes: 8
 quiz:
   - question: "¿Qué significa 'licenziare qualcuno' en un contexto laboral?"

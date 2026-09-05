@@ -50,6 +50,71 @@ export function esDocumentoSW(
   return !/\.[a-z0-9]+$/i.test(url.pathname);
 }
 
+/** Cuánto se espera a la red antes de tirar de la copia guardada. */
+export const TIMEOUT_RED_MS = 3500;
+
+/**
+ * La estrategia con la que se sirve TODA página del sitio: red primero, con la
+ * caché como red de seguridad.
+ *
+ * Igual que `esDocumentoSW`, se inyecta en el Service Worker con `.toString()`
+ * para que el test pruebe exactamente esto y no una copia. Por eso recibe
+ * `deps` en vez de usar `fetch` y `caches` globales: así el test puede
+ * simular una red lenta sin montar un Service Worker de verdad. Y por eso no
+ * puede referenciar nada de fuera de su propio cuerpo.
+ *
+ * El tercer camino es el que faltaba y el que colgaba el sitio. Antes había
+ * solo dos —la red responde, o la red falla— y el fallback a caché vivía en un
+ * `catch`. Pero una conexión móvil que va y viene no falla: se queda colgada,
+ * el `fetch` ni resuelve ni rechaza, y como `event.respondWith()` bloquea la
+ * navegación hasta que esa promesa termine, la página se queda cargando para
+ * siempre. Nunca llegaba a la caché porque para llegar hacía falta un error
+ * que no se producía.
+ *
+ * Ahora, si la red tarda más de `TIMEOUT_RED_MS` y hay copia guardada, se
+ * sirve la copia. El `fetch` NO se aborta: sigue por detrás y refresca la
+ * caché, así que la próxima navegación ya trae lo último publicado. Si no hay
+ * copia, se sigue esperando — es la primera visita a esa URL y sin red no hay
+ * nada que mostrar.
+ *
+ * Eso conserva lo que esta estrategia vino a garantizar (una página nueva se
+ * ve al navegar, sin quedar congelada en la caché) y le quita el único camino
+ * que podía dejar la pantalla en blanco indefinidamente.
+ */
+export async function redPrimeroSW(
+  request: unknown,
+  deps: {
+    fetch: (req: unknown) => Promise<Response>;
+    match: (req: unknown, opciones?: { ignoreSearch?: boolean }) => Promise<Response | undefined>;
+    guardar: (req: unknown, res: Response) => void;
+    sinConexion: () => Response;
+    offlineUrl: string;
+    timeoutMs: number;
+  },
+): Promise<Response> {
+  const red = deps
+    .fetch(request)
+    .then((response) => {
+      deps.guardar(request, response);
+      return response;
+    })
+    .catch(() => null);
+
+  // `ignoreSearch` es imprescindible: la PWA instalada arranca en
+  // `/?utm_source=pwa`, que sin esto NO matchea la portada cacheada como `/`.
+  const cacheada = await deps.match(request, { ignoreSearch: true });
+
+  if (cacheada) {
+    // Hay copia: se compite contra el reloj. Gana la red si llega a tiempo.
+    const reloj = new Promise<null>((resolve) => setTimeout(() => resolve(null), deps.timeoutMs));
+    return (await Promise.race([red, reloj])) ?? cacheada;
+  }
+
+  // Sin copia no hay carrera posible: o llega la red, o no hay nada que servir.
+  const response = await red;
+  return response ?? (await deps.match(deps.offlineUrl)) ?? deps.sinConexion();
+}
+
 export const PRECACHE_URLS: readonly string[] = [
   '/',
   OFFLINE_URL,

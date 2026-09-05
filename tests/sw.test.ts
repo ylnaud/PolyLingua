@@ -2,7 +2,13 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import { execSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { esDocumentoSW, OFFLINE_URL, PRECACHE_URLS } from '../src/lib/swPrecache';
+import {
+  esDocumentoSW,
+  OFFLINE_URL,
+  PRECACHE_URLS,
+  redPrimeroSW,
+  TIMEOUT_RED_MS,
+} from '../src/lib/swPrecache';
 
 const ROOT = join(import.meta.dirname, '..');
 const SW_PATH = join(ROOT, 'dist', 'sw.js');
@@ -22,6 +28,104 @@ function pedido(opciones: {
 
 const esDocumento = (ruta: string, opciones: Parameters<typeof pedido>[0] = {}) =>
   esDocumentoSW(pedido(opciones), { pathname: ruta });
+
+describe('estrategia de páginas: red primero, sin colgarse', () => {
+  // El bug que esto fija: `redPrimero` hacía `await fetch(request)` sin
+  // timeout, y el fallback a caché vivía en un `catch`. Una conexión móvil que
+  // va y viene no falla — se queda colgada, el fetch ni resuelve ni rechaza —,
+  // así que nunca se llegaba al catch y, como `respondWith` bloquea la
+  // navegación, la página se quedaba cargando indefinidamente.
+  const respuesta = (cuerpo: string) => new Response(cuerpo, { status: 200 });
+
+  /** Arma las dependencias con una red y una caché a medida. */
+  function deps(opciones: {
+    red: () => Promise<Response>;
+    enCache?: Record<string, string>;
+    timeoutMs?: number;
+  }) {
+    const guardadas: string[] = [];
+    return {
+      guardadas,
+      deps: {
+        fetch: () => opciones.red(),
+        match: async (req: unknown) => {
+          const clave = String(req);
+          const cuerpo = opciones.enCache?.[clave];
+          return cuerpo === undefined ? undefined : respuesta(cuerpo);
+        },
+        guardar: (req: unknown) => guardadas.push(String(req)),
+        sinConexion: () => new Response('sin conexión', { status: 503 }),
+        offlineUrl: OFFLINE_URL,
+        timeoutMs: opciones.timeoutMs ?? TIMEOUT_RED_MS,
+      },
+    };
+  }
+
+  it('sirve de la red cuando la red responde', async () => {
+    const { deps: d, guardadas } = deps({ red: async () => respuesta('de la red') });
+    const res = await redPrimeroSW('/es/de/a1', d);
+    expect(await res.text()).toBe('de la red');
+    // Y la guarda para la próxima.
+    expect(guardadas).toEqual(['/es/de/a1']);
+  });
+
+  it('cae a la caché cuando la red NO responde ni falla', async () => {
+    // El caso que colgaba el sitio: una promesa que no se resuelve nunca.
+    // Sin timeout este test se quedaría esperando hasta que vitest lo mate,
+    // que es exactamente lo que le pasaba al navegador.
+    const { deps: d } = deps({
+      red: () => new Promise<Response>(() => {}),
+      enCache: { '/es/de/a1': 'de la caché' },
+      timeoutMs: 50,
+    });
+    const antes = Date.now();
+    const res = await redPrimeroSW('/es/de/a1', d);
+    expect(await res.text()).toBe('de la caché');
+    expect(Date.now() - antes).toBeLessThan(1000);
+  });
+
+  it('la red gana si llega antes del timeout, aunque haya caché', async () => {
+    const { deps: d } = deps({
+      red: async () => respuesta('de la red'),
+      enCache: { '/es/de/a1': 'de la caché' },
+      timeoutMs: 500,
+    });
+    expect(await (await redPrimeroSW('/es/de/a1', d)).text()).toBe('de la red');
+  });
+
+  it('cae a la caché cuando la red falla de verdad', async () => {
+    const { deps: d } = deps({
+      red: async () => {
+        throw new Error('sin red');
+      },
+      enCache: { '/es/de/a1': 'de la caché' },
+    });
+    expect(await (await redPrimeroSW('/es/de/a1', d)).text()).toBe('de la caché');
+  });
+
+  it('sin red y sin caché de la página, sirve la página offline', async () => {
+    const { deps: d } = deps({
+      red: async () => {
+        throw new Error('sin red');
+      },
+      enCache: { [OFFLINE_URL]: 'página offline' },
+    });
+    expect(await (await redPrimeroSW('/es/de/a1', d)).text()).toBe('página offline');
+  });
+
+  it('sin red, sin caché y sin página offline, responde algo legible', async () => {
+    // Nunca resolver a undefined: respondWith(undefined) le da al navegador un
+    // error de red crudo en vez de una pantalla que se pueda leer.
+    const { deps: d } = deps({
+      red: async () => {
+        throw new Error('sin red');
+      },
+    });
+    const res = await redPrimeroSW('/es/de/a1', d);
+    expect(res.status).toBe(503);
+    expect(await res.text()).toContain('sin conexión');
+  });
+});
 
 describe('clasificación de peticiones del Service Worker', () => {
   // El bug que rompió la app: <ClientRouter /> pide las páginas con un fetch()

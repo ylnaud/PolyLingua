@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'Preguntando el camino'
-description: 'Pedí indicaciones en la calle en italiano con un diálogo de 6 líneas que podés usar tal cual.'
+description: 'Pedí indicaciones en italiano: preguntá dónde está la estación, entendé «sempre dritto e poi a sinistra» y confirmá si queda lejos. Diálogo A1 traducido.'
 order: 2
 situation: 'Orientación'
 dialogue:

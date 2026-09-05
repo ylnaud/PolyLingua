@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'En una fiesta'
-description: 'Rompé el hielo en una fiesta hablando francés: saludá, preguntá y contá algo sobre vos.'
+description: 'Charlá en una fiesta en francés: contá de qué conocés al anfitrión, preguntá en qué barrio vive y seguí la conversación. Diálogo A1 traducido.'
 order: 14
 situation: 'Presentaciones'
 dialogue:

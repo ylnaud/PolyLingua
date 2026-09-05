@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'En una fiesta'
-description: 'Conocé a alguien en una fiesta en alemán: saludar, contar qué hacés y quedar en contacto.'
+description: 'Rompé el hielo en una fiesta en alemán: presentate, contá qué estudiás o en qué trabajás y pedí el contacto para seguir en charla. Diálogo A1 traducido.'
 order: 14
 situation: 'Presentaciones'
 dialogue:

@@ -2,7 +2,7 @@
 language: it
 level: a2
 title: 'Planes del fin de semana'
-description: 'Hablá de tus planes del fin de semana en italiano con este diálogo de nivel A2.'
+description: 'Organizá el fin de semana en italiano: proponé ir a la playa, acordá a qué hora salen y repartí quién lleva qué. Diálogo A2 traducido.'
 order: 20
 situation: 'Conversación'
 dialogue:

@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'En el supermercado'
-description: 'Preguntá dónde están las cosas y cuánto cuestan con un diálogo real de supermercado en inglés.'
+description: 'Tu primera compra en inglés: preguntá dónde encontrar la leche, escuchá la respuesta «aisle three» y consultá el precio del pan. Diálogo A1 traducido.'
 order: 1
 situation: 'Compras'
 dialogue:

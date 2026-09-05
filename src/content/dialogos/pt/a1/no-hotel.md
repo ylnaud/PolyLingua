@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'En el hotel en portugués'
-description: 'Hacé el check-in en un hotel brasileño con este diálogo A1: pedí la habitación, preguntá el horario y más.'
+description: 'Hacé el check-in en un hotel en Brasil: dá tu apellido, anotá el número de habitación y preguntá por el desayuno. Diálogo A1 traducido.'
 order: 10
 situation: 'Alojamiento'
 dialogue:

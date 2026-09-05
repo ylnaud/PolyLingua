@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'Presentándose en portugués'
-description: 'Aprendé a presentarte en portugués brasileño: nombre, nacionalidad y profesión con este diálogo básico A1.'
+description: 'Presentate en portugués brasileño: arranca con el típico «tudo bem?», decí tu nombre, de dónde sos y a qué te dedicás. Diálogo A1 traducido.'
 order: 13
 situation: 'Presentaciones'
 dialogue:

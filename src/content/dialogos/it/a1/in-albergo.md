@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'En el hotel'
-description: 'Hacé el check-in en un hotel italiano con este diálogo de 6 líneas para principiantes.'
+description: 'Hacé el check-in en un hotel italiano: dá tu apellido, confirmá las noches, entregá el pasaporte y pedí la clave del Wi-Fi. Diálogo A1 traducido.'
 order: 10
 situation: 'Alojamiento'
 dialogue:

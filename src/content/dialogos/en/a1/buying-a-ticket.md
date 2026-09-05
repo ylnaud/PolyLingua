@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'Comprando un boleto en inglés'
-description: 'Aprendé a comprar un pasaje de tren o autobús en inglés con un diálogo simple de nivel A1.'
+description: 'Comprá un boleto de tren en inglés: pedí ida o ida y vuelta, preguntá el precio y confirmá desde qué andén sale. Diálogo A1 traducido.'
 order: 18
 situation: 'Transporte'
 dialogue:

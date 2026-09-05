@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'La cuenta'
-description: 'Pedí la cuenta y pagá en un restaurante francés con este diálogo corto y útil de nivel A1.'
+description: 'Pedí la cuenta en un restaurante francés: preguntá si aceptan tarjeta, ingresá el código y despedite. Diálogo A1 con traducción y vocabulario.'
 order: 9
 situation: 'Restaurante'
 dialogue:

@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'Comprando ropa'
-description: 'Preguntá por tallas y precios en una tienda de ropa en italiano con un diálogo práctico.'
+description: 'Comprá ropa en Italia: pedí la talla M, elegí entre azul y blanco y preguntá si podés probártela. Diálogo A1 con traducción y vocabulario.'
 order: 3
 situation: 'Compras'
 dialogue:

@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'Presentándose'
-description: 'Aprendé a presentarte en alemán: decir tu nombre, de dónde sos y qué hacés, en un diálogo natural.'
+description: 'Presentate en alemán: decí cómo te llamás, de dónde sos y a qué te dedicás, y devolvé la pregunta. Diálogo A1 con traducción y vocabulario.'
 order: 13
 situation: 'Presentaciones'
 dialogue:

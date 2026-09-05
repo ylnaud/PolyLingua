@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: 'Problema en la habitación'
-description: 'Reportá un problema en tu habitación de hotel en francés: algo roto, sucio o que no funciona.'
+description: 'Reportá un problema en tu habitación de hotel en francés: la ducha no anda y hay ruido, y pedís que lo solucionen. Diálogo A2 traducido.'
 order: 12
 situation: 'Alojamiento'
 dialogue:

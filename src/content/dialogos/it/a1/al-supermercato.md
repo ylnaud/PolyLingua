@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'En el supermercado'
-description: 'Preguntá dónde están las cosas y cuánto cuestan con un diálogo real de supermercado en italiano.'
+description: 'Supermercado en Italia: preguntá en qué «corsia» está la leche y cuánto cuesta el pan. Cuatro líneas cortas para tu primera compra en italiano.'
 order: 1
 situation: 'Compras'
 dialogue:

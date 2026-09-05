@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: 'Alquilando un departamento en portugués'
-description: 'Aprendé a preguntar por un alquiler en Brasil: precio, gastos incluidos y condiciones con este diálogo A2.'
+description: 'Alquilá un departamento en Brasil: preguntá si sigue disponible, cuánto es el alquiler y qué gastos están incluidos. Diálogo A2 traducido.'
 order: 11
 situation: 'Alojamiento'
 dialogue:

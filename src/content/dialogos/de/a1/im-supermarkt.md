@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'En el supermercado'
-description: 'Preguntá dónde están las cosas y cuánto cuestan con un diálogo real de supermercado en alemán.'
+description: 'Ubicate en un supermercado alemán: preguntá en qué pasillo está la leche y cuánto cuesta el pan. Cuatro líneas para tu primera compra sin bloquearte.'
 order: 1
 situation: 'Compras'
 dialogue:

@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'En la farmacia'
-description: 'Comprá un remedio en una farmacia francesa: explicá qué te pasa y preguntá cómo tomarlo.'
+description: 'En una farmacia francesa: contá que te duele la garganta, preguntá cómo tomar las pastillas y cuánto cuestan. Diálogo A1 con traducción.'
 order: 16
 situation: 'Salud'
 dialogue:

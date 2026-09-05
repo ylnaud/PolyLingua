@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'Pidiendo la comida en inglés'
-description: 'Aprendé a pedir un plato, preguntar por ingredientes y hacer cambios en un restaurante con inglés nivel A1.'
+description: 'Pedí en un restaurante en inglés: elegí el plato, decidí entre ensalada o papas fritas y aclará si el agua es con o sin gas. Diálogo A1 traducido.'
 order: 8
 situation: 'Restaurante'
 dialogue:

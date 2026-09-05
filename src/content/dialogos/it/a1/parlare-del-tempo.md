@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'Hablando del clima'
-description: 'Hablá del clima en italiano con este diálogo cotidiano de 4 líneas para nivel A1.'
+description: 'Hablá del clima en italiano: comentá que parece que va a llover, citá el pronóstico y comparalo con ayer. Diálogo A1 corto y traducido.'
 order: 19
 situation: 'Conversación'
 dialogue:

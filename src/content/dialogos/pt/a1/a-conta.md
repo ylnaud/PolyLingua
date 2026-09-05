@@ -2,7 +2,7 @@
 language: pt
 level: a1
 title: 'La cuenta en portugués'
-description: 'Pedí la cuenta, preguntá si aceptan tarjeta y dejá propina en un restaurante brasileño con este diálogo A1.'
+description: 'Pedí la cuenta en un restaurante en Brasil: preguntá si aceptan tarjeta y elegí entre crédito y débito. Diálogo A1 con traducción y vocabulario.'
 order: 9
 situation: 'Restaurante'
 dialogue:

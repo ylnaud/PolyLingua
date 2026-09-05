@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'En el café'
-description: 'Pedí un café y algo para comer en un bar italiano con este diálogo sencillo.'
+description: 'Pedí en un café italiano: elegí entre un caffè solo o un macchiato, sumá una medialuna de crema y entendé cuánto es el total. Diálogo A1 traducido.'
 order: 7
 situation: 'Restaurante'
 dialogue:

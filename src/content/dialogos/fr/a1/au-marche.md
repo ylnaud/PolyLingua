@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'En el mercado'
-description: 'Comprá frutas y verduras en un mercado francés con este diálogo que te enseña a pedir cantidades.'
+description: 'Comprá en un mercado francés: pedí un kilo de manzanas y unos tomates, y entendé cuánto es el total. Diálogo A1 con traducción y vocabulario.'
 order: 4
 situation: 'Compras'
 dialogue:

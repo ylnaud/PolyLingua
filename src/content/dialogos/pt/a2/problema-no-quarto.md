@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: 'Problema en la habitación en portugués'
-description: 'Aprendé a reportar un problema en tu habitación de hotel en Brasil: aire acondicionado, toallas y más.'
+description: 'Reportá un problema desde tu habitación en Brasil: el aire acondicionado no anda, dá el número de cuarto y pedí que lo arreglen. Diálogo A2 traducido.'
 order: 12
 situation: 'Alojamiento'
 dialogue:

@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'Comprando ropa en inglés'
-description: 'Aprendé a pedir un talle, preguntar el precio y probarte ropa en una tienda con un diálogo simple en inglés.'
+description: 'Comprá ropa en inglés: pedí talle medium, preguntá si podés probártela y consultá el precio antes de pagar. Diálogo A1 con traducción.'
 order: 3
 situation: 'Compras'
 dialogue:

@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'Pidiendo la comida'
-description: 'Hacé tu pedido en un restaurante alemán con este diálogo: elegir plato, preguntar y pedir la comida.'
+description: 'Pedí en un restaurante alemán: preguntá qué recomiendan, elegí plato y guarnición y sumá la bebida. Diálogo A1 con traducción y vocabulario.'
 order: 8
 situation: 'Restaurante'
 dialogue:

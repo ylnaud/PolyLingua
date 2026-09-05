@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'En el autobús'
-description: 'Preguntá qué colectivo tomar y dónde bajarte con este diálogo real de transporte en alemán.'
+description: 'Moverte en autobús en alemán: preguntá si va a la estación central, dónde está la parada correcta y cuántas paradas faltan. Diálogo A1 traducido.'
 order: 6
 situation: 'Orientación'
 dialogue:

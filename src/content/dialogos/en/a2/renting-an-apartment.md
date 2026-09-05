@@ -2,7 +2,7 @@
 language: en
 level: a2
 title: 'Alquilando un departamento en inglés'
-description: 'Aprendé a preguntar por un alquiler, las condiciones y los servicios incluidos con un diálogo A2 en inglés.'
+description: 'Alquilá un departamento en inglés: preguntá cuántos ambientes tiene, cuánto es el alquiler y si los servicios están incluidos. Diálogo A2 traducido.'
 order: 11
 situation: 'Alojamiento'
 dialogue:

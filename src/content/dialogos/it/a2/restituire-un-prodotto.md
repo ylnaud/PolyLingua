@@ -2,7 +2,7 @@
 language: it
 level: a2
 title: 'Devolviendo un producto'
-description: 'Devolvé un producto defectuoso en una tienda italiana con este diálogo de nivel A2.'
+description: 'Devolvé una camisa con un defecto en una tienda italiana: mostrá el botón roto, presentá el ticket y pedí el cambio. Diálogo A2 traducido.'
 order: 5
 situation: 'Compras'
 dialogue:

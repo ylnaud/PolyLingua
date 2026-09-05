@@ -99,36 +99,83 @@ const PESOS: Record<Motivo, number> = {
   'misma-unidad': 55,
 };
 
-/** Por debajo de esto no se enlaza. Mejor 20 enlaces buenos que 500 forzados. */
-export const UMBRAL = 50;
+/**
+ * Por debajo de esto no se enlaza.
+ *
+ * Estaba en 50, cinco puntos por debajo de "misma unidad" (55), y una
+ * auditoría del build mostró la consecuencia: 296 de las 513 páginas con
+ * bloque —el 58 %— se sostenían SOLO sobre esa regla. Y una unidad es un cajón
+ * del temario, no un tema: `es-fr/a1/u1` mete en el mismo saco «Artículos y
+ * género», «Decir la hora», «Números cardinales» y el «Présent de
+ * l'indicatif», así que enlazaba los artículos con la hora.
+ */
+export const UMBRAL = 60;
 
 /** Tope por página. Un bloque de "seguí por acá", no una granja de enlaces. */
 export const MAX_POR_PAGINA = 3;
+
+/**
+ * Motivos que NO bastan por sí solos.
+ *
+ * Compartir unidad es una pista, no una relación: sirve para completar un
+ * bloque que ya tiene algo bueno («ya que estás en esta unidad…»), pero no
+ * para justificar un bloque entero. Así que se salta el umbral —de otro modo
+ * quedaría fuera del todo— a cambio de exigir que la página tenga ya al menos
+ * un enlace de un motivo que sí se sostiene solo.
+ */
+const MOTIVOS_DE_APOYO = new Set<Motivo>(['misma-unidad']);
 
 /**
  * Tope por motivo dentro de una misma página.
  *
  * "Misma unidad" es cierto para todas las lecciones de la unidad a la vez, así
  * que sin este tope llenaba los tres huecos de las 400 lecciones y dejaba
- * fuera los prerrequisitos, que son la relación que de verdad aporta. Con uno
- * basta para ofrecer "seguí por acá"; el resto de huecos queda libre para algo
- * mejor, y si no lo hay, se quedan vacíos.
+ * fuera los prerrequisitos, que son la relación que de verdad aporta.
  */
 const MAX_POR_MOTIVO: Partial<Record<Motivo, number>> = {
   'misma-unidad': 1,
   'misma-situacion': 2,
 };
 
+/** A partir de acá un ancla deja de leerse como enlace y parece un índice. */
+const ANCHOR_LARGO = 45;
+
 const curso = (p: PageRecord) => `${p.userLang}-${p.targetLang}`;
 
-/** El texto del enlace sale del contenido de la página destino, nunca de una keyword. */
+/**
+ * El texto del enlace, sacado del contenido de la página destino y nunca de
+ * una keyword.
+ *
+ * Los `grammarTopic` están escritos como encabezados de temario y algunos
+ * llegan a 59 caracteres: «Nominalstil (estilo nominal) vs. Verbalstil (estilo
+ * verbal)». Como enlace eso no se lee. Cuando pasa de ANCHOR_LARGO se quitan
+ * los paréntesis, que es donde vive la aclaración y no el nombre del tema —
+ * queda «Nominalstil vs. Verbalstil», que es exactamente como se llama.
+ *
+ * No se corta por número de caracteres ni se parte una palabra: un ancla
+ * truncada a la fuerza es peor que una larga.
+ */
 export function anchorPara(destino: PageRecord): string {
-  const tema = destino.grammarTopic?.trim();
-  if (tema && tema.length > 0 && tema.length <= 60) return tema;
   // Los títulos son de SEO y suelen llevar un gancho tras dos puntos o raya
-  // ("Der, die, das: cómo funciona el género"). Para un enlace dentro de un
-  // texto, la mitad de la izquierda es la que nombra el tema.
-  return destino.title.split(/\s*[:—–]\s*/)[0]!.trim();
+  // ("Der, die, das: cómo funciona el género"). Para un enlace, la mitad de la
+  // izquierda es la que nombra el tema.
+  const tituloCorto = destino.title.split(/\s*[:—–]\s*/)[0]!.trim();
+  const tema = destino.grammarTopic?.trim();
+  const elegido = tema && tema.length > 0 && tema.length <= 60 ? tema : tituloCorto;
+
+  // Si ya se lee bien, no se toca. El acortado es para arreglar las largas, no
+  // para reescribir las 831.
+  if (elegido.length <= ANCHOR_LARGO) return elegido;
+
+  const sinParentesis = elegido
+    .replace(/\s*\([^)]*\)/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  if (sinParentesis.length > 0 && sinParentesis.length < elegido.length) return sinParentesis;
+
+  // Sin paréntesis que quitar no hay forma de acortarla sin partir una
+  // palabra, y un ancla truncada a la fuerza es peor que una larga.
+  return elegido;
 }
 
 function añadir(
@@ -336,7 +383,9 @@ export function proposeLinks(entrada: Entrada): Map<string, Propuesta[]> {
   const porOrigen = new Map<string, Propuesta[]>();
 
   for (const p of buildRelations(entrada)) {
-    if (p.score < UMBRAL) continue;
+    // Los motivos de apoyo se saltan el umbral pero se ganan el sitio después,
+    // solo si la página tiene ya un enlace que se sostiene solo.
+    if (p.score < UMBRAL && !MOTIVOS_DE_APOYO.has(p.motivo)) continue;
     if (!porOrigen.has(p.desde)) porOrigen.set(p.desde, []);
     porOrigen.get(p.desde)!.push(p);
   }
@@ -354,6 +403,10 @@ export function proposeLinks(entrada: Entrada): Map<string, Propuesta[]> {
     )) {
       if (elegidas.length >= MAX_POR_PAGINA) break;
       if (vistos.has(c.hasta) || anclas.has(c.anchor.toLowerCase())) continue;
+      // El recorrido va de mayor a menor score y los motivos de apoyo son los
+      // de score más bajo, así que cuando llega uno ya están elegidos todos los
+      // que se sostienen solos: si no hay ninguno, este tampoco entra.
+      if (MOTIVOS_DE_APOYO.has(c.motivo) && elegidas.length === 0) continue;
       const usados = porMotivo.get(c.motivo) ?? 0;
       if (usados >= (MAX_POR_MOTIVO[c.motivo] ?? MAX_POR_PAGINA)) continue;
       vistos.add(c.hasta);

@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'En el médico'
-description: 'Describí tus síntomas en alemán en una consulta médica con frases claras y directas para hacerte entender.'
+description: 'En la consulta médica en alemán: contá que te duele la cabeza y tenés fiebre, decí desde cuándo y entendé cómo tomar la receta. Diálogo A1 traducido.'
 order: 15
 situation: 'Salud'
 dialogue:

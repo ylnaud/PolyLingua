@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'En el hotel'
-description: 'Hacé el check-in en un hotel alemán con este diálogo: dar tu nombre, recibir la llave y preguntar lo básico.'
+description: 'Hacé el check-in en un hotel alemán: dá tu apellido, confirmá las noches reservadas y preguntá por el wifi. Diálogo A1 con traducción y vocabulario.'
 order: 10
 situation: 'Alojamiento'
 dialogue:

@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'En el mercado'
-description: 'Comprá frutas y verduras en un mercado alemán con frases que podés usar desde el primer día.'
+description: 'Comprá fruta y verdura en un mercado alemán: pedí un kilo de manzanas, preguntá si los tomates están frescos y cerrá la compra. Diálogo A1 traducido.'
 order: 4
 situation: 'Compras'
 dialogue:

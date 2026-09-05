@@ -2,7 +2,7 @@
 language: de
 level: a1
 title: 'Tomando un taxi'
-description: 'Tomá un taxi en Alemania: dá tu destino, preguntá el precio y pedí que se apure, todo en alemán.'
+description: 'Tomá un taxi en Alemania: dá el destino, preguntá cuánto sale el viaje y pedí que vaya rápido si llegás justo al vuelo. Diálogo A1 traducido.'
 order: 17
 situation: 'Transporte'
 dialogue:

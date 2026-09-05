@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: 'Devolviendo un producto'
-description: 'Aprendé a devolver algo en una tienda francesa: explicar el problema y pedir un reembolso o cambio.'
+description: 'Devolvé una camisa en una tienda francesa: explicá que el talle es chico, mostrá el ticket y elegí cambio o reembolso. Diálogo A2 traducido.'
 order: 5
 situation: 'Compras'
 dialogue:

@@ -30,6 +30,7 @@ import {
   type Propuesta,
 } from '../src/lib/links/engine.ts';
 import { LEVELS } from '../src/data/levels.ts';
+import { anclaDeNivel } from '../src/lib/links/labels.ts';
 
 const require = createRequire(import.meta.url);
 const yaml = require('js-yaml');
@@ -121,7 +122,7 @@ for (const combo of cursosVistos) {
       unit: null,
       order: null,
       title: `${nombre} ${nivel.id.toUpperCase()}`,
-      grammarTopic: `${nombre} ${nivel.id.toUpperCase()}`,
+      grammarTopic: anclaDeNivel(nombre, nivel.id),
       skills: [],
       situation: null,
       tags: [],

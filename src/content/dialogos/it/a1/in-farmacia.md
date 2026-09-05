@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'En la farmacia'
-description: 'Comprá medicamentos en una farmacia italiana con este diálogo de 6 líneas.'
+description: 'En una farmacia italiana: explicá que te duele el estómago después de comer y entendé cuándo tomar el antiácido. Diálogo A1 traducido.'
 order: 16
 situation: 'Salud'
 dialogue:

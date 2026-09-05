@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'En el autobús'
-description: 'Subite a un autobús en Francia con confianza: preguntá la parada correcta y validá tu boleto.'
+description: 'Moverte en autobús en Francia: preguntá si va a la estación, en qué parada bajar y si hay que validar el boleto. Diálogo A1 traducido.'
 order: 6
 situation: 'Orientación'
 dialogue:

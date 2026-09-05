@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'En el médico en inglés'
-description: 'Aprendé a describir síntomas y entender al médico con un diálogo claro de nivel A1 en inglés.'
+description: 'En la consulta médica en inglés: describí el dolor de cabeza y de garganta, decí desde cuándo y entendé la receta. Diálogo A1 traducido.'
 order: 15
 situation: 'Salud'
 dialogue:

@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'Pidiendo la comida'
-description: 'Ordená un almuerzo completo en un restaurante francés: entrada, plato principal y postre.'
+description: 'Pedí un menú completo en francés: entrada, plato principal y postre, con las frases que usa el mozo. Diálogo A1 con traducción y vocabulario.'
 order: 8
 situation: 'Restaurante'
 dialogue:

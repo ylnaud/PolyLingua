@@ -5,6 +5,19 @@
 // se agregue (con un pub-id aprobado) el anuncio no empuja el contenido.
 // Por ahora no carga ningún script de terceros — eso queda para cuando
 // exista una cuenta de AdSense real que aprobar.
+//
+// NADIE LO MONTA HOY, A PROPÓSITO. Estuvo dos veces por lección en las 484
+// lecciones: 968 rectángulos grises de 280px con la etiqueta PUBLICIDAD y nada
+// dentro, partiendo el flujo entre la teoría y los ejercicios. Reservar
+// espacio tiene sentido cuando hay un anuncio que reservar; sin él, la página
+// prometía publicidad, ocupaba el sitio y no entregaba nada.
+//
+// El componente se conserva porque la decisión anti-CLS sigue siendo la
+// correcta: el día que haya un pub-id aprobado, se vuelve a montar en
+// LessonLayout y se pega el <ins class="adsbygoogle"> donde marca el
+// comentario de abajo. Junto con esto se borró public/ads.txt, que publicaba
+// un ID de ejemplo (pub-0000000000000000); habrá que crearlo de nuevo con el
+// ID real.
 import { getDictionary } from '../i18n';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
 

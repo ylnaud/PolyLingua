@@ -111,15 +111,15 @@ const structuredData = {
         <p class="hero-note">100% gratis · sin registro · funciona en cualquier dispositivo</p>
         <div class="hero-stats">
           <div class="hero-stat">
-            <span class="hero-stat-num" data-count-to={LANGUAGES.length}>0</span>
+            <span class="hero-stat-num" data-count-to={LANGUAGES.length}>{LANGUAGES.length}</span>
             <span class="hero-stat-label">idiomas</span>
           </div>
           <div class="hero-stat">
-            <span class="hero-stat-num" data-count-to={lessons.length}>0</span>
+            <span class="hero-stat-num" data-count-to={lessons.length}>{lessons.length}</span>
             <span class="hero-stat-label">lecciones</span>
           </div>
           <div class="hero-stat">
-            <span class="hero-stat-num" data-count-to={6}>0</span>
+            <span class="hero-stat-num" data-count-to={6}>6</span>
             <span class="hero-stat-label">niveles MCER</span>
           </div>
         </div>
@@ -477,7 +477,15 @@ const structuredData = {
 <script>
   // Cuenta ascendente de 0 al valor real (idiomas/lecciones/niveles) al
   // entrar en viewport — usa datos ya calculados server-side en el
-  // frontmatter (data-count-to), sin fetch ni librerías. Guard por
+  // frontmatter (data-count-to), sin fetch ni librerías.
+  //
+  // El HTML ya trae el número REAL escrito, no un 0: la animación lo pisa
+  // desde el primer frame, así que no se ve distinto, pero quien no ejecute
+  // JS —un rastreador que no renderice, un navegador con JS bloqueado— lee el
+  // dato correcto. Antes leía «0 idiomas, 0 lecciones, 0 niveles MCER», que es
+  // lo contrario de lo que la portada quiere decir.
+  //
+  // Guard por
   // dataset.initialized + astro:page-load, mismo patrón que
   // BottomNav.astro/ProgressTracker.astro para sobrevivir la navegación SPA.
   function initHeroStats() {

@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Vocabulario: trabajo y profesión'
 funFact: "En francés, muchas profesiones tienen forma masculina y femenina, pero la regla no siempre es tan simple como añadir '-e': 'un directeur' se convierte en 'une directrice', no 'une directeure'. Aprende cada profesión con su versión femenina desde el principio, ya que las terminaciones varían."
+skills:
+  - fr.b1.vocabulary.work
 minutes: 7
 quiz:
   - question: "¿Cómo se dice 'la entrevista de trabajo' en francés?"

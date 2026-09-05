@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Decir la hora'
 funFact: "'Il est midi et demi' (es mediodía y media) es una de las pocas excepciones donde 'demi' concuerda en género con 'midi' (masculino) sin 'e' final — pero 'il est une heure et demie' sí lleva la 'e' porque 'heure' es femenino. Un pequeño detalle de concordancia que sorprende incluso a nivel intermedio."
+skills:
+  - fr.a1.vocabulary.time
 minutes: 6
 quiz:
   - question: '¿Cómo preguntarías la hora en francés?'

@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Estilo literario y prosa elevada'
 funFact: 'La literatura francesa a menudo prefiere frases largas y acumulativas, con múltiples cláusulas subordinadas encadenadas, construyendo una imagen o idea paso a paso antes de llegar a su resolución — un ritmo muy distinto al estilo más directo del francés hablado o periodístico.'
+skills:
+  - fr.c2.style.literary
 minutes: 10
 quiz:
   - question: '¿Por qué la prosa literaria francesa a menudo usa el passé simple en vez del passé composé?'

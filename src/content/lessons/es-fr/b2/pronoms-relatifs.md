@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Pronoms relatifs (qui, que, dont, où)'
 funFact: "Piensa en cada pronombre relativo como una etiqueta que indica qué función cumplía la palabra que reemplaza: 'qui' reemplaza un SUJETO, 'que' reemplaza un OBJETO DIRECTO, 'dont' reemplaza algo introducido por 'de', y 'où' reemplaza un LUGAR o TIEMPO. Identifica la función antes de elegir el pronombre."
+skills:
+  - fr.b2.pronoun.relative
 minutes: 9
 quiz:
   - question: "'J'ai un ami. Cet ami habite à Paris.' → 'J'ai un ami ___ habite à Paris.' ¿Qué pronombre va?"

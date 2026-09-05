@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Posición de los adjetivos'
 funFact: "A diferencia del español, donde 'grande' antes o después del sustantivo casi no cambia el significado ('un gran hombre' vs 'un hombre grande'), en francés esa posición SÍ puede cambiar el significado: 'un homme grand' (un hombre alto físicamente) vs. 'un grand homme' (un gran hombre, admirado) — la posición no es solo estilo, es semántica."
+skills:
+  - fr.a2.adjective.position
 minutes: 8
 quiz:
   - question: '¿Dónde va la mayoría de los adjetivos en francés respecto al sustantivo?'

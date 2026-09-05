@@ -7,22 +7,24 @@ order: 10
 unit: 3
 grammarTopic: 'Le futur antérieur'
 funFact: "El futur antérieur tiene un segundo uso poco intuitivo: expresar una suposición sobre algo que probablemente ya pasó. 'Il aura oublié' no es 'habrá olvidado' en el sentido literal de futuro, sino 'seguramente se olvidó' — un truco de nativos para especular sin sonar tajante."
+skills:
+  - fr.c1.verb.futur-anterieur
 minutes: 10
 quiz:
-  - question: "¿Cómo se forma el futur antérieur?"
+  - question: '¿Cómo se forma el futur antérieur?'
     options:
-      - "avoir/être en futur simple + participe passé"
-      - "avoir/être en présent + participe passé"
-      - "avoir/être en conditionnel + infinitif"
+      - 'avoir/être en futur simple + participe passé'
+      - 'avoir/être en présent + participe passé'
+      - 'avoir/être en conditionnel + infinitif'
     answerIndex: 0
     explanation: "El futur antérieur usa el auxiliar (avoir o être) conjugado en FUTUR SIMPLE, más el participe passé: j'aurai fini, elle sera partie."
   - question: "'Quand tu arriveras, j'aurai déjà fini.' ¿Qué relación temporal expresa 'j'aurai fini'?"
     options:
-      - "Una acción que pasará DESPUÉS de que tú llegues"
-      - "Una acción futura que terminará ANTES que otra acción futura (tu llegada)"
-      - "Una acción que ya pasó en el presente"
+      - 'Una acción que pasará DESPUÉS de que tú llegues'
+      - 'Una acción futura que terminará ANTES que otra acción futura (tu llegada)'
+      - 'Una acción que ya pasó en el presente'
     answerIndex: 1
-    explanation: "El futur antérieur marca anterioridad DENTRO del futuro: para cuando tú llegues (acción futura 1), yo ya habré terminado (acción futura 2, anterior a la primera)."
+    explanation: 'El futur antérieur marca anterioridad DENTRO del futuro: para cuando tú llegues (acción futura 1), yo ya habré terminado (acción futura 2, anterior a la primera).'
   - question: "'Il n'est pas venu à la réunion. Il aura oublié.' ¿Qué expresa aquí 'il aura oublié'?"
     options:
       - 'Una orden'
@@ -90,11 +92,11 @@ avoir/être (futur simple)  +  participe passé
 ```
 
 | Verbo   | Auxiliar en futur simple | Futur antérieur    |
-| ------- | -------------------------- | -------------------- |
-| finir   | aurai                       | j'aurai fini         |
-| partir  | sera                        | elle sera partie     |
-| arriver | seront                      | ils seront arrivés   |
-| manger  | aurons                      | nous aurons mangé    |
+| ------- | ------------------------ | ------------------ |
+| finir   | aurai                    | j'aurai fini       |
+| partir  | sera                     | elle sera partie   |
+| arriver | seront                   | ils seront arrivés |
+| manger  | aurons                   | nous aurons mangé  |
 
 ## Uso 1: anterioridad dentro del futuro
 

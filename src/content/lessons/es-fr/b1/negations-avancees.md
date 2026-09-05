@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Negaciones avanzadas (ne...jamais/rien/personne/plus)'
 funFact: "Todas estas negaciones siguen exactamente el mismo 'sándwich' que ya conoces de 'ne...pas' — solo cambia la segunda palabra. Una vez que dominas la estructura básica, memorizar el resto de la familia es simplemente aprender vocabulario nuevo dentro de un molde que ya conoces."
+skills:
+  - fr.b1.negation.advanced
 minutes: 8
 quiz:
   - question: "¿Cuál es la traducción correcta de 'Je ne mange jamais de viande'?"

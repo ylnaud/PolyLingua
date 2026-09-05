@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Figuras retóricas (figures de style)'
 funFact: 'Francia tiene una tradición retórica que se remonta a la Ilustración y los grandes oradores revolucionarios — el arte del discurso persuasivo se enseña formalmente en la educación francesa, y frases como las de Victor Hugo o de Gaulle siguen citándose como modelos de estilo retórico.'
+skills:
+  - fr.c2.style.rhetoric
 minutes: 10
 quiz:
   - question: "¿Cuál es el propósito de una 'question rhétorique' (pregunta retórica)?"

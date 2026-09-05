@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Verbos semi-modales (vouloir, pouvoir, devoir) + il faut'
 funFact: 'Estos tres verbos son irregulares pero comparten una estructura idéntica: [verbo conjugado] + [infinitivo]. Una vez que memorizas la conjugación de uno, entiendes la lógica de los tres. Es como aprender tres acordes de guitarra que se combinan con cualquier canción.'
+skills:
+  - fr.a2.verb.semi-modals
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta de 'je' con 'vouloir' (querer)?"

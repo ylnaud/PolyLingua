@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Passé simple (tiempo literario)'
 funFact: "El passé simple es único entre los tiempos verbales franceses: NADIE lo usa al hablar — ni siquiera los franceses cultos en conversación formal. Existe exclusivamente en textos escritos literarios y narrativos, como una especie de 'modo formal congelado' reservado para novelas, cuentos y biografías."
+skills:
+  - fr.c1.verb.passe-simple
 minutes: 10
 quiz:
   - question: '¿En qué contexto encontrarás el passé simple?'

@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Formación de preguntas (intonation, est-ce que, inversion)'
 funFact: "El francés te da TRES formas de hacer la misma pregunta, cada una con su propio nivel de formalidad: solo la entonación (muy informal), 'est-ce que' (neutral, la más usada), o invertir el verbo y el sujeto (formal/escrito). Puedes elegir según el contexto, igual que eliges el registro en español."
+skills:
+  - fr.a1.question.formation
 minutes: 7
 quiz:
   - question: "¿Cuál es la forma más informal de preguntar '¿Hablas francés?'"

@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Futur simple'
 funFact: "El futur simple francés es la envidia de otros idiomas: no necesita ningún auxiliar como 'will' o 'werden' — las terminaciones del futuro se pegan DIRECTAMENTE al infinitivo del verbo. De hecho, esas terminaciones (-ai, -as, -a, -ons, -ez, -ont) son literalmente el verbo 'avoir' abreviado, fusionado históricamente con el infinitivo."
+skills:
+  - fr.b1.verb.futur-simple
 minutes: 8
 quiz:
   - question: "¿Cuál es la terminación del futur simple para 'je'?"

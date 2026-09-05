@@ -7,39 +7,41 @@ order: 9
 unit: 3
 grammarTopic: 'Le plus-que-parfait'
 funFact: "El plus-que-parfait es al passé composé lo que el pluscuamperfecto español es al pretérito: 'había llegado' vs 'llegué'. Si en español dirías 'había', en francés casi seguro necesitás plus-que-parfait — es una traducción casi automática."
+skills:
+  - fr.b2.verb.plus-que-parfait
 minutes: 9
 quiz:
-  - question: "¿Cómo se forma el plus-que-parfait?"
+  - question: '¿Cómo se forma el plus-que-parfait?'
     options:
-      - "avoir/être en présent + participe passé"
-      - "avoir/être en imparfait + participe passé"
-      - "avoir/être en futur + participe passé"
+      - 'avoir/être en présent + participe passé'
+      - 'avoir/être en imparfait + participe passé'
+      - 'avoir/être en futur + participe passé'
     answerIndex: 1
-    explanation: "El plus-que-parfait usa el auxiliar (avoir o être) conjugado en IMPARFAIT, más el participe passé: il avait fini, elle était partie."
-  - question: "¿Cuál frase usa correctamente el plus-que-parfait?"
+    explanation: 'El plus-que-parfait usa el auxiliar (avoir o être) conjugado en IMPARFAIT, más el participe passé: il avait fini, elle était partie.'
+  - question: '¿Cuál frase usa correctamente el plus-que-parfait?'
     options:
-      - "Quand je suis arrivé, il était déjà parti."
-      - "Quand je suis arrivé, il est déjà parti."
+      - 'Quand je suis arrivé, il était déjà parti.'
+      - 'Quand je suis arrivé, il est déjà parti.'
       - "Quand j'arrive, il était déjà parti."
     answerIndex: 0
-    explanation: "La acción de partir (était parti) ocurrió ANTES que la de llegar (suis arrivé), así que necesita plus-que-parfait para marcar esa anterioridad."
+    explanation: 'La acción de partir (était parti) ocurrió ANTES que la de llegar (suis arrivé), así que necesita plus-que-parfait para marcar esa anterioridad.'
   - question: "¿Con qué verbos el plus-que-parfait usa 'être' como auxiliar?"
     options:
-      - "Con todos los verbos, sin excepción"
-      - "Con los mismos verbos que usan être en passé composé (aller, partir, arriver, etc.) y los pronominales"
-      - "Solo con verbos irregulares"
+      - 'Con todos los verbos, sin excepción'
+      - 'Con los mismos verbos que usan être en passé composé (aller, partir, arriver, etc.) y los pronominales'
+      - 'Solo con verbos irregulares'
     answerIndex: 1
     explanation: "El auxiliar (avoir o être) del plus-que-parfait es el mismo que el verbo usa en passé composé: il était parti, elle s'était réveillée."
 exercises:
   - type: 'fill-blank'
-    sentence: "Quand je suis arrivé, il ___ déjà parti."
+    sentence: 'Quand je suis arrivé, il ___ déjà parti.'
     answer: 'était'
     accepted: ['etait']
     hint: "'Partir' usa être como auxiliar, conjugado en imparfait: était parti."
     translation: 'Cuando llegué, él ya se había ido.'
     placeholder: 'avait'
   - type: 'fill-blank'
-    sentence: "Elle ___ mangé avant que nous arrivions."
+    sentence: 'Elle ___ mangé avant que nous arrivions.'
     answer: 'avait'
     accepted: ['avait']
     hint: "'Manger' usa avoir como auxiliar en imparfait: avait mangé."
@@ -60,10 +62,14 @@ exercises:
         right: 'nous étions partis'
   - type: 'write'
     prompt: "Traduce: 'Cuando llegué, ella ya había terminado.' (usa 'quand je suis arrivé...')"
-    answer: "Quand je suis arrivé, elle avait déjà fini."
-    accepted: ["Quand je suis arrivée, elle avait déjà fini.", "Quand je suis arrivé, elle avait déjà terminé."]
-    hint: "La acción anterior (terminar) va en plus-que-parfait: avait fini."
-    placeholder: "Quand je suis arrivé, il était déjà parti."
+    answer: 'Quand je suis arrivé, elle avait déjà fini.'
+    accepted:
+      [
+        'Quand je suis arrivée, elle avait déjà fini.',
+        'Quand je suis arrivé, elle avait déjà terminé.',
+      ]
+    hint: 'La acción anterior (terminar) va en plus-que-parfait: avait fini.'
+    placeholder: 'Quand je suis arrivé, il était déjà parti.'
   - type: 'order'
     sentence: 'Quand je suis arrivé il était déjà parti'
     translation: 'Cuando llegué, él ya se había ido.'
@@ -89,12 +95,12 @@ El plus-que-parfait cuenta lo que **ya había pasado** antes de otro momento del
 avoir/être (imparfait)  +  participe passé
 ```
 
-| Verbo   | Auxiliar en imparfait | Plus-que-parfait  |
-| ------- | ---------------------- | ------------------ |
-| finir   | avait                   | il avait fini      |
-| partir  | était                   | elle était partie  |
-| manger  | avait                   | j'avais mangé      |
-| arriver | étaient                 | ils étaient arrivés |
+| Verbo   | Auxiliar en imparfait | Plus-que-parfait    |
+| ------- | --------------------- | ------------------- |
+| finir   | avait                 | il avait fini       |
+| partir  | était                 | elle était partie   |
+| manger  | avait                 | j'avais mangé       |
+| arriver | étaient               | ils étaient arrivés |
 
 El auxiliar que usa cada verbo (avoir o être) es **el mismo** que usa en passé composé
 — solo cambia la conjugación de ese auxiliar, de présent a imparfait.
@@ -115,11 +121,11 @@ temporal.
 
 ## Comparación español-francés
 
-| Español                          | Francés                                |
-| --------------------------------- | ---------------------------------------- |
-| Cuando llegué, ya había comido.  | Quand je suis arrivé, j'avais déjà mangé. |
-| Se había despertado antes que yo. | Elle s'était réveillée avant moi.       |
-| Habíamos terminado el trabajo.    | Nous avions fini le travail.            |
+| Español                           | Francés                                   |
+| --------------------------------- | ----------------------------------------- |
+| Cuando llegué, ya había comido.   | Quand je suis arrivé, j'avais déjà mangé. |
+| Se había despertado antes que yo. | Elle s'était réveillée avant moi.         |
+| Habíamos terminado el trabajo.    | Nous avions fini le travail.              |
 
 La correspondencia es casi uno a uno: si en español necesitás "había + participio",
 en francés casi seguro necesitás "avait/était + participe passé".

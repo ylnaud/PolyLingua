@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: "Mise en relief (c'est...qui/que)"
 funFact: "'C'est Marie qui a téléphoné' literalmente 'parte' la frase en dos, con el único propósito de gritar 'fue MARÍA, no nadie más'. Es el equivalente francés exacto de las cleft sentences inglesas — la misma herramienta retórica, con su propio molde gramatical."
+skills:
+  - fr.c1.emphasis.cleft
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta para dar énfasis en QUIÉN llamó: 'Marie a téléphoné'?"

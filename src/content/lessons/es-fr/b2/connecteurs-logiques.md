@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Conectores lógicos avanzados'
 funFact: "'Cependant' y 'néanmoins' significan casi lo mismo (sin embargo), pero 'néanmoins' suena ligeramente más formal y enfático — la elección entre ambos es una cuestión de matiz estilístico, igual que elegir entre 'sin embargo' y 'no obstante' en español."
+skills:
+  - fr.b2.connector.logical
 minutes: 9
 quiz:
   - question: "¿Qué función cumple 'de plus' en un argumento?"

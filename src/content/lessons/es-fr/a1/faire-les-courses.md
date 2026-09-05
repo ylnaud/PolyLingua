@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Frases de compras'
 situation: 'Compras y supermercado'
 funFact: "En Francia todavia existen muchas tiendas especializadas: la boulangerie (panaderia), la boucherie (carniceria), la fromagerie (queseria), la patisserie (pasteleria). Comprar el pan en la boulangerie del barrio es un ritual diario para muchos franceses. Saber decir 'une baguette, s'il vous plait' te abre una puerta cultural."
+skills:
+  - fr.a1.vocabulary.shopping
 minutes: 8
 phrases:
   - text: 'Combien ca coute?'

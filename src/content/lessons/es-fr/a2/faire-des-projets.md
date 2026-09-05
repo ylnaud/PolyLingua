@@ -8,6 +8,8 @@ unit: 2
 situation: 'Hacer planes'
 grammarTopic: 'Vocabulario: faire des projets'
 funFact: "'On' reemplaza a 'nous' en el francés hablado: 'On va au cinéma?' es mucho más natural que 'Allons-nous au cinéma?' para proponer un plan — casi nadie usa la forma formal en una conversación real."
+skills:
+  - fr.a2.vocabulary.plans
 minutes: 7
 phrases:
   - text: 'Tu es libre samedi?'

@@ -8,6 +8,8 @@ unit: 2
 situation: 'Problemas cotidianos'
 grammarTopic: 'Vocabulario: les problèmes quotidiens'
 funFact: "'Ça ne marche pas' sirve para casi cualquier cosa rota, del wifi a la lavadora — literalmente 'eso no camina', una de las frases más útiles del francés cotidiano."
+skills:
+  - fr.a2.vocabulary.problems
 minutes: 7
 phrases:
   - text: 'Ça ne marche pas.'
@@ -34,7 +36,8 @@ quiz:
     answerIndex: 1
     explanation: "'aider' es ayudar. 'Tu peux m'aider?' es la forma directa de pedir ayuda."
   - question: 'Si no entendiste algo, la frase más útil es...'
-    options: ["Tu peux répéter, s'il te plaît?", 'Ça ne marche pas.', 'Je me suis trompé de numéro.']
+    options:
+      ["Tu peux répéter, s'il te plaît?", 'Ça ne marche pas.', 'Je me suis trompé de numéro.']
     answerIndex: 0
     explanation: "'Tu peux répéter, s'il te plaît?' te permite seguir la conversación en vez de asentir sin entender."
 exercises:
@@ -48,7 +51,7 @@ exercises:
   - type: 'fill-blank'
     sentence: 'Tu peux ___?'
     answer: "m'aider"
-    accepted: ["m'aider", "maider"]
+    accepted: ["m'aider", 'maider']
     hint: "'ayudarme' = 'aider' + 'm'."
     translation: '¿Me puedes ayudar?'
     placeholder: "m'aider / m'attendre"

@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Style soutenu et nominalisation'
 funFact: "El francés formal AMA convertir verbos en sustantivos: en vez de 'décider' (decidir), un texto formal prefiere 'la décision'; en vez de 'analyser', prefiere 'l'analyse'. Esta nominalización compacta las ideas y suena mucho más elevado — es el mismo instinto que lleva al alemán formal a usar Partizipialkonstruktionen."
+skills:
+  - fr.c2.style.nominalisation
 minutes: 11
 quiz:
   - question: '¿Cuál versión es más propia del estilo soutenu (formal/académico)?'

@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Passé composé (avoir/être + participe passé)'
 funFact: "Piensa en 'avoir' como el auxiliar por defecto (el 90% de los verbos lo usan) y en 'être' como el club exclusivo de 14 verbos de movimiento (aller, venir, partir...) que necesitas memorizar como una lista cerrada. Fuera de esa lista, casi siempre es 'avoir'."
+skills:
+  - fr.a2.verb.passe-compose
 minutes: 9
 quiz:
   - question: "¿Cuál es la forma correcta de 'yo he comido' (manger)?"

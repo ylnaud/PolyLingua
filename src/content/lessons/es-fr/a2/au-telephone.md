@@ -8,6 +8,8 @@ unit: 2
 situation: 'Hablar por teléfono'
 grammarTopic: 'Vocabulario: au téléphone'
 funFact: "En francés se atiende el teléfono diciendo 'Allô?', muy parecido al inglés 'hello'. Y para presentarte se dice 'C'est Léa' o 'Léa à l'appareil', nunca 'je suis Léa'."
+skills:
+  - fr.a2.vocabulary.phone
 minutes: 7
 phrases:
   - text: 'Allô?'

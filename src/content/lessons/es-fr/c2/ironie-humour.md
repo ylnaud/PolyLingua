@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Ironía y humor en francés'
 funFact: "El 'esprit français' (ingenio francés) valora especialmente la réplica rápida y elegante — un comentario irónico bien construido se admira casi tanto como tener razón en un argumento. Reconocer cuándo alguien está siendo irónico, sin ninguna marca gramatical explícita, es una habilidad puramente cultural."
+skills:
+  - fr.c2.style.irony
 minutes: 10
 quiz:
   - question: "Alguien dice 'Quelle bonne idée!' con tono plano después de un plan que claramente fracasó. ¿Qué expresa?"

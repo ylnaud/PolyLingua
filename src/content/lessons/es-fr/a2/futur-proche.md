@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Futur proche (aller + infinitivo)'
 funFact: "Igual que en español decimos 'voy a comer' en vez de 'comeré' en la conversación diaria, el francés prefiere 'je vais manger' sobre el futuro simple formal 'je mangerai'. El futur proche domina el habla cotidiana; el futur simple queda para contextos más formales o planes a largo plazo."
+skills:
+  - fr.a2.verb.futur-proche
 minutes: 6
 quiz:
   - question: '¿Cuál es la estructura del futur proche?'

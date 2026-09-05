@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulario: francés de negocios'
 funFact: "El francés de negocios ama las fórmulas de cortesía elaboradas: cerrar un correo con 'Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées' es mucho más formal y ceremonioso que cualquier cierre equivalente en inglés o español — una cortesía casi ritual muy propia de la cultura corporativa francesa."
+skills:
+  - fr.c1.vocabulary.business
 minutes: 8
 quiz:
   - question: "¿Qué significa 'licencier quelqu'un' en un contexto laboral?"

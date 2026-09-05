@@ -8,6 +8,8 @@ unit: 4
 grammarTopic: 'Pedir comida y la cuenta'
 situation: 'En el restaurante'
 funFact: "En Francia, pedir 'l'addition' (la cuenta) es responsabilidad tuya: el camarero no te la va a traer hasta que la pidas. Y si quieres dejar propina, no es obligatorio como en otros paises: el servicio ya esta incluido en el precio. Aun asi, dejar un euro o dos es un gesto apreciado."
+skills:
+  - fr.a1.vocabulary.restaurant
 minutes: 8
 phrases:
   - text: "Une table pour deux, s'il vous plait."

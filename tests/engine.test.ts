@@ -490,6 +490,29 @@ describe('plantillas de refuerzo', () => {
     }
   });
 
+  it('toda variación trae su answer, y la de orden es la frase entera', () => {
+    // `answer` es obligatorio en el tipo, así que esto no debería poder
+    // fallar... salvo que la variación se escriba y nadie mire la línea
+    // `- N errors` de astro check. Pasó: seis variaciones de orden en francés
+    // llegaron a CI sin `answer`. El tipo ya lo cazaba; el test lo caza
+    // también con vitest, que es lo que se corre primero.
+    //
+    // En las de orden `toRepairExercise` usa `sentence` como respuesta y no
+    // mira `answer` — por eso se exige que sean iguales: un `answer` distinto
+    // ahí es dato muerto que miente sobre lo que se corrige.
+    for (const t of REPAIR_TEMPLATES) {
+      for (const v of t.variations) {
+        expect(v.answer?.trim(), `${t.skillId}: ${v.sentence}`).toBeTruthy();
+        if (v.kind === 'order') {
+          expect(v.answer, `${t.skillId}: ${v.sentence}`).toBe(v.sentence);
+          // La frase se parte por espacios para armar las fichas, así que un
+          // punto final se queda pegado a la última palabra.
+          expect(/[.?!]$/.test(v.sentence), `${t.skillId}: ${v.sentence}`).toBe(false);
+        }
+      }
+    }
+  });
+
   it('cada plantilla apunta a una habilidad que existe', () => {
     const ids = new Set(SKILLS.map((s) => s.id));
     const fantasma = REPAIR_TEMPLATES.filter((t) => !ids.has(t.skillId)).map((t) => t.skillId);

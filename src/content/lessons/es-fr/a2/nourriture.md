@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Vocabulario: comida y restaurante'
 funFact: "En un restaurante francés, decir 'je voudrais' (quisiera) en vez de 'je veux' (quiero) es la diferencia entre sonar educado y sonar brusco — 'je voudrais' es el Conditionnel de 'vouloir' y es la fórmula estándar y obligatoria para pedir cualquier cosa educadamente."
+skills:
+  - fr.a2.vocabulary.food
 minutes: 6
 quiz:
   - question: "¿Cuál es el artículo correcto para 'eau' (agua)?"

@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Conditionnel passé'
 funFact: "El Conditionnel passé es la versión francesa del 'habría hecho' en español — y se construye exactamente como el passé composé, pero con el auxiliar en Conditionnel présent en vez de presente normal. Es la fórmula perfecta para el arrepentimiento y las reflexiones tipo '¿qué habría pasado si...?'"
+skills:
+  - fr.b2.verb.conditionnel-passe
 minutes: 9
 quiz:
   - question: '¿Cuál es la fórmula del Conditionnel passé?'

@@ -8,6 +8,8 @@ unit: 2
 situation: 'Transporte y ciudad'
 grammarTopic: 'Vocabulario: les transports et les directions'
 funFact: "'Tout droit' significa 'todo recto', no 'todo derecho' como en español — y no confundas 'à droite' (a la derecha) con 'tout droit' (recto): comparten la palabra 'droit', pero una es dirección y la otra es rumbo fijo hacia adelante."
+skills:
+  - fr.a2.vocabulary.transport
 minutes: 7
 phrases:
   - text: 'Comment aller à la gare?'
@@ -98,23 +100,23 @@ tienes ambos.
 
 ## Medios de transporte
 
-| Francés    | Español    |
-| ---------- | ---------- |
-| le bus     | el autobús |
-| le train   | el tren    |
-| le taxi    | el taxi    |
-| le métro   | el metro   |
+| Francés  | Español    |
+| -------- | ---------- |
+| le bus   | el autobús |
+| le train | el tren    |
+| le taxi  | el taxi    |
+| le métro | el metro   |
 
 ## Direcciones básicas
 
-| Francés            | Español         |
-| -------------------- | --------------- |
-| tourner à gauche      | girar a la izquierda |
-| tourner à droite      | girar a la derecha   |
-| tout droit            | todo recto      |
-| à côté de             | al lado de      |
-| en face de            | enfrente de     |
-| près de               | cerca de        |
+| Francés          | Español              |
+| ---------------- | -------------------- |
+| tourner à gauche | girar a la izquierda |
+| tourner à droite | girar a la derecha   |
+| tout droit       | todo recto           |
+| à côté de        | al lado de           |
+| en face de       | enfrente de          |
+| près de          | cerca de             |
 
 ## Pedir y dar indicaciones
 

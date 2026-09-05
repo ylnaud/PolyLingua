@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Expresiones idiomáticas francesas'
 funFact: "'Poser un lapin à quelqu'un' literalmente significa 'ponerle un conejo a alguien' — pero en realidad significa 'dejar plantado a alguien'. Como toda expresión idiomática, no se puede traducir palabra por palabra: se aprende como una imagen mental completa."
+skills:
+  - fr.c1.idiom.expressions
 minutes: 10
 quiz:
   - question: "'Il m'a posé un lapin hier soir.' ¿Qué significa realmente?"

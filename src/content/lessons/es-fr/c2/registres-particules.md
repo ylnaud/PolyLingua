@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Registre familier et particules discursives'
 funFact: "Estas palabras son el 'tono de voz' escrito del francés: 'quand même' añade sorpresa o resignación, 'enfin' suaviza o corrige lo que acabas de decir, 'ben' (versión oral de 'bien') marca duda o transición casual. Ningún libro de texto las traduce bien porque no cambian el significado literal — cambian la actitud del hablante."
+skills:
+  - fr.c2.register.familiar
 minutes: 12
 quiz:
   - question: "'Il a réussi, quand même!' — ¿qué matiz añade 'quand même' aquí?"

@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Variedades regionales del francés (francophonie)'
 funFact: "En Quebec, 'un char' significa 'un coche' (no un carro de guerra), y 'magasiner' significa 'ir de compras' — palabras que un francés de Francia probablemente no reconocería de inmediato. El francés es idioma oficial en más de 25 países, y cada región desarrolló su propio vocabulario y ritmo."
+skills:
+  - fr.c2.variety.francophonie
 minutes: 9
 quiz:
   - question: "¿Qué significa 'un char' en el francés de Quebec?"

@@ -7,30 +7,33 @@ order: 10
 unit: 3
 grammarTopic: 'Emprunts et anglicismes en français contemporain'
 funFact: "La Académie française propone alternativas francesas para casi todo anglicismo, pero el uso real decide: 'courriel' sí prendió (se usa en Quebec y en contextos oficiales franceses), mientras que casi nadie dice 'toile' en vez de 'web'. La batalla la gana la calle, no la academia."
+skills:
+  - fr.c2.lexicon.anglicisms
 minutes: 9
 quiz:
   - question: "¿Cuál es el equivalente oficial que promueve la Académie française para 'email'?"
     options: ['le week-end', 'le courriel', 'le shopping']
     answerIndex: 1
     explanation: "'Courriel' (de 'courrier électronique') es la alternativa oficial francesa a 'email', y de hecho se usa bastante en Quebec y en documentos oficiales franceses."
-  - question: "¿Cuál de estas palabras es un anglicismo de uso completamente normal en el francés cotidiano?"
+  - question: '¿Cuál de estas palabras es un anglicismo de uso completamente normal en el francés cotidiano?'
     options: ['le week-end', 'la fin de semaine', "l'hebdomadaire"]
     answerIndex: 0
     explanation: "'Le week-end' es un anglicismo totalmente naturalizado en Francia — mucho más común que 'la fin de semaine', que sí se prefiere en Quebec."
-  - question: "¿Por qué algunos anglicismos se imponen sobre sus alternativas francesas y otros no, según la lingüística del uso?"
-    options: [
+  - question: '¿Por qué algunos anglicismos se imponen sobre sus alternativas francesas y otros no, según la lingüística del uso?'
+    options:
+      [
         'Porque el gobierno francés los prohíbe por decreto',
         'Porque el uso cotidiano de los hablantes decide, más allá de lo que recomiende la Académie française',
         'Porque el inglés es obligatorio en las escuelas francesas',
       ]
     answerIndex: 1
-    explanation: "La Académie française solo puede recomendar; no tiene poder legal para forzar el uso. Al final, gana la palabra que los hablantes eligen usar con más frecuencia y naturalidad."
+    explanation: 'La Académie française solo puede recomendar; no tiene poder legal para forzar el uso. Al final, gana la palabra que los hablantes eligen usar con más frecuencia y naturalidad.'
 exercises:
   - type: 'fill-blank'
-    sentence: "On se voit ce ___? (fin de semana, anglicismo muy común)"
+    sentence: 'On se voit ce ___? (fin de semana, anglicismo muy común)'
     answer: 'week-end'
     accepted: ['week-end', 'weekend']
-    hint: "Anglicismo totalmente naturalizado en el francés de Francia."
+    hint: 'Anglicismo totalmente naturalizado en el francés de Francia.'
     translation: '¿Nos vemos este fin de semana?'
     placeholder: 'courriel'
   - type: 'fill-blank'
@@ -60,7 +63,7 @@ exercises:
     hint: "'Shopping' y 'week-end' son los anglicismos naturalizados, no 'magasinage' ni 'fin de semaine'."
     placeholder: "J'ai un nouveau job."
   - type: 'order'
-    sentence: "On se voit ce week-end pour faire du shopping"
+    sentence: 'On se voit ce week-end pour faire du shopping'
     translation: 'Nos vemos este fin de semana para ir de compras.'
 vocabulary:
   - term: 'le week-end'
@@ -83,13 +86,13 @@ de nivel C2.
 
 Estas palabras se usan tanto que suenan más naturales que su alternativa francesa:
 
-| Anglicismo    | Alternativa "oficial"      | Uso real en Francia          |
-| -------------- | ----------------------------- | -------------------------------- |
-| le week-end    | la fin de semaine             | "week-end" domina ampliamente    |
-| le foot        | le football                   | "foot" es la forma coloquial normal |
-| cool           | sympa / génial                 | "cool" se usa constantemente     |
-| le shopping    | les courses / le magasinage    | "shopping" es el uso mayoritario |
-| un job         | un emploi / un travail          | "job" es informal pero muy común |
+| Anglicismo  | Alternativa "oficial"       | Uso real en Francia                 |
+| ----------- | --------------------------- | ----------------------------------- |
+| le week-end | la fin de semaine           | "week-end" domina ampliamente       |
+| le foot     | le football                 | "foot" es la forma coloquial normal |
+| cool        | sympa / génial              | "cool" se usa constantemente        |
+| le shopping | les courses / le magasinage | "shopping" es el uso mayoritario    |
+| un job      | un emploi / un travail      | "job" es informal pero muy común    |
 
 ## Anglicismos en disputa: email vs. courriel
 

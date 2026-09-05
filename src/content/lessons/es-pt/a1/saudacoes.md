@@ -7,6 +7,9 @@ order: 13
 unit: 3
 grammarTopic: 'Saludos y presentarse'
 funFact: "'Tudo bem?' en Brasil no es solo un saludo: es pregunta y respuesta a la vez. Si alguien te dice 'Tudo bem?', la respuesta estándar es 'Tudo bem!' o 'Tudo bom!' — literalmente estás respondiendo la pregunta con la misma frase, solo cambiando la entonación de pregunta a afirmación."
+skills:
+  - pt.a1.vocabulary.greetings
+  - pt.a1.verb.ser-estar-ter
 minutes: 7
 phrases:
   - text: 'Oi!'

@@ -7,6 +7,9 @@ order: 12
 unit: 3
 grammarTopic: 'Subjuntivo depois de uma expressão de expectativa'
 funFact: 'Depois de "eu esperaria que", o verbo quase sempre muda de forma (dá → desse). Memorize a fórmula inteira como bloco, não o subjuntivo isolado — é mais fácil de reutilizar.'
+skills:
+  - pt.b1.subjunctive.intro
+  - pt.b1.verb.condicional
 minutes: 8
 quiz:
   - question: 'Qual é a forma correta do imperfeito do subjuntivo de "dar" na terceira pessoa do singular?'
@@ -14,11 +17,21 @@ quiz:
     answerIndex: 1
     explanation: '"desse" é o imperfeito do subjuntivo de "dar" — usado depois de expressões como "eu esperaria que".'
   - question: 'Por que o português usa o subjuntivo depois de "eu esperaria que"?'
-    options: ['porque "esperar" sempre exige o indicativo', 'porque expressões de expectativa, desejo ou dúvida são seguidas do subjuntivo em português', 'é uma exceção sem motivo']
+    options:
+      [
+        'porque "esperar" sempre exige o indicativo',
+        'porque expressões de expectativa, desejo ou dúvida são seguidas do subjuntivo em português',
+        'é uma exceção sem motivo',
+      ]
     answerIndex: 1
     explanation: 'Em português, verbos/expressões que indicam expectativa, desejo, dúvida ou necessidade (querer que, é preciso que, esperar que) exigem o subjuntivo na oração subordinada.'
   - question: '"Se o problema não puder ser resolvido, terei que mudar de hotel" usa o subjuntivo futuro depois de "se". O que essa escolha indica, comparada ao imperfeito do subjuntivo da lição anterior?'
-    options: ['a condição é puramente imaginária', 'a condição é real e ainda está aberta — pode mesmo acontecer', 'já aconteceu']
+    options:
+      [
+        'a condição é puramente imaginária',
+        'a condição é real e ainda está aberta — pode mesmo acontecer',
+        'já aconteceu',
+      ]
     answerIndex: 1
     explanation: '"se" + futuro do subjuntivo descreve uma condição real que permanece possível, diferente de "se" + imperfeito do subjuntivo, reservado à hipótese improvável.'
 exercises:
@@ -59,13 +72,13 @@ a ferramenta gramatical que carrega a firmeza muda: é o **subjuntivo**.
 
 ## Os 5 blocos desta situação
 
-| Português                                                   | Español                                          |
-| --------------------------------------------------------------- | --------------------------------------------------- |
-| Já avisei há duas horas, mas nada mudou.                        | Ya avisé hace dos horas, pero nada ha cambiado.     |
-| Realmente não posso ficar aqui assim.                             | Realmente no puedo quedarme aquí así.               |
-| Eu esperaria que me desse um desconto.                            | Esperaría que me diera un descuento.                |
-| O que você sugere como solução?                                   | ¿Qué sugiere como solución?                          |
-| Se o problema não puder ser resolvido, terei que mudar de hotel.  | Si el problema no se puede resolver, tendré que cambiar de hotel. |
+| Português                                                        | Español                                                           |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Já avisei há duas horas, mas nada mudou.                         | Ya avisé hace dos horas, pero nada ha cambiado.                   |
+| Realmente não posso ficar aqui assim.                            | Realmente no puedo quedarme aquí así.                             |
+| Eu esperaria que me desse um desconto.                           | Esperaría que me diera un descuento.                              |
+| O que você sugere como solução?                                  | ¿Qué sugiere como solución?                                       |
+| Se o problema não puder ser resolvido, terei que mudar de hotel. | Si el problema no se puede resolver, tendré que cambiar de hotel. |
 
 ## A conversa completa
 

@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Discurso indireto (concordância verbal)'
 funFact: "Igual que en francés, italiano o inglés, el portugués retrocede sistemáticamente los tiempos verbales al reportar discurso: presente → pretérito imperfeito, pretérito perfeito → mais-que-perfeito, futuro → futuro do pretérito (condicional). Es un movimiento mecánico de 'un paso hacia atrás' que se automatiza con práctica."
+skills:
+  - pt.c1.speech.indirect
 minutes: 10
 quiz:
   - question: "Maria disse: 'Estou cansada.' ¿Cómo lo reportas?"

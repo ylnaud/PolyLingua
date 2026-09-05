@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Estilo formal e nominalização'
 funFact: "El portugués formal, igual que el francés y el italiano, ama convertir verbos en sustantivos: en vez de 'decidir', un texto formal prefiere 'a decisão'; en vez de 'analisar', prefiere 'a análise'. Esta nominalización compacta las ideas y suena mucho más elevado — un instinto compartido por todas las lenguas romances en su registro culto."
+skills:
+  - pt.c2.style.nominalizacao
 minutes: 11
 quiz:
   - question: '¿Cuál versión es más propia del estilo formal/académico?'

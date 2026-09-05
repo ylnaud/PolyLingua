@@ -7,6 +7,8 @@ order: 11
 unit: 3
 grammarTopic: 'El imperativo'
 funFact: "En Brasil, el imperativo se forma con la conjugación de 'você', no con la de 'tu' como en España. Así que si ya sabes conjugar el presente para 'você', ya sabes el 90% del imperativo brasileño — es el mismo verbo: 'você fala' → 'fala!' (¡habla!)."
+skills:
+  - pt.a1.verb.imperative
 minutes: 8
 quiz:
   - question: "¿Cómo se dice '¡Habla!' (imperativo) en portugués brasileño?"

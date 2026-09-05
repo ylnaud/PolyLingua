@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Expressões idiomáticas'
 funFact: "'Pagar o pato' (literalmente 'pagar el pato') significa cargar con la culpa o consecuencia de algo que no hiciste — una expresión cuyo origen exacto se debate, pero que es tan común en Brasil que aparece constantemente en noticias, conversación cotidiana y hasta titulares de periódico."
+skills:
+  - pt.c1.idiom.expressions
 minutes: 8
 quiz:
   - question: "¿Qué significa 'pagar o pato' en portugués?"

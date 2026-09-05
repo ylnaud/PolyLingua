@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Pronomes possessivos'
 funFact: "En Portugal (y a menudo en portugués formal escrito) se usa el artículo antes del posesivo: 'o meu carro' (literalmente 'el mi coche'), una estructura que no existe en español pero sí en italiano ('la mia macchina') — un puente útil si ya conoces algo de italiano."
+skills:
+  - pt.a1.possessive.article
 minutes: 6
 quiz:
   - question: "¿Cómo se dice 'mi coche' en portugués (Portugal, forma completa)?"

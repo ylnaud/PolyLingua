@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Presente do indicativo (verbos regulares -ar/-er/-ir)'
 funFact: 'El presente portugués es probablemente el punto de partida más fácil de los cinco idiomas: los tres grupos verbales (-ar, -er, -ir) son EXACTAMENTE los mismos que en español, con terminaciones muy parecidas. El reto real no es la lógica, es la pronunciación de las vocales nasales — pero eso es para tus oídos, no para tu gramática.'
+skills:
+  - pt.a1.verb.present-regular
+  - pt.a1.verb.ser-estar-ter
 minutes: 6
 quiz:
   - question: "¿Cuál es la conjugación correcta de 'falar' (hablar) con 'você' (tú/usted)?"

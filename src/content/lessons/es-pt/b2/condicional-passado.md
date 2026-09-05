@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Futuro do pretérito composto (condicional composto)'
 funFact: "El condicional compuesto portugués aparece casi siempre junto al pluscuamperfecto do subjuntivo en frases condicionales irreales del pasado ('Se eu tivesse estudado, teria passado'), formando un par gramatical que funciona exactamente igual que en español ('si hubiera estudiado, habría aprobado') — una de las estructuras más simétricas entre ambos idiomas."
+skills:
+  - pt.b2.verb.condicional-passado
 minutes: 8
 quiz:
   - question: '¿Cómo se forma el condicional compuesto en portugués?'

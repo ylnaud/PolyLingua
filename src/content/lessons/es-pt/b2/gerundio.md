@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Gerúndio'
 funFact: "El uso del gerundio es una de las diferencias más marcadas entre Brasil y Portugal: donde un brasileño diría 'estou estudando' (estoy estudiando), un portugués suele preferir 'estou a estudar' — la misma idea, dos construcciones completamente distintas, y una de las señales más rápidas para identificar de qué lado del Atlántico es un hablante."
+skills:
+  - pt.b2.verb.gerundio
 minutes: 7
 quiz:
   - question: "¿Cómo forma el brasileño típico 'estoy estudiando'?"

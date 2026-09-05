@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Futuro próximo (ir + infinitivo)'
 funFact: "En el portugués hablado cotidiano, tanto en Brasil como en Portugal, el futuro próximo con 'ir + infinitivo' es mucho más común que el futuro simple morfológico ('falarei') — este último suena más formal o incluso literario en el habla diaria, un patrón muy similar al del español y el francés."
+skills:
+  - pt.a2.verb.futuro-proximo
 minutes: 6
 quiz:
   - question: "¿Cómo dirías 'Voy a estudiar' en portugués?"

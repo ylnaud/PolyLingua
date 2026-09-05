@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Vocabulário profissional'
 funFact: "'Currículo' en Brasil y 'currículo vitae' o simplemente 'CV' en Portugal son formas comunes de referirse al currículum — pero en Brasil también es muy frecuente escuchar simplemente 'currículo', mientras que en Portugal el uso de 'CV' importado del inglés/francés es más habitual en contextos formales."
+skills:
+  - pt.b1.vocabulary.work
 minutes: 7
 quiz:
   - question: "¿Cómo se dice 'entrevista de trabajo' en portugués?"

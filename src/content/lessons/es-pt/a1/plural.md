@@ -7,6 +7,9 @@ order: 10
 unit: 3
 grammarTopic: 'Formación del plural'
 funFact: "Las palabras terminadas en -ão tienen tres plurales posibles: -ões (la mayoría), -ães (algunas) y -ãos (pocas). No hay regla fija para saber cuál usar — 'coração' da 'corações', 'pão' da 'pães' y 'mão' da 'mãos'. La buena noticia: si dices -ões, acertarás la mayoría de las veces."
+skills:
+  - pt.a1.noun.plural-ao
+  - pt.a1.article.definite
 minutes: 8
 quiz:
   - question: "¿Cuál es el plural de 'animal' en portugués?"

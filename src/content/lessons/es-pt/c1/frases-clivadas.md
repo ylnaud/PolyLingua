@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Frases clivadas (é que)'
 funFact: "La partícula 'é que' es tan omnipresente en el portugués hablado —tanto de Brasil como de Portugal— que aparece incluso en preguntas simples sin ninguna función de énfasis real ('Onde é que você mora?' en vez de simplemente 'Onde você mora?'), un tic conversacional que suena completamente natural a un nativo pero puede parecer redundante a un estudiante."
+skills:
+  - pt.c1.emphasis.cleft
 minutes: 8
 quiz:
   - question: "¿Qué hace una frase clivada como 'Foi ele que quebrou o vaso'?"

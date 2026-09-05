@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Pronomes possessivos substantivos'
 funFact: "Cuando el posesivo funciona como pronombre independiente (sin sustantivo al lado), el artículo se vuelve prácticamente obligatorio incluso en Brasil, donde normalmente se omite: 'Este é o meu' (Este es el mío) casi nunca pierde el 'o', a diferencia de 'meu carro' (sin artículo), donde el artículo sí es opcional."
+skills:
+  - pt.b2.pronoun.possessive
 minutes: 7
 quiz:
   - question: "¿Cómo dirías 'Este es el mío' en portugués?"

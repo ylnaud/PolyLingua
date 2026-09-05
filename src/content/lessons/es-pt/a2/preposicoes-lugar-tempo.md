@@ -7,6 +7,8 @@ order: 9
 unit: 1
 grammarTopic: 'Preposições de lugar e tempo'
 funFact: "'Daqui a' se usa para el futuro ('daqui a três dias' = dentro de tres días), mientras que 'há' se usa para el pasado ('há três dias' = hace tres días) — son casi espejos, así que fijarte en la dirección temporal te ayuda a no confundirlas."
+skills:
+  - pt.a2.preposition.contraction
 minutes: 7
 quiz:
   - question: "¿Qué preposición usarías para decir 'el libro está sobre la mesa'?"
@@ -84,15 +86,15 @@ describir espacios y organizar planes en portugués.
 
 ## Preposiciones de lugar
 
-| Portugués      | Español      |
-| -------------- | ------------ |
-| em             | en           |
-| sobre          | sobre / encima de |
-| sob            | debajo de    |
-| em frente de   | delante de   |
-| atrás de       | detrás de    |
-| entre          | entre        |
-| perto de       | cerca de     |
+| Portugués    | Español           |
+| ------------ | ----------------- |
+| em           | en                |
+| sobre        | sobre / encima de |
+| sob          | debajo de         |
+| em frente de | delante de        |
+| atrás de     | detrás de         |
+| entre        | entre             |
+| perto de     | cerca de          |
 
 ```
 O livro está sobre a mesa.        (El libro está sobre la mesa)

@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Provérbios (refrões populares)'
 funFact: "'Água mole em pedra dura, tanto bate até que fura' (agua blanda en piedra dura, tanto golpea hasta que perfora) es uno de los refranes más citados en portugués y celebra la persistencia — un equivalente casi perfecto en imagen y significado a 'gota a gota se llena la copa' del español, aunque con una metáfora física distinta (agua y piedra vs. gota y copa)."
+skills:
+  - pt.c2.idiom.proverbs
 minutes: 9
 quiz:
   - question: "'Água mole em pedra dura, tanto bate até que fura.' ¿Qué valora este refrán?"

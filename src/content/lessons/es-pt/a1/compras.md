@@ -8,6 +8,9 @@ unit: 2
 situation: 'Compras y supermercado'
 grammarTopic: 'Vocabulário: fazer compras'
 funFact: "Para pedir algo con cortesía, el portugués usa 'eu queria' (pretérito imperfecto) en vez del presente 'eu quero' — sonar menos directo es más educado, igual que 'quisiera' en español."
+skills:
+  - pt.a1.vocabulary.shopping
+  - pt.a1.number.cardinal
 minutes: 6
 phrases:
   - text: 'Eu queria um café.'
@@ -31,7 +34,12 @@ quiz:
     answerIndex: 0
     explanation: "'Quanto custa isso?' es la forma estándar para preguntar el precio."
   - question: "¿Por qué 'Eu queria um café' suena más cortés que 'Eu quero um café'?"
-    options: ['Porque es más corto.', 'Porque usa el pretérito imperfecto en vez del presente.', 'No hay diferencia.']
+    options:
+      [
+        'Porque es más corto.',
+        'Porque usa el pretérito imperfecto en vez del presente.',
+        'No hay diferencia.',
+      ]
     answerIndex: 1
     explanation: "'queria' (imperfecto) suaviza el pedido, igual que 'quisiera' en español frente a 'quiero'."
   - question: "'Está muito caro' significa..."

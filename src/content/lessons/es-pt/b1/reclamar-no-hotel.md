@@ -7,6 +7,9 @@ order: 11
 unit: 3
 grammarTopic: 'Pretérito imperfeito do subjuntivo após "se" (cortesia e hipótese)'
 funFact: '"se fosse possível" não fala do passado — fala de uma hipótese cortês. Memorize como bloco fixo: "se + imperfeito do subjuntivo" = pedido gentil, nunca um fato passado.'
+skills:
+  - pt.b1.subjunctive.imperfeito-se
+  - pt.b1.verb.condicional
 minutes: 8
 quiz:
   - question: 'Qual é a forma correta do imperfeito do subjuntivo de "ser" na primeira pessoa do singular?'
@@ -18,7 +21,12 @@ quiz:
     answerIndex: 1
     explanation: '"se fosse possível" suaviza o pedido — muito mais cortês do que "eu quero outro quarto".'
   - question: 'Em "se tivéssemos um quarto livre", o que indica o imperfeito do subjuntivo depois de "se"?'
-    options: ['que o quarto livre existe mesmo agora', 'que é uma condição hipotética, provavelmente não real', 'que aconteceu ontem']
+    options:
+      [
+        'que o quarto livre existe mesmo agora',
+        'que é uma condição hipotética, provavelmente não real',
+        'que aconteceu ontem',
+      ]
     answerIndex: 1
     explanation: '"se" + imperfeito do subjuntivo expressa uma condição irreal ou pouco provável no presente — aqui, a recepcionista deixa entender que não há quarto livre.'
 exercises:
@@ -62,13 +70,13 @@ de "se"**.
 
 Não memorize palavras soltas — memorize estas frases completas, prontas para usar:
 
-| Português                                                       | Español                                              |
-| ------------------------------------------------------------------ | -------------------------------------------------------- |
-| Desculpe, infelizmente tenho um problema com o meu quarto.         | Disculpe, lamentablemente tengo un problema con mi habitación. |
-| O aquecimento não funciona desde esta manhã.                       | La calefacción no funciona desde esta mañana.             |
-| Poderia mandar alguém verificar o problema?                        | ¿Podría enviar a alguien a revisar el problema?            |
-| Eu gostaria de outro quarto, se fosse possível.                    | Me gustaría otra habitación, si fuera posible.             |
-| Obrigado pela compreensão — espero que isso se resolva rápido.     | Gracias por su comprensión — espero que se resuelva rápido. |
+| Português                                                      | Español                                                        |
+| -------------------------------------------------------------- | -------------------------------------------------------------- |
+| Desculpe, infelizmente tenho um problema com o meu quarto.     | Disculpe, lamentablemente tengo un problema con mi habitación. |
+| O aquecimento não funciona desde esta manhã.                   | La calefacción no funciona desde esta mañana.                  |
+| Poderia mandar alguém verificar o problema?                    | ¿Podría enviar a alguien a revisar el problema?                |
+| Eu gostaria de outro quarto, se fosse possível.                | Me gustaría otra habitación, si fuera posible.                 |
+| Obrigado pela compreensão — espero que isso se resolva rápido. | Gracias por su comprensión — espero que se resuelva rápido.    |
 
 ## A conversa completa
 

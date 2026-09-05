@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Verbos modais (poder, dever, querer) + infinitivo'
 funFact: "Estos tres verbos comparten estructura idéntica: [verbo conjugado] + [infinitivo, sin cambios] — igual que en español. La diferencia real está en los matices: 'dever' se usa mucho más que 'ter que' para dar consejos suaves, mientras 'ter que' suena a obligación más innegociable. Ese matiz es tu próximo nivel de naturalidad."
+skills:
+  - pt.a2.verb.modal
 minutes: 7
 quiz:
   - question: "¿Cuál es la forma correcta de 'eu' (yo) con 'poder' (poder)?"

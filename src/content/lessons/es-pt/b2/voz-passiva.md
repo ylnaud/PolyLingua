@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Voz passiva (ser + particípio)'
 funFact: "La voz pasiva portuguesa es casi calcada de la española: 'la casa es construida' = 'a casa é construída'. Si ya la usas en español, la mayor parte del trabajo mental ya está hecho. Solo hay que recordar la concordancia del participio con el sujeto, igual que en español."
+skills:
+  - pt.b2.verb.passive
 minutes: 9
 quiz:
   - question: "¿Cuál es la voz pasiva correcta de 'O chef prepara o almoço' (el chef prepara el almuerzo)?"

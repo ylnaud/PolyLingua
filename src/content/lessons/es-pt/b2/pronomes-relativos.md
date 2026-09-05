@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Pronomes relativos (que, quem, cujo, onde)'
 funFact: "'Que' es el pronombre relativo más versátil del portugués — funciona para sujeto y objeto, personas y cosas. El verdadero reto está en 'cujo', que no se traduce como una sola palabra en español: significa 'cuyo/cuya' pero concuerda en género y número con lo que sigue, no con el poseedor."
+skills:
+  - pt.b2.pronoun.relative
 minutes: 9
 quiz:
   - question: "'Tenho um amigo. Esse amigo mora em Lisboa.' → 'Tenho um amigo ___ mora em Lisboa.' ¿Qué pronombre va?"

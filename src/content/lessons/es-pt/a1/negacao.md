@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: "Negação com 'não'"
 funFact: "A diferencia del español, donde 'no' puede combinarse con otras palabras negativas ('no quiero nada'), el portugués permite construcciones similares pero con más flexibilidad de orden: 'não quero nada' o, en habla coloquial brasileña, hasta 'não quero nada não' — una doble negación enfática muy característica del Brasil hablado."
+skills:
+  - pt.a1.negation.nao
 minutes: 6
 quiz:
   - question: "¿Cómo se dice 'No hablo portugués' en portugués?"

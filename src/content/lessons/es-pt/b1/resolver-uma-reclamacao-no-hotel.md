@@ -7,18 +7,31 @@ order: 13
 unit: 3
 grammarTopic: 'Pretérito perfeito simples vs. estar + particípio (ação vs. estado)'
 funFact: '"organizamos" conta O QUE foi feito; "está resolvido" descreve COMO as coisas estão agora. Pergunte-se: estou contando uma ação, ou descrevendo um estado?'
+skills:
+  - pt.b1.verb.passive-state
 minutes: 8
 quiz:
   - question: '"Organizamos um upgrade gratuito" descreve...'
-    options: ['um estado permanente', 'uma ação já concluída, com foco no que foi feito', 'uma hipótese']
+    options:
+      ['um estado permanente', 'uma ação já concluída, com foco no que foi feito', 'uma hipótese']
     answerIndex: 1
     explanation: 'O pretérito perfeito simples narra uma ação concluída no passado — aqui, o fato de ter organizado o upgrade.'
   - question: 'Por que se diz "o assunto está resolvido" e não "o assunto resolveu"?'
-    options: ['porque "resolvido" aqui descreve o estado resultante do assunto, não a ação de resolvê-lo', 'é um erro comum mas tolerado', '"resolver" não existe no pretérito perfeito']
+    options:
+      [
+        'porque "resolvido" aqui descreve o estado resultante do assunto, não a ação de resolvê-lo',
+        'é um erro comum mas tolerado',
+        '"resolver" não existe no pretérito perfeito',
+      ]
     answerIndex: 0
     explanation: '"está resolvido" (estar + particípio, quase como um adjetivo) descreve o estado atual do assunto, sem destacar quem o resolveu ou quando.'
   - question: 'Qual é a diferença de foco entre "nós organizamos isso" e "isso está organizado"?'
-    options: ['nenhuma, significam exatamente o mesmo', 'a primeira destaca quem agiu; a segunda destaca o resultado, independentemente de quem agiu', 'a segunda está incorreta']
+    options:
+      [
+        'nenhuma, significam exatamente o mesmo',
+        'a primeira destaca quem agiu; a segunda destaca o resultado, independentemente de quem agiu',
+        'a segunda está incorreta',
+      ]
     answerIndex: 1
     explanation: 'O pretérito perfeito simples mantém o sujeito e a ação em foco; "estar + particípio" como estado desloca o foco para o resultado em si.'
 exercises:
@@ -60,13 +73,13 @@ parecem, mas não significam a mesma coisa.
 
 ## Os 5 blocos de encerramento
 
-| Português                                                          | Español                                                        |
-| ---------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Português                                                              | Español                                                             |
+| ---------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | Organizamos um upgrade gratuito para uma suíte pelas noites restantes. | Le organizamos una mejora gratis a suite para las noches restantes. |
-| Isso parece uma solução justa, obrigado.                                | Eso parece una solución justa, gracias.                               |
-| Poderia confirmar isso por escrito, por favor?                          | ¿Podría confirmarlo por escrito, por favor?                            |
-| No que me diz respeito, o assunto está resolvido.                       | En lo que a mí respecta, el asunto está resuelto.                      |
-| Agradeço muito a sua resposta rápida.                                    | Realmente aprecio su rápida respuesta.                                 |
+| Isso parece uma solução justa, obrigado.                               | Eso parece una solución justa, gracias.                             |
+| Poderia confirmar isso por escrito, por favor?                         | ¿Podría confirmarlo por escrito, por favor?                         |
+| No que me diz respeito, o assunto está resolvido.                      | En lo que a mí respecta, el asunto está resuelto.                   |
+| Agradeço muito a sua resposta rápida.                                  | Realmente aprecio su rápida respuesta.                              |
 
 ## A conversa completa
 

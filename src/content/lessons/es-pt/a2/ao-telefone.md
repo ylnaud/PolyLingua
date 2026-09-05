@@ -8,6 +8,8 @@ unit: 2
 situation: 'Hablar por teléfono'
 grammarTopic: 'Vocabulário: ao telefone'
 funFact: "En Brasil se atiende el teléfono diciendo '¿Alô?', un préstamo del inglés 'hello'; en Portugal es más común 'Estou' o 'Está lá?', literalmente 'estoy' o '¿hay alguien ahí?'. Dos formas completamente distintas de decir exactamente lo mismo."
+skills:
+  - pt.a2.vocabulary.phone
 minutes: 7
 phrases:
   - text: 'Alô?'
@@ -37,7 +39,7 @@ quiz:
     options: ['¿Puedo dejar un mensaje?', '¿Puedo colgar ahora?', '¿Puedo llamar más tarde?']
     answerIndex: 0
     explanation: "'o recado' es el mensaje que dejás para que le den a alguien. 'Deixar um recado' es dejar un mensaje."
-  - question: "¿Cómo pedirías hablar con Ana por teléfono?"
+  - question: '¿Cómo pedirías hablar con Ana por teléfono?'
     options: ['Eu sou a Ana.', 'Posso falar com a Ana?', 'Onde está a Ana?']
     answerIndex: 1
     explanation: "'Posso falar com...?' es la fórmula estándar para pedir hablar con alguien por teléfono."
@@ -68,7 +70,7 @@ exercises:
       - left: 'Foi engano'
         right: 'Me equivoqué de número'
   - type: 'write'
-    prompt: "Atendés el teléfono y te presentás como Marina. ¿Qué decís?"
+    prompt: 'Atendés el teléfono y te presentás como Marina. ¿Qué decís?'
     answer: 'Alô, aqui é a Marina'
     accepted: ['Alô, aqui é a Marina.', 'Aqui é a Marina', 'Aqui é a Marina.']
     hint: "'aqui é' + tu nombre, la fórmula para presentarte al teléfono."

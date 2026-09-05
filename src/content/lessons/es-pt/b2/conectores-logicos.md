@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Conectores lógicos de contraste e concessão'
 funFact: "'No entanto' y 'contudo' son prácticamente intercambiables en significado, pero 'contudo' suena ligeramente más formal/escrito, mientras que 'no entanto' se usa con más libertad tanto en habla cuidada como en textos — una diferencia de registro sutil que solo se aprende con exposición real al idioma."
+skills:
+  - pt.b2.connector.logical
 minutes: 8
 quiz:
   - question: "¿Qué significa 'no entanto' en portugués?"

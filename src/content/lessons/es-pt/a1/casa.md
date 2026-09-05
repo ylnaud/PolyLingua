@@ -8,6 +8,8 @@ unit: 2
 situation: 'Casa'
 grammarTopic: 'Vocabulário: a casa'
 funFact: "'Tem' es la forma más usada en el habla cotidiana (sobre todo en Brasil) para decir que algo 'hay' en un lugar, mientras que 'há' es más formal y común en Portugal — ambas son correctas, así que puedes usar la que te resulte más natural."
+skills:
+  - pt.a1.vocabulary.home
 minutes: 6
 phrases:
   - text: 'Tem uma mesa na cozinha.'
@@ -64,7 +66,7 @@ exercises:
     prompt: "Escribe en portugués cómo dirías 'el sofá'."
     answer: 'o sofá'
     accepted: ['sofá', 'o sofa', 'sofa']
-    hint: "Es casi igual al español, pero con género masculino y acento."
+    hint: 'Es casi igual al español, pero con género masculino y acento.'
     placeholder: 'a mesa'
   - type: 'order'
     sentence: 'Tem uma mesa na cozinha'
@@ -93,21 +95,21 @@ anuncios de alquiler, guías turísticas o simples conversaciones cotidianas.
 
 ## Las habitaciones
 
-| Portugués  | Español    |
-| ---------- | ---------- |
-| a cozinha  | la cocina  |
+| Portugués  | Español       |
+| ---------- | ------------- |
+| a cozinha  | la cocina     |
 | o quarto   | el dormitorio |
-| o banheiro | el baño    |
-| a sala     | el salón   |
+| o banheiro | el baño       |
+| a sala     | el salón      |
 
 ## Muebles básicos
 
-| Portugués   | Español  |
-| ----------- | -------- |
-| a cama      | la cama  |
-| a mesa      | la mesa  |
-| a cadeira   | la silla |
-| o sofá      | el sofá  |
+| Portugués | Español  |
+| --------- | -------- |
+| a cama    | la cama  |
+| a mesa    | la mesa  |
+| a cadeira | la silla |
+| o sofá    | el sofá  |
 
 ## Cómo decir que "hay" algo: tem / há
 

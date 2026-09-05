@@ -7,17 +7,19 @@ order: 10
 unit: 3
 grammarTopic: 'Pronomes demonstrativos (este/esse/aquele)'
 funFact: "El truco no es memorizar tres palabras, es pensar en tres 'zonas': este = mi mano, esse = tu mano, aquele = el horizonte. Y si no tenés ni idea de qué género tiene la cosa que señalás, usá la forma neutra: isto, isso o aquilo."
+skills:
+  - pt.b2.pronoun.demonstrative
 minutes: 9
 quiz:
-  - question: "¿Cuál pronombre demostrativo usas para algo cerca de quien HABLA?"
+  - question: '¿Cuál pronombre demostrativo usas para algo cerca de quien HABLA?'
     options: ['esse', 'este', 'aquele']
     answerIndex: 1
     explanation: "'Este' se usa para lo que está cerca de quien habla: 'Este livro aqui é meu' (este libro, aquí conmigo)."
-  - question: "¿Cuál pronombre usas para algo cerca de quien ESCUCHA o ya mencionado en la conversación?"
+  - question: '¿Cuál pronombre usas para algo cerca de quien ESCUCHA o ya mencionado en la conversación?'
     options: ['esse', 'este', 'aquele']
     answerIndex: 0
     explanation: "'Esse' se usa para lo cercano al oyente, o para retomar algo ya mencionado: 'Esse livro aí, de quem é?'"
-  - question: "¿Qué forma neutra usas cuando no sabes o no importa el género de lo que señalas y está lejos de ambos?"
+  - question: '¿Qué forma neutra usas cuando no sabes o no importa el género de lo que señalas y está lejos de ambos?'
     options: ['isto', 'isso', 'aquilo']
     answerIndex: 2
     explanation: "'Aquilo' es la forma neutra de 'aquele/aquela', para señalar algo lejano sin especificar género: 'O que é aquilo ali?'"
@@ -51,7 +53,7 @@ exercises:
     prompt: "Traduce: 'Aquel libro (allá lejos, en la otra punta del cuarto) es interesante.'"
     answer: 'Aquele livro é interessante.'
     accepted: ['Aquele livro é interessante']
-    hint: "Lejos de quien habla y de quien escucha: aquele."
+    hint: 'Lejos de quien habla y de quien escucha: aquele.'
     placeholder: 'Aquele livro...'
   - type: 'order'
     sentence: 'Este livro aqui é meu'
@@ -75,11 +77,11 @@ distinta respecto a quien habla y a quien escucha.
 
 ## Las tres zonas de distancia
 
-| Pronombre | Distancia                                 | Ejemplo                              |
-| --------- | ------------------------------------------ | -------------------------------------- |
-| este      | cerca de quien habla                       | Este livro aqui é meu.                |
-| esse      | cerca de quien escucha / ya mencionado     | Esse livro aí, de quem é?             |
-| aquele    | lejos de ambos                             | Aquele livro ali, na estante, é raro. |
+| Pronombre | Distancia                              | Ejemplo                               |
+| --------- | -------------------------------------- | ------------------------------------- |
+| este      | cerca de quien habla                   | Este livro aqui é meu.                |
+| esse      | cerca de quien escucha / ya mencionado | Esse livro aí, de quem é?             |
+| aquele    | lejos de ambos                         | Aquele livro ali, na estante, é raro. |
 
 ## Género y número: concuerdan como adjetivos
 

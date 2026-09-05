@@ -1,12 +1,14 @@
 ---
 language: pt
 level: b1
-title: "Há, desde, durante: expresa el tiempo sin confundirte"
-description: "Diferencia entre há, desde y durante en portugués para expresar duración y tiempo transcurrido, la trampa más común para hispanohablantes."
+title: 'Há, desde, durante: expresa el tiempo sin confundirte'
+description: 'Diferencia entre há, desde y durante en portugués para expresar duración y tiempo transcurrido, la trampa más común para hispanohablantes.'
 order: 10
 unit: 3
 grammarTopic: 'Há / desde / durante (expressões de tempo e duração)'
 funFact: "Cuando en español decís 'desde hace 5 años', en portugués NO existe esa combinación — usás solo 'há 5 anos', sin 'desde'. Guardate esta equivalencia: 'desde hace' (español) = 'há' (portugués), sin traducir la palabra 'desde'. Es el error número uno de los hispanohablantes con este tema."
+skills:
+  - pt.b1.preposition.ha-desde
 minutes: 8
 quiz:
   - question: "¿Cómo se dice 'Vivo aquí desde hace 5 años' en portugués?"
@@ -17,11 +19,11 @@ quiz:
     options: ['Não a vejo há 2020', 'Não a vejo desde 2020', 'Não a vejo durante 2020']
     answerIndex: 1
     explanation: "'desde' se usa con un punto o momento concreto de partida: desde 2020, desde que cheguei. 'há' se usa con una cantidad de tiempo transcurrido."
-  - question: "¿Cuál conjunción expresa una duración con principio y fin claros, como unas vacaciones?"
+  - question: '¿Cuál conjunción expresa una duración con principio y fin claros, como unas vacaciones?'
     options: ['há', 'desde', 'durante']
     answerIndex: 2
     explanation: "'durante' expresa una duración completa, delimitada: Viajei durante dois meses (Viajé durante dos meses, con inicio y fin definidos)."
-  - question: "¿Qué construcción es incorrecta en portugués?"
+  - question: '¿Qué construcción es incorrecta en portugués?'
     options: ['Moro aqui há 5 anos', 'Trabalho aqui desde 2018', 'Moro aqui desde há 5 anos']
     answerIndex: 2
     explanation: "'desde há' no existe en portugués — es el calco directo del español 'desde hace' que hay que evitar. Usa 'há' solo, sin 'desde'."
@@ -55,7 +57,7 @@ exercises:
     prompt: "Escribe en portugués: 'Viajé durante dos meses.'"
     answer: 'Viajei durante dois meses.'
     accepted: []
-    hint: "Duración completa con inicio y fin definidos = durante."
+    hint: 'Duración completa con inicio y fin definidos = durante.'
     placeholder: 'Trabalho aqui desde 2018.'
   - type: 'order'
     sentence: 'Trabalho aqui desde que cheguei ao Brasil'
@@ -118,11 +120,11 @@ Ela estudou durante a noite.     (Ella estudió durante la noche)
 
 ## Comparando los tres
 
-| Expresión | Responde a...                     | Ejemplo                        |
-| --------- | ---------------------------------- | ------------------------------- |
-| há        | ¿cuánto tiempo hace que...?        | Moro aqui há 5 anos.            |
-| desde     | ¿desde cuándo/qué momento?         | Moro aqui desde 2019.           |
-| durante   | ¿cuánto duró, de principio a fin?  | Morei lá durante 5 anos.        |
+| Expresión | Responde a...                     | Ejemplo                  |
+| --------- | --------------------------------- | ------------------------ |
+| há        | ¿cuánto tiempo hace que...?       | Moro aqui há 5 anos.     |
+| desde     | ¿desde cuándo/qué momento?        | Moro aqui desde 2019.    |
+| durante   | ¿cuánto duró, de principio a fin? | Morei lá durante 5 anos. |
 
 Fíjate en la última fila: "morei" (pretérito, acción terminada) + "durante" describe un
 período cerrado en el pasado, mientras que "moro" (presente) + "há" describe algo que

@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Estruturas de negação avançadas'
 funFact: "'Nem' puede funcionar solo ('Nem eu sei' = Ni yo sé) o duplicado ('Nem como nem bebo' = Ni como ni bebo) — y en portugués coloquial brasileño, 'nem' también se usa como respuesta enfática corta a una pregunta negativa, muy parecido a un 'para nada' o 'qué va' del español."
+skills:
+  - pt.b1.negation.advanced
 minutes: 7
 quiz:
   - question: "¿Qué significa 'nem' en portugués?"

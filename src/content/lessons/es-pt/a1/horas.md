@@ -7,6 +7,9 @@ order: 4
 unit: 1
 grammarTopic: 'As horas'
 funFact: "En portugués, para decir la hora se usa el verbo 'ser' en plural ('São duas horas') excepto para la una, donde va en singular ('É uma hora') — un pequeño detalle de concordancia que refleja si hablas de una hora o de varias."
+skills:
+  - pt.a1.time.telling
+  - pt.a1.number.cardinal
 minutes: 6
 quiz:
   - question: '¿Cómo preguntas la hora en portugués?'

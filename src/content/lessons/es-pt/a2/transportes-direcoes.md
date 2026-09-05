@@ -8,6 +8,9 @@ unit: 2
 situation: 'Transporte y ciudad'
 grammarTopic: 'Vocabulário: transportes e direções'
 funFact: "'Ônibus' es la palabra brasileña para autobús, pero en Portugal se dice 'autocarro'; lo mismo pasa con 'trem' (BR) y 'comboio' (PT) — conocer ambas te evita confusiones al viajar por el mundo lusófono."
+skills:
+  - pt.a2.vocabulary.transport
+  - pt.a2.preposition.contraction
 minutes: 7
 phrases:
   - text: 'Como chego à estação?'
@@ -97,22 +100,22 @@ visitar un país de habla portuguesa.
 
 ## Medios de transporte
 
-| Portugués (Brasil) | Portugués (Portugal) | Español |
-| ------------------- | --------------------- | ------- |
-| o ônibus            | o autocarro           | el autobús |
-| o trem              | o comboio             | el tren |
-| o táxi              | o táxi                | el taxi |
-| o metrô             | o metro               | el metro |
+| Portugués (Brasil) | Portugués (Portugal) | Español    |
+| ------------------ | -------------------- | ---------- |
+| o ônibus           | o autocarro          | el autobús |
+| o trem             | o comboio            | el tren    |
+| o táxi             | o táxi               | el taxi    |
+| o metrô            | o metro              | el metro   |
 
 ## Direcciones básicas
 
-| Portugués        | Español            |
-| ----------------- | ------------------- |
-| virar à esquerda  | girar a la izquierda |
-| virar à direita   | girar a la derecha   |
-| em frente         | todo recto / en frente |
-| ao lado de        | al lado de          |
-| perto de          | cerca de             |
+| Portugués        | Español                |
+| ---------------- | ---------------------- |
+| virar à esquerda | girar a la izquierda   |
+| virar à direita  | girar a la derecha     |
+| em frente        | todo recto / en frente |
+| ao lado de       | al lado de             |
+| perto de         | cerca de               |
 
 ## Preguntar y dar indicaciones
 

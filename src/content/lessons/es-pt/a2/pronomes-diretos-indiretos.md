@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Pronomes de objeto direto e indireto'
 funFact: "En el portugués hablado de Brasil, es extremadamente común usar el pronombre sujeto en vez del pronombre de objeto directo: en vez de 'Eu vi ela' (gramaticalmente 'incorrecto' según la norma culta, que exigiría 'Eu a vi'), esa forma domina el habla real de todo el país — un caso fascinante de norma escrita vs. uso hablado."
+skills:
+  - pt.a2.pronoun.direct-indirect
 minutes: 7
 quiz:
   - question: '¿Cuál es el pronombre de objeto directo femenino singular en portugués?'

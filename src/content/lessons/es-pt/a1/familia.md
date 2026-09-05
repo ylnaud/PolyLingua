@@ -8,6 +8,9 @@ unit: 2
 situation: 'Familia y amigos'
 grammarTopic: 'Vocabulário da família'
 funFact: "'Os pais' en portugués significa 'los padres' (papá y mamá juntos), no 'los países' — un falso amigo clásico con el español que ha confundido a generaciones de estudiantes hispanohablantes desde el primer día de clase."
+skills:
+  - pt.a1.vocabulary.family
+  - pt.a1.possessive.article
 minutes: 6
 phrases:
   - text: 'Este é o meu pai.'

@@ -7,18 +7,31 @@ order: 10
 unit: 3
 grammarTopic: 'Diminutivos e aumentativos (além do tamanho)'
 funFact: "'Um cafezinho' casi nunca se refiere a una taza pequeña de café — es una invitación cariñosa, casi un gesto social. Y 'que ideia boazinha...' dicho con el tono correcto es puro sarcasmo. El diminutivo portugués miente sobre el tamaño constantemente, y esa es la gracia."
+skills:
+  - pt.c2.morphology.diminutive
 minutes: 10
 quiz:
   - question: "¿Qué comunica 'um cafezinho' además (o en vez) de tamaño pequeño?"
-    options: ['Nada distinto, solo indica que la taza es chica', 'Cariño, cercanía o una invitación amable', 'Que el café está frío']
+    options:
+      [
+        'Nada distinto, solo indica que la taza es chica',
+        'Cariño, cercanía o una invitación amable',
+        'Que el café está frío',
+      ]
     answerIndex: 1
     explanation: "'Cafezinho' es sobre todo una forma cariñosa de ofrecer o hablar de un café — no indica necesariamente que la taza sea pequeña."
   - question: "¿Qué expresa el aumentativo en 'Ela é um mulherão'?"
-    options: ['Que la mujer es muy alta físicamente', 'Admiración: una mujer impresionante o imponente', 'Un insulto directo']
+    options:
+      [
+        'Que la mujer es muy alta físicamente',
+        'Admiración: una mujer impresionante o imponente',
+        'Un insulto directo',
+      ]
     answerIndex: 1
     explanation: "'Mulherão' es un elogio admirativo — el aumentativo aquí expresa impresión positiva, no describe literalmente el tamaño."
   - question: "¿Qué otro matiz, además del cariño, puede expresar el diminutivo '-inho/-inha'?"
-    options: ['Solo tamaño físico, nunca otra cosa', 'Ironía o sarcasmo, según el tono', 'Tiempo pasado']
+    options:
+      ['Solo tamaño físico, nunca otra cosa', 'Ironía o sarcasmo, según el tono', 'Tiempo pasado']
     answerIndex: 1
     explanation: "El diminutivo también puede ser irónico: 'Que ideia boazinha...' dicho con sarcasmo comunica justo lo contrario de 'buena idea'."
 exercises:
@@ -26,7 +39,7 @@ exercises:
     sentence: 'Vamos tomar um ___? (invitación cariñosa a un café)'
     answer: 'cafezinho'
     accepted: ['cafezinho']
-    hint: "Diminutivo de cariño, no indica tamaño real de la taza."
+    hint: 'Diminutivo de cariño, no indica tamaño real de la taza.'
     translation: '¿Vamos a tomar un cafecito?'
     placeholder: 'cafezinho'
   - type: 'fill-blank'
@@ -103,12 +116,12 @@ son los que revelan si es cariño o sarcasmo.
 "-ão" (o "-zão" según la terminación de la palabra) no solo agranda: intensifica,
 impresiona o elogia:
 
-| Palabra base | Con "-ão" | Matiz real                        |
-| ------------- | ---------- | ------------------------------------ |
-| mulher         | mulherão   | mujer imponente (admiración)        |
-| carro           | carrão     | auto impresionante                  |
-| problema        | problemão  | problema grave, no solo grande      |
-| homem            | homenzão   | hombre imponente físicamente        |
+| Palabra base | Con "-ão" | Matiz real                     |
+| ------------ | --------- | ------------------------------ |
+| mulher       | mulherão  | mujer imponente (admiración)   |
+| carro        | carrão    | auto impresionante             |
+| problema     | problemão | problema grave, no solo grande |
+| homem        | homenzão  | hombre imponente físicamente   |
 
 ```
 Que carrão! Deve ter custado uma fortuna.

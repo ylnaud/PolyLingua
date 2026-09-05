@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Formação de perguntas'
 funFact: "El portugués no invierte el orden sujeto-verbo para preguntas de sí/no como el inglés — basta con la entonación (o los signos '?' al escribir): 'Você fala português?' tiene exactamente el mismo orden de palabras que la afirmación, solo cambia la entonación."
+skills:
+  - pt.a1.question.words
 minutes: 6
 quiz:
   - question: '¿Cómo formas una pregunta de sí/no en portugués?'

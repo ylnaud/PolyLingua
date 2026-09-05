@@ -8,6 +8,9 @@ unit: 2
 situation: 'Animales'
 grammarTopic: 'Vocabulário: os animais'
 funFact: "En Brasil 'cachorro' es la palabra normal para perro (de cualquier edad), mientras que en Portugal 'cachorro' se usa más para cachorro/cría — allí lo habitual es 'cão'. Si viajas, ambas palabras te van a entender."
+skills:
+  - pt.a1.vocabulary.animals
+  - pt.a1.noun.plural-ao
 minutes: 6
 phrases:
   - text: 'Eu tenho um gato.'
@@ -97,21 +100,21 @@ para hablar de mascotas o para leer cuentos infantiles en portugués.
 
 ## Animales domésticos
 
-| Portugués   | Español   |
-| ----------- | --------- |
-| o cachorro  | el perro  |
-| o gato      | el gato   |
-| o peixe     | el pez    |
-| o pássaro   | el pájaro |
+| Portugués  | Español   |
+| ---------- | --------- |
+| o cachorro | el perro  |
+| o gato     | el gato   |
+| o peixe    | el pez    |
+| o pássaro  | el pájaro |
 
 ## Animales de granja y salvajes
 
-| Portugués   | Español    |
-| ----------- | ---------- |
-| a vaca      | la vaca    |
-| o cavalo    | el caballo |
-| o leão      | el león    |
-| o elefante  | el elefante |
+| Portugués  | Español     |
+| ---------- | ----------- |
+| a vaca     | la vaca     |
+| o cavalo   | el caballo  |
+| o leão     | el león     |
+| o elefante | el elefante |
 
 ## Describir animales con ser y ter
 

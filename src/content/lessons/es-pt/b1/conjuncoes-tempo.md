@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Conjunções temporais'
 funFact: "Cuando una conjunción temporal se refiere a una acción futura todavía no realizada, el portugués exige el futuro do subjuntivo ('Quando eu chegar, te aviso') — un tiempo verbal que no existe en español y que suele sorprender a hispanohablantes, aunque su lógica es muy similar a la del subjuntivo presente español en frases equivalentes."
+skills:
+  - pt.b1.conjunction.time
 minutes: 8
 quiz:
   - question: "¿Qué tiempo verbal exige 'quando' cuando se refiere a una acción futura aún no realizada?"

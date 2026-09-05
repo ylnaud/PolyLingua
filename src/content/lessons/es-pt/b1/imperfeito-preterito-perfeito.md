@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Pretérito imperfeito vs Pretérito perfeito'
 funFact: "Buenas noticias: esta distinción es la MÁS fácil de las que vas a estudiar en los cinco idiomas de PolyLingua, porque el portugués la organiza exactamente igual que el español. Si sabes cuándo usar 'llovía' vs 'llovió', ya sabes cuándo usar 'chovia' vs 'choveu'."
+skills:
+  - pt.b1.verb.imperfeito
 minutes: 8
 quiz:
   - question: "¿Cuál es correcta para describir el clima como telón de fondo: '___ quando eu cheguei' (llovía cuando llegué)?"

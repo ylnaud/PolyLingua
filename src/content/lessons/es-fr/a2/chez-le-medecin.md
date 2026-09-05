@@ -12,7 +12,7 @@ skills:
   - fr.a2.vocabulary.health
 minutes: 7
 phrases:
-  - text: "Je ne me sens pas bien."
+  - text: 'Je ne me sens pas bien.'
     es: 'No me siento bien.'
   - text: "J'ai mal à la tête."
     es: 'Tengo dolor de cabeza.'
@@ -29,7 +29,7 @@ phrases:
     es: '¡Que te mejores!'
 quiz:
   - question: "¿Cómo se dice 'Tengo dolor de cabeza' en francés?"
-    options: ["J'ai un mal de tête.", "J'ai mal à la tête.", "Je suis mal à la tête."]
+    options: ["J'ai un mal de tête.", "J'ai mal à la tête.", 'Je suis mal à la tête.']
     answerIndex: 1
     explanation: "'avoir mal à' + la parte del cuerpo es la fórmula fija: j'ai mal à la tête."
   - question: "'J'ai besoin d'un rendez-vous' significa..."

@@ -5286,6 +5286,856 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // FRANCÉS — B1 y B2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    skillId: 'fr.b1.verb.imparfait',
+    explanation:
+      'El imparfait se saca de la forma **nous** del presente: *nous parlons* → **parl-** + ais, ais, ait, ions, iez, aient. La única excepción es *être*, que hace **ét-**.',
+    variations: [
+      {
+        sentence: 'Quand j’étais petit, je ___ au parc. (aller)',
+        answer: 'allais',
+        translation: 'De chico iba al parque.',
+      },
+      {
+        sentence: 'Il ___ toujours en retard. (être)',
+        answer: 'était',
+        translation: 'Él siempre llegaba tarde.',
+      },
+      {
+        sentence: 'Nous ___ la télé tous les soirs. (regarder)',
+        answer: 'regardions',
+        translation: 'Mirábamos la tele todas las noches.',
+      },
+      {
+        sentence: 'Vous ___ beaucoup à cette époque. (voyager)',
+        answer: 'voyagiez',
+        translation: 'Ustedes viajaban mucho en esa época.',
+      },
+      {
+        sentence: 'Elles ___ à Paris avant. (habiter)',
+        answer: 'habitaient',
+        translation: 'Ellas vivían en París antes.',
+      },
+      {
+        sentence: 'Tu ___ faim tous les matins. (avoir)',
+        answer: 'avais',
+        translation: 'Tenías hambre todas las mañanas.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.aspect.imparfait-vs-pc',
+    explanation:
+      'No es cuestión de cuánto duró: es de **qué papel juega**. El imparfait pinta el decorado (cómo estaban las cosas, lo que se repetía); el passé composé cuenta lo que **pasó** y empujó la historia. En la misma frase suelen convivir: *je dormais quand le téléphone a sonné*.',
+    variations: [
+      {
+        sentence: 'Je ___ quand le téléphone a sonné. (dormir)',
+        answer: 'dormais',
+        translation: 'Dormía cuando sonó el teléfono.',
+      },
+      {
+        sentence: 'Hier, j’___ un très bon film. (voir)',
+        answer: 'ai vu',
+        translation: 'Ayer vi una película muy buena.',
+      },
+      {
+        sentence: 'Il faisait beau, alors nous ___ à la plage. (aller)',
+        answer: 'sommes allés',
+        translation: 'Hacía buen tiempo, así que fuimos a la playa.',
+      },
+      {
+        sentence: 'Tous les étés, on ___ chez ma grand-mère. (aller)',
+        answer: 'allait',
+        translation: 'Todos los veranos íbamos a casa de mi abuela.',
+      },
+      {
+        sentence: 'Elle lisait tranquillement quand quelqu’un ___ à la porte. (frapper)',
+        answer: 'a frappé',
+        translation: 'Leía tranquila cuando alguien golpeó la puerta.',
+      },
+      {
+        sentence: 'Avant, je ne ___ pas le café. (aimer)',
+        answer: 'aimais',
+        translation: 'Antes no me gustaba el café.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.verb.futur-simple',
+    explanation:
+      'El futur simple se arma sobre el **infinitivo entero** + ai, as, a, ons, ez, ont. Los -re pierden la e final: *prendre* → **prendr-**. Los irregulares son pocos y muy usados: *être* → ser-, *avoir* → aur-, *aller* → ir-, *faire* → fer-.',
+    variations: [
+      {
+        sentence: 'Demain je ___ mes amis. (visiter)',
+        answer: 'visiterai',
+        translation: 'Mañana visitaré a mis amigos.',
+      },
+      {
+        sentence: 'Tu ___ ce livre la semaine prochaine. (finir)',
+        answer: 'finiras',
+        translation: 'Terminarás este libro la semana que viene.',
+      },
+      {
+        sentence: 'Il ___ médecin un jour. (être)',
+        answer: 'sera',
+        translation: 'Él será médico algún día.',
+      },
+      {
+        sentence: 'Nous ___ le temps demain. (avoir)',
+        answer: 'aurons',
+        translation: 'Tendremos tiempo mañana.',
+      },
+      {
+        sentence: 'Vous ___ en Italie cet été. (aller)',
+        answer: 'irez',
+        translation: 'Ustedes irán a Italia este verano.',
+      },
+      {
+        sentence: 'Ils ___ le train de 8 heures. (prendre)',
+        answer: 'prendront',
+        translation: 'Tomarán el tren de las 8.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.verb.conditionnel',
+    explanation:
+      'El condicional es la **raíz del futuro** con las terminaciones del imparfait: *je ferai* (haré) → *je ferais* (haría). Una sola letra los separa al escribir, y en el habla la diferencia también es mínima: hay que fijarse.',
+    variations: [
+      {
+        sentence: 'Je ___ un café, s’il vous plaît. (vouloir)',
+        answer: 'voudrais',
+        translation: 'Querría un café, por favor.',
+      },
+      {
+        sentence: 'Tu ___ m’aider ? (pouvoir)',
+        answer: 'pourrais',
+        translation: '¿Podrías ayudarme?',
+      },
+      {
+        sentence: 'À ta place, je ___ le train. (prendre)',
+        answer: 'prendrais',
+        translation: 'En tu lugar, tomaría el tren.',
+      },
+      {
+        sentence: 'Nous ___ partir plus tôt. (devoir)',
+        answer: 'devrions',
+        translation: 'Deberíamos irnos más temprano.',
+      },
+      {
+        sentence: 'Ce ___ une bonne idée. (être)',
+        answer: 'serait',
+        translation: 'Sería una buena idea.',
+      },
+      {
+        sentence: 'Ils ___ venir avec nous. (aimer)',
+        answer: 'aimeraient',
+        translation: 'A ellos les gustaría venir con nosotros.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.clause.subordinate',
+    explanation:
+      'La subordinada va con **que** y el verbo se queda en su sitio: *je pense que tu as raison*. Al revés que en español, *que* **no se puede omitir** nunca: «je pense tu as raison» no existe.',
+    variations: [
+      {
+        sentence: 'Je pense ___ tu as raison.',
+        answer: 'que',
+        translation: 'Creo que tenés razón.',
+      },
+      {
+        sentence: 'Il est parti ___ il était fatigué.',
+        answer: 'parce qu’',
+        translation: 'Se fue porque estaba cansado.',
+      },
+      {
+        sentence: 'Elle dit ___ elle viendra demain.',
+        answer: 'qu’',
+        translation: 'Dice que vendrá mañana.',
+      },
+      {
+        sentence: 'Nous savons ___ le magasin est fermé.',
+        answer: 'que',
+        translation: 'Sabemos que la tienda está cerrada.',
+      },
+      {
+        sentence: '___ il pleuvait, nous sommes sortis.',
+        answer: 'Bien qu’',
+        translation: 'Aunque llovía, salimos.',
+      },
+      {
+        sentence: 'J’espère ___ tout ira bien.',
+        answer: 'que',
+        translation: 'Espero que todo vaya bien.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.subjunctive.intro',
+    explanation:
+      'El subjuntivo no lo decide el significado, lo decide **la palabra que lo introduce**. *Bien que*, *pour que*, *avant que* y *il faut que* lo piden siempre; *parce que*, *pendant que* y *je pense que* (afirmativo) piden indicativo. Hay que aprender la lista, no razonarla.',
+    variations: [
+      {
+        sentence: 'Il faut que tu ___ tout de suite. (partir)',
+        answer: 'partes',
+        translation: 'Hace falta que te vayas enseguida.',
+      },
+      {
+        sentence: 'Bien qu’il ___ fatigué, il continue. (être)',
+        answer: 'soit',
+        translation: 'Aunque esté cansado, sigue.',
+      },
+      {
+        sentence: 'Je pense qu’elle ___ raison. (avoir)',
+        answer: 'a',
+        translation: 'Creo que ella tiene razón.',
+      },
+      {
+        sentence: 'Pour que vous ___ comprendre, je répète. (pouvoir)',
+        answer: 'puissiez',
+        translation: 'Para que puedan entender, repito.',
+      },
+      {
+        sentence: 'Il est parti parce qu’il ___ tard. (être)',
+        answer: 'était',
+        translation: 'Se fue porque era tarde.',
+      },
+      {
+        sentence: 'Je veux que tu ___ avec moi. (venir)',
+        answer: 'viennes',
+        translation: 'Quiero que vengas conmigo.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.pronoun.y-en',
+    explanation:
+      'La pregunta no es qué significan, sino **qué preposición había**. Lo que iba con **à** o con un lugar se sustituye por **y**; lo que iba con **de** o con una cantidad, por **en**. *Je pense à Paris* → *j’y pense*. *Je parle de mon travail* → *j’en parle*.',
+    variations: [
+      {
+        sentence: 'Tu vas à Paris ? — Oui, j’___ vais demain.',
+        answer: 'y',
+        translation: '¿Vas a París? —Sí, voy mañana.',
+      },
+      {
+        sentence: 'Tu parles de ton travail ? — Oui, j’___ parle souvent.',
+        answer: 'en',
+        translation: '¿Hablás de tu trabajo? —Sí, hablo seguido de eso.',
+      },
+      {
+        sentence: 'Tu as du pain ? — Oui, j’___ ai.',
+        answer: 'en',
+        translation: '¿Tenés pan? —Sí, tengo.',
+      },
+      {
+        sentence: 'Vous pensez à ce problème ? — Oui, nous ___ pensons.',
+        answer: 'y',
+        translation: '¿Piensan en ese problema? —Sí, pensamos en eso.',
+      },
+      {
+        sentence: 'Elle revient du marché ? — Oui, elle ___ revient.',
+        answer: 'en',
+        translation: '¿Vuelve del mercado? —Sí, vuelve de ahí.',
+      },
+      {
+        sentence: 'Il joue au tennis ? — Oui, il ___ joue le samedi.',
+        answer: 'y',
+        translation: '¿Juega al tenis? —Sí, juega los sábados.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.conjunction.time',
+    explanation:
+      'Con **quand**, **lorsque** y **dès que**, el francés pone el **futuro** donde el español pone presente o subjuntivo: *quand tu **arriveras**, appelle-moi* («cuando llegues»). Es de los errores que más delatan al hispanohablante.',
+    variations: [
+      {
+        sentence: 'Quand tu ___, appelle-moi. (arriver)',
+        answer: 'arriveras',
+        translation: 'Cuando llegues, llamame.',
+      },
+      {
+        sentence: 'Dès que je ___ le temps, je t’écrirai. (avoir)',
+        answer: 'aurai',
+        translation: 'En cuanto tenga tiempo, te escribo.',
+      },
+      {
+        sentence: 'Lorsqu’il ___ prêt, nous partirons. (être)',
+        answer: 'sera',
+        translation: 'Cuando esté listo, saldremos.',
+      },
+      {
+        sentence: 'Quand nous ___ à Paris, il fera froid. (arriver)',
+        answer: 'arriverons',
+        translation: 'Cuando lleguemos a París, hará frío.',
+      },
+      {
+        sentence: 'Pendant que tu ___, je préparerai le dîner. (travailler)',
+        answer: 'travailleras',
+        translation: 'Mientras trabajes, prepararé la cena.',
+      },
+      {
+        sentence: 'Dès qu’elle ___, préviens-moi. (finir)',
+        answer: 'finira',
+        translation: 'En cuanto termine, avisame.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.negation.advanced',
+    explanation:
+      'El *pas* se cambia por otra palabra, pero el **ne se queda**: *ne… jamais* (nunca), *ne… rien* (nada), *ne… personne* (nadie), *ne… plus* (ya no). Nunca se ponen los dos: «ne pas jamais» no existe.',
+    variations: [
+      {
+        sentence: 'Je ne mange ___ de viande.',
+        answer: 'jamais',
+        translation: 'Nunca como carne.',
+      },
+      {
+        sentence: 'Il n’y a ___ dans le frigo.',
+        answer: 'rien',
+        translation: 'No hay nada en la heladera.',
+      },
+      {
+        sentence: 'Je ne connais ___ ici.',
+        answer: 'personne',
+        translation: 'No conozco a nadie acá.',
+      },
+      {
+        sentence: 'Elle ne fume ___ depuis un an.',
+        answer: 'plus',
+        translation: 'Ya no fuma desde hace un año.',
+      },
+      {
+        sentence: 'Nous n’avons ___ vu ce film.',
+        answer: 'jamais',
+        translation: 'Nunca vimos esa película.',
+      },
+      {
+        sentence: 'Il ne reste ___ à faire.',
+        answer: 'rien',
+        translation: 'No queda nada por hacer.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.pronoun.indefinite',
+    explanation:
+      '**quelqu’un** y **quelque chose** son los positivos; sus negativos son **personne** y **rien**, y arrastran el *ne* al verbo. En una respuesta corta van solos: *— Qui est là ? — Personne.*',
+    variations: [
+      {
+        sentence: '___ a sonné à la porte.',
+        answer: 'Quelqu’un',
+        translation: 'Alguien tocó el timbre.',
+      },
+      {
+        sentence: 'J’ai acheté ___ pour toi.',
+        answer: 'quelque chose',
+        translation: 'Compré algo para vos.',
+      },
+      {
+        sentence: 'Il n’y a ___ dans la salle.',
+        answer: 'personne',
+        translation: 'No hay nadie en la sala.',
+      },
+      { sentence: 'Je ne veux ___ manger.', answer: 'rien', translation: 'No quiero comer nada.' },
+      {
+        sentence: 'Est-ce que ___ peut m’aider ?',
+        answer: 'quelqu’un',
+        translation: '¿Alguien puede ayudarme?',
+      },
+      {
+        sentence: '___ ne comprend cette règle.',
+        answer: 'Personne',
+        translation: 'Nadie entiende esta regla.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.time.depuis-pendant',
+    explanation:
+      'En español casi todas son «hace», y ahí está la trampa. **depuis**: empezó antes y **sigue** (*depuis trois ans*). **il y a**: terminado, cuándo pasó (*il y a trois ans*). **pendant**: cuánto duró, cerrado. **dans**: cuánto falta para que empiece.',
+    variations: [
+      {
+        sentence: 'Je travaille ici ___ trois ans.',
+        answer: 'depuis',
+        translation: 'Trabajo aquí desde hace tres años.',
+      },
+      {
+        sentence: 'Il est parti ___ deux heures.',
+        answer: 'il y a',
+        translation: 'Se fue hace dos horas.',
+      },
+      {
+        sentence: 'J’ai étudié ___ six mois, puis j’ai arrêté.',
+        answer: 'pendant',
+        translation: 'Estudié durante seis meses y después dejé.',
+      },
+      {
+        sentence: 'Le train arrive ___ dix minutes.',
+        answer: 'dans',
+        translation: 'El tren llega dentro de diez minutos.',
+      },
+      {
+        sentence: 'Elle habite à Lyon ___ 2019.',
+        answer: 'depuis',
+        translation: 'Vive en Lyon desde 2019.',
+      },
+      {
+        sentence: 'Nous nous sommes rencontrés ___ un an.',
+        answer: 'il y a',
+        translation: 'Nos conocimos hace un año.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.conditional.si-imparfait',
+    explanation:
+      'Detrás de **si** nunca va condicional: va **imparfait**, y el condicional se queda en la otra mitad. *Si j’**avais** le temps, je **viendrais***. Sirve igual para hipótesis y para pedir algo con educación.',
+    variations: [
+      {
+        sentence: 'Si j’___ le temps, je viendrais. (avoir)',
+        answer: 'avais',
+        translation: 'Si tuviera tiempo, iría.',
+      },
+      {
+        sentence: 'Si tu ___ plus tôt, tu ne serais pas fatigué. (dormir)',
+        answer: 'dormais',
+        translation: 'Si durmieras más temprano, no estarías cansado.',
+      },
+      {
+        sentence: 'Si nous ___ riches, nous voyagerions. (être)',
+        answer: 'étions',
+        translation: 'Si fuéramos ricos, viajaríamos.',
+      },
+      {
+        sentence: 'Ce serait bien si vous ___ nous aider. (pouvoir)',
+        answer: 'pouviez',
+        translation: 'Estaría bien si pudieran ayudarnos.',
+      },
+      {
+        sentence: 'Si elle ___ ici, elle comprendrait. (habiter)',
+        answer: 'habitait',
+        translation: 'Si viviera aquí, entendería.',
+      },
+      {
+        sentence: 'Je serais content si tu ___. (venir)',
+        answer: 'venais',
+        translation: 'Estaría contento si vinieras.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.subjunctive.expectation',
+    explanation:
+      'Cuando reclamás o esperás algo de alguien, el francés formal pide **subjuntivo**: *j’aimerais que vous **fassiez** un geste*, *je m’attends à ce que ce **soit** réglé*. Es la fórmula de una reclamación educada.',
+    variations: [
+      {
+        sentence: 'J’aimerais que vous ___ un geste commercial. (faire)',
+        answer: 'fassiez',
+        translation: 'Me gustaría que hicieran un gesto comercial.',
+      },
+      {
+        sentence: 'Je voudrais que ce problème ___ réglé aujourd’hui. (être)',
+        answer: 'soit',
+        translation: 'Querría que este problema quede resuelto hoy.',
+      },
+      {
+        sentence: 'Il faudrait que quelqu’un ___ vérifier. (venir)',
+        answer: 'vienne',
+        translation: 'Haría falta que alguien viniera a verificar.',
+      },
+      {
+        sentence: 'J’attends que vous me ___ une réponse. (donner)',
+        answer: 'donniez',
+        translation: 'Espero que me den una respuesta.',
+      },
+      {
+        sentence: 'Je souhaite que la chambre ___ changée. (être)',
+        answer: 'soit',
+        translation: 'Deseo que cambien la habitación.',
+      },
+      {
+        sentence: 'Il est important que vous ___ la facture. (garder)',
+        answer: 'gardiez',
+        translation: 'Es importante que guarden la factura.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b1.aspect.action-vs-result',
+    explanation:
+      'El passé composé cuenta **lo que se hizo**; el presente describe **cómo está ahora**. *On a réparé la douche* (se arregló) vs. *la douche est réparée* (está arreglada). Confundirlos hace que una reclamación suene a que todavía no pasó nada.',
+    variations: [
+      {
+        sentence: 'Le technicien ___ la douche ce matin. (réparer)',
+        answer: 'a réparé',
+        translation: 'El técnico arregló la ducha esta mañana.',
+      },
+      {
+        sentence: 'La douche ___ maintenant. (être réparé)',
+        answer: 'est réparée',
+        translation: 'La ducha ya está arreglada.',
+      },
+      {
+        sentence: 'Nous ___ votre dossier hier. (recevoir)',
+        answer: 'avons reçu',
+        translation: 'Recibimos su expediente ayer.',
+      },
+      {
+        sentence: 'Le problème ___ depuis ce matin. (être résolu)',
+        answer: 'est résolu',
+        translation: 'El problema está resuelto desde esta mañana.',
+      },
+      {
+        sentence: 'Ils ___ la chambre à midi. (changer)',
+        answer: 'ont changé',
+        translation: 'Cambiaron la habitación al mediodía.',
+      },
+      {
+        sentence: 'La facture ___ hier soir. (être envoyé)',
+        answer: 'est envoyée',
+        translation: 'La factura está enviada desde anoche.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b2.voice.passive',
+    explanation:
+      'La pasiva es **être + participio**, y el participio concuerda con el sujeto: *la lettre **est écrite***, *les lettres **sont écrites***. El agente entra con **par**. Ojo: *être* marca el tiempo, así que el pasado es *a été*.',
+    variations: [
+      {
+        sentence: 'La lettre ___ par le directeur. (être écrit)',
+        answer: 'est écrite',
+        translation: 'La carta la escribe el director.',
+      },
+      {
+        sentence: 'Les documents ___ hier. (être envoyé)',
+        answer: 'ont été envoyés',
+        translation: 'Los documentos fueron enviados ayer.',
+      },
+      {
+        sentence: 'Ce musée ___ en 1850. (être construit)',
+        answer: 'a été construit',
+        translation: 'Este museo fue construido en 1850.',
+      },
+      {
+        sentence: 'La décision ___ demain. (être prise)',
+        answer: 'sera prise',
+        translation: 'La decisión se tomará mañana.',
+      },
+      {
+        sentence: 'Les résultats ___ par le jury. (être annoncé)',
+        answer: 'sont annoncés',
+        translation: 'Los resultados los anuncia el jurado.',
+      },
+      {
+        sentence: 'Cette chanson ___ par des millions de gens. (être écouté)',
+        answer: 'est écoutée',
+        translation: 'Esta canción la escuchan millones de personas.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b2.pronoun.relative',
+    explanation:
+      'El relativo lo elige **su función en la subordinada**, no lo que va antes. **qui** = sujeto, **que** = objeto directo, **dont** = lo que llevaba *de*, **où** = lugar o tiempo. Truco: si detrás viene un verbo, *qui*; si viene un sujeto, *que*.',
+    variations: [
+      {
+        sentence: 'C’est le livre ___ m’a plu.',
+        answer: 'qui',
+        translation: 'Es el libro que me gustó.',
+      },
+      {
+        sentence: 'C’est le livre ___ j’ai lu hier.',
+        answer: 'que',
+        translation: 'Es el libro que leí ayer.',
+      },
+      {
+        sentence: 'Voici l’ami ___ je t’ai parlé.',
+        answer: 'dont',
+        translation: 'Este es el amigo del que te hablé.',
+      },
+      {
+        sentence: 'C’est la ville ___ je suis né.',
+        answer: 'où',
+        translation: 'Es la ciudad donde nací.',
+      },
+      {
+        sentence: 'La femme ___ travaille ici est ma sœur.',
+        answer: 'qui',
+        translation: 'La mujer que trabaja aquí es mi hermana.',
+      },
+      {
+        sentence: 'Le film ___ tu as besoin est à la bibliothèque.',
+        answer: 'dont',
+        translation: 'La película que necesitás está en la biblioteca.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b2.verb.plus-que-parfait',
+    explanation:
+      'Es el pasado **anterior a otro pasado**: *quand je suis arrivé, il **était** déjà **parti***. Se arma con avoir/être en imparfait + participio, y elige auxiliar con las mismas reglas del passé composé.',
+    variations: [
+      {
+        sentence: 'Quand je suis arrivé, il ___ déjà parti. (être)',
+        answer: 'était',
+        translation: 'Cuando llegué, él ya se había ido.',
+      },
+      {
+        sentence: 'Elle ___ fini son travail avant midi. (avoir)',
+        answer: 'avait',
+        translation: 'Ella había terminado su trabajo antes del mediodía.',
+      },
+      {
+        sentence: 'Nous ___ vu ce film deux fois. (avoir)',
+        answer: 'avions',
+        translation: 'Habíamos visto esa película dos veces.',
+      },
+      {
+        sentence: 'Ils ___ sortis quand il a commencé à pleuvoir. (être)',
+        answer: 'étaient',
+        translation: 'Habían salido cuando empezó a llover.',
+      },
+      {
+        sentence: 'Tu ___ oublié tes clés encore une fois. (avoir)',
+        answer: 'avais',
+        translation: 'Te habías olvidado las llaves otra vez.',
+      },
+      {
+        sentence: 'Vous ___ arrivés avant nous. (être)',
+        answer: 'étiez',
+        translation: 'Ustedes habían llegado antes que nosotros.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b2.verb.conditionnel-passe',
+    explanation:
+      'Es el «habría»: **avoir/être en condicional + participio**. Sirve para el reproche y el arrepentimiento (*j’aurais dû*), y para lo que no pasó: *si j’avais su, je serais venu*.',
+    variations: [
+      {
+        sentence: 'J’___ dû te prévenir. (avoir)',
+        answer: 'aurais',
+        translation: 'Debería haberte avisado.',
+      },
+      {
+        sentence: 'Elle ___ venue si elle avait pu. (être)',
+        answer: 'serait',
+        translation: 'Habría venido si hubiera podido.',
+      },
+      {
+        sentence: 'Nous ___ aimé rester plus longtemps. (avoir)',
+        answer: 'aurions',
+        translation: 'Nos habría gustado quedarnos más tiempo.',
+      },
+      {
+        sentence: 'Tu ___ pu me le dire avant. (avoir)',
+        answer: 'aurais',
+        translation: 'Podrías habérmelo dicho antes.',
+      },
+      {
+        sentence: 'Ils ___ partis plus tôt avec un peu d’organisation. (être)',
+        answer: 'seraient',
+        translation: 'Se habrían ido más temprano con un poco de organización.',
+      },
+      {
+        sentence: 'Vous ___ préféré une autre chambre ? (avoir)',
+        answer: 'auriez',
+        translation: '¿Habrían preferido otra habitación?',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b2.verb.gerondif',
+    explanation:
+      'El gérondif es **en + participio presente** y dice cómo o cuándo: *il travaille **en écoutant** de la musique*. Condición dura: el sujeto de las dos acciones tiene que ser **el mismo**, si no hay que usar otra construcción.',
+    variations: [
+      {
+        sentence: 'Il travaille en ___ de la musique. (écouter)',
+        answer: 'écoutant',
+        translation: 'Trabaja escuchando música.',
+      },
+      {
+        sentence: 'Elle est tombée en ___ dans l’escalier. (courir)',
+        answer: 'courant',
+        translation: 'Se cayó corriendo por la escalera.',
+      },
+      {
+        sentence: 'On apprend en ___ des erreurs. (faire)',
+        answer: 'faisant',
+        translation: 'Se aprende cometiendo errores.',
+      },
+      {
+        sentence: 'Je l’ai vu en ___ du bureau. (sortir)',
+        answer: 'sortant',
+        translation: 'Lo vi al salir de la oficina.',
+      },
+      {
+        sentence: 'Ils discutent en ___. (manger)',
+        answer: 'mangeant',
+        translation: 'Charlan mientras comen.',
+      },
+      {
+        sentence: 'En ___ ce chemin, tu arriveras plus vite. (prendre)',
+        answer: 'prenant',
+        translation: 'Tomando este camino llegarás más rápido.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b2.connector.cause-consequence',
+    explanation:
+      'La causa cambia de palabra según dónde va: **parce que** responde a un porqué, **car** encadena en registro escrito, **puisque** presenta la causa como sabida, **grâce à** es positiva y **à cause de** negativa. La consecuencia va con **donc**, **alors** o **c’est pourquoi**.',
+    variations: [
+      {
+        sentence: 'Il est resté chez lui ___ il pleuvait.',
+        answer: 'parce qu’',
+        translation: 'Se quedó en casa porque llovía.',
+      },
+      {
+        sentence: '___ tu le sais déjà, je ne répète pas.',
+        answer: 'Puisque',
+        translation: 'Ya que lo sabés, no repito.',
+      },
+      {
+        sentence: 'Le train a du retard, ___ nous arriverons tard.',
+        answer: 'donc',
+        translation: 'El tren viene con retraso, así que llegaremos tarde.',
+      },
+      {
+        sentence: 'J’ai réussi ___ ton aide.',
+        answer: 'grâce à',
+        translation: 'Lo logré gracias a tu ayuda.',
+      },
+      {
+        sentence: 'Le vol est annulé ___ la tempête.',
+        answer: 'à cause de',
+        translation: 'El vuelo está cancelado a causa de la tormenta.',
+      },
+      {
+        sentence: 'Il n’a pas étudié, ___ il a échoué.',
+        answer: 'c’est pourquoi',
+        translation: 'No estudió, por eso reprobó.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b2.connector.logical',
+    explanation:
+      'Los conectores de argumentación ordenan un texto: **d’abord / ensuite / enfin** para las etapas, **cependant** y **en revanche** para oponer, **en effet** para confirmar, **par ailleurs** para sumar otro punto. No son adorno: son lo que hace seguible un texto B2.',
+    variations: [
+      {
+        sentence: '___, je voudrais présenter le contexte.',
+        answer: 'D’abord',
+        translation: 'En primer lugar, quisiera presentar el contexto.',
+      },
+      {
+        sentence: 'Le plan est ambitieux ; ___, il reste réalisable.',
+        answer: 'cependant',
+        translation: 'El plan es ambicioso; sin embargo, sigue siendo realizable.',
+      },
+      {
+        sentence: 'Les ventes ont chuté. ___, les coûts ont augmenté.',
+        answer: 'Par ailleurs',
+        translation: 'Las ventas cayeron. Además, los costos subieron.',
+      },
+      {
+        sentence: 'Il a refusé. ___, il n’avait pas le choix.',
+        answer: 'En effet',
+        translation: 'Se negó. En efecto, no tenía opción.',
+      },
+      {
+        sentence: 'Le premier projet a échoué ; ___, le second a réussi.',
+        answer: 'en revanche',
+        translation: 'El primer proyecto fracasó; en cambio, el segundo funcionó.',
+      },
+      {
+        sentence: '___, je tiens à vous remercier.',
+        answer: 'Enfin',
+        translation: 'Por último, quiero agradecerles.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b2.pronoun.possessive',
+    explanation:
+      'El posesivo **sustituye** al sustantivo y se lleva el artículo pegado: *ma voiture* → **la mienne**. Concuerda con lo poseído, no con el dueño, así que «su coche» de una mujer sigue siendo *le sien*.',
+    variations: [
+      {
+        sentence: 'Ma voiture est rouge ; ___ est bleue.',
+        answer: 'la tienne',
+        translation: 'Mi coche es rojo; el tuyo es azul.',
+      },
+      {
+        sentence: 'Ton appartement est grand, ___ est petit.',
+        answer: 'le mien',
+        translation: 'Tu departamento es grande, el mío es chico.',
+      },
+      {
+        sentence: 'Ce sont mes clés, pas ___.',
+        answer: 'les tiennes',
+        translation: 'Son mis llaves, no las tuyas.',
+      },
+      {
+        sentence: 'Notre maison est ancienne ; ___ est moderne.',
+        answer: 'la leur',
+        translation: 'Nuestra casa es antigua; la de ellos es moderna.',
+      },
+      {
+        sentence: 'J’ai perdu mon stylo, tu me prêtes ___ ?',
+        answer: 'le tien',
+        translation: 'Perdí mi lapicera, ¿me prestás la tuya?',
+      },
+      {
+        sentence: 'Vos résultats sont bons, ___ aussi.',
+        answer: 'les nôtres',
+        translation: 'Sus resultados son buenos, los nuestros también.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.b2.pronoun.demonstrative',
+    explanation:
+      '**celui / celle / ceux / celles** sustituyen al sustantivo y nunca van solos: piden **-ci**, **-là**, un **de** o una relativa. *Quel livre ? — **Celui que** j’ai lu hier.*',
+    variations: [
+      {
+        sentence: 'Quel livre ? — ___ que j’ai lu hier.',
+        answer: 'Celui',
+        translation: '¿Qué libro? —El que leí ayer.',
+      },
+      {
+        sentence: 'Ces photos sont belles, surtout ___ de Paris.',
+        answer: 'celles',
+        translation: 'Estas fotos son lindas, sobre todo las de París.',
+      },
+      {
+        sentence: 'Je préfère cette veste à ___ -là.',
+        answer: 'celle',
+        translation: 'Prefiero esta campera a aquella.',
+      },
+      {
+        sentence: 'Parmi les candidats, ___ qui parlent français sont prioritaires.',
+        answer: 'ceux',
+        translation: 'Entre los candidatos, los que hablan francés tienen prioridad.',
+      },
+      {
+        sentence: 'Mon vélo est cassé, je prends ___ de mon frère.',
+        answer: 'celui',
+        translation: 'Mi bici está rota, tomo la de mi hermano.',
+      },
+      {
+        sentence: 'De toutes ces solutions, ___ -ci est la meilleure.',
+        answer: 'celle',
+        translation: 'De todas estas soluciones, esta es la mejor.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

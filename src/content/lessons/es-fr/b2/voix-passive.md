@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Voix passive (être + participe passé)'
 funFact: "La voz pasiva francesa es casi un calco de la española: 'la casa es construida' = 'la maison est construite'. Si ya sabes usarla en español, el 80% del trabajo mental ya está hecho — solo necesitas la conjugación correcta de 'être' y recordar la concordancia del participio."
+skills:
+  - fr.b2.voice.passive
 minutes: 9
 quiz:
   - question: "¿Cuál es la voz pasiva correcta de 'Le chef prépare le repas' (el chef prepara la comida)?"

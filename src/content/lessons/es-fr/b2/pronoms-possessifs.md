@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Pronombres posesivos (le mien, le tien, le sien...)'
 funFact: "A diferencia de los adjetivos posesivos (mon/ma/mes) que ya conoces, los pronombres posesivos SIEMPRE llevan un artículo pegado: 'le mien', nunca solo 'mien'. Es como si la palabra necesitara ese artículo para poder funcionar de forma independiente, sin el sustantivo al lado."
+skills:
+  - fr.b2.pronoun.possessive
 minutes: 8
 quiz:
   - question: "'C'est mon livre.' → 'C'est ___' (es el mío). ¿Qué pronombre va?"

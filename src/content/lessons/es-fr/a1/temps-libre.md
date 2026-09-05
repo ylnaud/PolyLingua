@@ -32,12 +32,18 @@ quiz:
     options: ['Je like lire.', "J'aime lire.", 'Je suis lire.']
     answerIndex: 1
     explanation: "'aimer' + infinitivo: j'aime lire, j'aime cuisiner."
-  - question: "¿Cómo negás que te gusta algo?"
-    options: ["Je n'aime pas regarder la télé.", 'Je aime pas regarder la télé.', "Je n'aime regarder pas la télé."]
+  - question: '¿Cómo negás que te gusta algo?'
+    options:
+      [
+        "Je n'aime pas regarder la télé.",
+        'Je aime pas regarder la télé.',
+        "Je n'aime regarder pas la télé.",
+      ]
     answerIndex: 0
     explanation: "'ne ... pas' rodea al verbo: je n'aime pas regarder la télé."
   - question: "¿Qué significa 'Le week-end, je vais au cinéma'?"
-    options: ['Voy al cine todos los días.', 'El fin de semana voy al cine.', 'No voy nunca al cine.']
+    options:
+      ['Voy al cine todos los días.', 'El fin de semana voy al cine.', 'No voy nunca al cine.']
     answerIndex: 1
     explanation: "'le week-end' marca cuándo pasa la acción: el fin de semana."
 exercises:

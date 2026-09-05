@@ -37,7 +37,7 @@ exercises:
     translation: 'Eso es lo que necesito: silencio.'
     placeholder: 'ce que'
   - type: 'fill-blank'
-    sentence: "Dis-moi ___ tu penses avant la réunion."
+    sentence: 'Dis-moi ___ tu penses avant la réunion.'
     answer: 'ce à quoi'
     accepted: ['ce à quoi', 'ce a quoi']
     hint: "'Penser À' → el relativo lleva 'à quoi' porque el verbo exige 'à'."
@@ -59,7 +59,8 @@ exercises:
   - type: 'write'
     prompt: "Traduce: 'Eso es exactamente a lo que me esperaba.' (usa 's'attendre à' y 'ce à quoi')"
     answer: "C'est exactement ce à quoi je m'attendais."
-    accepted: ["C'est exactement ce à quoi je m'attendais", "C'est exactement ce a quoi je m'attendais."]
+    accepted:
+      ["C'est exactement ce à quoi je m'attendais", "C'est exactement ce a quoi je m'attendais."]
     hint: "'S'attendre À' → 'ce à quoi'."
     placeholder: "C'est exactement ce dont j'avais besoin."
   - type: 'order'
@@ -83,10 +84,10 @@ son los relativos sin preposición.
 
 ## Repaso: ce que / ce qui
 
-| Función             | Pronombre | Ejemplo                                  |
-| -------------------- | ---------- | ------------------------------------------ |
-| Sujeto               | ce qui     | Ce qui m'intéresse, c'est la musique.    |
-| Objeto directo       | ce que     | Ce que je veux, c'est du calme.          |
+| Función        | Pronombre | Ejemplo                               |
+| -------------- | --------- | ------------------------------------- |
+| Sujeto         | ce qui    | Ce qui m'intéresse, c'est la musique. |
+| Objeto directo | ce que    | Ce que je veux, c'est du calme.       |
 
 Ninguno de los dos lleva preposición: el verbo (intéresser, vouloir) no la necesita.
 
@@ -115,12 +116,12 @@ Je m'attendais à ce résultat.   →  C'est ce à quoi je m'attendais.
 
 ## Tabla resumen
 
-| Preposición del verbo | Pronombre  | Ejemplo de verbo         |
-| ----------------------- | ----------- | -------------------------- |
-| ninguna (sujeto)        | ce qui      | intéresser, plaire         |
-| ninguna (objeto)        | ce que      | vouloir, faire, dire       |
-| de                       | ce dont     | parler de, avoir besoin de |
-| à                        | ce à quoi   | penser à, s'attendre à     |
+| Preposición del verbo | Pronombre | Ejemplo de verbo           |
+| --------------------- | --------- | -------------------------- |
+| ninguna (sujeto)      | ce qui    | intéresser, plaire         |
+| ninguna (objeto)      | ce que    | vouloir, faire, dire       |
+| de                    | ce dont   | parler de, avoir besoin de |
+| à                     | ce à quoi | penser à, s'attendre à     |
 
 ## Por qué es un reto de nivel C1
 

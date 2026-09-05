@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Conjunciones de tiempo (quand, lorsque, dès que) + concordancia de tiempos'
 funFact: "En español dices 'cuando llegues, llámame' usando presente para el futuro. En francés, esa misma lógica sería incorrecta: 'quand tu arriveras, appelle-moi' EXIGE futuro en ambas partes si el evento es futuro. Es una de las trampas más comunes para hispanohablantes en este nivel."
+skills:
+  - fr.b1.conjunction.time
 minutes: 8
 quiz:
   - question: "¿Cuál es correcta: 'Quand tu ___ (arriver), appelle-moi' (cuando llegues, llámame)?"

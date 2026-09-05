@@ -1,42 +1,59 @@
 ---
 language: fr
 level: b1
-title: 'Résoudre une réclamation à l''hôtel en français B1 : passé composé vs. état'
+title: "Résoudre une réclamation à l'hôtel en français B1 : passé composé vs. état"
 description: "Apprends à clore poliment une réclamation d'hôtel en français, en distinguant le passé composé (l'action) du présent-état (« est réglée »)."
 order: 13
 unit: 3
 grammarTopic: 'Passé composé vs. présent-état (action vs. résultat)'
 funFact: "« nous vous avons organisé » raconte CE QUI a été fait ; « l'affaire est réglée » décrit COMMENT les choses se présentent maintenant. Demande-toi : est-ce que je raconte une action, ou un résultat ?"
+skills:
+  - fr.b1.aspect.action-vs-result
 minutes: 8
 quiz:
-  - question: "« Nous vous avons organisé un surclassement » décrit..."
-    options: ['un état permanent', 'une action déjà accomplie, avec un lien vers le présent', 'une hypothèse']
+  - question: '« Nous vous avons organisé un surclassement » décrit...'
+    options:
+      [
+        'un état permanent',
+        'une action déjà accomplie, avec un lien vers le présent',
+        'une hypothèse',
+      ]
     answerIndex: 1
     explanation: "Le passé composé (avoir + participe passé) raconte une action achevée et sa pertinence actuelle — ici, le fait d'avoir organisé le surclassement."
   - question: "Pourquoi dit-on « l'affaire est réglée » et pas « l'affaire a réglé » ?"
-    options: ["parce que « réglée » décrit ici l'état résultant de l'affaire, pas l'action de la régler", "c'est une erreur fréquente mais tolérée", "« régler » n'existe pas au passé composé"]
+    options:
+      [
+        "parce que « réglée » décrit ici l'état résultant de l'affaire, pas l'action de la régler",
+        "c'est une erreur fréquente mais tolérée",
+        "« régler » n'existe pas au passé composé",
+      ]
     answerIndex: 0
     explanation: "« est réglée » (être + participe, comme un adjectif) décrit l'état actuel de l'affaire, sans mettre l'accent sur qui l'a réglée ni quand."
   - question: "Quelle est la différence de focus entre « nous l'avons organisé » et « c'est organisé » ?"
-    options: ["aucune, c'est exactement pareil", 'la première met en avant qui a agi ; la seconde met en avant le résultat, peu importe qui a agi', 'la seconde est incorrecte']
+    options:
+      [
+        "aucune, c'est exactement pareil",
+        'la première met en avant qui a agi ; la seconde met en avant le résultat, peu importe qui a agi',
+        'la seconde est incorrecte',
+      ]
     answerIndex: 1
-    explanation: 'Le passé composé garde le sujet et son action au centre ; « est/c''est + participe » comme état déplace le focus vers le résultat lui-même.'
+    explanation: "Le passé composé garde le sujet et son action au centre ; « est/c'est + participe » comme état déplace le focus vers le résultat lui-même."
 exercises:
   - type: 'fill-blank'
     sentence: "En ce qui me concerne, l'affaire ___ réglée."
     answer: 'est'
     accepted: ['Est']
-    hint: "« réglée » décrit ici un état, pas une action — utilise « être »."
+    hint: '« réglée » décrit ici un état, pas une action — utilise « être ».'
     translation: 'En lo que a mí respecta, el asunto está resuelto.'
     placeholder: 'est / a / était'
   - type: 'write'
-    prompt: "Traduis : « Eso me parece una solución justa, gracias. »"
+    prompt: 'Traduis : « Eso me parece una solución justa, gracias. »'
     answer: 'Ça me semble être une solution juste, merci.'
     hint: "« sembler être » + adjectif ; « juste » s'accorde avec « solution » (féminin)."
   - type: 'write'
-    prompt: "Traduis : « ¿Podría confirmármelo por escrito, por favor? »"
+    prompt: 'Traduis : « ¿Podría confirmármelo por escrito, por favor? »'
     answer: "Pourriez-vous me le confirmer par écrit, s'il vous plaît ?"
-    hint: "« par écrit » = por escrito ; deux pronoms avant le verbe (me le)."
+    hint: '« par écrit » = por escrito ; deux pronoms avant le verbe (me le).'
   - type: 'order'
     sentence: "J'apprécie vraiment votre réaction rapide"
     translation: 'Realmente aprecio su rápida reacción.'
@@ -60,13 +77,13 @@ signifier la même chose.
 
 ## Les 5 blocs de clôture
 
-| Français                                                              | Español                                                        |
-| --------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Français                                                                             | Español                                                                  |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
 | Nous vous avons organisé un surclassement gratuit en suite pour les nuits restantes. | Le hemos organizado una mejora gratis a suite para las noches restantes. |
-| Ça me semble être une solution juste, merci.                          | Eso me parece una solución justa, gracias.                          |
-| Pourriez-vous me le confirmer par écrit, s'il vous plaît ?             | ¿Podría confirmármelo por escrito, por favor?                       |
-| En ce qui me concerne, l'affaire est réglée.                          | En lo que a mí respecta, el asunto está resuelto.                    |
-| J'apprécie vraiment votre réaction rapide.                             | Realmente aprecio su rápida reacción.                                |
+| Ça me semble être une solution juste, merci.                                         | Eso me parece una solución justa, gracias.                               |
+| Pourriez-vous me le confirmer par écrit, s'il vous plaît ?                           | ¿Podría confirmármelo por escrito, por favor?                            |
+| En ce qui me concerne, l'affaire est réglée.                                         | En lo que a mí respecta, el asunto está resuelto.                        |
+| J'apprécie vraiment votre réaction rapide.                                           | Realmente aprecio su rápida reacción.                                    |
 
 ## La conversation complète
 

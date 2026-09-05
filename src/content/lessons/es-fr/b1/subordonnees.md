@@ -7,6 +7,9 @@ order: 1
 unit: 1
 grammarTopic: 'Oraciones subordinadas (parce que, bien que, quand) + introducción al subjonctif'
 funFact: "Piensa en 'bien que' como una alarma: cada vez que la escuches o la uses, tu cerebro debe encender una lucecita que dice 'subjonctif obligatorio'. No todas las conjunciones lo piden — pero las de contraste/duda casi siempre sí. Aprende esa lista corta y sabrás detectar la trampa antes de caer en ella."
+skills:
+  - fr.b1.clause.subordinate
+  - fr.b1.subjunctive.intro
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta: 'Je reste à la maison ___ je suis malade' (porque estoy enfermo)?"

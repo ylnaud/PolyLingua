@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Imparfait vs Passé composé'
 funFact: "Piensa en el imparfait como una FOTO FIJA (una descripción, un estado, algo habitual sin límite claro) y en el passé composé como una PELÍCULA con inicio y fin (un evento puntual y completado). 'Il pleuvait quand je suis sorti' — 'pleuvait' es la foto de fondo, 'suis sorti' es la acción que ocurre en ese fondo."
+skills:
+  - fr.b1.verb.imparfait
+  - fr.b1.aspect.imparfait-vs-pc
 minutes: 10
 quiz:
   - question: "¿Cuál es correcta para describir el clima como telón de fondo: 'Il ___ quand je suis arrivé' (llovía cuando llegué)?"

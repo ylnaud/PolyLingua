@@ -5,8 +5,10 @@ title: "Se plaindre à l'hôtel en français B1 : l'imparfait après « si »"
 description: "Apprends à te plaindre poliment à la réception d'un hôtel en français, avec l'imparfait après « si » pour exprimer politesse et hypothèse."
 order: 11
 unit: 3
-grammarTopic: "Imparfait après « si » (politesse et hypothèse)"
+grammarTopic: 'Imparfait après « si » (politesse et hypothèse)'
 funFact: "« si c'était possible » ne parle pas du passé — ça parle d'une hypothèse polie. Retiens-le comme un bloc figé : « si + imparfait » = demande douce, jamais une histoire ancienne."
+skills:
+  - fr.b1.conditional.si-imparfait
 minutes: 8
 quiz:
   - question: "Quelle est la forme correcte de l'imparfait de « être » à la première personne du singulier ?"
@@ -18,7 +20,12 @@ quiz:
     answerIndex: 1
     explanation: "« si c'était possible » adoucit la demande — c'est beaucoup plus poli que « je veux une autre chambre »."
   - question: "Dans « si nous avions une chambre libre », que signifie l'imparfait après « si » ?"
-    options: ['que la chambre libre existe vraiment maintenant', 'que la condition est hypothétique, probablement pas réelle', "que c'est arrivé hier"]
+    options:
+      [
+        'que la chambre libre existe vraiment maintenant',
+        'que la condition est hypothétique, probablement pas réelle',
+        "que c'est arrivé hier",
+      ]
     answerIndex: 1
     explanation: "« si » + imparfait exprime une condition irréelle ou peu probable au présent — ici, la réceptionniste sous-entend qu'il n'y a pas de chambre libre."
 exercises:
@@ -26,19 +33,19 @@ exercises:
     sentence: "J'aimerais une autre chambre, si c'___ possible."
     answer: 'était'
     accepted: ['etait']
-    hint: "« si » + imparfait pour une demande polie."
+    hint: '« si » + imparfait pour une demande polie.'
     translation: 'Me gustaría otra habitación, si fuera posible.'
     placeholder: 'est / était / sera'
   - type: 'write'
-    prompt: "Traduis : « Disculpe, lamentablemente tengo un problema con mi habitación. »"
+    prompt: 'Traduis : « Disculpe, lamentablemente tengo un problema con mi habitación. »'
     answer: "Excusez-moi, j'ai malheureusement un problème avec ma chambre."
-    hint: "« malheureusement » se place juste après le verbe conjugué."
+    hint: '« malheureusement » se place juste après le verbe conjugué.'
   - type: 'write'
-    prompt: "Traduis : « La calefacción no funciona desde esta mañana. »"
+    prompt: 'Traduis : « La calefacción no funciona desde esta mañana. »'
     answer: 'Le chauffage ne fonctionne plus depuis ce matin.'
-    hint: "« ne...plus » = déjà plus (ya no); « depuis » = desde."
+    hint: '« ne...plus » = déjà plus (ya no); « depuis » = desde.'
   - type: 'order'
-    sentence: 'Pourriez-vous envoyer quelqu''un pour vérifier le problème'
+    sentence: "Pourriez-vous envoyer quelqu'un pour vérifier le problème"
     translation: '¿Podría enviar a alguien a revisar el problema?'
 vocabulary:
   - term: "Excusez-moi, j'ai malheureusement un problème avec ma chambre."
@@ -49,7 +56,7 @@ vocabulary:
     translation: '¿Podría enviar a alguien a revisar el problema?'
   - term: "J'aimerais une autre chambre, si c'était possible."
     translation: 'Me gustaría otra habitación, si fuera posible.'
-  - term: 'Merci de votre compréhension — j''espère que ça pourra se résoudre vite.'
+  - term: "Merci de votre compréhension — j'espère que ça pourra se résoudre vite."
     translation: 'Gracias por su comprensión — espero que se resuelva rápido.'
 ---
 
@@ -61,13 +68,13 @@ un mot spécial — c'est un temps verbal complet : **l'imparfait après « si �
 
 Ne mémorise pas des mots isolés — mémorise ces phrases complètes, prêtes à l'emploi :
 
-| Français                                                          | Español                                              |
-| --------------------------------------------------------------------- | -------------------------------------------------------- |
-| Excusez-moi, j'ai malheureusement un problème avec ma chambre.        | Disculpe, lamentablemente tengo un problema con mi habitación. |
-| Le chauffage ne fonctionne plus depuis ce matin.                      | La calefacción no funciona desde esta mañana.            |
-| Pourriez-vous envoyer quelqu'un pour vérifier le problème ?           | ¿Podría enviar a alguien a revisar el problema?           |
-| J'aimerais une autre chambre, si c'était possible.                    | Me gustaría otra habitación, si fuera posible.            |
-| Merci de votre compréhension — j'espère que ça pourra se résoudre vite. | Gracias por su comprensión — espero que se resuelva rápido. |
+| Français                                                                | Español                                                        |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Excusez-moi, j'ai malheureusement un problème avec ma chambre.          | Disculpe, lamentablemente tengo un problema con mi habitación. |
+| Le chauffage ne fonctionne plus depuis ce matin.                        | La calefacción no funciona desde esta mañana.                  |
+| Pourriez-vous envoyer quelqu'un pour vérifier le problème ?             | ¿Podría enviar a alguien a revisar el problema?                |
+| J'aimerais une autre chambre, si c'était possible.                      | Me gustaría otra habitación, si fuera posible.                 |
+| Merci de votre compréhension — j'espère que ça pourra se résoudre vite. | Gracias por su comprensión — espero que se resuelva rápido.    |
 
 ## La conversation complète
 

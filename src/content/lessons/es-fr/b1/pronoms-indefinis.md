@@ -1,19 +1,21 @@
 ---
 language: fr
 level: b1
-title: "Pronoms indéfinis: alguien, algo, nadie y nada"
+title: 'Pronoms indéfinis: alguien, algo, nadie y nada'
 description: "Aprende quelqu'un, quelque chose, personne y rien en francés, con la doble negación ne...personne / ne...rien y ejemplos claros."
 order: 9
 unit: 3
 grammarTopic: "Pronoms indéfinis (quelqu'un, quelque chose, personne, rien)"
 funFact: "Piensa en 'quelqu'un/quelque chose' y 'personne/rien' como un par de opuestos con GPS incorporado: los primeros dos siempre son afirmativos y nunca llevan 'ne'; los otros dos siempre exigen el 'ne' antes del verbo, como un candado que abre la negación. Si ves 'ne' antes del verbo, ya sabes que viene 'personne' o 'rien', no 'quelqu'un' ni 'quelque chose'."
+skills:
+  - fr.b1.pronoun.indefinite
 minutes: 8
 quiz:
   - question: "¿Cómo se dice 'Alguien llama a la puerta' en francés?"
     options:
       - "Quelqu'un frappe à la porte"
-      - "Quelque chose frappe à la porte"
-      - "Personne ne frappe à la porte"
+      - 'Quelque chose frappe à la porte'
+      - 'Personne ne frappe à la porte'
     answerIndex: 0
     explanation: "'Quelqu'un' (alguien) se usa para personas indeterminadas: Quelqu'un frappe à la porte."
   - question: "¿Cuál es la traducción correcta de 'Je ne vois personne'?"
@@ -26,7 +28,7 @@ quiz:
   - question: "¿Qué frase usarías para decir 'Cada uno tiene su opinión'?"
     options:
       - 'Tout le monde a son opinion'
-      - "Chacun a son opinion"
+      - 'Chacun a son opinion'
       - "Quelqu'un a son opinion"
     answerIndex: 1
     explanation: "'Chacun' significa 'cada uno' y se usa para hablar de individuos dentro de un grupo, con un verbo en singular: Chacun a son opinion."
@@ -34,7 +36,7 @@ quiz:
     options:
       - "Il n'y a personne dans le frigo"
       - "Il n'y a rien dans le frigo"
-      - "Il y a quelque chose dans le frigo"
+      - 'Il y a quelque chose dans le frigo'
     answerIndex: 1
     explanation: "'rien' es el pronombre negativo para cosas ('nada') y también exige 'ne' antes del verbo: Il n'y a rien dans le frigo."
 exercises:
@@ -98,10 +100,10 @@ gramatical que conviene dominar desde ya.
 
 Se usan para hablar de una persona o cosa indeterminada, sin negación:
 
-| Pronombre     | Significado | Ejemplo                       |
-| ------------- | ----------- | ------------------------------ |
-| quelqu'un     | alguien     | Quelqu'un frappe à la porte.   |
-| quelque chose | algo        | J'ai quelque chose pour toi.   |
+| Pronombre     | Significado | Ejemplo                      |
+| ------------- | ----------- | ---------------------------- |
+| quelqu'un     | alguien     | Quelqu'un frappe à la porte. |
+| quelque chose | algo        | J'ai quelque chose pour toi. |
 
 Ambos son invariables (no cambian por género ni número) y funcionan como sujeto u
 objeto de la frase, igual que cualquier sustantivo.
@@ -113,10 +115,10 @@ no necesitan ninguna otra palabra ("No veo a nadie"), pero en francés estos pro
 **siempre van acompañados de "ne"** antes del verbo — funcionan como la segunda mitad
 de una negación, igual que "ne...pas".
 
-| Pronombre | Significado | Ejemplo               |
-| --------- | ----------- | ---------------------- |
-| personne  | nadie       | Je ne vois personne.   |
-| rien      | nada        | Il n'y a rien ici.     |
+| Pronombre | Significado | Ejemplo              |
+| --------- | ----------- | -------------------- |
+| personne  | nadie       | Je ne vois personne. |
+| rien      | nada        | Il n'y a rien ici.   |
 
 ## La diferencia clave con ne...jamais / ne...pas
 

@@ -31,10 +31,11 @@ quiz:
     answerIndex: 0
     explanation: "'Qu'est-ce que tu fais dans la vie?' (literalmente '¿qué haces en la vida?') es la forma normal de preguntar por la profesión de alguien."
   - question: "¿Qué significa 'Je travaille de neuf heures à dix-sept heures'?"
-    options: ['Trabajo nueve días.', 'Trabajo de nueve a cinco.', 'Trabajo desde hace diecisiete años.']
+    options:
+      ['Trabajo nueve días.', 'Trabajo de nueve a cinco.', 'Trabajo desde hace diecisiete años.']
     answerIndex: 1
     explanation: "'de ... à ...' es la fórmula para dar un horario: 'de neuf heures à dix-sept heures' es 'de nueve a cinco'."
-  - question: "¿Cuál es el verbo correcto para preguntar la profesión de alguien?"
+  - question: '¿Cuál es el verbo correcto para preguntar la profesión de alguien?'
     options: ['travailler', 'faire', 'avoir']
     answerIndex: 1
     explanation: "'faire' (hacer) es el verbo que se usa en 'Qu'est-ce que tu fais...?', no 'travailler'."
@@ -121,13 +122,13 @@ J'ai une réunion à trois heures.                   (Tengo una reunión a las t
 
 ## Vocabulario de la oficina
 
-| Francés         | Español              |
-| ---------------- | --------------------- |
-| le travail       | el trabajo             |
-| le bureau        | la oficina              |
-| le patron        | el jefe                  |
-| la réunion       | la reunión                |
-| faire une pause  | tomarse un descanso       |
+| Francés         | Español             |
+| --------------- | ------------------- |
+| le travail      | el trabajo          |
+| le bureau       | la oficina          |
+| le patron       | el jefe             |
+| la réunion      | la reunión          |
+| faire une pause | tomarse un descanso |
 
 ## Una frase completa
 

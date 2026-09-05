@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Conditionnel présent'
 funFact: 'El Conditionnel se forma combinando la raíz del futuro (que ya conoces) con las terminaciones del imparfait (que también ya conoces) — es literalmente una fusión de dos cosas que ya sabes construir, sin gramática nueva que memorizar desde cero.'
+skills:
+  - fr.b1.verb.conditionnel
 minutes: 8
 quiz:
   - question: '¿Cuál es la fórmula del Conditionnel présent?'

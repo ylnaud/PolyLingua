@@ -20,7 +20,7 @@ phrases:
   - text: 'Il y a une chaise dans le salon.'
     es: 'Hay una silla en el salón.'
 quiz:
-  - question: "¿Dónde preparas la comida en una casa francesa?"
+  - question: '¿Dónde preparas la comida en una casa francesa?'
     options: ['dans la chambre', 'dans la cuisine', 'dans le salon']
     answerIndex: 1
     explanation: "'la cuisine' es la cocina — el lugar donde se prepara la comida."
@@ -29,7 +29,12 @@ quiz:
     answerIndex: 2
     explanation: "'le lit' es la cama, el mueble principal de 'la chambre' (el dormitorio)."
   - question: "¿Cómo dirías 'Hay una mesa en la cocina'?"
-    options: ['Il y a une table dans la cuisine.', 'Il a une table dans la cuisine.', 'Il y une table dans la cuisine.']
+    options:
+      [
+        'Il y a une table dans la cuisine.',
+        'Il a une table dans la cuisine.',
+        'Il y une table dans la cuisine.',
+      ]
     answerIndex: 0
     explanation: "'Il y a' es la fórmula fija para 'hay' — no se puede alterar ni omitir el 'y'."
 exercises:
@@ -95,21 +100,21 @@ muebles, junto con la fórmula "il y a" para describirlas.
 
 ## Las habitaciones
 
-| Francés          | Español      |
-| ----------------- | ------------ |
-| la cuisine         | la cocina    |
-| la chambre         | el dormitorio |
-| la salle de bains  | el baño      |
-| le salon           | el salón     |
+| Francés           | Español       |
+| ----------------- | ------------- |
+| la cuisine        | la cocina     |
+| la chambre        | el dormitorio |
+| la salle de bains | el baño       |
+| le salon          | el salón      |
 
 ## Los muebles básicos
 
-| Francés     | Español    |
-| ----------- | ---------- |
-| le lit      | la cama    |
-| la table    | la mesa    |
-| la chaise   | la silla   |
-| le canapé   | el sofá    |
+| Francés   | Español  |
+| --------- | -------- |
+| le lit    | la cama  |
+| la table  | la mesa  |
+| la chaise | la silla |
+| le canapé | el sofá  |
 
 ## "Il y a": la fórmula para describir
 

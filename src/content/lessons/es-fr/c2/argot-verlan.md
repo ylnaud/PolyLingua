@@ -9,7 +9,7 @@ grammarTopic: 'Argot et verlan (langage familier des jeunes)'
 funFact: "'Verlan' es la palabra 'l'envers' (al revés) dicha... al revés. Así de literal es el mecanismo: invertís las sílabas de una palabra para crear una nueva. Una vez que detectás el patrón, podés casi 'descifrar' verlan que nunca escuchaste antes."
 minutes: 10
 quiz:
-  - question: "¿Qué es el verlan?"
+  - question: '¿Qué es el verlan?'
     options:
       - 'Un dialecto regional del sur de Francia'
       - 'Un juego de lenguaje que invierte las sílabas de una palabra para crear otra'
@@ -20,13 +20,13 @@ quiz:
     options:
       - "Es el verlan de 'lourd' (pesado, en el sentido de 'pesado/molesto')"
       - "Significa 'genial'"
-      - "Es un insulto muy fuerte, casi tabú"
+      - 'Es un insulto muy fuerte, casi tabú'
     answerIndex: 0
     explanation: "'Relou' es el verlan de 'lourd' (pesado). En argot significa 'molesto, pesado, cargante' — un mec relou es alguien que resulta pesado/molesto."
-  - question: "¿Cuál de estas NO es una palabra de argot común (no verlan) para dinero/trabajo?"
+  - question: '¿Cuál de estas NO es una palabra de argot común (no verlan) para dinero/trabajo?'
     options:
-      - "fric (dinero)"
-      - "taf (trabajo)"
+      - 'fric (dinero)'
+      - 'taf (trabajo)'
       - "chelou (raro/sospechoso — es verlan de 'louche')"
     answerIndex: 2
     explanation: "'Chelou' es verlan de 'louche' (sospechoso/raro), no vocabulario de dinero o trabajo. 'Fric' (plata) y 'taf' (curro) son argot directo, no verlan."
@@ -65,7 +65,7 @@ exercises:
     hint: "'Taf' = trabajo (curro), 'bagnole' = auto/carro, ambos argot cotidiano."
     placeholder: "J'ai fini mon bouquin hier soir."
   - type: 'order'
-    sentence: "Il est relou ce mec"
+    sentence: 'Il est relou ce mec'
     translation: 'Es pesado/molesto, ese tipo.'
 vocabulary:
   - term: 'meuf'
@@ -88,12 +88,12 @@ París si no conocés el verlan y el argot — es el registro más alejado del f
 
 El mecanismo es simple: tomás una palabra de dos sílabas y las invertís de orden.
 
-| Palabra original | Verlan  | Significado                   |
-| ------------------ | -------- | -------------------------------- |
-| femme               | meuf     | mujer / novia                    |
-| fou                 | ouf      | loco (o "genial", según contexto) |
-| lourd               | relou    | pesado, molesto, cargante        |
-| louche               | chelou   | raro, sospechoso                 |
+| Palabra original | Verlan | Significado                       |
+| ---------------- | ------ | --------------------------------- |
+| femme            | meuf   | mujer / novia                     |
+| fou              | ouf    | loco (o "genial", según contexto) |
+| lourd            | relou  | pesado, molesto, cargante         |
+| louche           | chelou | raro, sospechoso                  |
 
 ```
 Il est relou, ce mec.       (Es pesado, ese tipo.)
@@ -109,12 +109,12 @@ palabras aparecen incluso en diccionarios de francés informal.
 No todo el vocabulario informal es verlan — hay muchísimo argot que simplemente
 reemplaza una palabra "neutra" por otra más coloquial:
 
-| Neutro   | Argot   | Traducción       |
-| --------- | -------- | ------------------ |
-| livre     | bouquin  | libro               |
-| voiture   | bagnole  | auto / carro        |
-| travail   | taf      | trabajo / curro     |
-| argent    | fric     | dinero / plata      |
+| Neutro  | Argot   | Traducción      |
+| ------- | ------- | --------------- |
+| livre   | bouquin | libro           |
+| voiture | bagnole | auto / carro    |
+| travail | taf     | trabajo / curro |
+| argent  | fric    | dinero / plata  |
 
 ```
 J'ai fini mon bouquin hier soir.     (Terminé mi libro anoche.)

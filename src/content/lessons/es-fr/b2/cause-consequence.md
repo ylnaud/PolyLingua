@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Conectores de causa y consecuencia'
 funFact: "'Car' y 'parce que' significan lo mismo (porque), pero 'car' es más formal y NUNCA puede empezar una frase por sí solo sin conectar dos ideas ya presentadas — mientras 'parce que' responde naturalmente a la pregunta '¿pourquoi?' de forma directa."
+skills:
+  - fr.b2.connector.cause-consequence
 minutes: 9
 quiz:
   - question: "¿Cuál es la diferencia principal entre 'parce que' y 'puisque'?"

@@ -31,7 +31,12 @@ phrases:
     es: 'La semana que viene estoy libre.'
 quiz:
   - question: "¿Cómo preguntarías 'Qué hiciste ayer?' en francés?"
-    options: ["Qu'est-ce que tu fais hier?", "Qu'est-ce que tu as fait hier?", "Qu'est-ce que tu feras hier?"]
+    options:
+      [
+        "Qu'est-ce que tu fais hier?",
+        "Qu'est-ce que tu as fait hier?",
+        "Qu'est-ce que tu feras hier?",
+      ]
     answerIndex: 1
     explanation: "'as fait' es el passé composé de 'faire', el tiempo que se usa para contar lo que pasó."
   - question: "¿Cómo decís 'Mañana trabajo' en francés cotidiano?"
@@ -72,7 +77,7 @@ exercises:
     prompt: "'Qu'est-ce que tu as fait hier?' — Respondé que trabajaste mucho."
     answer: "J'ai beaucoup travaillé"
     accepted: ["J'ai beaucoup travaillé."]
-    hint: "Passé composé de travailler."
+    hint: 'Passé composé de travailler.'
     placeholder: "J'ai ..."
   - type: 'order'
     sentence: 'Demain je travaille'

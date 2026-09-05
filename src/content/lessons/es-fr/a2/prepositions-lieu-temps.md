@@ -19,7 +19,7 @@ quiz:
     options: ['derrière la maison', 'devant la maison', 'sous la maison']
     answerIndex: 1
     explanation: "'devant' significa delante de; su opuesto es 'derrière' (detrás de)."
-  - question: "¿Qué preposición usas para un mes o un año?"
+  - question: '¿Qué preposición usas para un mes o un año?'
     options: ['à janvier', 'en janvier', 'sur janvier']
     answerIndex: 1
     explanation: "'en' se usa con meses y años: en janvier, en 2026."
@@ -90,15 +90,15 @@ usadas, con ejemplos claros.
 
 ## Preposiciones de lugar
 
-| Francés   | Español      |
-| --------- | ------------ |
-| à         | en / a       |
-| dans      | dentro de    |
-| sur       | encima de    |
-| sous      | debajo de    |
-| devant    | delante de   |
-| derrière  | detrás de    |
-| entre     | entre        |
+| Francés  | Español    |
+| -------- | ---------- |
+| à        | en / a     |
+| dans     | dentro de  |
+| sur      | encima de  |
+| sous     | debajo de  |
+| devant   | delante de |
+| derrière | detrás de  |
+| entre    | entre      |
 
 ```
 Le chat est sous la table.        (El gato está debajo de la mesa)
@@ -112,11 +112,11 @@ Le jardin est derrière la maison. (El jardín está detrás de la casa)
 Para el tiempo, "à", "en" y "dans" no son intercambiables: cada una marca un tipo de
 momento distinto.
 
-| Uso                    | Preposición | Ejemplo             |
-| ----------------------- | ----------- | -------------------- |
-| Hora exacta              | à           | à 8 heures            |
-| Mes o año                | en          | en janvier, en 2026   |
-| Tiempo futuro (dentro de) | dans        | dans trois jours       |
+| Uso                       | Preposición | Ejemplo             |
+| ------------------------- | ----------- | ------------------- |
+| Hora exacta               | à           | à 8 heures          |
+| Mes o año                 | en          | en janvier, en 2026 |
+| Tiempo futuro (dentro de) | dans        | dans trois jours    |
 
 ```
 Le cours commence à 8 heures.       (El curso empieza a las 8 horas)

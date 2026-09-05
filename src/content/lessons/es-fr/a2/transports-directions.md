@@ -100,23 +100,23 @@ tienes ambos.
 
 ## Medios de transporte
 
-| Francés    | Español    |
-| ---------- | ---------- |
-| le bus     | el autobús |
-| le train   | el tren    |
-| le taxi    | el taxi    |
-| le métro   | el metro   |
+| Francés  | Español    |
+| -------- | ---------- |
+| le bus   | el autobús |
+| le train | el tren    |
+| le taxi  | el taxi    |
+| le métro | el metro   |
 
 ## Direcciones básicas
 
-| Francés            | Español         |
-| -------------------- | --------------- |
-| tourner à gauche      | girar a la izquierda |
-| tourner à droite      | girar a la derecha   |
-| tout droit            | todo recto      |
-| à côté de             | al lado de      |
-| en face de            | enfrente de     |
-| près de               | cerca de        |
+| Francés          | Español              |
+| ---------------- | -------------------- |
+| tourner à gauche | girar a la izquierda |
+| tourner à droite | girar a la derecha   |
+| tout droit       | todo recto           |
+| à côté de        | al lado de           |
+| en face de       | enfrente de          |
+| près de          | cerca de             |
 
 ## Pedir y dar indicaciones
 

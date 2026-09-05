@@ -7,6 +7,8 @@ order: 10
 unit: 3
 grammarTopic: 'Depuis / pendant / il y a / dans (expressions de temps)'
 funFact: "Divide estas cuatro palabras en un eje mental con el presente en el centro: 'il y a' mira hacia atrás desde el pasado (hace X tiempo), 'depuis' es un puente que empieza en el pasado y sigue hasta ahora (desde X, y continúa), 'dans' mira hacia adelante desde ahora (en X tiempo, futuro), y 'pendant' es la única que no depende de dónde estás parado: mide una duración cerrada, con principio y fin, en cualquier tiempo verbal."
+skills:
+  - fr.b1.time.depuis-pendant
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta para 'Vivo aquí desde 2020' (acción que empezó y continúa)?"
@@ -140,7 +142,7 @@ Je pars dans une heure.
 
 ## Los cuatro juntos, de un vistazo
 
-| Expresión | Dirección                    | Ejemplo                       |
+| Expresión | Dirección                     | Ejemplo                        |
 | --------- | ----------------------------- | ------------------------------ |
 | depuis    | pasado → presente (continúa)  | J'habite ici depuis 2020.      |
 | pendant   | duración cerrada (cualquiera) | J'ai voyagé pendant deux mois. |

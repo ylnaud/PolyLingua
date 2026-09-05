@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Le gérondif (en + participe présent)'
 funFact: "El gérondif francés hace algo que el español necesita dos palabras para lograr: 'en mangeant' comprime 'mientras como/comiendo' en una construcción compacta de 'en' + el verbo terminado en '-ant'. Es la forma más económica de describir dos acciones simultáneas del mismo sujeto."
+skills:
+  - fr.b2.verb.gerondif
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta del gérondif de 'manger' (comer)?"

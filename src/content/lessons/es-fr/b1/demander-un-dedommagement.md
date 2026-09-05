@@ -7,36 +7,48 @@ order: 12
 unit: 3
 grammarTopic: "Subjonctif après une expression d'attente"
 funFact: "Après « je m'attendrais à ce que », le verbe change presque toujours de forme (fait → fasse). Retiens la formule entière comme un bloc, pas le subjonctif isolé — c'est plus facile à réutiliser."
+skills:
+  - fr.b1.subjunctive.expectation
 minutes: 8
 quiz:
-  - question: "Quelle est la forme correcte du subjonctif présent de « faire » à la deuxième personne du pluriel ?"
+  - question: 'Quelle est la forme correcte du subjonctif présent de « faire » à la deuxième personne du pluriel ?'
     options: ['vous faites', 'vous fassiez', 'vous ferez']
     answerIndex: 1
     explanation: "« fassiez » est le subjonctif présent de « faire » — utilisé après des expressions comme « je m'attendrais à ce que »."
   - question: "Pourquoi le français utilise-t-il le subjonctif après « je m'attendrais à ce que » ?"
-    options: ["parce que « attendre » impose toujours l'indicatif", "parce que les expressions d'attente, de souhait ou de doute sont suivies du subjonctif en français", "c'est une exception sans raison"]
+    options:
+      [
+        "parce que « attendre » impose toujours l'indicatif",
+        "parce que les expressions d'attente, de souhait ou de doute sont suivies du subjonctif en français",
+        "c'est une exception sans raison",
+      ]
     answerIndex: 1
     explanation: "En français, les verbes/expressions exprimant attente, souhait, doute ou nécessité (vouloir que, il faut que, s'attendre à ce que) exigent le subjonctif dans la subordonnée."
   - question: "« Si le problème ne peut pas être résolu, je devrai changer d'hôtel » utilise l'indicatif après « si ». Que signifie ce choix, comparé à l'imparfait de la leçon précédente ?"
-    options: ['la condition est purement imaginaire', 'la condition est réelle et encore ouverte — elle peut vraiment se réaliser', "c'est déjà arrivé"]
+    options:
+      [
+        'la condition est purement imaginaire',
+        'la condition est réelle et encore ouverte — elle peut vraiment se réaliser',
+        "c'est déjà arrivé",
+      ]
     answerIndex: 1
     explanation: "« si » + indicatif présent décrit une condition réelle qui reste possible, contrairement à « si » + imparfait, réservé à l'hypothèse improbable."
 exercises:
   - type: 'fill-blank'
-    sentence: 'Je m''attendrais à ce que vous me ___ une réduction.'
+    sentence: "Je m'attendrais à ce que vous me ___ une réduction."
     answer: 'fassiez'
     accepted: ['Fassiez']
     hint: "subjonctif de « faire » après une expression d'attente."
     translation: 'Esperaría que me hiciera un descuento.'
     placeholder: 'faites / fassiez / ferez'
   - type: 'write'
-    prompt: "Traduis : « Ya lo señalé hace dos horas, pero nada ha cambiado. »"
+    prompt: 'Traduis : « Ya lo señalé hace dos horas, pero nada ha cambiado. »'
     answer: "Je l'ai déjà signalé il y a deux heures, mais rien n'a changé."
-    hint: "« il y a deux heures » = hace dos horas ; passé composé pour les deux verbes."
+    hint: '« il y a deux heures » = hace dos horas ; passé composé pour les deux verbes.'
   - type: 'write'
-    prompt: "Traduis : « ¿Qué me propone como solución? »"
+    prompt: 'Traduis : « ¿Qué me propone como solución? »'
     answer: 'Que me proposez-vous comme solution ?'
-    hint: "inversion sujet-verbe pour la question formelle."
+    hint: 'inversion sujet-verbe pour la question formelle.'
   - type: 'order'
     sentence: 'Je ne peux vraiment pas rester ici comme ça'
     translation: 'Realmente no puedo quedarme aquí así.'
@@ -59,12 +71,12 @@ poliment. Ici, l'outil grammatical qui porte la fermeté change : c'est le **sub
 
 ## Les 5 blocs de cette situation
 
-| Français                                                    | Español                                          |
-| ---------------------------------------------------------- | ---------------------------------------------------- |
-| Je l'ai déjà signalé il y a deux heures, mais rien n'a changé. | Ya lo señalé hace dos horas, pero nada ha cambiado. |
-| Je ne peux vraiment pas rester ici comme ça.                 | Realmente no puedo quedarme aquí así.               |
-| Je m'attendrais à ce que vous me fassiez une réduction.       | Esperaría que me hiciera un descuento.               |
-| Que me proposez-vous comme solution ?                         | ¿Qué me propone como solución?                       |
+| Français                                                           | Español                                                           |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------- |
+| Je l'ai déjà signalé il y a deux heures, mais rien n'a changé.     | Ya lo señalé hace dos horas, pero nada ha cambiado.               |
+| Je ne peux vraiment pas rester ici comme ça.                       | Realmente no puedo quedarme aquí así.                             |
+| Je m'attendrais à ce que vous me fassiez une réduction.            | Esperaría que me hiciera un descuento.                            |
+| Que me proposez-vous comme solution ?                              | ¿Qué me propone como solución?                                    |
 | Si le problème ne peut pas être résolu, je devrai changer d'hôtel. | Si el problema no se puede resolver, tendré que cambiar de hotel. |
 
 ## La conversation complète

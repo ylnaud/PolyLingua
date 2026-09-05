@@ -7135,6 +7135,729 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // ITALIANO — B1 y B2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    skillId: 'it.b1.verb.imperfetto',
+    explanation:
+      'No se decide por cuánto duró la acción sino por **cómo se mira**. El **passato prossimo** cuenta un hecho cerrado que hace avanzar la historia; el **imperfetto** describe el decorado: costumbres, estados, edades, el tiempo que hacía. *Mentre studia**vo**, è suonat**o** il telefono*.',
+    variations: [
+      {
+        sentence: 'Da bambino ___ sempre al parco. (andare)',
+        answer: 'andavo',
+        translation: 'De niño iba siempre al parque.',
+      },
+      {
+        sentence: 'Ieri ___ un film bellissimo. (vedere)',
+        answer: 'ho visto',
+        translation: 'Ayer vi una película preciosa.',
+      },
+      {
+        sentence: 'Mentre ___, è suonato il telefono. (studiare)',
+        answer: 'studiavo',
+        translation: 'Mientras estudiaba, sonó el teléfono.',
+      },
+      {
+        sentence: 'L’anno scorso ___ in Sicilia. (andare, noi)',
+        answer: 'siamo andati',
+        translation: 'El año pasado fuimos a Sicilia.',
+      },
+      {
+        sentence: 'Quando ___ dieci anni, vivevo a Roma. (avere)',
+        answer: 'avevo',
+        translation: 'Cuando tenía diez años, vivía en Roma.',
+      },
+      {
+        sentence: 'Stamattina ___ alle sette. (svegliarsi, io)',
+        answer: 'mi sono svegliato',
+        translation: 'Esta mañana me desperté a las siete.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.verb.futuro-semplice',
+    explanation:
+      'Las tres conjugaciones convergen: **-are** y **-ere** hacen **-erò** (*parlerò*, *prenderò*) y **-ire** hace **-irò** (*dormirò*). Y hay un uso que no existe en español: el futuro para **suponer** — *saranno le tre* es «serán las tres», o sea, «deben de ser».',
+    variations: [
+      {
+        sentence: 'Domani ___ a Roma. (andare, io)',
+        answer: 'andrò',
+        translation: 'Mañana iré a Roma.',
+      },
+      {
+        sentence: 'L’anno prossimo ___ casa. (comprare, noi)',
+        answer: 'compreremo',
+        translation: 'El año que viene compraremos casa.',
+      },
+      {
+        sentence: 'Marco ___ alle otto. (partire)',
+        answer: 'partirà',
+        translation: 'Marco saldrá a las ocho.',
+      },
+      {
+        sentence: 'Non risponde: ___ occupato. (essere)',
+        answer: 'sarà',
+        translation: 'No contesta: estará ocupado.',
+      },
+      {
+        sentence: 'Voi ___ il treno delle sei? (prendere)',
+        answer: 'prenderete',
+        translation: '¿Tomaréis el tren de las seis?',
+      },
+      {
+        sentence: 'Loro ___ la casa il mese prossimo. (vendere)',
+        answer: 'venderanno',
+        translation: 'Venderán la casa el mes que viene.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.verb.condizionale',
+    explanation:
+      'Se construye sobre la **misma raíz que el futuro** —si sabés *andrò*, sabés *andrei*— y sirve para tres cosas: pedir con cortesía (*vorrei un caffè*), expresar un deseo (*mi piacerebbe*) y dar un consejo (*dovresti riposare*).',
+    variations: [
+      {
+        sentence: '___ un caffè, per favore. (volere, io)',
+        answer: 'Vorrei',
+        translation: 'Querría un café, por favor.',
+      },
+      {
+        sentence: '___ venire con noi? (potere, tu)',
+        answer: 'Potresti',
+        translation: '¿Podrías venir con nosotros?',
+      },
+      {
+        sentence: 'Mi ___ visitare Firenze. (piacere)',
+        answer: 'piacerebbe',
+        translation: 'Me gustaría visitar Florencia.',
+      },
+      {
+        sentence: '___ riposare di più. (dovere, tu)',
+        answer: 'Dovresti',
+        translation: 'Deberías descansar más.',
+      },
+      {
+        sentence: 'Noi ___ volentieri, ma non possiamo. (venire)',
+        answer: 'verremmo',
+        translation: 'Vendríamos con gusto, pero no podemos.',
+      },
+      {
+        sentence: 'Loro ___ una risposta entro venerdì. (dare)',
+        answer: 'darebbero',
+        translation: 'Darían una respuesta antes del viernes.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.subjunctive.intro',
+    explanation:
+      'Lo que manda es **la palabra de delante, no el significado**. Piden congiuntivo los verbos de opinión y duda (*penso che*, *credo che*, *dubito che*), los de deseo (*voglio che*, *spero che*) y conjunciones como *benché* o *sebbene*. **No** lo piden *so che*, *è vero che* ni *perché* causal.',
+    variations: [
+      {
+        sentence: 'Penso che Marco ___ ragione. (avere)',
+        answer: 'abbia',
+        translation: 'Creo que Marco tiene razón.',
+      },
+      {
+        sentence: 'So che Marco ___ a Roma. (essere)',
+        answer: 'è',
+        translation: 'Sé que Marco está en Roma.',
+      },
+      {
+        sentence: 'Spero che tu ___ presto. (guarire)',
+        answer: 'guarisca',
+        translation: 'Espero que te mejores pronto.',
+      },
+      {
+        sentence: 'È vero che loro ___ partiti. (essere)',
+        answer: 'sono',
+        translation: 'Es verdad que se han ido.',
+      },
+      {
+        sentence: 'Benché ___ tardi, usciamo. (essere)',
+        answer: 'sia',
+        translation: 'Aunque sea tarde, salimos.',
+      },
+      {
+        sentence: 'Non esco perché ___ stanco. (essere, io)',
+        answer: 'sono',
+        translation: 'No salgo porque estoy cansado.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.subjunctive.imperfetto-se',
+    explanation:
+      'Tras **se** hipotético el italiano usa **congiuntivo imperfetto**, y en la otra mitad va el **condizionale**: ***se avessi** tempo, **verrei***. Es el mismo reparto que en español («si tuviera… vendría»), pero hay que producir las formas: *fossi, avessi, potessi, facessi*.',
+    variations: [
+      {
+        sentence: 'Se ___ tempo, verrei con voi. (avere, io)',
+        answer: 'avessi',
+        translation: 'Si tuviera tiempo, iría con vosotros.',
+      },
+      {
+        sentence: 'Se ___ più giovane, viaggerei di più. (essere, io)',
+        answer: 'fossi',
+        translation: 'Si fuera más joven, viajaría más.',
+      },
+      {
+        sentence: 'Se tu ___ aiutarmi, finirei prima. (potere)',
+        answer: 'potessi',
+        translation: 'Si pudieras ayudarme, terminaría antes.',
+      },
+      {
+        sentence: 'Vorrei che tu ___ più attenzione. (fare)',
+        answer: 'facessi',
+        translation: 'Querría que prestaras más atención.',
+      },
+      {
+        sentence: 'Se ___ a Roma, ci vedremmo spesso. (abitare, noi)',
+        answer: 'abitassimo',
+        translation: 'Si viviéramos en Roma, nos veríamos a menudo.',
+      },
+      {
+        sentence: 'Se loro ___ prima, arriverebbero in tempo. (partire)',
+        answer: 'partissero',
+        translation: 'Si salieran antes, llegarían a tiempo.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.conjunction.time',
+    explanation:
+      'La decisión es si hay **cambio de sujeto y anterioridad**. *Quando*, *appena* y *mentre* van con indicativo. **Prima che** pide congiuntivo, pero solo si los sujetos son distintos: con el mismo sujeto se usa **prima di + infinitivo**.',
+    variations: [
+      {
+        sentence: 'Quando ___ a casa, ti chiamo. (arrivare, io)',
+        answer: 'arrivo',
+        translation: 'Cuando llegue a casa, te llamo.',
+      },
+      {
+        sentence: 'Prima che ___ buio, torniamo. (fare)',
+        answer: 'faccia',
+        translation: 'Antes de que oscurezca, volvemos.',
+      },
+      {
+        sentence: 'Appena ___ la notizia, ti avviso. (sapere, io)',
+        answer: 'so',
+        translation: 'En cuanto sepa la noticia, te aviso.',
+      },
+      {
+        sentence: 'Mentre ___, ascolto la musica. (cucinare, io)',
+        answer: 'cucino',
+        translation: 'Mientras cocino, escucho música.',
+      },
+      {
+        sentence: 'Prima di ___, controlla le luci. (uscire)',
+        answer: 'uscire',
+        translation: 'Antes de salir, revisa las luces.',
+      },
+      {
+        sentence: 'Prima che loro ___, prepariamo tutto. (arrivare)',
+        answer: 'arrivino',
+        translation: 'Antes de que lleguen, lo preparamos todo.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.pronoun.ci-ne',
+    explanation:
+      'Sustituyen a un complemento entero y se eligen por la preposición: **ci** reemplaza lo que va con *a* o un lugar (*penso **a**l lavoro → **ci** penso*), y **ne** reemplaza lo que va con *di* o una cantidad (*parlo **del** film → **ne** parlo*; *quanti ne vuoi?*).',
+    variations: [
+      {
+        sentence: 'Vai a Roma? Sì, ___ vado domani.',
+        answer: 'ci',
+        translation: '¿Vas a Roma? Sí, voy mañana.',
+      },
+      {
+        sentence: 'Parli del progetto? Sì, ___ parlo spesso.',
+        answer: 'ne',
+        translation: '¿Hablas del proyecto? Sí, hablo de él a menudo.',
+      },
+      {
+        sentence: 'Quante mele vuoi? ___ voglio tre.',
+        answer: 'Ne',
+        translation: '¿Cuántas manzanas quieres? Quiero tres.',
+      },
+      {
+        sentence: 'Pensi all’esame? Sì, ___ penso sempre.',
+        answer: 'ci',
+        translation: '¿Piensas en el examen? Sí, pienso siempre en él.',
+      },
+      {
+        sentence: 'Hai bisogno di aiuto? Sì, ___ ho bisogno.',
+        answer: 'ne',
+        translation: '¿Necesitas ayuda? Sí, la necesito.',
+      },
+      {
+        sentence: 'Credi a questa storia? No, non ___ credo.',
+        answer: 'ci',
+        translation: '¿Te crees esta historia? No, no me la creo.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.negation.advanced',
+    explanation:
+      'El italiano **dobla la negación** igual que el español: *non vedo **nessuno***. La regla es de posición: si la palabra negativa va **detrás** del verbo, hace falta *non*; si va **delante**, el *non* desaparece — ***nessuno** è venuto*, no «non nessuno è venuto».',
+    variations: [
+      {
+        sentence: 'Non ho visto ___ alla festa.',
+        answer: 'nessuno',
+        translation: 'No vi a nadie en la fiesta.',
+      },
+      {
+        sentence: '___ è venuto alla riunione.',
+        answer: 'Nessuno',
+        translation: 'Nadie vino a la reunión.',
+      },
+      {
+        sentence: 'Non mangio ___ dalle otto.',
+        answer: 'niente',
+        translation: 'No como nada desde las ocho.',
+      },
+      { sentence: 'Marco non fuma ___.', answer: 'più', translation: 'Marco ya no fuma.' },
+      {
+        sentence: 'Non sono ___ stato in Giappone.',
+        answer: 'mai',
+        translation: 'Nunca he estado en Japón.',
+      },
+      {
+        sentence: '___ mi ha detto la verità.',
+        answer: 'Niente',
+        translation: 'Nada me dijo la verdad.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.pronoun.indefinite',
+    explanation:
+      'Se emparejan de dos en dos: **qualcuno / nessuno** para personas y **qualcosa / niente** para cosas. Y hay una concordancia que sorprende: *qualcosa* y *niente* piden el adjetivo en **masculino singular con di** — *qualcosa **di** bello*, *niente **di** speciale*.',
+    variations: [
+      {
+        sentence: 'C’è ___ alla porta.',
+        answer: 'qualcuno',
+        translation: 'Hay alguien en la puerta.',
+      },
+      {
+        sentence: 'Non c’è ___ in ufficio.',
+        answer: 'nessuno',
+        translation: 'No hay nadie en la oficina.',
+      },
+      { sentence: 'Vuoi ___ da bere?', answer: 'qualcosa', translation: '¿Quieres algo de beber?' },
+      { sentence: 'Non ho comprato ___.', answer: 'niente', translation: 'No he comprado nada.' },
+      {
+        sentence: 'Ho visto qualcosa ___ interessante.',
+        answer: 'di',
+        translation: 'He visto algo interesante.',
+      },
+      {
+        sentence: 'Non è successo niente ___ grave.',
+        answer: 'di',
+        translation: 'No ha pasado nada grave.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.preposition.da-per',
+    explanation:
+      '**Da** marca una duración que **sigue abierta** y va con presente: *studio italiano **da** due anni* (y sigo). **Per** marca una duración **cerrada**: *ho studiato **per** due anni* (y terminé). En español las dos serían «desde hace» y «durante».',
+    variations: [
+      {
+        sentence: 'Studio italiano ___ due anni.',
+        answer: 'da',
+        translation: 'Estudio italiano desde hace dos años.',
+      },
+      {
+        sentence: 'Ho lavorato a Milano ___ tre mesi.',
+        answer: 'per',
+        translation: 'Trabajé en Milán durante tres meses.',
+      },
+      { sentence: 'Abito qui ___ gennaio.', answer: 'da', translation: 'Vivo aquí desde enero.' },
+      {
+        sentence: 'Resteremo a Roma ___ una settimana.',
+        answer: 'per',
+        translation: 'Nos quedaremos en Roma una semana.',
+      },
+      {
+        sentence: 'Non lo vedo ___ molto tempo.',
+        answer: 'da',
+        translation: 'No lo veo desde hace mucho.',
+      },
+      {
+        sentence: 'Ha piovuto ___ tutta la notte.',
+        answer: 'per',
+        translation: 'Llovió durante toda la noche.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b1.verb.passive-state',
+    explanation:
+      'La distinción que en español se hace con ser/estar. **Essere + participio** describe el **estado** en que algo quedó: *la finestra **è rotta*** (está rota). El **passato prossimo** cuenta la **acción**: *qualcuno **ha rotto** la finestra* (alguien la rompió).',
+    variations: [
+      {
+        sentence: 'La porta ___ chiusa da ieri. (essere)',
+        answer: 'è',
+        translation: 'La puerta está cerrada desde ayer.',
+      },
+      {
+        sentence: 'Il cameriere ___ chiuso la porta. (avere)',
+        answer: 'ha',
+        translation: 'El camarero cerró la puerta.',
+      },
+      {
+        sentence: 'Le camere ___ già pulite. (essere)',
+        answer: 'sono',
+        translation: 'Las habitaciones ya están limpias.',
+      },
+      {
+        sentence: 'La donna delle pulizie ___ pulito le camere. (avere)',
+        answer: 'ha',
+        translation: 'La limpiadora limpió las habitaciones.',
+      },
+      {
+        sentence: 'Il problema ___ risolto, non preoccuparti. (essere)',
+        answer: 'è',
+        translation: 'El problema está resuelto, no te preocupes.',
+      },
+      {
+        sentence: 'Il tecnico ___ risolto il problema stamattina. (avere)',
+        answer: 'ha',
+        translation: 'El técnico resolvió el problema esta mañana.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b2.verb.passive',
+    explanation:
+      'Dos auxiliares con matices distintos: **essere** para el hecho (*la lettera **è** scritta da Marco*) y **venire** para insistir en la acción repetida o el procedimiento (*il museo **viene** chiuso alle sei*). En los dos, el participio **concuerda** con el sujeto y el agente va con **da**.',
+    variations: [
+      {
+        sentence: 'La lettera ___ scritta da Marco. (essere)',
+        answer: 'è',
+        translation: 'La carta está escrita por Marco.',
+      },
+      {
+        sentence: 'Il museo ___ chiuso alle sei ogni giorno. (venire)',
+        answer: 'viene',
+        translation: 'El museo se cierra a las seis todos los días.',
+      },
+      {
+        sentence: 'Le case ___ costruite nel 1920. (essere)',
+        answer: 'sono',
+        translation: 'Las casas fueron construidas en 1920.',
+      },
+      {
+        sentence: 'Il progetto è stato approvato ___ direttore.',
+        answer: 'dal',
+        translation: 'El proyecto fue aprobado por el director.',
+      },
+      {
+        sentence: 'I documenti ___ controllati ogni mese. (venire)',
+        answer: 'vengono',
+        translation: 'Los documentos se revisan cada mes.',
+      },
+      {
+        sentence: 'La cena ___ preparata da mia madre. (essere)',
+        answer: 'è',
+        translation: 'La cena está preparada por mi madre.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b2.pronoun.relative',
+    explanation:
+      '**Che** vale para sujeto y objeto directo, y no cambia nunca. En cuanto aparece una **preposición**, ya no sirve: hay que usar **cui** (*la città **in cui** vivo*). *Il quale* es la variante formal de *cui*, y sí concuerda en género y número.',
+    variations: [
+      {
+        sentence: 'Il libro ___ ho letto è bellissimo.',
+        answer: 'che',
+        translation: 'El libro que leí es precioso.',
+      },
+      {
+        sentence: 'La città in ___ vivo è Bologna.',
+        answer: 'cui',
+        translation: 'La ciudad en la que vivo es Bolonia.',
+      },
+      {
+        sentence: 'L’amico a ___ ho scritto non risponde.',
+        answer: 'cui',
+        translation: 'El amigo al que escribí no contesta.',
+      },
+      {
+        sentence: 'La ragazza ___ parla è mia sorella.',
+        answer: 'che',
+        translation: 'La chica que habla es mi hermana.',
+      },
+      {
+        sentence: 'Il motivo per ___ sono venuto è semplice.',
+        answer: 'cui',
+        translation: 'El motivo por el que he venido es simple.',
+      },
+      {
+        sentence: 'I colleghi con ___ lavoro sono simpatici.',
+        answer: 'cui',
+        translation: 'Los compañeros con los que trabajo son simpáticos.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b2.verb.condizionale-passato',
+    explanation:
+      'Sirve para lo que **no llegó a pasar** (*sarei venuto, ma…*) y, sobre todo, para el **futuro en el pasado**: donde el español dice «dijo que vendría», el italiano dice *ha detto che **sarebbe venuto*** — condicional compuesto, no simple. Ese es el punto que más se falla.',
+    variations: [
+      {
+        sentence: '___ venuto, ma ero malato. (essere, io)',
+        answer: 'Sarei',
+        translation: 'Habría venido, pero estaba enfermo.',
+      },
+      {
+        sentence: 'Ha detto che ___ arrivato alle otto. (essere)',
+        answer: 'sarebbe',
+        translation: 'Dijo que llegaría a las ocho.',
+      },
+      {
+        sentence: '___ dovuto avvisarti prima. (avere, io)',
+        answer: 'Avrei',
+        translation: 'Debería haberte avisado antes.',
+      },
+      {
+        sentence: 'Pensavo che ___ telefonato. (avere, tu)',
+        answer: 'avresti',
+        translation: 'Pensaba que habrías llamado.',
+      },
+      {
+        sentence: 'Noi ___ preferito restare a casa. (avere)',
+        answer: 'avremmo',
+        translation: 'Habríamos preferido quedarnos en casa.',
+      },
+      {
+        sentence: 'Sapevo che loro ___ partiti presto. (essere)',
+        answer: 'sarebbero',
+        translation: 'Sabía que se irían temprano.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b2.verb.gerundio',
+    explanation:
+      'Dos usos que hay que separar. **Stare + gerundio** marca la acción en curso: *sto mangiando*. El gerundio solo expresa **modo o causa**: *sono uscito **correndo***. Lo que el italiano **no** hace es usarlo como adjetivo: «una caja conteniendo libros» es *una scatola **che contiene** libri*.',
+    variations: [
+      {
+        sentence: 'Marco ___ mangiando. (stare)',
+        answer: 'sta',
+        translation: 'Marco está comiendo.',
+      },
+      {
+        sentence: 'Che cosa ___ facendo? (stare, tu)',
+        answer: 'stai',
+        translation: '¿Qué estás haciendo?',
+      },
+      {
+        sentence: 'Sono uscito ___. (correre)',
+        answer: 'correndo',
+        translation: 'Salí corriendo.',
+      },
+      {
+        sentence: 'Noi ___ leggendo il giornale. (stare)',
+        answer: 'stiamo',
+        translation: 'Estamos leyendo el periódico.',
+      },
+      {
+        sentence: '___ molto, ha superato l’esame. (studiare)',
+        answer: 'Studiando',
+        translation: 'Estudiando mucho, aprobó el examen.',
+      },
+      {
+        sentence: 'I bambini ___ dormendo. (stare)',
+        answer: 'stanno',
+        translation: 'Los niños están durmiendo.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b2.verb.trapassato',
+    explanation:
+      'Es el pasado **anterior a otro pasado**, y se arma con el **imperfetto** de avere/essere + participio: *quando sono arrivato, lui **era** già **uscito***. Elegir mal el auxiliar es el error frecuente: sigue la misma regla que el passato prossimo.',
+    variations: [
+      {
+        sentence: 'Quando sono arrivato, lui ___ già uscito. (essere)',
+        answer: 'era',
+        translation: 'Cuando llegué, él ya había salido.',
+      },
+      {
+        sentence: 'Non sapevo che ___ perso il treno. (avere, tu)',
+        answer: 'avevi',
+        translation: 'No sabía que habías perdido el tren.',
+      },
+      {
+        sentence: 'Ci ___ già visti l’anno prima. (essere, noi)',
+        answer: 'eravamo',
+        translation: 'Ya nos habíamos visto el año anterior.',
+      },
+      {
+        sentence: 'Mi ha detto che ___ finito il lavoro. (avere)',
+        answer: 'aveva',
+        translation: 'Me dijo que había terminado el trabajo.',
+      },
+      {
+        sentence: 'Loro ___ partiti prima della telefonata. (essere)',
+        answer: 'erano',
+        translation: 'Se habían ido antes de la llamada.',
+      },
+      {
+        sentence: 'Voi ___ già mangiato quando sono arrivato. (avere)',
+        answer: 'avevate',
+        translation: 'Ya habíais comido cuando llegué.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b2.conditional.periodo-ipotetico',
+    explanation:
+      'Dos tipos que no se mezclan. **De la realidad**: *se + indicativo → indicativo* (*se piove, resto a casa*). **De la posibilidad**: *se + congiuntivo imperfetto → condizionale* (*se piovesse, resterei*). El error es cruzarlos y poner condicional detrás del *se*.',
+    variations: [
+      {
+        sentence: 'Se ___, resto a casa. (piovere)',
+        answer: 'piove',
+        translation: 'Si llueve, me quedo en casa.',
+      },
+      {
+        sentence: 'Se ___, resterei a casa. (piovere)',
+        answer: 'piovesse',
+        translation: 'Si lloviera, me quedaría en casa.',
+      },
+      {
+        sentence: 'Se hai tempo, ___ con noi. (venire, tu)',
+        answer: 'vieni',
+        translation: 'Si tienes tiempo, vente con nosotros.',
+      },
+      {
+        sentence: 'Se avessi tempo, ___ con voi. (venire, io)',
+        answer: 'verrei',
+        translation: 'Si tuviera tiempo, iría con vosotros.',
+      },
+      {
+        sentence: 'Se ___ più soldi, comprerei una casa. (avere, io)',
+        answer: 'avessi',
+        translation: 'Si tuviera más dinero, compraría una casa.',
+      },
+      {
+        sentence: 'Se studi, ___ l’esame. (superare, tu)',
+        answer: 'superi',
+        translation: 'Si estudias, apruebas el examen.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b2.connector.cause',
+    explanation:
+      'La causa va con indicativo —**perché**, **siccome**, **poiché**— pero **affinché** y **perché final** («para que») piden **congiuntivo**. Y ojo con el orden: *siccome* solo puede ir **al principio** de la frase, nunca en medio.',
+    variations: [
+      { sentence: 'Non esco ___ piove.', answer: 'perché', translation: 'No salgo porque llueve.' },
+      {
+        sentence: '___ pioveva, siamo restati a casa.',
+        answer: 'Siccome',
+        translation: 'Como llovía, nos quedamos en casa.',
+      },
+      {
+        sentence: 'Te lo spiego affinché tu ___ capire. (potere)',
+        answer: 'possa',
+        translation: 'Te lo explico para que puedas entender.',
+      },
+      {
+        sentence: 'Ha piovuto molto, ___ la strada è allagata.',
+        answer: 'quindi',
+        translation: 'Llovió mucho, así que la calle está inundada.',
+      },
+      {
+        sentence: 'Studio molto ___ voglio superare l’esame.',
+        answer: 'perché',
+        translation: 'Estudio mucho porque quiero aprobar el examen.',
+      },
+      {
+        sentence: 'Parla piano affinché tutti ___ sentire. (potere)',
+        answer: 'possano',
+        translation: 'Habla despacio para que todos puedan oír.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b2.connector.logical',
+    explanation:
+      'Los que ordenan un texto: **inoltre** añade, **tuttavia** y **eppure** contraponen, **infatti** confirma, **invece** contrasta, **anzi** corrige al alza. La trampa es *anzi*: no significa «antes» sino «al contrario, es más».',
+    variations: [
+      {
+        sentence: 'È caro; ___, non è nemmeno buono.',
+        answer: 'inoltre',
+        translation: 'Es caro; además, ni siquiera está bueno.',
+      },
+      {
+        sentence: 'Ha studiato molto; ___, non ha superato l’esame.',
+        answer: 'tuttavia',
+        translation: 'Estudió mucho; sin embargo, no aprobó.',
+      },
+      {
+        sentence: 'Non è stanco; ___, è pieno di energia.',
+        answer: 'anzi',
+        translation: 'No está cansado; al contrario, está lleno de energía.',
+      },
+      {
+        sentence: 'Pensavo piovesse e ___ ha piovuto.',
+        answer: 'infatti',
+        translation: 'Pensaba que llovería y en efecto llovió.',
+      },
+      {
+        sentence: 'Marco è alto, sua sorella ___ è bassa.',
+        answer: 'invece',
+        translation: 'Marco es alto, su hermana en cambio es baja.',
+      },
+      {
+        sentence: 'Aveva tutto per vincere; ___ ha perso.',
+        answer: 'eppure',
+        translation: 'Tenía todo para ganar; y sin embargo perdió.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.b2.pronoun.possessive',
+    explanation:
+      'Cuando el posesivo sustituye al nombre en vez de acompañarlo, **el artículo vuelve siempre** — incluso con familiares, donde el adjetivo lo perdía. *Mio fratello* sin artículo, pero *questo è **il mio***. Y concuerda con la cosa poseída, no con el dueño.',
+    variations: [
+      {
+        sentence: 'Questa è la mia borsa, quella è ___ tua.',
+        answer: 'la',
+        translation: 'Este es mi bolso, aquel es el tuyo.',
+      },
+      {
+        sentence: 'Mio fratello lavora; ___ tuo studia.',
+        answer: 'il',
+        translation: 'Mi hermano trabaja; el tuyo estudia.',
+      },
+      {
+        sentence: 'Le nostre chiavi sono qui, ___ vostre no.',
+        answer: 'le',
+        translation: 'Nuestras llaves están aquí, las vuestras no.',
+      },
+      {
+        sentence: 'Il mio libro è nuovo, ___ suo è vecchio.',
+        answer: 'il',
+        translation: 'Mi libro es nuevo, el suyo es viejo.',
+      },
+      {
+        sentence: 'Questi non sono i miei occhiali, sono ___ tuoi.',
+        answer: 'i',
+        translation: 'Estas no son mis gafas, son las tuyas.',
+      },
+      {
+        sentence: 'La sua idea è buona, ma preferisco ___ mia.',
+        answer: 'la',
+        translation: 'Su idea es buena, pero prefiero la mía.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

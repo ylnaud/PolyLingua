@@ -7,12 +7,14 @@ order: 10
 unit: 3
 grammarTopic: 'Periodo ipotetico della realtà e della possibilità'
 funFact: "Pensá en dos cajones: el de la 'realtà' (se + presente + presente, como una regla que siempre se cumple: 'Se piove, resto a casa') y el de la 'possibilità' (se + congiuntivo imperfetto + condizionale, para algo que imaginás pero no es seguro: 'Se avessi tempo, verrei'). Elegir el cajón correcto es la mitad del trabajo."
+skills:
+  - it.b2.conditional.periodo-ipotetico
 minutes: 10
 quiz:
   - question: "'Se piove, resto a casa.' ¿Qué tipo de periodo ipotetico es?"
     options:
-      - "della realtà (se + indicativo presente + indicativo/imperativo)"
-      - "della possibilità (se + congiuntivo imperfetto + condizionale)"
+      - 'della realtà (se + indicativo presente + indicativo/imperativo)'
+      - 'della possibilità (se + congiuntivo imperfetto + condizionale)'
       - "dell'irrealtà (se + congiuntivo trapassato + condizionale passato)"
     answerIndex: 0
     explanation: "'Se piove, resto a casa' usa indicativo presente en ambas partes: es el tipo della realtà, describe algo que se cumple siempre que llueve."
@@ -23,9 +25,10 @@ quiz:
   - question: "En el periodo ipotetico della possibilità, ¿qué tiempo va en la parte con 'se'?"
     options: ['indicativo presente', 'congiuntivo imperfetto', 'congiuntivo trapassato']
     answerIndex: 1
-    explanation: "Della possibilità: se + congiuntivo imperfetto (avessi, fossi, potessi...) + condizionale presente en la consecuencia."
-  - question: "¿Cuál de estas frases describe algo que se cumple siempre (una regla, no una hipótesis)?"
-    options: ['Se avessi soldi, viaggerei.', 'Se studi, impari.', 'Se avessi studiato, avrei imparato.']
+    explanation: 'Della possibilità: se + congiuntivo imperfetto (avessi, fossi, potessi...) + condizionale presente en la consecuencia.'
+  - question: '¿Cuál de estas frases describe algo que se cumple siempre (una regla, no una hipótesis)?'
+    options:
+      ['Se avessi soldi, viaggerei.', 'Se studi, impari.', 'Se avessi studiato, avrei imparato.']
     answerIndex: 1
     explanation: "'Se studi, impari' (si estudias, aprendes) usa indicativo presente en ambas partes: es una regla general, tipo della realtà."
 exercises:
@@ -112,18 +115,18 @@ Se fossi ricco, viaggerei sempre.
    (Si fuera rico, viajaría siempre — pero no lo soy.)
 ```
 
-| Verbo (congiuntivo imperfetto) | io       | Ejemplo             |
-| ------------------------------- | -------- | -------------------- |
-| avere                            | avessi   | Se avessi soldi...   |
-| essere                           | fossi    | Se fossi ricco...    |
-| potere                           | potessi  | Se potessi, verrei.  |
+| Verbo (congiuntivo imperfetto) | io      | Ejemplo             |
+| ------------------------------ | ------- | ------------------- |
+| avere                          | avessi  | Se avessi soldi...  |
+| essere                         | fossi   | Se fossi ricco...   |
+| potere                         | potessi | Se potessi, verrei. |
 
 ## Comparando los dos tipos
 
-| Tipo               | Fórmula                                       | Ejemplo                        |
-| ------------------- | ---------------------------------------------- | -------------------------------- |
-| Della realtà        | se + indicativo presente + indicativo/imperativo | Se piove, resto a casa.        |
-| Della possibilità   | se + congiuntivo imperfetto + condizionale presente | Se avessi tempo, verrei.       |
+| Tipo              | Fórmula                                             | Ejemplo                  |
+| ----------------- | --------------------------------------------------- | ------------------------ |
+| Della realtà      | se + indicativo presente + indicativo/imperativo    | Se piove, resto a casa.  |
+| Della possibilità | se + congiuntivo imperfetto + condizionale presente | Se avessi tempo, verrei. |
 
 ## El próximo paso: el tercer tipo
 

@@ -5,8 +5,11 @@ title: 'Chiedere un risarcimento in italiano B1: il congiuntivo'
 description: "Impara a insistere con fermezza ma cortesia per una soluzione in hotel in italiano, con il congiuntivo dopo un'espressione di aspettativa."
 order: 12
 unit: 3
-grammarTopic: 'Congiuntivo dopo un''espressione di aspettativa'
+grammarTopic: "Congiuntivo dopo un'espressione di aspettativa"
 funFact: 'Dopo "mi aspetterei che", il verbo cambia quasi sempre forma (fate → faceste). Memorizza la formula intera come blocco, non il congiuntivo isolato — è più facile da riusare.'
+skills:
+  - it.b1.subjunctive.intro
+  - it.b1.verb.condizionale
 minutes: 8
 quiz:
   - question: 'Qual è la forma corretta del congiuntivo imperfetto di "fare" alla seconda persona plurale?'
@@ -14,11 +17,21 @@ quiz:
     answerIndex: 1
     explanation: '"faceste" è il congiuntivo imperfetto di "fare" — usato dopo espressioni come "mi aspetterei che".'
   - question: 'Perché l''italiano usa il congiuntivo dopo "mi aspetterei che"?'
-    options: ['perché "aspettarsi" richiede sempre l''indicativo', 'perché le espressioni di aspettativa, desiderio o dubbio sono seguite dal congiuntivo in italiano', "è un'eccezione senza motivo"]
+    options:
+      [
+        'perché "aspettarsi" richiede sempre l''indicativo',
+        'perché le espressioni di aspettativa, desiderio o dubbio sono seguite dal congiuntivo in italiano',
+        "è un'eccezione senza motivo",
+      ]
     answerIndex: 1
     explanation: 'In italiano, i verbi/le espressioni che esprimono aspettativa, desiderio, dubbio o necessità (volere che, bisogna che, aspettarsi che) richiedono il congiuntivo nella subordinata.'
   - question: '"Se il problema non si può risolvere, dovrò cambiare hotel" usa l''indicativo dopo "se". Cosa indica questa scelta, rispetto al congiuntivo imperfetto della lezione precedente?'
-    options: ['la condizione è puramente immaginaria', 'la condizione è reale e ancora aperta — può davvero succedere', 'è già successo']
+    options:
+      [
+        'la condizione è puramente immaginaria',
+        'la condizione è reale e ancora aperta — può davvero succedere',
+        'è già successo',
+      ]
     answerIndex: 1
     explanation: '"se" + indicativo presente descrive una condizione reale che resta possibile, a differenza di "se" + congiuntivo imperfetto, riservato all''ipotesi improbabile.'
 exercises:
@@ -60,13 +73,13 @@ cortesia. Qui lo strumento grammaticale che porta la fermezza cambia: è il
 
 ## I 5 blocchi di questa situazione
 
-| Italiano                                                     | Español                                          |
-| --------------------------------------------------------------- | ------------------------------------------------- |
-| L'ho già segnalato due ore fa, ma non è cambiato niente.        | Ya lo señalé hace dos horas, pero no ha cambiado nada. |
-| Non posso davvero restare qui così.                              | Realmente no puedo quedarme aquí así.               |
-| Mi aspetterei che mi faceste uno sconto.                         | Esperaría que me hicieran un descuento.             |
-| Cosa mi propone come soluzione?                                  | ¿Qué me propone como solución?                      |
-| Se il problema non si può risolvere, dovrò cambiare hotel.       | Si el problema no se puede resolver, tendré que cambiar de hotel. |
+| Italiano                                                   | Español                                                           |
+| ---------------------------------------------------------- | ----------------------------------------------------------------- |
+| L'ho già segnalato due ore fa, ma non è cambiato niente.   | Ya lo señalé hace dos horas, pero no ha cambiado nada.            |
+| Non posso davvero restare qui così.                        | Realmente no puedo quedarme aquí así.                             |
+| Mi aspetterei che mi faceste uno sconto.                   | Esperaría que me hicieran un descuento.                           |
+| Cosa mi propone come soluzione?                            | ¿Qué me propone como solución?                                    |
+| Se il problema non si può risolvere, dovrò cambiare hotel. | Si el problema no se puede resolver, tendré que cambiar de hotel. |
 
 ## La conversazione completa
 

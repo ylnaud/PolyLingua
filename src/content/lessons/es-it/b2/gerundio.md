@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Il gerundio (-ando/-endo)'
 funFact: "El gerundio italiano se usa mucho más ampliamente que en español: además de describir simultaneidad ('mangiando' = comiendo), se combina con 'stare' para formar una forma progresiva ('sto mangiando' = estoy comiendo) muy similar a la estructura inglesa 'I am eating' — un uso que otros idiomas romances no tienen tan desarrollado."
+skills:
+  - it.b2.verb.gerundio
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta del gerundio de 'mangiare' (comer)?"

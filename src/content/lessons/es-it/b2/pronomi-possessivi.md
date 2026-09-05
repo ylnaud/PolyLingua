@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Pronombres posesivos (il mio, il tuo, il suo...)'
 funFact: "A diferencia de los adjetivos posesivos que ya conoces (donde el artículo desaparece con familiares singulares: 'mia madre'), los pronombres posesivos SIEMPRE mantienen su artículo, sin excepción: 'Questo libro è il mio' — nunca se omite, porque aquí el pronombre reemplaza completamente al sustantivo."
+skills:
+  - it.b2.pronoun.possessive
 minutes: 8
 quiz:
   - question: "'È il mio libro.' → 'È ___' (es el mío). ¿Qué forma va?"

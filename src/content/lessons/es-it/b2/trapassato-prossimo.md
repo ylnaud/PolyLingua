@@ -7,15 +7,17 @@ order: 9
 unit: 3
 grammarTopic: 'Trapassato prossimo'
 funFact: "El trapassato prossimo es al passato prossimo lo que el pluscuamperfecto es al pretérito en español: 'había llegado' = 'ero arrivato'. Si en español dirías 'había', en italiano casi seguro necesitás trapassato prossimo — la traducción es casi automática."
+skills:
+  - it.b2.verb.trapassato
 minutes: 9
 quiz:
-  - question: "¿Cómo se forma el trapassato prossimo?"
+  - question: '¿Cómo se forma el trapassato prossimo?'
     options:
       - 'avere/essere en presente + participio passato'
       - 'avere/essere en imperfetto + participio passato'
       - 'avere/essere en futuro + participio passato'
     answerIndex: 1
-    explanation: "El trapassato prossimo usa el imperfetto de avere o essere (según el verbo) + el participio passato: avevo mangiato, ero arrivato."
+    explanation: 'El trapassato prossimo usa el imperfetto de avere o essere (según el verbo) + el participio passato: avevo mangiato, ero arrivato.'
   - question: "'Quando sono arrivato, lui era già partito.' ¿Qué acción pasó primero?"
     options:
       - "'sono arrivato' (llegué) pasó primero"
@@ -68,7 +70,8 @@ exercises:
   - type: 'write'
     prompt: "Escribe en italiano: 'Cuando llegué, él ya había partido' (usa trapassato prossimo para 'había partido')."
     answer: 'Quando sono arrivato, lui era già partito'
-    accepted: ['Quando sono arrivato, lui era già partito', 'quando sono arrivato lui era già partito']
+    accepted:
+      ['Quando sono arrivato, lui era già partito', 'quando sono arrivato lui era già partito']
     hint: "'Sono arrivato' (passato prossimo) para la acción más reciente, 'era partito' (trapassato prossimo) para la más lejana."
     placeholder: 'Quando ho aperto la porta, il gatto aveva già mangiato.'
   - type: 'order'
@@ -97,14 +100,14 @@ esta forma.
 avere/essere (imperfetto)  +  participio passato
 ```
 
-| Persona     | avere (imperfetto) | essere (imperfetto) |
-| ----------- | ------------------- | -------------------- |
-| io          | avevo                | ero                   |
-| tu          | avevi                | eri                    |
-| lui/lei     | aveva                 | era                    |
-| noi         | avevamo              | eravamo               |
-| voi         | avevate              | eravate                |
-| loro        | avevano              | erano                  |
+| Persona | avere (imperfetto) | essere (imperfetto) |
+| ------- | ------------------ | ------------------- |
+| io      | avevo              | ero                 |
+| tu      | avevi              | eri                 |
+| lui/lei | aveva              | era                 |
+| noi     | avevamo            | eravamo             |
+| voi     | avevate            | eravate             |
+| loro    | avevano            | erano               |
 
 Igual que en el passato prossimo, la elección entre avere y essere depende del mismo
 verbo (movimiento/cambio de estado → essere; la mayoría del resto → avere), y con

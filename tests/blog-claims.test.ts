@@ -53,6 +53,45 @@ describe('afirmaciones del blog', () => {
     expect(texto).not.toMatch(/en cada m.dulo/);
   });
 
+  it('los cuatro artículos de falsos amigos no comparten estructura', () => {
+    // Eran una plantilla rellenada cuatro veces: cinco H2 palabra por palabra,
+    // los mismos cuatro «trucos» en el mismo orden, y una tabla de «verdaderos
+    // amigos» con 8 de 10 lemas idénticos entre francés, italiano y portugués.
+    // Cuatro artículos con la misma forma compiten entre sí en el buscador y no
+    // le dan al lector una razón para leer más de uno.
+    //
+    // Ahora cada uno se organiza sobre lo que es propio de ese par: el rodeo por
+    // el inglés en alemán, los falsos amigos a medias en francés, la ausencia de
+    // duda en italiano, y comprensión contra producción en portugués. Lo único
+    // que pueden compartir es el andamio (FAQ, cierre, cómo trabajarlo).
+    const ANDAMIO = new Set(['Preguntas frecuentes', 'Cómo trabajarlo', 'En resumen']);
+    const idiomas = ['aleman', 'frances', 'italiano', 'portugues'];
+
+    const porIdioma = idiomas.map((l) => {
+      const texto = readFileSync(join(DIR, `falsos-amigos-${l}-espanol.md`), 'utf8');
+      const h2 = [...texto.matchAll(/^## (.+)$/gm)].map((m) => m[1]!.trim());
+      return { l, propios: h2.filter((h) => !ANDAMIO.has(h)) };
+    });
+
+    const repetidos = new Map<string, string[]>();
+    for (const { l, propios } of porIdioma) {
+      for (const h of new Set(propios)) repetidos.set(h, [...(repetidos.get(h) ?? []), l]);
+    }
+    const compartidos = [...repetidos].filter(([, ls]) => ls.length > 1);
+    expect(
+      compartidos.map(([h, ls]) => `${ls.join('/')}: ${h}`),
+      'estos H2 se repiten entre artículos; cada uno debería nombrar lo que es propio de su idioma',
+    ).toEqual([]);
+
+    // Y que ninguno vuelva a traer la tabla genérica de cognados latinos.
+    for (const l of idiomas) {
+      const texto = readFileSync(join(DIR, `falsos-amigos-${l}-espanol.md`), 'utf8');
+      expect(texto, `${l} recuperó la tabla de «verdaderos amigos»`).not.toContain(
+        'verdaderos amigos',
+      );
+    }
+  });
+
   it('el plural alemán no se presenta como regla sin excepción', () => {
     // Decía «en plural el artículo siempre es die, sin ninguna excepción», y lo
     // titulaba «la única regla sin excepción de todo el idioma». El dativo

@@ -1,5 +1,5 @@
 ---
-title: 'Aprender 5 idiomas gratis sin internet: así funciona una app que no necesita cuenta ni WiFi'
+title: 'Aprender idiomas sin internet: cómo funciona una web offline'
 description: 'Cómo una web puede funcionar sin conexión, sin cuenta y sin pesar 200 MB: la explicación técnica (sencilla) detrás de una PWA para aprender idiomas.'
 publishDate: 2026-08-12
 tags: ['offline', 'PWA', 'cómo funciona']

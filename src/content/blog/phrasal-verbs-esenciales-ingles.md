@@ -105,6 +105,47 @@ Agrupar por partícula ayuda a ver patrones de significado, aunque no son
 | **hang out**        | pasar el rato (socialmente)      | We hung out at the park all afternoon. |
 | **break down**      | descomponerse (una máquina)      | My car broke down on the highway.      |
 
+## Por dónde empezar según tu nivel (A1 → B2)
+
+Los 23 de arriba no hacen falta todos a la vez. Esta es la escalera que
+seguiría yo, y conviene decir de dónde sale: **es una agrupación editorial, no
+una clasificación oficial del MCER.** No hay una lista del Marco que diga qué
+phrasal verb es de qué nivel. El criterio acá es otro y es comprobable contra
+las tablas de arriba: cuánto se aleja el significado del verbo suelto.
+
+**A1 — los que describen tu día y significan casi lo que parecen**
+
+`wake up` · `get up` · `turn on` · `turn off`
+
+Son los primeros porque la partícula todavía ayuda: _up_ es levantarse, _on_ y
+_off_ son encendido y apagado. Se pueden deducir, y por eso entran sin
+esfuerzo.
+
+**A2 — los que ya no se deducen, pero aparecen todos los días**
+
+`look up` · `take off` · `run out of` · `go on` · `depend on` · `hang out`
+
+Acá empieza la distancia: _look up_ no es mirar hacia arriba, es buscar. Son
+frecuentes, así que la práctica los fija rápido aunque el significado no se
+adivine.
+
+**B1 — los idiomáticos que separan a quien estudió de quien conversa**
+
+`give up` · `break up` · `find out` · `work out` · `figure out` · `check out` ·
+`put off` · `get on with` · `look forward to` · `deal with`
+
+Ninguno se deduce de sus piezas, y son exactamente los que aparecen en una
+conversación normal. Si tenés que elegir un grupo para trabajar a fondo, es
+este.
+
+**B2 — los que ya son otra cosa**
+
+`call off` · `come across` · `break down`
+
+_Break down_ va de un auto que se rompe a una persona que se derrumba a una
+cifra que se desglosa, todo con las mismas dos palabras. Ese salto es el que
+marca el nivel.
+
 ## El error más común: traducir literalmente
 
 El error número uno de los hispanohablantes es intentar entender un

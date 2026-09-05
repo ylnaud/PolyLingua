@@ -8,6 +8,8 @@ unit: 2
 situation: 'Salud y cuerpo'
 grammarTopic: 'Vocabulário: o médico'
 funFact: "Para decir que tenés un síntoma, el portugués usa 'estar com': 'estou com dor de cabeça' es 'tengo dolor de cabeza', literalmente 'estoy con dolor de cabeza' — una estructura distinta a 'ter', que reservás para posesión real."
+skills:
+  - pt.a2.vocabulary.health
 minutes: 7
 phrases:
   - text: 'Eu não estou me sentindo bem.'

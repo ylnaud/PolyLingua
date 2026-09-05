@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Expressões impessoais (é preciso, é necessário)'
 funFact: "'É preciso' puede ir seguido directamente de infinitivo ('É preciso estudar') o de 'que' + subjuntivo ('É preciso que você estude') — la primera es más general/impersonal, la segunda personaliza a quién le toca hacer la acción, un matiz sutil que en español funciona de forma muy parecida."
+skills:
+  - pt.a2.impersonal.e-preciso
 minutes: 7
 quiz:
   - question: "¿Qué significa 'É preciso estudar' en portugués?"

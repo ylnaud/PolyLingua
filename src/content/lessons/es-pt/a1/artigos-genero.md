@@ -7,6 +7,9 @@ order: 1
 unit: 1
 grammarTopic: 'Artigos e gênero (o/a, um/uma)'
 funFact: "El portugués es el idioma con más palabras 'gratis' para un hispanohablante: muchísimas coinciden en escritura, significado Y género. Pero justo esa cercanía es peligrosa — bajas la guardia y caes en 'falsos amigos' de género como 'o sangue' (masculino, aunque en español 'la sangre' es femenina). Nunca asumas: verifica cada palabra nueva."
+skills:
+  - pt.a1.article.definite
+  - pt.a1.article.indefinite
 minutes: 6
 quiz:
   - question: "¿Cuál es el artículo correcto para 'livro' (libro)?"

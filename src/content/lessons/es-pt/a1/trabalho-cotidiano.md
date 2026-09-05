@@ -8,6 +8,8 @@ unit: 2
 situation: 'Trabajo'
 grammarTopic: 'Vocabulário: o trabalho'
 funFact: "'Expediente' no es un documento en portugués: es tu horario de trabajo. Preguntar 'Qual é o seu expediente?' es preguntar a qué hora trabajas, no pedir papeles — uno de los falsos amigos más útiles para el día a día laboral."
+skills:
+  - pt.a1.vocabulary.work
 minutes: 6
 phrases:
   - text: 'O que você faz?'
@@ -30,7 +32,12 @@ quiz:
     answerIndex: 0
     explanation: "'O que você faz?' (literalmente '¿qué haces?') es la forma normal de preguntar por la profesión de alguien."
   - question: "¿Qué significa 'Eu trabalho das nove às seis'?"
-    options: ['Trabajo los nueve días de la semana.', 'Trabajo de nueve a seis.', 'Trabajo desde hace seis años.']
+    options:
+      [
+        'Trabajo los nueve días de la semana.',
+        'Trabajo de nueve a seis.',
+        'Trabajo desde hace seis años.',
+      ]
     answerIndex: 1
     explanation: "'das ... às ...' es la fórmula para dar un horario: 'das nove às seis' es 'de nueve a seis'."
   - question: "En portugués, ¿qué es tu 'expediente'?"
@@ -121,13 +128,13 @@ documento, es tu horario de trabajo.
 
 ## Vocabulario de la oficina
 
-| Portugués      | Español              |
-| --------------- | --------------------- |
-| o emprego       | el empleo              |
-| o escritório    | la oficina             |
-| o chefe / a chefe | el jefe / la jefa    |
-| a reunião       | la reunión             |
-| fazer uma pausa | tomarse un descanso    |
+| Portugués         | Español             |
+| ----------------- | ------------------- |
+| o emprego         | el empleo           |
+| o escritório      | la oficina          |
+| o chefe / a chefe | el jefe / la jefa   |
+| a reunião         | la reunión          |
+| fazer uma pausa   | tomarse un descanso |
 
 ## El descanso de Marina
 

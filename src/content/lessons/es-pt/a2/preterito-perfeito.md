@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Pretérito perfeito simples'
 funFact: "Si has estudiado alemán, francés o italiano, esperas un pasado con dos palabras (auxiliar + participio). El portugués te sorprende: usa una SOLA palabra conjugada, como el español 'hablé, comí, viví'. Es, de los cinco idiomas de PolyLingua, el único con esta estructura — tenlo presente para no 'inventar' un auxiliar que no existe."
+skills:
+  - pt.a2.verb.preterito-perfeito
 minutes: 8
 quiz:
   - question: "¿Cuál es el pretérito correcto de 'falar' (hablar) con 'eu' (yo)?"

@@ -8,6 +8,9 @@ unit: 2
 situation: 'Dinero'
 grammarTopic: 'Vocabulário: o dinheiro'
 funFact: "En Brasil el cajero automático es 'o caixa eletrônico', mientras que en Portugal es 'a caixa multibanco' — dos nombres completamente distintos para exactamente lo mismo."
+skills:
+  - pt.a2.vocabulary.money
+  - pt.a2.comparative.superlative
 minutes: 7
 phrases:
   - text: 'Posso pagar com cartão?'

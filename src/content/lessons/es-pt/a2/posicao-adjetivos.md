@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Posição dos adjetivos'
 funFact: "'Um grande homem' (un gran hombre, en el sentido de importante/admirable) y 'um homem grande' (un hombre grande, de tamaño físico) tienen significados claramente distintos según dónde coloques el adjetivo — exactamente el mismo fenómeno que ocurre en español con 'un gran hombre' vs. 'un hombre grande'."
+skills:
+  - pt.a2.adjective.position
 minutes: 7
 quiz:
   - question: '¿Cuál es la posición más común y neutral del adjetivo en portugués?'

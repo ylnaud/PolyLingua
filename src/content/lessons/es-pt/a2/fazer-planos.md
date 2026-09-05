@@ -8,6 +8,9 @@ unit: 2
 situation: 'Hacer planes'
 grammarTopic: 'Vocabulário: fazer planos'
 funFact: "'Topar' es una palabra clave en portugués brasileño para aceptar un plan con entusiasmo: 'Eu topo!' es 'me apunto', mucho más natural que un simple 'sim' cuando alguien te invita a algo."
+skills:
+  - pt.a2.vocabulary.plans
+  - pt.a2.verb.futuro-proximo
 minutes: 7
 phrases:
   - text: 'Você tem tempo no sábado?'

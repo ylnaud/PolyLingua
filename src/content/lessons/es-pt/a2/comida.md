@@ -8,6 +8,8 @@ unit: 2
 situation: 'Restaurante'
 grammarTopic: 'Vocabulário de comida e restaurante'
 funFact: "'Bolacha' significa galleta en Portugal, pero en Brasil significa bofetada — pedir 'uma bolacha' en un café brasileño puede generar una mirada confusa. En Brasil, galleta se dice 'biscoito'. Este tipo de diferencias léxicas son de las más útiles de conocer al viajar."
+skills:
+  - pt.a2.vocabulary.food
 minutes: 7
 phrases:
   - text: 'A conta, por favor.'

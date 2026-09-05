@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Pronombres personales sujeto'
 funFact: "En Brasil casi nadie dice 'tu' en el día a día: 'você' lo reemplazó por completo en la mayor parte del país. Sin embargo, en el sur (Rio Grande do Sul) y en el norte (Pará, Maranhão) todavía se usa 'tu' — pero conjugado como 'você': 'tu vai' en vez del correcto 'tu vais'."
+skills:
+  - pt.a1.pronoun.subject
 minutes: 7
 quiz:
   - question: "¿Cuál es el pronombre más usado para 'tú' en el portugués brasileño cotidiano?"

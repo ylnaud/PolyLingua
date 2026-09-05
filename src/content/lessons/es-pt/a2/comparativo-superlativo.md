@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Comparativo e superlativo'
 funFact: "El portugués usa 'do que' (no solo 'que') para comparaciones de desigualdad: 'mais alto do que' — un detalle que muchos hispanohablantes olvidan porque en español basta con 'más alto que', sin preposición equivalente."
+skills:
+  - pt.a2.comparative.superlative
 minutes: 7
 quiz:
   - question: "¿Cómo dirías 'más alto que' en portugués?"

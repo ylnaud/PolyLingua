@@ -8,6 +8,9 @@ unit: 2
 situation: 'Ayer y mañana'
 grammarTopic: 'Vocabulário: ontem e amanhã'
 funFact: "Para el futuro cercano, el portugués no necesita ningún tiempo especial: alcanza con el presente + 'amanhã' — 'amanhã eu trabalho' es 'mañana trabajo', sin conjugar nada distinto."
+skills:
+  - pt.a2.vocabulary.time-refs
+  - pt.a2.verb.preterito-perfeito
 minutes: 7
 phrases:
   - text: 'O que você fez ontem?'

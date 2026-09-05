@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Números cardinais'
 funFact: "El número 'cem' (cien) pierde la 'o' final que tiene en español, pero 'cento' reaparece en compuestos: 'cento e um' (ciento uno). Es una de esas pequeñas irregularidades que solo se aprenden usándolas."
+skills:
+  - pt.a1.number.cardinal
 minutes: 6
 quiz:
   - question: "¿Cómo se dice '15' en portugués?"

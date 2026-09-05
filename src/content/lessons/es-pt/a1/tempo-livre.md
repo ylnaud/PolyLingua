@@ -8,6 +8,8 @@ unit: 2
 situation: 'Tiempo libre'
 grammarTopic: 'Vocabulário: o tempo livre'
 funFact: "'Gostar' siempre va con la preposición 'de': 'eu gosto de ler', nunca 'eu gosto ler' a secas — a diferencia del español, donde 'me gusta leer' no lleva preposición."
+skills:
+  - pt.a1.vocabulary.freetime
 minutes: 6
 phrases:
   - text: 'O que você gosta de fazer?'
@@ -30,12 +32,13 @@ quiz:
     options: ['Eu gosto ler.', 'Eu gosto de ler.', 'Eu ler gosto.']
     answerIndex: 1
     explanation: "'gostar' siempre va con la preposición 'de': gosto de ler, gosto de cozinhar."
-  - question: "¿Cómo negás que te gusta algo?"
+  - question: '¿Cómo negás que te gusta algo?'
     options: ['Eu não gosto de assistir TV.', 'Eu gosto não de assistir TV.', 'Eu de não gosto TV.']
     answerIndex: 0
     explanation: "'não' va antes del verbo: eu não gosto de..., igual que en español."
   - question: "¿Qué significa 'No fim de semana, eu vou ao cinema'?"
-    options: ['Voy al cine todos los días.', 'El fin de semana voy al cine.', 'No voy nunca al cine.']
+    options:
+      ['Voy al cine todos los días.', 'El fin de semana voy al cine.', 'No voy nunca al cine.']
     answerIndex: 1
     explanation: "'no fim de semana' es 'el fin de semana', y marca cuándo pasa la acción."
 exercises:
@@ -68,7 +71,7 @@ exercises:
     prompt: "'O que você gosta de fazer?' — Respondé que te gusta cocinar."
     answer: 'Eu gosto de cozinhar'
     accepted: ['Eu gosto de cozinhar.', 'Gosto de cozinhar', 'Gosto de cozinhar.']
-    hint: "gostar + de + infinitivo."
+    hint: 'gostar + de + infinitivo.'
     placeholder: 'Eu gosto ...'
   - type: 'order'
     sentence: 'No fim de semana eu vou ao cinema'

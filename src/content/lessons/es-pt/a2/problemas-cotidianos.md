@@ -8,6 +8,8 @@ unit: 2
 situation: 'Problemas cotidianos'
 grammarTopic: 'Vocabulário: problemas do dia a dia'
 funFact: "En Brasil se dice que algo 'está com defeito' cuando se rompe; en Portugal es más común 'está avariado'. Ambas formas se entienden en cualquier país lusófono, así que podés usar la que te resulte más natural."
+skills:
+  - pt.a2.vocabulary.problems
 minutes: 7
 phrases:
   - text: 'A internet está com defeito.'
@@ -28,7 +30,7 @@ phrases:
   - text: 'Não tem problema.'
     es: 'No hay problema.'
 quiz:
-  - question: "¿Cómo decís que algo se rompió en portugués?"
+  - question: '¿Cómo decís que algo se rompió en portugués?'
     options: ['Está com defeito.', 'Está com fome.', 'Está com pressa.']
     answerIndex: 0
     explanation: "'estar com defeito' (o 'estar avariado' en Portugal) es la forma normal de decir que algo no funciona."
@@ -36,7 +38,7 @@ quiz:
     options: ['¿Puede esperarme?', '¿Me puede ayudar?', '¿Puede repetir?']
     answerIndex: 1
     explanation: "'ajudar' es ayudar. 'Você pode me ajudar?' es la forma directa de pedir ayuda."
-  - question: "Si no entendiste algo, la frase más útil es..."
+  - question: 'Si no entendiste algo, la frase más útil es...'
     options: ['Pode repetir, por favor?', 'Está com defeito.', 'Foi engano.']
     answerIndex: 0
     explanation: "'Pode repetir, por favor?' te permite seguir la conversación en vez de asentir sin entender."
@@ -67,7 +69,7 @@ exercises:
       - left: 'Não tem problema'
         right: 'No hay problema'
   - type: 'write'
-    prompt: "No entendiste lo que te dijeron. Pedí que lo repitan."
+    prompt: 'No entendiste lo que te dijeron. Pedí que lo repitan.'
     answer: 'Pode repetir, por favor'
     accepted: ['Pode repetir, por favor?', 'Pode repetir?', 'Pode repetir']
     hint: "'pode' + verbo, para pedir algo con cortesía."

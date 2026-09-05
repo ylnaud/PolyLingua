@@ -7,6 +7,8 @@ order: 12
 unit: 3
 grammarTopic: 'Pronunciación: vocales nasales'
 funFact: 'El portugués es la única lengua románica con un sistema completo de vocales nasales — cinco en total. El francés también tiene nasales, pero el portugués las combina en diptongos nasales (-ão, -ãe, -õe) que no existen en ningún otro idioma europeo grande. Son el sonido que hace al portugués inconfundible.'
+skills:
+  - pt.a1.pronunciation.nasal
 minutes: 9
 phrases:
   - text: 'não'

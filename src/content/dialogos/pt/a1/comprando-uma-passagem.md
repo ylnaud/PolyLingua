@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a1
-title: 'Comprando un boleto en portugués'
+title: 'Comprando un boleto'
 description: 'Comprá un pasaje de micro en Brasil: decí para cuándo lo querés, compará los horarios de salida y elegí el más barato. Diálogo A1 traducido.'
 order: 18
 situation: 'Transporte'

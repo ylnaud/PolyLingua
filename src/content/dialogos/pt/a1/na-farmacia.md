@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a1
-title: 'En la farmacia en portugués'
+title: 'En la farmacia'
 description: 'En una farmacia brasileña: pedí algo para el dolor de garganta y entendé cada cuántas horas tomar las pastillas. Diálogo A1 traducido.'
 order: 16
 situation: 'Salud'

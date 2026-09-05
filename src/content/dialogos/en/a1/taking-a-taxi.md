@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'Tomando un taxi en inglés'
+title: 'Tomando un taxi'
 description: 'Tomá un taxi en inglés: pedí que te lleven al aeropuerto, preguntá cuánto va a costar y avisá dónde querés bajar. Diálogo A1 traducido.'
 order: 17
 situation: 'Transporte'

@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'En el autobús en inglés'
+title: 'En el autobús'
 description: 'Moverte en autobús en inglés: preguntá si va al centro, cuántas paradas faltan y pedí que te avisen cuándo bajar. Diálogo A1 traducido.'
 order: 6
 situation: 'Orientación'

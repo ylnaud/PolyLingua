@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a1
-title: 'En el médico en portugués'
+title: 'En el médico'
 description: 'En la consulta médica en portugués: contá que tenés dolor de cabeza y fiebre, decí qué tomaste y entendé la receta. Diálogo A1 traducido.'
 order: 15
 situation: 'Salud'

@@ -1,7 +1,7 @@
 ---
 language: it
 level: a1
-title: 'En el colectivo'
+title: 'En el autobús'
 description: 'Moverte en colectivo en Italia: preguntá si va al centro, qué número tenés que tomar, dónde está la parada y cuánto tarda. Diálogo A1 traducido.'
 order: 6
 situation: 'Orientación'

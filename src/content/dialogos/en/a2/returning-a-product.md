@@ -1,7 +1,7 @@
 ---
 language: en
 level: a2
-title: 'Devolviendo un producto en inglés'
+title: 'Devolviendo un producto'
 description: 'Devolvé una campera en una tienda en inglés: explicá que te queda chica, mostrá el ticket y elegí cambio o reembolso. Diálogo A2 traducido.'
 order: 5
 situation: 'Compras'

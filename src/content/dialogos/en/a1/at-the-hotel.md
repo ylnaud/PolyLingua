@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'En el hotel en inglés'
+title: 'En el hotel'
 description: 'Hacé el check-in en un hotel en inglés: dá tu apellido, confirmá las noches y preguntá si el desayuno está incluido. Diálogo A1 traducido.'
 order: 10
 situation: 'Alojamiento'

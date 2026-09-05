@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'En el médico en inglés'
+title: 'En el médico'
 description: 'En la consulta médica en inglés: describí el dolor de cabeza y de garganta, decí desde cuándo y entendé la receta. Diálogo A1 traducido.'
 order: 15
 situation: 'Salud'

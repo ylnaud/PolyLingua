@@ -64,11 +64,22 @@ const d = entry.data;
 const langMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
 const levelMeta = LEVEL_MAP[d.level as keyof typeof LEVEL_MAP];
 
+// El `title` del frontmatter nombra SOLO la situación («En el café»), igual en
+// los cinco idiomas: son 20 situaciones × 5 cursos. El idioma lo pone acá la
+// plantilla, que es la única que lo sabe.
+//
+// Antes estaba a medias, y de las dos formas mal: `de`/`fr`/`it` no lo decían
+// en ningún sitio —así que las tres páginas de una misma situación tenían el
+// MISMO <h1> y el mismo `name` en los datos estructurados— y `en`/`pt` lo
+// llevaban metido en el propio título, que al sumarse al del layout salía
+// repetido: «En el café en portugués · Diálogo A1 en Portugués».
+const tituloConIdioma = `${d.title} en ${langMeta.name.toLowerCase()}`;
+
 const siteURL = Astro.site!.origin;
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LearningResource',
-  name: d.title,
+  name: tituloConIdioma,
   description: d.description,
   inLanguage: lang,
   educationalLevel: d.level.toUpperCase(),
@@ -125,7 +136,7 @@ const siloContext = {
       <span class="badge">⏱ {d.minutes} min</span>
     </div>
 
-    <h1>{d.title}</h1>
+    <h1>{tituloConIdioma}</h1>
     <p class="situation-tag">{d.situation}</p>
   </section>
 

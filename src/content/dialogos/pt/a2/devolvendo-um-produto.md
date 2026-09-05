@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a2
-title: 'Devolviendo un producto en portugués'
+title: 'Devolviendo un producto'
 description: 'Devolvé un auricular que no funciona en Brasil: explicá la falla, mostrá el ticket y elegí entre cambio y reembolso. Diálogo A2 traducido.'
 order: 5
 situation: 'Compras'

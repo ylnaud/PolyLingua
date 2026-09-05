@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a1
-title: 'Hablando del clima en portugués'
+title: 'Hablando del clima'
 description: 'Hablá del calor en portugués: comentá los treinta y cinco grados, preguntá si va a llover y citá el pronóstico. Diálogo A1 traducido.'
 order: 19
 situation: 'Conversación'

@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'En una fiesta en inglés'
+title: 'En una fiesta'
 description: 'Socializá en una fiesta en inglés: preguntá de qué se conocen, contá qué te gusta hacer y mantené la charla. Diálogo A1 con traducción.'
 order: 14
 situation: 'Presentaciones'

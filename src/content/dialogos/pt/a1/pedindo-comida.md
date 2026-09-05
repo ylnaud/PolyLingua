@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a1
-title: 'Pidiendo la comida en portugués'
+title: 'Pidiendo la comida'
 description: 'Pedí en un restaurante brasileño: preguntá qué recomiendan, elegí el plato del día y aclará si el agua es con o sin gas. Diálogo A1 traducido.'
 order: 8
 situation: 'Restaurante'

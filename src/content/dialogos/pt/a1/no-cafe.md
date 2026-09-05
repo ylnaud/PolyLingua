@@ -1,7 +1,7 @@
 ---
 language: pt
 level: a1
-title: 'En el café en portugués'
+title: 'En el café'
 description: 'Pedí en un café brasileño: un café con leche y un pan de queso, y decidí si es para tomar ahí o para llevar. Diálogo A1 traducido.'
 order: 7
 situation: 'Restaurante'

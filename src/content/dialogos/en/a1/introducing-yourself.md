@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'Presentándose en inglés'
+title: 'Presentándose'
 description: 'Presentate en inglés: decí tu nombre, de dónde sos y a qué te dedicás, y devolvé la pregunta. Diálogo A1 con traducción y vocabulario.'
 order: 13
 situation: 'Presentaciones'

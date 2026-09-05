@@ -1,7 +1,7 @@
 ---
 language: en
 level: a1
-title: 'En el mercado en inglés'
+title: 'En el mercado'
 description: 'Comprá fruta en un mercado en inglés: preguntá el precio por libra, pedí la cantidad que querés y cerrá la compra. Diálogo A1 traducido.'
 order: 4
 situation: 'Compras'

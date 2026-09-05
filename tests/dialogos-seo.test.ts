@@ -39,9 +39,19 @@ function descriptionDe(archivo: string): string {
   return m[1]!.replace(/''/g, "'");
 }
 
+/** Mismo criterio que `descriptionDe`: la línea, no el YAML entero. */
+function titleDe(archivo: string): string {
+  const raw = readFileSync(archivo, 'utf-8');
+  const m = raw.match(/^title: '((?:[^']|'')*)'\s*$/m);
+  if (!m) throw new Error(`Sin title entre comillas simples: ${archivo}`);
+  return m[1]!.replace(/''/g, "'");
+}
+
 const dialogos = archivos(RAIZ).map((f) => ({
   id: relative(RAIZ, f).replace(/\.md$/, ''),
+  archivo: relative(RAIZ, f),
   description: descriptionDe(f),
+  title: titleDe(f),
 }));
 
 describe('meta descriptions de los diálogos', () => {
@@ -180,5 +190,55 @@ describe('datos estructurados de diálogos y hubs', () => {
       (m) => new URL(m[1]!).pathname,
     );
     expect(alt).toEqual(['/es/de/dialogos/im-supermarkt']);
+  });
+});
+
+/**
+ * El título de un diálogo y el idioma que enseña.
+ *
+ * Son 20 situaciones × 5 cursos, así que el `title` del frontmatter nombra
+ * SOLO la situación («En el café») y es el mismo en los cinco idiomas. El
+ * idioma lo pone la plantilla, que es la única que lo sabe.
+ *
+ * Estuvo a medias y de las dos formas mal. En `de`, `fr` e `it` no se decía en
+ * ninguna parte: las tres páginas de una misma situación salían con el MISMO
+ * <h1> y el mismo `name` en los datos estructurados. Y en `en` y `pt` estaba
+ * metido dentro del propio título, que al sumarse al del layout salía repetido:
+ * «En el café en portugués · Diálogo A1 en Portugués».
+ *
+ * Los dos tests de abajo son las dos mitades de esa regla, y hacen falta las
+ * dos: uno impide que el idioma vuelva al frontmatter, el otro impide que
+ * desaparezca de la página.
+ */
+describe('el título dice qué idioma se enseña, y lo dice una sola vez', () => {
+  const DIST = join(import.meta.dirname, '..', 'dist');
+
+  it('ningún título del frontmatter nombra el idioma — eso es cosa de la plantilla', () => {
+    const culpables = dialogos
+      .filter((d) => / en (alemán|inglés|francés|italiano|portugués)$/i.test(d.title))
+      .map((d) => `${d.archivo}: ${d.title}`);
+    expect(culpables).toEqual([]);
+  });
+
+  it('las 20 situaciones son las mismas en los cinco idiomas', () => {
+    const veces = new Map<string, number>();
+    for (const d of dialogos) veces.set(d.title, (veces.get(d.title) ?? 0) + 1);
+    expect(veces.size).toBe(20);
+    expect([...new Set(veces.values())]).toEqual([5]);
+  });
+
+  it('los 100 <h1> publicados son distintos entre sí', () => {
+    const h1 = dialogos.map((d) => {
+      const [idioma, , slug] = d.id.split('/');
+      const html = readFileSync(
+        join(DIST, 'es', idioma!, 'dialogos', slug!, 'index.html'),
+        'utf-8',
+      );
+      return /<h1[^>]*>([^<]*)/.exec(html)?.[1] ?? '';
+    });
+    expect(h1.length).toBe(100);
+    expect(new Set(h1).size, 'hay <h1> repetidos entre idiomas').toBe(h1.length);
+    // Y ninguno repite el idioma dos veces, que era el defecto de en/pt.
+    expect(h1.filter((t) => /portugués.*portugués|inglés.*inglés/i.test(t))).toEqual([]);
   });
 });

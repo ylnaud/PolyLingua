@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Juegos de palabras (jeux de mots) y homófonos'
 funFact: "El francés tiene muchísimos homófonos (palabras que suenan igual pero se escriben distinto: 'ver', 'vert', 'vers', 'verre' — todos suenan igual pero significan 'gusano', 'verde', 'hacia' y 'vaso') — una mina de oro para juegos de palabras que casi no tiene equivalente en español."
+skills:
+  - fr.c2.style.wordplay
 minutes: 10
 quiz:
   - question: '¿Por qué el francés es especialmente propicio para juegos de palabras?'

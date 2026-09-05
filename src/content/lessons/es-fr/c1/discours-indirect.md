@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Discours indirect (concordance des temps)'
 funFact: "Igual que en el 'backshift' del inglés, el francés retrocede sistemáticamente los tiempos verbales al reportar discurso: présent → imparfait, futur → conditionnel, passé composé → plus-que-parfait. Es un movimiento mecánico de 'un paso hacia atrás' que, una vez que lo automatizas, se vuelve instantáneo."
+skills:
+  - fr.c1.speech.indirect
 minutes: 10
 quiz:
   - question: "Marie a dit: 'Je suis fatiguée.' ¿Cómo lo reportas?"

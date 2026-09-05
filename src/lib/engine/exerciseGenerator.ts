@@ -6136,6 +6136,301 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // FRANCÉS — C1 y C2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    skillId: 'fr.c1.subjunctive.full',
+    explanation:
+      'En C1 ya no basta con reconocer el disparador: hay que producir las formas irregulares. **faire → fasse**, **pouvoir → puisse**, **savoir → sache**, **aller → aille**, **valoir → vaille**. Y sigue siendo la palabra de delante la que manda, no el significado.',
+    variations: [
+      {
+        sentence: 'Il faut que tu ___ un effort. (faire)',
+        answer: 'fasses',
+        translation: 'Hace falta que hagas un esfuerzo.',
+      },
+      {
+        sentence: 'Je doute qu’il ___ la réponse. (savoir)',
+        answer: 'sache',
+        translation: 'Dudo que él sepa la respuesta.',
+      },
+      {
+        sentence: 'Bien que nous ___ fatigués, continuons. (être)',
+        answer: 'soyons',
+        translation: 'Aunque estemos cansados, sigamos.',
+      },
+      {
+        sentence: 'Il vaut mieux que vous ___ tôt. (partir)',
+        answer: 'partiez',
+        translation: 'Es mejor que se vayan temprano.',
+      },
+      {
+        sentence: 'Je ne crois pas qu’elle ___ venir. (pouvoir)',
+        answer: 'puisse',
+        translation: 'No creo que ella pueda venir.',
+      },
+      {
+        sentence: 'Il est possible qu’ils ___ au musée. (aller)',
+        answer: 'aillent',
+        translation: 'Es posible que vayan al museo.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.c1.subjunctive.past',
+    explanation:
+      'El subjonctif passé es **subjuntivo de avoir/être + participio**, y sirve para lo ya ocurrido: *je regrette qu’il **soit parti***. La elección entre presente y pasado no depende del verbo principal, sino de si la acción de la subordinada es anterior.',
+    variations: [
+      {
+        sentence: 'Je regrette qu’il ___ si tôt. (partir)',
+        answer: 'soit parti',
+        translation: 'Lamento que se haya ido tan temprano.',
+      },
+      {
+        sentence: 'Je suis content que tu ___ ce livre. (lire)',
+        answer: 'aies lu',
+        translation: 'Me alegra que hayas leído este libro.',
+      },
+      {
+        sentence: 'Bien qu’elle ___ tout, elle a échoué. (faire)',
+        answer: 'ait fait',
+        translation: 'Aunque lo hizo todo, fracasó.',
+      },
+      {
+        sentence: 'Il est possible qu’ils ___ hier. (arriver)',
+        answer: 'soient arrivés',
+        translation: 'Es posible que hayan llegado ayer.',
+      },
+      {
+        sentence: 'Je doute que vous ___ le message. (recevoir)',
+        answer: 'ayez reçu',
+        translation: 'Dudo que hayan recibido el mensaje.',
+      },
+      {
+        sentence: 'C’est dommage que nous ___ le début. (manquer)',
+        answer: 'ayons manqué',
+        translation: 'Es una pena que nos hayamos perdido el comienzo.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.c1.speech.indirect',
+    explanation:
+      'Al pasar a estilo indirecto en pasado, cada tiempo **retrocede uno**: presente → imparfait, passé composé → plus-que-parfait, futur → conditionnel. Y las preguntas pierden la inversión: *«Où vas-tu ?»* → *il m’a demandé **où j’allais***.',
+    variations: [
+      {
+        sentence: '«Je suis fatigué» → Il a dit qu’il ___ fatigué.',
+        answer: 'était',
+        translation: 'Dijo que estaba cansado.',
+      },
+      {
+        sentence: '«J’ai fini» → Elle a dit qu’elle ___ fini.',
+        answer: 'avait',
+        translation: 'Dijo que había terminado.',
+      },
+      {
+        sentence: '«Je viendrai» → Il a promis qu’il ___.',
+        answer: 'viendrait',
+        translation: 'Prometió que vendría.',
+      },
+      {
+        sentence: '«Où vas-tu ?» → Il m’a demandé où j’___.',
+        answer: 'allais',
+        translation: 'Me preguntó adónde iba.',
+      },
+      {
+        sentence: '«Nous partons demain» → Ils ont annoncé qu’ils ___ le lendemain.',
+        answer: 'partaient',
+        translation: 'Anunciaron que se iban al día siguiente.',
+      },
+      {
+        sentence: '«Tu as raison» → Elle a reconnu que j’___ raison.',
+        answer: 'avais',
+        translation: 'Reconoció que yo tenía razón.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.c1.emphasis.cleft',
+    explanation:
+      'La mise en relief saca al frente lo que importa: **c’est… qui** si lo destacado es el sujeto, **c’est… que** si es cualquier otra cosa. *C’est **Marie qui** a appelé* (ella llamó) frente a *C’est **Marie que** j’ai appelée* (yo la llamé a ella).',
+    variations: [
+      {
+        sentence: 'C’est Marie ___ a téléphoné.',
+        answer: 'qui',
+        translation: 'Fue Marie la que llamó.',
+      },
+      {
+        sentence: 'C’est ce livre ___ je cherchais.',
+        answer: 'que',
+        translation: 'Era este libro el que buscaba.',
+      },
+      {
+        sentence: 'C’est à Lyon ___ nous nous sommes rencontrés.',
+        answer: 'que',
+        translation: 'Fue en Lyon donde nos conocimos.',
+      },
+      {
+        sentence: 'C’est toi ___ as eu l’idée.',
+        answer: 'qui',
+        translation: 'Fuiste vos quien tuvo la idea.',
+      },
+      {
+        sentence: 'C’est demain ___ tout se décide.',
+        answer: 'que',
+        translation: 'Es mañana cuando todo se decide.',
+      },
+      {
+        sentence: 'Ce sont les enfants ___ ont tout préparé.',
+        answer: 'qui',
+        translation: 'Fueron los chicos los que prepararon todo.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.c1.verb.passe-simple',
+    explanation:
+      'El passé simple **no se habla**: se lee. Es el pasado de la novela y del ensayo histórico, donde ocupa el sitio del passé composé. Hay que reconocerlo más que producirlo: *il **fut***, *il **eut***, *il **fit***, *ils **allèrent***.',
+    variations: [
+      { sentence: 'Il ___ roi en 1515. (être)', answer: 'fut', translation: 'Fue rey en 1515.' },
+      {
+        sentence: 'Elle ___ une idée géniale. (avoir)',
+        answer: 'eut',
+        translation: 'Tuvo una idea genial.',
+      },
+      {
+        sentence: 'Ils ___ la ville au petit matin. (quitter)',
+        answer: 'quittèrent',
+        translation: 'Dejaron la ciudad de madrugada.',
+      },
+      {
+        sentence: 'Le roi ___ construire le château. (faire)',
+        answer: 'fit',
+        translation: 'El rey mandó construir el castillo.',
+      },
+      {
+        sentence: 'Nous ___ à Paris le lendemain. (arriver)',
+        answer: 'arrivâmes',
+        translation: 'Llegamos a París al día siguiente.',
+      },
+      {
+        sentence: 'Il ___ la lettre sans un mot. (prendre)',
+        answer: 'prit',
+        translation: 'Tomó la carta sin decir palabra.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.c1.pronoun.relative-complex',
+    explanation:
+      'Cuando no hay sustantivo al que referirse, entra **ce** delante: *ce **qui** m’intéresse* (sujeto), *ce **que** je veux* (objeto), *ce **dont** j’ai besoin* (verbo con *de*), *ce **à quoi** je pense* (verbo con *à*). La preposición del verbo sigue mandando.',
+    variations: [
+      {
+        sentence: '___ m’intéresse, c’est la musique.',
+        answer: 'Ce qui',
+        translation: 'Lo que me interesa es la música.',
+      },
+      {
+        sentence: 'Je ne comprends pas ___ tu dis.',
+        answer: 'ce que',
+        translation: 'No entiendo lo que decís.',
+      },
+      {
+        sentence: 'Voilà ___ j’ai besoin.',
+        answer: 'ce dont',
+        translation: 'Esto es lo que necesito.',
+      },
+      {
+        sentence: 'C’est exactement ___ je pensais.',
+        answer: 'ce à quoi',
+        translation: 'Es exactamente en lo que estaba pensando.',
+      },
+      {
+        sentence: 'Dis-moi ___ te ferait plaisir.',
+        answer: 'ce qui',
+        translation: 'Decime qué te gustaría.',
+      },
+      {
+        sentence: 'Je me souviens de ___ tu m’as parlé.',
+        answer: 'ce dont',
+        translation: 'Me acuerdo de lo que me hablaste.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.c1.verb.futur-anterieur',
+    explanation:
+      'Es el futuro que se cierra **antes que otro**: *quand tu arriveras, j’**aurai fini***. Se arma con avoir/être en futur simple + participio, y también sirve para suponer sobre el pasado: *il **aura oublié*** («se habrá olvidado»).',
+    variations: [
+      {
+        sentence: 'Quand tu arriveras, j’___ fini. (avoir)',
+        answer: 'aurai',
+        translation: 'Cuando llegues, habré terminado.',
+      },
+      {
+        sentence: 'Dans un an, ils ___ déménagé. (avoir)',
+        answer: 'auront',
+        translation: 'Dentro de un año se habrán mudado.',
+      },
+      {
+        sentence: 'Elle ___ partie avant midi. (être)',
+        answer: 'sera',
+        translation: 'Se habrá ido antes del mediodía.',
+      },
+      {
+        sentence: 'Il n’a pas répondu : il ___ oublié. (avoir)',
+        answer: 'aura',
+        translation: 'No contestó: se habrá olvidado.',
+      },
+      {
+        sentence: 'Nous ___ terminé le projet en juin. (avoir)',
+        answer: 'aurons',
+        translation: 'Habremos terminado el proyecto en junio.',
+      },
+      {
+        sentence: 'Dès que vous ___ arrivés, on commencera. (être)',
+        answer: 'serez',
+        translation: 'En cuanto hayan llegado, empezamos.',
+      },
+    ],
+  },
+  {
+    skillId: 'fr.c2.style.nominalisation',
+    explanation:
+      'El registro elevado prefiere el **sustantivo al verbo**: *le prix a augmenté* → *l’**augmentation** du prix*. No es adorno: es lo que permite condensar una idea entera en un sintagma y encadenar argumentos sin subordinadas.',
+    variations: [
+      {
+        sentence: 'Le prix a augmenté → l’___ du prix. (augmenter)',
+        answer: 'augmentation',
+        translation: 'El aumento del precio.',
+      },
+      {
+        sentence: 'On a construit le pont → la ___ du pont. (construire)',
+        answer: 'construction',
+        translation: 'La construcción del puente.',
+      },
+      {
+        sentence: 'Le projet a échoué → l’___ du projet. (échouer)',
+        answer: 'échec',
+        translation: 'El fracaso del proyecto.',
+      },
+      {
+        sentence: 'Les ventes ont diminué → la ___ des ventes. (diminuer)',
+        answer: 'diminution',
+        translation: 'La disminución de las ventas.',
+      },
+      {
+        sentence: 'Il a démissionné → sa ___. (démissionner)',
+        answer: 'démission',
+        translation: 'Su dimisión.',
+      },
+      {
+        sentence: 'On a supprimé le poste → la ___ du poste. (supprimer)',
+        answer: 'suppression',
+        translation: 'La supresión del puesto.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

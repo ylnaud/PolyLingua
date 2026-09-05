@@ -2277,6 +2277,204 @@ export const SKILLS: Skill[] = [
     prerequisites: [],
     difficulty: 3,
   },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // FRANCÉS — C1
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'fr.c1.subjunctive.full',
+    lang: 'fr',
+    level: 'c1',
+    category: 'grammar',
+    name: 'El subjuntivo completo',
+    prerequisites: ['fr.b1.subjunctive.intro'],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c1.subjunctive.past',
+    lang: 'fr',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Subjonctif passé',
+    prerequisites: ['fr.c1.subjunctive.full'],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c1.speech.indirect',
+    lang: 'fr',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Discurso indirecto y concordancia',
+    prerequisites: ['fr.b2.verb.plus-que-parfait'],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c1.emphasis.cleft',
+    lang: 'fr',
+    level: 'c1',
+    category: 'word_order',
+    name: 'Mise en relief (c’est… qui/que)',
+    prerequisites: ['fr.b2.pronoun.relative'],
+    difficulty: 4,
+  },
+  {
+    id: 'fr.c1.verb.passe-simple',
+    lang: 'fr',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Passé simple (registro literario)',
+    prerequisites: ['fr.a2.verb.passe-compose'],
+    difficulty: 4,
+  },
+  {
+    id: 'fr.c1.pronoun.relative-complex',
+    lang: 'fr',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Ce qui / ce que / ce dont / ce à quoi',
+    prerequisites: ['fr.b2.pronoun.relative'],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c1.verb.futur-anterieur',
+    lang: 'fr',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Futur antérieur',
+    prerequisites: ['fr.b1.verb.futur-simple'],
+    difficulty: 4,
+  },
+  {
+    id: 'fr.c1.idiom.expressions',
+    lang: 'fr',
+    level: 'c1',
+    category: 'vocabulary',
+    name: 'Expresiones idiomáticas',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'fr.c1.vocabulary.academic',
+    lang: 'fr',
+    level: 'c1',
+    category: 'vocabulary',
+    name: 'Lenguaje académico',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'fr.c1.vocabulary.business',
+    lang: 'fr',
+    level: 'c1',
+    category: 'vocabulary',
+    name: 'Francés de negocios',
+    prerequisites: [],
+    difficulty: 4,
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // FRANCÉS — C2
+  //
+  // Casi todo va con `writing` o `vocabulary`, y por tanto sin plantilla de
+  // refuerzo. Es la misma decisión que se tomó en alemán y en inglés: el
+  // registro, la ironía, la retórica y los juegos de palabras no son reglas
+  // que se completen en un hueco, son cosas que se producen; un ejercicio de
+  // hueco ahí inventaría una respuesta única donde no la hay.
+  //
+  // La excepción es la nominalización, que sí es una transformación con una
+  // forma correcta —igual que `de.c1.style.nominal` y
+  // `en.c2.style.nominalization`—, así que va con `grammar` y su plantilla.
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'fr.c2.style.nominalisation',
+    lang: 'fr',
+    level: 'c2',
+    category: 'grammar',
+    name: 'Nominalización y estilo elevado',
+    prerequisites: ['fr.c1.vocabulary.academic'],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c2.register.familiar',
+    lang: 'fr',
+    level: 'c2',
+    category: 'writing',
+    name: 'Registro familiar y partículas del habla',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'fr.c2.style.irony',
+    lang: 'fr',
+    level: 'c2',
+    category: 'writing',
+    name: 'Ironía y humor',
+    prerequisites: [],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c2.style.rhetoric',
+    lang: 'fr',
+    level: 'c2',
+    category: 'writing',
+    name: 'Figuras retóricas',
+    prerequisites: [],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c2.style.wordplay',
+    lang: 'fr',
+    level: 'c2',
+    category: 'writing',
+    name: 'Juegos de palabras y homófonos',
+    prerequisites: [],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c2.style.literary',
+    lang: 'fr',
+    level: 'c2',
+    category: 'writing',
+    name: 'Estilo literario',
+    prerequisites: ['fr.c1.verb.passe-simple'],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c2.idiom.proverbs',
+    lang: 'fr',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Refranes y proverbios',
+    prerequisites: ['fr.c1.idiom.expressions'],
+    difficulty: 4,
+  },
+  {
+    id: 'fr.c2.variety.francophonie',
+    lang: 'fr',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Variedades de la francofonía',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'fr.c2.register.slang',
+    lang: 'fr',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Argot y verlan',
+    prerequisites: ['fr.c2.register.familiar'],
+    difficulty: 5,
+  },
+  {
+    id: 'fr.c2.lexicon.anglicisms',
+    lang: 'fr',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Anglicismos en francés actual',
+    prerequisites: [],
+    difficulty: 3,
+  },
 ];
 
 export const SKILL_MAP: Record<string, Skill> = Object.fromEntries(SKILLS.map((s) => [s.id, s]));

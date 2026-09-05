@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Ce dont / ce à quoi (pronoms relatifs complexes)'
 funFact: "El truco no es memorizar frases sueltas, es memorizar la preposición del VERBO: 'parler DE' → 'ce DONT je parle'; 'penser À' → 'ce À QUOI je pense'. Si conocés la preposición del verbo, el pronombre relativo se deduce solo."
+skills:
+  - fr.c1.pronoun.relative-complex
 minutes: 10
 quiz:
   - question: "Repaso rápido: '___ m'intéresse' (sujeto, sin preposición) — ¿cuál pronombre?"

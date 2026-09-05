@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Le mode subjonctif'
 funFact: "El indicativo describe el mundo como ES; el subjonctif describe el mundo como lo SIENTES, DUDAS o DESEAS. Antes de conjugar, pregúntate: '¿estoy afirmando un hecho, o expresando emoción, duda, deseo u obligación subjetiva?' Si es lo segundo, casi seguro necesitas subjonctif."
+skills:
+  - fr.c1.subjunctive.full
 minutes: 12
 quiz:
   - question: '¿Para qué se usa principalmente el subjonctif?'

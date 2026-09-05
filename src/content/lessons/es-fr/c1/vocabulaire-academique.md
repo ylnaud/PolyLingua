@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Vocabulario: lenguaje académico'
 funFact: 'La disertación francesa clásica (dissertation) sigue una estructura muy codificada: thèse, antithèse, synthèse (tesis, antítesis, síntesis) — un formato que se enseña desde el liceo y que domina la escritura académica francesa de forma mucho más rígida que en otras tradiciones educativas.'
+skills:
+  - fr.c1.vocabulary.academic
 minutes: 8
 quiz:
   - question: "¿Cómo dirías 'según el estudio' al citar una fuente académica?"

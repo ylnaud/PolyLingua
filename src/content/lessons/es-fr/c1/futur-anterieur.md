@@ -7,6 +7,8 @@ order: 10
 unit: 3
 grammarTopic: 'Le futur antérieur'
 funFact: "El futur antérieur tiene un segundo uso poco intuitivo: expresar una suposición sobre algo que probablemente ya pasó. 'Il aura oublié' no es 'habrá olvidado' en el sentido literal de futuro, sino 'seguramente se olvidó' — un truco de nativos para especular sin sonar tajante."
+skills:
+  - fr.c1.verb.futur-anterieur
 minutes: 10
 quiz:
   - question: '¿Cómo se forma el futur antérieur?'

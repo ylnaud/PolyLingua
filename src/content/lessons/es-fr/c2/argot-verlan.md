@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Argot et verlan (langage familier des jeunes)'
 funFact: "'Verlan' es la palabra 'l'envers' (al revés) dicha... al revés. Así de literal es el mecanismo: invertís las sílabas de una palabra para crear una nueva. Una vez que detectás el patrón, podés casi 'descifrar' verlan que nunca escuchaste antes."
+skills:
+  - fr.c2.register.slang
 minutes: 10
 quiz:
   - question: '¿Qué es el verlan?'

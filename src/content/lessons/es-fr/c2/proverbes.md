@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Proverbes (refranes y dichos populares)'
 funFact: "'Petit à petit, l'oiseau fait son nid' (poco a poco, el pájaro hace su nido) es prácticamente idéntico en sabiduría a 'Roma no se hizo en un día' — la imagen concreta cambia entre culturas, pero la paciencia como virtud es una sabiduría casi universal."
+skills:
+  - fr.c2.idiom.proverbs
 minutes: 9
 quiz:
   - question: "'Petit à petit, l'oiseau fait son nid.' ¿Cuál es su equivalente en español?"

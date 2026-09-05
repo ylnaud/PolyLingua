@@ -7,6 +7,8 @@ order: 10
 unit: 3
 grammarTopic: 'Emprunts et anglicismes en français contemporain'
 funFact: "La Académie française propone alternativas francesas para casi todo anglicismo, pero el uso real decide: 'courriel' sí prendió (se usa en Quebec y en contextos oficiales franceses), mientras que casi nadie dice 'toile' en vez de 'web'. La batalla la gana la calle, no la academia."
+skills:
+  - fr.c2.lexicon.anglicisms
 minutes: 9
 quiz:
   - question: "¿Cuál es el equivalente oficial que promueve la Académie française para 'email'?"

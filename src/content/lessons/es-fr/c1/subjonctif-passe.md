@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Subjonctif passé'
 funFact: "El Subjonctif passé no es un tiempo verbal nuevo que aprender desde cero — es simplemente el Subjonctif présent del auxiliar (avoir/être) combinado con el participio que ya conoces del passé composé. Si ya dominas ambas piezas por separado, esta 'nueva' estructura es solo unirlas."
+skills:
+  - fr.c1.subjunctive.past
 minutes: 9
 quiz:
   - question: '¿Cuál es la fórmula del Subjonctif passé?'

@@ -1,6 +1,6 @@
 ---
 title: 'Falsos amigos entre italiano y español: la lista que te salva de meter la pata'
-description: 'Lista de falsos amigos italiano-español que confunden hasta a los más avanzados, con la traducción correcta y trucos para no caer en la trampa.'
+description: 'Con el italiano no dudás, y ese es el problema: burro, largo, salire salen solos con el significado español. La lista y la única señal que te queda.'
 publishDate: 2026-08-23
 tags: ['italiano', 'vocabulario', 'falsos amigos']
 ---
@@ -23,7 +23,7 @@ La trampa no está en las palabras raras — está en las palabras **cotidianas*
 que usás sin pensar porque suenan a español. Y como la mayoría suena bien,
 tu cerebro no activa ninguna alarma.
 
-## La lista: los falsos amigos que más duelen
+## Los falsi amici que más duelen
 
 ### Los que cambian el significado por completo
 
@@ -81,7 +81,7 @@ _Pronto_ te va a sorprender la primera vez que llamás a alguien en Italia:
 si te contesta "Pronto?", no te está preguntando "¿ya?" — es su forma de
 decir "¿hola?" al atender.
 
-## Categorías de riesgo: dónde caés más seguido
+## Dónde se cae: cuatro escenas de viaje
 
 ### En la cocina y el supermercado
 
@@ -104,54 +104,72 @@ decir "¿hola?" al atender.
 - Decís que tenés un _negozio_ importante y la gente entiende que sos
   dueño de una tienda, no que cerraste un trato.
 
-## Trucos para no caer
+## Lo que hace distinto al italiano: no llegás a dudar
 
-### 1. Cuando suene igual, sospechá el doble
+Con el francés dudás, con el alemán dudás. Con el italiano no, y ese es el
+problema entero.
 
-El italiano y el español se parecen tanto que la intuición falla más seguido
-que con otros idiomas. Tratá cada palabra "obvia" con un poco de sospecha
-extra antes de usarla en una frase importante.
+Un falso amigo se detecta cuando algo te suena raro y frenás a comprobar. En
+italiano nunca suena raro: _burro_, _largo_, _salire_, _guardare_ son palabras
+que un hispanohablante lee sin el menor tropiezo. **No es que te equivoques al
+elegir; es que no llegás a elegir.** La palabra sale sola, con el significado
+español puesto, antes de que haya nada que decidir.
 
-### 2. Aprendé la palabra italiana "real" primero
+Por eso los consejos habituales —«fijate bien», «prestá atención»— no sirven
+acá: no podés prestar atención a algo que tu cabeza ya dio por resuelto.
 
-En vez de traducir mentalmente, memorizá el significado italiano desde el
-inicio: "burro = mantequilla", no "burro = ¿el animal, no?". Las
-[lecciones de italiano A1](/es/it/a1) de PolyLingua enseñan vocabulario
-con frases de ejemplo, no listas sueltas, precisamente para fijar el
-significado correcto desde el principio.
+**Lo que sí funciona es al revés: fiarte de la incomodidad.** Cuando una frase
+italiana te salga demasiado fácil, demasiado idéntica al español, ese es el
+momento de comprobar. La fluidez sospechosa es la única señal que tenés,
+porque la señal normal —la extrañeza— con el italiano no aparece nunca.
 
-### 3. Usá frases completas, no palabras sueltas
+## Los que se rompen por una sola letra
 
-"Compro il burro per la colazione" (compro la mantequilla para el desayuno)
-fija el significado mucho mejor que memorizar "burro" solo.
+Hay un grupo que merece atención aparte, y es específicamente italiano: pares
+donde el cambio es mínimo y el significado se va entero.
 
-### 4. Anotá los tuyos
+| Italiano   | Español que te viene | Lo que de verdad es |
+| ---------- | -------------------- | ------------------- |
+| **aceto**  | aceite               | vinagre             |
+| **burro**  | burro                | mantequilla         |
+| **salire** | salir                | subir               |
+| **topo**   | topo                 | ratón               |
+| **caldo**  | caldo                | caliente            |
 
-Cada vez que caigas en uno (te va a pasar, y más de una vez), anotalo. Con
-un idioma tan parecido al español, tu lista personal va a crecer rápido —
-y eso está bien, es la señal de que estás progresando.
+_Aceto_ y _aceite_ se diferencian en dos letras y están los dos en la cocina.
+_Burro_ y _burro_ no se diferencian en ninguna. Con esa distancia, ninguna
+regla de escritura te va a salvar: **estos cinco se aprenden de memoria y
+punto**, y conviene hacerlo temprano porque aparecen todos en la primera semana
+de cualquier viaje.
 
-## Los "verdaderos amigos" (para compensar)
+## El regalo del italiano: las reglas de conversión
 
-El italiano y el español comparten muchísimas palabras que sí significan lo
-mismo, más que cualquier otro par de idiomas de este curso:
+La contrapartida buena, y es la más generosa de los cinco idiomas del curso.
+Buena parte del vocabulario se convierte con reglas mecánicas:
 
-| Italiano   | Español     |
-| ---------- | ----------- |
-| importante | importante  |
-| differente | diferente   |
-| possibile  | posible     |
-| necessario | necesario   |
-| problema   | problema    |
-| musica     | música      |
-| famiglia   | familia     |
-| animale    | animal      |
-| ristorante | restaurante |
-| università | universidad |
+| Termina en italiano | Se convierte en | Ejemplos                                |
+| ------------------- | --------------- | --------------------------------------- |
+| **-zione**          | -ción           | stazione, nazione → estación, nación    |
+| **-tà**             | -dad            | università, città → universidad, ciudad |
+| **-mente**          | -mente          | rapidamente → rápidamente               |
+| **-oso**            | -oso            | famoso, curioso → famoso, curioso       |
+| **-ista**           | -ista           | artista, turista → artista, turista     |
 
-Esa base compartida es lo que hace que un hispanohablante entienda mucho
-italiano antes de estudiarlo. También es lo que vuelve caros a los falsos
-amigos: cuando casi todo se entiende, cuesta más notar la palabra que no.
+Con eso, un hispanohablante entiende italiano escrito casi de entrada. Es
+verdad, y es justo lo que vuelve caros a los falsos amigos: **cuando casi toda
+la frase se entiende sola, la palabra que no encaja pasa desapercibida** en vez
+de destacar.
+
+## Cómo trabajarlo
+
+Aprendé la palabra dentro de una frase que la fije: _«Compro il burro per la
+colazione»_ deja «burro = mantequilla» pegado de una forma que una lista de dos
+columnas no consigue. Es lo que hacen las
+[lecciones de italiano A1](/es/it/a1) de PolyLingua.
+
+Y llevá tu propia lista. Con un idioma tan cercano va a crecer rápido, y eso no
+es mala señal: significa que estás produciendo italiano de verdad, no
+traduciendo español con acento.
 
 ## Preguntas frecuentes
 
@@ -176,10 +194,10 @@ palabra en una frase real.
 
 ## En resumen
 
-El parecido entre italiano y español es una ventaja enorme para aprender
-rápido, pero también el terreno perfecto para los falsos amigos: cuanto más
-familiar suena una palabra, menos la cuestionás, y ahí es donde te
-equivocás. Sospechá de lo obvio, aprendé vocabulario en frases (no en listas
-sueltas) y anotá tus propios tropiezos. Podés empezar a practicar con
-contexto real en las [lecciones de italiano](/es/it) de PolyLingua,
-donde cada palabra viene acompañada de su frase y su situación.
+El problema del italiano no es que elijas mal: es que no llegás a elegir. La
+palabra sale con el significado español puesto, sin que aparezca la extrañeza
+que en otros idiomas te haría frenar. Por eso la única señal fiable es la
+contraria: **cuando una frase italiana te salga demasiado fácil, comprobá**.
+_Burro_, _largo_, _salire_, _aceto_ y _caldo_ merecen aprenderse de memoria y
+temprano, porque los cinco aparecen en los primeros días de cualquier viaje.
+Practicalos en contexto en las [lecciones de italiano](/es/it) de PolyLingua.

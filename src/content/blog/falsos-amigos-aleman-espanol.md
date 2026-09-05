@@ -1,6 +1,6 @@
 ---
 title: "Falsos amigos entre alemán y español: por qué 'Gift' no es un regalo"
-description: 'Lista de falsos amigos alemán-español que confunden hasta al estudiante más avanzado, con la traducción correcta y trucos para no caer en la trampa.'
+description: 'Los falsos amigos del alemán no vienen del español sino del inglés: Gift, bekommen, also. La lista, por qué pasa, y las terminaciones que sí podés fiarte.'
 publishDate: 2026-08-27
 tags: ['alemán', 'vocabulario', 'falsos amigos']
 ---
@@ -27,9 +27,9 @@ que se parecen a palabras inglesas — pero significan otra cosa. A esto se le
 suma un puñado de préstamos latinos y griegos que el alemán tomó y torció con el
 tiempo, igual que hizo el español, pero hacia un lado distinto.
 
-## La lista: los falsos amigos que más duelen
+## Los falschen Freunde que más duelen
 
-### Los que heredaste del inglés (la trampa exclusiva del alemán)
+### Los que heredaste del inglés (la categoría más grande)
 
 | Alemán        | Parece que significa                    | Realmente significa   |
 | ------------- | --------------------------------------- | --------------------- |
@@ -79,7 +79,7 @@ colegio secundario más exigente, el que prepara para la universidad — nada qu
 ver con levantar pesas. Y si tu jefe te presenta como su "Chef" en una reunión,
 no te está poniendo a cocinar: te está diciendo que sos vos quien manda.
 
-## Categorías de riesgo: dónde caés más seguido
+## Dónde se cae: las escenas de siempre
 
 - **En la oficina**: hablar de tu "Chef" (jefe, no cocinero), o mencionar sin
   querer que la empresa está en "Konkurs" (quiebra) cuando en realidad ganó un
@@ -92,57 +92,58 @@ no te está poniendo a cocinar: te está diciendo que sos vos quien manda.
   regalito para vos" traduciendo directo del inglés y terminar con "Gift" en la
   frase.
 
-## Trucos para no caer
+## Lo que hace distinto al alemán: el chequeo va por partida doble
 
-### 1. Si viene del inglés, sospechá el doble
+Con el italiano, el francés o el portugués el reflejo es uno: si una palabra se
+parece al español, desconfiá. Con el alemán ese reflejo no alcanza, porque el
+alemán **no se parece al español**. Se parece al inglés.
 
-Con el resto de los idiomas alcanza con desconfiar de lo que suena parecido al
-español. Con el alemán tenés que hacer ese chequeo **dos veces**: una vez contra
-el español, y otra contra el inglés. Si una palabra alemana te suena a inglés,
-esa es justo la que más cuidado necesita.
+Así que el chequeo son dos preguntas, no una:
 
-### 2. Aprendé la palabra real antes de que la necesites
+1. ¿Se parece a una palabra española? _(Konkurs, eventuell.)_
+2. ¿Se parece a una palabra inglesa? _(Gift, bekommen, also.)_
 
-"Gift" y "Konkurs" no son palabras raras de manual — aparecen en conversaciones
-comunes. Mejor memorizarlas de una vez, antes de que te agarren desprevenido, en
-vez de descubrirlas en el momento incómodo. Podés arrancar por las
-[lecciones de alemán A1](/es/de/a1) de PolyLingua, donde el vocabulario
-viene siempre metido en una frase real, no suelto.
+**La segunda es la que casi nadie hace**, y es de donde salen los errores más
+sonoros. Tiene una razón concreta: la mayoría de los hispanohablantes que
+llegan al alemán pasaron antes por el inglés, así que traen un diccionario
+mental de germánico ya cargado. Ese diccionario ayuda casi siempre, y te
+traiciona justo en las palabras que más se usan.
 
-### 3. Usá frases completas, no palabras sueltas
+Si venís del inglés, la regla es corta: **cuanto más obvia te parezca una
+palabra alemana por su parecido al inglés, más despacio.**
 
-"Ich bekomme" sola no te dice nada sobre la trampa. "Ich bekomme ein Geschenk"
-(recibo un regalo) sí te fuerza a notar que "bekommen" no tiene nada que ver con
-"convertirse en". Practicar con oraciones enteras es lo que fija el significado
-real, no la traducción que tu cerebro quiere inventar.
+## El otro lado: cuando el alemán se vuelve transparente
 
-### 4. Armá tu propia lista con los que te pasaron a vos
+La contrapartida. El alemán tomó vocabulario internacional del latín y el
+griego, y ahí coincide con el español sin sorpresas. Lo interesante es que no
+hay que memorizarlas una a una: **se reconocen por la terminación.**
 
-Cada persona tropieza con falsos amigos distintos según qué otros idiomas ya
-sabe. Anotá los tuyos apenas te confundan — esa lista personal, hecha con tus
-propios errores, se te queda grabada mucho mejor que cualquier lista genérica,
-incluida esta.
+| Termina en alemán | Es nuestro | Ejemplos                         |
+| ----------------- | ---------- | -------------------------------- |
+| **-tion**         | -ción      | Nation, Situation, Organisation  |
+| **-ität**         | -dad       | Universität, Qualität, Realität  |
+| **-ie**           | -ía        | Biologie, Fotografie, Demokratie |
+| **-ismus**        | -ismo      | Kapitalismus, Tourismus          |
+| **-ist**          | -ista      | Tourist, Artist, Pianist         |
 
-## Los "verdaderos amigos" (para compensar)
+Y un puñado que se usan a diario y coinciden sin regla: _die Familie_, _die
+Krise_, _der Direktor_, _das Formular_, _die Fabrik_, _das Restaurant_,
+_sympathisch_.
 
-No todo es trampa. El alemán tomó muchísimo vocabulario internacional del latín
-y el griego, y en esos casos suele coincidir con el español sin sorpresas:
+**El detalle que hace la diferencia:** casi todas estas son femeninas cuando
+terminan en **-tion**, **-ität** o **-ie**. Así que esta sección no solo te da
+vocabulario gratis — te da el artículo también, que en alemán es media batalla.
 
-| Alemán          | Español                                                      |
-| --------------- | ------------------------------------------------------------ |
-| die Universität | la universidad                                               |
-| die Bibliothek  | la biblioteca                                                |
-| die Familie     | la familia                                                   |
-| die Krise       | la crisis                                                    |
-| der Direktor    | el director                                                  |
-| sympathisch     | simpático                                                    |
-| das Formular    | el formulario                                                |
-| die Fabrik      | la fábrica                                                   |
-| das Rezept      | la receta (de cocina y también médica, igual que en español) |
-| das Restaurant  | el restaurante                                               |
+## Cómo trabajarlo
 
-Diez palabras que podés usar con total confianza desde el primer día, sin
-sospechar nada raro.
+"Ich bekomme" sola no te dice nada sobre la trampa. _"Ich bekomme ein
+Geschenk"_ (recibo un regalo) sí te obliga a ver que _bekommen_ no tiene nada
+que ver con «convertirse en». Con el alemán, más que con ningún otro, la frase
+entera es lo que desactiva el reflejo del inglés — es lo que hacen las
+[lecciones de alemán A1](/es/de/a1) de PolyLingua.
+
+Y anotá los tuyos. Acá la lista personal depende de algo muy concreto: de
+cuánto inglés sabés. Cuanto mejor sea tu inglés, más larga va a ser.
 
 ## Preguntas frecuentes
 
@@ -164,9 +165,10 @@ completamente distinto.
 
 ## En resumen
 
-El alemán te va a sorprender menos veces que el francés o el italiano con
-falsos amigos, pero cuando lo hace, suele ser porque tendiste vos mismo la
-trampa al apoyarte en el inglés. Conocer estos casos de antemano — sobre todo
-"Gift" y "bekommen" — te ahorra más de un momento incómodo. Practicá vocabulario
-en contexto real con las [lecciones de alemán](/es/de) de PolyLingua, donde
-cada palabra viene siempre acompañada de su frase y su situación, nunca suelta.
+El alemán te va a sorprender menos veces que el francés o el italiano, pero
+cuando lo hace es porque la trampa la tendiste vos: viene por el lado del
+inglés, no del español. Si sabés inglés, ese es el flanco que hay que vigilar —
+y _Gift_ y _bekommen_ son los dos que conviene tener resueltos antes de
+necesitarlos. La buena noticia es que del otro lado están las terminaciones
+internacionales, que te regalan vocabulario y artículo a la vez. Podés
+practicarlo en contexto en las [lecciones de alemán](/es/de) de PolyLingua.

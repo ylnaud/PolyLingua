@@ -1,6 +1,6 @@
 ---
 title: 'Verbos irregulares en inglés: lista esencial y trucos para memorizarlos sin sufrimiento'
-description: 'Los 50 verbos irregulares más usados del inglés organizados por patrón, con trucos mnemotécnicos para dejar de adivinar el past simple y el past participle.'
+description: 'Sesenta verbos irregulares del inglés agrupados por patrón, con cinco reglas mnemotécnicas y un top 20 para empezar, y así dejar de adivinar el past simple.'
 publishDate: 2026-08-22
 tags: ['inglés', 'gramática', 'verbos irregulares']
 ---
@@ -133,9 +133,9 @@ El pasado y el participio son iguales, pero distintos de la base:
 | show   | showed | shown      |
 | hide   | hid    | hidden     |
 
-**Truco:** muchos de estos siguen el patrón de cambio vocálico
-**i → o/a → i/o**: drive → drove → driven, write → wrote → written,
-ride → rode → ridden.
+**Truco:** varios de estos siguen el mismo cambio vocálico **i → o → i**, con
+la -en al final: drive → drove → driven, write → wrote → written, hide → hid →
+hidden.
 
 ### Patrón 4: Cambio vocálico puro (ABC sin -en)
 
@@ -152,9 +152,10 @@ ride → rode → ridden.
 | swim   | swam   | swum       |
 | ring   | rang   | rung       |
 
-**Truco del "i-a-u":** begin → began → begun, drink → drank → drunk,
-sing → sang → sung, swim → swam → swum, ring → rang → rung. La vocal
-del medio cambia de **i → a → u**. Memorizá el patrón, no cada verbo.
+Los cinco últimos —begin, drink, sing, swim, ring— comparten un patrón que vale
+oro: la vocal del medio va **i → a → u**, siempre en ese orden. Es el más
+rentable de toda la lista y le dedico el primer mnemotécnico de la sección de
+abajo. Los de arriba (go, do, come, run) no lo siguen: esos van sueltos.
 
 ### Los rebeldes que no siguen nada
 
@@ -167,6 +168,98 @@ Algunos simplemente hay que memorizarlos:
 
 _Be_ y _go_ son los más irregulares del idioma. Pero como los usás en cada
 frase, se memorizan solos con la práctica.
+
+Con _go_ hay un gancho que ayuda a que deje de parecer arbitrario: **_went_ no
+viene de _go_**. Es el pasado de otro verbo antiguo, _wend_ («encaminarse»),
+que se quedó pegado a _go_ cuando el pasado propio de _go_ cayó en desuso. Son
+dos verbos distintos pegados con cinta. Por eso no hay ninguna lógica que
+encontrarles: no la hay.
+
+## Cinco mnemotécnicos que sí funcionan
+
+Un mnemotécnico no es un resumen: es un gancho que te devuelve la forma cuando
+la necesitás. Estos cinco cubren la mayor parte de las tablas de arriba.
+
+### 1. La escalera i → a → u
+
+Es la más rentable de todas. Un grupo entero de verbos cambia su vocal en ese
+orden, siempre:
+
+```
+begin → began → begun
+drink → drank → drunk
+sing  → sang  → sung
+swim  → swam  → swum
+ring  → rang  → rung
+```
+
+**Cómo recordarla:** _«bebo, canto, nado»_ en ese orden — **i** hoy, **a**
+ayer, **u** siempre. Si dudás de una de estas, cantá la escalera y la forma
+aparece sola.
+
+### 2. La familia de los -ought y los -aught
+
+Cinco verbos muy frecuentes terminan en el mismo sonido, y se reparten en dos
+grupos por cómo se escriben:
+
+| -ought              | -aught         |
+| ------------------- | -------------- |
+| buy → **bought**    | catch → caught |
+| think → **thought** | teach → taught |
+| bring → **brought** |                |
+| fight → **fought**  |                |
+
+**Cómo recordarla:** los de **-aught** son los dos del aula — _catch_ y
+_teach_, atrapar y enseñar. **Todo lo demás va con -ought.** Con esa sola
+excepción cubrís el grupo entero.
+
+### 3. La frase de los que no se mueven
+
+Los AAA —los que tienen las tres formas iguales— caben en una frase:
+
+> **Let** me **cut**, **put**, **hit** and **shut** — nothing **costs**,
+> nothing **hurts**.
+
+Siete verbos, una frase. Si te la sabés, sabés que ninguno de esos cambia
+nunca.
+
+### 4. El participio con -en pide un auxiliar
+
+_Taken_, _given_, _eaten_, _written_, _broken_, _spoken_. Esa **-en** final es
+casi una etiqueta: marca la forma que **nunca va sola**, la que necesita
+_have_ o _be_ delante.
+
+**Cómo usarla:** si te sale una palabra terminada en -en y no hay _have_ ni
+_be_ en la frase, algo está mal. _«I eaten»_ chirría; _«I have eaten»_, no.
+
+### 5. Las cuatro parejas que se pisan
+
+Estas son las que de verdad se cruzan cuando el que habla es hispanohablante, y
+cada una tiene su gancho:
+
+**leave / let** — las dos se traducen «dejar», y ahí está la trampa.
+
+> _Leave_ es dejar **algo o a alguien atrás**: _leave → left_.
+> _Let_ es dejar **que pase algo**, permitir: _let → let_, no cambia nunca.
+>
+> Gancho: el que **permite** no se mueve, así que su forma tampoco.
+
+**fall / feel** — casi idénticas en pasado.
+
+> _fell_ (caer) y _felt_ (sentir) se separan por una sola letra: la **t** de
+> _sen**t**ir_.
+
+**be / go** en participio — no es de forma, es de significado.
+
+> _I've **been** to Paris_ → fui y ya volví.
+> _I've **gone** to Paris_ → me fui y sigo allá.
+>
+> Gancho: **_gone_ es el que no volvió.**
+
+**find / found** — la **ou** marca el pasado.
+
+> _find → found_. Nada de _finded_: el gancho es que la **i** se hunde y sale
+> **ou**, como en _f**ou**nd_.
 
 ## Estrategia de estudio: los 20 primeros
 

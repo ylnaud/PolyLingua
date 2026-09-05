@@ -1,6 +1,6 @@
 ---
 title: 'Falsos amigos entre francés y español: las palabras que te van a traicionar'
-description: 'Lista de falsos amigos francés-español que engañan a todos los hispanohablantes, con la traducción correcta y trucos para no caer en la trampa.'
+description: 'Los faux amis peores del francés son los que aciertan a medias —assister, réaliser, supporter— y por eso nadie te corrige. La lista y cómo detectarlos.'
 publishDate: 2026-08-22
 tags: ['francés', 'vocabulario', 'falsos amigos']
 ---
@@ -23,7 +23,7 @@ El peligro real no es confundir una palabra rara — es confundir una palabra
 el cerebro hispanohablante, al escuchar algo familiar en francés, desactiva
 la alarma de "esto podría significar otra cosa".
 
-## La lista: los falsos amigos que más duelen
+## Los faux amis que más duelen
 
 ### Los que cambian el significado completamente
 
@@ -96,7 +96,7 @@ _Carte_ te va a confundir en los restaurantes. Cuando el mozo te pregunta
 "Vous avez choisi sur la carte?", te está preguntando si elegiste del
 **menú**, no si escribiste una carta.
 
-## Categorías de riesgo: dónde caés más seguido
+## Dónde se cae: tres escenas típicas
 
 ### En el restaurante
 
@@ -122,57 +122,67 @@ _Carte_ te va a confundir en los restaurantes. Cuando el mozo te pregunta
 - Y si decís "je suis constipé" pensando que tenés un resfrío... acabás de
   anunciar que estás estreñido.
 
-## Trucos para no caer
+## Lo que hace distinto al francés: los falsos amigos a medias
 
-### 1. Cuando suene igual, sospechá
+Si ya leíste la lista de italiano o de portugués, esta parte es la que no se
+repite. El francés tiene una categoría que los otros casi no tienen: palabras
+que **no son falsas del todo**. Coinciden en un sentido y se separan en otro, y
+por eso son las que sobreviven más tiempo sin que las detectes.
 
-Si una palabra francesa se parece demasiado a la española, no la uses sin
-verificar. Los falsos amigos más peligrosos son los que suenan idénticos.
+Mirá otra vez tres de las de arriba:
 
-### 2. Aprendé la palabra francesa "real" primero
+- **_assister_** sí significa asistir... pero solo en el sentido de _asistir a
+  un acto_, no en el de _ayudar_. La mitad correcta te da confianza para usar
+  mal la otra mitad.
+- **_réaliser_** sí es realizar, y además es «darse cuenta». Nunca vas a
+  equivocarte del todo, así que nadie te corrige.
+- **_supporter_** sí es soportar, pero es sobre todo «ser hincha de». _Je
+  supporte cette équipe_ no es que la aguantes.
 
-En vez de traducir mentalmente del español, aprendé la palabra francesa
-directamente con su significado. No pienses "attendre = atender", memorizá
-"attendre = esperar" desde el principio.
+Con un falso amigo completo —_salir_ = ensuciar— el error es tan grande que
+alguien lo señala y no vuelve a pasar. Con uno a medias no: te entienden igual,
+nadie te corrige, y el hueco se queda ahí durante años.
 
-### 3. Usá frases, no palabras sueltas
+**La pregunta que hay que hacerse en francés** no es «¿esta palabra significa
+lo mismo?», sino **«¿significa lo mismo EN ESTE contexto?»**. Es una pregunta
+más incómoda, y es la que separa un francés de andar por casa de uno que suena
+bien.
 
-Los falsos amigos se neutralizan con contexto. Si aprendés "J'attends le
-bus" (espero el colectivo) como frase completa, nunca vas a confundir
-_attendre_ con "atender".
+## El regalo del francés: las terminaciones que se convierten solas
 
-Las [lecciones de francés A1](/es/fr/a1) de PolyLingua enseñan
-vocabulario en contexto — con frases de ejemplo y situaciones reales — en
-vez de listas de palabras sueltas, precisamente para evitar este tipo de
-confusiones.
+La otra cara. Además de palabras sueltas parecidas, el francés y el español
+comparten **terminaciones regulares** heredadas del latín. No son diez palabras:
+son familias enteras que se convierten con una regla.
 
-### 4. Hacé una lista personal
+| Termina en francés | Se convierte en | Ejemplos                                         |
+| ------------------ | --------------- | ------------------------------------------------ |
+| **-tion**          | -ción           | nation, situation, attention → nación, situación |
+| **-té**            | -dad            | liberté, université, société → libertad          |
+| **-eur**           | -or             | docteur, acteur, moteur → doctor, actor          |
+| **-ique**          | -ico            | musique, politique, logique → música, lógico     |
+| **-aire**          | -ario           | nécessaire, ordinaire → necesario, ordinario     |
+| **-ment**          | -mente          | rapidement, normalement → rápidamente            |
 
-Cada vez que caigas en un falso amigo (te va a pasar), anotalo. Tu lista
-personal va a ser más útil que cualquier lista genérica, porque va a reflejar
-exactamente las palabras que **vos** confundís.
+Esto es mucho más rentable que memorizar una lista de cognados: con seis reglas
+tenés acceso a miles de palabras que ya sabés sin haberlas estudiado.
 
-## Los "verdaderos amigos" (para compensar)
+**Y el aviso, porque si no esto sería otra trampa:** la regla convierte la
+_forma_, no garantiza el _significado_. _Actuellement_ termina en -ment y se
+convierte a «actualmente» sin problema... y aun así es un falso amigo a medias
+de los de arriba. Las terminaciones te dan la palabra; el contexto te dice si
+podés usarla.
 
-No todo es engaño. El francés y el español comparten miles de palabras que
-sí significan lo mismo o casi lo mismo:
+## Cómo trabajarlo
 
-| Francés    | Español    |
-| ---------- | ---------- |
-| important  | importante |
-| différent  | diferente  |
-| national   | nacional   |
-| possible   | posible    |
-| nécessaire | necesario  |
-| problème   | problema   |
-| musique    | música     |
-| hôpital    | hospital   |
-| famille    | familia    |
-| animal     | animal     |
+En francés, más que en ningún otro par, conviene **aprender la palabra dentro
+de la frase que la fija**: _J'attends le bus_ deja «attendre = esperar» pegado
+de una forma que una lista de dos columnas no consigue. Es lo que hacen las
+[lecciones de francés A1](/es/fr/a1) de PolyLingua — vocabulario en situación,
+no listas sueltas.
 
-Estas son las palabras que hacen que el francés sea uno de los idiomas más
-accesibles para hispanohablantes. El truco está en distinguir cuáles son
-amigos de verdad y cuáles te van a traicionar.
+Y anotá los tuyos. Los falsos amigos a medias son personales: dependen de qué
+sentido de la palabra española tengas más a mano, así que tu lista va a ser
+distinta de la de cualquier otro.
 
 ## Preguntas frecuentes
 
@@ -195,10 +205,10 @@ lista con los que vos confundiste, que son los que se te van a repetir.
 
 ## En resumen
 
-Los falsos amigos entre francés y español son inevitables cuando dos idiomas
-se parecen tanto. No los vas a evitar todos, pero podés minimizar los
-errores: sospechá de las palabras que suenan igual, aprendé vocabulario en
-contexto (no como traducciones 1:1), y cuando caigas — porque vas a caer —
-anotalo y seguí. Podés empezar a practicar francés con contexto real en las
-[lecciones de francés](/es/fr) de PolyLingua, donde cada palabra viene
-con su frase y su situación, no suelta en una lista.
+Con el francés lo difícil no son los falsos amigos completos —esos se aprenden
+una vez y ya— sino los que aciertan a medias: _assister_, _réaliser_,
+_supporter_. Nadie te corrige, porque te entienden igual, y por eso pueden
+quedarse años. La pregunta que hay que hacerse no es si la palabra significa lo
+mismo, sino si significa lo mismo **en este contexto**. Y del lado bueno están
+las terminaciones —-tion, -té, -eur—, que valen mil veces más que cualquier
+lista de cognados. Empezá en las [lecciones de francés](/es/fr) de PolyLingua.

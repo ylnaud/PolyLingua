@@ -7,10 +7,17 @@ order: 9
 unit: 3
 grammarTopic: 'Gírias e estrangeirismos'
 funFact: "'Sinistro' es una palabra camaleón: puede significar 'genial, increíble' o 'terrible, feo', y el tono de voz es lo único que te dice cuál de las dos. Entender esta ambigüedad deliberada es puro nivel C2 — ningún libro de texto te la explica bien."
+skills:
+  - pt.c2.register.slang
 minutes: 9
 quiz:
   - question: "¿Qué significa 'dar um rolê' en el portugués coloquial brasileño?"
-    options: ['Hacer trámites burocráticos', 'Salir a pasear o dar una vuelta sin destino fijo', 'Discutir con alguien']
+    options:
+      [
+        'Hacer trámites burocráticos',
+        'Salir a pasear o dar una vuelta sin destino fijo',
+        'Discutir con alguien',
+      ]
     answerIndex: 1
     explanation: "'Dar um rolê' significa salir a pasear, dar una vuelta informal — 'Vamos dar um rolê?' es una invitación casual a salir."
   - question: "'Treta' en jerga brasileña significa..."
@@ -18,13 +25,14 @@ quiz:
     answerIndex: 1
     explanation: "'Treta' es jerga para un problema o conflicto: 'Deu treta lá na festa' (hubo bronca en la fiesta)."
   - question: "¿Qué son 'home office' y 'delivery' en el portugués actual?"
-    options: [
+    options:
+      [
         'Estrangeirismos: préstamos directos del inglés, usados sin traducir',
         'Palabras antiguas del portugués medieval',
         'Términos exclusivos de textos académicos',
       ]
     answerIndex: 0
-    explanation: "Son estrangeirismos: palabras tomadas directamente del inglés y usadas en portugués sin traducir, muy comunes en el habla urbana cotidiana."
+    explanation: 'Son estrangeirismos: palabras tomadas directamente del inglés y usadas en portugués sin traducir, muy comunes en el habla urbana cotidiana.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Vamos dar um ___ hoje à noite?'
@@ -81,12 +89,12 @@ ese registro informal y vivo.
 
 ## Gírias: la jerga cotidiana
 
-| Gíria           | Significado                                    |
-| ---------------- | ------------------------------------------------- |
-| mano / cara       | tío, colega — forma de dirigirse a un amigo     |
-| treta             | problema, bronca, conflicto                     |
-| rolê               | salida o paseo informal, sin plan fijo          |
-| sinistro           | genial/increíble, o feo/terrible, según el tono |
+| Gíria       | Significado                                     |
+| ----------- | ----------------------------------------------- |
+| mano / cara | tío, colega — forma de dirigirse a un amigo     |
+| treta       | problema, bronca, conflicto                     |
+| rolê        | salida o paseo informal, sin plan fijo          |
+| sinistro    | genial/increíble, o feo/terrible, según el tono |
 
 ```
 E aí, mano, tudo certo?          (¿Qué onda, tío, todo bien?)
@@ -112,11 +120,11 @@ El portugués urbano —sobre todo en Brasil— incorpora palabras inglesas dire
 sin traducir, para conceptos de la vida moderna:
 
 | Estrangeirismo | Uso en portugués                          |
-| ---------------- | -------------------------------------------- |
-| shopping          | centro comercial                            |
-| delivery           | entrega a domicilio ("pedir um delivery")   |
-| home office         | trabajo desde casa                          |
-| mouse               | mouse de computadora                        |
+| -------------- | ----------------------------------------- |
+| shopping       | centro comercial                          |
+| delivery       | entrega a domicilio ("pedir um delivery") |
+| home office    | trabajo desde casa                        |
+| mouse          | mouse de computadora                      |
 
 ```
 Vou pedir um delivery hoje, não quero cozinhar.

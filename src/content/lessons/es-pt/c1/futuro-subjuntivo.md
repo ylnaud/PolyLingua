@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Futuro do subjuntivo'
 funFact: "El español TUVO un futuro de subjuntivo (fuere, hubiere) pero prácticamente desapareció, sobreviviendo solo en textos legales arcaicos ('quien contraviniere...'). El portugués, en cambio, lo conservó vivo y lo usa a diario en frases tan comunes como 'cuando yo pueda' o 'si tú quieres'. Es la joya gramatical más distintiva del idioma."
+skills:
+  - pt.c1.subjunctive.futuro
 minutes: 11
 quiz:
   - question: '¿Para qué se usa principalmente el futuro do subjuntivo?'

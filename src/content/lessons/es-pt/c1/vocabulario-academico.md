@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Vocabulário e registro acadêmico'
 funFact: "El portugués académico favorece fuertemente la voz pasiva y las construcciones nominalizadas ('a análise dos dados foi realizada' en vez de 'analisamos os dados') — un rasgo de estilo formal muy similar al del español académico, que distancia deliberadamente al autor de la acción para sonar más objetivo."
+skills:
+  - pt.c1.vocabulary.academic
 minutes: 8
 quiz:
   - question: '¿Qué construcción prefiere el registro académico portugués para sonar más objetivo?'

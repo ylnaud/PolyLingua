@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Voz passiva com "se" (passiva sintética/pronominal)'
 funFact: "En anuncios, letreros y conversación diaria, 'Vendem-se casas' es muchísimo más natural que 'Casas são vendidas' — la pasiva con 'ser' suena casi siempre a texto formal o de informe. Si querés sonar como un hablante nativo real, esta es la construcción que tenés que dominar."
+skills:
+  - pt.c1.verb.passive-se
 minutes: 10
 quiz:
   - question: "¿Qué función cumple el 'se' en 'Vende-se casas neste bairro'?"
@@ -22,9 +24,10 @@ quiz:
       - "Porque el verbo concuerda con 'casas', el sujeto paciente de la oración"
       - 'Es un error común pero aceptado'
     answerIndex: 1
-    explanation: "En la passiva sintética, el verbo concuerda en número con el sustantivo que sigue: vende-se UMA casa / vendem-se CASAS."
-  - question: "¿Cuál construcción es más común en el habla y los anuncios cotidianos de portugués?"
-    options: [
+    explanation: 'En la passiva sintética, el verbo concuerda en número con el sustantivo que sigue: vende-se UMA casa / vendem-se CASAS.'
+  - question: '¿Cuál construcción es más común en el habla y los anuncios cotidianos de portugués?'
+    options:
+      [
         "'Casas são vendidas aqui' (ser + particípio)",
         "'Vendem-se casas aqui' (passiva com se)",
         'Ambas se usan exactamente igual en todos los contextos',
@@ -119,12 +122,12 @@ Alugam-se  quartos.     (plural)
 Esta construcción es la reina de los anuncios, letreros y avisos clasificados en
 portugués:
 
-| Anuncio                     | Significado                  |
-| ---------------------------- | ------------------------------ |
-| Aluga-se.                    | Se alquila.                   |
-| Vende-se.                    | Se vende.                     |
-| Precisa-se de funcionários.  | Se necesitan empleados.       |
-| Fala-se português aqui.      | Se habla portugués aquí.      |
+| Anuncio                     | Significado              |
+| --------------------------- | ------------------------ |
+| Aluga-se.                   | Se alquila.              |
+| Vende-se.                   | Se vende.                |
+| Precisa-se de funcionários. | Se necesitan empleados.  |
+| Fala-se português aqui.     | Se habla portugués aquí. |
 
 ## Passiva com "se" vs. "ser + particípio"
 

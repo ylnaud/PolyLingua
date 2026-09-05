@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Português dos negócios'
 funFact: "El entorno corporativo brasileño mezcla con naturalidad un registro formal en portugués con anglicismos importados directamente del inglés de negocios ('fazer um follow-up', 'ter um feedback', 'agendar uma call') — una jerga híbrida muy característica del mundo empresarial brasileño moderno, especialmente en startups y tecnología."
+skills:
+  - pt.c1.vocabulary.business
 minutes: 8
 quiz:
   - question: "¿Qué significa 'fazer um follow-up' en el contexto corporativo brasileño?"

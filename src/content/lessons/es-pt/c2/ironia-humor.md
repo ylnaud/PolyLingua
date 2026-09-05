@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Ironia e humor'
 funFact: "El humor brasileño y el portugués (de Portugal) tienen tonos notablemente distintos: el humor brasileño tiende a ser más exagerado y físico ('humor pastelão'), mientras que el humor portugués suele apoyarse más en la ironía seca y el doble sentido sutil — dos tradiciones cómicas dentro del mismo idioma que pueden sonar completamente distintas entre sí."
+skills:
+  - pt.c2.style.irony
 minutes: 9
 quiz:
   - question: '¿Qué distingue principalmente al humor irónico del humor literal?'

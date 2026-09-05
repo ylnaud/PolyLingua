@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Variedades regionais do português (PT-BR, PT-PT, África lusófona)'
 funFact: 'El portugués es la lengua oficial de nueve países en cuatro continentes — Brasil, Portugal, Angola, Mozambique, Cabo Verde, Guinea-Bissau, Santo Tomé y Príncipe, Guinea Ecuatorial y Timor Oriental — lo que lo convierte en una de las lenguas con mayor diversidad geográfica y cultural del mundo, con acentos y vocabularios notablemente distintos entre regiones.'
+skills:
+  - pt.c2.variety.regional
 minutes: 9
 quiz:
   - question: '¿En cuántos países es el portugués lengua oficial?'

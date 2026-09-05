@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Estilo literário e prosa elevada'
 funFact: 'La literatura de lengua portuguesa incluye a un Premio Nobel (José Saramago) y a gigantes como Machado de Assis, Clarice Lispector y Fernando Pessoa — cada uno con un estilo de prosa radicalmente distinto, desde las frases larguísimas sin puntuación de Saramago hasta la introspección fragmentada de Lispector, mostrando la enorme flexibilidad estilística que permite este idioma.'
+skills:
+  - pt.c2.style.literary
 minutes: 10
 quiz:
   - question: "¿Por qué el pretérito mais-que-perfeito simples ('falara') aparece frecuentemente en prosa literaria?"

@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Jogos de palavras e trocadilhos'
 funFact: "Brasil tiene una tradición muy particular de 'trocadilhos' (juegos de palabras) en titulares de periódico y publicidad — una práctica tan extendida que existen concursos y compilaciones dedicadas exclusivamente a los mejores trocadilhos de titulares deportivos brasileños, especialmente relacionados con fútbol."
+skills:
+  - pt.c2.style.wordplay
 minutes: 9
 quiz:
   - question: "¿Qué es un 'trocadilho' en portugués?"

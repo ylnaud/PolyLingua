@@ -6,30 +6,32 @@ description: 'Domina el infinitivo pessoal (infinitivo flexionado) en portugués
 order: 10
 unit: 3
 grammarTopic: 'Infinitivo pessoal (infinitivo flexionado)'
-funFact: "El infinitivo pessoal es uno de los pocos rasgos gramaticales del portugués que NO existe en español, francés ni italiano — es exclusivo de esta lengua entre las romances. Dominarlo es una de las señales más claras de que ya pensás en portugués y no traducís mentalmente."
+funFact: 'El infinitivo pessoal es uno de los pocos rasgos gramaticales del portugués que NO existe en español, francés ni italiano — es exclusivo de esta lengua entre las romances. Dominarlo es una de las señales más claras de que ya pensás en portugués y no traducís mentalmente.'
+skills:
+  - pt.c1.verb.infinitivo-pessoal
 minutes: 10
 quiz:
-  - question: "¿Qué hace único al infinitivo pessoal del portugués?"
+  - question: '¿Qué hace único al infinitivo pessoal del portugués?'
     options:
-      - "Se conjuga según la persona del sujeto, algo que el español no hace"
+      - 'Se conjuga según la persona del sujeto, algo que el español no hace'
       - 'Solo existe en tiempo pasado'
       - 'Se usa exclusivamente en literatura'
     answerIndex: 0
     explanation: "El infinitivo pessoal se conjuga según la persona ('para eu entender', 'para vocês chegarem'), algo que ni el español ni el francés ni el italiano hacen con su infinitivo."
-  - question: "¿Cuándo se usa el infinitivo pessoal en vez del impessoal (sin flexionar)?"
+  - question: '¿Cuándo se usa el infinitivo pessoal en vez del impessoal (sin flexionar)?'
     options:
       - 'Siempre, no hay diferencia real'
       - 'Cuando el sujeto de la acción del infinitivo es distinto del sujeto de la oración principal'
       - 'Solo con verbos irregulares'
     answerIndex: 1
     explanation: "Se flexiona cuando el sujeto del infinitivo difiere del sujeto principal: 'É importante vocês chegarem cedo' (vocês, no yo, es quien llega)."
-  - question: "¿Qué terminaciones usa el infinitivo pessoal?"
+  - question: '¿Qué terminaciones usa el infinitivo pessoal?'
     options:
       - 'Las mismas del pretérito perfeito'
       - 'Las mismas del futuro do subjuntivo'
       - 'No lleva ninguna terminación, nunca'
     answerIndex: 1
-    explanation: "El infinitivo pessoal usa las mismas terminaciones que el futuro do subjuntivo: -, -es, -, -mos, -des, -em."
+    explanation: 'El infinitivo pessoal usa las mismas terminaciones que el futuro do subjuntivo: -, -es, -, -mos, -des, -em.'
 exercises:
   - type: 'fill-blank'
     sentence: 'É importante vocês ___ cedo.'
@@ -90,13 +92,13 @@ falar:  eu falar, tu falares, ele/ela falar,
 ```
 
 | Pessoa          | Infinitivo pessoal (falar) |
-| --------------- | ---------------------------- |
-| eu              | falar                       |
-| tu              | falares                     |
-| ele/ela/você    | falar                       |
-| nós             | falarmos                    |
-| vós             | falardes                    |
-| eles/elas/vocês | falarem                     |
+| --------------- | -------------------------- |
+| eu              | falar                      |
+| tu              | falares                    |
+| ele/ela/você    | falar                      |
+| nós             | falarmos                   |
+| vós             | falardes                   |
+| eles/elas/vocês | falarem                    |
 
 Fijate que "eu" y "ele/ela" no llevan terminación visible — se ven idénticas al
 infinitivo impessoal. Por eso el infinitivo pessoal se nota sobre todo en "nós"

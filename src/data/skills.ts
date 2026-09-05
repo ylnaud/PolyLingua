@@ -3754,6 +3754,209 @@ export const SKILLS: Skill[] = [
     prerequisites: [],
     difficulty: 4,
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // PORTUGUÉS — C1
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'pt.c1.subjunctive.futuro',
+    lang: 'pt',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Futuro de subjuntivo',
+    prerequisites: ['pt.b1.subjunctive.intro', 'pt.b1.conjunction.time'],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c1.verb.infinitivo-pessoal',
+    lang: 'pt',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Infinitivo personal (flexionado)',
+    prerequisites: ['pt.b1.subjunctive.intro'],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c1.subjunctive.imperfeito',
+    lang: 'pt',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Imperfecto de subjuntivo completo',
+    prerequisites: ['pt.b1.subjunctive.imperfeito-se'],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c1.speech.indirect',
+    lang: 'pt',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Discurso indirecto y concordancia de tiempos',
+    prerequisites: ['pt.b2.verb.mais-que-perfeito', 'pt.b2.verb.condicional-passado'],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c1.emphasis.cleft',
+    lang: 'pt',
+    level: 'c1',
+    category: 'word_order',
+    name: 'Frases clivadas (é que)',
+    prerequisites: ['pt.b2.pronoun.relative'],
+    difficulty: 4,
+  },
+  {
+    id: 'pt.c1.verb.passive-se',
+    lang: 'pt',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Pasiva con «se» (sintética)',
+    prerequisites: ['pt.b2.verb.passive'],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c1.verb.mais-que-perfeito-simples',
+    lang: 'pt',
+    level: 'c1',
+    category: 'grammar',
+    name: 'Pluscuamperfecto simple (registro literario)',
+    prerequisites: ['pt.b2.verb.mais-que-perfeito'],
+    difficulty: 4,
+  },
+  {
+    id: 'pt.c1.idiom.expressions',
+    lang: 'pt',
+    level: 'c1',
+    category: 'vocabulary',
+    name: 'Expresiones idiomáticas',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'pt.c1.vocabulary.academic',
+    lang: 'pt',
+    level: 'c1',
+    category: 'vocabulary',
+    name: 'Lenguaje y registro académico',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'pt.c1.vocabulary.business',
+    lang: 'pt',
+    level: 'c1',
+    category: 'vocabulary',
+    name: 'Portugués de negocios',
+    prerequisites: [],
+    difficulty: 4,
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // PORTUGUÉS — C2
+  //
+  // Casi todo va con `writing` o `vocabulary`, y por tanto sin plantilla de
+  // refuerzo. Es la misma decisión que se tomó en alemán, inglés, francés e
+  // italiano: el registro, la ironía, la retórica y los juegos de palabras no
+  // son reglas que se completen en un hueco, son cosas que se producen; un
+  // ejercicio de hueco ahí inventaría una respuesta única donde no la hay.
+  //
+  // Hay DOS excepciones, no una:
+  //
+  // 1. La nominalización, igual que en los cuatro idiomas anteriores.
+  // 2. Los diminutivos, y esto sí es una salida respecto a los otros cursos.
+  //    La alternancia -inho / -zinho es morfología productiva con UNA forma
+  //    correcta (café → cafezinho, no «cafeinho»): la elige la terminación de
+  //    la palabra, no el gusto de quien habla. Que además el diminutivo
+  //    transmita afecto o ironía no quita que la forma se decida por regla, y
+  //    esa regla se puede entrenar en un hueco.
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    id: 'pt.c2.style.nominalizacao',
+    lang: 'pt',
+    level: 'c2',
+    category: 'grammar',
+    name: 'Nominalización y estilo formal',
+    prerequisites: ['pt.c1.vocabulary.academic'],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c2.morphology.diminutive',
+    lang: 'pt',
+    level: 'c2',
+    category: 'grammar',
+    name: 'Diminutivos y aumentativos (-inho / -zinho)',
+    prerequisites: ['pt.a1.noun.plural-ao'],
+    difficulty: 4,
+  },
+  {
+    id: 'pt.c2.register.colloquial',
+    lang: 'pt',
+    level: 'c2',
+    category: 'writing',
+    name: 'Registro coloquial y partículas del habla',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'pt.c2.style.irony',
+    lang: 'pt',
+    level: 'c2',
+    category: 'writing',
+    name: 'Ironía y humor',
+    prerequisites: [],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c2.style.rhetoric',
+    lang: 'pt',
+    level: 'c2',
+    category: 'writing',
+    name: 'Figuras retóricas',
+    prerequisites: [],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c2.style.wordplay',
+    lang: 'pt',
+    level: 'c2',
+    category: 'writing',
+    name: 'Juegos de palabras y dobles sentidos',
+    prerequisites: [],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c2.style.literary',
+    lang: 'pt',
+    level: 'c2',
+    category: 'writing',
+    name: 'Estilo literario',
+    prerequisites: ['pt.c1.verb.mais-que-perfeito-simples'],
+    difficulty: 5,
+  },
+  {
+    id: 'pt.c2.idiom.proverbs',
+    lang: 'pt',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Refranes y proverbios',
+    prerequisites: ['pt.c1.idiom.expressions'],
+    difficulty: 4,
+  },
+  {
+    id: 'pt.c2.variety.regional',
+    lang: 'pt',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Variedades regionales (PT-BR, PT-PT, África)',
+    prerequisites: [],
+    difficulty: 4,
+  },
+  {
+    id: 'pt.c2.register.slang',
+    lang: 'pt',
+    level: 'c2',
+    category: 'vocabulary',
+    name: 'Jerga y extranjerismos',
+    prerequisites: ['pt.c2.register.colloquial'],
+    difficulty: 5,
+  },
 ];
 
 export const SKILL_MAP: Record<string, Skill> = Object.fromEntries(SKILLS.map((s) => [s.id, s]));

@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Pretérito imperfeito do subjuntivo'
 funFact: "El pretérito imperfeito do subjuntivo se forma siempre a partir de la tercera persona del plural del pretérito perfeito ('falaram' → 'falasse'), un atajo morfológico que funciona para prácticamente todos los verbos irregulares del idioma, incluso los más caóticos como 'ser/ir' (foram → fosse)."
+skills:
+  - pt.c1.subjunctive.imperfeito
 minutes: 8
 quiz:
   - question: '¿De qué forma verbal se deriva el pretérito imperfeito do subjuntivo?'

@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Figuras de retórica'
 funFact: 'Los discursos de grandes oradores lusófonos —desde políticos brasileños y portugueses hasta líderes de independencia africanos como Amílcar Cabral— han moldeado un estilo retórico propio del mundo de habla portuguesa, con particular fuerza en la anáfora y la antítesis como recursos de movilización popular.'
+skills:
+  - pt.c2.style.rhetoric
 minutes: 9
 quiz:
   - question: "¿Cuál es el propósito de una 'pergunta retórica'?"

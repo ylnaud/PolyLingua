@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_HOST } from '../data/site';
 
 const updated = 'agosto de 2026';
 ---
@@ -46,18 +47,18 @@ const updated = 'agosto de 2026';
 
     <h2>Analítica y publicidad</h2>
     <p>
-      PolyLingua no usa ninguna herramienta de analítica ni publicidad. No hay cookies de
-      rastreo, no se envía ningún dato a servidores de terceros, y ninguna respuesta que des en
-      un ejercicio sale de tu navegador (ver arriba). Si en el futuro incorporamos alguna
-      herramienta de este tipo, actualizaremos esta página con el detalle exacto de qué se
-      recopila antes de que entre en vigor.
+      PolyLingua no usa ninguna herramienta de analítica ni publicidad. No hay cookies de rastreo,
+      no se envía ningún dato a servidores de terceros, y ninguna respuesta que des en un ejercicio
+      sale de tu navegador (ver arriba). Si en el futuro incorporamos alguna herramienta de este
+      tipo, actualizaremos esta página con el detalle exacto de qué se recopila antes de que entre
+      en vigor.
     </p>
 
     <h2>Cómo borrar tus datos</h2>
     <p>
       Como todo se guarda localmente en tu navegador, puedes borrarlo tú mismo en cualquier momento
       desde los ajustes de tu navegador (borrar datos de navegación / datos del sitio para <code
-        >polylingua.thyronemiguelvegasantana-c6e.workers.dev</code
+        >{SITE_HOST}</code
       >). Hoy la app no tiene un botón de "reiniciar progreso" dentro de la propia interfaz; borrar
       los datos del sitio desde el navegador tiene el mismo efecto.
     </p>

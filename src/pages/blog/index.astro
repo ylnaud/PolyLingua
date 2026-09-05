@@ -86,14 +86,36 @@ const structuredData = {
     color: var(--text-muted);
   }
 
+  /* Una columna en móvil, dos en tablet y tres en escritorio. Los cortes son
+     640px y 960px, los mismos que ya usa el resto del sitio. Con el contenedor
+     a 1120px, tres columnas dejan tarjetas de ~340px: suficiente para que el
+     título respire y no tan anchas como para que la descripción se convierta
+     en un renglón interminable. */
   .posts-grid {
     display: grid;
-    gap: 1.25rem;
+    gap: 1.5rem;
     padding-block: 1rem 4rem;
   }
 
+  @media (min-width: 640px) {
+    .posts-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 960px) {
+    .posts-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+  }
+
   .post-card {
-    display: block;
+    /* Columna flexible para que todas las tarjetas de una fila midan lo mismo
+       y las etiquetas queden alineadas abajo (margin-top: auto), en vez de
+       colgar de una descripción que en cada tarjeta ocupa distinto. */
+    display: flex;
+    flex-direction: column;
     /* Mismo motivo que en DialogueCard: sin esto, un título con una palabra
        larga ensancha la tarjeta más allá del contenedor. */
     min-width: 0;
@@ -128,9 +150,19 @@ const structuredData = {
     transition: color 0.15s ease;
   }
 
+  /* La descripción se corta a tres líneas. Las meta descriptions van de 130 a
+     160 caracteres porque eso es lo que pide el SEO, pero volcadas enteras en
+     la tarjeta son un párrafo que nadie lee y que además descuadra las alturas
+     de la fila. Tres líneas alcanzan para decidir si el artículo interesa; el
+     texto completo sigue entero en la meta description y en el post. */
   .post-card p {
-    margin: 0;
+    margin: 0 0 1rem;
     color: var(--text-muted);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
   }
 
   /* Las etiquetas eran píldoras con borde y fondo: dentro de una tarjeta que
@@ -145,7 +177,10 @@ const structuredData = {
     flex-wrap: wrap;
     gap: 0 0.5rem;
     padding: 0.85rem 0 0;
-    margin: 1rem 0 0;
+    /* auto: empuja las etiquetas al pie de la tarjeta, así la regla queda a la
+       misma altura en toda la fila aunque un título ocupe dos líneas y otro
+       tres. */
+    margin: auto 0 0;
     border-top: 1px solid var(--border);
     font-size: 0.8rem;
     color: var(--text-muted);

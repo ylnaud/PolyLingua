@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Adjetivos posesivos (mon/ma/mes...)'
 funFact: "En español, 'mi' no cambia sin importar si el objeto es masculino o femenino. En francés, 'mon/ma/mes' concuerda con el GÉNERO DE LA COSA POSEÍDA, no con quién eres tú. Y hay una excepción sorprendente: antes de una palabra femenina que empieza con vocal, usas 'mon' (no 'ma') solo por facilidad de pronunciación."
+skills:
+  - fr.a1.possessive.adjectives
 minutes: 7
 quiz:
   - question: "¿Cuál es el posesivo correcto para 'mi libro' (le livre, masculino)?"

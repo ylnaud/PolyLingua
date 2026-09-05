@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Comparativo y superlativo'
 funFact: "A diferencia del alemán o inglés, el francés casi nunca cambia la terminación del adjetivo para comparar — simplemente añade 'plus/moins/aussi' antes y 'que' después. Es uno de los sistemas comparativos más simples y regulares de los cinco idiomas de PolyLingua."
+skills:
+  - fr.a2.comparison
 minutes: 7
 quiz:
   - question: "¿Cómo dirías 'más rápido que' en francés?"

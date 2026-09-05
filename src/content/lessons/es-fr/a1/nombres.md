@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Números cardinales (0-100)'
 funFact: "El francés hace matemáticas mientras cuenta: 'soixante-dix' (70) literalmente es 'sesenta-diez', y 'quatre-vingts' (80) es 'cuatro-veintes' (4×20). Es un sistema vigesimal, herencia histórica, que sorprende a todo estudiante — Bélgica y Suiza, de hecho, usan palabras más simples (septante, huitante) que Francia no adoptó."
+skills:
+  - fr.a1.vocabulary.numbers
 minutes: 7
 quiz:
   - question: "¿Cómo se dice '70' en francés estándar?"

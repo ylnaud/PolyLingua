@@ -8,6 +8,8 @@ unit: 2
 situation: 'Ayer y mañana'
 grammarTopic: 'Vocabulario: hier et demain'
 funFact: "Para el futuro cercano, el francés no necesita el futur simple: alcanza con el presente + 'demain' — 'demain je travaille' es 'mañana trabajo', sin conjugar nada distinto."
+skills:
+  - fr.a2.vocabulary.past-future
 minutes: 7
 phrases:
   - text: "Qu'est-ce que tu as fait hier?"

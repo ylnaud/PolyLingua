@@ -8,6 +8,8 @@ unit: 2
 situation: 'Transporte y ciudad'
 grammarTopic: 'Vocabulario: les transports et les directions'
 funFact: "'Tout droit' significa 'todo recto', no 'todo derecho' como en español — y no confundas 'à droite' (a la derecha) con 'tout droit' (recto): comparten la palabra 'droit', pero una es dirección y la otra es rumbo fijo hacia adelante."
+skills:
+  - fr.a2.vocabulary.transport
 minutes: 7
 phrases:
   - text: 'Comment aller à la gare?'

@@ -7,6 +7,8 @@ order: 13
 unit: 3
 grammarTopic: 'Saludos y presentarse'
 funFact: "En Francia, saludar es obligatorio: si entras a una tienda pequena sin decir 'bonjour', el dependiente puede tomarlo como una falta de respeto. Un 'bonjour' al entrar y un 'au revoir' al salir son el minimo social absoluto. Es como el 'buenos dias' en espanol, pero todavia mas importante."
+skills:
+  - fr.a1.introduction.greetings
 minutes: 7
 phrases:
   - text: 'Bonjour!'

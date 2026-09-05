@@ -7,6 +7,8 @@ order: 12
 unit: 3
 grammarTopic: 'Pronunciacion: vocales nasales'
 funFact: "El frances tiene cuatro vocales nasales que no existen en espanol. El truco: se pronuncian dejando salir el aire por la nariz, como si tuvieras un resfriado leve. No digas la 'n' ni la 'm' al final: 'bon' no es 'bon' con n espanola, es un sonido nasal puro, como un 'bo' que vibra en la nariz."
+skills:
+  - fr.a1.pron.nasales
 minutes: 8
 phrases:
   - text: 'enfant'

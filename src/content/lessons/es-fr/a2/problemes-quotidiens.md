@@ -8,6 +8,8 @@ unit: 2
 situation: 'Problemas cotidianos'
 grammarTopic: 'Vocabulario: les problèmes quotidiens'
 funFact: "'Ça ne marche pas' sirve para casi cualquier cosa rota, del wifi a la lavadora — literalmente 'eso no camina', una de las frases más útiles del francés cotidiano."
+skills:
+  - fr.a2.vocabulary.problems
 minutes: 7
 phrases:
   - text: 'Ça ne marche pas.'

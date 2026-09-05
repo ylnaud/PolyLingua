@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Artículos y género (le/la/les, un/une)'
 funFact: "Ventaja para ti: el español YA tiene género gramatical, así que el concepto no es nuevo. El problema es que las palabras no siempre coinciden entre idiomas: 'la leche' (fem. en español) es 'le lait' (masc. en francés). Nunca asumas que el género se traduce igual — apréndelo palabra por palabra, con su artículo pegado."
+skills:
+  - fr.a1.article.gender
 minutes: 7
 quiz:
   - question: "¿Cuál es el artículo correcto para 'table' (mesa)?"

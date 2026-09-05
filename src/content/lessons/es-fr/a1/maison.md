@@ -8,6 +8,8 @@ unit: 2
 situation: 'Casa'
 grammarTopic: 'Vocabulario: la maison'
 funFact: "'Il y a' (hay) no cambia nunca, sin importar si hablas de una cosa o de diez — 'il y a une table' y 'il y a trois chaises' usan la misma forma. Es mucho más simple que el español, donde 'hay' tampoco cambia, así que este es un vocabulario gratis para ti."
+skills:
+  - fr.a1.vocabulary.home
 minutes: 6
 phrases:
   - text: 'Il y a une table dans la cuisine.'

@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Pronombres objeto directo (COD) e indirecto (COI)'
 funFact: "A diferencia del español, donde el pronombre de objeto va antes del verbo conjugado ('lo veo'), el francés hace exactamente lo mismo ('je le vois') — la lógica te resultará familiar. La verdadera trampa está en elegir entre COD (le/la/les) y COI (lui/leur) según si el verbo francés usa una preposición 'à' oculta o no."
+skills:
+  - fr.a2.pronoun.cod-coi
 minutes: 9
 quiz:
   - question: "'Je vois Marie' → 'Je ___ vois' (la veo). ¿Qué pronombre va?"

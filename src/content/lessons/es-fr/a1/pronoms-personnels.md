@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Pronombres personales sujeto'
 funFact: "El frances tiene un pronombre que no existe en espanol: 'on'. Oficialmente significa 'uno/se' (impersonal), pero en la vida real los franceses lo usan mas que 'nous' para decir 'nosotros'. Si escuchas 'on y va', no es impersonal: es 'vamos'."
+skills:
+  - fr.a1.pronoun.subject
 minutes: 8
 quiz:
   - question: "Cual es el pronombre correcto para hablar de 'nosotros' en conversacion informal?"

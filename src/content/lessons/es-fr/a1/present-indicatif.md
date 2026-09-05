@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: "Présent de l'indicatif (verbos regulares -er + être/avoir)"
 funFact: "El 90% de los verbos franceses terminan en '-er' y se conjugan EXACTAMENTE igual (parler, manger, aimer...). Aprende UN verbo en -er a la perfección y automáticamente sabes conjugar cientos más. Es el grupo más rentable de memorizar."
+skills:
+  - fr.a1.verb.present-er
+  - fr.a1.verb.etre-avoir
 minutes: 7
 quiz:
   - question: "¿Cuál es la conjugación correcta de 'parler' (hablar) con 'tu' (tú)?"

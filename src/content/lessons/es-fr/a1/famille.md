@@ -8,6 +8,8 @@ unit: 2
 situation: 'Familia y amigos'
 grammarTopic: 'Vocabulario: la familia'
 funFact: 'Como en español, las palabras de familia francesa casi siempre siguen el género real de la persona: le père/la mère, le frère/la sœur. Apréndelas en parejas y duplicarás tu vocabulario con el mismo esfuerzo, reforzando también el patrón le/la que ya conoces.'
+skills:
+  - fr.a1.vocabulary.family
 minutes: 6
 phrases:
   - text: "J'ai deux frères et une sœur."

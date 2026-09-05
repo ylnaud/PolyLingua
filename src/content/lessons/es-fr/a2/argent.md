@@ -8,6 +8,8 @@ unit: 2
 situation: 'Dinero'
 grammarTopic: 'Vocabulario: el dinero'
 funFact: "En francés, 'liquide' significa efectivo (no líquido en el sentido literal) — 'payer en liquide' es pagar en efectivo, uno de esos falsos amigos que conviene memorizar antes de necesitarlo en una tienda."
+skills:
+  - fr.a2.vocabulary.money
 minutes: 7
 phrases:
   - text: 'Je peux payer par carte?'

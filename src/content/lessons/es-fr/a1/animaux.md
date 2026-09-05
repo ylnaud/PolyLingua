@@ -8,6 +8,8 @@ unit: 2
 situation: 'Animales'
 grammarTopic: 'Vocabulario: les animaux'
 funFact: "Los nombres de animales en francés casi siempre traen su artículo pegado en la memoria: le chien, le chat, la vache. Apréndelos siempre junto al artículo desde el primer día — así nunca tendrás que adivinar el género más adelante."
+skills:
+  - fr.a1.vocabulary.animals
 minutes: 6
 phrases:
   - text: "J'ai un chat."

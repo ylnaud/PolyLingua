@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Negación (ne...pas)'
 funFact: "Piensa en 'ne...pas' como un sándwich: el verbo va siempre en el medio, atrapado entre 'ne' (antes) y 'pas' (después). En el francés hablado muy informal, los franceses a menudo omiten el 'ne' y dicen solo 'pas' — pero al escribir o hablar formalmente, ambas partes son obligatorias."
+skills:
+  - fr.a1.negation.ne-pas
 minutes: 6
 quiz:
   - question: "¿Cuál es la negación correcta de 'Je parle français' (hablo francés)?"

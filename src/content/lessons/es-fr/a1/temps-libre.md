@@ -8,6 +8,8 @@ unit: 4
 situation: 'Tiempo libre'
 grammarTopic: 'Vocabulario: le temps libre'
 funFact: "'Aimer' funciona igual que en español: 'J'aime lire' es 'me gusta leer', literalmente 'yo amo leer' — mucho más simple que el 'me gusta' invertido que vas a encontrar en italiano o portugués."
+skills:
+  - fr.a1.vocabulary.freetime
 minutes: 6
 phrases:
   - text: "Qu'est-ce que tu aimes faire?"

@@ -8,6 +8,8 @@ unit: 4
 situation: 'Trabajo'
 grammarTopic: 'Vocabulario: le travail'
 funFact: "Para preguntar la profesión de alguien, el francés usa 'faire' (hacer), no 'travailler': 'Qu'est-ce que tu fais dans la vie?' es literalmente '¿qué haces en la vida?', no '¿en qué trabajas?'."
+skills:
+  - fr.a1.vocabulary.work
 minutes: 6
 phrases:
   - text: "Qu'est-ce que tu fais dans la vie?"

@@ -7,6 +7,8 @@ order: 10
 unit: 3
 grammarTopic: 'Formacion del plural'
 funFact: "La -s del plural en frances es MUDA: 'chat' y 'chats' se pronuncian exactamente igual. La diferencia solo se ve por escrito o por el articulo que los acompana: 'le chat' vs 'les chats'. Tu oido va a depender del articulo, no de la palabra."
+skills:
+  - fr.a1.noun.plural
 minutes: 7
 quiz:
   - question: "Cual es el plural de 'le chat' (el gato)?"

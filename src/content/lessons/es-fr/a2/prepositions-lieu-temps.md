@@ -7,6 +7,8 @@ order: 9
 unit: 1
 grammarTopic: 'Prépositions de lieu et de temps'
 funFact: "'dans' sirve tanto para lugar como para tiempo, pero significa cosas distintas: 'dans la cuisine' (dentro de la cocina) es un lugar físico, mientras que 'dans trois jours' (dentro de tres días) es un tiempo futuro que todavía no llegó. La misma palabra, dos usos que no debes confundir."
+skills:
+  - fr.a2.preposition.place-time
 minutes: 7
 quiz:
   - question: "¿Qué preposición usas para decir 'a las 8 horas'?"

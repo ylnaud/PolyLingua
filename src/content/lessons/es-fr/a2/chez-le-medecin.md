@@ -8,6 +8,8 @@ unit: 2
 situation: 'Salud y cuerpo'
 grammarTopic: 'Vocabulario: chez le médecin'
 funFact: "Para decir que te duele algo, el francés usa 'avoir mal à': 'j'ai mal à la tête' es 'tengo dolor de cabeza', literalmente 'tengo mal a la cabeza' — memorizá 'avoir mal à' + la parte del cuerpo como un bloque fijo."
+skills:
+  - fr.a2.vocabulary.health
 minutes: 7
 phrases:
   - text: "Je ne me sens pas bien."

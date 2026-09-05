@@ -7,6 +7,8 @@ order: 11
 unit: 3
 grammarTopic: 'El imperativo'
 funFact: "En el imperativo de los verbos en -er, la forma 'tu' pierde la -s final: dices 'parle!' (no 'parles!'), 'mange!' (no 'manges!'). Es la unica conjugacion en frances donde la segunda persona singular NO lleva -s. Si la ves sin -s, sabes que es una orden."
+skills:
+  - fr.a1.verb.imperative
 minutes: 8
 quiz:
   - question: "Cual es la forma correcta del imperativo de 'parler' para 'tu'?"

@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Futuro inmediato (presente + stare per)'
 funFact: "A diferencia del francés (aller + infinitivo) o el inglés (going to), el italiano cotidiano prefiere simplemente el PRESENTE para hablar de planes cercanos: 'Parto domani' (me voy mañana) sin necesitar ningún verbo auxiliar extra. Para algo a punto de pasar EN ESTE MOMENTO, usa 'stare per'."
+skills:
+  - it.a2.verb.futuro-immediato
 minutes: 7
 quiz:
   - question: "¿Cómo dirías 'me voy mañana' de forma natural en italiano cotidiano?"

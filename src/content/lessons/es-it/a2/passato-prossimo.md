@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Passato prossimo (avere/essere + participio passato)'
 funFact: "Piensa en 'avere' como el auxiliar 'de fábrica' (la mayoría de verbos lo usan) y en 'essere' como el club exclusivo de verbos de movimiento y cambio de estado (andare, venire, nascere...). El truco extra: con 'essere', el participio se comporta como un adjetivo y concuerda en género y número — con 'avere' normalmente no."
+skills:
+  - it.a2.verb.passato-prossimo
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta para 'yo he comido' (mangiare)?"

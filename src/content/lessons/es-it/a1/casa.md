@@ -2,17 +2,19 @@
 language: it
 level: a1
 title: 'La casa: habitaciones y muebles en italiano'
-description: "Vocabulario italiano de la casa: la cucina, la camera da letto, il bagno y muebles básicos, con frases con \"c'è/ci sono\" para describir tu hogar."
+description: 'Vocabulario italiano de la casa: la cucina, la camera da letto, il bagno y muebles básicos, con frases con "c''è/ci sono" para describir tu hogar.'
 order: 14
 unit: 2
 situation: 'Casa'
 grammarTopic: 'Vocabulario: la casa'
-funFact: "\"C'è\" (hay, singular) y \"ci sono\" (hay, plural) son las dos palabras más útiles para describir cualquier casa — memorízalas como un par, igual que \"hay\" en español no cambia entre singular y plural pero en italiano sí."
+funFact: '"C''è" (hay, singular) y "ci sono" (hay, plural) son las dos palabras más útiles para describir cualquier casa — memorízalas como un par, igual que "hay" en español no cambia entre singular y plural pero en italiano sí.'
+skills:
+  - it.a1.vocabulary.home
 minutes: 6
 phrases:
   - text: "C'è un tavolo in cucina."
     es: 'Hay una mesa en la cocina.'
-    note: "\"c'è\" es para un solo elemento."
+    note: '"c''è" es para un solo elemento.'
   - text: 'Ci sono due sedie in soggiorno.'
     es: 'Hay dos sillas en el salón.'
     note: '"ci sono" es para varios elementos.'
@@ -24,9 +26,9 @@ quiz:
     answerIndex: 1
     explanation: "'cucina' es femenina: la cucina."
   - question: "¿Cómo dirías 'Hay una mesa en la cocina'?"
-    options: ["Ci sono un tavolo in cucina.", "C'è un tavolo in cucina.", 'Ha un tavolo in cucina.']
+    options: ['Ci sono un tavolo in cucina.', "C'è un tavolo in cucina.", 'Ha un tavolo in cucina.']
     answerIndex: 1
-    explanation: "\"C'è\" se usa para un solo elemento (un tavolo, singular); \"ci sono\" es para plural."
+    explanation: '"C''è" se usa para un solo elemento (un tavolo, singular); "ci sono" es para plural.'
   - question: "¿Cuál es el artículo correcto para 'letto' (cama)?"
     options: ['il letto', 'la letto', "l'letto"]
     answerIndex: 0
@@ -35,8 +37,8 @@ exercises:
   - type: 'fill-blank'
     sentence: '___ un tavolo in cucina.'
     answer: "C'è"
-    accepted: ["c'è", "Cè"]
-    hint: "Para un solo elemento usa \"c'è\" (hay), no \"ci sono\"."
+    accepted: ["c'è", 'Cè']
+    hint: 'Para un solo elemento usa "c''è" (hay), no "ci sono".'
     translation: 'Hay una mesa en la cocina.'
     placeholder: "C'è / Ci sono"
   - type: 'fill-blank'
@@ -62,7 +64,7 @@ exercises:
     prompt: "Escribe en italiano cómo dirías 'Hay un sofá en el salón'."
     answer: "C'è un divano in soggiorno."
     accepted: ["C'è un divano in soggiorno"]
-    hint: "Singular: usa \"c'è\" + un/una + el mueble + in + la habitación."
+    hint: 'Singular: usa "c''è" + un/una + el mueble + in + la habitación.'
     placeholder: "es. C'è ... in ..."
   - type: 'order'
     sentence: "C'è un tavolo in cucina"
@@ -91,21 +93,21 @@ tener — con este vocabulario y "c'è/ci sono" ya puedes hacerlo con frases com
 
 ## Las habitaciones
 
-| Italiano           | Español      |
-| ------------------- | ------------ |
-| la cucina           | la cocina    |
-| la camera da letto  | el dormitorio |
-| il bagno            | el baño      |
-| il soggiorno        | el salón     |
+| Italiano           | Español       |
+| ------------------ | ------------- |
+| la cucina          | la cocina     |
+| la camera da letto | el dormitorio |
+| il bagno           | el baño       |
+| il soggiorno       | el salón      |
 
 ## Muebles básicos
 
-| Italiano   | Español   |
-| ---------- | --------- |
-| il letto   | la cama   |
-| il tavolo  | la mesa   |
-| la sedia   | la silla  |
-| il divano  | el sofá   |
+| Italiano  | Español  |
+| --------- | -------- |
+| il letto  | la cama  |
+| il tavolo | la mesa  |
+| la sedia  | la silla |
+| il divano | el sofá  |
 
 ## "C'è" y "ci sono": tu herramienta para describir
 

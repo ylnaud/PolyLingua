@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Pronombres objeto directo e indirecto'
 funFact: "Igual que en español ('lo veo', 'le hablo'), el italiano coloca el pronombre objeto ANTES del verbo conjugado — la lógica te resultará completamente natural, a diferencia de otros idiomas donde el orden puede sorprender."
+skills:
+  - it.a2.pronoun.direct-indirect
 minutes: 9
 quiz:
   - question: "'Vedo Marco' → '___ vedo' (lo veo). ¿Qué pronombre va?"

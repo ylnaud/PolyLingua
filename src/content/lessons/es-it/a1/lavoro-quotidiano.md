@@ -8,6 +8,8 @@ unit: 2
 situation: 'Trabajo'
 grammarTopic: 'Vocabolario: il lavoro'
 funFact: "Para preguntar la profesión de alguien, el italiano usa 'fare' (hacer), no 'lavorare': 'Che lavoro fai?' es literalmente '¿qué trabajo haces?', no '¿qué trabajas?'."
+skills:
+  - it.a1.vocabulary.work
 minutes: 6
 phrases:
   - text: 'Che lavoro fai?'
@@ -32,7 +34,7 @@ quiz:
     options: ['Trabajo nueve días.', 'Trabajo de nueve a seis.', 'Trabajo desde hace seis años.']
     answerIndex: 1
     explanation: "'dalle ... alle ...' es la fórmula para dar un horario: 'dalle nove alle sei' es 'de nueve a seis'."
-  - question: "¿Cuál es el verbo correcto para preguntar la profesión de alguien?"
+  - question: '¿Cuál es el verbo correcto para preguntar la profesión de alguien?'
     options: ['lavorare', 'fare', 'avere']
     answerIndex: 1
     explanation: "'fare' (hacer) es el verbo que se usa en 'Che lavoro fai?', no 'lavorare'."
@@ -119,10 +121,10 @@ Ho una riunione alle tre.          (Tengo una reunión a las tres)
 
 ## Vocabulario de la oficina
 
-| Italiano       | Español         |
-| -------------- | ---------------- |
-| il lavoro      | el trabajo        |
-| l'ufficio      | la oficina         |
+| Italiano       | Español             |
+| -------------- | ------------------- |
+| il lavoro      | el trabajo          |
+| l'ufficio      | la oficina          |
 | il capo        | el jefe             |
 | la riunione    | la reunión          |
 | fare una pausa | tomarse un descanso |

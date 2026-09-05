@@ -8,6 +8,8 @@ unit: 2
 situation: 'Problemas cotidianos'
 grammarTopic: 'Vocabolario: i problemi quotidiani'
 funFact: "'Non funziona' sirve para casi cualquier cosa rota, del wifi a la lavadora — es probablemente la frase italiana más útil para resolver imprevistos sin necesitar vocabulario técnico."
+skills:
+  - it.a2.vocabulary.problems
 minutes: 7
 phrases:
   - text: 'Non funziona.'

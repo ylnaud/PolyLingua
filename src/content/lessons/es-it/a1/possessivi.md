@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Adjetivos posesivos (mio/tuo/suo + artículo)'
 funFact: "A diferencia del español, donde 'mi libro' no lleva artículo, el italiano casi siempre combina el posesivo CON el artículo definido: 'il mio libro' (literalmente 'el mi libro'). La única excepción importante: con familiares en singular, el artículo desaparece — 'mia madre', no 'la mia madre'."
+skills:
+  - it.a1.possessive.article
 minutes: 8
 quiz:
   - question: "¿Cuál es la forma correcta de 'mi libro' (il libro, masculino)?"

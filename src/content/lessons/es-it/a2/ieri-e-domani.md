@@ -8,6 +8,9 @@ unit: 2
 situation: 'Ayer y mañana'
 grammarTopic: 'Vocabolario: ieri e domani'
 funFact: "Para el futuro cercano, el italiano no necesita ningún tiempo especial: alcanza con el presente + 'domani' — 'domani lavoro' es 'mañana trabajo', sin conjugar nada distinto."
+skills:
+  - it.a2.vocabulary.time-refs
+  - it.a2.verb.passato-prossimo
 minutes: 7
 phrases:
   - text: 'Cosa hai fatto ieri?'

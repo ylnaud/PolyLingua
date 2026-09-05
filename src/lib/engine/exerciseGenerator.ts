@@ -6437,6 +6437,704 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // ITALIANO — A1
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    skillId: 'it.a1.article.definite',
+    explanation:
+      'El italiano no elige el artículo solo por el género, sino por **cómo empieza la palabra**. Masculino normal → **il**; si empieza por s+consonante, z, ps, gn, y o x → **lo**; ante vocal → **l’**. Femenino → **la**, y **l’** ante vocal.',
+    variations: [
+      {
+        sentence: '___ libro è sul tavolo.',
+        answer: 'Il',
+        translation: 'El libro está sobre la mesa.',
+      },
+      {
+        sentence: '___ studente arriva tardi.',
+        answer: 'Lo',
+        translation: 'El estudiante llega tarde.',
+      },
+      {
+        sentence: '___ amica di Marco è simpatica.',
+        answer: 'L’',
+        translation: 'La amiga de Marco es simpática.',
+      },
+      { sentence: '___ zaino è pesante.', answer: 'Lo', translation: 'La mochila es pesada.' },
+      {
+        sentence: '___ casa dei miei nonni è grande.',
+        answer: 'La',
+        translation: 'La casa de mis abuelos es grande.',
+      },
+      {
+        sentence: '___ albergo si trova in centro.',
+        answer: 'L’',
+        translation: 'El hotel está en el centro.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.article.indefinite',
+    explanation:
+      'Los indeterminados siguen la MISMA lógica que los determinados: **un** para el masculino normal, **uno** donde iría *lo* (s+consonante, z, ps, gn), **una** para el femenino y **un’** ante vocal femenina. Ojo: *un* masculino ante vocal NO lleva apóstrofo.',
+    variations: [
+      {
+        sentence: 'Ho comprato ___ libro nuovo.',
+        answer: 'un',
+        translation: 'Compré un libro nuevo.',
+      },
+      {
+        sentence: 'C’è ___ studente alla porta.',
+        answer: 'uno',
+        translation: 'Hay un estudiante en la puerta.',
+      },
+      {
+        sentence: 'Vorrei ___ acqua minerale.',
+        answer: 'un’',
+        translation: 'Quisiera un agua mineral.',
+      },
+      {
+        sentence: 'Marco è ___ amico di mia sorella.',
+        answer: 'un',
+        translation: 'Marco es un amigo de mi hermana.',
+      },
+      {
+        sentence: 'Abbiamo visto ___ zebra allo zoo.',
+        answer: 'una',
+        translation: 'Vimos una cebra en el zoo.',
+      },
+      {
+        sentence: 'Mi serve ___ zaino per il viaggio.',
+        answer: 'uno',
+        translation: 'Necesito una mochila para el viaje.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.noun.plural',
+    explanation:
+      'Tres reglas y ninguna excepción que valga la pena a este nivel: **-o → -i**, **-a → -e**, **-e → -i** (venga de donde venga el género). Lo que cuesta es la tercera: *il fiore* y *la chiave* hacen las dos **-i**.',
+    variations: [
+      { sentence: 'Un libro, due ___.', answer: 'libri', translation: 'Un libro, dos libros.' },
+      { sentence: 'Una casa, tre ___.', answer: 'case', translation: 'Una casa, tres casas.' },
+      {
+        sentence: 'Un fiore, molti ___.',
+        answer: 'fiori',
+        translation: 'Una flor, muchas flores.',
+      },
+      { sentence: 'Una chiave, due ___.', answer: 'chiavi', translation: 'Una llave, dos llaves.' },
+      {
+        sentence: 'Un ragazzo, dieci ___.',
+        answer: 'ragazzi',
+        translation: 'Un chico, diez chicos.',
+      },
+      { sentence: 'Una notte, due ___.', answer: 'notti', translation: 'Una noche, dos noches.' },
+    ],
+  },
+  {
+    skillId: 'it.a1.verb.present-regular',
+    explanation:
+      'Tres conjugaciones: **-are** (parlo, parli, parla), **-ere** (prendo, prendi, prende) e **-ire** (dormo, dormi, dorme). La primera persona termina siempre en **-o**; la diferencia real aparece en *noi* y *voi*: parl**iamo**/parl**ate**, prend**iamo**/prend**ete**.',
+    variations: [
+      {
+        sentence: 'Io ___ italiano ogni giorno. (parlare)',
+        answer: 'parlo',
+        translation: 'Yo hablo italiano todos los días.',
+      },
+      {
+        sentence: 'Tu ___ il treno delle otto. (prendere)',
+        answer: 'prendi',
+        translation: 'Tomas el tren de las ocho.',
+      },
+      {
+        sentence: 'Marco ___ otto ore. (dormire)',
+        answer: 'dorme',
+        translation: 'Marco duerme ocho horas.',
+      },
+      {
+        sentence: 'Noi ___ a Roma. (abitare)',
+        answer: 'abitiamo',
+        translation: 'Vivimos en Roma.',
+      },
+      {
+        sentence: 'Voi ___ troppo in fretta. (scrivere)',
+        answer: 'scrivete',
+        translation: 'Escribís demasiado deprisa.',
+      },
+      {
+        sentence: 'Loro ___ la porta. (aprire)',
+        answer: 'aprono',
+        translation: 'Ellos abren la puerta.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.verb.essere-avere',
+    explanation:
+      'Los dos verbos que hay que saber antes que ninguno. **Essere**: sono, sei, è, siamo, siete, sono. **Avere**: ho, hai, ha, abbiamo, avete, hanno. La trampa para un hispanohablante: la edad y el hambre van con **avere**, no con *essere* — *ho vent’anni*, *ho fame*.',
+    variations: [
+      { sentence: 'Io ___ italiano. (essere)', answer: 'sono', translation: 'Soy italiano.' },
+      {
+        sentence: 'Tu ___ due fratelli. (avere)',
+        answer: 'hai',
+        translation: 'Tienes dos hermanos.',
+      },
+      {
+        sentence: 'Anna ___ vent’anni. (avere)',
+        answer: 'ha',
+        translation: 'Anna tiene veinte años.',
+      },
+      { sentence: 'Noi ___ in ritardo. (essere)', answer: 'siamo', translation: 'Llegamos tarde.' },
+      { sentence: 'Voi ___ fame? (avere)', answer: 'avete', translation: '¿Tenéis hambre?' },
+      {
+        sentence: 'Loro ___ molto stanchi. (essere)',
+        answer: 'sono',
+        translation: 'Ellos están muy cansados.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.pronoun.subject',
+    explanation:
+      'Son **io, tu, lui/lei, noi, voi, loro**, y como en español **se omiten casi siempre**: la terminación del verbo ya dice quién habla. Se ponen solo para contrastar (*io lavoro, lui no*) o para deshacer una ambigüedad.',
+    variations: [
+      {
+        sentence: '___ sono Marco, piacere.',
+        answer: 'Io',
+        translation: 'Yo soy Marco, encantado.',
+      },
+      { sentence: 'E ___, come ti chiami?', answer: 'tu', translation: '¿Y tú, cómo te llamas?' },
+      {
+        sentence: '___ è la sorella di Anna.',
+        answer: 'Lei',
+        translation: 'Ella es la hermana de Anna.',
+      },
+      {
+        sentence: '___ andiamo al cinema stasera.',
+        answer: 'Noi',
+        translation: 'Nosotros vamos al cine esta noche.',
+      },
+      { sentence: 'Dove abitate ___?', answer: 'voi', translation: '¿Dónde vivís vosotros?' },
+      {
+        sentence: '___ arrivano domani mattina.',
+        answer: 'Loro',
+        translation: 'Ellos llegan mañana por la mañana.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.negation.non',
+    explanation:
+      'Una sola palabra, **non**, y va siempre **delante del verbo**: *non parlo*, *non ho capito*. Y algo que al hispanohablante le sale solo pero conviene notar: el italiano también dobla la negación, *non vedo **niente***, igual que «no veo nada».',
+    variations: [
+      { sentence: 'Io ___ parlo tedesco.', answer: 'non', translation: 'No hablo alemán.' },
+      {
+        sentence: 'Marco ___ abita più a Milano.',
+        answer: 'non',
+        translation: 'Marco ya no vive en Milán.',
+      },
+      {
+        sentence: '___ ho capito la domanda.',
+        answer: 'Non',
+        translation: 'No he entendido la pregunta.',
+      },
+      {
+        sentence: 'Oggi ___ c’è nessuno in ufficio.',
+        answer: 'non',
+        translation: 'Hoy no hay nadie en la oficina.',
+      },
+      {
+        sentence: 'Loro ___ vengono alla festa.',
+        answer: 'non',
+        translation: 'Ellos no vienen a la fiesta.',
+      },
+      {
+        sentence: 'Perché ___ mangi niente?',
+        answer: 'non',
+        translation: '¿Por qué no comes nada?',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.question.words',
+    explanation:
+      'En italiano la pregunta suele tener **el mismo orden que la afirmación**: lo que cambia es la entonación. Con palabra interrogativa —**chi, che cosa, dove, quando, perché, come, quanto**— esa palabra va delante y el sujeto se suele posponer.',
+    variations: [
+      {
+        kind: 'order',
+        sentence: 'Dove abiti tu',
+        answer: 'Dove abiti tu',
+        translation: '¿Dónde vives?',
+      },
+      {
+        kind: 'order',
+        sentence: 'Quando arriva il treno',
+        answer: 'Quando arriva il treno',
+        translation: '¿Cuándo llega el tren?',
+      },
+      {
+        kind: 'order',
+        sentence: 'Come si chiama tua sorella',
+        answer: 'Come si chiama tua sorella',
+        translation: '¿Cómo se llama tu hermana?',
+      },
+      {
+        kind: 'order',
+        sentence: 'Quanto costa questo libro',
+        answer: 'Quanto costa questo libro',
+        translation: '¿Cuánto cuesta este libro?',
+      },
+      {
+        kind: 'order',
+        sentence: 'Perché non vieni con noi',
+        answer: 'Perché non vieni con noi',
+        translation: '¿Por qué no vienes con nosotros?',
+      },
+      {
+        kind: 'order',
+        sentence: 'Che cosa fai domani',
+        answer: 'Che cosa fai domani',
+        translation: '¿Qué haces mañana?',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.verb.imperative',
+    explanation:
+      'El imperativo de *tú* cruza las terminaciones: los **-are** hacen **-a** (*parla!*) y los **-ere/-ire** hacen **-i** (*prendi!*, *dormi!*) — justo al revés de lo que sugiere el presente. Para *noi* y *voi* se usan las formas del presente tal cual.',
+    variations: [
+      {
+        sentence: '___ più lentamente, per favore! (parlare, tu)',
+        answer: 'Parla',
+        translation: '¡Habla más despacio, por favor!',
+      },
+      {
+        sentence: '___ il treno delle nove! (prendere, tu)',
+        answer: 'Prendi',
+        translation: '¡Toma el tren de las nueve!',
+      },
+      {
+        sentence: '___ la finestra, fa caldo. (aprire, tu)',
+        answer: 'Apri',
+        translation: 'Abre la ventana, hace calor.',
+      },
+      {
+        sentence: '___ a casa mia stasera! (venire, voi)',
+        answer: 'Venite',
+        translation: '¡Venid a mi casa esta noche!',
+      },
+      {
+        sentence: '___ subito, siamo in ritardo! (andare, noi)',
+        answer: 'Andiamo',
+        translation: '¡Vámonos ya, llegamos tarde!',
+      },
+      {
+        sentence: '___ attenzione al gradino! (fare, voi)',
+        answer: 'Fate',
+        translation: '¡Tened cuidado con el escalón!',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.possessive.article',
+    explanation:
+      'La diferencia grande con el español: el posesivo italiano **lleva artículo delante** — *il mio libro*, no «mio libro». La excepción son los familiares **en singular**: *mio fratello*, *mia madre*, sin artículo. En plural vuelve: *i miei fratelli*.',
+    variations: [
+      {
+        sentence: '___ mio libro è sul tavolo.',
+        answer: 'Il',
+        translation: 'Mi libro está sobre la mesa.',
+      },
+      { sentence: 'Dov’è ___ tua borsa?', answer: 'la', translation: '¿Dónde está tu bolso?' },
+      {
+        sentence: '___ fratello lavora a Torino.',
+        answer: 'Mio',
+        translation: 'Mi hermano trabaja en Turín.',
+      },
+      {
+        sentence: '___ miei genitori abitano a Bari.',
+        answer: 'I',
+        translation: 'Mis padres viven en Bari.',
+      },
+      {
+        sentence: '___ nostra casa è piccola.',
+        answer: 'La',
+        translation: 'Nuestra casa es pequeña.',
+      },
+      {
+        sentence: '___ sorella studia medicina.',
+        answer: 'Mia',
+        translation: 'Mi hermana estudia medicina.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.number.cardinal',
+    explanation:
+      'Del 11 al 16 el italiano pone la unidad delante (**undici, dodici… sedici**) y a partir del 17 la invierte (**diciassette, diciotto, diciannove**). Las decenas pierden la vocal ante *uno* y *otto*: vent**u**no, vent**o**tto.',
+    variations: [
+      { sentence: 'Ho ___ anni. (15)', answer: 'quindici', translation: 'Tengo quince años.' },
+      {
+        sentence: 'Il libro costa ___ euro. (17)',
+        answer: 'diciassette',
+        translation: 'El libro cuesta diecisiete euros.',
+      },
+      {
+        sentence: 'Siamo in ___ persone. (21)',
+        answer: 'ventuno',
+        translation: 'Somos veintiuna personas.',
+      },
+      {
+        sentence: 'Mia nonna ha ___ anni. (78)',
+        answer: 'settantotto',
+        translation: 'Mi abuela tiene setenta y ocho años.',
+      },
+      {
+        sentence: 'Ci sono ___ studenti in classe. (30)',
+        answer: 'trenta',
+        translation: 'Hay treinta estudiantes en clase.',
+      },
+      {
+        sentence: 'Il biglietto costa ___ euro. (12)',
+        answer: 'dodici',
+        translation: 'El billete cuesta doce euros.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a1.time.telling',
+    explanation:
+      'La hora va en **plural** porque se sobreentiende *le ore*: **sono le** tre, **sono le** dieci. Solo tres excepciones van en singular: **è l’una**, **è mezzogiorno** y **è mezzanotte**.',
+    variations: [
+      {
+        sentence: '___ le tre del pomeriggio.',
+        answer: 'Sono',
+        translation: 'Son las tres de la tarde.',
+      },
+      { sentence: '___ l’una e mezza.', answer: 'È', translation: 'Es la una y media.' },
+      {
+        sentence: '___ le nove di sera.',
+        answer: 'Sono',
+        translation: 'Son las nueve de la noche.',
+      },
+      {
+        sentence: '___ mezzogiorno, andiamo a pranzo.',
+        answer: 'È',
+        translation: 'Es mediodía, vamos a comer.',
+      },
+      {
+        sentence: '___ le sette meno un quarto.',
+        answer: 'Sono',
+        translation: 'Son las siete menos cuarto.',
+      },
+      {
+        sentence: '___ mezzanotte e tutti dormono.',
+        answer: 'È',
+        translation: 'Es medianoche y todos duermen.',
+      },
+    ],
+  },
+  // ══════════════════════════════════════════════════════════════════════════
+  // ITALIANO — A2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    skillId: 'it.a2.verb.passato-prossimo',
+    explanation:
+      'El punto de decisión es **avere o essere**, y no se elige por el significado sino por el verbo: los de **movimiento y cambio de estado** —andare, venire, uscire, entrare, restare, nascere— van con **essere**, y entonces **el participio concuerda**: *Anna è andat**a***. Con *avere* no concuerda nunca: *Anna ha mangiat**o***.',
+    variations: [
+      {
+        sentence: 'Ieri ___ mangiato una pizza. (io, avere)',
+        answer: 'ho',
+        translation: 'Ayer comí una pizza.',
+      },
+      {
+        sentence: 'Anna ___ andata al cinema. (essere)',
+        answer: 'è',
+        translation: 'Anna fue al cine.',
+      },
+      {
+        sentence: 'Noi ___ visto un bel film. (avere)',
+        answer: 'abbiamo',
+        translation: 'Vimos una buena película.',
+      },
+      {
+        sentence: 'I ragazzi ___ usciti presto. (essere)',
+        answer: 'sono',
+        translation: 'Los chicos salieron temprano.',
+      },
+      {
+        sentence: 'Tu ___ già finito i compiti? (avere)',
+        answer: 'hai',
+        translation: '¿Ya has terminado los deberes?',
+      },
+      {
+        sentence: 'Mia sorella ___ nata a Napoli. (essere)',
+        answer: 'è',
+        translation: 'Mi hermana nació en Nápoles.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a2.verb.modal',
+    explanation:
+      'Los tres son irregulares y hay que producirlos, no reconocerlos: **dovere** (devo, devi, deve, dobbiamo, dovete, devono), **potere** (posso, puoi, può, possiamo, potete, possono) y **volere** (voglio, vuoi, vuole, vogliamo, volete, vogliono). Detrás va siempre **infinitivo**.',
+    variations: [
+      {
+        sentence: 'Io ___ studiare per l’esame. (dovere)',
+        answer: 'devo',
+        translation: 'Tengo que estudiar para el examen.',
+      },
+      {
+        sentence: 'Tu ___ venire con noi? (potere)',
+        answer: 'puoi',
+        translation: '¿Puedes venir con nosotros?',
+      },
+      {
+        sentence: 'Marco ___ un caffè. (volere)',
+        answer: 'vuole',
+        translation: 'Marco quiere un café.',
+      },
+      {
+        sentence: 'Noi ___ partire alle sei. (dovere)',
+        answer: 'dobbiamo',
+        translation: 'Tenemos que salir a las seis.',
+      },
+      {
+        sentence: 'Voi ___ aiutarmi, per favore? (potere)',
+        answer: 'potete',
+        translation: '¿Podéis ayudarme, por favor?',
+      },
+      {
+        sentence: 'Loro ___ andare al mare. (volere)',
+        answer: 'vogliono',
+        translation: 'Ellos quieren ir a la playa.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a2.pronoun.direct-indirect',
+    explanation:
+      'La decisión está en si el verbo lleva **a** delante del complemento. Sin *a* → **directo** (lo, la, li, le): *vedo Marco → **lo** vedo*. Con *a* → **indirecto** (gli, le, gli): *telefono a Marco → **gli** telefono*. Y todos van **delante del verbo conjugado**.',
+    variations: [
+      {
+        sentence: 'Vedi Marco? Sì, ___ vedo ogni giorno.',
+        answer: 'lo',
+        translation: '¿Ves a Marco? Sí, lo veo todos los días.',
+      },
+      {
+        sentence: 'Telefoni ad Anna? Sì, ___ telefono stasera.',
+        answer: 'le',
+        translation: '¿Llamas a Anna? Sí, la llamo esta noche.',
+      },
+      {
+        sentence: 'Compri i biglietti? Sì, ___ compro domani.',
+        answer: 'li',
+        translation: '¿Compras las entradas? Sí, las compro mañana.',
+      },
+      {
+        sentence: 'Scrivi a tuo fratello? Sì, ___ scrivo spesso.',
+        answer: 'gli',
+        translation: '¿Le escribes a tu hermano? Sí, le escribo a menudo.',
+      },
+      {
+        sentence: 'Conosci le mie amiche? Sì, ___ conosco bene.',
+        answer: 'le',
+        translation: '¿Conoces a mis amigas? Sí, las conozco bien.',
+      },
+      {
+        sentence: 'Dai il libro a Marco? Sì, ___ do il libro.',
+        answer: 'gli',
+        translation: '¿Le das el libro a Marco? Sí, le doy el libro.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a2.adjective.position',
+    explanation:
+      'El adjetivo italiano va **detrás** del sustantivo por defecto: *una macchina rossa*. Delante van los cortos y frecuentes —**bello, brutto, buono, cattivo, grande, piccolo, giovane, vecchio, nuovo**— y ahí cambia el matiz: *un **grande** uomo* (un gran hombre) frente a *un uomo **grande*** (un hombre corpulento).',
+    variations: [
+      {
+        kind: 'order',
+        sentence: 'È una macchina rossa',
+        answer: 'È una macchina rossa',
+        translation: 'Es un coche rojo.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Ho comprato un vestito elegante',
+        answer: 'Ho comprato un vestito elegante',
+        translation: 'Compré un vestido elegante.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Abbiamo visitato un piccolo paese',
+        answer: 'Abbiamo visitato un piccolo paese',
+        translation: 'Visitamos un pueblecito.',
+      },
+      {
+        kind: 'order',
+        sentence: 'È un buon ristorante giapponese',
+        answer: 'È un buon ristorante giapponese',
+        translation: 'Es un buen restaurante japonés.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Vivono in una bella casa moderna',
+        answer: 'Vivono in una bella casa moderna',
+        translation: 'Viven en una casa bonita y moderna.',
+      },
+      {
+        kind: 'order',
+        sentence: 'Marco porta un vecchio maglione nero',
+        answer: 'Marco porta un vecchio maglione nero',
+        translation: 'Marco lleva un jersey viejo y negro.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a2.comparative.superlative',
+    explanation:
+      'Comparativo: **più… di** o **meno… di** ante nombre o pronombre, pero **che** cuando se comparan dos adjetivos, dos verbos o algo con preposición. Superlativo absoluto: **-issimo** (*bellissimo*), que es mucho más frecuente en italiano que «muy» en español.',
+    variations: [
+      {
+        sentence: 'Marco è più alto ___ me.',
+        answer: 'di',
+        translation: 'Marco es más alto que yo.',
+      },
+      {
+        sentence: 'Questo libro è meno caro ___ quello.',
+        answer: 'di',
+        translation: 'Este libro es menos caro que aquel.',
+      },
+      {
+        sentence: 'È più simpatico ___ intelligente.',
+        answer: 'che',
+        translation: 'Es más simpático que inteligente.',
+      },
+      {
+        sentence: 'Il caffè è buon___! (superlativo)',
+        answer: 'issimo',
+        translation: '¡El café está buenísimo!',
+      },
+      {
+        sentence: 'Preferisco leggere ___ guardare la TV.',
+        answer: 'che',
+        translation: 'Prefiero leer que ver la tele.',
+      },
+      {
+        sentence: 'Roma è la città più bella ___ Italia.',
+        answer: 'd’',
+        translation: 'Roma es la ciudad más bonita de Italia.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a2.preposition.place-time',
+    explanation:
+      'La regla que más rinde: con ciudades va **a** (*a Roma*), con países y regiones va **in** (*in Italia*). Y **da** marca el origen o la casa de alguien: *vengo **da** Milano*, *vado **dal** medico*.',
+    variations: [
+      {
+        sentence: 'Abito ___ Roma da tre anni.',
+        answer: 'a',
+        translation: 'Vivo en Roma desde hace tres años.',
+      },
+      {
+        sentence: 'Quest’estate andiamo ___ Sicilia.',
+        answer: 'in',
+        translation: 'Este verano vamos a Sicilia.',
+      },
+      {
+        sentence: 'Vengo ___ Napoli, sono napoletano.',
+        answer: 'da',
+        translation: 'Vengo de Nápoles, soy napolitano.',
+      },
+      { sentence: 'Domani vado ___ medico.', answer: 'dal', translation: 'Mañana voy al médico.' },
+      {
+        sentence: 'Il treno parte ___ le otto.',
+        answer: 'alle',
+        translation: 'El tren sale a las ocho.',
+      },
+      {
+        sentence: 'Studio italiano ___ Italia da settembre.',
+        answer: 'in',
+        translation: 'Estudio italiano en Italia desde septiembre.',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a2.verb.futuro-immediato',
+    explanation:
+      '**Stare per + infinitivo** es lo que en español decimos con «estar a punto de»: *sto per uscire*. No es el futuro general —para eso está el futuro simple—: marca algo inminente, que pasa en los próximos minutos.',
+    variations: [
+      {
+        sentence: 'Io ___ per uscire, ti richiamo dopo. (stare)',
+        answer: 'sto',
+        translation: 'Estoy a punto de salir, te llamo luego.',
+      },
+      {
+        sentence: 'Il treno ___ per partire. (stare)',
+        answer: 'sta',
+        translation: 'El tren está a punto de salir.',
+      },
+      {
+        sentence: 'Noi ___ per cenare, vuoi restare? (stare)',
+        answer: 'stiamo',
+        translation: 'Estamos a punto de cenar, ¿quieres quedarte?',
+      },
+      {
+        sentence: 'Tu ___ per commettere un errore. (stare)',
+        answer: 'stai',
+        translation: 'Estás a punto de cometer un error.',
+      },
+      {
+        sentence: 'Loro ___ per arrivare all’aeroporto. (stare)',
+        answer: 'stanno',
+        translation: 'Están a punto de llegar al aeropuerto.',
+      },
+      {
+        sentence: 'Voi ___ per finire il lavoro? (stare)',
+        answer: 'state',
+        translation: '¿Estáis a punto de terminar el trabajo?',
+      },
+    ],
+  },
+  {
+    skillId: 'it.a2.impersonal.bisogna',
+    explanation:
+      'Tres formas que en español serían casi la misma. **Bisogna** + infinitivo es una necesidad general: *bisogna studiare*. **Ci vuole / ci vogliono** mide tiempo o cantidad, y concuerda con lo que sigue: *ci vuol**e** un’ora*, *ci vogli**ono** due ore*.',
+    variations: [
+      {
+        sentence: '___ studiare tutti i giorni.',
+        answer: 'Bisogna',
+        translation: 'Hay que estudiar todos los días.',
+      },
+      {
+        sentence: 'Per arrivare ___ un’ora di treno.',
+        answer: 'ci vuole',
+        translation: 'Para llegar hace falta una hora de tren.',
+      },
+      {
+        sentence: 'Per questa ricetta ___ tre uova.',
+        answer: 'ci vogliono',
+        translation: 'Para esta receta hacen falta tres huevos.',
+      },
+      {
+        sentence: '___ prenotare in anticipo.',
+        answer: 'Bisogna',
+        translation: 'Hay que reservar con antelación.',
+      },
+      {
+        sentence: 'Da qui al centro ___ venti minuti.',
+        answer: 'ci vogliono',
+        translation: 'De aquí al centro hacen falta veinte minutos.',
+      },
+      {
+        sentence: 'Per il visto ___ molta pazienza.',
+        answer: 'ci vuole',
+        translation: 'Para el visado hace falta mucha paciencia.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

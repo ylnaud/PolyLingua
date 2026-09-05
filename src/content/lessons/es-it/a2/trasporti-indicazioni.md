@@ -8,6 +8,9 @@ unit: 2
 situation: 'Transporte y ciudad'
 grammarTopic: 'Vocabolario: i trasporti e le indicazioni'
 funFact: "'Dritto' (recto/derecho) es una de esas palabras que confunde por sonar como 'derecho' en español, pero significa 'todo recto' — no confundas 'vai dritto' (sigue recto) con 'a destra' (a la derecha)."
+skills:
+  - it.a2.vocabulary.transport
+  - it.a2.preposition.place-time
 minutes: 7
 phrases:
   - text: 'Come arrivo alla stazione?'
@@ -98,12 +101,12 @@ direcciones.
 
 ## Medios de transporte
 
-| Italiano    | Español    |
-| ----------- | ---------- |
-| l'autobus   | el autobús |
-| il treno    | el tren    |
-| il taxi     | el taxi    |
-| la metro    | el metro   |
+| Italiano  | Español    |
+| --------- | ---------- |
+| l'autobus | el autobús |
+| il treno  | el tren    |
+| il taxi   | el taxi    |
+| la metro  | el metro   |
 
 ```
 Prendo l'autobus per andare in centro.  (Tomo el autobús para ir al centro)
@@ -111,14 +114,14 @@ Prendo l'autobus per andare in centro.  (Tomo el autobús para ir al centro)
 
 ## Direcciones básicas
 
-| Italiano       | Español         |
-| -------------- | --------------- |
+| Italiano          | Español              |
+| ----------------- | -------------------- |
 | girare a sinistra | girar a la izquierda |
 | girare a destra   | girar a la derecha   |
-| dritto         | todo recto      |
-| accanto a      | al lado de      |
-| di fronte a    | enfrente de     |
-| vicino a       | cerca de        |
+| dritto            | todo recto           |
+| accanto a         | al lado de           |
+| di fronte a       | enfrente de          |
+| vicino a          | cerca de             |
 
 ## Pedir y dar indicaciones
 

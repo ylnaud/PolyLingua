@@ -7,6 +7,9 @@ order: 1
 unit: 1
 grammarTopic: 'Artículos y género (il/lo/la, un/uno/una)'
 funFact: "Buenas noticias: el italiano es el idioma con el género MÁS parecido al español de los cinco que ofrecemos. La mayoría de las palabras en '-o' son masculinas y en '-a' son femeninas, igual que en español. Solo memoriza el truco de 'lo' (para palabras que empiezan con s+consonante, z, gn, ps) y ya vas muy adelantado."
+skills:
+  - it.a1.article.definite
+  - it.a1.article.indefinite
 minutes: 6
 quiz:
   - question: "¿Cuál es el artículo correcto para 'libro' (libro)?"

@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Verbi modali (dovere, potere, volere)'
 funFact: 'Estos tres verbos son irregulares, pero comparten estructura idéntica: [verbo modal conjugado] + [infinitivo, sin tocar]. Una vez que memorizas la conjugación de uno, ya entiendes cómo funcionan los tres. Además suenan MUY parecido a sus primos en español: dovere~deber, potere~poder, volere~querer.'
+skills:
+  - it.a2.verb.modal
 minutes: 7
 quiz:
   - question: "¿Cuál es la forma correcta de 'io' (yo) con 'potere' (poder)?"

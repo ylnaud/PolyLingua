@@ -7,6 +7,9 @@ order: 13
 unit: 3
 grammarTopic: 'Saludos y presentarse'
 funFact: "'Ciao' es probablemente la palabra italiana más famosa del mundo — se usa en docenas de idiomas. Viene del veneciano 's-ciavo' (esclavo), que era una fórmula de cortesía: 'soy tu servidor'. Hoy es el saludo informal por excelencia, tanto para llegar como para despedirse."
+skills:
+  - it.a1.vocabulary.greetings
+  - it.a1.verb.essere-avere
 minutes: 7
 phrases:
   - text: 'Buongiorno!'

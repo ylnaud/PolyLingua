@@ -8,6 +8,8 @@ unit: 2
 situation: 'Salud y cuerpo'
 grammarTopic: 'Vocabolario: dal medico'
 funFact: "Para decir que te duele algo, el italiano usa 'avere mal di': 'ho mal di testa' es 'tengo dolor de cabeza', literalmente 'tengo mal de cabeza' — memorizá 'mal di' + la parte del cuerpo como un bloque fijo."
+skills:
+  - it.a2.vocabulary.health
 minutes: 7
 phrases:
   - text: 'Non mi sento bene.'

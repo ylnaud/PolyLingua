@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Expresiones impersonales (bisogna, ci vuole, è necessario)'
 funFact: "'Bisogna' viene del verbo 'bisognare' pero SOLO se usa en tercera persona singular, sin sujeto específico — parecido al 'il faut' francés o al 'hay que' español. Es tu herramienta favorita para dar consejos generales sin sonar demasiado directo o autoritario."
+skills:
+  - it.a2.impersonal.bisogna
 minutes: 7
 quiz:
   - question: "¿Cómo dirías 'hay que estudiar mucho' usando bisogna?"

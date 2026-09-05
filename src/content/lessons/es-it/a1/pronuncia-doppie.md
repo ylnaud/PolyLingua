@@ -7,6 +7,8 @@ order: 12
 unit: 3
 grammarTopic: 'Pronunciación: consonantes dobles'
 funFact: "En español las consonantes dobles casi nunca cambian el significado, pero en italiano son fonémicas: 'pala' (pala) y 'palla' (pelota) son palabras completamente distintas. El truco es alargar la consonante, como si la mantuvieras un instante más antes de soltar la siguiente vocal."
+skills:
+  - it.a1.pronunciation.doppie
 minutes: 8
 phrases:
   - text: 'pala'

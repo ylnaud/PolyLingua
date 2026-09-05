@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { AUTHOR, PUBLISHER } from '../data/author';
+
+// La fecha se escribe a mano, igual que en /privacidad: es la fecha de la
+// última revisión del texto, no la del build. Un `new Date()` acá diría que
+// las condiciones se actualizaron cada vez que se despliega el sitio, que es
+// justo lo contrario de lo que un aviso legal debe transmitir.
+const updated = 'septiembre de 2026';
+---
+
+<BaseLayout
+  title="Términos de uso"
+  description="Condiciones de uso de PolyLingua: qué puedes hacer con el contenido, qué garantías hay y cuáles no, y quién responde por el sitio."
+  path="/terminos"
+>
+  <section class="container legal-head">
+    <span class="eyebrow">Legal</span>
+    <h1>Términos de uso</h1>
+    <p class="updated">Última actualización: {updated}</p>
+  </section>
+
+  <article class="container legal">
+    <h2>En resumen</h2>
+    <p>
+      PolyLingua es gratis, no pide cuenta y no te vende nada. A cambio se ofrece tal cual: es
+      material de estudio hecho por una persona, no un curso acreditado ni un servicio contratado.
+      Úsalo para aprender, y contrasta con la fuente oficial cualquier dato del que dependa un
+      trámite.
+    </p>
+
+    <h2>Quién responde por el sitio</h2>
+    <p>
+      PolyLingua lo escribe y lo mantiene <strong>{AUTHOR.name}</strong>, a título personal. No hay
+      ninguna empresa detrás. Puedes leer cómo se produce el contenido en la página
+      <a href="/acerca">Acerca de</a>.
+    </p>
+
+    <h2>Uso del sitio</h2>
+    <p>
+      Puedes usar PolyLingua libremente para estudiar, por tu cuenta o con tus alumnos, y enlazar a
+      cualquiera de sus páginas sin pedir permiso. Lo que no está permitido es copiar el contenido
+      en bloque para republicarlo como propio, ni usar el sitio de una forma que degrade el servicio
+      para los demás.
+    </p>
+    <p>
+      El código fuente es abierto y está publicado con licencia MIT en
+      <a href={PUBLISHER.repo} rel="noopener">GitHub</a>. Esa licencia cubre el código; el contenido
+      de las lecciones y del blog no se cede bajo esos mismos términos.
+    </p>
+
+    <h2>Sin garantías</h2>
+    <p>
+      El contenido se publica «tal cual». Se revisa antes de publicarlo, pero puede contener errores
+      y no sustituye a un profesor, a un manual acreditado ni a la información oficial de ninguna
+      institución. En particular, <strong
+        >todo lo que se diga aquí sobre exámenes oficiales —formato, puntuación, precios, fechas o
+        requisitos— tiene que confirmarse en la web de la institución que los organiza</strong
+      > antes de tomar cualquier decisión: esos datos cambian y aquí pueden quedarse viejos.
+    </p>
+    <p>
+      Tampoco se garantiza que el sitio esté siempre disponible ni libre de fallos. Es un proyecto
+      personal y puede caerse, cambiar o dejar de actualizarse.
+    </p>
+
+    <h2>Tu progreso</h2>
+    <p>
+      Todo tu progreso vive en el almacenamiento local de tu navegador, no en un servidor. Eso
+      significa que si borras los datos del navegador, cambias de dispositivo o usas una ventana
+      privada, ese progreso se pierde y no hay forma de recuperarlo desde aquí. Los detalles están
+      en la <a href="/privacidad">Política de privacidad</a>.
+    </p>
+
+    <h2>Enlaces a otros sitios</h2>
+    <p>
+      Algunas páginas enlazan a recursos externos. Esos sitios tienen sus propias condiciones y
+      políticas, y PolyLingua no responde por su contenido. No hay enlaces de afiliado ni contenido
+      patrocinado.
+    </p>
+
+    <h2>Cambios en estos términos</h2>
+    <p>
+      Si cambian, se actualiza la fecha de arriba. El historial completo de cambios de esta página
+      es público en el <a href={PUBLISHER.repo} rel="noopener">repositorio</a>.
+    </p>
+
+    <h2>Contacto</h2>
+    <p>
+      Por el <a href={PUBLISHER.repo} rel="noopener">repositorio de GitHub</a>, abriendo un issue.
+      Es el único canal de contacto del proyecto.
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .legal-head {
+    padding-block: 3rem 1.5rem;
+    max-width: 720px;
+  }
+
+  h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin: 0.6rem 0 0.5rem;
+  }
+
+  .updated {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .legal {
+    max-width: 720px;
+    padding-block: 0 4rem;
+  }
+
+  .legal h2 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .legal h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal p {
+    color: var(--text-muted);
+    margin: 0 0 1rem;
+  }
+
+  .legal a {
+    color: var(--accent-text);
+  }
+</style>

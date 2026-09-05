@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { AUTHOR } from './data/author';
 
 const quizQuestion = z.object({
   question: z.string(),
@@ -115,6 +116,12 @@ const blog = defineCollection({
     publishDate: z.date(),
     updatedDate: z.date().optional(),
     tags: z.array(z.string()).default([]),
+    // Con `default`, no `optional`: un post sin firma no debe existir. Hoy los
+    // escribe una sola persona, así que el valor por defecto es el correcto en
+    // todos; el campo está para poder firmar distinto sin tocar el layout si
+    // algún día escribe alguien más. El nombre sale de src/data/author.ts, que
+    // es la misma fuente que usan /acerca y el JSON-LD.
+    author: z.string().default(AUTHOR.name),
   }),
 });
 

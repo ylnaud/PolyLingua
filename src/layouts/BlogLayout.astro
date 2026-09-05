@@ -2,6 +2,7 @@
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
+import { AUTHOR, PUBLISHER } from '../data/author';
 
 interface Props {
   title: string;
@@ -11,9 +12,19 @@ interface Props {
   tags?: string[];
   path: string;
   ogImage?: string;
+  author?: string;
 }
 
-const { title, description, publishDate, updatedDate, tags = [], path, ogImage } = Astro.props;
+const {
+  title,
+  description,
+  publishDate,
+  updatedDate,
+  tags = [],
+  path,
+  ogImage,
+  author = AUTHOR.name,
+} = Astro.props;
 
 const siteURL = Astro.site!.origin;
 
@@ -32,13 +43,22 @@ const structuredData = {
       description,
       datePublished: publishDate.toISOString(),
       ...(updatedDate && { dateModified: updatedDate.toISOString() }),
+      // El `author` era `Organization: PolyLingua`, que contradecía a /acerca:
+      // o lo escribe una organización o lo escribe una persona. Ahora apunta al
+      // nodo Person que emite /acerca, así los dos hablan de la misma entidad.
+      // El `publisher` sí es la marca: quien lo escribe y quien lo edita son
+      // campos distintos aunque hoy sean la misma persona.
       author: {
-        '@type': 'Organization',
-        name: 'PolyLingua',
+        '@type': 'Person',
+        '@id': `${siteURL}/acerca#autor`,
+        name: author,
+        url: `${siteURL}/acerca`,
       },
       publisher: {
         '@type': 'Organization',
-        name: 'PolyLingua',
+        name: PUBLISHER.name,
+        url: siteURL,
+        sameAs: [PUBLISHER.repo],
       },
       mainEntityOfPage: `${siteURL}${path}`,
     },
@@ -74,6 +94,9 @@ const structuredData = {
       <h1>{title}</h1>
       <p class="lede">{description}</p>
       <div class="meta">
+        <span class="byline">
+          Por <a href="/acerca" rel="author">{author}</a>
+        </span>
         <time datetime={publishDate.toISOString()}>{dateFormatter.format(publishDate)}</time>
         {
           tags.length > 0 && (
@@ -127,6 +150,17 @@ const structuredData = {
     flex-wrap: wrap;
     font-size: 0.85rem;
     color: var(--text-muted);
+  }
+
+  .byline a {
+    color: var(--text);
+    font-weight: 600;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+  }
+
+  .byline a:hover {
+    color: var(--accent-text);
   }
 
   /* Mismo cambio que en la portada del blog: eran píldoras con borde y fondo,

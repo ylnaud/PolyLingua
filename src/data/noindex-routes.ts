@@ -33,19 +33,33 @@ export const NOINDEX_LAST_SEGMENTS = [
  */
 export function isNoindexRoute(pathname: string): boolean {
   const segments = pathname.replace(/\/$/, '').split('/').filter(Boolean);
+
+  // La sección de diálogos entera queda fuera del índice: el selector
+  // (/es/dialogos), los cinco hubs (/es/de/dialogos) y los 100 diálogos
+  // (/es/de/dialogos/im-cafe). Por eso se mira si `dialogos` aparece en
+  // CUALQUIER segmento y no solo en el último, que es donde estaban los
+  // diálogos sueltos escapándose de esta lista.
+  //
+  // Es una decisión de contenido, y conviene dejar el razonamiento porque
+  // deshace uno anterior. Antes el hub era la excepción: se indexaba a
+  // propósito porque los 100 diálogos no recibían ningún enlace seguible y
+  // quedaban desconectados del reparto de autoridad interno. Esa razón ya no
+  // existe — si los diálogos no se indexan, no hay a quién desatascar, y un
+  // hub cuyos 20 enlaces apuntan todos a contenido noindex es una página
+  // débil por construcción.
+  //
+  // El motivo de fondo: los diálogos son las páginas más cortas del sitio con
+  // diferencia —235 palabras únicas de mediana frente a las 1140 de una
+  // lección, con un cuerpo de 17 a 36 palabras—. No son duplicados entre sí
+  // (el solape del español entre los cinco idiomas es del 26,7 %), pero sí
+  // demasiado flojas para competir. Pasan a ser una herramienta más, como
+  // repasar o vocabulario: intactas para quien usa el sitio, invisibles para
+  // Google. Sitemap: de 557 URLs a 452.
+  //
+  // Si algún día se les escribe contenido de verdad, revertirlo es quitar
+  // este bloque.
+  if (segments.includes('dialogos')) return true;
+
   const last = segments[segments.length - 1] ?? '';
-  if (!NOINDEX_LAST_SEGMENTS.includes(last)) return false;
-  // Excepción: el hub de diálogos de un curso (/es/de/dialogos, 3 segmentos).
-  //
-  // Los 100 diálogos son `index, follow` y están en el sitemap, pero su ÚNICO
-  // enlace entrante venía de este hub — y el hub, al ser noindex, salía además
-  // con `nofollow`. O sea que ninguna ruta seguible del sitio llegaba a un
-  // diálogo: 100 de 551 páginas indexables (el 18 %) desconectadas del reparto
-  // de autoridad interno. El hub tiene título y descripción propios por idioma
-  // y lista contenido real, así que se indexa.
-  //
-  // El selector /es/dialogos (2 segmentos) sigue fuera: es una lista de
-  // idiomas sin contenido propio.
-  if (last === 'dialogos' && segments.length === 3) return false;
-  return true;
+  return NOINDEX_LAST_SEGMENTS.includes(last);
 }

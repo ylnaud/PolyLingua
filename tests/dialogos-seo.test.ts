@@ -2,6 +2,7 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import { execSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { isNoindexRoute } from '../src/data/noindex-routes';
 
 /**
  * Las meta descriptions de los diálogos.
@@ -108,9 +109,16 @@ describe('meta descriptions de los diálogos', () => {
 /**
  * Datos estructurados de los diálogos y sus hubs.
  *
- * Los hubs se indexaron para desatascar los 100 diálogos, que no recibían
- * ningún enlace seguible. Pero salieron sin NINGÚN dato estructurado, y los
- * diálogos sin BreadcrumbList aunque pintaran las migas. Esto lo fija.
+ * Estos tests nacieron cuando los hubs se indexaron para desatascar los 100
+ * diálogos: salieron sin NINGÚN dato estructurado, y los diálogos sin
+ * BreadcrumbList aunque pintaran las migas.
+ *
+ * Toda la sección es hoy `noindex` (ver más abajo), así que estas
+ * comprobaciones ya no defienden un objetivo de posicionamiento. Se quedan
+ * igual por dos motivos: el JSON-LD sigue describiendo la página para
+ * cualquier cliente que la lea, y —sobre todo— si algún día se les escribe
+ * contenido y vuelven al índice, tienen que volver bien. Un test que se borra
+ * al apagar una función es un test que hay que reescribir al encenderla.
  */
 describe('datos estructurados de diálogos y hubs', () => {
   const DIST = join(import.meta.dirname, '..', 'dist');
@@ -240,5 +248,70 @@ describe('el título dice qué idioma se enseña, y lo dice una sola vez', () =>
     expect(new Set(h1).size, 'hay <h1> repetidos entre idiomas').toBe(h1.length);
     // Y ninguno repite el idioma dos veces, que era el defecto de en/pt.
     expect(h1.filter((t) => /portugués.*portugués|inglés.*inglés/i.test(t))).toEqual([]);
+  });
+});
+
+/**
+ * La sección de diálogos está fuera del índice.
+ *
+ * Decisión de contenido, no un accidente: son las páginas más cortas del
+ * sitio con diferencia —235 palabras únicas de mediana frente a las 1140 de
+ * una lección— y quedan como herramienta, igual que repasar o vocabulario.
+ *
+ * Hacen falta las dos comprobaciones porque son dos mecanismos distintos que
+ * ya discreparon una vez: el `<meta robots>` lo pinta el layout y la
+ * exclusión del sitemap sale del filtro de astro.config.mjs. Los 100
+ * diálogos estuvieron en el sitemap con `index, follow` mientras `dialogos`
+ * ya figuraba en NOINDEX_LAST_SEGMENTS — el último segmento de
+ * /es/de/dialogos/im-cafe es `im-cafe`, así que ninguno de los cien cumplía
+ * la regla que creíamos aplicada.
+ */
+describe('los diálogos no se indexan', () => {
+  const DIST = join(import.meta.dirname, '..', 'dist');
+
+  const rutasDialogo = () =>
+    dialogos.map((d) => {
+      const [idioma, , slug] = d.id.split('/');
+      return {
+        ruta: `/es/${idioma}/dialogos/${slug}`,
+        archivo: join(DIST, 'es', idioma!, 'dialogos', slug!, 'index.html'),
+      };
+    });
+
+  it('la función de rutas cubre las tres formas: selector, hub y diálogo', () => {
+    expect(isNoindexRoute('/es/dialogos')).toBe(true);
+    expect(isNoindexRoute('/es/de/dialogos')).toBe(true);
+    expect(isNoindexRoute('/es/de/dialogos/im-cafe')).toBe(true);
+    // Control: una lección normal sigue indexándose. Sin esto, una función
+    // que devolviera `true` siempre pasaría los tres de arriba.
+    expect(isNoindexRoute('/es/de/a1/articulos-der-die-das')).toBe(false);
+  });
+
+  it('los 100 diálogos publicados llevan <meta robots> noindex', () => {
+    const conIndex = rutasDialogo().filter(({ archivo }) => {
+      const robots =
+        /<meta name="robots" content="([^"]*)"/.exec(readFileSync(archivo, 'utf-8'))?.[1] ?? '';
+      return !robots.includes('noindex');
+    });
+    expect(conIndex.map((x) => x.archivo)).toEqual([]);
+  });
+
+  it('los 5 hubs también', () => {
+    for (const lang of ['de', 'en', 'fr', 'it', 'pt']) {
+      const html = readFileSync(join(DIST, 'es', lang, 'dialogos', 'index.html'), 'utf-8');
+      expect(/<meta name="robots" content="([^"]*)"/.exec(html)?.[1], lang).toContain('noindex');
+    }
+  });
+
+  it('ninguna URL de diálogos queda en el sitemap', () => {
+    const urls = readdirSync(DIST)
+      .filter((f) => /^sitemap-\d+\.xml$/.test(f))
+      .flatMap((f) =>
+        [...readFileSync(join(DIST, f), 'utf-8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+          (m) => m[1]!,
+        ),
+      );
+    expect(urls.length).toBeGreaterThan(300); // control: el sitemap no está vacío
+    expect(urls.filter((u) => u.includes('/dialogos'))).toEqual([]);
   });
 });

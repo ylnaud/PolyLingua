@@ -1,6 +1,7 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import { ACTIVE_USER_LANGUAGES, USER_LANGUAGE_MAP } from '../data/userLanguages';
+import { isNoindexRoute } from '../data/noindex-routes';
 import Header from '../components/Header.astro';
 import StreakReminder from '../components/StreakReminder.astro';
 import EngineTracker from '../components/EngineTracker.astro';
@@ -71,7 +72,21 @@ const htmlLang = USER_LANGUAGE_MAP[pageLang as keyof typeof USER_LANGUAGE_MAP]?.
 // vuelvan juntas y no haya que acordarse de esta.
 const inactiveUserLang =
   USER_LANGUAGE_MAP[pageLang as keyof typeof USER_LANGUAGE_MAP]?.active === false;
-const noindexFinal = noindex || inactiveUserLang;
+
+// La tercera fuente: la lista de rutas noindex, la MISMA que usa el filtro
+// del sitemap en astro.config.mjs.
+//
+// Se consulta acá, en el layout por el que pasan todas las páginas, y no
+// página por página. Con el prop `noindex` a mano, una ruta nueva que
+// debería quedar fuera del índice se cuela con solo olvidarse de pasarlo, y
+// el olvido no se ve: la página se publica y parece correcta. Los 100
+// diálogos eran justo eso — `dialogos` llevaba tiempo en la lista, pero el
+// último segmento de /es/de/dialogos/im-cafe es `im-cafe`, así que ninguno
+// de los cien la cumplía.
+//
+// El prop sigue existiendo para las páginas que deciden por su cuenta; esto
+// es un suelo, no un reemplazo.
+const noindexFinal = noindex || inactiveUserLang || isNoindexRoute(path);
 const ogImage = new URL(ogImagePath, Astro.site);
 ---
 

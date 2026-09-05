@@ -13,11 +13,12 @@ memorizando mal.
 ## El error que casi todo el mundo comete
 
 La mayoría de los principiantes memoriza la palabra sola ("Tisch = mesa") y
-después intenta recordar el artículo por separado, como un dato suelto sin
-ninguna lógica. El cerebro no retiene bien datos sueltos sin patrón. La buena
-noticia es que **el género en alemán no es tan arbitrario como parece** —
-tiene categorías por significado y terminaciones que aciertan la gran mayoría
-de las veces.
+después intenta recordar el artículo por separado, como un dato suelto que
+hay que ir a buscar aparte cada vez. Ahí está el problema: son dos cosas que
+se usan siempre juntas y se guardaron separadas. La buena noticia es que
+**el género en alemán no es tan arbitrario como parece** — hay categorías de
+significado y sufijos que lo deciden, y eso reduce mucho lo que hay que
+memorizar a pelo.
 
 ## Truco 1: aprende la palabra CON su artículo pegado
 
@@ -28,34 +29,53 @@ sola con un dato extra que se te olvida.
 
 ## Truco 2: usa las categorías de significado (no hay que adivinar)
 
-Estas categorías no tienen excepciones, así que memorizarlas te da aciertos
-gratis para siempre:
+Hay categorías enteras donde el género se sabe sin memorizar palabra por
+palabra:
 
 - **Días de la semana y meses** → siempre masculinos: der Montag, der Januar.
 - **Estaciones del año** → der Frühling, der Sommer, der Winter.
 - **Puntos cardinales** → der Norden, der Süden.
-- **Personas y animales según su sexo** → der Mann, die Frau (con la
-  excepción notable de das Mädchen, que ves en el truco 4).
+- **Personas según su sexo** → der Mann, die Frau. Esta es la única de las
+  cuatro que sí tiene excepciones, y son famosas: **das Mädchen** y **das
+  Fräulein** son neutros porque el diminutivo manda sobre el significado (lo
+  ves en el truco 3).
 
-## Truco 3: aprende las terminaciones con su porcentaje real de certeza
+Las tres primeras no fallan. La cuarta falla justo donde otra regla pisa más
+fuerte, que es exactamente el patrón que conviene entender.
 
-Esto es lo que casi nadie te enseña de forma explícita: las terminaciones no
-son "reglas", son **tendencias con un porcentaje de acierto**. Tratarlas así
-te da una expectativa realista en vez de frustración cuando aparece una
-excepción.
+## Truco 3: distinguí un sufijo de una simple terminación
 
-| Terminación                 | Género          | Certeza                |
-| --------------------------- | --------------- | ---------------------- |
-| -ung, -heit, -keit, -schaft | femenino (die)  | 98%                    |
-| -chen, -lein                | neutro (das)    | 100% (sin excepciones) |
-| -ig, -ismus                 | masculino (der) | 98%                    |
-| -ion, -tät                  | femenino (die)  | 95-98%                 |
-| -um, -nis                   | neutro (das)    | 90%                    |
+Acá está la distinción que casi nadie te explica y que cambia todo: **un
+sufijo no es lo mismo que una terminación**.
 
-Fijate que "-chen/-lein" está marcado como 100% — es la única terminación
-que **nunca** falla. Por eso das Mädchen (niña) es neutro pese a referirse a
-una persona femenina: termina en -chen, y esa regla le gana a la del
-significado.
+Un sufijo es una pieza que se le añade a una palabra para formar otra
+(_Zeitung_ = _Zeit_ + **-ung**). Una terminación es, sin más, cómo suena el
+final de una palabra, venga de donde venga. **Los sufijos mandan sobre el
+género; las terminaciones sueltas, no.**
+
+Estos sí son sufijos, y por eso son fiables:
+
+| Sufijo                      | Género          |
+| --------------------------- | --------------- |
+| -ung, -heit, -keit, -schaft | femenino (die)  |
+| -chen, -lein (diminutivos)  | neutro (das)    |
+| -ion, -tät, -ie             | femenino (die)  |
+| -ismus, -ling               | masculino (der) |
+
+Y acá está la trampa. Si mirás solo el final de la palabra sin preguntarte si
+es un sufijo de verdad, te comés estas:
+
+- **der Kuchen**, **der Knochen**, **der Drachen** terminan en "-chen" y son
+  masculinos. No son diminutivos de nada: la "-chen" es parte de la raíz.
+- **der Sprung**, **der Ursprung** terminan en "-ung" y son masculinos, por
+  el mismo motivo.
+
+Y hay finales que directamente no deciden nada: **-nis** se reparte entre
+neutro y femenino (das Ergebnis, das Verhältnis, pero die Erlaubnis, die
+Kenntnis). Ahí no hay regla que sirva: se aprende la palabra con su artículo.
+
+Por eso **das Mädchen** es neutro pese a significar "niña": ahí "-chen" sí es
+el sufijo diminutivo, y el sufijo le gana a la categoría de significado.
 
 ## Truco 4: memoriza las excepciones famosas aparte, como un grupo cerrado
 
@@ -67,10 +87,10 @@ general:
   terminar en -e (que normalmente es tendencia femenina).
 - das Mädchen — neutro por el diminutivo -chen, aunque signifique "niña".
 
-## Truco 5: la única regla sin excepción de todo el idioma
+## Truco 5: en plural el género desaparece
 
-Sea cual sea el género original de la palabra, **en plural el artículo
-siempre es "die"**, sin ninguna excepción:
+Sea cual sea el género original de la palabra, **en plural los tres se juntan
+en uno solo**. Ya no hay que elegir entre der, die y das:
 
 ```
 der Tisch  →  die Tische
@@ -78,8 +98,21 @@ das Mädchen  →  die Mädchen
 die Zeitung  →  die Zeitungen
 ```
 
-Esta es la regla que más tranquilidad da: en plural, nunca tenés que
-adivinar.
+Un matiz que conviene saber desde el principio, porque después sorprende: ese
+"die" es la forma de **nominativo y acusativo**. El artículo plural sí cambia
+con el caso, igual que en singular:
+
+| Caso       | Plural          |
+| ---------- | --------------- |
+| Nominativo | **die** Kinder  |
+| Acusativo  | **die** Kinder  |
+| Dativo     | **den** Kindern |
+| Genitivo   | **der** Kinder  |
+
+Nada de eso se evalúa en A1 — el dativo llega en A2 —, pero es la razón por
+la que algún día vas a leer _mit den Kindern_ y no _mit die Kindern_. Lo que
+sí podés dar por hecho desde hoy: en plural **no tenés que adivinar el
+género**, que es de lo que va este artículo.
 
 ## Errores típicos que refuerzan el patrón equivocado
 

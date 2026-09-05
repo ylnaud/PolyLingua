@@ -7,8 +7,8 @@ tags: ['offline', 'PWA', 'cómo funciona']
 
 "Funciona sin internet" suena a promesa de marketing hasta que lo probás en
 la práctica: modo avión activado, y las lecciones siguen ahí. Vale la pena
-explicar cómo es posible, porque no es magia — es una decisión técnica que
-casi ninguna app grande de idiomas toma.
+explicar cómo es posible, porque no es magia: es una decisión técnica
+concreta, y tiene un costo que también vale la pena contar.
 
 ## El problema de las apps "normales"
 

@@ -6,10 +6,10 @@ tags: ['italiano', 'vocabulario', 'falsos amigos']
 ---
 
 El italiano es, de los cinco idiomas de PolyLingua, el que más se parece al
-español. Comparten casi el 80% del vocabulario en alguna forma reconocible,
-lo que hace que aprender italiano desde el español se sienta casi como hacer
-trampa... hasta que te topás con un _falso amico_ y decís algo completamente
-distinto de lo que querías decir.
+español: los dos vienen del latín, y buena parte del vocabulario se reconoce
+sin haberlo estudiado. Eso hace que aprender italiano desde el español se
+sienta casi como hacer trampa... hasta que te topás con un _falso amico_ y
+decís algo completamente distinto de lo que querías decir.
 
 ## Por qué el italiano tiene tantos (y tan traicioneros)
 
@@ -27,36 +27,36 @@ tu cerebro no activa ninguna alarma.
 
 ### Los que cambian el significado por completo
 
-| Italiano      | Parece que significa | Realmente significa                    |
-| ------------- | --------------------- | --------------------------------------- |
-| **burro**     | burro (el animal)     | **mantequilla**                         |
-| **largo**     | largo                 | **ancho**                               |
-| **salire**    | salir                 | **subir**                               |
-| **guardare**  | guardar               | **mirar**                               |
-| **tirare**    | tirar (desechar)      | **tirar / jalar (hacia uno)**           |
-| **topo**      | topo (el animal)      | **ratón**                               |
+| Italiano     | Parece que significa | Realmente significa           |
+| ------------ | -------------------- | ----------------------------- |
+| **burro**    | burro (el animal)    | **mantequilla**               |
+| **largo**    | largo                | **ancho**                     |
+| **salire**   | salir                | **subir**                     |
+| **guardare** | guardar              | **mirar**                     |
+| **tirare**   | tirar (desechar)     | **tirar / jalar (hacia uno)** |
+| **topo**     | topo (el animal)     | **ratón**                     |
 
-Mirá esa lista con calma. _Burro_ en italiano es la mantequilla que ponés en
-el pan — el animal se dice _asino_. _Largo_ significa "ancho": una calle
-_larga_ en italiano no es necesariamente extensa, es **amplia**. Y _salire_
-es exactamente lo opuesto de lo que pensás: significa **subir**, no salir
-(eso es _uscire_).
+_Burro_ en italiano es la mantequilla que ponés en el pan — el animal se dice
+_asino_. _Largo_ es directamente **ancho**, no largo: una _strada larga_ es
+una calle **amplia**, y para decir que algo es largo se usa _lungo_. Y
+_salire_ es lo opuesto de lo que pensás: significa **subir**, no salir (eso es
+_uscire_).
 
 **El más traicionero de todos:** _tirare_. En español "tirar" casi siempre es
 desechar algo. En italiano, _tirare_ es **jalar hacia uno** — casi lo
-contrario. Por eso en las puertas italianas ves carteles que dicen "tirare"
-quiere decir "jalá", no "empujá".
+contrario. Por eso el cartel _TIRARE_ en una puerta italiana significa "jalá",
+no "empujá"; empujar es _spingere_.
 
 ### Los que suenan igual pero cambian el objeto entero
 
-| Italiano       | En español parece      | En italiano es                          |
-| --------------- | ------------------------ | ------------------------------------------ |
-| **gamba**       | gamba (el marisco)       | **pierna**                                  |
-| **camera**      | cámara (de fotos)        | **habitación / cuarto**                     |
-| **officina**    | oficina (de trabajo)     | **taller mecánico**                         |
-| **negozio**     | negocio (empresa/trato)  | **tienda**                                  |
-| **carta**       | carta (correspondencia)  | **papel / documento**                       |
-| **aceto**       | aceite                   | **vinagre**                                 |
+| Italiano     | En español parece       | En italiano es          |
+| ------------ | ----------------------- | ----------------------- |
+| **gamba**    | gamba (el marisco)      | **pierna**              |
+| **camera**   | cámara (de fotos)       | **habitación / cuarto** |
+| **officina** | oficina (de trabajo)    | **taller mecánico**     |
+| **negozio**  | negocio (empresa/trato) | **tienda**              |
+| **carta**    | carta (correspondencia) | **papel / documento**   |
+| **aceto**    | aceite                  | **vinagre**             |
 
 _Camera_ es el que más problemas causa en un viaje: cuando pedís "una camera
 doppia" en un hotel, estás pidiendo una **habitación doble**, no una cámara
@@ -70,12 +70,12 @@ se dice _affare_.
 
 ### Los que cambian de matiz sin cambiar tanto
 
-| Italiano       | Español aparente      | Diferencia                                              |
-| --------------- | ------------------------ | ---------------------------------------------------------- |
-| **pronto**      | pronto (pronto/luego)   | también **"¿diga?"** al atender el teléfono                |
-| **confetti**    | confeti (de papel)      | **almendras garrapiñadas** que se regalan en bodas/bautismos |
-| **subire**      | subir                   | **sufrir / padecer** (subir es _salire_)                    |
-| **mica**        | mica (mineral)          | partícula que refuerza una negación: **"no... en absoluto"** |
+| Italiano     | Español aparente      | Diferencia                                                   |
+| ------------ | --------------------- | ------------------------------------------------------------ |
+| **pronto**   | pronto (pronto/luego) | también **"¿diga?"** al atender el teléfono                  |
+| **confetti** | confeti (de papel)    | **almendras garrapiñadas** que se regalan en bodas/bautismos |
+| **subire**   | subir                 | **sufrir / padecer** (subir es _salire_)                     |
+| **caldo**    | caldo (sopa)          | **caliente** (el caldo se dice _brodo_)                      |
 
 _Pronto_ te va a sorprender la primera vez que llamás a alguien en Italia:
 si te contesta "Pronto?", no te está preguntando "¿ya?" — es su forma de
@@ -96,8 +96,8 @@ decir "¿hola?" al atender.
 
 ### En el hotel o alojamiento
 
-- Pedís "una camera" pensando que te van a mostrar el hotel con cámaras de
-  seguridad, cuando en realidad te están por dar la llave del cuarto.
+- En la recepción te preguntan por tu _camera_ y entendés "cámara": lo que te
+  están preguntando es el número de habitación.
 
 ### Al hablar de trabajo y compras
 
@@ -136,22 +136,22 @@ y eso está bien, es la señal de que estás progresando.
 El italiano y el español comparten muchísimas palabras que sí significan lo
 mismo, más que cualquier otro par de idiomas de este curso:
 
-| Italiano   | Español    |
-| ---------- | ---------- |
-| importante | importante |
-| differente | diferente  |
-| possibile  | posible    |
-| necessario | necesario  |
-| problema   | problema   |
-| musica     | música     |
-| famiglia   | familia    |
-| animale    | animal     |
+| Italiano   | Español     |
+| ---------- | ----------- |
+| importante | importante  |
+| differente | diferente   |
+| possibile  | posible     |
+| necessario | necesario   |
+| problema   | problema    |
+| musica     | música      |
+| famiglia   | familia     |
+| animale    | animal      |
 | ristorante | restaurante |
 | università | universidad |
 
-Esta cercanía es la razón por la que el italiano suele ser el idioma más
-rápido de aprender para un hispanohablante — siempre que tengas mapeados
-los falsos amigos que se esconden en el medio.
+Esa base compartida es lo que hace que un hispanohablante entienda mucho
+italiano antes de estudiarlo. También es lo que vuelve caros a los falsos
+amigos: cuando casi todo se entiende, cuesta más notar la palabra que no.
 
 ## Preguntas frecuentes
 
@@ -168,9 +168,11 @@ Sí, sobre todo los de matiz como _pronto_ o _subire_. Los más obvios
 que se recuerdan para siempre.
 
 **¿Hay una lista oficial de falsos amigos italiano-español?**
-Hay listas académicas extensas, pero en la práctica los que realmente te van
-a complicar el día a día son unos 20-25. Los de este artículo son los más
-frecuentes y los que más confusión generan.
+Oficial no hay ninguna, y con el italiano el problema es que la lista se
+alarga sola: como casi todo se entiende, es fácil dar por buena una palabra
+que no lo es. Los repertorios académicos existen y son útiles para consultar,
+pero para hablar conviene fiarse menos del parecido y más de haber visto la
+palabra en una frase real.
 
 ## En resumen
 

@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Futuro do presente (futuro simples)'
 funFact: "El futuro simple portugués comparte una característica única entre las lenguas romances: acepta la mesóclise, es decir, insertar el pronombre EN MEDIO del verbo ('dar-lhe-ei' = le daré), una estructura que suena hoy muy arcaica pero que todavía se enseña como correcta en la norma culta escrita más formal."
+skills:
+  - pt.b1.verb.futuro-simples
 minutes: 8
 quiz:
   - question: "¿Cuál es la terminación del futuro simple para 'eu' con verbos regulares?"

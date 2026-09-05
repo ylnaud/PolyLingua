@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Futuro do pretérito (condicional)'
 funFact: "En portugués, el condicional se llama oficialmente 'futuro do pretérito' — un nombre que parece contradictorio pero tiene lógica histórica: describe una acción futura vista desde un punto de vista pasado ('Ele disse que viria' = Él dijo que vendría), el mismo concepto que el condicional español."
+skills:
+  - pt.b1.verb.condicional
 minutes: 7
 quiz:
   - question: '¿Cómo se forma el condicional (futuro do pretérito) en portugués?'

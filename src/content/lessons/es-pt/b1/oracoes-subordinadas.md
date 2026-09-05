@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Orações subordinadas (porque, embora, quando) + introducción al subjuntivo'
 funFact: "Trata 'embora' como una alarma: en cuanto la veas o la uses, tu cerebro debe avisar 'subjuntivo obligatorio'. Es el mismo reflejo que ya conoces del español con 'aunque + subjuntivo' cuando hay incertidumbre — la lógica es prácticamente idéntica entre los dos idiomas."
+skills:
+  - pt.b1.subjunctive.intro
 minutes: 9
 quiz:
   - question: "¿Cuál es correcta: 'Fico em casa ___ estou doente' (porque estoy enfermo)?"

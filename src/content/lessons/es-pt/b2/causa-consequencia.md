@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Conectores de causa e consequência'
 funFact: "'Já que' y 'visto que' introducen una causa que el oyente ya conoce o da por sentada (similar a 'puisque' en francés o 'ya que' en español), a diferencia de 'porque', que introduce información nueva — una distinción sutil que separa a un hablante intermedio de uno avanzado."
+skills:
+  - pt.b2.connector.cause
 minutes: 8
 quiz:
   - question: "¿Qué diferencia hay entre 'porque' y 'já que' al introducir una causa?"

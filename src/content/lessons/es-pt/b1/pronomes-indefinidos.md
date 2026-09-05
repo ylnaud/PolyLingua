@@ -1,12 +1,14 @@
 ---
 language: pt
 level: b1
-title: "Pronomes indefinidos: alguém, algo, ninguém, nada"
+title: 'Pronomes indefinidos: alguém, algo, ninguém, nada'
 description: "Pronombres indefinidos en portugués (alguém, algo, ninguém, nada, cada um) y la regla clave del 'não' que sorprende a hispanohablantes."
 order: 9
 unit: 3
 grammarTopic: 'Pronomes indefinidos (alguém, algo, ninguém, nada)'
 funFact: "Piensa en 'não' como un guardia que solo aparece SI el pronombre negativo llega tarde (después del verbo). Si el pronombre negativo llega primero ('Ninguém veio'), el guardia ni se presenta. Es lo contrario del francés ('ne...personne') y del italiano ('non...nessuno'), que casi siempre exigen la doble marca — en portugués, la posición decide."
+skills:
+  - pt.b1.pronoun.indefinite
 minutes: 8
 quiz:
   - question: "¿Cuál es correcta para 'Nadie vino a la fiesta'?"
@@ -85,14 +87,14 @@ una trampa gramatical importante: la posición de la doble negación.
 
 ## Los pronombres básicos
 
-| Pronombre  | Significado  | Ejemplo                          |
-| ---------- | ------------ | --------------------------------- |
-| alguém     | alguien      | Alguém está na porta.             |
-| algo       | algo         | Quero comer algo.                 |
-| ninguém    | nadie        | Ninguém sabe a resposta.          |
-| nada       | nada         | Não sei nada sobre isso.          |
-| cada um    | cada uno     | Cada um traz o seu prato.         |
-| todo mundo | todos        | Todo mundo adora essa música.     |
+| Pronombre  | Significado | Ejemplo                       |
+| ---------- | ----------- | ----------------------------- |
+| alguém     | alguien     | Alguém está na porta.         |
+| algo       | algo        | Quero comer algo.             |
+| ninguém    | nadie       | Ninguém sabe a resposta.      |
+| nada       | nada        | Não sei nada sobre isso.      |
+| cada um    | cada uno    | Cada um traz o seu prato.     |
+| todo mundo | todos       | Todo mundo adora essa música. |
 
 ## La regla que rompe el reflejo del español, francés e italiano
 

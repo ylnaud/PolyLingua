@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Colocação pronominal (próclise, ênclise, mesóclise)'
 funFact: "La colocación pronominal es, según muchos profesores, la diferencia estructural más marcada entre el portugués de Brasil (que prefiere fuertemente la próclise: 'te amo') y el de Portugal (que en frases afirmativas simples prefiere la ênclise: 'amo-te') — la misma frase se escribe de forma distinta y suena inmediatamente reconocible según el país."
+skills:
+  - pt.b1.pronoun.colocacao
 minutes: 8
 quiz:
   - question: "¿Qué es la 'ênclise'?"

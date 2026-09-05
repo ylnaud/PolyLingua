@@ -8856,6 +8856,733 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
       },
     ],
   },
+  // ══════════════════════════════════════════════════════════════════════════
+  // PORTUGUÉS — B1 y B2
+  // ══════════════════════════════════════════════════════════════════════════
+  {
+    skillId: 'pt.b1.pronoun.colocacao',
+    explanation:
+      'Es lo más propio del portugués y donde más divergen Brasil y Portugal: Brasil pone el pronombre **delante** (*me diga*), Portugal **detrás con guion** (*diga-me*). Pero por encima de la variedad hay una regla que no se negocia: ciertas palabras —**não, que, quem, nunca, ninguém, todos** y los adverbios— **atraen el pronombre hacia adelante** en las dos. Tras *não* nunca va detrás.',
+    variations: [
+      {
+        sentence: 'Não ___ diga isso, por favor.',
+        answer: 'me',
+        translation: 'No me digas eso, por favor.',
+      },
+      {
+        sentence: 'Quem ___ falou sobre a reunião?',
+        answer: 'te',
+        translation: '¿Quién te habló de la reunión?',
+      },
+      { sentence: 'Nunca ___ vi tão feliz.', answer: 'a', translation: 'Nunca la vi tan feliz.' },
+      {
+        sentence: 'Ela disse que ___ ligaria hoje.',
+        answer: 'me',
+        translation: 'Ella dijo que me llamaría hoy.',
+      },
+      {
+        sentence: 'Ninguém ___ avisou do atraso.',
+        answer: 'nos',
+        translation: 'Nadie nos avisó del retraso.',
+      },
+      {
+        sentence: 'Todos ___ conhecem no bairro.',
+        answer: 'o',
+        translation: 'Todos lo conocen en el barrio.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.verb.imperfeito',
+    explanation:
+      'No se decide por cuánto duró sino por **cómo se mira**. El **perfecto** cuenta un hecho cerrado que hace avanzar la historia; el **imperfecto** pinta el decorado: costumbres, estados, edades, el tiempo que hacía. *Enquanto estuda**va**, o telefone toc**ou***.',
+    variations: [
+      {
+        sentence: 'Quando era criança, ___ sempre ao parque. (ir)',
+        answer: 'ia',
+        translation: 'De niño iba siempre al parque.',
+      },
+      {
+        sentence: 'Ontem ___ um filme lindíssimo. (ver, eu)',
+        answer: 'vi',
+        translation: 'Ayer vi una película preciosa.',
+      },
+      {
+        sentence: 'Enquanto eu ___, o telefone tocou. (estudar)',
+        answer: 'estudava',
+        translation: 'Mientras estudiaba, sonó el teléfono.',
+      },
+      {
+        sentence: 'No ano passado nós ___ ao Algarve. (ir)',
+        answer: 'fomos',
+        translation: 'El año pasado fuimos al Algarve.',
+      },
+      {
+        sentence: 'Quando ___ dez anos, morava no Rio. (ter, eu)',
+        answer: 'tinha',
+        translation: 'Cuando tenía diez años, vivía en Río.',
+      },
+      {
+        sentence: 'Esta manhã eu ___ às sete. (acordar)',
+        answer: 'acordei',
+        translation: 'Esta mañana me desperté a las siete.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.verb.futuro-simples',
+    explanation:
+      'Se forma sobre el **infinitivo entero** más la terminación: *falar + ei = **falarei***. Solo tres verbos rompen la raíz: **fazer → farei**, **dizer → direi**, **trazer → trarei**. En el habla cotidiana casi siempre gana *ir + infinitivo*, así que este vive sobre todo en lo escrito y lo formal.',
+    variations: [
+      {
+        sentence: 'Amanhã eu ___ ao Porto. (ir)',
+        answer: 'irei',
+        translation: 'Mañana iré a Oporto.',
+      },
+      {
+        sentence: 'No ano que vem nós ___ uma casa. (comprar)',
+        answer: 'compraremos',
+        translation: 'El año que viene compraremos una casa.',
+      },
+      {
+        sentence: 'O Marco ___ às oito. (partir)',
+        answer: 'partirá',
+        translation: 'Marco saldrá a las ocho.',
+      },
+      {
+        sentence: 'Eu ___ tudo o que puder. (fazer)',
+        answer: 'farei',
+        translation: 'Haré todo lo que pueda.',
+      },
+      {
+        sentence: 'Ela ___ a verdade amanhã. (dizer)',
+        answer: 'dirá',
+        translation: 'Ella dirá la verdad mañana.',
+      },
+      {
+        sentence: 'Vocês ___ o comboio das seis? (apanhar)',
+        answer: 'apanharão',
+        translation: '¿Cogeréis el tren de las seis?',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.verb.condicional',
+    explanation:
+      'En portugués se llama **futuro do pretérito** y se arma sobre la misma raíz que el futuro: si sabés *farei*, sabés *faria*. Sirve para la cortesía (*gostaria de*), el deseo y el consejo (*devias descansar*). Los mismos tres irregulares: faria, diria, traria.',
+    variations: [
+      {
+        sentence: 'Eu ___ de um café, por favor. (gostar)',
+        answer: 'gostaria',
+        translation: 'Querría un café, por favor.',
+      },
+      {
+        sentence: 'Você ___ vir connosco? (poder)',
+        answer: 'poderia',
+        translation: '¿Podrías venir con nosotros?',
+      },
+      {
+        sentence: 'Nós ___ com prazer, mas não podemos. (ir)',
+        answer: 'iríamos',
+        translation: 'Iríamos con gusto, pero no podemos.',
+      },
+      {
+        sentence: 'Você ___ descansar mais. (dever)',
+        answer: 'deveria',
+        translation: 'Deberías descansar más.',
+      },
+      {
+        sentence: 'Eu ___ isso de outra maneira. (fazer)',
+        answer: 'faria',
+        translation: 'Yo haría eso de otra manera.',
+      },
+      {
+        sentence: 'Eles ___ uma resposta até sexta. (dar)',
+        answer: 'dariam',
+        translation: 'Darían una respuesta antes del viernes.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.subjunctive.intro',
+    explanation:
+      'Manda **la palabra de delante, no el significado**. Piden subjuntivo los verbos de deseo y duda (*quero que*, *espero que*, *duvido que*) y conjunciones como *embora* o *para que*. **No** lo piden *sei que*, *é verdade que* ni *porque* causal. Es el mismo reparto que en español, así que la ventaja es grande.',
+    variations: [
+      {
+        sentence: 'Espero que você ___ bem. (estar)',
+        answer: 'esteja',
+        translation: 'Espero que estés bien.',
+      },
+      {
+        sentence: 'Sei que ele ___ no Porto. (estar)',
+        answer: 'está',
+        translation: 'Sé que él está en Oporto.',
+      },
+      {
+        sentence: 'Quero que tu ___ mais cedo. (chegar)',
+        answer: 'chegues',
+        translation: 'Quiero que llegues más temprano.',
+      },
+      {
+        sentence: 'É verdade que eles ___ partido. (ter)',
+        answer: 'têm',
+        translation: 'Es verdad que se han ido.',
+      },
+      {
+        sentence: 'Embora ___ tarde, vamos sair. (ser)',
+        answer: 'seja',
+        translation: 'Aunque sea tarde, vamos a salir.',
+      },
+      {
+        sentence: 'Não saio porque ___ cansado. (estar, eu)',
+        answer: 'estou',
+        translation: 'No salgo porque estoy cansado.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.subjunctive.imperfeito-se',
+    explanation:
+      'Tras **se** hipotético va el **imperfecto de subjuntivo**, y en la otra mitad el condicional: ***se eu tivesse** tempo, **iria***. Igual que en español, pero hay que producir las formas, que salen de la tercera del plural del perfecto: *tiveram → **tivesse***, *foram → **fosse***, *puderam → **pudesse***.',
+    variations: [
+      {
+        sentence: 'Se eu ___ tempo, iria com vocês. (ter)',
+        answer: 'tivesse',
+        translation: 'Si tuviera tiempo, iría con vosotros.',
+      },
+      {
+        sentence: 'Se eu ___ mais novo, viajaria mais. (ser)',
+        answer: 'fosse',
+        translation: 'Si fuera más joven, viajaría más.',
+      },
+      {
+        sentence: 'Se você ___ ajudar, eu acabaria antes. (poder)',
+        answer: 'pudesse',
+        translation: 'Si pudieras ayudar, terminaría antes.',
+      },
+      {
+        sentence: 'Gostaria que você ___ mais atenção. (prestar)',
+        answer: 'prestasse',
+        translation: 'Querría que prestaras más atención.',
+      },
+      {
+        sentence: 'Se nós ___ no Porto, ver-nos-íamos mais. (morar)',
+        answer: 'morássemos',
+        translation: 'Si viviéramos en Oporto, nos veríamos más.',
+      },
+      {
+        sentence: 'Se eles ___ antes, chegariam a tempo. (sair)',
+        answer: 'saíssem',
+        translation: 'Si salieran antes, llegarían a tiempo.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.conjunction.time',
+    explanation:
+      'Acá aparece algo que el español no tiene: **quando** y **assim que**, mirando al futuro, piden **futuro de subjuntivo** — *quando eu **chegar***, no «quando eu chego». **Antes que** pide subjuntivo presente, y **enquanto** con indicativo.',
+    variations: [
+      {
+        sentence: 'Quando eu ___ a casa, ligo-te. (chegar)',
+        answer: 'chegar',
+        translation: 'Cuando llegue a casa, te llamo.',
+      },
+      {
+        sentence: 'Assim que eu ___ a notícia, aviso. (saber)',
+        answer: 'souber',
+        translation: 'En cuanto sepa la noticia, aviso.',
+      },
+      {
+        sentence: 'Antes que ___ escuro, voltamos. (ficar)',
+        answer: 'fique',
+        translation: 'Antes de que oscurezca, volvemos.',
+      },
+      {
+        sentence: 'Enquanto eu ___, ouço música. (cozinhar)',
+        answer: 'cozinho',
+        translation: 'Mientras cocino, escucho música.',
+      },
+      {
+        sentence: 'Depois que vocês ___, começamos. (chegar)',
+        answer: 'chegarem',
+        translation: 'Después de que lleguéis, empezamos.',
+      },
+      {
+        sentence: 'Quando eles ___, já será tarde. (vir)',
+        answer: 'vierem',
+        translation: 'Cuando vengan, ya será tarde.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.negation.advanced',
+    explanation:
+      'Igual que en español, la negación se dobla, y la regla es de **posición**: si la palabra negativa va **detrás** del verbo hace falta *não*; si va **delante**, el *não* sobra — ***ninguém** veio*, no «não ninguém veio».',
+    variations: [
+      {
+        sentence: 'Não vi ___ na festa.',
+        answer: 'ninguém',
+        translation: 'No vi a nadie en la fiesta.',
+      },
+      {
+        sentence: '___ veio à reunião.',
+        answer: 'Ninguém',
+        translation: 'Nadie vino a la reunión.',
+      },
+      {
+        sentence: 'Não como ___ desde as oito.',
+        answer: 'nada',
+        translation: 'No como nada desde las ocho.',
+      },
+      { sentence: 'O Marco não fuma ___.', answer: 'mais', translation: 'Marco ya no fuma.' },
+      {
+        sentence: '___ estive no Japão.',
+        answer: 'Nunca',
+        translation: 'Nunca he estado en Japón.',
+      },
+      {
+        sentence: 'Ele não disse ___ sobre isso.',
+        answer: 'nada',
+        translation: 'Él no dijo nada sobre eso.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.pronoun.indefinite',
+    explanation:
+      'Se emparejan de dos en dos: **alguém / ninguém** para personas y **algo (alguma coisa) / nada** para cosas. En el habla se prefiere *alguma coisa* a *algo*, que suena más escrito. Y como en español, con verbo delante hace falta *não*.',
+    variations: [
+      { sentence: 'Há ___ à porta.', answer: 'alguém', translation: 'Hay alguien en la puerta.' },
+      {
+        sentence: 'Não há ___ no escritório.',
+        answer: 'ninguém',
+        translation: 'No hay nadie en la oficina.',
+      },
+      {
+        sentence: 'Queres ___ para beber?',
+        answer: 'alguma coisa',
+        translation: '¿Quieres algo de beber?',
+      },
+      { sentence: 'Não comprei ___.', answer: 'nada', translation: 'No compré nada.' },
+      {
+        sentence: '___ me contou o que aconteceu.',
+        answer: 'Alguém',
+        translation: 'Alguien me contó lo que pasó.',
+      },
+      {
+        sentence: 'Não aconteceu ___ de grave.',
+        answer: 'nada',
+        translation: 'No pasó nada grave.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.preposition.ha-desde',
+    explanation:
+      'Tres formas para lo que en español casi siempre es «hace». **Há** mide el tiempo transcurrido (*moro aqui **há** três anos*). **Desde** marca el punto de partida (*desde janeiro*). **Durante** mide un periodo cerrado (*trabalhei lá **durante** três meses*).',
+    variations: [
+      {
+        sentence: 'Estudo português ___ dois anos.',
+        answer: 'há',
+        translation: 'Estudio portugués desde hace dos años.',
+      },
+      {
+        sentence: 'Trabalhei em Lisboa ___ três meses.',
+        answer: 'durante',
+        translation: 'Trabajé en Lisboa durante tres meses.',
+      },
+      {
+        sentence: 'Moro aqui ___ janeiro.',
+        answer: 'desde',
+        translation: 'Vivo aquí desde enero.',
+      },
+      {
+        sentence: 'Não o vejo ___ muito tempo.',
+        answer: 'há',
+        translation: 'No lo veo desde hace mucho.',
+      },
+      {
+        sentence: 'Choveu ___ toda a noite.',
+        answer: 'durante',
+        translation: 'Llovió durante toda la noche.',
+      },
+      {
+        sentence: 'Ele está doente ___ segunda-feira.',
+        answer: 'desde',
+        translation: 'Está enfermo desde el lunes.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b1.verb.passive-state',
+    explanation:
+      'La distinción que en español hace ser/estar. **Estar + participio** describe el **estado** en que algo quedó: *a janela **está partida***. El **perfecto** cuenta la **acción**: *alguém **partiu** a janela*.',
+    variations: [
+      {
+        sentence: 'A porta ___ fechada desde ontem. (estar)',
+        answer: 'está',
+        translation: 'La puerta está cerrada desde ayer.',
+      },
+      {
+        sentence: 'O empregado ___ a porta às dez. (fechar)',
+        answer: 'fechou',
+        translation: 'El empleado cerró la puerta a las diez.',
+      },
+      {
+        sentence: 'Os quartos já ___ limpos. (estar)',
+        answer: 'estão',
+        translation: 'Las habitaciones ya están limpias.',
+      },
+      {
+        sentence: 'A senhora ___ os quartos de manhã. (limpar)',
+        answer: 'limpou',
+        translation: 'La señora limpió las habitaciones por la mañana.',
+      },
+      {
+        sentence: 'O problema ___ resolvido, não se preocupe. (estar)',
+        answer: 'está',
+        translation: 'El problema está resuelto, no se preocupe.',
+      },
+      {
+        sentence: 'O técnico ___ o problema hoje cedo. (resolver)',
+        answer: 'resolveu',
+        translation: 'El técnico resolvió el problema esta mañana.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b2.verb.passive',
+    explanation:
+      '**Ser + participio**, y el participio **concuerda** con el sujeto: *as casas **foram construídas***. El agente va con **por**, que se contrae con el artículo: *por + o = **pelo***, *por + a = **pela***. Esa contracción es obligatoria.',
+    variations: [
+      {
+        sentence: 'A carta ___ escrita pelo Marco. (ser)',
+        answer: 'foi',
+        translation: 'La carta fue escrita por Marco.',
+      },
+      {
+        sentence: 'As casas ___ construídas em 1920. (ser)',
+        answer: 'foram',
+        translation: 'Las casas fueron construidas en 1920.',
+      },
+      {
+        sentence: 'O projeto foi aprovado ___ diretor. (por + o)',
+        answer: 'pelo',
+        translation: 'El proyecto fue aprobado por el director.',
+      },
+      {
+        sentence: 'A decisão foi tomada ___ comissão. (por + a)',
+        answer: 'pela',
+        translation: 'La decisión fue tomada por la comisión.',
+      },
+      {
+        sentence: 'Os documentos ___ revistos todos os meses. (ser)',
+        answer: 'são',
+        translation: 'Los documentos son revisados cada mes.',
+      },
+      {
+        sentence: 'O jantar ___ preparado pela minha mãe. (ser)',
+        answer: 'foi',
+        translation: 'La cena fue preparada por mi madre.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b2.pronoun.relative',
+    explanation:
+      '**Que** vale para casi todo. **Quem** solo para personas y **detrás de preposición** (*a pessoa **com quem** falei*). **Onde** para lugar. Y **cujo**, que el español apenas usa pero el portugués sí: es posesivo y **concuerda con lo poseído**, no con el dueño — *o autor **cujos** livros li*.',
+    variations: [
+      {
+        sentence: 'O livro ___ li é ótimo.',
+        answer: 'que',
+        translation: 'El libro que leí es buenísimo.',
+      },
+      {
+        sentence: 'A pessoa com ___ falei era o chefe.',
+        answer: 'quem',
+        translation: 'La persona con la que hablé era el jefe.',
+      },
+      {
+        sentence: 'A cidade ___ moro é Lisboa.',
+        answer: 'onde',
+        translation: 'La ciudad donde vivo es Lisboa.',
+      },
+      {
+        sentence: 'O autor ___ livros li ganhou o prémio.',
+        answer: 'cujos',
+        translation: 'El autor cuyos libros leí ganó el premio.',
+      },
+      {
+        sentence: 'A empresa ___ sede é no Porto fechou.',
+        answer: 'cuja',
+        translation: 'La empresa cuya sede está en Oporto cerró.',
+      },
+      {
+        sentence: 'Os colegas ___ trabalham comigo são simpáticos.',
+        answer: 'que',
+        translation: 'Los compañeros que trabajan conmigo son simpáticos.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b2.verb.condicional-passado',
+    explanation:
+      'Sirve para lo que **no llegó a pasar** (*teria ido, mas…*) y para el **futuro en el pasado**: donde el español dice «dijo que vendría», el portugués dice *disse que **teria vindo*** solo si ya no pasó; para el futuro puro basta *viria*. La forma es **ter/haver en condicional + participio**.',
+    variations: [
+      {
+        sentence: 'Eu ___ ido, mas estava doente. (ter)',
+        answer: 'teria',
+        translation: 'Habría ido, pero estaba enfermo.',
+      },
+      {
+        sentence: 'Nós ___ preferido ficar em casa. (ter)',
+        answer: 'teríamos',
+        translation: 'Habríamos preferido quedarnos en casa.',
+      },
+      {
+        sentence: 'Você ___ avisado antes? (ter)',
+        answer: 'teria',
+        translation: '¿Habrías avisado antes?',
+      },
+      {
+        sentence: 'Eles ___ chegado a tempo com outro voo. (ter)',
+        answer: 'teriam',
+        translation: 'Habrían llegado a tiempo con otro vuelo.',
+      },
+      {
+        sentence: 'Eu ___ dito a verdade se soubesse. (ter)',
+        answer: 'teria',
+        translation: 'Habría dicho la verdad si lo supiera.',
+      },
+      {
+        sentence: 'Ela ___ ficado se lhe pedissem. (ter)',
+        answer: 'teria',
+        translation: 'Ella se habría quedado si se lo pidieran.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b2.verb.gerundio',
+    explanation:
+      'Acá la variedad cambia la construcción entera. Para la acción en curso, **Brasil usa el gerundio** (*estou fazendo*) y **Portugal usa a + infinitivo** (*estou a fazer*). Las dos son correctas; lo que no se hace es mezclarlas. El gerundio solo, para modo o causa (*saí correndo*), funciona en las dos.',
+    variations: [
+      {
+        sentence: 'O Marco está ___ agora. (comer, Brasil)',
+        answer: 'comendo',
+        translation: 'Marco está comiendo ahora.',
+      },
+      {
+        sentence: 'Estou ___ trabalhar neste momento. (a + infinitivo, Portugal)',
+        answer: 'a',
+        translation: 'Estoy trabajando en este momento.',
+      },
+      {
+        sentence: 'O que você está ___? (fazer, Brasil)',
+        answer: 'fazendo',
+        translation: '¿Qué estás haciendo?',
+      },
+      {
+        sentence: 'Saí ___ para apanhar o comboio. (correr)',
+        answer: 'correndo',
+        translation: 'Salí corriendo para coger el tren.',
+      },
+      {
+        sentence: 'Nós estamos ___ o jornal. (ler, Brasil)',
+        answer: 'lendo',
+        translation: 'Estamos leyendo el periódico.',
+      },
+      {
+        sentence: '___ muito, ele passou no exame. (estudar)',
+        answer: 'Estudando',
+        translation: 'Estudiando mucho, aprobó el examen.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b2.verb.mais-que-perfeito',
+    explanation:
+      'El pasado **anterior a otro pasado**, y se arma con **tinha (o havia) + participio**: *quando cheguei, ele já **tinha saído***. En el habla se usa *tinha* casi siempre; *havia* suena más escrito.',
+    variations: [
+      {
+        sentence: 'Quando cheguei, ele já ___ saído. (ter)',
+        answer: 'tinha',
+        translation: 'Cuando llegué, él ya había salido.',
+      },
+      {
+        sentence: 'Não sabia que você ___ perdido o comboio. (ter)',
+        answer: 'tinha',
+        translation: 'No sabía que habías perdido el tren.',
+      },
+      {
+        sentence: 'Nós já nos ___ visto no ano anterior. (ter)',
+        answer: 'tínhamos',
+        translation: 'Ya nos habíamos visto el año anterior.',
+      },
+      {
+        sentence: 'Ele disse que ___ acabado o trabalho. (ter)',
+        answer: 'tinha',
+        translation: 'Dijo que había terminado el trabajo.',
+      },
+      {
+        sentence: 'Eles ___ partido antes do telefonema. (ter)',
+        answer: 'tinham',
+        translation: 'Se habían ido antes de la llamada.',
+      },
+      {
+        sentence: 'Vocês já ___ comido quando eu cheguei. (ter)',
+        answer: 'tinham',
+        translation: 'Ya habíais comido cuando llegué.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b2.pronoun.demonstrative',
+    explanation:
+      'El portugués mantiene los **tres grados** con más rigor que el español: **este** es lo que está conmigo, **esse** lo que está contigo, **aquele** lo que está lejos de los dos. Y se contraen con las preposiciones: *de + este = **deste***, *em + esse = **nesse***, *de + aquele = **daquele***.',
+    variations: [
+      {
+        sentence: '___ livro que tenho aqui é meu.',
+        answer: 'Este',
+        translation: 'Este libro que tengo aquí es mío.',
+      },
+      {
+        sentence: '___ livro que está aí contigo é teu?',
+        answer: 'Esse',
+        translation: '¿Ese libro que está ahí contigo es tuyo?',
+      },
+      {
+        sentence: '___ prédio lá ao fundo é a câmara.',
+        answer: 'Aquele',
+        translation: 'Aquel edificio del fondo es el ayuntamiento.',
+      },
+      {
+        sentence: 'Gosto muito ___ cidade. (de + esta)',
+        answer: 'desta',
+        translation: 'Me gusta mucho esta ciudad.',
+      },
+      {
+        sentence: 'Moro ___ bairro há anos. (em + este)',
+        answer: 'neste',
+        translation: 'Vivo en este barrio desde hace años.',
+      },
+      {
+        sentence: 'Lembro-me bem ___ dia. (de + aquele)',
+        answer: 'daquele',
+        translation: 'Me acuerdo bien de aquel día.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b2.connector.cause',
+    explanation:
+      'La causa va con indicativo —**porque**, **como**, **já que**, **visto que**— pero **para que** y **a fim de que** piden **subjuntivo**. Y hay una regla de posición: **como** causal solo puede ir al principio de la frase, nunca en medio.',
+    variations: [
+      {
+        sentence: 'Não saio ___ está a chover.',
+        answer: 'porque',
+        translation: 'No salgo porque está lloviendo.',
+      },
+      {
+        sentence: '___ chovia, ficámos em casa.',
+        answer: 'Como',
+        translation: 'Como llovía, nos quedamos en casa.',
+      },
+      {
+        sentence: 'Explico-te para que ___ entender. (poder, tu)',
+        answer: 'possas',
+        translation: 'Te lo explico para que puedas entender.',
+      },
+      {
+        sentence: 'Choveu muito, ___ a estrada está alagada.',
+        answer: 'portanto',
+        translation: 'Llovió mucho, por lo tanto la calle está inundada.',
+      },
+      {
+        sentence: '___ já sabes a verdade, podemos falar.',
+        answer: 'Já que',
+        translation: 'Ya que sabes la verdad, podemos hablar.',
+      },
+      {
+        sentence: 'Fala baixo a fim de que todos ___ ouvir. (poder)',
+        answer: 'possam',
+        translation: 'Habla bajo para que todos puedan oír.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b2.connector.logical',
+    explanation:
+      'Los que ordenan un texto: **além disso** añade, **no entanto** y **contudo** contraponen, **aliás** corrige al alza, **pelo contrário** invierte. Y **embora** pide **subjuntivo**, mientras que **apesar de** va con infinitivo — esa es la que más se cruza.',
+    variations: [
+      {
+        sentence: 'É caro; ___, nem sequer é bom.',
+        answer: 'além disso',
+        translation: 'Es caro; además, ni siquiera es bueno.',
+      },
+      {
+        sentence: 'Estudou muito; ___, não passou no exame.',
+        answer: 'no entanto',
+        translation: 'Estudió mucho; sin embargo, no aprobó.',
+      },
+      {
+        sentence: 'Não está cansado; ___, está cheio de energia.',
+        answer: 'pelo contrário',
+        translation: 'No está cansado; al contrario, está lleno de energía.',
+      },
+      {
+        sentence: 'Embora ___ tarde, vamos sair. (ser)',
+        answer: 'seja',
+        translation: 'Aunque sea tarde, vamos a salir.',
+      },
+      {
+        sentence: 'Apesar de ___ tarde, vamos sair. (ser)',
+        answer: 'ser',
+        translation: 'A pesar de ser tarde, vamos a salir.',
+      },
+      {
+        sentence: 'Ele é competente; ___, é o melhor da equipa.',
+        answer: 'aliás',
+        translation: 'Él es competente; es más, es el mejor del equipo.',
+      },
+    ],
+  },
+  {
+    skillId: 'pt.b2.pronoun.possessive',
+    explanation:
+      'Cuando el posesivo **sustituye** al nombre en vez de acompañarlo, **el artículo vuelve siempre**, también en Brasil, donde con el adjetivo era opcional: *meu livro* pero *este é **o meu***. Y concuerda con la cosa poseída, no con el dueño.',
+    variations: [
+      {
+        sentence: 'Esta é a minha mala, aquela é ___ tua.',
+        answer: 'a',
+        translation: 'Esta es mi maleta, aquella es la tuya.',
+      },
+      {
+        sentence: 'O meu irmão trabalha; ___ teu estuda.',
+        answer: 'o',
+        translation: 'Mi hermano trabaja; el tuyo estudia.',
+      },
+      {
+        sentence: 'As nossas chaves estão aqui, ___ vossas não.',
+        answer: 'as',
+        translation: 'Nuestras llaves están aquí, las vuestras no.',
+      },
+      {
+        sentence: 'O meu carro é novo, ___ dele é velho.',
+        answer: 'o',
+        translation: 'Mi coche es nuevo, el suyo es viejo.',
+      },
+      {
+        sentence: 'Estes não são os meus óculos, são ___ teus.',
+        answer: 'os',
+        translation: 'Estas no son mis gafas, son las tuyas.',
+      },
+      {
+        sentence: 'A ideia dela é boa, mas prefiro ___ minha.',
+        answer: 'a',
+        translation: 'Su idea es buena, pero prefiero la mía.',
+      },
+    ],
+  },
 ];
 
 export function repairTemplateFor(skillId: string): RepairTemplate | null {

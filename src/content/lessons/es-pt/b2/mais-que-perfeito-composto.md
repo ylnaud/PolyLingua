@@ -7,9 +7,11 @@ order: 9
 unit: 3
 grammarTopic: 'Pretérito mais-que-perfeito composto (tinha + particípio)'
 funFact: "El participio en este tiempo NUNCA concuerda con el sujeto, a diferencia de la voz pasiva: 'ela tinha saído' (no 'saída'), 'eles tinham chegado' (no 'chegados'). Con 'ter' de auxiliar, el participio se queda fijo en masculino singular siempre."
+skills:
+  - pt.b2.verb.mais-que-perfeito
 minutes: 9
 quiz:
-  - question: "¿Cómo se forma el pretérito mais-que-perfeito composto?"
+  - question: '¿Cómo se forma el pretérito mais-que-perfeito composto?'
     options:
       - "presente de 'ter' + gerúndio"
       - "imperfeito de 'ter' (tinha) + particípio"
@@ -27,7 +29,7 @@ quiz:
     options:
       - "Concuerda: sería 'ela tinha comida'"
       - 'No concuerda: el participio queda invariable'
-      - "Solo concuerda en número, no en género"
+      - 'Solo concuerda en número, no en género'
     answerIndex: 1
     explanation: "A diferencia de la voz pasiva con 'ser', el participio con 'ter' es siempre invariable: 'ela tinha comido', 'eles tinham comido', sin importar género o número."
 exercises:
@@ -42,7 +44,7 @@ exercises:
     sentence: 'Ela já ___ comido quando o telefone tocou.'
     answer: 'tinha'
     accepted: ['tinha']
-    hint: "Mismo patrón: tinha + particípio, para una acción anterior a otra en pasado."
+    hint: 'Mismo patrón: tinha + particípio, para una acción anterior a otra en pasado.'
     translation: 'Ella ya había comido cuando sonó el teléfono.'
     placeholder: 'tinha / tínhamos'
   - type: 'match'
@@ -89,13 +91,13 @@ imperfeito de TER (tinha)  +  particípio del verbo principal
 ```
 
 | Pessoa          | tinha + particípio |
-| --------------- | ------------------- |
-| eu              | tinha saído         |
-| tu              | tinhas saído        |
-| ele/ela/você    | tinha saído         |
-| nós             | tínhamos saído      |
-| vós             | tínheis saído       |
-| eles/elas/vocês | tinham saído        |
+| --------------- | ------------------ |
+| eu              | tinha saído        |
+| tu              | tinhas saído       |
+| ele/ela/você    | tinha saído        |
+| nós             | tínhamos saído     |
+| vós             | tínheis saído      |
+| eles/elas/vocês | tinham saído       |
 
 ## El participio NO concuerda
 

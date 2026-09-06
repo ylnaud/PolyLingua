@@ -4,6 +4,13 @@
 // página — así todas las páginas del silo comparten el mismo cálculo de
 // hreflang y JSON-LD en vez de repetirlo cada una.
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import {
+  courseHasLesson,
+  getTargetLangsFor,
+  SPANISH_GLOSS_TOOLS,
+  SPANISH_GLOSS_USER_LANG,
+} from '../lib/courses';
+import { LEVELS } from '../data/levels';
 
 interface Breadcrumb {
   name: string;
@@ -48,7 +55,44 @@ const {
 
 const siteURL = Astro.site!.origin;
 
-const alternates = ACTIVE_USER_LANGUAGES.map((lang) => ({
+// Un hreflang solo se declara si la página equivalente EXISTE de verdad.
+//
+// Antes esto era un `.map()` que concatenaba la ruta sin comprobar nada. No se
+// notaba mientras hubo un solo idioma activo, pero al activar el inglés
+// resultaron 645 de 1350 hreflang apuntando a un 404 — medido sobre el build,
+// no estimado. Dos motivos, los dos estructurales:
+//
+//   - es-de y en-de no comparten NI UN slug: `articulos-der-die-das` frente a
+//     `der-die-das-articles`.
+//   - en-de es el único curso inglés, así que las lecciones de es-en, es-fr,
+//     es-it y es-pt apuntaban a cursos que no existen.
+//
+// Y un hreflang roto no es un aviso menor: Google descarta el grupo entero.
+//
+// La misma comprobación ya vivía en LanguageSelector.astro, que es la versión
+// visible de esto mismo; se reutilizan sus helpers en vez de duplicar la
+// lógica. La diferencia está en qué hacer cuando no hay equivalente: el
+// selector cae a la página más cercana, porque para un enlace eso es mejor que
+// un 404. Para un hreflang NO — apuntar a una página distinta le dice a Google
+// que dos páginas distintas son la misma. Acá se omite y punto.
+const restSegments = restPath.split('/').filter(Boolean);
+const restFirst = restSegments[0] ?? '';
+const restIsSpanishOnly = SPANISH_GLOSS_TOOLS.includes(restFirst);
+const lessonLevel = LEVELS.some((l) => l.id === restFirst) ? restFirst : null;
+// `/a1/examen` no es una lección: el examen se genera para todo curso+nivel,
+// así que se trata como el nivel y no se busca su slug entre las lecciones.
+const lessonSlug =
+  lessonLevel && restSegments.length === 2 && restSegments[1] !== 'examen' ? restSegments[1] : null;
+
+function alternateExists(langId: string): boolean {
+  if (!targetLang) return true; // /<userLang>: el catálogo existe en todos
+  if (!getTargetLangsFor(langId).includes(targetLang as never)) return false;
+  if (restIsSpanishOnly && langId !== SPANISH_GLOSS_USER_LANG) return false;
+  if (lessonSlug) return courseHasLesson(langId, targetLang, lessonLevel!, lessonSlug);
+  return true;
+}
+
+const alternates = ACTIVE_USER_LANGUAGES.filter((lang) => alternateExists(lang.id)).map((lang) => ({
   hreflang: lang.bcp47,
   href: targetLang ? `${siteURL}/${lang.id}/${targetLang}${restPath}` : `${siteURL}/${lang.id}`,
 }));

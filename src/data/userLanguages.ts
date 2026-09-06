@@ -6,30 +6,26 @@
 // enlazan desde el sitio y entran al sitemap (ver el filtro en
 // astro.config.mjs, que se deriva de esta lista).
 //
-// Hoy solo `es` está activo. `de` llegó a estarlo, con sus 5 cursos `de-*`
+// Hoy están activos `es` y `en`. `de` llegó a estarlo, con sus 5 cursos `de-*`
 // (386 lecciones) y su diccionario, y se quitó entero; está en el historial de
 // git si algún día se quiere de vuelta.
 //
-// `en` está a medio camino, y conviene saber en qué mitad. YA tiene su
-// diccionario completo en src/i18n/dictionary.ts, así que el silo /en/ pinta
-// la interfaz en inglés de verdad — antes declaraba <html lang="en-US"> y
-// mostraba la cáscara en español, que es peor que no traducirla porque el
-// atributo de idioma mentía a buscadores y lectores de pantalla.
+// Activar un idioma es lo ÚLTIMO que se hace, no lo primero, y lo que costó
+// aquí no fue el diccionario sino el español que vive fuera de él. Al activar
+// `en` hubo que perseguirlo por cuatro sitios distintos: la prosa SEO de
+// src/data/tsa.ts, las descripciones de src/data/units.ts, los widgets
+// globales (los toggles del header y del menú «Más», que tenían los textos a
+// mano y sin userLang) y el bloque «Del blog», que enlazaba posts en español
+// desde el silo inglés porque el motor de enlaces emparejaba solo por
+// targetLang.
 //
-// Lo que falta para poder poner `active: true` NO es el diccionario, es el
-// español que vive fuera de él y que solo se ve al mirar una página /en/:
+// La forma de comprobarlo no es leer el código, es barrer el `dist/`: buscar
+// palabras funcionales del español en las páginas del idioma nuevo que entren
+// al sitemap. Mientras eso no dé cero, el flag se queda en false.
 //
-//   - src/data/tsa.ts — 735 líneas, 30 bloques de prosa SEO por curso y
-//     nivel. No se traduce: hay que ESCRIBIRLO en inglés.
-//   - src/data/units.ts — las descripciones de unidad de todos los cursos.
-//   - DailyGoal, StreakReminder, BackupReminder y DrillTutor: montados en
-//     todas las páginas y con los textos escritos a mano, sin userLang.
-//   - LanguageCard («lecciones»), src/pages/index.astro y
-//     src/pages/[userLang]/index.astro.
-//
-// Activarlo antes de eso publicaría 92 URLs mitad en inglés y mitad en
-// español, y encima indexadas. El orden correcto es siempre: primero que la
-// página esté entera en su idioma, después el flag.
+// Y otra que se paga cara: los hreflang. BaseSEO.astro tuvo que aprender a
+// comprobar que la página equivalente EXISTE antes de declararla; con dos
+// idiomas activos y sin eso salieron 645 apuntando a un 404.
 //
 // Y `es` tiene que seguir siendo el primero del array: varias páginas usan
 // ACTIVE_USER_LANGUAGES[0] como idioma por defecto.
@@ -46,7 +42,7 @@ export interface UserLanguageMeta {
 export const USER_LANGUAGES: UserLanguageMeta[] = [
   { id: 'es', name: 'Español', flag: '🇪🇸', bcp47: 'es-ES', active: true },
   { id: 'de', name: 'Deutsch', flag: '🇩🇪', bcp47: 'de-DE', active: false },
-  { id: 'en', name: 'English', flag: '🇬🇧', bcp47: 'en-US', active: false },
+  { id: 'en', name: 'English', flag: '🇬🇧', bcp47: 'en-US', active: true },
   { id: 'fr', name: 'Français', flag: '🇫🇷', bcp47: 'fr-FR', active: false },
   { id: 'it', name: 'Italiano', flag: '🇮🇹', bcp47: 'it-IT', active: false },
   { id: 'pt', name: 'Português', flag: '🇵🇹', bcp47: 'pt-PT', active: false },

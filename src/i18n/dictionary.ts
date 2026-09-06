@@ -2,11 +2,12 @@
 // [userLang]/[targetLang]/... — ver src/data/userLanguages.ts para la lista
 // de idiomas de interfaz.
 //
-// Hoy están poblados `es` y `en`. Ojo: tener diccionario NO es lo mismo que
-// estar activo. `en` tiene el suyo completo —así que el silo /en/ ya pinta la
-// interfaz en inglés— pero sigue con `active: false` porque queda español
-// escrito a mano fuera de este archivo (src/data/tsa.ts y src/data/units.ts).
-// Activarlo antes de terminar eso publicaría páginas mitad y mitad.
+// Hoy están poblados `es` y `en`, y los dos están activos. Ojo: tener
+// diccionario NO es lo mismo que estar activo, y traducir este archivo es solo
+// la mitad del trabajo. La otra mitad es el español escrito a mano FUERA de
+// acá — src/data/tsa.ts, src/data/units.ts y los widgets globales — que no se
+// ve leyendo el código, solo barriendo el `dist/`. Ver el comentario de
+// src/data/userLanguages.ts, que cuenta el orden correcto.
 //
 // Agregar un diccionario nuevo acá es el paso real de "traducir la interfaz",
 // y va SIEMPRE antes del flag — ver src/i18n/index.ts para el fallback.
@@ -170,6 +171,8 @@ export interface Dictionary {
     unidad: string;
     /** Antesala de los enlaces del bloque TSA (ver src/data/tsa.ts). */
     seguiCon: string;
+    /** Título del bloque de RelatedLinks en la portada del curso. */
+    delBlog: string;
     /** CTA de la tarjeta de idioma de las portadas. */
     verNiveles: string;
     // El selector de nivel de inicio: quien ya sabe algo del idioma no
@@ -223,6 +226,15 @@ export interface Dictionary {
     incorrecto: string;
     respuestaCorrecta: string;
     resultado: string;
+    /** Etiqueta del campo de respuesta y botón de corregir, en fill-blank/write. */
+    tuRespuesta: string;
+    comprobar: string;
+    /** Botón de rehacer la práctica entera al llegar al resumen final. */
+    repetir: string;
+    /** Enunciado de un ítem `write` con `spokenOnly`: solo se oye, no se lee. */
+    escuchaYEscribe: string;
+    /** Botón del modo shadowing: confirma que ya repetiste en voz alta. */
+    yaLoDije: string;
   };
   exam: {
     titulo: string;
@@ -433,6 +445,26 @@ export interface Dictionary {
     copia: { texto: string; cta: string };
     /** Avisos del bucle de refuerzo, escritos sobre el ítem fallado. */
     refuerzo: { pausado: string; otraVez: string };
+    /** Botón de modo shadowing: está en el header y en el menú «Más». */
+    shadowing: { aria: string; etiqueta: string };
+    /** Selector de idioma de INTERFAZ del header (no el de idioma a aprender). */
+    selectorIdioma: { aria: string; proximamente: string };
+    /** Botón de tema claro/oscuro. */
+    tema: { aria: string; aClaro: string; aOscuro: string };
+    /** Botón de sonido. Los dos textos los reescribe el cliente al alternar. */
+    sonido: { silenciar: string; activar: string };
+    /**
+     * Botón de instalar la PWA. `iosPasos` y `otrosPasos` son el texto de
+     * respaldo para navegadores sin `beforeinstallprompt`; los escribe el
+     * cliente, así que viajan por `[data-install-strings]`.
+     */
+    instalar: {
+      aria: string;
+      etiqueta: string;
+      comoInstalar: string;
+      iosPasos: string;
+      otrosPasos: string;
+    };
   };
 }
 
@@ -608,6 +640,7 @@ export const es: Dictionary = {
     lecciones: 'lecciones',
     unidad: 'Unidad',
     seguiCon: 'Seguí con:',
+    delBlog: 'Del blog',
     verNiveles: 'Ver niveles →',
     inicio: {
       titulo: '¿Ya sabés algo?',
@@ -653,6 +686,11 @@ export const es: Dictionary = {
     incorrecto: '❌ No del todo.',
     respuestaCorrecta: 'Correcto:',
     resultado: 'Acertaste',
+    tuRespuesta: 'Tu respuesta',
+    comprobar: 'Comprobar',
+    repetir: 'Repetir',
+    escuchaYEscribe: '🔊 Escucha y escribe lo que oís',
+    yaLoDije: '🎤 Ya lo dije en voz alta',
   },
   exam: {
     titulo: 'Examen',
@@ -892,6 +930,25 @@ export const es: Dictionary = {
         'Este tema se te está resistiendo hoy. Seguimos con la lección y te lo guardo para «Practicar ahora».',
       otraVez: 'Vamos otra vez con la misma estructura, en otra frase.',
     },
+    shadowing: {
+      aria: 'Modo shadowing: repetir en voz alta antes de seguir',
+      etiqueta: 'Modo shadowing (repetir en voz alta)',
+    },
+    selectorIdioma: { aria: 'Cambiar idioma de la interfaz', proximamente: 'Próximamente' },
+    tema: {
+      aria: 'Cambiar entre modo oscuro y modo claro',
+      aClaro: ' Cambiar a modo claro',
+      aOscuro: ' Cambiar a modo oscuro',
+    },
+    sonido: { silenciar: 'Silenciar sonidos', activar: 'Activar sonidos' },
+    instalar: {
+      aria: 'Instalar PolyLingua como aplicación',
+      etiqueta: '📲 Instalar app',
+      comoInstalar: '❓ Cómo instalar',
+      iosPasos: 'Tocá Compartir (□↑) y elegí "Agregar a pantalla de inicio".',
+      otrosPasos:
+        'Tocá el menú (⋮) de tu navegador y elegí "Agregar a pantalla de inicio" o "Instalar aplicación".',
+    },
   },
 };
 
@@ -1125,6 +1182,7 @@ export const en: Dictionary = {
     lecciones: 'lessons',
     unidad: 'Unit',
     seguiCon: 'Carry on with:',
+    delBlog: 'From the blog',
     verNiveles: 'See levels →',
     inicio: {
       titulo: 'Already know some?',
@@ -1170,6 +1228,11 @@ export const en: Dictionary = {
     incorrecto: '❌ Not quite.',
     respuestaCorrecta: 'Correct:',
     resultado: 'You got',
+    tuRespuesta: 'Your answer',
+    comprobar: 'Check',
+    repetir: 'Repeat',
+    escuchaYEscribe: '🔊 Listen and write what you hear',
+    yaLoDije: '🎤 I said it out loud',
   },
   exam: {
     titulo: 'Test',
@@ -1408,6 +1471,24 @@ export const en: Dictionary = {
       pausado:
         'This topic is fighting back today. We will carry on with the lesson and save it for "Practise now".',
       otraVez: 'Same structure once more, in a different sentence.',
+    },
+    shadowing: {
+      aria: 'Shadowing mode: say it out loud before moving on',
+      etiqueta: 'Shadowing mode (say it out loud)',
+    },
+    selectorIdioma: { aria: 'Change interface language', proximamente: 'Coming soon' },
+    tema: {
+      aria: 'Switch between dark and light mode',
+      aClaro: ' Switch to light mode',
+      aOscuro: ' Switch to dark mode',
+    },
+    sonido: { silenciar: 'Mute sounds', activar: 'Unmute sounds' },
+    instalar: {
+      aria: 'Install PolyLingua as an app',
+      etiqueta: '📲 Install app',
+      comoInstalar: '❓ How to install',
+      iosPasos: 'Tap Share (□↑) and choose "Add to Home Screen".',
+      otrosPasos: 'Tap your browser menu (⋮) and choose "Add to Home Screen" or "Install app".',
     },
   },
 };

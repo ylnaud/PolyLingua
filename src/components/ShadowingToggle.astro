@@ -1,5 +1,7 @@
 ---
 import IconToggle from './IconToggle.astro';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
 
 interface Props {
   // 'icon' es el botón circular del header (desktop/landscape); 'sheet' es la
@@ -8,18 +10,18 @@ interface Props {
   // así que en cualquier página con las dos instancias montadas (header +
   // sheet) se sincronizan en simultáneo.
   variant?: 'icon' | 'sheet';
+  // Lo pasan Header y BottomNav, que ya lo reciben del layout. Sin esto los
+  // dos textos salían en español en TODAS las páginas, también en el silo /en/.
+  userLang?: string;
 }
 
-const { variant = 'icon' } = Astro.props;
+const { variant = 'icon', userLang = ACTIVE_USER_LANGUAGES[0].id } = Astro.props;
+const t = getDictionary(userLang as never).widgets.shadowing;
 ---
 
-<IconToggle
-  toggleClass="shadowing-toggle"
-  variant={variant}
-  ariaLabel="Modo shadowing: repetir en voz alta antes de seguir"
->
+<IconToggle toggleClass="shadowing-toggle" variant={variant} ariaLabel={t.aria}>
   <span class="icon" aria-hidden="true">🎤</span>
-  <span class="sheet-only">Modo shadowing (repetir en voz alta)</span>
+  <span class="sheet-only">{t.etiqueta}</span>
 </IconToggle>
 
 <style>

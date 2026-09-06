@@ -1,5 +1,7 @@
 ---
 import IconToggle from './IconToggle.astro';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
 
 interface Props {
   // 'icon' es el botón circular del header (desktop/landscape); 'sheet' es la
@@ -8,21 +10,18 @@ interface Props {
   // que en cualquier página con las dos instancias montadas (header + sheet)
   // se sincronizan en simultáneo.
   variant?: 'icon' | 'sheet';
+  // Lo pasan Header y BottomNav; sin esto los textos salían siempre en español.
+  userLang?: string;
 }
 
-const { variant = 'icon' } = Astro.props;
+const { variant = 'icon', userLang = ACTIVE_USER_LANGUAGES[0].id } = Astro.props;
+const t = getDictionary(userLang as never).widgets.tema;
 ---
 
-<IconToggle
-  toggleClass="theme-toggle"
-  variant={variant}
-  ariaLabel="Cambiar entre modo oscuro y modo claro"
->
-  <span class="icon icon-sun" aria-hidden="true"
-    >☀️<span class="sheet-only"> Cambiar a modo claro</span></span
-  >
+<IconToggle toggleClass="theme-toggle" variant={variant} ariaLabel={t.aria}>
+  <span class="icon icon-sun" aria-hidden="true">☀️<span class="sheet-only">{t.aClaro}</span></span>
   <span class="icon icon-moon" aria-hidden="true"
-    >🌙<span class="sheet-only"> Cambiar a modo oscuro</span></span
+    >🌙<span class="sheet-only">{t.aOscuro}</span></span
   >
 </IconToggle>
 

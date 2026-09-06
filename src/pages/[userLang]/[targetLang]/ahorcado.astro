@@ -46,8 +46,8 @@ const vocabPool = Array.from(
   <section class="container hangman-body">
     <div class="card empty-state" data-hangman-empty hidden>
       <p class="empty-emoji">📭</p>
-      <h2>Todavía no hay vocabulario</h2>
-      <p>Completa alguna lección de {languageMeta?.name} primero para desbloquear el ahorcado.</p>
+      <h2>{tt.vacioTitulo}</h2>
+      <p>{tt.vacioDesc.replace('{lang}', langName)}</p>
       <a class="btn btn-primary" href={`/${userLang}/${lang}`}>{dict.tools.comun.verLecciones}</a>
     </div>
 

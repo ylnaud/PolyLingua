@@ -10,6 +10,9 @@ export const getStaticPaths = getCourseStaticPaths;
 const { userLang, targetLang: lang } = Astro.params;
 const dict = getDictionary(userLang as never);
 const tt = dict.tools.vocabulario;
+// Mismo patrón que ahorcado.astro: el nombre del idioma sale del diccionario,
+// que es de donde lo espera el marcador {lang} de estas cadenas.
+const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
 // El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
 // un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
 // una sola versión (en español), por eso sale del diccionario.
@@ -40,8 +43,8 @@ const vocabManifest = Object.fromEntries(
   <section class="container vocab-body">
     <div class="card empty-state" data-empty-state hidden>
       <p class="empty-emoji">✏️</p>
-      <h2>Todavía no aprendiste vocabulario en {languageMeta?.name}</h2>
-      <p>Completa una lección para que sus palabras nuevas empiecen a aparecer acá.</p>
+      <h2>{tt.vacioTitulo.replace('{lang}', langName)}</h2>
+      <p>{tt.vacioDesc}</p>
       <a class="btn btn-primary" href={`/${userLang}/${lang}`}>{dict.tools.comun.verLecciones}</a>
     </div>
 

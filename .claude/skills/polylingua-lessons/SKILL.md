@@ -5,16 +5,51 @@ description: Use this skill whenever working in the PolyLingua repo (Astro app i
 
 # PolyLingua lesson content
 
-PolyLingua is a 5-language learning site (alemán, inglés, francés, italiano, portugués
-— each with A1 to C2, 8 lessons per level, 240 lessons total). Every lesson is one
-Markdown file with structured frontmatter that Astro's Content Layer validates against
-a Zod schema at build time. That validation is your safety net — a broken lesson fails
-`npx astro build` loudly instead of shipping a silently-corrupt page.
+PolyLingua teaches five languages (alemán, inglés, francés, italiano, portugués) from
+A1 to C2. Every lesson is one Markdown file with structured frontmatter that Astro's
+Content Layer validates against a Zod schema at build time. That validation is your
+safety net — a broken lesson fails `npx astro build` loudly instead of shipping a
+silently-corrupt page.
+
+## Two language axes — get this wrong and the build fails on a confusing error
+
+A lesson has **two** languages, not one, and confusing them is the most expensive
+mistake you can make here:
+
+- **`userLang`** — the language the explanation is written in. Only `es` is active.
+- **`targetLang`** — the language being taught. Six exist: `de en es fr it pt`.
+
+The frontmatter field `language` is **always the targetLang**. The userLang is never
+in the frontmatter — it is inferred from the folder name.
 
 ## Where things live
 
-- Content: `src/content/lessons/{lang}/{level}/{slug}.md` — `lang` ∈ `de en fr it pt`,
-  `level` ∈ `a1 a2 b1 b2 c1 c2`.
+- Content: **`src/content/lessons/<userLang>-<targetLang>/<level>/<slug>.md`**, e.g.
+  `src/content/lessons/es-de/a1/articulos-der-die-das.md`. The six courses that exist
+  are `es-de` (91 lessons), `en-de` (84, hidden — `en` is inactive), `es-fr` (78),
+  `es-en` (77), `es-it` (77), `es-pt` (77). 484 lessons total.
+
+  There is **no** `src/content/lessons/de/…` folder. Writing one there fails the build
+  — but with an error that never names your file:
+
+  ```
+  generating static routes
+  Missing parameter: targetLang
+    Location: node_modules/astro/dist/core/routing/generator.js:18:13
+  ```
+
+  (Verified by actually creating one, not inferred.) The glob picks the file up,
+  `parseLessonId('de/a1/x')` returns `targetLang: undefined`, and Astro's route
+  generator rejects the undefined param. If you ever see `Missing parameter: targetLang`
+  and nothing you touched looks related, check for a lesson in a single-language
+  folder: `ls src/content/lessons/` should show only the six `xx-yy` courses.
+
+- Which courses exist is derived from those folder names by `src/lib/courses.ts` —
+  never hard-code a course list. Use `getCourseStaticPaths`, `getTargetLangsFor` and
+  `getCourseLessons`. Filtering only by the `language` field is a known bug source: it
+  matches both `es-de` and `en-de`.
+- `src/lib/lessonPath.ts` (`parseLessonId`) is the single place that knows the id
+  format. Don't re-split ids by hand.
 - Schema (source of truth, always read this before writing frontmatter — it can
   evolve): `src/content.config.ts`.
 - Renderer for quiz + exercises: `src/components/Practice.astro`. This replaced an
@@ -23,14 +58,29 @@ a Zod schema at build time. That validation is your safety net — a broken less
   into one deck with a shared progress bar and score.
 - Full worked example with every field populated, including all 4 exercise types:
   `references/example-lesson.md` in this skill (mirrors the real
-  `src/content/lessons/de/a1/articulos-der-die-das.md`).
+  `src/content/lessons/es-de/a1/articulos-der-die-das.md`).
 
 ## Frontmatter shape
 
-Every lesson needs: `language`, `level`, `title`, `description`, `order` (position
-within its level), `grammarTopic`, `funFact`, `minutes`, `quiz` (array), `exercises`
-(array). `funFact` isn't trivia — it's the "💡 Truco para no aburrirte" callout, so tie
-it to the actual grammar point.
+Required by Zod: `language` (the **targetLang**), `level`, `title`, `description`,
+`order` (position within its level), `grammarTopic`, `funFact`. `funFact` isn't trivia
+— it's the "💡 Truco para no aburrirte" callout, so tie it to the actual grammar point.
+
+Two more that Zod treats as optional but you should always fill in:
+
+- **`unit`** — optional to the schema, **not** to the level page. Every level today has
+  units defined in `src/data/units.ts` (keyed `<targetLang>-<level>`), and the page
+  groups lessons by unit. A lesson with no `unit`, or a `unit` that isn't in that list,
+  belongs to no group. Fifteen lessons were once invisible on their own level page
+  while still sitting in the sitemap. `tests/data-integrity.test.ts` now fails if one
+  appears. If the topic fits no existing unit, add a unit to `units.ts` — don't leave
+  the field empty.
+- **`skills`** — feeds the adaptive engine (`src/lib/engine/`, documented in
+  `docs/LEARNING_ENGINE.md`). Ids come from the catalogue in `src/data/skills.ts`
+  (`de.a1.wordorder.basic`). The relation is N:N. 400 of the 484 lessons are tagged;
+  the 84 in `en-de` are not. Tests fail if you reference a skill that doesn't exist, or
+  leave a skill with no lesson. Every skill in category `grammar` or `word_order` also
+  needs a repair template in `src/lib/engine/exerciseGenerator.ts`.
 
 `quiz` items: `question`, `options` (≥2), `answerIndex`, `explanation`.
 
@@ -92,12 +142,12 @@ before it reaches a PR.
   of testing something new.
 - `hint` fields should explain the _rule_, not just restate the answer (see the
   example: "Terminación -ig: masculina con 98% de certeza" rather than "es 'der'").
-- Match `order` in this project's naming style for lesson counts: at levels A1-A2, aim
-  for grammar/vocab fundamentals; B1-B2 for connectors and compound tenses; C1 for
-  advanced/register-specific grammar and vocabulary (business, academic); C2 for
-  cultural nuance (idioms, irony, regional variants, rhetoric, literary style) — this
-  mirrors the existing 8-lessons-per-level structure across all 5 languages, so a new
-  lesson should slot into whichever tier fits its difficulty.
+- Pitch the topic to its level: A1-A2 grammar/vocab fundamentals; B1-B2 connectors and
+  compound tenses; C1 advanced or register-specific grammar and vocabulary (business,
+  academic); C2 cultural nuance (idioms, irony, regional variants, rhetoric, literary
+  style). Levels do **not** hold a fixed number of lessons — across the six courses it
+  runs from 135 at A1 down to 56 at B2 — so slot a new lesson wherever its difficulty
+  fits rather than padding a level to a target count.
 
 ## Global CSS gotcha worth knowing
 
@@ -118,12 +168,22 @@ it rather than improvising a different one:
    they want — this repo has used a single long-lived feature branch reset from `main`
    between rounds).
 2. Write/edit the lesson file(s).
-3. `npx astro build` — must complete with no errors before moving on. Check the final
-   page count line to sanity-check nothing regressed.
-4. `git add` the specific files (not `-A` blindly), commit with a descriptive Spanish
+3. Run all three checks that actually exist in `package.json` — there is no `lint`
+   script, don't invent one:
+   - `npm run check` — **read the `- N errors` line specifically.** The output ends
+     with ~125 hints, so `| tail -3` hides the error count and a build with 6 real
+     errors looks green. This has happened.
+   - `npm test` — the suite is the safety net for units, skills and SEO invariants.
+   - `npm run build` — the only thing that runs the Zod schema. Check the page count.
+4. Format **only the files you touched**, never the whole repo:
+   `git diff --name-only | xargs npx prettier --write`. Running `prettier --write .`
+   reformats dozens of unrelated lessons and buries your real change in the diff — it
+   has polluted commits here twice. If a lesson shows up in `git status` that you never
+   meant to edit, `git restore` it before committing.
+5. `git add` the specific files (not `-A` blindly), commit with a descriptive Spanish
    message summarizing what changed and why (see recent `git log` for tone/format).
-5. `git push -u origin <branch>`.
-6. Open a PR with `mcp__github__create_pull_request` (base `main`), then merge with
+6. `git push -u origin <branch>`.
+7. Open a PR with `mcp__github__create_pull_request` (base `main`), then merge with
    `mcp__github__merge_pull_request` using `merge_method: "squash"`. Include a short
    test-plan checklist in the PR body (build passed, counts verified) — that's the
    established PR body style here.

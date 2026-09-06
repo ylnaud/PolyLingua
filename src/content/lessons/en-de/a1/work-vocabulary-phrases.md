@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Work Vocabulary: Job, Office, and Colleagues | PolyLingua'
+title: 'German Work Vocabulary: Job, Office, and Colleagues'
 description: 'Essential German work vocabulary and phrases — job titles, office words, and how to answer "Was machst du beruflich?" (What do you do for a living?).'
 order: 16
 unit: 4
 grammarTopic: 'Work and job vocabulary with sentence patterns'
-funFact: "German answers \"what is your job\" without an article: Ich bin Lehrer, not Ich bin ein Lehrer. This drops-the-article rule applies to professions, nationalities, and religions after sein — a small pattern that trips up a lot of English speakers who instinctively add \"a\"."
+funFact: 'German answers "what is your job" without an article: Ich bin Lehrer, not Ich bin ein Lehrer. This drops-the-article rule applies to professions, nationalities, and religions after sein — a small pattern that trips up a lot of English speakers who instinctively add "a".'
 minutes: 8
 quiz:
   - question: 'What does "der Beruf" mean?'
@@ -28,13 +28,14 @@ quiz:
   - question: 'How would you ask someone "What do you do for a living?" in German?'
     options: ['Wo arbeitest du?', 'Was machst du beruflich?', 'Wie viel verdienst du?']
     answerIndex: 1
-    explanation: "\"Was machst du beruflich?\" is the standard way to ask about a person's profession — a polite, common question."
+    explanation: '"Was machst du beruflich?" is the standard way to ask about a person''s profession — a polite, common question.'
   - question: 'What does "der Chef" (or "die Chefin" for a woman) mean?'
     options: ['the boss / manager', 'the coworker', 'the customer']
     answerIndex: 0
     explanation: '"der Chef / die Chefin" means boss or manager — the person in charge at work.'
   - question: 'Which sentence correctly means "I work as an engineer"?'
-    options: ['Ich arbeite als Ingenieur.', 'Ich bin ein Ingenieur arbeiten.', 'Ich habe Ingenieur.']
+    options:
+      ['Ich arbeite als Ingenieur.', 'Ich bin ein Ingenieur arbeiten.', 'Ich habe Ingenieur.']
     answerIndex: 0
     explanation: '"Ich arbeite als [Beruf]" (I work as a [job]) is a very common alternative pattern to "Ich bin [Beruf]", and both drop the article after "als" too.'
 exercises:
@@ -124,7 +125,7 @@ Ich bin Ärztin.         NOT   Ich bin eine Ärztin.
 Ich arbeite als Koch.   NOT   Ich arbeite als ein Koch.
 ```
 
-English always needs "a" here ("I am *a* teacher"), but German treats the profession
+English always needs "a" here ("I am _a_ teacher"), but German treats the profession
 almost like an adjective describing you, not a countable noun — so no article appears.
 
 ## Male and female job titles
@@ -132,25 +133,25 @@ almost like an adjective describing you, not a countable noun — so no article 
 Most German job titles have a masculine form and a feminine form, usually built by
 adding **-in** to the masculine version:
 
-| Masculine | Feminine | English |
-| ----------- | ---------- | -------- |
-| der Lehrer | die Lehrerin | teacher |
-| der Arzt | die Ärztin | doctor |
-| der Ingenieur | die Ingenieurin | engineer |
-| der Kollege | die Kollegin | colleague |
-| der Chef | die Chefin | boss |
+| Masculine     | Feminine        | English   |
+| ------------- | --------------- | --------- |
+| der Lehrer    | die Lehrerin    | teacher   |
+| der Arzt      | die Ärztin      | doctor    |
+| der Ingenieur | die Ingenieurin | engineer  |
+| der Kollege   | die Kollegin    | colleague |
+| der Chef      | die Chefin      | boss      |
 
 ## Core workplace vocabulary
 
-| German | English |
-| -------- | ------- |
-| der Beruf | profession / job |
-| die Arbeit | work |
-| das Büro | office |
-| arbeiten | to work |
-| der Kollege / die Kollegin | colleague |
-| der Chef / die Chefin | boss |
-| der Arbeitsplatz | workplace |
+| German                     | English          |
+| -------------------------- | ---------------- |
+| der Beruf                  | profession / job |
+| die Arbeit                 | work             |
+| das Büro                   | office           |
+| arbeiten                   | to work          |
+| der Kollege / die Kollegin | colleague        |
+| der Chef / die Chefin      | boss             |
+| der Arbeitsplatz           | workplace        |
 
 ## Sample sentences
 

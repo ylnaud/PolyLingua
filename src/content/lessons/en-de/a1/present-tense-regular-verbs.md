@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Present Tense: Conjugating Regular Verbs | PolyLingua'
+title: 'German Present Tense: Conjugating Regular Verbs'
 description: 'Learn the six present-tense endings that every regular German verb follows, with machen, spielen, and lernen as your model verbs.'
 order: 4
 unit: 2
@@ -10,11 +10,8 @@ funFact: "Once you learn one regular verb's six endings, you have learned them f
 minutes: 9
 quiz:
   - question: 'What are the six present-tense endings for a regular German verb like "machen" (to do/make)?'
-    options: [
-        '-e, -st, -t, -en, -t, -en',
-        '-o, -as, -a, -amos, -áis, -an',
-        '-s is added to every form',
-      ]
+    options:
+      ['-e, -st, -t, -en, -t, -en', '-o, -as, -a, -amos, -áis, -an', '-s is added to every form']
     answerIndex: 0
     explanation: 'Regular ("weak") German verbs follow the pattern ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en.'
   - question: 'What is the "ich" (I) form of "machen" (to do)?'
@@ -38,7 +35,8 @@ quiz:
     answerIndex: 0
     explanation: 'The third-person singular takes -t: kauf + t = kauft. Er kauft Brot (He buys bread).'
   - question: 'Why do German verb stems ending in -t or -d (like "arbeiten," to work) insert an extra -e- before -st and -t endings?'
-    options: [
+    options:
+      [
         'It is a random exception with no reason',
         'To make the ending pronounceable — "arbeitst" without the extra -e- would be hard to say, so it becomes "arbeitest"',
         'This only happens in formal writing, never in speech',
@@ -118,14 +116,14 @@ Take a regular ("weak") verb like **machen** (to do/make). Remove the -en infini
 ending to get the stem (mach-), then attach one of six endings depending on the
 subject:
 
-| Pronoun       | Ending | machen  | English            |
-| ------------- | ------ | ------- | -------------------- |
-| ich           | -e     | mache   | I do                |
-| du            | -st    | machst  | you do (informal)  |
-| er / sie / es | -t     | macht   | he/she/it does     |
-| wir           | -en    | machen  | we do               |
-| ihr           | -t     | macht   | you all do          |
-| sie / Sie     | -en    | machen  | they do / you (formal) do |
+| Pronoun       | Ending | machen | English                   |
+| ------------- | ------ | ------ | ------------------------- |
+| ich           | -e     | mache  | I do                      |
+| du            | -st    | machst | you do (informal)         |
+| er / sie / es | -t     | macht  | he/she/it does            |
+| wir           | -en    | machen | we do                     |
+| ihr           | -t     | macht  | you all do                |
+| sie / Sie     | -en    | machen | they do / you (formal) do |
 
 Notice that wir and sie/Sie both end in -en and look exactly like the plain infinitive
 — that pattern repeats across every regular verb in German.
@@ -135,12 +133,12 @@ Notice that wir and sie/Sie both end in -en and look exactly like the plain infi
 Because the endings attach to the stem the same way every time, you can plug in any
 regular verb stem and get correct conjugations immediately:
 
-| Verb              | ich    | du       | er/sie/es | wir     |
-| ------------------ | ------ | -------- | --------- | ------- |
-| spielen (to play)  | spiele | spielst  | spielt    | spielen |
-| lernen (to learn)  | lerne  | lernst   | lernt     | lernen  |
-| kaufen (to buy)    | kaufe  | kaufst   | kauft     | kaufen  |
-| wohnen (to live)   | wohne  | wohnst   | wohnt     | wohnen  |
+| Verb              | ich    | du      | er/sie/es | wir     |
+| ----------------- | ------ | ------- | --------- | ------- |
+| spielen (to play) | spiele | spielst | spielt    | spielen |
+| lernen (to learn) | lerne  | lernst  | lernt     | lernen  |
+| kaufen (to buy)   | kaufe  | kaufst  | kauft     | kaufen  |
+| wohnen (to live)  | wohne  | wohnst  | wohnt     | wohnen  |
 
 ## A small pronunciation fix: verbs ending in -t or -d
 
@@ -148,12 +146,12 @@ A handful of common verbs, like **arbeiten** (to work), have stems ending in -t 
 Adding -st or -t directly would create an unpronounceable cluster ("arbeitst"), so
 German inserts an extra **-e-** before those two endings:
 
-| Pronoun | arbeiten     |
-| ------- | ------------ |
-| ich     | arbeite      |
-| du      | arbeit**e**st|
-| er/sie/es | arbeit**e**t |
-| wir     | arbeiten     |
+| Pronoun   | arbeiten      |
+| --------- | ------------- |
+| ich       | arbeite       |
+| du        | arbeit**e**st |
+| er/sie/es | arbeit**e**t  |
+| wir       | arbeiten      |
 
 This is not a random exception — it exists purely to keep the word sayable. You will
 run into the same -e- insertion with other -t/-d stem verbs later on.

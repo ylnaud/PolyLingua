@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Greetings: Hallo, Guten Tag, and Introducing Yourself | PolyLingua'
+title: 'German Greetings: Hallo, Guten Tag, and Introducing Yourself'
 description: 'Learn the essential German greetings for every time of day, how to say goodbye, and how to introduce yourself with Ich heiße and Ich komme aus.'
 order: 1
 unit: 1
 grammarTopic: 'Greetings and self-introduction (Begrüßung / Sich vorstellen)'
-funFact: "German greetings are tied to the clock: Guten Morgen only works before noon, Guten Tag covers the afternoon, and Guten Abend takes over in the evening. Picture a clock face with three zones and you will never reach for the wrong one."
+funFact: 'German greetings are tied to the clock: Guten Morgen only works before noon, Guten Tag covers the afternoon, and Guten Abend takes over in the evening. Picture a clock face with three zones and you will never reach for the wrong one.'
 minutes: 7
 quiz:
   - question: 'Which greeting would you use to say hello to a stranger at 10 AM?'
@@ -26,11 +26,7 @@ quiz:
     answerIndex: 1
     explanation: '"Wie heißt du?" literally asks "How are you called?" — the standard informal way to ask someone their name.'
   - question: 'How would you answer "Ich heiße Anna" if someone asked for your name?'
-    options: [
-        'It means "I am from Anna"',
-        'It means "My name is Anna"',
-        'It means "I like Anna"',
-      ]
+    options: ['It means "I am from Anna"', 'It means "My name is Anna"', 'It means "I like Anna"']
     answerIndex: 1
     explanation: '"Ich heiße..." literally means "I am called..." — the standard way to state your name in German.'
   - question: 'Which question asks "Where are you from?"'
@@ -119,11 +115,11 @@ English, but they follow a simple, logical pattern once you see it laid out.
 German greetings are tied to the clock more strictly than English "good morning" is.
 Picture the day split into three zones:
 
-| German         | English         | When to use it              |
-| -------------- | --------------- | ---------------------------- |
-| Guten Morgen   | Good morning    | Waking up until around noon  |
-| Guten Tag      | Good day        | Noon until early evening     |
-| Guten Abend    | Good evening    | From early evening onward    |
+| German       | English      | When to use it              |
+| ------------ | ------------ | --------------------------- |
+| Guten Morgen | Good morning | Waking up until around noon |
+| Guten Tag    | Good day     | Noon until early evening    |
+| Guten Abend  | Good evening | From early evening onward   |
 
 All three are polite and safe to use with strangers, shopkeepers, or coworkers. If you
 are unsure which zone you are in, "Guten Tag" is the safest all-purpose choice during

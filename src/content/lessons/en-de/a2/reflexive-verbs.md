@@ -1,8 +1,8 @@
 ---
 language: 'de'
 level: 'a2'
-title: 'German Reflexive Verbs: sich freuen, sich waschen, sich anziehen | PolyLingua'
-description: "Master German reflexive verbs with sich — learn the reflexive pronouns for every person, the rare dative exceptions, and common verbs like sich freuen."
+title: 'German Reflexive Verbs: sich freuen, sich waschen, sich anziehen'
+description: 'Master German reflexive verbs with sich — learn the reflexive pronouns for every person, the rare dative exceptions, and common verbs like sich freuen.'
 order: 5
 unit: 2
 grammarTopic: 'Reflexive verbs (sich + verb)'
@@ -33,7 +33,12 @@ quiz:
     answerIndex: 1
     explanation: "'sich interessieren für' + accusative is the standard way to say you are interested in something: Ich interessiere mich für Musik."
   - question: 'Complete: "Ich putze ___ die Zähne." (I brush my teeth.) Why is this pronoun different from the usual accusative reflexive?'
-    options: ['mich, because it is always mich', 'mir, because "die Zähne" is already the direct object, so the pronoun becomes dative', 'dir, because it refers to someone else']
+    options:
+      [
+        'mich, because it is always mich',
+        'mir, because "die Zähne" is already the direct object, so the pronoun becomes dative',
+        'dir, because it refers to someone else',
+      ]
     answerIndex: 1
     explanation: 'When the sentence already has a direct object in the accusative (die Zähne), the reflexive pronoun shifts to the dative: mir, dir, sich, uns, euch, sich.'
   - question: 'What is the difference in meaning between "sich freuen auf" and "sich freuen über"?'
@@ -115,15 +120,15 @@ who the subject is.
 Good news: you already know most of these from the accusative pronouns you learned
 earlier. Only one form is new.
 
-| Subject     | Reflexive pronoun | Notes                     |
-| ----------- | ------------------ | -------------------------- |
-| ich         | mich                | same as accusative "me"    |
-| du          | dich                | same as accusative "you"   |
-| er/sie/es   | **sich**            | new form — not "ihn/sie/es" |
-| wir         | uns                 | same as accusative "us"    |
-| ihr         | euch                | same as accusative "you"   |
-| sie (they)  | **sich**            | same word as er/sie/es      |
-| Sie (formal)| **sich**            | same word again             |
+| Subject      | Reflexive pronoun | Notes                       |
+| ------------ | ----------------- | --------------------------- |
+| ich          | mich              | same as accusative "me"     |
+| du           | dich              | same as accusative "you"    |
+| er/sie/es    | **sich**          | new form — not "ihn/sie/es" |
+| wir          | uns               | same as accusative "us"     |
+| ihr          | euch              | same as accusative "you"    |
+| sie (they)   | **sich**          | same word as er/sie/es      |
+| Sie (formal) | **sich**          | same word again             |
 
 Only **sich** is genuinely new — and it single-handedly covers third person singular,
 third person plural, and the formal "you."

@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Shopping Vocabulary and Key Phrases | PolyLingua'
+title: 'German Shopping Vocabulary and Key Phrases'
 description: 'Learn German shopping vocabulary and phrases — asking prices, paying, and navigating a store with "Wie viel kostet das?" and other essentials.'
 order: 17
 unit: 4
 grammarTopic: 'Shopping vocabulary and useful phrases'
-funFact: "The single most useful shopping phrase in German is Wie viel kostet das? (How much does that cost?) — learn that one sentence and you can point at almost anything in a store and get an answer, even before you know the word for the item itself."
+funFact: 'The single most useful shopping phrase in German is Wie viel kostet das? (How much does that cost?) — learn that one sentence and you can point at almost anything in a store and get an answer, even before you know the word for the item itself.'
 minutes: 8
 quiz:
   - question: 'How do you ask "How much does that cost?" in German?'
@@ -116,13 +116,13 @@ item. The reply will usually be a number followed by "Euro":
 
 ## Verbs you need at a store
 
-| German | English |
-| -------- | ------- |
-| einkaufen | to go shopping |
-| kaufen | to buy |
-| bezahlen | to pay |
-| kosten | to cost |
-| möchten | would like (polite "want") |
+| German    | English                    |
+| --------- | -------------------------- |
+| einkaufen | to go shopping             |
+| kaufen    | to buy                     |
+| bezahlen  | to pay                     |
+| kosten    | to cost                    |
+| möchten   | would like (polite "want") |
 
 A very common, polite sentence combines möchte with kaufen at the end:
 
@@ -131,12 +131,12 @@ A very common, polite sentence combines möchte with kaufen at the end:
 
 ## Describing price
 
-| German | English |
-| -------- | ------- |
-| teuer | expensive |
-| günstig | cheap / good value |
-| billig | cheap (can sound like "cheaply made") |
-| kostenlos | free of charge |
+| German    | English                               |
+| --------- | ------------------------------------- |
+| teuer     | expensive                             |
+| günstig   | cheap / good value                    |
+| billig    | cheap (can sound like "cheaply made") |
+| kostenlos | free of charge                        |
 
 Note the small difference between günstig and billig: günstig is a neutral, positive way
 to say something is a good deal, while billig can sometimes hint that something is low
@@ -144,13 +144,13 @@ quality — a distinction worth knowing even at a beginner level.
 
 ## Places and things
 
-| German | English |
-| -------- | ------- |
-| der Supermarkt | supermarket |
-| das Geschäft | store / shop |
-| die Kasse | cash register / checkout |
-| das Geld | money |
-| die Rechnung | the receipt / bill |
+| German         | English                  |
+| -------------- | ------------------------ |
+| der Supermarkt | supermarket              |
+| das Geschäft   | store / shop             |
+| die Kasse      | cash register / checkout |
+| das Geld       | money                    |
+| die Rechnung   | the receipt / bill       |
 
 ## Sample conversation at a shop
 

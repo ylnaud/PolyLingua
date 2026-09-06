@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'c2'
-title: 'German Irony and Register: Reading Between the Lines | PolyLingua'
+title: 'German Irony and Register: Reading Between the Lines'
 description: 'Learn to detect German irony, sarcasm and shifts in linguistic register (formal Sie vs casual du, deadpan understatement) that textbooks rarely teach.'
 order: 3
 unit: 1
@@ -12,24 +12,24 @@ quiz:
   - question: "A colleague's presentation crashes twice and someone deadpans, 'Na, das lief ja hervorragend.' What is actually being communicated?"
     options:
       - 'Genuine praise for a job well done'
-      - "The opposite of the words: it went badly, and the flat tone signals irony rather than a literal compliment"
+      - 'The opposite of the words: it went badly, and the flat tone signals irony rather than a literal compliment'
       - 'A request to repeat the presentation'
     answerIndex: 1
     explanation: "'That went excellently, huh' said flatly right after a visible failure is textbook German irony — the mismatch between words and reality, delivered without exaggerated tone, is the whole joke."
-  - question: "Why do English speakers often miss German irony even when their vocabulary is advanced?"
+  - question: 'Why do English speakers often miss German irony even when their vocabulary is advanced?'
     options:
       - 'German irony always uses different words than the literal meaning'
-      - "German irony frequently relies on deadpan delivery rather than obvious vocal exaggeration, so the cue is tone and context, not word choice"
+      - 'German irony frequently relies on deadpan delivery rather than obvious vocal exaggeration, so the cue is tone and context, not word choice'
       - 'German has no irony, so there is nothing to miss'
     answerIndex: 1
-    explanation: "Where some languages mark sarcasm with an exaggerated singsong tone, German irony often stays flat and matter-of-fact — the humor is in the contrast between calm delivery and absurd or negative reality."
+    explanation: 'Where some languages mark sarcasm with an exaggerated singsong tone, German irony often stays flat and matter-of-fact — the humor is in the contrast between calm delivery and absurd or negative reality.'
   - question: "Switching from 'Sie' to 'du' mid-conversation with a stranger, without being invited to, generally comes across as what?"
     options:
       - 'A neutral stylistic choice with no social meaning'
       - 'Overly familiar or even disrespectful, since the shift to du is normally offered by the older or higher-status person'
       - 'Always a sign of friendliness that is universally welcomed'
     answerIndex: 1
-    explanation: "Register in German carries real social weight. Du/Sie is not just grammar — using du uninvited can read as presumptuous, while sticking to Sie signals respect for boundaries until the other person offers the switch (das Du anbieten)."
+    explanation: 'Register in German carries real social weight. Du/Sie is not just grammar — using du uninvited can read as presumptuous, while sticking to Sie signals respect for boundaries until the other person offers the switch (das Du anbieten).'
   - question: "A German says, of a spectacularly delayed train, 'Ach, die Bahn ist ja mal wieder pünktlich.' What is happening linguistically?"
     options:
       - 'A literal compliment about German punctuality'
@@ -44,20 +44,20 @@ quiz:
       - 'It has no function in ironic speech'
     answerIndex: 1
     explanation: "'ja' marks something as self-evident or just noticed. Paired with an exaggeratedly positive adjective in a clearly negative situation, it amplifies the ironic 'well, obviously' tone rather than softening it."
-  - question: "In formal written German (an email to a professor, a business letter), what usually happens to irony and sarcasm?"
+  - question: 'In formal written German (an email to a professor, a business letter), what usually happens to irony and sarcasm?'
     options:
       - 'They become more common, since formal writing rewards cleverness'
-      - "They are used sparingly or avoided, since formal register in German values directness and clarity over playful ambiguity"
+      - 'They are used sparingly or avoided, since formal register in German values directness and clarity over playful ambiguity'
       - 'They are mandatory in any formal German text'
     answerIndex: 1
-    explanation: "Formal German register (Sie, subjunctive politeness forms, precise vocabulary) tends to favor straightforward communication. Irony thrives in informal spoken register, among friends or colleagues who share context — not in a letter to your professor."
-  - question: "What is the safest strategy for a learner trying to use irony in German for the first time?"
+    explanation: 'Formal German register (Sie, subjunctive politeness forms, precise vocabulary) tends to favor straightforward communication. Irony thrives in informal spoken register, among friends or colleagues who share context — not in a letter to your professor.'
+  - question: 'What is the safest strategy for a learner trying to use irony in German for the first time?'
     options:
       - 'Use it constantly to sound advanced, regardless of context'
-      - "Recognize it first through exposure to native speech, and only attempt it with people you know well, since misjudged irony can land as genuine rudeness"
+      - 'Recognize it first through exposure to native speech, and only attempt it with people you know well, since misjudged irony can land as genuine rudeness'
       - 'Avoid all emotional tone in German permanently'
     answerIndex: 1
-    explanation: "Irony depends on shared context and trust — a stranger or a formal setting may take an ironic remark literally, or as genuinely rude. Recognizing irony passively is a much lower-risk skill to build first than producing it."
+    explanation: 'Irony depends on shared context and trust — a stranger or a formal setting may take an ironic remark literally, or as genuinely rude. Recognizing irony passively is a much lower-risk skill to build first than producing it.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Der Zug hat 40 Minuten Verspätung. "Ach, die Bahn ist ___ mal wieder pünktlich."'
@@ -89,7 +89,7 @@ exercises:
       - left: 'formal letter or email register'
         right: 'irony is generally avoided'
   - type: 'write'
-    prompt: "In formal written German register, is irony generally more common or less common than in spoken German among friends?"
+    prompt: 'In formal written German register, is irony generally more common or less common than in spoken German among friends?'
     answer: 'less common'
     accepted:
       - 'less'
@@ -102,7 +102,7 @@ exercises:
     accepted:
       - 'Well, that went great'
       - 'That went really well'
-    hint: "Translate the literal words — the irony comes from context, not from different vocabulary."
+    hint: 'Translate the literal words — the irony comes from context, not from different vocabulary.'
   - type: 'order'
     sentence: 'Ach die Bahn ist ja mal wieder pünktlich'
     translation: 'Oh, the train is punctual again, as always (said ironically about a delayed train)'
@@ -152,15 +152,15 @@ stereotype being subverted.
 ## The particle "ja" as an irony amplifier
 
 Modal particle **"ja"** normally marks something as obvious or just-noticed. In an
-ironic sentence, stacking it next to an exaggeratedly positive word — *ja toll*,
-*ja hervorragend*, *ja super* — reinforces the "well, obviously" undertone that tips
+ironic sentence, stacking it next to an exaggeratedly positive word — _ja toll_,
+_ja hervorragend_, _ja super_ — reinforces the "well, obviously" undertone that tips
 a listener off that the speaker means the opposite. It's a small word doing real
 interpretive work.
 
 ## Register: the other half of the puzzle
 
-Irony is about *meaning the opposite*; register is about *how formal the delivery
-is* — and German marks that distinction more rigidly than English does, largely
+Irony is about _meaning the opposite_; register is about _how formal the delivery
+is_ — and German marks that distinction more rigidly than English does, largely
 through the **du/Sie** distinction. Using **du** with someone who hasn't offered it
 (**das Du anbieten**, traditionally initiated by the older or higher-status person,
 though this is loosening in casual and youth contexts) can land as presumptuous even
@@ -180,10 +180,10 @@ and meaning.
 
 ## A safe strategy for learners
 
-Build the *receptive* skill first: notice deadpan irony in German shows, podcasts,
+Build the _receptive_ skill first: notice deadpan irony in German shows, podcasts,
 and conversations before trying to produce it yourself. Irony misjudged is one of the
 easiest ways to accidentally sound rude or confusing in a foreign language, because
 it depends on trust and shared context that a stranger or a formal setting may not
-give you room for. Once you can reliably *recognize* "Na, das lief ja hervorragend"
+give you room for. Once you can reliably _recognize_ "Na, das lief ja hervorragend"
 as bitter commentary rather than praise, producing your own dry remarks becomes much
 lower-risk.

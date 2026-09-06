@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'Sein and Haben in Everyday German Sentences | PolyLingua'
+title: 'Sein and Haben in Everyday German Sentences'
 description: 'Put sein and haben to work in real conversations — introducing yourself, asking how someone is, and the fixed haben expressions German uses instead of "to be".'
 order: 15
 unit: 4
 grammarTopic: 'Sein and haben in everyday conversational sentences'
-funFact: "German uses haben, not sein, for feelings like hunger, thirst, and fear: Ich habe Hunger literally means \"I have hunger\", not \"I am hungry\". English speakers who translate word for word end up saying \"Ich bin hungrig\" — which is technically understandable, but Ich habe Hunger is what a native speaker actually says."
+funFact: 'German uses haben, not sein, for feelings like hunger, thirst, and fear: Ich habe Hunger literally means "I have hunger", not "I am hungry". English speakers who translate word for word end up saying "Ich bin hungrig" — which is technically understandable, but Ich habe Hunger is what a native speaker actually says.'
 minutes: 8
 quiz:
   - question: 'How do you say "I am a student" in German?'
@@ -38,7 +38,8 @@ quiz:
     answerIndex: 0
     explanation: '"To be right" is another haben expression in German: Sie haben Recht (literally "you have right"), not a form of sein.'
   - question: 'Why can you not always translate English "to be" sentences word for word into German?'
-    options: [
+    options:
+      [
         'Because German has no verb for "to be"',
         'Because some English "to be" expressions (hungry, thirsty, afraid, right) map onto German haben instead, as fixed idioms',
         'Because German speakers never use sein in conversation',
@@ -135,13 +136,13 @@ states that English expresses with "to be" — and these have to be memorized as
 phrases, because there is no grammatical rule that predicts them:
 
 | German (with haben) | Literal translation | English meaning |
-| --------------------- | --------------------- | ----------------- |
-| Ich habe Hunger.     | I have hunger        | I am hungry.      |
-| Ich habe Durst.      | I have thirst         | I am thirsty.     |
-| Ich habe Angst.      | I have fear            | I am afraid.      |
-| Ich habe Recht.      | I have right(ness)   | I am right.       |
+| ------------------- | ------------------- | --------------- |
+| Ich habe Hunger.    | I have hunger       | I am hungry.    |
+| Ich habe Durst.     | I have thirst       | I am thirsty.   |
+| Ich habe Angst.     | I have fear         | I am afraid.    |
+| Ich habe Recht.     | I have right(ness)  | I am right.     |
 
-A very common beginner mistake is saying *Ich bin hungrig* instead of *Ich habe Hunger*.
+A very common beginner mistake is saying _Ich bin hungrig_ instead of _Ich habe Hunger_.
 Ich bin hungrig is not wrong exactly, but Ich habe Hunger is what a native speaker
 actually reaches for in conversation — so it is worth training your instinct now.
 

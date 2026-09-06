@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'German Adjective Declension: Weak, Mixed and Strong Endings | PolyLingua'
+title: 'German Adjective Declension: Weak, Mixed and Strong Endings'
 description: 'Learn German adjective declension: the weak endings after der/die/das, mixed endings after ein-words, and strong endings with no article at all.'
 order: 7
 unit: 2
@@ -23,7 +23,7 @@ quiz:
       - 'neuer'
     answerIndex: 2
     explanation: "'ein' has NO ending in masculine Nominativ, so the adjective must signal the gender itself and takes the strong ending -er: ein neuer Mann. This is the 'mixed' declension: mixed because it borrows strong endings only where ein leaves a gap."
-  - question: "Adjectives used WITHOUT any article at all (strong declension) copy their endings from where?"
+  - question: 'Adjectives used WITHOUT any article at all (strong declension) copy their endings from where?'
     options:
       - 'The verb conjugation'
       - 'The definite article endings (der/die/das pattern)'
@@ -43,8 +43,8 @@ quiz:
       - 'neuer'
       - 'neuen'
     answerIndex: 2
-    explanation: "Weak declension after a definite article in Akkusativ masculine is -en: den neuen Mann. Weak endings are only ever -e or -en, never anything sharper."
-  - question: "Which declension type is used after ein, kein and the possessives (mein, dein...)?"
+    explanation: 'Weak declension after a definite article in Akkusativ masculine is -en: den neuen Mann. Weak endings are only ever -e or -en, never anything sharper.'
+  - question: 'Which declension type is used after ein, kein and the possessives (mein, dein...)?'
     options:
       - 'Strong'
       - 'Weak'
@@ -91,7 +91,7 @@ exercises:
     answer: 'neues'
     accepted:
       - 'neues'
-    hint: "Neuter Nominativ after ein-word is a gap → strong ending -es."
+    hint: 'Neuter Nominativ after ein-word is a gap → strong ending -es.'
     placeholder: 'neue'
   - type: 'write'
     prompt: "Complete: 'ein ___ Mann' (a new man — ein-word, masculine Nominativ)"
@@ -163,11 +163,11 @@ einen neuen Mann       (Akkusativ: "einen" already signals case clearly → weak
 
 ## Quick comparison table (Nominativ)
 
-| Gender    | Weak (der/die/das) | Mixed (ein-word)      | Strong (no article) |
-| --------- | ------------------- | ----------------------- | -------------------- |
-| maskulin  | der neue Mann        | ein neuer Mann           | guter Wein            |
-| feminin   | die neue Frau         | eine neue Frau            | gute Suppe             |
-| neutral   | das neue Auto         | ein neues Auto             | gutes Bier              |
+| Gender   | Weak (der/die/das) | Mixed (ein-word) | Strong (no article) |
+| -------- | ------------------ | ---------------- | ------------------- |
+| maskulin | der neue Mann      | ein neuer Mann   | guter Wein          |
+| feminin  | die neue Frau      | eine neue Frau   | gute Suppe          |
+| neutral  | das neue Auto      | ein neues Auto   | gutes Bier          |
 
 This table looks like a lot to memorize at once — but if you keep asking "does an
 article already give a clear signal here?", the right ending becomes far more

@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'German Subordinate Clauses: weil, dass, obwohl, wenn | PolyLingua'
+title: 'German Subordinate Clauses: weil, dass, obwohl, wenn'
 description: 'Learn German subordinate clauses with weil, dass, obwohl and wenn, and the single rule that sends the conjugated verb all the way to the end.'
 order: 1
 unit: 1
@@ -15,7 +15,7 @@ quiz:
       - 'At the very end of the subordinate clause'
       - 'Right after weil'
     answerIndex: 1
-    explanation: "Subordinating conjunctions (weil, dass, obwohl, wenn...) push the conjugated verb all the way to the end of their own clause."
+    explanation: 'Subordinating conjunctions (weil, dass, obwohl, wenn...) push the conjugated verb all the way to the end of their own clause.'
   - question: "Fill in: 'Ich bleibe zu Hause, ___ ich krank bin.' (because I am sick)"
     options:
       - 'denn'
@@ -37,14 +37,14 @@ quiz:
       - 'It replaces a noun'
     answerIndex: 0
     explanation: "'dass' (that) introduces a subordinate clause after verbs of thinking, saying, believing — and sends the conjugated verb (hat) to the end."
-  - question: "What happens to word order when the subordinate clause comes FIRST, before the main clause?"
+  - question: 'What happens to word order when the subordinate clause comes FIRST, before the main clause?'
     options:
       - 'Nothing changes'
       - 'The main clause is inverted: the main verb jumps right after the comma'
       - 'You need a second comma'
     answerIndex: 1
     explanation: "When the subordinate clause opens the sentence, it counts as one 'slot', so the main clause inverts: Wenn es regnet, bleibe ich zu Hause (verb-subject, not subject-verb)."
-  - question: "Which conjunction is subordinating and forces verb-final word order?"
+  - question: 'Which conjunction is subordinating and forces verb-final word order?'
     options:
       - 'und (and)'
       - 'aber (but)'
@@ -128,12 +128,12 @@ German subordinate clauses, and it applies every time, no exceptions.
 
 ## The conjunctions you need to master
 
-| Conjunction | Meaning     | Example                         |
-| ----------- | ----------- | -------------------------------- |
-| weil        | because     | ...weil ich müde bin.           |
-| dass        | that        | Ich glaube, dass er recht hat.  |
-| obwohl      | although    | ...obwohl es kalt ist.          |
-| wenn        | if / when   | Wenn du Zeit hast, ruf mich an. |
+| Conjunction | Meaning   | Example                         |
+| ----------- | --------- | ------------------------------- |
+| weil        | because   | ...weil ich müde bin.           |
+| dass        | that      | Ich glaube, dass er recht hat.  |
+| obwohl      | although  | ...obwohl es kalt ist.          |
+| wenn        | if / when | Wenn du Zeit hast, ruf mich an. |
 
 ## weil vs. denn: a trap for English speakers
 

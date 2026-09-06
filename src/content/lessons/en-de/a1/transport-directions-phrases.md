@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Transport and Directions Phrases | PolyLingua'
+title: 'German Transport and Directions Phrases'
 description: 'Learn German vocabulary for transport and directions — bus, train, and how to ask "Wie komme ich zu...?" to find your way around any city.'
 order: 21
 unit: 5
 grammarTopic: 'Transport and directions vocabulary'
-funFact: "The single most useful direction phrase is Wie komme ich zu...? (How do I get to...?) — pair it with the name of any place and you can ask directions to almost anything, even if you cannot yet understand the full answer."
+funFact: 'The single most useful direction phrase is Wie komme ich zu...? (How do I get to...?) — pair it with the name of any place and you can ask directions to almost anything, even if you cannot yet understand the full answer.'
 minutes: 8
 quiz:
   - question: 'How would you ask "How do I get to the train station?" in German?'
@@ -30,7 +30,8 @@ quiz:
     answerIndex: 0
     explanation: '"zu Fuß" (literally "to foot") means on foot/walking — Ich gehe zu Fuß (I go on foot / I walk).'
   - question: 'What does "links" mean, and what is its opposite?'
-    options: ['right; opposite is geradeaus', 'left; opposite is rechts', 'straight; opposite is zurück']
+    options:
+      ['right; opposite is geradeaus', 'left; opposite is rechts', 'straight; opposite is zurück']
     answerIndex: 1
     explanation: '"links" means left, and its opposite is "rechts" (right) — two of the most essential direction words.'
   - question: 'How would you say "I am taking the bus" in German?'
@@ -123,14 +124,14 @@ masculine/neuter places and **zur** for feminine ones.
 
 ## Understanding the answer: direction words
 
-| German | English |
-| -------- | ------- |
-| links | left |
-| rechts | right |
-| geradeaus | straight ahead |
-| zurück | back |
+| German       | English              |
+| ------------ | -------------------- |
+| links        | left                 |
+| rechts       | right                |
+| geradeaus    | straight ahead       |
+| zurück       | back                 |
 | an der Ampel | at the traffic light |
-| an der Ecke | at the corner |
+| an der Ecke  | at the corner        |
 
 A typical set of directions might sound like:
 
@@ -139,14 +140,14 @@ A typical set of directions might sound like:
 
 ## Modes of transport
 
-| German | English |
-| -------- | ------- |
-| der Bus | the bus |
-| der Zug | the train |
-| die U-Bahn | the subway/metro |
-| das Auto | the car |
-| das Fahrrad | the bicycle |
-| zu Fuß | on foot |
+| German      | English          |
+| ----------- | ---------------- |
+| der Bus     | the bus          |
+| der Zug     | the train        |
+| die U-Bahn  | the subway/metro |
+| das Auto    | the car          |
+| das Fahrrad | the bicycle      |
+| zu Fuß      | on foot          |
 
 To say how you are traveling, German uses **fahren** (to travel/drive) with "mit dem/der":
 
@@ -158,12 +159,12 @@ Ich gehe zu Fuß.            I go on foot. (uses gehen, not fahren)
 
 ## Places you will ask about
 
-| German | English |
-| -------- | ------- |
-| der Bahnhof | train station |
+| German          | English       |
+| --------------- | ------------- |
+| der Bahnhof     | train station |
 | die Haltestelle | bus/tram stop |
-| der Flughafen | airport |
-| der Parkplatz | parking lot |
+| der Flughafen   | airport       |
+| der Parkplatz   | parking lot   |
 
 ## Sample exchange
 

@@ -1,16 +1,17 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Home Vocabulary: Rooms and House Words | PolyLingua'
+title: 'German Home Vocabulary: Rooms and House Words'
 description: 'Learn essential German vocabulary for the home — rooms, furniture words, and the key difference between "das Haus" and "die Wohnung".'
 order: 18
 unit: 4
 grammarTopic: 'Home and house vocabulary'
-funFact: "German keeps das Haus (a standalone house) and die Wohnung (an apartment/flat) strictly separate — you cannot use them interchangeably the way English sometimes blurs \"house\" and \"place\". If you live in an apartment building, you say Ich wohne in einer Wohnung, never Ich wohne in einem Haus."
+funFact: 'German keeps das Haus (a standalone house) and die Wohnung (an apartment/flat) strictly separate — you cannot use them interchangeably the way English sometimes blurs "house" and "place". If you live in an apartment building, you say Ich wohne in einer Wohnung, never Ich wohne in einem Haus.'
 minutes: 8
 quiz:
   - question: 'What is the difference between "das Haus" and "die Wohnung"?'
-    options: [
+    options:
+      [
         'There is no difference, they are interchangeable',
         'das Haus is a standalone house; die Wohnung is an apartment/flat',
         'das Haus is only used for very large buildings',
@@ -34,7 +35,8 @@ quiz:
     answerIndex: 1
     explanation: '"das Badezimmer" combines baden (to bathe) + das Zimmer (the room) = the bathroom.'
   - question: 'How would you say "I live in an apartment" in German?'
-    options: ['Ich wohne in einem Haus.', 'Ich wohne in einer Wohnung.', 'Ich habe eine Wohnung wohnen.']
+    options:
+      ['Ich wohne in einem Haus.', 'Ich wohne in einer Wohnung.', 'Ich habe eine Wohnung wohnen.']
     answerIndex: 1
     explanation: 'Ich wohne in einer Wohnung means "I live in an apartment" — wohnen (to live/reside) plus in einer Wohnung.'
   - question: 'What does "das Fenster" mean?'
@@ -130,12 +132,12 @@ always the right choice: Wo wohnst du?
 Many German room names are simply built from **das Zimmer** (the room) plus another word
 describing its purpose:
 
-| German | Breakdown | English |
-| -------- | ----------- | -------- |
-| das Schlafzimmer | schlafen (sleep) + Zimmer | bedroom |
-| das Badezimmer | baden (bathe) + Zimmer | bathroom |
-| das Wohnzimmer | wohnen (live) + Zimmer | living room |
-| das Esszimmer | essen (eat) + Zimmer | dining room |
+| German           | Breakdown                  | English         |
+| ---------------- | -------------------------- | --------------- |
+| das Schlafzimmer | schlafen (sleep) + Zimmer  | bedroom         |
+| das Badezimmer   | baden (bathe) + Zimmer     | bathroom        |
+| das Wohnzimmer   | wohnen (live) + Zimmer     | living room     |
+| das Esszimmer    | essen (eat) + Zimmer       | dining room     |
 | das Kinderzimmer | Kinder (children) + Zimmer | children's room |
 
 Once you recognize this pattern, you can often guess the meaning of a new "-zimmer" word
@@ -145,23 +147,23 @@ just from its first half.
 
 Not every room follows the -zimmer pattern — a few important ones have their own name:
 
-| German | English |
-| -------- | ------- |
-| die Küche | the kitchen |
-| der Flur | the hallway |
+| German     | English      |
+| ---------- | ------------ |
+| die Küche  | the kitchen  |
+| der Flur   | the hallway  |
 | der Keller | the basement |
-| der Garten | the garden |
-| der Balkon | the balcony |
+| der Garten | the garden   |
+| der Balkon | the balcony  |
 
 ## Basic parts of a home
 
-| German | English |
-| -------- | ------- |
-| die Tür | the door |
-| das Fenster | the window |
-| die Wand | the wall |
-| das Dach | the roof |
-| der Schlüssel | the key |
+| German        | English    |
+| ------------- | ---------- |
+| die Tür       | the door   |
+| das Fenster   | the window |
+| die Wand      | the wall   |
+| das Dach      | the roof   |
+| der Schlüssel | the key    |
 
 ## Sample sentences
 

@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Hobbies and Free Time Vocabulary | PolyLingua'
+title: 'German Hobbies and Free Time Vocabulary'
 description: 'Learn to talk about hobbies and free time in German — "Ich spiele gern...", "Was machst du gern?", and the key verb "gern haben" pattern.'
 order: 22
 unit: 5
 grammarTopic: 'Hobbies and free time vocabulary with "gern"'
-funFact: "German does not have a direct verb for \"to like\" the way English does — instead, it adds the little word gern (gladly) right after the main verb: Ich spiele gern Fußball literally means \"I play gladly soccer\", but it is how Germans say \"I like playing soccer\". Master this one small word and you can express liking almost any activity."
+funFact: 'German does not have a direct verb for "to like" the way English does — instead, it adds the little word gern (gladly) right after the main verb: Ich spiele gern Fußball literally means "I play gladly soccer", but it is how Germans say "I like playing soccer". Master this one small word and you can express liking almost any activity.'
 minutes: 8
 quiz:
   - question: 'How does German typically express "I like playing soccer"?'
@@ -125,16 +125,16 @@ you can express liking almost any activity you already know the verb for.
 
 ## Common hobby verbs and phrases
 
-| German | English |
-| -------- | ------- |
-| lesen | to read |
-| schwimmen | to swim |
-| kochen | to cook |
-| malen | to paint |
-| tanzen | to dance |
-| Musik hören | to listen to music |
-| Sport treiben | to do/play sports (in general) |
-| Fußball spielen | to play soccer |
+| German          | English                        |
+| --------------- | ------------------------------ |
+| lesen           | to read                        |
+| schwimmen       | to swim                        |
+| kochen          | to cook                        |
+| malen           | to paint                       |
+| tanzen          | to dance                       |
+| Musik hören     | to listen to music             |
+| Sport treiben   | to do/play sports (in general) |
+| Fußball spielen | to play soccer                 |
 
 Notice **Sport treiben** is a fixed expression for doing sports generally, while naming
 a specific sport uses "spielen" (to play) — Fußball spielen, Tennis spielen — or its own
@@ -142,13 +142,13 @@ specific verb, like schwimmen.
 
 ## Free time vocabulary
 
-| German | English |
-| -------- | ------- |
-| die Freizeit | free time |
-| das Hobby | hobby |
-| das Wochenende | the weekend |
-| gern | gladly (marks liking an activity) |
-| oft / manchmal / nie | often / sometimes / never |
+| German               | English                           |
+| -------------------- | --------------------------------- |
+| die Freizeit         | free time                         |
+| das Hobby            | hobby                             |
+| das Wochenende       | the weekend                       |
+| gern                 | gladly (marks liking an activity) |
+| oft / manchmal / nie | often / sometimes / never         |
 
 ## Sample conversation
 

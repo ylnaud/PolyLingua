@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b2'
-title: 'German Double Conjunctions: sowohl...als auch, je...desto | PolyLingua'
+title: 'German Double Conjunctions: sowohl...als auch, je...desto'
 description: 'Learn German double conjunctions like sowohl...als auch, je...desto, and nicht nur...sondern auch to build precise, connected sentences at B2 level.'
 order: 8
 unit: 2
@@ -18,7 +18,12 @@ quiz:
     answerIndex: 0
     explanation: '"Sowohl ... als auch" is the correct pair for "both ... and": sowohl intelligent als auch fleißig.'
   - question: 'What does "je ... desto" express?'
-    options: ['a simple list of two items', 'a proportional relationship between two things', 'a contrast between two ideas']
+    options:
+      [
+        'a simple list of two items',
+        'a proportional relationship between two things',
+        'a contrast between two ideas',
+      ]
     answerIndex: 1
     explanation: '"Je ... desto" (the more ... the more) expresses that one thing increases/decreases in proportion to another: Je mehr du übst, desto besser wirst du.'
   - question: 'What is the word order in the "je" clause of "je ... desto"?'
@@ -26,7 +31,12 @@ quiz:
     answerIndex: 1
     explanation: 'The je-clause is a subordinate clause, so the conjugated verb goes to the end: Je mehr du übst, ...'
   - question: 'What is the word order in the "desto" clause?'
-    options: ['Verb at the end', 'Verb right after desto (inversion, like a main clause)', 'Verb at the very beginning']
+    options:
+      [
+        'Verb at the end',
+        'Verb right after desto (inversion, like a main clause)',
+        'Verb at the very beginning',
+      ]
     answerIndex: 1
     explanation: 'The desto-clause behaves like a main clause with inversion: desto besser wirst du — verb (wirst) right after desto, then subject (du).'
   - question: 'What does "nicht nur ... sondern auch" mean?'
@@ -112,8 +122,8 @@ need most: sowohl...als auch, je...desto, and nicht nur...sondern auch.
 Use this pair to emphasize that two things are equally true, rather than just listing them
 with "und":
 
-- *Er spricht sowohl Deutsch als auch Englisch.* (He speaks both German and English.)
-- *Das Restaurant ist sowohl günstig als auch lecker.* (The restaurant is both affordable
+- _Er spricht sowohl Deutsch als auch Englisch._ (He speaks both German and English.)
+- _Das Restaurant ist sowohl günstig als auch lecker._ (The restaurant is both affordable
   and delicious.)
 
 Word order stays normal in both halves — no inversion, no verb movement. It's purely a
@@ -123,9 +133,9 @@ vocabulary-level connector.
 
 This pair adds emphasis by first negating an incomplete picture, then completing it:
 
-- *Sie ist nicht nur klug, sondern auch kreativ.* (She is not only smart, but also
+- _Sie ist nicht nur klug, sondern auch kreativ._ (She is not only smart, but also
   creative.)
-- *Wir brauchen nicht nur Geld, sondern auch Zeit.* (We need not only money, but also
+- _Wir brauchen nicht nur Geld, sondern auch Zeit._ (We need not only money, but also
   time.)
 
 Like sowohl...als auch, this doesn't change word order — it's a straightforward
@@ -140,7 +150,7 @@ proportional effect, and **each half has its own word-order rule**.
 - The **desto**-clause behaves like a main clause: the verb comes **right after desto**
   (inversion), followed by the subject.
 
-*Je mehr du übst, desto besser wirst du.* (The more you practice, the better you get.)
+_Je mehr du übst, desto besser wirst du._ (The more you practice, the better you get.)
 
 Breaking it down: "Je mehr du übst" — übst (practice) is pushed to the end of the je-clause.
 "desto besser wirst du" — wirst (become) comes immediately after desto, then du. Both
@@ -149,8 +159,8 @@ are pointing at.
 
 More examples:
 
-- *Je älter ich werde, desto weiser werde ich.* (The older I get, the wiser I become.)
-- *Je früher wir anfangen, desto schneller sind wir fertig.* (The earlier we start, the
+- _Je älter ich werde, desto weiser werde ich._ (The older I get, the wiser I become.)
+- _Je früher wir anfangen, desto schneller sind wir fertig._ (The earlier we start, the
   sooner we're done.)
 
 ## Putting them together

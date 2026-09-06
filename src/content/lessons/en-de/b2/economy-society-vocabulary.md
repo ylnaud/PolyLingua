@@ -1,8 +1,8 @@
 ---
 language: 'de'
 level: 'b2'
-title: 'German Economy and Society Vocabulary | PolyLingua'
-description: "Build B2-level German vocabulary for economy, politics, and society, including die Wirtschaft, die Arbeitslosigkeit, and die Gesellschaft, with real usage."
+title: 'German Economy and Society Vocabulary'
+description: 'Build B2-level German vocabulary for economy, politics, and society, including die Wirtschaft, die Arbeitslosigkeit, and die Gesellschaft, with real usage.'
 order: 7
 unit: 2
 grammarTopic: 'Economy and society vocabulary: compound nouns and abstract concepts'
@@ -129,29 +129,29 @@ instead of memorizing it cold.
 
 ## Core economy vocabulary
 
-| German | English |
-| --- | --- |
-| die Wirtschaft | the economy |
+| German                         | English                      |
+| ------------------------------ | ---------------------------- |
+| die Wirtschaft                 | the economy                  |
 | das Bruttoinlandsprodukt (BIP) | gross domestic product (GDP) |
-| die Inflation | inflation |
-| die Steuer(n) | tax(es) |
-| das Einkommen | income |
-| der Mindestlohn | minimum wage |
-| die Rente | pension, retirement income |
-| die Arbeitslosigkeit | unemployment |
+| die Inflation                  | inflation                    |
+| die Steuer(n)                  | tax(es)                      |
+| das Einkommen                  | income                       |
+| der Mindestlohn                | minimum wage                 |
+| die Rente                      | pension, retirement income   |
+| die Arbeitslosigkeit           | unemployment                 |
 
 ## Core society/politics vocabulary
 
-| German | English |
-| --- | --- |
+| German           | English                                     |
+| ---------------- | ------------------------------------------- |
 | die Gesellschaft | society (or "company" in business contexts) |
-| die Ungleichheit | inequality |
-| die Regierung | the government |
-| die Bevölkerung | the population |
-| die Wahl | the election |
-| die Debatte | the debate |
-| der Staat | the state |
-| die Reform | the reform |
+| die Ungleichheit | inequality                                  |
+| die Regierung    | the government                              |
+| die Bevölkerung  | the population                              |
+| die Wahl         | the election                                |
+| die Debatte      | the debate                                  |
+| der Staat        | the state                                   |
+| die Reform       | the reform                                  |
 
 ## A note on false friends
 
@@ -163,7 +163,7 @@ Context almost always disambiguates instantly: "die Steuer erhöhen" (raise taxe
 ## Using this vocabulary in a sentence
 
 Try building full sentences instead of memorizing isolated words — it's how this vocabulary
-sticks: *Die Arbeitslosigkeit ist letztes Jahr gesunken, aber die Inflation ist gestiegen.*
+sticks: _Die Arbeitslosigkeit ist letztes Jahr gesunken, aber die Inflation ist gestiegen._
 (Unemployment fell last year, but inflation rose.) Notice how naturally this pairs with the
 advanced connectors ("aber") and passive constructions you've already studied at B2 — this
 is exactly the kind of sentence you'll meet in real German news articles.

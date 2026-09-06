@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'Konjunktiv II with würde + Infinitive | PolyLingua'
+title: 'Konjunktiv II with würde + Infinitive'
 description: 'Learn the German würde + infinitive construction, the everyday substitute for Konjunktiv II verb forms, used here to politely ask for compensation.'
 order: 11
 unit: 3
@@ -9,13 +9,13 @@ grammarTopic: 'Konjunktiv II with würde + infinitive'
 funFact: "Most Konjunktiv II verb forms (käme, ginge, fände...) sound old-fashioned or overly literary in casual speech — so German speakers dodge almost all of them with one universal workaround: würde + infinitive. It is the German equivalent of English 'would' + verb, and it works for nearly every verb except sein, haben and the modal verbs."
 minutes: 9
 quiz:
-  - question: "What is the basic pattern for würde + infinitive?"
+  - question: 'What is the basic pattern for würde + infinitive?'
     options:
       - 'würde + conjugated verb'
       - 'würde + infinitive, at the end of the sentence'
       - 'infinitive + würde, at the start'
     answerIndex: 1
-    explanation: "würde is conjugated to match the subject, and the main verb stays in its infinitive form at the very end: Ich würde das gern machen. (I would like to do that.)"
+    explanation: 'würde is conjugated to match the subject, and the main verb stays in its infinitive form at the very end: Ich würde das gern machen. (I would like to do that.)'
   - question: "'Ich ___ gern eine Entschädigung bekommen.' (I would like to receive compensation.) Which form fits?"
     options:
       - 'werde'
@@ -36,8 +36,8 @@ quiz:
       - "'käme' sounds old-fashioned/literary in everyday speech, so würde + infinitive is preferred"
       - 'There is no alternative, käme is required'
     answerIndex: 1
-    explanation: "Most Konjunktiv II simple forms (käme, ginge, fände) sound bookish in casual conversation. Speakers substitute würde + infinitive instead: Ich würde gern kommen."
-  - question: "Which two verbs are the main EXCEPTIONS that normally keep their own Konjunktiv II form instead of using würde?"
+    explanation: 'Most Konjunktiv II simple forms (käme, ginge, fände) sound bookish in casual conversation. Speakers substitute würde + infinitive instead: Ich würde gern kommen.'
+  - question: 'Which two verbs are the main EXCEPTIONS that normally keep their own Konjunktiv II form instead of using würde?'
     options:
       - 'gehen and kommen'
       - 'sein and haben (wäre, hätte)'
@@ -50,7 +50,7 @@ quiz:
       - 'würden'
       - 'werden'
     answerIndex: 1
-    explanation: "würde conjugates like a normal verb: ich würde, du würdest, er/sie/es würde, wir würden, ihr würdet, sie/Sie würden."
+    explanation: 'würde conjugates like a normal verb: ich würde, du würdest, er/sie/es würde, wir würden, ihr würdet, sie/Sie würden.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Ich ___ gern eine Entschädigung bekommen.'
@@ -84,13 +84,13 @@ exercises:
     answer: 'Wir würden eine Rückerstattung erwarten.'
     accepted:
       - 'Wir würden eine Rückerstattung erwarten'
-    hint: "würden (matches wir) + infinitive erwarten at the end."
+    hint: 'würden (matches wir) + infinitive erwarten at the end.'
   - type: 'write'
     prompt: "Translate: 'I would like to receive compensation.' (eine Entschädigung = compensation)"
     answer: 'Ich würde gern eine Entschädigung bekommen.'
     accepted:
       - 'Ich würde gern eine Entschädigung bekommen'
-    hint: "würde + gern + object + infinitive bekommen at the end."
+    hint: 'würde + gern + object + infinitive bekommen at the end.'
   - type: 'order'
     sentence: 'Würden Sie mir bitte helfen'
     translation: 'Would you please help me?'
@@ -134,14 +134,14 @@ Ich würde gern kommen. (what people actually say)
 
 ## Conjugating würde
 
-| Person    | Form   |
+| Person    | Form    |
 | --------- | ------- |
-| ich        | würde    |
-| du          | würdest   |
-| er/sie/es    | würde      |
-| wir           | würden      |
-| ihr            | würdet       |
-| sie/Sie          | würden        |
+| ich       | würde   |
+| du        | würdest |
+| er/sie/es | würde   |
+| wir       | würden  |
+| ihr       | würdet  |
+| sie/Sie   | würden  |
 
 ## The exceptions: sein and haben keep their own forms
 

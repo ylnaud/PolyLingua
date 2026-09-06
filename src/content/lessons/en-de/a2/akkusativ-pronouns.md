@@ -1,8 +1,8 @@
 ---
 language: 'de'
 level: 'a2'
-title: 'Akkusativ Personal Pronouns in German: mich, dich, ihn | PolyLingua'
-description: "Learn the German accusative personal pronouns — mich, dich, ihn, sie, es, uns, euch — and the one pronoun that changes completely instead of adding a letter."
+title: 'Akkusativ Personal Pronouns in German: mich, dich, ihn'
+description: 'Learn the German accusative personal pronouns — mich, dich, ihn, sie, es, uns, euch — and the one pronoun that changes completely instead of adding a letter.'
 order: 10
 unit: 3
 grammarTopic: 'Akkusativ personal pronouns (mich, dich, ihn, sie, es, uns, euch, sie/Sie)'
@@ -129,17 +129,17 @@ that role — and the good news is most of them already look familiar.
 
 ## Normal form vs. accusative (when it is what you see/have)
 
-| Nominative | Accusative | Change...      |
-| ---------- | ---------- | --------------- |
-| ich        | mich       | adds -ch        |
-| du         | dich       | adds -ch        |
-| er         | ihn        | completely      |
-| sie (she)  | sie        | no change       |
-| es         | es         | no change       |
-| wir        | uns        | completely      |
-| ihr        | euch       | completely      |
-| sie (they) | sie        | no change       |
-| Sie        | Sie        | no change       |
+| Nominative | Accusative | Change...  |
+| ---------- | ---------- | ---------- |
+| ich        | mich       | adds -ch   |
+| du         | dich       | adds -ch   |
+| er         | ihn        | completely |
+| sie (she)  | sie        | no change  |
+| es         | es         | no change  |
+| wir        | uns        | completely |
+| ihr        | euch       | completely |
+| sie (they) | sie        | no change  |
+| Sie        | Sie        | no change  |
 
 ```
 Ich liebe dich.        Sie ruft mich an.        Wir besuchen sie.

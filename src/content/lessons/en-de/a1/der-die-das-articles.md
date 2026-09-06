@@ -1,16 +1,17 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'Der, Die, Das: Understanding German Grammatical Gender | PolyLingua'
+title: 'Der, Die, Das: Understanding German Grammatical Gender'
 description: 'English has no grammatical gender, so der/die/das trips up every beginner. Learn the categories and endings that predict gender correctly most of the time.'
 order: 3
 unit: 2
 grammarTopic: 'Definite articles (der/die/das) and grammatical gender'
-funFact: "This is not really about biological gender — der Tisch (the table) is not literally masculine. Think of der/die/das as three unpredictable color-coded bins that every noun gets sorted into. You cannot always guess the bin, but always learning the article WITH the word (der Tisch, not just Tisch) means you never have to guess later."
+funFact: 'This is not really about biological gender — der Tisch (the table) is not literally masculine. Think of der/die/das as three unpredictable color-coded bins that every noun gets sorted into. You cannot always guess the bin, but always learning the article WITH the word (der Tisch, not just Tisch) means you never have to guess later.'
 minutes: 12
 quiz:
   - question: 'Why does German have three words for "the" (der, die, das) when English only has one?'
-    options: [
+    options:
+      [
         'German makes spelling mistakes on purpose',
         'German nouns each belong to one of three grammatical genders — masculine, feminine, or neuter — and the article matches that gender',
         'The three words are just regional dialect variations of the same word',
@@ -42,7 +43,8 @@ quiz:
     answerIndex: 2
     explanation: '-chen and -lein are 100% reliable: any noun with these endings is neuter, even das Mädchen (the girl), regardless of the person’s actual sex.'
   - question: 'What is the single best habit for learning German noun gender?'
-    options: [
+    options:
+      [
         'Guess the article every time you speak',
         'Memorize each new noun together with its article, as one unit (e.g. "der Tisch", not just "Tisch")',
         'Avoid using articles until you reach an advanced level',
@@ -127,11 +129,11 @@ the same time you learn the noun itself.
 
 ## The three articles
 
-| Article | Gender    | Example                  |
-| ------- | --------- | -------------------------- |
-| der     | masculine | der Mann (the man)         |
-| die     | feminine  | die Frau (the woman)       |
-| das     | neuter    | das Kind (the child)       |
+| Article | Gender    | Example              |
+| ------- | --------- | -------------------- |
+| der     | masculine | der Mann (the man)   |
+| die     | feminine  | die Frau (the woman) |
+| das     | neuter    | das Kind (the child) |
 
 For words describing people, gender often matches biological sex (der Mann, die Frau).
 But for objects, ideas, and abstract nouns, the assignment can feel arbitrary: der
@@ -142,12 +144,12 @@ there is no logical reason a table "is" more masculine than a lamp.
 
 While gender cannot always be predicted, certain word endings are reliable clues:
 
-| Ending          | Gender    | Reliability | Example                          |
-| --------------- | --------- | ----------- | ---------------------------------- |
-| -ung, -heit, -keit | feminine (die) | ~98%   | die Zeitung, die Freiheit          |
-| -chen, -lein    | neuter (das) | 100%     | das Mädchen, das Brötchen          |
-| -ismus          | masculine (der) | ~98% | der Kapitalismus                   |
-| -ion, -tät      | feminine (die) | ~95%  | die Nation, die Universität        |
+| Ending             | Gender          | Reliability | Example                     |
+| ------------------ | --------------- | ----------- | --------------------------- |
+| -ung, -heit, -keit | feminine (die)  | ~98%        | die Zeitung, die Freiheit   |
+| -chen, -lein       | neuter (das)    | 100%        | das Mädchen, das Brötchen   |
+| -ismus             | masculine (der) | ~98%        | der Kapitalismus            |
+| -ion, -tät         | feminine (die)  | ~95%        | die Nation, die Universität |
 
 The -chen/-lein rule is especially useful because it is absolute: any word with that
 ending is neuter, even das Mädchen (the girl) — a female person — because the ending

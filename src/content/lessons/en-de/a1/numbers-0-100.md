@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Numbers 0-100: How to Count in German | PolyLingua'
+title: 'German Numbers 0-100: How to Count in German'
 description: 'Learn German cardinal numbers from 0 to 100, including the reversed unit-and-ten pattern (einundzwanzig) that trips up every English speaker at first.'
 order: 6
 unit: 2
@@ -115,45 +115,45 @@ surprises every English speaker the first time they hear it.
 The first thirteen numbers are irregular and simply need to be learned by heart, the
 same way English "one, two, three... eleven, twelve" doesn't follow a formula either:
 
-| Number | German | Number | German  |
-| ------ | ------ | ------ | ------- |
-| 0      | null   | 7      | sieben  |
-| 1      | eins   | 8      | acht    |
-| 2      | zwei   | 9      | neun    |
-| 3      | drei   | 10     | zehn    |
-| 4      | vier   | 11     | elf     |
-| 5      | fünf   | 12     | zwölf   |
-| 6      | sechs  | —      | —       |
+| Number | German | Number | German |
+| ------ | ------ | ------ | ------ |
+| 0      | null   | 7      | sieben |
+| 1      | eins   | 8      | acht   |
+| 2      | zwei   | 9      | neun   |
+| 3      | drei   | 10     | zehn   |
+| 4      | vier   | 11     | elf    |
+| 5      | fünf   | 12     | zwölf  |
+| 6      | sechs  | —      | —      |
 
 ## Thirteen through nineteen: a regular pattern begins
 
 From 13 onward, German starts building numbers by combining the unit with "-zehn"
 (a form of "zehn," ten):
 
-| Number | German      |
-| ------ | ----------- |
-| 13     | dreizehn    |
-| 14     | vierzehn    |
-| 15     | fünfzehn    |
-| 16     | sechzehn    |
-| 17     | siebzehn    |
-| 18     | achtzehn    |
-| 19     | neunzehn    |
+| Number | German   |
+| ------ | -------- |
+| 13     | dreizehn |
+| 14     | vierzehn |
+| 15     | fünfzehn |
+| 16     | sechzehn |
+| 17     | siebzehn |
+| 18     | achtzehn |
+| 19     | neunzehn |
 
 ## The tens: 20 to 90
 
 The tens mostly follow a "-zig" pattern (from "zwanzig," twenty), with one exception:
 
-| Number | German     |
-| ------ | ---------- |
-| 20     | zwanzig    |
-| 30     | **dreißig**  (irregular — ß, not -zig) |
-| 40     | vierzig    |
-| 50     | fünfzig    |
-| 60     | sechzig    |
-| 70     | siebzig    |
-| 80     | achtzig    |
-| 90     | neunzig    |
+| Number | German                                |
+| ------ | ------------------------------------- |
+| 20     | zwanzig                               |
+| 30     | **dreißig** (irregular — ß, not -zig) |
+| 40     | vierzig                               |
+| 50     | fünfzig                               |
+| 60     | sechzig                               |
+| 70     | siebzig                               |
+| 80     | achtzig                               |
+| 90     | neunzig                               |
 
 ## The twist: units come before tens
 

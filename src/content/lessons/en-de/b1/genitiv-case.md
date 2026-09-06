@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'The German Genitiv Case: Possession and Key Prepositions | PolyLingua'
+title: 'The German Genitiv Case: Possession and Key Prepositions'
 description: 'Learn the German Genitiv case: how articles change to des/der, when nouns add -s or -es, and the prepositions like wegen and trotz that require it.'
 order: 6
 unit: 2
@@ -9,7 +9,7 @@ grammarTopic: 'The Genitiv case'
 funFact: "Genitiv is the case English speakers already half-know without realizing it: 'des Mannes' works exactly like 'the man's' in English — an -s glued onto the owner. The difference is German also changes the article: der Mann becomes des Mannes."
 minutes: 9
 quiz:
-  - question: "What does the Genitiv case express?"
+  - question: 'What does the Genitiv case express?'
     options:
       - 'The direct object of a sentence'
       - 'Possession — that something belongs to someone or something'
@@ -30,13 +30,13 @@ quiz:
       - 'die Frau'
     answerIndex: 1
     explanation: "Feminine and plural nouns use 'der' in the Genitiv, and — unlike masculine/neuter — they do NOT add an -s ending: die Frau → der Frau."
-  - question: "Which preposition below ALWAYS requires the Genitiv case?"
+  - question: 'Which preposition below ALWAYS requires the Genitiv case?'
     options:
       - 'mit (with)'
       - 'wegen (because of)'
       - 'in (in)'
     answerIndex: 1
-    explanation: "wegen, trotz, während and statt are the four core Genitiv prepositions: wegen des Regens (because of the rain), trotz des Regens (despite the rain)."
+    explanation: 'wegen, trotz, während and statt are the four core Genitiv prepositions: wegen des Regens (because of the rain), trotz des Regens (despite the rain).'
   - question: "'das Auto ___ Vaters' (my father's car — meines Vater = mein Vater in Genitiv). Which possessive form fits?"
     options:
       - 'mein'
@@ -51,13 +51,13 @@ quiz:
       - 'der Kind'
     answerIndex: 1
     explanation: "Neuter nouns behave exactly like masculine ones in the Genitiv: article becomes 'des', and the noun adds -es (short, one-syllable nouns typically take -es rather than just -s)."
-  - question: "In everyday spoken German, what commonly replaces the Genitiv after wegen and trotz?"
+  - question: 'In everyday spoken German, what commonly replaces the Genitiv after wegen and trotz?'
     options:
       - 'The Akkusativ'
       - 'The Dativ, especially in casual speech'
       - 'The Nominativ'
     answerIndex: 1
-    explanation: "Formally these prepositions govern Genitiv (wegen des Regens), but colloquially many speakers use Dativ instead (wegen dem Regen). For writing and exams, stick with Genitiv."
+    explanation: 'Formally these prepositions govern Genitiv (wegen des Regens), but colloquially many speakers use Dativ instead (wegen dem Regen). For writing and exams, stick with Genitiv.'
   - question: "'trotz ___ Wetters' (despite the weather — das Wetter, neuter). Which form is correct?"
     options:
       - 'des'
@@ -168,12 +168,12 @@ die Kinder   → der Kinder
 
 ## Four prepositions that always take Genitiv
 
-| Preposition | Meaning     | Example                          |
-| ----------- | ----------- | --------------------------------- |
-| wegen       | because of  | wegen des Regens                  |
-| trotz       | despite     | trotz des Wetters                 |
-| während     | during      | während der Woche                 |
-| statt       | instead of  | statt des Autos nehme ich den Bus |
+| Preposition | Meaning    | Example                           |
+| ----------- | ---------- | --------------------------------- |
+| wegen       | because of | wegen des Regens                  |
+| trotz       | despite    | trotz des Wetters                 |
+| während     | during     | während der Woche                 |
+| statt       | instead of | statt des Autos nehme ich den Bus |
 
 ## A real-world shortcut: colloquial Dativ
 

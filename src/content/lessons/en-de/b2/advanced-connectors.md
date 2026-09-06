@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b2'
-title: 'Advanced German Connectors (Konnektoren) | PolyLingua'
+title: 'Advanced German Connectors (Konnektoren)'
 description: 'Learn advanced German discourse connectors like trotzdem, dennoch, obwohl, sodass, and zwar...aber to link ideas with precision at B2 level.'
 order: 3
 unit: 1
@@ -14,7 +14,8 @@ quiz:
     answerIndex: 0
     explanation: "'Trotzdem' means 'nevertheless/despite that' and introduces a main clause with inverted word order: verb in position 2, right after trotzdem."
   - question: "What is the word order effect of 'obwohl' (although)?"
-    options: [
+    options:
+      [
         'It sends the conjugated verb to the very end of its clause',
         'It has no effect on word order',
         'It sends the verb to position 2',
@@ -30,7 +31,8 @@ quiz:
     answerIndex: 0
     explanation: "'Sodass' (so that) introduces a subordinate clause of result, with the verb at the end: ...sodass ich nicht schlafen konnte."
   - question: "What does the paired connector 'zwar ... aber' express?"
-    options: [
+    options:
+      [
         'A conceded point followed by a contrasting one',
         'A cause followed by its effect',
         'A list of equal items',
@@ -38,7 +40,8 @@ quiz:
     answerIndex: 0
     explanation: "'Zwar ... aber' concedes something is true and then contrasts it: Das Auto ist zwar teuer, aber es ist sehr zuverlässig. (It's expensive, but it's very reliable.)"
   - question: "Which sentence uses 'obwohl' with correct word order?"
-    options: [
+    options:
+      [
         'Obwohl es regnet, wir gehen spazieren.',
         'Obwohl es regnet, gehen wir spazieren.',
         'Obwohl regnet es, gehen wir spazieren.',
@@ -50,13 +53,14 @@ quiz:
     answerIndex: 0
     explanation: "'Weder ... noch' means 'neither ... nor' — it negates both options: Ich trinke weder Kaffee noch Tee."
   - question: "What is the difference between 'trotzdem' and 'obwohl' even though both express contrast?"
-    options: [
+    options:
+      [
         'Trotzdem starts a main clause (verb position 2); obwohl introduces a subordinate clause (verb at the end)',
         'They are always fully interchangeable in every position',
         'Obwohl can only be used with the Konjunktiv',
       ]
     answerIndex: 0
-    explanation: "Trotzdem is an adverb that triggers inversion in a main clause; obwohl is a subordinating conjunction that sends the verb to the end of its own clause. Both express contrast, but they behave grammatically differently."
+    explanation: 'Trotzdem is an adverb that triggers inversion in a main clause; obwohl is a subordinating conjunction that sends the verb to the end of its own clause. Both express contrast, but they behave grammatically differently.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Es regnet. ___ gehen wir spazieren.'
@@ -69,7 +73,7 @@ exercises:
     sentence: 'Obwohl es regnet, ___ wir spazieren.'
     answer: 'gehen'
     accepted: ['gehen']
-    hint: "After a subordinate clause starting with obwohl, the main clause follows with inverted order: verb before subject."
+    hint: 'After a subordinate clause starting with obwohl, the main clause follows with inverted order: verb before subject.'
     translation: 'Although it is raining, we go for a walk.'
     placeholder: 'gehen / gehen wir / wir gehen'
   - type: 'fill-blank'
@@ -139,31 +143,31 @@ than memorizing individual words:
 
 Both express contrast ("although" / "nevertheless"), but their grammar differs completely:
 
-- **obwohl** (subordinating): *Obwohl es regnet, gehen wir spazieren.* (Although it's
+- **obwohl** (subordinating): _Obwohl es regnet, gehen wir spazieren._ (Although it's
   raining, we go for a walk.) — Note the verb "regnet" at the end of the obwohl-clause, and
   the inversion "gehen wir" that follows because the whole subordinate clause counts as
   "position 1" of the main clause.
-- **trotzdem / dennoch** (main-clause adverb): *Es regnet. Trotzdem gehen wir spazieren.*
+- **trotzdem / dennoch** (main-clause adverb): _Es regnet. Trotzdem gehen wir spazieren._
   — Two separate sentences (or clauses joined by a semicolon/comma), with "trotzdem"
   triggering inversion: verb (gehen) right after it, subject (wir) after the verb.
 
 ## Result: sodass
 
 **Sodass** (so that / with the result that) introduces a subordinate clause describing the
-consequence of what was just said, with the verb at the end: *Es war sehr laut, sodass ich
-nicht schlafen konnte.* (It was so loud that I couldn't sleep.) In spoken German you will
-also hear it split as "so ... dass": *Es war so laut, dass ich nicht schlafen konnte.*
+consequence of what was just said, with the verb at the end: _Es war sehr laut, sodass ich
+nicht schlafen konnte._ (It was so loud that I couldn't sleep.) In spoken German you will
+also hear it split as "so ... dass": _Es war so laut, dass ich nicht schlafen konnte._
 
 ## Paired connectors
 
 German uses several two-part connectors that must appear together:
 
-- **zwar ... aber** — concede a point, then contrast it: *Das Auto ist zwar teuer, aber es
-  ist zuverlässig.* (It's admittedly expensive, but it's reliable.)
-- **weder ... noch** — neither ... nor: *Ich trinke weder Kaffee noch Tee.*
-- **entweder ... oder** — either ... or: *Entweder kommst du mit, oder du bleibst hier.*
-- **sowohl ... als auch** — both ... and: *Sie spricht sowohl Deutsch als auch
-  Französisch.*
+- **zwar ... aber** — concede a point, then contrast it: _Das Auto ist zwar teuer, aber es
+  ist zuverlässig._ (It's admittedly expensive, but it's reliable.)
+- **weder ... noch** — neither ... nor: _Ich trinke weder Kaffee noch Tee._
+- **entweder ... oder** — either ... or: _Entweder kommst du mit, oder du bleibst hier._
+- **sowohl ... als auch** — both ... and: _Sie spricht sowohl Deutsch als auch
+  Französisch._
 
 ## Building fluency with connectors
 

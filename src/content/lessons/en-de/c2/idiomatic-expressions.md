@@ -1,19 +1,19 @@
 ---
 language: 'de'
 level: 'c2'
-title: 'German Idiomatic Expressions Native Speakers Actually Use | PolyLingua'
+title: 'German Idiomatic Expressions Native Speakers Actually Use'
 description: 'Learn real German Redewendungen like Tomaten auf den Augen haben and die Daumen drücken — idioms that make you sound native instead of like a phrasebook.'
 order: 2
 unit: 1
 grammarTopic: 'Idiomatic expressions (Redewendungen)'
-funFact: "German idioms are little windows into how Germans picture the world: fingers become crossed thumbs, cats fall out of bags, and eating your hat is what you do when you are absolutely certain. Learn the image, not the words, and the phrase sticks forever."
+funFact: 'German idioms are little windows into how Germans picture the world: fingers become crossed thumbs, cats fall out of bags, and eating your hat is what you do when you are absolutely certain. Learn the image, not the words, and the phrase sticks forever.'
 minutes: 11
 quiz:
   - question: "What does 'Tomaten auf den Augen haben' literally mean, and what does it actually express?"
     options:
       - "Literally 'to have tomatoes on your eyes' — used when someone fails to see something obvious"
       - 'Literally the same, and it means someone has red, tired eyes'
-      - "It is a cooking idiom about overripe vegetables"
+      - 'It is a cooking idiom about overripe vegetables'
     answerIndex: 0
     explanation: "Literally 'to have tomatoes on your eyes,' this idiom is said to someone who overlooks something obvious right in front of them — the tomatoes are blocking their view."
   - question: "'Ich drücke dir die Daumen!' is the German equivalent of which English expression?"
@@ -22,7 +22,7 @@ quiz:
       - "'I am crossing my fingers for you!'"
       - "'Keep your chin up!'"
     answerIndex: 1
-    explanation: "Where English speakers cross their fingers, Germans press (drücken) their thumbs (Daumen) inward into a fist — same wish for luck, completely different gesture."
+    explanation: 'Where English speakers cross their fingers, Germans press (drücken) their thumbs (Daumen) inward into a fist — same wish for luck, completely different gesture.'
   - question: "Someone says 'Das ist mir Wurst.' What are they telling you?"
     options:
       - 'They are hungry and want sausage'
@@ -51,10 +51,10 @@ quiz:
       - "'Ich trinke meinen Schuh!'"
     answerIndex: 0
     explanation: "Germans stake their certainty on a broom, not a hat: 'Ich fresse einen Besen, wenn das stimmt' means 'I'd eat a broom if that's true' — i.e. I'm certain it's not."
-  - question: "Why is translating idioms word-for-word into German usually a bad idea?"
+  - question: 'Why is translating idioms word-for-word into German usually a bad idea?'
     options:
       - 'German has no idioms at all, so any translation sounds foreign'
-      - "Each language encodes its idioms in its own images — a literal translation often means nothing, or something unintended, to a German ear"
+      - 'Each language encodes its idioms in its own images — a literal translation often means nothing, or something unintended, to a German ear'
       - 'Idioms are only used in written German, never spoken'
     answerIndex: 1
     explanation: "Idioms are culture-specific images, not interchangeable vocabulary. 'It's raining cats and dogs' translated literally means nothing in German — the equivalent image is 'Es regnet in Strömen' (it's raining in streams)."
@@ -64,7 +64,7 @@ exercises:
     answer: 'Daumen'
     accepted:
       - 'Daumen'
-    hint: "The German luck gesture involves thumbs, not fingers — think of a fist with the thumb pressed inside."
+    hint: 'The German luck gesture involves thumbs, not fingers — think of a fist with the thumb pressed inside.'
     translation: "I'm crossing my fingers for you for the exam tomorrow!"
     placeholder: 'Finger'
   - type: 'fill-blank'
@@ -72,7 +72,7 @@ exercises:
     answer: 'Katze'
     accepted:
       - 'Katze'
-    hint: "The idiom about buying something unseen and risky involves a specific animal hidden in a bag."
+    hint: 'The idiom about buying something unseen and risky involves a specific animal hidden in a bag.'
     translation: "Don't buy the car unseen, or you'll be buying a pig in a poke."
     placeholder: 'Maus'
   - type: 'match'
@@ -137,7 +137,7 @@ willing to eat.
 Every language encodes emotion, certainty, and judgment in different physical images.
 English speakers cross their fingers; Germans press their thumbs. English speakers
 eat their hat when proven wrong; Germans eat a broom. The grammar is often simple —
-these are short, common sentences — but the *meaning lives entirely in the image*, so
+these are short, common sentences — but the _meaning lives entirely in the image_, so
 a word-for-word translation either means nothing or means something unintentionally
 strange. Learning idioms is really learning to see the world the way German phrases
 see it.
@@ -159,7 +159,7 @@ the sentiment but notice the gesture is "wrong" for the phrase.
 
 ## Indifference, wrapped in sausage
 
-**"Das ist mir Wurst"** (also heard as the more colorful *Das ist mir Wurscht* in the
+**"Das ist mir Wurst"** (also heard as the more colorful _Das ist mir Wurscht_ in the
 south) means "I genuinely don't care, it's all the same to me." The logic: one
 sausage looks and tastes roughly like another, so which one you get doesn't matter.
 It is casual and mildly informal — reach for it with friends, not in a job interview.
@@ -190,7 +190,7 @@ claim.)
 
 ## How to actually learn these
 
-Don't memorize idioms as vocabulary lists — memorize the *image* attached to each
+Don't memorize idioms as vocabulary lists — memorize the _image_ attached to each
 one, and notice them when native speakers use them in shows, podcasts, or
 conversation. The picture is what makes the phrase stick, and it's also what makes
 it fun: German idioms are full of tomatoes, brooms, sausages, and cats in sacks, and

@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Family Vocabulary: Mother, Father, and Relatives | PolyLingua'
+title: 'German Family Vocabulary: Mother, Father, and Relatives'
 description: 'Learn essential German family vocabulary — parents, siblings, grandparents, and more — with the correct der/die article for every family member.'
 order: 8
 unit: 3
 grammarTopic: 'Family vocabulary (die Familie)'
-funFact: "German family words are a great shortcut for practicing der/die: every male relative takes der (der Vater, der Bruder, der Onkel) and every female relative takes die (die Mutter, die Schwester, die Tante) — biological gender and grammatical gender line up perfectly here, unlike with objects."
+funFact: 'German family words are a great shortcut for practicing der/die: every male relative takes der (der Vater, der Bruder, der Onkel) and every female relative takes die (die Mutter, die Schwester, die Tante) — biological gender and grammatical gender line up perfectly here, unlike with objects.'
 minutes: 8
 quiz:
   - question: 'What is the German word for "family"?'
@@ -126,18 +126,18 @@ in German, because it also doubles as free practice for der/die/das gender.
 
 ## The core family
 
-| German         | English      |
-| -------------- | ------------- |
-| die Familie    | the family    |
-| die Eltern     | the parents   |
-| der Vater      | the father    |
-| die Mutter     | the mother    |
-| die Geschwister| the siblings  |
-| der Bruder     | the brother   |
-| die Schwester  | the sister    |
-| der Sohn       | the son       |
-| die Tochter    | the daughter  |
-| die Kinder     | the children  |
+| German          | English      |
+| --------------- | ------------ |
+| die Familie     | the family   |
+| die Eltern      | the parents  |
+| der Vater       | the father   |
+| die Mutter      | the mother   |
+| die Geschwister | the siblings |
+| der Bruder      | the brother  |
+| die Schwester   | the sister   |
+| der Sohn        | the son      |
+| die Tochter     | the daughter |
+| die Kinder      | the children |
 
 ## A gift for practicing der/die
 
@@ -153,13 +153,13 @@ articles before tackling objects, where the gender is far less predictable.
 
 ## Grandparents, aunts, uncles, cousins
 
-| German                  | English              |
-| ------------------------ | --------------------- |
-| der Großvater / Opa      | grandfather / grandpa |
-| die Großmutter / Oma     | grandmother / grandma |
-| die Großeltern           | the grandparents       |
-| der Onkel                | the uncle              |
-| die Tante                | the aunt               |
+| German                   | English                     |
+| ------------------------ | --------------------------- |
+| der Großvater / Opa      | grandfather / grandpa       |
+| die Großmutter / Oma     | grandmother / grandma       |
+| die Großeltern           | the grandparents            |
+| der Onkel                | the uncle                   |
+| die Tante                | the aunt                    |
 | der Cousin / die Cousine | male cousin / female cousin |
 
 Note the compound structure: "groß" (big/grand) + Vater/Mutter/Eltern builds

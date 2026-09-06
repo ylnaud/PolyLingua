@@ -1,16 +1,17 @@
 ---
 language: 'de'
 level: 'c1'
-title: 'German Functional Verb Constructions (Funktionsverbgefüge) | PolyLingua'
+title: 'German Functional Verb Constructions (Funktionsverbgefüge)'
 description: 'Learn Funktionsverbgefüge — formal German phrases like in Kraft treten and zur Verfügung stehen — that replace simple verbs in bureaucratic and business German.'
 order: 4
 unit: 1
 grammarTopic: 'Functional verb constructions (Funktionsverbgefüge)'
-funFact: "A Funktionsverbgefüge is a verb wearing a disguise: \"eine Entscheidung treffen\" doesn't add anything \"entscheiden\" doesn't already say — it just sounds more official. Spot the pattern (weak verb + noun, often with a fixed preposition) and you can decode almost any bureaucratic or business sentence by mentally collapsing it back into the one simple verb hiding inside."
+funFact: 'A Funktionsverbgefüge is a verb wearing a disguise: "eine Entscheidung treffen" doesn''t add anything "entscheiden" doesn''t already say — it just sounds more official. Spot the pattern (weak verb + noun, often with a fixed preposition) and you can decode almost any bureaucratic or business sentence by mentally collapsing it back into the one simple verb hiding inside.'
 minutes: 10
 quiz:
   - question: 'What is a Funktionsverbgefüge (functional verb construction)?'
-    options: [
+    options:
+      [
         'A modal verb combined with an infinitive',
         'A semantically weak verb + a noun that together carry the main meaning, replacing a simple verb',
         'A separable verb with a detachable prefix',
@@ -30,11 +31,17 @@ quiz:
     answerIndex: 1
     explanation: '"in Kraft treten" (literally "to step into force") means a law or regulation takes effect: Das Gesetz tritt am 1. Januar in Kraft.'
   - question: 'Which register is Funktionsverbgefüge most typical of?'
-    options: ['casual spoken German among friends', 'formal, bureaucratic, legal, and business German', 'children’s books']
+    options:
+      [
+        'casual spoken German among friends',
+        'formal, bureaucratic, legal, and business German',
+        'children’s books',
+      ]
     answerIndex: 1
     explanation: 'Funktionsverbgefüge are a hallmark of formal/bureaucratic/business/legal register — official documents, news, contracts, and administrative language.'
   - question: 'What does "Kritik üben an + Dativ" mean?'
-    options: ['to practice criticism as a hobby', 'to criticize (someone/something)', 'to avoid criticism']
+    options:
+      ['to practice criticism as a hobby', 'to criticize (someone/something)', 'to avoid criticism']
     answerIndex: 1
     explanation: '"Kritik üben an + Dativ" is the Funktionsverbgefüge for "kritisieren": Er übte Kritik an der Entscheidung = Er kritisierte die Entscheidung.'
   - question: 'What does "Anwendung finden" mean?'
@@ -42,7 +49,8 @@ quiz:
     answerIndex: 1
     explanation: '"Anwendung finden" is the Funktionsverbgefüge for "angewendet werden" (to be applied): Diese Methode findet in vielen Bereichen Anwendung.'
   - question: 'Why do writers of formal German prefer Funktionsverbgefüge over the simple verb, even though they mean the same thing?'
-    options: [
+    options:
+      [
         'They allow adding adjectives to the noun and sound more objective/impersonal, fitting formal register',
         'They are always shorter to write',
         'They are required by German spelling rules',
@@ -110,27 +118,27 @@ vocabulary:
 ---
 
 Read a German contract, a company press release, or a law, and you will notice something odd:
-verbs like *entscheiden* (to decide) or *kritisieren* (to criticize) rarely appear. Instead you
-get *eine Entscheidung treffen* (to make a decision) and *Kritik üben* (to exercise criticism).
+verbs like _entscheiden_ (to decide) or _kritisieren_ (to criticize) rarely appear. Instead you
+get _eine Entscheidung treffen_ (to make a decision) and _Kritik üben_ (to exercise criticism).
 These are **Funktionsverbgefüge** — functional verb constructions — and they are the fingerprint
 of formal, bureaucratic, and business German.
 
 ## The pattern: a "light" verb + a noun
 
-A Funktionsverbgefüge pairs a semantically weak (or "light") verb — often *treffen*, *stehen*,
-*bringen*, *finden*, *üben*, *nehmen*, *geben* — with a noun that carries the real meaning,
+A Funktionsverbgefüge pairs a semantically weak (or "light") verb — often _treffen_, _stehen_,
+_bringen_, _finden_, _üben_, _nehmen_, _geben_ — with a noun that carries the real meaning,
 sometimes with a fixed preposition:
 
-| Funktionsverbgefüge | Simple verb | Meaning |
-| --- | --- | --- |
-| eine Entscheidung **treffen** | entscheiden | to decide |
-| zur Verfügung **stehen** | verfügbar sein | to be available |
-| in Kraft **treten** | gelten (ab einem Datum) | to take effect |
-| Kritik üben **an** + Dat. | kritisieren | to criticize |
-| Anwendung **finden** | angewendet werden | to be applied |
-| zum Ausdruck **bringen** | ausdrücken | to express |
-| eine Frage **stellen** | fragen | to ask a question |
-| Rücksicht **nehmen auf** + Akk. | berücksichtigen | to take into account |
+| Funktionsverbgefüge             | Simple verb             | Meaning              |
+| ------------------------------- | ----------------------- | -------------------- |
+| eine Entscheidung **treffen**   | entscheiden             | to decide            |
+| zur Verfügung **stehen**        | verfügbar sein          | to be available      |
+| in Kraft **treten**             | gelten (ab einem Datum) | to take effect       |
+| Kritik üben **an** + Dat.       | kritisieren             | to criticize         |
+| Anwendung **finden**            | angewendet werden       | to be applied        |
+| zum Ausdruck **bringen**        | ausdrücken              | to express           |
+| eine Frage **stellen**          | fragen                  | to ask a question    |
+| Rücksicht **nehmen auf** + Akk. | berücksichtigen         | to take into account |
 
 The verb itself (treffen, stehen, bringen...) contributes almost no independent meaning here —
 its job is purely grammatical, to carry tense and person while the noun does the real semantic
@@ -140,9 +148,9 @@ work.
 
 Three concrete advantages explain why Funktionsverbgefüge are everywhere in official language:
 
-1. **You can modify the noun with adjectives**, which you cannot do to a simple verb: *eine
-   schwierige Entscheidung treffen* (to make a difficult decision) — there is no equivalent way
-   to insert "difficult" into the verb *entscheiden* itself.
+1. **You can modify the noun with adjectives**, which you cannot do to a simple verb: _eine
+   schwierige Entscheidung treffen_ (to make a difficult decision) — there is no equivalent way
+   to insert "difficult" into the verb _entscheiden_ itself.
 2. **They sound more impersonal and objective** — a favored tone in laws, contracts, and
    academic writing, where the action is framed as a formal, almost bureaucratic event rather
    than a personal choice.
@@ -153,9 +161,9 @@ Three concrete advantages explain why Funktionsverbgefüge are everywhere in off
 ## Learning them as fixed units
 
 Because the light verb + noun + preposition combination is largely fixed (you cannot swap
-*treffen* for *machen* in *eine Entscheidung treffen*), the only reliable way to master
+_treffen_ for _machen_ in _eine Entscheidung treffen_), the only reliable way to master
 Funktionsverbgefüge is to **memorize each one as a chunk**, the same way you would memorize an
-English idiom like "to make a decision" (not *"to do a decision"*).
+English idiom like "to make a decision" (not _"to do a decision"_).
 
 A few more high-frequency examples worth memorizing directly:
 

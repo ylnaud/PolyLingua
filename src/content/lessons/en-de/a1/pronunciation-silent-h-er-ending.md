@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'Silent H, -er Endings, and v/z/s Sounds in German | PolyLingua'
+title: 'Silent H, -er Endings, and v/z/s Sounds in German'
 description: 'Why "Vater" starts with an F sound and "-er" endings sound like "uh": the last core pronunciation rules for silent h, word endings, and v, z, s.'
 order: 0.5
 unit: 1
@@ -189,15 +189,15 @@ Haus      "house"         house      (unvoiced s-sound)
 
 ## Quick reference table
 
-| Letter                          | Sounds like              | Example         |
-| -------------------------------- | ------------------------- | ---------------- |
-| silent h (after a vowel)         | nothing — lengthens vowel | Sohn, Uhr        |
-| -er (unstressed ending)          | soft "uh"                 | Vater, Mutter    |
-| v (native German words)          | English f                  | Vater            |
-| v (loanwords)                    | English v                  | Vase             |
-| z                                 | "ts"                       | Zeit             |
-| s (start of word, before vowel)  | English z                  | sagen            |
-| s (end of word)                  | English s                  | das, Haus        |
+| Letter                          | Sounds like               | Example       |
+| ------------------------------- | ------------------------- | ------------- |
+| silent h (after a vowel)        | nothing — lengthens vowel | Sohn, Uhr     |
+| -er (unstressed ending)         | soft "uh"                 | Vater, Mutter |
+| v (native German words)         | English f                 | Vater         |
+| v (loanwords)                   | English v                 | Vase          |
+| z                               | "ts"                      | Zeit          |
+| s (start of word, before vowel) | English z                 | sagen         |
+| s (end of word)                 | English s                 | das, Haus     |
 
 ## How to practice
 

@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Diphthongs ei, ie, eu, au: Pronunciation Guide | PolyLingua'
+title: 'German Diphthongs ei, ie, eu, au: Pronunciation Guide'
 description: 'Master the four key German diphthongs — ei, ie, eu, and au — with a simple naming trick, English sound comparisons, and practice words.'
 order: 0.2
 unit: 1
@@ -175,11 +175,11 @@ auch     "OWKH"                                        also/too
 ## Quick reference table
 
 | Spelling | Sounds like (English) | Example      |
-| -------- | ---------------------- | ------------ |
-| ei       | eye (as in "time")     | Wein (wine)  |
-| ie       | ee (as in "see")       | wie (how)    |
-| eu       | oy (as in "boy")       | neu (new)    |
-| au       | ow (as in "cow")       | Haus (house) |
+| -------- | --------------------- | ------------ |
+| ei       | eye (as in "time")    | Wein (wine)  |
+| ie       | ee (as in "see")      | wie (how)    |
+| eu       | oy (as in "boy")      | neu (new)    |
+| au       | ow (as in "cow")      | Haus (house) |
 
 ## How to practice
 

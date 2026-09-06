@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Stem-Changing Verbs: Fahren, Essen, Sehen, Lesen | PolyLingua'
+title: 'German Stem-Changing Verbs: Fahren, Essen, Sehen, Lesen'
 description: 'Some German verbs change their vowel in the du and er/sie/es forms only. Learn the pattern with fahren, essen, sehen, and lesen.'
 order: 5
 unit: 2
@@ -10,11 +10,7 @@ funFact: "The vowel change only ever hits two forms — du and er/sie/es — and
 minutes: 9
 quiz:
   - question: 'In stem-changing verbs, which two forms are affected by the vowel change?'
-    options: [
-        'ich and wir',
-        'du and er/sie/es',
-        'ihr and sie/Sie',
-      ]
+    options: ['ich and wir', 'du and er/sie/es', 'ihr and sie/Sie']
     answerIndex: 1
     explanation: 'The vowel change appears only in the du-form and the er/sie/es-form. All other forms (ich, wir, ihr, sie/Sie) keep the normal vowel and normal regular endings.'
   - question: 'What is the "du" form of "fahren" (to drive/go)?'
@@ -42,7 +38,8 @@ quiz:
     answerIndex: 1
     explanation: '"essen" belongs to the e → i group (short vowel becomes short i): du isst, er isst.'
   - question: 'Why does "essen" become "isst" (not "esst") in the du-form?'
-    options: [
+    options:
+      [
         'Because the stem already ends in -s, so du + -st would create a triple s, and German drops the extra -s',
         'It is a spelling mistake that became standard',
         'The verb "essen" does not actually stem-change',
@@ -122,14 +119,14 @@ other form — ich, wir, ihr, sie/Sie — stays completely regular.
 
 ## Pattern 1: a → ä (fahren)
 
-| Pronoun       | fahren   |
-| ------------- | -------- |
-| ich           | fahre    |
+| Pronoun       | fahren     |
+| ------------- | ---------- |
+| ich           | fahre      |
 | du            | **fährst** |
 | er / sie / es | **fährt**  |
-| wir           | fahren   |
-| ihr           | fahrt    |
-| sie / Sie     | fahren   |
+| wir           | fahren     |
+| ihr           | fahrt      |
+| sie / Sie     | fahren     |
 
 Only du and er/sie/es pick up the umlaut: fahre → fährst / fährt.
 
@@ -138,8 +135,8 @@ Only du and er/sie/es pick up the umlaut: fahre → fährst / fährt.
 | Pronoun       | essen    |
 | ------------- | -------- |
 | ich           | esse     |
-| du            | **isst**   |
-| er / sie / es | **isst**   |
+| du            | **isst** |
+| er / sie / es | **isst** |
 | wir           | essen    |
 | ihr           | esst     |
 | sie / Sie     | essen    |
@@ -149,14 +146,14 @@ another -s(t) collapses into a single "isst" for both du and er/sie/es.
 
 ## Pattern 3: e → ie (sehen, lesen)
 
-| Pronoun       | sehen    | lesen    |
-| ------------- | -------- | -------- |
-| ich           | sehe     | lese     |
-| du            | **siehst** | **liest**  |
-| er / sie / es | **sieht**  | **liest**  |
-| wir           | sehen    | lesen    |
-| ihr           | seht     | lest     |
-| sie / Sie     | sehen    | lesen    |
+| Pronoun       | sehen      | lesen     |
+| ------------- | ---------- | --------- |
+| ich           | sehe       | lese      |
+| du            | **siehst** | **liest** |
+| er / sie / es | **sieht**  | **liest** |
+| wir           | sehen      | lesen     |
+| ihr           | seht       | lest      |
+| sie / Sie     | sehen      | lesen     |
 
 The long e becomes "ie" (pronounced like a long "ee") in exactly the same two forms.
 Notice that lesen's du-form and er/sie/es-form are identical ("liest") — that overlap

@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Question Words: Wer, Was, Wo, Wann, Warum, Wie | PolyLingua'
+title: 'German Question Words: Wer, Was, Wo, Wann, Warum, Wie'
 description: 'Master the six essential German W-Fragen (question words) — wer, was, wo, wann, warum, and wie — with examples that let you start asking real questions.'
 order: 2
 unit: 1
 grammarTopic: 'Question words (W-Fragen: wer, was, wo, wann, warum, wie)'
-funFact: "Germans call these W-Fragen (W-questions) because every single one starts with the letter W — wer, was, wo, wann, warum, wie. Spot a W at the start of a German sentence and you instantly know a question is coming, before you even finish reading it."
+funFact: 'Germans call these W-Fragen (W-questions) because every single one starts with the letter W — wer, was, wo, wann, warum, wie. Spot a W at the start of a German sentence and you instantly know a question is coming, before you even finish reading it.'
 minutes: 7
 quiz:
   - question: 'Which question word means "who"?'
@@ -34,7 +34,8 @@ quiz:
     answerIndex: 0
     explanation: '"wie" asks "how": Wie geht es dir? (How are you?)'
   - question: 'In "Wo wohnst du?", what position does the question word take?'
-    options: [
+    options:
+      [
         'It always comes at the end of the sentence',
         'It comes first, immediately followed by the verb',
         'It can go anywhere in the sentence',
@@ -42,11 +43,8 @@ quiz:
     answerIndex: 1
     explanation: 'German W-questions follow a fixed pattern: question word + verb + subject, e.g. Wo wohnst du?'
   - question: 'What does "Wie heißt du?" literally ask?'
-    options: [
-        'Where do you live?',
-        'How are you called? (i.e. What is your name?)',
-        'Who are you with?',
-      ]
+    options:
+      ['Where do you live?', 'How are you called? (i.e. What is your name?)', 'Who are you with?']
     answerIndex: 1
     explanation: '"Wie heißt du?" uses "wie" (how) but idiomatically means "What is your name?" — a fixed phrase worth memorizing.'
 exercises:
@@ -119,14 +117,14 @@ letter W: **wer, was, wo, wann, warum, wie**.
 
 ## The six W-Fragen
 
-| German | English | Example                              |
-| ------ | ------- | ------------------------------------- |
-| wer    | who     | Wer ist das? (Who is that?)           |
-| was    | what    | Was machst du? (What are you doing?)  |
-| wo     | where   | Wo wohnst du? (Where do you live?)    |
-| wann   | when    | Wann kommst du? (When are you coming?)|
-| warum  | why     | Warum lachst du? (Why are you laughing?)|
-| wie    | how     | Wie geht es dir? (How are you?)       |
+| German | English | Example                                  |
+| ------ | ------- | ---------------------------------------- |
+| wer    | who     | Wer ist das? (Who is that?)              |
+| was    | what    | Was machst du? (What are you doing?)     |
+| wo     | where   | Wo wohnst du? (Where do you live?)       |
+| wann   | when    | Wann kommst du? (When are you coming?)   |
+| warum  | why     | Warum lachst du? (Why are you laughing?) |
+| wie    | how     | Wie geht es dir? (How are you?)          |
 
 Notice the pattern in the English translations too: who, what, where, when, why, how —
 English question words mostly start with "wh," and German ones mostly start with "w."

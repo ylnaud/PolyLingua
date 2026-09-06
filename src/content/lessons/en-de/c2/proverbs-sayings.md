@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'c2'
-title: 'German Proverbs and Sayings: Sprichwörter Explained | PolyLingua'
-description: "Explore real German Sprichwörter like Der Apfel fällt nicht weit vom Stamm, with meanings, origins and how native speakers actually use them."
+title: 'German Proverbs and Sayings: Sprichwörter Explained'
+description: 'Explore real German Sprichwörter like Der Apfel fällt nicht weit vom Stamm, with meanings, origins and how native speakers actually use them.'
 order: 4
 unit: 1
 grammarTopic: 'Proverbs and sayings (Sprichwörter)'
-funFact: "Many German proverbs rhyme or use old-fashioned grammar frozen in time — Morgenstund hat Gold im Mund uses a dative form (Mund) without the modern -e ending, a fossil of older German preserved only because the rhyme with Morgenstund locked it in place."
+funFact: 'Many German proverbs rhyme or use old-fashioned grammar frozen in time — Morgenstund hat Gold im Mund uses a dative form (Mund) without the modern -e ending, a fossil of older German preserved only because the rhyme with Morgenstund locked it in place.'
 minutes: 10
 quiz:
   - question: "'Der Apfel fällt nicht weit vom Stamm' is used when someone notices what?"
@@ -23,13 +23,13 @@ quiz:
       - 'Speaking carefully and choosing words wisely'
     answerIndex: 1
     explanation: '"The morning hour has gold in its mouth" is the German equivalent of "the early bird catches the worm" — praising early starts, though today it is often said half-jokingly to someone dragging themselves out of bed.'
-  - question: "A friend is stressed about a problem that has not happened yet and may never happen. What proverb fits?"
+  - question: 'A friend is stressed about a problem that has not happened yet and may never happen. What proverb fits?'
     options:
       - "'Kommt Zeit, kommt Rat'"
       - "'Man soll den Tag nicht vor dem Abend loben'"
       - "'Wer A sagt, muss auch B sagen'"
     answerIndex: 0
-    explanation: "\"When time comes, advice comes\" reassures that a solution will present itself in due course — it counsels patience rather than premature worry, similar to \"we'll cross that bridge when we come to it.\""
+    explanation: '"When time comes, advice comes" reassures that a solution will present itself in due course — it counsels patience rather than premature worry, similar to "we''ll cross that bridge when we come to it."'
   - question: "'Man soll den Tag nicht vor dem Abend loben' warns against what?"
     options:
       - 'Staying up too late'
@@ -39,22 +39,22 @@ quiz:
     explanation: '"One should not praise the day before the evening" cautions against celebrating too soon — things can still go wrong before the day (or the plan, or the deal) is actually over.'
   - question: "'Wer A sagt, muss auch B sagen' is used to point out what?"
     options:
-      - "That someone needs to improve their alphabet skills"
+      - 'That someone needs to improve their alphabet skills'
       - "That once you commit to the first step of something, you're obligated to see the rest of it through"
       - 'That two people are having a disagreement'
     answerIndex: 1
     explanation: '"Whoever says A must also say B" means: having started something (or made a commitment), you cannot back out halfway — you have to follow through on the consequences.'
-  - question: "What distinguishes a Redewendung (idiom) from a Sprichwort (proverb)?"
+  - question: 'What distinguishes a Redewendung (idiom) from a Sprichwort (proverb)?'
     options:
       - 'There is no real difference; the words are interchangeable'
-      - "A Sprichwort is typically a complete, traditional sentence expressing general wisdom or advice, while a Redewendung is a shorter fixed phrase that plugs into other sentences"
+      - 'A Sprichwort is typically a complete, traditional sentence expressing general wisdom or advice, while a Redewendung is a shorter fixed phrase that plugs into other sentences'
       - 'Sprichwörter are always about animals, Redewendungen never are'
     answerIndex: 1
     explanation: "Sprichwörter (proverbs) tend to be self-contained, often old sentences carrying general life advice — 'Der Apfel fällt nicht weit vom Stamm.' Redewendungen (idioms) are shorter fixed expressions inserted into a sentence you're already building, like 'die Daumen drücken.'"
-  - question: "Why do many German proverbs sound slightly archaic, with older grammar than everyday speech?"
+  - question: 'Why do many German proverbs sound slightly archaic, with older grammar than everyday speech?'
     options:
       - 'They are deliberately written in a fake old style for effect'
-      - "Proverbs are old, frozen expressions passed down largely unchanged, so they preserve older grammatical forms (like the dative Mund instead of modern Munde) that everyday German has since simplified"
+      - 'Proverbs are old, frozen expressions passed down largely unchanged, so they preserve older grammatical forms (like the dative Mund instead of modern Munde) that everyday German has since simplified'
       - 'German grammar has not changed in centuries'
     answerIndex: 1
     explanation: 'Proverbs are transmitted almost word-for-word across generations, which "freezes" their grammar at an earlier stage of the language — a phenomenon linguists call fossilization, also seen in English phrases like "so be it."'
@@ -64,7 +64,7 @@ exercises:
     answer: 'Apfel'
     accepted:
       - 'Apfel'
-    hint: "The proverb about a child resembling a parent uses a specific fruit and its tree."
+    hint: 'The proverb about a child resembling a parent uses a specific fruit and its tree.'
     translation: "He's just as stubborn as his father — the apple doesn't fall far from the tree."
     placeholder: 'Baum'
   - type: 'fill-blank'
@@ -94,7 +94,7 @@ exercises:
     answer: 'Abend'
     accepted:
       - 'abend'
-    hint: "The proverb about not celebrating too soon contrasts the day with a specific time when it truly ends."
+    hint: 'The proverb about not celebrating too soon contrasts the day with a specific time when it truly ends.'
     placeholder: 'Morgen'
   - type: 'write'
     prompt: "Translate into English: 'Kommt Zeit, kommt Rat.'"
@@ -142,9 +142,9 @@ stubborn as his father...") equally well.
 
 ## Gold in the mouth of the morning
 
-**"Morgenstund hat Gold im Mund"** rhymes on purpose — *Morgenstund* and *Mund* —
+**"Morgenstund hat Gold im Mund"** rhymes on purpose — _Morgenstund_ and _Mund_ —
 which is exactly why its grammar looks a little frozen in time: modern German would
-normally add an *-e* to *Mund* in this dative construction, but the proverb keeps the
+normally add an _-e_ to _Mund_ in this dative construction, but the proverb keeps the
 older, shorter form because changing it would break the rhyme. The meaning: early
 hours are especially valuable, so get up and start your day. In practice, it's often
 said half-teasingly to someone struggling to leave bed, the way "the early bird
@@ -179,7 +179,7 @@ finish what you started, live with the consequences of the choice you already ma
 Notice how proverbs often sound slightly older or stiffer than everyday spoken
 German — that's not your imagination. Because proverbs get passed down nearly
 word-for-word across generations, they preserve grammatical forms (like the dative
-*Mund* above) that the rest of the language has since simplified or dropped.
+_Mund_ above) that the rest of the language has since simplified or dropped.
 Linguists call this fossilization, and it happens in every language — English still
 says "so be it" and "woe is me," constructions nobody would build from scratch in
 modern speech. Learning a handful of German Sprichwörter, then, is a little bit like

@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Noun Plurals: The Five Patterns You Need | PolyLingua'
+title: 'German Noun Plurals: The Five Patterns You Need'
 description: 'Learn the five plural patterns German nouns follow — no change, -e, -er, -(e)n, and -s — plus the umlaut rule and why plurals always use "die".'
 order: 14
 unit: 3
 grammarTopic: 'Noun plural formation (five plural patterns)'
-funFact: "English mostly just adds -s, but German nouns fall into five different plural patterns — and there is no rule that tells you which one a word uses just by looking at it. The fix: learn every new noun WITH its plural form attached, the same way you learn it with its article. der Tisch, die Tische — treat it as one package."
+funFact: 'English mostly just adds -s, but German nouns fall into five different plural patterns — and there is no rule that tells you which one a word uses just by looking at it. The fix: learn every new noun WITH its plural form attached, the same way you learn it with its article. der Tisch, die Tische — treat it as one package.'
 minutes: 9
 quiz:
   - question: 'What article do ALL German nouns take in the plural, no matter what gender they were in the singular?'
@@ -30,11 +30,17 @@ quiz:
     answerIndex: 0
     explanation: 'Many masculine nouns take the -e plural: der Tisch → die Tische, der Tag → die Tage.'
   - question: 'What happens to "der Vater" (the father) in the plural?'
-    options: ['It stays exactly the same: die Vater', 'It adds no ending but gets an umlaut: die Väter', 'It adds -en: die Vateren']
+    options:
+      [
+        'It stays exactly the same: die Vater',
+        'It adds no ending but gets an umlaut: die Väter',
+        'It adds -en: die Vateren',
+      ]
     answerIndex: 1
     explanation: 'Some nouns — often ones ending in -er, -el, or -en — add no plural ending at all but DO add an umlaut when the vowel allows it: der Vater → die Väter, der Bruder → die Brüder.'
   - question: 'Why is it a mistake to memorize a German noun without its plural form?'
-    options: [
+    options:
+      [
         'It is not a mistake — German plurals are always predictable from the singular',
         'Because German has five different plural patterns and no single spelling rule reliably predicts which one applies',
         'Because German nouns do not actually have plurals',
@@ -119,17 +125,17 @@ das Kind   →  die Kinder
 die Frau   →  die Frauen
 ```
 
-You never have to guess the plural article. You only have to learn the plural *ending*.
+You never have to guess the plural article. You only have to learn the plural _ending_.
 
 ## The five plural patterns
 
-| Pattern | What happens | Examples |
-| ------- | ------------- | -------- |
-| No ending (sometimes + umlaut) | The word does not change, or only gets an umlaut | der Lehrer → die Lehrer; der Vater → die Väter |
-| -e (often + umlaut) | Add -e, sometimes with an umlaut on the vowel | der Tisch → die Tische; der Stuhl → die Stühle |
-| -er (+ umlaut when possible) | Add -er, and add an umlaut whenever the vowel can take one | das Kind → die Kinder; das Buch → die Bücher |
-| -(e)n | Add -n or -en, never with an umlaut | die Frau → die Frauen; die Lampe → die Lampen |
-| -s | Add -s — typical of loanwords from other languages | das Auto → die Autos; das Hotel → die Hotels |
+| Pattern                        | What happens                                               | Examples                                       |
+| ------------------------------ | ---------------------------------------------------------- | ---------------------------------------------- |
+| No ending (sometimes + umlaut) | The word does not change, or only gets an umlaut           | der Lehrer → die Lehrer; der Vater → die Väter |
+| -e (often + umlaut)            | Add -e, sometimes with an umlaut on the vowel              | der Tisch → die Tische; der Stuhl → die Stühle |
+| -er (+ umlaut when possible)   | Add -er, and add an umlaut whenever the vowel can take one | das Kind → die Kinder; das Buch → die Bücher   |
+| -(e)n                          | Add -n or -en, never with an umlaut                        | die Frau → die Frauen; die Lampe → die Lampen  |
+| -s                             | Add -s — typical of loanwords from other languages         | das Auto → die Autos; das Hotel → die Hotels   |
 
 ## Tendencies that help you guess
 

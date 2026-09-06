@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b2'
-title: 'German Futur I and Futur II Explained | PolyLingua'
+title: 'German Futur I and Futur II Explained'
 description: 'Learn how to form and use Futur I (werden + infinitive) and Futur II (werden + Partizip II + haben/sein) to talk about future plans and predictions in German.'
 order: 4
 unit: 1
@@ -14,11 +14,17 @@ quiz:
     answerIndex: 1
     explanation: 'Futur I = conjugated werden + the infinitive of the main verb, with the infinitive at the end of the clause: Ich werde morgen arbeiten.'
   - question: 'Which sentence correctly expresses "I will call you tomorrow" using Futur I?'
-    options: ['Ich rufe dich morgen an.', 'Ich werde dich morgen anrufen.', 'Ich habe dich morgen angerufen.']
+    options:
+      [
+        'Ich rufe dich morgen an.',
+        'Ich werde dich morgen anrufen.',
+        'Ich habe dich morgen angerufen.',
+      ]
     answerIndex: 1
     explanation: 'Futur I uses werde (1st person singular of werden) plus the separable infinitive anrufen at the end: Ich werde dich morgen anrufen.'
   - question: 'Besides expressing future actions, what else does Futur I commonly express in German?'
-    options: ['A polite request', 'A present-tense assumption or probability', 'A completed past action']
+    options:
+      ['A polite request', 'A present-tense assumption or probability', 'A completed past action']
     answerIndex: 1
     explanation: 'Futur I very often expresses a guess about the present: Er wird jetzt zu Hause sein. (He is probably at home now.) — with a time word like "jetzt," it is not about the future at all.'
   - question: 'How is Futur II formed?'
@@ -26,7 +32,8 @@ quiz:
     answerIndex: 0
     explanation: 'Futur II = conjugated werden + Partizip II + haben or sein (as an infinitive) at the very end: Ich werde die Arbeit bis Montag beendet haben.'
   - question: 'What does "Sie wird die Prüfung bestanden haben." most likely mean?'
-    options: [
+    options:
+      [
         'She is currently taking the exam.',
         'She will have passed the exam (by some future point) / She has probably passed the exam.',
         'She failed the exam.',
@@ -105,7 +112,7 @@ vocabulary:
 ---
 
 German actually uses the present tense far more often than English does to talk about the
-future — a time word is usually enough: *Ich fahre morgen nach Berlin.* (I'm going to Berlin
+future — a time word is usually enough: _Ich fahre morgen nach Berlin._ (I'm going to Berlin
 tomorrow.) But Futur I and Futur II exist for specific jobs: making a prediction sound more
 definite, expressing an assumption, or describing something that will be completed by a
 future point. At B2 level you need to recognize and produce both.
@@ -115,21 +122,21 @@ future point. At B2 level you need to recognize and produce both.
 Futur I is built exactly like the passive voice, but with an infinitive instead of a
 participle: **conjugated werden + Infinitiv (at the end of the clause)**.
 
-| Subject | werden | Example |
-| --- | --- | --- |
-| ich | werde | Ich werde arbeiten. (I will work.) |
-| du | wirst | Du wirst ankommen. (You will arrive.) |
-| er/sie/es | wird | Sie wird gewinnen. (She will win.) |
-| wir | werden | Wir werden reisen. (We will travel.) |
-| ihr | werdet | Ihr werdet lernen. (You all will learn.) |
-| sie/Sie | werden | Sie werden helfen. (They will help.) |
+| Subject   | werden | Example                                  |
+| --------- | ------ | ---------------------------------------- |
+| ich       | werde  | Ich werde arbeiten. (I will work.)       |
+| du        | wirst  | Du wirst ankommen. (You will arrive.)    |
+| er/sie/es | wird   | Sie wird gewinnen. (She will win.)       |
+| wir       | werden | Wir werden reisen. (We will travel.)     |
+| ihr       | werdet | Ihr werdet lernen. (You all will learn.) |
+| sie/Sie   | werden | Sie werden helfen. (They will help.)     |
 
 ## Futur I as an assumption, not just a future
 
 One of the most common uses of Futur I in everyday German has nothing to do with the future
 at all — it expresses a **guess about the present**, usually with a word like "wohl,"
-"wahrscheinlich," or "jetzt": *Er wird jetzt zu Hause sein.* (He is probably at home right
-now.) *Sie wird wohl krank sein.* (She's probably sick.) Context and time words tell you
+"wahrscheinlich," or "jetzt": _Er wird jetzt zu Hause sein._ (He is probably at home right
+now.) _Sie wird wohl krank sein._ (She's probably sick.) Context and time words tell you
 whether werden + infinitive is a real future or a present-tense guess.
 
 ## Futur II: werden + Partizip II + haben/sein
@@ -138,15 +145,15 @@ Futur II describes an action that will be **completed by** some point in the fut
 German equivalent of "will have done." The formula stacks one more piece onto Futur I:
 **werden + Partizip II + haben/sein (as an infinitive, at the very end)**.
 
-- *Ich werde die Arbeit bis Montag beendet haben.* (I will have finished the work by
+- _Ich werde die Arbeit bis Montag beendet haben._ (I will have finished the work by
   Monday.)
-- *Er wird bis morgen angekommen sein.* (He will have arrived by tomorrow.) — uses sein
+- _Er wird bis morgen angekommen sein._ (He will have arrived by tomorrow.) — uses sein
   because ankommen takes sein in the Perfekt too.
 
 ## Futur II as a probability about the past
 
 Just like Futur I can express a present-tense guess, Futur II very often expresses a guess
-about something that already happened: *Sie wird die Prüfung bestanden haben.* can mean
+about something that already happened: _Sie wird die Prüfung bestanden haben._ can mean
 either "she will have passed the exam" (future perfect) or, more commonly in conversation,
 "she has probably passed the exam" (a confident assumption about the past).
 
@@ -154,7 +161,7 @@ either "she will have passed the exam" (future perfect) or, more commonly in con
 
 In practice, German speakers reach for Futur I mainly to:
 
-- Make a promise or prediction sound more emphatic: *Ich werde es tun!* (I will do it!)
+- Make a promise or prediction sound more emphatic: _Ich werde es tun!_ (I will do it!)
 - Express a formal or written prediction: news, weather forecasts, official announcements.
 - Signal an assumption rather than a fact.
 

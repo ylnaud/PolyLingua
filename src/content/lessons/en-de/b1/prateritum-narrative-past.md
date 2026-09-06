@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'German Präteritum: The Narrative Past Tense | PolyLingua'
+title: 'German Präteritum: The Narrative Past Tense'
 description: 'Learn the German Präteritum, the written/narrative past used in books and news, and why sein, haben and modal verbs use it even in everyday speech.'
 order: 2
 unit: 1
@@ -36,8 +36,8 @@ quiz:
       - 'The stem vowel changes, and ich/er/sie/es get no extra ending at all'
       - 'The verb becomes a compound word'
     answerIndex: 1
-    explanation: "Strong verbs change their stem vowel (gehen → ging, sehen → sah, kommen → kam) and take NO extra ending for ich/er/sie/es — unlike weak verbs, which always add -te."
-  - question: "Which sentence is typical of a written news report rather than everyday chat?"
+    explanation: 'Strong verbs change their stem vowel (gehen → ging, sehen → sah, kommen → kam) and take NO extra ending for ich/er/sie/es — unlike weak verbs, which always add -te.'
+  - question: 'Which sentence is typical of a written news report rather than everyday chat?'
     options:
       - 'Ich habe gegessen.'
       - 'Ich aß.'
@@ -50,7 +50,7 @@ quiz:
       - "Because Germans strongly prefer the short Präteritum form 'ich war' for sein, even when speaking"
       - "Because 'gewesen' does not exist"
     answerIndex: 1
-    explanation: "sein, haben and the modal verbs are the exception: their Präteritum forms (war, hatte, konnte...) are shorter and more natural than their Perfekt equivalents, so native speakers default to them even out loud."
+    explanation: 'sein, haben and the modal verbs are the exception: their Präteritum forms (war, hatte, konnte...) are shorter and more natural than their Perfekt equivalents, so native speakers default to them even out loud.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Ich ___ gestern sehr müde.'
@@ -116,10 +116,10 @@ written narration.
 
 ## When each one is used
 
-| Perfekt                 | Präteritum                          |
-| ------------------------ | ------------------------------------ |
-| Everyday conversation    | Written texts, news, stories         |
-| "Ich habe gegessen"      | "Ich aß"                             |
+| Perfekt               | Präteritum                   |
+| --------------------- | ---------------------------- |
+| Everyday conversation | Written texts, news, stories |
+| "Ich habe gegessen"   | "Ich aß"                     |
 
 If you are speaking out loud about something that happened, the Perfekt is your
 default. If you are reading (or writing) a story, article, or novel, expect the
@@ -141,12 +141,12 @@ unnecessarily long-winded — German speakers default to the short form here.
 
 **Weak (regular) verbs**: stem + -te
 
-| Pronoun    | machen    |
-| ---------- | --------- |
-| ich        | machte    |
-| du         | machtest  |
-| er/sie/es  | machte    |
-| wir        | machten   |
+| Pronoun   | machen   |
+| --------- | -------- |
+| ich       | machte   |
+| du        | machtest |
+| er/sie/es | machte   |
+| wir       | machten  |
 
 **Strong (irregular) verbs**: the stem vowel changes, and ich/er-sie-es get no ending
 

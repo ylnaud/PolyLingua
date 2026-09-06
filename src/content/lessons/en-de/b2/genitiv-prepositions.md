@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b2'
-title: 'German Prepositions with the Genitiv Case | PolyLingua'
+title: 'German Prepositions with the Genitiv Case'
 description: 'Learn the German prepositions that govern the Genitiv case, including trotz, während, wegen, and statt, with formal usage and common spoken alternatives.'
 order: 5
 unit: 2
@@ -25,12 +25,13 @@ quiz:
     options: ['statt', 'wegen', 'trotz']
     answerIndex: 0
     explanation: "'Statt' (instead of) governs the Genitiv: statt des Kaffees, though with an uncountable/unspecified noun like Kaffee it is common to see it without an article ending too."
-  - question: "What is the masculine/neuter Genitiv singular article, used after Genitiv prepositions?"
+  - question: 'What is the masculine/neuter Genitiv singular article, used after Genitiv prepositions?'
     options: ['der', 'des', 'dem']
     answerIndex: 1
     explanation: "The Genitiv definite article for masculine and neuter singular nouns is 'des' (plus an -s or -es ending on the noun itself): des Mannes, des Kindes."
-  - question: "Which sentence is grammatically correct, standard written German?"
-    options: [
+  - question: 'Which sentence is grammatically correct, standard written German?'
+    options:
+      [
         'Wegen dem Regen bleiben wir zu Hause.',
         'Wegen des Regens bleiben wir zu Hause.',
         'Wegen der Regen bleiben wir zu Hause.',
@@ -42,13 +43,14 @@ quiz:
     answerIndex: 2
     explanation: "'Außerhalb' (outside of) and 'innerhalb' (within/inside of) are a common pair, both governing the Genitiv: außerhalb der Stadt, innerhalb einer Woche."
   - question: "How does 'des Mannes' differ in formation from 'des Kindes'?"
-    options: [
+    options:
+      [
         'They are formed identically for this example',
         'Mannes adds only -es, Kindes adds only -s',
         'Only Mannes takes an article',
       ]
     answerIndex: 0
-    explanation: "Both der Mann and das Kind are one-syllable-stem masculine/neuter nouns, so both take -es in the Genitiv: des Mannes, des Kindes — the -es (vs. plain -s) is common with nouns ending in a consonant cluster or a single syllable."
+    explanation: 'Both der Mann and das Kind are one-syllable-stem masculine/neuter nouns, so both take -es in the Genitiv: des Mannes, des Kindes — the -es (vs. plain -s) is common with nouns ending in a consonant cluster or a single syllable.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Trotz ___ Regens gehen wir spazieren.'
@@ -118,14 +120,14 @@ perfectly yourself.
 
 ## The core Genitiv prepositions
 
-| Preposition | Meaning | Example |
-| --- | --- | --- |
-| trotz | despite | trotz des Regens (despite the rain) |
-| während | during | während des Konzerts (during the concert) |
-| wegen | because of | wegen des Wetters (because of the weather) |
-| statt (also: anstatt) | instead of | statt des Kaffees (instead of the coffee) |
-| außerhalb | outside of | außerhalb der Stadt (outside the city) |
-| innerhalb | within, inside of | innerhalb einer Woche (within a week) |
+| Preposition           | Meaning           | Example                                    |
+| --------------------- | ----------------- | ------------------------------------------ |
+| trotz                 | despite           | trotz des Regens (despite the rain)        |
+| während               | during            | während des Konzerts (during the concert)  |
+| wegen                 | because of        | wegen des Wetters (because of the weather) |
+| statt (also: anstatt) | instead of        | statt des Kaffees (instead of the coffee)  |
+| außerhalb             | outside of        | außerhalb der Stadt (outside the city)     |
+| innerhalb             | within, inside of | innerhalb einer Woche (within a week)      |
 
 ## Forming the Genitiv after these prepositions
 
@@ -136,13 +138,13 @@ The Genitiv changes both the article and, for many masculine/neuter nouns, the n
 - **Feminine and plural**: article becomes **der**, and the noun itself does **not**
   change: der Frau, der Kinder.
 
-So: *trotz des Regens* (masc.), *wegen des Wetters* (neut.), *während der Nacht* (fem.,
-"during the night"), *statt der Kinder* (plural, "instead of the children").
+So: _trotz des Regens_ (masc.), _wegen des Wetters_ (neut.), _während der Nacht_ (fem.,
+"during the night"), _statt der Kinder_ (plural, "instead of the children").
 
 ## The spoken-German shortcut: Genitiv → Dativ
 
 In everyday spoken German, especially with "wegen," it's extremely common to hear the
-Dativ used instead of the Genitiv: *wegen dem Regen* instead of *wegen des Regens*. This is
+Dativ used instead of the Genitiv: _wegen dem Regen_ instead of _wegen des Regens_. This is
 widespread and easily understood, but it is considered non-standard in formal writing,
 exams, and careful speech. As a learner:
 
@@ -151,8 +153,8 @@ exams, and careful speech. As a learner:
 
 ## A useful memory trick
 
-Many learners memorize these prepositions with the mnemonic sentence: *"Trotz, während,
-wegen, statt — dem Genitiv folgt die Attitüde!"* (a rhyme reminding you that these four are
+Many learners memorize these prepositions with the mnemonic sentence: _"Trotz, während,
+wegen, statt — dem Genitiv folgt die Attitüde!"_ (a rhyme reminding you that these four are
 the classic Genitiv set). Add außerhalb/innerhalb as a matched pair once the core four feel
 automatic, since they are less frequent but common enough in written German (contracts,
 articles, instructions) to be worth knowing at B2.

@@ -1,21 +1,21 @@
 ---
 language: 'de'
 level: 'c2'
-title: 'Ja, Doch, Mal, Halt: German Modal Particles Explained | PolyLingua'
-description: "Master German modal particles like ja, doch, mal, halt and eben — tiny words with no dictionary meaning that separate fluent from textbook German."
+title: 'Ja, Doch, Mal, Halt: German Modal Particles Explained'
+description: 'Master German modal particles like ja, doch, mal, halt and eben — tiny words with no dictionary meaning that separate fluent from textbook German.'
 order: 1
 unit: 1
 grammarTopic: 'Modal particles (Modalpartikeln: ja, doch, mal, halt, eben, denn)'
 funFact: "Modal particles are the written equivalent of tone of voice. The same sentence with 'doch' sounds surprised, with 'ja' sounds obvious, with 'mal' sounds casual — and no dictionary translates them well, because they don't change what is said, only how it lands."
 minutes: 11
 quiz:
-  - question: "You can build a grammatically flawless German sentence and still sound like a textbook. What is usually missing?"
+  - question: 'You can build a grammatically flawless German sentence and still sound like a textbook. What is usually missing?'
     options:
       - 'More advanced vocabulary'
       - 'Modal particles (ja, doch, mal, halt...)'
       - 'The subjunctive mood'
     answerIndex: 1
-    explanation: "Grammar gets you understood; modal particles get you sounding native. They carry attitude — surprise, resignation, casualness — that grammar alone cannot express."
+    explanation: 'Grammar gets you understood; modal particles get you sounding native. They carry attitude — surprise, resignation, casualness — that grammar alone cannot express.'
   - question: "'Das ist ja interessant!' — what does 'ja' signal here?"
     options:
       - 'A yes/no question'
@@ -40,7 +40,7 @@ quiz:
   - question: "A Bavarian speaker says 'Das ist halt so.' What attitude does 'halt' convey?"
     options:
       - 'Strong disagreement'
-      - "Resignation — \"that's just how it is, nothing to be done\""
+      - 'Resignation — "that''s just how it is, nothing to be done"'
       - 'Excitement about the news'
     answerIndex: 1
     explanation: "'halt' (and its more standard-German cousin 'eben') shrugs at an unchangeable fact: 'that's just the way it is.'"
@@ -51,14 +51,14 @@ quiz:
       - 'It makes the question sound rude'
     answerIndex: 0
     explanation: "'denn' in questions signals real interest — it turns a formulaic 'how are you' into 'so, how are you actually doing?'"
-  - question: "What is the best strategy for learning to use modal particles correctly?"
+  - question: 'What is the best strategy for learning to use modal particles correctly?'
     options:
       - 'Memorize a single English translation for each one'
       - 'Notice them in real conversations, podcasts and shows, and imitate the contexts where native speakers use them'
       - 'Avoid them entirely, since they are optional'
     answerIndex: 1
-    explanation: "Modal particles have no 1:1 translation — their meaning lives entirely in tone and context, so dictionary memorization fails. Exposure and imitation are what actually work."
-  - question: "Which combination correctly stacks two modal particles for a softened, slightly insistent invitation?"
+    explanation: 'Modal particles have no 1:1 translation — their meaning lives entirely in tone and context, so dictionary memorization fails. Exposure and imitation are what actually work.'
+  - question: 'Which combination correctly stacks two modal particles for a softened, slightly insistent invitation?'
     options:
       - 'Komm doch mal her!'
       - 'Komm her doch mal!'
@@ -92,7 +92,7 @@ exercises:
       - left: 'mal'
         right: 'softens a request or command'
       - left: 'halt / eben'
-        right: "resignation — \"that's just how it is\""
+        right: 'resignation — "that''s just how it is"'
       - left: 'denn'
         right: 'genuine curiosity in a question'
   - type: 'write'
@@ -120,7 +120,7 @@ vocabulary:
   - term: 'mal'
     translation: 'particle that softens requests and commands'
   - term: 'halt'
-    translation: "particle of resignation (\"that's just how it is\"), common in Southern Germany/Austria"
+    translation: 'particle of resignation ("that''s just how it is"), common in Southern Germany/Austria'
   - term: 'eben'
     translation: 'standard-German equivalent of "halt" — resignation, agreement'
   - term: 'denn'
@@ -145,13 +145,13 @@ but emotionally flat.
 
 ## The particles that trip up learners most
 
-| Particle | Effect | Example |
-| --- | --- | --- |
-| doch | emphasis / mild contradiction | Das weißt du doch! (but you DO know that!) |
-| ja | something obvious or just noticed | Das ist ja toll! (oh, that's actually great!) |
-| mal | softens, adds casualness | Warte mal. (hang on a sec) |
-| halt / eben | resignation, "that's just how it is" | Das ist halt so. (that's just the way it is) |
-| denn | genuine curiosity in questions | Wie geht's dir denn? (so, how are you really doing?) |
+| Particle    | Effect                               | Example                                              |
+| ----------- | ------------------------------------ | ---------------------------------------------------- |
+| doch        | emphasis / mild contradiction        | Das weißt du doch! (but you DO know that!)           |
+| ja          | something obvious or just noticed    | Das ist ja toll! (oh, that's actually great!)        |
+| mal         | softens, adds casualness             | Warte mal. (hang on a sec)                           |
+| halt / eben | resignation, "that's just how it is" | Das ist halt so. (that's just the way it is)         |
+| denn        | genuine curiosity in questions       | Wie geht's dir denn? (so, how are you really doing?) |
 
 ## doch: German's favorite word for "actually, yes"
 

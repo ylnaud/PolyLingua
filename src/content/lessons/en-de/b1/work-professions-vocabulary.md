@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'German Work and Professions Vocabulary | PolyLingua'
+title: 'German Work and Professions Vocabulary'
 description: 'Learn German vocabulary for work and professions, plus the grammar rule English speakers always forget: no article before a profession with sein.'
 order: 8
 unit: 2
@@ -16,20 +16,20 @@ quiz:
       - 'Ich habe Lehrer.'
     answerIndex: 1
     explanation: "German drops the article before professions after sein/werden: Ich bin Lehrer (no 'ein'). This is one of the most common mistakes English speakers make."
-  - question: "When DOES a profession noun get an article in German?"
+  - question: 'When DOES a profession noun get an article in German?'
     options:
       - 'Never, under any circumstance'
       - 'When it is modified by an adjective, e.g. Ich bin ein guter Lehrer'
       - 'Only in questions'
     answerIndex: 1
-    explanation: "The article comes back as soon as you add a describing adjective: Ich bin ein guter Lehrer (I am a good teacher) — now the noun phrase needs its normal article + adjective ending."
+    explanation: 'The article comes back as soon as you add a describing adjective: Ich bin ein guter Lehrer (I am a good teacher) — now the noun phrase needs its normal article + adjective ending.'
   - question: "What is the feminine form of 'der Lehrer' (the teacher)?"
     options:
       - 'die Lehrer'
       - 'die Lehrerin'
       - 'das Lehrerin'
     answerIndex: 1
-    explanation: "Most German profession nouns add the suffix -in to form the feminine: der Lehrer → die Lehrerin. This -in pattern applies to almost every profession."
+    explanation: 'Most German profession nouns add the suffix -in to form the feminine: der Lehrer → die Lehrerin. This -in pattern applies to almost every profession.'
   - question: "How do you ask someone's profession politely in German?"
     options:
       - 'Was sind Sie von Beruf?'
@@ -50,7 +50,7 @@ quiz:
       - 'die Lehrerins'
       - 'die Lehrerin'
     answerIndex: 0
-    explanation: "Feminine profession nouns ending in -in add -nen in the plural (doubling the n): die Lehrerin → die Lehrerinnen."
+    explanation: 'Feminine profession nouns ending in -in add -nen in the plural (doubling the n): die Lehrerin → die Lehrerinnen.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Ich bin ___ von Beruf.'
@@ -84,13 +84,13 @@ exercises:
     answer: 'Was sind Sie von Beruf?'
     accepted:
       - 'Was sind Sie von Beruf'
-    hint: "Fixed phrase: Was sind Sie von Beruf? — Beruf means profession/job."
+    hint: 'Fixed phrase: Was sind Sie von Beruf? — Beruf means profession/job.'
   - type: 'write'
     prompt: "Translate: 'I am a good teacher.' (adjective present, so the article returns)"
     answer: 'Ich bin ein guter Lehrer.'
     accepted:
       - 'Ich bin ein guter Lehrer'
-    hint: "With an adjective, the article comes back: ein guter Lehrer, and the adjective takes the mixed declension ending -er (masculine Nominativ)."
+    hint: 'With an adjective, the article comes back: ein guter Lehrer, and the adjective takes the mixed declension ending -er (masculine Nominativ).'
   - type: 'order'
     sentence: 'Ich arbeite als Ingenieurin bei einer Firma'
     translation: 'I work as an engineer at a company.'
@@ -143,12 +143,12 @@ Sie ist eine erfahrene Ärztin.  (She is an experienced doctor)
 Almost every profession noun forms its feminine version by adding **-in** to the
 masculine noun:
 
-| Masculine       | Feminine           |
-| ---------------- | -------------------- |
-| der Lehrer        | die Lehrerin          |
-| der Arzt           | die Ärztin (note the umlaut!) |
-| der Ingenieur      | die Ingenieurin        |
-| der Verkäufer      | die Verkäuferin         |
+| Masculine     | Feminine                      |
+| ------------- | ----------------------------- |
+| der Lehrer    | die Lehrerin                  |
+| der Arzt      | die Ärztin (note the umlaut!) |
+| der Ingenieur | die Ingenieurin               |
+| der Verkäufer | die Verkäuferin               |
 
 For the plural of the feminine form, double the n and add -en: die Lehrerin → die
 Lehrerinnen.

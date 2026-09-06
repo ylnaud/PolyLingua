@@ -562,7 +562,10 @@ export const TSA: Partial<Record<string, TsaEntry>> = {
     links: [
       { href: '/es/pt/b1/colocacao-pronominal', label: 'Colocação pronominal' },
       { href: '/es/pt/b1/condicional-presente', label: 'O condicional presente' },
-      { href: '/es/pt/b1/imperfeito-preterito-perfeito', label: 'Imperfeito vs. pretérito perfeito' },
+      {
+        href: '/es/pt/b1/imperfeito-preterito-perfeito',
+        label: 'Imperfeito vs. pretérito perfeito',
+      },
     ],
   },
   'pt-b2': {
@@ -733,3 +736,203 @@ export const TSA_LANG: Partial<Record<string, TsaEntry>> = {
     ],
   },
 };
+
+/**
+ * El TSA del silo inglés.
+ *
+ * Misma forma y misma clave `${targetLang}-${level}` que TSA — no es una
+ * arquitectura nueva, es el mismo mapa para el otro idioma de interfaz. Solo
+ * están los seis bloques `de-*` porque en-de es hoy el único curso con la
+ * interfaz en inglés.
+ *
+ * No es una traducción mecánica del castellano: los `links` NO se podían
+ * traducir. Apuntaban a `/es/de/a1/saludos-presentarse` y compañía, y esos
+ * slugs **no existen en en-de**, que llama a esa misma lección
+ * `greetings-introducing-yourself`. Un enlace traducido a ojo habría mandado
+ * al lector inglés al curso en español o directamente a un 404, así que cada
+ * href se emparejó contra el archivo real del curso.
+ *
+ * El resto conserva el sentido, la estructura y los datos del original: los
+ * mismos cinco logros, el mismo insight y las mismas estimaciones de tiempo.
+ * No hay dato nuevo sobre el curso que no estuviera ya en la versión
+ * española.
+ */
+export const TSA_EN: Partial<Record<string, TsaEntry>> = {
+  'de-a1': {
+    heading:
+      'Learn German A1 free: what you will be able to do, and why it is less scary than it looks',
+    intro:
+      'A1 is the official starting point in the CEFR: enough to get through an everyday conversation without panicking. Most people fear German because of its reputation as a "hard language", but at A1 the real difficulty comes down to just three things.',
+    achievements: [
+      'Introduce yourself and greet people in different settings',
+      'Order in a restaurant and go shopping',
+      'Ask for prices and directions',
+      'Talk about your family and your daily routine',
+      'Say what you do and what you like, in the present tense',
+    ],
+    insight:
+      'Grammatical gender (der, die, das), word order (the verb goes in second position) and a handful of new sounds (ch, ü, ö) are the only real difficulty at this level — the rest is fairly regular and predictable once you see the pattern.',
+    stat: { value: '6-8 weeks', label: 'at 15-20 min a day' },
+    links: [
+      { href: '/en/de/a1/greetings-introducing-yourself', label: 'Greetings and introductions' },
+      { href: '/en/de/a1/der-die-das-articles', label: 'Der, die, das' },
+      { href: '/en/de/a1/present-tense-regular-verbs', label: 'The present tense (Präsens)' },
+    ],
+  },
+  'de-a2': {
+    heading: 'German A2 free: the past tense, the cases, and the phrases that start to sound local',
+    intro:
+      'A2 is where German stops being "isolated phrases" and becomes real conversation: you talk about what you did yesterday, book a doctor\'s appointment, make plans. It is also where the language\'s real test shows up — the cases.',
+    achievements: [
+      'Say what you did, in the past (Perfekt)',
+      "Book a doctor's appointment and describe symptoms",
+      'Take a phone call and leave a message',
+      'Use Dativ and Akkusativ to say who receives what',
+      'Compare things with Komparativ and Superlativ',
+    ],
+    insight:
+      'The real jump in difficulty at A2 is not new vocabulary, it is Dativ vs. Akkusativ: deciding which article to use depending on whether something "receives" the action or "is" the action. It underpins everything that comes later, so it is worth mastering here rather than dragging it along.',
+    stat: { value: '8-10 weeks', label: 'if you already finished A1' },
+    links: [
+      { href: '/en/de/a2/perfekt-past-tense', label: 'Perfekt: the past tense' },
+      { href: '/en/de/a2/dativ-akkusativ-cases', label: 'Dativ vs. Akkusativ' },
+      { href: '/en/de/a2/modal-verbs', label: 'Modal verbs' },
+    ],
+  },
+  'de-b1': {
+    heading: 'German B1: connect ideas like an adult (and survive Adjektivdeklination)',
+    intro:
+      'At B1 you stop speaking in short sentences and start making a case: because, although, even though. This is the level where German starts to sound like a real language — subordinate clauses and opinions with nuance.',
+    achievements: [
+      'Link ideas with weil, dass, obwohl',
+      'Use the Genitiv, the case of formal possession',
+      'Decline adjectives correctly (der / ein / no article)',
+      'Talk about your job and working life',
+      'Tell stories in the Präteritum',
+    ],
+    insight:
+      'Adjektivdeklination (which ending an adjective takes depending on case, gender and whether there is an article) has a reputation as the most feared part of intermediate German. The good news: it follows a fixed table, with no exceptions to memorise — just the right table.',
+    stat: { value: '10-12 weeks', label: 'genuine intermediate level' },
+    links: [
+      { href: '/en/de/b1/subordinate-clauses', label: 'Subordinate clauses' },
+      { href: '/en/de/b1/adjective-declension', label: 'Adjektivdeklination' },
+      { href: '/en/de/b1/genitiv-case', label: 'Der Genitiv' },
+    ],
+  },
+  'de-b2': {
+    heading: 'German B2: master the passive, the subjunctive and the German of the news',
+    intro:
+      'B2 is the "I can read the paper and understand almost all of it" level. This is where the passive voice properly arrives, along with Konjunktiv II for hypotheticals and the connectors adults use to argue a point.',
+    achievements: [
+      'Understand and use the passive voice (Passiv)',
+      'Talk about hypotheticals and be polite with Konjunktiv II',
+      'Talk about the future with Futur I and II',
+      'Debate with Konnektoren at an argumentative level',
+      'Read economics and society vocabulary',
+    ],
+    insight:
+      'The German passive is not just "werden + participle" — it changes depending on whether it describes a process (Vorgangspassiv) or a resulting state (Zustandspassiv), a distinction English blurs and that makes anyone who masters it sound far more native.',
+    stat: { value: '3-4 months', label: 'upper intermediate level' },
+    links: [
+      { href: '/en/de/b2/passive-voice-passiv', label: 'Passiv' },
+      { href: '/en/de/b2/konjunktiv-2-would-forms', label: 'Konjunktiv II' },
+      { href: '/en/de/b2/advanced-connectors', label: 'Konnektoren' },
+    ],
+  },
+  'de-c1': {
+    heading: 'German C1: the formal, academic and journalistic register',
+    intro:
+      'C1 is the German of the university and the office: reported speech without quotation marks, nominal phrases instead of verbal ones, and the vocabulary you need to read a paper or write a report.',
+    achievements: [
+      'Report what others said with Konjunktiv I',
+      'Write in Nominalstil, the formal German style',
+      'Use prepositions of academic register',
+      'Understand Funktionsverbgefüge (verbs disguised as phrases)',
+      'Read and write scientific texts',
+    ],
+    insight:
+      'Konjunktiv I (for reported speech: "he said he had arrived") is barely used in speech, but it is the standard in news and formal writing — recognising it is what separates understanding a newspaper article from only understanding a conversation.',
+    stat: { value: '4-6 months', label: 'advanced level' },
+    links: [
+      { href: '/en/de/c1/konjunktiv-1-reported-speech', label: 'Konjunktiv I' },
+      { href: '/en/de/c1/nominal-style', label: 'Nominalstil vs. Verbalstil' },
+      { href: '/en/de/c1/academic-scientific-vocabulary', label: 'Wissenschaftssprache' },
+    ],
+  },
+  'de-c2': {
+    heading: 'German C2: irony, humour and the nuance only an educated native handles',
+    intro:
+      'C2 is not "more grammar" — by this point you know almost all of it. It is getting the joke without translating it, noticing when someone is being ironic, and recognising that a Berliner and a Bavarian do not speak quite the same German.',
+    achievements: [
+      'Spot irony and shifts in register',
+      'Understand everyday Redewendungen (idioms)',
+      'Recognise current Jugendsprache and anglicisms',
+      'Notice the differences between regional varieties',
+      'Use modal particles (ja, doch, mal, halt)',
+    ],
+    insight:
+      'Modal particles — ja, doch, mal, halt — have no direct translation and barely appear in textbooks, yet they are what gives a non-native speaker away more than anything else. Mastering them is the difference between "speaking perfect German" and "sounding German".',
+    stat: { value: 'mastery', label: 'no fixed time ceiling' },
+    links: [
+      { href: '/en/de/c2/idiomatic-expressions', label: 'Redewendungen' },
+      { href: '/en/de/c2/irony-and-register', label: 'Ironie und Register' },
+      { href: '/en/de/c2/modal-particles', label: 'Modal particles' },
+    ],
+  },
+};
+
+/**
+ * El bloque TSA de una página, o null si no hay.
+ *
+ * Para el silo inglés NO cae al castellano a propósito: sin entrada propia la
+ * página simplemente no pinta el bloque, que es el comportamiento que este
+ * archivo ya tenía para las combinaciones sin TSA. Caer al español metería un
+ * bloque entero en otro idioma —con enlaces a otro curso— en mitad de una
+ * página inglesa.
+ */
+export function tsaFor(userLang: string, targetLang: string, level: string): TsaEntry | null {
+  const key = `${targetLang}-${level}`;
+  if (userLang === 'en') return TSA_EN[key] ?? null;
+  return TSA[key] ?? null;
+}
+
+/**
+ * TSA_LANG del silo inglés. Solo `de`: en-de es hoy el único curso con la
+ * interfaz en inglés.
+ *
+ * Los links apuntan a niveles (`/en/de/a1`), no a lecciones, así que aquí sí
+ * son una traducción directa de la ruta — no hacía falta emparejar slugs como
+ * en TSA_EN.
+ *
+ * El `stat` dice 84 lecciones, que es lo que tiene en-de de verdad (contadas
+ * en src/content/lessons/en-de). El bloque español dice 81 para es-de; no lo
+ * toco, pero tampoco copio su número, porque son cursos distintos.
+ */
+export const TSA_LANG_EN: Partial<Record<string, TsaEntry>> = {
+  de: {
+    heading: 'Learn German free online: the full path from A1 to C2',
+    intro:
+      'German has a reputation as the hardest language in Europe, but that reputation comes from generalising: the basic grammar is predictable once you see the pattern, and you already recognise a good deal of the technical vocabulary (Auto, Hotel, Musik). This is the full CEFR path, from your first sentence to academic register.',
+    achievements: [
+      'Introduce yourself and get through daily life (A1-A2)',
+      'Give opinions and argue with nuance (B1-B2)',
+      'Read academic texts and the news (C1)',
+      'Catch irony and humour like a native (C2)',
+      'Practise with interactive quizzes in every lesson',
+    ],
+    insight:
+      "German's three real obstacles — grammatical gender, word order and the cases (Dativ/Akkusativ) — all turn up early, in A1-A2. Once you are past them, the rest of the path is mostly memorising vocabulary and patterns rather than fighting new rules.",
+    stat: { value: '84 lessons', label: 'across 6 CEFR levels, free' },
+    links: [
+      { href: '/en/de/a1', label: 'Start at A1' },
+      { href: '/en/de/b1', label: 'Level B1' },
+      { href: '/en/de/c1', label: 'Level C1' },
+    ],
+  },
+};
+
+/** Como `tsaFor`, para el bloque de la portada del curso. */
+export function tsaLangFor(userLang: string, targetLang: string): TsaEntry | null {
+  if (userLang === 'en') return TSA_LANG_EN[targetLang] ?? null;
+  return TSA_LANG[targetLang] ?? null;
+}

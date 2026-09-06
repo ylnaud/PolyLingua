@@ -5,7 +5,7 @@ import StartLevelPicker from '../../../components/StartLevelPicker.astro';
 import RelatedLinks from '../../../components/RelatedLinks.astro';
 import { LEVELS } from '../../../data/levels';
 import { LANGUAGE_MAP } from '../../../data/languages';
-import { TSA_LANG } from '../../../data/tsa';
+import { tsaLangFor } from '../../../data/tsa';
 import { parseLessonId } from '../../../lib/lessonPath';
 import { MATRIX_DATA } from '../../../data/matrices';
 import { SPANISH_GLOSS_USER_LANG } from '../../../lib/courses';
@@ -34,7 +34,7 @@ const languageTagline = dict.languageTaglines[targetLang as keyof typeof dict.la
 const languageDescription =
   dict.languageDescriptions[targetLang as keyof typeof dict.languageNames];
 const languageMeta = LANGUAGE_MAP[targetLang as keyof typeof LANGUAGE_MAP];
-const tsaEntry = TSA_LANG[targetLang as string] ?? null;
+const tsaEntry = tsaLangFor(userLang, targetLang as string);
 
 // Diálogos, recursos y generador de frases solo existen dentro del silo
 // español: su contenido guarda la traducción en un solo idioma de interfaz
@@ -285,7 +285,7 @@ const structuredData = {
         </p>
 
         <p class="tsa-links">
-          Seguí con:{' '}
+          {t.seguiCon}{' '}
           {tsaEntry.links.map((link, i) => (
             <>
               <a href={link.href}>{link.label}</a>

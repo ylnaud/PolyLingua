@@ -117,6 +117,21 @@ export interface Dictionary {
   levelNames: Record<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2', string>;
   levelTaglines: Record<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2', string>;
   levelDescriptions: Record<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2', string>;
+  /**
+   * Descripciones de unidad, SOLO donde hagan falta traducidas.
+   *
+   * Las unidades viven en src/data/units.ts, indexadas por
+   * `${targetLang}-${level}` — sin eje userLang, así que las mismas 92
+   * entradas sirven a `es-de` y a `en-de` y sus `description` están en
+   * español. El `name` no: ese va en el idioma que se enseña
+   * («Erste Schritte») y no se traduce nunca.
+   *
+   * Esto es un MAPA DE EXCEPCIONES, no una copia: la clave es la misma de
+   * units.ts y dentro va el id de la unidad. Si falta una entrada, la página
+   * usa la de units.ts. Así el español no se duplica y units.ts sigue siendo
+   * su única fuente.
+   */
+  unitDescriptions: Record<string, Record<string, string>>;
   languageDescriptions: Record<'de' | 'en' | 'es' | 'fr' | 'it' | 'pt', string>;
   silo: {
     idiomas: string;
@@ -151,6 +166,10 @@ export interface Dictionary {
     irAlExamen: string;
     leccion: string;
     lecciones: string;
+    /** Encabezado de un grupo de lecciones: «Unidad 3 — Meine Welt». */
+    unidad: string;
+    /** Antesala de los enlaces del bloque TSA (ver src/data/tsa.ts). */
+    seguiCon: string;
     /** CTA de la tarjeta de idioma de las portadas. */
     verNiveles: string;
     // El selector de nivel de inicio: quien ya sabe algo del idioma no
@@ -534,6 +553,8 @@ export const es: Dictionary = {
     c1: 'Redacta, debate y comprende textos complejos con soltura casi nativa.',
     c2: 'Ironía, registro coloquial y matices estilísticos que solo dominan los expertos.',
   },
+  // Vacío a propósito: units.ts ya guarda estas descripciones en español.
+  unitDescriptions: {},
   languageTaglines: {
     de: 'Precisión, casos y palabras larguísimas',
     en: 'El idioma que ya usas sin saberlo',
@@ -585,6 +606,8 @@ export const es: Dictionary = {
     irAlExamen: 'Ir al examen →',
     leccion: 'lección',
     lecciones: 'lecciones',
+    unidad: 'Unidad',
+    seguiCon: 'Seguí con:',
     verNiveles: 'Ver niveles →',
     inicio: {
       titulo: '¿Ya sabés algo?',
@@ -1011,6 +1034,45 @@ export const en: Dictionary = {
     c1: 'Write, argue and follow complex texts with near-native ease.',
     c2: 'Irony, colloquial register and the stylistic nuance only experts handle.',
   },
+  // Solo los bloques `de-*`: son los únicos que ve un usuario del silo inglés,
+  // porque en-de es hoy el único curso con la interfaz en inglés. Los otros 24
+  // bloques de units.ts sirven a cursos es-* y su español es el correcto.
+  unitDescriptions: {
+    'de-a1': {
+      1: 'Pronunciation and your first phrases',
+      2: 'The grammar foundations',
+      3: 'Everyday vocabulary',
+      4: 'Everyday situations',
+      5: 'Out and about',
+      6: 'Prepositions of place and time',
+    },
+    'de-a2': {
+      1: 'The past and modal verbs',
+      2: 'Cases and prepositions',
+      3: 'Pronouns and fixed prepositions',
+      4: 'Advanced everyday situations',
+    },
+    'de-b1': {
+      1: 'Subordinate clauses and narrative tenses',
+      2: 'Applied grammar and professional vocabulary',
+      3: 'Complaining, asking and telling politely',
+      4: 'Verbs with fixed prepositions, and the full guide',
+    },
+    'de-b2': {
+      1: 'Passive, subjunctive and future',
+      2: 'Advanced connectors and topic vocabulary',
+    },
+    'de-c1': {
+      1: 'Konjunktiv I, participles and modal verbs',
+      2: 'Nominal style, connectors and academic vocabulary',
+      3: 'Prepositions in academic and professional register',
+    },
+    'de-c2': {
+      1: 'Modal particles, idioms and register',
+      2: 'Regional varieties, humour and rhetoric',
+      3: 'Idiomatic use and nuance with prepositions',
+    },
+  },
   languageTaglines: {
     de: 'Precision, cases and gloriously long words',
     en: 'The language you already use without noticing',
@@ -1061,6 +1123,8 @@ export const en: Dictionary = {
     irAlExamen: 'Take the test →',
     leccion: 'lesson',
     lecciones: 'lessons',
+    unidad: 'Unit',
+    seguiCon: 'Carry on with:',
     verNiveles: 'See levels →',
     inicio: {
       titulo: 'Already know some?',

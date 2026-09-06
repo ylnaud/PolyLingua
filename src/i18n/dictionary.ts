@@ -1239,11 +1239,124 @@ export const en: Dictionary = {
       3: 'Idiomatic use and nuance with prepositions',
     },
   },
-  // Vacío: las 95 habilidades alemanas siguen mostrando el `name` del catálogo,
-  // que está en español. Es contenido pendiente, no un fallo del mecanismo —
-  // con añadir aquí `'de.a1.article.der-die-das': 'The articles der/die/das'`
-  // esa etiqueta pasa a inglés sin tocar una línea de código.
-  skillNames: {},
+  // Las 95 habilidades del catálogo alemán, que es el único curso con eje
+  // inglés (en-de). 91 las enseñan sus lecciones; las otras cuatro —los tres
+  // artículos por separado y hin/her— solo tienen lección en es-de, pero
+  // practicar.astro manda el catálogo ENTERO al cliente, así que pueden salir
+  // igual en el panel de progreso. Por eso están las 95 y no 91.
+  //
+  // Son etiquetas de interfaz, no contenido: describen la habilidad, no la
+  // enseñan. Los términos alemanes (Perfekt, Wechselpräpositionen,
+  // Funktionsverbgefüge) se conservan porque son el nombre técnico del tema y
+  // es como los va a encontrar el alumno en cualquier gramática.
+  skillNames: {
+    // ── A1 ────────────────────────────────────────────────────────
+    'de.a1.pron.umlaute': 'The umlauts (ä, ö, ü)',
+    'de.a1.pron.diptongos': 'Diphthongs (ei, ie, eu, au)',
+    'de.a1.pron.consonantes': 'sch, ch, ck, st, sp',
+    'de.a1.introduction.name': 'Saying your name',
+    'de.a1.introduction.origin': 'Saying where you are from',
+    'de.a1.question.words': 'Question words (W-Fragen)',
+    'de.a1.article.der-die-das': 'The articles der / die / das',
+    'de.a1.article.der': 'The article der (masculine)',
+    'de.a1.article.die': 'The article die (feminine)',
+    'de.a1.article.das': 'The article das (neuter)',
+    'de.a1.verb.present-regular': 'Present tense of regular verbs',
+    'de.a1.verb.present-irregular': 'Vowel-changing verbs',
+    'de.a1.vocabulary.numbers': 'Numbers (0-100)',
+    'de.a1.vocabulary.time': 'Telling the time',
+    'de.a1.wordorder.basic': 'The verb in second position',
+    'de.a1.wordorder.time-verb-subject': 'Starting with a time phrase (Heute trinke ich…)',
+    'de.a1.wordorder.questions': 'Word order in questions',
+    'de.a1.verb.sein': 'The verb sein',
+    'de.a1.verb.haben': 'The verb haben',
+    'de.a1.pronoun.personal': 'Personal pronouns',
+    'de.a1.negation.nicht-kein': 'Negating with nicht and kein',
+    'de.a1.noun.plural': 'Forming the plural',
+    'de.a1.verb.imperative': 'The imperative',
+    'de.a1.vocabulary.family': 'Family',
+    'de.a1.vocabulary.food': 'Food and drink',
+    'de.a1.vocabulary.home': 'The home',
+    'de.a1.vocabulary.work': 'Work and jobs',
+    'de.a1.vocabulary.shopping': 'Shopping',
+    'de.a1.writing.about-me': 'Writing about yourself',
+    'de.a1.vocabulary.restaurant': 'At the restaurant',
+    'de.a1.vocabulary.transport': 'Transport and directions',
+    'de.a1.vocabulary.freetime': 'Likes and free time',
+    'de.a1.vocabulary.animals': 'Animals',
+    'de.a1.preposition.place-time': 'Prepositions of place and time',
+
+    // ── A2 ────────────────────────────────────────────────────────
+    'de.a2.verb.perfekt': 'Perfekt: choosing haben or sein',
+    'de.a2.verb.participle': 'Forming the participle (ge-…-t / ge-…-en)',
+    'de.a2.verb.modal': 'Modal verbs (können, müssen, wollen…)',
+    'de.a2.wordorder.verb-final': 'The second verb at the end of the sentence',
+    'de.a2.verb.separable': 'Separable verbs (trennbare Verben)',
+    'de.a2.adjective.comparative': 'Comparative and superlative',
+    'de.a2.case.akkusativ': 'Akkusativ: the direct object',
+    'de.a2.case.dativ': 'Dativ: who the action reaches',
+    'de.a2.preposition.fixed': 'Fixed Akkusativ and Dativ prepositions',
+    'de.a2.preposition.wechsel': 'Wechselpräpositionen: movement or position',
+    'de.a2.verb.reflexive': 'Reflexive verbs (sich + verb)',
+    'de.a2.vocabulary.freetime': 'Free time and hobbies',
+    'de.a2.pronoun.akkusativ': 'Akkusativ pronouns (mich, dich, ihn…)',
+    'de.a2.pronoun.possessive': 'Possessives (mein, dein, sein…)',
+    'de.a2.time.past-future': 'Talking about the past and the future',
+    'de.a2.vocabulary.phone': 'On the phone',
+    'de.a2.vocabulary.health': 'Health and the doctor',
+    'de.a2.vocabulary.money': 'Money and payments',
+    'de.a2.vocabulary.problems': 'Everyday problems',
+    'de.a2.vocabulary.plans': 'Making plans: inviting, accepting, cancelling',
+
+    // ── B1 ────────────────────────────────────────────────────────
+    'de.b1.wordorder.subordinate': 'The verb at the end in subordinate clauses',
+    'de.b1.conjunction.subordinating': 'Choosing the conjunction (weil, dass, obwohl, wenn)',
+    'de.b1.verb.praeteritum': 'Präteritum: the narrative past',
+    'de.b1.clause.relative': 'Relative clauses (der, die, das)',
+    'de.b1.clause.indirect-question': 'Indirect questions (ob, W-Wort)',
+    'de.b1.clause.final': 'Purpose clauses (um…zu, damit)',
+    'de.b1.case.genitiv': 'Genitiv: formal possession',
+    'de.b1.adjective.declension': 'Adjective declension',
+    'de.b1.vocabulary.work': 'Work and profession',
+    'de.b1.verb.konjunktiv2': 'Polite Konjunktiv II (wäre, hätte, könnte)',
+    'de.b1.verb.konjunktiv2-wuerde': 'Konjunktiv II with würde + infinitive',
+    'de.b1.verb.perfekt-zustand': 'Action (Perfekt) vs. state (sein + participle)',
+    'de.b1.vocabulary.complaints': 'Complaining and asking for a solution',
+    'de.b1.adverb.direction': 'Adverbs of direction (hin, her, da-)',
+    'de.b1.verb.with-preposition': 'Verbs with fixed prepositions (warten auf, denken an…)',
+
+    // ── B2 ────────────────────────────────────────────────────────
+    'de.b2.verb.futur': 'Futur I and Futur II',
+    'de.b2.clause.conditional-irreal': 'Unreal conditionals (wenn + Konjunktiv II)',
+    'de.b2.voice.passive': 'The passive with werden',
+    'de.b2.voice.zustandspassiv': 'Zustandspassiv vs. Vorgangspassiv',
+    'de.b2.connector.discourse': 'Discourse connectors (deshalb, trotzdem, allerdings)',
+    'de.b2.conjunction.double': 'Double conjunctions (sowohl…als auch, je…desto)',
+    'de.b2.preposition.genitiv': 'Genitiv prepositions (trotz, wegen, während)',
+    'de.b2.vocabulary.economy': 'Economy and society',
+
+    // ── C1 ────────────────────────────────────────────────────────
+    'de.c1.verb.konjunktiv1': 'Konjunktiv I: reported speech',
+    'de.c1.verb.modal-subjective': 'Speculative modals (er muss krank sein)',
+    'de.c1.construction.participial': 'Participial constructions',
+    'de.c1.construction.funktionsverb': 'Funktionsverbgefüge (in Frage stellen…)',
+    'de.c1.style.nominal': 'Nominal vs. verbal style',
+    'de.c1.connector.causal': 'Causal connectors (da, denn, zumal)',
+    'de.c1.wordformation.affixes': 'Word formation: prefixes and suffixes',
+    'de.c1.preposition.academic': 'Prepositions in academic register',
+    'de.c1.vocabulary.academic': 'Academic and scientific language',
+
+    // ── C2 ────────────────────────────────────────────────────────
+    'de.c2.particle.modal': 'Modal particles (doch, mal, ja, wohl)',
+    'de.c2.idiom.prepositional': 'Idiomatic use of prepositions',
+    'de.c2.idiom.redewendungen': 'Idiomatic expressions',
+    'de.c2.idiom.sprichwoerter': 'Proverbs and sayings',
+    'de.c2.variety.regional': 'Regional varieties (Austria, Switzerland)',
+    'de.c2.variety.youth': 'Jugendsprache and anglicisms',
+    'de.c2.style.irony-register': 'Irony and register',
+    'de.c2.style.rhetoric': 'Rhetorical devices',
+    'de.c2.style.wordplay': 'Humour and wordplay',
+  },
   languageTaglines: {
     de: 'Precision, cases and gloriously long words',
     en: 'The language you already use without noticing',

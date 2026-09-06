@@ -144,30 +144,62 @@ describe('escenario 3 — en → de con una glosa inglesa de prueba', () => {
 });
 
 describe('escenario 4 — skillNames', () => {
-  it('los dos mapas están vacíos todavía', () => {
+  /** La expresión exacta que usan practicar.astro y DrillTutor.astro. */
+  const mostrado = (id: string, mapa: Record<string, string>) => mapa[id] ?? SKILL_MAP[id].name;
+
+  it('el español conserva sus nombres: su mapa sigue vacío', () => {
+    // es-de lee del catálogo, que ya está en su idioma. Traducir ahí sería
+    // duplicar el español en dos sitios.
     expect(es.skillNames).toEqual({});
-    expect(en.skillNames).toEqual({});
+    for (const s of SKILLS.filter((x) => x.lang === 'de'))
+      expect(mostrado(s.id, es.skillNames)).toBe(s.name);
   });
 
-  it('sin traducción muestra EXACTAMENTE el nombre del catálogo', () => {
-    // La expresión es la misma que usan practicar.astro y DrillTutor.astro.
-    const s = SKILL_MAP['de.a1.introduction.name'];
-    expect(en.skillNames[s.id] ?? s.name).toBe(s.name);
-    // Y hoy ese nombre está en español: es el contenido que falta, no un fallo
-    // del mecanismo. Este test lo deja documentado y medible.
-    expect(s.name).toBe('Decir cómo te llamás');
+  it('en usa dict.skillNames en las 95 habilidades alemanas', () => {
+    const de = SKILLS.filter((s) => s.lang === 'de');
+    expect(de).toHaveLength(95);
+    for (const s of de)
+      expect(
+        Object.prototype.hasOwnProperty.call(en.skillNames, s.id),
+        `${s.id} sin nombre inglés`,
+      ).toBe(true);
   });
 
-  it('con una traducción de prueba usa esa traducción', () => {
-    const s = SKILL_MAP['de.a1.introduction.name'];
-    const mapa: Record<string, string> = { [s.id]: `${MARCA} Saying your name` };
-    expect(mapa[s.id] ?? s.name).toBe(`${MARCA} Saying your name`);
-    expect(mapa[s.id] ?? s.name).not.toBe(s.name);
+  it('ninguna de las 95 cae al nombre del catálogo por falta de traducción', () => {
+    // Dos coinciden con el español a propósito y no son una caída: una lista
+    // de letras («sch, ch, ck, st, sp») y un término técnico alemán
+    // («Funktionsverbgefüge»), que se escriben igual en los dos idiomas. Por
+    // eso se comprueba que tengan CLAVE PROPIA, no que el texto difiera.
+    for (const s of SKILLS.filter((x) => x.lang === 'de')) {
+      const propia = Object.prototype.hasOwnProperty.call(en.skillNames, s.id);
+      expect(propia, `${s.id} caería al catálogo español`).toBe(true);
+    }
+  });
+
+  it('ningún nombre inglés lleva marcas del español', () => {
+    const marcas =
+      /[áéíóúñ¿¡]|\b(el|la|los|las|del|con|para|verbo|frase|palabras|preposiciones|pronombres)\b/i;
+    for (const [id, n] of Object.entries(en.skillNames))
+      expect(marcas.test(n), `${id}: «${n}»`).toBe(false);
+  });
+
+  it('el mapa no inventa habilidades que no existan', () => {
+    const ids = new Set(SKILLS.map((s) => s.id));
+    for (const id of Object.keys(en.skillNames)) expect(ids.has(id), `${id} no existe`).toBe(true);
+  });
+
+  it('una skill sin localizar mantiene el fallback sin romper nada', () => {
+    // El mecanismo sigue existiendo para los idiomas que aún no se traduzcan:
+    // se comprueba con una skill de otro idioma meta, que no entra en este
+    // trabajo y por tanto no tiene entrada.
+    const otra = SKILLS.find((s) => s.lang === 'fr')!;
+    expect(Object.prototype.hasOwnProperty.call(en.skillNames, otra.id)).toBe(false);
+    expect(mostrado(otra.id, en.skillNames)).toBe(otra.name);
+    expect(mostrado(otra.id, en.skillNames).length).toBeGreaterThan(0);
   });
 
   it('toda habilidad tiene un nombre al que caer', () => {
-    // El fallback nunca puede dejar un hueco.
-    for (const s of SKILLS) expect((en.skillNames[s.id] ?? s.name).length, s.id).toBeGreaterThan(0);
+    for (const s of SKILLS) expect(mostrado(s.id, en.skillNames).length, s.id).toBeGreaterThan(0);
   });
 });
 

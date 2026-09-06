@@ -1,14 +1,30 @@
 ---
 import type { LanguageMeta } from '../data/languages';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
 
 interface Props {
   language: LanguageMeta;
   lessonCount: number;
   basePath?: string;
+  userLang?: string;
 }
 
-const { language, lessonCount, basePath = `/${ACTIVE_USER_LANGUAGES[0].id}` } = Astro.props;
+const {
+  language,
+  lessonCount,
+  userLang = ACTIVE_USER_LANGUAGES[0].id,
+  basePath = `/${userLang}`,
+} = Astro.props;
+
+// El nombre, el eslogan y la descripción salen del DICCIONARIO, no de
+// src/data/languages.ts. Ese archivo guarda una sola versión de cada uno, en
+// español, así que la portada del silo inglés anunciaba «Alemán · Precisión,
+// casos y palabras larguísimas». El diccionario los tiene por idioma de
+// interfaz justamente para esto.
+const dict = getDictionary(userLang as never);
+const id = language.id as keyof typeof dict.languageNames;
+const t = dict.silo;
 ---
 
 <a
@@ -24,12 +40,12 @@ const { language, lessonCount, basePath = `/${ACTIVE_USER_LANGUAGES[0].id}` } = 
         estuvo cinco veces en la portada —una por idioma— hasta que la
         auditoría de contenido lo encontró. */
     }
-    <span class="badge">{lessonCount} {lessonCount === 1 ? 'lección' : 'lecciones'}</span>
+    <span class="badge">{lessonCount} {lessonCount === 1 ? t.leccion : t.lecciones}</span>
   </div>
-  <h3>{language.name}</h3>
-  <p class="tagline underline-draw">{language.tagline}</p>
-  <p class="desc">{language.description}</p>
-  <span class="link">Ver niveles →</span>
+  <h3>{dict.languageNames[id]}</h3>
+  <p class="tagline underline-draw">{dict.languageTaglines[id]}</p>
+  <p class="desc">{dict.languageDescriptions[id]}</p>
+  <span class="link">{t.verNiveles}</span>
 </a>
 
 <style>

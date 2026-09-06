@@ -113,6 +113,40 @@ describe('motor de enlaces internos', () => {
     }
   });
 
+  // El blog es la única relación que cruza de curso a curso (R7), y por eso
+  // se le escapaba el otro eje: un post en español casaba con en-de igual que
+  // con es-de, así que /en/de pintaba "From the blog" con títulos en español.
+  it('el blog solo enlaza cursos de su mismo idioma de interfaz', () => {
+    const entrada: Entrada = {
+      pages: [
+        pagina({ route: '/es/de', kind: 'curso', level: null, title: 'Alemán' }),
+        pagina({
+          route: '/en/de',
+          kind: 'curso',
+          userLang: 'en',
+          level: null,
+          title: 'German',
+        }),
+        pagina({
+          route: '/blog/falsos-amigos',
+          kind: 'blog',
+          targetLang: null,
+          level: null,
+          tags: ['Alemán'],
+          title: 'Falsos amigos',
+        }),
+      ],
+      skills: [],
+      languages: [{ id: 'de', name: 'Alemán' }],
+    };
+
+    const destinos = buildRelations(entrada).map((p) => `${p.desde} → ${p.hasta}`);
+    expect(destinos).toContain('/blog/falsos-amigos → /es/de');
+    expect(destinos).toContain('/es/de → /blog/falsos-amigos');
+    expect(destinos).not.toContain('/blog/falsos-amigos → /en/de');
+    expect(destinos).not.toContain('/en/de → /blog/falsos-amigos');
+  });
+
   it('nunca enlaza una página a sí misma', () => {
     for (const [desde, lista] of proposeLinks(fixture())) {
       for (const p of lista) expect(p.hasta).not.toBe(desde);

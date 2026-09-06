@@ -58,8 +58,8 @@ const structuredData = {
 ---
 
 <BaseLayout
-  title="Idiomas disponibles"
-  description="Elige el idioma que quieres aprender: alemán, inglés, francés, italiano o portugués. Gramática gamificada de A1 a C2, gratis."
+  title={t.catalogoMetaTitulo}
+  description={t.catalogoMetaDescripcion}
   path={`/${userLang}`}
   structuredData={structuredData}
   siloContext={{
@@ -71,10 +71,7 @@ const structuredData = {
   <section class="container page-head">
     <span class="eyebrow">{t.catalogoEyebrow}</span>
     <h1>{t.catalogoTitulo}</h1>
-    <p>
-      Cada idioma tiene su propia ruta de A1 a C2, con la misma gramática gamificada que hace que
-      aprender no se sienta como estudiar.
-    </p>
+    <p>{t.catalogoIntro}</p>
   </section>
 
   <section class="container languages-grid">
@@ -83,6 +80,7 @@ const structuredData = {
         <LanguageCard
           language={language}
           lessonCount={lessonCounts[language.id] ?? 0}
+          userLang={userLang}
           basePath={`/${userLang}`}
         />
       ))

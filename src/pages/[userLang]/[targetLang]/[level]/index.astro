@@ -7,7 +7,7 @@ import { parseLessonId } from '../../../../lib/lessonPath';
 import { getDictionary } from '../../../../i18n';
 import { getCollection } from 'astro:content';
 import { UNITS, type UnitMeta } from '../../../../data/units';
-import { TSA } from '../../../../data/tsa';
+import { tsaFor } from '../../../../data/tsa';
 
 export async function getStaticPaths() {
   const allLessons = await getCollection('lessons');
@@ -39,8 +39,16 @@ const lessons = allLessons
   )
   .sort((a, b) => a.data.order - b.data.order);
 
-const unitMetas = UNITS[`${targetLang}-${level}`] ?? null;
-const tsaEntry = TSA[`${targetLang}-${level}`] ?? null;
+const unitKey = `${targetLang}-${level}`;
+const unitMetas = UNITS[unitKey] ?? null;
+
+// units.ts se indexa por `${targetLang}-${level}`, sin eje userLang, así que
+// las mismas entradas sirven a es-de y a en-de con la description en español.
+// El diccionario trae solo las traducciones que existan; si no hay, se queda
+// la de units.ts, que es su única fuente.
+const unitDesc = (u: { id: number; description: string }) =>
+  dict.unitDescriptions[unitKey]?.[String(u.id)] ?? u.description;
+const tsaEntry = tsaFor(userLang, targetLang, level);
 
 // Agrupar por unidad, sin perder ninguna lección por el camino.
 //
@@ -161,9 +169,9 @@ const structuredData = {
                 </span>
                 <div class="unit-titles">
                   <h2 class="unit-name">
-                    Unidad {group.unit.id} — {group.unit.name}
+                    {dict.silo.unidad} {group.unit.id} — {group.unit.name}
                   </h2>
-                  <p class="unit-desc">{group.unit.description}</p>
+                  <p class="unit-desc">{unitDesc(group.unit)}</p>
                 </div>
                 <span
                   class="unit-count"
@@ -247,7 +255,7 @@ const structuredData = {
         </p>
 
         <p class="tsa-links">
-          Seguí con:{' '}
+          {dict.silo.seguiCon}{' '}
           {tsaEntry.links.map((link, i) => (
             <>
               <a href={link.href}>{link.label}</a>

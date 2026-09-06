@@ -38,7 +38,7 @@ const siloHref = `/${userLang}`;
     </nav>
     <div class="actions">
       <LanguageSelector />
-      <DailyGoal />
+      <DailyGoal userLang={userLang} />
       <details class="tools-menu">
         <summary class="tools-trigger" aria-label={t.header.toolsAria}>
           <span aria-hidden="true">🧰</span>
@@ -78,12 +78,12 @@ const siloHref = `/${userLang}`;
             hidden={!headerLang}
             aria-label={t.header.tools.misErroresAria}>❌ {t.header.tools.misErrores}</a
           >
-          <ShadowingToggle variant="sheet" />
-          <InstallPrompt variant="sheet" />
+          <ShadowingToggle variant="sheet" userLang={userLang} />
+          <InstallPrompt variant="sheet" userLang={userLang} />
         </div>
       </details>
-      <SoundToggle />
-      <ThemeToggle />
+      <SoundToggle userLang={userLang} />
+      <ThemeToggle userLang={userLang} />
       <a class="btn btn-primary cta" href={siloHref}>{t.header.ctaStart}</a>
     </div>
   </div>

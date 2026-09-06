@@ -83,7 +83,9 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
       <p class="empty-emoji">🌱</p>
       <h2>Todavía no hay nada que practicar</h2>
       <p>Haz una lección primero y el motor empezará a saber qué necesitas reforzar.</p>
-      <a class="btn btn-primary" href={`/${userLang}/${targetLang}`}>Ver lecciones</a>
+      <a class="btn btn-primary" href={`/${userLang}/${targetLang}`}
+        >{dict.tools.comun.verLecciones}</a
+      >
     </div>
 
     <Practice

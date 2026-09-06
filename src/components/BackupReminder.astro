@@ -1,16 +1,26 @@
 ---
 import DismissibleBar from './DismissibleBar.astro';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
 
 // La cáscara (markup y CSS) es de DismissibleBar; acá vive solo lo propio de
 // este aviso: cuándo aparece. El texto es fijo, así que va como prop.
+
+interface Props {
+  userLang?: string;
+}
+
+const { userLang } = Astro.props;
+const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).widgets;
 ---
 
 <DismissibleBar
   id="backup"
   emoji="💾"
-  text="Tu progreso vive solo en este navegador — hacé una copia antes de perderlo."
-  ctaLabel="Hacer copia"
+  text={t.copia.texto}
+  ctaLabel={t.copia.cta}
   ctaHref="/logros#backup"
+  dismissLabel={t.barra.cerrar}
 />
 
 <script>

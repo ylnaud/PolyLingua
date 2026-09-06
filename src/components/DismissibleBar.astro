@@ -20,13 +20,28 @@ interface Props {
   text?: string;
   ctaLabel: string;
   ctaHref: string;
-  dismissLabel?: string;
+  dismissLabel: string;
+  /**
+   * Strings que necesita el <script> de quien usa la barra, serializados en
+   * [data-bar-strings]. Hace falta porque esos scripts arman el texto en el
+   * cliente (la racha lleva el número de días) y no pueden leer el
+   * diccionario: se resuelve en el servidor. Es el mismo patrón `data-*` que
+   * usa el resto del proyecto.
+   */
+  strings?: Record<string, string>;
 }
 
-const { id, emoji, text = '', ctaLabel, ctaHref, dismissLabel = 'Cerrar aviso' } = Astro.props;
+const { id, emoji, text = '', ctaLabel, ctaHref, dismissLabel, strings } = Astro.props;
 ---
 
-<div class="bar" data-bar={id} hidden role="status" aria-live="polite">
+<div
+  class="bar"
+  data-bar={id}
+  data-bar-strings={strings ? JSON.stringify(strings) : undefined}
+  hidden
+  role="status"
+  aria-live="polite"
+>
   <div class="container bar-inner">
     <p>
       <span aria-hidden="true">{emoji}</span>

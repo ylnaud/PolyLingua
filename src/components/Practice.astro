@@ -183,7 +183,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                 </p>
                 {item.data.translation && <p class="prompt-translation">{item.data.translation}</p>}
                 <label class="visually-hidden" for={`input-${i}`}>
-                  Tu respuesta
+                  {t.tuRespuesta}
                 </label>
                 <div class="answer-row">
                   <input
@@ -199,7 +199,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                     spellcheck="false"
                   />
                   <button type="button" class="btn btn-primary check" data-check>
-                    Comprobar
+                    {t.comprobar}
                   </button>
                 </div>
                 {item.data.hint && (
@@ -214,7 +214,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
             {item.kind === 'write' && (
               <>
                 <legend tabindex="-1">
-                  {item.data.spokenOnly ? '🔊 Escucha y escribe lo que oís' : item.data.prompt}
+                  {item.data.spokenOnly ? t.escuchaYEscribe : item.data.prompt}
                 </legend>
                 {item.data.spokenOnly && (
                   <button
@@ -228,7 +228,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                   </button>
                 )}
                 <label class="visually-hidden" for={`input-${i}`}>
-                  Tu respuesta
+                  {t.tuRespuesta}
                 </label>
                 <div class="answer-row">
                   <input
@@ -244,7 +244,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                     spellcheck="false"
                   />
                   <button type="button" class="btn btn-primary check" data-check>
-                    Comprobar
+                    {t.comprobar}
                   </button>
                 </div>
                 {item.data.hint && (
@@ -321,7 +321,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                   ))}
                 </div>
                 <button type="button" class="btn btn-primary check" data-check hidden>
-                  Comprobar
+                  {t.comprobar}
                 </button>
               </>
             )}
@@ -347,7 +347,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
                   data-shadow-confirm
                   hidden
                 >
-                  🎤 Ya lo dije en voz alta
+                  {t.yaLoDije}
                 </button>
               </>
             )}
@@ -367,7 +367,7 @@ function splitSentence(sentence: string): { before: string; after: string } {
           {t.resultado} 0 / {items.length}
         </p>
         <button type="button" class="btn btn-ghost" data-restart>
-          Repetir
+          {t.repetir}
         </button>
       </div>
     </section>

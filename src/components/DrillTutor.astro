@@ -1,7 +1,25 @@
 ---
-// Sin frontmatter: el componente es solo comportamiento. Se monta una vez en
+// Casi todo el componente es comportamiento; el frontmatter existe solo para
+// resolver sus dos textos en el idioma de la página. Se monta una vez en
 // BaseLayout, junto a EngineTracker.
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
+
+interface Props {
+  userLang?: string;
+}
+
+const { userLang } = Astro.props;
+const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).widgets.refuerzo;
 ---
+
+{
+  /* Los avisos los escribe el <script> sobre el ítem fallado, así que sus
+     textos viajan por data-* — el patrón del proyecto para pasarle datos del
+     servidor al JS de cliente. Comentario de Astro, no HTML: uno de HTML se
+     publicaría en las 1042 páginas. */
+}
+<span hidden data-drill-strings={JSON.stringify(t)}></span>
 
 <style is:global>
   /* Estilos globales, no scoped: estos nodos los crea el JS y por eso nunca
@@ -59,6 +77,16 @@
 </style>
 
 <script>
+  /** Los dos textos del tutor, puestos por el servidor en [data-drill-strings]. */
+  function textos(): { pausado: string; otraVez: string } {
+    const el = document.querySelector<HTMLElement>('[data-drill-strings]');
+    try {
+      return JSON.parse(el?.dataset.drillStrings ?? '{}');
+    } catch {
+      return { pausado: '', otraVez: '' };
+    }
+  }
+
   /**
    * El tutor: cuando fallás, insiste en el momento.
    *
@@ -210,12 +238,7 @@
       // EngineTracker, así que /practicar va a seguir priorizando el tema.
       bucle.activo = false;
       if (item) {
-        tip(
-          item,
-          'Este tema se te está resistiendo hoy. Seguimos con la lección y te lo guardo para «Practicar ahora».',
-          '🌱',
-          'is-paused',
-        );
+        tip(item, textos().pausado, '🌱', 'is-paused');
       }
       return;
     }
@@ -232,9 +255,7 @@
       const plantilla = repairTemplateFor(skillId);
       tip(
         item,
-        estabaAbierto
-          ? 'Vamos otra vez con la misma estructura, en otra frase.'
-          : (plantilla?.explanation ?? ''),
+        estabaAbierto ? textos().otraVez : (plantilla?.explanation ?? ''),
         estabaAbierto ? '🔁' : '💡',
       );
     }

@@ -342,12 +342,19 @@ export function buildRelations({ pages, skills, languages }: Entrada): Propuesta
   // enlaces al silo y no recibe ni uno de vuelta desde una lección, aunque
   // CLAUDE.md lo llame "la herramienta SEO principal". La misma evidencia
   // justifica la ida y la vuelta.
+  //
+  // El emparejamiento mira los DOS ejes, no solo el idioma que se enseña. Con
+  // `targetLang` a secas, un post en español casaba igual con es-de que con
+  // en-de, así que /en/de pintaba un bloque "From the blog" con los títulos en
+  // español. Es la misma condición que ya aplica R6 más arriba.
   for (const post of blog) {
     const idiomas = languages.filter((lang) =>
       post.tags.some((t) => t.toLowerCase() === lang.name.toLowerCase()),
     );
     for (const lang of idiomas) {
-      for (const c of cursos.filter((c) => c.targetLang === lang.id)) {
+      for (const c of cursos.filter(
+        (c) => c.targetLang === lang.id && c.userLang === post.userLang,
+      )) {
         añadir(
           out,
           post,

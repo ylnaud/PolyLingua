@@ -1,9 +1,16 @@
 // Diccionario de strings de interfaz para la arquitectura SILO
 // [userLang]/[targetLang]/... — ver src/data/userLanguages.ts para la lista
-// de idiomas de interfaz. Hoy solo `es` está poblado (es el único
-// UserLanguageId con `active: true`); agregar un diccionario nuevo acá es
-// el paso de "traducir la interfaz" cuando se active otro idioma — ver
-// src/i18n/index.ts para el mecanismo de fallback.
+// de idiomas de interfaz.
+//
+// Hoy están poblados `es` y `en`, y los dos están activos. Ojo: tener
+// diccionario NO es lo mismo que estar activo, y traducir este archivo es solo
+// la mitad del trabajo. La otra mitad es el español escrito a mano FUERA de
+// acá — src/data/tsa.ts, src/data/units.ts y los widgets globales — que no se
+// ve leyendo el código, solo barriendo el `dist/`. Ver el comentario de
+// src/data/userLanguages.ts, que cuenta el orden correcto.
+//
+// Agregar un diccionario nuevo acá es el paso real de "traducir la interfaz",
+// y va SIEMPRE antes del flag — ver src/i18n/index.ts para el fallback.
 // Los selectores de idioma ("¿Qué idioma quieres repasar?") son todos la
 // misma página con otro texto, así que comparten forma.
 export interface PickerStrings {
@@ -111,17 +118,37 @@ export interface Dictionary {
   levelNames: Record<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2', string>;
   levelTaglines: Record<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2', string>;
   levelDescriptions: Record<'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2', string>;
+  /**
+   * Descripciones de unidad, SOLO donde hagan falta traducidas.
+   *
+   * Las unidades viven en src/data/units.ts, indexadas por
+   * `${targetLang}-${level}` — sin eje userLang, así que las mismas 92
+   * entradas sirven a `es-de` y a `en-de` y sus `description` están en
+   * español. El `name` no: ese va en el idioma que se enseña
+   * («Erste Schritte») y no se traduce nunca.
+   *
+   * Esto es un MAPA DE EXCEPCIONES, no una copia: la clave es la misma de
+   * units.ts y dentro va el id de la unidad. Si falta una entrada, la página
+   * usa la de units.ts. Así el español no se duplica y units.ts sigue siendo
+   * su única fuente.
+   */
+  unitDescriptions: Record<string, Record<string, string>>;
   languageDescriptions: Record<'de' | 'en' | 'es' | 'fr' | 'it' | 'pt', string>;
   silo: {
     idiomas: string;
     catalogoEyebrow: string;
     catalogoTitulo: string;
+    /** Meta e intro de la portada del silo (/[userLang]). */
+    catalogoMetaTitulo: string;
+    catalogoMetaDescripcion: string;
+    catalogoIntro: string;
     continuar: string;
     repaso: string;
     errores: string;
     racha: string;
     explorarMas: string;
     explorar: {
+      practicarAhora: string;
       situaciones: string;
       dialogos: string;
       pronunciacion: string;
@@ -140,6 +167,14 @@ export interface Dictionary {
     irAlExamen: string;
     leccion: string;
     lecciones: string;
+    /** Encabezado de un grupo de lecciones: «Unidad 3 — Meine Welt». */
+    unidad: string;
+    /** Antesala de los enlaces del bloque TSA (ver src/data/tsa.ts). */
+    seguiCon: string;
+    /** Título del bloque de RelatedLinks en la portada del curso. */
+    delBlog: string;
+    /** CTA de la tarjeta de idioma de las portadas. */
+    verNiveles: string;
     // El selector de nivel de inicio: quien ya sabe algo del idioma no
     // debería tener que aprobar dos exámenes de lo que ya sabe para llegar a
     // su nivel. Ver src/components/StartLevelPicker.astro.
@@ -191,6 +226,15 @@ export interface Dictionary {
     incorrecto: string;
     respuestaCorrecta: string;
     resultado: string;
+    /** Etiqueta del campo de respuesta y botón de corregir, en fill-blank/write. */
+    tuRespuesta: string;
+    comprobar: string;
+    /** Botón de rehacer la práctica entera al llegar al resumen final. */
+    repetir: string;
+    /** Enunciado de un ítem `write` con `spokenOnly`: solo se oye, no se lee. */
+    escuchaYEscribe: string;
+    /** Botón del modo shadowing: confirma que ya repetiste en voz alta. */
+    yaLoDije: string;
   };
   exam: {
     titulo: string;
@@ -375,6 +419,53 @@ export interface Dictionary {
       consignaSrs: string;
     };
   };
+  /**
+   * Los avisos y controles que BaseLayout monta en TODAS las páginas.
+   *
+   * Están acá y no escritos a mano en cada componente porque son justamente
+   * los que se ven en cualquier silo: mientras tuvieron el texto fijo en
+   * español, una página /en/ salía con la interfaz en inglés y estos cuatro
+   * widgets en español encima.
+   */
+  widgets: {
+    /** Enlace de salto al contenido, primer foco de cada página. */
+    saltarContenido: string;
+    /** Barra descartable compartida (racha y copia de seguridad). */
+    barra: { cerrar: string };
+    /** Meta diaria: la píldora del header y su diálogo. */
+    metaDiaria: {
+      pildoraAria: string;
+      titulo: string;
+      sub: string;
+      opcionesAria: string;
+      ahoraNo: string;
+    };
+    /** Aviso de racha en riesgo. El texto lo arma el cliente con {n} días. */
+    racha: { cta: string; texto: string; textos: string };
+    copia: { texto: string; cta: string };
+    /** Avisos del bucle de refuerzo, escritos sobre el ítem fallado. */
+    refuerzo: { pausado: string; otraVez: string };
+    /** Botón de modo shadowing: está en el header y en el menú «Más». */
+    shadowing: { aria: string; etiqueta: string };
+    /** Selector de idioma de INTERFAZ del header (no el de idioma a aprender). */
+    selectorIdioma: { aria: string; proximamente: string };
+    /** Botón de tema claro/oscuro. */
+    tema: { aria: string; aClaro: string; aOscuro: string };
+    /** Botón de sonido. Los dos textos los reescribe el cliente al alternar. */
+    sonido: { silenciar: string; activar: string };
+    /**
+     * Botón de instalar la PWA. `iosPasos` y `otrosPasos` son el texto de
+     * respaldo para navegadores sin `beforeinstallprompt`; los escribe el
+     * cliente, así que viajan por `[data-install-strings]`.
+     */
+    instalar: {
+      aria: string;
+      etiqueta: string;
+      comoInstalar: string;
+      iosPasos: string;
+      otrosPasos: string;
+    };
+  };
 }
 
 export const es: Dictionary = {
@@ -494,6 +585,8 @@ export const es: Dictionary = {
     c1: 'Redacta, debate y comprende textos complejos con soltura casi nativa.',
     c2: 'Ironía, registro coloquial y matices estilísticos que solo dominan los expertos.',
   },
+  // Vacío a propósito: units.ts ya guarda estas descripciones en español.
+  unitDescriptions: {},
   languageTaglines: {
     de: 'Precisión, casos y palabras larguísimas',
     en: 'El idioma que ya usas sin saberlo',
@@ -514,12 +607,18 @@ export const es: Dictionary = {
     idiomas: 'Idiomas',
     catalogoEyebrow: 'Catálogo de idiomas',
     catalogoTitulo: '¿Qué idioma quieres aprender?',
+    catalogoMetaTitulo: 'Idiomas disponibles',
+    catalogoMetaDescripcion:
+      'Elige el idioma que quieres aprender: alemán, inglés, francés, italiano o portugués. Gramática gamificada de A1 a C2, gratis.',
+    catalogoIntro:
+      'Cada idioma tiene su propia ruta de A1 a C2, con la misma gramática gamificada que hace que aprender no se sienta como estudiar.',
     continuar: 'Continuar',
     repaso: 'Repaso',
     errores: 'Errores',
     racha: 'Racha',
     explorarMas: '🧭 Explorá más',
     explorar: {
+      practicarAhora: 'Practicar ahora',
       situaciones: 'Situaciones',
       dialogos: 'Diálogos',
       pronunciacion: 'Escuchar y repetir',
@@ -539,6 +638,10 @@ export const es: Dictionary = {
     irAlExamen: 'Ir al examen →',
     leccion: 'lección',
     lecciones: 'lecciones',
+    unidad: 'Unidad',
+    seguiCon: 'Seguí con:',
+    delBlog: 'Del blog',
+    verNiveles: 'Ver niveles →',
     inicio: {
       titulo: '¿Ya sabés algo?',
       desc: 'Elegí desde qué nivel querés empezar. Los anteriores quedan abiertos por si querés repasarlos.',
@@ -583,6 +686,11 @@ export const es: Dictionary = {
     incorrecto: '❌ No del todo.',
     respuestaCorrecta: 'Correcto:',
     resultado: 'Acertaste',
+    tuRespuesta: 'Tu respuesta',
+    comprobar: 'Comprobar',
+    repetir: 'Repetir',
+    escuchaYEscribe: '🔊 Escucha y escribe lo que oís',
+    yaLoDije: '🎤 Ya lo dije en voz alta',
   },
   exam: {
     titulo: 'Examen',
@@ -796,6 +904,591 @@ export const es: Dictionary = {
       ganaste: '🎉 ¡Bien! La palabra era "{x}" ({y}).',
       perdiste: '💀 Se acabaron los intentos. La palabra era "{x}" ({y}).',
       consignaSrs: 'Escribe esta palabra en {lang}: "{x}"',
+    },
+  },
+  widgets: {
+    saltarContenido: 'Saltar al contenido',
+    barra: { cerrar: 'Cerrar aviso' },
+    metaDiaria: {
+      pildoraAria: 'Ver o cambiar tu meta de práctica de hoy',
+      titulo: '¿Cuánto quieres practicar hoy?',
+      sub: 'Elige una meta para hoy — puedes cambiarla cuando quieras.',
+      opcionesAria: 'Minutos por día',
+      ahoraNo: 'Ahora no',
+    },
+    racha: {
+      cta: 'Practicar ahora',
+      texto: 'No pierdas tu racha de {n} día — practica algo hoy.',
+      textos: 'No pierdas tu racha de {n} días — practica algo hoy.',
+    },
+    copia: {
+      texto: 'Tu progreso vive solo en este navegador — hacé una copia antes de perderlo.',
+      cta: 'Hacer copia',
+    },
+    refuerzo: {
+      pausado:
+        'Este tema se te está resistiendo hoy. Seguimos con la lección y te lo guardo para «Practicar ahora».',
+      otraVez: 'Vamos otra vez con la misma estructura, en otra frase.',
+    },
+    shadowing: {
+      aria: 'Modo shadowing: repetir en voz alta antes de seguir',
+      etiqueta: 'Modo shadowing (repetir en voz alta)',
+    },
+    selectorIdioma: { aria: 'Cambiar idioma de la interfaz', proximamente: 'Próximamente' },
+    tema: {
+      aria: 'Cambiar entre modo oscuro y modo claro',
+      aClaro: ' Cambiar a modo claro',
+      aOscuro: ' Cambiar a modo oscuro',
+    },
+    sonido: { silenciar: 'Silenciar sonidos', activar: 'Activar sonidos' },
+    instalar: {
+      aria: 'Instalar PolyLingua como aplicación',
+      etiqueta: '📲 Instalar app',
+      comoInstalar: '❓ Cómo instalar',
+      iosPasos: 'Tocá Compartir (□↑) y elegí "Agregar a pantalla de inicio".',
+      otrosPasos:
+        'Tocá el menú (⋮) de tu navegador y elegí "Agregar a pantalla de inicio" o "Instalar aplicación".',
+    },
+  },
+};
+
+// Diccionario de interfaz en inglés, para el silo /en/ (hoy, el curso en-de:
+// 84 lecciones de alemán explicadas en inglés).
+//
+// El tipo `Dictionary` no admite claves parciales a propósito: si falta una,
+// el build falla en vez de publicar una página con un string vacío. Así que
+// esto es una traducción COMPLETA de `es`, no un subconjunto.
+//
+// Dos cosas que no se traducen y conviene no "arreglar":
+//
+// - `tools.diario.placeholder` son ejemplos EN el idioma que se estudia
+//   («Heute habe ich…»), no texto de interfaz. Van igual en los dos
+//   diccionarios.
+// - Los marcadores `{lang}`, `{nivel}`, `{n}`, `{x}`, `{y}`, `{enlace}` y
+//   `{detalle}` los sustituye src/lib/interpolate.ts por nombre; si se
+//   traducen o se renombran, el texto sale con el marcador crudo.
+//
+// Y un detalle de montaje: los strings del examen `intro`, `umbral`,
+// `yDesbloquear` y `yCompletarIdioma` son FRAGMENTOS que examen.astro
+// concatena en una sola frase («You need **70% or more** to unlock **A2**»),
+// no oraciones sueltas. Traducirlos por separado sin mirar cómo se unen da
+// inglés roto. Lo mismo con `pendientes`, que no lleva punto final porque
+// `{detalle}` lo aporta.
+export const en: Dictionary = {
+  header: {
+    logoAria: 'PolyLingua — home',
+    navAria: 'Main navigation',
+    nav: {
+      idiomas: 'Languages',
+      buscar: 'Search',
+      blog: 'Blog',
+      porQue: 'Why',
+      faq: 'FAQ',
+    },
+    toolsAria: 'More tools',
+    tools: {
+      repasar: 'Review',
+      repasarAria: 'Review words you got wrong',
+      vocabulario: 'Vocabulary',
+      vocabularioAria: 'See and review your vocabulary',
+      practicaLibre: 'Free practice',
+      practicaLibreAria: 'Random free practice',
+      ahorcado: 'Hangman',
+      ahorcadoAria: 'Play hangman',
+      logros: 'Achievements',
+      logrosAria: 'See your achievements',
+      misErrores: 'My mistakes',
+      misErroresAria: 'See your most frequent mistakes',
+    },
+    ctaStart: 'Start for free',
+  },
+  bottomNav: {
+    navAria: 'Main mobile navigation',
+    tabs: {
+      inicio: 'Home',
+      idiomas: 'Languages',
+      repasar: 'Review',
+      logros: 'Achievements',
+      mas: 'More',
+    },
+    sheetAria: 'More options',
+    groups: {
+      practicar: 'Practise',
+      tuProgreso: 'Your progress',
+      recursos: 'Resources',
+      sobrePolyLingua: 'About PolyLingua',
+      preferencias: 'Preferences',
+    },
+    links: {
+      buscarLecciones: 'Search lessons',
+      situaciones: 'Situations',
+      dialogos: 'Dialogues',
+      vocabulario: 'Vocabulary',
+      practicaLibre: 'Free practice',
+      ahorcado: 'Hangman',
+      escucharRepetir: 'Listen and repeat',
+      generadorFrases: 'Sentence builder',
+      misErrores: 'My mistakes',
+      gramatica: 'Grammar',
+      copiaSeguridad: 'Backup',
+      recursos: 'Resources',
+      diario: 'Journal',
+      blog: 'Blog',
+      porQuePolyLingua: 'Why PolyLingua',
+      faq: 'FAQ',
+    },
+    ctaStart: 'Start for free',
+  },
+  footer: {
+    tagline:
+      'Languages from A1 to C2, with grammar you actually enjoy learning. Free while we build the community.',
+    idiomas: 'Languages',
+    proyecto: 'Project',
+    codigoGitHub: 'Code on GitHub',
+    blog: 'Blog',
+    faq: 'FAQ',
+    acercaDe: 'About',
+    terminos: 'Terms of use',
+    privacidad: 'Privacy',
+    hechoCon: 'Made with ☕ for people who love languages.',
+  },
+  breadcrumbAria: 'Breadcrumb',
+  cookies: {
+    texto:
+      'PolyLingua saves your progress in your browser only — we use no tracking cookies. More detail in the {enlace}.',
+    enlace: 'privacy policy',
+    entendido: 'Got it',
+  },
+  languageNames: {
+    de: 'German',
+    en: 'English',
+    es: 'Spanish',
+    fr: 'French',
+    it: 'Italian',
+    pt: 'Portuguese',
+  },
+  levelNames: {
+    a1: 'A1 · Beginner',
+    a2: 'A2 · Elementary',
+    b1: 'B1 · Intermediate',
+    b2: 'B2 · Upper intermediate',
+    c1: 'C1 · Advanced',
+    c2: 'C2 · Mastery',
+  },
+  levelTaglines: {
+    a1: 'Your first words',
+    a2: 'Talk about what you did yesterday',
+    b1: 'Conversations with substance',
+    b2: 'Master the passive and the subjunctive',
+    c1: 'Style, nuance and register',
+    c2: 'The language at an educated native level',
+  },
+  levelDescriptions: {
+    a1: 'Introduce yourself, order food and survive your first day speaking the language.',
+    a2: 'The past, daily routines and the first sentences that make you sound (almost) local.',
+    b1: 'Link ideas with cause, contrast and condition, and start giving opinions like someone who owns the language.',
+    b2: 'Talk about hypotheses, news and nuance with the precision of an advanced speaker.',
+    c1: 'Write, argue and follow complex texts with near-native ease.',
+    c2: 'Irony, colloquial register and the stylistic nuance only experts handle.',
+  },
+  // Solo los bloques `de-*`: son los únicos que ve un usuario del silo inglés,
+  // porque en-de es hoy el único curso con la interfaz en inglés. Los otros 24
+  // bloques de units.ts sirven a cursos es-* y su español es el correcto.
+  unitDescriptions: {
+    'de-a1': {
+      1: 'Pronunciation and your first phrases',
+      2: 'The grammar foundations',
+      3: 'Everyday vocabulary',
+      4: 'Everyday situations',
+      5: 'Out and about',
+      6: 'Prepositions of place and time',
+    },
+    'de-a2': {
+      1: 'The past and modal verbs',
+      2: 'Cases and prepositions',
+      3: 'Pronouns and fixed prepositions',
+      4: 'Advanced everyday situations',
+    },
+    'de-b1': {
+      1: 'Subordinate clauses and narrative tenses',
+      2: 'Applied grammar and professional vocabulary',
+      3: 'Complaining, asking and telling politely',
+      4: 'Verbs with fixed prepositions, and the full guide',
+    },
+    'de-b2': {
+      1: 'Passive, subjunctive and future',
+      2: 'Advanced connectors and topic vocabulary',
+    },
+    'de-c1': {
+      1: 'Konjunktiv I, participles and modal verbs',
+      2: 'Nominal style, connectors and academic vocabulary',
+      3: 'Prepositions in academic and professional register',
+    },
+    'de-c2': {
+      1: 'Modal particles, idioms and register',
+      2: 'Regional varieties, humour and rhetoric',
+      3: 'Idiomatic use and nuance with prepositions',
+    },
+  },
+  languageTaglines: {
+    de: 'Precision, cases and gloriously long words',
+    en: 'The language you already use without noticing',
+    es: 'Ser or estar: that is the question',
+    fr: 'Elegance, gender and that famous subjonctif',
+    it: 'Melodic, expressive and closer than you think',
+    pt: 'The close cousin that surprises you with its nuance',
+  },
+  languageDescriptions: {
+    de: 'The language of logic: clear rules, a curious word order and a vocabulary you build like Lego bricks.',
+    en: 'Simple grammar on the surface, with nuance (tenses, phrasal verbs) that separates sounding fine from sounding native.',
+    es: 'One of the most spoken languages in the world, with rich verb grammar — the subjunctive turns up everywhere — but no case declensions.',
+    fr: 'Nasal sounds, a grammatical gender to master and a subjunctive mood that separates good speakers from excellent ones.',
+    it: 'Very close to Spanish in vocabulary, with its own rhythm, double consonants and a congiuntivo worth conquering.',
+    pt: 'Familiar on the surface if you know Spanish, with nasal sounds of its own and structures — like the future subjunctive — that your language simply lacks.',
+  },
+  silo: {
+    idiomas: 'Languages',
+    catalogoEyebrow: 'Language catalogue',
+    catalogoTitulo: 'Which language do you want to learn?',
+    catalogoMetaTitulo: 'Available languages',
+    catalogoMetaDescripcion:
+      'Pick the language you want to learn: German, English, French, Italian or Portuguese. Gamified grammar from A1 to C2, free.',
+    catalogoIntro:
+      'Every language has its own path from A1 to C2, with the same gamified grammar that keeps learning from feeling like studying.',
+    continuar: 'Continue',
+    repaso: 'Review',
+    errores: 'Mistakes',
+    racha: 'Streak',
+    explorarMas: '🧭 Explore more',
+    explorar: {
+      practicarAhora: 'Practise now',
+      situaciones: 'Situations',
+      dialogos: 'Dialogues',
+      pronunciacion: 'Listen and repeat',
+      recursos: 'Resources',
+      sprintSemanal: 'Weekly sprint',
+      diario: 'Journal',
+      misErrores: 'My mistakes',
+      gramatica: 'Grammar',
+      generadorFrases: 'Sentence builder',
+    },
+    nivelVacio: 'We are still writing lessons for this level. Check back soon!',
+    examenNivel: 'Level test',
+    examenDesc: 'Everything you learned in {nivel} in one go — pass it to unlock the next level.',
+    bloqueado: '🔒 Locked',
+    completado: '✓ Completed',
+    irAlExamen: 'Take the test →',
+    leccion: 'lesson',
+    lecciones: 'lessons',
+    unidad: 'Unit',
+    seguiCon: 'Carry on with:',
+    delBlog: 'From the blog',
+    verNiveles: 'See levels →',
+    inicio: {
+      titulo: 'Already know some?',
+      desc: 'Pick the level you want to start from. Everything below it stays open in case you want to review.',
+      elegido: 'Starting at {nivel}',
+      cambiar: 'Change level',
+      cerrar: 'Done',
+      aria: 'Choose starting level',
+    },
+  },
+  lesson: {
+    anterior: '← Previous',
+    cursoNombre: 'Interactive {lang} Course — PolyLingua',
+    cursoDescripcion:
+      'Learn {lang} from A1 to C2 for free, with grammar that is actually fun and interactive exercises.',
+    trucoTitulo: '💡 A trick so you do not get bored',
+    vocabularioTitulo: '📚 Vocabulary from this lesson',
+    escuchar: 'Listen',
+    empezarPractica: 'Start practising →',
+    siguiente: 'Next →',
+    frasesTitulo: '🗣️ Phrases to use today',
+    frasesIntro: 'Listen to each phrase and say it out loud before you practise.',
+  },
+  practice: {
+    kinds: {
+      choice: '🔘 Multiple choice',
+      fillBlank: '✏️ Fill the gap',
+      match: '🔗 Match',
+      write: '⌨️ Type the answer',
+      order: '🧩 Put the sentence in order',
+    },
+    publicidad: 'Advertisement',
+    tituloSeccion: '🎮 Test yourself',
+    aria: 'Interactive practice',
+    pista: '💡 Hint',
+    completado: 'Done!',
+    completaLaFrase: 'Complete the sentence',
+    ordenaPalabras: 'Put the words in the right order',
+    emparejaElementos: 'Match each item with its pair',
+    escucharDeNuevo: 'Listen again',
+    fraseConstruyendo: 'The sentence you are building',
+    correcto: '✅ Correct!',
+    incorrecto: '❌ Not quite.',
+    respuestaCorrecta: 'Correct:',
+    resultado: 'You got',
+    tuRespuesta: 'Your answer',
+    comprobar: 'Check',
+    repetir: 'Repeat',
+    escuchaYEscribe: '🔊 Listen and write what you hear',
+    yaLoDije: '🎤 I said it out loud',
+  },
+  exam: {
+    titulo: 'Test',
+    tituloPagina: 'Level test',
+    metaTitulo: '{lang} test — {nivel}',
+    metaDescripcion:
+      'Final {nivel} test for {lang}: everything you learned in the level in one go. Score 70% or more to unlock the next level.',
+    intro: 'This test mixes questions and exercises from the {n} lessons in {nivel}. You need',
+    yDesbloquear: 'to unlock',
+    desbloqueaste: 'You unlocked',
+    cursoCompleto: 'You finished the whole {lang} course. Congratulations!',
+    irA: 'Go to',
+    aprobado: 'Passed!',
+    todaviaNo: 'Not yet',
+    umbral: '70% or more',
+    explicacionFallo:
+      'You need at least 70% to pass. Everything you got wrong is already saved for review.',
+    reintentar: 'Try again',
+    repasarAhora: 'Review now',
+    verMisLogros: 'See my achievements',
+    yCompletarIdioma: 'to finish the language',
+  },
+  tools: {
+    nombres: {
+      vocabulario: 'Vocabulary',
+      repasar: 'Review',
+      practicaLibre: 'Free practice',
+      ahorcado: 'Hangman',
+      diario: 'Journal',
+      gramatica: 'Grammar',
+      misErrores: 'My mistakes',
+      pronunciacion: 'Listen and repeat',
+      situaciones: 'Situations',
+    },
+    comun: {
+      verLecciones: 'See lessons',
+      todos: 'All ({n})',
+      mastery: ['New', 'Learning', 'Familiar', 'Good', 'Strong', 'Mastered'],
+      caja: 'Box {n}',
+      practicar: 'Practise',
+      sinDatos: 'No data',
+    },
+    selectores: {
+      vocabulario: {
+        metaTitulo: 'Vocabulary',
+        metaDescripcion:
+          'Every new word you have learned across your lessons, in one place to look over and review.',
+        h1: 'Which language do you want to see vocabulary for?',
+        desc: 'Pick a language to see the words you already know.',
+      },
+      repasar: {
+        metaTitulo: 'Review',
+        metaDescripcion:
+          'Review the words and exercises you got wrong, with spaced repetition, until you really know them.',
+        h1: 'Which language do you want to review?',
+        desc: 'Pick a language to see what you have due.',
+      },
+      practicaLibre: {
+        metaTitulo: 'Free practice',
+        metaDescripcion:
+          'Practise with a random session of questions and exercises drawn from all your lessons, different every time.',
+        h1: 'Which language do you want to practise?',
+        desc: 'Pick a language for a free practice session.',
+      },
+      ahorcado: {
+        metaTitulo: 'Hangman',
+        metaDescripcion:
+          'Play hangman with the vocabulary you have already learned on PolyLingua, in whichever language you are studying.',
+        h1: 'Which language do you want to play in?',
+        desc: 'Pick a language to play hangman with your own vocabulary.',
+      },
+      diario: {
+        metaTitulo: 'Writing journal',
+        metaDescripcion:
+          'Write a few lines every day in the language you are studying to practise free writing, with no fixed answers.',
+        h1: 'Which language do you want to write in today?',
+        desc: "Pick a language to write today's entry.",
+      },
+      pronunciacion: {
+        metaTitulo: 'Listen and repeat',
+        metaDescripcion:
+          'Hear words in a native voice and say them out loud to practise your pronunciation in the language you are studying.',
+        h1: 'Which language do you want to practise?',
+        desc: 'Pick a language to hear words and repeat them out loud.',
+      },
+      situaciones: {
+        metaTitulo: 'Everyday situations',
+        metaDescripcion:
+          'Learn languages through real situations — work, home, shopping — with the phrases people actually use every day.',
+        h1: 'Which language do you want to practise situations in?',
+        desc: 'Pick a language to learn with real phrases instead of isolated rules.',
+      },
+    },
+    vocabulario: {
+      metaTitulo: '{lang} vocabulary',
+      metaDescripcion:
+        'Every {lang} word you have learned across your lessons, in one place to look over and review.',
+      h1: 'Your {lang} vocabulary',
+      cargando: 'Loading your vocabulary…',
+      vacioTitulo: 'You have not learned any {lang} vocabulary yet',
+      vacioDesc: 'Finish a lesson and its new words will start showing up here.',
+      palabrasTitulo: '📚 Words learned',
+      pruebaTitulo: '🎯 Test yourself',
+      palabraAprendida: '{n} word learned.',
+      palabrasAprendidas: '{n} words learned.',
+      comoSeDice: 'How do you say "{x}"?',
+    },
+    repasar: {
+      metaTitulo: 'Review {lang}',
+      metaDescripcion:
+        'Review the {lang} words and exercises you got wrong, with spaced repetition, until you really know them.',
+      h1: 'Review {lang}',
+      cargando: 'Loading your review…',
+      vacioTitulo: 'Nothing left to review today',
+      vacioDesc: 'Come back tomorrow, or keep going with new lessons in the meantime.',
+      pendientes: 'You have {n} items to review{detalle}',
+      pendiente: 'You have {n} item to review{detalle}',
+    },
+    practicaLibre: {
+      metaTitulo: '{lang} free practice',
+      metaDescripcion:
+        'Practise {lang} with a random session of questions and exercises from all your lessons, different every time.',
+      h1: '{lang} free practice',
+      armando: 'Putting a random session together…',
+      vacioTitulo: 'No exercises to practise yet',
+      vacioDesc: 'Finish a lesson first and come back here.',
+      sesion: 'A random session of {n} items, different every time you visit this page.',
+    },
+    gramatica: {
+      metaTitulo: 'Grammar — {lang}',
+      metaDescripcion:
+        'Go over the grammar topics in {lang}: see how well you know each one and practise the ones you need most.',
+      h1: '{lang} grammar',
+      desc: 'How well you know each grammar topic.',
+      ejercicio: '{n} exercise',
+      ejercicios: '{n} exercises',
+    },
+    misErrores: {
+      metaTitulo: 'My mistakes — {lang}',
+      metaDescripcion: 'Go back over the {lang} exercises you find hardest and practise them.',
+      h1: 'My mistakes',
+      cargando: 'Loading your mistakes…',
+      vacioTitulo: 'No mistakes recorded',
+      vacioDesc: 'When you get an exercise wrong, it will show up here so you can go over it.',
+      practicarBtn: 'Practise my mistakes',
+      conErrores: 'You have {n} exercises with mistakes.',
+      conError: 'You have {n} exercise with mistakes.',
+      falladoVeces: 'got wrong {n}×',
+      tuRespuesta: 'Your answer:',
+      correcta: 'Correct:',
+    },
+    diario: {
+      metaTitulo: 'Writing journal in {lang}',
+      metaDescripcion:
+        'Write a few lines every day in {lang} to practise free writing, with no fixed answers — saved in your browser only.',
+      h1: '{lang} journal',
+      desc: 'Write a few lines about your day — no pressure, no right answer. It is saved in this browser only.',
+      etiquetaTextarea: "Today's entry",
+      placeholder: {
+        de: 'Heute habe ich...',
+        en: 'Today I...',
+        es: 'Hoy he...',
+        fr: "Aujourd'hui j'ai...",
+        it: 'Oggi ho...',
+        pt: 'Hoje eu...',
+      },
+      palabras: '{n} words',
+      guardado: '✅ Saved',
+      pista:
+        '💡 If you want to check your text, you can paste it into {enlace} to look over the grammar — it is not part of PolyLingua, just an optional outside tool.',
+      anterioresTitulo: '📅 Earlier entries',
+    },
+    pronunciacion: {
+      metaTitulo: 'Listen and repeat in {lang}',
+      metaDescripcion:
+        'Hear {lang} words in a native voice, say them out loud and mark the hard ones — those come back more often.',
+      h1: 'Listen and repeat in {lang}',
+      desc: 'Listen to the word, pause, and say it out loud. Then mark whether you got it — the ones you find hard will come back more often.',
+      vacioTitulo: 'No vocabulary yet',
+      vacioDesc: 'Finish a {lang} lesson first to unlock this practice.',
+      escuchar: '🔊 Listen',
+      guia: 'Listen, pause, and say it out loud.',
+      meSalio: '✅ Got it',
+      meCosto: '🔁 Found it hard',
+      traduccion: 'Translation: {x}',
+      practicada: '{n} word practised',
+      practicadas: '{n} words practised',
+    },
+    situaciones: {
+      metaTitulo: 'Everyday situations in {lang}',
+      metaDescripcion:
+        'Learn {lang} through real situations — work, home, shopping — with the phrases people actually use every day.',
+      h1: 'Everyday situations',
+      desc: 'Instead of studying isolated rules, learn the phrases people really use in each situation. Listen to them, say them out loud, and practise producing them yourself.',
+      vacioTitulo: 'No situations in {lang} yet',
+      vacioDesc: 'We are building this mode language by language — check back soon.',
+      frase: '{n} phrase',
+      frases: '{n} phrases',
+    },
+    ahorcado: {
+      metaTitulo: '{lang} hangman',
+      metaDescripcion:
+        'Play hangman with the {lang} vocabulary you have already learned on PolyLingua — guess the word letter by letter.',
+      h1: '{lang} hangman',
+      desc: 'Guess the word letter by letter before you run out of tries.',
+      vacioTitulo: 'No vocabulary yet',
+      vacioDesc: 'Finish a {lang} lesson first to unlock hangman.',
+      escuchar: '🔊 Listen',
+      jugarDeNuevo: '🔁 Play again',
+      pista: 'Hint: {x}',
+      ganaste: '🎉 Nice! The word was "{x}" ({y}).',
+      perdiste: '💀 Out of tries. The word was "{x}" ({y}).',
+      consignaSrs: 'Write this word in {lang}: "{x}"',
+    },
+  },
+  widgets: {
+    saltarContenido: 'Skip to content',
+    barra: { cerrar: 'Dismiss notice' },
+    metaDiaria: {
+      pildoraAria: "See or change today's practice goal",
+      titulo: 'How much do you want to practise today?',
+      sub: 'Pick a goal for today — you can change it whenever you like.',
+      opcionesAria: 'Minutes per day',
+      ahoraNo: 'Not now',
+    },
+    racha: {
+      cta: 'Practise now',
+      texto: 'Do not lose your {n}-day streak — practise something today.',
+      textos: 'Do not lose your {n}-day streak — practise something today.',
+    },
+    copia: {
+      texto: 'Your progress lives in this browser only — back it up before you lose it.',
+      cta: 'Back up',
+    },
+    refuerzo: {
+      pausado:
+        'This topic is fighting back today. We will carry on with the lesson and save it for "Practise now".',
+      otraVez: 'Same structure once more, in a different sentence.',
+    },
+    shadowing: {
+      aria: 'Shadowing mode: say it out loud before moving on',
+      etiqueta: 'Shadowing mode (say it out loud)',
+    },
+    selectorIdioma: { aria: 'Change interface language', proximamente: 'Coming soon' },
+    tema: {
+      aria: 'Switch between dark and light mode',
+      aClaro: ' Switch to light mode',
+      aOscuro: ' Switch to dark mode',
+    },
+    sonido: { silenciar: 'Mute sounds', activar: 'Unmute sounds' },
+    instalar: {
+      aria: 'Install PolyLingua as an app',
+      etiqueta: '📲 Install app',
+      comoInstalar: '❓ How to install',
+      iosPasos: 'Tap Share (□↑) and choose "Add to Home Screen".',
+      otrosPasos: 'Tap your browser menu (⋮) and choose "Add to Home Screen" or "Install app".',
     },
   },
 };

@@ -45,8 +45,8 @@ const topicManifest = Object.fromEntries(lessonsForLang.map((l) => [l.id, l.data
   <section class="container errors-body">
     <div class="card empty-state" data-empty-state hidden>
       <p class="empty-emoji">🎉</p>
-      <h2>No tienes errores registrados</h2>
-      <p>Cuando falles un ejercicio, aparecerá aquí para que puedas repasarlo.</p>
+      <h2>{tt.vacioTitulo}</h2>
+      <p>{tt.vacioDesc}</p>
       <a class="btn btn-primary" href={`/${userLang}/${lang}`}>{dict.tools.comun.verLecciones}</a>
     </div>
 

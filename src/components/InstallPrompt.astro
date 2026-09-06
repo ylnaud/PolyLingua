@@ -1,4 +1,7 @@
 ---
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
+
 interface Props {
   // 'pill' es el botón compacto del header (desktop/landscape); 'sheet' es la
   // variante de fila completa para el menú "Más" del bottom nav (portrait) —
@@ -6,21 +9,36 @@ interface Props {
   // que en cualquier página con las dos instancias montadas (header + sheet)
   // se muestran/ocultan en simultáneo.
   variant?: 'pill' | 'sheet';
+  // Lo pasan Header y BottomNav; sin esto los textos salían siempre en español.
+  userLang?: string;
 }
 
-const { variant = 'pill' } = Astro.props;
+const { variant = 'pill', userLang = ACTIVE_USER_LANGUAGES[0].id } = Astro.props;
+const t = getDictionary(userLang as never).widgets.instalar;
+
+// El texto de respaldo (para navegadores sin `beforeinstallprompt`) lo escribe
+// el cliente, que no puede leer el diccionario: se resuelve en el servidor.
+// Viaja por data-* en el propio <span> que lo va a mostrar — el mismo patrón
+// que DismissibleBar.astro con [data-bar-strings].
+const fallbackStrings = JSON.stringify({
+  comoInstalar: t.comoInstalar,
+  iosPasos: t.iosPasos,
+  otrosPasos: t.otrosPasos,
+});
 ---
 
 <button
   type="button"
   class:list={['install-btn', { 'install-btn-sheet': variant === 'sheet' }]}
   hidden
-  aria-label="Instalar PolyLingua como aplicación"
+  aria-label={t.aria}
 >
-  📲 Instalar app
+  {t.etiqueta}
 </button>
-<span class:list={['install-fallback', { 'install-fallback-sheet': variant === 'sheet' }]} hidden
-></span>
+<span
+  class:list={['install-fallback', { 'install-fallback-sheet': variant === 'sheet' }]}
+  hidden
+  data-install-strings={fallbackStrings}></span>
 
 <style>
   .install-btn {
@@ -123,23 +141,26 @@ const { variant = 'pill' } = Astro.props;
     );
   }
 
-  function fallbackCopy(): { full: string; short: string } {
+  function fallbackCopy(el: HTMLElement): { full: string; short: string } {
+    const raw = el.dataset.installStrings;
+    let s = {
+      comoInstalar: '❓ Cómo instalar',
+      iosPasos: 'Tocá Compartir (□↑) y elegí "Agregar a pantalla de inicio".',
+      otrosPasos:
+        'Tocá el menú (⋮) de tu navegador y elegí "Agregar a pantalla de inicio" o "Instalar aplicación".',
+    };
+    try {
+      if (raw) s = JSON.parse(raw);
+    } catch {}
+
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    return isIOS
-      ? {
-          full: 'Tocá Compartir (□↑) y elegí "Agregar a pantalla de inicio".',
-          short: '❓ Cómo instalar',
-        }
-      : {
-          full: 'Tocá el menú (⋮) de tu navegador y elegí "Agregar a pantalla de inicio" o "Instalar aplicación".',
-          short: '❓ Cómo instalar',
-        };
+    return { full: isIOS ? s.iosPasos : s.otrosPasos, short: s.comoInstalar };
   }
 
   function populateFallback(el: HTMLElement) {
     if (el.dataset.populated) return;
     el.dataset.populated = 'true';
-    const { full, short } = fallbackCopy();
+    const { full, short } = fallbackCopy(el);
     if (el.classList.contains('install-fallback-sheet')) {
       el.textContent = full;
     } else {

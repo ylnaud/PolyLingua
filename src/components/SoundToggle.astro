@@ -1,5 +1,7 @@
 ---
 import IconToggle from './IconToggle.astro';
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
 
 interface Props {
   // 'icon' es el botón circular del header (desktop/landscape); 'sheet' es la
@@ -8,17 +10,26 @@ interface Props {
   // que en cualquier página con las dos instancias montadas (header + sheet)
   // se sincronizan en simultáneo.
   variant?: 'icon' | 'sheet';
+  // Lo pasan Header y BottomNav; sin esto los textos salían siempre en español.
+  userLang?: string;
 }
 
-const { variant = 'icon' } = Astro.props;
+const { variant = 'icon', userLang = ACTIVE_USER_LANGUAGES[0].id } = Astro.props;
+const t = getDictionary(userLang as never).widgets.sonido;
+
+// El <script> reescribe el aria-label al alternar, y no puede leer el
+// diccionario porque se resuelve en el servidor. Van por data-* al <span>,
+// que es lo que este archivo renderiza — el mismo patrón que
+// DismissibleBar.astro con [data-bar-strings].
+const scriptStrings = JSON.stringify({ silenciar: t.silenciar, activar: t.activar });
 ---
 
-<IconToggle toggleClass="sound-toggle" variant={variant} ariaLabel="Silenciar sonidos">
-  <span class="icon icon-on" aria-hidden="true"
-    >🔊<span class="sheet-only"> Silenciar sonidos</span></span
+<IconToggle toggleClass="sound-toggle" variant={variant} ariaLabel={t.silenciar}>
+  <span class="icon icon-on" aria-hidden="true" data-sound-strings={scriptStrings}
+    >🔊<span class="sheet-only"> {t.silenciar}</span></span
   >
   <span class="icon icon-off" aria-hidden="true"
-    >🔇<span class="sheet-only"> Activar sonidos</span></span
+    >🔇<span class="sheet-only"> {t.activar}</span></span
   >
 </IconToggle>
 
@@ -52,12 +63,21 @@ const { variant = 'icon' } = Astro.props;
     return Array.from(document.querySelectorAll<HTMLButtonElement>('.sound-toggle'));
   }
 
+  function stringsDe(btn: HTMLButtonElement): { silenciar: string; activar: string } {
+    const raw = btn.querySelector<HTMLElement>('[data-sound-strings]')?.dataset.soundStrings;
+    try {
+      if (raw) return JSON.parse(raw);
+    } catch {}
+    return { silenciar: 'Silenciar sonidos', activar: 'Activar sonidos' };
+  }
+
   function syncAll() {
     const muted = isMuted();
     allButtons().forEach((btn) => {
       btn.setAttribute('aria-pressed', String(muted));
       btn.classList.toggle('is-muted', muted);
-      btn.setAttribute('aria-label', muted ? 'Activar sonidos' : 'Silenciar sonidos');
+      const s = stringsDe(btn);
+      btn.setAttribute('aria-label', muted ? s.activar : s.silenciar);
     });
   }
 

@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'German Verbs with Fixed Prepositions (Verben mit Präpositionen) | PolyLingua'
+title: 'German Verbs with Fixed Prepositions (Verben mit Präpositionen)'
 description: 'Learn German verbs with fixed prepositions like warten auf and sich freuen auf, plus da- and wo-compounds for talking about things instead of people.'
 order: 13
 grammarTopic: 'Verbs with fixed prepositions (Verben mit Präpositionen)'
@@ -93,7 +93,7 @@ exercises:
     answer: 'über'
     accepted:
       - 'über'
-    hint: "Already happened → sich freuen über, not auf."
+    hint: 'Already happened → sich freuen über, not auf.'
     placeholder: 'auf'
   - type: 'write'
     prompt: "Ask 'What are you interested in?' using a wo-compound (thing, not person)."
@@ -124,13 +124,13 @@ everyday conversation.
 
 ## Five essential pairs
 
-| Verb + preposition            | Case      | Meaning                          |
-| ------------------------------ | --------- | --------------------------------- |
-| warten auf                      | Akkusativ | to wait for                        |
-| sich freuen auf                  | Akkusativ | to look forward to (future)         |
-| sich freuen über                  | Akkusativ | to be happy about (already happened) |
-| sich interessieren für              | Akkusativ | to be interested in                  |
-| denken an                            | Akkusativ | to think of / about                   |
+| Verb + preposition     | Case      | Meaning                              |
+| ---------------------- | --------- | ------------------------------------ |
+| warten auf             | Akkusativ | to wait for                          |
+| sich freuen auf        | Akkusativ | to look forward to (future)          |
+| sich freuen über       | Akkusativ | to be happy about (already happened) |
+| sich interessieren für | Akkusativ | to be interested in                  |
+| denken an              | Akkusativ | to think of / about                  |
 
 ```
 Ich warte auf den Bus.               (I am waiting for the bus.)

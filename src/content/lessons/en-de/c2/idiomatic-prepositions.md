@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'c2'
-title: 'Idiomatic German Prepositions: Fixed Verb-Preposition Pairs | PolyLingua'
+title: 'Idiomatic German Prepositions: Fixed Verb-Preposition Pairs'
 description: 'Master idiomatic German prepositions in fixed expressions like sich freuen auf, warten auf and denken an — the stylistic nuances no grammar rule can predict.'
 order: 9
 grammarTopic: 'Idiomatic expressions and stylistic nuances with prepositions'
@@ -20,7 +20,7 @@ quiz:
     options:
       - "Because in fixed verb-preposition idioms, the preposition's meaning is not literal or spatial — it's simply the preposition that collocation happens to require, memorized with the verb as a unit"
       - "Because 'warten auf' does not actually exist in German"
-      - "Because idiomatic prepositions always ignore case entirely"
+      - 'Because idiomatic prepositions always ignore case entirely'
     answerIndex: 0
     explanation: "'Auf jemanden warten' (to wait for someone) uses 'auf' + Akkusativ not because of any literal 'onto' meaning, but because that is simply the fixed preposition this verb takes — like English 'good AT' rather than 'good ON,' with no logical reason beyond convention."
   - question: "'Ich denke an dich' uses 'an' + Akkusativ. What does this phrase mean, and why does 'an' appear here rather than another preposition?"
@@ -44,20 +44,20 @@ quiz:
       - 'A perfectly acceptable regional variant'
     answerIndex: 1
     explanation: "This is a very common English-influenced mistake: English uses 'wait FOR,' but German's fixed collocation for this verb is 'warten AUF' + Akkusativ, not 'für.' The two languages simply chose different prepositions for the same idea."
-  - question: "Why is it risky to assume a German idiomatic preposition will match its English equivalent?"
+  - question: 'Why is it risky to assume a German idiomatic preposition will match its English equivalent?'
     options:
       - "Because each language fixes its own arbitrary collocations, so a verb's 'logical' preposition in English ('wait FOR', 'think OF') frequently does not match German's chosen preposition ('warten AUF', 'denken AN')"
       - 'Because German never uses prepositions with verbs at all'
       - 'Because English and German are unrelated languages with no shared vocabulary'
     answerIndex: 0
     explanation: "Fixed collocations are language-specific and largely arbitrary from a logical standpoint — assuming a 1:1 match with English ('wait for' → warten für) is one of the most common and persistent error sources for advanced English-speaking learners of German."
-  - question: "What is the most reliable long-term strategy for mastering idiomatic verb-preposition pairs in German?"
+  - question: 'What is the most reliable long-term strategy for mastering idiomatic verb-preposition pairs in German?'
     options:
       - 'Deriving them logically from the general case-and-preposition rules learned at A1/A2'
       - 'Memorizing each verb together with its required preposition and case as one fixed unit, reinforced through exposure to real usage rather than translated one by one from English'
       - 'Avoiding prepositional verbs entirely and rephrasing every sentence to skip them'
     answerIndex: 1
-    explanation: "Because these pairings are collocational, not rule-derived, the only durable fix is treating verb + preposition + case as a single memorized chunk (warten auf + Akk., sich freuen über + Akk., denken an + Akk.) and reinforcing it through real exposure, not by translating English prepositions one-to-one."
+    explanation: 'Because these pairings are collocational, not rule-derived, the only durable fix is treating verb + preposition + case as a single memorized chunk (warten auf + Akk., sich freuen über + Akk., denken an + Akk.) and reinforcing it through real exposure, not by translating English prepositions one-to-one.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Ich freue mich schon ___ die Ferien nächste Woche.'
@@ -122,7 +122,7 @@ vocabulary:
 ---
 
 By C2, you already know the grammar rule that governs most German prepositions:
-*auf* + Akkusativ marks movement onto a surface, *auf* + Dativ marks static position
+_auf_ + Akkusativ marks movement onto a surface, _auf_ + Dativ marks static position
 on top of it. That rule is genuinely useful — right up until you hit a verb like
 **warten auf**, where "auf" has nothing to do with surfaces or movement at all. This
 is the world of **idiomatic prepositions**: fixed verb-preposition pairs that must be
@@ -131,7 +131,7 @@ memorized as a single chunk, because no spatial or logical rule predicts them.
 ## Why these pairings resist logic
 
 Think of English "good AT chess" versus "good WITH people." There's no rule that
-derives *at* versus *with* from the meaning of "good" — English speakers just know,
+derives _at_ versus _with_ from the meaning of "good" — English speakers just know,
 from exposure, which preposition each phrase takes. German does exactly the same
 thing with verbs: **warten auf** (to wait for), **denken an** (to think of/about),
 **sich interessieren für** (to be interested in) are all fixed collocations. The
@@ -143,9 +143,9 @@ preposition convention has assigned to that particular verb.
 Unlike most idiomatic pairs, this one actually tracks a meaningful difference:
 
 - **sich freuen auf** + Akkusativ — looking forward to something that hasn't happened
-  yet: *"Ich freue mich auf die Ferien"* (I'm looking forward to the holidays).
+  yet: _"Ich freue mich auf die Ferien"_ (I'm looking forward to the holidays).
 - **sich freuen über** + Akkusativ — being happy about something that has already
-  happened or is already present: *"Ich freue mich über das Geschenk"* (I'm happy
+  happened or is already present: _"Ich freue mich über das Geschenk"_ (I'm happy
   about the gift I just received).
 
 Mixing these up doesn't just sound slightly off — it can genuinely confuse the
@@ -155,25 +155,25 @@ timeline of what you're describing.
 
 English speakers instinctively reach for "warten für," because English says "wait
 FOR." But German's fixed collocation is **warten auf** + Akkusativ:
-*"Ich warte auf den Bus"* (I'm waiting for the bus). This single mismatch is one of
+_"Ich warte auf den Bus"_ (I'm waiting for the bus). This single mismatch is one of
 the most persistent, hard-to-shake errors advanced English-speaking learners make,
 precisely because the English preposition feels so intuitively "correct" that it's
 easy to transfer without noticing.
 
 ## More pairs that don't map onto English
 
-- **denken an** + Akkusativ — to think of/about: *"Ich denke an dich"* (I'm thinking
+- **denken an** + Akkusativ — to think of/about: _"Ich denke an dich"_ (I'm thinking
   of you). English "think OF/ABOUT" doesn't hint at "an" at all.
-- **sich interessieren für** + Akkusativ — to be interested in: *"Sie interessiert
-  sich für Kunst"* (she's interested in art). English "interested IN" would predict
+- **sich interessieren für** + Akkusativ — to be interested in: _"Sie interessiert
+  sich für Kunst"_ (she's interested in art). English "interested IN" would predict
   "in," not "für" — another false-friend trap.
-- **sich erinnern an** + Akkusativ — to remember: *"Erinnerst du dich an mich?"* (do
+- **sich erinnern an** + Akkusativ — to remember: _"Erinnerst du dich an mich?"_ (do
   you remember me?).
 
 ## The only real fix: memorize the whole chunk
 
 There is no shortcut here that bypasses memorization. The reliable approach is to
-learn each verb *together with* its preposition and case as one inseparable unit —
+learn each verb _together with_ its preposition and case as one inseparable unit —
 not "warten," but "warten auf + Akkusativ," stored and drilled as a single phrase.
 Reinforce it the way you'd reinforce any collocation: through repeated exposure to
 real sentences, not by mentally translating the English preposition first and hoping

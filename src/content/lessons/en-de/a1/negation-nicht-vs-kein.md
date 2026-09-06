@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'Nicht vs. Kein: How to Say "Not" in German | PolyLingua'
+title: 'Nicht vs. Kein: How to Say "Not" in German'
 description: 'Learn when to use nicht and when to use kein to negate German sentences — the single most common mistake English speakers make, explained with clear rules.'
 order: 11
 unit: 3
 grammarTopic: 'Negation: nicht vs. kein'
-funFact: "Ask yourself one question: is there a noun with ein/eine (or no article at all) that I want to negate? If yes, use kein. Everything else — verbs, adjectives, adverbs, and nouns with der/die/das — gets nicht. That one question resolves 90% of negation mistakes."
+funFact: 'Ask yourself one question: is there a noun with ein/eine (or no article at all) that I want to negate? If yes, use kein. Everything else — verbs, adjectives, adverbs, and nouns with der/die/das — gets nicht. That one question resolves 90% of negation mistakes.'
 minutes: 9
 quiz:
   - question: 'Which word negates a noun that would otherwise use "ein" or "eine"?'
@@ -26,7 +26,8 @@ quiz:
     answerIndex: 1
     explanation: '"Buch" is neuter (das Buch), so its negated form is "kein Buch" — kein already agrees with neuter nouns without an extra ending.'
   - question: 'Why is it wrong to use kein to negate "Ich arbeite heute" (I work today)?'
-    options: [
+    options:
+      [
         'Because "arbeite" is a verb, and verbs are negated with nicht, not kein',
         'Because the sentence is already negative',
         'Because kein only works with the pronoun "ich"',
@@ -38,7 +39,12 @@ quiz:
     answerIndex: 1
     explanation: 'When a noun already has a possessive (mein, dein...) or a definite article (der/die/das), you negate with nicht, not kein.'
   - question: 'Where does nicht usually go when negating an entire simple sentence?'
-    options: ['Always at the very beginning', 'Usually near the end, often right before the second verb part or a describing word', 'It never changes position']
+    options:
+      [
+        'Always at the very beginning',
+        'Usually near the end, often right before the second verb part or a describing word',
+        'It never changes position',
+      ]
     answerIndex: 1
     explanation: 'nicht tends to move toward the end of the sentence, right before whatever it is negating — an adjective, a second verb, or a prepositional phrase.'
   - question: 'Which is the correct negation of "Sie hat ein Auto" (She has a car)?'
@@ -121,13 +127,13 @@ all?**
 Kein negates indefinite nouns. It changes its ending depending on the noun's gender and
 grammatical case, exactly like "ein" does:
 
-| Gender/number       | Article form | Example                          |
-| -------------------- | ------------ | --------------------------------- |
-| masculine (subject)  | kein         | Kein Mann ist hier. (No man is here.) |
-| masculine (object)   | keinen       | Ich habe keinen Hund. (I have no dog.) |
-| feminine              | keine        | Ich habe keine Zeit. (I have no time.) |
-| neuter                | kein         | Das ist kein Problem. (That is no problem.) |
-| plural (any gender)   | keine        | Ich habe keine Bücher. (I have no books.) |
+| Gender/number       | Article form | Example                                     |
+| ------------------- | ------------ | ------------------------------------------- |
+| masculine (subject) | kein         | Kein Mann ist hier. (No man is here.)       |
+| masculine (object)  | keinen       | Ich habe keinen Hund. (I have no dog.)      |
+| feminine            | keine        | Ich habe keine Zeit. (I have no time.)      |
+| neuter              | kein         | Das ist kein Problem. (That is no problem.) |
+| plural (any gender) | keine        | Ich habe keine Bücher. (I have no books.)   |
 
 You do not need to master every case ending yet — just recognize that kein always attaches
 itself to a noun and changes shape to match it, the same way ein/eine does.
@@ -161,12 +167,12 @@ only when you are negating one specific word rather than the whole sentence.
 
 ## Side-by-side comparison
 
-| English                     | German                        |
-| ---------------------------- | ------------------------------ |
-| I do not have a car.         | Ich habe **kein** Auto.        |
-| That is not my car.          | Das ist **nicht** mein Auto.   |
-| I am not hungry.             | Ich habe **keinen** Hunger.    |
-| I am not tired.              | Ich bin **nicht** müde.        |
+| English              | German                       |
+| -------------------- | ---------------------------- |
+| I do not have a car. | Ich habe **kein** Auto.      |
+| That is not my car.  | Das ist **nicht** mein Auto. |
+| I am not hungry.     | Ich habe **keinen** Hunger.  |
+| I am not tired.      | Ich bin **nicht** müde.      |
 
 Notice the first and third examples both translate an English "not... a/any" pattern into
 kein, while the second and fourth use nicht because they negate a possessive noun and an

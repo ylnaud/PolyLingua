@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a2'
-title: 'German Possessive Pronouns: mein, dein, sein, ihr | PolyLingua'
+title: 'German Possessive Pronouns: mein, dein, sein, ihr'
 description: 'Learn German possessive determiners — mein, dein, sein, ihr, unser, euer — and how they decline like ein across nominative, accusative, and dative cases.'
 order: 9
 unit: 3
 grammarTopic: 'Possessive pronouns/determiners (mein, dein, sein, ihr, unser, euer, Ihr)'
-funFact: "Possessive pronouns decline exactly like \"ein\" — that's why they're called \"ein-words.\" If you already know that \"ein Buch\" becomes \"einen Bruder\" in the Akkusativ, you already know that \"mein Buch\" becomes \"meinen Bruder\" too — just swap the ending pattern onto whichever possessive you need."
+funFact: 'Possessive pronouns decline exactly like "ein" — that''s why they''re called "ein-words." If you already know that "ein Buch" becomes "einen Bruder" in the Akkusativ, you already know that "mein Buch" becomes "meinen Bruder" too — just swap the ending pattern onto whichever possessive you need.'
 minutes: 8
 quiz:
   - question: "Which possessive corresponds to 'er' (he)?"
@@ -18,7 +18,12 @@ quiz:
     answerIndex: 1
     explanation: "'sie' (she) takes the possessive 'ihr' (her): ihr Bruder, ihre Schwester."
   - question: 'Possessive determiners like "mein" and "dein" decline like which type of word?'
-    options: ['der-words (like the definite article)', 'ein-words (like the indefinite article)', 'They never change at all']
+    options:
+      [
+        'der-words (like the definite article)',
+        'ein-words (like the indefinite article)',
+        'They never change at all',
+      ]
     answerIndex: 1
     explanation: 'Possessives are "ein-words" — they take the exact same endings as "ein/eine" across all cases and genders.'
   - question: 'Complete: "Das ist ___ Bruder." (my brother — "der Bruder," Nominativ)'
@@ -38,7 +43,12 @@ quiz:
     answerIndex: 1
     explanation: "The formal 'Sie' takes 'Ihr' (capitalized, just like the pronoun itself), which is easy to confuse with 'ihr' (her/their) in writing — capitalization is the only difference."
   - question: 'What happens to "euer" (your, plural informal) when an ending is added, as in "your book" → "eure Bücher"?'
-    options: ['It stays "euer" with the ending added on top: eueres', 'It drops the middle -e-: eure', 'It becomes a completely different word']
+    options:
+      [
+        'It stays "euer" with the ending added on top: eueres',
+        'It drops the middle -e-: eure',
+        'It becomes a completely different word',
+      ]
     answerIndex: 1
     explanation: '"euer" drops its middle -e- before an ending: euer → eure, euren, eurem — never "euere".'
 exercises:
@@ -111,16 +121,16 @@ is that they follow a pattern you already know.
 
 ## One possessive for every subject
 
-| Subject      | Possessive | Meaning        |
-| ------------ | ----------- | --------------- |
-| ich          | mein        | my               |
-| du           | dein        | your (informal)  |
-| er / es      | sein        | his / its        |
-| sie (she)    | ihr         | her              |
-| wir          | unser       | our              |
-| ihr          | euer        | your (pl. inf.)  |
-| sie (they)   | ihr         | their            |
-| Sie (formal) | Ihr         | your (formal)    |
+| Subject      | Possessive | Meaning         |
+| ------------ | ---------- | --------------- |
+| ich          | mein       | my              |
+| du           | dein       | your (informal) |
+| er / es      | sein       | his / its       |
+| sie (she)    | ihr        | her             |
+| wir          | unser      | our             |
+| ihr          | euer       | your (pl. inf.) |
+| sie (they)   | ihr        | their           |
+| Sie (formal) | Ihr        | your (formal)   |
 
 Notice that "ihr" (her) and "ihr" (their) look identical — context tells them apart.
 The formal "Ihr" is spelled the same as "ihr" but always capitalized, just like the
@@ -131,11 +141,11 @@ pronoun "Sie" itself.
 Possessive pronouns are called **ein-words** because they take the exact same endings
 as the indefinite article "ein" across every case and gender.
 
-| Case      | masculine        | feminine         | neuter           | plural            |
-| --------- | ------------------ | ------------------ | ------------------ | -------------------- |
-| Nominativ | mein Bruder         | meine Schwester     | mein Kind           | meine Eltern          |
-| Akkusativ | meinen Bruder       | meine Schwester     | mein Kind           | meine Eltern          |
-| Dativ     | meinem Bruder       | meiner Schwester    | meinem Kind         | meinen Eltern         |
+| Case      | masculine     | feminine         | neuter      | plural        |
+| --------- | ------------- | ---------------- | ----------- | ------------- |
+| Nominativ | mein Bruder   | meine Schwester  | mein Kind   | meine Eltern  |
+| Akkusativ | meinen Bruder | meine Schwester  | mein Kind   | meine Eltern  |
+| Dativ     | meinem Bruder | meiner Schwester | meinem Kind | meinen Eltern |
 
 The pattern is identical no matter which possessive you use — swap "mein" for "dein,"
 "sein," "ihr," "unser," or "euer" and the endings stay exactly the same.

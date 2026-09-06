@@ -137,6 +137,33 @@ describe('units', () => {
 
     expect(huerfanas, `lecciones sin unidad válida:\n${huerfanas.join('\n')}`).toEqual([]);
   });
+
+  // BaseLayout ya añade « | PolyLingua» al <title>, y solo si no está: por eso
+  // la pestaña salía bien y esto pasó desapercibido. Pero la lección pinta el
+  // `title` CRUDO en el <h1> y en el `name` del JSON-LD, así que 73 de las 84
+  // lecciones de en-de tenían un titular que terminaba en el nombre del sitio.
+  // Se vio al activar el silo inglés, cuando esas páginas entraron al índice.
+  //
+  // El nombre del sitio va en el <title>, que lo pone el layout. En el
+  // frontmatter, nunca.
+  it('ningún título de lección lleva el nombre del sitio', () => {
+    const lessonsDir = join(import.meta.dirname, '..', 'src', 'content', 'lessons');
+    const conMarca: string[] = [];
+
+    for (const course of readdirSync(lessonsDir)) {
+      if (!/^[a-z]{2}-[a-z]{2}$/.test(course)) continue;
+      for (const level of readdirSync(join(lessonsDir, course))) {
+        for (const file of readdirSync(join(lessonsDir, course, level))) {
+          if (!file.endsWith('.md')) continue;
+          const raw = readFileSync(join(lessonsDir, course, level, file), 'utf-8');
+          const title = raw.match(/^title:\s*(.+)$/m)?.[1] ?? '';
+          if (title.includes('PolyLingua')) conMarca.push(`${course}/${level}/${file} → ${title}`);
+        }
+      }
+    }
+
+    expect(conMarca, `títulos con el nombre del sitio:\n${conMarca.join('\n')}`).toEqual([]);
+  });
 });
 
 describe('resources', () => {

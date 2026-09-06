@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Animals Vocabulary: Pets and Wildlife | PolyLingua'
+title: 'German Animals Vocabulary: Pets and Wildlife'
 description: 'Learn German animal vocabulary — pets, farm animals, and wildlife — with genders and plurals for words like der Hund, die Katze, and das Pferd.'
 order: 23
 unit: 5
 grammarTopic: 'Animal vocabulary with articles and plurals'
-funFact: "Animal words are a great place to practice the plural patterns from earlier lessons, since they cover all five patterns at once: der Hund → die Hunde (-e), die Katze → die Katzen (-n), das Pferd → die Pferde (-e), der Vogel → die Vögel (umlaut only), das Tier → die Tiere (-e)."
+funFact: 'Animal words are a great place to practice the plural patterns from earlier lessons, since they cover all five patterns at once: der Hund → die Hunde (-e), die Katze → die Katzen (-n), das Pferd → die Pferde (-e), der Vogel → die Vögel (umlaut only), das Tier → die Tiere (-e).'
 minutes: 7
 quiz:
   - question: 'What does "der Hund" mean?'
@@ -22,7 +22,8 @@ quiz:
     answerIndex: 0
     explanation: 'das Pferd takes the -e plural pattern: die Pferde, with no umlaut needed.'
   - question: 'What does "der Vogel" mean, and what is special about its plural?'
-    options: [
+    options:
+      [
         'bird; the plural adds -s: die Vogels',
         'bird; the plural takes only an umlaut, no ending: die Vögel',
         'fish; the plural is identical to the singular',
@@ -107,13 +108,13 @@ you the most common animals — pets, farm animals, and general wildlife.
 
 ## Pets
 
-| German | Plural | English |
-| -------- | -------- | -------- |
-| der Hund | die Hunde | dog |
-| die Katze | die Katzen | cat |
-| der Vogel | die Vögel | bird |
-| der Fisch | die Fische | fish |
-| das Kaninchen | die Kaninchen | rabbit |
+| German        | Plural        | English |
+| ------------- | ------------- | ------- |
+| der Hund      | die Hunde     | dog     |
+| die Katze     | die Katzen    | cat     |
+| der Vogel     | die Vögel     | bird    |
+| der Fisch     | die Fische    | fish    |
+| das Kaninchen | die Kaninchen | rabbit  |
 
 Notice **der Vogel → die Vögel** uses the no-ending-plus-umlaut pattern you saw earlier
 with der Vater → die Väter — a good reminder that this pattern is not limited to family
@@ -121,13 +122,13 @@ words.
 
 ## Farm animals
 
-| German | Plural | English |
-| -------- | -------- | -------- |
-| die Kuh | die Kühe | cow |
-| das Pferd | die Pferde | horse |
-| das Schwein | die Schweine | pig |
-| das Schaf | die Schafe | sheep |
-| das Huhn | die Hühner | chicken |
+| German      | Plural       | English |
+| ----------- | ------------ | ------- |
+| die Kuh     | die Kühe     | cow     |
+| das Pferd   | die Pferde   | horse   |
+| das Schwein | die Schweine | pig     |
+| das Schaf   | die Schafe   | sheep   |
+| das Huhn    | die Hühner   | chicken |
 
 ## The general word: das Tier
 

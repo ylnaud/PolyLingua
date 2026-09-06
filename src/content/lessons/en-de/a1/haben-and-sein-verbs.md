@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'Haben and Sein: The Two Verbs You Cannot Avoid | PolyLingua'
+title: 'Haben and Sein: The Two Verbs You Cannot Avoid'
 description: 'Learn to conjugate haben (to have) and sein (to be) in the present tense — the two irregular verbs German uses constantly, with tables and real examples.'
 order: 10
 unit: 3
 grammarTopic: 'Present tense of haben and sein'
-funFact: "Both verbs are irregular, so there is no shortcut — but they follow the SAME six-person pattern every other verb does (ich / du / er-sie-es / wir / ihr / sie-Sie). Learn that six-slot pattern once with these two verbs, and every regular verb you meet later will already feel familiar."
+funFact: 'Both verbs are irregular, so there is no shortcut — but they follow the SAME six-person pattern every other verb does (ich / du / er-sie-es / wir / ihr / sie-Sie). Learn that six-slot pattern once with these two verbs, and every regular verb you meet later will already feel familiar.'
 minutes: 9
 quiz:
   - question: 'Which form of sein goes with "ich"?'
@@ -41,7 +41,12 @@ quiz:
     answerIndex: 1
     explanation: 'haben and sein are the two most frequent verbs in German, and later on you will use them as "helper verbs" to build the perfect tense (ich habe gemacht, ich bin gegangen) — so learning them solidly now pays off twice.'
   - question: 'Which sentence is grammatically correct?'
-    options: ['Wir sind Studenten und wir haben viel Arbeit.', 'Wir seid Studenten und wir habt viel Arbeit.', 'Wir bin Studenten und wir hat viel Arbeit.']
+    options:
+      [
+        'Wir sind Studenten und wir haben viel Arbeit.',
+        'Wir seid Studenten und wir habt viel Arbeit.',
+        'Wir bin Studenten und wir hat viel Arbeit.',
+      ]
     answerIndex: 0
     explanation: 'wir sind (we are) and wir haben (we have) are both correct wir-forms — the other options mix up the person endings.'
 exercises:
@@ -115,14 +120,14 @@ comfortable with these six forms now and a huge chunk of future grammar gets eas
 Sein is irregular in every single form, so there is no pattern to lean on — you simply
 have to memorize it. The good news: it is short.
 
-| Pronoun    | Form | Example                    |
-| ---------- | ---- | --------------------------- |
-| ich        | bin  | Ich bin müde. (I am tired.) |
-| du         | bist | Du bist nett. (You are nice.) |
-| er/sie/es  | ist  | Er ist groß. (He is tall.)  |
-| wir        | sind | Wir sind Freunde. (We are friends.) |
-| ihr        | seid | Ihr seid laut. (You all are loud.) |
-| sie/Sie    | sind | Sie sind pünktlich. (They are / You [formal] are punctual.) |
+| Pronoun   | Form | Example                                                     |
+| --------- | ---- | ----------------------------------------------------------- |
+| ich       | bin  | Ich bin müde. (I am tired.)                                 |
+| du        | bist | Du bist nett. (You are nice.)                               |
+| er/sie/es | ist  | Er ist groß. (He is tall.)                                  |
+| wir       | sind | Wir sind Freunde. (We are friends.)                         |
+| ihr       | seid | Ihr seid laut. (You all are loud.)                          |
+| sie/Sie   | sind | Sie sind pünktlich. (They are / You [formal] are punctual.) |
 
 Notice that **sie** (they) and **Sie** (formal "you") share the same verb form as **wir**
 — that pattern repeats across almost every German verb, so it is worth noticing early.
@@ -132,14 +137,14 @@ Notice that **sie** (they) and **Sie** (formal "you") share the same verb form a
 Haben is mostly regular, with one small irregularity: the du-form and er/sie/es-form drop
 the letter **b**.
 
-| Pronoun    | Form  | Example                          |
-| ---------- | ----- | --------------------------------- |
-| ich        | habe  | Ich habe Hunger. (I am hungry — literally "I have hunger.") |
-| du         | hast  | Du hast Recht. (You are right.)   |
-| er/sie/es  | hat   | Sie hat ein Auto. (She has a car.) |
-| wir        | haben | Wir haben Zeit. (We have time.)   |
-| ihr        | habt  | Habt ihr Hunger? (Are you all hungry?) |
-| sie/Sie    | haben | Sie haben eine Frage. (They have / You [formal] have a question.) |
+| Pronoun   | Form  | Example                                                           |
+| --------- | ----- | ----------------------------------------------------------------- |
+| ich       | habe  | Ich habe Hunger. (I am hungry — literally "I have hunger.")       |
+| du        | hast  | Du hast Recht. (You are right.)                                   |
+| er/sie/es | hat   | Sie hat ein Auto. (She has a car.)                                |
+| wir       | haben | Wir haben Zeit. (We have time.)                                   |
+| ihr       | habt  | Habt ihr Hunger? (Are you all hungry?)                            |
+| sie/Sie   | haben | Sie haben eine Frage. (They have / You [formal] have a question.) |
 
 ## A pattern worth memorizing
 
@@ -151,7 +156,7 @@ Sie machen), so getting used to it here saves you effort later.
 ## Why these two verbs matter beyond the present tense
 
 German builds its past tense (the "perfect tense") using haben or sein plus a past
-participle — for example, *Ich habe gegessen* (I have eaten) or *Ich bin gegangen* (I have
+participle — for example, _Ich habe gegessen_ (I have eaten) or _Ich bin gegangen_ (I have
 gone). You will not need that yet, but it is why textbooks always teach haben and sein
 before almost anything else: they are doing double duty as both standalone verbs now and
 grammar tools later.

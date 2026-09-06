@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'c1'
-title: 'German Academic and Scientific Vocabulary | PolyLingua'
+title: 'German Academic and Scientific Vocabulary'
 description: 'Build core German academic and scientific vocabulary — These, Hypothese, Ergebnis, untersuchen, belegen — for reading and writing research texts at C1.'
 order: 8
 unit: 2
@@ -10,11 +10,17 @@ funFact: "German academic writing runs on a small set of workhorse verbs — unt
 minutes: 10
 quiz:
   - question: 'What does "die These" mean in academic German?'
-    options: ['thesis/claim (a proposed statement to be argued or tested)', 'a footnote', 'a university degree']
+    options:
+      [
+        'thesis/claim (a proposed statement to be argued or tested)',
+        'a footnote',
+        'a university degree',
+      ]
     answerIndex: 0
     explanation: '"die These" is a thesis or claim — the central statement an academic text sets out to argue, support, or test.'
   - question: 'What is the difference between "die These" and "die Hypothese"?'
-    options: [
+    options:
+      [
         'They are unrelated concepts from different fields',
         'A These is a broader claim/argument; a Hypothese is a specific, testable prediction, often in empirical research',
         'Hypothese is only used in literature studies',
@@ -22,7 +28,12 @@ quiz:
     answerIndex: 1
     explanation: 'die These is a general claim or argument; die Hypothese is narrower — a specific, testable prediction, typically used in empirical/scientific research design.'
   - question: 'What does "untersuchen" mean, and why is it central to academic vocabulary?'
-    options: ['to publish', 'to investigate/examine — the core verb for describing what a study does', 'to reject']
+    options:
+      [
+        'to publish',
+        'to investigate/examine — the core verb for describing what a study does',
+        'to reject',
+      ]
     answerIndex: 1
     explanation: '"untersuchen" (to investigate, examine, study) is one of the most common verbs in academic writing, describing what a study, researcher, or method does to a topic.'
   - question: 'What does "belegen" mean in an academic context?'
@@ -34,15 +45,30 @@ quiz:
     answerIndex: 1
     explanation: '"widerlegen" means to refute or disprove — the opposite of belegen: Die neuen Ergebnisse widerlegen die alte Hypothese (The new results refute the old hypothesis).'
   - question: 'What does "signifikant" mean in a scientific/statistical context?'
-    options: ['loud, noticeable to the ear', 'statistically significant (not due to chance)', 'famous, well-known']
+    options:
+      [
+        'loud, noticeable to the ear',
+        'statistically significant (not due to chance)',
+        'famous, well-known',
+      ]
     answerIndex: 1
     explanation: '"signifikant" in scientific German specifically means statistically significant: ein signifikanter Unterschied (a statistically significant difference).'
   - question: 'What does "empirisch" describe?'
-    options: ['based on observation/experiment/data rather than theory alone', 'purely theoretical, with no data', 'related to emotions']
+    options:
+      [
+        'based on observation/experiment/data rather than theory alone',
+        'purely theoretical, with no data',
+        'related to emotions',
+      ]
     answerIndex: 0
     explanation: '"empirisch" (empirical) describes research based on observed, measured, or experimental data, as opposed to purely theoretical (theoretisch) work.'
   - question: 'Which sentence correctly uses academic vocabulary to say "The study confirms the hypothesis"?'
-    options: ['Die Studie bestätigt die Hypothese.', 'Die Studie widerspricht die Hypothese.', 'Die Studie fragt die Hypothese.']
+    options:
+      [
+        'Die Studie bestätigt die Hypothese.',
+        'Die Studie widerspricht die Hypothese.',
+        'Die Studie fragt die Hypothese.',
+      ]
     answerIndex: 0
     explanation: '"bestätigen" means to confirm: Die Studie bestätigt die Hypothese (The study confirms the hypothesis) — the correct, standard academic phrasing.'
 exercises:
@@ -124,36 +150,36 @@ academic text.
 
 ## Core nouns: the building blocks of an argument
 
-| Term | Meaning |
-| --- | --- |
-| **die These** | thesis, claim — the central statement being argued |
-| **die Hypothese** | hypothesis — a specific, testable prediction |
-| **das Ergebnis** | result, finding |
-| **die Schlussfolgerung** | conclusion |
-| **die Studie** | study |
-| **die Methode** | method |
-| **das Experiment** | experiment |
-| **der Forscher / die Forscherin** | researcher |
-| **die Quelle** | source |
-| **der Beleg** | (piece of) evidence |
+| Term                              | Meaning                                            |
+| --------------------------------- | -------------------------------------------------- |
+| **die These**                     | thesis, claim — the central statement being argued |
+| **die Hypothese**                 | hypothesis — a specific, testable prediction       |
+| **das Ergebnis**                  | result, finding                                    |
+| **die Schlussfolgerung**          | conclusion                                         |
+| **die Studie**                    | study                                              |
+| **die Methode**                   | method                                             |
+| **das Experiment**                | experiment                                         |
+| **der Forscher / die Forscherin** | researcher                                         |
+| **die Quelle**                    | source                                             |
+| **der Beleg**                     | (piece of) evidence                                |
 
-Note the distinction between **These** and **Hypothese**: a *These* is a broader claim or
-position an author argues for; a *Hypothese* is narrower and typically tied to empirical
+Note the distinction between **These** and **Hypothese**: a _These_ is a broader claim or
+position an author argues for; a _Hypothese_ is narrower and typically tied to empirical
 research design — something you test and can confirm or refute with data.
 
-## Core verbs: what a study *does*
+## Core verbs: what a study _does_
 
 A small set of verbs describes almost every move an academic text makes:
 
-- **untersuchen** — to investigate, examine: *Die Studie untersucht den Einfluss von...*
+- **untersuchen** — to investigate, examine: _Die Studie untersucht den Einfluss von..._
 - **analysieren** — to analyze
-- **belegen** — to support with evidence, substantiate: *Die Daten belegen diese These.*
-- **widerlegen** — to refute, disprove: *Die Ergebnisse widerlegen die alte Theorie.*
-- **bestätigen** — to confirm: *Die Studie bestätigt die Hypothese.*
-- **nachweisen** — to prove, demonstrate (often with hard data): *Der Versuch weist den Effekt
-  nach.*
-- **feststellen** — to determine, establish, find (as a result): *Die Autoren stellten fest,
-  dass...*
+- **belegen** — to support with evidence, substantiate: _Die Daten belegen diese These._
+- **widerlegen** — to refute, disprove: _Die Ergebnisse widerlegen die alte Theorie._
+- **bestätigen** — to confirm: _Die Studie bestätigt die Hypothese._
+- **nachweisen** — to prove, demonstrate (often with hard data): _Der Versuch weist den Effekt
+  nach._
+- **feststellen** — to determine, establish, find (as a result): _Die Autoren stellten fest,
+  dass..._
 - **zeigen** — to show
 
 **belegen** and **widerlegen** are natural opposites worth learning as a pair — a study either
@@ -177,7 +203,7 @@ supports or undermines a given claim, and these are the two verbs that say so.
 confirm the central hypothesis and simultaneously refute earlier assumptions.)
 
 Notice how much of the sentence's meaning rides on just a handful of high-frequency academic
-verbs — *untersuchen*, *belegen*, *bestätigen*, *widerlegen* — around a core noun, *die
-Hypothese*. Once these words are automatic, the specific subject matter of almost any German
+verbs — _untersuchen_, _belegen_, _bestätigen_, _widerlegen_ — around a core noun, _die
+Hypothese_. Once these words are automatic, the specific subject matter of almost any German
 research text becomes far easier to follow, because the scaffolding around it is always built
 from the same small vocabulary set.

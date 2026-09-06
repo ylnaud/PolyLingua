@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Food and Drink Vocabulary for Beginners | PolyLingua'
+title: 'German Food and Drink Vocabulary for Beginners'
 description: 'Learn essential German food and drink vocabulary — bread, water, coffee, fruit, and meals — with the correct der/die/das article for each word.'
 order: 9
 unit: 3
 grammarTopic: 'Food and drink vocabulary (Essen und Trinken)'
-funFact: "Notice how many food words end in a pattern you can predict: das Brot, das Ei, das Obst, das Gemüse, das Fleisch are all neuter. It is not a hard rule like -chen, but a strong tendency worth noticing — basic, everyday foods lean neuter more often than you would expect."
+funFact: 'Notice how many food words end in a pattern you can predict: das Brot, das Ei, das Obst, das Gemüse, das Fleisch are all neuter. It is not a hard rule like -chen, but a strong tendency worth noticing — basic, everyday foods lean neuter more often than you would expect.'
 minutes: 8
 quiz:
   - question: 'What is the German word for "bread"?'
@@ -127,13 +127,13 @@ market.
 
 ## Everyday staples
 
-| German        | English     |
-| ------------- | ----------- |
-| das Brot      | bread       |
-| das Wasser    | water       |
-| der Kaffee    | coffee      |
-| der Tee       | tea         |
-| die Milch     | milk        |
+| German     | English |
+| ---------- | ------- |
+| das Brot   | bread   |
+| das Wasser | water   |
+| der Kaffee | coffee  |
+| der Tee    | tea     |
+| die Milch  | milk    |
 
 ## A pattern worth noticing: basic foods lean neuter
 
@@ -146,16 +146,16 @@ its article rather than relying on the tendency alone.
 
 ## Fruits, vegetables, and proteins
 
-| German        | English      |
-| ------------- | ------------ |
-| der Apfel     | apple         |
-| das Obst      | fruit (general) |
-| das Gemüse    | vegetables (general) |
-| das Fleisch   | meat          |
-| der Fisch     | fish          |
-| der Käse      | cheese        |
-| das Ei        | egg           |
-| der Saft      | juice         |
+| German      | English              |
+| ----------- | -------------------- |
+| der Apfel   | apple                |
+| das Obst    | fruit (general)      |
+| das Gemüse  | vegetables (general) |
+| das Fleisch | meat                 |
+| der Fisch   | fish                 |
+| der Käse    | cheese               |
+| das Ei      | egg                  |
+| der Saft    | juice                |
 
 Note that "Käse" (cheese) ends in -e, which usually signals a feminine noun — but it's
 one of a small group of common masculine exceptions (alongside der Name, der Kunde),
@@ -163,11 +163,11 @@ so it's worth memorizing on its own.
 
 ## The three meals of the day
 
-| German           | English    |
-| ----------------- | ---------- |
-| das Frühstück      | breakfast  |
-| das Mittagessen    | lunch      |
-| das Abendessen     | dinner     |
+| German          | English   |
+| --------------- | --------- |
+| das Frühstück   | breakfast |
+| das Mittagessen | lunch     |
+| das Abendessen  | dinner    |
 
 Notice the compound structure: "Mittag" (midday) + "Essen" (eating/food) =
 Mittagessen. "Abend" (evening) + "Essen" = Abendessen. Once you know "das Essen" means

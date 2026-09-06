@@ -1,8 +1,8 @@
 ---
 language: 'de'
 level: 'b2'
-title: 'Zustandspassiv vs. Vorgangspassiv in German | PolyLingua'
-description: "Understand the difference between German Zustandspassiv (sein + Partizip II, a resulting state) and Vorgangspassiv (werden + Partizip II, an action)."
+title: 'Zustandspassiv vs. Vorgangspassiv in German'
+description: 'Understand the difference between German Zustandspassiv (sein + Partizip II, a resulting state) and Vorgangspassiv (werden + Partizip II, an action).'
 order: 6
 unit: 2
 grammarTopic: 'Zustandspassiv (sein + Partizip II) vs. Vorgangspassiv (werden + Partizip II)'
@@ -18,7 +18,8 @@ quiz:
     answerIndex: 2
     explanation: 'Zustandspassiv (the "state passive") is built with sein + Partizip II: Die Tür ist geschlossen. (The door is closed.)'
   - question: 'What does "Die Tür wird geschlossen." emphasize?'
-    options: [
+    options:
+      [
         'The ongoing action of closing the door',
         'The resulting state of the door being closed',
         'That the door was never closed',
@@ -26,7 +27,8 @@ quiz:
     answerIndex: 0
     explanation: 'Vorgangspassiv describes the process or action as it happens — someone is actively closing the door right now.'
   - question: 'What does "Die Tür ist geschlossen." emphasize?'
-    options: [
+    options:
+      [
         'That someone is closing the door at this moment',
         'The resulting state — the door is currently closed',
         'That the door will be closed tomorrow',
@@ -34,11 +36,17 @@ quiz:
     answerIndex: 1
     explanation: 'Zustandspassiv describes the state that results from a completed action — the closing already happened, and the sentence just describes the current condition.'
   - question: 'Which is the Zustandspassiv version of "The shop is opened (by someone) every morning."?'
-    options: ['Der Laden ist jeden Morgen geöffnet.', 'Der Laden wird jeden Morgen geöffnet.', 'Der Laden hat jeden Morgen geöffnet.']
+    options:
+      [
+        'Der Laden ist jeden Morgen geöffnet.',
+        'Der Laden wird jeden Morgen geöffnet.',
+        'Der Laden hat jeden Morgen geöffnet.',
+      ]
     answerIndex: 1
     explanation: 'This describes a repeated action (someone opens it every morning), so it needs Vorgangspassiv (wird geöffnet), not Zustandspassiv.'
   - question: 'Can Zustandspassiv take a von-agent phrase (e.g. "von Peter")?'
-    options: [
+    options:
+      [
         'Yes, just as freely as Vorgangspassiv',
         'Rarely — Zustandspassiv normally describes a state without naming who caused it',
         'Never, under any circumstances',
@@ -46,7 +54,8 @@ quiz:
     answerIndex: 1
     explanation: 'Zustandspassiv focuses on the resulting condition, not the actor, so a von-phrase is unusual and mostly appears in Vorgangspassiv: Die Tür wird von Peter geschlossen.'
   - question: 'Which sentence pair correctly contrasts the two passives?'
-    options: [
+    options:
+      [
         'Das Fenster wird geöffnet. (action) / Das Fenster ist geöffnet. (state)',
         'Das Fenster ist geöffnet. (action) / Das Fenster wird geöffnet. (state)',
         'Both sentences mean exactly the same thing.',
@@ -54,7 +63,8 @@ quiz:
     answerIndex: 0
     explanation: '"Wird geöffnet" = the window is being opened (action in progress). "Ist geöffnet" = the window is open (resulting state).'
   - question: 'Why can Zustandspassiv sometimes look like a simple adjective + sein sentence?'
-    options: [
+    options:
+      [
         'Because it uses a completely different structure',
         'Because Partizip II forms often function like adjectives describing a state, similar to "Das Fenster ist offen."',
         'It cannot ever look like that',
@@ -128,12 +138,12 @@ not just its style.
 
 ## The core contrast
 
-| | Vorgangspassiv | Zustandspassiv |
-| --- | --- | --- |
-| Auxiliary | werden | sein |
-| Focus | the action itself, happening or repeated | the resulting state, already complete |
-| Example | Die Tür wird geschlossen. | Die Tür ist geschlossen. |
-| English | The door is being closed. | The door is closed. |
+|           | Vorgangspassiv                           | Zustandspassiv                        |
+| --------- | ---------------------------------------- | ------------------------------------- |
+| Auxiliary | werden                                   | sein                                  |
+| Focus     | the action itself, happening or repeated | the resulting state, already complete |
+| Example   | Die Tür wird geschlossen.                | Die Tür ist geschlossen.              |
+| English   | The door is being closed.                | The door is closed.                   |
 
 Both sentences use the same participle, "geschlossen" — the only thing that changes is the
 auxiliary, and that single word shifts the entire meaning from an ongoing process to a
@@ -145,18 +155,18 @@ Vorgangspassiv (literally the "process passive") is what most textbooks simply c
 passive voice." It describes an action being done to the subject, whether once or
 repeatedly:
 
-- *Die Tür wird geschlossen.* (Someone is closing the door right now.)
-- *Der Laden wird jeden Morgen geöffnet.* (The shop is opened every morning — a repeated
+- _Die Tür wird geschlossen._ (Someone is closing the door right now.)
+- _Der Laden wird jeden Morgen geöffnet._ (The shop is opened every morning — a repeated
   action.)
-- It freely takes a von/durch agent phrase: *Die Tür wird von Peter geschlossen.*
+- It freely takes a von/durch agent phrase: _Die Tür wird von Peter geschlossen._
 
 ## Zustandspassiv: the resulting state
 
 Zustandspassiv (the "state passive") describes the condition that exists **after** an
 action is complete — it functions almost like a predicate adjective:
 
-- *Die Tür ist geschlossen.* (The door is [in the state of being] closed.)
-- Compare to a true adjective: *Die Tür ist offen/geschlossen* — grammatically, "ist
+- _Die Tür ist geschlossen._ (The door is [in the state of being] closed.)
+- Compare to a true adjective: _Die Tür ist offen/geschlossen_ — grammatically, "ist
   geschlossen" behaves almost identically to "ist offen."
 - A von-agent phrase is rare here, because Zustandspassiv isn't really about who did the
   action — it's about the current condition.
@@ -166,9 +176,9 @@ action is complete — it functions almost like a predicate adjective:
 Ask yourself: **"Is this describing something happening, or something that already
 happened and is now just true?"**
 
-- Happening / repeated → **werden** (Vorgangspassiv): *Das Auto wird gerade repariert.*
+- Happening / repeated → **werden** (Vorgangspassiv): _Das Auto wird gerade repariert._
   (The car is being repaired right now.)
-- Already true / a finished result → **sein** (Zustandspassiv): *Das Auto ist repariert.*
+- Already true / a finished result → **sein** (Zustandspassiv): _Das Auto ist repariert._
   (The car is [now, as a result] repaired.)
 
 ## Why this distinction matters

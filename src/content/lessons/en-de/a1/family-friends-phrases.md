@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Family and Friends Vocabulary | PolyLingua'
+title: 'German Family and Friends Vocabulary'
 description: 'Learn German words for family members and friends, plus phrases to introduce them — "Das ist meine Schwester" and other everyday family sentences.'
 order: 19
 unit: 4
 grammarTopic: 'Family and friends vocabulary with possessives'
-funFact: "German family words often come in clear masculine/feminine pairs built the same way: der Bruder/die Schwester share no root, but der Sohn/die Tochter, der Onkel/die Tante, and der Neffe/die Nichte are worth learning side by side in pairs — it doubles your vocabulary for barely any extra effort."
+funFact: 'German family words often come in clear masculine/feminine pairs built the same way: der Bruder/die Schwester share no root, but der Sohn/die Tochter, der Onkel/die Tante, and der Neffe/die Nichte are worth learning side by side in pairs — it doubles your vocabulary for barely any extra effort.'
 minutes: 8
 quiz:
   - question: 'What does "die Familie" mean?'
@@ -24,9 +24,10 @@ quiz:
   - question: 'How would you say "This is my brother" in German?'
     options: ['Das ist mein Bruder.', 'Das ist meine Bruder.', 'Das habe Bruder.']
     answerIndex: 0
-    explanation: "Das ist mein Bruder uses \"mein\" (my) because der Bruder is masculine — possessives change form to match the noun's gender."
+    explanation: 'Das ist mein Bruder uses "mein" (my) because der Bruder is masculine — possessives change form to match the noun''s gender.'
   - question: 'What is the difference between "der Freund" and "die Freundin"?'
-    options: [
+    options:
+      [
         'No difference, both mean "friend" for any gender',
         'der Freund can mean male friend OR boyfriend, and die Freundin can mean female friend OR girlfriend, depending on context',
         'der Freund only means "boyfriend", never "friend"',
@@ -107,18 +108,18 @@ introduce people using possessives like "mein" and "meine".
 
 ## Core family words
 
-| German | English |
-| -------- | ------- |
-| die Familie | the family |
-| die Eltern | the parents |
-| die Mutter | the mother |
-| der Vater | the father |
-| der Bruder | the brother |
-| die Schwester | the sister |
-| die Geschwister | the siblings |
-| der Sohn / die Tochter | the son / the daughter |
+| German                         | English                           |
+| ------------------------------ | --------------------------------- |
+| die Familie                    | the family                        |
+| die Eltern                     | the parents                       |
+| die Mutter                     | the mother                        |
+| der Vater                      | the father                        |
+| der Bruder                     | the brother                       |
+| die Schwester                  | the sister                        |
+| die Geschwister                | the siblings                      |
+| der Sohn / die Tochter         | the son / the daughter            |
 | die Großmutter / der Großvater | the grandmother / the grandfather |
-| die Tante / der Onkel | the aunt / the uncle |
+| die Tante / der Onkel          | the aunt / the uncle              |
 
 Notice **die Geschwister** has no direct English translation — it means "siblings" as a
 group, brothers and sisters together, and it is always used in the plural.

@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German sch, ch, ck Sounds: Pronunciation Guide | PolyLingua'
+title: 'German sch, ch, ck Sounds: Pronunciation Guide'
 description: 'Learn the three consonant sounds that trip up English speakers most: sch, the two versions of ch, and ck — with clear rules and practice words.'
 order: 0.3
 unit: 1
@@ -172,10 +172,10 @@ auch     "also / too"
 
 ### Quick test: which one do I use?
 
-| Letter right before "ch" | Sound      | Example        |
-| ------------------------- | ---------- | -------------- |
+| Letter right before "ch"      | Sound           | Example    |
+| ----------------------------- | --------------- | ---------- |
 | e, i, ä, ö, ü, or a consonant | soft ich-sound  | ich, Milch |
-| a, o, u                    | rough ach-sound | Buch, auch |
+| a, o, u                       | rough ach-sound | Buch, auch |
 
 ## A common beginner mistake
 

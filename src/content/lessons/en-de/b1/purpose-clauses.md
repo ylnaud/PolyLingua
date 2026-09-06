@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'German Purpose Clauses: um...zu vs. damit | PolyLingua'
+title: 'German Purpose Clauses: um...zu vs. damit'
 description: 'Learn German purpose clauses with um...zu and damit: when to use the infinitive construction and when you need a full subordinate clause instead.'
 order: 5
 unit: 2
@@ -15,7 +15,7 @@ quiz:
       - 'um'
       - 'weil'
     answerIndex: 1
-    explanation: "Same subject (ich...ich) in both halves → um...zu + infinitive: Ich lerne Deutsch, um in Berlin zu arbeiten."
+    explanation: 'Same subject (ich...ich) in both halves → um...zu + infinitive: Ich lerne Deutsch, um in Berlin zu arbeiten.'
   - question: "'Ich spreche langsam, ___ meine Oma mich versteht.' (I speak slowly so that my grandma understands me — different subjects.) Which fits?"
     options:
       - 'um'
@@ -29,8 +29,8 @@ quiz:
       - 'Right after um'
       - 'It replaces the infinitive'
     answerIndex: 0
-    explanation: "The pattern is: um + [rest of clause] + zu + infinitive. Example: um ein Auto zu kaufen (in order to buy a car) — zu sits directly in front of the infinitive kaufen."
-  - question: "Which sentence is grammatically correct?"
+    explanation: 'The pattern is: um + [rest of clause] + zu + infinitive. Example: um ein Auto zu kaufen (in order to buy a car) — zu sits directly in front of the infinitive kaufen.'
+  - question: 'Which sentence is grammatically correct?'
     options:
       - 'Ich arbeite viel, um meine Familie zu unterstützen.'
       - 'Ich arbeite viel, um ich meine Familie unterstütze.'
@@ -51,20 +51,20 @@ quiz:
       - 'ob'
     answerIndex: 1
     explanation: "'ich' calls, but 'wir' (a group including someone else) is who benefits from meeting — different subjects means damit is required, not um...zu."
-  - question: "Can um...zu be used when the two clauses have different subjects?"
+  - question: 'Can um...zu be used when the two clauses have different subjects?'
     options:
       - 'Yes, always'
       - 'No, only damit works for different subjects'
       - 'Only with modal verbs'
     answerIndex: 1
-    explanation: "um...zu strictly requires that the same person (or thing) performs the action in both parts of the sentence. Any change of subject forces damit instead."
+    explanation: 'um...zu strictly requires that the same person (or thing) performs the action in both parts of the sentence. Any change of subject forces damit instead.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Ich lerne Deutsch, ___ in Berlin zu arbeiten.'
     answer: 'um'
     accepted:
       - 'um'
-    hint: "Same subject in both halves (ich...ich) → um...zu + infinitive."
+    hint: 'Same subject in both halves (ich...ich) → um...zu + infinitive.'
     translation: 'I am learning German in order to work in Berlin.'
     placeholder: 'damit'
   - type: 'fill-blank'
@@ -163,10 +163,10 @@ Ich schicke dir das Buch, damit du es lesen kannst.
 
 ## Quick comparison
 
-| Construction | Subject rule       | Verb form               |
-| ------------ | ------------------- | ------------------------ |
-| um...zu      | same subject         | infinitive + zu, at the end |
-| damit        | different subjects  | conjugated verb, at the end |
+| Construction | Subject rule       | Verb form                   |
+| ------------ | ------------------ | --------------------------- |
+| um...zu      | same subject       | infinitive + zu, at the end |
+| damit        | different subjects | conjugated verb, at the end |
 
 A helpful trap to watch for: **damit** can technically be used even when the subject
 is the same, but native speakers strongly prefer um...zu whenever possible — it is

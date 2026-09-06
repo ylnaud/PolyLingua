@@ -1,16 +1,21 @@
 ---
 language: 'de'
 level: 'a2'
-title: 'German Two-Way Prepositions: Wechselpräpositionen Explained | PolyLingua'
+title: 'German Two-Way Prepositions: Wechselpräpositionen Explained'
 description: 'Learn the nine German two-way prepositions like in, auf, and unter — when they take Dativ for location and Akkusativ for movement, plus the common contractions.'
 order: 7
 unit: 2
 grammarTopic: 'Two-way prepositions (Wechselpräpositionen): Dativ vs. Akkusativ'
-funFact: "Ask \"Wo?\" (where is it?) and the answer wants Dativ, no movement, like a photograph. Ask \"Wohin?\" (where is it going?) and the answer wants Akkusativ, movement, like a video. \"Die Katze liegt auf dem Tisch\" is a photo (Dativ); \"Die Katze springt auf den Tisch\" is a video (Akkusativ)."
+funFact: 'Ask "Wo?" (where is it?) and the answer wants Dativ, no movement, like a photograph. Ask "Wohin?" (where is it going?) and the answer wants Akkusativ, movement, like a video. "Die Katze liegt auf dem Tisch" is a photo (Dativ); "Die Katze springt auf den Tisch" is a video (Akkusativ).'
 minutes: 9
 quiz:
   - question: 'What actually decides whether a two-way preposition takes Dativ or Akkusativ?'
-    options: ['The gender of the noun', 'Whether the sentence describes location (Wo?) or movement/direction (Wohin?)', 'It is random and must be memorized word by word']
+    options:
+      [
+        'The gender of the noun',
+        'Whether the sentence describes location (Wo?) or movement/direction (Wohin?)',
+        'It is random and must be memorized word by word',
+      ]
     answerIndex: 1
     explanation: 'Two-way prepositions (Wechselpräpositionen) switch case based on meaning: a fixed location takes Dativ, a movement toward a destination takes Akkusativ.'
   - question: 'Complete: "Die Katze liegt auf ___ Tisch." (the cat is lying on the table — no movement)'
@@ -30,7 +35,12 @@ quiz:
     answerIndex: 0
     explanation: '"in das" (Akkusativ) contracts to "ins": Ich gehe ins Haus.'
   - question: 'Which type of verb typically pairs with the Akkusativ in a two-way preposition phrase?'
-    options: ['State verbs like sein, liegen, stehen', 'Movement verbs like gehen, legen, stellen, setzen', 'Modal verbs like können, müssen']
+    options:
+      [
+        'State verbs like sein, liegen, stehen',
+        'Movement verbs like gehen, legen, stellen, setzen',
+        'Modal verbs like können, müssen',
+      ]
     answerIndex: 1
     explanation: 'Movement verbs describe going somewhere or putting something somewhere, which triggers Akkusativ: Ich stelle die Vase auf den Tisch.'
   - question: 'Complete: "Ich bin ___ Haus." (I am inside the house — a state, no movement)'
@@ -136,20 +146,20 @@ Die Katze liegt auf dem Tisch.     (Wo? — location — Dativ)
 Die Katze springt auf den Tisch.   (Wohin? — movement — Akkusativ)
 ```
 
-Same preposition, same noun, different case — because the *meaning* changed from "is
+Same preposition, same noun, different case — because the _meaning_ changed from "is
 located" to "moves toward."
 
 ## State verbs vs. movement verbs
 
 A useful shortcut: certain verbs almost always signal one side or the other.
 
-| State verbs (→ Dativ) | Movement verbs (→ Akkusativ) |
-| ----------------------- | ------------------------------ |
-| sein (to be)             | gehen (to go)                  |
-| liegen (to lie/be located) | legen (to lay/put down)      |
-| stehen (to stand)        | stellen (to stand/place)      |
-| sitzen (to sit)          | setzen (to sit down/place)    |
-| hängen (hanging, state)  | hängen (to hang something up) |
+| State verbs (→ Dativ)      | Movement verbs (→ Akkusativ)  |
+| -------------------------- | ----------------------------- |
+| sein (to be)               | gehen (to go)                 |
+| liegen (to lie/be located) | legen (to lay/put down)       |
+| stehen (to stand)          | stellen (to stand/place)      |
+| sitzen (to sit)            | setzen (to sit down/place)    |
+| hängen (hanging, state)    | hängen (to hang something up) |
 
 ```
 Der Stuhl steht neben dem Tisch.     (Dativ — the chair is standing there)

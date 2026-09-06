@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'Telling Time in German: Formal and Informal Ways | PolyLingua'
+title: 'Telling Time in German: Formal and Informal Ways'
 description: 'Learn to tell time in German both formally with the 24-hour clock and informally with halb, Viertel, vor, and nach — the trickiest part for English speakers.'
 order: 7
 unit: 2
@@ -30,7 +30,8 @@ quiz:
     answerIndex: 0
     explanation: '"Viertel vor acht" means "quarter to eight," i.e. 7:45 — also matches the English logic directly.'
   - question: 'Which time system is used for everyday informal conversation among friends?'
-    options: [
+    options:
+      [
         'Only the 24-hour clock',
         'The 12-hour clock with halb, Viertel, vor, and nach',
         'Time is never spoken informally, only written',
@@ -38,7 +39,8 @@ quiz:
     answerIndex: 1
     explanation: 'In casual speech, Germans use a 12-hour system built from halb (half), Viertel (quarter), vor (to/before), and nach (past/after).'
   - question: 'Why does official German time (schedules, appointments, news) prefer the 24-hour clock?'
-    options: [
+    options:
+      [
         'To avoid any AM/PM confusion, since there is no direct AM/PM marker in German the way English has it',
         'Because Germans cannot count past twelve',
         'It is only used in the military, never in daily official contexts',
@@ -46,7 +48,8 @@ quiz:
     answerIndex: 0
     explanation: 'German has no simple AM/PM equivalent, so official contexts use the unambiguous 24-hour clock — 14 Uhr can only mean 2 PM, never 2 AM.'
   - question: 'What is the safest strategy for a beginner unsure whether to use halb, Viertel, or the 24-hour clock?'
-    options: [
+    options:
+      [
         'Use the 24-hour clock (e.g. "vierzehn Uhr dreißig") since it removes ambiguity, even if it sounds slightly formal in casual talk',
         'Never mention time at all',
         'Always guess halb, since it works for every time',
@@ -129,14 +132,14 @@ use the 24-hour clock directly, read out as plain numbers followed by "Uhr" (o'c
 
 | Time  | German               |
 | ----- | -------------------- |
-| 9:00  | neun Uhr              |
-| 14:00 | vierzehn Uhr           |
-| 14:30 | vierzehn Uhr dreißig   |
-| 20:15 | zwanzig Uhr fünfzehn   |
+| 9:00  | neun Uhr             |
+| 14:00 | vierzehn Uhr         |
+| 14:30 | vierzehn Uhr dreißig |
+| 20:15 | zwanzig Uhr fünfzehn |
 
 This system exists because German has no simple AM/PM marker the way English does —
 "vierzehn Uhr" can only mean 2 PM, removing any ambiguity. As a beginner, this is
-actually the *safer* system to lean on, since it never requires guessing.
+actually the _safer_ system to lean on, since it never requires guessing.
 
 ## System 2: Informal — halb, Viertel, vor, nach
 
@@ -150,10 +153,10 @@ key words:
 
 Two of the four pieces — Viertel nach and Viertel vor — work exactly like English:
 
-| German             | Meaning       |
-| ------------------- | ------------- |
-| Viertel nach vier    | 4:15 (quarter past four) |
-| Viertel vor acht     | 7:45 (quarter to eight)  |
+| German            | Meaning                  |
+| ----------------- | ------------------------ |
+| Viertel nach vier | 4:15 (quarter past four) |
+| Viertel vor acht  | 7:45 (quarter to eight)  |
 
 ## The trap: halb does NOT mean "half past"
 

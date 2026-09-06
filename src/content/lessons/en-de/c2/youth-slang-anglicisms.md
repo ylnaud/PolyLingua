@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'c2'
-title: 'German Youth Slang and Anglicisms: Jugendsprache Explained | PolyLingua'
+title: 'German Youth Slang and Anglicisms: Jugendsprache Explained'
 description: 'Decode German Jugendsprache like cringe, chillen and Digga, plus how English loanwords get German grammar bolted onto them in everyday youth speech.'
 order: 7
 unit: 2
@@ -12,7 +12,7 @@ quiz:
   - question: "What happens grammatically when an English verb like 'to chill' enters German youth slang?"
     options:
       - 'It stays completely unchanged, exactly as in English'
-      - "It gets a German infinitive ending and is fully conjugated like a native verb: chillen, ich chille, er hat gechillt"
+      - 'It gets a German infinitive ending and is fully conjugated like a native verb: chillen, ich chille, er hat gechillt'
       - 'It can only ever be used as a noun in German'
     answerIndex: 1
     explanation: "German doesn't just borrow the English word — it naturalizes it with normal German verb morphology, including the past participle prefix ge- and ending -t: gechillt, exactly as a native weak verb would form its Partizip II."
@@ -33,15 +33,15 @@ quiz:
   - question: "The German youth slang phrase 'Alter, das ist krass!' uses 'krass' to mean roughly what?"
     options:
       - 'Boring or unremarkable'
-      - "Intense, extreme, or striking — it can express something as impressively good OR shockingly bad, depending on context"
+      - 'Intense, extreme, or striking — it can express something as impressively good OR shockingly bad, depending on context'
       - 'Grammatically incorrect'
     answerIndex: 1
     explanation: "'Krass' is a flexible intensifier in German slang, similar to 'wild' or 'intense' in English — it can mark something as amazing or as terrible, with tone and context deciding which."
-  - question: "Why do linguists consider German particularly receptive to absorbing English loanwords into everyday and youth speech?"
+  - question: 'Why do linguists consider German particularly receptive to absorbing English loanwords into everyday and youth speech?'
     options:
       - 'Because German grammar makes borrowing new words structurally impossible'
       - "Because German's flexible verb and noun morphology makes it easy to bolt native endings onto a borrowed word, fully integrating it grammatically"
-      - "Because English and German share no historical relationship, which somehow makes borrowing easier"
+      - 'Because English and German share no historical relationship, which somehow makes borrowing easier'
     answerIndex: 1
     explanation: "German and English are both Germanic languages with compatible grammatical patterns, and German's productive system of endings (verb conjugations, noun genders) makes it straightforward to fully naturalize an English loanword rather than leaving it as an untouched foreign insert."
   - question: "What social risk does a non-native speaker face when trying to use current youth slang like 'Digga' or 'cringe' in the wrong context?"
@@ -50,14 +50,14 @@ quiz:
       - 'It can sound forced, dated, or inappropriate if used outside casual peer contexts, since slang is tightly tied to age group, register, and specific social settings'
       - 'It is grammatically impossible for a non-native speaker to use slang correctly'
     answerIndex: 1
-    explanation: "Slang is one of the fastest-changing, most context-dependent layers of any language. Using it in a formal email or with someone outside the peer group it belongs to can come across as trying too hard, or simply out of place — awareness of context matters as much as knowing the word."
-  - question: "What is the best way for an advanced learner to stay current with fast-moving German youth slang?"
+    explanation: 'Slang is one of the fastest-changing, most context-dependent layers of any language. Using it in a formal email or with someone outside the peer group it belongs to can come across as trying too hard, or simply out of place — awareness of context matters as much as knowing the word.'
+  - question: 'What is the best way for an advanced learner to stay current with fast-moving German youth slang?'
     options:
       - 'Memorize a fixed list of slang words once, since slang never changes'
       - 'Regularly expose yourself to German social media, youth-oriented shows, and real conversations with younger native speakers, since slang evolves quickly and a static list goes stale'
       - 'Avoid all slang indefinitely since it is unteachable'
     answerIndex: 1
-    explanation: "Slang shifts faster than any other part of a language — words that were current five years ago can already sound dated. Ongoing exposure to real, current usage is the only reliable way to keep pace, rather than trying to learn it once and be done."
+    explanation: 'Slang shifts faster than any other part of a language — words that were current five years ago can already sound dated. Ongoing exposure to real, current usage is the only reliable way to keep pace, rather than trying to learn it once and be done.'
 exercises:
   - type: 'fill-blank'
     sentence: 'Lass uns heute Abend einfach ___, kein Stress.'
@@ -125,16 +125,16 @@ Open any German teenager's group chat and you'll see something textbooks rarely
 prepare you for: a stream of English words wearing German grammar like a costume.
 **Jugendsprache** — youth slang — is one of the fastest-moving, most anglicism-heavy
 layers of the language, and understanding it means understanding not just new
-vocabulary, but how German *absorbs* English words into its own system.
+vocabulary, but how German _absorbs_ English words into its own system.
 
 ## Borrowing a word means fully adopting it
 
 German doesn't just drop English words in untouched — it naturalizes them
 grammatically. Take **chillen**, from "to chill": it gets a completely normal German
-infinitive ending (*-en*), conjugates like any native weak verb (*ich chille, du
-chillst, er/sie chillt*), and even forms its past participle the standard German way:
-**gechillt**, with the *ge-* prefix and *-t* ending, exactly as you'd expect from
-*machen → gemacht*. The word is English; the grammar wrapped around it is entirely
+infinitive ending (_-en_), conjugates like any native weak verb (_ich chille, du
+chillst, er/sie chillt_), and even forms its past participle the standard German way:
+**gechillt**, with the _ge-_ prefix and _-t_ ending, exactly as you'd expect from
+_machen → gemacht_. The word is English; the grammar wrapped around it is entirely
 German.
 
 This works so smoothly because German and English are both Germanic languages with
@@ -145,17 +145,17 @@ genders is productive enough to bolt onto almost any borrowed root.
 
 A few words show up constantly in casual German youth speech:
 
-- **Digga** (or *Dicka*) — "dude," "bro" — a friendly, informal way to address a
+- **Digga** (or _Dicka_) — "dude," "bro" — a friendly, informal way to address a
   friend, rooted in hip-hop and youth culture.
 - **cringe** — borrowed directly, unchanged, meaning something awkward or
   second-hand embarrassing.
-- **krass** — a flexible intensifier that can mean impressively amazing *or*
-  shockingly bad, with tone alone deciding which: *"Das ist krass gut"* (that's
-  incredibly good) versus *"Das ist krass schlimm"* (that's really bad).
+- **krass** — a flexible intensifier that can mean impressively amazing _or_
+  shockingly bad, with tone alone deciding which: _"Das ist krass gut"_ (that's
+  incredibly good) versus _"Das ist krass schlimm"_ (that's really bad).
 - **Alter** — literally "old man," but functioning as a casual exclamation or form of
   address, similar to "dude" or "man" in English, with zero literal reference to age.
 
-Put together: *"Digga, das war voll cringe, aber trotzdem krass."* — "Dude, that was
+Put together: _"Digga, das war voll cringe, aber trotzdem krass."_ — "Dude, that was
 totally cringe, but still wild." — is a completely plausible sentence among German
 teenagers, and largely unintelligible if you've only studied Hochdeutsch.
 

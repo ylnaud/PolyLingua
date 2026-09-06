@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Restaurant Phrases: Ordering Food and Drinks | PolyLingua'
+title: 'German Restaurant Phrases: Ordering Food and Drinks'
 description: 'Essential German restaurant phrases — ordering, asking for the bill, and polite expressions like "Ich hätte gern..." for your next meal out.'
 order: 20
 unit: 5
 grammarTopic: 'Restaurant vocabulary and ordering phrases'
-funFact: "Germans do not say \"the check, please\" the way you might in English — they say Die Rechnung, bitte (The bill, please) or Zahlen, bitte (To pay, please), and the waiter often asks getrennt oder zusammen? (separate or together?) if you are in a group, expecting you to know the answer on the spot."
+funFact: 'Germans do not say "the check, please" the way you might in English — they say Die Rechnung, bitte (The bill, please) or Zahlen, bitte (To pay, please), and the waiter often asks getrennt oder zusammen? (separate or together?) if you are in a group, expecting you to know the answer on the spot.'
 minutes: 8
 quiz:
   - question: 'What does "die Speisekarte" mean?'
@@ -140,14 +140,14 @@ If you are in a group, the waiter will likely ask:
 
 ## Core restaurant vocabulary
 
-| German | English |
-| -------- | ------- |
-| die Speisekarte | the menu |
-| bestellen | to order |
+| German                      | English               |
+| --------------------------- | --------------------- |
+| die Speisekarte             | the menu              |
+| bestellen                   | to order              |
 | der Kellner / die Kellnerin | the waiter / waitress |
-| die Rechnung | the bill |
-| das Trinkgeld | the tip |
-| lecker | tasty / delicious |
+| die Rechnung                | the bill              |
+| das Trinkgeld               | the tip               |
+| lecker                      | tasty / delicious     |
 
 ## Sample conversation
 

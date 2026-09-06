@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'Konjunktiv II for Politeness: wäre and hätte | PolyLingua'
+title: 'Konjunktiv II for Politeness: wäre and hätte'
 description: 'Learn Konjunktiv II with wäre and hätte for polite requests and hypotheticals in German, using a hotel complaint as the running example.'
 order: 10
 unit: 3
@@ -9,7 +9,7 @@ grammarTopic: 'Konjunktiv II for politeness and hypotheticals (wäre, hätte)'
 funFact: "wäre and hätte do exactly what 'would be' and 'would have' do in English — they take the sharp edge off a statement. 'Ich habe ein Problem' sounds like a blunt complaint; 'Ich hätte gern ein anderes Zimmer' sounds like a reasonable, polite request. Same situation, completely different tone."
 minutes: 9
 quiz:
-  - question: "You arrive at your hotel room and it is not what you booked. Which sentence sounds more polite?"
+  - question: 'You arrive at your hotel room and it is not what you booked. Which sentence sounds more polite?'
     options:
       - 'Ich habe ein anderes Zimmer.'
       - 'Ich hätte gern ein anderes Zimmer.'
@@ -44,13 +44,13 @@ quiz:
       - 'war'
     answerIndex: 1
     explanation: "'Das wäre sehr freundlich von Ihnen' softens a request into a polite hypothetical, common in formal complaints and requests."
-  - question: "Why do hotel complaints often use Konjunktiv II instead of the plain present tense?"
+  - question: 'Why do hotel complaints often use Konjunktiv II instead of the plain present tense?'
     options:
       - 'Because Konjunktiv II is grammatically required in hotels'
       - 'Because it softens the request/complaint and sounds more polite and less confrontational'
       - 'Because the present tense does not exist in formal German'
     answerIndex: 1
-    explanation: "Konjunktiv II is a tone choice, not a grammatical requirement — it turns a blunt statement into a polite, hypothetical-sounding request, which works much better when you are complaining to hotel staff."
+    explanation: 'Konjunktiv II is a tone choice, not a grammatical requirement — it turns a blunt statement into a polite, hypothetical-sounding request, which works much better when you are complaining to hotel staff.'
   - question: "'Ich hätte gern' is followed by which case?"
     options:
       - 'Nominativ'
@@ -131,10 +131,10 @@ Ich hätte gern ein anderes Zimmer.   (polite: I would like a different room.)
 
 ## The two forms you need most: wäre and hätte
 
-| Verb  | Konjunktiv II (ich) | Meaning        |
-| ----- | -------------------- | --------------- |
-| sein   | ich wäre               | I would be       |
-| haben  | ich hätte                | I would have      |
+| Verb  | Konjunktiv II (ich) | Meaning      |
+| ----- | ------------------- | ------------ |
+| sein  | ich wäre            | I would be   |
+| haben | ich hätte           | I would have |
 
 Notice both look like their Präteritum forms (war, hatte) with an umlaut added — a
 pattern shared by several other Konjunktiv II verbs.

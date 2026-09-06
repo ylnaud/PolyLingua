@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'German Relative Clauses: der, die, das (Again) | PolyLingua'
+title: 'German Relative Clauses: der, die, das (Again)'
 description: 'Learn German relative clauses: how der, die, das get recycled as relative pronouns whose case depends on their role inside the clause.'
 order: 3
 unit: 1
@@ -30,13 +30,13 @@ quiz:
       - 'At the beginning'
     answerIndex: 1
     explanation: 'Like every subordinate clause, the verb goes at the end: der Mann, der dort STEHT — exactly the same pattern you already know from weil/dass/obwohl.'
-  - question: "Two things decide which relative pronoun form to use. What are they?"
+  - question: 'Two things decide which relative pronoun form to use. What are they?'
     options:
       - 'Gender/number of the noun it replaces, and its case inside its own clause'
       - 'Only the gender of the noun'
       - 'Only whether the sentence is a question'
     answerIndex: 0
-    explanation: 'First look at the noun being described to get gender/number (der Mann → masculine singular). Then look at the relative pronoun''s own function inside its clause (subject, object, etc.) to get the case.'
+    explanation: "First look at the noun being described to get gender/number (der Mann → masculine singular). Then look at the relative pronoun's own function inside its clause (subject, object, etc.) to get the case."
   - question: "'Der Mann, ___ ich helfe, ist nett' (helfen requires Dativ). Which pronoun fits?"
     options:
       - 'der'

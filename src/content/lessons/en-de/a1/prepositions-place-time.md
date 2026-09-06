@@ -1,18 +1,18 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Prepositions of Place and Time (in, an, auf, um) | PolyLingua'
+title: 'German Prepositions of Place and Time (in, an, auf, um)'
 description: 'Learn the basic German prepositions of place and time — in, an, auf for location, and um, am, im for time — with clear examples for beginners.'
 order: 24
 grammarTopic: 'Basic prepositions of place and time'
-funFact: "German time prepositions are surprisingly fixed: um is always for a clock time (um acht Uhr), am is always for a day (am Montag), and im is always for a month or season (im Mai, im Winter). Memorize which preposition goes with which TYPE of time expression, and you will almost never have to guess again."
+funFact: 'German time prepositions are surprisingly fixed: um is always for a clock time (um acht Uhr), am is always for a day (am Montag), and im is always for a month or season (im Mai, im Winter). Memorize which preposition goes with which TYPE of time expression, and you will almost never have to guess again.'
 unit: 6
 minutes: 9
 quiz:
-  - question: "Which preposition is used with a specific clock time, like \"at eight o'clock\"?"
+  - question: 'Which preposition is used with a specific clock time, like "at eight o''clock"?'
     options: ['am', 'um', 'im']
     answerIndex: 1
-    explanation: "\"um\" is used with exact clock times: um acht Uhr (at eight o'clock), um zwölf Uhr (at twelve o'clock)."
+    explanation: '"um" is used with exact clock times: um acht Uhr (at eight o''clock), um zwölf Uhr (at twelve o''clock).'
   - question: 'Which preposition is used with days of the week, like "on Monday"?'
     options: ['am', 'um', 'im']
     answerIndex: 0
@@ -38,7 +38,12 @@ quiz:
     answerIndex: 1
     explanation: '"in" means "inside of" — Die Milch ist im Kühlschrank (The milk is in the fridge) — note "im" here is the contraction "in dem".'
   - question: 'How do you say "between the table and the chair" in German?'
-    options: ['zwischen dem Tisch und dem Stuhl', 'neben dem Tisch und dem Stuhl', 'über dem Tisch und dem Stuhl']
+    options:
+      [
+        'zwischen dem Tisch und dem Stuhl',
+        'neben dem Tisch und dem Stuhl',
+        'über dem Tisch und dem Stuhl',
+      ]
     answerIndex: 0
     explanation: '"zwischen" means "between" — zwischen dem Tisch und dem Stuhl (between the table and the chair).'
 exercises:
@@ -110,16 +115,16 @@ at a beginner level.
 
 ## Prepositions of place: where is it?
 
-| German | English | Example |
-| -------- | ------- | -------- |
-| in | in / inside | Die Milch ist im Kühlschrank. (The milk is in the fridge.) |
-| auf | on top of | Das Buch ist auf dem Tisch. (The book is on the table.) |
-| unter | under | Die Katze ist unter dem Tisch. (The cat is under the table.) |
-| über | above / over | Die Lampe ist über dem Tisch. (The lamp is above the table.) |
-| vor | in front of | Das Auto ist vor dem Haus. (The car is in front of the house.) |
-| hinter | behind | Der Garten ist hinter dem Haus. (The garden is behind the house.) |
-| neben | next to | Der Stuhl ist neben dem Tisch. (The chair is next to the table.) |
-| zwischen | between | Die Lampe ist zwischen den Büchern. (The lamp is between the books.) |
+| German   | English      | Example                                                              |
+| -------- | ------------ | -------------------------------------------------------------------- |
+| in       | in / inside  | Die Milch ist im Kühlschrank. (The milk is in the fridge.)           |
+| auf      | on top of    | Das Buch ist auf dem Tisch. (The book is on the table.)              |
+| unter    | under        | Die Katze ist unter dem Tisch. (The cat is under the table.)         |
+| über     | above / over | Die Lampe ist über dem Tisch. (The lamp is above the table.)         |
+| vor      | in front of  | Das Auto ist vor dem Haus. (The car is in front of the house.)       |
+| hinter   | behind       | Der Garten ist hinter dem Haus. (The garden is behind the house.)    |
+| neben    | next to      | Der Stuhl ist neben dem Tisch. (The chair is next to the table.)     |
+| zwischen | between      | Die Lampe ist zwischen den Büchern. (The lamp is between the books.) |
 
 These location questions usually start with **Wo?** (Where?) — Wo ist das Buch? Das Buch
 ist auf dem Tisch.
@@ -134,11 +139,11 @@ depth later.
 Unlike place prepositions, German time prepositions are refreshingly predictable — each
 one is locked to a specific TYPE of time expression:
 
-| Preposition | Used with | Example |
-| ------------- | ----------- | -------- |
-| **um** | exact clock times | um acht Uhr (at eight o'clock) |
-| **am** | days of the week, dates | am Montag (on Monday), am 3. Mai (on May 3rd) |
-| **im** | months, seasons | im Mai (in May), im Winter (in winter) |
+| Preposition | Used with               | Example                                       |
+| ----------- | ----------------------- | --------------------------------------------- |
+| **um**      | exact clock times       | um acht Uhr (at eight o'clock)                |
+| **am**      | days of the week, dates | am Montag (on Monday), am 3. Mai (on May 3rd) |
+| **im**      | months, seasons         | im Mai (in May), im Winter (in winter)        |
 
 Both **am** (an + dem) and **im** (in + dem) are contractions — German frequently fuses
 a preposition and an article together, and these two are essential to recognize.

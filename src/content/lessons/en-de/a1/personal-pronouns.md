@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German Personal Pronouns: Ich, Du, Er, Sie, Es, Wir, Ihr | PolyLingua'
+title: 'German Personal Pronouns: Ich, Du, Er, Sie, Es, Wir, Ihr'
 description: 'Master the six German personal pronouns and the crucial du/ihr/Sie distinction for "you" — the foundation every verb conjugation depends on.'
 order: 13
 unit: 3
 grammarTopic: 'Personal pronouns (ich, du, er/sie/es, wir, ihr, sie/Sie)'
-funFact: "German has three words for the English \"you\": du (one friend), ihr (several friends), Sie (anyone formal, always capitalized). Picking the wrong one is not a small mistake to a German speaker — it instantly signals whether you are being friendly or rude, so learn this split before anything else."
+funFact: 'German has three words for the English "you": du (one friend), ihr (several friends), Sie (anyone formal, always capitalized). Picking the wrong one is not a small mistake to a German speaker — it instantly signals whether you are being friendly or rude, so learn this split before anything else.'
 minutes: 8
 quiz:
   - question: 'Which German pronoun means "I"?'
@@ -26,7 +26,8 @@ quiz:
     answerIndex: 0
     explanation: '"ihr" is the informal plural "you" — used to address more than one person you know informally.'
   - question: 'What is the difference between "sie" (lowercase) and "Sie" (capitalized)?'
-    options: [
+    options:
+      [
         'There is no difference, spelling does not matter',
         'Lowercase "sie" means "she" or "they"; capitalized "Sie" means formal "you"',
         'Lowercase "sie" is only used in questions',
@@ -42,7 +43,8 @@ quiz:
     answerIndex: 0
     explanation: '"wir" means "we" — Wir sind Freunde (We are friends) uses the first-person plural pronoun.'
   - question: 'Why does German need a separate word (Sie) just for formal "you", when English only has one word "you"?'
-    options: [
+    options:
+      [
         'German grammar requires more words for no functional reason',
         'German marks social distance and respect directly in its pronoun system, something English used to do too (with "thou" vs "you")',
         'Sie is only used in writing, never in speech',
@@ -116,14 +118,14 @@ attached to nearly every verb for the rest of your German studies.
 
 ## The six pronouns
 
-| German     | English        | Notes                                    |
-| ----------- | --------------- | ------------------------------------------ |
-| ich         | I               | always lowercase                          |
-| du          | you (informal)  | one friend, child, family member          |
-| er / sie / es | he / she / it | matches the noun's grammatical gender     |
-| wir         | we               | first-person plural                        |
-| ihr         | you all (informal) | more than one friend                   |
-| sie / Sie   | they / you (formal) | lowercase = they, capitalized = formal you |
+| German        | English             | Notes                                      |
+| ------------- | ------------------- | ------------------------------------------ |
+| ich           | I                   | always lowercase                           |
+| du            | you (informal)      | one friend, child, family member           |
+| er / sie / es | he / she / it       | matches the noun's grammatical gender      |
+| wir           | we                  | first-person plural                        |
+| ihr           | you all (informal)  | more than one friend                       |
+| sie / Sie     | they / you (formal) | lowercase = they, capitalized = formal you |
 
 ## The three ways to say "you"
 

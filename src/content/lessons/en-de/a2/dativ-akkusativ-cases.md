@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a2'
-title: 'German Dativ vs. Akkusativ: Direct and Indirect Objects | PolyLingua'
-description: "Learn to tell German Dativ and Akkusativ cases apart — the wen/wem question test, article changes, dative-only verbs, and word order with two objects."
+title: 'German Dativ vs. Akkusativ: Direct and Indirect Objects'
+description: 'Learn to tell German Dativ and Akkusativ cases apart — the wen/wem question test, article changes, dative-only verbs, and word order with two objects.'
 order: 6
 unit: 2
 grammarTopic: 'Dativ and Akkusativ cases (direct vs. indirect object)'
-funFact: "Ask yourself two questions to find the case instantly: \"Wen oder was?\" (whom or what?) points to the Akkusativ direct object, and \"Wem?\" (to/for whom?) points to the Dativ indirect object. \"Ich gebe (wem?) meinem Bruder (wen/was?) ein Buch\" sorts itself out in seconds once you ask the right question."
+funFact: 'Ask yourself two questions to find the case instantly: "Wen oder was?" (whom or what?) points to the Akkusativ direct object, and "Wem?" (to/for whom?) points to the Dativ indirect object. "Ich gebe (wem?) meinem Bruder (wen/was?) ein Buch" sorts itself out in seconds once you ask the right question.'
 minutes: 9
 quiz:
   - question: 'Which question word helps you find the Akkusativ (direct object) in a sentence?'
@@ -30,7 +30,12 @@ quiz:
     answerIndex: 1
     explanation: 'In the Dativ, the feminine article "die" changes to "der": Ich gebe der Frau das Buch.'
   - question: 'When both objects are full nouns, as in "Ich gebe meinem Bruder ein Buch," what is the standard word order?'
-    options: ['Akkusativ comes before Dativ', 'Dativ comes before Akkusativ', 'The order is completely random']
+    options:
+      [
+        'Akkusativ comes before Dativ',
+        'Dativ comes before Akkusativ',
+        'The order is completely random',
+      ]
     answerIndex: 1
     explanation: 'With two noun objects, the Dativ (person) normally comes before the Akkusativ (thing): Ich gebe meinem Bruder (Dativ) ein Buch (Akkusativ).'
   - question: 'Which of these verbs is dative-only and never takes a direct Akkusativ object?'
@@ -38,7 +43,12 @@ quiz:
     answerIndex: 2
     explanation: '"helfen" (to help) always takes a Dativ object: Ich helfe dir. Other common dative-only verbs are danken, gefallen, and gehören.'
   - question: 'If you replace "das Buch" with the pronoun "es" in "Ich gebe meinem Bruder das Buch," what happens to the word order?'
-    options: ['Nothing changes', 'The pronoun "es" moves in front of the Dativ noun: Ich gebe es meinem Bruder', 'The sentence becomes ungrammatical']
+    options:
+      [
+        'Nothing changes',
+        'The pronoun "es" moves in front of the Dativ noun: Ich gebe es meinem Bruder',
+        'The sentence becomes ungrammatical',
+      ]
     answerIndex: 1
     explanation: 'When the Akkusativ object is a pronoun, it jumps ahead of a Dativ noun object: Ich gebe es meinem Bruder.'
 exercises:
@@ -105,7 +115,7 @@ vocabulary:
 
 By now you know that Akkusativ marks a direct object — the thing being acted on
 directly. **Dativ** marks a different role: the person (or thing) something is being
-done *to* or *for* — the indirect object. Many German sentences use both at once.
+done _to_ or _for_ — the indirect object. Many German sentences use both at once.
 
 ## The two-question test
 
@@ -117,16 +127,16 @@ Wen oder was?  →  Akkusativ (direct object)
 Wem?           →  Dativ (indirect object)
 ```
 
-**Ich gebe meinem Bruder ein Buch.** — Wem gebe ich das Buch? *meinem Bruder* (Dativ).
-Was gebe ich? *ein Buch* (Akkusativ).
+**Ich gebe meinem Bruder ein Buch.** — Wem gebe ich das Buch? _meinem Bruder_ (Dativ).
+Was gebe ich? _ein Buch_ (Akkusativ).
 
 ## How the articles change
 
 | Case      | masculine (der) | feminine (die) | neuter (das) | plural (die) |
-| --------- | ---------------- | ---------------- | -------------- | -------------- |
-| Nominativ | der               | die               | das             | die             |
-| Akkusativ | den               | die               | das             | die             |
-| Dativ     | dem               | der               | dem             | den (+n)        |
+| --------- | --------------- | -------------- | ------------ | ------------ |
+| Nominativ | der             | die            | das          | die          |
+| Akkusativ | den             | die            | das          | die          |
+| Dativ     | dem             | der            | dem          | den (+n)     |
 
 Note the plural Dativ takes both a changed article (den) **and** an -n added to the
 noun itself when it does not already end in -n: den Kindern, den Frauen.

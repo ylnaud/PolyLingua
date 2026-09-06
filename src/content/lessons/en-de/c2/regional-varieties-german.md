@@ -1,8 +1,8 @@
 ---
 language: 'de'
 level: 'c2'
-title: 'Austrian German vs Swiss German vs Standard German | PolyLingua'
-description: "Understand the key differences between Austrian German, Swiss German and Standard High German — vocabulary, pronunciation and cultural markers."
+title: 'Austrian German vs Swiss German vs Standard German'
+description: 'Understand the key differences between Austrian German, Swiss German and Standard High German — vocabulary, pronunciation and cultural markers.'
 order: 5
 unit: 2
 grammarTopic: 'Regional varieties of German (Österreichisches Deutsch, Schweizerdeutsch)'
@@ -16,7 +16,7 @@ quiz:
       - 'A formal written standard used in Swiss newspapers'
     answerIndex: 1
     explanation: "Swiss German isn't one thing — it's a collection of Alemannic dialects (Zurich German, Bernese German, and others) that differ enough from each other, and from Standard German, that mutual understanding with Standard German speakers can require real effort."
-  - question: "In what situation do Swiss German speakers typically switch to Standard German (Schweizer Hochdeutsch)?"
+  - question: 'In what situation do Swiss German speakers typically switch to Standard German (Schweizer Hochdeutsch)?'
     options:
       - 'Never — Swiss German is used in every context, spoken and written'
       - 'Mainly in writing and formal contexts, like news broadcasts, official documents and school textbooks'
@@ -44,27 +44,27 @@ quiz:
       - "It has no religious origin and simply means 'goodbye'"
     answerIndex: 0
     explanation: '"Grüß Gott" literally means "greet God" (i.e. "may God greet you") and is a standard, everyday greeting in Austria and Catholic Southern Germany — it carries no strong religious weight in daily use, similar to how "goodbye" no longer registers as "God be with you" to most English speakers.'
-  - question: "Why might a learner who studied only Standard (German) German struggle to understand Swiss TV news at first?"
+  - question: 'Why might a learner who studied only Standard (German) German struggle to understand Swiss TV news at first?'
     options:
-      - "Swiss TV news is broadcast in Standard German with unfamiliar vocabulary, and its pronunciation carries a distinct Swiss accent and cadence that differs from German or Austrian pronunciation"
+      - 'Swiss TV news is broadcast in Standard German with unfamiliar vocabulary, and its pronunciation carries a distinct Swiss accent and cadence that differs from German or Austrian pronunciation'
       - 'Swiss German has an entirely different grammar system unrelated to German'
       - 'Swiss broadcasts use no spoken German at all, only dialect subtitles'
     answerIndex: 0
-    explanation: "Swiss Hochdeutsch is grammatically Standard German, but pronunciation, some vocabulary, and rhythm carry a distinctly Swiss flavor — recognizable even in formal broadcast contexts, and different again from the everyday Swiss German dialect used at home."
-  - question: "What is the most useful takeaway for a C2 learner regarding regional varieties of German?"
+    explanation: 'Swiss Hochdeutsch is grammatically Standard German, but pronunciation, some vocabulary, and rhythm carry a distinctly Swiss flavor — recognizable even in formal broadcast contexts, and different again from the everyday Swiss German dialect used at home.'
+  - question: 'What is the most useful takeaway for a C2 learner regarding regional varieties of German?'
     options:
       - "There's only one 'correct' German, and regional forms should be ignored"
-      - "Recognizing Austrian and Swiss vocabulary, greetings and pronunciation patterns builds real comprehension, since huge numbers of native speakers use these varieties daily, not just Standard German"
-      - "Regional varieties are rare exceptions barely worth studying"
+      - 'Recognizing Austrian and Swiss vocabulary, greetings and pronunciation patterns builds real comprehension, since huge numbers of native speakers use these varieties daily, not just Standard German'
+      - 'Regional varieties are rare exceptions barely worth studying'
     answerIndex: 1
-    explanation: "Austria and Switzerland together represent tens of millions of German speakers using these forms as their everyday norm, not exceptions — real-world listening comprehension at an advanced level requires recognizing these varieties, not just textbook Hochdeutsch."
+    explanation: 'Austria and Switzerland together represent tens of millions of German speakers using these forms as their everyday norm, not exceptions — real-world listening comprehension at an advanced level requires recognizing these varieties, not just textbook Hochdeutsch.'
 exercises:
   - type: 'fill-blank'
     sentence: 'In Zürich sagt man morgens oft "___" statt "Hallo".'
     answer: 'Grüezi'
     accepted:
       - 'Grüezi'
-    hint: "This is the common Swiss German greeting heard across much of German-speaking Switzerland."
+    hint: 'This is the common Swiss German greeting heard across much of German-speaking Switzerland.'
     translation: 'In Zurich, people often say "Grüezi" in the morning instead of "Hallo".'
     placeholder: 'Servus'
   - type: 'fill-blank'
@@ -72,7 +72,7 @@ exercises:
     answer: 'Paradeiser'
     accepted:
       - 'Paradeiser'
-    hint: "Austrian German uses its own word for this red vegetable, distinct from the word used in Germany."
+    hint: 'Austrian German uses its own word for this red vegetable, distinct from the word used in Germany.'
     translation: 'On an Austrian menu it says "Paradeiser" instead of "Tomate".'
     placeholder: 'Tomate'
   - type: 'match'
@@ -96,7 +96,7 @@ exercises:
       - 'erdaepfel'
     hint: "Literally it means 'earth apple' — a word also historically used in parts of Southern Germany and Switzerland."
   - type: 'write'
-    prompt: "What term describes the situation where Swiss German is spoken at home but Standard German is used for writing and formal speech?"
+    prompt: 'What term describes the situation where Swiss German is spoken at home but Standard German is used for writing and formal speech?'
     answer: 'diglossia'
     accepted:
       - 'diglosia'
@@ -132,8 +132,8 @@ being thrown by unfamiliar words and sounds you were never taught.
 
 Austrian German isn't a dialect layered on top of Standard German — it's a
 recognized national variety with its own vocabulary for everyday items:
-**Paradeiser** instead of *Tomate* (tomato), **Erdäpfel** instead of *Kartoffel*
-(potato), **Marille** instead of *Aprikose* (apricot). Some of these words are
+**Paradeiser** instead of _Tomate_ (tomato), **Erdäpfel** instead of _Kartoffel_
+(potato), **Marille** instead of _Aprikose_ (apricot). Some of these words are
 formally protected: when Austria joined the EU, a list of Austrian food terms was
 written into the accession treaty specifically so Austrian German words wouldn't be
 quietly replaced by the German-German equivalents on packaging and menus.
@@ -169,14 +169,14 @@ A textbook fluent in Hochdeutsch alone can still be caught off guard by an Austr
 menu, a Swiss radio interview, or a colleague from Vienna or Zurich using vocabulary
 that was simply never taught. These aren't rare curiosities — Austria and
 German-speaking Switzerland together represent well over ten million native speakers
-for whom these forms *are* the everyday norm, not an exception to it. Recognizing
+for whom these forms _are_ the everyday norm, not an exception to it. Recognizing
 **Grüezi** versus **Grüß Gott** versus a plain **Hallo**, or **Paradeiser** versus
 **Tomate**, is a fast, practical way to place where a German speaker is likely from —
 and to avoid the confusion of assuming Standard German is the only "real" German.
 
 ## A practical listening tip
 
-You don't need to learn to *speak* Austrian or Swiss German fluently to benefit from
+You don't need to learn to _speak_ Austrian or Swiss German fluently to benefit from
 this lesson — the real C2 skill is passive recognition. Notice the vocabulary swaps,
 notice the greetings, and notice that Swiss Hochdeutsch on the news still sounds
 different from a German or Austrian newscaster, even though the grammar on the page

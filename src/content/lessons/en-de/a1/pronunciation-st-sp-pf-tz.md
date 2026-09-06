@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'a1'
-title: 'German st, sp, pf, tz, ß Sounds Explained | PolyLingua'
+title: 'German st, sp, pf, tz, ß Sounds Explained'
 description: 'Why "Stadt" sounds like "shtat": the rules for German st, sp, pf, tz, and ß, with clear examples so you can read new words out loud correctly.'
 order: 0.4
 unit: 1
@@ -116,7 +116,7 @@ vocabulary:
 
 Four more spelling patterns change how you should read a German word out loud: **st**,
 **sp**, **pf**, **tz**, and the special letter **ß**. Unlike the umlauts and
-diphthongs, a couple of these depend on *where* the letters sit in the word — so pay
+diphthongs, a couple of these depend on _where_ the letters sit in the word — so pay
 attention to position, not just spelling.
 
 ## st and sp at the start of a word: "sht" and "shp"
@@ -180,13 +180,13 @@ Fuß        "foos"           foot
 
 ## Quick reference table
 
-| Spelling                 | Sounds like              | Example         |
-| ------------------------- | ------------------------- | --------------- |
-| st / sp (word-initial)    | sht / shp                 | Stadt, sprechen |
-| st / sp (elsewhere)       | plain st / sp              | Fenster         |
-| pf                         | p blended into f           | Apfel           |
-| tz                         | ts (as in "cats")          | jetzt           |
-| ß                          | sharp s (as in "hiss")     | Straße          |
+| Spelling               | Sounds like            | Example         |
+| ---------------------- | ---------------------- | --------------- |
+| st / sp (word-initial) | sht / shp              | Stadt, sprechen |
+| st / sp (elsewhere)    | plain st / sp          | Fenster         |
+| pf                     | p blended into f       | Apfel           |
+| tz                     | ts (as in "cats")      | jetzt           |
+| ß                      | sharp s (as in "hiss") | Straße          |
 
 ## How to practice
 

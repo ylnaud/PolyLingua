@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'German Indirect Questions: ob and Question Words | PolyLingua'
+title: 'German Indirect Questions: ob and Question Words'
 description: 'Learn German indirect questions: how to turn a direct question into a polite version with ob for yes/no questions or the matching question word.'
 order: 4
 unit: 1
@@ -30,13 +30,13 @@ quiz:
       - 'There is no difference in use'
     answerIndex: 1
     explanation: "'Können Sie mir sagen, ob der Zug pünktlich ist?' sounds much more polite than the direct question 'Ist der Zug pünktlich?' — a useful tool in formal contexts."
-  - question: "How do you convert a question WITH a question word (a W-question) into an indirect question?"
+  - question: 'How do you convert a question WITH a question word (a W-question) into an indirect question?'
     options:
       - 'Drop the question word and add ob instead'
       - 'Keep the same question word, but move the verb to the end of the clause'
       - 'Turn it into a yes/no question'
     answerIndex: 1
-    explanation: "W-questions keep their question word (wo, wann, was, wer...) when they become indirect — only the word order changes, with the verb moving to the end."
+    explanation: 'W-questions keep their question word (wo, wann, was, wer...) when they become indirect — only the word order changes, with the verb moving to the end.'
   - question: "Which sentence correctly reports the question 'Ist der Zug pünktlich?' indirectly?"
     options:
       - 'Können Sie mir sagen, ist der Zug pünktlich?'
@@ -44,7 +44,7 @@ quiz:
       - 'Können Sie mir sagen, der Zug ist pünktlich?'
     answerIndex: 1
     explanation: "Since the original question has no question word, it needs 'ob', and the verb 'ist' moves to the end of the clause: ob der Zug pünktlich ist."
-  - question: "What introductory phrase would you use to politely report NOT knowing something?"
+  - question: 'What introductory phrase would you use to politely report NOT knowing something?'
     options:
       - 'Ich weiß nicht, ob...'
       - 'Ich bin sicher, dass...'

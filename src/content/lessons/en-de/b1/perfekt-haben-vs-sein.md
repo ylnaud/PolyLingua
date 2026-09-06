@@ -1,7 +1,7 @@
 ---
 language: 'de'
 level: 'b1'
-title: 'German Perfekt: haben vs. sein + Partizip | PolyLingua'
+title: 'German Perfekt: haben vs. sein + Partizip'
 description: 'Learn when the German Perfekt tense uses haben vs. sein plus the past participle, following a hotel complaint from arrival to resolution.'
 order: 12
 unit: 3
@@ -29,7 +29,7 @@ quiz:
       - 'Movement from A to B (or change of state) AND no direct object'
       - 'The subject is plural AND the sentence is a question'
     answerIndex: 1
-    explanation: "sein-verbs describe movement between locations or a change of state, and crucially have NO direct object: gehen, fahren, aufwachen, werden, bleiben, sterben, sein."
+    explanation: 'sein-verbs describe movement between locations or a change of state, and crucially have NO direct object: gehen, fahren, aufwachen, werden, bleiben, sterben, sein.'
   - question: "'Ich ___ heute Morgen früh aufgewacht.' (I woke up early this morning.) Which helper fits?"
     options:
       - 'habe'
@@ -44,7 +44,7 @@ quiz:
       - 'werden'
     answerIndex: 1
     explanation: "'besprechen' (to discuss) is transitive — it has a direct object (das Problem) — so it takes haben, regardless of any prefix."
-  - question: "Which of these verbs is one of the rare EXCEPTIONS that takes sein despite NOT expressing movement or a location change?"
+  - question: 'Which of these verbs is one of the rare EXCEPTIONS that takes sein despite NOT expressing movement or a location change?'
     options:
       - 'bleiben (to stay) and sein (to be)'
       - 'essen (to eat)'
@@ -99,7 +99,7 @@ exercises:
     answer: 'Der Gast hat sich beschwert, und danach ist er zufrieden geblieben.'
     accepted:
       - 'Der Gast hat sich beschwert und danach ist er zufrieden geblieben'
-    hint: "sich beschweren is reflexive/transitive → hat. bleiben is a state exception → ist."
+    hint: 'sich beschweren is reflexive/transitive → hat. bleiben is a state exception → ist.'
   - type: 'order'
     sentence: 'Der Manager hat sich entschuldigt'
     translation: 'The manager apologized.'
@@ -186,11 +186,11 @@ Es ist ein guter Aufenthalt gewesen.
 
 ## Quick reference
 
-| Use sein when...                 | Use haben when...                |
-| ---------------------------------- | ----------------------------------- |
-| movement between locations (gehen, fahren, ziehen) | the verb has a direct object (besprechen) |
-| change of state (aufwachen, sterben, werden)          | the verb is reflexive (sich entschuldigen, sich beschweren) |
-| the exceptions: bleiben, sein         | almost everything else               |
+| Use sein when...                                   | Use haben when...                                           |
+| -------------------------------------------------- | ----------------------------------------------------------- |
+| movement between locations (gehen, fahren, ziehen) | the verb has a direct object (besprechen)                   |
+| change of state (aufwachen, sterben, werden)       | the verb is reflexive (sich entschuldigen, sich beschweren) |
+| the exceptions: bleiben, sein                      | almost everything else                                      |
 
 With this test in hand, you can now build a complete, natural-sounding Perfekt story
 — complaint, apology, resolution — mixing both helpers correctly every time.

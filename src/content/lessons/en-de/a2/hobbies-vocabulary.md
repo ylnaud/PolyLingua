@@ -1,12 +1,12 @@
 ---
 language: 'de'
 level: 'a2'
-title: 'German Free Time Vocabulary: Hobbies with gern and machen | PolyLingua'
+title: 'German Free Time Vocabulary: Hobbies with gern and machen'
 description: 'Learn essential German vocabulary for free time and hobbies, how to use gern to say what you like doing, and the all-purpose verb machen to describe activities.'
 order: 8
 unit: 2
 grammarTopic: 'Vocabulary: free time and hobbies, with gern and machen'
-funFact: "The verb \"machen\" (to do/make) is your all-purpose hobby verb: Sport machen, Musik machen, eine Pause machen. Pair it with \"gern\" and you can describe almost your entire free time with just two small words plus a noun."
+funFact: 'The verb "machen" (to do/make) is your all-purpose hobby verb: Sport machen, Musik machen, eine Pause machen. Pair it with "gern" and you can describe almost your entire free time with just two small words plus a noun.'
 minutes: 7
 quiz:
   - question: "How do you say 'I like reading' using 'gern'?"
@@ -18,7 +18,8 @@ quiz:
     answerIndex: 2
     explanation: "'das Hobby' is neuter, like many international words German has borrowed from other languages."
   - question: "How would you ask 'What do you do in your free time?'"
-    options: ['Was machst du in deiner Freizeit?', 'Wo machst du Freizeit?', 'Wann ist deine Freizeit?']
+    options:
+      ['Was machst du in deiner Freizeit?', 'Wo machst du Freizeit?', 'Wann ist deine Freizeit?']
     answerIndex: 0
     explanation: '"Was machst du in deiner Freizeit?" is the standard question for asking about someone’s hobbies.'
   - question: 'Where does "gern" go in "Ich ___ Musik." (I like listening to music)?'
@@ -28,7 +29,7 @@ quiz:
   - question: 'What does "Ich koche nicht gern" mean?'
     options: ['I love cooking', "I don't like cooking", 'I never cook']
     answerIndex: 1
-    explanation: "\"nicht gern\" negates the liking, not the activity itself — it does not mean you never do it, just that you don't enjoy it."
+    explanation: '"nicht gern" negates the liking, not the activity itself — it does not mean you never do it, just that you don''t enjoy it.'
   - question: 'What does "Sport machen" mean?'
     options: ['to watch sports', 'to do sports/exercise', 'to buy sports equipment']
     answerIndex: 1
@@ -107,17 +108,17 @@ the essential vocabulary, plus the two small grammar tools that make it work.
 
 ## Common activities
 
-| German                  | English                     |
-| ------------------------ | ---------------------------- |
-| lesen                    | to read                      |
-| Sport machen             | to do sports, to exercise    |
-| schwimmen                | to swim                      |
-| kochen                   | to cook                      |
-| Musik hören              | to listen to music           |
-| ins Kino gehen           | to go to the movies          |
-| sich mit Freunden treffen | to meet up with friends       |
-| wandern                  | to hike                      |
-| malen                    | to paint                     |
+| German                    | English                   |
+| ------------------------- | ------------------------- |
+| lesen                     | to read                   |
+| Sport machen              | to do sports, to exercise |
+| schwimmen                 | to swim                   |
+| kochen                    | to cook                   |
+| Musik hören               | to listen to music        |
+| ins Kino gehen            | to go to the movies       |
+| sich mit Freunden treffen | to meet up with friends   |
+| wandern                   | to hike                   |
+| malen                     | to paint                  |
 
 ## Saying what you like with "gern"
 

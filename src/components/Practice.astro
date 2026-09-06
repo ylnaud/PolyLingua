@@ -70,14 +70,33 @@ const {
 const dict = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never);
 const t = dict.practice;
 
-// Los 4 strings que necesita el <script> del navegador. Se pasan por
-// data-* (patrón ya usado en el resto del proyecto) porque el script se
-// ejecuta en el cliente y no ve las variables del frontmatter de Astro.
+// Los strings que necesita el JS del navegador. Se pasan por data-* (patrón ya
+// usado en el resto del proyecto) porque el script se ejecuta en el cliente y
+// no ve las variables del frontmatter de Astro.
+//
+// Los del segundo bloque son para src/lib/practiceItemMarkup.ts, que arma los
+// ítems de las sesiones DINÁMICAS (practicar, repasar, práctica libre, mis
+// errores). Ese módulo los tenía escritos a mano, así que /en/de/practicar
+// pintaba «💡 Pista», «Comprobar» y «Tu respuesta» en español aunque el resto
+// de la página estuviera en inglés — y no se veía en el HTML publicado porque
+// esos nodos los crea el cliente. Las claves ya existían todas en `practice`;
+// lo único que faltaba era hacérselas llegar.
 const scriptStrings = JSON.stringify({
   correcto: t.correcto,
   incorrecto: t.incorrecto,
   respuestaCorrecta: t.respuestaCorrecta,
   resultado: t.resultado,
+  kinds: t.kinds,
+  completaLaFrase: t.completaLaFrase,
+  ordenaPalabras: t.ordenaPalabras,
+  emparejaElementos: t.emparejaElementos,
+  fraseConstruyendo: t.fraseConstruyendo,
+  escuchaYEscribe: t.escuchaYEscribe,
+  tuRespuesta: t.tuRespuesta,
+  comprobar: t.comprobar,
+  pista: t.pista,
+  escuchar: dict.lesson.escuchar,
+  escucharDeNuevo: t.escucharDeNuevo,
 });
 
 type Item =

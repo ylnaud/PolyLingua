@@ -3,8 +3,13 @@ import SiloToolPage from '../../../components/SiloToolPage.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { SKILLS } from '../../../data/skills';
-import { getCourseLessons, getCourseStaticPaths } from '../../../lib/courses';
+import {
+  getCourseLessons,
+  getCourseStaticPaths,
+  SPANISH_GLOSS_USER_LANG,
+} from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
+import { fill } from '../../../lib/interpolate';
 
 // Solo para los cursos que tienen habilidades definidas: hoy, alemán. El resto
 // sigue con Repasar, que no ha cambiado. Cuando se definan las skills de otro
@@ -41,6 +46,31 @@ const bank = lessons.flatMap((l) => {
 });
 
 const skills = SKILLS.filter((s) => s.lang === targetLang);
+
+// La reparación intensiva solo se ofrece donde sus plantillas están escritas.
+//
+// REPAIR_TEMPLATES guarda `explanation` y `translation` en un solo idioma, el
+// español, indexadas por skillId —que lleva el idioma META—, así que la misma
+// plantilla sirve a es-de y a en-de. Sin este filtro, un angloparlante con
+// errores acumulados recibía cinco ejercicios con la explicación y las
+// traducciones en castellano. Se cae al `generateExercise()` normal, que tira
+// del banco de las propias lecciones y por tanto está en inglés.
+//
+// Mismo criterio que el gate de DrillTutor.astro y que tsaFor() en tsa.ts.
+const repairEnabled = userLang === SPANISH_GLOSS_USER_LANG;
+
+// Los textos de la página. Estaban escritos a mano en el markup —era la única
+// de las seis herramientas así— y por eso /en/de/practicar salía en español
+// aunque el diccionario inglés estuviera completo.
+const t = dict.tools.practicar;
+// Los que pinta el <script> sobre la sesión ya armada no pueden leer el
+// diccionario (se resuelve en el servidor): van por [data-page-strings].
+const pageStrings = {
+  elegidos: t.elegidos,
+  progresoGeneral: t.progresoGeneral,
+  motivos: t.motivos,
+  categorias: t.categorias,
+};
 ---
 
 <SiloToolPage
@@ -50,11 +80,11 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
   emoji="🎯"
   headClass="adaptive-head"
   ownHeadStyles
-  name="Practicar"
-  title={`Practicar ${languageName}`}
-  description={`Practica ${languageName} con ejercicios elegidos según lo que ya sabes y lo que sueles fallar.`}
-  h1={`Practicar ${languageName}`}
-  desc="Preparando tu sesión…"
+  name={dict.tools.comun.practicar}
+  title={fill(t.metaTitulo, { lang: languageName })}
+  description={fill(t.metaDescripcion, { lang: languageName })}
+  h1={fill(t.h1, { lang: languageName })}
+  desc={t.preparando}
   descAttr="data-practice-desc"
   siloContext={{
     userLang: userLang!,
@@ -63,7 +93,7 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
     breadcrumbs: [
       { name: dict.silo.idiomas, href: `/${userLang}` },
       { name: languageName, href: `/${userLang}/${targetLang}` },
-      { name: 'Practicar', href: `/${userLang}/${targetLang}/practicar` },
+      { name: dict.tools.comun.practicar, href: `/${userLang}/${targetLang}/practicar` },
     ],
   }}
 >
@@ -81,8 +111,8 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
   <section class="container adaptive-body">
     <div class="card empty-state" data-empty hidden>
       <p class="empty-emoji">🌱</p>
-      <h2>Todavía no hay nada que practicar</h2>
-      <p>Haz una lección primero y el motor empezará a saber qué necesitas reforzar.</p>
+      <h2>{t.vacioTitulo}</h2>
+      <p>{t.vacioDesc}</p>
       <a class="btn btn-primary" href={`/${userLang}/${targetLang}`}
         >{dict.tools.comun.verLecciones}</a
       >
@@ -101,7 +131,7 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
   </section>
 
   <section class="container dashboard" data-dashboard hidden>
-    <span class="eyebrow">📊 Tu progreso en A1</span>
+    <span class="eyebrow">{fill(t.progresoTitulo, { lang: languageName })}</span>
     <div class="dash-overall">
       <div class="silo-track"><span class="silo-fill" data-dash-fill></span></div>
       <p class="dash-overall-text" data-dash-text></p>
@@ -110,13 +140,15 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
     <div class="dash-cats" data-dash-cats></div>
 
     <div class="dash-weak" data-dash-weak hidden>
-      <h2>Necesitas practicar</h2>
+      <h2>{t.debilesTitulo}</h2>
       <ul class="weak-list" data-weak-list></ul>
     </div>
   </section>
 
   <div hidden data-skill-bank={JSON.stringify(bank)}></div>
   <div hidden data-skill-catalog={JSON.stringify(skills)}></div>
+  <div hidden data-repair-enabled={String(repairEnabled)}></div>
+  <div hidden data-page-strings={JSON.stringify(pageStrings)}></div>
 </SiloToolPage>
 
 <script>
@@ -129,9 +161,20 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
     type BankItem,
   } from '../../../lib/engine/exerciseGenerator';
   import { needsIntensiveRepair } from '../../../lib/engine/errors';
+  import { readPageStrings, fill } from '../../../lib/pageStrings';
   import type { Exercise, Skill } from '../../../lib/engine/types';
 
   const SESSION_SIZE = 10;
+
+  // Los textos que este script escribe. Llegan del servidor ya en el idioma de
+  // la página; el fallback es el español, que es lo que había escrito a mano
+  // acá antes y lo que se usaría si el atributo faltara.
+  const S = readPageStrings({
+    elegidos: '{n} ejercicios elegidos para ti.',
+    progresoGeneral: 'Progreso general {pct}% · {n} de {total} habilidades empezadas',
+    motivos: {} as Record<string, { tag: string; texto: string }>,
+    categorias: {} as Record<string, string>,
+  });
 
   function readJson<T>(selector: string, attr: string, fallback: T): T {
     const el = document.querySelector<HTMLElement>(selector);
@@ -143,29 +186,9 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
     }
   }
 
-  const MOTIVOS: Record<string, { tag: string; texto: string }> = {
-    severe_error: {
-      tag: '🔴 Necesitas practicar esto',
-      texto: 'Este patrón se te ha resistido varias veces. Vamos a por él con calma.',
-    },
-    persistent_error: {
-      tag: '🟠 Se te repite',
-      texto: 'Has fallado esto más de una vez, así que toca reforzarlo.',
-    },
-    weak_skill: {
-      tag: '🟡 Aún no sale solo',
-      texto: 'Lo estás aprendiendo: un poco más de práctica.',
-    },
-    due_review: {
-      tag: '🔁 Toca repasar',
-      texto: 'Hace un tiempo que no lo ves. A ver si sigue ahí.',
-    },
-    new_skill: { tag: '🌱 Algo nuevo', texto: 'Estás listo para esto.' },
-    random_review: {
-      tag: '✨ Repaso suelto',
-      texto: 'Todo en orden: un repaso para mantenerlo fresco.',
-    },
-  };
+  // Las claves son los ids que devuelve el scheduler; el texto sale del
+  // diccionario vía [data-page-strings].
+  const MOTIVOS: Record<string, { tag: string; texto: string }> = S.motivos;
 
   function initAdaptivePractice() {
     const root = document.querySelector<HTMLElement>('[data-practice][data-session-type="review"]');
@@ -177,6 +200,11 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
 
     const bank = readJson<BankItem[]>('[data-skill-bank]', 'skillBank', []);
     const catalog = readJson<Skill[]>('[data-skill-catalog]', 'skillCatalog', []);
+    // Lo decide el servidor: las plantillas de reparación solo existen en
+    // español. Ver el comentario del frontmatter.
+    const repairEnabled =
+      document.querySelector<HTMLElement>('[data-repair-enabled]')?.dataset.repairEnabled ===
+      'true';
     const state = getState();
 
     // El motor decide. La página solo pinta lo que le dicen.
@@ -196,7 +224,7 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
       // Reparación intensiva: cinco variaciones dirigidas al patrón, no un
       // ejercicio suelto. Es la diferencia entre "volvé a intentarlo" y
       // "vamos a trabajar esto".
-      if (candidato.error && needsIntensiveRepair(candidato.error)) {
+      if (repairEnabled && candidato.error && needsIntensiveRepair(candidato.error)) {
         const tanda = generateRepairSet(skill, 5);
         if (tanda.length > 0) {
           for (const ej of tanda) ejercicios.push({ exercise: ej, candidate: candidato });
@@ -252,20 +280,21 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
     }
 
     if (desc) {
-      desc.textContent = `${ejercicios.length} ejercicios elegidos para ti.`;
+      desc.textContent = fill(S.elegidos, { n: ejercicios.length });
     }
 
     document.dispatchEvent(new Event('astro:page-load'));
   }
 
-  /** Etiquetas de las categorías, en el orden en que se muestran. */
-  const CATEGORIAS: [string, string][] = [
-    ['grammar', 'Gramática'],
-    ['vocabulary', 'Vocabulario'],
-    ['word_order', 'Orden de palabras'],
-    ['pronunciation', 'Pronunciación'],
-    ['writing', 'Escritura'],
-  ];
+  /**
+   * Etiquetas de las categorías, en el orden en que se muestran.
+   *
+   * El ORDEN vive acá porque es una decisión de la página; los ids son los de
+   * `Skill.category` y no se traducen. El texto sale del diccionario.
+   */
+  const CATEGORIAS: [string, string][] = (
+    ['grammar', 'vocabulary', 'word_order', 'pronunciation', 'writing'] as const
+  ).map((id) => [id, S.categorias[id] ?? id]);
 
   /** Punto de color según lo urgente que sea, igual que en el documento. */
   function semaforo(status: string): string {
@@ -289,11 +318,17 @@ const skills = SKILLS.filter((s) => s.lang === targetLang);
     const media = Math.round(
       catalog.reduce((n, s) => n + (state.progress[s.id]?.mastery ?? 0), 0) / catalog.length,
     );
-    const fill = caja.querySelector<HTMLElement>('[data-dash-fill]');
-    if (fill) fill.style.width = media + '%';
+    // `barra`, no `fill`: ese nombre lo ocupa ahora el interpolador de
+    // pageStrings, y el local lo tapaba.
+    const barra = caja.querySelector<HTMLElement>('[data-dash-fill]');
+    if (barra) barra.style.width = media + '%';
     const texto = caja.querySelector<HTMLElement>('[data-dash-text]');
     if (texto) {
-      texto.textContent = `Progreso general ${media}% · ${practicadas.length} de ${catalog.length} habilidades empezadas`;
+      texto.textContent = fill(S.progresoGeneral, {
+        pct: media,
+        n: practicadas.length,
+        total: catalog.length,
+      });
     }
 
     // Media por categoría, solo de las que existen en este curso.

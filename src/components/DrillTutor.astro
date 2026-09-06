@@ -3,6 +3,7 @@
 // resolver sus dos textos en el idioma de la página. Se monta una vez en
 // BaseLayout, junto a EngineTracker.
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { SPANISH_GLOSS_USER_LANG } from '../lib/courses';
 import { getDictionary } from '../i18n';
 
 interface Props {
@@ -10,7 +11,26 @@ interface Props {
 }
 
 const { userLang } = Astro.props;
-const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).widgets.refuerzo;
+const pageLang = userLang ?? ACTIVE_USER_LANGUAGES[0].id;
+const t = getDictionary(pageLang as never).widgets.refuerzo;
+
+// El bucle de refuerzo solo se abre donde sus plantillas están escritas.
+//
+// REPAIR_TEMPLATES (src/lib/engine/exerciseGenerator.ts) guarda la
+// `explanation` y la `translation` de cada variación en UN solo idioma, el
+// español, indexadas por skillId —que lleva el idioma META, no el de
+// interfaz—. Así que la misma plantilla sirve a es-de y a en-de, y en una
+// lección inglesa el aviso salía en castellano: «💡 Presente regular: se quita
+// el -en del infinitivo…». Y no tras fallar repetido, sino al PRIMER fallo,
+// que es cuando se abre el bucle.
+//
+// Sin equivalente inglés no hay nada que mostrar, así que no se muestra nada:
+// la lección se comporta como antes de etiquetar en-de. Es la misma decisión
+// que toma tsaFor() en src/data/tsa.ts —devolver null en vez de caer al
+// castellano— y por el mismo motivo: media página en otro idioma es peor que
+// media función de menos. Cuando existan las plantillas inglesas, este flag se
+// deriva de eso y el bucle vuelve solo.
+const conPlantillas = pageLang === SPANISH_GLOSS_USER_LANG;
 ---
 
 {
@@ -19,7 +39,8 @@ const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).widg
      servidor al JS de cliente. Comentario de Astro, no HTML: uno de HTML se
      publicaría en las 1042 páginas. */
 }
-<span hidden data-drill-strings={JSON.stringify(t)}></span>
+<span hidden data-drill-strings={JSON.stringify(t)} data-drill-enabled={String(conPlantillas)}
+></span>
 
 <style is:global>
   /* Estilos globales, no scoped: estos nodos los crea el JS y por eso nunca
@@ -140,7 +161,17 @@ const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).widg
    * sería peor que no hacer nada. Hoy tienen plantilla las de gramática y orden
    * de palabras de A1 alemán; el resto simplemente no abre bucle.
    */
+  /** ¿Hay plantillas en el idioma de esta página? Lo decide el servidor. */
+  function bucleDisponible(): boolean {
+    const el = document.querySelector<HTMLElement>('[data-drill-enabled]');
+    return el?.dataset.drillEnabled === 'true';
+  }
+
   function habilidadReforzable(itemId: string): string | null {
+    // Sin plantillas en el idioma de la página no se abre bucle: mostrar la
+    // explicación española en una lección inglesa es peor que no reforzar.
+    // Ver el comentario del frontmatter.
+    if (!bucleDisponible()) return null;
     const conPlantilla = skillsForItem(itemId).filter(
       (id) => SKILL_MAP[id] && repairTemplateFor(id),
     );

@@ -346,6 +346,49 @@ export interface Dictionary {
       ejercicio: string;
       ejercicios: string;
     };
+    /**
+     * Practicar (el motor adaptativo). Es la única herramienta que tenía sus
+     * textos escritos a mano en el markup, y por eso salía en español dentro
+     * del silo inglés.
+     *
+     * `motivos` y `categorias` los pinta el <script> sobre la sesión ya
+     * armada, así que viajan por [data-page-strings] (src/lib/pageStrings.ts).
+     * Las claves de `motivos` son los ids que devuelve el scheduler y las de
+     * `categorias` las de `Skill.category`: no se traducen, son datos.
+     */
+    practicar: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      /** Mientras el motor arma la sesión en el cliente. */
+      preparando: string;
+      /** Lleva {n}, el número de ejercicios elegidos. */
+      elegidos: string;
+      vacioTitulo: string;
+      vacioDesc: string;
+      /**
+       * Cabecera del panel. Lleva {lang}, no un nivel: decía «Tu progreso en
+       * A1» con el nivel escrito a mano, y el panel no calcula ninguno — su
+       * catálogo son TODAS las habilidades del curso, de A1 a C2.
+       */
+      progresoTitulo: string;
+      /** Resumen del panel. Lleva {pct}, {n} y {total}. */
+      progresoGeneral: string;
+      debilesTitulo: string;
+      motivos: Record<
+        | 'severe_error'
+        | 'persistent_error'
+        | 'weak_skill'
+        | 'due_review'
+        | 'new_skill'
+        | 'random_review',
+        { tag: string; texto: string }
+      >;
+      categorias: Record<
+        'grammar' | 'vocabulary' | 'word_order' | 'pronunciation' | 'writing',
+        string
+      >;
+    };
     misErrores: {
       metaTitulo: string;
       metaDescripcion: string;
@@ -827,6 +870,49 @@ export const es: Dictionary = {
       desc: 'Tu dominio por tema gramatical.',
       ejercicio: '{n} ejercicio',
       ejercicios: '{n} ejercicios',
+    },
+    practicar: {
+      metaTitulo: 'Practicar {lang}',
+      metaDescripcion:
+        'Practica {lang} con ejercicios elegidos según lo que ya sabes y lo que sueles fallar.',
+      h1: 'Practicar {lang}',
+      preparando: 'Preparando tu sesión…',
+      elegidos: '{n} ejercicios elegidos para ti.',
+      vacioTitulo: 'Todavía no hay nada que practicar',
+      vacioDesc: 'Haz una lección primero y el motor empezará a saber qué necesitas reforzar.',
+      progresoTitulo: '📊 Tu progreso en {lang}',
+      progresoGeneral: 'Progreso general {pct}% · {n} de {total} habilidades empezadas',
+      debilesTitulo: 'Necesitas practicar',
+      motivos: {
+        severe_error: {
+          tag: '🔴 Necesitas practicar esto',
+          texto: 'Este patrón se te ha resistido varias veces. Vamos a por él con calma.',
+        },
+        persistent_error: {
+          tag: '🟠 Se te repite',
+          texto: 'Has fallado esto más de una vez, así que toca reforzarlo.',
+        },
+        weak_skill: {
+          tag: '🟡 Aún no sale solo',
+          texto: 'Lo estás aprendiendo: un poco más de práctica.',
+        },
+        due_review: {
+          tag: '🔁 Toca repasar',
+          texto: 'Hace un tiempo que no lo ves. A ver si sigue ahí.',
+        },
+        new_skill: { tag: '🌱 Algo nuevo', texto: 'Estás listo para esto.' },
+        random_review: {
+          tag: '✨ Repaso suelto',
+          texto: 'Todo en orden: un repaso para mantenerlo fresco.',
+        },
+      },
+      categorias: {
+        grammar: 'Gramática',
+        vocabulary: 'Vocabulario',
+        word_order: 'Orden de palabras',
+        pronunciation: 'Pronunciación',
+        writing: 'Escritura',
+      },
     },
     misErrores: {
       metaTitulo: 'Mis errores — {lang}',
@@ -1369,6 +1455,50 @@ export const en: Dictionary = {
       desc: 'How well you know each grammar topic.',
       ejercicio: '{n} exercise',
       ejercicios: '{n} exercises',
+    },
+    practicar: {
+      metaTitulo: 'Practise {lang}',
+      metaDescripcion:
+        'Practise {lang} with exercises picked from what you already know and what you tend to get wrong.',
+      h1: 'Practise {lang}',
+      preparando: 'Putting your session together…',
+      elegidos: '{n} exercises picked for you.',
+      vacioTitulo: 'Nothing to practise yet',
+      vacioDesc:
+        'Finish a lesson first and the engine will start learning what you need to work on.',
+      progresoTitulo: '📊 Your progress in {lang}',
+      progresoGeneral: 'Overall progress {pct}% · {n} of {total} skills started',
+      debilesTitulo: 'Worth practising',
+      motivos: {
+        severe_error: {
+          tag: '🔴 Worth practising',
+          texto: 'This pattern has caught you out several times. Let us take it slowly.',
+        },
+        persistent_error: {
+          tag: '🟠 It keeps happening',
+          texto: 'You have got this wrong more than once, so it is time to shore it up.',
+        },
+        weak_skill: {
+          tag: '🟡 Not automatic yet',
+          texto: 'You are getting there: a bit more practice.',
+        },
+        due_review: {
+          tag: '🔁 Time for a review',
+          texto: 'You have not seen this in a while. Let us check it is still there.',
+        },
+        new_skill: { tag: '🌱 Something new', texto: 'You are ready for this one.' },
+        random_review: {
+          tag: '✨ Just a refresher',
+          texto: 'All good here: a quick review to keep it fresh.',
+        },
+      },
+      categorias: {
+        grammar: 'Grammar',
+        vocabulary: 'Vocabulary',
+        word_order: 'Word order',
+        pronunciation: 'Pronunciation',
+        writing: 'Writing',
+      },
     },
     misErrores: {
       metaTitulo: 'My mistakes — {lang}',

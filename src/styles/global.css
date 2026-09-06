@@ -64,19 +64,6 @@
   color-scheme: light;
 }
 
-@theme {
-  --color-accent: var(--accent);
-  --color-accent-strong: var(--accent-strong);
-  --color-accent-text: var(--accent-text);
-  --color-de-red: var(--de-red);
-  --color-bg: var(--bg);
-  --color-bg-elevated: var(--bg-elevated);
-  --color-bg-card: var(--bg-card);
-  --color-border: var(--border);
-  --color-text: var(--text);
-  --color-text-muted: var(--text-muted);
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

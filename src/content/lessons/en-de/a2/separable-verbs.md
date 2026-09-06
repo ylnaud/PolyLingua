@@ -7,10 +7,19 @@ order: 3
 unit: 1
 grammarTopic: 'Separable verbs (trennbare Verben)'
 funFact: 'Think of the prefix as a boomerang: in a simple main clause it flies all the way to the end of the sentence, but the moment you add "weil" or "dass" (a subordinate clause), the verb order changes and the boomerang snaps right back onto the verb.'
+skills:
+  - de.a2.verb.separable
+  - de.a2.wordorder.verb-final
 minutes: 8
 quiz:
   - question: 'In the sentence "Ich stehe früh auf," what has happened to the verb "aufstehen"?'
-    options: ['Nothing, it is used normally', 'The prefix "auf" has separated and moved to the end of the sentence', 'It has become a noun', 'It is in the Perfekt tense']
+    options:
+      [
+        'Nothing, it is used normally',
+        'The prefix "auf" has separated and moved to the end of the sentence',
+        'It has become a noun',
+        'It is in the Perfekt tense',
+      ]
     answerIndex: 1
     explanation: 'Aufstehen is a separable verb: in a main clause, the conjugated part (stehe) stays in position 2, and the prefix (auf) is pushed to the end.'
   - question: 'Which of these prefixes is commonly SEPARABLE?'
@@ -18,7 +27,13 @@ quiz:
     answerIndex: 2
     explanation: 'Ein- is a typical separable prefix (einkaufen, einsteigen). Ver-, be-, and ent- are always inseparable and never split off.'
   - question: 'How do you correctly say "We shop at the supermarket" using "einkaufen"?'
-    options: ['Wir einkaufen im Supermarkt.', 'Wir kaufen im Supermarkt ein.', 'Wir kaufen ein im Supermarkt.', 'Wir kaufen im Supermarkt.']
+    options:
+      [
+        'Wir einkaufen im Supermarkt.',
+        'Wir kaufen im Supermarkt ein.',
+        'Wir kaufen ein im Supermarkt.',
+        'Wir kaufen im Supermarkt.',
+      ]
     answerIndex: 1
     explanation: 'The prefix "ein" detaches from "kaufen" and goes to the very end: Wir kaufen im Supermarkt ein.'
   - question: 'How is the Perfekt participle of "anrufen" (to call) formed?'
@@ -26,11 +41,23 @@ quiz:
     answerIndex: 1
     explanation: 'For separable verbs, ge- is inserted between the prefix and the stem: an + ge + rufen = angerufen.'
   - question: 'What happens to the separable prefix in a subordinate clause introduced by "weil" (because)?'
-    options: ['It moves even further away', 'It disappears completely', 'It reattaches to the verb, and the whole verb goes to the end', 'Nothing changes at all']
+    options:
+      [
+        'It moves even further away',
+        'It disappears completely',
+        'It reattaches to the verb, and the whole verb goes to the end',
+        'Nothing changes at all',
+      ]
     answerIndex: 2
     explanation: 'In a subordinate clause the conjugated verb (with its prefix reattached) moves to the very end: ..., weil ich früh aufstehe.'
   - question: 'What happens to a separable verb when it is used with a modal verb like "müssen"?'
-    options: ['The prefix separates as usual', 'The whole verb stays together as one infinitive at the end', 'The modal verb is dropped', 'The prefix goes right after the modal verb']
+    options:
+      [
+        'The prefix separates as usual',
+        'The whole verb stays together as one infinitive at the end',
+        'The modal verb is dropped',
+        'The prefix goes right after the modal verb',
+      ]
     answerIndex: 1
     explanation: 'With a modal verb, the separable verb stays together as a single infinitive at the very end: Ich muss früh aufstehen.'
   - question: 'Which sentence is a correct yes/no question using "mitkommen" (to come along)?'
@@ -100,35 +127,35 @@ vocabulary:
 ---
 
 Many German verbs are built from a short verb plus a **prefix** — and depending on the
-prefix, that combination behaves very differently. **Separable verbs** (*trennbare
-Verben*) split apart in a main clause: the base verb stays in its normal position, and
+prefix, that combination behaves very differently. **Separable verbs** (_trennbare
+Verben_) split apart in a main clause: the base verb stays in its normal position, and
 the prefix jumps all the way to the end of the sentence.
 
 ## How separation works
 
-Take **aufstehen** (to get up), built from *auf* + *stehen*:
+Take **aufstehen** (to get up), built from _auf_ + _stehen_:
 
 ```
 Ich       stehe       früh       auf.
 (subject) (verb, pos.2)          (prefix, end)
 ```
 
-**Ich stehe früh auf.** (I get up early.) The infinitive *aufstehen* looks like one
+**Ich stehe früh auf.** (I get up early.) The infinitive _aufstehen_ looks like one
 word, but in a real sentence it splits into two pieces stretched across the clause.
 
 ## Common separable prefixes
 
-| Prefix | Example verb | Meaning |
-| --- | --- | --- |
-| auf- | aufstehen | to get up |
-| ein- | einkaufen | to shop |
-| an- | anrufen | to call |
-| aus- | ausgehen | to go out |
-| mit- | mitkommen | to come along |
-| ab- | abfahren | to depart |
-| zu- | zumachen | to close |
-| fern- | fernsehen | to watch TV |
-| vor- | vorschlagen | to suggest |
+| Prefix | Example verb | Meaning       |
+| ------ | ------------ | ------------- |
+| auf-   | aufstehen    | to get up     |
+| ein-   | einkaufen    | to shop       |
+| an-    | anrufen      | to call       |
+| aus-   | ausgehen     | to go out     |
+| mit-   | mitkommen    | to come along |
+| ab-    | abfahren     | to depart     |
+| zu-    | zumachen     | to close      |
+| fern-  | fernsehen    | to watch TV   |
+| vor-   | vorschlagen  | to suggest    |
 
 ## More examples
 
@@ -148,33 +175,33 @@ and NEVER split off: **be-, ge-, er-, ver-, zer-, ent-, emp-, miss-**.
 - **verstehen** (to understand) → **Ich verstehe das nicht.**
 
 If you see one of those eight prefixes, treat the verb as a single, unsplittable unit.
-Everything else — especially short, common prefixes like *auf-*, *an-*, *ein-*, *aus-*,
-*mit-* — is very likely separable.
+Everything else — especially short, common prefixes like _auf-_, _an-_, _ein-_, _aus-_,
+_mit-_ — is very likely separable.
 
 ## In the Perfekt tense
 
-The *ge-* of the past participle slides in **between** the prefix and the stem:
+The _ge-_ of the past participle slides in **between** the prefix and the stem:
 
 - aufstehen → **aufgestanden**
 - einkaufen → **eingekauft**
 - anrufen → **angerufen**
 - fernsehen → **ferngesehen**
 
-*Ich bin heute früh aufgestanden.* (I got up early today.)
+_Ich bin heute früh aufgestanden._ (I got up early today.)
 
 ## With a modal verb
 
 When a modal verb (können, müssen, wollen...) is in the sentence, the separable verb
 stays **together** as one plain infinitive at the very end — it doesn't split at all:
 
-*Ich muss früh aufstehen.* (I have to get up early.)
+_Ich muss früh aufstehen._ (I have to get up early.)
 
 ## In a subordinate clause
 
-Words like *weil* (because) and *dass* (that) send the *entire* conjugated verb — prefix
+Words like _weil_ (because) and _dass_ (that) send the _entire_ conjugated verb — prefix
 reattached — to the end of the clause:
 
-*Ich bin müde, weil ich früh aufstehe.* (I'm tired because I get up early.)
+_Ich bin müde, weil ich früh aufstehe._ (I'm tired because I get up early.)
 
-Compare that to the main clause version, *Ich stehe früh auf* — same verb, but the word
+Compare that to the main clause version, _Ich stehe früh auf_ — same verb, but the word
 order (and where the prefix lands) completely changes depending on the sentence type.

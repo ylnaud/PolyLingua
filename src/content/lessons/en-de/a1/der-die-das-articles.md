@@ -7,6 +7,8 @@ order: 3
 unit: 2
 grammarTopic: 'Definite articles (der/die/das) and grammatical gender'
 funFact: 'This is not really about biological gender — der Tisch (the table) is not literally masculine. Think of der/die/das as three unpredictable color-coded bins that every noun gets sorted into. You cannot always guess the bin, but always learning the article WITH the word (der Tisch, not just Tisch) means you never have to guess later.'
+skills:
+  - de.a1.article.der-die-das
 minutes: 12
 quiz:
   - question: 'Why does German have three words for "the" (der, die, das) when English only has one?'

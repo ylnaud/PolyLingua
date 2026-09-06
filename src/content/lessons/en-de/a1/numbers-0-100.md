@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Cardinal numbers 0-100'
 funFact: "German numbers above twenty run backward compared to English: 21 is einundzwanzig, literally 'one-and-twenty' — units first, tens second. It sounds odd until you realize English used to work exactly the same way (think of the old rhyme 'four-and-twenty blackbirds')."
+skills:
+  - de.a1.vocabulary.numbers
 minutes: 8
 quiz:
   - question: 'What is the German word for the number 1?'

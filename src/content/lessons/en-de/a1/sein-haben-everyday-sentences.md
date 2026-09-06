@@ -7,6 +7,10 @@ order: 15
 unit: 4
 grammarTopic: 'Sein and haben in everyday conversational sentences'
 funFact: 'German uses haben, not sein, for feelings like hunger, thirst, and fear: Ich habe Hunger literally means "I have hunger", not "I am hungry". English speakers who translate word for word end up saying "Ich bin hungrig" — which is technically understandable, but Ich habe Hunger is what a native speaker actually says.'
+skills:
+  - de.a1.verb.sein
+  - de.a1.verb.haben
+  - de.a1.wordorder.basic
 minutes: 8
 quiz:
   - question: 'How do you say "I am a student" in German?'

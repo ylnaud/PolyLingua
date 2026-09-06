@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Reflexive verbs (sich + verb)'
 funFact: "Six of the eight reflexive pronouns you already know from the accusative pronouns lesson — mich, dich, uns, euch — the only new piece is 'sich', which covers er/sie/es AND sie/Sie all by itself. Learn 'sich' once and you have covered four grammatical persons at the same time."
+skills:
+  - de.a2.verb.reflexive
 minutes: 8
 quiz:
   - question: "What does the word 'sich' do when it is attached to a verb like 'sich freuen'?"

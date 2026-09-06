@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Idiomatic expressions (Redewendungen)'
 funFact: 'German idioms are little windows into how Germans picture the world: fingers become crossed thumbs, cats fall out of bags, and eating your hat is what you do when you are absolutely certain. Learn the image, not the words, and the phrase sticks forever.'
+skills:
+  - de.c2.idiom.redewendungen
 minutes: 11
 quiz:
   - question: "What does 'Tomaten auf den Augen haben' literally mean, and what does it actually express?"

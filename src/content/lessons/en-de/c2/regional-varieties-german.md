@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Regional varieties of German (Österreichisches Deutsch, Schweizerdeutsch)'
 funFact: "Swiss German isn't really one dialect — it's a whole family of local varieties so different from Standard German that Swiss TV shows aimed at Germany often add German subtitles. Meanwhile Austrian German has its own officially recognized vocabulary, protected by the EU itself for words like Paradeiser (tomato) and Marille (apricot)."
+skills:
+  - de.c2.variety.regional
 minutes: 11
 quiz:
   - question: "What is 'Schweizerdeutsch' (Swiss German) most accurately described as?"

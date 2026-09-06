@@ -7,6 +7,8 @@ order: 17
 unit: 4
 grammarTopic: 'Shopping vocabulary and useful phrases'
 funFact: 'The single most useful shopping phrase in German is Wie viel kostet das? (How much does that cost?) — learn that one sentence and you can point at almost anything in a store and get an answer, even before you know the word for the item itself.'
+skills:
+  - de.a1.vocabulary.shopping
 minutes: 8
 quiz:
   - question: 'How do you ask "How much does that cost?" in German?'

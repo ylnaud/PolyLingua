@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Comparative and superlative'
 funFact: 'German superlatives always wear a little "am" + "-sten" outfit when used predicatively: am schnellsten, am besten, am größten. If you forget the "am," it just sounds incomplete — like saying "the fastest" without the "the."'
+skills:
+  - de.a2.adjective.comparative
 minutes: 8
 quiz:
   - question: 'How do you form the comparative of "schnell" (fast)?'
@@ -34,7 +36,8 @@ quiz:
     answerIndex: 1
     explanation: 'Viel (much/many) is irregular: viel → mehr (more) → am meisten (most).'
   - question: 'How is the predicative superlative always formed?'
-    options: ['der/die/das + -ste', 'am + adjective + -sten', 'mehr + adjective', 'sehr + adjective']
+    options:
+      ['der/die/das + -ste', 'am + adjective + -sten', 'mehr + adjective', 'sehr + adjective']
     answerIndex: 1
     explanation: 'When the superlative stands alone (not directly before a noun), it always takes the form am + -sten: Das ist am schnellsten.'
   - question: 'What is the comparative of "hoch" (high/tall)?'
@@ -110,10 +113,10 @@ have to memorize.
 
 ## The three degrees
 
-| Degree | Formation | Example |
-| --- | --- | --- |
-| **Positive** | the plain adjective | schnell (fast) |
-| **Comparative** | adjective + **-er** | schnell**er** (faster) |
+| Degree          | Formation                      | Example                          |
+| --------------- | ------------------------------ | -------------------------------- |
+| **Positive**    | the plain adjective            | schnell (fast)                   |
+| **Comparative** | adjective + **-er**            | schnell**er** (faster)           |
 | **Superlative** | **am** + adjective + **-sten** | **am** schnell**sten** (fastest) |
 
 - Er ist **schnell.** (He is fast.)
@@ -122,9 +125,9 @@ have to memorize.
 
 ## Comparing things: als vs. wie
 
-- **als** = "than" — for an **unequal** comparison: *Er ist größer als ich.* (He is
+- **als** = "than" — for an **unequal** comparison: _Er ist größer als ich._ (He is
   taller than me.)
-- **so ... wie** = "as ... as" — for an **equal** comparison: *Er ist so groß wie ich.*
+- **so ... wie** = "as ... as" — for an **equal** comparison: _Er ist so groß wie ich._
   (He is as tall as me.)
 
 ## Watch for the umlaut
@@ -132,39 +135,39 @@ have to memorize.
 Many short (one-syllable) adjectives with the vowel **a, o, or u** add an umlaut in
 both the comparative and superlative:
 
-| Positive | Comparative | Superlative |
-| --- | --- | --- |
-| groß (big) | größer | am größten |
-| jung (young) | jünger | am jüngsten |
-| alt (old) | älter | am ältesten |
-| kalt (cold) | kälter | am kältesten |
-| lang (long) | länger | am längsten |
+| Positive     | Comparative | Superlative  |
+| ------------ | ----------- | ------------ |
+| groß (big)   | größer      | am größten   |
+| jung (young) | jünger      | am jüngsten  |
+| alt (old)    | älter       | am ältesten  |
+| kalt (cold)  | kälter      | am kältesten |
+| lang (long)  | länger      | am längsten  |
 
 ## Irregular forms
 
 A small set of very common adjectives don't follow the regular pattern at all — these
 just need memorizing, much like English "good, better, best":
 
-| Positive | Comparative | Superlative |
-| --- | --- | --- |
-| gut (good) | besser | am besten |
-| viel (much/many) | mehr | am meisten |
-| gern (gladly) | lieber | am liebsten |
-| hoch (high) | höher | am höchsten |
-| nah (near) | näher | am nächsten |
+| Positive         | Comparative | Superlative |
+| ---------------- | ----------- | ----------- |
+| gut (good)       | besser      | am besten   |
+| viel (much/many) | mehr        | am meisten  |
+| gern (gladly)    | lieber      | am liebsten |
+| hoch (high)      | höher       | am höchsten |
+| nah (near)       | näher       | am nächsten |
 
-*Gern/lieber/am liebsten* is especially useful for talking about preferences: **Ich
+_Gern/lieber/am liebsten_ is especially useful for talking about preferences: **Ich
 spiele gern Fußball, aber ich schwimme lieber, und am liebsten fahre ich Rad.** (I like
 to play soccer, but I prefer swimming, and I like cycling best of all.)
 
 ## Two ways to use the superlative
 
 1. **Predicatively (standing alone)** — always **am + -sten**:
-   *Dieses Auto ist am schnellsten.* (This car is the fastest.)
+   _Dieses Auto ist am schnellsten._ (This car is the fastest.)
 2. **Attributively (directly before a noun)** — takes a normal adjective ending instead,
    agreeing with the noun's gender, case, and number:
-   *Das ist das schnellste Auto.* (That is the fastest car.)
-   *Das ist das größte Haus in der Stadt.* (That is the biggest house in the city.)
+   _Das ist das schnellste Auto._ (That is the fastest car.)
+   _Das ist das größte Haus in der Stadt._ (That is the biggest house in the city.)
 
 Notice the attributive form drops the "am" entirely and uses an article + adjective
 ending instead — a detail that trips up a lot of learners at first.

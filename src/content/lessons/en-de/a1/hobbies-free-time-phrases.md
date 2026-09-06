@@ -7,6 +7,8 @@ order: 22
 unit: 5
 grammarTopic: 'Hobbies and free time vocabulary with "gern"'
 funFact: 'German does not have a direct verb for "to like" the way English does — instead, it adds the little word gern (gladly) right after the main verb: Ich spiele gern Fußball literally means "I play gladly soccer", but it is how Germans say "I like playing soccer". Master this one small word and you can express liking almost any activity.'
+skills:
+  - de.a1.vocabulary.freetime
 minutes: 8
 quiz:
   - question: 'How does German typically express "I like playing soccer"?'

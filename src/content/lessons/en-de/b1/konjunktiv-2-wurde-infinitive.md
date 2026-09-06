@@ -7,6 +7,9 @@ order: 11
 unit: 3
 grammarTopic: 'Konjunktiv II with würde + infinitive'
 funFact: "Most Konjunktiv II verb forms (käme, ginge, fände...) sound old-fashioned or overly literary in casual speech — so German speakers dodge almost all of them with one universal workaround: würde + infinitive. It is the German equivalent of English 'would' + verb, and it works for nearly every verb except sein, haben and the modal verbs."
+skills:
+  - de.b1.verb.konjunktiv2-wuerde
+  - de.b1.vocabulary.complaints
 minutes: 9
 quiz:
   - question: 'What is the basic pattern for würde + infinitive?'

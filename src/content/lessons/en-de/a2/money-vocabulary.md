@@ -7,6 +7,8 @@ order: 16
 unit: 4
 grammarTopic: 'Money and payment phrases'
 funFact: 'In Germany there are still plenty of places that only take cash, and they will let you know with a flat "Nur Bargeld." That is why it is worth asking "Kann ich mit Karte zahlen?" before you order, not after you have already eaten.'
+skills:
+  - de.a2.vocabulary.money
 minutes: 9
 quiz:
   - question: "What does 'Das kann ich mir nicht leisten' mean?"
@@ -18,7 +20,8 @@ quiz:
     answerIndex: 1
     explanation: 'Many places only accept cash, and they will tell you with "Nur Bargeld." Better to know beforehand.'
   - question: "In 'Ich muss Geld abheben', why does 'abheben' go at the end?"
-    options: [
+    options:
+      [
         'Because it is separable and always goes at the end',
         'Because with a modal verb, the infinitive goes at the end of the sentence',
         'It is a word-order mistake',
@@ -34,7 +37,8 @@ quiz:
     answerIndex: 0
     explanation: "'schulden' means 'to owe'. 'ich schulde dir' is 'I owe you'."
   - question: "In 'Das ist mir zu teuer', what role does 'mir' play?"
-    options: [
+    options:
+      [
         'It shows who finds it too expensive (Dativ)',
         'It is the direct object',
         'It has no grammatical function here',
@@ -68,7 +72,7 @@ exercises:
       - left: 'Wie viel schulde ich dir?'
         right: 'How much do I owe you?'
   - type: 'write'
-    prompt: "You are about to order and want to know if they take cards. What do you ask?"
+    prompt: 'You are about to order and want to know if they take cards. What do you ask?'
     answer: 'Kann ich mit Karte zahlen'
     accepted:
       - 'Kann ich mit Karte zahlen?'

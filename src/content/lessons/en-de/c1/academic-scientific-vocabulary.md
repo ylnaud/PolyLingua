@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Academic/scientific language vocabulary'
 funFact: "German academic writing runs on a small set of workhorse verbs — untersuchen, belegen, widerlegen, nachweisen — that you'll meet in nearly every research abstract. Learn these eight or ten verbs cold and you can already follow the skeleton of almost any German study, even before you know a single word of its specific subject matter."
+skills:
+  - de.c1.vocabulary.academic
 minutes: 10
 quiz:
   - question: 'What does "die These" mean in academic German?'

@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Irony and linguistic register (Ironie und Sprachregister)'
 funFact: "German irony rarely announces itself with a wink — it hides in flat intonation and exaggerated politeness. The stereotype that Germans 'don't do irony' is itself ironic: they do it constantly, just dryer and more deadpan than English speakers expect."
+skills:
+  - de.c2.style.irony-register
 minutes: 10
 quiz:
   - question: "A colleague's presentation crashes twice and someone deadpans, 'Na, das lief ja hervorragend.' What is actually being communicated?"

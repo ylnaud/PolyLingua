@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Proverbs and sayings (Sprichwörter)'
 funFact: 'Many German proverbs rhyme or use old-fashioned grammar frozen in time — Morgenstund hat Gold im Mund uses a dative form (Mund) without the modern -e ending, a fossil of older German preserved only because the rhyme with Morgenstund locked it in place.'
+skills:
+  - de.c2.idiom.sprichwoerter
 minutes: 10
 quiz:
   - question: "'Der Apfel fällt nicht weit vom Stamm' is used when someone notices what?"

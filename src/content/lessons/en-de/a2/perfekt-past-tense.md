@@ -7,6 +7,10 @@ order: 1
 unit: 1
 grammarTopic: 'Perfekt (haben/sein + past participle)'
 funFact: 'Almost every verb of MOVEMENT (gehen, fahren, kommen) or CHANGE OF STATE (aufwachen, sterben, werden) uses sein instead of haben. Picture a little arrow moving from A to B — if the verb has that "movement" feeling, reach for sein.'
+skills:
+  - de.a2.verb.perfekt
+  - de.a2.verb.participle
+  - de.a2.wordorder.verb-final
 minutes: 9
 quiz:
   - question: 'Which auxiliary verb do most German verbs use to form the Perfekt?'
@@ -14,7 +18,13 @@ quiz:
     answerIndex: 0
     explanation: 'The vast majority of verbs — especially all transitive ones (verbs with a direct object) — take haben: Ich habe das Buch gelesen.'
   - question: 'Which sentence correctly forms the Perfekt of "fahren" (to drive/go)?'
-    options: ['Ich habe nach Berlin gefahren.', 'Ich bin nach Berlin gefahren.', 'Ich habe nach Berlin gefahrt.', 'Ich bin nach Berlin gefahrt.']
+    options:
+      [
+        'Ich habe nach Berlin gefahren.',
+        'Ich bin nach Berlin gefahren.',
+        'Ich habe nach Berlin gefahrt.',
+        'Ich bin nach Berlin gefahrt.',
+      ]
     answerIndex: 1
     explanation: 'Fahren is a verb of motion, so it takes sein, and its past participle is irregular: gefahren (not "gefahrt").'
   - question: 'What is the past participle of the regular (weak) verb "spielen" (to play)?'
@@ -30,15 +40,28 @@ quiz:
     answerIndex: 1
     explanation: 'With separable verbs, ge- slots between the prefix and the stem: auf + ge + standen = aufgestanden.'
   - question: 'Why does "besuchen" (to visit) NOT take ge- in the Perfekt?'
-    options: ['Because it is a motion verb', 'Because it starts with an inseparable prefix (be-, ge-, ver-, er-, ent-, zer-, emp-, miss-)', 'Because it ends in -en', 'There is no rule; it is random']
+    options:
+      [
+        'Because it is a motion verb',
+        'Because it starts with an inseparable prefix (be-, ge-, ver-, er-, ent-, zer-, emp-, miss-)',
+        'Because it ends in -en',
+        'There is no rule; it is random',
+      ]
     answerIndex: 1
     explanation: 'Verbs starting with an inseparable prefix never add ge-: besuchen → besucht, verstehen → verstanden, erklären → erklärt.'
   - question: 'Where does the past participle go in a normal German statement?'
-    options: ['Right after the subject', 'At the very end of the sentence', 'Right before the auxiliary verb', 'It cannot go in a statement, only in questions']
+    options:
+      [
+        'Right after the subject',
+        'At the very end of the sentence',
+        'Right before the auxiliary verb',
+        'It cannot go in a statement, only in questions',
+      ]
     answerIndex: 1
     explanation: 'German uses a "verb bracket": the conjugated haben/sein sits in position 2, and the participle is pushed all the way to the end — Ich habe gestern Pizza gegessen.'
   - question: 'Which of these verbs takes "sein" in the Perfekt?'
-    options: ['essen (to eat)', 'kaufen (to buy)', 'einschlafen (to fall asleep)', 'lesen (to read)']
+    options:
+      ['essen (to eat)', 'kaufen (to buy)', 'einschlafen (to fall asleep)', 'lesen (to read)']
     answerIndex: 2
     explanation: 'Einschlafen describes a change of state (awake → asleep), so like most change-of-state and motion verbs it takes sein: Ich bin eingeschlafen.'
 exercises:
@@ -107,7 +130,7 @@ When Germans talk about something that already happened — what they did yester
 weekend, or five minutes ago — they almost always reach for the **Perfekt** tense, not a
 simple past form. In everyday spoken German, Perfekt IS the past tense. (There's also a
 "Präteritum"/simple past, but in conversation it's mostly reserved for a handful of verbs
-like *sein*, *haben*, and the modal verbs — you'll meet those separately.)
+like _sein_, _haben_, and the modal verbs — you'll meet those separately.)
 
 ## The formula
 
@@ -120,40 +143,40 @@ haben or sein  (conjugated, position 2)  +  past participle  (at the end)
 - **Ich habe** ein Buch **gelesen.** (I read a book.)
 - **Er ist** nach Hause **gegangen.** (He went home.)
 
-This creates German's famous "verb bracket" (*Satzklammer*): the conjugated auxiliary
+This creates German's famous "verb bracket" (_Satzklammer_): the conjugated auxiliary
 stays in the normal second position, while the participle gets pushed to the very end
 of the sentence — no matter how much other information sits in between.
 
 ## Choosing haben or sein
 
-| Rule | Examples |
-| --- | --- |
-| **Default: use haben** — almost all transitive verbs (verbs with a direct object) and most other verbs | machen, essen, trinken, lesen, kaufen, lernen, sehen |
-| **Use sein for motion verbs** — movement from one place to another | gehen → **ist gegangen**, fahren → **ist gefahren**, kommen → **ist gekommen**, fliegen → **ist geflogen**, laufen → **ist gelaufen** |
-| **Use sein for change-of-state verbs** — a shift from one condition to another | aufwachen → **ist aufgewacht**, einschlafen → **ist eingeschlafen**, sterben → **ist gestorben**, werden → **ist geworden** |
-| **A few irregular exceptions also use sein** | sein → **ist gewesen**, bleiben → **ist geblieben** |
+| Rule                                                                                                   | Examples                                                                                                                              |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| **Default: use haben** — almost all transitive verbs (verbs with a direct object) and most other verbs | machen, essen, trinken, lesen, kaufen, lernen, sehen                                                                                  |
+| **Use sein for motion verbs** — movement from one place to another                                     | gehen → **ist gegangen**, fahren → **ist gefahren**, kommen → **ist gekommen**, fliegen → **ist geflogen**, laufen → **ist gelaufen** |
+| **Use sein for change-of-state verbs** — a shift from one condition to another                         | aufwachen → **ist aufgewacht**, einschlafen → **ist eingeschlafen**, sterben → **ist gestorben**, werden → **ist geworden**           |
+| **A few irregular exceptions also use sein**                                                           | sein → **ist gewesen**, bleiben → **ist geblieben**                                                                                   |
 
 ## Building the past participle
 
 **Regular (weak) verbs:** ge- + stem + -t
 
-| Infinitive | Participle |
-| --- | --- |
-| machen | ge**mach**t |
-| spielen | ge**spiel**t |
-| kaufen | ge**kauf**t |
-| lernen | ge**lern**t |
+| Infinitive | Participle   |
+| ---------- | ------------ |
+| machen     | ge**mach**t  |
+| spielen    | ge**spiel**t |
+| kaufen     | ge**kauf**t  |
+| lernen     | ge**lern**t  |
 
 **Irregular (strong) verbs:** ge- + (often changed) stem + -en — these have to be
 memorized, since the vowel frequently changes:
 
-| Infinitive | Participle |
-| --- | --- |
-| gehen | ge**gang**en |
-| essen | ge**gess**en |
-| trinken | ge**trunk**en |
-| sehen | ge**seh**en |
-| nehmen | ge**nomm**en |
+| Infinitive | Participle    |
+| ---------- | ------------- |
+| gehen      | ge**gang**en  |
+| essen      | ge**gess**en  |
+| trinken    | ge**trunk**en |
+| sehen      | ge**seh**en   |
+| nehmen     | ge**nomm**en  |
 
 **Verbs ending in -ieren:** no ge- prefix at all, just add -t to the stem:
 
@@ -168,7 +191,7 @@ also no ge- prefix, because these prefixes are never separated from the verb:
 - verstehen → **verstanden** (understood)
 - erklären → **erklärt** (explained)
 
-**Separable verbs:** the ge- goes *between* the separable prefix and the stem:
+**Separable verbs:** the ge- goes _between_ the separable prefix and the stem:
 
 - auf + stehen → **aufgestanden**
 - ein + kaufen → **eingekauft**

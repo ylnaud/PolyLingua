@@ -7,6 +7,9 @@ order: 12
 unit: 3
 grammarTopic: 'Perfekt with haben vs. sein + Partizip (action vs. state)'
 funFact: "The test is simpler than it looks: does the verb describe MOVEMENT from one place to another, or a CHANGE OF STATE — and can you NOT do it to something else (no direct object)? If yes to both, it's sein. Everything else defaults to haben."
+skills:
+  - de.b1.verb.perfekt-zustand
+  - de.b1.vocabulary.complaints
 minutes: 9
 quiz:
   - question: "'Ich ___ ins neue Zimmer gezogen.' (I moved into the new room.) Which helper verb fits?"

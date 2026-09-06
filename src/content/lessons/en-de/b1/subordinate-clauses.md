@@ -7,6 +7,9 @@ order: 1
 unit: 1
 grammarTopic: 'Subordinate clauses (weil, dass, obwohl, wenn)'
 funFact: "Picture the conjugated verb as a tired guest who has to sit in the very last chair in the room. The moment you say 'weil', 'dass', or 'obwohl', that verb is already walking to the back of the sentence — no matter how long the sentence gets before it gets there."
+skills:
+  - de.b1.wordorder.subordinate
+  - de.b1.conjunction.subordinating
 minutes: 10
 quiz:
   - question: "Where does the conjugated verb go in a clause introduced by 'weil'?"

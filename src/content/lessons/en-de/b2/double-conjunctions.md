@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Double conjunctions (Doppelkonjunktionen): sowohl...als auch, je...desto, nicht nur...sondern auch'
 funFact: "je...desto is the one double conjunction with a real word-order trap: BOTH halves send the verb toward the end/second position in a mirrored way — 'Je mehr du übst, desto besser wirst du' — je-clause verb-final, desto-clause verb-second (right after desto). Say it out loud a few times and the rhythm does the grammar for you."
+skills:
+  - de.b2.conjunction.double
 minutes: 9
 quiz:
   - question: 'What does "sowohl ... als auch" mean?'

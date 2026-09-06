@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Advanced causal connectors: weil, da, denn, zumal'
 funFact: 'Think of these four as a formality dial, not four ways to say the same thing: "weil" is the everyday default, "da" politely states a reason everyone already half-knows, "denn" is weil''s formal cousin that refuses to send the verb to the end, and "zumal" only shows up to pile on an EXTRA reason nobody asked for. Get the dial position right and your German stops sounding like a word-for-word swap of "because."'
+skills:
+  - de.c1.connector.causal
 minutes: 10
 quiz:
   - question: 'Which causal connector is the most common, neutral, everyday way to say "because" in German?'

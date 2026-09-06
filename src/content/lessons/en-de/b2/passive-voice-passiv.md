@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Passive voice (Vorgangspassiv) in present and past tense'
 funFact: "Think of werden as the passive's engine and the Partizip II as its cargo: werden always carries the person/number ending, while the participle sits fixed at the end of the clause. Once you can conjugate werden (werde, wirst, wird, werden, werdet, werden) in your sleep, the passive is just plugging in a participle."
+skills:
+  - de.b2.voice.passive
 minutes: 10
 quiz:
   - question: 'How do you form the German passive voice (Vorgangspassiv) in the present tense?'

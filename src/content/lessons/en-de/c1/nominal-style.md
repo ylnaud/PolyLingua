@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Nominalstil (nominal style) vs. Verbalstil (verbal style)'
 funFact: 'German loves turning verbs into nouns the way English loves turning nouns into verbs. "Nach Beendigung der Sitzung" packs an entire clause ("after the meeting had ended") into three words by nominalizing the verb beenden into die Beendigung. Spot a -ung, -heit, -keit, or -tum ending and you''re almost always looking at a verb or adjective in disguise, hiding a whole clause inside a genitive or prepositional phrase.'
+skills:
+  - de.c1.style.nominal
 minutes: 11
 quiz:
   - question: 'What is Nominalstil?'

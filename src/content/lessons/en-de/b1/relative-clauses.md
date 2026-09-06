@@ -7,6 +7,9 @@ order: 3
 unit: 1
 grammarTopic: 'Relative clauses (Relativpronomen)'
 funFact: 'Surprise: der, die, das are not only articles — recycled as relative pronouns, they connect two sentences into one. The only new rule: the relative pronoun agrees in gender/number with the noun it refers to, but its CASE depends on its own job inside the relative clause.'
+skills:
+  - de.b1.clause.relative
+  - de.b1.wordorder.subordinate
 minutes: 9
 quiz:
   - question: "'Der Mann, ___ dort steht, ist mein Lehrer' (the man who is standing there is my teacher). Which pronoun goes in the blank?"

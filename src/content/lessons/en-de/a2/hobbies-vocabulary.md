@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Vocabulary: free time and hobbies, with gern and machen'
 funFact: 'The verb "machen" (to do/make) is your all-purpose hobby verb: Sport machen, Musik machen, eine Pause machen. Pair it with "gern" and you can describe almost your entire free time with just two small words plus a noun.'
+skills:
+  - de.a2.vocabulary.freetime
 minutes: 7
 quiz:
   - question: "How do you say 'I like reading' using 'gern'?"

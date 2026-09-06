@@ -7,6 +7,8 @@ order: 0.3
 unit: 1
 grammarTopic: 'Pronunciation: sch, ch, and ck'
 funFact: 'ch has two different sounds depending on what comes before it — a soft one after e, i, ä, ö, ü (think "huge" said very breathily) and a rough, throat-clearing one after a, o, u (like the Scottish "loch"). Same two letters, two jobs.'
+skills:
+  - de.a1.pron.consonantes
 minutes: 8
 quiz:
   - question: 'How is German "sch" pronounced?'

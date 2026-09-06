@@ -7,6 +7,8 @@ order: 5
 unit: 2
 grammarTopic: 'Present tense of stem-changing verbs (vowel change: a→ä, e→i, e→ie)'
 funFact: "The vowel change only ever hits two forms — du and er/sie/es — and never touches ich, wir, ihr, or sie/Sie. Think of it as a two-person surprise: only 'you' and 'he/she/it' get the twist, everyone else conjugates like a totally regular verb."
+skills:
+  - de.a1.verb.present-irregular
 minutes: 9
 quiz:
   - question: 'In stem-changing verbs, which two forms are affected by the vowel change?'

@@ -7,6 +7,8 @@ order: 14
 unit: 3
 grammarTopic: 'Noun plural formation (five plural patterns)'
 funFact: 'English mostly just adds -s, but German nouns fall into five different plural patterns — and there is no rule that tells you which one a word uses just by looking at it. The fix: learn every new noun WITH its plural form attached, the same way you learn it with its article. der Tisch, die Tische — treat it as one package.'
+skills:
+  - de.a1.noun.plural
 minutes: 9
 quiz:
   - question: 'What article do ALL German nouns take in the plural, no matter what gender they were in the singular?'

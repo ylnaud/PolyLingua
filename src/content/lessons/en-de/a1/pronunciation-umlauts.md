@@ -7,6 +7,8 @@ order: 0.1
 unit: 1
 grammarTopic: 'Pronunciation: German umlauts (ä, ö, ü)'
 funFact: 'Umlauts are not decoration — they change the word. Schon (already) and schön (beautiful) are two completely different words. Practice ö and ü as a MOUTH POSITION trick, not a sound you try to copy by ear: round your lips for one vowel, but say a different vowel through them.'
+skills:
+  - de.a1.pron.umlaute
 minutes: 8
 quiz:
   - question: 'What is the two-dot mark over ä, ö, and ü called?'

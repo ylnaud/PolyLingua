@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Functional verb constructions (Funktionsverbgefüge)'
 funFact: 'A Funktionsverbgefüge is a verb wearing a disguise: "eine Entscheidung treffen" doesn''t add anything "entscheiden" doesn''t already say — it just sounds more official. Spot the pattern (weak verb + noun, often with a fixed preposition) and you can decode almost any bureaucratic or business sentence by mentally collapsing it back into the one simple verb hiding inside.'
+skills:
+  - de.c1.construction.funktionsverb
 minutes: 10
 quiz:
   - question: 'What is a Funktionsverbgefüge (functional verb construction)?'

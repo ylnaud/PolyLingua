@@ -7,6 +7,8 @@ order: 16
 unit: 4
 grammarTopic: 'Work and job vocabulary with sentence patterns'
 funFact: 'German answers "what is your job" without an article: Ich bin Lehrer, not Ich bin ein Lehrer. This drops-the-article rule applies to professions, nationalities, and religions after sein — a small pattern that trips up a lot of English speakers who instinctively add "a".'
+skills:
+  - de.a1.vocabulary.work
 minutes: 8
 quiz:
   - question: 'What does "der Beruf" mean?'

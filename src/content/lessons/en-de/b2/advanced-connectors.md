@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Advanced discourse connectors (Konnektoren): contrast, cause, and result'
 funFact: "Sort connectors by their effect on word order, not by meaning: two-part connectors like 'obwohl' and 'weil' push the verb to the end of their clause, while 'trotzdem' and 'dennoch' start a main clause and trigger inversion (verb stays in position 2, right after them). Learn the grammar family first, the exact word second."
+skills:
+  - de.b2.connector.discourse
 minutes: 10
 quiz:
   - question: "Which connector correctly links these ideas: 'Es regnet. ___ gehen wir spazieren.' (It's raining. Nevertheless we go for a walk.)"

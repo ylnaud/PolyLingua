@@ -7,6 +7,8 @@ order: 0.2
 unit: 1
 grammarTopic: 'Pronunciation: German diphthongs (ei, ie, eu, au)'
 funFact: 'For ei and ie, say the NAME of the second letter: ei → the letter "i" says "eye", ie → the letter "e" says "ee". Mix them up and you get a real, different word — mein (mine) vs. Miene (facial expression) both exist.'
+skills:
+  - de.a1.pron.diptongos
 minutes: 8
 quiz:
   - question: 'How is the German combination "ei" pronounced?'

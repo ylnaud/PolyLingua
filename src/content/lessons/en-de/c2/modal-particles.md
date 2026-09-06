@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Modal particles (Modalpartikeln: ja, doch, mal, halt, eben, denn)'
 funFact: "Modal particles are the written equivalent of tone of voice. The same sentence with 'doch' sounds surprised, with 'ja' sounds obvious, with 'mal' sounds casual — and no dictionary translates them well, because they don't change what is said, only how it lands."
+skills:
+  - de.c2.particle.modal
 minutes: 11
 quiz:
   - question: 'You can build a grammatically flawless German sentence and still sound like a textbook. What is usually missing?'

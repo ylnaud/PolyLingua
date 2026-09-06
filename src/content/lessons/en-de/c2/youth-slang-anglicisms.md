@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Youth slang (Jugendsprache) and anglicisms'
 funFact: "German youth slang doesn't just borrow English words — it fully naturalizes them with German grammar. 'To chill' becomes chillen, with a normal German infinitive ending, and gets conjugated exactly like any native verb: ich chille, du chillst, er hat gechillt."
+skills:
+  - de.c2.variety.youth
 minutes: 10
 quiz:
   - question: "What happens grammatically when an English verb like 'to chill' enters German youth slang?"

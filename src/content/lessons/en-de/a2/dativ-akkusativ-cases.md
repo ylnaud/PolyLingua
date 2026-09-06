@@ -7,6 +7,9 @@ order: 6
 unit: 2
 grammarTopic: 'Dativ and Akkusativ cases (direct vs. indirect object)'
 funFact: 'Ask yourself two questions to find the case instantly: "Wen oder was?" (whom or what?) points to the Akkusativ direct object, and "Wem?" (to/for whom?) points to the Dativ indirect object. "Ich gebe (wem?) meinem Bruder (wen/was?) ein Buch" sorts itself out in seconds once you ask the right question.'
+skills:
+  - de.a2.case.akkusativ
+  - de.a2.case.dativ
 minutes: 9
 quiz:
   - question: 'Which question word helps you find the Akkusativ (direct object) in a sentence?'

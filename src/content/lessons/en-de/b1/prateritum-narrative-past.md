@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Präteritum (narrative past tense)'
 funFact: "Think of the Perfekt as the coffee-chat past (spoken) and the Präteritum as the storybook past (written/narrated). With 'sein', 'haben' and the modal verbs, though, Germans use the Präteritum even in conversation — they are the exception that breaks the rule."
+skills:
+  - de.b1.verb.praeteritum
 minutes: 9
 quiz:
   - question: "What is the correct Präteritum form of 'sein' (to be) for 'ich'?"

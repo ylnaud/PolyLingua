@@ -7,6 +7,8 @@ order: 10
 unit: 3
 grammarTopic: 'Akkusativ personal pronouns (mich, dich, ihn, sie, es, uns, euch, sie/Sie)'
 funFact: "Of the 8 pronouns, only 'er' changes completely (into 'ihn'). All the rest either stay exactly the same (sie, es, Sie) or just add '-ch' to a form you already know (ich becomes mich, du becomes dich). Memorize 'ihn' first — it is the only one you truly have to learn from scratch."
+skills:
+  - de.a2.pronoun.akkusativ
 minutes: 7
 quiz:
   - question: "How do you say 'I see him' in German?"

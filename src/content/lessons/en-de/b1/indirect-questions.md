@@ -7,6 +7,9 @@ order: 4
 unit: 1
 grammarTopic: 'Indirect questions (ob, question word + verb-final)'
 funFact: "Think of 'ob' as the German stand-in for 'whether/if' when you report a yes/no question: 'Kommst du?' (are you coming?) becomes 'Ich weiß nicht, ob du kommst' (I don't know whether you're coming). For questions with a question word, you simply reuse that same word."
+skills:
+  - de.b1.clause.indirect-question
+  - de.b1.wordorder.subordinate
 minutes: 8
 quiz:
   - question: "'Kommt sie heute?' → 'Ich frage mich, ___ sie heute kommt.' Which word fits?"

@@ -7,6 +7,8 @@ order: 24
 grammarTopic: 'Basic prepositions of place and time'
 funFact: 'German time prepositions are surprisingly fixed: um is always for a clock time (um acht Uhr), am is always for a day (am Montag), and im is always for a month or season (im Mai, im Winter). Memorize which preposition goes with which TYPE of time expression, and you will almost never have to guess again.'
 unit: 6
+skills:
+  - de.a1.preposition.place-time
 minutes: 9
 quiz:
   - question: 'Which preposition is used with a specific clock time, like "at eight o''clock"?'

@@ -7,6 +7,8 @@ order: 18
 unit: 4
 grammarTopic: 'Home and house vocabulary'
 funFact: 'German keeps das Haus (a standalone house) and die Wohnung (an apartment/flat) strictly separate — you cannot use them interchangeably the way English sometimes blurs "house" and "place". If you live in an apartment building, you say Ich wohne in einer Wohnung, never Ich wohne in einem Haus.'
+skills:
+  - de.a1.vocabulary.home
 minutes: 8
 quiz:
   - question: 'What is the difference between "das Haus" and "die Wohnung"?'

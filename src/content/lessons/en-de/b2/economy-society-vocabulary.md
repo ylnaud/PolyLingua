@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Economy and society vocabulary: compound nouns and abstract concepts'
 funFact: "Most economy/society words in German are compound nouns built from everyday roots you already know: 'die Arbeitslosigkeit' (unemployment) is just Arbeit (work) + los (without/-less) + igkeit (a noun-forming suffix, like English '-ness'). Once you spot the suffix pattern -heit/-keit/-igkeit for abstract nouns, half of this vocabulary becomes guessable instead of memorizable."
+skills:
+  - de.b2.vocabulary.economy
 minutes: 10
 quiz:
   - question: 'What does "die Wirtschaft" mean?'

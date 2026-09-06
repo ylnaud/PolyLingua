@@ -2,6 +2,7 @@
 import { ClientRouter } from 'astro:transitions';
 import { ACTIVE_USER_LANGUAGES, USER_LANGUAGE_MAP } from '../data/userLanguages';
 import { isNoindexRoute } from '../data/noindex-routes';
+import { getDictionary } from '../i18n';
 import Header from '../components/Header.astro';
 import StreakReminder from '../components/StreakReminder.astro';
 import EngineTracker from '../components/EngineTracker.astro';
@@ -88,6 +89,12 @@ const inactiveUserLang =
 // es un suelo, no un reemplazo.
 const noindexFinal = noindex || inactiveUserLang || isNoindexRoute(path);
 const ogImage = new URL(ogImagePath, Astro.site);
+
+// og:locale estaba fijo en "es_ES", así que una página del silo inglés se
+// anunciaba como española en cada tarjeta compartida. Sale del mismo bcp47
+// que ya alimenta <html lang>, con el guion que pide Open Graph.
+const ogLocale = htmlLang.replace('-', '_');
+const tShell = getDictionary(pageLang as never).widgets;
 ---
 
 <!doctype html>
@@ -128,7 +135,7 @@ const ogImage = new URL(ogImagePath, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale" content={ogLocale} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
@@ -149,17 +156,17 @@ const ogImage = new URL(ogImagePath, Astro.site);
     <ClientRouter />
   </head>
   <body>
-    <a href="#main" class="skip-link">Saltar al contenido</a>
+    <a href="#main" class="skip-link">{tShell.saltarContenido}</a>
     <Header userLang={pageLang} />
-    <StreakReminder />
-    <BackupReminder />
+    <StreakReminder userLang={pageLang} />
+    <BackupReminder userLang={pageLang} />
     <main id="main">
       <slot />
     </main>
     <Footer userLang={pageLang} />
     <ProgressTracker />
     <EngineTracker />
-    <DrillTutor />
+    <DrillTutor userLang={pageLang} />
     <SoundEffects />
     <CookieNotice userLang={pageLang} />
     <ScrollTopButton />

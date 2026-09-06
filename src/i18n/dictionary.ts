@@ -1,9 +1,15 @@
 // Diccionario de strings de interfaz para la arquitectura SILO
 // [userLang]/[targetLang]/... — ver src/data/userLanguages.ts para la lista
-// de idiomas de interfaz. Hoy solo `es` está poblado (es el único
-// UserLanguageId con `active: true`); agregar un diccionario nuevo acá es
-// el paso de "traducir la interfaz" cuando se active otro idioma — ver
-// src/i18n/index.ts para el mecanismo de fallback.
+// de idiomas de interfaz.
+//
+// Hoy están poblados `es` y `en`. Ojo: tener diccionario NO es lo mismo que
+// estar activo. `en` tiene el suyo completo —así que el silo /en/ ya pinta la
+// interfaz en inglés— pero sigue con `active: false` porque queda español
+// escrito a mano fuera de este archivo (src/data/tsa.ts y src/data/units.ts).
+// Activarlo antes de terminar eso publicaría páginas mitad y mitad.
+//
+// Agregar un diccionario nuevo acá es el paso real de "traducir la interfaz",
+// y va SIEMPRE antes del flag — ver src/i18n/index.ts para el fallback.
 // Los selectores de idioma ("¿Qué idioma quieres repasar?") son todos la
 // misma página con otro texto, así que comparten forma.
 export interface PickerStrings {
@@ -116,12 +122,17 @@ export interface Dictionary {
     idiomas: string;
     catalogoEyebrow: string;
     catalogoTitulo: string;
+    /** Meta e intro de la portada del silo (/[userLang]). */
+    catalogoMetaTitulo: string;
+    catalogoMetaDescripcion: string;
+    catalogoIntro: string;
     continuar: string;
     repaso: string;
     errores: string;
     racha: string;
     explorarMas: string;
     explorar: {
+      practicarAhora: string;
       situaciones: string;
       dialogos: string;
       pronunciacion: string;
@@ -140,6 +151,8 @@ export interface Dictionary {
     irAlExamen: string;
     leccion: string;
     lecciones: string;
+    /** CTA de la tarjeta de idioma de las portadas. */
+    verNiveles: string;
     // El selector de nivel de inicio: quien ya sabe algo del idioma no
     // debería tener que aprobar dos exámenes de lo que ya sabe para llegar a
     // su nivel. Ver src/components/StartLevelPicker.astro.
@@ -375,6 +388,33 @@ export interface Dictionary {
       consignaSrs: string;
     };
   };
+  /**
+   * Los avisos y controles que BaseLayout monta en TODAS las páginas.
+   *
+   * Están acá y no escritos a mano en cada componente porque son justamente
+   * los que se ven en cualquier silo: mientras tuvieron el texto fijo en
+   * español, una página /en/ salía con la interfaz en inglés y estos cuatro
+   * widgets en español encima.
+   */
+  widgets: {
+    /** Enlace de salto al contenido, primer foco de cada página. */
+    saltarContenido: string;
+    /** Barra descartable compartida (racha y copia de seguridad). */
+    barra: { cerrar: string };
+    /** Meta diaria: la píldora del header y su diálogo. */
+    metaDiaria: {
+      pildoraAria: string;
+      titulo: string;
+      sub: string;
+      opcionesAria: string;
+      ahoraNo: string;
+    };
+    /** Aviso de racha en riesgo. El texto lo arma el cliente con {n} días. */
+    racha: { cta: string; texto: string; textos: string };
+    copia: { texto: string; cta: string };
+    /** Avisos del bucle de refuerzo, escritos sobre el ítem fallado. */
+    refuerzo: { pausado: string; otraVez: string };
+  };
 }
 
 export const es: Dictionary = {
@@ -514,12 +554,18 @@ export const es: Dictionary = {
     idiomas: 'Idiomas',
     catalogoEyebrow: 'Catálogo de idiomas',
     catalogoTitulo: '¿Qué idioma quieres aprender?',
+    catalogoMetaTitulo: 'Idiomas disponibles',
+    catalogoMetaDescripcion:
+      'Elige el idioma que quieres aprender: alemán, inglés, francés, italiano o portugués. Gramática gamificada de A1 a C2, gratis.',
+    catalogoIntro:
+      'Cada idioma tiene su propia ruta de A1 a C2, con la misma gramática gamificada que hace que aprender no se sienta como estudiar.',
     continuar: 'Continuar',
     repaso: 'Repaso',
     errores: 'Errores',
     racha: 'Racha',
     explorarMas: '🧭 Explorá más',
     explorar: {
+      practicarAhora: 'Practicar ahora',
       situaciones: 'Situaciones',
       dialogos: 'Diálogos',
       pronunciacion: 'Escuchar y repetir',
@@ -539,6 +585,7 @@ export const es: Dictionary = {
     irAlExamen: 'Ir al examen →',
     leccion: 'lección',
     lecciones: 'lecciones',
+    verNiveles: 'Ver niveles →',
     inicio: {
       titulo: '¿Ya sabés algo?',
       desc: 'Elegí desde qué nivel querés empezar. Los anteriores quedan abiertos por si querés repasarlos.',
@@ -798,6 +845,31 @@ export const es: Dictionary = {
       consignaSrs: 'Escribe esta palabra en {lang}: "{x}"',
     },
   },
+  widgets: {
+    saltarContenido: 'Saltar al contenido',
+    barra: { cerrar: 'Cerrar aviso' },
+    metaDiaria: {
+      pildoraAria: 'Ver o cambiar tu meta de práctica de hoy',
+      titulo: '¿Cuánto quieres practicar hoy?',
+      sub: 'Elige una meta para hoy — puedes cambiarla cuando quieras.',
+      opcionesAria: 'Minutos por día',
+      ahoraNo: 'Ahora no',
+    },
+    racha: {
+      cta: 'Practicar ahora',
+      texto: 'No pierdas tu racha de {n} día — practica algo hoy.',
+      textos: 'No pierdas tu racha de {n} días — practica algo hoy.',
+    },
+    copia: {
+      texto: 'Tu progreso vive solo en este navegador — hacé una copia antes de perderlo.',
+      cta: 'Hacer copia',
+    },
+    refuerzo: {
+      pausado:
+        'Este tema se te está resistiendo hoy. Seguimos con la lección y te lo guardo para «Practicar ahora».',
+      otraVez: 'Vamos otra vez con la misma estructura, en otra frase.',
+    },
+  },
 };
 
 // Diccionario de interfaz en inglés, para el silo /en/ (hoy, el curso en-de:
@@ -959,12 +1031,18 @@ export const en: Dictionary = {
     idiomas: 'Languages',
     catalogoEyebrow: 'Language catalogue',
     catalogoTitulo: 'Which language do you want to learn?',
+    catalogoMetaTitulo: 'Available languages',
+    catalogoMetaDescripcion:
+      'Pick the language you want to learn: German, English, French, Italian or Portuguese. Gamified grammar from A1 to C2, free.',
+    catalogoIntro:
+      'Every language has its own path from A1 to C2, with the same gamified grammar that keeps learning from feeling like studying.',
     continuar: 'Continue',
     repaso: 'Review',
     errores: 'Mistakes',
     racha: 'Streak',
     explorarMas: '🧭 Explore more',
     explorar: {
+      practicarAhora: 'Practise now',
       situaciones: 'Situations',
       dialogos: 'Dialogues',
       pronunciacion: 'Listen and repeat',
@@ -983,6 +1061,7 @@ export const en: Dictionary = {
     irAlExamen: 'Take the test →',
     leccion: 'lesson',
     lecciones: 'lessons',
+    verNiveles: 'See levels →',
     inicio: {
       titulo: 'Already know some?',
       desc: 'Pick the level you want to start from. Everything below it stays open in case you want to review.',
@@ -1240,6 +1319,31 @@ export const en: Dictionary = {
       ganaste: '🎉 Nice! The word was "{x}" ({y}).',
       perdiste: '💀 Out of tries. The word was "{x}" ({y}).',
       consignaSrs: 'Write this word in {lang}: "{x}"',
+    },
+  },
+  widgets: {
+    saltarContenido: 'Skip to content',
+    barra: { cerrar: 'Dismiss notice' },
+    metaDiaria: {
+      pildoraAria: "See or change today's practice goal",
+      titulo: 'How much do you want to practise today?',
+      sub: 'Pick a goal for today — you can change it whenever you like.',
+      opcionesAria: 'Minutes per day',
+      ahoraNo: 'Not now',
+    },
+    racha: {
+      cta: 'Practise now',
+      texto: 'Do not lose your {n}-day streak — practise something today.',
+      textos: 'Do not lose your {n}-day streak — practise something today.',
+    },
+    copia: {
+      texto: 'Your progress lives in this browser only — back it up before you lose it.',
+      cta: 'Back up',
+    },
+    refuerzo: {
+      pausado:
+        'This topic is fighting back today. We will carry on with the lesson and save it for "Practise now".',
+      otraVez: 'Same structure once more, in a different sentence.',
     },
   },
 };

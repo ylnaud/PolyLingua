@@ -1,14 +1,34 @@
 ---
 import DismissibleBar from './DismissibleBar.astro';
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
 
 // La cáscara (markup y CSS) es de DismissibleBar; acá vive solo lo propio de
 // este aviso: cuándo aparece y qué dice. El texto lleva el número de días de
-// racha, así que se arma en el cliente sobre [data-bar-text].
-const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
+// racha, así que se arma en el cliente sobre [data-bar-text] con los strings
+// que van por [data-bar-strings].
+
+interface Props {
+  userLang?: string;
+}
+
+const { userLang } = Astro.props;
+const lang = (userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never;
+const t = getDictionary(lang).widgets;
+
+// El CTA lleva al silo del idioma de la página, no siempre al español: desde
+// una lección de /en/de/ mandaba a /es, sacando al usuario de su propio silo.
+const ctaHref = `/${userLang ?? ACTIVE_USER_LANGUAGES[0].id}`;
 ---
 
-<DismissibleBar id="streak" emoji="🔥" ctaLabel="Practicar ahora" ctaHref={defaultUserLangHref} />
+<DismissibleBar
+  id="streak"
+  emoji="🔥"
+  ctaLabel={t.racha.cta}
+  ctaHref={ctaHref}
+  dismissLabel={t.barra.cerrar}
+  strings={{ texto: t.racha.texto, textos: t.racha.textos }}
+/>
 
 <script>
   import { today, yesterday, read, write } from '../lib/storage';
@@ -45,7 +65,9 @@ const defaultUserLangHref = `/${ACTIVE_USER_LANGUAGES[0].id}`;
     const show = streakAtRisk() && !dismissedToday();
     el.hidden = !show;
     if (show) {
-      text.textContent = `No pierdas tu racha de ${streak} día${streak === 1 ? '' : 's'} — practica algo hoy.`;
+      const s = JSON.parse(el.dataset.barStrings ?? '{}');
+      const plantilla = (streak === 1 ? s.texto : s.textos) ?? '';
+      text.textContent = plantilla.replace('{n}', String(streak));
     }
 
     if (!dismissBtn.dataset.initialized) {

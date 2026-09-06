@@ -1,12 +1,13 @@
-# PolyLingua 🇩🇪
+# PolyLingua 🇩🇪 🇬🇧 🇫🇷 🇮🇹 🇵🇹
 
-Aprende alemán de **A1 a C2**, gratis, con gramática explicada de forma
-divertida en vez de aburrida. Construido con [Astro](https://astro.build)
-para ser **ultra ligero** (casi cero JavaScript) y tener **SEO** de primera
-desde el día uno.
+Aprende **alemán, inglés, francés, italiano o portugués** de **A1 a C2**,
+gratis, con gramática explicada de forma divertida en vez de aburrida.
+Construido con [Astro](https://astro.build) para ser **ultra ligero** (casi
+cero JavaScript) y tener **SEO** de primera desde el día uno.
 
 ## ✨ Qué incluye
 
+- **5 cursos** con la interfaz en español, y **484 lecciones** en total
 - **6 niveles** siguiendo el Marco Común Europeo de Referencia (A1–C2)
 - **Lecciones de gramática gamificadas**: cada regla viene con una
   mnemotecnia o truco visual para que se quede grabada sin sufrimiento
@@ -38,26 +39,43 @@ Otros comandos:
 ```bash
 npm run build      # genera el sitio estático en dist/
 npm run preview    # sirve el build de producción localmente
-npm run check       # chequeo de tipos de Astro/TypeScript
+npm run check      # chequeo de tipos de Astro/TypeScript
+npm test           # tests con Vitest
+npm run format     # Prettier
 ```
+
+No hay `npm run lint`.
 
 ## 📂 Estructura del contenido
 
-Cada lección vive como un archivo Markdown en
-`src/content/lessons/<nivel>/<leccion>.md`, con esta forma:
+Cada lección es un archivo Markdown. La ruta lleva **dos idiomas**: el de la
+interfaz y el que se enseña.
+
+```
+src/content/lessons/<userLang>-<targetLang>/<nivel>/<slug>.md
+```
+
+Por ejemplo `src/content/lessons/es-de/a1/articulos-der-die-das.md`: la
+explicación está en español y enseña alemán. Los cursos que existen son
+`es-de`, `es-en`, `es-fr`, `es-it`, `es-pt` y `en-de` (oculto).
 
 ```md
 ---
-level: a1
-title: 'Título de la lección'
-description: 'Resumen corto para SEO y tarjetas'
-order: 1
+language: 'de' # OBLIGATORIO: el idioma que se ENSEÑA. Sin él, el build falla
+level: 'a1'
+title: 'Título con keyword'
+description: 'Meta description de 130 a 160 caracteres, con la keyword'
+order: 3 # posición dentro del nivel
+unit: 2 # agrupa la lección en su página de nivel (ver src/data/units.ts)
 grammarTopic: 'Tema gramatical'
 funFact: 'El truco/mnemotecnia para no aburrirse'
-minutes: 7
+minutes: 5
 quiz:
   - question: '¿...?'
-    options: ['opción A', 'opción B', 'opción C']
+    options:
+      - 'opción A'
+      - 'opción B'
+      - 'opción C'
     answerIndex: 0
     explanation: 'Por qué es correcta'
 ---
@@ -65,14 +83,26 @@ quiz:
 Contenido de la lección en Markdown normal.
 ```
 
+El esquema completo —incluidos `exercises`, `vocabulary` y `skills`— vive en
+`src/content.config.ts`, que es la fuente de verdad. Si un campo no lo cumple,
+`npm run build` falla.
+
 Con eso basta: la página de nivel y la lección se generan solas.
+
+## 🤖 Trabajar con Claude Code
+
+`.claude/skills/` contiene la documentación operativa del proyecto (arquitectura,
+contenido, frontend, SEO y despliegue) para que Claude Code trabaje sobre reglas
+reales. `CLAUDE.md` es el resumen de entrada y `docs/` guarda las notas largas:
+`LEARNING_ENGINE.md` y `MIGRACION-DOMINIO.md`.
 
 ## 🗺️ Roadmap
 
-- [ ] Completar el temario de cada nivel (actualmente hay lecciones de
-      muestra por nivel para validar formato y diseño)
-- [ ] Ejercicios de vocabulario y audio/pronunciación
-- [ ] Seguimiento de progreso del usuario (localStorage → cuenta)
+- [x] Completar el temario de los cinco cursos (484 lecciones)
+- [x] Ejercicios de vocabulario y audio/pronunciación
+- [x] Seguimiento de progreso del usuario en `localStorage`, con copia de
+      seguridad exportable desde `/logros`
+- [ ] Cuentas de usuario (hoy el progreso vive solo en el navegador)
 - [x] Despliegue a producción — Cloudflare Workers, publica solo en cada push
       a `main`
 - [ ] Dominio propio (hoy se sirve desde el subdominio `*.workers.dev`)

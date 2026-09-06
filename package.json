@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "PolyLingua — aprende alemán de A1 a C2 con gramática que no aburre.",
+  "description": "PolyLingua — aprende alemán, inglés, francés, italiano o portugués de A1 a C2 con gramática que no aburre.",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

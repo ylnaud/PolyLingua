@@ -1,101 +1,92 @@
 # Plantilla de referencia: lección completa con quiz + exercises
 
-Archivo real del repo: `src/content/lessons/de/a1/articulos-der-die-das.md`
+**Copia literal del archivo real `src/content/lessons/es-de/a1/articulos-der-die-das.md`.**
+No está escrita a mano: se generó desde ese archivo, así que si el original cambia,
+esta copia se queda vieja — al usarla, comprueba que la ruta sigue existiendo antes de
+fiarte del resto.
 
-Cópialo como base de formato — especialmente el punto exacto donde `exercises:`
-empieza (justo después del último ítem de `quiz`, antes del `---` de cierre) y el
-estilo de bloque YAML (todo con `-` en líneas separadas, nunca `[a, b, c]`).
+Fíjate sobre todo en:
+
+- La **ruta**: `es-de` es `<userLang>-<targetLang>`, no un idioma suelto. No existe
+  `src/content/lessons/de/`.
+- `language: de` es el idioma que se **enseña**; el `es` de la carpeta es el de la
+  interfaz y no aparece en el frontmatter.
+- `unit: 2` — sin esto la lección no aparece agrupada en su página de nivel.
+- `skills:` — los ids salen del catálogo de `src/data/skills.ts`.
+- El punto exacto donde empieza `exercises:` (después del último ítem de `quiz`) y el
+  estilo de bloque YAML: todo con `-` en líneas separadas, nunca `[a, b, c]`.
 
 ```markdown
 ---
 language: de
 level: a1
-title: 'Der, die, das: la guía definitiva para dejar de adivinar'
-description: 'Categorías por significado, terminaciones con su porcentaje de acierto y las excepciones que sí importan — todo lo que necesitas para dejar de tirar una moneda al aire.'
-order: 1
+title: 'Der, die, das: cómo funciona el género en alemán'
+description: 'Los tres artículos del alemán, la única regla que no falla nunca y el truco para memorizarlos. El punto de partida antes de ver cada género por separado.'
+order: 3
+unit: 2
 grammarTopic: 'Artículos determinados (der/die/das)'
-funFact: "Esto no son reglas fijas, son tendencias: con estas categorías acertarás la gran mayoría de las veces, pero el alemán siempre se reserva un puñado de excepciones. Aprende cada palabra nueva CON su artículo pegado — der Tisch, no solo 'Tisch' — y tu memoria hará el resto."
-minutes: 12
+funFact: "Esto no son reglas fijas, son tendencias: con las categorías de las tres páginas siguientes acertarás la gran mayoría de las veces. Aprende cada palabra nueva CON su artículo pegado — der Tisch, no solo 'Tisch' — y tu memoria hará el resto."
+skills:
+  - de.a1.article.der-die-das
+minutes: 5
 quiz:
-  - question: "¿Cuál es el artículo correcto para 'Lehrer' (profesor)?"
-    options: ['der Lehrer', 'die Lehrer', 'das Lehrer']
+  - question: 'En plural, ¿qué artículo se usa sin importar el género original de la palabra?'
+    options: ['die, siempre', 'depende del género original', 'se elimina el artículo']
     answerIndex: 0
-    explanation: 'Las personas de sexo masculino son siempre masculinas: der Lehrer, der Arzt, der Mann.'
-  - question: "'Mädchen' (niña) usa el artículo 'das' aunque hable de una persona femenina. ¿Por qué?"
+    explanation: "En plural el artículo es SIEMPRE 'die', sin excepción: der Tisch → die Tische, das Mädchen → die Mädchen, die Zeitung → die Zeitungen."
+  - question: '¿Cuántos géneros gramaticales tiene el alemán?'
+    options: ['Dos: masculino y femenino', 'Tres: masculino, femenino y neutro', 'Cuatro']
+    answerIndex: 1
+    explanation: 'Masculino (der), femenino (die) y neutro (das). El neutro es el que no existe en español y el que más cuesta al principio.'
+  - question: '¿Cuál es la mejor forma de aprender una palabra nueva en alemán?'
+    options:
+      - 'Memorizar solo la palabra y deducir el artículo después'
+      - 'Memorizar la palabra CON su artículo, como si fueran una sola palabra'
+      - 'Usar siempre die, que es el más común'
+    answerIndex: 1
+    explanation: "Guarda 'der Tisch', no 'Tisch'. El artículo forma parte de la palabra: separarlos es lo que obliga luego a adivinar."
+  - question: "¿Por qué 'das Mädchen' (niña) es neutro si habla de una persona femenina?"
     options:
       - 'Porque todas las palabras cortas son neutras'
-      - 'Porque termina en el diminutivo -chen, y los diminutivos en -chen/-lein siempre son neutros (100% de certeza)'
+      - 'Porque la terminación manda sobre el significado: -chen es siempre neutro'
       - 'Es un error histórico del idioma'
     answerIndex: 1
-    explanation: 'Regla sin excepciones: cualquier palabra que termine en -chen o -lein es SIEMPRE neutra (das), sin importar el significado.'
+    explanation: 'Cuando una terminación tiene regla propia, gana a la categoría de significado. Es el principio que explica las tres páginas siguientes.'
 exercises:
   - type: 'fill-blank'
-    sentence: '___ Mädchen spielt im Garten.'
-    answer: 'Das'
-    accepted: ['das']
-    hint: 'Termina en -chen: los diminutivos en -chen/-lein son siempre neutros, sin excepción.'
-    translation: 'La niña juega en el jardín.'
-  - type: 'fill-blank'
-    sentence: '___ Zeitung liegt auf dem Tisch.'
+    sentence: 'Der Tisch ist neu. ___ Tische sind neu.'
     answer: 'Die'
     accepted: ['die']
-    hint: 'Terminación -ung: femenina con 98% de certeza.'
-    translation: 'El periódico está sobre la mesa.'
+    hint: 'En plural siempre die, venga de donde venga la palabra.'
+    translation: 'La mesa es nueva. Las mesas son nuevas.'
+    placeholder: 'der / die / das'
   - type: 'match'
-    instructions: 'Empareja cada palabra con su artículo correcto.'
+    instructions: 'Empareja cada palabra con su artículo. Los verás uno por uno en las páginas siguientes.'
     pairs:
+      - left: 'Lehrer'
+        right: 'der'
       - left: 'Zeitung'
         right: 'die'
       - left: 'Mädchen'
         right: 'das'
-      - left: 'Lehrer'
-        right: 'der'
-      - left: 'Freiheit'
-        right: 'die'
-      - left: 'Ergebnis'
-        right: 'das'
-  - type: 'write'
-    prompt: "Escribe el artículo correcto (der/die/das) para 'Honig' (miel)."
-    answer: 'der'
-    accepted: ['Der']
-    hint: 'Terminación -ig: masculina con 98% de certeza.'
-  - type: 'write'
-    prompt: "Escribe el artículo correcto (der/die/das) para 'Freundschaft' (amistad)."
-    answer: 'die'
-    accepted: ['Die']
-    hint: 'Terminación -schaft: femenina con 98% de certeza.'
   - type: 'order'
     sentence: 'Der Lehrer trinkt heute Kaffee'
     translation: 'El profesor toma café hoy.'
+vocabulary:
+  - term: 'der Tisch'
+    translation: 'la mesa'
+  - term: 'die Zeitung'
+    translation: 'el periódico'
+  - term: 'das Mädchen'
+    translation: 'la niña'
 ---
 
 En español decimos "la mesa" y en alemán... también puede ser "der Tisch", "die Tisch" o
 "das Tisch" — y solo una de esas opciones es correcta. Bienvenido al primer gran reto del
 alemán: **el género gramatical**.
 
-## Los tres colores del alemán
+La buena noticia: no tienes que memorizar palabra por palabra desde cero. Existen
+categorías de significado y terminaciones que cubren la gran mayoría de los casos.
 
-- 🔵 **der** — masculino
-- 🔴 **die** — femenino
-- 🟢 **das** — neutro
-
-## DER (masculino): categorías por significado
-
-| Categoría                         | Ejemplos                                 |
-| --------------------------------- | ---------------------------------------- |
-| Personas y animales masculinos    | der Mann, der Lehrer, der Arzt, der Hund |
-| Días de la semana (sin excepción) | der Montag, der Samstag, der Sonntag     |
-
-## El truco mental para memorizar
-
-Cuando aprendas una palabra nueva, no la guardes sola: guárdala **con su artículo
-pegado**, como si fuera una sola palabra.
+(… cuerpo de la lección en Markdown normal …)
 ```
-
-## Por qué este archivo es la referencia correcta
-
-- Usa los 4 tipos de `exercises` en un solo lugar, así que sirve de plantilla completa.
-- El cuerpo Markdown usa tablas, un bloque de código (` ``` `) y negritas — el mismo
-  repertorio visual que el resto de las 240 lecciones.
-- El `funFact` no es trivia suelta: siempre conecta con el `grammarTopic` y aparece
-  bajo el eyebrow "💡 Truco para no aburrirte" en la página (ver `LessonLayout.astro`).

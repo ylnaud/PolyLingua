@@ -133,6 +133,26 @@ export interface Dictionary {
    * su única fuente.
    */
   unitDescriptions: Record<string, Record<string, string>>;
+  /**
+   * Nombres de habilidad, SOLO donde hagan falta traducidos.
+   *
+   * Mismo problema y misma forma que `unitDescriptions`: el catálogo de
+   * src/data/skills.ts está indexado por el idioma META (`de.a1.article.der`),
+   * sin eje userLang, así que su `name` —«El género de los sustantivos»— sale
+   * igual en es-de que en en-de. Se ve en la tarjeta de motivo de /practicar y
+   * en la lista de temas flojos del panel.
+   *
+   * Es un MAPA DE EXCEPCIONES, no una copia: la clave es el id de la
+   * habilidad, y si falta se usa el `name` del catálogo. Así el español no se
+   * duplica y skills.ts sigue siendo su única fuente.
+   *
+   * Vacío en los dos idiomas todavía. La caída al catálogo es a propósito y no
+   * es «fallback silencioso al español» en el sentido malo: no hay ninguna otra
+   * fuente de la que sacarlo, y una etiqueta corta sin traducir es preferible a
+   * un hueco. Lo que NUNCA cae de un idioma a otro es la glosa de las
+   * plantillas de refuerzo, que es donde está la enseñanza.
+   */
+  skillNames: Record<string, string>;
   languageDescriptions: Record<'de' | 'en' | 'es' | 'fr' | 'it' | 'pt', string>;
   silo: {
     idiomas: string;
@@ -487,7 +507,8 @@ export interface Dictionary {
     racha: { cta: string; texto: string; textos: string };
     copia: { texto: string; cta: string };
     /** Avisos del bucle de refuerzo, escritos sobre el ítem fallado. */
-    refuerzo: { pausado: string; otraVez: string };
+    /** `dominado` cierra el bucle y lleva {tema}, el nombre de la habilidad. */
+    refuerzo: { pausado: string; otraVez: string; dominado: string };
     /** Botón de modo shadowing: está en el header y en el menú «Más». */
     shadowing: { aria: string; etiqueta: string };
     /** Selector de idioma de INTERFAZ del header (no el de idioma a aprender). */
@@ -630,6 +651,7 @@ export const es: Dictionary = {
   },
   // Vacío a propósito: units.ts ya guarda estas descripciones en español.
   unitDescriptions: {},
+  skillNames: {},
   languageTaglines: {
     de: 'Precisión, casos y palabras larguísimas',
     en: 'El idioma que ya usas sin saberlo',
@@ -1015,6 +1037,7 @@ export const es: Dictionary = {
       pausado:
         'Este tema se te está resistiendo hoy. Seguimos con la lección y te lo guardo para «Practicar ahora».',
       otraVez: 'Vamos otra vez con la misma estructura, en otra frase.',
+      dominado: 'Tres seguidos con {tema}. Tema dominado: seguimos con la lección.',
     },
     shadowing: {
       aria: 'Modo shadowing: repetir en voz alta antes de seguir',
@@ -1216,6 +1239,11 @@ export const en: Dictionary = {
       3: 'Idiomatic use and nuance with prepositions',
     },
   },
+  // Vacío: las 95 habilidades alemanas siguen mostrando el `name` del catálogo,
+  // que está en español. Es contenido pendiente, no un fallo del mecanismo —
+  // con añadir aquí `'de.a1.article.der-die-das': 'The articles der/die/das'`
+  // esa etiqueta pasa a inglés sin tocar una línea de código.
+  skillNames: {},
   languageTaglines: {
     de: 'Precision, cases and gloriously long words',
     en: 'The language you already use without noticing',
@@ -1601,6 +1629,7 @@ export const en: Dictionary = {
       pausado:
         'This topic is fighting back today. We will carry on with the lesson and save it for "Practise now".',
       otraVez: 'Same structure once more, in a different sentence.',
+      dominado: 'Three in a row with {tema}. Topic mastered: back to the lesson.',
     },
     shadowing: {
       aria: 'Shadowing mode: say it out loud before moving on',

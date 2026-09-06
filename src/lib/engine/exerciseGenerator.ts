@@ -194,6 +194,48 @@ export interface RepairTemplate {
   variations: RepairVariation[];
 }
 
+/**
+ * Los DOS ejes de idioma de una plantilla.
+ *
+ * Una plantilla mezcla dos cosas que no dependen de lo mismo:
+ *
+ *   - `sentence` y `answer` son del idioma META (el alemán que se aprende).
+ *     No cambian según quién lo estudie.
+ *   - `explanation` y `translation` son del idioma del USUARIO. «Heute lerne
+ *     ich Deutsch» se explica en español a un hispanohablante y en inglés a un
+ *     angloparlante.
+ *
+ * REPAIR_TEMPLATES está indexado por `skillId`, que lleva el idioma meta
+ * delante (`de.a1.…`), así que una sola entrada servía a es-de y a en-de por
+ * igual: el curso inglés recibía la explicación en castellano.
+ *
+ * En vez de duplicar las 253 plantillas —con sus frases alemanas, que son
+ * idénticas— se separa la GLOSA: solo los campos del usuario, por idioma. Es
+ * la misma forma que `TSA`/`TSA_EN` en src/data/tsa.ts y que
+ * `unitDescriptions` en el diccionario.
+ */
+export interface RepairGloss {
+  explanation: string;
+  /** Paralelo a `variations`, por índice. */
+  translations: string[];
+}
+
+/**
+ * Glosas por idioma de interfaz, para los que NO son el glosado por defecto.
+ *
+ * Vacío a propósito: la arquitectura entra primero y el contenido después. Con
+ * el mapa vacío, `repairTemplateFor(id, 'en')` devuelve `null` y el silo
+ * inglés simplemente no abre bucle de refuerzo — que es lo correcto mientras
+ * no haya nada que mostrarle en su idioma.
+ *
+ * Para activarlo: añadir la entrada del skillId, con tantas `translations`
+ * como variaciones tenga su plantilla. No hace falta tocar ni una línea de
+ * código; la función de abajo la recoge sola.
+ */
+export const REPAIR_GLOSSES: Record<string, Record<string, RepairGloss>> = {
+  en: {},
+};
+
 export const REPAIR_TEMPLATES: RepairTemplate[] = [
   {
     skillId: 'de.a1.wordorder.time-verb-subject',
@@ -9917,13 +9959,60 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
   },
 ];
 
-export function repairTemplateFor(skillId: string): RepairTemplate | null {
-  return REPAIR_TEMPLATES.find((t) => t.skillId === skillId) ?? null;
+/**
+ * El idioma en el que están escritas las `explanation` y `translation` de
+ * REPAIR_TEMPLATES.
+ *
+ * Se declara acá y no se importa de src/lib/courses.ts —donde vive el
+ * `SPANISH_GLOSS_USER_LANG` equivalente— porque ese módulo importa
+ * `astro:content`, y este archivo es lógica pura: lo cargan vitest y el bundle
+ * de cliente. Son dos caracteres duplicados a cambio de no arrastrar Astro al
+ * motor.
+ */
+export const DEFAULT_GLOSS_LANG = 'es';
+
+/**
+ * La plantilla de una habilidad, glosada en el idioma del usuario.
+ *
+ * El defecto es `'es'` sólo por compatibilidad con las llamadas que aún no
+ * pasan el idioma; las del flujo real lo pasan siempre.
+ *
+ * NO hay fallback entre idiomas, y es la regla que importa: si falta la glosa
+ * inglesa devuelve `null`, nunca la española. Enseñarle a un angloparlante una
+ * explicación en castellano es peor que no reforzar — la traducción de la
+ * frase alemana ES la enseñanza, así que en el idioma equivocado no enseña
+ * nada. Mismo criterio que tsaFor() en src/data/tsa.ts.
+ */
+export function repairTemplateFor(
+  skillId: string,
+  userLang: string = DEFAULT_GLOSS_LANG,
+): RepairTemplate | null {
+  const base = REPAIR_TEMPLATES.find((t) => t.skillId === skillId) ?? null;
+  if (!base) return null;
+  if (userLang === DEFAULT_GLOSS_LANG) return base;
+
+  const gloss = REPAIR_GLOSSES[userLang]?.[skillId];
+  if (!gloss) return null;
+
+  // Las frases del idioma meta se conservan tal cual; solo se sustituye lo que
+  // pertenece al usuario.
+  return {
+    ...base,
+    explanation: gloss.explanation,
+    variations: base.variations.map((v, i) => ({
+      ...v,
+      translation: gloss.translations[i],
+    })),
+  };
 }
 
 /** Convierte una plantilla en ejercicios `fill-blank` listos para pintar. */
-export function generateRepairSet(skill: Skill, count = 5): Exercise[] {
-  const plantilla = repairTemplateFor(skill.id);
+export function generateRepairSet(
+  skill: Skill,
+  count = 5,
+  userLang: string = DEFAULT_GLOSS_LANG,
+): Exercise[] {
+  const plantilla = repairTemplateFor(skill.id, userLang);
   if (!plantilla) return [];
   return plantilla.variations
     .slice(0, count)

@@ -3,7 +3,6 @@
 // resolver sus dos textos en el idioma de la página. Se monta una vez en
 // BaseLayout, junto a EngineTracker.
 import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
-import { SPANISH_GLOSS_USER_LANG } from '../lib/courses';
 import { getDictionary } from '../i18n';
 
 interface Props {
@@ -12,35 +11,33 @@ interface Props {
 
 const { userLang } = Astro.props;
 const pageLang = userLang ?? ACTIVE_USER_LANGUAGES[0].id;
-const t = getDictionary(pageLang as never).widgets.refuerzo;
+const dict = getDictionary(pageLang as never);
+const t = dict.widgets.refuerzo;
 
-// El bucle de refuerzo solo se abre donde sus plantillas están escritas.
-//
-// REPAIR_TEMPLATES (src/lib/engine/exerciseGenerator.ts) guarda la
-// `explanation` y la `translation` de cada variación en UN solo idioma, el
-// español, indexadas por skillId —que lleva el idioma META, no el de
-// interfaz—. Así que la misma plantilla sirve a es-de y a en-de, y en una
-// lección inglesa el aviso salía en castellano: «💡 Presente regular: se quita
-// el -en del infinitivo…». Y no tras fallar repetido, sino al PRIMER fallo,
-// que es cuando se abre el bucle.
-//
-// Sin equivalente inglés no hay nada que mostrar, así que no se muestra nada:
-// la lección se comporta como antes de etiquetar en-de. Es la misma decisión
-// que toma tsaFor() en src/data/tsa.ts —devolver null en vez de caer al
-// castellano— y por el mismo motivo: media página en otro idioma es peor que
-// media función de menos. Cuando existan las plantillas inglesas, este flag se
-// deriva de eso y el bucle vuelve solo.
-const conPlantillas = pageLang === SPANISH_GLOSS_USER_LANG;
+// Los nombres de habilidad, en el idioma de la página. El catálogo
+// (src/data/skills.ts) los guarda en un solo idioma porque está indexado por
+// el idioma META; `skillNames` es el mapa de excepciones por userLang. Vacío
+// todavía: lo que falta es el contenido, no el mecanismo.
+const skillNames = dict.skillNames;
 ---
 
 {
   /* Los avisos los escribe el <script> sobre el ítem fallado, así que sus
      textos viajan por data-* — el patrón del proyecto para pasarle datos del
      servidor al JS de cliente. Comentario de Astro, no HTML: uno de HTML se
-     publicaría en las 1042 páginas. */
+     publicaría en las 1042 páginas.
+
+     `data-drill-lang` es el idioma de la página, no un booleano: quién decide
+     si hay bucle es repairTemplateFor(), que devuelve la plantilla glosada o
+     null. Antes había acá una condición escrita a mano («¿es español?») y eso
+     era una segunda fuente de verdad que podía desincronizarse del contenido
+     real. */
 }
-<span hidden data-drill-strings={JSON.stringify(t)} data-drill-enabled={String(conPlantillas)}
-></span>
+<span
+  hidden
+  data-drill-strings={JSON.stringify(t)}
+  data-drill-lang={pageLang}
+  data-skill-names={JSON.stringify(skillNames)}></span>
 
 <style is:global>
   /* Estilos globales, no scoped: estos nodos los crea el JS y por eso nunca
@@ -98,13 +95,13 @@ const conPlantillas = pageLang === SPANISH_GLOSS_USER_LANG;
 </style>
 
 <script>
-  /** Los dos textos del tutor, puestos por el servidor en [data-drill-strings]. */
-  function textos(): { pausado: string; otraVez: string } {
+  /** Los textos del tutor, puestos por el servidor en [data-drill-strings]. */
+  function textos(): { pausado: string; otraVez: string; dominado: string } {
     const el = document.querySelector<HTMLElement>('[data-drill-strings]');
     try {
       return JSON.parse(el?.dataset.drillStrings ?? '{}');
     } catch {
-      return { pausado: '', otraVez: '' };
+      return { pausado: '', otraVez: '', dominado: '' };
     }
   }
 
@@ -135,6 +132,7 @@ const conPlantillas = pageLang === SPANISH_GLOSS_USER_LANG;
   import { SKILL_MAP } from '../data/skills';
   import { repairTemplateFor, toRepairExercise } from '../lib/engine/exerciseGenerator';
   import { skillsForItem, declareItemSkills } from '../lib/itemSkills';
+  import { fill } from '../lib/pageStrings';
 
   const ACIERTOS_PARA_SALIR = 3;
   const MAX_INSERTADOS = 6;
@@ -153,27 +151,36 @@ const conPlantillas = pageLang === SPANISH_GLOSS_USER_LANG;
 
   const bucles = new Map<string, Bucle>();
 
+  /** El idioma de interfaz de la página, que es el de la glosa que hace falta. */
+  function langDePagina(): string {
+    return document.querySelector<HTMLElement>('[data-drill-lang]')?.dataset.drillLang ?? 'es';
+  }
+
+  /** Nombre de la habilidad en el idioma de la página, con caída al catálogo. */
+  function nombreDe(skillId: string): string {
+    const raw = document.querySelector<HTMLElement>('[data-skill-names]')?.dataset.skillNames;
+    try {
+      const mapa = raw ? (JSON.parse(raw) as Record<string, string>) : {};
+      if (mapa[skillId]) return mapa[skillId];
+    } catch {}
+    return SKILL_MAP[skillId]?.name ?? skillId;
+  }
+
   /**
    * La habilidad que se va a reforzar por este ítem.
    *
-   * De todas las que ejercita, la primera que tenga plantilla de refuerzo: sin
-   * plantilla no hay con qué insistir, y proponer un ejercicio de otro tema
-   * sería peor que no hacer nada. Hoy tienen plantilla las de gramática y orden
-   * de palabras de A1 alemán; el resto simplemente no abre bucle.
+   * De todas las que ejercita, la primera que tenga plantilla de refuerzo EN EL
+   * IDIOMA DE LA PÁGINA: sin plantilla no hay con qué insistir, y proponer un
+   * ejercicio de otro tema —o en otro idioma— sería peor que no hacer nada.
+   *
+   * Que exista la plantilla localizada es la única condición; no hay ninguna
+   * bandera aparte que diga «este idioma sí, este no». Cuando se escriba la
+   * glosa inglesa de una habilidad, su bucle se enciende solo.
    */
-  /** ¿Hay plantillas en el idioma de esta página? Lo decide el servidor. */
-  function bucleDisponible(): boolean {
-    const el = document.querySelector<HTMLElement>('[data-drill-enabled]');
-    return el?.dataset.drillEnabled === 'true';
-  }
-
   function habilidadReforzable(itemId: string): string | null {
-    // Sin plantillas en el idioma de la página no se abre bucle: mostrar la
-    // explicación española en una lección inglesa es peor que no reforzar.
-    // Ver el comentario del frontmatter.
-    if (!bucleDisponible()) return null;
+    const lang = langDePagina();
     const conPlantilla = skillsForItem(itemId).filter(
-      (id) => SKILL_MAP[id] && repairTemplateFor(id),
+      (id) => SKILL_MAP[id] && repairTemplateFor(id, lang),
     );
     return conPlantilla[0] ?? null;
   }
@@ -200,7 +207,7 @@ const conPlantillas = pageLang === SPANISH_GLOSS_USER_LANG;
   /** Inserta UNA variación nueva del patrón. Devuelve si pudo. */
   function insertarRefuerzo(root: HTMLElement, skillId: string, bucle: Bucle): boolean {
     const skill = SKILL_MAP[skillId];
-    const plantilla = repairTemplateFor(skillId);
+    const plantilla = repairTemplateFor(skillId, langDePagina());
     if (!skill || !plantilla) return false;
 
     const libres = plantilla.variations.map((_, i) => i).filter((i) => !bucle.usados.includes(i));
@@ -248,7 +255,7 @@ const conPlantillas = pageLang === SPANISH_GLOSS_USER_LANG;
         if (item) {
           tip(
             item,
-            `Tres seguidos con ${SKILL_MAP[skillId].name.toLowerCase()}. Tema dominado: seguimos con la lección.`,
+            fill(textos().dominado, { tema: nombreDe(skillId).toLowerCase() }),
             '✅',
             'is-done',
           );
@@ -283,7 +290,7 @@ const conPlantillas = pageLang === SPANISH_GLOSS_USER_LANG;
     bucle.activo = true;
 
     if (item) {
-      const plantilla = repairTemplateFor(skillId);
+      const plantilla = repairTemplateFor(skillId, langDePagina());
       tip(
         item,
         estabaAbierto ? textos().otraVez : (plantilla?.explanation ?? ''),

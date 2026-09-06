@@ -3,11 +3,7 @@ import SiloToolPage from '../../../components/SiloToolPage.astro';
 import Practice from '../../../components/Practice.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { SKILLS } from '../../../data/skills';
-import {
-  getCourseLessons,
-  getCourseStaticPaths,
-  SPANISH_GLOSS_USER_LANG,
-} from '../../../lib/courses';
+import { getCourseLessons, getCourseStaticPaths } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
 import { fill } from '../../../lib/interpolate';
 
@@ -47,29 +43,26 @@ const bank = lessons.flatMap((l) => {
 
 const skills = SKILLS.filter((s) => s.lang === targetLang);
 
-// La reparación intensiva solo se ofrece donde sus plantillas están escritas.
-//
-// REPAIR_TEMPLATES guarda `explanation` y `translation` en un solo idioma, el
-// español, indexadas por skillId —que lleva el idioma META—, así que la misma
-// plantilla sirve a es-de y a en-de. Sin este filtro, un angloparlante con
-// errores acumulados recibía cinco ejercicios con la explicación y las
-// traducciones en castellano. Se cae al `generateExercise()` normal, que tira
-// del banco de las propias lecciones y por tanto está en inglés.
-//
-// Mismo criterio que el gate de DrillTutor.astro y que tsaFor() en tsa.ts.
-const repairEnabled = userLang === SPANISH_GLOSS_USER_LANG;
-
 // Los textos de la página. Estaban escritos a mano en el markup —era la única
 // de las seis herramientas así— y por eso /en/de/practicar salía en español
 // aunque el diccionario inglés estuviera completo.
 const t = dict.tools.practicar;
 // Los que pinta el <script> sobre la sesión ya armada no pueden leer el
 // diccionario (se resuelve en el servidor): van por [data-page-strings].
+//
+// `userLang` viaja con ellos porque el <script> se lo pasa a
+// repairTemplateFor(): la reparación intensiva usa las plantillas, y esas
+// tienen su glosa —`explanation` y `translation`— en un idioma concreto. Sin
+// glosa en el idioma de la página no hay tanda de reparación y se cae al
+// `generateExercise()` normal, que tira del banco de las propias lecciones y
+// por tanto ya está en el idioma correcto.
 const pageStrings = {
+  userLang,
   elegidos: t.elegidos,
   progresoGeneral: t.progresoGeneral,
   motivos: t.motivos,
   categorias: t.categorias,
+  skillNames: dict.skillNames,
 };
 ---
 
@@ -147,7 +140,6 @@ const pageStrings = {
 
   <div hidden data-skill-bank={JSON.stringify(bank)}></div>
   <div hidden data-skill-catalog={JSON.stringify(skills)}></div>
-  <div hidden data-repair-enabled={String(repairEnabled)}></div>
   <div hidden data-page-strings={JSON.stringify(pageStrings)}></div>
 </SiloToolPage>
 
@@ -170,11 +162,25 @@ const pageStrings = {
   // la página; el fallback es el español, que es lo que había escrito a mano
   // acá antes y lo que se usaría si el atributo faltara.
   const S = readPageStrings({
+    userLang: 'es',
     elegidos: '{n} ejercicios elegidos para ti.',
     progresoGeneral: 'Progreso general {pct}% · {n} de {total} habilidades empezadas',
     motivos: {} as Record<string, { tag: string; texto: string }>,
     categorias: {} as Record<string, string>,
+    skillNames: {} as Record<string, string>,
   });
+
+  /**
+   * Nombre de la habilidad en el idioma de la página.
+   *
+   * El catálogo (src/data/skills.ts) está indexado por el idioma META, así que
+   * su `name` sale igual en es-de que en en-de. `skillNames` es el mapa de
+   * excepciones por userLang; si no hay entrada se usa el del catálogo, que es
+   * mejor que un hueco para una etiqueta corta.
+   */
+  function nombreDe(skill: Skill): string {
+    return S.skillNames[skill.id] ?? skill.name;
+  }
 
   function readJson<T>(selector: string, attr: string, fallback: T): T {
     const el = document.querySelector<HTMLElement>(selector);
@@ -200,11 +206,6 @@ const pageStrings = {
 
     const bank = readJson<BankItem[]>('[data-skill-bank]', 'skillBank', []);
     const catalog = readJson<Skill[]>('[data-skill-catalog]', 'skillCatalog', []);
-    // Lo decide el servidor: las plantillas de reparación solo existen en
-    // español. Ver el comentario del frontmatter.
-    const repairEnabled =
-      document.querySelector<HTMLElement>('[data-repair-enabled]')?.dataset.repairEnabled ===
-      'true';
     const state = getState();
 
     // El motor decide. La página solo pinta lo que le dicen.
@@ -224,8 +225,11 @@ const pageStrings = {
       // Reparación intensiva: cinco variaciones dirigidas al patrón, no un
       // ejercicio suelto. Es la diferencia entre "volvé a intentarlo" y
       // "vamos a trabajar esto".
-      if (repairEnabled && candidato.error && needsIntensiveRepair(candidato.error)) {
-        const tanda = generateRepairSet(skill, 5);
+      // `S.userLang` decide de qué glosa se tira. Si no hay plantilla en ese
+      // idioma, generateRepairSet devuelve [] y se sigue con el ejercicio
+      // normal: la condición es que exista el contenido, no una bandera.
+      if (candidato.error && needsIntensiveRepair(candidato.error)) {
+        const tanda = generateRepairSet(skill, 5, S.userLang);
         if (tanda.length > 0) {
           for (const ej of tanda) ejercicios.push({ exercise: ej, candidate: candidato });
           continue;
@@ -271,7 +275,7 @@ const pageStrings = {
       caja.hidden = false;
       const tag = caja.querySelector<HTMLElement>('[data-reason-tag]');
       const texto = caja.querySelector<HTMLElement>('[data-reason-text]');
-      if (tag) tag.textContent = `${motivo.tag}${skill ? ` · ${skill.name}` : ''}`;
+      if (tag) tag.textContent = `${motivo.tag}${skill ? ` · ${nombreDe(skill)}` : ''}`;
       if (texto) {
         // En reparación se explica la regla antes de preguntar: explicación
         // corta, producción, repetición. No una clase.
@@ -383,7 +387,7 @@ const pageStrings = {
         if (!skill) continue;
         const p = state.progress[skill.id];
         const li = document.createElement('li');
-        li.textContent = `${semaforo(p?.status ?? 'new')} ${skill.name}`;
+        li.textContent = `${semaforo(p?.status ?? 'new')} ${nombreDe(skill)}`;
         if (c.error) li.textContent += ` · ${c.error.occurrences} fallos`;
         lista.appendChild(li);
       }

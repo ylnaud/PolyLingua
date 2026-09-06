@@ -25,6 +25,8 @@ import {
 } from '../src/lib/engine/repetition';
 import {
   REPAIR_TEMPLATES,
+  REPAIR_GLOSSES,
+  DEFAULT_GLOSS_LANG,
   generateRepairSet,
   repairTemplateFor,
   toRepairExercise,
@@ -552,5 +554,98 @@ describe('plantillas de refuerzo', () => {
       const data = pintado(ej.render?.data);
       expect(data.answer ?? data.sentence).toBeTruthy();
     }
+  });
+});
+
+/**
+ * Los dos ejes de idioma de una plantilla.
+ *
+ * `sentence` y `answer` son del idioma META y no dependen de quién estudie;
+ * `explanation` y `translation` son del USUARIO. REPAIR_TEMPLATES está
+ * indexado solo por skillId, que lleva el meta, así que sin estos candados una
+ * plantilla española se serviría tal cual al curso inglés.
+ *
+ * La regla que vigilan: sin glosa en el idioma pedido se devuelve `null`,
+ * NUNCA la glosa de otro idioma.
+ */
+describe('glosa de las plantillas por idioma de usuario', () => {
+  const ID = 'de.a1.wordorder.basic';
+
+  it('es → de conserva el comportamiento actual', () => {
+    const base = REPAIR_TEMPLATES.find((t) => t.skillId === ID)!;
+    // Sin argumento (las llamadas viejas) y con 'es' explícito dan lo mismo.
+    expect(repairTemplateFor(ID)).toEqual(base);
+    expect(repairTemplateFor(ID, 'es')).toEqual(base);
+    expect(repairTemplateFor(ID, DEFAULT_GLOSS_LANG)).toEqual(base);
+  });
+
+  it('en → de sin glosa devuelve null', () => {
+    expect(repairTemplateFor(ID, 'en')).toBeNull();
+    // Y por tanto no hay tanda de reparación que ofrecer.
+    const skill = SKILLS.find((s) => s.id === ID)!;
+    expect(generateRepairSet(skill, 5, 'en')).toEqual([]);
+  });
+
+  it('en → de nunca devuelve la glosa española', () => {
+    // El candado de verdad: NINGUNA plantilla, de ningún idioma meta, puede
+    // devolver contenido cuando se pide en un idioma sin glosa escrita.
+    for (const t of REPAIR_TEMPLATES) {
+      expect(repairTemplateFor(t.skillId, 'en'), `${t.skillId} filtró la glosa`).toBeNull();
+    }
+  });
+
+  it('una skill puede tener glosas distintas para es y en', () => {
+    // Se inyecta una glosa inglesa de mentira para probar el mecanismo sin
+    // añadir contenido real, y se retira al terminar.
+    const base = REPAIR_TEMPLATES.find((t) => t.skillId === ID)!;
+    REPAIR_GLOSSES.en[ID] = {
+      explanation: 'TEST-EN explanation',
+      translations: base.variations.map((_, i) => `TEST-EN translation ${i}`),
+    };
+    try {
+      const en = repairTemplateFor(ID, 'en')!;
+      const es = repairTemplateFor(ID, 'es')!;
+
+      // La glosa cambia...
+      expect(en.explanation).toBe('TEST-EN explanation');
+      expect(es.explanation).toBe(base.explanation);
+      expect(en.explanation).not.toBe(es.explanation);
+      expect(en.variations[0].translation).toBe('TEST-EN translation 0');
+
+      // ...y las frases del idioma meta NO.
+      expect(en.variations.map((v) => v.sentence)).toEqual(base.variations.map((v) => v.sentence));
+      expect(en.variations.map((v) => v.answer)).toEqual(base.variations.map((v) => v.answer));
+
+      // Y el ejercicio pintado hereda la glosa correcta.
+      const skill = SKILLS.find((s) => s.id === ID)!;
+      const tanda = generateRepairSet(skill, 2, 'en');
+      expect(tanda).toHaveLength(2);
+      expect(tanda[0].explanation).toBe('TEST-EN explanation');
+    } finally {
+      delete REPAIR_GLOSSES.en[ID];
+    }
+  });
+
+  it('el mapa de glosas no lleva contenido todavía', () => {
+    // Que este test falle es la señal de que alguien empezó a traducir: hay que
+    // actualizarlo entonces, no antes. Sirve para que las 632 piezas pendientes
+    // no entren por accidente creyendo que ya estaban.
+    expect(Object.keys(REPAIR_GLOSSES.en)).toEqual([]);
+  });
+});
+
+describe('nombres de habilidad localizados', () => {
+  it('el catálogo sigue siendo la fuente y ningún id se queda sin nombre', () => {
+    for (const s of SKILLS) expect(s.name, `${s.id} sin nombre`).toBeTruthy();
+  });
+
+  it('la lectura localizada cae al catálogo cuando no hay traducción', () => {
+    // Es la misma expresión que usan practicar.astro y DrillTutor.astro.
+    const skillNames: Record<string, string> = {};
+    const s = SKILLS.find((x) => x.id === 'de.a1.wordorder.basic')!;
+    expect(skillNames[s.id] ?? s.name).toBe(s.name);
+
+    skillNames[s.id] = 'Word order: verb second';
+    expect(skillNames[s.id] ?? s.name).toBe('Word order: verb second');
   });
 });

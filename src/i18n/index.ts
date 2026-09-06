@@ -1,14 +1,16 @@
 import type { UserLanguageId } from '../data/userLanguages';
-import { es, type Dictionary } from './dictionary';
+import { en, es, type Dictionary } from './dictionary';
 
-// Un diccionario por UserLanguageId. Hoy solo existe `es`, el único idioma
-// de interfaz activo (ver src/data/userLanguages.ts). Hubo uno en alemán y se
-// quitó: la decisión es mantener la interfaz en un solo idioma. Agregar uno
-// nuevo acá es el paso real de "traducir la interfaz", además de activarlo en
-// USER_LANGUAGES — y el tipo Dictionary no admite claves parciales, así que
-// tiene que estar completo o el build falla.
+// Un diccionario por UserLanguageId. Hoy existen `es` y `en`, los dos idiomas
+// de interfaz activos (ver src/data/userLanguages.ts). Hubo uno en alemán y se
+// quitó junto con sus cursos `de-*`.
+//
+// Agregar uno nuevo acá es el paso real de "traducir la interfaz", y va ANTES
+// de activarlo en USER_LANGUAGES, nunca al revés: el tipo Dictionary no
+// admite claves parciales, así que o está completo o el build falla.
 const dictionaries: Partial<Record<UserLanguageId, Dictionary>> = {
   es,
+  en,
 };
 
 // Si el userLang pedido todavía no tiene diccionario propio, cae a `es`

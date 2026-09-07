@@ -1,7 +1,17 @@
 import { describe, it, expect } from 'vitest';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { escanear, textoVisible, PALABRAS_ES, ENDONIMO } from './lib/spanish-scan';
+import {
+  escanear,
+  textoVisible,
+  textoDeAtributos,
+  cadenasEspanolasVigiladas,
+  fugasDeDiccionario,
+  PALABRAS_ES,
+  ENDONIMO,
+} from './lib/spanish-scan';
+import { es, en } from '../src/i18n/dictionary';
+import { LEVELS } from '../src/data/levels';
 
 /**
  * U-01 del Gauntlet · Pureza de idioma del silo inglés.
@@ -99,8 +109,9 @@ describe('U-01 · sensibilidad del detector (fixtures, sin build)', () => {
   });
 
   it('ignora el español que vive dentro de <script>', () => {
-    // El JS de este proyecto está escrito en español. Sin esta exclusión el
-    // detector daría 1586 falsos positivos y acabaría desactivado.
+    // El JS de este proyecto está escrito en español; sin esta exclusión el
+    // detector se ahoga en ruido. Cuánto ruido lo mide el test de más abajo
+    // sobre el build real, en vez de copiar aquí un número que se queda viejo.
     const r = escanear(
       envuelve('<p>Check</p><script>const siguiente = "Todavía no hay lecciones";</script>'),
     );
@@ -138,6 +149,24 @@ describe('U-01 · sensibilidad del detector (fixtures, sin build)', () => {
       ),
     );
     expect(r.hallazgos).toEqual([]);
+  });
+
+  it('data-title NO se confunde con title (el guion no es frontera de palabra)', () => {
+    // La ronda 2 usaba `\b` delante del nombre del atributo, así que
+    // `data-title=` casaba y el detector leía atributos de máquina mientras el
+    // test de arriba afirmaba lo contrario. El caso que lo prueba tiene que ser
+    // un data-* que TERMINE en un nombre vigilado, no uno cualquiera.
+    expect(textoDeAtributos('<span data-title="Volver arriba y seguí">x</span>')).toBe('');
+    expect(textoDeAtributos('<span title="Volver arriba">x</span>')).toContain('Volver');
+  });
+
+  it('ve el aria-label aunque venga con comilla simple', () => {
+    expect(textoDeAtributos("<button aria-label='Volver arriba'>x</button>")).toContain('Volver');
+  });
+
+  it('ve la meta description con los atributos en cualquier orden', () => {
+    const alReves = '<meta content="Aprender alemán desde cero" name="description">';
+    expect(textoDeAtributos(alReves)).toContain('alemán');
   });
 
   it('conoce el voseo rioplatense, que es como escribe este proyecto', () => {
@@ -224,5 +253,100 @@ describe('U-01 · sensibilidad del detector (fixtures, sin build)', () => {
       'la',
     ];
     expect(PALABRAS_ES.filter((p) => prohibidas.includes(p))).toEqual([]);
+  });
+});
+
+describe('U-01 · segundo detector: cadenas del diccionario español', () => {
+  // La lista de palabras falló dos rondas seguidas por lo mismo: es cerrada y
+  // siempre tiene huecos («acá» en la ronda 1, «Principiante» en la ronda 2).
+  // Esto no adivina qué es español: coge las cadenas españolas que el proyecto
+  // tiene de verdad y comprueba que ninguna se publica en una página inglesa.
+  // Se mantiene solo, y habría cazado los dos fallos anteriores.
+  const VIGILADAS = cadenasEspanolasVigiladas(es, en);
+
+  it('hay cadenas que vigilar (control de la propia comprobación)', () => {
+    // El umbral solo demuestra que el conjunto no se ha quedado vacío por un
+    // filtro mal puesto. Hoy son 197; se pide 150 para no convertir una cifra
+    // exacta en otro número frágil que haya que perseguir a cada cambio del
+    // diccionario. Que sea >= 150 y no == 197 es deliberado.
+    expect(VIGILADAS.length).toBeGreaterThanOrEqual(150);
+  });
+
+  it('ninguna cadena del diccionario español se publica en /en/', () => {
+    const fallos: string[] = [];
+    for (const f of PAGINAS_EN) {
+      for (const s of fugasDeDiccionario(readFileSync(f, 'utf-8'), VIGILADAS)) {
+        fallos.push(`${relative(DIST, f)} · «${s}»`);
+      }
+    }
+    expect(fallos, `cadenas españolas en el silo inglés:\n${fallos.join('\n')}`).toEqual([]);
+  });
+
+  it('los nombres de nivel salen del diccionario, no de LEVELS', () => {
+    // src/data/levels.ts guarda una sola versión, en español, y StartLevelPicker
+    // la publicaba tal cual: /en/de/ mostraba «A1 · Principiante» justo encima
+    // de «A1 · Beginner». Mismo defecto que ya tuvo examen.astro con el nombre
+    // del idioma. Este candado lo fija para los dos silos.
+    const españoles = LEVELS.map((l) => l.name);
+    const fallos: string[] = [];
+    for (const f of PAGINAS_EN) {
+      const texto = textoVisible(readFileSync(f, 'utf-8'));
+      for (const n of españoles)
+        if (texto.includes(n)) fallos.push(`${relative(DIST, f)} · «${n}»`);
+    }
+    expect(fallos, `nombres de nivel en español en /en/:\n${fallos.join('\n')}`).toEqual([]);
+  });
+
+  it('el control funciona: esas mismas cadenas SÍ aparecen en /es/', () => {
+    const marcadas = PAGINAS_ES.filter(
+      (f) => fugasDeDiccionario(readFileSync(f, 'utf-8'), VIGILADAS).length > 0,
+    ).length;
+    expect(marcadas).toBeGreaterThanOrEqual(400);
+  });
+});
+
+describe('U-01 · el control invertido protege palabra por palabra', () => {
+  // El control «marca ≥400 páginas de /es/» es demasiado grueso: el Critic
+  // borró las 18 formas de voseo enteras y seguía dando 641/641. Es decir, el
+  // hueco que causó la ronda 1 podía reabrirse sin poner nada en rojo. Estas
+  // frases reales del proyecto obligan a que cada grupo de la lista siga vivo.
+  const CANARIOS: ReadonlyArray<[string, string]> = [
+    ['voseo', 'Seguí por acá'],
+    ['voseo', 'Elegí el nivel'],
+    ['voseo', 'Ya tenés una racha'],
+    ['tildes', 'Todavía no hay lecciones'],
+    ['tildes', '¿Qué idioma querés aprender?'],
+    ['comunes', 'Completa alguna lección primero'],
+    ['comunes', 'Volver arriba'],
+    ['comunes', 'Escribe tu respuesta'],
+  ];
+
+  it.each(CANARIOS)('sigue detectando %s: «%s»', (_grupo, frase) => {
+    const r = escanear(`<html lang="en"><body><p>${frase}</p></body></html>`);
+    expect(r.hallazgos.length, `«${frase}» ya no se detecta`).toBeGreaterThan(0);
+  });
+});
+
+describe('U-01 · la exclusión de <script> se mide, no se afirma', () => {
+  // Este comentario llegó a publicar «270» y luego «1586», y las dos veces era
+  // falso: la magnitud depende de la lista, del build y de la variante del
+  // pipeline. Tres mediciones independientes dieron 1586, 1819 y 1934. Así que
+  // ya no se copia ningún número: se calcula aquí, sobre el build del momento.
+  const RE = new RegExp(`(?<!\\p{L})(${PALABRAS_ES.join('|')})(?!\\p{L})`, 'giu');
+
+  it('sin quitar los <script> hay cientos de coincidencias; quitándolos, cero', () => {
+    let conScripts = 0;
+    let sinScripts = 0;
+    for (const f of PAGINAS_EN) {
+      const raw = readFileSync(f, 'utf-8');
+      const todo = raw
+        .replace(/<style\b[\s\S]*?<\/style>/gi, ' ')
+        .replace(/<!--[\s\S]*?-->/g, ' ')
+        .replace(/<[^>]*>/g, ' ');
+      conScripts += [...`${todo} · ${textoDeAtributos(raw)}`.matchAll(RE)].length;
+      sinScripts += escanear(raw).hallazgos.length;
+    }
+    expect(sinScripts).toBe(0);
+    expect(conScripts, 'la exclusión de <script> ya no filtra nada').toBeGreaterThan(500);
   });
 });

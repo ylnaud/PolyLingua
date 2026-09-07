@@ -170,3 +170,55 @@ $ npm test
 $ npm run check
 - 0 errors  - 0 warnings
 ```
+
+---
+
+# Ronda 3 · tras el segundo `FAIL`
+
+## 8 · El defecto de la ronda 2, medido antes y después
+
+```
+antes  $ grep -rl 'Principiante' dist/en --include=*.html
+       dist/en/de/index.html
+       # texto visible: «Change level 🌱 A1 · Principiante 🧩 A2 · Elemental …
+       #                 👑 C2 · Maestría 🌱 A1 · Beginner Your first words …»
+
+después $ grep -rl 'Principiante' dist/en --include=*.html | wc -l   → 0
+        $ grep -c 'A1 · Beginner' dist/en/de/index.html              → 1
+        $ grep -c 'Principiante' dist/es/de/index.html               → 1   (control)
+```
+
+## 9 · La cifra: tres mediciones, tres números
+
+```
+1586   lista ronda 1 · build ronda 1     (lo que se publicó como si fuera el detector actual)
+1819   medición del Critic
+1934   medición propia, lista actual · build actual
+```
+
+Conclusión: la magnitud no es estable, depende de la lista, del build y de la
+variante del pipeline. Ya no se copia ningún número; el test lo calcula y exige
+`> 500` con `<script>` y `0` sin ellos.
+
+## 10 · El segundo detector caza los tres defectos anteriores
+
+Ejecutado contra el módulo real:
+
+```
+ronda 1 · h2       → CAZADO: ["Seguí por acá"]
+ronda 1 · aria     → CAZADO: ["Volver arriba"]
+ronda 2 · nivel    → CAZADO: ["A1 · Principiante"]
+cadenas vigiladas: 197
+```
+
+Es la prueba de que ataca la clase de defecto y no la instancia: ninguno de los
+tres se cazó ampliando la lista de palabras.
+
+## 11 · Validación
+
+```
+$ npm run build   → 1042 page(s) built
+$ npm test        → 19 files, 538 passed (538)
+$ npm run check   → 0 errors, 0 warnings
+$ npx prettier --check  → All matched files use Prettier code style!
+```

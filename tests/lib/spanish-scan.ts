@@ -17,17 +17,20 @@
 /**
  * El texto que un lector ve, sin nada de lo que hay alrededor.
  *
- * Quitar los `<script>` es EL paso decisivo, y no es una precaución teórica:
- * medido con ESTA lista sobre las 115 páginas del silo inglés, un barrido que
- * no los quita da **1586** coincidencias y quitándolos da 0. El JS de este
- * proyecto está escrito en español —identificadores, comentarios, los `data-*`
- * con JSON de pageStrings— y encima el JSON-LD viaja dentro de un `<script>`.
- * Sin este paso el detector sería inservible por ruido y acabaría desactivado.
+ * Quitar los `<script>` es EL paso decisivo: el JS de este proyecto está escrito
+ * en español —identificadores, comentarios, los `data-*` con JSON de
+ * pageStrings— y encima el JSON-LD viaja dentro de un `<script>`. Sin este paso
+ * el detector sería inservible por ruido y acabaría desactivado.
  *
- * (La primera versión publicaba «270» en tres sitios. Ese número salía de una
- * lista de sondeo de seis palabras usada durante el diagnóstico, no de la lista
- * que se publica aquí: se midió con un instrumento y se reportó como si fuera
- * otro. Lo detectó el Critic de U-01.)
+ * AQUÍ NO VA NINGÚN NÚMERO, y eso es deliberado. Este comentario llegó a decir
+ * «270 coincidencias», luego «1586», y las dos veces era falso: la magnitud
+ * depende de la lista de palabras, del build y de la variante exacta del
+ * pipeline, así que se queda vieja en cuanto se toca cualquiera de los tres. Tres
+ * mediciones independientes de lo mismo dieron 1586, 1819 y 1934. La comprobación
+ * vive ahora en `tests/lang-purity.test.ts`, que la CALCULA sobre el build del
+ * momento y exige que sin quitar los `<script>` haya cientos de coincidencias y
+ * quitándolos cero. Un número que se verifica solo no puede mentir; uno copiado a
+ * mano, sí — y lo hizo dos veces.
  *
  * Quitar las etiquetas descarta de paso todos los valores de atributo, y eso
  * tiene una cara y una cruz. La cara: las rutas (`/en/de/vocabulario`) no se
@@ -56,15 +59,35 @@ export function textoVisible(html: string): string {
  *
  * `href`, `src`, `class`, `id` y los `data-*` quedan fuera a propósito: llevan
  * rutas, identificadores y el JSON que el cliente consume, todo escrito en
- * español por convención del proyecto. Meterlos aquí devolvería los 1586 falsos
- * positivos que la exclusión de `<script>` evita.
+ * español por convención del proyecto. Meterlos aquí ahogaría el detector en
+ * ruido, igual que no quitar los `<script>`.
+ *
+ * Ese límite es real y hoy tapa contenido: `/en/de/practicar` publica el
+ * catálogo entero de habilidades en español dentro de `data-skill-catalog`, y
+ * el JSON-LD de `/en/` lleva «Curso de Alemán». Está declarado en la ficha de
+ * U-01 como límite, no vendido como si no existiera.
  */
 export const ATRIBUTOS_DE_TEXTO = ['aria-label', 'alt', 'title', 'placeholder'] as const;
 
-const RE_ATRIBUTOS = new RegExp(`\\b(?:${ATRIBUTOS_DE_TEXTO.join('|')})\\s*=\\s*"([^"]*)"`, 'gi');
+/**
+ * `(?<![\w-])` y no `\b` delante del nombre: con `\b`, `data-title=` casaba
+ * —el guion es frontera de palabra— y el detector leía atributos de máquina
+ * mientras el test afirmaba lo contrario. Lo señaló el Critic en la ronda 2.
+ * Acepta comilla doble y simple: Astro emite dobles, pero el detector no debería
+ * depender de eso para ver un `aria-label`.
+ */
+const RE_ATRIBUTOS = new RegExp(
+  `(?<![\\w-])(?:${ATRIBUTOS_DE_TEXTO.join('|')})\\s*=\\s*("([^"]*)"|'([^']*)')`,
+  'gi',
+);
 
-/** El `content` de <meta name="description">, que CLAUDE.md exige por página. */
-const RE_META_DESC = /<meta[^>]*\bname="description"[^>]*\bcontent="([^"]*)"/gi;
+/**
+ * El `content` de <meta name="description">, que CLAUDE.md exige por página.
+ * Los atributos pueden venir en cualquier orden, así que se localiza la etiqueta
+ * y se leen sus atributos por separado en vez de exigir `name` antes de
+ * `content`.
+ */
+const RE_META = /<meta\b[^>]*>/gi;
 
 /** El texto legible que vive dentro de atributos, no en el cuerpo. */
 export function textoDeAtributos(html: string): string {
@@ -72,8 +95,13 @@ export function textoDeAtributos(html: string): string {
     .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
     .replace(/<style\b[\s\S]*?<\/style>/gi, ' ');
   const trozos: string[] = [];
-  for (const m of sinScripts.matchAll(RE_ATRIBUTOS)) trozos.push(m[1]);
-  for (const m of sinScripts.matchAll(RE_META_DESC)) trozos.push(m[1]);
+  for (const m of sinScripts.matchAll(RE_ATRIBUTOS)) trozos.push(m[2] ?? m[3] ?? '');
+  for (const m of sinScripts.matchAll(RE_META)) {
+    const etiqueta = m[0];
+    if (!/\bname\s*=\s*["']description["']/i.test(etiqueta)) continue;
+    const c = /\bcontent\s*=\s*("([^"]*)"|'([^']*)')/i.exec(etiqueta);
+    if (c) trozos.push(c[2] ?? c[3] ?? '');
+  }
   return trozos.join(' · ');
 }
 
@@ -312,4 +340,64 @@ export function escanear(html: string): Resultado {
     });
   }
   return { hallazgos, endonimos };
+}
+
+/**
+ * SEGUNDO DETECTOR · cadenas españolas reales, no palabras adivinadas.
+ *
+ * La lista de arriba falló dos rondas seguidas por el mismo motivo estructural:
+ * una lista cerrada de palabras siempre tiene huecos. La ronda 1 se le escapó
+ * «Seguí por acá» (no tenía `acá`); la ronda 2, «A1 · Principiante» (no tenía
+ * `Principiante`). Ampliar la lista después de cada fallo es perseguir el
+ * síntoma.
+ *
+ * Este detector ataca la causa: en vez de adivinar qué palabras son españolas,
+ * toma las cadenas españolas que el proyecto REALMENTE tiene —el diccionario
+ * `es` y los datos que guardan una sola versión, como `LEVELS[].name`— y
+ * comprueba que ninguna se publica literalmente en una página inglesa.
+ *
+ * Se mantiene solo: cualquier cadena nueva en el diccionario español entra al
+ * candado el día que se escribe, sin tocar este archivo. Y habría cazado los dos
+ * fallos anteriores sin saber una palabra de español.
+ *
+ * Lo que NO cubre, y por eso el primer detector sigue haciendo falta: el español
+ * que no viene del diccionario —una lección mal escrita, una cadena a mano en
+ * un componente— no está en ningún catálogo con el que comparar.
+ */
+
+/** Aplana un diccionario a las cadenas hoja que puede ver un usuario. */
+export function cadenasDe(obj: unknown, salida: string[] = []): string[] {
+  if (typeof obj === 'string') {
+    salida.push(obj);
+  } else if (Array.isArray(obj)) {
+    for (const v of obj) cadenasDe(v, salida);
+  } else if (obj && typeof obj === 'object') {
+    for (const v of Object.values(obj)) cadenasDe(v, salida);
+  }
+  return salida;
+}
+
+/**
+ * Las cadenas españolas que serían un defecto si aparecieran en una página
+ * inglesa. Se descartan tres clases, cada una por un motivo comprobable:
+ *
+ * - Las **cortas** (< 12 caracteres): «Sí», «Ver», «A1» coinciden por azar con
+ *   fragmentos de cualquier texto y no distinguen idioma.
+ * - Las **idénticas a su versión inglesa**: si el diccionario dice lo mismo en
+ *   los dos idiomas —«Funktionsverbgefüge», «sch, ch, ck, st, sp»— encontrarla
+ *   en una página inglesa es correcto, no una fuga.
+ * - Las que llevan **marcador** (`{lang}`, `{n}`): nunca se publican literales.
+ */
+export function cadenasEspanolasVigiladas(dictEs: unknown, dictEn: unknown): string[] {
+  const enSet = new Set(cadenasDe(dictEn));
+  return [...new Set(cadenasDe(dictEs))]
+    .filter((s) => s.length >= 12)
+    .filter((s) => !enSet.has(s))
+    .filter((s) => !s.includes('{'));
+}
+
+/** Las cadenas vigiladas que aparecen de verdad en este HTML. */
+export function fugasDeDiccionario(html: string, vigiladas: readonly string[]): string[] {
+  const texto = `${textoVisible(html)} · ${textoDeAtributos(html)}`;
+  return vigiladas.filter((s) => texto.includes(s));
 }

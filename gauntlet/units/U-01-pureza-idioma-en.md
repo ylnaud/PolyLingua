@@ -1,6 +1,6 @@
 # U-01 · Pureza de idioma del silo inglés
 
-- **Estado**: `CRITIC` (ronda 2) — reparada tras un `FAIL`; esperando reveredicto
+- **Estado**: `CRITIC` (ronda 3) — dos `FAIL` reparados; esperando tercer veredicto
 - **Tipo**: `automático`
 - **Depende de**: —
 
@@ -35,8 +35,12 @@ escribía, se ejecutaba y se tiraba.
 3. **Control invertido permanente**: la misma lista marca ≥ 400 páginas de
    `dist/es/`. Si la lista pierde capacidad de detección, este test se pone rojo
    aunque el silo inglés esté impecable.
-4. **Sensibilidad contra fixtures**: 14 casos que no dependen del build.
-5. El mensaje de fallo nombra archivo, palabra y contexto.
+4. **Sensibilidad contra fixtures**: 22 casos que no dependen del build.
+5. **Segundo detector**: ninguna cadena del diccionario español se publica en
+   `/en/`, y los nombres de nivel de `LEVELS` tampoco.
+6. **Control por palabra**: 8 frases canario que el detector debe seguir
+   marcando, una por grupo de la lista.
+7. El mensaje de fallo nombra archivo, palabra y contexto.
 
 ## Cómo se prueba
 
@@ -45,7 +49,7 @@ npm run build
 npx vitest run tests/lang-purity.test.ts
 ```
 
-Resultado: **19 pasando**.
+Resultado: **35 pasando**.
 
 ## Inversión — hecha, no prometida
 
@@ -80,15 +84,23 @@ estructurados y «Alemán» en pantalla.
   hipótesis remota: es exactamente por donde se coló «Seguí por acá» en 58
   páginas durante la ronda 1. Cada palabra que falte es un hueco real. Una
   cadena corta sin ninguna de las ~160 («Hola», «Vale») seguiría pasando.
-- **Solo mira `dist/`.** El texto que el JS de cliente inserta en ejecución —los
-  ítems de `practiceItemMarkup.ts`, por ejemplo— no está en el HTML servido y
-  esta unidad no lo cubre. Es trabajo de U-10 y de los checks de navegador.
+- **Lo que el JS de cliente pinta en ejecución no se cubre.** La razón NO es que
+  no esté en `dist/` —la ronda 2 lo decía así y era falso: está, en
+  `data-skill-catalog`, `data-page-strings`, `data-item-json`—. La razón es que
+  vive en atributos de máquina que el detector no lee, a propósito. Y ahí hay
+  español real hoy: `/en/de/practicar` lleva el catálogo de habilidades en
+  español en `data-skill-catalog`, y el JSON-LD de `/en/` dice «Curso de
+  Alemán». Es trabajo de U-10 y de los checks de navegador.
 - **De los atributos, solo los de texto.** `aria-label`, `alt`, `title`,
   `placeholder` y la meta description sí; `href`, `src`, `class`, `id` y
-  `data-*` no. Si algún día se mete texto de interfaz en un `data-*`, este
-  candado no lo verá.
+  `data-*` no. **No es un riesgo futuro, es el estado actual**: hay texto de
+  interfaz en español dentro de `data-*` ahora mismo, y este candado no lo ve.
 - **Las entidades HTML se le escapan.** `lecci&oacute;n` no casa con `lección`.
   El build de Astro no las genera hoy, pero el detector no lo comprueba.
+- **El segundo detector solo ve lo que está en el diccionario.** El español
+  escrito a mano en un componente, o una lección mal redactada, no está en ningún
+  catálogo con el que comparar: para eso sigue haciendo falta la lista de
+  palabras, con los huecos que tenga.
 - **No juzga calidad.** Que una página no tenga español no dice que su inglés sea
   bueno; eso es revisión de contenido.
 
@@ -143,6 +155,62 @@ to top». El silo español intacto: 294 y 641 respectivamente.
 **Segunda inversión, por la vía que antes era ciega**: se devolvió el literal al
 `aria-label`, rebuild, y el candado se puso **rojo nombrando «Volver» en las
 páginas afectadas**. Restaurado, verde otra vez.
+
+## Ronda 2 — `FAIL`, y el patrón que destapó
+
+El Critic volvió a tumbarla, con dos defectos verificados por mi parte:
+
+**El objetivo seguía siendo falso en el build que el candado certificaba.**
+`/en/de/` publicaba los seis niveles en español —«A1 · Principiante … C2 ·
+Maestría»— un bloque por encima de la escalera que sí los traduce.
+`StartLevelPicker.astro` usaba `LEVELS[].name` de `src/data/levels.ts`, que
+guarda una sola versión, aunque el componente ya recibía `userLang` y el
+diccionario ya tenía `levelNames` en inglés. **Es exactamente el mismo defecto
+que `examen.astro`**, que la ronda 0 celebró haber cazado.
+
+**La cifra de recambio también estaba mal.** `1586` era la lista de la ronda 1
+sobre el build de la ronda 1. El Critic midió 1819; yo, remidiendo, 1934. Tres
+mediciones independientes, tres números.
+
+Y tres apuntes más, todos ciertos: `RE_ATRIBUTOS` empezaba en `\b`, así que
+`data-title=` sí se leía —y el test que decía probar lo contrario usaba
+`data-page-strings`, que no podía casar por construcción—; el detector era ciego
+a la comilla simple y al orden de atributos en la `<meta>`; y el control
+invertido no protegía palabras concretas: borrando las 18 formas de voseo
+enteras, `/es/` seguía dando 641/641 contra un umbral de 400.
+
+## Reparación (ronda 3) — atacar la clase, no la instancia
+
+Dos rondas seguidas con el mismo patrón: **una lista cerrada de palabras siempre
+tiene huecos**. Ronda 1, faltaba `acá`; ronda 2, faltaba `Principiante`. Ampliar
+la lista después de cada fallo es perseguir el síntoma, así que esta ronda añade
+un **segundo detector que no depende de mi vocabulario**:
+
+`cadenasEspanolasVigiladas(es, en)` toma las cadenas del diccionario español,
+descarta las cortas (< 12 caracteres), las idénticas a su versión inglesa y las
+que llevan marcador, y comprueba que ninguna de las 197 restantes se publique en
+`/en/`. Se mantiene solo: una cadena nueva en el diccionario entra al candado el
+día que se escribe. Comprobado que **caza los tres defectos anteriores**:
+
+```
+ronda 1 · h2    → CAZADO: ["Seguí por acá"]
+ronda 1 · aria  → CAZADO: ["Volver arriba"]
+ronda 2 · nivel → CAZADO: ["A1 · Principiante"]
+```
+
+Lo demás de la ronda:
+
+- `StartLevelPicker.astro` usa `dict.levelNames`; de `LEVELS` solo saca emoji y
+  color. «Principiante» en `/en/`: 6 → **0**. Un test lo fija para siempre.
+- **Ningún número copiado a mano.** El test calcula sobre el build del momento
+  que sin quitar los `<script>` haya más de 500 coincidencias y quitándolos cero.
+  Un número que se verifica solo no puede quedarse viejo; uno copiado, sí — y lo
+  hizo dos veces.
+- `(?<![\w-])` en vez de `\b`, comilla simple aceptada, `<meta>` leída con los
+  atributos en cualquier orden, y el test de `data-*` reescrito con `data-title`,
+  que es el caso que de verdad podía colarse.
+- **8 canarios** que el detector debe seguir marcando, uno por grupo de la lista:
+  borrar el voseo entero ahora pone tres tests en rojo.
 
 ## Veredicto del Critic
 

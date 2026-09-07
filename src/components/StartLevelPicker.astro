@@ -21,6 +21,13 @@ const { userLang, targetLang, levelIds } = Astro.props;
 const dict = getDictionary(userLang as never);
 const t = dict.silo.inicio;
 const niveles = LEVELS.filter((l) => levelIds.includes(l.id));
+// El NOMBRE del nivel sale del diccionario; de LEVELS solo el emoji y el color,
+// que no dependen de la interfaz. src/data/levels.ts guarda una sola versión
+// —«A1 · Principiante»— y estas fichas la publicaban tal cual, así que
+// /en/de/ mostraba los seis niveles en español justo encima de la escalera que
+// sí los traduce. Lo encontró el Critic de U-01, no el candado: es el mismo
+// defecto que ya tuvo examen.astro, y por el mismo motivo.
+const nombreNivel = (id: string) => dict.levelNames[id as keyof typeof dict.levelNames];
 ---
 
 <section
@@ -47,11 +54,11 @@ const niveles = LEVELS.filter((l) => levelIds.includes(l.id));
           type="button"
           class="start-level-chip"
           data-start-level-choice={nivel.id}
-          data-level-name={nivel.name}
+          data-level-name={nombreNivel(nivel.id)}
           aria-pressed="false"
           style={`--nivel-color:${nivel.color}`}
         >
-          <span aria-hidden="true">{nivel.emoji}</span> {nivel.name}
+          <span aria-hidden="true">{nivel.emoji}</span> {nombreNivel(nivel.id)}
         </button>
       ))
     }

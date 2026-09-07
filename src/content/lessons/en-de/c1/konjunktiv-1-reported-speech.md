@@ -7,6 +7,8 @@ order: 1
 unit: 1
 grammarTopic: 'Konjunktiv I for indirect/reported speech'
 funFact: 'Konjunktiv I is the mood of the messenger, not the speaker: it flags "this is what THEY said," letting German drop quotation marks entirely. Whenever a Konjunktiv I form looks identical to the plain indicative (most obviously with wir and sie/Sie), German swaps in Konjunktiv II or a würde-form instead — so ambiguity is the one thing this mood refuses to tolerate.'
+skills:
+  - de.c1.verb.konjunktiv1
 minutes: 11
 quiz:
   - question: 'What is the main function of Konjunktiv I in German?'

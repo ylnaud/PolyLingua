@@ -7,6 +7,8 @@ order: 3
 unit: 1
 grammarTopic: 'Subjective (speculative) modal verbs: müssen, dürfte, können, sollen, wollen'
 funFact: 'Every German modal verb secretly leads a double life: an objective one (permission, ability, obligation) and a subjective one (how sure YOU are about a claim). "Er muss zu Hause sein" never means "he is obligated to be home" — it means "I''m almost certain he''s home." Learn the subjective meaning of each modal and you can rank your own certainty on a sliding scale, from near-fact (müssen) down to rumor (sollen) and hostile skepticism (wollen).'
+skills:
+  - de.c1.verb.modal-subjective
 minutes: 11
 quiz:
   - question: 'What does "Er muss zu Hause sein." mean in its subjective (speculative) reading?'

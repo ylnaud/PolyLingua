@@ -7,6 +7,9 @@ order: 12
 unit: 3
 grammarTopic: 'Perfekt for the past, present tense for the near future'
 funFact: "For everyday past-tense talk, Germans almost always reach for the Perfekt: 'Ich bin ins Kino gegangen', not 'Ich ging ins Kino'. And for the near future, you don't even need a future tense — present tense plus a word like 'morgen' does the job. Two fewer verb tenses to worry about."
+skills:
+  - de.a2.time.past-future
+  - de.a2.verb.perfekt
 minutes: 9
 quiz:
   - question: 'What is the normal way to talk about something that happened yesterday, in everyday spoken German?'
@@ -27,8 +30,13 @@ quiz:
     options: ['Morgen werde ich arbeiten.', 'Morgen arbeite ich.', 'Morgen ich arbeite.']
     answerIndex: 1
     explanation: "Present tense plus a time marker is enough for the near future. And the verb always sits in second position: if you start with 'Morgen', the verb comes right after it."
-  - question: "Where does the past participle go in a normal German Perfekt sentence?"
-    options: ['Right after the subject', 'At the very end of the sentence', 'Right before the auxiliary verb']
+  - question: 'Where does the past participle go in a normal German Perfekt sentence?'
+    options:
+      [
+        'Right after the subject',
+        'At the very end of the sentence',
+        'Right before the auxiliary verb',
+      ]
     answerIndex: 1
     explanation: 'German uses a "verb bracket": the conjugated haben/sein sits in position 2, and the participle is pushed all the way to the end.'
   - question: "'Ich habe einen Freund getroffen.' — what does this mean?"
@@ -40,7 +48,12 @@ quiz:
     answerIndex: 2
     explanation: "'kommen' is a verb of motion, so — like gehen and fahren — it takes sein: Ich bin gekommen."
   - question: "'Nächste Woche habe ich frei.' — how is this future meaning expressed?"
-    options: ['With the Futur tense (werde + infinitive)', 'With the present tense plus a future time word', 'With the Perfekt tense']
+    options:
+      [
+        'With the Futur tense (werde + infinitive)',
+        'With the present tense plus a future time word',
+        'With the Perfekt tense',
+      ]
     answerIndex: 1
     explanation: "German everyday speech doesn't bother with a future tense for near-future plans — present tense ('habe') plus 'nächste Woche' already signals the future."
 exercises:

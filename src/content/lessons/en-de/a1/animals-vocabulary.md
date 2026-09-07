@@ -7,6 +7,8 @@ order: 23
 unit: 5
 grammarTopic: 'Animal vocabulary with articles and plurals'
 funFact: 'Animal words are a great place to practice the plural patterns from earlier lessons, since they cover all five patterns at once: der Hund → die Hunde (-e), die Katze → die Katzen (-n), das Pferd → die Pferde (-e), der Vogel → die Vögel (umlaut only), das Tier → die Tiere (-e).'
+skills:
+  - de.a1.vocabulary.animals
 minutes: 7
 quiz:
   - question: 'What does "der Hund" mean?'

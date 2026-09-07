@@ -7,6 +7,9 @@ order: 19
 unit: 4
 grammarTopic: 'Family and friends vocabulary with possessives'
 funFact: 'German family words often come in clear masculine/feminine pairs built the same way: der Bruder/die Schwester share no root, but der Sohn/die Tochter, der Onkel/die Tante, and der Neffe/die Nichte are worth learning side by side in pairs — it doubles your vocabulary for barely any extra effort.'
+skills:
+  - de.a1.vocabulary.family
+  - de.a1.writing.about-me
 minutes: 8
 quiz:
   - question: 'What does "die Familie" mean?'

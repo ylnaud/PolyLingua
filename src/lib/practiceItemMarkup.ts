@@ -25,13 +25,57 @@ export interface SrsEntry {
   failCount?: number;
 }
 
-const KIND_LABELS: Record<string, string> = {
-  choice: '🔘 Opción múltiple',
-  'fill-blank': '✏️ Completa el hueco',
-  match: '🔗 Empareja',
-  write: '⌨️ Escribe la respuesta',
-  order: '🧩 Ordena la frase',
+/**
+ * Los textos, en el idioma de la página.
+ *
+ * Estaban escritos a mano acá, así que las sesiones dinámicas del silo inglés
+ * salían con «Comprobar», «Tu respuesta» y «💡 Pista» en español. No se veía
+ * barriendo el HTML publicado porque estos nodos los crea el cliente.
+ *
+ * Vienen de `practice` en el diccionario, por el `[data-i18n]` que ya emite
+ * Practice.astro — montado en las cuatro páginas que usan este módulo. El
+ * fallback es el español, que es lo que había antes y lo que se usaría si el
+ * atributo faltara.
+ */
+const FALLBACK = {
+  kinds: {
+    choice: '🔘 Opción múltiple',
+    fillBlank: '✏️ Completa el hueco',
+    match: '🔗 Empareja',
+    write: '⌨️ Escribe la respuesta',
+    order: '🧩 Ordena la frase',
+  },
+  completaLaFrase: 'Completa la frase',
+  ordenaPalabras: 'Ordena las palabras para formar la frase correcta',
+  emparejaElementos: 'Empareja cada elemento con su pareja correcta',
+  fraseConstruyendo: 'Frase que estás construyendo',
+  escuchaYEscribe: '🔊 Escucha y escribe lo que oís',
+  tuRespuesta: 'Tu respuesta',
+  comprobar: 'Comprobar',
+  pista: '💡 Pista',
+  escuchar: 'Escuchar',
+  escucharDeNuevo: 'Escuchar de nuevo',
 };
+
+function textos(): typeof FALLBACK {
+  const raw = document.querySelector<HTMLElement>('[data-i18n]')?.dataset.i18n;
+  try {
+    if (raw) return { ...FALLBACK, ...JSON.parse(raw) };
+  } catch {}
+  return FALLBACK;
+}
+
+function kindLabel(kind: string): string {
+  const k = textos().kinds;
+  const porKind: Record<string, string> = {
+    choice: k.choice,
+    'fill-blank': k.fillBlank,
+    match: k.match,
+    write: k.write,
+    order: k.order,
+  };
+  return porKind[kind] ?? '';
+}
 
 function el<K extends keyof HTMLElementTagNameMap>(
   tag: K,
@@ -57,7 +101,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
   });
   if (index !== 0) fieldset.hidden = true;
 
-  fieldset.appendChild(el('span', { class: 'kind-tag' }, KIND_LABELS[kind] ?? kind));
+  fieldset.appendChild(el('span', { class: 'kind-tag' }, kindLabel(kind) || kind));
 
   if (kind === 'choice') {
     fieldset.appendChild(el('legend', { tabindex: '-1' }, data.question));
@@ -78,7 +122,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
 
   if (kind === 'fill-blank' || kind === 'write') {
     if (kind === 'fill-blank') {
-      fieldset.appendChild(el('legend', { tabindex: '-1' }, 'Completa la frase'));
+      fieldset.appendChild(el('legend', { tabindex: '-1' }, textos().completaLaFrase));
       const idx = (data.sentence as string).indexOf('___');
       const before = idx === -1 ? data.sentence : data.sentence.slice(0, idx);
       const after = idx === -1 ? '' : data.sentence.slice(idx + 3);
@@ -93,7 +137,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
         el(
           'legend',
           { tabindex: '-1' },
-          data.spokenOnly && speechAvailable ? '🔊 Escucha y escribe lo que oís' : data.prompt,
+          data.spokenOnly && speechAvailable ? textos().escuchaYEscribe : data.prompt,
         ),
       );
       if (data.spokenOnly) {
@@ -105,15 +149,15 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
               class: 'speak-btn spoken-only-speak',
               'data-speak': '',
               'data-speak-text': data.answer,
-              'aria-label': 'Escuchar de nuevo',
+              'aria-label': textos().escucharDeNuevo,
             },
-            '🔊 Escuchar',
+            `🔊 ${textos().escuchar}`,
           ),
         );
       }
     }
     const inputId = `review-input-${index}`;
-    const label = el('label', { class: 'visually-hidden', for: inputId }, 'Tu respuesta');
+    const label = el('label', { class: 'visually-hidden', for: inputId }, textos().tuRespuesta);
     fieldset.appendChild(label);
     const row = el('div', { class: 'answer-row' });
     const input = el('input', {
@@ -131,24 +175,20 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
     const checkBtn = el(
       'button',
       { type: 'button', class: 'btn btn-primary check', 'data-check': '' },
-      'Comprobar',
+      textos().comprobar,
     );
     row.append(input, checkBtn);
     fieldset.appendChild(row);
     if (data.hint) {
       const details = el('details', { class: 'hint' });
-      details.append(el('summary', {}, '💡 Pista'), el('p', {}, data.hint));
+      details.append(el('summary', {}, textos().pista), el('p', {}, data.hint));
       fieldset.appendChild(details);
     }
   }
 
   if (kind === 'match') {
     fieldset.appendChild(
-      el(
-        'legend',
-        { tabindex: '-1' },
-        data.instructions ?? 'Empareja cada elemento con su pareja correcta',
-      ),
+      el('legend', { tabindex: '-1' }, data.instructions ?? textos().emparejaElementos),
     );
     const pairs = data.pairs as { left: string; right: string }[];
     const board = el('div', {
@@ -210,9 +250,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
   }
 
   if (kind === 'order') {
-    fieldset.appendChild(
-      el('legend', { tabindex: '-1' }, 'Ordena las palabras para formar la frase correcta'),
-    );
+    fieldset.appendChild(el('legend', { tabindex: '-1' }, textos().ordenaPalabras));
     if (data.translation)
       fieldset.appendChild(el('p', { class: 'prompt-translation' }, data.translation));
     fieldset.appendChild(
@@ -220,7 +258,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
         class: 'order-assembled',
         'data-order-assembled': '',
         'data-answer': data.sentence,
-        'aria-label': 'Frase que estás construyendo',
+        'aria-label': textos().fraseConstruyendo,
       }),
     );
     const words = (data.sentence as string).split(' ');
@@ -244,7 +282,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
       el(
         'button',
         { type: 'button', class: 'btn btn-primary check', 'data-check': '', hidden: '' },
-        'Comprobar',
+        textos().comprobar,
       ),
     );
   }
@@ -266,7 +304,7 @@ export function buildItemFieldset(entry: SrsEntry, index: number): HTMLFieldSetE
           'data-reveal-speak': '',
           hidden: '',
         },
-        '🔊 Escuchar',
+        `🔊 ${textos().escuchar}`,
       ),
     );
     fieldset.appendChild(

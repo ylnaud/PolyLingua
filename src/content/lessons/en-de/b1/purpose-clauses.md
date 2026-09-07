@@ -7,6 +7,9 @@ order: 5
 unit: 2
 grammarTopic: 'Purpose clauses (um...zu, damit)'
 funFact: "One quick test decides which one you need: ask yourself 'who is doing the action in both halves of the sentence?' Same person both times → um...zu. Different people → damit. No exceptions, no guessing."
+skills:
+  - de.b1.clause.final
+  - de.b1.wordorder.subordinate
 minutes: 9
 quiz:
   - question: "'Ich lerne Deutsch, ___ in Berlin zu arbeiten.' (I am learning German in order to work in Berlin — same subject both times.) Which fits?"

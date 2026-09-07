@@ -7,6 +7,8 @@ order: 13
 unit: 4
 grammarTopic: 'Health and doctor phrases'
 funFact: "To say something hurts, German uses mir/dir/ihm (Dativ — the 'to whom' form) with the body part as the subject: 'Mir tut der Kopf weh' is literally 'to me hurts the head'. It's the exact same structure as the English 'my head hurts me' feeling, once you flip the word order in your head."
+skills:
+  - de.a2.vocabulary.health
 minutes: 9
 quiz:
   - question: "How do you say 'My back hurts'?"
@@ -24,20 +26,26 @@ quiz:
     options: ['Where it hurts.', 'Since when it hurts.', 'How much it hurts.']
     answerIndex: 1
     explanation: "'seit wann' means 'since when'. You answer with 'seit' + a time expression: seit drei Tagen."
-  - question: "How are German pain words for body parts usually built?"
-    options: [
+  - question: 'How are German pain words for body parts usually built?'
+    options:
+      [
         'Body part + Schmerzen, as one compound word',
         'Schmerzen + body part, as two separate words',
         'There is no pattern, each word is different',
       ]
     answerIndex: 0
-    explanation: "Kopf + Schmerzen = Kopfschmerzen, Bauch + Schmerzen = Bauchschmerzen, Rücken + Schmerzen = Rückenschmerzen — one predictable compound word."
+    explanation: 'Kopf + Schmerzen = Kopfschmerzen, Bauch + Schmerzen = Bauchschmerzen, Rücken + Schmerzen = Rückenschmerzen — one predictable compound word.'
   - question: "What does 'Ich fühle mich nicht gut' mean?"
     options: ["I don't feel well.", 'I am not well fed.', 'I do not like it.']
     answerIndex: 0
     explanation: "'sich fühlen' means 'to feel' (reflexive). 'nicht gut' negates 'gut' (well), so the sentence means 'I don't feel well'."
   - question: "What is the reply to 'Gute Besserung!' typically used for?"
-    options: ['Wishing someone well when they are sick', 'Congratulating someone', 'Saying goodbye at the end of a phone call']
+    options:
+      [
+        'Wishing someone well when they are sick',
+        'Congratulating someone',
+        'Saying goodbye at the end of a phone call',
+      ]
     answerIndex: 0
     explanation: "'Gute Besserung!' means 'Get well soon!' — it's what you say to someone who is sick."
 exercises:

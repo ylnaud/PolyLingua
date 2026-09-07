@@ -133,6 +133,26 @@ export interface Dictionary {
    * su única fuente.
    */
   unitDescriptions: Record<string, Record<string, string>>;
+  /**
+   * Nombres de habilidad, SOLO donde hagan falta traducidos.
+   *
+   * Mismo problema y misma forma que `unitDescriptions`: el catálogo de
+   * src/data/skills.ts está indexado por el idioma META (`de.a1.article.der`),
+   * sin eje userLang, así que su `name` —«El género de los sustantivos»— sale
+   * igual en es-de que en en-de. Se ve en la tarjeta de motivo de /practicar y
+   * en la lista de temas flojos del panel.
+   *
+   * Es un MAPA DE EXCEPCIONES, no una copia: la clave es el id de la
+   * habilidad, y si falta se usa el `name` del catálogo. Así el español no se
+   * duplica y skills.ts sigue siendo su única fuente.
+   *
+   * Vacío en los dos idiomas todavía. La caída al catálogo es a propósito y no
+   * es «fallback silencioso al español» en el sentido malo: no hay ninguna otra
+   * fuente de la que sacarlo, y una etiqueta corta sin traducir es preferible a
+   * un hueco. Lo que NUNCA cae de un idioma a otro es la glosa de las
+   * plantillas de refuerzo, que es donde está la enseñanza.
+   */
+  skillNames: Record<string, string>;
   languageDescriptions: Record<'de' | 'en' | 'es' | 'fr' | 'it' | 'pt', string>;
   silo: {
     idiomas: string;
@@ -346,6 +366,49 @@ export interface Dictionary {
       ejercicio: string;
       ejercicios: string;
     };
+    /**
+     * Practicar (el motor adaptativo). Es la única herramienta que tenía sus
+     * textos escritos a mano en el markup, y por eso salía en español dentro
+     * del silo inglés.
+     *
+     * `motivos` y `categorias` los pinta el <script> sobre la sesión ya
+     * armada, así que viajan por [data-page-strings] (src/lib/pageStrings.ts).
+     * Las claves de `motivos` son los ids que devuelve el scheduler y las de
+     * `categorias` las de `Skill.category`: no se traducen, son datos.
+     */
+    practicar: {
+      metaTitulo: string;
+      metaDescripcion: string;
+      h1: string;
+      /** Mientras el motor arma la sesión en el cliente. */
+      preparando: string;
+      /** Lleva {n}, el número de ejercicios elegidos. */
+      elegidos: string;
+      vacioTitulo: string;
+      vacioDesc: string;
+      /**
+       * Cabecera del panel. Lleva {lang}, no un nivel: decía «Tu progreso en
+       * A1» con el nivel escrito a mano, y el panel no calcula ninguno — su
+       * catálogo son TODAS las habilidades del curso, de A1 a C2.
+       */
+      progresoTitulo: string;
+      /** Resumen del panel. Lleva {pct}, {n} y {total}. */
+      progresoGeneral: string;
+      debilesTitulo: string;
+      motivos: Record<
+        | 'severe_error'
+        | 'persistent_error'
+        | 'weak_skill'
+        | 'due_review'
+        | 'new_skill'
+        | 'random_review',
+        { tag: string; texto: string }
+      >;
+      categorias: Record<
+        'grammar' | 'vocabulary' | 'word_order' | 'pronunciation' | 'writing',
+        string
+      >;
+    };
     misErrores: {
       metaTitulo: string;
       metaDescripcion: string;
@@ -444,7 +507,8 @@ export interface Dictionary {
     racha: { cta: string; texto: string; textos: string };
     copia: { texto: string; cta: string };
     /** Avisos del bucle de refuerzo, escritos sobre el ítem fallado. */
-    refuerzo: { pausado: string; otraVez: string };
+    /** `dominado` cierra el bucle y lleva {tema}, el nombre de la habilidad. */
+    refuerzo: { pausado: string; otraVez: string; dominado: string };
     /** Botón de modo shadowing: está en el header y en el menú «Más». */
     shadowing: { aria: string; etiqueta: string };
     /** Selector de idioma de INTERFAZ del header (no el de idioma a aprender). */
@@ -587,6 +651,7 @@ export const es: Dictionary = {
   },
   // Vacío a propósito: units.ts ya guarda estas descripciones en español.
   unitDescriptions: {},
+  skillNames: {},
   languageTaglines: {
     de: 'Precisión, casos y palabras larguísimas',
     en: 'El idioma que ya usas sin saberlo',
@@ -828,6 +893,49 @@ export const es: Dictionary = {
       ejercicio: '{n} ejercicio',
       ejercicios: '{n} ejercicios',
     },
+    practicar: {
+      metaTitulo: 'Practicar {lang}',
+      metaDescripcion:
+        'Practica {lang} con ejercicios elegidos según lo que ya sabes y lo que sueles fallar.',
+      h1: 'Practicar {lang}',
+      preparando: 'Preparando tu sesión…',
+      elegidos: '{n} ejercicios elegidos para ti.',
+      vacioTitulo: 'Todavía no hay nada que practicar',
+      vacioDesc: 'Haz una lección primero y el motor empezará a saber qué necesitas reforzar.',
+      progresoTitulo: '📊 Tu progreso en {lang}',
+      progresoGeneral: 'Progreso general {pct}% · {n} de {total} habilidades empezadas',
+      debilesTitulo: 'Necesitas practicar',
+      motivos: {
+        severe_error: {
+          tag: '🔴 Necesitas practicar esto',
+          texto: 'Este patrón se te ha resistido varias veces. Vamos a por él con calma.',
+        },
+        persistent_error: {
+          tag: '🟠 Se te repite',
+          texto: 'Has fallado esto más de una vez, así que toca reforzarlo.',
+        },
+        weak_skill: {
+          tag: '🟡 Aún no sale solo',
+          texto: 'Lo estás aprendiendo: un poco más de práctica.',
+        },
+        due_review: {
+          tag: '🔁 Toca repasar',
+          texto: 'Hace un tiempo que no lo ves. A ver si sigue ahí.',
+        },
+        new_skill: { tag: '🌱 Algo nuevo', texto: 'Estás listo para esto.' },
+        random_review: {
+          tag: '✨ Repaso suelto',
+          texto: 'Todo en orden: un repaso para mantenerlo fresco.',
+        },
+      },
+      categorias: {
+        grammar: 'Gramática',
+        vocabulary: 'Vocabulario',
+        word_order: 'Orden de palabras',
+        pronunciation: 'Pronunciación',
+        writing: 'Escritura',
+      },
+    },
     misErrores: {
       metaTitulo: 'Mis errores — {lang}',
       metaDescripcion: 'Revisa y practica los ejercicios de {lang} que más te cuestan.',
@@ -929,6 +1037,7 @@ export const es: Dictionary = {
       pausado:
         'Este tema se te está resistiendo hoy. Seguimos con la lección y te lo guardo para «Practicar ahora».',
       otraVez: 'Vamos otra vez con la misma estructura, en otra frase.',
+      dominado: 'Tres seguidos con {tema}. Tema dominado: seguimos con la lección.',
     },
     shadowing: {
       aria: 'Modo shadowing: repetir en voz alta antes de seguir',
@@ -1129,6 +1238,124 @@ export const en: Dictionary = {
       2: 'Regional varieties, humour and rhetoric',
       3: 'Idiomatic use and nuance with prepositions',
     },
+  },
+  // Las 95 habilidades del catálogo alemán, que es el único curso con eje
+  // inglés (en-de). 91 las enseñan sus lecciones; las otras cuatro —los tres
+  // artículos por separado y hin/her— solo tienen lección en es-de, pero
+  // practicar.astro manda el catálogo ENTERO al cliente, así que pueden salir
+  // igual en el panel de progreso. Por eso están las 95 y no 91.
+  //
+  // Son etiquetas de interfaz, no contenido: describen la habilidad, no la
+  // enseñan. Los términos alemanes (Perfekt, Wechselpräpositionen,
+  // Funktionsverbgefüge) se conservan porque son el nombre técnico del tema y
+  // es como los va a encontrar el alumno en cualquier gramática.
+  skillNames: {
+    // ── A1 ────────────────────────────────────────────────────────
+    'de.a1.pron.umlaute': 'The umlauts (ä, ö, ü)',
+    'de.a1.pron.diptongos': 'Diphthongs (ei, ie, eu, au)',
+    'de.a1.pron.consonantes': 'sch, ch, ck, st, sp',
+    'de.a1.introduction.name': 'Saying your name',
+    'de.a1.introduction.origin': 'Saying where you are from',
+    'de.a1.question.words': 'Question words (W-Fragen)',
+    'de.a1.article.der-die-das': 'The articles der / die / das',
+    'de.a1.article.der': 'The article der (masculine)',
+    'de.a1.article.die': 'The article die (feminine)',
+    'de.a1.article.das': 'The article das (neuter)',
+    'de.a1.verb.present-regular': 'Present tense of regular verbs',
+    'de.a1.verb.present-irregular': 'Vowel-changing verbs',
+    'de.a1.vocabulary.numbers': 'Numbers (0-100)',
+    'de.a1.vocabulary.time': 'Telling the time',
+    'de.a1.wordorder.basic': 'The verb in second position',
+    'de.a1.wordorder.time-verb-subject': 'Starting with a time phrase (Heute trinke ich…)',
+    'de.a1.wordorder.questions': 'Word order in questions',
+    'de.a1.verb.sein': 'The verb sein',
+    'de.a1.verb.haben': 'The verb haben',
+    'de.a1.pronoun.personal': 'Personal pronouns',
+    'de.a1.negation.nicht-kein': 'Negating with nicht and kein',
+    'de.a1.noun.plural': 'Forming the plural',
+    'de.a1.verb.imperative': 'The imperative',
+    'de.a1.vocabulary.family': 'Family',
+    'de.a1.vocabulary.food': 'Food and drink',
+    'de.a1.vocabulary.home': 'The home',
+    'de.a1.vocabulary.work': 'Work and jobs',
+    'de.a1.vocabulary.shopping': 'Shopping',
+    'de.a1.writing.about-me': 'Writing about yourself',
+    'de.a1.vocabulary.restaurant': 'At the restaurant',
+    'de.a1.vocabulary.transport': 'Transport and directions',
+    'de.a1.vocabulary.freetime': 'Likes and free time',
+    'de.a1.vocabulary.animals': 'Animals',
+    'de.a1.preposition.place-time': 'Prepositions of place and time',
+
+    // ── A2 ────────────────────────────────────────────────────────
+    'de.a2.verb.perfekt': 'Perfekt: choosing haben or sein',
+    'de.a2.verb.participle': 'Forming the participle (ge-…-t / ge-…-en)',
+    'de.a2.verb.modal': 'Modal verbs (können, müssen, wollen…)',
+    'de.a2.wordorder.verb-final': 'The second verb at the end of the sentence',
+    'de.a2.verb.separable': 'Separable verbs (trennbare Verben)',
+    'de.a2.adjective.comparative': 'Comparative and superlative',
+    'de.a2.case.akkusativ': 'Akkusativ: the direct object',
+    'de.a2.case.dativ': 'Dativ: who the action reaches',
+    'de.a2.preposition.fixed': 'Fixed Akkusativ and Dativ prepositions',
+    'de.a2.preposition.wechsel': 'Wechselpräpositionen: movement or position',
+    'de.a2.verb.reflexive': 'Reflexive verbs (sich + verb)',
+    'de.a2.vocabulary.freetime': 'Free time and hobbies',
+    'de.a2.pronoun.akkusativ': 'Akkusativ pronouns (mich, dich, ihn…)',
+    'de.a2.pronoun.possessive': 'Possessives (mein, dein, sein…)',
+    'de.a2.time.past-future': 'Talking about the past and the future',
+    'de.a2.vocabulary.phone': 'On the phone',
+    'de.a2.vocabulary.health': 'Health and the doctor',
+    'de.a2.vocabulary.money': 'Money and payments',
+    'de.a2.vocabulary.problems': 'Everyday problems',
+    'de.a2.vocabulary.plans': 'Making plans: inviting, accepting, cancelling',
+
+    // ── B1 ────────────────────────────────────────────────────────
+    'de.b1.wordorder.subordinate': 'The verb at the end in subordinate clauses',
+    'de.b1.conjunction.subordinating': 'Choosing the conjunction (weil, dass, obwohl, wenn)',
+    'de.b1.verb.praeteritum': 'Präteritum: the narrative past',
+    'de.b1.clause.relative': 'Relative clauses (der, die, das)',
+    'de.b1.clause.indirect-question': 'Indirect questions (ob, W-Wort)',
+    'de.b1.clause.final': 'Purpose clauses (um…zu, damit)',
+    'de.b1.case.genitiv': 'Genitiv: formal possession',
+    'de.b1.adjective.declension': 'Adjective declension',
+    'de.b1.vocabulary.work': 'Work and profession',
+    'de.b1.verb.konjunktiv2': 'Polite Konjunktiv II (wäre, hätte, könnte)',
+    'de.b1.verb.konjunktiv2-wuerde': 'Konjunktiv II with würde + infinitive',
+    'de.b1.verb.perfekt-zustand': 'Action (Perfekt) vs. state (sein + participle)',
+    'de.b1.vocabulary.complaints': 'Complaining and asking for a solution',
+    'de.b1.adverb.direction': 'Adverbs of direction (hin, her, da-)',
+    'de.b1.verb.with-preposition': 'Verbs with fixed prepositions (warten auf, denken an…)',
+
+    // ── B2 ────────────────────────────────────────────────────────
+    'de.b2.verb.futur': 'Futur I and Futur II',
+    'de.b2.clause.conditional-irreal': 'Unreal conditionals (wenn + Konjunktiv II)',
+    'de.b2.voice.passive': 'The passive with werden',
+    'de.b2.voice.zustandspassiv': 'Zustandspassiv vs. Vorgangspassiv',
+    'de.b2.connector.discourse': 'Discourse connectors (deshalb, trotzdem, allerdings)',
+    'de.b2.conjunction.double': 'Double conjunctions (sowohl…als auch, je…desto)',
+    'de.b2.preposition.genitiv': 'Genitiv prepositions (trotz, wegen, während)',
+    'de.b2.vocabulary.economy': 'Economy and society',
+
+    // ── C1 ────────────────────────────────────────────────────────
+    'de.c1.verb.konjunktiv1': 'Konjunktiv I: reported speech',
+    'de.c1.verb.modal-subjective': 'Speculative modals (er muss krank sein)',
+    'de.c1.construction.participial': 'Participial constructions',
+    'de.c1.construction.funktionsverb': 'Funktionsverbgefüge (in Frage stellen…)',
+    'de.c1.style.nominal': 'Nominal vs. verbal style',
+    'de.c1.connector.causal': 'Causal connectors (da, denn, zumal)',
+    'de.c1.wordformation.affixes': 'Word formation: prefixes and suffixes',
+    'de.c1.preposition.academic': 'Prepositions in academic register',
+    'de.c1.vocabulary.academic': 'Academic and scientific language',
+
+    // ── C2 ────────────────────────────────────────────────────────
+    'de.c2.particle.modal': 'Modal particles (doch, mal, ja, wohl)',
+    'de.c2.idiom.prepositional': 'Idiomatic use of prepositions',
+    'de.c2.idiom.redewendungen': 'Idiomatic expressions',
+    'de.c2.idiom.sprichwoerter': 'Proverbs and sayings',
+    'de.c2.variety.regional': 'Regional varieties (Austria, Switzerland)',
+    'de.c2.variety.youth': 'Jugendsprache and anglicisms',
+    'de.c2.style.irony-register': 'Irony and register',
+    'de.c2.style.rhetoric': 'Rhetorical devices',
+    'de.c2.style.wordplay': 'Humour and wordplay',
   },
   languageTaglines: {
     de: 'Precision, cases and gloriously long words',
@@ -1370,6 +1597,50 @@ export const en: Dictionary = {
       ejercicio: '{n} exercise',
       ejercicios: '{n} exercises',
     },
+    practicar: {
+      metaTitulo: 'Practise {lang}',
+      metaDescripcion:
+        'Practise {lang} with exercises picked from what you already know and what you tend to get wrong.',
+      h1: 'Practise {lang}',
+      preparando: 'Putting your session together…',
+      elegidos: '{n} exercises picked for you.',
+      vacioTitulo: 'Nothing to practise yet',
+      vacioDesc:
+        'Finish a lesson first and the engine will start learning what you need to work on.',
+      progresoTitulo: '📊 Your progress in {lang}',
+      progresoGeneral: 'Overall progress {pct}% · {n} of {total} skills started',
+      debilesTitulo: 'Worth practising',
+      motivos: {
+        severe_error: {
+          tag: '🔴 Worth practising',
+          texto: 'This pattern has caught you out several times. Let us take it slowly.',
+        },
+        persistent_error: {
+          tag: '🟠 It keeps happening',
+          texto: 'You have got this wrong more than once, so it is time to shore it up.',
+        },
+        weak_skill: {
+          tag: '🟡 Not automatic yet',
+          texto: 'You are getting there: a bit more practice.',
+        },
+        due_review: {
+          tag: '🔁 Time for a review',
+          texto: 'You have not seen this in a while. Let us check it is still there.',
+        },
+        new_skill: { tag: '🌱 Something new', texto: 'You are ready for this one.' },
+        random_review: {
+          tag: '✨ Just a refresher',
+          texto: 'All good here: a quick review to keep it fresh.',
+        },
+      },
+      categorias: {
+        grammar: 'Grammar',
+        vocabulary: 'Vocabulary',
+        word_order: 'Word order',
+        pronunciation: 'Pronunciation',
+        writing: 'Writing',
+      },
+    },
     misErrores: {
       metaTitulo: 'My mistakes — {lang}',
       metaDescripcion: 'Go back over the {lang} exercises you find hardest and practise them.',
@@ -1471,6 +1742,7 @@ export const en: Dictionary = {
       pausado:
         'This topic is fighting back today. We will carry on with the lesson and save it for "Practise now".',
       otraVez: 'Same structure once more, in a different sentence.',
+      dominado: 'Three in a row with {tema}. Topic mastered: back to the lesson.',
     },
     shadowing: {
       aria: 'Shadowing mode: say it out loud before moving on',

@@ -7,6 +7,8 @@ order: 2
 unit: 1
 grammarTopic: 'Participial constructions: Partizip I, Partizip II, and erweitertes Partizip'
 funFact: 'Partizip I always answers "doing what, right now?" (der lachende Mann = the man WHILE laughing), while Partizip II always answers "having what done to it?" (der geschriebene Brief = the letter THAT WAS written). Once you sort every participle into one of those two questions, the extended construction — the long noun-phrase sandwich German loves in formal writing — stops looking scary and just becomes a relative clause folded flat.'
+skills:
+  - de.c1.construction.participial
 minutes: 11
 quiz:
   - question: 'What does Partizip I (the -end form) express when used as an adjective?'

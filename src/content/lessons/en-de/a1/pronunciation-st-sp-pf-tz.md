@@ -7,6 +7,8 @@ order: 0.4
 unit: 1
 grammarTopic: 'Pronunciation: st, sp, pf, tz, and ß'
 funFact: 'st and sp only turn into "sht" and "shp" at the START of a word or word part — Stadt is "SHTAT", but Fenster (window) keeps a normal "st" sound because the st is not at the start. Position is everything.'
+skills:
+  - de.a1.pron.consonantes
 minutes: 8
 quiz:
   - question: 'How is "st" pronounced at the START of a German word, as in "Stadt" (city)?'

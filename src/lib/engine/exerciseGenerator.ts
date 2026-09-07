@@ -194,6 +194,297 @@ export interface RepairTemplate {
   variations: RepairVariation[];
 }
 
+/**
+ * Los DOS ejes de idioma de una plantilla.
+ *
+ * Una plantilla mezcla dos cosas que no dependen de lo mismo:
+ *
+ *   - `sentence` y `answer` son del idioma META (el alemán que se aprende).
+ *     No cambian según quién lo estudie.
+ *   - `explanation` y `translation` son del idioma del USUARIO. «Heute lerne
+ *     ich Deutsch» se explica en español a un hispanohablante y en inglés a un
+ *     angloparlante.
+ *
+ * REPAIR_TEMPLATES está indexado por `skillId`, que lleva el idioma meta
+ * delante (`de.a1.…`), así que una sola entrada servía a es-de y a en-de por
+ * igual: el curso inglés recibía la explicación en castellano.
+ *
+ * En vez de duplicar las 253 plantillas —con sus frases alemanas, que son
+ * idénticas— se separa la GLOSA: solo los campos del usuario, por idioma. Es
+ * la misma forma que `TSA`/`TSA_EN` en src/data/tsa.ts y que
+ * `unitDescriptions` en el diccionario.
+ */
+export interface RepairGloss {
+  explanation: string;
+  /** Paralelo a `variations`, por índice. */
+  translations: string[];
+}
+
+/**
+ * Glosas por idioma de interfaz, para los que NO son el glosado por defecto.
+ *
+ * Una entrada aquí ENCIENDE el bucle de refuerzo de esa habilidad en ese
+ * idioma: `repairTemplateFor()` devuelve la plantilla con estos textos y las
+ * frases alemanas intactas. Sin entrada devuelve `null` y el bucle no se abre,
+ * que es lo correcto mientras no haya nada que mostrar en el idioma de quien
+ * estudia. No hay caída de un idioma a otro, nunca.
+ *
+ * `translations` va por ÍNDICE contra `variations` de la plantilla. Vacío es
+ * válido y significa «todavía no»: la variación se pinta sin su línea de
+ * traducción (los dos renderizadores la protegen con `if (data.translation)`),
+ * no con la española.
+ *
+ * Estado: A1 completo en inglés — 17 explicaciones. Las `translations` y los
+ * niveles A2-C2 son las tandas siguientes.
+ */
+export const REPAIR_GLOSSES: Record<string, Record<string, RepairGloss>> = {
+  en: {
+    // ── A1 ──────────────────────────────────────────────────────────────
+    //
+    // Traducción del `explanation` español de cada plantilla, sin añadir
+    // reglas que el original no diga. Se conservan literalmente los términos y
+    // ejemplos alemanes —der/die/das, sein, haben, W-Frage, las terminaciones,
+    // las conjugaciones— porque son lo que se está enseñando, no envoltorio.
+    //
+    // En `question.words` el español glosa cada W-Frage con una palabra
+    // (wo = dónde, woher = de dónde, wohin = adónde). El inglés necesita dos
+    // para las dos últimas (where from, where to); es la misma distinción del
+    // original, dicha como se dice en inglés, no una regla nueva.
+    'de.a1.wordorder.time-verb-subject': {
+      // El español lleva **negrita** aquí, y los dos consumidores pintan con
+      // textContent, así que los asteriscos saldrían literales. No se copian.
+      explanation:
+        'In German the verb is ALWAYS in second position. If the sentence starts with the time, the verb stays second and the subject moves behind it: Heute trinke ich Kaffee.',
+      translations: [
+        'Today I learn German.',
+        'Today I drink coffee.',
+        'Tomorrow I go to work.',
+        'Afterwards I do sport.',
+        'On Monday I visit my family.',
+        'Now I am reading a book.',
+      ],
+    },
+    'de.a1.wordorder.basic': {
+      explanation:
+        'The conjugated verb takes the second position in the sentence. What comes first can change; the verb does not move.',
+      translations: [
+        'I learn German every day.',
+        'My sister lives in Berlin.',
+        'At the weekend we go to the cinema.',
+        'The shop opens at eight.',
+        'In summer I always go to Spain.',
+        'My parents work in Hamburg.',
+      ],
+    },
+    'de.a1.article.der-die-das': {
+      explanation:
+        'The article goes with the noun, not with its meaning: you learn them together, as a single word.',
+      translations: [
+        'The man is tall.',
+        'The woman works here.',
+        'The child plays outside.',
+        'The table is new.',
+        'The house is old.',
+        'The newspaper is here.',
+      ],
+    },
+    'de.a1.article.der': {
+      explanation:
+        'Masculine: male people, days, months, seasons, compass points and the endings -ig, -ismus, -ich, -ling. Watch out for the two exceptions that break their own categories: die Nacht and das Bier.',
+      translations: [
+        'Monday is free.',
+        'Winter is cold.',
+        'Honey is sweet.',
+        'The night is long. (exception: the other times of day are der)',
+        'The carpet is old.',
+        'The beer is cold. (exception: the other alcoholic drinks are der)',
+        'The journalist writes.',
+        'The south is warm.',
+      ],
+    },
+    'de.a1.article.die': {
+      explanation:
+        'Feminine: female people and the most reliable endings in the language — -ung, -heit, -keit, -schaft, -ion, -tät, -ei, -ik, -in. A final -e leans feminine, but der Name and der Käse are exceptions.',
+      translations: [
+        'The newspaper is new.',
+        'Freedom is important.',
+        'The teacher explains a lot.',
+        'The music is loud.',
+        'The university is big.',
+        'The name is difficult. (exception: -e is usually feminine)',
+        'The bakery opens early.',
+        'The nation is celebrating today.',
+      ],
+    },
+    'de.a1.article.das': {
+      explanation:
+        'Neuter: the diminutives -chen and -lein (100% certain, even when they refer to people), -um, -nis, -ment, international loanwords and infinitives used as nouns.',
+      translations: [
+        'The girl is reading a book.',
+        'The bread roll is fresh.',
+        'The centre is modern.',
+        'The result is good.',
+        'Marketing works.',
+        'The butterfly is beautiful. (German -ling, not the English -ing)',
+        'Life is beautiful.',
+        'The hotel is in the centre.',
+      ],
+    },
+    'de.a1.question.words': {
+      explanation:
+        'Each W-Frage asks for a different piece of information: wer (who), was (what), wo (where), woher (where from), wohin (where to), wann (when), wie (how) and warum (why).',
+      translations: [
+        'What is your name?',
+        'Where do you come from?',
+        'Where do you live?',
+        'Who is that?',
+        'When does the course begin?',
+        'What are you doing here?',
+        'Why are you learning German?',
+        'Where are you going to?',
+      ],
+    },
+    'de.a1.wordorder.questions': {
+      explanation:
+        'In W- questions the order is question word + verb + subject. In yes/no questions the verb goes straight to the front.',
+      translations: [
+        'When does the course begin?',
+        'Where do you come from?',
+        'Do you speak German?',
+        'Where does your family live?',
+        'Do you have time today?',
+        'What are you doing at the weekend?',
+      ],
+    },
+    'de.a1.verb.present-regular': {
+      explanation:
+        'Regular present: drop the -en from the infinitive and add the ending for the person — ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en.',
+      translations: [
+        'I learn German.',
+        'You live in Berlin.',
+        'He plays football.',
+        'We drink coffee.',
+        'You work a lot.',
+        'The children go home.',
+        'My mother likes cooking.',
+        'You learn every day.',
+      ],
+    },
+    'de.a1.verb.present-irregular': {
+      explanation:
+        'Some verbs change their vowel ONLY in du and er/sie/es: e→i (sprechen → du sprichst), e→ie (lesen → du liest) and a→ä (fahren → du fährst). The other persons are regular.',
+      translations: [
+        'I drive, you drive.',
+        'I eat, he eats bread.',
+        'I read, she reads a book.',
+        'I speak, you speak German.',
+        'I sleep, he sleeps a lot.',
+        'I take, you take the bus.',
+        'I give, she gives me the book.',
+        'We run, he runs fast.',
+      ],
+    },
+    'de.a1.verb.sein': {
+      explanation:
+        'sein is irregular and you have to know it by heart: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.',
+      translations: [
+        'I am tired.',
+        'You are very kind.',
+        'He is my brother.',
+        'We are from Spain.',
+        'You are on time.',
+        'This is my family.',
+        'The children are in the garden.',
+        'Are you a teacher?',
+      ],
+    },
+    'de.a1.verb.haben': {
+      explanation:
+        'haben is irregular too: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben. Only du and er/sie/es lose the -b-.',
+      translations: [
+        'I have a brother.',
+        'You have time.',
+        'He is hungry.',
+        'We have a flat.',
+        'You have a lot of books.',
+        'My sister has a dog.',
+        'The neighbours have two children.',
+        'Are you thirsty?',
+      ],
+    },
+    'de.a1.pronoun.personal': {
+      explanation:
+        'The pronoun follows the GENDER of the word, not whether it is a person or a thing: der Tisch → er, die Zeitung → sie, das Kind → es.',
+      translations: [
+        'Anna is tired. She is sleeping.',
+        'The table is new. It is big. (der → er, even though it is a thing)',
+        'The child is playing. It is happy.',
+        'My brother and I are learning German.',
+        'The children are eating. They are hungry.',
+        'The newspaper is old. It is on the table. (die → sie)',
+        'Peter, you are late.',
+        'Mr Müller, you are very kind.',
+      ],
+    },
+    'de.a1.negation.nicht-kein': {
+      explanation:
+        'kein negates nouns that take an indefinite article or none at all (kein Auto, keine Zeit). nicht negates everything else: verbs, adjectives and nouns with a definite article or a possessive.',
+      translations: [
+        'I have no time.',
+        'That is not my car.',
+        'He has no dog.',
+        'I do not understand you.',
+        'We do not drink beer.',
+        'The soup is not warm.',
+        'She has no siblings.',
+        'Today I am not working.',
+      ],
+    },
+    'de.a1.noun.plural': {
+      explanation:
+        'The German plural has five routes (-e, -er, -(e)n, -s or no change) and sometimes an Umlaut. What never changes is the article: in the plural it is always die.',
+      translations: [
+        'the table → the tables',
+        'the child → the children',
+        'the newspaper → the newspapers',
+        'the car → the cars',
+        'the girl → the girls (no change)',
+        'the chair → the chairs (with Umlaut)',
+        'the woman → the women',
+        'the teacher → the teachers (no change)',
+      ],
+    },
+    'de.a1.verb.imperative': {
+      explanation:
+        'The du imperative goes without the pronoun and without the -st (du sprichst → Sprich!). The ihr one is the same as the present (Sprecht!) and the Sie one is infinitive + Sie (Sprechen Sie!).',
+      translations: [
+        'Speak slowly!',
+        'Help me, please!',
+        'Wait here!',
+        'Speak louder, please!',
+        'Please take a seat!',
+        'Open the window!',
+        'Be quiet!',
+        'Please help me!',
+      ],
+    },
+    'de.a1.preposition.place-time': {
+      explanation:
+        'For time: um with the hour (um acht), am with the day (am Montag) and im with the month or season (im Sommer). For place: in a city or country, auf on top of something, an next to something and zu/zum towards someone.',
+      translations: [
+        'The course begins at eight.',
+        'On Monday I have the day off.',
+        'In summer I go to Italy.',
+        'I live in Berlin.',
+        'The book is on the table.',
+        'I am going to the doctor.',
+        'We are meeting at the station.',
+        'At the weekend I sleep late.',
+      ],
+    },
+  },
+};
+
 export const REPAIR_TEMPLATES: RepairTemplate[] = [
   {
     skillId: 'de.a1.wordorder.time-verb-subject',
@@ -9917,13 +10208,60 @@ export const REPAIR_TEMPLATES: RepairTemplate[] = [
   },
 ];
 
-export function repairTemplateFor(skillId: string): RepairTemplate | null {
-  return REPAIR_TEMPLATES.find((t) => t.skillId === skillId) ?? null;
+/**
+ * El idioma en el que están escritas las `explanation` y `translation` de
+ * REPAIR_TEMPLATES.
+ *
+ * Se declara acá y no se importa de src/lib/courses.ts —donde vive el
+ * `SPANISH_GLOSS_USER_LANG` equivalente— porque ese módulo importa
+ * `astro:content`, y este archivo es lógica pura: lo cargan vitest y el bundle
+ * de cliente. Son dos caracteres duplicados a cambio de no arrastrar Astro al
+ * motor.
+ */
+export const DEFAULT_GLOSS_LANG = 'es';
+
+/**
+ * La plantilla de una habilidad, glosada en el idioma del usuario.
+ *
+ * El defecto es `'es'` sólo por compatibilidad con las llamadas que aún no
+ * pasan el idioma; las del flujo real lo pasan siempre.
+ *
+ * NO hay fallback entre idiomas, y es la regla que importa: si falta la glosa
+ * inglesa devuelve `null`, nunca la española. Enseñarle a un angloparlante una
+ * explicación en castellano es peor que no reforzar — la traducción de la
+ * frase alemana ES la enseñanza, así que en el idioma equivocado no enseña
+ * nada. Mismo criterio que tsaFor() en src/data/tsa.ts.
+ */
+export function repairTemplateFor(
+  skillId: string,
+  userLang: string = DEFAULT_GLOSS_LANG,
+): RepairTemplate | null {
+  const base = REPAIR_TEMPLATES.find((t) => t.skillId === skillId) ?? null;
+  if (!base) return null;
+  if (userLang === DEFAULT_GLOSS_LANG) return base;
+
+  const gloss = REPAIR_GLOSSES[userLang]?.[skillId];
+  if (!gloss) return null;
+
+  // Las frases del idioma meta se conservan tal cual; solo se sustituye lo que
+  // pertenece al usuario.
+  return {
+    ...base,
+    explanation: gloss.explanation,
+    variations: base.variations.map((v, i) => ({
+      ...v,
+      translation: gloss.translations[i],
+    })),
+  };
 }
 
 /** Convierte una plantilla en ejercicios `fill-blank` listos para pintar. */
-export function generateRepairSet(skill: Skill, count = 5): Exercise[] {
-  const plantilla = repairTemplateFor(skill.id);
+export function generateRepairSet(
+  skill: Skill,
+  count = 5,
+  userLang: string = DEFAULT_GLOSS_LANG,
+): Exercise[] {
+  const plantilla = repairTemplateFor(skill.id, userLang);
   if (!plantilla) return [];
   return plantilla.variations
     .slice(0, count)

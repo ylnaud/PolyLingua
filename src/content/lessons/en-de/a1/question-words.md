@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Question words (W-Fragen: wer, was, wo, wann, warum, wie)'
 funFact: 'Germans call these W-Fragen (W-questions) because every single one starts with the letter W — wer, was, wo, wann, warum, wie. Spot a W at the start of a German sentence and you instantly know a question is coming, before you even finish reading it.'
+skills:
+  - de.a1.question.words
+  - de.a1.wordorder.questions
 minutes: 7
 quiz:
   - question: 'Which question word means "who"?'

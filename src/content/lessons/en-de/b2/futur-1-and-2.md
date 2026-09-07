@@ -7,6 +7,8 @@ order: 4
 unit: 1
 grammarTopic: 'Futur I and Futur II: future actions and future-perfect predictions'
 funFact: "Futur I is the same werden you already know from the passive voice — just paired with a plain infinitive instead of a participle: 'werden + Infinitiv' for the future, 'werden + Partizip II' for the passive. Futur II simply stacks one more layer on top: werden + Partizip II + haben/sein, for 'will have done' by some future point."
+skills:
+  - de.b2.verb.futur
 minutes: 9
 quiz:
   - question: 'How is Futur I formed in German?'

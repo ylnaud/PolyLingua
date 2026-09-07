@@ -7,6 +7,10 @@ order: 7
 unit: 2
 grammarTopic: 'Two-way prepositions (Wechselpräpositionen): Dativ vs. Akkusativ'
 funFact: 'Ask "Wo?" (where is it?) and the answer wants Dativ, no movement, like a photograph. Ask "Wohin?" (where is it going?) and the answer wants Akkusativ, movement, like a video. "Die Katze liegt auf dem Tisch" is a photo (Dativ); "Die Katze springt auf den Tisch" is a video (Akkusativ).'
+skills:
+  - de.a2.preposition.wechsel
+  - de.a2.case.dativ
+  - de.a2.case.akkusativ
 minutes: 9
 quiz:
   - question: 'What actually decides whether a two-way preposition takes Dativ or Akkusativ?'

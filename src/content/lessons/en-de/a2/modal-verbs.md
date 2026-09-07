@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Modal verbs (können, müssen, wollen, dürfen, sollen, möchten)'
 funFact: 'All six modal verbs are irregular in exactly the same quirky way: the ich-form and the er/sie/es-form are IDENTICAL (ich kann = er kann, ich muss = er muss). Learn one, and you basically get two conjugations for free.'
+skills:
+  - de.a2.verb.modal
+  - de.a2.wordorder.verb-final
 minutes: 9
 quiz:
   - question: 'Which modal verb expresses ability, like the English "can"?'
@@ -18,11 +21,23 @@ quiz:
     answerIndex: 2
     explanation: 'Modal verbs drop their normal endings in the singular: ich muss, du musst, er/sie/es muss.'
   - question: 'Where does the infinitive of the main verb go when a modal verb is used?'
-    options: ['Right after the modal verb', 'At the very end of the sentence', 'At the beginning of the sentence', 'It is never used, only the modal verb']
+    options:
+      [
+        'Right after the modal verb',
+        'At the very end of the sentence',
+        'At the beginning of the sentence',
+        'It is never used, only the modal verb',
+      ]
     answerIndex: 1
     explanation: 'German modal sentences form a "bracket": the conjugated modal is in position 2, and the plain infinitive of the main verb goes to the very end — Ich muss heute früh aufstehen.'
   - question: 'Which sentence correctly uses "dürfen" (to be allowed to)?'
-    options: ['Ihr dürft hier nicht rauchen.', 'Ihr dürft hier nicht raucht.', 'Ihr dürfen hier nicht rauchen.', 'Ihr dürfst hier nicht rauchen.']
+    options:
+      [
+        'Ihr dürft hier nicht rauchen.',
+        'Ihr dürft hier nicht raucht.',
+        'Ihr dürfen hier nicht rauchen.',
+        'Ihr dürfst hier nicht rauchen.',
+      ]
     answerIndex: 0
     explanation: 'Dürfen conjugates as: ich darf, du darfst, er darf, wir dürfen, ihr dürft, sie dürfen — and the main verb stays as a bare infinitive at the end.'
   - question: 'What does "möchten" express?'
@@ -34,7 +49,13 @@ quiz:
     answerIndex: 2
     explanation: 'Sollen expresses an outside expectation or obligation, close to English "should": Sie soll früh aufstehen. (She is supposed to get up early.)'
   - question: 'How do you say "We want to go to the cinema" in German?'
-    options: ['Wir wollt ins Kino gehen.', 'Wir wollen ins Kino gehen.', 'Wir will ins Kino gehen.', 'Wir wollen ins Kino gegangen.']
+    options:
+      [
+        'Wir wollt ins Kino gehen.',
+        'Wir wollen ins Kino gehen.',
+        'Wir will ins Kino gehen.',
+        'Wir wollen ins Kino gegangen.',
+      ]
     answerIndex: 1
     explanation: 'Wollen in the wir-form is regular: wir wollen. The main verb gehen stays as a plain infinitive at the end.'
   - question: 'Which pair correctly shows the du-form of "können"?'
@@ -110,14 +131,14 @@ pays off fast.
 
 ## The six modal verbs
 
-| Verb | Meaning |
-| --- | --- |
-| **können** | can, to be able to |
-| **müssen** | must, to have to |
-| **wollen** | to want to |
-| **dürfen** | may, to be allowed to |
-| **sollen** | should, to be supposed to (someone else's expectation) |
-| **möchten** | would like to (a politer, softer form of *mögen*) |
+| Verb        | Meaning                                                |
+| ----------- | ------------------------------------------------------ |
+| **können**  | can, to be able to                                     |
+| **müssen**  | must, to have to                                       |
+| **wollen**  | to want to                                             |
+| **dürfen**  | may, to be allowed to                                  |
+| **sollen**  | should, to be supposed to (someone else's expectation) |
+| **möchten** | would like to (a politer, softer form of _mögen_)      |
 
 ## Conjugation
 
@@ -125,21 +146,21 @@ Modal verbs are irregular, but they follow one shared pattern: most of them lose
 umlaut and change their stem vowel in the **ich**, **du**, and **er/sie/es** forms, and
 the **ich** and **er/sie/es** forms are always identical to each other.
 
-| | können | müssen | wollen | dürfen | sollen | möchten |
-| --- | --- | --- | --- | --- | --- | --- |
-| ich | kann | muss | will | darf | soll | möchte |
-| du | kannst | musst | willst | darfst | sollst | möchtest |
-| er/sie/es | kann | muss | will | darf | soll | möchte |
-| wir | können | müssen | wollen | dürfen | sollen | möchten |
-| ihr | könnt | müsst | wollt | dürft | sollt | möchtet |
-| sie/Sie | können | müssen | wollen | dürfen | sollen | möchten |
+|           | können | müssen | wollen | dürfen | sollen | möchten  |
+| --------- | ------ | ------ | ------ | ------ | ------ | -------- |
+| ich       | kann   | muss   | will   | darf   | soll   | möchte   |
+| du        | kannst | musst  | willst | darfst | sollst | möchtest |
+| er/sie/es | kann   | muss   | will   | darf   | soll   | möchte   |
+| wir       | können | müssen | wollen | dürfen | sollen | möchten  |
+| ihr       | könnt  | müsst  | wollt  | dürft  | sollt  | möchtet  |
+| sie/Sie   | können | müssen | wollen | dürfen | sollen | möchten  |
 
 Notice: **ich kann = er kann**, **ich muss = er muss**, and so on for every one of these
 verbs. That's one conjugation pattern doing double duty.
 
 ## Word order: the verb bracket, again
 
-Just like in the Perfekt tense, when you use a modal verb the *main* verb gets bumped
+Just like in the Perfekt tense, when you use a modal verb the _main_ verb gets bumped
 to the very end of the sentence, appearing there as a plain, unconjugated infinitive:
 
 ```
@@ -151,14 +172,14 @@ to the very end of the sentence, appearing there as a plain, unconjugated infini
 - **Wir wollen** ins Kino **gehen.** (We want to go to the cinema.)
 - **Ihr dürft** hier nicht **rauchen.** (You all aren't allowed to smoke here.)
 - **Sie soll** früh **aufstehen.** (She's supposed to get up early.)
-- **Ich möchte** einen Kaffee. (I would like a coffee. — here *möchte* is used alone,
+- **Ich möchte** einen Kaffee. (I would like a coffee. — here _möchte_ is used alone,
   without a second verb, which is very common when ordering food or asking for things.)
 
 ## A note on tone
 
-- **wollen** is direct and can sound blunt or even a little demanding: *Ich will einen
-  Kaffee* sounds like "I want a coffee," almost a command.
-- **möchten** is the polite version: *Ich möchte einen Kaffee* is the natural, courteous
+- **wollen** is direct and can sound blunt or even a little demanding: _Ich will einen
+  Kaffee_ sounds like "I want a coffee," almost a command.
+- **möchten** is the polite version: _Ich möchte einen Kaffee_ is the natural, courteous
   way to order — closer to "I would like a coffee." When in doubt in a café or a shop,
   reach for möchten.
 
@@ -166,9 +187,9 @@ to the very end of the sentence, appearing there as a plain, unconjugated infini
 
 Both can translate to "can" in English, but they're not interchangeable:
 
-- **können** = physical/mental ability — *Ich kann Deutsch sprechen.* (I know how to
+- **können** = physical/mental ability — _Ich kann Deutsch sprechen._ (I know how to
   speak German.)
-- **dürfen** = permission — *Ich darf hier parken.* (I'm allowed to park here.)
+- **dürfen** = permission — _Ich darf hier parken._ (I'm allowed to park here.)
 
-*Kannst du das Fenster öffnen?* asks about ability (and is a common polite request),
-while *Darf ich das Fenster öffnen?* explicitly asks for permission.
+_Kannst du das Fenster öffnen?_ asks about ability (and is a common polite request),
+while _Darf ich das Fenster öffnen?_ explicitly asks for permission.

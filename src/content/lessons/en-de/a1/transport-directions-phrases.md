@@ -7,6 +7,8 @@ order: 21
 unit: 5
 grammarTopic: 'Transport and directions vocabulary'
 funFact: 'The single most useful direction phrase is Wie komme ich zu...? (How do I get to...?) — pair it with the name of any place and you can ask directions to almost anything, even if you cannot yet understand the full answer.'
+skills:
+  - de.a1.vocabulary.transport
 minutes: 8
 quiz:
   - question: 'How would you ask "How do I get to the train station?" in German?'

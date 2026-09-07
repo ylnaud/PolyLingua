@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Word formation: productive prefixes and suffixes'
 funFact: 'German vocabulary isn''t a wall to memorize word by word — it''s a construction kit. Learn that -bar means "can be done to" (essbar = edible, literally "eat-able"), -los means "without" (arbeitslos = unemployed, literally "work-less"), and -ung turns almost any verb into a noun, and you can suddenly guess dozens of words you''ve never seen, the same way English speakers guess "unbreakable" without ever memorizing it.'
+skills:
+  - de.c1.wordformation.affixes
 minutes: 10
 quiz:
   - question: 'What does the prefix "un-" typically do to an adjective?'

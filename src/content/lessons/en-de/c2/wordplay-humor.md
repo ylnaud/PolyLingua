@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'Wordplay and humor (Wortspiele)'
 funFact: "German's love of stacking nouns into one giant compound word isn't just a grammar quirk — it's a comedy engine. Because any noun can combine with almost any other, German speakers build absurd, invented compounds on the spot purely for laughs, the same way English speakers might improvise a silly nickname."
+skills:
+  - de.c2.style.wordplay
 minutes: 10
 quiz:
   - question: 'What makes German especially fertile ground for wordplay involving compound nouns?'

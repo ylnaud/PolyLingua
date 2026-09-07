@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Work and professions vocabulary'
 funFact: "English speakers almost always say 'I am A teacher' — with the article. German drops it completely: 'Ich bin Lehrer.' Saying 'Ich bin ein Lehrer' sounds like you are comparing yourself to a category of object, not stating your job — a small slip that instantly marks you as a non-native speaker."
+skills:
+  - de.b1.vocabulary.work
 minutes: 8
 quiz:
   - question: "How do you say 'I am a teacher' correctly in German?"

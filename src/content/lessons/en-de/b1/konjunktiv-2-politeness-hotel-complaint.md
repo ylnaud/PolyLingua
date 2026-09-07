@@ -7,6 +7,9 @@ order: 10
 unit: 3
 grammarTopic: 'Konjunktiv II for politeness and hypotheticals (wäre, hätte)'
 funFact: "wäre and hätte do exactly what 'would be' and 'would have' do in English — they take the sharp edge off a statement. 'Ich habe ein Problem' sounds like a blunt complaint; 'Ich hätte gern ein anderes Zimmer' sounds like a reasonable, polite request. Same situation, completely different tone."
+skills:
+  - de.b1.verb.konjunktiv2
+  - de.b1.vocabulary.complaints
 minutes: 9
 quiz:
   - question: 'You arrive at your hotel room and it is not what you booked. Which sentence sounds more polite?'

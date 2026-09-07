@@ -7,6 +7,9 @@ order: 4
 unit: 2
 grammarTopic: 'Present tense of regular verbs (Präsens)'
 funFact: "Once you learn one regular verb's six endings, you have learned them for hundreds of verbs at once — -e, -st, -t, -en, -t, -en attach to almost any verb stem in the language. Learn the pattern with machen, and spielen, lernen, and kaufen come along for free."
+skills:
+  - de.a1.verb.present-regular
+  - de.a1.wordorder.basic
 minutes: 9
 quiz:
   - question: 'What are the six present-tense endings for a regular German verb like "machen" (to do/make)?'

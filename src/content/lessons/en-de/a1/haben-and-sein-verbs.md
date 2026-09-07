@@ -7,6 +7,9 @@ order: 10
 unit: 3
 grammarTopic: 'Present tense of haben and sein'
 funFact: 'Both verbs are irregular, so there is no shortcut — but they follow the SAME six-person pattern every other verb does (ich / du / er-sie-es / wir / ihr / sie-Sie). Learn that six-slot pattern once with these two verbs, and every regular verb you meet later will already feel familiar.'
+skills:
+  - de.a1.verb.sein
+  - de.a1.verb.haben
 minutes: 9
 quiz:
   - question: 'Which form of sein goes with "ich"?'

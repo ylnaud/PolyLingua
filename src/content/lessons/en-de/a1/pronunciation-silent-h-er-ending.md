@@ -7,6 +7,8 @@ order: 0.5
 unit: 1
 grammarTopic: 'Pronunciation: silent h, the -er ending, and v/z/s'
 funFact: 'German v almost always sounds like English f (Vater = "FAH-ter"), while German w sounds like English v. Swap those two in your head and half your "German accent" problems disappear.'
+skills:
+  - de.a1.pron.consonantes
 minutes: 8
 quiz:
   - question: 'What does a silent "h" after a vowel do, as in "Sohn" (son)?'

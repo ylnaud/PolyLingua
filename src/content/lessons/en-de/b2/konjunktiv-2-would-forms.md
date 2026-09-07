@@ -7,6 +7,9 @@ order: 2
 unit: 1
 grammarTopic: 'Konjunktiv II (würde + infinitive, hätte, wäre)'
 funFact: 'Almost every verb can borrow würde + infinitive, but three verbs are so common they keep their own short forms instead: sein → wäre, haben → hätte, and the modal verbs (könnte, müsste, sollte...). Learn those three families by heart and you can build a polite request or a hypothetical wish about almost anything.'
+skills:
+  - de.b2.clause.conditional-irreal
+  - de.b1.verb.konjunktiv2-wuerde
 minutes: 11
 quiz:
   - question: 'What is Konjunktiv II mainly used for?'

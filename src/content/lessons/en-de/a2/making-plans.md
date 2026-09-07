@@ -7,10 +7,17 @@ order: 17
 unit: 4
 grammarTopic: 'Making plans and arranging to meet'
 funFact: '"Wollen wir ins Kino gehen?" does not translate as "do we want to go to the movies?" — it means "shall we go to the movies?" In German, "wollen wir...?" is the normal way to propose something, just like the English "shall we...?" Translating it word for word is confusing; using it as a fixed block is not.'
+skills:
+  - de.a2.vocabulary.plans
 minutes: 9
 quiz:
   - question: "What does 'Wollen wir ins Kino gehen?' mean?"
-    options: ['Do we want to go to the movies?', 'Shall we go to the movies?', 'Do you want me to go to the movies?']
+    options:
+      [
+        'Do we want to go to the movies?',
+        'Shall we go to the movies?',
+        'Do you want me to go to the movies?',
+      ]
     answerIndex: 1
     explanation: 'Translated literally it sounds odd, but "Wollen wir...?" is simply the way to propose a plan — the German equivalent of "shall we...?"'
   - question: "'Das passt mir gut' — why 'mir' and not 'mich'?"
@@ -33,7 +40,12 @@ quiz:
     answerIndex: 1
     explanation: "'Abgemacht!' is used to confirm an agreement — the equivalent of 'deal!' or 'it's settled!'"
   - question: "'Ich muss leider absagen' means..."
-    options: ['I unfortunately have to cancel.', 'I unfortunately have to leave.', 'I unfortunately forgot.']
+    options:
+      [
+        'I unfortunately have to cancel.',
+        'I unfortunately have to leave.',
+        'I unfortunately forgot.',
+      ]
     answerIndex: 0
     explanation: "'absagen' means 'to cancel'. With the modal 'muss', the infinitive goes to the end: Ich muss ... absagen."
 exercises:

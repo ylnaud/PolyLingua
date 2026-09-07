@@ -7,6 +7,8 @@ order: 8
 unit: 3
 grammarTopic: 'Family vocabulary (die Familie)'
 funFact: 'German family words are a great shortcut for practicing der/die: every male relative takes der (der Vater, der Bruder, der Onkel) and every female relative takes die (die Mutter, die Schwester, die Tante) — biological gender and grammatical gender line up perfectly here, unlike with objects.'
+skills:
+  - de.a1.vocabulary.family
 minutes: 8
 quiz:
   - question: 'What is the German word for "family"?'

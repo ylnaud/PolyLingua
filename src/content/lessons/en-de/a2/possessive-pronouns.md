@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Possessive pronouns/determiners (mein, dein, sein, ihr, unser, euer, Ihr)'
 funFact: 'Possessive pronouns decline exactly like "ein" — that''s why they''re called "ein-words." If you already know that "ein Buch" becomes "einen Bruder" in the Akkusativ, you already know that "mein Buch" becomes "meinen Bruder" too — just swap the ending pattern onto whichever possessive you need.'
+skills:
+  - de.a2.pronoun.possessive
 minutes: 8
 quiz:
   - question: "Which possessive corresponds to 'er' (he)?"

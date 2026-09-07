@@ -7,6 +7,8 @@ order: 7
 unit: 2
 grammarTopic: 'Adjective declension (weak, mixed, strong)'
 funFact: "There is a hidden logic here: German always wants exactly ONE signal of gender/case in the noun phrase — never zero, never two. If the article already gives that signal clearly (der, die, das), the adjective can relax with a weak -e/-en ending. If there is no article at all, the adjective has to do the article's job itself, so it grabs the strong ending."
+skills:
+  - de.b1.adjective.declension
 minutes: 10
 quiz:
   - question: "'der ___ Mann' (the new man). Which ending is correct after 'der'?"

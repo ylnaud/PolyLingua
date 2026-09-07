@@ -7,6 +7,9 @@ order: 6
 unit: 2
 grammarTopic: 'Zustandspassiv (sein + Partizip II) vs. Vorgangspassiv (werden + Partizip II)'
 funFact: "Picture a door: while someone is closing it, that is Vorgangspassiv — 'Die Tür wird geschlossen' (the closing is happening, werden = action verb). The moment it's shut and you're just describing the result, that's Zustandspassiv — 'Die Tür ist geschlossen' (sein = state, like an adjective). Same participle, totally different auxiliary, totally different meaning."
+skills:
+  - de.b2.voice.zustandspassiv
+  - de.b2.voice.passive
 minutes: 9
 quiz:
   - question: 'What auxiliary verb does Vorgangspassiv use?'

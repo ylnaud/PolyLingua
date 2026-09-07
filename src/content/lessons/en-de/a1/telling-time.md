@@ -7,6 +7,9 @@ order: 7
 unit: 2
 grammarTopic: 'Telling time (Uhrzeit): formal and informal'
 funFact: "The biggest trap for English speakers is 'halb drei.' It does NOT mean half past three — it means half TO three, i.e. 2:30. German counts toward the next hour, not away from the last one. Get this one backward and you will genuinely miss appointments."
+skills:
+  - de.a1.vocabulary.time
+  - de.a1.wordorder.time-verb-subject
 minutes: 9
 quiz:
   - question: 'How do you ask "What time is it?" in German?'

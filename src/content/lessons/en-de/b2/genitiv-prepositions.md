@@ -7,6 +7,9 @@ order: 5
 unit: 2
 grammarTopic: 'Prepositions governing the Genitiv case: trotz, während, wegen, statt, and more'
 funFact: "Almost every Genitiv preposition has a Dativ escape hatch in spoken German: 'wegen dem Regen' instead of 'wegen des Regens' is everywhere in casual speech, even though it's technically non-standard. Learn the Genitiv forms for writing and formal speech, but don't be surprised when you hear the Dativ version on the street — recognizing both is the real B2 skill."
+skills:
+  - de.b2.preposition.genitiv
+  - de.b1.case.genitiv
 minutes: 9
 quiz:
   - question: "Which preposition means 'despite' and governs the Genitiv, as in 'trotz des Regens'?"

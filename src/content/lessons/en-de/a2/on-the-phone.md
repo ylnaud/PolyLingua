@@ -2,11 +2,13 @@
 language: 'de'
 level: 'a2'
 title: 'On the Phone in German: Answering, Introducing Yourself, and Leaving a Message'
-description: "Hallo, hier ist Anna; kann ich bitte mit Herrn Müller sprechen; ich rufe später zurück: the full script for a phone call in German."
+description: 'Hallo, hier ist Anna; kann ich bitte mit Herrn Müller sprechen; ich rufe später zurück: the full script for a phone call in German.'
 order: 15
 unit: 4
 grammarTopic: 'Phone phrases'
-funFact: "Germans answer the phone by saying their last name, not \"hello.\" Hearing a flat \"Müller.\" on the other end isn't rude — it's completely normal. And to introduce yourself, you say \"hier ist Anna\", literally \"here is Anna\", never \"ich bin Anna\"."
+funFact: 'Germans answer the phone by saying their last name, not "hello." Hearing a flat "Müller." on the other end isn''t rude — it''s completely normal. And to introduce yourself, you say "hier ist Anna", literally "here is Anna", never "ich bin Anna".'
+skills:
+  - de.a2.vocabulary.phone
 minutes: 9
 quiz:
   - question: 'On the phone, how do you introduce yourself?'
@@ -24,9 +26,10 @@ quiz:
   - question: 'How do Germans typically answer the phone?'
     options: ['With "Hallo!"', 'With their last name', 'With "Guten Tag, wer ist da?"']
     answerIndex: 1
-    explanation: "It's completely normal for Germans to answer with just their last name, e.g. a flat \"Müller.\""
+    explanation: 'It''s completely normal for Germans to answer with just their last name, e.g. a flat "Müller."'
   - question: "'Kann ich bitte mit Herrn Müller sprechen?' — why does 'Herr' become 'Herrn'?"
-    options: [
+    options:
+      [
         "Because it follows 'mit', which requires Dativ, and 'Herr' is one of the few nouns that changes in Dativ too",
         'It is a spelling mistake',
         "Because all names change after 'mit'",

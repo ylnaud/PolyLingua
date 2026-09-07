@@ -7,6 +7,8 @@ order: 12
 unit: 3
 grammarTopic: 'Imperative mood (du / ihr / Sie forms)'
 funFact: 'For the du-form, take the du-conjugation, drop the -st, and drop the pronoun — Du kommst → Komm! That single trick builds most du-commands correctly without memorizing a new rule.'
+skills:
+  - de.a1.verb.imperative
 minutes: 9
 quiz:
   - question: 'How do you tell a friend (du) to "come"?'

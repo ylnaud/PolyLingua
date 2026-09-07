@@ -7,6 +7,8 @@ order: 11
 unit: 3
 grammarTopic: 'Negation: nicht vs. kein'
 funFact: 'Ask yourself one question: is there a noun with ein/eine (or no article at all) that I want to negate? If yes, use kein. Everything else — verbs, adjectives, adverbs, and nouns with der/die/das — gets nicht. That one question resolves 90% of negation mistakes.'
+skills:
+  - de.a1.negation.nicht-kein
 minutes: 9
 quiz:
   - question: 'Which word negates a noun that would otherwise use "ein" or "eine"?'

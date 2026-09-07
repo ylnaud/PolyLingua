@@ -6,7 +6,9 @@ description: 'Das funktioniert nicht, können Sie das wiederholen, ich habe ein 
 order: 14
 unit: 4
 grammarTopic: 'Everyday problem phrases'
-funFact: "\"Können Sie das bitte wiederholen?\" is probably the single most useful sentence in your German. Asking someone to repeat themselves isn't a beginner move — it's what anyone does to keep following a conversation instead of nodding along without understanding."
+funFact: '"Können Sie das bitte wiederholen?" is probably the single most useful sentence in your German. Asking someone to repeat themselves isn''t a beginner move — it''s what anyone does to keep following a conversation instead of nodding along without understanding.'
+skills:
+  - de.a2.vocabulary.problems
 minutes: 9
 quiz:
   - question: 'How do you say something is broken?'
@@ -28,13 +30,18 @@ quiz:
     answerIndex: 1
     explanation: "'Ich weiß nicht' means 'I don't know' and 'das ist mir egal' means 'I don't care'. To ask someone to repeat something, use 'wiederholen'."
   - question: "What does 'Können Sie bitte langsamer sprechen?' mean?"
-    options: ['Can you speak louder, please?', 'Can you speak more slowly, please?', 'Can you repeat that, please?']
+    options:
+      [
+        'Can you speak louder, please?',
+        'Can you speak more slowly, please?',
+        'Can you repeat that, please?',
+      ]
     answerIndex: 1
     explanation: "'langsamer' is the comparative of 'langsam' (slow), so this asks someone to slow down."
   - question: "In 'Können Sie das bitte wiederholen?', where does the infinitive 'wiederholen' go?"
     options: ['Right after können', 'At the end of the sentence', 'Before the subject']
     answerIndex: 1
-    explanation: "With können (and other modal verbs), the conjugated verb sits in second position and the infinitive is pushed to the end."
+    explanation: 'With können (and other modal verbs), the conjugated verb sits in second position and the infinitive is pushed to the end.'
   - question: "What is the correct response to 'Es tut mir leid'?"
     options: ['Kein Problem.', 'Gute Besserung.', 'Auf Wiederhören.']
     answerIndex: 0

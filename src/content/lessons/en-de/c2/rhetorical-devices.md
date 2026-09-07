@@ -7,6 +7,8 @@ order: 8
 unit: 2
 grammarTopic: 'Rhetorical devices (Stilmittel)'
 funFact: 'German political speeches lean hard on the Dreierfigur (rule of three) — three parallel words or phrases in a row — because German ears are trained on it from school essay analysis (Gedichtinterpretation) onward. Spot a triad in a speech and you have just caught the speaker reaching for maximum persuasive weight.'
+skills:
+  - de.c2.style.rhetoric
 minutes: 11
 quiz:
   - question: "What is an 'Anapher' (anaphora) in German rhetoric?"

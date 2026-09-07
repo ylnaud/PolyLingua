@@ -7,6 +7,8 @@ order: 13
 unit: 3
 grammarTopic: 'Personal pronouns (ich, du, er/sie/es, wir, ihr, sie/Sie)'
 funFact: 'German has three words for the English "you": du (one friend), ihr (several friends), Sie (anyone formal, always capitalized). Picking the wrong one is not a small mistake to a German speaker — it instantly signals whether you are being friendly or rude, so learn this split before anything else.'
+skills:
+  - de.a1.pronoun.personal
 minutes: 8
 quiz:
   - question: 'Which German pronoun means "I"?'

@@ -7,6 +7,8 @@ order: 9
 unit: 3
 grammarTopic: 'Food and drink vocabulary (Essen und Trinken)'
 funFact: 'Notice how many food words end in a pattern you can predict: das Brot, das Ei, das Obst, das Gemüse, das Fleisch are all neuter. It is not a hard rule like -chen, but a strong tendency worth noticing — basic, everyday foods lean neuter more often than you would expect.'
+skills:
+  - de.a1.vocabulary.food
 minutes: 8
 quiz:
   - question: 'What is the German word for "bread"?'

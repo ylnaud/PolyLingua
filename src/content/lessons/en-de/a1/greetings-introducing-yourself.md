@@ -7,6 +7,9 @@ order: 1
 unit: 1
 grammarTopic: 'Greetings and self-introduction (Begrüßung / Sich vorstellen)'
 funFact: 'German greetings are tied to the clock: Guten Morgen only works before noon, Guten Tag covers the afternoon, and Guten Abend takes over in the evening. Picture a clock face with three zones and you will never reach for the wrong one.'
+skills:
+  - de.a1.introduction.name
+  - de.a1.introduction.origin
 minutes: 7
 quiz:
   - question: 'Which greeting would you use to say hello to a stranger at 10 AM?'

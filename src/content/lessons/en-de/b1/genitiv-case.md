@@ -7,6 +7,8 @@ order: 6
 unit: 2
 grammarTopic: 'The Genitiv case'
 funFact: "Genitiv is the case English speakers already half-know without realizing it: 'des Mannes' works exactly like 'the man's' in English — an -s glued onto the owner. The difference is German also changes the article: der Mann becomes des Mannes."
+skills:
+  - de.b1.case.genitiv
 minutes: 9
 quiz:
   - question: 'What does the Genitiv case express?'

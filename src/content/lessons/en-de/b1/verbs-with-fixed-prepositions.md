@@ -7,6 +7,8 @@ order: 13
 grammarTopic: 'Verbs with fixed prepositions (Verben mit Präpositionen)'
 funFact: "These pairings are just as arbitrary in German as 'wait FOR' vs. 'listen TO' are in English — there is no logic to memorize, only pairs to drill. The trick that actually helps: always learn the verb and its preposition (and the case it demands) as one single unbreakable unit, never separately."
 unit: 4
+skills:
+  - de.b1.verb.with-preposition
 minutes: 9
 quiz:
   - question: "'Ich warte ___ den Bus.' (I am waiting for the bus.) Which preposition + case is correct?"

@@ -6,7 +6,9 @@ description: 'Learn the German prepositions that never change case — durch, f�
 order: 11
 unit: 3
 grammarTopic: 'Fixed-case prepositions (always Akkusativ or always Dativ)'
-funFact: "Read the five Akkusativ prepositions in this order — für, um, durch, gegen, ohne — and the first letters spell FUDGO. It is a nonsense word, but a nonsense word is exactly the kind of thing your brain refuses to forget."
+funFact: 'Read the five Akkusativ prepositions in this order — für, um, durch, gegen, ohne — and the first letters spell FUDGO. It is a nonsense word, but a nonsense word is exactly the kind of thing your brain refuses to forget.'
+skills:
+  - de.a2.preposition.fixed
 minutes: 8
 quiz:
   - question: "Which case does the preposition 'für' always take?"
@@ -33,14 +35,15 @@ quiz:
     answerIndex: 0
     explanation: "'aus' always takes Dativ, so the feminine article 'die' becomes 'der' in the dative: aus der Schweiz."
   - question: "'Ich fahre mit dem Bus.' — why is it 'dem' and not 'den'?"
-    options: [
+    options:
+      [
         'Because Bus is neuter',
         'Because mit always takes Dativ, and der Bus becomes dem Bus in the dative',
         'Because it is a mistake; it should be den',
       ]
     answerIndex: 1
     explanation: "'mit' is a fixed Dativ preposition, so masculine 'der' becomes 'dem' — the standard masculine/neuter dative ending."
-  - question: "Which of these prepositions is NOT one of the five fixed-Akkusativ prepositions?"
+  - question: 'Which of these prepositions is NOT one of the five fixed-Akkusativ prepositions?'
     options: ['gegen', 'ohne', 'bei']
     answerIndex: 2
     explanation: "'bei' is a fixed Dativ preposition. The five fixed-Akkusativ prepositions are durch, für, gegen, ohne, um."
@@ -175,8 +178,8 @@ forever — no need to analyze the sentence.
 
 ## Quick reference table
 
-| Akkusativ (always) | Dativ (always) |
-| --- | --- |
+| Akkusativ (always)          | Dativ (always)                     |
+| --------------------------- | ---------------------------------- |
 | durch, für, gegen, ohne, um | aus, bei, mit, nach, seit, von, zu |
 
 ## How to practice

@@ -7,6 +7,8 @@ order: 20
 unit: 5
 grammarTopic: 'Restaurant vocabulary and ordering phrases'
 funFact: 'Germans do not say "the check, please" the way you might in English — they say Die Rechnung, bitte (The bill, please) or Zahlen, bitte (To pay, please), and the waiter often asks getrennt oder zusammen? (separate or together?) if you are in a group, expecting you to know the answer on the spot.'
+skills:
+  - de.a1.vocabulary.restaurant
 minutes: 8
 quiz:
   - question: 'What does "die Speisekarte" mean?'

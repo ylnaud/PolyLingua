@@ -4,8 +4,13 @@
 // silo /[userLang]/[targetLang]/..., arma el link equivalente en cada
 // idioma de interfaz activo (mismo targetLang y resto de la ruta); si no,
 // linkea al catálogo de esa interfaz. Los idiomas todavía sin contenido
-// (`active: false`) se muestran deshabilitados como "Próximamente" — la
-// arquitectura ya los soporta, solo falta traducir la interfaz.
+// (`active: false`) se muestran deshabilitados como "Próximamente".
+//
+// Esa fila gris es una promesa, no un catálogo de lo que la arquitectura
+// soporta: la arquitectura soporta los seis idiomas y aun así acá solo hay
+// tres. Antes estaban también francés, italiano y portugués, prometiendo una
+// interfaz que nadie estaba escribiendo, y se quitaron de USER_LANGUAGES por
+// eso. Añadir uno significa comprometerse a traducirlo.
 import { USER_LANGUAGES, type UserLanguageId } from '../data/userLanguages';
 import {
   courseHasLesson,

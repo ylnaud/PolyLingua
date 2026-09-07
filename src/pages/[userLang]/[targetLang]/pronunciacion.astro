@@ -3,6 +3,7 @@ import SiloToolPage from '../../../components/SiloToolPage.astro';
 import { LANGUAGE_MAP } from '../../../data/languages';
 import { getCourseStaticPaths, getCourseLessons } from '../../../lib/courses';
 import { getDictionary } from '../../../i18n';
+import { fill } from '../../../lib/interpolate';
 
 export const getStaticPaths = getCourseStaticPaths;
 
@@ -10,9 +11,11 @@ const { userLang, targetLang: lang } = Astro.params;
 const dict = getDictionary(userLang as never);
 const tt = dict.tools.pronunciacion;
 // El nombre del idioma meta traducido al idioma de la interfaz: 'Alemán' para
-// un hispanohablante, 'Deutsch' para un alemán. src/data/languages.ts guarda
-// una sola versión (en español), por eso sale del diccionario.
+// un hispanohablante, 'German' para un angloparlante. src/data/languages.ts
+// guarda una sola versión (en español), por eso sale del diccionario. De
+// LANGUAGE_MAP solo se usa el bcp47, que no depende de la interfaz.
 const languageMeta = LANGUAGE_MAP[lang as keyof typeof LANGUAGE_MAP];
+const langName = dict.languageNames[lang as keyof typeof dict.languageNames];
 
 // Mismo pool deduplicado que ahorcado.astro: todo el vocabulario de las
 // lecciones de este idioma, sin repetir término. Se suman también las frases
@@ -43,8 +46,8 @@ const vocabPool = Array.from(
   <section class="container pron-body">
     <div class="card empty-state" data-pron-empty hidden>
       <p class="empty-emoji">📭</p>
-      <h2>Todavía no hay vocabulario</h2>
-      <p>Completa alguna lección de {languageMeta?.name} primero para desbloquear esta práctica.</p>
+      <h2>{tt.vacioTitulo}</h2>
+      <p>{fill(tt.vacioDesc, { lang: langName })}</p>
       <a class="btn btn-primary" href={`/${userLang}/${lang}`}>{dict.tools.comun.verLecciones}</a>
     </div>
 

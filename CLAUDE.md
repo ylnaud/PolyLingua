@@ -41,10 +41,11 @@ Vocabulario, repasar, práctica libre, ahorcado, diario, gramática, mis
 errores, escuchar y repetir y situaciones viven **dentro** del silo:
 `/<userLang>/<targetLang>/<herramienta>`, con su selector de idioma en
 `/<userLang>/<herramienta>`. Estaban en `/idiomas/<targetLang>/...`, fuera
-del eje userLang, así que una URL solo podía existir en un idioma. Con la
-interfaz en un solo idioma eso no se nota, pero la estructura es la correcta
-y evita el enredo de tener las herramientas fuera del silo. Sus textos salen
-de `dict.tools` (`src/i18n/dictionary.ts`); el JS de cliente los recibe por
+del eje userLang, así que una URL solo podía existir en un idioma. Con una
+sola interfaz eso no se notaba; con `es` y `en` activos sí:
+`/es/de/vocabulario` y `/en/de/vocabulario` son dos páginas distintas, cada
+una en su idioma. Sus textos salen de `dict.tools`
+(`src/i18n/dictionary.ts`); el JS de cliente los recibe por
 `[data-page-strings]` (ver `src/lib/pageStrings.ts`), porque un
 `<script define:vars>` no soporta `import`.
 
@@ -103,14 +104,27 @@ las pierde (van a un grupo final) y hay un test en
 poner siempre un `unit` que exista. Si el tema no entra en ninguna unidad,
 agregá una nueva a `units.ts` en vez de dejar el campo vacío.
 
-El campo `skills` es opcional y alimenta el **motor de aprendizaje
-adaptativo** (`src/lib/engine/`, documentado en `docs/LEARNING_ENGINE.md`).
-Lista las habilidades que enseña la lección, con ids del catálogo de
+El campo `skills` alimenta el **motor de aprendizaje adaptativo**
+(`src/lib/engine/`, documentado en `docs/LEARNING_ENGINE.md`). Lista las
+habilidades que enseña la lección, con ids del catálogo de
 `src/data/skills.ts` (`de.a1.wordorder.basic`). La relación es N:N: una
-lección enseña varias y una habilidad aparece en varias lecciones. Hoy solo
-están etiquetadas las 29 lecciones de A1 alemán; el resto simplemente no
-alimenta al motor todavía. Hay tests que fallan si se referencia una habilidad
-inexistente o si una habilidad se queda sin lección.
+lección enseña varias y una habilidad aparece en varias lecciones. Hay tests
+que fallan si se referencia una habilidad inexistente o si una habilidad se
+queda sin lección.
+
+Para Zod tiene default `[]`, así que técnicamente se puede omitir, pero hoy
+**lo llevan las 484 lecciones de los 6 cursos** (es-de 91, en-de 84, es-fr 78,
+es-en 77, es-it 77, es-pt 77). Una lección nueva sin `skills` sería la
+excepción: ponelo siempre.
+
+Etiquetado no quiere decir cubierto por igual, y conviene no confundir las dos
+cosas. El catálogo tiene 413 habilidades entre los 5 idiomas que se enseñan
+(de 95, en 81, fr 81, it 78, pt 78), y de esas solo 253 tienen plantilla de
+refuerzo en `REPAIR_TEMPLATES`. Esas plantillas están escritas en español, así
+que en la interfaz inglesa el bucle de refuerzo solo se enciende donde existe
+además la glosa traducida: hoy, las 17 habilidades de A1 alemán que hay en
+`REPAIR_GLOSSES.en`. Todo lo demás sigue etiquetado y sigue alimentando al
+motor; lo que no tiene es refuerzo.
 
 Tipos de `exercises` que acepta el schema: `fill-blank` (necesita `___` en
 `sentence`), `match` (mínimo 3 `pairs`), `write`, `order`.
@@ -123,7 +137,9 @@ Desde la arquitectura SILO el sitio tiene **dos** ejes de idioma, y
 confundirlos es la fuente de errores más común:
 
 - **`userLang` (interfaz)**: en qué idioma está escrita la explicación.
-  Definido en `src/data/userLanguages.ts`. **Hoy solo `es` está activo.**
+  Definido en `src/data/userLanguages.ts`. **Hoy están activos `es` y `en`.**
+  La lista tiene tres ids (`es`, `de`, `en`); `de` está en `active: false` y
+  el selector lo muestra como "Próximamente".
 - **`targetLang` (meta)**: qué idioma se enseña. Definido en
   `src/data/languages.ts`. Son 6: `de`, `en`, `es`, `fr`, `it`, `pt`.
 
@@ -135,28 +151,38 @@ está en el frontmatter, se infiere del nombre de la carpeta vía
 
 ### Los 6 cursos que existen
 
-| Curso   | Interfaz | Enseña    | Estado                    |
-| ------- | -------- | --------- | ------------------------- |
-| `es-de` | Español  | Alemán    | Visible                   |
-| `es-en` | Español  | Inglés    | Visible                   |
-| `es-fr` | Español  | Francés   | Visible                   |
-| `es-it` | Español  | Italiano  | Visible                   |
-| `es-pt` | Español  | Portugués | Visible                   |
-| `en-de` | Inglés   | Alemán    | Publicado pero **oculto** |
+| Curso   | Interfaz | Enseña    | Estado  |
+| ------- | -------- | --------- | ------- |
+| `es-de` | Español  | Alemán    | Visible |
+| `es-en` | Español  | Inglés    | Visible |
+| `es-fr` | Español  | Francés   | Visible |
+| `es-it` | Español  | Italiano  | Visible |
+| `es-pt` | Español  | Portugués | Visible |
+| `en-de` | Inglés   | Alemán    | Visible |
 
-### La interfaz va en un solo idioma
+### La interfaz va en español e inglés
 
-Es una decisión de producto: **el sitio se mantiene solo en español**. Llegó
-a haber una interfaz en alemán activa, con su diccionario y 5 cursos `de-*`
-(386 lecciones), y se quitó entera. Si algún día se quiere de vuelta, está
-en el historial de git — no hace falta reescribirla.
+Son dos, y solo dos. El inglés se activó con su diccionario completo en
+`src/i18n/dictionary.ts`, y desde entonces sus 92 URLs entran al sitemap como
+las del silo español: `en-de` ya no es un curso oculto.
 
-Así que, antes de traducir la interfaz a otro idioma, preguntá: hoy la
-respuesta por defecto es que no.
+Añadir una tercera no es una decisión de código sino de producto, y la
+respuesta por defecto sigue siendo que no: cada interfaz hay que escribirla
+entera y después mantenerla. Llegó a haber una en alemán activa, con su
+diccionario y 5 cursos `de-*` (386 lecciones), y se quitó entera; y `fr`, `it`
+y `pt` estuvieron en la lista **sin** diccionario y sin lecciones, prometiendo
+desde el selector una traducción que nadie estaba escribiendo, así que se
+quitaron también. Lo retirado está en el historial de git — no hace falta
+reescribirlo.
 
-`en` sigue en `active: false` porque no tiene diccionario de interfaz en
-`src/i18n/dictionary.ts`: activarlo mostraría lecciones en inglés dentro de
-una cáscara en español.
+`de` sí sigue en la lista, con `active: false`: es el único candidato real,
+porque ya tuvo interfaz y cursos. Por eso el selector lo muestra como
+"Próximamente".
+
+Y cuidado con el eje: **francés, italiano y portugués no son idiomas de
+interfaz, son idiomas que se enseñan.** Viven en `src/data/languages.ts` y sus
+cursos `es-fr`, `es-it` y `es-pt` están intactos. Que no estén en
+`userLanguages.ts` no dice nada sobre su contenido.
 
 Mientras un idioma siga inactivo, sus páginas:
 

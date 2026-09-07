@@ -115,7 +115,13 @@ const nextLevel = levelIndex >= 0 ? LEVELS[levelIndex + 1] : undefined;
       items={[
         { name: dict.silo.idiomas, href: `/${userLang}` },
         {
-          name: languageMeta?.name ?? '',
+          // El NOMBRE sale del diccionario y la BANDERA de LANGUAGE_MAP: el
+          // nombre depende de la interfaz («Alemán» / «German»), el emoji no.
+          // Antes los dos salían de LANGUAGE_MAP, que guarda una sola versión
+          // —la española—, así que la miga de pan de /en/de/a1/examen decía
+          // «Alemán» mientras su propio JSON-LD, dos líneas más arriba, ya
+          // decía «German». Lo encontró el candado de U-01.
+          name: languageName,
           flag: languageMeta?.flag,
           href: `/${userLang}/${targetLang}`,
         },

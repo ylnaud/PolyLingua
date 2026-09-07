@@ -225,7 +225,7 @@ const restPath = `/${level}/${path.split('/').pop()}`;
         del recorrido lineal, y estos enlaces son la alternativa a seguir esa
         línea. Después de "siguiente lección" ya nadie los lee. */
     }
-    <RelatedLinks route={path} />
+    <RelatedLinks route={path} title={dict.silo.seguiPorAca} />
 
     <footer class="lesson-nav">
       {

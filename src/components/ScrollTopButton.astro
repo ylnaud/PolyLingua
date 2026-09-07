@@ -1,8 +1,20 @@
 ---
+// El nombre accesible sale del diccionario, no de un literal: es lo único que
+// este botón le dice a un lector de pantalla, y estaba en español en las 115
+// páginas del silo inglés. Un `aria-label` es texto de interfaz aunque no se
+// vea, así que se traduce como cualquier otro.
+import { ACTIVE_USER_LANGUAGES } from '../data/userLanguages';
+import { getDictionary } from '../i18n';
 
+interface Props {
+  userLang?: string;
+}
+
+const { userLang } = Astro.props;
+const t = getDictionary((userLang ?? ACTIVE_USER_LANGUAGES[0].id) as never).widgets;
 ---
 
-<button type="button" class="scroll-top-btn" id="scroll-top-btn" aria-label="Volver arriba">
+<button type="button" class="scroll-top-btn" id="scroll-top-btn" aria-label={t.volverArriba}>
   <span aria-hidden="true">↑</span>
 </button>
 

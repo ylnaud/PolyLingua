@@ -92,3 +92,81 @@ $ git status --short
 ---
 
 **VERDE → defecto → ROJO → revertir → VERDE.** El candado no es decorativo.
+
+---
+
+# Ronda 2 · tras el `FAIL` del Critic
+
+El Critic tumbó la ronda 1. Aquí la evidencia de la reparación y de la segunda
+inversión, esta vez por la vía que el detector tenía ciega: los atributos.
+
+## 4 · Los dos defectos que el candado NO veía, ahora medidos
+
+Antes de reparar:
+
+```
+$ grep -rl 'Seguí por acá' dist/en --include=*.html | wc -l
+58                                    # de 115 páginas inglesas — es un <h2> visible
+$ grep -rl 'aria-label="Volver arriba"' dist/en --include=*.html | wc -l
+115                                   # las 115 — nombre accesible del botón
+$ npx vitest run tests/lang-purity.test.ts
+      Tests  14 passed (14)           # verde encima de los dos
+```
+
+Después de reparar:
+
+```
+$ grep -rl 'Seguí por acá' dist/en --include=*.html | wc -l
+0
+$ grep -rl 'Volver arriba' dist/en --include=*.html | wc -l
+0
+$ grep -rl 'Carry on here' dist/en --include=*.html | wc -l
+58
+$ grep -rl 'aria-label="Back to top"' dist/en --include=*.html | wc -l
+115
+```
+
+Control de no regresión en español:
+
+```
+$ grep -rl 'Seguí por acá' dist/es --include=*.html | wc -l
+294
+$ grep -rl 'aria-label="Volver arriba"' dist/es --include=*.html | wc -l
+641
+```
+
+## 5 · La cifra falsa (D3), remedida
+
+```
+con la lista de 6 palabras que usé aquel día, sin quitar <script>:  270
+con la lista REAL del detector, sin quitar <script>:               1586
+```
+
+El 270 estaba publicado en tres sitios como si describiera el detector. Corregido
+a 1586, con la explicación del error en `spanish-scan.ts`.
+
+## 6 · Segunda inversión, por la vía ciega → ROJO
+
+Se devolvió el literal al `aria-label` de `ScrollTopButton.astro`, `npm run build`:
+
+```
+AssertionError: español en el silo inglés:
+en/ahorcado/index.html · «Volver» · …witch between dark and light mode · Dismiss notice · Dismiss notice · Volver arriba · Main mobile navigation · More options · Install PolyLi…
+en/de/a1/animals-vocabulary/index.html · «Volver» · …the full sentence · plural of Vogel · The sentence you are building · Volver arriba · Main mobile navigation · More options · Install PolyLi…
+en/de/a1/at-the-restaurant/index.html · «Volver» · …the full sentence · type the phrase · The sentence you are building · Volver arriba · Main mobile navigation · More options · Install PolyLi…
+```
+
+La ronda 1 daba **verde** ante este mismo HTML.
+
+## 7 · Restaurado → VERDE
+
+```
+$ npm run build      → 1042 page(s) built
+$ npx vitest run tests/lang-purity.test.ts
+ Test Files  1 passed (1)
+      Tests  19 passed (19)
+$ npm test
+      Tests  522 passed (522)
+$ npm run check
+- 0 errors  - 0 warnings
+```

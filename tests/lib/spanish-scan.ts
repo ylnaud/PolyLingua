@@ -18,21 +18,63 @@
  * El texto que un lector ve, sin nada de lo que hay alrededor.
  *
  * Quitar los `<script>` es EL paso decisivo, y no es una precaución teórica:
- * medido sobre las 115 páginas del silo inglés, un barrido que no los quita da
- * 270 coincidencias y quitándolos da 0. El JS de este proyecto está escrito en
- * español —identificadores, comentarios, los `data-*` con JSON de
- * pageStrings— y encima el JSON-LD viaja dentro de un `<script>`. Sin este
- * paso el detector sería inservible por ruido y acabaría desactivado.
+ * medido con ESTA lista sobre las 115 páginas del silo inglés, un barrido que
+ * no los quita da **1586** coincidencias y quitándolos da 0. El JS de este
+ * proyecto está escrito en español —identificadores, comentarios, los `data-*`
+ * con JSON de pageStrings— y encima el JSON-LD viaja dentro de un `<script>`.
+ * Sin este paso el detector sería inservible por ruido y acabaría desactivado.
  *
- * Quitar las etiquetas después tiene un efecto secundario útil: ningún valor de
- * atributo llega al texto, así que las rutas (`/en/de/vocabulario`) no pueden
- * confundirse con una cadena de interfaz. Comprobado sobre el build.
+ * (La primera versión publicaba «270» en tres sitios. Ese número salía de una
+ * lista de sondeo de seis palabras usada durante el diagnóstico, no de la lista
+ * que se publica aquí: se midió con un instrumento y se reportó como si fuera
+ * otro. Lo detectó el Critic de U-01.)
+ *
+ * Quitar las etiquetas descarta de paso todos los valores de atributo, y eso
+ * tiene una cara y una cruz. La cara: las rutas (`/en/de/vocabulario`) no se
+ * confunden con cadenas de interfaz. La cruz, que la primera versión de este
+ * archivo presentó como si solo hubiera cara: **hay atributos que SÍ son texto
+ * de interfaz**. El Critic de U-01 lo demostró con dos defectos reales que este
+ * detector daba por buenos — `aria-label="Volver arriba"` en las 115 páginas
+ * inglesas, con `volver` ya en la lista de palabras. Un `aria-label` es lo
+ * único que un lector de pantalla anuncia: que no se vea no lo hace menos
+ * interfaz.
+ *
+ * Por eso `textoVisible()` conserva el texto del cuerpo y `escanear()` añade
+ * aparte los atributos legibles (ver ATRIBUTOS_DE_TEXTO). La distinción no es
+ * «atributo sí / atributo no», es «esto lo lee una persona / esto lo lee el
+ * navegador».
  */
 export function textoVisible(html: string): string {
   let h = html.replace(/<script\b[\s\S]*?<\/script>/gi, ' ');
   h = h.replace(/<style\b[\s\S]*?<\/style>/gi, ' ');
   h = h.replace(/<!--[\s\S]*?-->/g, ' ');
   return h.replace(/<[^>]*>/g, ' ');
+}
+
+/**
+ * Atributos cuyo valor lee una persona, no el navegador.
+ *
+ * `href`, `src`, `class`, `id` y los `data-*` quedan fuera a propósito: llevan
+ * rutas, identificadores y el JSON que el cliente consume, todo escrito en
+ * español por convención del proyecto. Meterlos aquí devolvería los 1586 falsos
+ * positivos que la exclusión de `<script>` evita.
+ */
+export const ATRIBUTOS_DE_TEXTO = ['aria-label', 'alt', 'title', 'placeholder'] as const;
+
+const RE_ATRIBUTOS = new RegExp(`\\b(?:${ATRIBUTOS_DE_TEXTO.join('|')})\\s*=\\s*"([^"]*)"`, 'gi');
+
+/** El `content` de <meta name="description">, que CLAUDE.md exige por página. */
+const RE_META_DESC = /<meta[^>]*\bname="description"[^>]*\bcontent="([^"]*)"/gi;
+
+/** El texto legible que vive dentro de atributos, no en el cuerpo. */
+export function textoDeAtributos(html: string): string {
+  const sinScripts = html
+    .replace(/<script\b[\s\S]*?<\/script>/gi, ' ')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, ' ');
+  const trozos: string[] = [];
+  for (const m of sinScripts.matchAll(RE_ATRIBUTOS)) trozos.push(m[1]);
+  for (const m of sinScripts.matchAll(RE_META_DESC)) trozos.push(m[1]);
+  return trozos.join(' · ');
 }
 
 /**
@@ -106,6 +148,29 @@ export const PALABRAS_ES: readonly string[] = [
   'enseña',
   'niño',
   'todavía',
+  // Voseo rioplatense: el proyecto escribe así, y la primera versión de esta
+  // lista solo traía las formas peninsulares. Por eso dejó pasar el <h2>
+  // «Seguí por acá» que se publicaba en 58 páginas inglesas: tenía `aquí` pero
+  // no `acá`, y `sigue` pero no `seguí`. Frecuencias medidas en el silo
+  // español: acá 376, seguí 334, tenés 119, podés 61, querés 57.
+  'acá',
+  'allá',
+  'vos',
+  'seguí',
+  'elegí',
+  'completá',
+  'escribí',
+  'poné',
+  'volvé',
+  'agregá',
+  'mirá',
+  'probá',
+  'tenés',
+  'querés',
+  'podés',
+  'sabés',
+  'hacés',
+  'andá',
   // Sin tilde, pero inequívocas: ni inglesas ni alemanas.
   'para',
   'pero',
@@ -228,7 +293,7 @@ export interface Resultado {
 const RE = new RegExp(`(?<!\\p{L})(${PALABRAS_ES.join('|')})(?!\\p{L})`, 'giu');
 
 export function escanear(html: string): Resultado {
-  let texto = textoVisible(html);
+  let texto = `${textoVisible(html)} · ${textoDeAtributos(html)}`;
   let endonimos = 0;
   texto = texto.replaceAll(ENDONIMO, () => {
     endonimos++;

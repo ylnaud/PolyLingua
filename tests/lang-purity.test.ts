@@ -100,11 +100,53 @@ describe('U-01 · sensibilidad del detector (fixtures, sin build)', () => {
 
   it('ignora el español que vive dentro de <script>', () => {
     // El JS de este proyecto está escrito en español. Sin esta exclusión el
-    // detector daría 270 falsos positivos y acabaría desactivado.
+    // detector daría 1586 falsos positivos y acabaría desactivado.
     const r = escanear(
       envuelve('<p>Check</p><script>const siguiente = "Todavía no hay lecciones";</script>'),
     );
     expect(r.hallazgos).toEqual([]);
+  });
+
+  // Los cuatro casos siguientes son los que el Critic usó para tumbar la
+  // primera versión de esta unidad: el detector descartaba TODO valor de
+  // atributo, así que un aria-label en español pasaba invisible aunque su
+  // palabra estuviera en la lista.
+  it('detecta español en un aria-label', () => {
+    const r = escanear(envuelve('<button aria-label="Volver arriba">↑</button>'));
+    expect(r.hallazgos.map((h) => h.palabra.toLowerCase())).toContain('volver');
+  });
+
+  it('detecta español en alt, title y placeholder', () => {
+    for (const attr of ['alt', 'title', 'placeholder']) {
+      const r = escanear(envuelve(`<input ${attr}="Escribe tu respuesta aquí">`));
+      expect(r.hallazgos.length, `${attr} no se está mirando`).toBeGreaterThan(0);
+    }
+  });
+
+  it('detecta español en la meta description', () => {
+    // CLAUDE.md la exige en cada página; es texto que ve quien busca en Google.
+    const r = escanear(
+      '<html><head><meta name="description" content="Aprender alemán desde cero"></head><body></body></html>',
+    );
+    expect(r.hallazgos.length).toBeGreaterThan(0);
+  });
+
+  it('NO mira href, src, class ni data-*: ahí viven rutas e identificadores', () => {
+    const r = escanear(
+      envuelve(
+        '<a href="/en/de/vocabulario" class="nivel-actual" data-page-strings=\'{"siguiente":"Next"}\'>Vocabulary</a>',
+      ),
+    );
+    expect(r.hallazgos).toEqual([]);
+  });
+
+  it('conoce el voseo rioplatense, que es como escribe este proyecto', () => {
+    // El hueco por el que se publicó «Seguí por acá» en 58 páginas inglesas:
+    // la lista tenía `aquí` pero no `acá`, y `sigue` pero no `seguí`.
+    const r = escanear(envuelve('<h2>Seguí por acá</h2>'));
+    const palabras = r.hallazgos.map((h) => h.palabra.toLowerCase());
+    expect(palabras).toContain('seguí');
+    expect(palabras).toContain('acá');
   });
 
   it('ignora el JSON-LD, que viaja dentro de un <script>', () => {
@@ -138,9 +180,7 @@ describe('U-01 · sensibilidad del detector (fixtures, sin build)', () => {
     expect(r.hallazgos).toEqual([]);
   });
 
-  it('los slugs de URL no llegan al texto: van en atributos', () => {
-    // Comprobado sobre el build. Por eso NO hace falta excluirlos, y añadir esa
-    // exclusión debilitaría el detector sin motivo.
+  it('los slugs de URL no llegan al texto: viven en href, que no se mira', () => {
     const r = escanear(envuelve('<a href="/en/de/vocabulario">Vocabulary</a>'));
     expect(r.hallazgos).toEqual([]);
     expect(textoVisible('<a href="/en/de/vocabulario">Vocabulary</a>')).not.toContain(

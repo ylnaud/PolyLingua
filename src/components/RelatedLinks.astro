@@ -24,11 +24,15 @@ import { relatedFor } from '../lib/links/fromContent';
 interface Props {
   /** Ruta de la página actual, tal como la genera el silo. */
   route: string;
-  /** Encabezado del bloque. Cada tipo de página usa el suyo. */
-  title?: string;
+  /** Encabezado del bloque. Obligatorio: cada tipo de página usa el suyo, y
+   *  un valor por defecto solo puede estar en un idioma. */
+  title: string;
 }
 
-const { route, title = 'Seguí por acá' } = Astro.props;
+// Sin `title`, el encabezado salía del literal español que había aquí, y las 58
+// páginas del silo inglés que montan el bloque sin pasarlo publicaban un <h2>
+// en castellano. Ahora quien lo monta pasa el suyo desde el diccionario.
+const { route, title } = Astro.props;
 const enlaces = relatedFor(route);
 ---
 

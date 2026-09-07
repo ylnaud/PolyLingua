@@ -191,6 +191,13 @@ export interface Dictionary {
     unidad: string;
     /** Antesala de los enlaces del bloque TSA (ver src/data/tsa.ts). */
     seguiCon: string;
+    /**
+     * Encabezado por defecto del bloque RelatedLinks. Era un literal en las
+     * props del componente («Seguí por acá»), así que salía en español en las
+     * 58 páginas del silo inglés que lo montan sin `title`. Lo encontró el
+     * Critic de U-01, no el candado: es un `<h2>` visible.
+     */
+    seguiPorAca: string;
     /** Título del bloque de RelatedLinks en la portada del curso. */
     delBlog: string;
     /** CTA de la tarjeta de idioma de las portadas. */
@@ -493,6 +500,13 @@ export interface Dictionary {
   widgets: {
     /** Enlace de salto al contenido, primer foco de cada página. */
     saltarContenido: string;
+    /**
+     * Nombre accesible del botón de volver arriba. Era un literal dentro del
+     * componente, así que un lector de pantalla lo anunciaba en español en las
+     * 115 páginas del silo inglés. El candado de U-01 no lo vio porque vive en
+     * un `aria-label` y el detector no miraba atributos; lo encontró el Critic.
+     */
+    volverArriba: string;
     /** Barra descartable compartida (racha y copia de seguridad). */
     barra: { cerrar: string };
     /** Meta diaria: la píldora del header y su diálogo. */
@@ -705,6 +719,7 @@ export const es: Dictionary = {
     lecciones: 'lecciones',
     unidad: 'Unidad',
     seguiCon: 'Seguí con:',
+    seguiPorAca: 'Seguí por acá',
     delBlog: 'Del blog',
     verNiveles: 'Ver niveles →',
     inicio: {
@@ -1016,6 +1031,7 @@ export const es: Dictionary = {
   },
   widgets: {
     saltarContenido: 'Saltar al contenido',
+    volverArriba: 'Volver arriba',
     barra: { cerrar: 'Cerrar aviso' },
     metaDiaria: {
       pildoraAria: 'Ver o cambiar tu meta de práctica de hoy',
@@ -1409,6 +1425,7 @@ export const en: Dictionary = {
     lecciones: 'lessons',
     unidad: 'Unit',
     seguiCon: 'Carry on with:',
+    seguiPorAca: 'Carry on here',
     delBlog: 'From the blog',
     verNiveles: 'See levels →',
     inicio: {
@@ -1721,6 +1738,7 @@ export const en: Dictionary = {
   },
   widgets: {
     saltarContenido: 'Skip to content',
+    volverArriba: 'Back to top',
     barra: { cerrar: 'Dismiss notice' },
     metaDiaria: {
       pildoraAria: "See or change today's practice goal",

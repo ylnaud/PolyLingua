@@ -354,15 +354,179 @@ describe('tanda A1 — las 17 glosas inglesas', () => {
     }
   });
 
-  it('las translations siguen pendientes: vacías, no españolas', () => {
-    // Este test cae cuando llegue la tanda de las 128 traducciones. Es la
-    // señal de que hay que actualizarlo, no de que algo se rompió.
-    for (const [id, g] of Object.entries(REPAIR_GLOSSES.en)) {
-      expect(g.translations, id).toEqual([]);
+  it('las 128 translations están, una por variación y en su índice', () => {
+    let total = 0;
+    for (const id of A1) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      const tr = REPAIR_GLOSSES.en[id].translations;
+      expect(
+        tr.length,
+        `${id}: ${tr.length} traducciones para ${base.variations.length} variaciones`,
+      ).toBe(base.variations.length);
+      tr.forEach((t, i) => {
+        expect(typeof t, `${id}[${i}]`).toBe('string');
+        expect(t.trim().length, `${id}[${i}] vacía`).toBeGreaterThan(0);
+      });
+      total += tr.length;
     }
-    // Y mientras estén vacías, la variación se pinta SIN traducción — nunca
-    // con la española. Los dos renderizadores la protegen con `if`.
-    const r = repairTemplateFor(CON, 'en')!;
-    for (const v of r.variations) expect(v.translation).toBeUndefined();
+    expect(total).toBe(128);
+  });
+
+  /**
+   * Correspondencia POR ÍNDICE.
+   *
+   * Contar 128 no detecta un array desplazado: si la traducción 3 acaba en la
+   * posición 4, los conteos siguen cuadrando y el alumno ve la frase que no es.
+   * Se compara la FORMA de cada original con la de su traducción —interrogación,
+   * flecha del plural, paréntesis pedagógico— que es lo que se conserva al
+   * traducir y lo que se rompe al desplazar.
+   */
+  it('cada traducción conserva la forma de SU variación, no la de otra', () => {
+    for (const id of A1) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      const tr = REPAIR_GLOSSES.en[id].translations;
+      base.variations.forEach((v, i) => {
+        const o = v.translation ?? '';
+        const n = tr[i];
+        expect(n.trim().endsWith('?'), `${id}[${i}] interrogación: «${o}» → «${n}»`).toBe(
+          o.trim().endsWith('?'),
+        );
+        expect(n.includes('→'), `${id}[${i}] flecha: «${o}» → «${n}»`).toBe(o.includes('→'));
+        expect(n.includes('('), `${id}[${i}] paréntesis: «${o}» → «${n}»`).toBe(o.includes('('));
+      });
+    }
+  });
+
+  /**
+   * Anclas textuales: nombres propios que aparecen IGUAL en la frase alemana y
+   * en su traducción inglesa (Berlin, Anna, Peter, Müller…).
+   *
+   * Es el único candado que ata una traducción a SU variación concreta. El de
+   * la forma no llega: intercambiar dos entradas con la misma pinta —las dos
+   * con flecha, las dos sin paréntesis— lo pasa sin enterarse. Lo comprobé
+   * intercambiando dos del plural y no saltó.
+   *
+   * Cubre 9 de las 128. Para el resto no hay señal comprobable sin un
+   * diccionario bilingüe, así que la garantía es parcial y conviene saberlo.
+   */
+  it('las traducciones con nombre propio corresponden a SU frase alemana', () => {
+    let ancladas = 0;
+    for (const id of A1) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      base.variations.forEach((v, i) => {
+        const propios = v.sentence.match(/\b[A-ZÄÖÜ][a-zäöüß]{3,}\b/g) ?? [];
+        for (const w of propios) {
+          // Solo los que de verdad viajan a la traducción: Berlin sí, Zeitung no.
+          if (
+            !base.variations.some((_, j) =>
+              (REPAIR_GLOSSES.en[id].translations[j] ?? '').includes(w),
+            )
+          )
+            continue;
+          expect(
+            REPAIR_GLOSSES.en[id].translations[i],
+            `${id}[${i}] no menciona «${w}», que sí está en «${v.sentence}»`,
+          ).toContain(w);
+          ancladas++;
+        }
+      });
+    }
+    expect(ancladas, 'no se ancló ninguna: el candado no mide nada').toBeGreaterThanOrEqual(9);
+  });
+
+  it('la primera y la última de cada skill están fijadas', () => {
+    // Pinta los extremos: una rotación o un reverso del array cae aquí aunque
+    // todas las entradas tengan la misma forma.
+    expect(REPAIR_GLOSSES.en['de.a1.noun.plural'].translations[0]).toBe('the table → the tables');
+    expect(REPAIR_GLOSSES.en['de.a1.noun.plural'].translations[7]).toBe(
+      'the teacher → the teachers (no change)',
+    );
+    expect(REPAIR_GLOSSES.en['de.a1.verb.sein'].translations[0]).toBe('I am tired.');
+    expect(REPAIR_GLOSSES.en['de.a1.verb.sein'].translations[7]).toBe('Are you a teacher?');
+    expect(REPAIR_GLOSSES.en['de.a1.question.words'].translations[0]).toBe('What is your name?');
+    expect(REPAIR_GLOSSES.en['de.a1.question.words'].translations[7]).toBe(
+      'Where are you going to?',
+    );
+    expect(REPAIR_GLOSSES.en['de.a1.wordorder.questions'].translations[0]).toBe(
+      'When does the course begin?',
+    );
+    expect(REPAIR_GLOSSES.en['de.a1.wordorder.questions'].translations[5]).toBe(
+      'What are you doing at the weekend?',
+    );
+  });
+
+  it('las 6 de wordorder.questions son el enunciado: preguntas, no fichas', () => {
+    // En `order` la traducción va DELANTE de las fichas y es lo único que dice
+    // qué frase montar. Sin ella el ejercicio no tiene objetivo.
+    const base = REPAIR_TEMPLATES.find((t) => t.skillId === 'de.a1.wordorder.questions')!;
+    const tr = REPAIR_GLOSSES.en['de.a1.wordorder.questions'].translations;
+    expect(base.variations.every((v) => v.kind === 'order')).toBe(true);
+    expect(tr).toHaveLength(6);
+    for (const t of tr) expect(t.trim().endsWith('?'), `«${t}» no es una pregunta`).toBe(true);
+  });
+
+  it('los 9 paréntesis pedagógicos sobreviven a la traducción', () => {
+    const conNota: string[] = [];
+    for (const id of A1) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      base.variations.forEach((v, i) => {
+        if ((v.translation ?? '').includes('(')) {
+          conNota.push(`${id}[${i}]`);
+          expect(REPAIR_GLOSSES.en[id].translations[i], `${id}[${i}] perdió la nota`).toContain(
+            '(',
+          );
+        }
+      });
+    }
+    expect(conNota).toHaveLength(9);
+  });
+
+  it('ninguna traducción inglesa lleva español evidente', () => {
+    const marcas =
+      /[áéíóúñ¿¡]|\b(el|los|las|del|una|pero|con|hermano|hermana|libro|mesa|casa|noche|tengo|tienes|tiene|estoy|somos|vivo|vives|vive|niño|niña|niños|mujer|profesor|profesora|coche|periodico|silla|excepcion|cambio|sin|los)\b/i;
+
+    // Control: la regex TIENE que marcar los originales españoles.
+    const originales = A1.flatMap(
+      (id) => REPAIR_TEMPLATES.find((t) => t.skillId === id)!.variations,
+    ).map((v) => v.translation ?? '');
+    const marcados = originales.filter((o) => marcas.test(o));
+    expect(marcados.length, 'la regex no detecta español: no mide nada').toBeGreaterThan(100);
+
+    for (const id of A1)
+      REPAIR_GLOSSES.en[id].translations.forEach((t, i) => {
+        const m = t.match(marcas);
+        expect(m, `${id}[${i}]: «${m?.[0]}» en «${t}»`).toBeNull();
+      });
+  });
+
+  it('en devuelve las inglesas y es sigue devolviendo las españolas', () => {
+    for (const id of A1) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      const ing = repairTemplateFor(id, 'en')!;
+      const esp = repairTemplateFor(id, 'es')!;
+      ing.variations.forEach((v, i) => {
+        expect(v.translation, `${id}[${i}]`).toBe(REPAIR_GLOSSES.en[id].translations[i]);
+        expect(v.translation, `${id}[${i}] devolvió la española`).not.toBe(
+          base.variations[i].translation,
+        );
+        // La frase alemana, intacta en las dos.
+        expect(v.sentence).toBe(base.variations[i].sentence);
+        expect(v.answer).toBe(base.variations[i].answer);
+      });
+      expect(esp).toEqual(base);
+    }
+  });
+
+  it('rellenar las translations no ha mutado REPAIR_TEMPLATES', () => {
+    for (const id of A1) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      // Las 128 originales siguen ahí y siguen siendo españolas.
+      expect(
+        base.variations.every((v) => v.translation),
+        id,
+      ).toBe(true);
+      for (const v of base.variations)
+        expect(REPAIR_GLOSSES.en[id].translations).not.toContain(v.translation);
+    }
   });
 });

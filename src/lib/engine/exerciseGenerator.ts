@@ -223,17 +223,121 @@ export interface RepairGloss {
 /**
  * Glosas por idioma de interfaz, para los que NO son el glosado por defecto.
  *
- * Vacío a propósito: la arquitectura entra primero y el contenido después. Con
- * el mapa vacío, `repairTemplateFor(id, 'en')` devuelve `null` y el silo
- * inglés simplemente no abre bucle de refuerzo — que es lo correcto mientras
- * no haya nada que mostrarle en su idioma.
+ * Una entrada aquí ENCIENDE el bucle de refuerzo de esa habilidad en ese
+ * idioma: `repairTemplateFor()` devuelve la plantilla con estos textos y las
+ * frases alemanas intactas. Sin entrada devuelve `null` y el bucle no se abre,
+ * que es lo correcto mientras no haya nada que mostrar en el idioma de quien
+ * estudia. No hay caída de un idioma a otro, nunca.
  *
- * Para activarlo: añadir la entrada del skillId, con tantas `translations`
- * como variaciones tenga su plantilla. No hace falta tocar ni una línea de
- * código; la función de abajo la recoge sola.
+ * `translations` va por ÍNDICE contra `variations` de la plantilla. Vacío es
+ * válido y significa «todavía no»: la variación se pinta sin su línea de
+ * traducción (los dos renderizadores la protegen con `if (data.translation)`),
+ * no con la española.
+ *
+ * Estado: A1 completo en inglés — 17 explicaciones. Las `translations` y los
+ * niveles A2-C2 son las tandas siguientes.
  */
 export const REPAIR_GLOSSES: Record<string, Record<string, RepairGloss>> = {
-  en: {},
+  en: {
+    // ── A1 ──────────────────────────────────────────────────────────────
+    //
+    // Traducción del `explanation` español de cada plantilla, sin añadir
+    // reglas que el original no diga. Se conservan literalmente los términos y
+    // ejemplos alemanes —der/die/das, sein, haben, W-Frage, las terminaciones,
+    // las conjugaciones— porque son lo que se está enseñando, no envoltorio.
+    //
+    // En `question.words` el español glosa cada W-Frage con una palabra
+    // (wo = dónde, woher = de dónde, wohin = adónde). El inglés necesita dos
+    // para las dos últimas (where from, where to); es la misma distinción del
+    // original, dicha como se dice en inglés, no una regla nueva.
+    'de.a1.wordorder.time-verb-subject': {
+      // El español lleva **negrita** aquí, y los dos consumidores pintan con
+      // textContent, así que los asteriscos saldrían literales. No se copian.
+      explanation:
+        'In German the verb is ALWAYS in second position. If the sentence starts with the time, the verb stays second and the subject moves behind it: Heute trinke ich Kaffee.',
+      translations: [],
+    },
+    'de.a1.wordorder.basic': {
+      explanation:
+        'The conjugated verb takes the second position in the sentence. What comes first can change; the verb does not move.',
+      translations: [],
+    },
+    'de.a1.article.der-die-das': {
+      explanation:
+        'The article goes with the noun, not with its meaning: you learn them together, as a single word.',
+      translations: [],
+    },
+    'de.a1.article.der': {
+      explanation:
+        'Masculine: male people, days, months, seasons, compass points and the endings -ig, -ismus, -ich, -ling. Watch out for the two exceptions that break their own categories: die Nacht and das Bier.',
+      translations: [],
+    },
+    'de.a1.article.die': {
+      explanation:
+        'Feminine: female people and the most reliable endings in the language — -ung, -heit, -keit, -schaft, -ion, -tät, -ei, -ik, -in. A final -e leans feminine, but der Name and der Käse are exceptions.',
+      translations: [],
+    },
+    'de.a1.article.das': {
+      explanation:
+        'Neuter: the diminutives -chen and -lein (100% certain, even when they refer to people), -um, -nis, -ment, international loanwords and infinitives used as nouns.',
+      translations: [],
+    },
+    'de.a1.question.words': {
+      explanation:
+        'Each W-Frage asks for a different piece of information: wer (who), was (what), wo (where), woher (where from), wohin (where to), wann (when), wie (how) and warum (why).',
+      translations: [],
+    },
+    'de.a1.wordorder.questions': {
+      explanation:
+        'In W- questions the order is question word + verb + subject. In yes/no questions the verb goes straight to the front.',
+      translations: [],
+    },
+    'de.a1.verb.present-regular': {
+      explanation:
+        'Regular present: drop the -en from the infinitive and add the ending for the person — ich -e, du -st, er/sie/es -t, wir -en, ihr -t, sie/Sie -en.',
+      translations: [],
+    },
+    'de.a1.verb.present-irregular': {
+      explanation:
+        'Some verbs change their vowel ONLY in du and er/sie/es: e→i (sprechen → du sprichst), e→ie (lesen → du liest) and a→ä (fahren → du fährst). The other persons are regular.',
+      translations: [],
+    },
+    'de.a1.verb.sein': {
+      explanation:
+        'sein is irregular and you have to know it by heart: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind.',
+      translations: [],
+    },
+    'de.a1.verb.haben': {
+      explanation:
+        'haben is irregular too: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben. Only du and er/sie/es lose the -b-.',
+      translations: [],
+    },
+    'de.a1.pronoun.personal': {
+      explanation:
+        'The pronoun follows the GENDER of the word, not whether it is a person or a thing: der Tisch → er, die Zeitung → sie, das Kind → es.',
+      translations: [],
+    },
+    'de.a1.negation.nicht-kein': {
+      explanation:
+        'kein negates nouns that take an indefinite article or none at all (kein Auto, keine Zeit). nicht negates everything else: verbs, adjectives and nouns with a definite article or a possessive.',
+      translations: [],
+    },
+    'de.a1.noun.plural': {
+      explanation:
+        'The German plural has five routes (-e, -er, -(e)n, -s or no change) and sometimes an Umlaut. What never changes is the article: in the plural it is always die.',
+      translations: [],
+    },
+    'de.a1.verb.imperative': {
+      explanation:
+        'The du imperative goes without the pronoun and without the -st (du sprichst → Sprich!). The ihr one is the same as the present (Sprecht!) and the Sie one is infinitive + Sie (Sprechen Sie!).',
+      translations: [],
+    },
+    'de.a1.preposition.place-time': {
+      explanation:
+        'For time: um with the hour (um acht), am with the day (am Montag) and im with the month or season (im Sommer). For place: in a city or country, auf on top of something, an next to something and zu/zum towards someone.',
+      translations: [],
+    },
+  },
 };
 
 export const REPAIR_TEMPLATES: RepairTemplate[] = [

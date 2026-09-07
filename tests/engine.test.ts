@@ -569,42 +569,52 @@ describe('plantillas de refuerzo', () => {
  * NUNCA la glosa de otro idioma.
  */
 describe('glosa de las plantillas por idioma de usuario', () => {
-  const ID = 'de.a1.wordorder.basic';
+  // Con glosa inglesa (tanda A1) y sin ella (A2, tanda siguiente). Hace falta
+  // una de cada: el comportamiento a comprobar es justo la diferencia.
+  const CON = 'de.a1.wordorder.basic';
+  const SIN = 'de.a2.verb.perfekt';
 
   it('es → de conserva el comportamiento actual', () => {
-    const base = REPAIR_TEMPLATES.find((t) => t.skillId === ID)!;
-    // Sin argumento (las llamadas viejas) y con 'es' explícito dan lo mismo.
-    expect(repairTemplateFor(ID)).toEqual(base);
-    expect(repairTemplateFor(ID, 'es')).toEqual(base);
-    expect(repairTemplateFor(ID, DEFAULT_GLOSS_LANG)).toEqual(base);
+    for (const id of [CON, SIN]) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      // Sin argumento (las llamadas viejas) y con 'es' explícito dan lo mismo.
+      expect(repairTemplateFor(id)).toEqual(base);
+      expect(repairTemplateFor(id, 'es')).toEqual(base);
+      expect(repairTemplateFor(id, DEFAULT_GLOSS_LANG)).toEqual(base);
+    }
   });
 
   it('en → de sin glosa devuelve null', () => {
-    expect(repairTemplateFor(ID, 'en')).toBeNull();
-    // Y por tanto no hay tanda de reparación que ofrecer.
-    const skill = SKILLS.find((s) => s.id === ID)!;
+    expect(repairTemplateFor(SIN, 'en')).toBeNull();
+    const skill = SKILLS.find((s) => s.id === SIN)!;
     expect(generateRepairSet(skill, 5, 'en')).toEqual([]);
   });
 
   it('en → de nunca devuelve la glosa española', () => {
-    // El candado de verdad: NINGUNA plantilla, de ningún idioma meta, puede
-    // devolver contenido cuando se pide en un idioma sin glosa escrita.
+    // El candado de verdad: ninguna plantilla sin glosa escrita puede devolver
+    // contenido, y ninguna CON glosa puede devolver la española.
     for (const t of REPAIR_TEMPLATES) {
-      expect(repairTemplateFor(t.skillId, 'en'), `${t.skillId} filtró la glosa`).toBeNull();
+      const r = repairTemplateFor(t.skillId, 'en');
+      if (REPAIR_GLOSSES.en[t.skillId]) {
+        expect(r!.explanation, `${t.skillId} devolvió la española`).not.toBe(t.explanation);
+      } else {
+        expect(r, `${t.skillId} filtró la glosa`).toBeNull();
+      }
     }
   });
 
   it('una skill puede tener glosas distintas para es y en', () => {
-    // Se inyecta una glosa inglesa de mentira para probar el mecanismo sin
-    // añadir contenido real, y se retira al terminar.
-    const base = REPAIR_TEMPLATES.find((t) => t.skillId === ID)!;
-    REPAIR_GLOSSES.en[ID] = {
+    // Se inyecta sobre una habilidad SIN glosa real y se retira al terminar:
+    // borrar la entrada de una que sí la tiene destruiría contenido de verdad.
+    const base = REPAIR_TEMPLATES.find((t) => t.skillId === SIN)!;
+    expect(REPAIR_GLOSSES.en[SIN]).toBeUndefined();
+    REPAIR_GLOSSES.en[SIN] = {
       explanation: 'TEST-EN explanation',
       translations: base.variations.map((_, i) => `TEST-EN translation ${i}`),
     };
     try {
-      const en = repairTemplateFor(ID, 'en')!;
-      const es = repairTemplateFor(ID, 'es')!;
+      const en = repairTemplateFor(SIN, 'en')!;
+      const es = repairTemplateFor(SIN, 'es')!;
 
       // La glosa cambia...
       expect(en.explanation).toBe('TEST-EN explanation');
@@ -617,20 +627,21 @@ describe('glosa de las plantillas por idioma de usuario', () => {
       expect(en.variations.map((v) => v.answer)).toEqual(base.variations.map((v) => v.answer));
 
       // Y el ejercicio pintado hereda la glosa correcta.
-      const skill = SKILLS.find((s) => s.id === ID)!;
+      const skill = SKILLS.find((s) => s.id === SIN)!;
       const tanda = generateRepairSet(skill, 2, 'en');
       expect(tanda).toHaveLength(2);
       expect(tanda[0].explanation).toBe('TEST-EN explanation');
     } finally {
-      delete REPAIR_GLOSSES.en[ID];
+      delete REPAIR_GLOSSES.en[SIN];
     }
   });
 
-  it('el mapa de glosas no lleva contenido todavía', () => {
-    // Que este test falle es la señal de que alguien empezó a traducir: hay que
-    // actualizarlo entonces, no antes. Sirve para que las 632 piezas pendientes
-    // no entren por accidente creyendo que ya estaban.
-    expect(Object.keys(REPAIR_GLOSSES.en)).toEqual([]);
+  it('el mapa lleva la tanda A1 y nada más', () => {
+    // Cuando entre A2 hay que subir este número, no borrar el test: es lo que
+    // impide que una tanda se cuele a medias sin que nadie lo note.
+    const ids = Object.keys(REPAIR_GLOSSES.en);
+    expect(ids).toHaveLength(17);
+    expect(ids.every((id) => id.startsWith('de.a1.'))).toBe(true);
   });
 });
 

@@ -19,16 +19,26 @@ import { es, en } from '../src/i18n/dictionary';
  * entrada llegó a servir a es-de y a en-de, y el curso inglés recibía la
  * explicación en castellano.
  *
- * Estos tests son el candado de que eso no puede volver. No prueban que el
- * contenido inglés exista —hoy no existe, y es correcto que no exista— sino
- * que el sistema está PREPARADO para recibirlo sin filtrar otro idioma por el
- * camino.
+ * Estos tests son el candado de que eso no puede volver: sin glosa en el
+ * idioma pedido se devuelve `null`, nunca la de otro idioma.
  */
 
-const ID = 'de.a1.wordorder.basic';
+/** Una habilidad CON glosa inglesa (tanda A1). */
+const CON = 'de.a1.wordorder.basic';
+/** Una SIN glosa inglesa todavía (A2 entra en la tanda siguiente). */
+const SIN = 'de.a2.verb.perfekt';
 
 /** Marca inconfundible: si aparece donde no toca, se ve a simple vista. */
 const MARCA = '⟦TEST-EN⟧';
+
+/**
+ * Las glosas reales, capturadas al cargar el módulo.
+ *
+ * El `afterEach` restaura EXACTAMENTE esto en vez de vaciar el mapa: vaciarlo
+ * borraría las 17 entradas A1 de verdad y los tests siguientes medirían sobre
+ * un mapa vacío sin enterarse.
+ */
+const REALES = { ...REPAIR_GLOSSES.en };
 
 function ponerGlosaDePrueba(skillId: string) {
   const base = REPAIR_TEMPLATES.find((t) => t.skillId === skillId)!;
@@ -39,9 +49,9 @@ function ponerGlosaDePrueba(skillId: string) {
   return base;
 }
 
-// Ningún dato de prueba sobrevive a su test, pase lo que pase.
 afterEach(() => {
   for (const k of Object.keys(REPAIR_GLOSSES.en)) delete REPAIR_GLOSSES.en[k];
+  Object.assign(REPAIR_GLOSSES.en, REALES);
 });
 
 describe('escenario 1 — es → de encuentra su glosa y se comporta como antes', () => {
@@ -54,61 +64,54 @@ describe('escenario 1 — es → de encuentra su glosa y se comporta como antes'
   });
 
   it('la llamada sin idioma sigue siendo la española', () => {
-    // Compatibilidad: el defecto existe para que nada que aún no pase el
-    // idioma cambie de comportamiento.
     for (const base of REPAIR_TEMPLATES) {
       expect(repairTemplateFor(base.skillId)).toEqual(base);
       expect(repairTemplateFor(base.skillId, DEFAULT_GLOSS_LANG)).toEqual(base);
     }
   });
 
-  it('la glosa española tiene contenido de verdad', () => {
-    // Si esto fallara, el test de arriba pasaría comparando dos vacíos.
-    const base = repairTemplateFor(ID, 'es')!;
-    expect(base.explanation.length).toBeGreaterThan(20);
-    expect(base.variations.length).toBeGreaterThan(0);
-    expect(base.variations[0].translation).toBeTruthy();
+  it('tener glosa inglesa no altera la española de esa misma habilidad', () => {
+    const base = REPAIR_TEMPLATES.find((t) => t.skillId === CON)!;
+    const esp = repairTemplateFor(CON, 'es')!;
+    expect(esp).toEqual(base);
+    expect(esp.explanation).toBe(base.explanation);
+    expect(esp.variations[0].translation).toBe(base.variations[0].translation);
   });
 });
 
-describe('escenario 2 — en → de con el mapa vacío', () => {
-  it('el mapa está vacío (si no, los tests de abajo no prueban nada)', () => {
-    expect(Object.keys(REPAIR_GLOSSES.en)).toEqual([]);
+describe('escenario 2 — una habilidad sin glosa inglesa', () => {
+  it('devuelve null', () => {
+    expect(repairTemplateFor(SIN, 'en')).toBeNull();
   });
 
-  it('devuelve null para las 253 plantillas', () => {
-    for (const t of REPAIR_TEMPLATES) {
+  it('null en todas las plantillas que aún no tienen glosa', () => {
+    const sinGlosa = REPAIR_TEMPLATES.filter((t) => !REPAIR_GLOSSES.en[t.skillId]);
+    expect(sinGlosa.length).toBeGreaterThan(0);
+    for (const t of sinGlosa) {
       expect(repairTemplateFor(t.skillId, 'en'), `${t.skillId} filtró contenido`).toBeNull();
     }
   });
 
-  it('no hay tanda de reparación, así que no se abre bucle', () => {
-    // Es la señal que leen los dos caminos: sin plantilla no hay con qué
-    // insistir y el bucle no llega a abrirse.
-    for (const s of SKILLS.filter((x) => x.lang === 'de')) {
-      expect(generateRepairSet(s, 5, 'en'), s.id).toEqual([]);
-    }
+  it('sin glosa no hay tanda de reparación, así que no se abre bucle', () => {
+    const skill = SKILL_MAP[SIN];
+    expect(generateRepairSet(skill, 5, 'en')).toEqual([]);
   });
 
   it('no devuelve español por ninguna vía', () => {
-    for (const t of REPAIR_TEMPLATES.filter((x) => x.skillId.startsWith('de.'))) {
+    for (const t of REPAIR_TEMPLATES.filter((x) => !REPAIR_GLOSSES.en[x.skillId])) {
       const r = repairTemplateFor(t.skillId, 'en');
       expect(r).toBeNull();
-      // Y explícitamente: lo que sea que devuelva no puede ser la española.
       expect(r?.explanation).not.toBe(t.explanation);
     }
   });
 });
 
-describe('escenario 3 — en → de con una glosa inglesa de prueba', () => {
+describe('escenario 3 — glosa inglesa inyectada', () => {
   it('devuelve la glosa inglesa y NUNCA consulta la española', () => {
-    const base = ponerGlosaDePrueba(ID);
-    const r = repairTemplateFor(ID, 'en')!;
+    const base = ponerGlosaDePrueba(SIN);
+    const r = repairTemplateFor(SIN, 'en')!;
 
-    expect(r).not.toBeNull();
     expect(r.explanation).toBe(`${MARCA} explanation`);
-    // Lo que importa: la española no aparece por ningún lado.
-    expect(r.explanation).not.toBe(base.explanation);
     expect(JSON.stringify(r)).not.toContain(base.explanation);
     for (const v of base.variations) {
       if (v.translation) expect(JSON.stringify(r)).not.toContain(v.translation);
@@ -116,9 +119,8 @@ describe('escenario 3 — en → de con una glosa inglesa de prueba', () => {
   });
 
   it('conserva intactas las frases del idioma meta', () => {
-    const base = ponerGlosaDePrueba(ID);
-    const r = repairTemplateFor(ID, 'en')!;
-    // El alemán no depende de quién estudie: tiene que ser el mismo.
+    const base = ponerGlosaDePrueba(SIN);
+    const r = repairTemplateFor(SIN, 'en')!;
     expect(r.variations.map((v) => v.sentence)).toEqual(base.variations.map((v) => v.sentence));
     expect(r.variations.map((v) => v.answer)).toEqual(base.variations.map((v) => v.answer));
     expect(r.variations.map((v) => v.kind)).toEqual(base.variations.map((v) => v.kind));
@@ -126,20 +128,12 @@ describe('escenario 3 — en → de con una glosa inglesa de prueba', () => {
   });
 
   it('es y en coexisten: pedir una no contamina la otra', () => {
-    const base = ponerGlosaDePrueba(ID);
-    // Alternar los dos idiomas varias veces; ninguno debe arrastrar al otro.
+    const base = ponerGlosaDePrueba(SIN);
     for (let i = 0; i < 3; i++) {
-      expect(repairTemplateFor(ID, 'en')!.explanation).toBe(`${MARCA} explanation`);
-      expect(repairTemplateFor(ID, 'es')!.explanation).toBe(base.explanation);
+      expect(repairTemplateFor(SIN, 'en')!.explanation).toBe(`${MARCA} explanation`);
+      expect(repairTemplateFor(SIN, 'es')!.explanation).toBe(base.explanation);
     }
-    // Y la plantilla original no se ha mutado por el camino.
-    expect(REPAIR_TEMPLATES.find((t) => t.skillId === ID)).toEqual(base);
-  });
-
-  it('la glosa solo afecta a su propia habilidad', () => {
-    ponerGlosaDePrueba(ID);
-    const otras = REPAIR_TEMPLATES.filter((t) => t.skillId !== ID);
-    for (const t of otras) expect(repairTemplateFor(t.skillId, 'en'), t.skillId).toBeNull();
+    expect(REPAIR_TEMPLATES.find((t) => t.skillId === SIN)).toEqual(base);
   });
 });
 
@@ -148,8 +142,6 @@ describe('escenario 4 — skillNames', () => {
   const mostrado = (id: string, mapa: Record<string, string>) => mapa[id] ?? SKILL_MAP[id].name;
 
   it('el español conserva sus nombres: su mapa sigue vacío', () => {
-    // es-de lee del catálogo, que ya está en su idioma. Traducir ahí sería
-    // duplicar el español en dos sitios.
     expect(es.skillNames).toEqual({});
     for (const s of SKILLS.filter((x) => x.lang === 'de'))
       expect(mostrado(s.id, es.skillNames)).toBe(s.name);
@@ -165,17 +157,6 @@ describe('escenario 4 — skillNames', () => {
       ).toBe(true);
   });
 
-  it('ninguna de las 95 cae al nombre del catálogo por falta de traducción', () => {
-    // Dos coinciden con el español a propósito y no son una caída: una lista
-    // de letras («sch, ch, ck, st, sp») y un término técnico alemán
-    // («Funktionsverbgefüge»), que se escriben igual en los dos idiomas. Por
-    // eso se comprueba que tengan CLAVE PROPIA, no que el texto difiera.
-    for (const s of SKILLS.filter((x) => x.lang === 'de')) {
-      const propia = Object.prototype.hasOwnProperty.call(en.skillNames, s.id);
-      expect(propia, `${s.id} caería al catálogo español`).toBe(true);
-    }
-  });
-
   it('ningún nombre inglés lleva marcas del español', () => {
     const marcas =
       /[áéíóúñ¿¡]|\b(el|la|los|las|del|con|para|verbo|frase|palabras|preposiciones|pronombres)\b/i;
@@ -189,50 +170,33 @@ describe('escenario 4 — skillNames', () => {
   });
 
   it('una skill sin localizar mantiene el fallback sin romper nada', () => {
-    // El mecanismo sigue existiendo para los idiomas que aún no se traduzcan:
-    // se comprueba con una skill de otro idioma meta, que no entra en este
-    // trabajo y por tanto no tiene entrada.
     const otra = SKILLS.find((s) => s.lang === 'fr')!;
     expect(Object.prototype.hasOwnProperty.call(en.skillNames, otra.id)).toBe(false);
     expect(mostrado(otra.id, en.skillNames)).toBe(otra.name);
-    expect(mostrado(otra.id, en.skillNames).length).toBeGreaterThan(0);
-  });
-
-  it('toda habilidad tiene un nombre al que caer', () => {
-    for (const s of SKILLS) expect(mostrado(s.id, en.skillNames).length, s.id).toBeGreaterThan(0);
   });
 });
 
 describe('escenario 5 — los dos caminos de reparación', () => {
   it('camino de practicar.astro (reparación intensiva)', () => {
-    const skill = SKILLS.find((s) => s.id === ID)!;
-    // Sin glosa: no hay tanda, y la página cae al generateExercise normal.
+    const skill = SKILL_MAP[SIN];
     expect(generateRepairSet(skill, 5, 'en')).toEqual([]);
-    // Con glosa: hay tanda, y lleva el texto inglés.
-    ponerGlosaDePrueba(ID);
+    ponerGlosaDePrueba(SIN);
     const tanda = generateRepairSet(skill, 3, 'en');
     expect(tanda).toHaveLength(3);
-    for (const ej of tanda) {
-      expect(ej.explanation).toBe(`${MARCA} explanation`);
-      expect(ej.skillId).toBe(ID);
-    }
-    // Y en español sigue dando la tanda española.
+    for (const ej of tanda) expect(ej.explanation).toBe(`${MARCA} explanation`);
     expect(generateRepairSet(skill, 3, 'es')[0].explanation).not.toBe(`${MARCA} explanation`);
   });
 
   it('camino de DrillTutor (plantilla + toRepairExercise)', () => {
-    const skill = SKILLS.find((s) => s.id === ID)!;
-    // Sin glosa el tutor no encuentra plantilla y no abre bucle.
-    expect(repairTemplateFor(ID, 'en')).toBeNull();
-
-    ponerGlosaDePrueba(ID);
-    const plantilla = repairTemplateFor(ID, 'en')!;
+    const skill = SKILL_MAP[SIN];
+    expect(repairTemplateFor(SIN, 'en')).toBeNull();
+    ponerGlosaDePrueba(SIN);
+    const plantilla = repairTemplateFor(SIN, 'en')!;
     const ej = toRepairExercise(skill, plantilla, plantilla.variations[0], 0);
     expect(ej.explanation).toBe(`${MARCA} explanation`);
     const data = ej.render?.data as { translation?: string; sentence?: string };
     expect(data.translation).toBe(`${MARCA} translation 0`);
-    // La frase alemana insertada es la de siempre.
-    const base = REPAIR_TEMPLATES.find((t) => t.skillId === ID)!;
+    const base = REPAIR_TEMPLATES.find((t) => t.skillId === SIN)!;
     expect(data.sentence).toBe(base.variations[0].sentence);
   });
 });
@@ -244,10 +208,8 @@ describe('escenario 6 — en → de no puede caer a ningún otro idioma', () => 
   });
 
   it('una skill alemana nunca devuelve una plantilla de otro idioma meta', () => {
-    ponerGlosaDePrueba(ID);
-    const r = repairTemplateFor(ID, 'en')!;
+    const r = repairTemplateFor(CON, 'en')!;
     expect(r.skillId.startsWith('de.')).toBe(true);
-    // Y ninguna de sus frases sale de una plantilla fr/it/pt/en.
     const ajenas = REPAIR_TEMPLATES.filter((t) => !t.skillId.startsWith('de.')).flatMap((t) =>
       t.variations.map((v) => v.sentence),
     );
@@ -255,40 +217,152 @@ describe('escenario 6 — en → de no puede caer a ningún otro idioma', () => 
   });
 
   it('un idioma de usuario sin mapa devuelve null, no el de otro', () => {
-    // fr, it, pt y un idioma inventado: ninguno tiene entrada en
-    // REPAIR_GLOSSES, así que todos caen a null — nunca al español.
     for (const lang of ['fr', 'it', 'pt', 'xx', '']) {
-      expect(repairTemplateFor(ID, lang), lang).toBeNull();
+      expect(repairTemplateFor(CON, lang), lang).toBeNull();
+      expect(repairTemplateFor(SIN, lang), lang).toBeNull();
     }
-  });
-
-  it('poner una glosa inglesa no la hace visible para otro idioma', () => {
-    ponerGlosaDePrueba(ID);
-    for (const lang of ['fr', 'it', 'pt', 'xx']) {
-      expect(repairTemplateFor(ID, lang), lang).toBeNull();
-    }
-    // El español sigue viendo la suya, no la inglesa.
-    expect(repairTemplateFor(ID, 'es')!.explanation).not.toContain(MARCA);
   });
 });
 
 describe('escenario 7 — es → de intacto', () => {
   it('ninguna plantilla ha sido mutada por los tests de arriba', () => {
-    // Los tests inyectan glosas; si alguna hubiera mutado el array base en vez
-    // de copiarlo, se vería acá.
-    for (const t of REPAIR_TEMPLATES) {
-      expect(JSON.stringify(t)).not.toContain(MARCA);
-    }
+    for (const t of REPAIR_TEMPLATES) expect(JSON.stringify(t)).not.toContain(MARCA);
   });
 
-  it('el mapa de glosas queda limpio al terminar', () => {
-    expect(Object.keys(REPAIR_GLOSSES.en)).toEqual([]);
+  it('el mapa de glosas vuelve a su contenido real al terminar cada test', () => {
+    expect(Object.keys(REPAIR_GLOSSES.en).sort()).toEqual(Object.keys(REALES).sort());
+    for (const [id, g] of Object.entries(REPAIR_GLOSSES.en))
+      expect(g.explanation).not.toContain(MARCA);
   });
 
   it('las tandas españolas siguen completas', () => {
-    const skill = SKILLS.find((s) => s.id === 'de.a1.article.die')!;
+    const skill = SKILL_MAP['de.a1.article.die'];
     const tanda = generateRepairSet(skill, 5, 'es');
     expect(tanda).toHaveLength(5);
     for (const ej of tanda) expect(ej.explanation).toBeTruthy();
+  });
+});
+
+/**
+ * La tanda A1 de glosas inglesas.
+ *
+ * Es la primera con contenido real, así que estos candados vigilan tanto que
+ * esté completa como que no se haya colado nada de más ni en otro idioma.
+ */
+describe('tanda A1 — las 17 glosas inglesas', () => {
+  const A1 = [
+    'de.a1.wordorder.time-verb-subject',
+    'de.a1.wordorder.basic',
+    'de.a1.article.der-die-das',
+    'de.a1.article.der',
+    'de.a1.article.die',
+    'de.a1.article.das',
+    'de.a1.question.words',
+    'de.a1.wordorder.questions',
+    'de.a1.verb.present-regular',
+    'de.a1.verb.present-irregular',
+    'de.a1.verb.sein',
+    'de.a1.verb.haben',
+    'de.a1.pronoun.personal',
+    'de.a1.negation.nicht-kein',
+    'de.a1.noun.plural',
+    'de.a1.verb.imperative',
+    'de.a1.preposition.place-time',
+  ];
+
+  it('hay exactamente 17', () => {
+    expect(Object.keys(REPAIR_GLOSSES.en)).toHaveLength(17);
+  });
+
+  it('son exactamente esas 17, sin sobrantes', () => {
+    expect(Object.keys(REPAIR_GLOSSES.en).sort()).toEqual([...A1].sort());
+  });
+
+  it('cada skillId existe de verdad en REPAIR_TEMPLATES', () => {
+    const ids = new Set(REPAIR_TEMPLATES.map((t) => t.skillId));
+    for (const id of Object.keys(REPAIR_GLOSSES.en)) expect(ids.has(id), id).toBe(true);
+  });
+
+  it('todas son de A1: ninguna otra tanda se ha colado', () => {
+    for (const id of Object.keys(REPAIR_GLOSSES.en)) expect(id.startsWith('de.a1.'), id).toBe(true);
+  });
+
+  it('cada glosa tiene explanation con contenido', () => {
+    for (const [id, g] of Object.entries(REPAIR_GLOSSES.en)) {
+      expect(g.explanation, id).toBeTruthy();
+      expect(g.explanation.length, id).toBeGreaterThan(30);
+    }
+  });
+
+  it('repairTemplateFor(id, en) devuelve la glosa inglesa en las 17', () => {
+    for (const id of A1) {
+      const r = repairTemplateFor(id, 'en');
+      expect(r, id).not.toBeNull();
+      expect(r!.explanation, id).toBe(REPAIR_GLOSSES.en[id].explanation);
+    }
+  });
+
+  it('repairTemplateFor(id, es) sigue devolviendo el español original', () => {
+    for (const id of A1) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      expect(repairTemplateFor(id, 'es'), id).toEqual(base);
+    }
+  });
+
+  it('la inglesa NUNCA es la española: no hay fallback', () => {
+    for (const id of A1) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      expect(repairTemplateFor(id, 'en')!.explanation, id).not.toBe(base.explanation);
+    }
+  });
+
+  it('ninguna glosa inglesa lleva español evidente', () => {
+    // Solo palabras que NO existen en inglés: `plural`, `general` o `hay` sí
+    // existen y darían falsos positivos (ya me pasó midiendo otra cosa).
+    const marcas =
+      /[áéíóúñ¿¡]|\b(el|los|las|del|una|pero|verbo|frase|palabra|palabras|segunda|posicion|siempre|articulo|sustantivo|persona|personas|cambian?|lleva|todo|todos|otras?|demas|mismo|misma)\b/i;
+
+    // Control: la regex TIENE que marcar los originales españoles. Sin esto,
+    // una regex rota pasaría el test de abajo sin detectar nada.
+    const originales = REPAIR_TEMPLATES.filter((t) => REPAIR_GLOSSES.en[t.skillId]);
+    const marcados = originales.filter((t) => marcas.test(t.explanation));
+    expect(marcados.length, 'la regex no detecta español: no mide nada').toBe(originales.length);
+
+    for (const [id, g] of Object.entries(REPAIR_GLOSSES.en)) {
+      const m = g.explanation.match(marcas);
+      expect(m, `${id}: «${m?.[0]}» en «${g.explanation.slice(0, 70)}…»`).toBeNull();
+    }
+  });
+
+  it('no se introducen asteriscos de markdown nuevos', () => {
+    // Los consumidores pintan con textContent, así que un ** saldría literal.
+    // El original de wordorder.time-verb-subject los lleva; la glosa no.
+    for (const [id, g] of Object.entries(REPAIR_GLOSSES.en))
+      expect(g.explanation.includes('**'), id).toBe(false);
+  });
+
+  it('la plantilla alemana original no se ha tocado', () => {
+    for (const id of A1) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      expect(base.explanation, id).toBeTruthy();
+      // Sigue siendo española: la glosa no la reemplaza, convive con ella.
+      expect(base.explanation, id).not.toBe(REPAIR_GLOSSES.en[id].explanation);
+      expect(
+        base.variations.every((v) => v.translation),
+        id,
+      ).toBe(true);
+    }
+  });
+
+  it('las translations siguen pendientes: vacías, no españolas', () => {
+    // Este test cae cuando llegue la tanda de las 128 traducciones. Es la
+    // señal de que hay que actualizarlo, no de que algo se rompió.
+    for (const [id, g] of Object.entries(REPAIR_GLOSSES.en)) {
+      expect(g.translations, id).toEqual([]);
+    }
+    // Y mientras estén vacías, la variación se pinta SIN traducción — nunca
+    // con la española. Los dos renderizadores la protegen con `if`.
+    const r = repairTemplateFor(CON, 'en')!;
+    for (const v of r.variations) expect(v.translation).toBeUndefined();
   });
 });

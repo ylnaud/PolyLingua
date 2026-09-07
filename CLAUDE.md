@@ -104,14 +104,27 @@ las pierde (van a un grupo final) y hay un test en
 poner siempre un `unit` que exista. Si el tema no entra en ninguna unidad,
 agregá una nueva a `units.ts` en vez de dejar el campo vacío.
 
-El campo `skills` es opcional y alimenta el **motor de aprendizaje
-adaptativo** (`src/lib/engine/`, documentado en `docs/LEARNING_ENGINE.md`).
-Lista las habilidades que enseña la lección, con ids del catálogo de
+El campo `skills` alimenta el **motor de aprendizaje adaptativo**
+(`src/lib/engine/`, documentado en `docs/LEARNING_ENGINE.md`). Lista las
+habilidades que enseña la lección, con ids del catálogo de
 `src/data/skills.ts` (`de.a1.wordorder.basic`). La relación es N:N: una
-lección enseña varias y una habilidad aparece en varias lecciones. Hoy solo
-están etiquetadas las 29 lecciones de A1 alemán; el resto simplemente no
-alimenta al motor todavía. Hay tests que fallan si se referencia una habilidad
-inexistente o si una habilidad se queda sin lección.
+lección enseña varias y una habilidad aparece en varias lecciones. Hay tests
+que fallan si se referencia una habilidad inexistente o si una habilidad se
+queda sin lección.
+
+Para Zod tiene default `[]`, así que técnicamente se puede omitir, pero hoy
+**lo llevan las 484 lecciones de los 6 cursos** (es-de 91, en-de 84, es-fr 78,
+es-en 77, es-it 77, es-pt 77). Una lección nueva sin `skills` sería la
+excepción: ponelo siempre.
+
+Etiquetado no quiere decir cubierto por igual, y conviene no confundir las dos
+cosas. El catálogo tiene 413 habilidades entre los 5 idiomas que se enseñan
+(de 95, en 81, fr 81, it 78, pt 78), y de esas solo 253 tienen plantilla de
+refuerzo en `REPAIR_TEMPLATES`. Esas plantillas están escritas en español, así
+que en la interfaz inglesa el bucle de refuerzo solo se enciende donde existe
+además la glosa traducida: hoy, las 17 habilidades de A1 alemán que hay en
+`REPAIR_GLOSSES.en`. Todo lo demás sigue etiquetado y sigue alimentando al
+motor; lo que no tiene es refuerzo.
 
 Tipos de `exercises` que acepta el schema: `fill-blank` (necesita `___` en
 `sentence`), `match` (mínimo 3 `pairs`), `write`, `order`.

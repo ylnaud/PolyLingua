@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: 'Faire des projets: cómo quedar con alguien en francés'
-description: 'Aprende a proponer, aceptar y cancelar planes en francés: cómo invitar a alguien, quedar a una hora y avisar si no podés ir.'
+description: 'Aprende a proponer, aceptar y cancelar planes en francés: invitar con on pourrait o ça te dit, quedar a una hora y avisar si no podés ir.'
 order: 15
 unit: 2
 situation: 'Hacer planes'

@@ -2,7 +2,7 @@
 language: 'de'
 level: 'a1'
 title: 'German Stem-Changing Verbs: Fahren, Essen, Sehen, Lesen'
-description: 'Some German verbs change their vowel in the du and er/sie/es forms only. Learn the pattern with fahren, essen, sehen, and lesen.'
+description: 'Some German verbs change their stem vowel in the du and er/sie/es forms only. Learn the a→ä, e→i and e→ie pattern with fahren, essen, sehen and lesen.'
 order: 5
 unit: 2
 grammarTopic: 'Present tense of stem-changing verbs (vowel change: a→ä, e→i, e→ie)'

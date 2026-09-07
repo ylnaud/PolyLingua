@@ -1,4 +1,5 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
+import { execSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { AUTHOR } from '../src/data/author';
@@ -12,7 +13,6 @@ import { AUTHOR } from '../src/data/author';
 // tests comprueban que los cuatro siguen diciendo lo mismo, que es la parte
 // que se desincroniza sola.
 const DIST = join(process.cwd(), 'dist');
-const hayBuild = existsSync(DIST);
 
 /** Extrae los objetos JSON-LD de una página del build. */
 function jsonLd(rel: string): unknown[] {
@@ -28,7 +28,17 @@ const nodo = (nodos: unknown[], tipo: string) =>
   nodos.find((n) => (n as { '@type'?: string })['@type'] === tipo) as
     Record<string, unknown> | undefined;
 
-describe.skipIf(!hayBuild)('autoría', () => {
+describe('autoría', () => {
+  // Antes esto era `describe.skipIf(!existsSync(DIST))`, evaluado al cargar el
+  // módulo. En un clon frío, sin `dist/`, los cinco tests se saltaban EN
+  // SILENCIO y la suite salía verde igual: un candado que no cierra no avisa
+  // de que no está cerrando. Se construye el sitio si hace falta, como hacen
+  // el resto de los tests que leen el build.
+  beforeAll(() => {
+    if (existsSync(join(DIST, 'index.html'))) return;
+    execSync('npx astro build', { cwd: join(DIST, '..'), timeout: 300_000 });
+  }, 300_000);
+
   it('/acerca nombra a la persona y emite su nodo Person', () => {
     const html = readFileSync(join(DIST, 'acerca/index.html'), 'utf8');
     expect(html).toContain(AUTHOR.name);

@@ -2,7 +2,7 @@
 language: en
 level: a2
 title: 'Making plans: cómo quedar con alguien en inglés'
-description: 'Aprende a proponer, aceptar y cancelar planes en inglés: cómo invitar a alguien, quedar a una hora y avisar si no podés ir.'
+description: 'Aprende a proponer, aceptar y cancelar planes en inglés: invitar con would you like o shall we, quedar a una hora y avisar si no podés ir.'
 order: 14
 unit: 2
 situation: 'Hacer planes'

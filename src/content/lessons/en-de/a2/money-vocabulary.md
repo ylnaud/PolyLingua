@@ -2,7 +2,7 @@
 language: 'de'
 level: 'a2'
 title: 'Money in German: Paying, Withdrawing Cash, and Talking About Expenses'
-description: 'Kann ich mit Karte zahlen, ich muss Geld abheben, das kann ich mir nicht leisten: the phrases for handling money in German.'
+description: 'Kann ich mit Karte zahlen, ich muss Geld abheben, das kann ich mir nicht leisten: the German phrases for paying, withdrawing cash and talking costs.'
 order: 16
 unit: 4
 grammarTopic: 'Money and payment phrases'

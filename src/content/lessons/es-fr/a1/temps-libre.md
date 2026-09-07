@@ -2,7 +2,7 @@
 language: fr
 level: a1
 title: 'Le temps libre: cómo hablar de tus gustos en francés'
-description: 'Aprende a hablar de tu tiempo libre en francés: qué te gusta hacer, tus hobbies y planes de fin de semana con el verbo aimer.'
+description: 'Aprende a hablar de tu tiempo libre en francés: qué te gusta hacer, tus hobbies y tus planes de fin de semana con el verbo aimer y sus formas.'
 order: 19
 unit: 4
 situation: 'Tiempo libre'

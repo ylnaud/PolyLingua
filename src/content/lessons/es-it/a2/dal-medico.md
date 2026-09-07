@@ -2,7 +2,7 @@
 language: it
 level: a2
 title: 'Dal medico: cómo hablar de salud en italiano'
-description: 'Aprende a hablar de síntomas y pedir una visita en italiano: cómo decir qué te duele, pedir un appuntamento y entender al médico.'
+description: 'Aprende a hablar de síntomas y pedir una visita en italiano: cómo decir qué te duele, pedir un appuntamento y entender lo que te contesta el médico.'
 order: 14
 unit: 2
 situation: 'Salud y cuerpo'

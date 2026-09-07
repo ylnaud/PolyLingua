@@ -2,7 +2,7 @@
 language: pt
 level: a2
 title: 'Fazer planos: cómo quedar con alguien en portugués'
-description: 'Aprende a proponer, aceptar y cancelar planes en portugués: cómo invitar a alguien, quedar a una hora y avisar si no podés ir.'
+description: 'Aprende a proponer, aceptar y cancelar planes en portugués: invitar con vamos o que tal, quedar a una hora y avisar si al final no podés ir.'
 order: 15
 unit: 2
 situation: 'Hacer planes'

@@ -2,7 +2,7 @@
 language: fr
 level: b1
 title: 'Pronoms indéfinis: alguien, algo, nadie y nada'
-description: "Aprende quelqu'un, quelque chose, personne y rien en francés, con la doble negación ne...personne / ne...rien y ejemplos claros."
+description: "Aprende quelqu'un, quelque chose, personne y rien en francés, con la doble negación ne...personne y ne...rien explicada con ejemplos claros."
 order: 9
 unit: 3
 grammarTopic: "Pronoms indéfinis (quelqu'un, quelque chose, personne, rien)"

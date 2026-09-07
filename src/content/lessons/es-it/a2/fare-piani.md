@@ -2,7 +2,7 @@
 language: it
 level: a2
 title: 'Fare piani: cómo quedar con alguien en italiano'
-description: 'Aprende a proponer, aceptar y cancelar planes en italiano: cómo invitar a alguien, quedar a una hora y avisar si no podés ir.'
+description: 'Aprende a proponer, aceptar y cancelar planes en italiano: invitar con ti va di o potremmo, quedar a una hora y avisar si no podés ir.'
 order: 15
 unit: 2
 situation: 'Hacer planes'

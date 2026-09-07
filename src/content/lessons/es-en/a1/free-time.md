@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'Free time: cómo hablar de tus gustos en inglés'
-description: 'Aprende a hablar de tu tiempo libre en inglés: qué te gusta hacer, tus hobbies y planes de fin de semana con el verbo like.'
+description: 'Aprende a hablar de tu tiempo libre en inglés: qué te gusta hacer, tus hobbies y tus planes de fin de semana con el verbo like y sus formas.'
 order: 17
 unit: 4
 situation: 'Tiempo libre'

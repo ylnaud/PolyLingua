@@ -2,7 +2,7 @@
 language: it
 level: a1
 title: 'Il tempo libero: cómo hablar de tus gustos en italiano'
-description: 'Aprende a hablar de tu tiempo libre en italiano: qué te gusta hacer, tus hobbies y planes de fin de semana con el verbo piacere.'
+description: 'Aprende a hablar de tu tiempo libre en italiano: qué te gusta hacer, tus hobbies y tus planes de fin de semana con el verbo piacere y sus formas.'
 order: 17
 unit: 2
 situation: 'Tiempo libre'

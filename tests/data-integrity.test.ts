@@ -166,6 +166,107 @@ describe('units', () => {
   });
 });
 
+/**
+ * Frontmatter de las lecciones: lo que el esquema Zod no puede exigir.
+ *
+ * Zod valida que los campos existan y tengan el tipo correcto, y eso es lo que
+ * debe hacer: un fallo suyo rompe el build entero. Pero una description corta
+ * o dos lecciones con el mismo `order` son problemas de calidad, no de datos
+ * inválidos — el sitio compila perfectamente con ellos, y por eso nadie los ve.
+ * Ese es justo el trabajo de un test. El mismo reparto que ya documenta
+ * tests/dialogos-seo.test.ts para la colección `dialogos`.
+ */
+describe('frontmatter de las lecciones', () => {
+  const lessonsDir = join(import.meta.dirname, '..', 'src', 'content', 'lessons');
+
+  /**
+   * Un escalar de una línea del frontmatter, con las dos formas de comillas que
+   * usa el repo. La mayoría van entre comillas simples (donde YAML escapa la
+   * comilla duplicándola), pero las que llevan un apóstrofo dentro —
+   * `quelqu'un`, en es-fr/b1/pronoms-indefinis— van entre dobles. Leer solo una
+   * de las dos formas da un falso positivo, no un fallo: la lección parece no
+   * tener el campo.
+   */
+  function escalar(raw: string, campo: string): string | null {
+    const m = raw.match(new RegExp(`^${campo}:[ \\t]*(.*)$`, 'm'));
+    if (!m) return null;
+    const v = m[1]!.trim();
+    if (v.startsWith("'") && v.endsWith("'")) return v.slice(1, -1).replace(/''/g, "'");
+    if (v.startsWith('"') && v.endsWith('"')) return v.slice(1, -1).replace(/\\"/g, '"');
+    return v;
+  }
+
+  const lecciones = (() => {
+    const out: {
+      id: string;
+      course: string;
+      level: string;
+      description: string | null;
+      unit: string | null;
+      order: string | null;
+    }[] = [];
+    for (const course of readdirSync(lessonsDir)) {
+      if (!/^[a-z]{2}-[a-z]{2}$/.test(course)) continue;
+      for (const level of readdirSync(join(lessonsDir, course))) {
+        for (const file of readdirSync(join(lessonsDir, course, level))) {
+          if (!file.endsWith('.md')) continue;
+          const raw = readFileSync(join(lessonsDir, course, level, file), 'utf-8');
+          out.push({
+            id: `${course}/${level}/${file}`,
+            course,
+            level,
+            description: escalar(raw, 'description'),
+            unit: escalar(raw, 'unit'),
+            order: escalar(raw, 'order'),
+          });
+        }
+      }
+    }
+    return out;
+  })();
+
+  it('hay lecciones que comprobar (control de la propia comprobación)', () => {
+    expect(lecciones.length).toBeGreaterThan(400);
+  });
+
+  // 130-160 caracteres, el mismo rango que CLAUDE.md exige y que
+  // tests/dialogos-seo.test.ts ya imponía a los diálogos. Sin este test la
+  // colección `lessons` no tenía a nadie mirando: había 14 lecciones entre 121
+  // y 129 repartidas por cinco cursos.
+  it('toda description mide entre 130 y 160 caracteres', () => {
+    const fuera = lecciones
+      .filter(
+        (l) => l.description === null || l.description.length < 130 || l.description.length > 160,
+      )
+      .map((l) => `${l.id} (${l.description === null ? 'ausente' : l.description.length})`);
+    expect(fuera, `descriptions fuera de 130-160:\n${fuera.join('\n')}`).toEqual([]);
+  });
+
+  // La página de nivel ordena por `order` dentro de cada unidad. Con empates el
+  // desempate lo decide el orden en que el glob devuelve los ficheros, no el
+  // contenido: la secuencia que ve el alumno —y la numeración del camino, y el
+  // anterior/siguiente— dejaría de estar declarada en ningún sitio.
+  //
+  // Hoy no hay ninguno, y conviene saber por qué: `order` es `z.number()`, no
+  // un entero, y las lecciones que se intercalan usan decimales
+  // (`articulos-der-die-das` es 3 y las tres de género que la desarrollan son
+  // 3.1, 3.2 y 3.3). Leer el campo con un `\d+` los trunca todos al mismo
+  // entero e inventa colisiones que no existen — pasó auditando esto. Por eso
+  // acá se compara el escalar entero, tal cual está escrito.
+  it('no hay dos lecciones con el mismo order dentro de una unidad', () => {
+    const grupos = new Map<string, string[]>();
+    for (const l of lecciones) {
+      const clave = `${l.course}/${l.level} unidad ${l.unit ?? '?'} order ${l.order ?? '?'}`;
+      if (!grupos.has(clave)) grupos.set(clave, []);
+      grupos.get(clave)!.push(l.id);
+    }
+    const repetidos = [...grupos.entries()]
+      .filter(([, ids]) => ids.length > 1)
+      .map(([clave, ids]) => `${clave}: ${ids.join(', ')}`);
+    expect(repetidos, `order repetido:\n${repetidos.join('\n')}`).toEqual([]);
+  });
+});
+
 describe('resources', () => {
   const langIds = ['de', 'en', 'fr', 'it', 'pt'];
   const validCategories = Object.keys(CATEGORY_LABELS);

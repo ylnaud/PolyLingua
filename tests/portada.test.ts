@@ -1,9 +1,9 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
+import { execSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIST = join(process.cwd(), 'dist');
-const hayBuild = existsSync(DIST);
 
 /** Todos los index.html del build, recursivamente. */
 function paginas(dir: string, acc: string[] = []): string[] {
@@ -15,7 +15,15 @@ function paginas(dir: string, acc: string[] = []): string[] {
   return acc;
 }
 
-describe.skipIf(!hayBuild)('portada y lecciones', () => {
+describe('portada y lecciones', () => {
+  // Mismo motivo que en tests/autoria.test.ts: con `skipIf` sobre un
+  // `existsSync` de carga de módulo, un clon sin `dist/` saltaba estos tests
+  // sin decir nada y la suite salía verde.
+  beforeAll(() => {
+    if (existsSync(join(DIST, 'index.html'))) return;
+    execSync('npx astro build', { cwd: join(DIST, '..'), timeout: 300_000 });
+  }, 300_000);
+
   it('no se cuela «lecciónes» en ninguna página', () => {
     // El plural de «lección» es «lecciones», sin tilde. LanguageCard lo armaba
     // como `lección` + `es`, así que la portada decía «91 lecciónes» cinco

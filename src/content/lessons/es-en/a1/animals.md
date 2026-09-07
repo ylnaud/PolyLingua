@@ -2,7 +2,7 @@
 language: en
 level: a1
 title: 'Animals: los animales en inglés'
-description: 'Vocabulario de animales domésticos y salvajes en inglés — dog, cat, cow, lion — con frases simples usando "to be" y "have got".'
+description: 'Vocabulario de animales domésticos y salvajes en inglés — dog, cat, cow, lion — con frases sencillas para describirlos usando "to be" y "have got".'
 order: 10
 unit: 3
 situation: 'Animales'

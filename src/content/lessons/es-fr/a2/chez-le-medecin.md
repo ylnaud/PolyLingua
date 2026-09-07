@@ -2,7 +2,7 @@
 language: fr
 level: a2
 title: 'Chez le médecin: cómo hablar de salud en francés'
-description: 'Aprende a hablar de síntomas y pedir cita en francés: cómo decir qué te duele, pedir un rendez-vous y entender al médico.'
+description: 'Aprende a hablar de síntomas y pedir cita en francés: cómo decir qué te duele, pedir un rendez-vous y entender lo que te contesta el médico.'
 order: 14
 unit: 2
 situation: 'Salud y cuerpo'

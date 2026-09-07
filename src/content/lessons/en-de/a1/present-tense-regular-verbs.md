@@ -2,7 +2,7 @@
 language: 'de'
 level: 'a1'
 title: 'German Present Tense: Conjugating Regular Verbs'
-description: 'Learn the six present-tense endings that every regular German verb follows, with machen, spielen, and lernen as your model verbs.'
+description: 'Learn the six present-tense endings that every regular German verb follows, with machen, spielen, and lernen as your model verbs in all six persons.'
 order: 4
 unit: 2
 grammarTopic: 'Present tense of regular verbs (Präsens)'

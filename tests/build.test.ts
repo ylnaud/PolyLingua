@@ -26,19 +26,6 @@ import { join } from 'node:path';
 const ROOT = join(import.meta.dirname, '..');
 const DIST = join(ROOT, 'dist');
 
-function countHtmlFiles(dir: string): number {
-  let count = 0;
-  for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    const full = join(dir, entry.name);
-    if (entry.isDirectory()) {
-      count += countHtmlFiles(full);
-    } else if (entry.name.endsWith('.html')) {
-      count++;
-    }
-  }
-  return count;
-}
-
 describe('astro build', () => {
   beforeAll(() => {
     if (existsSync(join(DIST, 'index.html'))) return;
@@ -54,9 +41,9 @@ describe('astro build', () => {
     expect(existsSync(join(DIST, 'index.html'))).toBe(true);
   });
 
-  it('generates at least 500 HTML pages', () => {
-    expect(countHtmlFiles(DIST)).toBeGreaterThanOrEqual(500);
-  });
+  // El número exacto de páginas (y del sitemap, por silo) es U-03:
+  // tests/baseline.test.ts. Acá solo queda la comprobación de que el build
+  // en sí compiló — no duplicar la cifra en dos sitios.
 
   it('dist directory contains sitemap', () => {
     expect(readdirSync(DIST)).toContain('sitemap-index.xml');

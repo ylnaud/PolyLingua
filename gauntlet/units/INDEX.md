@@ -1,32 +1,29 @@
 # Unidades del Gauntlet
 
-Una fila por pieza. Solo U-01 tiene ficha desarrollada: fijar criterios de
-aceptación sobre código que no se ha auditado a fondo produce barras genéricas,
-que es justo lo que este sistema existe para evitar.
+Una fila por pieza. Solo U-01 y U-02 tienen ficha desarrollada: fijar
+criterios de aceptación sobre código que no se ha auditado a fondo produce
+barras genéricas, que es justo lo que este sistema existe para evitar.
 
-| #    | Unidad                                | Tipo                       | Estado   | Ficha                             |
-| ---- | ------------------------------------- | -------------------------- | -------- | --------------------------------- |
-| U-01 | Pureza de idioma del silo inglés      | auto                       | `PASS`   | [ficha](U-01-pureza-idioma-en.md) |
-| U-02 | Glosas de refuerzo A2–C2 para `en-de` | auto + browser + contenido | `TODO`   | —                                 |
-| U-03 | Cifras base y rutas críticas          | auto                       | `TODO`   | —                                 |
-| U-04 | A1 `es→de` sin regresión              | auto                       | `TODO`   | —                                 |
-| U-05 | A1 `en→de` de punta a punta           | auto + browser             | `TODO`   | —                                 |
-| U-06 | A2 `en→de`                            | auto + browser             | `TODO`   | —                                 |
-| U-07 | B1 `en→de`                            | auto + browser             | `TODO`   | —                                 |
-| U-08 | Interfaz de idiomas                   | auto                       | `TODO`   | —                                 |
-| U-09 | Sistema de skills                     | auto                       | `TODO`   | —                                 |
-| U-10 | Ejercicios (los 5 `kind`)             | auto + browser             | `TODO`   | —                                 |
-| U-11 | Repair engine                         | auto                       | `TODO`   | —                                 |
-| U-12 | Navegación y enlaces                  | auto                       | `TODO`   | —                                 |
-| U-13 | Responsive y accesibilidad            | auto + browser             | `TODO`   | —                                 |
-| U-14 | Build y despliegue                    | auto                       | `TODO`   | —                                 |
-| U-15 | Marcado **Beta** de A2–C2             | auto + producto            | `TODO`   | —                                 |
+| #    | Unidad                                | Tipo             | Estado | Ficha                                  |
+| ---- | ------------------------------------- | ---------------- | ------ | -------------------------------------- |
+| U-01 | Pureza de idioma del silo inglés      | auto             | `PASS` | [ficha](U-01-pureza-idioma-en.md)      |
+| U-02 | Glosas de refuerzo A2–C2 para `en-de` | auto + contenido | `PASS` | [ficha](U-02-glosas-refuerzo-en-de.md) |
+| U-03 | Cifras base y rutas críticas          | auto             | `TODO` | —                                      |
+| U-04 | A1 `es→de` sin regresión              | auto             | `TODO` | —                                      |
+| U-05 | A1 `en→de` de punta a punta           | auto + browser   | `TODO` | —                                      |
+| U-06 | A2 `en→de`                            | auto + browser   | `TODO` | —                                      |
+| U-07 | B1 `en→de`                            | auto + browser   | `TODO` | —                                      |
+| U-08 | Interfaz de idiomas                   | auto             | `TODO` | —                                      |
+| U-09 | Sistema de skills                     | auto             | `TODO` | —                                      |
+| U-10 | Ejercicios (los 5 `kind`)             | auto + browser   | `TODO` | —                                      |
+| U-11 | Repair engine                         | auto             | `TODO` | —                                      |
+| U-12 | Navegación y enlaces                  | auto             | `TODO` | —                                      |
+| U-13 | Responsive y accesibilidad            | auto + browser   | `TODO` | —                                      |
+| U-14 | Build y despliegue                    | auto             | `TODO` | —                                      |
+| U-15 | Marcado **Beta** de A2–C2             | auto + producto  | `TODO` | —                                      |
 
 ## Barras en una línea, para las que aún no tienen ficha
 
-- **U-02** — Las 44 `explanation` y 348 `translation` inglesas de A2–C2 en
-  `REPAIR_GLOSSES.en`, paralelas por índice a sus variaciones, sin español y
-  conservando los términos alemanes del original.
 - **U-03** — Páginas construidas, URLs de sitemap por silo y rutas críticas, con
   tolerancia cero a la baja; subir el baseline obliga a justificarlo en el mismo
   commit.

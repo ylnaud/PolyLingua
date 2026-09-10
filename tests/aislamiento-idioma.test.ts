@@ -25,8 +25,14 @@ import { es, en } from '../src/i18n/dictionary';
 
 /** Una habilidad CON glosa inglesa (tanda A1). */
 const CON = 'de.a1.wordorder.basic';
-/** Una SIN glosa inglesa todavía (A2 entra en la tanda siguiente). */
-const SIN = 'de.a2.verb.perfekt';
+/**
+ * Una SIN glosa inglesa, y que nunca la va a tener: no es `de.*`. Tras U-02
+ * (A2-C2 completo — ver `tests/engine.test.ts`, describe "glosa de las
+ * plantillas por idioma de usuario") ya no queda ningún skillId alemán con
+ * plantilla y sin glosa — hace falta una de otro idioma meta, que por
+ * arquitectura no tiene curso con interfaz inglesa (`en-de` es el único).
+ */
+const SIN = 'en.a1.verb.to-be';
 
 /** Marca inconfundible: si aparece donde no toca, se ve a simple vista. */
 const MARCA = '⟦TEST-EN⟧';
@@ -270,21 +276,20 @@ describe('tanda A1 — las 17 glosas inglesas', () => {
     'de.a1.preposition.place-time',
   ];
 
+  /** Solo las de A1, filtradas del mapa completo (que desde U-02 también lleva A2-C2). */
+  const soloA1 = () => Object.keys(REPAIR_GLOSSES.en).filter((id) => id.startsWith('de.a1.'));
+
   it('hay exactamente 17', () => {
-    expect(Object.keys(REPAIR_GLOSSES.en)).toHaveLength(17);
+    expect(soloA1()).toHaveLength(17);
   });
 
   it('son exactamente esas 17, sin sobrantes', () => {
-    expect(Object.keys(REPAIR_GLOSSES.en).sort()).toEqual([...A1].sort());
+    expect(soloA1().sort()).toEqual([...A1].sort());
   });
 
   it('cada skillId existe de verdad en REPAIR_TEMPLATES', () => {
     const ids = new Set(REPAIR_TEMPLATES.map((t) => t.skillId));
     for (const id of Object.keys(REPAIR_GLOSSES.en)) expect(ids.has(id), id).toBe(true);
-  });
-
-  it('todas son de A1: ninguna otra tanda se ha colado', () => {
-    for (const id of Object.keys(REPAIR_GLOSSES.en)) expect(id.startsWith('de.a1.'), id).toBe(true);
   });
 
   it('cada glosa tiene explanation con contenido', () => {
@@ -319,8 +324,20 @@ describe('tanda A1 — las 17 glosas inglesas', () => {
   it('ninguna glosa inglesa lleva español evidente', () => {
     // Solo palabras que NO existen en inglés: `plural`, `general` o `hay` sí
     // existen y darían falsos positivos (ya me pasó midiendo otra cosa).
+    //
+    // `masculino`/`femenino` se agregaron al ampliar el control a las 61
+    // (U-02, A2-C2): sin ellas, `de.b2.preposition.genitiv` —cuya explicación
+    // española no lleva tilde, ñ ni ninguna otra palabra de la lista— pasaba
+    // el control invertido de abajo sin que la regex la detectara.
+    //
+    // `los` lleva `(?<!-)` porque es también un morfema alemán real: la glosa
+    // de `de.c1.wordformation.affixes` explica el sufijo «-los» (hoffnungslos)
+    // y sin la exclusión el guion delante no evita el límite de palabra. Ya
+    // pasó lo mismo con este morfema en el detector de U-01
+    // (`tests/lib/spanish-scan.ts`) — se acota la ocurrencia conocida, no se
+    // quita `los` de la lista.
     const marcas =
-      /[áéíóúñ¿¡]|\b(el|los|las|del|una|pero|verbo|frase|palabra|palabras|segunda|posicion|siempre|articulo|sustantivo|persona|personas|cambian?|lleva|todo|todos|otras?|demas|mismo|misma)\b/i;
+      /[áéíóúñ¿¡]|\b(el|las|del|una|pero|verbo|frase|palabra|palabras|segunda|posicion|siempre|articulo|sustantivo|persona|personas|cambian?|lleva|todo|todos|otras?|demas|mismo|misma|masculino|femenino)\b|(?<!-)\blos\b/i;
 
     // Control: la regex TIENE que marcar los originales españoles. Sin esto,
     // una regex rota pasaría el test de abajo sin detectar nada.

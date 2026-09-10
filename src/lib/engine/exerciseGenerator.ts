@@ -234,8 +234,10 @@ export interface RepairGloss {
  * traducción (los dos renderizadores la protegen con `if (data.translation)`),
  * no con la española.
  *
- * Estado: A1 completo en inglés — 17 explicaciones. Las `translations` y los
- * niveles A2-C2 son las tandas siguientes.
+ * Estado: A1-C2 completo en inglés para `de.*` — 61 explicaciones (17 A1 +
+ * 44 A2-C2, unidad U-02 del Gauntlet). Cubre todos los skillId `de.*` con
+ * plantilla de refuerzo (`REPAIR_TEMPLATES`). No incluye `en.*`, `fr.*`,
+ * `it.*` ni `pt.*`: esos targetLang no tienen curso con interfaz inglesa.
  */
 export const REPAIR_GLOSSES: Record<string, Record<string, RepairGloss>> = {
   en: {
@@ -480,6 +482,628 @@ export const REPAIR_GLOSSES: Record<string, Record<string, RepairGloss>> = {
         'I am going to the doctor.',
         'We are meeting at the station.',
         'At the weekend I sleep late.',
+      ],
+    },
+
+    // ── A2 ──────────────────────────────────────────────────────────────
+    'de.a2.verb.perfekt': {
+      explanation:
+        'The Perfekt is built with haben or sein + participle. Verbs of movement (gehen, fahren, kommen) and change of state (aufstehen, bleiben, werden) take sein; everything else takes haben.',
+      translations: [
+        'I ate pizza yesterday.',
+        'He went to Berlin. (movement → sein)',
+        'We watched a film.',
+        'She got up at eight. (change of state → sein)',
+        'I stayed at home. (bleiben takes sein even without movement)',
+        'You have worked a lot.',
+        'The children went to the cinema.',
+        'You (plural) have read the book.',
+      ],
+    },
+    'de.a2.verb.participle': {
+      explanation:
+        'The regular participle is ge- + stem + -t (machen → gemacht) and the irregular one is ge- + stem + -en (lesen → gelesen). Two exceptions people always forget: verbs ending in -ieren drop the ge- (studiert), and in separable verbs the ge- goes in the middle (eingekauft).',
+      translations: [
+        'to do → I have done',
+        'to read → I have read',
+        'to work → I have worked',
+        'to travel → I have travelled',
+        'to study → I have studied (-ieren verbs drop the ge-)',
+        'to shop → I have shopped (the ge- goes in the middle)',
+        'to drink → I have drunk',
+        'to understand → I have understood (inseparable prefix: no ge-)',
+      ],
+    },
+    'de.a2.verb.modal': {
+      explanation:
+        'Modal verbs are irregular in the singular: ich and er/sie/es take no ending and usually change the vowel (ich kann, ich muss, ich will). The plural is regular.',
+      translations: [
+        'I can swim well. (können)',
+        'You have to work today. (müssen)',
+        'He wants to go to the cinema. (wollen)',
+        'We are not allowed to smoke here. (dürfen)',
+        'You (plural) should study more. (sollen)',
+        'I would like a coffee, please. (möchten)',
+        'The child cannot read yet. (können)',
+        'The students have to study a lot. (müssen)',
+      ],
+    },
+    'de.a2.wordorder.verb-final': {
+      explanation:
+        "When there are two verbs, the conjugated one stays in second position and the other — infinitive or participle — goes to the END of the sentence. It's German's 'sandwich' structure.",
+      translations: [
+        "I can't come today.",
+        'We have watched a film.',
+        'He has to get up early tomorrow.',
+        'I ate pizza yesterday.',
+        'She wants to go to Berlin.',
+        'I would like to drink a coffee.',
+      ],
+    },
+    'de.a2.verb.separable': {
+      explanation:
+        'In the present tense the prefix splits off from the verb and jumps to the end of the sentence: aufstehen → ich stehe um sieben auf. It joins back together in the infinitive and the participle.',
+      translations: [
+        'I get up at seven. (aufstehen)',
+        'We do the shopping at the supermarket. (einkaufen)',
+        'The train arrives at ten. (ankommen)',
+        'Call me later! (anrufen)',
+        'Will you open the window, please? (aufmachen)',
+        'She likes watching TV. (fernsehen)',
+        'When does the film start? (anfangen)',
+        "I'm moving house tomorrow. (umziehen)",
+      ],
+    },
+    'de.a2.adjective.comparative': {
+      explanation:
+        'Comparative: adjective + -er (schnell → schneller). Superlative: am + adjective + -sten (am schnellsten). Short adjectives often add an Umlaut (groß → größer), and there are four irregulars: gut → besser, viel → mehr, gern → lieber, hoch → höher.',
+      translations: [
+        'Anna is faster than Peter. (schnell)',
+        'Berlin is bigger than Munich. (groß)',
+        'That is the best film. (gut)',
+        'I prefer coffee to tea. (gern)',
+        'He runs the fastest. (schnell)',
+        "Today it's warmer than yesterday. (warm)",
+        'The car is more expensive than the bike. (teuer)',
+        'She has more time than I do. (viel)',
+      ],
+    },
+    'de.a2.case.akkusativ': {
+      explanation:
+        "In the Akkusativ only the masculine changes: der → den, ein → einen. Feminine, neuter and plural stay the same. It's the best news about German cases.",
+      translations: [
+        'I see the man. (der)',
+        "She buys the newspaper. (the feminine doesn't change)",
+        'We have the car. (das)',
+        'He is looking for a key. (ein)',
+        'I need the chair. (der)',
+        'Are you drinking the coffee? (der)',
+        'She is reading the book. (das)',
+        'I know the teacher. (der)',
+      ],
+    },
+    'de.a2.case.dativ': {
+      explanation:
+        'In the Dativ all three change: der → dem, die → der, das → dem, and the plural die → den (the noun also adds an -n). It is required by the indirect object and by verbs like helfen, danken and gehören.',
+      translations: [
+        'I give the book to the man. (der)',
+        'She helps the woman. (die)',
+        'We thank the child. (das)',
+        'He is talking with the teacher. (die)',
+        'The book belongs to the student. (der)',
+        'I go by bus. (der)',
+        'She writes a letter to the children. (die, plural)',
+        'After work I go home. (die)',
+      ],
+    },
+    'de.a2.preposition.fixed': {
+      explanation:
+        "You don't work these out, you memorise them. Always Akkusativ: für, durch, gegen, ohne, um. Always Dativ: aus, bei, mit, nach, seit, von, zu.",
+      translations: [
+        'The present is for the father. (der)',
+        'I travel by train. (der)',
+        'We go for a walk without the dog. (der)',
+        'She comes from Switzerland. (die)',
+        'After the course we have coffee. (der)',
+        'He works at the company. (die)',
+        'The book is from the teacher. (der)',
+        'I walk through the park. (der)',
+      ],
+    },
+    'de.a2.preposition.wechsel': {
+      explanation:
+        'The nine two-way prepositions are decided with a question: wohin? (movement towards a place) takes Akkusativ; wo? (something is staying in a place) takes Dativ.',
+      translations: [
+        "I'm going into the park. (der, movement → wohin, Akkusativ)",
+        'I am in the park. (der, staying → wo, Dativ)',
+        'The book is lying on the table. (der, staying)',
+        "I'm putting the book on the table. (der, movement)",
+        "We're hanging the picture on the wall. (die, movement)",
+        'The picture is hanging on the wall. (die, staying)',
+        'The cat jumps under the bed. (das, movement)',
+        'The cat sleeps under the bed. (das, staying)',
+      ],
+    },
+    'de.a2.verb.reflexive': {
+      explanation:
+        "The reflexive pronoun changes with the person: mich, dich, sich, uns, euch, sich. Only third person and the formal 'Sie' use sich, which is the one people usually memorise.",
+      translations: [
+        "I'm looking forward to the weekend.",
+        'He is interested in music.',
+        "We're meeting at eight.",
+        'You (plural) sit down on the sofa.',
+        'They remember the film.',
+        'I get dressed quickly.',
+        'How are you feeling today?',
+        'The child washes itself alone.',
+      ],
+    },
+    'de.a2.pronoun.akkusativ': {
+      explanation:
+        'The Akkusativ pronouns are mich, dich, ihn, sie, es, uns, euch, sie/Sie. The trickiest one is ihn: der Mann → ihn, because the pronoun follows the gender of the noun.',
+      translations: [
+        'Do you know Peter? — Yes, I know him.',
+        'Do you see Anna? — Yes, I see her.',
+        "Where is the book? I'm looking for it.",
+        'Call me, please! (me)',
+        "I'm visiting you tomorrow. (you)",
+        'The teacher asks us. (us)',
+        "I don't understand you (plural). (you)",
+        "The children? I'll pick them up at three.",
+      ],
+    },
+    'de.a2.pronoun.possessive': {
+      explanation:
+        'The possessive behaves like ein: no ending in the masculine and neuter nominative (mein Bruder, mein Auto), with -e in the feminine and plural (meine Schwester), and with -en in the masculine Akkusativ (meinen Vater).',
+      translations: [
+        'This is my brother. (my)',
+        'This is my sister. (my)',
+        'I see your father. (your, Akkusativ)',
+        'Where is his car? (his)',
+        "I'm travelling with my mother. (my, Dativ)",
+        'These are our children. (our)',
+        'She loves her dog. (her, Akkusativ)',
+        "What's your (plural) teacher called? (your)",
+      ],
+    },
+    'de.a2.time.past-future': {
+      explanation:
+        "The Perfekt for the past and the present tense for the future are enough for everyday German: 'Morgen fahre ich nach Berlin' is future even though the verb is in the present. It's the time expression that marks the tense, not the verb form.",
+      translations: [
+        'Yesterday I studied German. (yesterday)',
+        "Tomorrow I'm going to Berlin. (tomorrow)",
+        "Next week I'm visiting my family. (besuchen)",
+        'Last summer we were in Italy. (sein)',
+        'Last year I started German. (last year)',
+        'Last week I was ill. (last week)',
+        'The course starts in two days. (beginnen)',
+        "Tonight I'm watching a film. (sehen)",
+      ],
+    },
+
+    // ── B1 ──────────────────────────────────────────────────────────────
+    'de.b1.wordorder.subordinate': {
+      explanation:
+        "Every subordinating conjunction (weil, dass, obwohl, wenn) sends the conjugated verb to the END of its clause. If there are two verbs, the conjugated one goes last of all: '…weil sie arbeiten muss'.",
+      translations: [
+        "I'm staying home because I'm ill.",
+        "He says that he's coming tomorrow.",
+        "Although it's raining, we're going for a walk.",
+        'When I have time, I read a book.',
+        "I know that you're right.",
+        "She isn't coming because she has to work.",
+      ],
+    },
+    'de.b1.conjunction.subordinating': {
+      explanation:
+        "weil = because (the cause), dass = that (the content), obwohl = although (the contrast), wenn = when or if (the condition). All four send the verb to the end; watch out for denn, which also means 'because' but does NOT send it there.",
+      translations: [
+        "I'm learning German because I want to work in Berlin.",
+        "I believe that he's right.",
+        "Although it's raining, we're going for a walk.",
+        "When I have time, I'll call you.",
+        "She's tired because she's worked a lot.",
+        "It's a shame that you can't come.",
+        'Although he is ill, he goes to work.',
+        "When you're ready, let me know.",
+      ],
+    },
+    'de.b1.verb.praeteritum': {
+      explanation:
+        "The Präteritum is the past tense of books and the news, but sein, haben and the modal verbs also use it in speech. Regular verbs: stem + -te (machen → machte). Irregular verbs: they change the vowel and don't take -te (gehen → ging).",
+      translations: [
+        'Yesterday I was ill. (sein)',
+        'We had no time. (haben)',
+        'He went home. (gehen)',
+        'She read the whole book. (lesen)',
+        "I couldn't do that. (können)",
+        'The child did the task. (machen)',
+        'We travelled to Berlin. (fahren)',
+        'He wrote me a letter. (schreiben)',
+      ],
+    },
+    'de.b1.clause.relative': {
+      explanation:
+        'The relative pronoun takes its GENDER from the noun it refers to, but its CASE from its function inside the clause: der Mann, der hier arbeitet (subject) versus der Mann, den ich sehe (object).',
+      translations: [
+        "That's the man who works here. (subject)",
+        "That's the man I saw yesterday. (object → Akkusativ)",
+        "That's the woman who helped me.",
+        "That's the book I'm reading right now.",
+        "That's the friend I gave the book to. (Dativ)",
+        'Do you know the people standing over there?',
+        "That's the city I live in.",
+        "That's the car that belongs to my brother.",
+      ],
+    },
+    'de.b1.clause.indirect-question': {
+      explanation:
+        "An indirect question loses the inversion and sends the verb to the end. If the direct question was a yes/no question, it's introduced with ob; if it had a W-word, that same word acts as the conjunction.",
+      translations: [
+        "Do you know if he's coming today? (yes/no)",
+        "I don't know where he lives. (where)",
+        'Can you tell me when the train leaves? (when)',
+        'She is asking whether we have time. (yes/no)',
+        'Do you know who the book belongs to? (whom)',
+        'He wants to know what your name is. (how)',
+        'I have no idea why he did that. (why)',
+        "Please tell me what you're doing at the weekend. (what)",
+      ],
+    },
+    'de.b1.clause.final': {
+      explanation:
+        "um…zu when the subject is the SAME in both parts; damit when it changes. 'Ich lerne, um zu arbeiten' (I and I) versus 'Ich spreche langsam, damit du mich verstehst' (I and you).",
+      translations: [
+        "I'm learning German (in order) to work in Berlin. (same subject)",
+        'I speak slowly so that you understand me. (subject changes)',
+        'She leaves early to be on time.',
+        'He explains it again so that everyone understands it.',
+        "We're saving money to go on a trip.",
+        "I'm writing it down so that I don't forget it.",
+        "She's calling to arrange an appointment.",
+        "I'm opening the window so that it isn't so warm.",
+      ],
+    },
+    'de.b1.case.genitiv': {
+      explanation:
+        "The Genitiv is formal possession. Masculine and neuter: des + an -(e)s on the noun (des Mannes). Feminine and plural: der. In speech it's almost always replaced by von + Dativ.",
+      translations: [
+        "The man's car is new. (der Mann)",
+        'I like the colour of the house. (das Haus)',
+        'The end of the story was sad. (die Geschichte)',
+        "People's opinion is important. (die Leute)",
+        'Despite the rain I go for a walk. (der Regen)',
+        'During the week I work. (die Woche)',
+        "Because of the weather we're staying home. (das Wetter)",
+        "That's the boss's office. (die Chefin)",
+      ],
+    },
+    'de.b1.adjective.declension': {
+      explanation:
+        'The ending depends on whether the article already marks the gender. With der/die/das it is already marked, so the adjective relaxes (-e or -en); with ein/kein/mein the adjective has to mark it itself: ein guter Mann, ein gutes Kind.',
+      translations: [
+        'The good man is coming. (gut)',
+        "A good man is coming. (ein doesn't mark the masculine: the adjective does)",
+        'The small child is playing. (klein)',
+        'A small child is playing. (klein)',
+        'I see the big dog. (groß)',
+        'She has a nice flat. (schön)',
+        'We live in an old house. (alt)',
+        'The new books are expensive. (neu)',
+      ],
+    },
+    'de.b1.verb.konjunktiv2': {
+      explanation:
+        'wäre, hätte and könnte are the polite version of sein, haben and können. They are not past tense: they are used to make requests without sounding blunt, and to talk about the hypothetical.',
+      translations: [
+        'Would you be so kind as to help me? (sein)',
+        'Could I have the bill, please? (haben)',
+        'Could you help me, please? (können)',
+        'That would be very kind. (sein)',
+        'I would like a room with a view. (haben)',
+        'Could you help me for a moment? (können)',
+        'It would be nice if you came. (sein)',
+        'We would like to have booked. (haben)',
+      ],
+    },
+    'de.b1.verb.konjunktiv2-wuerde': {
+      explanation:
+        'For almost all verbs the Konjunktiv II is built with würde + infinitive at the end. Only sein, haben and the modal verbs have their own form (wäre, hätte, könnte); for everything else, würde.',
+      translations: [
+        'I would be glad about a solution.',
+        'Would you give me an answer, please?',
+        'We would like to get another room.',
+        'Would you do that for me?',
+        'He would never say such a thing.',
+        'I would rather come tomorrow.',
+        'The guests would be very pleased.',
+        'Would you (plural) help me, please?',
+      ],
+    },
+    'de.b1.verb.perfekt-zustand': {
+      explanation:
+        "haben + participle tells the ACTION: 'ich habe das Fenster geöffnet'. sein + participle describes the resulting STATE: 'das Fenster ist geöffnet'. The form is almost the same; what changes is what you're talking about.",
+      translations: [
+        'I have opened the window. (the action)',
+        'The window is open. (the state)',
+        'We have solved the problem. (the action)',
+        'The problem is solved. (the state)',
+        'The waiter has reserved the table. (the action)',
+        'The table is reserved. (the state)',
+        'She has closed the door. (the action)',
+        'The door is closed. (the state)',
+      ],
+    },
+    'de.b1.adverb.direction': {
+      explanation:
+        "hin = away (the movement moves away from the speaker), her = towards (it comes closer). And da- + preposition replaces 'preposition + that': dahinter is 'behind that'. If the preposition begins with a vowel, an -r- goes in between: darüber, darunter.",
+      translations: [
+        "Come in! It's warm in here. (the speaker is inside)",
+        "Go in! I'll wait outside. (the speaker is outside)",
+        "I'm going up the stairs. (going up, away from the speaker)",
+        'The house is beautiful, the garden is behind it. (behind that)',
+        "There's a picture hanging above it. (above that)",
+        'The shoes are underneath it. (below that)',
+        "Come over here! I'm on this side. (towards this side)",
+        'Put the bag next to it. (next to that)',
+      ],
+    },
+    'de.b1.verb.with-preposition': {
+      explanation:
+        "Each verb is paired with a fixed preposition, and you have to memorise the whole pair: warten auf, denken an, sich freuen über, sich interessieren für, Angst haben vor. The preposition can't be guessed from its Spanish or English equivalent.",
+      translations: [
+        "I'm waiting for the bus.",
+        'Are you thinking of me?',
+        "She's happy about the present.",
+        'He is interested in music.',
+        "I'm talking to my boss.",
+        "We're hoping for good weather.",
+        "She's afraid of dogs.",
+        'I thank you for your help.',
+      ],
+    },
+
+    // ── B2 ──────────────────────────────────────────────────────────────
+    'de.b2.verb.futur': {
+      explanation:
+        'Futur I: werden + infinitive at the end. Futur II: werden + participle + haben/sein, used to guess that something has already happened. In everyday speech the future is expressed with the present tense; Futur I is mainly used for promises and predictions.',
+      translations: [
+        'I will call you tomorrow.',
+        'Will you help me?',
+        'It will rain tomorrow.',
+        'We will move house next year.',
+        'She will surely manage it.',
+        'You (plural) will certainly be pleased.',
+        'He will have forgotten the appointment. (Futur II)',
+        'She will already have gone home. (Futur II)',
+      ],
+    },
+    'de.b2.clause.conditional-irreal': {
+      explanation:
+        "The unreal conditional takes Konjunktiv II in BOTH parts: 'Wenn ich Zeit hätte, würde ich kommen'. For something that can no longer be changed, it's built with hätte or wäre + participle: 'Wenn ich Zeit gehabt hätte, wäre ich gekommen'.",
+      translations: [
+        'If I had time, I would come. (haben)',
+        'If I were rich, I would travel a lot. (sein)',
+        'If you had come earlier, you would have met him. (sein)',
+        'If we had more money, we would buy a house. (haben)',
+        'I would help you if I could. (werden)',
+        "If I had known that, I wouldn't have said anything. (haben)",
+        "In your place I wouldn't do that. (werden)",
+        "If he weren't ill, he would have come. (sein)",
+      ],
+    },
+    'de.b2.voice.passive': {
+      explanation:
+        "The passive is built with werden + participle at the end: 'Das Haus wird gebaut'. In the past, wurde; in the Perfekt, ist + participle + worden. Whoever does the action, if mentioned, is introduced with von.",
+      translations: [
+        'The house is being built right now.',
+        'The letters are written every day.',
+        'The car was repaired yesterday. (past)',
+        'The windows were cleaned last week. (past)',
+        'The contract was signed yesterday. (Perfekt)',
+        'There is no smoking here.',
+        'The problem is solved by the technicians.',
+        'The invoice was already paid. (past)',
+      ],
+    },
+    'de.b2.voice.zustandspassiv': {
+      explanation:
+        "werden + participle is the PROCESS (das Fenster wird geöffnet: it is being opened); sein + participle is the resulting STATE (das Fenster ist geöffnet: it is open). The sentence looks similar; what changes is what's being talked about.",
+      translations: [
+        'The shop is opened at eight. (the process)',
+        'The shop is open now. (the state)',
+        'The letter is being written right now. (the process)',
+        'The letter is already written. (the state)',
+        'The door is locked. (the state)',
+        'The door is locked every evening. (the process)',
+        'The food is already prepared. (the state)',
+        'The food is being prepared right now. (the process)',
+      ],
+    },
+    'de.b2.connector.discourse': {
+      explanation:
+        "deshalb, deswegen, trotzdem and allerdings are NOT subordinating: they come first and the verb stays second. 'Es regnet. Deshalb bleibe ich zu Hause' — never 'deshalb ich bleibe'.",
+      translations: [
+        "It's raining. That's why I'm staying home. (deshalb = that's why)",
+        "He studied a lot. That's why he passed. (deswegen = that's why)",
+        'It was cold. Even so, we went for a walk. (trotzdem = even so)',
+        'The hotel was good. However, it was too expensive. (allerdings = however)',
+        "I have no time. Even so, I'll help you. (trotzdem)",
+        "She's ill. That's why she isn't coming. (deshalb)",
+        'First we eat. Afterwards we go to the cinema. (danach = afterwards)',
+        "The train was delayed. That's why I was late. (deswegen)",
+      ],
+    },
+    'de.b2.conjunction.double': {
+      explanation:
+        'They come in pairs, and both halves have to be there: sowohl…als auch (both… and), entweder…oder (either… or), weder…noch (neither… nor), je…desto (the more… the more), nicht nur…sondern auch (not only… but also).',
+      translations: [
+        'Both Anna and Peter are coming.',
+        'Both Anna and Peter are coming.',
+        'Either we go to the cinema or we stay home.',
+        'He speaks neither German nor English.',
+        'The more I study, the better I understand.',
+        'The more I study, the better I understand.',
+        'She is not only clever, but also nice.',
+        'Neither he nor she called.',
+      ],
+    },
+    'de.b2.preposition.genitiv': {
+      explanation:
+        'trotz, wegen, während, aufgrund, statt and innerhalb take the Genitiv: des in the masculine and neuter, der in the feminine and plural.',
+      translations: [
+        "Despite the rain we're going out. (der Regen)",
+        "Because of the weather we're staying here. (das Wetter)",
+        'During the week I work a lot. (die Woche)',
+        'Because of the strike, no train is running. (der Streik)',
+        "Instead of the car I'll take the bike. (das Auto)",
+        'Within the city the speed limit is 50. (die Stadt)',
+        'During the holidays I read a lot. (die Ferien, plural)',
+        'Despite the problems it was nice. (die Probleme, plural)',
+      ],
+    },
+
+    // ── C1 ──────────────────────────────────────────────────────────────
+    'de.c1.verb.konjunktiv1': {
+      explanation:
+        "Konjunktiv I marks that you're quoting someone without vouching for what they say: 'Er sagt, er sei krank'. It's formed with the infinitive stem + -e (sei, habe, komme); when it would coincide with the indicative, Konjunktiv II is used instead (hätten instead of haben).",
+      translations: [
+        'He says he is ill. (sein)',
+        'She claims she has no time. (haben)',
+        'The minister states that he knew nothing. (haben)',
+        'They say the weather will improve. (werden)',
+        "She says she's coming tomorrow. (kommen)",
+        'He thinks that prices have risen. (sein)',
+        'The newspaper writes that the company is making losses. (machen)',
+        'They say they have no time. (haben would coincide with the indicative → Konjunktiv II)',
+      ],
+    },
+    'de.c1.verb.modal-subjective': {
+      explanation:
+        "Modal verbs can also express how certain you are: müssen = almost certain, dürfte = probable, können/könnte = possible, wollen = he claims it (and you doubt it), sollen = it's said / rumoured.",
+      translations: [
+        'He must be ill, he looks bad. (almost certain)',
+        "That's probably around 20 euros. (probable)",
+        "She might be right, I'm not sure. (possible)",
+        'He claims to be a millionaire. (he says so himself)',
+        "The restaurant is said to be very good. (it's rumoured)",
+        'She must already be home, the light is on. (almost certain)',
+        'That might have been a mistake. (possible)',
+        'He is said to have broken the record. (it’s rumoured)',
+      ],
+    },
+    'de.c1.construction.participial': {
+      explanation:
+        "The participle is placed before the noun and declined like an adjective: 'die spielenden Kinder' (Partizip I, ongoing action), 'das gelesene Buch' (Partizip II, finished action with a passive sense).",
+      translations: [
+        'the children who are playing (spielen, Partizip I)',
+        'the book that has been read (lesen, Partizip II)',
+        'the arriving train (ankommen, Partizip I)',
+        'the closed door (schließen, Partizip II)',
+        'a growing problem (wachsen, Partizip I)',
+        'the expected results (erwarten, Partizip II)',
+        'the sleeping man (schlafen, Partizip I)',
+        'the question that was asked (stellen, Partizip II)',
+      ],
+    },
+    'de.c1.construction.funktionsverb': {
+      explanation:
+        "These are fixed verb + noun pairs that replace a simple verb: 'in Frage stellen' (to question), 'zur Verfügung stehen' (to be available). The verb loses its own meaning, and the noun carries it instead.",
+      translations: [
+        'I question that. (to question)',
+        'The documents are available to you. (to be available)',
+        'We are referring to the results. (to refer to)',
+        'He brings up the proposal. (to bring up)',
+        'The project is coming to an end. (to come to an end)',
+        'She casts doubt on the statement. (to cast doubt on)',
+        'We put the plan into action. (to put into action)',
+        'The matter falls into oblivion. (to fall into oblivion)',
+      ],
+    },
+    'de.c1.style.nominal': {
+      explanation:
+        "The nominal style turns the verb into a noun and the conjunction into a preposition: 'Weil es regnete, blieben wir' → 'Wegen des Regens blieben wir'. It's the register of formal texts.",
+      translations: [
+        'because it was raining → because of the rain',
+        'after he had arrived → after his arrival',
+        'before we leave → before departure',
+        'while he was studying → during his studies',
+        'although there were problems → despite the problems',
+        "if it's necessary → if needed",
+        'because she was ill → because of her illness',
+        'since he has worked here → since he started working',
+      ],
+    },
+    'de.c1.connector.causal': {
+      explanation:
+        "weil answers the question 'why?' and sends the verb to the end; denn coordinates and leaves the verb second; da presents a cause that's already known and usually comes first; zumal adds a weighty extra reason.",
+      translations: [
+        "I'm staying home because I'm ill. (subordinate)",
+        "I'm staying home, for I'm ill. (coordinating)",
+        "Since it's already late, we're going home. (known cause)",
+        'We should go, especially since the weather is getting bad. (weighty reason)',
+        'He did not come because he had no time.',
+        'Since you are ill, stay in bed.',
+        "I'll take the bike, for the car is broken.",
+        'The project is worthwhile, especially since the costs are low.',
+      ],
+    },
+    'de.c1.wordformation.affixes': {
+      explanation:
+        "Productive affixes multiply your vocabulary without memorising new words: un- negates, -bar forms adjectives of possibility, -lich forms adjectives, -ung and -heit form nouns, -los means 'without something'.",
+      translations: [
+        'possible → impossible',
+        'to read → readable',
+        'child → childhood',
+        'hope → hopeless',
+        'to form/educate → education',
+        'friend → friendly',
+        'satisfied → dissatisfied',
+        'to drink → drinkable',
+      ],
+    },
+    'de.c1.preposition.academic': {
+      explanation:
+        'Academic register has its own set of prepositions: anhand (on the basis of), hinsichtlich (with regard to), bezüglich (regarding), gemäß (according to), infolge (as a result of), im Hinblick auf (with a view to).',
+      translations: [
+        'On the basis of the results, it can be said that… (on the basis of)',
+        'With regard to the costs, there are concerns. (with regard to)',
+        'Regarding your enquiry, we would like to inform you… (regarding)',
+        'According to the regulations, that is forbidden. (according to)',
+        'As a result of the strike, classes were cancelled. (as a result of)',
+        'With a view to the future, that is important. (with a view to)',
+        'According to the study, the number keeps rising. (according to)',
+        'On the basis of this data, the author argues. (on the basis of)',
+      ],
+    },
+
+    // ── C2 ──────────────────────────────────────────────────────────────
+    'de.c2.particle.modal': {
+      explanation:
+        'Modal particles are not translated word for word, they add colour: doch insists or contradicts, mal softens a request, ja treats something as already known between speakers, wohl marks a supposition, denn shows interest in a question, and halt sounds like resignation.',
+      translations: [
+        'Oh, come here! (insistence)',
+        'Go on, open the window. (softens the request)',
+        "Well, that's obvious! (we both know that)",
+        "He's probably ill. (I suppose)",
+        'So what are you doing here? (interest)',
+        "That's just how it is. (resignation)",
+        'Just tell the truth already! (insistence)',
+        "So what's your name? (interest)",
+      ],
+    },
+    'de.c2.idiom.prepositional': {
+      explanation:
+        "Fixed expressions where the preposition can't be worked out from anything: auf Anhieb (at the first attempt), im Großen und Ganzen (on the whole), unter Umständen (depending on the circumstances), von Haus aus (by training/originally). You memorise them whole.",
+      translations: [
+        'It worked at the first attempt. (at the first attempt)',
+        'On the whole it was good. (on the whole)',
+        'Depending on the circumstances, I might come later. (depending on the circumstances)',
+        'He is a musician by training. (by training)',
+        "In any case I'll call. (in any case)",
+        "That's out of the question!",
+        "The solution is obvious. (it's obvious)",
+        'He took that to heart.',
       ],
     },
   },

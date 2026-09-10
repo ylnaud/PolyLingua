@@ -569,10 +569,11 @@ describe('plantillas de refuerzo', () => {
  * NUNCA la glosa de otro idioma.
  */
 describe('glosa de las plantillas por idioma de usuario', () => {
-  // Con glosa inglesa (tanda A1) y sin ella (A2, tanda siguiente). Hace falta
-  // una de cada: el comportamiento a comprobar es justo la diferencia.
+  // Con glosa inglesa (de.*, completo A1-C2 desde U-02) y sin ella (nunca la
+  // va a tener: no es de.*, y en-de es el único curso con interfaz inglesa).
+  // Hace falta una de cada: el comportamiento a comprobar es justo la diferencia.
   const CON = 'de.a1.wordorder.basic';
-  const SIN = 'de.a2.verb.perfekt';
+  const SIN = 'en.a1.verb.to-be';
 
   it('es → de conserva el comportamiento actual', () => {
     for (const id of [CON, SIN]) {
@@ -636,12 +637,66 @@ describe('glosa de las plantillas por idioma de usuario', () => {
     }
   });
 
-  it('el mapa lleva la tanda A1 y nada más', () => {
-    // Cuando entre A2 hay que subir este número, no borrar el test: es lo que
-    // impide que una tanda se cuele a medias sin que nadie lo note.
+  it('el mapa lleva de.* completo (A1-C2) y nada de otro idioma meta', () => {
+    // U-02 subió esto de 17 (solo A1) a 61 (A1-C2 completo). Si vuelve a
+    // cambiar, no borrar el test: es lo que impide que una tanda se cuele a
+    // medias sin que nadie lo note.
     const ids = Object.keys(REPAIR_GLOSSES.en);
-    expect(ids).toHaveLength(17);
-    expect(ids.every((id) => id.startsWith('de.a1.'))).toBe(true);
+    expect(ids).toHaveLength(61);
+    expect(ids.every((id) => id.startsWith('de.'))).toBe(true);
+  });
+
+  /**
+   * Correspondencia por índice, para las 61 — no solo las 17 de A1.
+   *
+   * `tests/aislamiento-idioma.test.ts` ya vigila esto en detalle para la tanda
+   * A1 (forma, anclas de nombre propio). Esto es el candado equivalente pero
+   * general: cubre las 44 de A2-C2 que ese archivo no toca, y es el que
+   * detecta que un array se desplazó o quedó corto sin necesidad de revisar
+   * cada frase a mano.
+   */
+  it('cada translations[] de las 61 tiene el mismo largo que su variations[]', () => {
+    for (const [id, gloss] of Object.entries(REPAIR_GLOSSES.en)) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      expect(
+        gloss.translations.length,
+        `${id}: ${gloss.translations.length} translations para ${base.variations.length} variations`,
+      ).toBe(base.variations.length);
+      gloss.translations.forEach((t, i) => {
+        expect(typeof t, `${id}[${i}]`).toBe('string');
+        expect(t.trim().length, `${id}[${i}] vacía`).toBeGreaterThan(0);
+      });
+    }
+  });
+
+  /**
+   * `tests/aislamiento-idioma.test.ts` vigila "sin español evidente" en las
+   * `explanation` de las 61 y en las `translations[]` de las 17 de A1 (con
+   * anclas de nombre propio y forma, candado más fino). Ninguno de los dos
+   * cubría `translations[]` para las 44 de A2-C2 — hueco real que encontró
+   * el Critic al revisar U-02 a mano (verificó que el contenido estaba
+   * limpio, pero notó que no había candado automático). Este lo cierra, con
+   * la misma regex (mismas exclusiones documentadas: `masculino`/`femenino`,
+   * y `los` con `(?<!-)` por el morfema alemán -los de
+   * `de.c1.wordformation.affixes`).
+   */
+  it('ninguna translations[] de las 61 lleva español evidente', () => {
+    const marcas =
+      /[áéíóúñ¿¡]|\b(el|los|las|del|una|pero|verbo|frase|palabra|palabras|segunda|posicion|siempre|articulo|sustantivo|persona|personas|cambian?|lleva|todo|todos|otras?|demas|mismo|misma|masculino|femenino)\b|(?<!-)\blos\b/i;
+
+    // Control: la regex TIENE que marcar las 253 traducciones españolas
+    // originales (`variations[].translation`), no solo las explanations.
+    const originales = REPAIR_TEMPLATES.flatMap((t) =>
+      t.variations.map((v) => v.translation ?? ''),
+    ).filter(Boolean);
+    const marcados = originales.filter((t) => marcas.test(t));
+    expect(marcados.length, 'la regex no detecta español: no mide nada').toBeGreaterThan(200);
+
+    for (const [id, gloss] of Object.entries(REPAIR_GLOSSES.en))
+      gloss.translations.forEach((t, i) => {
+        const m = t.match(marcas);
+        expect(m, `${id}[${i}]: «${m?.[0]}» en «${t}»`).toBeNull();
+      });
   });
 });
 

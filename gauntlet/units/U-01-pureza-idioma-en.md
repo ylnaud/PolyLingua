@@ -228,6 +228,7 @@ final, pegado literal:
 # U-01 CRITIC — RONDA 3
 
 ## VEREDICTO
+
 PASS
 
 ## EVIDENCIA
@@ -237,10 +238,12 @@ PASS
 1. `npm run build` ejecutado desde cero: salida real `[build] 1042 page(s) built in 12.26s` / `[build] Complete!`. Confirmado con `ls -la dist/en` que el directorio se regeneró en el mismo timestamp de esta corrida (`Sep 10 12:01`).
 
 2. `npx vitest run tests/lang-purity.test.ts` sobre el `dist/` recién generado:
+
 ```
  Test Files  1 passed (1)
       Tests  35 passed (35)
 ```
+
 Coincide con lo que declara la ficha («35 pasando»).
 
 3. **Verificación independiente con `node --experimental-strip-types`** (no vitest, siguiendo la instrucción de armar casos propios), importando directamente `tests/lib/spanish-scan.ts` y `src/i18n/dictionary.ts` contra el `dist/` fresco — sin depender de que el propio test se autoengañe:
@@ -293,3 +296,18 @@ todavía no lo reconocía. La revisión se lanzó con un agente genérico llevá
 ese mismo contrato. Es decir: en esta ronda la prohibición de `Edit`/`Write` fue
 **instruida, no impuesta**. A partir de la próxima sesión el agente existe y la
 restricción la aplica la propia definición.
+
+## Rebote de verificación (sesión posterior)
+
+Pedido explícito de re-auditar U-01 de cero, sin asumir válido el `PASS`
+anterior. Critic independiente, ronda 1 del rebote, con foco específico en:
+español visible en `/en/**`, `data-title` y otros atributos, comillas
+simples/dobles, orden de atributos, `StartLevelPicker`, `examen.astro`,
+falsos PASS por `<script>`, baseline hardcodeado, control inverso y
+regresión de los defectos de rondas 1-2. Build propio, `npx vitest run
+tests/lang-purity.test.ts` → 35/35, y verificación independiente por fuera
+de vitest contra las funciones reales del detector — incluida una
+simulación propia de la regresión de ronda 1 (quitar el voseo de una copia
+de la lista, sin tocar el repo) que confirmó que el canario específico la
+detecta aunque el control agregado no lo haría. `PASS`, sin bloqueo,
+`NINGUNO` defecto, `No` regresión. U-01 se confirma cerrada.

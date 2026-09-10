@@ -1,6 +1,6 @@
 # Unidades del Gauntlet
 
-Una fila por pieza. Solo U-01, U-02 y U-03 tienen ficha desarrollada: fijar
+Una fila por pieza. Solo U-01 a U-04 tienen ficha desarrollada: fijar
 criterios de aceptación sobre código que no se ha auditado a fondo produce
 barras genéricas, que es justo lo que este sistema existe para evitar.
 
@@ -9,7 +9,7 @@ barras genéricas, que es justo lo que este sistema existe para evitar.
 | U-01 | Pureza de idioma del silo inglés      | auto             | `PASS` | [ficha](U-01-pureza-idioma-en.md)           |
 | U-02 | Glosas de refuerzo A2–C2 para `en-de` | auto + contenido | `PASS` | [ficha](U-02-glosas-refuerzo-en-de.md)      |
 | U-03 | Cifras base y rutas críticas          | auto             | `PASS` | [ficha](U-03-cifras-base-rutas-criticas.md) |
-| U-04 | A1 `es→de` sin regresión              | auto             | `TODO` | —                                           |
+| U-04 | A1 `es→de` sin regresión              | auto             | `PASS` | [ficha](U-04-a1-es-de-sin-regresion.md)     |
 | U-05 | A1 `en→de` de punta a punta           | auto + browser   | `TODO` | —                                           |
 | U-06 | A2 `en→de`                            | auto + browser   | `TODO` | —                                           |
 | U-07 | B1 `en→de`                            | auto + browser   | `TODO` | —                                           |
@@ -24,7 +24,6 @@ barras genéricas, que es justo lo que este sistema existe para evitar.
 
 ## Barras en una línea, para las que aún no tienen ficha
 
-- **U-04** — Las 33 URLs de `/es/de/a1/`, sus quiz y sus ejercicios intactos.
 - **U-05 · U-06 · U-07** — Sesión completable de punta a punta, con el bucle de
   refuerzo incluido. U-06 y U-07 dependen de U-02.
 - **U-08** — Selector con tres filas; hreflang solo hacia páginas que existen.

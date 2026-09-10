@@ -92,13 +92,14 @@ export async function answerItemWrong(page, visible, kind) {
   await visible.locator('[data-option][data-correct="false"]').first().click();
 }
 
-// U-05: A1 en→de, en punta a punta, con el bucle de refuerzo incluido.
-// A diferencia de runSmoke (que abre una lección es-de y responde todo
-// bien), esto abre una lección en-de real, responde MAL a propósito el
-// primer ítem —una habilidad con glosa A1 en inglés, de.a1.verb.present-
-// regular— para forzar que DrillTutor inserte un ejercicio de refuerzo, y
+// U-05/U-06/U-07: una lección en→de real, en punta a punta, con el bucle de
+// refuerzo incluido. A diferencia de runSmoke (que abre una lección es-de y
+// responde todo bien), esto abre una lección en-de real, responde MAL a
+// propósito el primer ítem —una habilidad con glosa en inglés en ese
+// nivel— para forzar que DrillTutor inserte un ejercicio de refuerzo, y
 // confirma que el texto que aparece es el inglés real, no vacío ni español.
-async function runSmokeEn({ port, out }) {
+// `url` es la única diferencia entre niveles; el resto del flujo es idéntico.
+async function runSmokeEnLesson({ port, out, url }) {
   const baseURL = `http://localhost:${port}`;
   const { browser, page } = await launch();
   await seedLocalStorage(page);
@@ -106,9 +107,7 @@ async function runSmokeEn({ port, out }) {
   const consoleErrors = [];
   page.on('pageerror', (err) => consoleErrors.push(String(err)));
 
-  await page.goto(`${baseURL}/en/de/a1/present-tense-regular-verbs/`, {
-    waitUntil: 'networkidle',
-  });
+  await page.goto(`${baseURL}${url}`, { waitUntil: 'networkidle' });
 
   let refuerzoTexto = null;
   let itemsRespondidos = 0;
@@ -162,6 +161,17 @@ async function runSmokeEn({ port, out }) {
     );
   }
   return { scoreText, refuerzoTexto, itemsRespondidos };
+}
+
+// U-05: A1 en→de. Habilidad probada: de.a1.verb.present-regular.
+async function runSmokeEn({ port, out }) {
+  return runSmokeEnLesson({ port, out, url: '/en/de/a1/present-tense-regular-verbs/' });
+}
+
+// U-06: A2 en→de. Habilidad probada: de.a2.verb.modal (primer skill de la
+// lección modal-verbs, con glosa en inglés).
+async function runSmokeEnA2({ port, out }) {
+  return runSmokeEnLesson({ port, out, url: '/en/de/a2/modal-verbs/' });
 }
 
 // Full end-to-end flow: open a real lesson, answer every item it contains
@@ -241,10 +251,11 @@ if (isMain) {
         console.error('FALLÓ:', err.message);
         process.exitCode = 1;
       });
-  } else if (cmd === 'smoke-en') {
+  } else if (cmd === 'smoke-en' || cmd === 'smoke-en-a2') {
     const port = args.port ?? '4321';
     const out = args.out ?? null;
-    runSmokeEn({ port, out })
+    const runner = cmd === 'smoke-en' ? runSmokeEn : runSmokeEnA2;
+    runner({ port, out })
       .then(({ scoreText, refuerzoTexto, itemsRespondidos }) => {
         console.log(`OK — ${scoreText}`);
         console.log(`Ítems respondidos (incluido el de refuerzo insertado): ${itemsRespondidos}`);
@@ -258,7 +269,8 @@ if (isMain) {
   } else {
     console.error(
       'Uso: node driver.mjs smoke --port 4321 --out /ruta/captura.png\n' +
-        '  o: node driver.mjs smoke-en --port 4321 --out /ruta/captura.png',
+        '  o: node driver.mjs smoke-en --port 4321 --out /ruta/captura.png\n' +
+        '  o: node driver.mjs smoke-en-a2 --port 4321 --out /ruta/captura.png',
     );
     process.exitCode = 1;
   }

@@ -1,6 +1,6 @@
 # Unidades del Gauntlet
 
-Una fila por pieza. Solo U-01 a U-05 tienen ficha desarrollada: fijar
+Una fila por pieza. Solo U-01 a U-06 tienen ficha desarrollada: fijar
 criterios de aceptación sobre código que no se ha auditado a fondo produce
 barras genéricas, que es justo lo que este sistema existe para evitar.
 
@@ -11,7 +11,7 @@ barras genéricas, que es justo lo que este sistema existe para evitar.
 | U-03 | Cifras base y rutas críticas          | auto             | `PASS` | [ficha](U-03-cifras-base-rutas-criticas.md) |
 | U-04 | A1 `es→de` sin regresión              | auto             | `PASS` | [ficha](U-04-a1-es-de-sin-regresion.md)     |
 | U-05 | A1 `en→de` de punta a punta           | auto + browser   | `PASS` | [ficha](U-05-a1-en-de-punta-a-punta.md)     |
-| U-06 | A2 `en→de`                            | auto + browser   | `TODO` | —                                           |
+| U-06 | A2 `en→de`                            | auto + browser   | `PASS` | [ficha](U-06-a2-en-de.md)                   |
 | U-07 | B1 `en→de`                            | auto + browser   | `TODO` | —                                           |
 | U-08 | Interfaz de idiomas                   | auto             | `TODO` | —                                           |
 | U-09 | Sistema de skills                     | auto             | `TODO` | —                                           |
@@ -24,8 +24,8 @@ barras genéricas, que es justo lo que este sistema existe para evitar.
 
 ## Barras en una línea, para las que aún no tienen ficha
 
-- **U-06 · U-07** — Sesión completable de punta a punta, con el bucle de
-  refuerzo incluido. Dependen de U-02.
+- **U-07** — Sesión completable de punta a punta, con el bucle de refuerzo
+  incluido. Depende de U-02.
 - **U-08** — Selector con tres filas; hreflang solo hacia páginas que existen.
 - **U-09** — Cero habilidades huérfanas, cero referencias a ids inexistentes,
   484/484 lecciones etiquetadas.

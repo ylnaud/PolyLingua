@@ -1,6 +1,6 @@
 # U-01 · Pureza de idioma del silo inglés
 
-- **Estado**: `CRITIC` (ronda 3) — dos `FAIL` reparados; esperando tercer veredicto
+- **Estado**: `PASS` — cerrada en ronda 3 del Critic, con evidencia de ejecución real
 - **Tipo**: `automático`
 - **Depende de**: —
 
@@ -214,10 +214,78 @@ Lo demás de la ronda:
 
 ## Veredicto del Critic
 
-Pendiente. Se pega aquí literal —`PASS` / `FAIL` / `BLOCKED` con su evidencia—
-cuando la revisión independiente termine. Hasta entonces esta unidad **no está
-cerrada**, por muy verde que esté el candado: que quien implementa vea verde es
-exactamente lo que el bucle no acepta como prueba.
+Ronda 3 tuvo dos intentos. El primero quedó `BLOCKED`: el Critic verificó todo
+por lectura (ficha, candado, detector, los cuatro componentes de las
+reparaciones anteriores, y el `dist/` ya presente en disco) sin encontrar
+ningún defecto, pero el harness le activó Plan Mode a mitad de tarea y no pudo
+ejecutar `npm run build` ni `npx vitest run tests/lang-purity.test.ts` —
+se negó a fingir esa evidencia y lo marcó `BLOCKED` en vez de `PASS`. Se
+relanzó la misma revisión; el segundo intento sí pudo ejecutar todo. Veredicto
+final, pegado literal:
+
+---
+
+# U-01 CRITIC — RONDA 3
+
+## VEREDICTO
+PASS
+
+## EVIDENCIA
+
+**Ejecución real (no Plan Mode blocked esta vez — lo intenté y corrió sin restricción):**
+
+1. `npm run build` ejecutado desde cero: salida real `[build] 1042 page(s) built in 12.26s` / `[build] Complete!`. Confirmado con `ls -la dist/en` que el directorio se regeneró en el mismo timestamp de esta corrida (`Sep 10 12:01`).
+
+2. `npx vitest run tests/lang-purity.test.ts` sobre el `dist/` recién generado:
+```
+ Test Files  1 passed (1)
+      Tests  35 passed (35)
+```
+Coincide con lo que declara la ficha («35 pasando»).
+
+3. **Verificación independiente con `node --experimental-strip-types`** (no vitest, siguiendo la instrucción de armar casos propios), importando directamente `tests/lib/spanish-scan.ts` y `src/i18n/dictionary.ts` contra el `dist/` fresco — sin depender de que el propio test se autoengañe:
+   - `EN pages: 115`, `ES pages: 641` — coincide con «115/115» y «≥400» de la ficha.
+   - `VIGILADAS length: 197` — coincide exactamente con la cifra publicada.
+   - `fugas de diccionario en /en: 0`, `hallazgos PALABRAS_ES en /en: 0` — cero español real, ambos detectores.
+   - `paginas ES marcadas por VIGILADAS: 641/641` y `por PALABRAS_ES: 641/641` — control invertido muy por encima del umbral de 400, con números reales de esta corrida, no supuestos.
+   - Umbral `<script>`: medí `conScripts: 1934`, `sinScripts: 0` — coincide con la tercera medición independiente («1934») que la ficha ya documenta como la más reciente, y muy por encima del `> 500` que exige el test. Confirma que el número **se calcula**, no está copiado.
+
+4. **8 canarios verificados por fuera de vitest** (`canaries.mjs`): los 8 detectan correctamente. **Simulé la regresión de ronda 2** quitando las 18 formas de voseo de `PALABRAS_ES` y re-testeando el canario `"Seguí por acá"`: da **0 coincidencias** — es decir, si alguien reintrodujera ese hueco, el canario específico de voseo lo detectaría en rojo, cerrando exactamente el agujero que en ronda 2 dejaba pasar (641/641 seguía en verde con el voseo entero borrado).
+
+5. **Casos adversariales manuales** (`adversarial.mjs`) contra las funciones reales, no contra fixtures del propio test:
+   - `data-title="Volver arriba"` → 0 hallazgos (no se confunde con `title`).
+   - `title="Volver arriba"` → 1 hallazgo (si se lee de verdad).
+   - `aria-label='Volver arriba'` (comilla simple) → detectado.
+   - `<meta content="..." name="description">` (orden invertido) → detectado.
+   - Entidad HTML `lecci&oacute;n` → no detectado (límite ya declarado en la ficha, no oculto).
+   - `<noscript>` con español → sí detectado (no hay hueco ahí).
+   - `value="Escribe tu respuesta aquí"` → NO detectado (atributo `value` fuera de `ATRIBUTOS_DE_TEXTO`). Comprobé en `dist/en` real si esto es explotable hoy: `grep -roE 'value="[^"]{1,80}"' dist/en | wc -l` → 936 coincidencias, todas contenido de ejercicio en inglés (`"the cat"`, `"to overlook something obvious"`, etc.), ninguna en español. Es un hueco teórico del detector, no un defecto activo hoy.
+
+6. **Componentes de las reparaciones anteriores, leídos en el código actual:**
+   - `RelatedLinks.astro` (líneas 27-35): `title` es prop obligatoria, sin default; `LessonLayout.astro:228` pasa `dict.silo.seguiPorAca`.
+   - `ScrollTopButton.astro` (líneas 6-17): `aria-label={t.volverArriba}` desde el diccionario según `userLang`; `BaseLayout.astro:172` le pasa `pageLang`, que en la línea 60 se define como `siloContext?.userLang ?? userLang ?? ...` — el eje correcto, no `targetLang`.
+   - `StartLevelPicker.astro` (líneas 21-30, 57-61): `nombreNivel()` lee `dict.levelNames`; de `LEVELS` solo saca `emoji` y `color`. Confirmé con `grep -RloE "Principiante|Maestr[ií]a" dist/en | wc -l` → **0**.
+   - `examen.astro` (líneas 27, 106-108, 124): `languageName` sale de `dict.languageNames`; `LANGUAGE_MAP` (línea 29) solo aporta `.flag` y `.bcp47`, nunca `.name`, ni en breadcrumb ni en JSON-LD.
+
+7. **Endónimo «Español»**: recorrí las 115 páginas de `dist/en` con `grep -o "Español" | wc -l` una por una — las 115 dan exactamente 1, sin excepciones, verificando el test correspondiente contra el HTML real.
+
+8. **Límite declarado y no oculto**: confirmé que `/en/de/practicar` sí lleva `data-skill-catalog="...&quot;name&quot;:&quot;Los Umlaute...` y que `dist/en/index.html` sí tiene `"name":"Curso de Alemán"` en su JSON-LD — exactamente lo que la ficha admite como límite conocido (atributos de máquina, fuera del alcance de U-01, trabajo de U-10).
+
+9. **Git**: `git status --porcelain` sin cambios pendientes salvo un archivo no relacionado (`.claude/agents/planner.md`, fuera del alcance de esta unidad). `git show 1df6c8f --stat` confirma que la reparación de ronda 3 (segundo detector, 8 canarios, fix de `StartLevelPicker`) está en un único commit ya existente, consistente con lo narrado en la ficha y en `gauntlet/evidence/U-01-inversion.md` (que también leí completo: las cuatro inversiones documentadas con salida cruda, incluidas las dos rondas previas).
+
+## DEFECTOS ENCONTRADOS
+
+NINGUNO que constituya incumplimiento del criterio de aceptación. Observación menor no bloqueante: el atributo `value=` de `<input>` no está en `ATRIBUTOS_DE_TEXTO` y por tanto queda fuera del barrido (igual categoría que el límite ya declarado sobre `data-*`), pero verifiqué que hoy no hay ningún `value=` en español en `dist/en` — es una superficie de riesgo futura, no un defecto presente, y es del mismo tipo que los límites ya declarados explícitamente en la ficha (atributos de máquina no cubiertos).
+
+## REGRESIONES
+
+No. Verifiqué activamente que los tres defectos de rondas 1 y 2 (`Seguí por acá`, `aria-label="Volver arriba"`, `A1 · Principiante`/`Maestría`) siguen en 0 apariciones sobre el `dist/en` que yo mismo construí, y que el control invertido (`/es/`) y los 8 canarios siguen detectando con margen.
+
+## CONCLUSIÓN
+
+U-01 puede considerarse formalmente cerrada. El criterio de aceptación se cumple con evidencia de ejecución real (build fresco propio + `npx vitest run tests/lang-purity.test.ts` con 35/35, más verificación independiente por fuera de la suite con `node` contra las mismas funciones y el mismo `dist/`). Los dos patrones que causaron los `FAIL` previos (lista de palabras con huecos, atributos de máquina mal filtrados) están cerrados con un segundo detector estructural (`cadenasEspanolasVigiladas`) que no depende de vocabulario, y los 8 canarios demuestran —los probé yo mismo simulando la regresión de ronda 2— que una reapertura del hueco de voseo volvería a ponerse en rojo.
+
+---
 
 Nota sobre la primera ronda: `.claude/agents/gauntlet-critic.md` se creó en esta
 misma sesión, y la lista de agentes se carga al arrancar, así que el harness

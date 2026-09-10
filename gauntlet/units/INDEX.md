@@ -6,7 +6,7 @@ que es justo lo que este sistema existe para evitar.
 
 | #    | Unidad                                | Tipo                       | Estado   | Ficha                             |
 | ---- | ------------------------------------- | -------------------------- | -------- | --------------------------------- |
-| U-01 | Pureza de idioma del silo inglés      | auto                       | `CRITIC` | [ficha](U-01-pureza-idioma-en.md) |
+| U-01 | Pureza de idioma del silo inglés      | auto                       | `PASS`   | [ficha](U-01-pureza-idioma-en.md) |
 | U-02 | Glosas de refuerzo A2–C2 para `en-de` | auto + browser + contenido | `TODO`   | —                                 |
 | U-03 | Cifras base y rutas críticas          | auto                       | `TODO`   | —                                 |
 | U-04 | A1 `es→de` sin regresión              | auto                       | `TODO`   | —                                 |

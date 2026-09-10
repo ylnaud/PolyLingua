@@ -1,6 +1,6 @@
 # Unidades del Gauntlet
 
-Una fila por pieza. Solo U-01 a U-08 tienen ficha desarrollada: fijar
+Una fila por pieza. Solo U-01 a U-09 tienen ficha desarrollada: fijar
 criterios de aceptación sobre código que no se ha auditado a fondo produce
 barras genéricas, que es justo lo que este sistema existe para evitar.
 
@@ -14,7 +14,7 @@ barras genéricas, que es justo lo que este sistema existe para evitar.
 | U-06 | A2 `en→de`                            | auto + browser   | `PASS` | [ficha](U-06-a2-en-de.md)                   |
 | U-07 | B1 `en→de`                            | auto + browser   | `PASS` | [ficha](U-07-b1-en-de.md)                   |
 | U-08 | Interfaz de idiomas                   | auto             | `PASS` | [ficha](U-08-interfaz-idiomas.md)           |
-| U-09 | Sistema de skills                     | auto             | `TODO` | —                                           |
+| U-09 | Sistema de skills                     | auto             | `PASS` | [ficha](U-09-sistema-skills.md)             |
 | U-10 | Ejercicios (los 5 `kind`)             | auto + browser   | `TODO` | —                                           |
 | U-11 | Repair engine                         | auto             | `TODO` | —                                           |
 | U-12 | Navegación y enlaces                  | auto             | `TODO` | —                                           |
@@ -24,8 +24,6 @@ barras genéricas, que es justo lo que este sistema existe para evitar.
 
 ## Barras en una línea, para las que aún no tienen ficha
 
-- **U-09** — Cero habilidades huérfanas, cero referencias a ids inexistentes,
-  484/484 lecciones etiquetadas.
 - **U-10** — Los cinco `kind` responden y puntúan; `fill-blank` lleva su `___`.
 - **U-11** — Sin caída de idioma entre glosas, por los dos caminos (DrillTutor y
   reparación intensiva de `practicar`).

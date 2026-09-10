@@ -196,6 +196,12 @@ describe('frontmatter de las lecciones', () => {
     return v;
   }
 
+  /** Cuenta las líneas `  - <id>` bajo `skills:`, el mismo patrón que ya usa
+   * `tests/engine.test.ts` para leer esta lista sin un parser YAML completo. */
+  function contarSkills(raw: string): number {
+    return (raw.match(/^ {2}- [a-z]{2}\.[a-z0-9]+\.[a-z0-9.-]+$/gm) ?? []).length;
+  }
+
   const lecciones = (() => {
     const out: {
       id: string;
@@ -204,6 +210,7 @@ describe('frontmatter de las lecciones', () => {
       description: string | null;
       unit: string | null;
       order: string | null;
+      skillsCount: number;
     }[] = [];
     for (const course of readdirSync(lessonsDir)) {
       if (!/^[a-z]{2}-[a-z]{2}$/.test(course)) continue;
@@ -218,6 +225,7 @@ describe('frontmatter de las lecciones', () => {
             description: escalar(raw, 'description'),
             unit: escalar(raw, 'unit'),
             order: escalar(raw, 'order'),
+            skillsCount: contarSkills(raw),
           });
         }
       }
@@ -264,6 +272,16 @@ describe('frontmatter de las lecciones', () => {
       .filter(([, ids]) => ids.length > 1)
       .map(([clave, ids]) => `${clave}: ${ids.join(', ')}`);
     expect(repetidos, `order repetido:\n${repetidos.join('\n')}`).toEqual([]);
+  });
+
+  // El esquema Zod acepta `skills: []` como default (necesario: no toda
+  // lección alimenta el motor adaptativo el mismo día que se escribe), así
+  // que una lección que pierda su lista de skills sigue siendo válida para
+  // el build — el mismo hueco que U-04 ya encontró para `exercises: []`.
+  // U-09 lo cierra: hoy las 484 lecciones del repo SÍ tienen al menos una.
+  it('todas las lecciones tienen al menos un skill (484/484 etiquetadas)', () => {
+    const sinSkills = lecciones.filter((l) => l.skillsCount === 0).map((l) => l.id);
+    expect(sinSkills, `lecciones sin skills:\n${sinSkills.join('\n')}`).toEqual([]);
   });
 });
 

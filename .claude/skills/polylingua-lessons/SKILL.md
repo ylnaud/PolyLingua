@@ -16,7 +16,8 @@ silently-corrupt page.
 A lesson has **two** languages, not one, and confusing them is the most expensive
 mistake you can make here:
 
-- **`userLang`** — the language the explanation is written in. Only `es` is active.
+- **`userLang`** — the language the explanation is written in. Both `es` and `en` are
+  active today.
 - **`targetLang`** — the language being taught. Six exist: `de en es fr it pt`.
 
 The frontmatter field `language` is **always the targetLang**. The userLang is never
@@ -26,7 +27,7 @@ in the frontmatter — it is inferred from the folder name.
 
 - Content: **`src/content/lessons/<userLang>-<targetLang>/<level>/<slug>.md`**, e.g.
   `src/content/lessons/es-de/a1/articulos-der-die-das.md`. The six courses that exist
-  are `es-de` (91 lessons), `en-de` (84, hidden — `en` is inactive), `es-fr` (78),
+  are `es-de` (91 lessons), `en-de` (84, visible now that `en` is active), `es-fr` (78),
   `es-en` (77), `es-it` (77), `es-pt` (77). 484 lessons total.
 
   There is **no** `src/content/lessons/de/…` folder. Writing one there fails the build
@@ -77,10 +78,17 @@ Two more that Zod treats as optional but you should always fill in:
   the field empty.
 - **`skills`** — feeds the adaptive engine (`src/lib/engine/`, documented in
   `docs/LEARNING_ENGINE.md`). Ids come from the catalogue in `src/data/skills.ts`
-  (`de.a1.wordorder.basic`). The relation is N:N. 400 of the 484 lessons are tagged;
-  the 84 in `en-de` are not. Tests fail if you reference a skill that doesn't exist, or
-  leave a skill with no lesson. Every skill in category `grammar` or `word_order` also
-  needs a repair template in `src/lib/engine/exerciseGenerator.ts`.
+  (`de.a1.wordorder.basic`). The relation is N:N. All 484 lessons across the six
+  courses are tagged, `en-de` included. Tests fail if you reference a skill that
+  doesn't exist, or leave a skill with no lesson. Tagged doesn't mean equally
+  covered: the catalogue has 413 skills, and only 253 have a repair template in
+  `REPAIR_TEMPLATES` (`src/lib/engine/exerciseGenerator.ts`). Those templates are
+  written in Spanish, so the English interface's repair loop only lights up where
+  a translated gloss also exists — today, the 17 A1 German skills in
+  `REPAIR_GLOSSES.en`. Everything else stays tagged and still feeds the engine; it
+  just has no repair loop. Every skill in category `grammar` or `word_order` needs
+  a repair template — `tests/engine.test.ts` enforces it, so a new skill in either
+  category ships broken without one.
 
 `quiz` items: `question`, `options` (≥2), `answerIndex`, `explanation`.
 

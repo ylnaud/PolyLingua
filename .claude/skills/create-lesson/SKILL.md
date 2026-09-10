@@ -26,14 +26,14 @@ enseña alemán.
 
 Los seis cursos que existen, y no hay más:
 
-| Carpeta | Interfaz | Enseña    | Lecciones                        |
-| ------- | -------- | --------- | -------------------------------- |
-| `es-de` | Español  | Alemán    | 91                               |
-| `es-fr` | Español  | Francés   | 78                               |
-| `es-en` | Español  | Inglés    | 77                               |
-| `es-it` | Español  | Italiano  | 77                               |
-| `es-pt` | Español  | Portugués | 77                               |
-| `en-de` | Inglés   | Alemán    | 84 (curso oculto, `en` inactivo) |
+| Carpeta | Interfaz | Enseña    | Lecciones |
+| ------- | -------- | --------- | --------- |
+| `es-de` | Español  | Alemán    | 91        |
+| `es-fr` | Español  | Francés   | 78        |
+| `es-en` | Español  | Inglés    | 77        |
+| `es-it` | Español  | Italiano  | 77        |
+| `es-pt` | Español  | Portugués | 77        |
+| `en-de` | Inglés   | Alemán    | 84        |
 
 > **No escribas nunca en `src/content/lessons/de/`.** Esa carpeta no existe. Si la
 > creas, el build falla —bien— pero con un mensaje que **no nombra tu archivo**:

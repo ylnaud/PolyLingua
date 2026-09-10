@@ -16,7 +16,7 @@ Es la fuente de errores número uno del proyecto. Cada página de curso tiene **
 idiomas:
 
 - **`userLang`** — en qué idioma está escrita la explicación. Definido en
-  `src/data/userLanguages.ts`. **Hoy solo `es` está activo.**
+  `src/data/userLanguages.ts`. **Hoy están activos `es` y `en`.**
 - **`targetLang`** — qué idioma se enseña. Definido en `src/data/languages.ts`. Seis:
   `de en es fr it pt`.
 
@@ -29,7 +29,7 @@ El campo `language` del frontmatter es **siempre el targetLang**. El userLang no
 en el frontmatter: se infiere del nombre de la carpeta.
 
 **No todos los pares existen.** Hay seis cursos: `es-de`, `es-en`, `es-fr`, `es-it`,
-`es-pt` y `en-de` (oculto). No hay `es-es` ni `de-de`. Filtrar solo por `data.language`
+`es-pt` y `en-de`. No hay `es-es` ni `de-de`. Filtrar solo por `data.language`
 mezcla `es-de` con `en-de`, que enseñan lo mismo a públicos distintos — es un bug que
 ya mandó 84 redirecciones a un 404.
 
@@ -68,19 +68,24 @@ Su contenido guarda la traducción en un único idioma (el campo `es` de
 `src/data/resources.ts`) y no tiene eje userLang. El filtro es
 `SPANISH_GLOSS_USER_LANG` en `courses.ts`.
 
-## La interfaz va en un solo idioma
+## La interfaz va en español e inglés
 
-Decisión de producto, no una tarea pendiente: **el sitio se mantiene solo en español**.
-Llegó a haber una interfaz en alemán con 5 cursos `de-*` (386 lecciones) y se quitó
-entera; está en el historial de git si algún día se quiere de vuelta.
+Son dos, y solo dos — no es una tarea pendiente, es el estado actual. El inglés se
+activó con su diccionario completo en `src/i18n/dictionary.ts`; sus 92 URLs (el curso
+`en-de`) entran al sitemap igual que las del silo español.
 
-Antes de traducir la interfaz a otro idioma, pregunta: hoy la respuesta por defecto es
-que no.
+Añadir una tercera interfaz sigue siendo una decisión de producto, no de código, y la
+respuesta por defecto sigue siendo que no. Llegó a haber una en alemán con 5 cursos
+`de-*` (386 lecciones) y se quitó entera; y `fr`, `it`, `pt` estuvieron en la lista sin
+diccionario y sin lecciones, prometiendo desde el selector algo que nadie escribía, así
+que se quitaron también. Todo está en el historial de git si algún día se retoma.
 
-`en` sigue en `active: false` porque no tiene diccionario en `src/i18n/dictionary.ts`.
-El tipo `Dictionary` no admite claves parciales, así que si falta una el build falla.
-Si alguna vez se activa un idioma: **primero** el diccionario completo, **después** el
-flag. Nunca al revés.
+`de` sigue en la lista con `active: false`: es el único candidato real, porque ya tuvo
+interfaz y cursos. El selector lo muestra como "Próximamente".
+
+Si alguna vez se activa un idioma de interfaz nuevo: **primero** el diccionario completo
+en `src/i18n/dictionary.ts` (el tipo `Dictionary` no admite claves parciales, así que si
+falta una el build falla), **después** el flag. Nunca al revés.
 
 Mientras un idioma siga inactivo, sus páginas se generan y son accesibles por URL
 directa, no aparecen en `LanguageSelector`, y no entran al sitemap — el filtro de

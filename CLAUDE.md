@@ -39,97 +39,24 @@ astro.config.mjs    → config principal + filtros del sitemap
 
 Vocabulario, repasar, práctica libre, ahorcado, diario, gramática, mis
 errores, escuchar y repetir y situaciones viven **dentro** del silo:
-`/<userLang>/<targetLang>/<herramienta>`, con su selector de idioma en
-`/<userLang>/<herramienta>`. Estaban en `/idiomas/<targetLang>/...`, fuera
-del eje userLang, así que una URL solo podía existir en un idioma. Con una
-sola interfaz eso no se notaba; con `es` y `en` activos sí:
-`/es/de/vocabulario` y `/en/de/vocabulario` son dos páginas distintas, cada
-una en su idioma. Sus textos salen de `dict.tools`
-(`src/i18n/dictionary.ts`); el JS de cliente los recibe por
-`[data-page-strings]` (ver `src/lib/pageStrings.ts`), porque un
-`<script define:vars>` no soporta `import`.
-
-Tres se generan solo en el silo español: **diálogos, generador de frases y
-recursos**. Su contenido guarda la traducción en un único idioma (el campo
-`es` de `src/content/dialogos`, el `glossEs` de `src/data/matrices.ts`, la
-nota de `src/data/resources.ts`) y no tiene eje userLang. El filtro es
-`SPANISH_GLOSS_USER_LANG` en `src/lib/courses.ts`.
-
-`src/lib/courses.ts` es el único lugar que sabe qué cursos existen — los
-deriva de las carpetas de `src/content/lessons/`, así que un curso nuevo
-entra solo. Úsalo (`getCourseStaticPaths`, `getTargetLangsFor`,
-`getCourseLessons`) en vez de recorrer `LANGUAGES`: no todos los pares
-existen (no hay `es-es` ni `de-de`) y filtrar solo por el campo `language`
-mezcla cursos distintos que enseñan el mismo idioma.
+`/<userLang>/<targetLang>/<herramienta>`, no en `/idiomas/*`. Tres
+(diálogos, generador de frases, recursos) son la excepción y se generan
+solo en el silo español. Detalle completo, por qué, y qué archivo manda
+sobre cada cosa: skill `polylingua-architecture`.
 
 ## Frontmatter obligatorio en cada lección
 
-```yaml
----
-language: 'de' # OBLIGATORIO. de | en | es | fr | it | pt
-level: 'a1' # a1 | a2 | b1 | b2 | c1 | c2
-title: 'Título SEO con keyword'
-description: '130–160 caracteres con keyword. Para meta description.'
-order: 1 # número entero, orden dentro del nivel
-grammarTopic: 'Tema gramatical'
-funFact: 'Truco mnemotécnico para recordar'
-minutes: 7 # duración estimada
-unit: 1 # agrupa la lección dentro del nivel — ver nota abajo
-quiz:
-  - question: '¿Pregunta?'
-    options: ['Opción A', 'Opción B', 'Opción C']
-    answerIndex: 0
-    explanation: 'Por qué es correcta'
-exercises: # opcional, ver tipos abajo
-  - type: 'fill-blank'
-    sentence: 'Ich ___ Deutsch.' # debe contener ___ literal
-    answer: 'lerne'
-vocabulary: # opcional
-  - term: 'lernen'
-    translation: 'aprender'
----
-```
+Cada lección es un `.md` con frontmatter validado por Zod
+(`src/content.config.ts`) al hacer build. `language` es **siempre el
+targetLang** (el idioma que se enseña), nunca el userLang — es el único
+campo sin valor por defecto, así que olvidarlo rompe el build. Si un campo
+no cumple el esquema, el build falla: valida siempre antes de commitear.
 
-`language` es el idioma **que se enseña** (el meta), nunca el de la
-interfaz — ese se infiere del nombre de la carpeta. Es el único campo sin
-valor por defecto además de los de texto, así que olvidarlo rompe el build.
-
-`unit` es opcional para Zod, pero **no** para la página de nivel: si el nivel
-tiene unidades definidas en `src/data/units.ts` (hoy todos las tienen), la
-página agrupa las lecciones por unidad, y una lección sin `unit` —o con un
-`unit` que no existe en esa lista— no pertenece a ningún grupo. Llegó a haber
-15 así, invisibles en su nivel aunque seguían en el sitemap. La página ya no
-las pierde (van a un grupo final) y hay un test en
-`tests/data-integrity.test.ts` que falla si aparece alguna, pero lo correcto es
-poner siempre un `unit` que exista. Si el tema no entra en ninguna unidad,
-agregá una nueva a `units.ts` en vez de dejar el campo vacío.
-
-El campo `skills` alimenta el **motor de aprendizaje adaptativo**
-(`src/lib/engine/`, documentado en `docs/LEARNING_ENGINE.md`). Lista las
-habilidades que enseña la lección, con ids del catálogo de
-`src/data/skills.ts` (`de.a1.wordorder.basic`). La relación es N:N: una
-lección enseña varias y una habilidad aparece en varias lecciones. Hay tests
-que fallan si se referencia una habilidad inexistente o si una habilidad se
-queda sin lección.
-
-Para Zod tiene default `[]`, así que técnicamente se puede omitir, pero hoy
-**lo llevan las 484 lecciones de los 6 cursos** (es-de 91, en-de 84, es-fr 78,
-es-en 77, es-it 77, es-pt 77). Una lección nueva sin `skills` sería la
-excepción: ponelo siempre.
-
-Etiquetado no quiere decir cubierto por igual, y conviene no confundir las dos
-cosas. El catálogo tiene 413 habilidades entre los 5 idiomas que se enseñan
-(de 95, en 81, fr 81, it 78, pt 78), y de esas solo 253 tienen plantilla de
-refuerzo en `REPAIR_TEMPLATES`. Esas plantillas están escritas en español, así
-que en la interfaz inglesa el bucle de refuerzo solo se enciende donde existe
-además la glosa traducida: hoy, las 17 habilidades de A1 alemán que hay en
-`REPAIR_GLOSSES.en`. Todo lo demás sigue etiquetado y sigue alimentando al
-motor; lo que no tiene es refuerzo.
-
-Tipos de `exercises` que acepta el schema: `fill-blank` (necesita `___` en
-`sentence`), `match` (mínimo 3 `pairs`), `write`, `order`.
-
-Si un campo no cumple el esquema Zod, el build falla. Valida siempre antes de commitear.
+La forma exacta del YAML, los campos opcionales que conviene llenar
+siempre (`unit`, `skills`), los cuatro tipos de `exercises` y las trampas
+que ya rompieron el build de verdad: skills `polylingua-lessons` y
+`create-lesson`. El campo `skills` alimenta el motor de aprendizaje
+adaptativo, documentado en `docs/LEARNING_ENGINE.md`.
 
 ## Dos ejes: idioma de interfaz × idioma meta
 
@@ -137,9 +64,8 @@ Desde la arquitectura SILO el sitio tiene **dos** ejes de idioma, y
 confundirlos es la fuente de errores más común:
 
 - **`userLang` (interfaz)**: en qué idioma está escrita la explicación.
-  Definido en `src/data/userLanguages.ts`. **Hoy están activos `es` y `en`.**
-  La lista tiene tres ids (`es`, `de`, `en`); `de` está en `active: false` y
-  el selector lo muestra como "Próximamente".
+  Definido en `src/data/userLanguages.ts`. **Hoy están activos `es` y
+  `en`**; `de` está en `active: false` ("Próximamente" en el selector).
 - **`targetLang` (meta)**: qué idioma se enseña. Definido en
   `src/data/languages.ts`. Son 6: `de`, `en`, `es`, `fr`, `it`, `pt`.
 
@@ -160,41 +86,15 @@ está en el frontmatter, se infiere del nombre de la carpeta vía
 | `es-pt` | Español  | Portugués | Visible |
 | `en-de` | Inglés   | Alemán    | Visible |
 
-### La interfaz va en español e inglés
-
-Son dos, y solo dos. El inglés se activó con su diccionario completo en
-`src/i18n/dictionary.ts`, y desde entonces sus 92 URLs entran al sitemap como
-las del silo español: `en-de` ya no es un curso oculto.
-
-Añadir una tercera no es una decisión de código sino de producto, y la
-respuesta por defecto sigue siendo que no: cada interfaz hay que escribirla
-entera y después mantenerla. Llegó a haber una en alemán activa, con su
-diccionario y 5 cursos `de-*` (386 lecciones), y se quitó entera; y `fr`, `it`
-y `pt` estuvieron en la lista **sin** diccionario y sin lecciones, prometiendo
-desde el selector una traducción que nadie estaba escribiendo, así que se
-quitaron también. Lo retirado está en el historial de git — no hace falta
-reescribirlo.
-
-`de` sí sigue en la lista, con `active: false`: es el único candidato real,
-porque ya tuvo interfaz y cursos. Por eso el selector lo muestra como
-"Próximamente".
-
-Y cuidado con el eje: **francés, italiano y portugués no son idiomas de
-interfaz, son idiomas que se enseñan.** Viven en `src/data/languages.ts` y sus
-cursos `es-fr`, `es-it` y `es-pt` están intactos. Que no estén en
-`userLanguages.ts` no dice nada sobre su contenido.
-
-Mientras un idioma siga inactivo, sus páginas:
-
-- se generan y son accesibles por URL directa,
-- no aparecen en `LanguageSelector` (sale "Próximamente"),
-- **no entran al sitemap** — el filtro en `astro.config.mjs` se deriva de
-  `USER_LANGUAGES`, así que al poner `active: true` vuelven solas.
-
-Si alguna vez se decide activar un idioma de interfaz: escribir su
-diccionario completo en `src/i18n/dictionary.ts` (el tipo `Dictionary` no
-admite claves parciales, así que si falta una el build falla) y recién
-después cambiar el flag. No al revés.
+Añadir una tercera interfaz es una decisión de producto, no de código, y
+la respuesta por defecto sigue siendo que no: cada interfaz hay que
+escribirla entera y mantenerla. Francés, italiano y portugués **siguen
+siendo idiomas que se enseñan** (viven en `src/data/languages.ts`) — no
+confundir ese eje con el de interfaz. Si alguna vez se activa un idioma de
+interfaz: primero el diccionario completo en `src/i18n/dictionary.ts` (el
+tipo `Dictionary` no admite claves parciales, así que si falta una el build
+falla), después el flag `active`. Nunca al revés. Detalle completo e
+historial: skill `polylingua-architecture`.
 
 ## Comandos
 
@@ -207,81 +107,27 @@ npm run check    # chequeo de tipos TypeScript
 
 Ejecuta siempre `npm run check && npm run build` antes de dar una tarea por terminada.
 
+## Gauntlet Loop
+
+Para cambios no triviales, el proyecto sigue un contrato de verificación
+independiente: quien implementa no decide solo que su trabajo está bien
+(Builder → Critic → `PASS`/`FAIL`/`BLOCKED`). Contrato completo, estados y
+comandos reales: `gauntlet/README.md`.
+
 ## Despliegue
 
-El hosting real hoy es **Cloudflare** (Workers con assets estáticos, vía
-`wrangler.jsonc`, que le dice a Cloudflare que sirva `dist/` como sitio
-estático). Producción vive en:
+Producción vive en **Cloudflare Workers** (`wrangler.jsonc`), sirviendo
+`dist/` como assets estáticos — sin servidor, sin adapter. Push a `main`
+construye y publica solo; cualquier comando de build sirve (`npm run
+build` o `astro build`). El Service Worker se genera como endpoint de
+Astro (`src/pages/sw.js.ts`) y tiene reglas no negociables sobre cómo sirve
+las páginas (red primero, clasificando por ruta, nunca por `request.mode`)
+— rómperlas ya rompió producción una vez. Detalle completo: skill
+`polylingua-deploy`.
 
-**https://polylingua.thyronemiguelvegasantana-c6e.workers.dev/**
-
-Push a `main` construye y publica ahí automáticamente. Cualquier comando
-de build sirve —`npm run build` o `astro build` a secas dan lo mismo—
-porque el Service Worker lo genera Astro como endpoint
-(`src/pages/sw.js.ts`). **Antes no era así**: vivía en `public/sw.js` y un
-hook `postbuild` le versionaba el `CACHE_NAME`, así que un build con
-`astro build` publicaba un Service Worker byte por byte idéntico al
-anterior, el navegador nunca detectaba la versión nueva y los usuarios se
-quedaban con la caché vieja. Astro sigue en modo SSG puro, sin adapter de
-servidor. `public/_headers` es hoy la config de seguridad activa
-(Cloudflare la lee directo del build output).
-
-### El Service Worker sirve las páginas de la red primero
-
-No es una preferencia, es obligatorio: `BaseLayout` monta `<ClientRouter />`
-y `astro.config.mjs` tiene `prefetchAll`, así que un clic en un enlace **no
-es una navegación del navegador** sino un `fetch()` que hace Astro para
-intercambiar el DOM. Ese fetch no lleva `mode: 'navigate'`, ni
-`destination: 'document'`, ni un `Accept` de HTML. Si el SW decide la
-estrategia mirando `request.mode`, todas las páginas caen en la rama de
-assets —caché primero, sin revalidar— y **dejan de cambiar al navegar**,
-congeladas en la copia de la primera visita. Pasó de verdad.
-
-Por eso `esDocumentoSW()` (en `src/lib/swPrecache.ts`) clasifica por la
-ruta: sin extensión de archivo = página = red primero. Esa función se
-inyecta en el SW con `.toString()` para que `tests/sw.test.ts` pruebe
-exactamente el código que se publica. Si tocás el SW, no vuelvas a decidir
-por `request.mode`.
-
-Y el precache va con `Promise.allSettled`, no con `cache.addAll`: `addAll`
-es atómico, así que una sola URL rota dejaba el precache entero vacío y la
-app sin conexión no abría nada. El test comprueba que las 40 URLs de
-`PRECACHE_URLS` existan en el build.
-
-Vercel dejó de ser el hosting real. `vercel.json` ya se borró del repo —
-la config de seguridad activa vive solo en `public/_headers` (formato
-Cloudflare). El proyecto de Vercel en sí (dashboard, integración con
-GitHub) queda pendiente de desconectar/borrar a mano — Claude Code no
-tiene acceso de escritura a la cuenta de Vercel.
-
-### Pendiente para terminar el corte a Cloudflare
-
-1. **Dominio propio**: todavía se sirve desde el subdominio
-   `*.workers.dev` de arriba, no desde un dominio comprado. La mudanza
-   está preparada de antemano y documentada paso a paso en
-   **`docs/MIGRACION-DOMINIO.md`** — leelo antes de tocar nada, sobre
-   todo por el orden de los pasos y por lo que NO hay que hacer.
-
-   Lo esencial: la URL vive en `src/data/site.ts` y de ahí salen el
-   `site:` de `astro.config.mjs` (y con él canonical, Open Graph y
-   sitemap), el host que muestra `/privacidad` y el que compara el
-   Worker de redirección. Cambiar de dominio es editar **esa** línea,
-   más los ficheros estáticos que no pueden importar nada
-   (`public/robots.txt`, `public/llms.txt`, `public/og-image.svg`,
-   `src/styles/global.css`). Esa lista no se mantiene a mano:
-   `tests/dominio.test.ts` recorre el repo y falla si la URL aparece en
-   un archivo que no esté documentado.
-
-   Un aviso que ya costó investigar: **`_redirects` NO sirve para esto.**
-   Cloudflare no soporta redirecciones por dominio, y una regla `/*`
-   haría que el dominio nuevo se redirigiera a sí mismo en bucle. La
-   redirección va en `worker/redirect.ts`, hoy inerte porque
-   `wrangler.jsonc` no lo referencia.
-
-2. **Vercel**: desconectar la integración con GitHub y/o borrar el
-   proyecto desde el dashboard de Vercel (vercel.com/dashboard →
-   proyecto PolyLingua → Settings → Git / Delete Project). Es un paso
-   manual, fuera del repo.
+El dominio propio está pendiente (hoy se sirve desde `*.workers.dev`); la
+mudanza está documentada paso a paso en `docs/MIGRACION-DOMINIO.md` —
+leelo antes de tocar nada, sobre todo por el orden de los pasos.
 
 ## Reglas de trabajo
 
@@ -297,30 +143,23 @@ tiene acceso de escritura a la cuenta de Vercel.
 
 ## SEO — prioridades
 
-- meta title: incluye keyword + "| PolyLingua"
-- meta description: 130–160 chars con keyword, en el frontmatter de cada .md
-- JSON-LD LearningResource en cada lección
-- Slugs descriptivos en las URLs
-- Canonical en cada página para evitar duplicados
-- Sitemap generado automáticamente por @astrojs/sitemap
+- meta title: keyword + "| PolyLingua"; meta description: 130–160 chars con
+  keyword, en el frontmatter de cada `.md`
+- Slugs descriptivos con keywords; JSON-LD y canonical en cada página
+
+Todo esto está **centralizado** (`BaseSEO.astro`, `BaseLayout.astro`,
+`noindex-routes.ts`) — nunca a mano por página. Tabla completa de JSON-LD
+por tipo de página y la regla de qué se indexa: skill `polylingua-seo`.
 
 ## Progreso del usuario (localStorage)
 
-Todo el progreso del usuario (SRS de repaso, logros, racha diaria, lecciones
-completadas, vocabulario aprendido, tema, sonido) se persiste client-side con
-`localStorage`, vía el wrapper `src/lib/storage.ts` (`read`/`write`, con
-try/catch — nunca llames a `localStorage` directo). Es el patrón ya usado en
-`src/components/ProgressTracker.astro`, `DailyGoal.astro`, `ThemeToggle.astro`,
-`src/lib/sound.ts` y las páginas `repasar`/`practica-libre`/`vocabulario`. Si
-agregas una funcionalidad de progreso nueva, sigue este mismo patrón (key con
-prefijo `polylingua-`, lectura/escritura por `storage.ts`) en vez de inventar
-otro mecanismo. No es apto para nada que deba ser indexable o SEO-relevante —
-para eso sigue siendo contenido estático en el `.md`/frontmatter.
-
-Scripts con `define:vars` en Astro se tratan como `is:inline` y por eso NO
-soportan `import` — si tu script necesita `import { read, write } from
-'../lib/storage'`, usa un `<script>` plano y lee los datos que necesites del
-DOM (atributos `data-*`) o de la URL en vez de inyectarlos como props.
+Todo el progreso del usuario (SRS de repaso, logros, racha diaria, tema,
+sonido, etc.) se persiste client-side vía el wrapper `src/lib/storage.ts`
+(`read`/`write`, con try/catch) — nunca `localStorage` directo. Key con
+prefijo `polylingua-`. No es apto para nada indexable o SEO-relevante — eso
+sigue siendo contenido estático en el `.md`/frontmatter. Detalle completo,
+las excepciones reales, y por qué `define:vars` no admite `import`: skill
+`polylingua-frontend`.
 
 ## Lo que NUNCA debes hacer
 

@@ -81,6 +81,89 @@ export async function answerItem(page, visible, kind) {
   }
 }
 
+// Like answerItem, but deliberately WRONG — used once per flow to trigger
+// DrillTutor's repair loop on purpose. Only 'choice' is implemented: it's
+// the only kind the en-de A1 smoke lesson needs, and every kind picks its
+// answer differently, so a generic "wrong" doesn't generalize cleanly.
+export async function answerItemWrong(page, visible, kind) {
+  if (kind !== 'choice') {
+    throw new Error(`answerItemWrong: kind "${kind}" not implemented`);
+  }
+  await visible.locator('[data-option][data-correct="false"]').first().click();
+}
+
+// U-05: A1 en→de, en punta a punta, con el bucle de refuerzo incluido.
+// A diferencia de runSmoke (que abre una lección es-de y responde todo
+// bien), esto abre una lección en-de real, responde MAL a propósito el
+// primer ítem —una habilidad con glosa A1 en inglés, de.a1.verb.present-
+// regular— para forzar que DrillTutor inserte un ejercicio de refuerzo, y
+// confirma que el texto que aparece es el inglés real, no vacío ni español.
+async function runSmokeEn({ port, out }) {
+  const baseURL = `http://localhost:${port}`;
+  const { browser, page } = await launch();
+  await seedLocalStorage(page);
+
+  const consoleErrors = [];
+  page.on('pageerror', (err) => consoleErrors.push(String(err)));
+
+  await page.goto(`${baseURL}/en/de/a1/present-tense-regular-verbs/`, {
+    waitUntil: 'networkidle',
+  });
+
+  let refuerzoTexto = null;
+  let itemsRespondidos = 0;
+
+  for (let i = 0; i < 40; i++) {
+    const visibleLocator = page.locator('[data-practice-item]:not([hidden])');
+    if ((await visibleLocator.count()) === 0) break;
+    const visible = visibleLocator.first();
+    const kind = await visible.getAttribute('data-kind');
+
+    if (itemsRespondidos === 0) {
+      // El primer ítem, a propósito mal: dispara el bucle de refuerzo.
+      await answerItemWrong(page, visible, kind);
+      await page.waitForTimeout(200);
+      const tip = visible.locator('.drill-tip p');
+      refuerzoTexto = await tip.textContent().catch(() => null);
+    } else {
+      await answerItem(page, visible, kind);
+    }
+    itemsRespondidos += 1;
+    await page.waitForTimeout(120);
+
+    const nextBtn = visible.locator('[data-next]');
+    if (await nextBtn.isVisible().catch(() => false)) {
+      await nextBtn.click();
+    } else {
+      break;
+    }
+  }
+
+  await page.waitForTimeout(300);
+  const scoreText = await page
+    .locator('[data-score-text]')
+    .textContent()
+    .catch(() => null);
+
+  if (out) await screenshot(page, out);
+  await browser.close();
+
+  if (!scoreText) {
+    throw new Error(
+      'No se encontró el texto de puntaje final — el flujo de la lección no llegó a completarse.',
+    );
+  }
+  if (consoleErrors.length > 0) {
+    throw new Error(`Errores de consola durante el flujo: ${consoleErrors.join('; ')}`);
+  }
+  if (!refuerzoTexto) {
+    throw new Error(
+      'El bucle de refuerzo no insertó ningún aviso (.drill-tip) tras la respuesta incorrecta.',
+    );
+  }
+  return { scoreText, refuerzoTexto, itemsRespondidos };
+}
+
 // Full end-to-end flow: open a real lesson, answer every item it contains
 // (one of each exercise kind, in this specific lesson), confirm the
 // practice engine reached its "done" state, and optionally screenshot it.
@@ -158,8 +241,25 @@ if (isMain) {
         console.error('FALLÓ:', err.message);
         process.exitCode = 1;
       });
+  } else if (cmd === 'smoke-en') {
+    const port = args.port ?? '4321';
+    const out = args.out ?? null;
+    runSmokeEn({ port, out })
+      .then(({ scoreText, refuerzoTexto, itemsRespondidos }) => {
+        console.log(`OK — ${scoreText}`);
+        console.log(`Ítems respondidos (incluido el de refuerzo insertado): ${itemsRespondidos}`);
+        console.log(`Texto del bucle de refuerzo: "${refuerzoTexto}"`);
+        if (out) console.log(`Captura guardada en ${out}`);
+      })
+      .catch((err) => {
+        console.error('FALLÓ:', err.message);
+        process.exitCode = 1;
+      });
   } else {
-    console.error('Uso: node driver.mjs smoke --port 4321 --out /ruta/captura.png');
+    console.error(
+      'Uso: node driver.mjs smoke --port 4321 --out /ruta/captura.png\n' +
+        '  o: node driver.mjs smoke-en --port 4321 --out /ruta/captura.png',
+    );
     process.exitCode = 1;
   }
 }

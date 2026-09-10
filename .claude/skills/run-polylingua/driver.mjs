@@ -174,6 +174,12 @@ async function runSmokeEnA2({ port, out }) {
   return runSmokeEnLesson({ port, out, url: '/en/de/a2/modal-verbs/' });
 }
 
+// U-07: B1 en→de. Habilidad probada: de.b1.clause.relative (primer skill de
+// la lección relative-clauses, con glosa en inglés).
+async function runSmokeEnB1({ port, out }) {
+  return runSmokeEnLesson({ port, out, url: '/en/de/b1/relative-clauses/' });
+}
+
 // Full end-to-end flow: open a real lesson, answer every item it contains
 // (one of each exercise kind, in this specific lesson), confirm the
 // practice engine reached its "done" state, and optionally screenshot it.
@@ -251,10 +257,11 @@ if (isMain) {
         console.error('FALLÓ:', err.message);
         process.exitCode = 1;
       });
-  } else if (cmd === 'smoke-en' || cmd === 'smoke-en-a2') {
+  } else if (cmd === 'smoke-en' || cmd === 'smoke-en-a2' || cmd === 'smoke-en-b1') {
     const port = args.port ?? '4321';
     const out = args.out ?? null;
-    const runner = cmd === 'smoke-en' ? runSmokeEn : runSmokeEnA2;
+    const runner =
+      cmd === 'smoke-en' ? runSmokeEn : cmd === 'smoke-en-a2' ? runSmokeEnA2 : runSmokeEnB1;
     runner({ port, out })
       .then(({ scoreText, refuerzoTexto, itemsRespondidos }) => {
         console.log(`OK — ${scoreText}`);
@@ -270,7 +277,8 @@ if (isMain) {
     console.error(
       'Uso: node driver.mjs smoke --port 4321 --out /ruta/captura.png\n' +
         '  o: node driver.mjs smoke-en --port 4321 --out /ruta/captura.png\n' +
-        '  o: node driver.mjs smoke-en-a2 --port 4321 --out /ruta/captura.png',
+        '  o: node driver.mjs smoke-en-a2 --port 4321 --out /ruta/captura.png\n' +
+        '  o: node driver.mjs smoke-en-b1 --port 4321 --out /ruta/captura.png',
     );
     process.exitCode = 1;
   }

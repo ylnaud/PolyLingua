@@ -65,7 +65,7 @@ quiz:
     explanation: "'Prazer!' (literalmente 'placer') es la forma estándar de decir 'mucho gusto' al conocer a alguien."
 exercises:
   - type: 'fill-blank'
-    sentence: '___! Meu nome é Ana. ___!'
+    sentence: '___! Meu nome é Ana. Prazer!'
     answer: 'Oi'
     accepted: ['oi', 'Olá', 'olá']
     hint: 'El saludo más informal y común en Brasil.'

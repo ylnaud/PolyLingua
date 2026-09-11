@@ -63,12 +63,12 @@ quiz:
     explanation: "'Piacere' al presentarte equivale al español 'mucho gusto' o 'encantado/a'. Literalmente significa 'placer'."
 exercises:
   - type: 'fill-blank'
-    sentence: '___! ___ Marco. ___!'
-    answer: 'Ciao, Mi chiamo, Piacere'
-    accepted: ['ciao, mi chiamo, piacere', 'Ciao, mi chiamo, Piacere']
-    hint: 'Saludo informal + presentación + fórmula de cortesía.'
+    sentence: '___! Mi chiamo Marco. Piacere!'
+    answer: 'Ciao'
+    accepted: ['ciao']
+    hint: 'Saludo informal para empezar una presentación.'
     translation: 'Hola. Me llamo Marco. Mucho gusto.'
-    placeholder: 'Buongiorno / Mi chiamo / Grazie'
+    placeholder: 'Buongiorno'
   - type: 'match'
     instructions: 'Empareja cada expresión con su uso correcto.'
     pairs:
@@ -89,12 +89,12 @@ exercises:
     hint: 'La estructura es idéntica al español: me llamo + nombre.'
     placeholder: 'Io sono Ana'
   - type: 'fill-blank'
-    sentence: '___, come ___?'
-    answer: 'Buonasera, sta'
-    accepted: ['buonasera, sta', 'Buonasera, Sta']
-    hint: 'Saludo formal de tarde + pregunta formal por el estado.'
+    sentence: '___, come sta?'
+    answer: 'Buonasera'
+    accepted: ['buonasera']
+    hint: 'Saludo formal de tarde.'
     translation: 'Buenas tardes, cómo está usted.'
-    placeholder: 'Ciao / stai'
+    placeholder: 'Ciao'
 vocabulary:
   - term: 'buongiorno'
     translation: 'buenos días'

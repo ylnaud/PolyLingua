@@ -180,6 +180,62 @@ async function runSmokeEnB1({ port, out }) {
   return runSmokeEnLesson({ port, out, url: '/en/de/b1/relative-clauses/' });
 }
 
+// U-10: los cinco `kind` de ejercicio responden y puntúan en una sesión
+// real. presente-verbos (es-de/a1) es la única lección con los cinco en un
+// solo archivo (quiz=choice, dos fill-blank, un match, un write, un
+// order) — a diferencia de runSmoke, que solo toca cuatro (nunca 'write').
+async function runSmokeKinds({ port, out }) {
+  const baseURL = `http://localhost:${port}`;
+  const { browser, page } = await launch();
+  await seedLocalStorage(page);
+
+  const consoleErrors = [];
+  page.on('pageerror', (err) => consoleErrors.push(String(err)));
+
+  await page.goto(`${baseURL}/es/de/a1/presente-verbos/`, { waitUntil: 'networkidle' });
+
+  const kindsVistos = new Set();
+  for (let i = 0; i < 20; i++) {
+    const visibleLocator = page.locator('[data-practice-item]:not([hidden])');
+    if ((await visibleLocator.count()) === 0) break;
+    const visible = visibleLocator.first();
+    const kind = await visible.getAttribute('data-kind');
+    kindsVistos.add(kind);
+    await answerItem(page, visible, kind);
+    await page.waitForTimeout(120);
+    const nextBtn = visible.locator('[data-next]');
+    if (await nextBtn.isVisible().catch(() => false)) {
+      await nextBtn.click();
+    } else {
+      break;
+    }
+  }
+
+  await page.waitForTimeout(300);
+  const scoreText = await page
+    .locator('[data-score-text]')
+    .textContent()
+    .catch(() => null);
+
+  if (out) await screenshot(page, out);
+  await browser.close();
+
+  if (!scoreText) {
+    throw new Error(
+      'No se encontró el texto de puntaje final — el flujo de la lección no llegó a completarse.',
+    );
+  }
+  if (consoleErrors.length > 0) {
+    throw new Error(`Errores de consola durante el flujo: ${consoleErrors.join('; ')}`);
+  }
+  const esperados = ['choice', 'fill-blank', 'match', 'write', 'order'];
+  const faltantes = esperados.filter((k) => !kindsVistos.has(k));
+  if (faltantes.length > 0) {
+    throw new Error(`La lección no pasó por estos kind: ${faltantes.join(', ')}`);
+  }
+  return { scoreText, kinds: [...kindsVistos].sort() };
+}
+
 // Full end-to-end flow: open a real lesson, answer every item it contains
 // (one of each exercise kind, in this specific lesson), confirm the
 // practice engine reached its "done" state, and optionally screenshot it.
@@ -273,12 +329,26 @@ if (isMain) {
         console.error('FALLÓ:', err.message);
         process.exitCode = 1;
       });
+  } else if (cmd === 'smoke-kinds') {
+    const port = args.port ?? '4321';
+    const out = args.out ?? null;
+    runSmokeKinds({ port, out })
+      .then(({ scoreText, kinds }) => {
+        console.log(`OK — ${scoreText}`);
+        console.log(`Kinds vistos: ${kinds.join(', ')}`);
+        if (out) console.log(`Captura guardada en ${out}`);
+      })
+      .catch((err) => {
+        console.error('FALLÓ:', err.message);
+        process.exitCode = 1;
+      });
   } else {
     console.error(
       'Uso: node driver.mjs smoke --port 4321 --out /ruta/captura.png\n' +
         '  o: node driver.mjs smoke-en --port 4321 --out /ruta/captura.png\n' +
         '  o: node driver.mjs smoke-en-a2 --port 4321 --out /ruta/captura.png\n' +
-        '  o: node driver.mjs smoke-en-b1 --port 4321 --out /ruta/captura.png',
+        '  o: node driver.mjs smoke-en-b1 --port 4321 --out /ruta/captura.png\n' +
+        '  o: node driver.mjs smoke-kinds --port 4321 --out /ruta/captura.png',
     );
     process.exitCode = 1;
   }

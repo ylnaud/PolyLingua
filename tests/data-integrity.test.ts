@@ -435,3 +435,47 @@ describe('matrices (Generador de frases)', () => {
     }
   });
 });
+
+// U-10 del Gauntlet: `Practice.astro` (`splitSentence()`) solo reemplaza el
+// PRIMER `___` de un ejercicio `fill-blank` por el input real — un segundo o
+// tercer `___` en la misma `sentence` no se convierte en nada, se queda como
+// texto literal visible para el alumno. Un barrido encontró tres así (dos en
+// es-it/a1/saluti.md, uno en es-pt/a1/saudacoes.md), corregidos en el mismo
+// commit que cierra esta unidad — no era hipotético.
+describe('ejercicios fill-blank', () => {
+  const lessonsDir = join(import.meta.dirname, '..', 'src', 'content', 'lessons');
+
+  function fillBlankSentences(): { id: string; sentence: string }[] {
+    const out: { id: string; sentence: string }[] = [];
+    for (const course of readdirSync(lessonsDir)) {
+      if (!/^[a-z]{2}-[a-z]{2}$/.test(course)) continue;
+      for (const level of readdirSync(join(lessonsDir, course))) {
+        for (const file of readdirSync(join(lessonsDir, course, level))) {
+          if (!file.endsWith('.md')) continue;
+          const raw = readFileSync(join(lessonsDir, course, level, file), 'utf-8');
+          for (const block of raw.split(/\n {2}- type: /).slice(1)) {
+            if (!block.startsWith("'fill-blank'")) continue;
+            const m = block.match(/sentence:\s*(.+)/);
+            if (!m) continue;
+            out.push({ id: `${course}/${level}/${file}`, sentence: m[1]! });
+          }
+        }
+      }
+    }
+    return out;
+  }
+
+  it('hay ejercicios fill-blank que comprobar (control de la propia comprobación)', () => {
+    expect(fillBlankSentences().length).toBeGreaterThan(900);
+  });
+
+  it('cada fill-blank lleva exactamente un ___', () => {
+    const malos = fillBlankSentences()
+      .map((e) => ({ ...e, huecos: (e.sentence.match(/___/g) ?? []).length }))
+      .filter((e) => e.huecos !== 1)
+      .map((e) => `${e.id}: ${e.sentence} (${e.huecos} huecos)`);
+    expect(malos, `fill-blank con un número de huecos distinto de 1:\n${malos.join('\n')}`).toEqual(
+      [],
+    );
+  });
+});

@@ -547,3 +547,127 @@ describe('tanda A1 — las 17 glosas inglesas', () => {
     }
   });
 });
+
+/**
+ * U-11 del Gauntlet: todo lo de arriba escanea la FUENTE (`REPAIR_GLOSSES.en`
+ * directamente) o prueba el mecanismo con UN solo skill sintético (escenario
+ * 5). Nada corría las dos funciones reales —`generateRepairSet` (camino de
+ * `practicar.astro`, reparación intensiva) y `repairTemplateFor` +
+ * `toRepairExercise` (camino de DrillTutor)— contra las skills reales con
+ * glosa inglesa y escaneaba lo que de verdad DEVUELVEN. Cierra el lazo entre
+ * "el dato fuente está limpio" y "la función, con datos reales, también".
+ */
+describe('escenario 8 — los dos caminos con datos reales, no sintéticos', () => {
+  // Misma regex que ya usa el escaneo de la fuente más arriba (líneas 340 y
+  // 685 de tests/engine.test.ts), más 'la' — el Critic de esta unidad la
+  // corrió de verdad y encontró que su ausencia dejaba pasar dos fugas
+  // completas de español ('la semana pasada', 'a la primera') sin generar
+  // ningún falso positivo nuevo sobre las 61 reales. No se toca la regex
+  // original de U-01/U-02 en los otros archivos — ese ajuste queda fuera del
+  // alcance de esta unidad.
+  const marcas =
+    /[áéíóúñ¿¡]|\b(el|la|las|del|una|pero|verbo|frase|palabra|palabras|segunda|posicion|siempre|articulo|sustantivo|persona|personas|cambian?|lleva|todo|todos|otras?|demas|mismo|misma|masculino|femenino)\b|(?<!-)\blos\b/i;
+
+  it('generateRepairSet (practicar.astro) no filtra español en ninguna de las 61 skills reales', () => {
+    // No se escanea ej.prompt/sentence acá a propósito: para 'fill-blank' es
+    // la frase ALEMANA (nunca se traduce por userLang, así que no tiene que
+    // pasar este detector), y para 'order' es v.translation — que sí se
+    // escanea abajo vía data.translation. El escenario 9 documenta, aparte,
+    // una deuda real y distinta: algunas sentence alemanas llevan pistas
+    // gramaticales en español metidas entre paréntesis.
+    for (const id of Object.keys(REPAIR_GLOSSES.en)) {
+      const skill = SKILL_MAP[id];
+      expect(skill, id).toBeDefined();
+      const tanda = generateRepairSet(skill, 20, 'en');
+      expect(tanda.length, id).toBeGreaterThan(0);
+      for (const ej of tanda) {
+        expect(ej.explanation.match(marcas), `${id}: explanation «${ej.explanation}»`).toBeNull();
+        const data = ej.render?.data as { translation?: string };
+        if (data?.translation) {
+          expect(
+            data.translation.match(marcas),
+            `${id}: translation «${data.translation}»`,
+          ).toBeNull();
+        }
+      }
+    }
+  });
+
+  it('repairTemplateFor + toRepairExercise (DrillTutor) no filtra español en ninguna de las 61', () => {
+    for (const id of Object.keys(REPAIR_GLOSSES.en)) {
+      const skill = SKILL_MAP[id];
+      const plantilla = repairTemplateFor(id, 'en')!;
+      expect(plantilla, id).not.toBeNull();
+      plantilla.variations.forEach((v, i) => {
+        const ej = toRepairExercise(skill, plantilla, v, i);
+        expect(ej.explanation.match(marcas), `${id}[${i}]: explanation`).toBeNull();
+        const data = ej.render?.data as { translation?: string };
+        if (data?.translation) {
+          expect(data.translation.match(marcas), `${id}[${i}]: translation`).toBeNull();
+        }
+      });
+    }
+  });
+});
+
+/**
+ * U-11 — deuda conocida, no bloqueante: encontrada al escribir el escenario
+ * 8, distinta del problema que resuelve el resto de este archivo.
+ *
+ * `sentence` es el campo ALEMÁN — `repairTemplateFor()` nunca lo traduce por
+ * userLang, a propósito, porque es la frase que se está aprendiendo. Pero 17
+ * de las 61 skills con glosa inglesa (62 de sus variaciones) llevan, dentro
+ * de esa misma sentence alemana, una pista gramatical entre paréntesis
+ * escrita en español — p. ej. `'Das Buch liegt auf ___ Tisch. (der, está
+ * quieto)'`. Un alumno angloparlante ve esa pista tal cual: es una fuga real,
+ * pero de un tipo distinto al que cazan escenario 1-8 (que escanean
+ * `explanation`/`translation`, el lado que SÍ se traduce).
+ *
+ * Arreglarla de verdad es escribir el equivalente en inglés de cada pista —
+ * trabajo de contenido grande, decidido explícitamente FUERA de esta unidad.
+ * Este test no lo permite crecer en silencio: si el número sube, hay que
+ * justificarlo en el mismo commit; si baja, es que alguien tradujo alguna —
+ * bienvenido, y hay que bajar el número acá.
+ */
+describe('deuda conocida — pistas en español dentro de sentence (alemán)', () => {
+  const marcas =
+    /[áéíóúñ¿¡]|\b(el|la|las|del|una|pero|verbo|frase|palabra|palabras|segunda|posicion|siempre|articulo|sustantivo|persona|personas|cambian?|lleva|todo|todos|otras?|demas|mismo|misma|masculino|femenino|hay|esta|estoy|quieto|movimiento)\b|(?<!-)\blos\b/i;
+
+  it('hoy son exactamente 17 skills (62 sentence) — no crece sin darse cuenta', () => {
+    const skillsConFuga: string[] = [];
+    let sentencesConFuga = 0;
+    for (const id of Object.keys(REPAIR_GLOSSES.en)) {
+      const base = REPAIR_TEMPLATES.find((t) => t.skillId === id)!;
+      let tieneFuga = false;
+      for (const v of base.variations) {
+        if (marcas.test(v.sentence)) {
+          sentencesConFuga++;
+          tieneFuga = true;
+        }
+      }
+      if (tieneFuga) skillsConFuga.push(id);
+    }
+    expect(skillsConFuga.sort(), skillsConFuga.join(', ')).toEqual(
+      [
+        'de.a2.preposition.wechsel',
+        'de.a2.pronoun.akkusativ',
+        'de.a2.pronoun.possessive',
+        'de.a2.time.past-future',
+        'de.b1.adverb.direction',
+        'de.b1.clause.final',
+        'de.b1.clause.indirect-question',
+        'de.b1.verb.perfekt-zustand',
+        'de.b2.connector.discourse',
+        'de.b2.voice.zustandspassiv',
+        'de.c1.connector.causal',
+        'de.c1.construction.funktionsverb',
+        'de.c1.preposition.academic',
+        'de.c1.verb.modal-subjective',
+        'de.c1.wordformation.affixes',
+        'de.c2.idiom.prepositional',
+        'de.c2.particle.modal',
+      ].sort(),
+    );
+    expect(sentencesConFuga).toBe(62);
+  });
+});

@@ -284,6 +284,47 @@ async function runSmoke({ port, out }) {
   return scoreText;
 }
 
+// U-13: sin desbordamiento horizontal en 360 (móvil), 768 (tablet) y 1280
+// (escritorio), sobre una muestra de páginas reales de los dos silos
+// activos. `scrollWidth > clientWidth` es la señal real de que algo se
+// corta o fuerza un scroll horizontal — no un cálculo de CSS a ojo.
+const PAGINAS_OVERFLOW = [
+  '/es/de/',
+  '/es/de/a1/articulos-der-die-das/',
+  '/es/de/practicar/',
+  '/en/de/',
+  '/en/de/a1/present-tense-regular-verbs/',
+];
+const ANCHOS = [360, 768, 1280];
+
+async function runCheckOverflow({ port }) {
+  const baseURL = `http://localhost:${port}`;
+  const { browser, page } = await launch();
+  await seedLocalStorage(page);
+
+  const rotos = [];
+  for (const ruta of PAGINAS_OVERFLOW) {
+    for (const ancho of ANCHOS) {
+      await page.setViewportSize({ width: ancho, height: 800 });
+      await page.goto(`${baseURL}${ruta}`, { waitUntil: 'networkidle' });
+      const { scrollWidth, clientWidth } = await page.evaluate(() => ({
+        scrollWidth: document.documentElement.scrollWidth,
+        clientWidth: document.documentElement.clientWidth,
+      }));
+      if (scrollWidth > clientWidth) {
+        rotos.push(`${ruta} @ ${ancho}px: scrollWidth=${scrollWidth} > clientWidth=${clientWidth}`);
+      }
+    }
+  }
+
+  await browser.close();
+
+  if (rotos.length > 0) {
+    throw new Error(`Desbordamiento horizontal:\n${rotos.join('\n')}`);
+  }
+  return { paginas: PAGINAS_OVERFLOW.length, anchos: ANCHOS.length };
+}
+
 function parseArgs(argv) {
   const out = {};
   for (let i = 0; i < argv.length; i += 1) {
@@ -342,13 +383,24 @@ if (isMain) {
         console.error('FALLÓ:', err.message);
         process.exitCode = 1;
       });
+  } else if (cmd === 'check-overflow') {
+    const port = args.port ?? '4321';
+    runCheckOverflow({ port })
+      .then(({ paginas, anchos }) => {
+        console.log(`OK — ${paginas} páginas × ${anchos} anchos, sin desbordamiento horizontal`);
+      })
+      .catch((err) => {
+        console.error('FALLÓ:', err.message);
+        process.exitCode = 1;
+      });
   } else {
     console.error(
       'Uso: node driver.mjs smoke --port 4321 --out /ruta/captura.png\n' +
         '  o: node driver.mjs smoke-en --port 4321 --out /ruta/captura.png\n' +
         '  o: node driver.mjs smoke-en-a2 --port 4321 --out /ruta/captura.png\n' +
         '  o: node driver.mjs smoke-en-b1 --port 4321 --out /ruta/captura.png\n' +
-        '  o: node driver.mjs smoke-kinds --port 4321 --out /ruta/captura.png',
+        '  o: node driver.mjs smoke-kinds --port 4321 --out /ruta/captura.png\n' +
+        '  o: node driver.mjs check-overflow --port 4321',
     );
     process.exitCode = 1;
   }

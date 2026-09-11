@@ -1,6 +1,6 @@
 # Unidades del Gauntlet
 
-Una fila por pieza. Solo U-01 a U-13 tienen ficha desarrollada: fijar
+Una fila por pieza. Solo U-01 a U-14 tienen ficha desarrollada: fijar
 criterios de aceptación sobre código que no se ha auditado a fondo produce
 barras genéricas, que es justo lo que este sistema existe para evitar.
 
@@ -19,12 +19,8 @@ barras genéricas, que es justo lo que este sistema existe para evitar.
 | U-11 | Repair engine                         | auto             | `PASS` | [ficha](U-11-repair-engine.md)              |
 | U-12 | Navegación y enlaces                  | auto             | `PASS` | [ficha](U-12-navegacion-enlaces.md)         |
 | U-13 | Responsive y accesibilidad            | auto + browser   | `PASS` | [ficha](U-13-responsive-a11y.md)            |
-| U-14 | Build y despliegue                    | auto             | `TODO` | —                                           |
+| U-14 | Build y despliegue                    | auto             | `PASS` | [ficha](U-14-build-despliegue.md)           |
 | U-15 | Marcado **Beta** de A2–C2             | auto + producto  | `TODO` | —                                           |
-
-## Barras en una línea, para las que aún no tienen ficha
-
-- **U-14** — `build`, `test` y `check` verdes, y el commit exacto identificado.
 
 ## U-15 — nota de producto
 

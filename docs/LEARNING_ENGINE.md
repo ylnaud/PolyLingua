@@ -184,7 +184,8 @@ Dos eventos nuevos, en el mismo estilo que el `practice-complete` que ya existí
 `Practice.astro` dejó de montar una lista fija: los ítems se insertan detrás del
 actual y se cablean con la misma función que los del build. Sin nadie que emita
 el segundo evento el comportamiento es idéntico al de siempre, que es lo que
-mantiene intactas las 470 lecciones sin habilidades.
+mantiene intacto el comportamiento para lecciones sin habilidades — hoy
+ninguna de las 484 lo está, pero el motor sigue soportando el caso.
 
 `practice-item-answered` se emite **también al acertar**, no solo al fallar: el
 tutor necesita ver los dos resultados para contar la racha de tres.
@@ -192,10 +193,10 @@ tutor necesita ver los dos resultados para contar la racha de tres.
 ### De dónde salen los ejercicios del bucle
 
 De `REPAIR_TEMPLATES`. Una habilidad **sin plantilla no abre bucle**: proponer un
-ejercicio de otro tema sería peor que no hacer nada. Hoy tienen plantilla las 17
-habilidades de gramática y orden de palabras de A1 alemán, con 6-8 variaciones
-cada una — un test falla si alguna se queda corta, porque con menos de 6 el bucle
-se quedaría sin material antes de llegar al tope de 6.
+ejercicio de otro tema sería peor que no hacer nada. Hoy tienen plantilla las 253
+habilidades de gramática y orden de palabras de alemán, A1 a C2, con 6-8
+variaciones cada una — un test falla si alguna se queda corta, porque con menos
+de 6 el bucle se quedaría sin material antes de llegar al tope de 6.
 
 Las variaciones son casi todas de hueco (`fill-blank`), pero las de orden de
 palabras son de tipo `order`: un hueco en medio de la frase no obliga a colocar

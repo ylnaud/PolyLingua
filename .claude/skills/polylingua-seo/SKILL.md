@@ -40,7 +40,7 @@ entera debe quedar fuera, comprueba el segmento **en cualquier posición**, no s
 
 Hoy está fuera del índice: toda la sección de diálogos (100 + 5 hubs), las herramientas
 (repasar, vocabulario, ahorcado, diario, gramática, mis errores…), y los silos de
-idiomas de interfaz inactivos. Sitemap: **452 URLs**.
+idiomas de interfaz inactivos. Sitemap: **544 URLs**.
 
 ## Tres cosas que un sitemap no arregla
 
